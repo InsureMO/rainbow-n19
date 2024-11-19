@@ -1,8 +1,7 @@
 // noinspection ES6PreferShortImport
 
 import Decimal from 'decimal.js';
-import * as math from 'mathjs';
-import {ValueOperator as VO} from '../src/lib/step-helpers-value-operator';
+import {ValueOperator as VO} from '../src/lib/value-operator';
 
 describe('Value test chain', () => {
 	test('Test 1', async () => {
@@ -13,12 +12,8 @@ describe('Value test chain', () => {
 		expect(VO.with(123).isInt.toFixed2.value()).toEqual('123.00');
 		expect(VO.of('123.45').within({min: 100, max: 200}).toFixed3().orElse(150).value()).toEqual('123.450');
 		console.log({
-			'math: number, 5.0000000000000001': math.isInteger(5.0000000000000001),
-			'math: string, 5.0000000000000001': math.isInteger('5.0000000000000001' as any),
 			'decimal: number, 5.0000000000000001': new Decimal(5.0000000000000001).isInteger(),
 			'decimal: string, 5.0000000000000001': new Decimal('5.0000000000000001').isInteger(),
-			'math: 0.1 + 0.2': math.chain(0.1).add(0.2).done(),
-			'math: add("0.1 + 0.2")': math.evaluate('0.1 + 0.2'),
 			'decimal: 0.1 + 0.2': new Decimal(0.1).add(0.2).toNumber()
 		});
 
