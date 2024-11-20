@@ -1,5 +1,5 @@
 import {RegisteredValueAction, RegisteredValueActionWithParams} from './action-types';
-import {isBlank, isEmpty, isNotBlank, isNotEmpty, isNotNull, isNull} from './test-any-actions';
+import {has, isBlank, isEmpty, isNotBlank, isNotEmpty, isNotNull, isNull, notHas} from './test-any-actions';
 import {after, before, between, notAfter, notBefore, notBetween} from './test-dayjs-actions';
 import {
 	isDecimal,
@@ -17,7 +17,17 @@ import {
 	isPositive,
 	isZero
 } from './test-decimal-actions';
-import {regexp} from './test-string-actions';
+import {
+	endsWith,
+	includes,
+	isNotAnyOf,
+	isOneOf,
+	notEndsWith,
+	notIncludes,
+	notStartsWith,
+	regexp,
+	startsWith
+} from './test-string-actions';
 
 const testers = {
 	// any
@@ -27,10 +37,21 @@ const testers = {
 	isNotEmpty: {type: 'func', func: isNotEmpty} as RegisteredValueAction,
 	isBlank: {type: 'func', func: isBlank} as RegisteredValueAction,
 	isNotBlank: {type: 'func', func: isNotBlank} as RegisteredValueAction,
+	has: {type: 'param', func: has} as RegisteredValueActionWithParams<typeof has>,
+	notHas: {type: 'param', func: notHas} as RegisteredValueActionWithParams<typeof notHas>,
+	hasNot: {type: 'param', func: notHas} as RegisteredValueActionWithParams<typeof notHas>,
 	// string
+	startsWith: {type: 'param', func: startsWith} as RegisteredValueActionWithParams<typeof startsWith>,
+	notStartsWith: {type: 'param', func: notStartsWith} as RegisteredValueActionWithParams<typeof notStartsWith>,
+	endsWith: {type: 'param', func: endsWith} as RegisteredValueActionWithParams<typeof endsWith>,
+	notEndsWith: {type: 'param', func: notEndsWith} as RegisteredValueActionWithParams<typeof notEndsWith>,
+	includes: {type: 'param', func: includes} as RegisteredValueActionWithParams<typeof includes>,
+	notIncludes: {type: 'param', func: notIncludes} as RegisteredValueActionWithParams<typeof notIncludes>,
 	regexp: {type: 'param', func: regexp} as RegisteredValueActionWithParams<typeof regexp>,
 	regex: {type: 'param', func: regexp} as RegisteredValueActionWithParams<typeof regexp>,
 	matches: {type: 'param', func: regexp} as RegisteredValueActionWithParams<typeof regexp>,
+	isOneOf: {type: 'param', func: isOneOf} as RegisteredValueActionWithParams<typeof isOneOf>,
+	isNotAnyOf: {type: 'param', func: isNotAnyOf} as RegisteredValueActionWithParams<typeof isNotAnyOf>,
 	// decimal, return decimal if test pass
 	isNumber: {type: 'func', func: isDecimal} as RegisteredValueAction,
 	isDecimal: {type: 'func', func: isDecimal} as RegisteredValueAction,

@@ -1,4 +1,4 @@
-import {StaticImplements} from './types';
+import {ExtendValueActions, StaticImplements} from './types';
 import {
 	AllTesters,
 	AllTransformers,
@@ -21,6 +21,11 @@ interface ValueOperatorBase {
 	// control
 	$allowNoParamFuncCall: boolean;
 }
+
+const AllExtensions: Record<string, RegisteredValueAction | RegisteredValueActionWithParams> = {};
+export const extend = <T extends RegisteredValueAction | RegisteredValueActionWithParams>(name: string, action: T) => {
+	AllExtensions[name] = action;
+};
 
 /**
  * function call is allowed for tester and transformer, only when the {@link $allowNoParamFuncCall} is true.
@@ -68,6 +73,7 @@ const findValueAction = (actions: Record<string, RegisteredValueAction | Registe
 };
 const findTester = findValueAction(AllTesters);
 const findTransformer = findValueAction(AllTransformers);
+const findExtended = findValueAction(AllExtensions);
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type UseDefaultFind = (operator: IValueOperator, base: ValueOperatorBase, prop: string) => ((defaultValue: any) => IValueOperator) | undefined | symbol;
 const findUseDefault: UseDefaultFind = (operator: IValueOperator, base: ValueOperatorBase, prop: string) => {
@@ -206,7 +212,7 @@ const getFromOperator = (operator: IValueOperator, base: ValueOperatorBase, prop
 	// set to false anyway
 	base.$allowNoParamFuncCall = false;
 	const finds = [
-		findTester, findTransformer, findUseDefault,
+		findTester, findTransformer, findExtended, findUseDefault,
 		findValue, findSuccessOrFailureCallback, findOK, findPromise
 	];
 	for (const find of finds) {
@@ -258,12 +264,14 @@ export interface DefaultValueSetter extends FinalValueRetriever {
 	else: (defaultValue: any) => FinalValueRetriever;
 }
 
-type ActionType<T> = T extends RegisteredValueAction
+export type ActionType<T> = T extends RegisteredValueAction
 	? (ValueActionsWithDefault & (() => ValueActionsWithDefault))
 	: T extends RegisteredValueActionWithParams ? ((...args: Parameters<T['func']>) => ValueActionsWithDefault) : never;
 export type ValueActions =
 	& { [K in keyof typeof AllTesters]: ActionType<typeof AllTesters[K]> }
-	& { [K in keyof typeof AllTransformers]: ActionType<typeof AllTransformers[K]> };
+	& { [K in keyof typeof AllTransformers]: ActionType<typeof AllTransformers[K]> }
+	& ExtendValueActions;
+
 export type ValueActionsWithDefault = ValueActions & DefaultValueSetter;
 
 export type IValueOperator = ValueActions;

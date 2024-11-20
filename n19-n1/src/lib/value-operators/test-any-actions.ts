@@ -56,3 +56,20 @@ export const isBlank: ValueAction<any, null | undefined | string> = (value?: any
 };
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const isNotBlank: ValueAction = (value?: any) => ({test: !isBlank(value).test, value});
+export const has = (prop: string): ValueAction => {
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	return (value?: any) => {
+		if (value == null) {
+			return {test: false, value};
+		}
+		return {test: prop in value, value};
+	};
+};
+export const notHas = (prop: string): ValueAction => {
+	const func = has(prop);
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	return (value?: any) => {
+		const {test, value: newValue} = func(value);
+		return {test: !test, value: newValue};
+	};
+};

@@ -126,3 +126,21 @@ export const format = (options: DateFormatOptions | NumberFormatOptions): ValueA
 			throw new Error(`Unsupported format type: ${options?.type}`);
 	}
 };
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const retrieve = <To>(propOrFunc: string | ValueAction<any, To>): ValueAction<any, To> => {
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	return (value?: any) => {
+		if (value == null) {
+			return {test: false, value};
+		}
+		if (typeof propOrFunc === 'string') {
+			return {test: propOrFunc in value, value: value[propOrFunc]};
+		}
+		const {test, value: newValue} = propOrFunc(value);
+		return {test, value: newValue};
+	};
+};
+
+/** temporary plugin action */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const manipulate = <To>(func: ValueAction<any, To>): ValueAction<any, To> => func;

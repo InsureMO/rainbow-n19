@@ -1,3 +1,3 @@
 import {buildConfig} from './rollup.config.base.js';
 
-export default [buildConfig(true)];
+export default [...buildConfig(true)];

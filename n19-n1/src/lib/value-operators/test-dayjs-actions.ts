@@ -11,6 +11,9 @@ export const toDate = (options?: IsDateOptions): ValueAction<any, Dayjs> => (val
 	if (value == null) {
 		return {test: false, value};
 	}
+	if (dayjs.isDayjs(value)) {
+		return {test: true, value};
+	}
 	const parsed = dayjs(value, options.format, options.locale, options.strict);
 	if (parsed.isValid()) {
 		return {test: true, value: parsed};

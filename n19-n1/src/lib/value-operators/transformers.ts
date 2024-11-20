@@ -1,5 +1,5 @@
 import {RegisteredValueAction, RegisteredValueActionWithParams} from './action-types';
-import {format, formatDate, formatNumber} from './transform-any-actions';
+import {format, formatDate, formatNumber, manipulate, retrieve} from './transform-any-actions';
 import {ceil, floor, roundBy, roundDown, roundUp, toDecimal, toFixed, toNumber} from './transform-decimal-actions';
 import {pad, padEnd, padStart, stringify, trim} from './transform-string-actions';
 
@@ -8,6 +8,9 @@ const transformers = {
 	formatDate: {type: 'param', func: formatDate} as RegisteredValueActionWithParams<typeof formatDate>,
 	formatNumber: {type: 'param', func: formatNumber} as RegisteredValueActionWithParams<typeof formatNumber>,
 	format: {type: 'param', func: format} as RegisteredValueActionWithParams<typeof format>,
+	retrieve: {type: 'param', func: retrieve} as RegisteredValueActionWithParams<typeof retrieve>,
+	manipulate: {type: 'param', func: manipulate} as RegisteredValueActionWithParams<typeof manipulate>,
+	man: {type: 'param', func: manipulate} as RegisteredValueActionWithParams<typeof manipulate>,
 	// string
 	stringify: {type: 'func', func: stringify} as RegisteredValueAction,
 	trim: {type: 'func', func: trim} as RegisteredValueAction,

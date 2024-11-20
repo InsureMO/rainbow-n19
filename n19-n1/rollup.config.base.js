@@ -10,7 +10,7 @@ export const buildConfig = (lint) => {
 	// 	}
 	// });
 
-	return {
+	return [{
 		input: './src/index.ts',
 		output: [
 			{format: 'es', dir: '.'},
@@ -26,5 +26,5 @@ export const buildConfig = (lint) => {
 			return ["dayjs/plugin/"].some(scope => id.startsWith(scope))
 				|| ['dayjs', 'decimal.js'].includes(id);
 		}
-	};
+	}];
 };
