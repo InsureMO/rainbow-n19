@@ -1,5 +1,24 @@
+import Decimal from 'decimal.js';
 import {ValueAction} from './action-types';
 
+/**
+ * convert number/boolean/bigint/Decimal to string
+ */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const stringify: ValueAction<any, string> = (value?: any) => {
+	if (value == null) {
+		return {test: true, value: ''};
+	}
+	const type = typeof value;
+	if (type === 'string') {
+		return {test: true, value};
+	} else if (['number', 'boolean', 'bigint'].includes(type)) {
+		return {test: true, value: `${value}`};
+	} else if (value instanceof Decimal) {
+		return {test: true, value: value.toString()};
+	}
+	return {test: false, value};
+};
 /**
  * always pass, and trim if given value is string
  */

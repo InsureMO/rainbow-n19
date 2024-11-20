@@ -13,7 +13,7 @@ export enum Rounding {
 	ROUND_HALF_FLOOR = 'half-floor'
 }
 
-const ToDecimalJsRounding = {
+export const ToDecimalJsRounding = {
 	[Rounding.ROUND_UP]: Decimal.ROUND_UP,
 	[Rounding.ROUND_DOWN]: Decimal.ROUND_DOWN,
 	[Rounding.ROUND_CEIL]: Decimal.ROUND_CEIL,

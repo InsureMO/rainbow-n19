@@ -30,7 +30,7 @@ export const isInRange = (options: DecimalInRangeOptions): ValueAction<any, Deci
 		if (!test) {
 			return {test: false, value};
 		}
-		let pass = false;
+		let pass;
 		switch (interval) {
 			case 'open':
 			case 'o':
@@ -51,6 +51,15 @@ export const isInRange = (options: DecimalInRangeOptions): ValueAction<any, Deci
 				break;
 		}
 		return pass ? {test: true, value: decimal} : {test: false, value};
+	};
+};
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const isNotInRange = (options: DecimalInRangeOptions): ValueAction<any, Decimal> => {
+	const check = isInRange(options);
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	return (value?: any) => {
+		const {test, value: decimal} = check(value);
+		return test ? {test: false, value} : {test, value: decimal};
 	};
 };
 export const isPositive = isInRange({min: 0, interval: 'left-open'});

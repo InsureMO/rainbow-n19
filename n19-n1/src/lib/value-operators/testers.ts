@@ -1,5 +1,6 @@
 import {RegisteredValueAction, RegisteredValueActionWithParams} from './action-types';
 import {isBlank, isEmpty, isNotBlank, isNotEmpty, isNotNull, isNull} from './test-any-actions';
+import {after, before, between, notAfter, notBefore, notBetween} from './test-dayjs-actions';
 import {
 	isDecimal,
 	isGreaterThan,
@@ -9,6 +10,7 @@ import {
 	isLessThan,
 	isLessThanOrEqual,
 	isNegative,
+	isNotInRange,
 	isNotNegative,
 	isNotPositive,
 	isNotZero,
@@ -54,6 +56,15 @@ const testers = {
 	} as RegisteredValueActionWithParams<typeof isLessThanOrEqual>,
 	lte: {type: 'param', func: isLessThanOrEqual} as RegisteredValueActionWithParams<typeof isLessThanOrEqual>,
 	isInRange: {type: 'param', func: isInRange} as RegisteredValueActionWithParams<typeof isInRange>,
-	within: {type: 'param', func: isInRange} as RegisteredValueActionWithParams<typeof isInRange>
+	within: {type: 'param', func: isInRange} as RegisteredValueActionWithParams<typeof isInRange>,
+	isNotInRange: {type: 'param', func: isNotInRange} as RegisteredValueActionWithParams<typeof isNotInRange>,
+	notWithin: {type: 'param', func: isNotInRange} as RegisteredValueActionWithParams<typeof isNotInRange>,
+	// date with params, return dayjs if test pass
+	before: {type: 'param', func: before} as RegisteredValueActionWithParams<typeof before>,
+	notBefore: {type: 'param', func: notBefore} as RegisteredValueActionWithParams<typeof notBefore>,
+	after: {type: 'param', func: after} as RegisteredValueActionWithParams<typeof after>,
+	notAfter: {type: 'param', func: notAfter} as RegisteredValueActionWithParams<typeof notAfter>,
+	between: {type: 'param', func: between} as RegisteredValueActionWithParams<typeof between>,
+	notBetween: {type: 'param', func: notBetween} as RegisteredValueActionWithParams<typeof notBetween>
 };
 export const AllTesters: Readonly<typeof testers> = testers;

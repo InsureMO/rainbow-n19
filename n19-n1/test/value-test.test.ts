@@ -1,8 +1,11 @@
 // noinspection ES6PreferShortImport
 
 import Decimal from 'decimal.js';
+import '../src/lib/decimaljs-init';
 import {ValueOperator as VO} from '../src/lib/value-operator';
+import {FormatType, Rounding} from '../src/lib/value-operators';
 
+Decimal.set({precision: 200, rounding: Decimal.ROUND_HALF_UP});
 describe('Value test chain', () => {
 	test('Test 1', async () => {
 		expect(VO.from('abc').isNotBlank().orUseDefault('default').value()).toEqual('abc');
@@ -32,6 +35,15 @@ describe('Value test chain', () => {
 		} catch (v) {
 			expect(v).toEqual(-123);
 		}
+
+		const formatted = VO.of('1234567890987654321.0123456')
+			.format({
+				type: FormatType.NUMBER,
+				fractionDigits: 5,
+				round: Rounding.ROUND_DOWN,
+				percent: 'myriad'
+			}).value();
+		console.log(formatted);
 
 		// console.log(new Decimal({} as any).isInteger());
 		interface AskImportConfigRequest {
