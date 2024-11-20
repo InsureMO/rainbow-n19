@@ -1,288 +1,137 @@
 ![Static Badge](https://img.shields.io/badge/InsureMO-777AF2.svg)
 
-![Module Formats](https://img.shields.io/badge/module%20formats-cjs-green.svg)
-
-# o23/n1
-
-The `o23/n1` module provides two parts of implementation:
-
-- The pipeline and pipeline steps, along with their unified registry.
-- The basic building blocks, including environment variable retrieval, logging, and exception definitions.
-
-## Pipeline and Pipeline Steps
-
-An application may allow for multiple pipelines to exist, so each pipeline will have a globally unique code to identify it. The pipeline
-interface also provides an execution API, which fundamentally does not care about the specific format of the incoming and outgoing data, nor
-the internal execution logic. Therefore, the pipeline interface is a higher-order definition, and the interface itself may not even be
-concerned with the internal execution mechanism.
-
-> Make sure that all pipelines and pipeline steps are stateless, so that singletons can be used to save the time of creating instances.
-
-```typescript
-export interface PipelineRequest<C = PipelineRequestPayload> {
-	payload: C;
-	traceId?: string;
-}
-
-export interface PipelineResponse<C = PipelineResponsePayload> {
-	payload: C;
-}
-
-export interface Pipeline<In = any, Out = any> {
-	/**
-	 * code should be unique globally
-	 */
-	getCode(): PipelineCode;
-
-	/**
-	 * perform pipeline
-	 */
-	perform(request: PipelineRequest<In>): Promise<PipelineResponse<Out>>;
-}
-```
-
-To facilitate tracking of the execution logic, the pipeline provides a context object that includes one `traceId` for tracing the execution
-logs of the entire pipeline.
-
-In fact, the execution of a pipeline depends on its pipeline steps. A pipeline can contain one or more steps. Therefore, `o23/n1` also
-provides an implementation of AbstractPipeline. By implementing this abstract class and providing constructors for pipeline steps, you can
-obtain a fully executable pipeline class and use it for execution.
-
-```typescript
-export interface PipelineStepBuilder {
-	create(options?: PipelineStepOptions): Promise<PipelineStep>;
-}
-
-export abstract class AbstractPipeline<In = any, Out = any> implements Pipeline<In, Out> {
-	// ...
-	protected abstract getStepBuilders(): Array<PipelineStepBuilder>;
-
-	// ...
-}
-```
-
-To conveniently implement a pipeline class, `o23/n1` provides a way to construct a pipeline based on static pipeline step classes, as
-follows:
-
-```typescript
-export interface PipelineStepType<S = PipelineStep> extends Function {
-	new(options?: PipelineStepOptions): S;
-}
-
-export class DefaultPipelineStepBuilder implements PipelineStepBuilder {
-	public constructor(protected readonly step: PipelineStepType) {
-	}
-
-	public async create(options?: PipelineStepOptions): Promise<PipelineStep> {
-		return new this.step(options);
-	}
-}
-
-export abstract class AbstractStaticPipeline<In = any, Out = any> extends AbstractPipeline<In, Out> {
-	protected abstract getStepTypes(): Array<PipelineStepType>;
-
-	protected getStepBuilders(): Array<PipelineStepBuilder> {
-		return this.getStepTypes().map(type => new DefaultPipelineStepBuilder(type));
-	}
-}
-```
-
-Here is a simple implementation of a pipeline. You can find the corresponding code in the `o23/scaffold` module.
-
-```typescript
-export class SimplePipelineStep1 extends AbstractPipelineStep<number, number> {
-	public perform(request: PipelineStepData<number>): Promise<PipelineStepData<number>> {
-		this.debug(() => `Perform (${request.content} + 100)`);
-		return Promise.resolve({content: request.content + 100});
-	}
-}
-
-export class SimplePipelineStep2 extends AbstractPipelineStep<number, number> {
-	public perform(request: PipelineStepData<number>): Promise<PipelineStepData<number>> {
-		this.debug(() => `Perform (${request.content} * 2)`);
-		return Promise.resolve({content: request.content * 2});
-	}
-}
-
-export class SimplePipeline extends AbstractStaticPipeline<number, number> {
-	public getCode(): PipelineCode {
-		return 'SimplePipeline';
-	}
-
-	protected getStepTypes(): Array<PipelineStepType> {
-		return [SimplePipelineStep1, SimplePipelineStep2];
-	}
-}
-```
-
-### Function Support
-
-Pipeline steps provide rich function support, and all the following functions or instances can be obtained from the `getHelpers` function.
-
-| Syntax                                                                   | Comments                                                                                                                                                                                                             |
-|--------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| $config                                                                  | Get config instance.                                                                                                                                                                                                 |
-| $logger                                                                  | Get logger instance.                                                                                                                                                                                                 |
-| $date.now()                                                              | Get current datetime, as string.                                                                                                                                                                                     |
-| $date.dayjs                                                              | Get [Day.js](https://day.js.org/).                                                                                                                                                                                   |
-| $math                                                                    | Get [Math.js](https://mathjs.org).                                                                                                                                                                                   |
-| $decimal(value: string \| number \| Decimal.value)                       | Create a decimal value by [Decimal.js](https://mikemcl.github.io/decimal.js/).                                                                                                                                       |
-| $nano(size?: number)                                                     | Create a nano string.                                                                                                                                                                                                |
-| $ascii(size?: number)                                                    | Create a nano string, only contains ascii characters (0-9, a-z, A-Z, _).                                                                                                                                             |
-| $error(options: PipelineStepErrorOptions)                                | Throw an exposed uncatchable error.                                                                                                                                                                                  |
-| $errorCodes                                                              | Get error codes record.                                                                                                                                                                                              |
-| $errors.catchable(options: Omit<PipelineStepErrorOptions, 'status'>)     | Throw a catchable error.                                                                                                                                                                                             |
-| $errors.isCatchable(e: any)                                              | Check if given is a catchable error.                                                                                                                                                                                 |
-| $errors.exposed(options: PipelineStepErrorOptions)                       | Throw an exposed uncatchable error, same as `$helpers.error`.                                                                                                                                                        |
-| $errors.isExposed(e: any)                                                | Check if given is an exposed uncatchable error.                                                                                                                                                                      |
-| $errors.catchable(uncatchable: Omit<PipelineStepErrorOptions, 'status'>) | Throw an uncatchable error.                                                                                                                                                                                          |
-| $errors.isUncatchable(e: any)                                            | Check if given is an uncatchable error.                                                                                                                                                                              |
-| $file(options: PipelineStepFileOptions) => PipelineStepFile              | Create a file instance by given options.                                                                                                                                                                             |
-| $clearContextData()                                                      | If the pipeline step does not return anything or returns null or undefined, the context will continue to be used without any modifications.<br>So returning this semaphore indicates clearing the step content data. |
-| isEmpty: (value: any)                                                    | **@deprecated**, Use `touch` chain instead.                                                                                                                                                                          |
-| isNotEmpty: (value: any)                                                 | **@deprecated**, Use `touch` chain instead.                                                                                                                                                                          |
-| isBlank: (value: any)                                                    | **@deprecated**, Use `touch` chain instead.                                                                                                                                                                          |
-| isNotBlank: (value: any)                                                 | **@deprecated**, Use `touch` chain instead.                                                                                                                                                                          |
-| trim: (value: any)                                                       | **@deprecated**, Use `touch` chain instead.                                                                                                                                                                          |
-| touch: (value: any): IValueOperator                                      | Operate given value, do test, transform.                                                                                                                                                                             |                                                                  
-| noop: () => void                                                         | Noop function.                                                                                                                                                                                                       |
-| asyncNoop: () => Promise<void>                                           | Async noop function.                                                                                                                                                                                                 |
-
-For example:
-
-```typescript
-const currentTime = this.getHelpers().$date.now();
-```
-
-> Use `registerToStepHelpers(helpers: Record<string, any>)` to register your own helpers. Note that if there is a conflict between the name
-> and the preset, the preset will take priority.
-
-## Logger
-
-`o23/n1` provides a standard logging implementation, which by default outputs to the console. You can obtain a logging instance through the
-following way:
-
-```typescript
-import {createLogger, Logger} from '@rainbow-o23/n1';
-
-const logger = createLogger();
-
-class CustomLogger implements Logger {
-	// your implemenation
-}
-
-// or use your own logger implementation, your logger should be an implemenation of Logger interface.
-const customLogger = createLogger(new CustomLogger());
-```
-
-The log level of `o23/n1` ranges from low to high: debug, verbose, log, warn, and error, while the concept of free log classification is
-also provided. Let's take a look at the following example:
-
-```typescript
-import {createLogger, Logger} from '@rainbow-o23/n1';
-
-const logger = createLogger();
-
-logger.debug('some log.');
-logger.verbose('some verbose info.', {hello: 'world'});
-logger.info('some info.', {hello: 'world'}, 'SomeCategory');
-logger.warn('some warning.', 'SomeCategory');
-logger.error('some error', new Error(), 'SomeCategory');
-```
-
-When the number of arguments in the log output function is more than one, and the last argument is of type string, the last argument is
-considered as the log category. There are no restrictions on the category name. The log level and categories of the logging can be globally
-controlled, or controlled at a more granular level with specific categories and levels. Here are some examples:
-
-```typescript
-import {EnhancedLogger} from '@rainbow-o23/n1';
-
-// Note that when a log level is enabled, all log levels higher than that level will also be enabled. Conversely, when a log level is
-// disabled, all log levels lower than that level will also be disabled.
-EnhancedLogger.enableLevel('debug');
-EnhancedLogger.disableLevel('info');
-
-// Or on some category.
-// All levels for given category are enabled.
-EnhancedLogger.enable('SomeCategory');
-EnhancedLogger.disable('SomeCategory');
-// Enable or disable given category on appointed level.
-// Note enable or disable category + level, will not impact other levels.
-EnhancedLogger.enable('SomeCategory.debug');
-EnhancedLogger.disable('SomeCategory.info');
-```
-
-## Config
-
-`o23/n1` provides a Config object for reading system environment variables, as shown below:
-
-```typescript
-import {createConfig, createLogger} from '@rainbow-o23/n1';
-
-let config = createConfig();
-
-// Or use given logger
-config = createConfig(createLogger());
-
-config.getBoolean('pipeline.debug.log.enabled', true);
-config.getString('app.version', 'UNDOCUMENTED');
-config.getNumber('app.port', 3100);
-```
-
-The given environment variable name will be transformed into the following format: underscore-separated and prefixed with `CFG_`. It reads
-from `process.env` and if not defined, it uses the provided default value (or returns `undefined` if no default value is given). Following
-this mapping rule, the environment variable names in the example above should be as follows:
-
-- `CFG_PIPELINE_DEBUG_LOG_ENABLED`,
-- `CFG_APP_VERSION`,
-- `CFG_APP_PORT`.
-
-## Error
-
-`o23/n1` defines three basic types of errors, namely `CatchableError`, `UncatchableError`, and `ExposedUncatchableError`. All errors will
-have a code, and `o23`'s error code follows the format of `Oxx-xxxxx`. Here, Oxx represents the module, and the last five digits should be
-numeric codes. For example, if the exception is defined in the `o23/n1` module, the code would be `O01`, such as `O01-00001`, `O01-99999`.
-`ExposedUncatchableError` is a type of error specifically designed for web applications. In addition to the code and message, it also
-includes an additional field called `status`, which represents the HTTP response status.
-
-## Environment Parameters
-
-| Name                               | Type    | Default Value       | Comments                                                                                                                                                                      |
-|------------------------------------|---------|---------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `format.datetime`                  | string  | YYYY-MM-DD HH:mm:ss | Default datetime format, follows [Day.js](https://day.js.org/)                                                                                                                |
-| `pipeline.debug.log.enabled`       | boolean | false               | Enable the pipeline debug log.                                                                                                                                                |
-| `pipeline.performance.log.enabled` | boolean | false               | Enable the pipeline performance log, spent time of pipeline and pipeline step.<br>Translation: If `pipeline.debug.log.enabled` is true, this log output will also be enabled. |
-
-## Value Operator
-
-`o23/n1` provides a value operator to operate given value, do test, transform. The value operator is a chainable operation. For example,
-
-```ts
-// chainable operation, do test, transform, or default value
-$.touch('abc').isNotBlank().orUseDefault('default').value();                        // 'abc'
-$.touch('').isNotBlank.withDefault('default').value();                              // 'default'
-$.touch('123').isNumber().toFixed(2).value();                                       // '123.00'
-$.touch(void 0).isNumber.useDefault(100).value();                                   // 100       
-$.touch(123).isInt.toFixed2.value();                                                // '123.00' 
-$.touch('123.45').within({min: 100, max: 200}).toFixed3().orElse(150).value();      // '123.450'
-
-// success and failure callback
-$.touch(123).isPositive                                                             // isPositive 123
-	.success((value: number) => console.log('isPositive', value))
-	.failure((value: number) => console.log('isNotPositive', value));
-$.touch(-123).isPositive                                                            // isNotPositive -123
-	.success((value: number) => console.log('isPositive', value))
-	.failure((value: number) => console.log('isNotPositive', value));
-
-// check
-$.touch(123).isPositive.ok();                                                       // true
-$.touch(-123).isPositive.ok();                                                      // false
-
-// promisify
-try {
-	const v = await $.touch(123).isPositive.toNumber.promise();                     // resolved 123
-	await VO.of(-123).isPositive.promise();                                         // rejected, -123 can be caught in catch block
-} catch (v) {
-	console.log(v);	                                                                // -123
-}
-```
+# n19/n1
+
+The `n19/n1` module provides a series of value operators that can be used via chainable calls. This module is primarily written in
+TypeScript and managed using npm or yarn.
+
+## Touch a Value
+
+Begin the value touching via the following method:
+
+- `ValueOperator.of`,
+- `ValueOperator.from`,
+- `ValueOperator.with`,
+
+they are all equivalent.
+
+## Value Actions
+
+### Available Testers
+
+The module includes various testers for different conditions. Below is a list of available testers:
+
+#### Any Type Testers
+
+- `isNull`: Checks if a value is null or undefined.
+- `isNotNull`: Checks if a value is not null or undefined.
+- `isEmpty`: Checks if a value is empty.
+- `isNotEmpty`: Checks if a value is not empty.
+- `isBlank`: Checks if a value is null, undefined, or a blank string.
+- `isNotBlank`: Checks if a value is not null, undefined, or a blank string.
+- `has`: Checks if a value has a specified property.
+- `notHas`: Checks if a value does not have a specified property.
+
+#### Dayjs Testers
+
+- `toDate`: Converts a value to a Dayjs object if valid.
+- `before`: Checks if a date is before the specified date.
+- `notBefore`: Checks if a date is not before the specified date.
+- `after`: Checks if a date is after the specified date.
+- `notAfter`: Checks if a date is not after the specified date.
+- `between`: Checks if a date is within the specified range.
+- `notBetween`: Checks if a date is not within the specified range.
+
+#### Decimal Testers
+
+- `isDecimal`: Checks if a value is a valid Decimal.
+- `isInteger`: Checks if a value is an integer Decimal.
+- `isInRange`: Checks if a decimal value is within a specified range.
+- `isNotInRange`: Checks if a decimal value is not within a specified range.
+- `isPositive`: Checks if a decimal value is positive.
+- `isNotPositive`: Checks if a decimal value is not positive.
+- `isNegative`: Checks if a decimal value is negative.
+- `isNotNegative`: Checks if a decimal value is not negative.
+- `isZero`: Checks if a decimal value is zero.
+- `isNotZero`: Checks if a decimal value is not zero.
+- `isGreaterThan`: Checks if a decimal value is greater than a specified value.
+- `isGreaterThanOrEqual`: Checks if a decimal value is greater than or equal to a specified value.
+- `isLessThan`: Checks if a decimal value is less than a specified value.
+- `isLessThanOrEqual`: Checks if a decimal value is less than or equal to a specified value.
+
+#### String Testers
+
+- `startsWith`: Checks if a string starts with the given prefix.
+- `notStartsWith`: Checks if a string does not start with the given prefix.
+- `endsWith`: Checks if a string ends with the given suffix.
+- `notEndsWith`: Checks if a string does not end with the given suffix.
+- `includes`: Checks if a string includes the given substring.
+- `notIncludes`: Checks if a string does not include the given substring.
+- `regexp`: Checks if a value matches the given regular expression.
+- `isOneOf`: Checks if a value is one of the given values.
+- `isNotAnyOf`: Checks if a value is not any of the given values.
+
+### Available Transformers
+
+The module includes various transformers for different data types. Below is a list of available transformers:
+
+#### Any Type Transformers
+
+- `formatDate`: Formats a date.
+- `formatNumber`: Formats a number.
+- `format`: General format function.
+- `retrieve`: Retrieves a value.
+
+#### String Transformers
+
+- `stringify`: Converts a value to a string.
+- `trim`: Trims whitespace from a string.
+- `pad`: Pads a string.
+- `padStart`: Pads a string at the start.
+- `padLeft`: Alias for `padStart`.
+- `lpad`: Alias for `padStart`.
+- `padEnd`: Pads a string at the end.
+- `padRight`: Alias for `padEnd`.
+- `rpad`: Alias for `padEnd`.
+
+#### Decimal Transformers
+
+- `toDecimal`: Converts a value to a decimal.
+- `toNumber`: Converts a value to a number.
+- `toFixed0`: Formats a number to 0 decimal places.
+- `toFixed1`: Formats a number to 1 decimal place.
+- `toFixed2`: Formats a number to 2 decimal places.
+- `toFixed3`: Formats a number to 3 decimal places.
+- `toFixed4`: Formats a number to 4 decimal places.
+- `toFixed5`: Formats a number to 5 decimal places.
+- `toFixed6`: Formats a number to 6 decimal places.
+- `toFixed`: General function to format a number to a specified number of decimal places.
+- `round`: Rounds a number.
+- `roundUp`: Rounds a number up.
+- `roundDown`: Rounds a number down.
+- `floor`: Floors a number.
+- `ceil`: Ceils a number.
+- `roundBy`: Rounds a number by a specified value.
+
+### Satisfied with Given Actions
+
+- `satisfy`: Checks if a value satisfies a condition.
+- `satisfyOne`: Checks if a value satisfies at least one condition.
+- `satisfyAll`: Checks if a value satisfies all conditions.
+
+### Extendable
+
+Extend the module by adding your own testers and transformers by `extend` function. The module is designed to be easily extensible.
+
+## Default Value
+
+When the value processing chain is not fully satisfied, a default value can be provided as the final return value. Could be configured by
+using `orUseDefault`, `useDefault`, `withDefault`, `orElse`, or `else`, as they are all equivalent.
+
+## Consuming the Value
+
+- `value`: Returns the value.
+- `promise`: Returns a promise that resolves to the value. Typically used for asynchronous value actions are placed in a chain, or simply
+  using promisify can also be applicable.
+- `success` and `failure`: Consumes the value by callbacks.
+- `ok`: Consumes the boolean return value of the actions, will get `true` when all actions are satisfied, otherwise `false`.

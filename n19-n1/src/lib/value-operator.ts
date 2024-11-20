@@ -1,7 +1,8 @@
-import {ExtendValueActions, StaticImplements} from './types';
+import {StaticImplements} from './types';
 import {
 	AllTesters,
 	AllTransformers,
+	AsyncValueAction,
 	RegisteredValueAction,
 	RegisteredValueActionWithParams,
 	ValueAction,
@@ -13,7 +14,7 @@ interface ValueOperatorBase {
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	$value?: any;
 	$allowMoreAction: boolean;
-	$actions?: Array<ValueAction>;
+	$actions?: Array<ValueAction | AsyncValueAction>;
 	$allowUseDefault: boolean;
 	$defaultUsed: boolean;
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -22,9 +23,11 @@ interface ValueOperatorBase {
 	$allowNoParamFuncCall: boolean;
 }
 
+export const ValueActions = {...AllTesters, ...AllTransformers};
 const AllExtensions: Record<string, RegisteredValueAction | RegisteredValueActionWithParams> = {};
 export const extend = <T extends RegisteredValueAction | RegisteredValueActionWithParams>(name: string, action: T) => {
 	AllExtensions[name] = action;
+	ValueActions[name] = action;
 };
 
 /**
@@ -94,11 +97,16 @@ const findUseDefault: UseDefaultFind = (operator: IValueOperator, base: ValueOpe
 	};
 };
 type ValueFind = (operator: IValueOperator, base: ValueOperatorBase, prop: string) => (<T>() => T) | undefined | symbol;
-const createValueRetrieveFunc = (base: ValueOperatorBase) => {
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const createSyncValueRetrieveFunc = (base: ValueOperatorBase) => {
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	return <T>(): ValueActionPassed<T> | ValueActionFailed<any> => {
+		const hasAsync = (base.$actions ?? []).some(action => Object.prototype.toString.call(action) === '[object AsyncFunction]');
+		if (hasAsync) {
+			throw new Error('Async action found, use promise instead.');
+		}
+
 		const tested = {test: true, value: base.$value};
-		for (const action of (base.$actions ?? [])) {
+		for (const action of ((base.$actions ?? []) as Array<ValueAction>)) {
 			const result = action(tested.value);
 			if (!result.test) {
 				// failed on action proceeding, ignore all tailing actions, and use original value
@@ -133,7 +141,7 @@ const findValue: ValueFind = (_operator: IValueOperator, base: ValueOperatorBase
 		return (void 0);
 	}
 	// return value anyway, no matter success or failure
-	return <T>(): T => createValueRetrieveFunc(base)<T>().value;
+	return <T>(): T => createSyncValueRetrieveFunc(base)<T>().value;
 };
 type SuccessCallback = (callback: <T>(value: T) => void) => ({ failure: (callback: <V>(value: V) => void) => void });
 type FailureCallback = (callback: <V>(value: V) => void) => ({ success: (callback: <T>(value: T) => void) => void });
@@ -149,7 +157,7 @@ const findSuccessOrFailureCallback: SuccessOrFailureCallbackFind = (_operator: I
 	switch (prop) {
 		case 'success':
 			return (callback: <T>(value: T) => void) => {
-				const tested = createValueRetrieveFunc(base)();
+				const tested = createSyncValueRetrieveFunc(base)();
 				if (tested.test) {
 					callback(tested.value);
 				}
@@ -163,7 +171,7 @@ const findSuccessOrFailureCallback: SuccessOrFailureCallbackFind = (_operator: I
 			};
 		case 'failure':
 			return (callback: <V>(value: V) => void) => {
-				const tested = createValueRetrieveFunc(base)();
+				const tested = createSyncValueRetrieveFunc(base)();
 				if (!tested.test) {
 					callback(tested.value);
 				}
@@ -180,7 +188,7 @@ const findSuccessOrFailureCallback: SuccessOrFailureCallbackFind = (_operator: I
 	}
 };
 type OKFind = (operator: IValueOperator, base: ValueOperatorBase, prop: string) => (() => boolean) | symbol;
-const findOK: OKFind = (operator: IValueOperator, base: ValueOperatorBase, prop: string) => {
+const findOK: OKFind = (_operator: IValueOperator, base: ValueOperatorBase, prop: string) => {
 	if (prop !== 'ok') {
 		return NOT_FOUND;
 	}
@@ -188,9 +196,39 @@ const findOK: OKFind = (operator: IValueOperator, base: ValueOperatorBase, prop:
 		// no action defined, get value directly, no way
 		return (void 0);
 	}
-	return (): boolean => createValueRetrieveFunc(base)().test;
+	return (): boolean => createSyncValueRetrieveFunc(base)().test;
 };
 type PromiseFind = (operator: IValueOperator, base: ValueOperatorBase, prop: string) => (<T>() => Promise<T>) | symbol;
+const createAsyncValueRetrieveFunc = (base: ValueOperatorBase) => {
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	return async <T>(): Promise<ValueActionPassed<T> | ValueActionFailed<any>> => {
+		const tested = {test: true, value: base.$value};
+		for (const action of (base.$actions ?? [])) {
+			const result = await action(tested.value);
+			if (!result.test) {
+				// failed on action proceeding, ignore all tailing actions, and use original value
+				tested.test = false;
+				tested.value = base.$value;
+				break;
+			} else {
+				// action proceeded successfully
+				tested.value = result.value;
+			}
+		}
+		if (tested.test) {
+			// all actions proceeded, and value might be transformed, do nothing
+		} else if (base.$defaultUsed) {
+			// failed on action proceeding, use default value if defined
+			// therefore, final result has been treated as success
+			tested.test = true;
+			tested.value = base.$defaultValue as T;
+		} else {
+			// failed on acton proceeding, and no default value defined, return value itself
+			tested.value = base.$value;
+		}
+		return tested;
+	};
+};
 const findPromise: PromiseFind = (_operator: IValueOperator, base: ValueOperatorBase, prop: string) => {
 	if (prop !== 'promise') {
 		return NOT_FOUND;
@@ -200,7 +238,7 @@ const findPromise: PromiseFind = (_operator: IValueOperator, base: ValueOperator
 		return (void 0);
 	}
 	return async <T>(): Promise<T> => {
-		const tested = createValueRetrieveFunc(base)();
+		const tested = await createAsyncValueRetrieveFunc(base)();
 		if (tested.test) {
 			return Promise.resolve(tested.value as T);
 		} else {
@@ -267,10 +305,11 @@ export interface DefaultValueSetter extends FinalValueRetriever {
 export type ActionType<T> = T extends RegisteredValueAction
 	? (ValueActionsWithDefault & (() => ValueActionsWithDefault))
 	: T extends RegisteredValueActionWithParams ? ((...args: Parameters<T['func']>) => ValueActionsWithDefault) : never;
-export type ValueActions =
-	& { [K in keyof typeof AllTesters]: ActionType<typeof AllTesters[K]> }
-	& { [K in keyof typeof AllTransformers]: ActionType<typeof AllTransformers[K]> }
-	& ExtendValueActions;
+export type TestActions = { [K in keyof typeof AllTesters]: ActionType<typeof AllTesters[K]> };
+export type TransformActions = { [K in keyof typeof AllTransformers]: ActionType<typeof AllTransformers[K]> };
+
+export interface ValueActions extends TestActions, TransformActions {
+}
 
 export type ValueActionsWithDefault = ValueActions & DefaultValueSetter;
 

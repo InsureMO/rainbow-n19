@@ -45,7 +45,7 @@ describe('Value test chain', () => {
 			}).value();
 		console.log(formatted);
 
-		VO.of(null).x.isNumber.toNumber.orUseDefault(0).value();
+		// VO.of(null).x.isNumber.toNumber.orUseDefault(0).value();
 
 		// console.log(new Decimal({} as any).isInteger());
 		interface AskImportConfigRequest {

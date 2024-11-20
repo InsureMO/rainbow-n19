@@ -140,7 +140,3 @@ export const retrieve = <To>(propOrFunc: string | ValueAction<any, To>): ValueAc
 		return {test, value: newValue};
 	};
 };
-
-/** temporary plugin action */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const manipulate = <To>(func: ValueAction<any, To>): ValueAction<any, To> => func;

@@ -10,3 +10,5 @@ export * from './transform-any-actions';
 export * from './transform-string-actions';
 export * from './transform-decimal-actions';
 export * from './transformers';
+
+export * from './extend-actions';
