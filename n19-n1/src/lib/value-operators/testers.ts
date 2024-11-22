@@ -17,6 +17,7 @@ import {
 	isPositive,
 	isZero
 } from './test-decimal-actions';
+import {all, any, test} from './test-extend-actions';
 import {
 	endsWith,
 	includes,
@@ -86,6 +87,10 @@ const testers = {
 	after: {type: 'param', func: after} as RegisteredValueActionWithParams<typeof after>,
 	notAfter: {type: 'param', func: notAfter} as RegisteredValueActionWithParams<typeof notAfter>,
 	between: {type: 'param', func: between} as RegisteredValueActionWithParams<typeof between>,
-	notBetween: {type: 'param', func: notBetween} as RegisteredValueActionWithParams<typeof notBetween>
+	notBetween: {type: 'param', func: notBetween} as RegisteredValueActionWithParams<typeof notBetween>,
+	// extension
+	test: {type: 'param', func: test} as RegisteredValueActionWithParams<typeof test>,
+	any: {type: 'param', func: any} as RegisteredValueActionWithParams<typeof any>,
+	all: {type: 'param', func: all} as RegisteredValueActionWithParams<typeof all>
 };
 export const AllTesters: Readonly<typeof testers> = testers;

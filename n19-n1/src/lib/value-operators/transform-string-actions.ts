@@ -66,3 +66,26 @@ export const pad = (options: PadOptions): ValueAction => {
 };
 export const padStart = (options: Omit<PadOptions, 'direction'>): ValueAction => pad({...options, direction: 'left'});
 export const padEnd = (options: Omit<PadOptions, 'direction'>): ValueAction => pad({...options, direction: 'right'});
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const transform = (func: (str: string) => string): ValueAction<any, string | null | undefined> => {
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	return (value?: any) => {
+		if (value == null) {
+			return {test: true, value};
+		}
+		if (typeof value === 'string') {
+			return {test: true, value: func(value)};
+		}
+		return {test: false, value};
+	};
+};
+export const lower = transform(str => str.toLowerCase());
+export const upper = transform(str => str.toUpperCase());
+export const capitalize = transform(str => str.charAt(0).toUpperCase() + str.slice(1));
+export const capitalizeAll = transform(str => str.replace(/\b\w/g, c => c.toUpperCase()));
+export const camel = transform(str => str.replace(/[-_](\w)/g, (_: string, c: string) => c.toUpperCase()));
+export const pascal = transform(str => str.replace(/[-_](\w)/g, (_: string, c: string) => c.toUpperCase()).replace(/^\w/, c => c.toUpperCase()));
+export const snake = transform(str => str.replace(/[A-Z]/g, c => `_${c.toLowerCase()}`));
+export const kebab = transform(str => str.replace(/[A-Z]/g, c => `-${c.toLowerCase()}`));
+export const replace = (searchValue: string | RegExp, replaceValue: string): ValueAction => transform(str => str.replace(searchValue, replaceValue));
+export const replaceAll = (searchValue: string | RegExp, replaceValue: string): ValueAction => transform(str => str.replace(new RegExp(searchValue, 'g'), replaceValue));

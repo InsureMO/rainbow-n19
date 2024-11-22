@@ -1,8 +1,56 @@
 import {RegisteredValueAction, RegisteredValueActionWithParams} from './action-types';
-import {satisfy, satisfyAll, satisfyOne} from './extend-actions';
+import {
+	asyncExchange,
+	asyncExchangeAll,
+	asyncExchangeFirst,
+	exchange,
+	exchangeAll,
+	exchangeFirst
+} from './transform-extend-actions';
 import {format, formatDate, formatNumber, retrieve} from './transform-any-actions';
+import {
+	day,
+	endOfDay,
+	endOfHour,
+	endOfMinute,
+	endOfMonth,
+	endOfYear,
+	hour,
+	minute,
+	month,
+	second,
+	shiftDay,
+	shiftHour,
+	shiftMinute,
+	shiftMonth,
+	shiftSecond,
+	shiftYear,
+	startOfDay,
+	startOfHour,
+	startOfMinute,
+	startOfMonth,
+	startOfYear,
+	travelTo,
+	year
+} from './transform-dayjs-actions';
 import {ceil, floor, roundBy, roundDown, roundUp, toDecimal, toFixed, toNumber} from './transform-decimal-actions';
-import {pad, padEnd, padStart, stringify, trim} from './transform-string-actions';
+import {
+	camel,
+	capitalize,
+	capitalizeAll,
+	kebab,
+	lower,
+	pad,
+	padEnd,
+	padStart,
+	pascal,
+	replace,
+	replaceAll,
+	snake,
+	stringify,
+	trim,
+	upper
+} from './transform-string-actions';
 
 const transformers = {
 	// any
@@ -20,6 +68,18 @@ const transformers = {
 	padEnd: {type: 'param', func: padEnd} as RegisteredValueActionWithParams<typeof padEnd>,
 	padRight: {type: 'param', func: padEnd} as RegisteredValueActionWithParams<typeof padEnd>,
 	rpad: {type: 'param', func: padEnd} as RegisteredValueActionWithParams<typeof padEnd>,
+	lower: {type: 'func', func: lower} as RegisteredValueAction,
+	upper: {type: 'func', func: upper} as RegisteredValueAction,
+	capitalize: {type: 'func', func: capitalize} as RegisteredValueAction,
+	cap: {type: 'func', func: capitalize} as RegisteredValueAction,
+	capitalizeAll: {type: 'func', func: capitalizeAll} as RegisteredValueAction,
+	capAll: {type: 'func', func: capitalizeAll} as RegisteredValueAction,
+	camel: {type: 'func', func: camel} as RegisteredValueAction,
+	pascal: {type: 'func', func: pascal} as RegisteredValueAction,
+	snake: {type: 'func', func: snake} as RegisteredValueAction,
+	kebab: {type: 'func', func: kebab} as RegisteredValueAction,
+	replace: {type: 'param', func: replace} as RegisteredValueActionWithParams<typeof replace>,
+	replaceAll: {type: 'param', func: replaceAll} as RegisteredValueActionWithParams<typeof replaceAll>,
 	// decimal
 	toDecimal: {type: 'func', func: toDecimal} as RegisteredValueAction,
 	toNumber: {type: 'func', func: toNumber} as RegisteredValueAction,
@@ -38,9 +98,42 @@ const transformers = {
 	floor: {type: 'param', func: floor} as RegisteredValueActionWithParams<typeof floor>,
 	ceil: {type: 'param', func: ceil} as RegisteredValueActionWithParams<typeof ceil>,
 	roundBy: {type: 'param', func: roundBy} as RegisteredValueActionWithParams<typeof roundBy>,
+	// date
+	startOfYear: {type: 'func', func: startOfYear} as RegisteredValueAction,
+	endOfYear: {type: 'func', func: endOfYear} as RegisteredValueAction,
+	startOfMonth: {type: 'func', func: startOfMonth} as RegisteredValueAction,
+	endOfMonth: {type: 'func', func: endOfMonth} as RegisteredValueAction,
+	startOfDay: {type: 'func', func: startOfDay} as RegisteredValueAction,
+	endOfDay: {type: 'func', func: endOfDay} as RegisteredValueAction,
+	startOfHour: {type: 'func', func: startOfHour} as RegisteredValueAction,
+	endOfHour: {type: 'func', func: endOfHour} as RegisteredValueAction,
+	startOfMinute: {type: 'func', func: startOfMinute} as RegisteredValueAction,
+	endOfMinute: {type: 'func', func: endOfMinute} as RegisteredValueAction,
+	// date with params
+	travelTo: {type: 'param', func: travelTo} as RegisteredValueActionWithParams<typeof travelTo>,
+	year: {type: 'param', func: year} as RegisteredValueActionWithParams<typeof year>,
+	shiftYear: {type: 'param', func: shiftYear} as RegisteredValueActionWithParams<typeof shiftYear>,
+	month: {type: 'param', func: month} as RegisteredValueActionWithParams<typeof month>,
+	shiftMonth: {type: 'param', func: shiftMonth} as RegisteredValueActionWithParams<typeof shiftMonth>,
+	day: {type: 'param', func: day} as RegisteredValueActionWithParams<typeof day>,
+	shiftDay: {type: 'param', func: shiftDay} as RegisteredValueActionWithParams<typeof shiftDay>,
+	hour: {type: 'param', func: hour} as RegisteredValueActionWithParams<typeof hour>,
+	shiftHour: {type: 'param', func: shiftHour} as RegisteredValueActionWithParams<typeof shiftHour>,
+	minute: {type: 'param', func: minute} as RegisteredValueActionWithParams<typeof minute>,
+	shiftMinute: {type: 'param', func: shiftMinute} as RegisteredValueActionWithParams<typeof shiftMinute>,
+	second: {type: 'param', func: second} as RegisteredValueActionWithParams<typeof second>,
+	shiftSecond: {type: 'param', func: shiftSecond} as RegisteredValueActionWithParams<typeof shiftSecond>,
 	// extension
-	satisfy: {type: 'param', func: satisfy} as RegisteredValueActionWithParams<typeof satisfy>,
-	satisfyOne: {type: 'param', func: satisfyOne} as RegisteredValueActionWithParams<typeof satisfyOne>,
-	satisfyAll: {type: 'param', func: satisfyAll} as RegisteredValueActionWithParams<typeof satisfyAll>
+	exchange: {type: 'param', func: exchange} as RegisteredValueActionWithParams<typeof exchange>,
+	exchangeFirst: {type: 'param', func: exchangeFirst} as RegisteredValueActionWithParams<typeof exchangeFirst>,
+	exchangeAll: {type: 'param', func: exchangeAll} as RegisteredValueActionWithParams<typeof exchangeAll>,
+	// async extension
+	asyncExchange: {type: 'param', func: asyncExchange} as RegisteredValueActionWithParams<typeof asyncExchange>,
+	asyncExchangeOne: {
+		type: 'param', func: asyncExchangeFirst
+	} as RegisteredValueActionWithParams<typeof asyncExchangeFirst>,
+	asyncExchangeAll: {
+		type: 'param', func: asyncExchangeAll
+	} as RegisteredValueActionWithParams<typeof asyncExchangeAll>
 };
 export const AllTransformers: Readonly<typeof transformers> = transformers;
