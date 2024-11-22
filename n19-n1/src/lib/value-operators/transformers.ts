@@ -1,12 +1,4 @@
 import {RegisteredValueAction, RegisteredValueActionWithParams} from './action-types';
-import {
-	asyncExchange,
-	asyncExchangeAll,
-	asyncExchangeFirst,
-	exchange,
-	exchangeAll,
-	exchangeFirst
-} from './transform-extend-actions';
 import {format, formatDate, formatNumber, retrieve} from './transform-any-actions';
 import {
 	day,
@@ -34,6 +26,18 @@ import {
 	year
 } from './transform-dayjs-actions';
 import {ceil, floor, roundBy, roundDown, roundUp, toDecimal, toFixed, toNumber} from './transform-decimal-actions';
+import {
+	asyncExchange,
+	asyncExchangeAll,
+	asyncExchangeFirst,
+	asyncGrabAll,
+	asyncGrabFirst,
+	exchange,
+	exchangeAll,
+	exchangeFirst,
+	grabAll,
+	grabFirst
+} from './transform-extend-actions';
 import {
 	camel,
 	capitalize,
@@ -126,14 +130,26 @@ const transformers = {
 	// extension
 	exchange: {type: 'param', func: exchange} as RegisteredValueActionWithParams<typeof exchange>,
 	exchangeFirst: {type: 'param', func: exchangeFirst} as RegisteredValueActionWithParams<typeof exchangeFirst>,
+	grabFirst: {type: 'param', func: grabFirst} as RegisteredValueActionWithParams<typeof grabFirst>,
+	withFirst: {type: 'param', func: grabFirst} as RegisteredValueActionWithParams<typeof grabFirst>,
+	andFirst: {type: 'param', func: grabFirst} as RegisteredValueActionWithParams<typeof grabFirst>,
 	exchangeAll: {type: 'param', func: exchangeAll} as RegisteredValueActionWithParams<typeof exchangeAll>,
+	grabAll: {type: 'param', func: grabAll} as RegisteredValueActionWithParams<typeof grabAll>,
+	withAll: {type: 'param', func: grabAll} as RegisteredValueActionWithParams<typeof grabAll>,
+	andAll: {type: 'param', func: grabAll} as RegisteredValueActionWithParams<typeof grabAll>,
 	// async extension
 	asyncExchange: {type: 'param', func: asyncExchange} as RegisteredValueActionWithParams<typeof asyncExchange>,
 	asyncExchangeOne: {
 		type: 'param', func: asyncExchangeFirst
 	} as RegisteredValueActionWithParams<typeof asyncExchangeFirst>,
+	asyncGrabFirst: {type: 'param', func: asyncGrabFirst} as RegisteredValueActionWithParams<typeof asyncGrabFirst>,
+	asyncWithFirst: {type: 'param', func: asyncGrabFirst} as RegisteredValueActionWithParams<typeof asyncGrabFirst>,
+	asyncAndFirst: {type: 'param', func: asyncGrabFirst} as RegisteredValueActionWithParams<typeof asyncGrabFirst>,
 	asyncExchangeAll: {
 		type: 'param', func: asyncExchangeAll
-	} as RegisteredValueActionWithParams<typeof asyncExchangeAll>
+	} as RegisteredValueActionWithParams<typeof asyncExchangeAll>,
+	asyncGrabAll: {type: 'param', func: asyncGrabAll} as RegisteredValueActionWithParams<typeof asyncGrabAll>,
+	asyncWithAll: {type: 'param', func: asyncGrabAll} as RegisteredValueActionWithParams<typeof asyncGrabAll>,
+	asyncAndAll: {type: 'param', func: asyncGrabAll} as RegisteredValueActionWithParams<typeof asyncGrabAll>
 };
 export const AllTransformers: Readonly<typeof transformers> = transformers;

@@ -1,14 +1,11 @@
 import {AsyncValueAction, ValueAction} from './action-types';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const exchange = <To>(func: ValueAction<any, To>): ValueAction<any, To> => func;
+export const exchange = <From, To>(func: ValueAction<From, To>): ValueAction<From, To> => func;
 /**
  * use returned of the first satisfied as the result
  */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const exchangeFirst = <To>(func1: ValueAction, ...funcs: Array<ValueAction>): ValueAction<any, To> => {
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	return (value?: any) => {
+export const exchangeFirst = <From, To>(func1: ValueAction<From>, ...funcs: Array<ValueAction<From>>): ValueAction<From, To> => {
+	return (value?: From) => {
 		for (const func of [func1, ...funcs]) {
 			const {test, value: ret} = func(value);
 			if (test) {
@@ -18,34 +15,45 @@ export const exchangeFirst = <To>(func1: ValueAction, ...funcs: Array<ValueActio
 		return {test: false, value};
 	};
 };
+export const grabFirst = <From, To>(func1: ValueAction<From>, ...funcs: Array<ValueAction<From>>): ValueAction<From, [From, To]> => {
+	const func = exchangeFirst(func1, ...funcs);
+	return (value?: From) => {
+		const {test, value: ret} = func(value);
+		return test ? {test: true, value: [value, ret] as [From, To]} : {test: false, value};
+	};
+};
 /**
  * use all returned as the result
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const exchangeAll = <To extends any[] = any[]>(func1: ValueAction, ...funcs: Array<ValueAction>): ValueAction<any, To> => {
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	return (value?: any) => {
+export const exchangeAll = <From, To extends any[] = any[]>(func1: ValueAction<From>, ...funcs: Array<ValueAction<From>>): ValueAction<From, To> => {
+	return (value?: From) => {
 		const results = [];
 		for (const func of [func1, ...funcs]) {
 			const {test, value: ret} = func(value);
 			if (!test) {
-				return {test, value};
+				return {test: false, value};
 			} else {
 				results.push(ret);
 			}
 		}
-		return {test: true, value: results};
+		return {test: true, value: results as To};
 	};
 };
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const asyncExchange = <To>(func: AsyncValueAction<any, To>): AsyncValueAction<any, To> => func;
+export const grabAll = <From, To extends any[] = any[]>(func1: ValueAction<From>, ...funcs: Array<ValueAction<From>>): ValueAction<From, [From, ...To]> => {
+	const func = exchangeAll(func1, ...funcs);
+	return (value?: From) => {
+		const {test, value: results} = func(value);
+		return test ? {test: true, value: [value, ...results] as [From, ...To]} : {test: false, value};
+	};
+};
+export const asyncExchange = <From, To>(func: AsyncValueAction<From, To>): AsyncValueAction<From, To> => func;
 /**
  * use returned of the first satisfied as the result
  */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const asyncExchangeFirst = <To>(func1: AsyncValueAction, ...funcs: Array<AsyncValueAction>): AsyncValueAction<any, To> => {
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	return async (value?: any) => {
+export const asyncExchangeFirst = <From, To>(func1: AsyncValueAction<From>, ...funcs: Array<AsyncValueAction<From>>): AsyncValueAction<From, To> => {
+	return async (value?: From) => {
 		const abort = new AbortController();
 		const signal = abort.signal;
 		try {
@@ -79,13 +87,19 @@ export const asyncExchangeFirst = <To>(func1: AsyncValueAction, ...funcs: Array<
 		}
 	};
 };
+export const asyncGrabFirst = <From, To>(func1: AsyncValueAction<From>, ...funcs: Array<AsyncValueAction<From>>): AsyncValueAction<From, [From, To]> => {
+	const func = asyncExchangeFirst(func1, ...funcs);
+	return async (value?: From) => {
+		const {test, value: ret} = await func(value);
+		return test ? {test: true, value: [value, ret] as [From, To]} : {test: false, value};
+	};
+};
 /**
  * will not use any returned from the value actions
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const asyncExchangeAll = <To extends any[] = any[]>(func1: AsyncValueAction, ...funcs: Array<AsyncValueAction>): AsyncValueAction<any, To> => {
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	return async (value?: any) => {
+export const asyncExchangeAll = <From, To extends any[] = any[]>(func1: AsyncValueAction<From>, ...funcs: Array<AsyncValueAction<From>>): AsyncValueAction<From, To> => {
+	return async (value?: From) => {
 		const abort = new AbortController();
 		const signal = abort.signal;
 		try {
@@ -121,5 +135,13 @@ export const asyncExchangeAll = <To extends any[] = any[]>(func1: AsyncValueActi
 		} catch {
 			return {test: false, value};
 		}
+	};
+};
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const asyncGrabAll = <From, To extends any[] = any[]>(func1: AsyncValueAction<From>, ...funcs: Array<AsyncValueAction<From>>): AsyncValueAction<From, [From, ...To]> => {
+	const func = asyncExchangeAll(func1, ...funcs);
+	return async (value?: From) => {
+		const {test, value: results} = await func(value);
+		return test ? {test: true, value: [value, ...results] as [From, ...To]} : {test: false, value};
 	};
 };

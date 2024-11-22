@@ -17,7 +17,7 @@ import {
 	isPositive,
 	isZero
 } from './test-decimal-actions';
-import {all, any, test} from './test-extend-actions';
+import {all, any, asyncAll, asyncAny, asyncTest, test} from './test-extend-actions';
 import {
 	endsWith,
 	includes,
@@ -91,6 +91,9 @@ const testers = {
 	// extension
 	test: {type: 'param', func: test} as RegisteredValueActionWithParams<typeof test>,
 	any: {type: 'param', func: any} as RegisteredValueActionWithParams<typeof any>,
-	all: {type: 'param', func: all} as RegisteredValueActionWithParams<typeof all>
+	all: {type: 'param', func: all} as RegisteredValueActionWithParams<typeof all>,
+	asyncTest: {type: 'param', func: asyncTest} as RegisteredValueActionWithParams<typeof asyncTest>,
+	asyncAny: {type: 'param', func: asyncAny} as RegisteredValueActionWithParams<typeof asyncAny>,
+	asyncAll: {type: 'param', func: asyncAll} as RegisteredValueActionWithParams<typeof asyncAll>
 };
 export const AllTesters: Readonly<typeof testers> = testers;
