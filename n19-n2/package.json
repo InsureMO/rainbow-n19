@@ -1,7 +1,7 @@
 {
-	"name": "@rainbow-n19/n1",
+	"name": "@rainbow-n19/n2",
 	"version": "0.0.1",
-	"description": "Value operators.",
+	"description": "O23 SQL builder.",
 	"main": "index.cjs",
 	"module": "index.js",
 	"types": "index.d.ts",
@@ -21,8 +21,6 @@
 		"url": "https://github.com/InsureMO/rainbow-n19/issues"
 	},
 	"dependencies": {
-		"dayjs": "^1.11.13",
-		"decimal.js": "^10.4.3"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.23.9",
