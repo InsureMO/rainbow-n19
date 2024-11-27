@@ -82,6 +82,42 @@ The module includes various transformers for different data types. Below is a li
 - `format`: General format function.
 - `retrieve`: Retrieves a value.
 
+#### Dayjs Transformers
+
+- `travelTo`: Travels to a specified date. Specific dates or times are represented by a string:
+	- `Y`/`y`, represents the year
+	- `M`, represents the month
+	- `D`/`d`, represents the day
+	- `H`/`h`, represents the hour
+	- `m`, represents the minute
+	- `S`/`s`, represents the second
+	- `+` represents moving forward in time
+	- `-` represents going back in time
+	- no symbol represents direct travel.
+	- e.g. `+5Y2M-3d12H0m0s` represents traveling 5 years later, Feb., and minus 3 days, and time is 12:00:00, from given date and time.
+- `year`: Travels to a specified year.
+- `shiftYear`: Travels to previous or next years.
+- `startOfYear`: Travels to the start of the year.
+- `endOfYear`: Travels to the end of the year.
+- `month`: Travels to a specified month.
+- `shiftMonth`: Travels to previous or next months.
+- `startOfMonth`: Travels to the start of the month.
+- `endOfMonth`: Travels to the end of the month.
+- `day`: Travels to a specified day of month.
+- `shiftDay`: Travels to previous or next days.
+- `startOfDay`: Travels to the start of the day.
+- `endOfDay`: Travels to the end of the day.
+- `hour`: Travels to a specified hour.
+- `shiftHour`: Travels to previous or next hours.
+- `startOfHour`: Travels to the start of the hour.
+- `endOfHour`: Travels to the end of the hour.
+- `minute`: Travels to a specified minute.
+- `shiftMinute`: Travels to previous or next minutes.
+- `startOfMinute`: Travels to the start of the minute.
+- `endOfMinute`: Travels to the end of the minute.
+- `second`: Travels to a specified second.
+- `shiftSecond`: Travels to previous or next seconds.
+
 #### String Transformers
 
 - `stringify`: Converts a value to a string.
@@ -93,6 +129,16 @@ The module includes various transformers for different data types. Below is a li
 - `padEnd`: Pads a string at the end.
 - `padRight`: Alias for `padEnd`.
 - `rpad`: Alias for `padEnd`.
+- `lower`: Converts a string to lowercase.
+- `upper`: Converts a string to uppercase.
+- `capitalize`: Capitalizes a string.
+- `capitalizeAll`: Capitalizes the first letter of each word in a string.
+- `camel`: Transform a string to camel case.
+- `pascal`: Transform a string to pascal case.
+- `snake`: Transform a string to snake case.
+- `kebab`: Transform a string to kebab case.
+- `replace`: Replaces a substring in a string.
+- `replaceAll`: Replaces all occurrences of a substring in a string.
 
 #### Decimal Transformers
 
@@ -115,9 +161,14 @@ The module includes various transformers for different data types. Below is a li
 
 ### Satisfied with Given Actions
 
-- `satisfy`: Checks if a value satisfies a condition.
-- `satisfyOne`: Checks if a value satisfies at least one condition.
-- `satisfyAll`: Checks if a value satisfies all conditions.
+- `test`/`asyncTest`: Checks if a value satisfies a condition.
+- `any`/`asyncAny`: Checks if a value satisfies at least one condition.
+- `all`/`asyncAll`: Checks if a value satisfies all conditions.
+- `exchange`/`asyncExchange`: Exchanges the value if it satisfies a condition.
+- `exchangeFirst`/`asyncExchangeFirst`: Exchanges the value from first satisfied condition.
+- `grabFirst`/`asyncGrabFirst`: Grabs the value from first satisfied condition.
+- `exchangeAll`/`asyncExchangeAll`: Exchanges the values from all satisfied conditions.
+- `grabAll`/`asyncGrabAll`: Grabs the values from all satisfied conditions.
 
 ### Extendable
 

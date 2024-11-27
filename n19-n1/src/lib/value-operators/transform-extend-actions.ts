@@ -1,6 +1,11 @@
 import {AsyncValueAction, ValueAction} from './action-types';
 
-export const exchange = <From, To>(func: ValueAction<From, To>): ValueAction<From, To> => func;
+export const exchange = <From, To>(func: ValueAction<From, To>): ValueAction<From, To> => {
+	return (value: From) => {
+		const {test, value: ret} = func(value);
+		return test ? {test, value: ret} : {test: false, value};
+	};
+};
 /**
  * use returned of the first satisfied as the result
  */
@@ -48,7 +53,12 @@ export const grabAll = <From, To extends any[] = any[]>(func1: ValueAction<From>
 		return test ? {test: true, value: [value, ...results] as [From, ...To]} : {test: false, value};
 	};
 };
-export const asyncExchange = <From, To>(func: AsyncValueAction<From, To>): AsyncValueAction<From, To> => func;
+export const asyncExchange = <From, To>(func: AsyncValueAction<From, To>): AsyncValueAction<From, To> => {
+	return async (value) => {
+		const {test, value: ret} = await func(value);
+		return test ? {test, value: ret} : {test: false, value};
+	};
+};
 /**
  * use returned of the first satisfied as the result
  */
