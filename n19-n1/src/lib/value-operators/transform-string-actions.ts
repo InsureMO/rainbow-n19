@@ -89,3 +89,5 @@ export const snake = transform(str => str.replace(/[A-Z]/g, c => `_${c.toLowerCa
 export const kebab = transform(str => str.replace(/[A-Z]/g, c => `-${c.toLowerCase()}`));
 export const replace = (searchValue: string | RegExp, replaceValue: string): ValueAction => transform(str => str.replace(searchValue, replaceValue));
 export const replaceAll = (searchValue: string | RegExp, replaceValue: string): ValueAction => transform(str => str.replace(new RegExp(searchValue, 'g'), replaceValue));
+export const prefix = (prefix: string): ValueAction => transform(str => `${prefix}${str}`);
+export const postfix = (postfix: string): ValueAction => transform(str => `${str}${postfix}`);

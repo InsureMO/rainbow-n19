@@ -139,6 +139,8 @@ The module includes various transformers for different data types. Below is a li
 - `kebab`: Transform a string to kebab case.
 - `replace`: Replaces a substring in a string.
 - `replaceAll`: Replaces all occurrences of a substring in a string.
+- `prefix`: Adds a prefix to a string.
+- `postfix`: Adds a postfix to a string.
 
 #### Decimal Transformers
 
