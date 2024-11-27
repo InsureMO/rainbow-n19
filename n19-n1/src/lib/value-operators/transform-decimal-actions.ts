@@ -63,6 +63,13 @@ export const toFixed = (fractionDigits: number, rounding: Rounding = Rounding.RO
 		return {test: true, value: parsed.toFixed(fractionDigits, ToDecimalJsRounding[rounding])};
 	};
 };
+export const toFixed0 = toFixed(0);
+export const toFixed1 = toFixed(1);
+export const toFixed2 = toFixed(2);
+export const toFixed3 = toFixed(3);
+export const toFixed4 = toFixed(4);
+export const toFixed5 = toFixed(5);
+export const toFixed6 = toFixed(6);
 const baseRound = (rounding: Rounding = Rounding.ROUND_HALF_UP) => {
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	return (fractionDigits: number): ValueAction<any, Decimal> => {
