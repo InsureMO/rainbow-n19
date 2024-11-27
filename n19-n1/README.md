@@ -164,11 +164,26 @@ The module includes various transformers for different data types. Below is a li
 - `test`/`asyncTest`: Checks if a value satisfies a condition.
 - `any`/`asyncAny`: Checks if a value satisfies at least one condition.
 - `all`/`asyncAll`: Checks if a value satisfies all conditions.
+- `prepend`/`asyncPrepend`: Prepends a value if it satisfies a condition.
+	- `headWith`/`asyncHeadWith`: Never fail version, with a transformation function given.
 - `exchange`/`asyncExchange`: Exchanges the value if it satisfies a condition.
+	- `replaceWith`/`asyncReplaceWith`: Never fail version, with a transformation function given.
+- `append`/`asyncAppend`: Appends a value if it satisfies a condition.
+	- `tailWith`/`asyncTailWith`: Never fail version, with a transformation function given.
+- `prependFirst`/`asyncPrependFirst`: Prepends the value from first satisfied condition.
+	- `asyncHeadWithFirst`: Never fail version, with a transformation function given.
 - `exchangeFirst`/`asyncExchangeFirst`: Exchanges the value from first satisfied condition.
-- `grabFirst`/`asyncGrabFirst`: Grabs the value from first satisfied condition.
+	- `asyncReplaceWithFirst`: Never fail version, with a transformation function given.
+- `appendFirst`/`grabFirst`/`withFirst`/`andFirst`/`asyncAppendFirst`/`asyncGrabFirst`/`asyncWithFirst`/`asyncAndFirst`: Appends the value
+  from first satisfied condition.
+	- `asyncTailWithFirst`: Never fail version, with a transformation function given.
+- `prependAll`/`asyncPrependAll`: Prepends the values if they satisfy the conditions.
+	- `headWithAll`/`asyncHeadWithAll`: Never fail version, with a transformation function given.
 - `exchangeAll`/`asyncExchangeAll`: Exchanges the values from all satisfied conditions.
-- `grabAll`/`asyncGrabAll`: Grabs the values from all satisfied conditions.
+	- `replaceWithAll`/`asyncReplaceWithAll`: Never fail version, with a transformation function given.
+- `appendAll`/`grabAll`/`withAll`/`andAll`/`asyncAppendAll`/`asyncGrabAll`/`asyncWithAll`/`asyncAndAll`: Appends the values from all
+  satisfied conditions.
+	- `tailWithAll`/`asyncTailWithAll`: Never fail version, with a transformation function given.
 
 ### Extendable
 
@@ -186,3 +201,16 @@ using `orUseDefault`, `useDefault`, `withDefault`, `orElse`, or `else`, as they 
   using promisify can also be applicable.
 - `success` and `failure`: Consumes the value by callbacks.
 - `ok`: Consumes the boolean return value of the actions, will get `true` when all actions are satisfied, otherwise `false`.
+
+## Examples
+
+```typescript
+import {ValueOperator} from '@rainbow-n19/n1';
+
+const x = 'abc';
+ValueOperator.of(x).isNotBlank.ok(); // true
+ValueOperator.of(x).isNotBlank.success((v) => console.log(v)); // abc
+const y = -1;
+ValueOperator.from(y).isPositive().orUseDefault(0).value(); // 0
+ValueOperator.from(y).isNegative.isInteger.replaceWith((n: number) => n * 10).toNumber.value(); // -10
+```

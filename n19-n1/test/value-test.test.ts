@@ -45,6 +45,15 @@ describe('Value test chain', () => {
 			}).value();
 		console.log(formatted);
 
+		const x = 'abc';
+		expect(VO.of(x).isNotBlank.ok()).toBe(true);
+		VO.of(x).isNotBlank.success((v) => console.log(v)); // abc
+		const y = -1;
+		expect(VO.from(y).isPositive().orUseDefault(0).value()).toBe(0);
+		expect(VO.from(y).isNegative.isInteger.replaceWith((n: number) => {
+			return n * 10
+		}).toNumber.value()).toBe(-10);
+
 		// VO.of(null).x.isNumber.toNumber.orUseDefault(0).value();
 
 		// console.log(new Decimal({} as any).isInteger());

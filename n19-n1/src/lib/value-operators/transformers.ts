@@ -43,16 +43,38 @@ import {
 	toNumber
 } from './transform-decimal-actions';
 import {
+	append,
+	appendAll,
+	appendFirst,
+	asyncAppend,
+	asyncAppendAll,
+	asyncAppendFirst,
 	asyncExchange,
 	asyncExchangeAll,
 	asyncExchangeFirst,
-	asyncGrabAll,
-	asyncGrabFirst,
+	asyncHeadWith,
+	asyncHeadWithAll,
+	asyncHeadWithFirst,
+	asyncPrepend,
+	asyncPrependAll,
+	asyncPrependFirst,
+	asyncReplaceWith,
+	asyncReplaceWithAll,
+	asyncReplaceWithFirst,
+	asyncTailWith,
+	asyncTailWithAll,
+	asyncTailWithFirst,
 	exchange,
 	exchangeAll,
 	exchangeFirst,
-	grabAll,
-	grabFirst
+	headWith,
+	headWithAll,
+	prepend, prependAll,
+	prependFirst,
+	replaceWith,
+	replaceWithAll,
+	tailWith,
+	tailWithAll
 } from './transform-extend-actions';
 import {
 	camel,
@@ -144,28 +166,74 @@ const transformers = {
 	second: {type: 'param', func: second} as RegisteredValueActionWithParams<typeof second>,
 	shiftSecond: {type: 'param', func: shiftSecond} as RegisteredValueActionWithParams<typeof shiftSecond>,
 	// extension
+	prepend: {type: 'param', func: prepend} as RegisteredValueActionWithParams<typeof prepend>,
 	exchange: {type: 'param', func: exchange} as RegisteredValueActionWithParams<typeof exchange>,
+	append: {type: 'param', func: append} as RegisteredValueActionWithParams<typeof append>,
+	prependFirst: {type: 'param', func: prependFirst} as RegisteredValueActionWithParams<typeof prependFirst>,
 	exchangeFirst: {type: 'param', func: exchangeFirst} as RegisteredValueActionWithParams<typeof exchangeFirst>,
-	grabFirst: {type: 'param', func: grabFirst} as RegisteredValueActionWithParams<typeof grabFirst>,
-	withFirst: {type: 'param', func: grabFirst} as RegisteredValueActionWithParams<typeof grabFirst>,
-	andFirst: {type: 'param', func: grabFirst} as RegisteredValueActionWithParams<typeof grabFirst>,
+	appendFirst: {type: 'param', func: appendFirst} as RegisteredValueActionWithParams<typeof appendFirst>,
+	grabFirst: {type: 'param', func: appendFirst} as RegisteredValueActionWithParams<typeof appendFirst>,
+	withFirst: {type: 'param', func: appendFirst} as RegisteredValueActionWithParams<typeof appendFirst>,
+	andFirst: {type: 'param', func: appendFirst} as RegisteredValueActionWithParams<typeof appendFirst>,
+	prependAll: {type: 'param', func: prependAll} as RegisteredValueActionWithParams<typeof prependAll>,
 	exchangeAll: {type: 'param', func: exchangeAll} as RegisteredValueActionWithParams<typeof exchangeAll>,
-	grabAll: {type: 'param', func: grabAll} as RegisteredValueActionWithParams<typeof grabAll>,
-	withAll: {type: 'param', func: grabAll} as RegisteredValueActionWithParams<typeof grabAll>,
-	andAll: {type: 'param', func: grabAll} as RegisteredValueActionWithParams<typeof grabAll>,
+	appendAll: {type: 'param', func: appendAll} as RegisteredValueActionWithParams<typeof appendAll>,
+	grabAll: {type: 'param', func: appendAll} as RegisteredValueActionWithParams<typeof appendAll>,
+	withAll: {type: 'param', func: appendAll} as RegisteredValueActionWithParams<typeof appendAll>,
+	andAll: {type: 'param', func: appendAll} as RegisteredValueActionWithParams<typeof appendAll>,
 	// async extension
+	asyncPrepend: {type: 'param', func: asyncPrepend} as RegisteredValueActionWithParams<typeof asyncPrepend>,
 	asyncExchange: {type: 'param', func: asyncExchange} as RegisteredValueActionWithParams<typeof asyncExchange>,
-	asyncExchangeOne: {
+	asyncAppend: {type: 'param', func: asyncAppend} as RegisteredValueActionWithParams<typeof asyncAppend>,
+	asyncPrependFirst: {
+		type: 'param', func: asyncPrependFirst
+	} as RegisteredValueActionWithParams<typeof asyncPrependFirst>,
+	asyncExchangeFirst: {
 		type: 'param', func: asyncExchangeFirst
 	} as RegisteredValueActionWithParams<typeof asyncExchangeFirst>,
-	asyncGrabFirst: {type: 'param', func: asyncGrabFirst} as RegisteredValueActionWithParams<typeof asyncGrabFirst>,
-	asyncWithFirst: {type: 'param', func: asyncGrabFirst} as RegisteredValueActionWithParams<typeof asyncGrabFirst>,
-	asyncAndFirst: {type: 'param', func: asyncGrabFirst} as RegisteredValueActionWithParams<typeof asyncGrabFirst>,
+	asyncAppendFirst: {
+		type: 'param', func: asyncAppendFirst
+	} as RegisteredValueActionWithParams<typeof asyncAppendFirst>,
+	asyncGrabFirst: {type: 'param', func: asyncAppendFirst} as RegisteredValueActionWithParams<typeof asyncAppendFirst>,
+	asyncWithFirst: {type: 'param', func: asyncAppendFirst} as RegisteredValueActionWithParams<typeof asyncAppendFirst>,
+	asyncAndFirst: {type: 'param', func: asyncAppendFirst} as RegisteredValueActionWithParams<typeof asyncAppendFirst>,
+	asyncPrependAll: {type: 'param', func: asyncPrependAll} as RegisteredValueActionWithParams<typeof asyncPrependAll>,
 	asyncExchangeAll: {
 		type: 'param', func: asyncExchangeAll
 	} as RegisteredValueActionWithParams<typeof asyncExchangeAll>,
-	asyncGrabAll: {type: 'param', func: asyncGrabAll} as RegisteredValueActionWithParams<typeof asyncGrabAll>,
-	asyncWithAll: {type: 'param', func: asyncGrabAll} as RegisteredValueActionWithParams<typeof asyncGrabAll>,
-	asyncAndAll: {type: 'param', func: asyncGrabAll} as RegisteredValueActionWithParams<typeof asyncGrabAll>
+	asyncAppendAll: {type: 'param', func: asyncAppendAll} as RegisteredValueActionWithParams<typeof asyncAppendAll>,
+	asyncGrabAll: {type: 'param', func: asyncAppendAll} as RegisteredValueActionWithParams<typeof asyncAppendAll>,
+	asyncWithAll: {type: 'param', func: asyncAppendAll} as RegisteredValueActionWithParams<typeof asyncAppendAll>,
+	asyncAndAll: {type: 'param', func: asyncAppendAll} as RegisteredValueActionWithParams<typeof asyncAppendAll>,
+	// extension with value transforming function
+	headWith: {type: 'param', func: headWith} as RegisteredValueActionWithParams<typeof headWith>,
+	replaceWith: {type: 'param', func: replaceWith} as RegisteredValueActionWithParams<typeof replaceWith>,
+	tailWith: {type: 'param', func: tailWith} as RegisteredValueActionWithParams<typeof tailWith>,
+	headWithAll: {type: 'param', func: headWithAll} as RegisteredValueActionWithParams<typeof headWithAll>,
+	replaceWithAll: {type: 'param', func: replaceWithAll} as RegisteredValueActionWithParams<typeof replaceWithAll>,
+	tailWithAll: {type: 'param', func: tailWithAll} as RegisteredValueActionWithParams<typeof tailWithAll>,
+	asyncHeadWith: {type: 'param', func: asyncHeadWith} as RegisteredValueActionWithParams<typeof asyncHeadWith>,
+	asyncReplaceWith: {
+		type: 'param', func: asyncReplaceWith
+	} as RegisteredValueActionWithParams<typeof asyncReplaceWith>,
+	asyncTailWith: {type: 'param', func: asyncTailWith} as RegisteredValueActionWithParams<typeof asyncTailWith>,
+	asyncHeadWithFirst: {
+		type: 'param', func: asyncHeadWithFirst
+	} as RegisteredValueActionWithParams<typeof asyncHeadWithFirst>,
+	asyncReplaceWithFirst: {
+		type: 'param', func: asyncReplaceWithFirst
+	} as RegisteredValueActionWithParams<typeof asyncReplaceWithFirst>,
+	asyncTailWithFirst: {
+		type: 'param', func: asyncTailWithFirst
+	} as RegisteredValueActionWithParams<typeof asyncTailWithFirst>,
+	asyncHeadWithAll: {
+		type: 'param', func: asyncHeadWithAll
+	} as RegisteredValueActionWithParams<typeof asyncHeadWithAll>,
+	asyncReplaceWithAll: {
+		type: 'param', func: asyncReplaceWithAll
+	} as RegisteredValueActionWithParams<typeof asyncReplaceWithAll>,
+	asyncTailWithAll: {
+		type: 'param', func: asyncTailWithAll
+	} as RegisteredValueActionWithParams<typeof asyncTailWithAll>
 };
 export const AllTransformers: Readonly<typeof transformers> = transformers;
