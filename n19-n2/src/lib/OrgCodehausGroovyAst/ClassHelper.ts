@@ -1,6 +1,6 @@
 import {BuiltInConstants, IClass} from '../Java';
 import {LowestUpperBoundClassNode} from '../OrgCodehausGroovyAstTools';
-import {StaticTypeCheckingSupport} from '../OrgCodehausGroovyTransform';
+import {StaticTypeCheckingSupport, Traits} from '../OrgCodehausGroovyTransform';
 import {Opcodes} from '../OrgObjectwebAsm';
 import {Optional} from '../TsAddon';
 import {ClassNode} from './ClassNode';

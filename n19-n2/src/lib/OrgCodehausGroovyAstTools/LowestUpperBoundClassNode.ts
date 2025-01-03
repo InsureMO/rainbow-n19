@@ -40,7 +40,7 @@ export class LowestUpperBoundClassNode extends ClassNode {
 		if (usesGenerics) {
 			const flatList: Array<GenericsType> = [];
 			for (const gts of genericsTypesList) {
-				if (gts != null) {
+				if (gts != null && gts.length !== 0) {
 					flatList.push(...gts);
 				}
 			}

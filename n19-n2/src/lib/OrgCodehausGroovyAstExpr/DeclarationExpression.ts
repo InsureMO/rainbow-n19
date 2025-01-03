@@ -1,3 +1,4 @@
+import {ClassNodeUtils} from '../OrgApacheGroovyAstTools';
 import {GroovyBugError} from '../OrgCodehausGroovy';
 import {GroovyCodeVisitor} from '../OrgCodehausGroovyAst';
 import {Token} from '../OrgCodehausGroovySyntax';

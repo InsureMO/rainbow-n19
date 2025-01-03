@@ -25,7 +25,7 @@ export class ArrayExpression extends Expression {
 		super();
 		super.setType(ArrayExpression.makeArray(elementType, sizeExpressions));
 		this._elementType = elementType;
-		if (initExpressions == null) {
+		if (initExpressions == null || initExpressions.length === 0) {
 			if (sizeExpressions == null || sizeExpressions.length === 0) {
 				throw new IllegalArgumentException('Either an initializer or defined size must be given');
 			} else {

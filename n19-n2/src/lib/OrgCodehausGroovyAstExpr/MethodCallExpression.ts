@@ -146,7 +146,7 @@ export class MethodCallExpression extends Expression implements MethodCall {
 	}
 
 	setGenericsTypes(genericsTypes: Array<GenericsType>): void {
-		this._usesGenerics = this._usesGenerics || genericsTypes != null;
+		this._usesGenerics = this._usesGenerics || (genericsTypes != null && genericsTypes.length !== 0);
 		this._genericsTypes = genericsTypes;
 	}
 

@@ -1,5 +1,6 @@
+import { GroovyClassLoader } from '../GroovyLang';
 import {JavaFunction} from '../JavaUtil';
-import {SourceUnit} from '../OrgCodehausGroovyControl';
+import {CompilerConfiguration, SourceUnit} from '../OrgCodehausGroovyControl';
 import {SyntaxException} from '../OrgCodehausGroovySyntax';
 import {Optional} from '../TsAddon';
 import {ClassNode} from './ClassNode';

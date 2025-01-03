@@ -1,3 +1,8 @@
+import {GroovyClassLoader} from '../GroovyLang';
+import {CompilerConfiguration} from './CompilerConfiguration';
+import {ErrorCollector} from './ErrorCollector';
+import { Phases } from './Phases';
+
 export abstract class ProcessingUnit {
 	/**
 	 * The current phase

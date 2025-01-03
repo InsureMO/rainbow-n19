@@ -1,3 +1,4 @@
+import {AnnotatedNodeUtils} from '../OrgApacheGroovyAstTools';
 import {ClassHelper, ClassNode, MethodNode, PropertyNode} from '../OrgCodehausGroovyAst';
 import {Statement} from '../OrgCodehausGroovyAstStmt';
 
@@ -58,7 +59,7 @@ export class BeanUtils {
 		}
 	}
 
-	private static decapitalize(property: string): string {
+	static decapitalize(property: string): string {
 		if (property == null || property.length === 0) {
 			return property;
 		}

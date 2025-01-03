@@ -1,7 +1,10 @@
 import {IClass, ModifiersValue} from '../Java';
+import {ClassNodeUtils, MethodNodeUtils} from '../OrgApacheGroovyAstTools';
 import {GroovyBugError} from '../OrgCodehausGroovy';
 import {BinaryExpression, Expression, FieldExpression, TupleExpression} from '../OrgCodehausGroovyAstExpr';
 import {BlockStatement, ExpressionStatement, Statement} from '../OrgCodehausGroovyAstStmt';
+import {ParameterUtils} from '../OrgCodehausGroovyAstTools';
+import {CompilePhase} from '../OrgCodehausGroovyControl';
 import {Opcodes} from '../OrgObjectwebAsm';
 import {Optional} from '../TsAddon';
 import {AnnotatedNode} from './AnnotatedNode';
@@ -14,7 +17,7 @@ import {FieldNode} from './FieldNode';
 import {GenericsType} from './GenericsType';
 import {GroovyClassVisitor} from './GroovyClassVisitor';
 import {InnerClassNode} from './InnerClassNode';
-import { MethodNode } from './MethodNode';
+import {MethodNode} from './MethodNode';
 import {MixinNode} from './MixinNode';
 import {ModuleNode} from './ModuleNode';
 import {PackageNode} from './PackageNode';
@@ -58,6 +61,7 @@ export class ClassNode extends AnnotatedNode {
 	static readonly THIS: ClassNode = new ClassNode(Object.class);
 	static readonly SUPER: ClassNode = new ClassNode(Object.class);
 
+	// noinspection TypeScriptFieldCanBeMadeReadonly
 	private _name: string;
 	private _modifiers: ModifiersValue;
 	private _syntheticPublic: boolean = false;
@@ -82,10 +86,10 @@ export class ClassNode extends AnnotatedNode {
 	private readonly _typeAnnotations: Array<AnnotationNode> = [];
 	private readonly _recordComponents: Array<RecordComponentNode> = [];
 	/** The AST Transformations to be applied during compilation. */
-	private readonly _transformInstances: Map<CompilePhase, Map<IClass<ASTTransformation>, Set<ASTNode>>> = (() => {
-		const map = new Map<CompilePhase, Map<IClass<ASTTransformation>, Set<ASTNode>>>();
+	private readonly _transformInstances: Map<CompilePhase, Map<IClass, Set<ASTNode>>> = (() => {
+		const map = new Map<CompilePhase, Map<IClass, Set<ASTNode>>>();
 		for (const phase of Object.values(CompilePhase)) {
-			this._transformInstances.set(phase, new Map<IClass<ASTTransformation>, Set<ASTNode>>());
+			this._transformInstances.set(phase as CompilePhase, new Map<IClass, Set<ASTNode>>());
 		}
 		return map;
 	})();
@@ -233,7 +237,7 @@ export class ClassNode extends AnnotatedNode {
 			throw new GroovyBugError('lazyClassInit called on a proxy ClassNode, that must not happen. ' +
 				'A redirect() call is missing somewhere!');
 		}
-		VMPluginFactory.getPlugin().configureClassNode(this.compileUnit, this);
+		VMPluginFactory.plugin.configureClassNode(this.compileUnit, this);
 		this._lazyInitDone = true;
 	}
 
@@ -564,7 +568,7 @@ export class ClassNode extends AnnotatedNode {
 	 * be a method defined in a class and so the default implementations should not be added
 	 * if already present.
 	 */
-	addMethod(nameOrNode: MethodNode,
+	addMethod(nameOrNode: string | MethodNode,
 	          modifiers?: ModifiersValue,
 	          returnType?: ClassNode,
 	          parameters?: Array<Parameter>,
@@ -1052,9 +1056,12 @@ export class ClassNode extends AnnotatedNode {
 		// visit the method nodes added while iterating,
 		// e.g. synthetic method for constructor reference
 		const newMethodList = this.methods;
-		if (newMethodList.length > methodList.length) { // if the newly added method nodes found, visit them
-			const changedMethodList = [...newMethodList];
-			const changed = changedMethodList.removeAll(methodList);
+		if (newMethodList.length > methodList.length) {
+			// if the newly added method nodes found, visit them
+			const changedMethodList = newMethodList.filter(method => {
+				return !methodList.some(originMethod => originMethod.equals(method));
+			});
+			const changed = changedMethodList.length !== newMethodList.length;
 			if (changed) {
 				for (const mn of changedMethodList) {
 					visitor.visitMethod(mn);
@@ -1212,7 +1219,7 @@ export class ClassNode extends AnnotatedNode {
 					if (match) {
 						if (method == null) {
 							method = mn;
-						} else if (cn.equals(this) || method.getParameters().length != nArgs) {
+						} else if (cn.equals(this) || method.parameters.length != nArgs) {
 							return (void 0);
 						} else {
 							for (let i = 0; i < nArgs; i += 1) {
@@ -1304,7 +1311,7 @@ export class ClassNode extends AnnotatedNode {
 		if (this.isRedirectNode) {
 			this.myRedirect.setRecordComponents(recordComponents);
 		} else {
-			this._recordComponents.length = 0
+			this._recordComponents.length = 0;
 			this._recordComponents.push(...(recordComponents ?? []));
 		}
 	}
@@ -1384,7 +1391,7 @@ export class ClassNode extends AnnotatedNode {
 	asGenericsType(): GenericsType {
 		if (!this.isGenericsPlaceHolder) {
 			return new GenericsType(this);
-		} else if (this._genericsTypes != null && this._genericsTypes[0].upperBounds != null) {
+		} else if (this._genericsTypes != null && this._genericsTypes.length !== 0 && this._genericsTypes[0].upperBounds != null) {
 			return this._genericsTypes[0];
 		} else {
 			const upper = (this.isRedirectNode ? this.myRedirect : this);
@@ -1397,7 +1404,7 @@ export class ClassNode extends AnnotatedNode {
 	}
 
 	setGenericsTypes(genericsTypes: Array<GenericsType>): void {
-		this._usesGenerics = this._usesGenerics || genericsTypes != null;
+		this._usesGenerics = this._usesGenerics || (genericsTypes != null && genericsTypes.length !== 0);
 		this._genericsTypes.length = 0;
 		this._genericsTypes.push(...(genericsTypes ?? []));
 	}
@@ -1437,6 +1444,14 @@ export class ClassNode extends AnnotatedNode {
 		return this.isInterface && (this.modifiers & Opcodes.ACC_ANNOTATION) != 0;
 	}
 
+	get annotations(): Array<AnnotationNode> {
+		if (this.isRedirectNode) {
+			return this.myRedirect.annotations;
+		}
+		this.lazyClassInit();
+		return super.annotations;
+	}
+
 	getAnnotations(type?: ClassNode): Array<AnnotationNode> {
 		if (this.isRedirectNode) {
 			return this.myRedirect.getAnnotations(type);
@@ -1445,10 +1460,10 @@ export class ClassNode extends AnnotatedNode {
 		return super.getAnnotations(type);
 	}
 
-	addTransform(transform: IClass<ASTTransformation>, node: ASTNode): void {
+	addTransform(transform: IClass, node: ASTNode): void {
 		const annotation = transform.getAnnotation(GroovyASTTransformation.class);
 		if (annotation != null) {
-			const transforms: Map<IClass<ASTTransformation>, Set<ASTNode>> = this.getTransforms(annotation.phase());
+			const transforms: Map<IClass, Set<ASTNode>> = this.getTransforms(annotation.get('phase') as CompilePhase);
 			let exists = transforms.get(transform);
 			if (exists == null) {
 				exists = new Set();
@@ -1458,7 +1473,7 @@ export class ClassNode extends AnnotatedNode {
 		}
 	}
 
-	getTransforms(phase: CompilePhase): Map<IClass<ASTTransformation>, Set<ASTNode>> {
+	getTransforms(phase: CompilePhase): Map<IClass, Set<ASTNode>> {
 		return this.transformInstances.get(phase);
 	}
 
@@ -1494,7 +1509,7 @@ export class ClassNode extends AnnotatedNode {
 		this._innerClasses.push(innerClassNode);
 	}
 
-	private get transformInstances(): Map<CompilePhase, Map<IClass<ASTTransformation>, Set<ASTNode>>> {
+	private get transformInstances(): Map<CompilePhase, Map<IClass, Set<ASTNode>>> {
 		return this._transformInstances;
 	}
 

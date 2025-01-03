@@ -57,7 +57,9 @@ import {
 } from '../OrgCodehausGroovyAstStmt';
 import {BytecodeExpression} from '../OrgCodehausGroovyClassgen';
 import {Token, Types} from '../OrgCodehausGroovySyntax';
-import { BeanUtils } from './BeanUtils';
+import {MethodVisitor} from '../OrgObjectwebAsm';
+import {BeanUtils} from './BeanUtils';
+import {GenericsUtils} from './GenericsUtils';
 
 export class GeneralUtils {
 	static readonly ASSIGN: Token = Token.newSymbol(Types.ASSIGN, -1, -1);
@@ -296,7 +298,7 @@ export class GeneralUtils {
 		return result;
 	}
 
-	static getAllProperties(namesOrType: Set<String> | ClassNode,
+	static getAllProperties(namesOrType: Array<string> | ClassNode,
 	                        origType?: ClassNode, cNode?: ClassNode,
 	                        includeProperties?: boolean, includeFields?: boolean, includePseudoGetters?: boolean,
 	                        includePseudoSetters?: boolean, traverseSuperClasses?: boolean, skipReadonly?: boolean,
@@ -318,9 +320,9 @@ export class GeneralUtils {
 		}
 		if (includeProperties) {
 			for (const pNode of cNode.properties) {
-				if ((!pNode.isStatic || includeStatic) && !names.has(pNode.name)) {
+				if ((!pNode.isStatic || includeStatic) && !names.includes(pNode.name)) {
 					result.push(pNode);
-					names.add(pNode.name);
+					names.push(pNode.name);
 				}
 			}
 			if (includePseudoGetters || includePseudoSetters) {
@@ -329,7 +331,7 @@ export class GeneralUtils {
 		}
 		if (includeFields) {
 			for (const fNode of cNode.fields) {
-				if ((fNode.isStatic && !includeStatic) || fNode.isSynthetic || cNode.getProperty(fNode.name) != null || names.has(fNode.name)) {
+				if ((fNode.isStatic && !includeStatic) || fNode.isSynthetic || cNode.getProperty(fNode.name) != null || names.includes(fNode.name)) {
 					continue;
 				}
 
@@ -345,7 +347,7 @@ export class GeneralUtils {
 					continue;
 				}
 				result.push(new PropertyNode(fNode, fNode.modifiers, null, null));
-				names.add(fNode.name);
+				names.push(fNode.name);
 			}
 		}
 		if (!(ClassHelper.isObjectType(cNode)) && traverseSuperClasses && reverse) {
@@ -378,23 +380,24 @@ export class GeneralUtils {
 	/**
 	 * TODO NEED FILTER NODE WHICH ALREADY ADDED
 	 */
-	private static addAllInterfaces(result: Set<ClassNode>, source: ClassNode): void {
+	private static addAllInterfaces(result: Array<ClassNode>, source: ClassNode): void {
 		for (const interfaceClassNode of source.interfaces) {
-			const genericInterfaceClassNode = GenericUtils.parameterizeType(source, interfaceClassNode);
-			if (result.add(genericInterfaceClassNode)) {
+			const genericInterfaceClassNode = GenericsUtils.parameterizeType(source, interfaceClassNode);
+			if (!result.includes(genericInterfaceClassNode)) {
+				result.push(genericInterfaceClassNode);
 				GeneralUtils.addAllInterfaces(result, genericInterfaceClassNode);
 			}
 		}
 		const sc = source.redirect().getUnresolvedSuperclass(false);
 		if (sc != null && !ClassHelper.isObjectType(sc)) {
-			GeneralUtils.addAllInterfaces(result, GenericUtils.parameterizeType(source, sc));
+			GeneralUtils.addAllInterfaces(result, GenericsUtils.parameterizeType(source, sc));
 		}
 	}
 
-	static getInterfacesAndSuperInterfaces(cNode: ClassNode): Set<ClassNode> {
-		const result = new Set<ClassNode>();
+	static getInterfacesAndSuperInterfaces(cNode: ClassNode): Array<ClassNode> {
+		const result = [];
 		if (cNode.isInterface) {
-			result.add(cNode);
+			result.push(cNode);
 		}
 		GeneralUtils.addAllInterfaces(result, cNode);
 		return result;
@@ -692,11 +695,11 @@ export class GeneralUtils {
 	}
 
 	/**
-	 * Copies all <tt>candidateAnnotations</tt> with retention policy {@link java.lang.annotation.RetentionPolicy#RUNTIME}
-	 * and {@link java.lang.annotation.RetentionPolicy#CLASS}.
-	 * {@link groovy.transform.Generated} annotations will be copied if {@code includeGenerated} is true.
+	 * Copies all <tt>candidateAnnotations</tt> with retention policy {@code RetentionPolicy#RUNTIME}
+	 * and {@code RetentionPolicy#CLASS}.
+	 * {@code groovy.transform.Generated} annotations will be copied if {@code includeGenerated} is true.
 	 * <p>
-	 * Annotations with {@link org.codehaus.groovy.runtime.GeneratedClosure} members are not supported at present.
+	 * Annotations with {@code org.codehaus.groovy.runtime.GeneratedClosure} members are not supported at present.
 	 */
 	static copyAnnotatedNodeAnnotations(annotatedNode: AnnotatedNode, copied: Array<AnnotationNode>, notCopied: Array<AnnotationNode>, includeGenerated: boolean = true): void {
 		const annotationList: Array<AnnotationNode> = annotatedNode.annotations;
@@ -889,7 +892,7 @@ export class GeneralUtils {
 	}
 
 	/**
-	 * @deprecated use MethodNodeUtils#methodDescriptorWithoutReturnType(MethodNode) instead
+	 * @deprecated use {@link MethodNodeUtils#methodDescriptorWithoutReturnType} instead
 	 */
 	static makeDescriptorWithoutReturnType(mn: MethodNode): string {
 		let sb: string = '';

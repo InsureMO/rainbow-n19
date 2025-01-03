@@ -1,9 +1,10 @@
 import {ClassNode, GroovyCodeVisitor} from '../OrgCodehausGroovyAst';
 import {Expression, ExpressionTransformer} from '../OrgCodehausGroovyAstExpr';
+import {MethodVisitor} from '../OrgObjectwebAsm';
 
 export abstract class BytecodeExpression extends Expression {
 	static readonly NOP: BytecodeExpression = new class extends BytecodeExpression {
-		doVisit(visitor: MethodVisitor): void {
+		doVisit(_visitor: MethodVisitor): void {
 			// do nothing
 		}
 	}();

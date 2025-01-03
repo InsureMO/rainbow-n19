@@ -10,7 +10,7 @@ import {ClassName, TypeName} from '../TypeAlias';
 export class ParameterizedType implements IParameterizedType {
 	/** define on where, could be class, constructor or method */
 	private readonly _declaration: IGenericDeclaration;
-	private _actualTypeArguments: Array<IType>;
+	private readonly _actualTypeArguments: Array<IType> = [];
 	private _rawTypeName: ClassName;
 	private _ownerType: Optional<IType>;
 
@@ -35,7 +35,8 @@ export class ParameterizedType implements IParameterizedType {
 	}
 
 	setActualTypeArguments(actualTypeArguments: Array<IType>): this {
-		this._actualTypeArguments = actualTypeArguments;
+		this._actualTypeArguments.length = 0;
+		this._actualTypeArguments.push(...(actualTypeArguments ?? []));
 		return this;
 	}
 
@@ -92,7 +93,7 @@ export class ParameterizedType implements IParameterizedType {
 			sb = sb + this.rawType.name;
 		}
 
-		if (this.actualTypeArguments != null) {
+		if (this.actualTypeArguments != null && this.actualTypeArguments.length !== 0) {
 			sb = sb + '<' + this.actualTypeArguments.map(actualTypeArgument => actualTypeArgument.typeName).join(', ') + '>';
 		}
 

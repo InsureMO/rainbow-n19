@@ -1,3 +1,4 @@
+import {GroovyClassLoader} from '../GroovyLang';
 import {Exception} from '../JavaExceptions';
 import {GroovyBugError} from '../OrgCodehausGroovy';
 import {ASTNode, ModuleNode} from '../OrgCodehausGroovyAst';
@@ -8,7 +9,10 @@ import {
 	WarningMessage
 } from '../OrgCodehausGroovyControlMessages';
 import {Reduction, SyntaxException, Token} from '../OrgCodehausGroovySyntax';
+import {CompilerConfiguration} from './CompilerConfiguration';
+import {ErrorCollector} from './ErrorCollector';
 import {Janitor} from './Janitor';
+import {Phases} from './Phases';
 import {ProcessingUnit} from './ProcessingUnit';
 
 export class SourceUnit extends ProcessingUnit {
@@ -268,7 +272,7 @@ export class SourceUnit extends ProcessingUnit {
 	 * @throws CompilationFailedException on error
 	 */
 	addError(se: SyntaxException): void /* throws CompilationFailedException */ {
-		this.errorCollector().addError(se, this);
+		this.errorCollector.addErrorAccordingToSyntaxError(se, this);
 	}
 
 	/**
@@ -296,7 +300,7 @@ export class SourceUnit extends ProcessingUnit {
 	}
 
 	addErrorAndContinue(se: SyntaxException) {
-		this.errorCollector.addErrorAndContinue(se, this);
+		this.errorCollector.addSyntaxErrorAndContinue(se, this);
 	}
 
 	get source(): ReaderSource {

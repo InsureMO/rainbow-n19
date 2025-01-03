@@ -100,23 +100,15 @@ export class Reduction extends CSTNode {
 	 * Sets an element in at the specified index.
 	 */
 	set(index: number, element: CSTNode): CSTNode {
-
-		if (this._elements == null) {
-			throw new GroovyBugError('attempt to set() on a EMPTY Reduction');
-		}
-
 		if (index == 0 && !(element instanceof Token)) {
-
 			//
 			// It's not the greatest of design that the interface allows this, but it
 			// is a tradeoff with convenience, and the convenience is more important.
-
 			throw new GroovyBugError('attempt to set() a non-Token as root of a Reduction');
 		}
 
 		//
 		// Fill slots with nulls, if necessary.
-
 		const count: number = this._elements.length;
 		if (index >= count) {
 			// extend length

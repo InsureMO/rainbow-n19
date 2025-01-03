@@ -1,4 +1,6 @@
+export * from '../GroovyLang';
 export * from '../GroovyLangGroovydoc';
+export * from '../OrgApacheGroovyAstTools';
 export * from '../OrgApacheGroovyIO';
 export * from '../OrgApacheGroovyParserAntlr4';
 export * from '../OrgCodehausGroovy';

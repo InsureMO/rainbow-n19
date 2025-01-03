@@ -48,10 +48,11 @@ export class MixinASTTransformation extends AbstractASTTransformation {
 		if (parent instanceof ClassNode) {
 			const annotatedClass = parent;
 
-			const noparams = Parameter.EMPTY_ARRAY;
-			let clinit = annotatedClass.getDeclaredMethod('<clinit>', noparams);
+			const noParams = Parameter.EMPTY_ARRAY;
+			let clinit = annotatedClass.getDeclaredMethod('<clinit>', noParams);
 			if (clinit == null) {
-				clinit = annotatedClass.addMethod('<clinit>', Opcodes.ACC_PUBLIC | Opcodes.ACC_STATIC | Opcodes.ACC_SYNTHETIC, ClassHelper.VOID_TYPE, noparams, null, new BlockStatement());
+				// @ts-ignore
+				clinit = annotatedClass.addMethod('<clinit>', Opcodes.ACC_PUBLIC | Opcodes.ACC_STATIC | Opcodes.ACC_SYNTHETIC, ClassHelper.VOID_TYPE, noParams, null, new BlockStatement());
 				clinit.setSynthetic(true);
 			}
 

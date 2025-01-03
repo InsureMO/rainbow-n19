@@ -1,5 +1,7 @@
 import {Modifier, ModifiersValue} from '../Java';
+import {ClassNodeUtils, MethodNodeUtils} from '../OrgApacheGroovyAstTools';
 import {BlockStatement, Statement} from '../OrgCodehausGroovyAstStmt';
+import { GenericsUtils } from '../OrgCodehausGroovyAstTools';
 import {Opcodes} from '../OrgObjectwebAsm';
 import {Optional} from '../TsAddon';
 import {AnnotatedNode} from './AnnotatedNode';

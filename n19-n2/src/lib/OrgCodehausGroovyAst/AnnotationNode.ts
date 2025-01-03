@@ -184,7 +184,7 @@ export class AnnotationNode extends ASTNode {
 							? (exp.value as ASTNode).text
 							: exp.text;
 					});
-					text = result.toString();
+					text = '[' + result.join(', ') + ']';
 				} else {
 					text = value.text;
 				}

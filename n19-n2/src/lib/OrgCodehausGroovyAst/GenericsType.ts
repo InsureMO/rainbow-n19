@@ -1,5 +1,6 @@
 import {Modifier} from '../Java';
-import {LowestUpperBoundClassNode} from '../OrgCodehausGroovyAstTools';
+import {GenericsUtils, LowestUpperBoundClassNode} from '../OrgCodehausGroovyAstTools';
+import {StaticTypeCheckingSupport} from '../OrgCodehausGroovyTransform';
 import {Optional} from '../TsAddon';
 import {ASTNode} from './ASTNode';
 import {ClassHelper} from './ClassHelper';
@@ -52,7 +53,7 @@ export class GenericsType extends ASTNode {
 		let ret = wildcard || placeholder ? name : GenericsType.genericsBounds(type, visited);
 		if (lowerBound != null) {
 			ret = ret + ' super ' + GenericsType.genericsBounds(lowerBound, visited);
-		} else if (upperBounds != null
+		} else if (upperBounds != null && upperBounds.length !== 0
 			// T extends Object should just be printed as T
 			&& !(placeholder && upperBounds.length == 1 && !upperBounds[0].isGenericsPlaceHolder && upperBounds[0].name === ClassHelper.OBJECT)) {
 			ret = ret + ' extends ';
@@ -69,8 +70,7 @@ export class GenericsType extends ASTNode {
 	private static genericsBounds(theType: ClassNode, visited: Set<string>): string {
 		let ret = GenericsType.appendName(theType, '');
 		const genericsTypes = theType.genericsTypes;
-		if (genericsTypes != null && genericsTypes.length > 0
-			&& !theType.isGenericsPlaceHolder) { // GROOVY-10583
+		if (genericsTypes != null && genericsTypes.length !== 0 && !theType.isGenericsPlaceHolder) { // GROOVY-10583
 			ret = ret + '<';
 			for (let i = 0, n = genericsTypes.length; i < n; i += 1) {
 				if (i != 0) {
@@ -168,7 +168,7 @@ export class GenericsType extends ASTNode {
 			return true; // diamond always matches
 		}
 		if (classNode.isGenericsPlaceHolder) {
-			if (genericsTypes == null) {
+			if (genericsTypes == null || genericsTypes.length === 0) {
 				return true;
 			}
 			const name = genericsTypes[0].name;
@@ -181,7 +181,7 @@ export class GenericsType extends ASTNode {
 				if (name === lowerBound.unresolvedName) {
 					return true;
 				}
-			} else if (this.upperBounds != null) {
+			} else if (this.upperBounds != null && this.upperBounds.length !== 0) {
 				// check for "? extends T & I" vs "T" or "I"
 				for (const upperBound of this.upperBounds) {
 					if (name === upperBound.unresolvedName) {
@@ -196,16 +196,16 @@ export class GenericsType extends ASTNode {
 			const lowerBound = this.lowerBound;
 			if (lowerBound != null) {
 				// test bound and type in reverse for lower bound vs upper bound
-				if (!ClassHelper.implementsInterfaceOrIsSubclassOf(lowerBound, classNode)) {
+				if (!StaticTypeCheckingSupport.implementsInterfaceOrIsSubclassOf(lowerBound, classNode)) {
 					return false;
 				}
 				return this.checkGenerics(classNode);
 			}
 			const upperBounds = this.upperBounds;
-			if (upperBounds != null) {
+			if (upperBounds != null && upperBounds.length !== 0) {
 				// check that provided type extends or implements all upper bounds
 				for (const upperBound of upperBounds) {
-					if (!ClassHelper.implementsInterfaceOrIsSubclassOf(classNode, upperBound)) {
+					if (!StaticTypeCheckingSupport.implementsInterfaceOrIsSubclassOf(classNode, upperBound)) {
 						return false;
 					}
 				}
@@ -231,7 +231,7 @@ export class GenericsType extends ASTNode {
 			return GenericsType.compareGenericsWithBound(classNode, lowerBound);
 		}
 		const upperBounds = this.upperBounds;
-		if (upperBounds != null) {
+		if (upperBounds != null && upperBounds.length !== 0) {
 			for (const upperBound of upperBounds) {
 				if (!GenericsType.compareGenericsWithBound(classNode, upperBound)) {
 					return false;
@@ -252,9 +252,10 @@ export class GenericsType extends ASTNode {
 		if (classNode == null) {
 			return false;
 		}
-		if (bound.genericsTypes == null
+		if (bound.genericsTypes == null || bound.genericsTypes.length === 0
 			|| classNode.isGenericsPlaceHolder // GROOVY-10556: "T" vs "C<T extends C<?>>" bound
-			|| (classNode.genericsTypes == null && classNode.redirect().genericsTypes != null))
+			|| ((classNode.genericsTypes == null || classNode.genericsTypes.length === 0)
+				&& classNode.redirect().genericsTypes != null && classNode.redirect().genericsTypes.length !== 0))
 			// if the bound is not using generics or the class node is a raw type, there's nothing to compare
 			return true;
 
@@ -273,7 +274,7 @@ export class GenericsType extends ASTNode {
 						// class node are not parameterized. This means that we must create a
 						// new class node with the parameterized types that the current class node
 						// has defined.
-						if (interfaceClass.genericsTypes != null) {
+						if (interfaceClass.genericsTypes != null && interfaceClass.genericsTypes.length !== 0) {
 							interfaceClass = GenericsUtils.parameterizeType(classNode, interfaceClass);
 						}
 						return GenericsType.compareGenericsWithBound(interfaceClass, bound);
@@ -291,20 +292,20 @@ export class GenericsType extends ASTNode {
 			if (ClassHelper.isObjectType(classNode)) {
 				return false;
 			}
-			let superClass = classNode.getUnresolvedSuperclass();
-			if (superClass == null) {
-				superClass = ClassHelper.OBJECT_TYPE;
-			} else if (superClass.genericsTypes != null) {
-				superClass = GenericsUtils.parameterizeType(classNode, superClass);
+			let superclass = classNode.getUnresolvedSuperclass();
+			if (superclass == null) {
+				superclass = ClassHelper.OBJECT_TYPE;
+			} else if (superclass.genericsTypes != null && superclass.genericsTypes.length !== 0) {
+				superclass = GenericsUtils.parameterizeType(classNode, superclass);
 			}
-			return GenericsType.compareGenericsWithBound(superClass, bound);
+			return GenericsType.compareGenericsWithBound(superclass, bound);
 		}
 
 		let genericsTypes = classNode.genericsTypes;
-		if (genericsTypes == null) {
+		if (genericsTypes == null || genericsTypes.length === 0) {
 			genericsTypes = classNode.redirect().genericsTypes;
 		}
-		if (genericsTypes == null) {
+		if (genericsTypes == null || genericsTypes.length === 0) {
 			// may happen if generic type is Foo<T extends Foo> and ClassNode is Foo -> Foo
 			return true;
 		}
@@ -313,7 +314,7 @@ export class GenericsType extends ASTNode {
 		const boundPlaceHolders: Map<string, GenericsType> = GenericsUtils.extractPlaceholders(bound);
 		const classNodePlaceholders: Map<string, GenericsType> = GenericsUtils.extractPlaceholders(classNode);
 		let match = true;
-		for (let i = 0; redirectBoundGenericTypes != null && i < redirectBoundGenericTypes.length && match; i += 1) {
+		for (let i = 0; redirectBoundGenericTypes != null && redirectBoundGenericTypes.length !== 0 && i < redirectBoundGenericTypes.length && match; i += 1) {
 			let redirectBoundType = redirectBoundGenericTypes[i];
 			const classNodeType = genericsTypes[i];
 			if (classNodeType.isPlaceholder) {
@@ -327,7 +328,7 @@ export class GenericsType extends ASTNode {
 							if (boundGenericsType.isPlaceholder) {
 								match = true;
 							} else if (boundGenericsType.isWildcard) {
-								if (boundGenericsType.upperBounds != null) { // ? supports single bound only
+								if (boundGenericsType.upperBounds != null && boundGenericsType.upperBounds.length !== 0) { // ? supports single bound only
 									match = classNodeType.isCompatibleWith(boundGenericsType.upperBounds[0]);
 								} else if (boundGenericsType.lowerBound != null) {
 									match = classNodeType.isCompatibleWith(boundGenericsType.lowerBound);
@@ -361,15 +362,15 @@ export class GenericsType extends ASTNode {
 									}
 									// GROOVY-6095, GROOVY-9338
 									if (classNodeType.isWildcard) {
-										if (classNodeType.lowerBound != null || classNodeType.upperBounds != null) {
+										if (classNodeType.lowerBound != null || (classNodeType.upperBounds != null && classNodeType.upperBounds.length !== 0)) {
 											match = classNodeType.checkGenerics(genericsType.type);
 										} else {
 											match = false; // "?" (from Comparable<?>) does not satisfy anything
 										}
 									} else {
-										match = ClassHelper.implementsInterfaceOrIsSubclassOf(genericsType.type, classNodeType.type);
+										match = StaticTypeCheckingSupport.implementsInterfaceOrIsSubclassOf(genericsType.type, classNodeType.type);
 									}
-								} else if (redirectBoundType.upperBounds != null) {
+								} else if (redirectBoundType.upperBounds != null && redirectBoundType.upperBounds.length !== 0) {
 									// ex: class Comparable<Integer> <=> bound Comparable<? extends T & I>
 									for (const upperBound of redirectBoundType.upperBounds) {
 										let genericsType = new GenericsType(upperBound);
@@ -381,13 +382,13 @@ export class GenericsType extends ASTNode {
 										if (classNodeType.isWildcard) {
 											if (classNodeType.lowerBound != null) {
 												match = genericsType.checkGenerics(classNodeType.lowerBound);
-											} else if (classNodeType.upperBounds != null) {
+											} else if (classNodeType.upperBounds != null && classNodeType.upperBounds.length !== 0) {
 												match = genericsType.checkGenerics(classNodeType.upperBounds[0]);
 											} else { // GROOVY-10576: "?" vs "? extends Object" (citation required) or no match
 												match = (!genericsType.isPlaceholder && !genericsType.isWildcard && ClassHelper.isObjectType(genericsType.type));
 											}
 										} else {
-											match = ClassHelper.implementsInterfaceOrIsSubclassOf(classNodeType.type, genericsType.type);
+											match = StaticTypeCheckingSupport.implementsInterfaceOrIsSubclassOf(classNodeType.type, genericsType.type);
 										}
 										if (!match) {
 											break;
