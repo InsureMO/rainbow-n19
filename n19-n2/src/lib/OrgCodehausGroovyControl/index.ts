@@ -5,6 +5,8 @@ export * from './ErrorCollector';
 export * from './HasCleanup';
 export * from './Janitor';
 export * from './MultipleCompilationErrorsException';
+export * from './ParserPlugin';
+export * from './ParserPluginFactory';
 export * from './Phases';
 export * from './ProcessingUnit';
 export * from './SourceUnit';

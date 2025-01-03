@@ -3,6 +3,12 @@ import {PositionInfo} from './PositionInfo';
 import {SyntaxErrorReportable} from './SyntaxErrorReportable';
 import {SyntaxErrorReportableSupport} from './SyntaxErrorReportableSupport';
 
+declare module 'antlr4' {
+	interface Lexer {
+		_channel: number;
+	}
+}
+
 export abstract class AbstractLexer extends Lexer implements SyntaxErrorReportable {
 	private readonly _reportableSupport = new SyntaxErrorReportableSupport(this);
 
