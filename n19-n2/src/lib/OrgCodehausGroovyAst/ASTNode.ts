@@ -14,7 +14,7 @@ export class ASTNode implements NodeMetaDataHandler {
 	private readonly _metaDataMap: Map<any, any> = new Map();
 	private _randomId: number;
 
-	visit(visitor: GroovyCodeVisitor): void {
+	visit(_visitor: GroovyCodeVisitor): void {
 		throw new RuntimeException('No visit() method implemented for class: ' + this.constructor.name);
 	}
 

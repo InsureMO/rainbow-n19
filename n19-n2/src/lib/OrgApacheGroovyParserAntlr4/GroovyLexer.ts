@@ -259,9 +259,9 @@ export class GroovyLexer extends AbstractLexer {
 			'SH_COMMENT', 'UNEXPECTED_CHAR'
 		];
 	}
-
 	static readonly ruleNames = GroovyLexer.makeRuleNames();
 
+	// noinspection DuplicatedCode
 	private static makeLiteralNames(): Array<Optional<string>> {
 		return [
 			null, null, null, null, null, null, null, '\'as\'', '\'def\'', '\'in\'', '\'trait\'',
@@ -283,9 +283,9 @@ export class GroovyLexer extends AbstractLexer {
 			'\'<<=\'', '\'>>=\'', '\'>>>=\'', '\'?=\'', null, null, '\'@\'', '\'...\''
 		];
 	}
-
 	private static readonly _LITERAL_NAMES = GroovyLexer.makeLiteralNames();
 
+	// noinspection DuplicatedCode
 	private static makeSymbolicNames(): Array<Optional<string>> {
 		return [
 			null, 'StringLiteral', 'GStringBegin', 'GStringEnd', 'GStringPart', 'GStringPathPart',
@@ -311,7 +311,6 @@ export class GroovyLexer extends AbstractLexer {
 			'Identifier', 'AT', 'ELLIPSIS', 'WS', 'NL', 'SH_COMMENT', 'UNEXPECTED_CHAR'
 		];
 	}
-
 	private static readonly _SYMBOLIC_NAMES = GroovyLexer.makeSymbolicNames();
 	static readonly VOCABULARY = new Vocabulary(GroovyLexer._LITERAL_NAMES, GroovyLexer._SYMBOLIC_NAMES);
 
