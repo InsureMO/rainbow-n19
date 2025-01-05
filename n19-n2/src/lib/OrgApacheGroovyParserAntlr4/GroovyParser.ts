@@ -1,4 +1,12 @@
-import {ATN, FailedPredicateException, ParserATNSimulator, RecognitionException, TokenStream} from 'antlr4';
+import {
+	ATN,
+	FailedPredicateException,
+	NoViableAltException,
+	ParserATNSimulator,
+	RecognitionException,
+	Token,
+	TokenStream
+} from 'antlr4';
 import {Optional} from '../TsAddon';
 import {AbstractParser} from './AbstractParser';
 import {GroovySyntaxSource} from './GroovySyntaxSource';
@@ -6,6 +14,7 @@ import {
 	CompilationUnitContext,
 	GroovyParserRuleContext,
 	ImportDeclarationContext,
+	ModifierContext,
 	PackageDeclarationContext,
 	ScriptStatementContext,
 	ScriptStatementsContext,
@@ -58,7 +67,7 @@ export class GroovyParser extends AbstractParser {
 	static readonly PERMITS = 41;
 	static readonly PRIVATE = 42;
 	static readonly PROTECTED = 43;
-	static readonly = 44;
+	static readonly PUBLIC = 44;
 	static readonly RECORD = 45;
 	static readonly RETURN = 46;
 	static readonly SEALED = 47;
@@ -725,6 +734,66 @@ export class GroovyParser extends AbstractParser {
 				this.classOrInterfaceModifiersOpt();
 				this.state = 378;
 				this.classDeclaration();
+			}
+		} catch (re /* RecognitionException */) {
+			this.handleRecognitionExceptionOrRethrow(_localCtx, re);
+		} finally {
+			this.exitRule();
+		}
+		return _localCtx;
+	}
+
+	modifier(): ModifierContext /* throws RecognitionException */ {
+		const _localCtx = new ModifierContext(this._ctx, this.state);
+		this.enterRule(_localCtx, 12, GroovyParser.RULE_modifier);
+		let _la: number;
+		try {
+			this.state = 382;
+			this._errHandler.sync(this);
+			switch (this._input.LA(1)) {
+				case GroovyParser.ABSTRACT:
+				case GroovyParser.DEFAULT:
+				case GroovyParser.FINAL:
+				case GroovyParser.NON_SEALED:
+				case GroovyParser.PRIVATE:
+				case GroovyParser.PROTECTED:
+				case GroovyParser.PUBLIC:
+				case GroovyParser.SEALED:
+				case GroovyParser.STATIC:
+				case GroovyParser.STRICTFP:
+				case GroovyParser.AT:
+					this.enterOuterAlt(_localCtx, 1);
+				{
+					this.state = 380;
+					this.classOrInterfaceModifier();
+				}
+					break;
+				case GroovyParser.DEF:
+				case GroovyParser.VAR:
+				case GroovyParser.NATIVE:
+				case GroovyParser.SYNCHRONIZED:
+				case GroovyParser.TRANSIENT:
+				case GroovyParser.VOLATILE:
+					this.enterOuterAlt(_localCtx, 2);
+				{
+					this.state = 381;
+					_localCtx.m = this._input.LT(1);
+					_la = this._input.LA(1);
+					if (!((((_la) & ~0x3f) == 0 && ((1 << _la) & ((1 << GroovyParser.DEF) | (1 << GroovyParser.VAR) | (1 << GroovyParser.NATIVE) | (1 << GroovyParser.SYNCHRONIZED) | (1 << GroovyParser.TRANSIENT) | (1 << GroovyParser.VOLATILE))) != 0))) {
+						_localCtx.m = this._errHandler.recoverInline(this);
+					} else {
+						if (this._input.LA(1) == Token.EOF) {
+							this.matchedEOF = true;
+						}
+
+						this._errHandler.reportMatch(this);
+						this.consume();
+					}
+				}
+					break;
+				default:
+					// noinspection ExceptionCaughtLocallyJS
+					throw new NoViableAltException(this);
 			}
 		} catch (re /* RecognitionException */) {
 			this.handleRecognitionExceptionOrRethrow(_localCtx, re);
