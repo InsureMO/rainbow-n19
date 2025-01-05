@@ -1,7 +1,17 @@
-import {ParserRuleContext} from 'antlr4';
+import {ParserRuleContext, ParseTreeVisitor} from 'antlr4';
 import {JavaFunction} from '../../JavaUtil';
 import {NodeMetaDataHandler, NodeMetaDataHandlerSupport} from '../../OrgCodehausGroovyAst';
 import {Optional} from '../../TsAddon';
+
+declare module 'antlr4' {
+	interface ParserRuleContext {
+		accept<Result>(visitor: ParseTreeVisitor<Result>): Result;
+	}
+}
+
+export type TypeExtendGroovyParserRuleContext = {
+	new(parent?: ParserRuleContext, invokingStateNumber?: number);
+}
 
 export class GroovyParserRuleContext extends ParserRuleContext implements NodeMetaDataHandler {
 	private readonly _nodeMetaDataHandlerSupport: NodeMetaDataHandlerSupport = new NodeMetaDataHandlerSupport(this);
@@ -9,6 +19,56 @@ export class GroovyParserRuleContext extends ParserRuleContext implements NodeMe
 
 	constructor(parent?: ParserRuleContext, invokingStateNumber?: number) {
 		super(parent, invokingStateNumber);
+	}
+
+	/**
+	 * another version of {@link #getChild}, use different {@link TypeExtendGroovyParserRuleContext}
+	 */
+	private getChildRuleContext<T extends GroovyParserRuleContext>(i: number, type: TypeExtendGroovyParserRuleContext): Optional<T> {
+		type = type || null;
+		if (this.children === null || i < 0 || i >= this.children.length) {
+			return null;
+		}
+		if (type === null) {
+			return this.children[i] as T;
+		} else {
+			for (let j = 0; j < this.children.length; j++) {
+				const child = this.children[j];
+				if (child instanceof type) {
+					if (i === 0) {
+						return child as T;
+					} else {
+						i -= 1;
+					}
+				}
+			}
+			return null;
+		}
+	}
+
+	/**
+	 * another version of {@link #getTypedRuleContext}, use different {@link TypeExtendGroovyParserRuleContext}
+	 */
+	getRuleContext<T extends GroovyParserRuleContext>(ctxType: TypeExtendGroovyParserRuleContext, i: number): Optional<T> {
+		return this.getChildRuleContext(i, ctxType);
+	}
+
+	/**
+	 * another version of {@link #getTypedRuleContexts}, use different {@link TypeExtendGroovyParserRuleContext}
+	 */
+	getRuleContexts<T extends GroovyParserRuleContext>(ctxType: TypeExtendGroovyParserRuleContext): Array<T> {
+		if (this.children === null) {
+			return [];
+		} else {
+			const contexts = [];
+			for (let j = 0; j < this.children.length; j++) {
+				const child = this.children[j];
+				if (child instanceof ctxType) {
+					contexts.push(child);
+				}
+			}
+			return contexts;
+		}
 	}
 
 	// NodeMetaDataHandler

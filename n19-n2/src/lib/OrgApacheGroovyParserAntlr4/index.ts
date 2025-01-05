@@ -7,6 +7,7 @@ export * from './GroovyLangParser';
 export * from './GroovyLexer';
 export * from './GroovyParser';
 export * from './ParserContexts';
+export * from './GroovyParserVisitor';
 export * from './GroovySyntaxError';
 export * from './GroovySyntaxSource';
 export * from './PositionInfo';

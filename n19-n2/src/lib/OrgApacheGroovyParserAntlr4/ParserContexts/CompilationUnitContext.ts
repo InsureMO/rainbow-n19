@@ -1,10 +1,13 @@
 import {ParserRuleContext, ParseTreeVisitor, TerminalNode} from 'antlr4';
 import {GroovyParser} from '../GroovyParser';
+import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
+import {PackageDeclarationContext} from './PackageDeclarationContext';
+import {ScriptStatementsContext} from './ScriptStatementsContext';
 
 export class CompilationUnitContext extends GroovyParserRuleContext {
 	nls(): NlsContext {
-		return this.getRuleContext(NlsContext.class, 0);
+		return this.getRuleContext(NlsContext, 0);
 	}
 
 	EOF(): TerminalNode {
@@ -12,18 +15,18 @@ export class CompilationUnitContext extends GroovyParserRuleContext {
 	}
 
 	packageDeclaration(): PackageDeclarationContext {
-		return this.getRuleContext(PackageDeclarationContext.class, 0);
+		return this.getRuleContext(PackageDeclarationContext, 0);
 	}
 
 	scriptStatements(): ScriptStatementsContext {
-		return getRuleContext(ScriptStatementsContext.class, 0);
+		return this.getRuleContext(ScriptStatementsContext, 0);
 	}
 
 	sep(): SepContext {
-		return getRuleContext(SepContext.class, 0);
+		return this.getRuleContext(SepContext, 0);
 	}
 
-	constructor(parent: ParserRuleContext, invokingState: number) {
+	constructor(parent?: ParserRuleContext, invokingState?: number) {
 		super(parent, invokingState);
 	}
 
@@ -33,7 +36,7 @@ export class CompilationUnitContext extends GroovyParserRuleContext {
 
 	accept<Result>(visitor: ParseTreeVisitor<Result>): Result {
 		if (visitor instanceof GroovyParserVisitor) {
-			return visitor.visitCompilationUnit(this) as GroovyParserVisitor<Result>;
+			return visitor.visitCompilationUnit(this);
 		} else {
 			return visitor.visitChildren(this);
 		}
