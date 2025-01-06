@@ -1,6 +1,8 @@
 import {ParserRuleContext, ParseTreeVisitor, TerminalNode} from 'antlr4';
 import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
+import {ElementValueContext} from './ElementValueContext';
+import {ElementValuePairNameContext} from './ElementValuePairNameContext';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
 
 export interface IElementValuePairContext {

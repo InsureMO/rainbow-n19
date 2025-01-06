@@ -2,15 +2,9 @@ import {ParserRuleContext, ParseTreeVisitor, TerminalNode} from 'antlr4';
 import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {BlockStatementsOptContext} from './BlockStatementsOptContext';
-import {FormalParameterListContext} from './FormalParameterListContext';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
 
-export interface IClosureContext {
-	nls(): Array<NlsContext>;
-	nls(i: number): NlsContext;
-}
-
-export class ClosureContext extends GroovyParserRuleContext implements IClosureContext {
+export class BlockContext extends GroovyParserRuleContext {
 	LBRACE(): TerminalNode {
 		return this.getToken(GroovyParser.LBRACE, 0);
 	}
@@ -23,26 +17,8 @@ export class ClosureContext extends GroovyParserRuleContext implements IClosureC
 		return this.getToken(GroovyParser.RBRACE, 0);
 	}
 
-	nls(): Array<NlsContext>;
-	nls(i: number): NlsContext;
-	nls(i?: number): Array<NlsContext> | NlsContext {
-		if (i == null) {
-			return this.getRuleContexts(NlsContext);
-		} else {
-			return this.getRuleContext<NlsContext>(NlsContext, i);
-		}
-	}
-
-	ARROW(): TerminalNode {
-		return this.getToken(GroovyParser.ARROW, 0);
-	}
-
 	sep(): SepContext {
 		return this.getRuleContext(SepContext, 0);
-	}
-
-	formalParameterList(): FormalParameterListContext {
-		return this.getRuleContext(FormalParameterListContext, 0);
 	}
 
 	constructor(parent?: ParserRuleContext, invokingState?: number) {
@@ -50,12 +26,12 @@ export class ClosureContext extends GroovyParserRuleContext implements IClosureC
 	}
 
 	getRuleIndex(): number {
-		return GroovyParser.RULE_closure;
+		return GroovyParser.RULE_block;
 	}
 
 	accept<Result>(visitor: ParseTreeVisitor<Result>): Result {
 		if (visitor instanceof GroovyParserVisitor) {
-			return visitor.visitClosure(this);
+			return visitor.visitBlock(this);
 		} else {
 			return visitor.visitChildren(this);
 		}

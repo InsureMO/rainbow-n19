@@ -4,6 +4,7 @@ import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
 import {TypeListContext} from './TypeListContext';
 import {TypeParametersContext} from './TypeParametersContext';
+import { ClassBodyContext } from './ClassBodyContext';
 
 export interface IClassDeclarationContext {
 	nls(): Array<NlsContext>;

@@ -2,6 +2,8 @@ import {ParserRuleContext, ParseTreeVisitor} from 'antlr4';
 import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {ClassDeclarationContext} from './ClassDeclarationContext';
+import {CompactConstructorDeclarationContext} from './CompactConstructorDeclarationContext';
+import {FieldDeclarationContext} from './FieldDeclarationContext';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
 import {MethodDeclarationContext} from './MethodDeclarationContext';
 import {ModifiersOptContext} from './ModifiersOptContext';
@@ -29,7 +31,6 @@ export class MemberDeclarationContext extends GroovyParserRuleContext {
 		return this.getRuleContext(CompactConstructorDeclarationContext, 0);
 	}
 
-	// MemberDeclarationContext(ParserRuleContext parent, int invokingState) { super(parent, invokingState); }
 	constructor(parent?: ParserRuleContext, invokingState?: number, t?: number) {
 		super(parent, invokingState);
 		this.t = t;

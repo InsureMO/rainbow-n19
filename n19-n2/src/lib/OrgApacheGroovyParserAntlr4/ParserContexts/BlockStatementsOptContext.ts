@@ -1,6 +1,7 @@
 import {ParserRuleContext, ParseTreeVisitor} from 'antlr4';
 import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
+import {BlockStatementsContext} from './BlockStatementsContext';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
 
 export class BlockStatementsOptContext extends GroovyParserRuleContext {

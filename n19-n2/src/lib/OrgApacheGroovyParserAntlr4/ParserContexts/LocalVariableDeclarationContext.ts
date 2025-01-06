@@ -4,7 +4,7 @@ import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
 import {VariableDeclarationContext} from './VariableDeclarationContext';
 
-export class FieldDeclarationContext extends GroovyParserRuleContext {
+export class LocalVariableDeclarationContext extends GroovyParserRuleContext {
 	variableDeclaration(): VariableDeclarationContext {
 		return this.getRuleContext(VariableDeclarationContext, 0);
 	}
@@ -14,12 +14,12 @@ export class FieldDeclarationContext extends GroovyParserRuleContext {
 	}
 
 	getRuleIndex(): number {
-		return GroovyParser.RULE_fieldDeclaration;
+		return GroovyParser.RULE_localVariableDeclaration;
 	}
 
 	accept<Result>(visitor: ParseTreeVisitor<Result>): Result {
 		if (visitor instanceof GroovyParserVisitor) {
-			return visitor.visitFieldDeclaration(this);
+			return visitor.visitLocalVariableDeclaration(this);
 		} else {
 			return visitor.visitChildren(this);
 		}

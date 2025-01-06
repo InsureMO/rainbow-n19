@@ -1,7 +1,9 @@
 import {ParserRuleContext, ParseTreeVisitor, TerminalNode} from 'antlr4';
 import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
+import {BlockContext} from './BlockContext';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
+import {MemberDeclarationContext} from './MemberDeclarationContext';
 
 export class ClassBodyDeclarationContext extends GroovyParserRuleContext {
 	t: number;

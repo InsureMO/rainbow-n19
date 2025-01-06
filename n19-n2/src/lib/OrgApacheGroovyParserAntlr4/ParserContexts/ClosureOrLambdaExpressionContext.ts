@@ -25,8 +25,8 @@ export class ClosureOrLambdaExpressionContext extends GroovyParserRuleContext {
 	accept<Result>(visitor: ParseTreeVisitor<Result>): Result {
 		if (visitor instanceof GroovyParserVisitor) {
 			return visitor.visitClosureOrLambdaExpression(this);
-		} else return {
-			visitor.visitChildren(this)
-		};
+		} else {
+			return visitor.visitChildren(this);
+		}
 	}
 }

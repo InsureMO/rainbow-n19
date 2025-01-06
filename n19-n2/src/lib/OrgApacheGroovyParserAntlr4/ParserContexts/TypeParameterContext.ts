@@ -1,7 +1,9 @@
 import {ParserRuleContext, ParseTreeVisitor, TerminalNode} from 'antlr4';
 import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
+import {AnnotationsOptContext} from './AnnotationsOptContext';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
+import {TypeBoundContext} from './TypeBoundContext';
 
 export class TypeParameterContext extends GroovyParserRuleContext {
 	annotationsOpt(): AnnotationsOptContext {

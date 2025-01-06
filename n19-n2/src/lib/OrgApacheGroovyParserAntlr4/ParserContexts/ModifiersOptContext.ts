@@ -10,7 +10,7 @@ export class ModifiersOptContext extends GroovyParserRuleContext {
 	}
 
 	nls(): NlsContext {
-		return getRuleContext(NlsContext, 0);
+		return this.getRuleContext(NlsContext, 0);
 	}
 
 	constructor(parent?: ParserRuleContext, invokingState?: number) {

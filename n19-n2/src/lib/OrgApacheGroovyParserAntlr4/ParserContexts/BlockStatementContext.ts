@@ -2,11 +2,15 @@ import {ParserRuleContext, ParseTreeVisitor} from 'antlr4';
 import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
-import {VariableDeclarationContext} from './VariableDeclarationContext';
+import {LocalVariableDeclarationContext} from './LocalVariableDeclarationContext';
 
-export class FieldDeclarationContext extends GroovyParserRuleContext {
-	variableDeclaration(): VariableDeclarationContext {
-		return this.getRuleContext(VariableDeclarationContext, 0);
+export class BlockStatementContext extends GroovyParserRuleContext {
+	localVariableDeclaration(): LocalVariableDeclarationContext {
+		return this.getRuleContext(LocalVariableDeclarationContext, 0);
+	}
+
+	statement(): StatementContext {
+		return this.getRuleContext(StatementContext, 0);
 	}
 
 	constructor(parent?: ParserRuleContext, invokingState?: number) {
@@ -14,12 +18,12 @@ export class FieldDeclarationContext extends GroovyParserRuleContext {
 	}
 
 	getRuleIndex(): number {
-		return GroovyParser.RULE_fieldDeclaration;
+		return GroovyParser.RULE_blockStatement;
 	}
 
 	accept<Result>(visitor: ParseTreeVisitor<Result>): Result {
 		if (visitor instanceof GroovyParserVisitor) {
-			return visitor.visitFieldDeclaration(this);
+			return visitor.visitBlockStatement(this);
 		} else {
 			return visitor.visitChildren(this);
 		}

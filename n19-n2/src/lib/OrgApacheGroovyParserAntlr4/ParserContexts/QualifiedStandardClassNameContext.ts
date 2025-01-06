@@ -36,16 +36,6 @@ export class QualifiedStandardClassNameContext extends GroovyParserRuleContext i
 		}
 	}
 
-	// List<? extends ClassNameContext> className() {
-	// 	return getRuleContexts(ClassNameContext);
-	// }
-	// ClassNameContext className(int i) {
-	// 	return getRuleContext(ClassNameContext,i);
-	// }
-	// List<? extends TerminalNode> DOT() { return getTokens(GroovyParser.DOT); }
-	// TerminalNode DOT(int i) {
-	// 	return getToken(GroovyParser.DOT, i);
-	// }
 	constructor(parent?: ParserRuleContext, invokingState?: number) {
 		super(parent, invokingState);
 	}

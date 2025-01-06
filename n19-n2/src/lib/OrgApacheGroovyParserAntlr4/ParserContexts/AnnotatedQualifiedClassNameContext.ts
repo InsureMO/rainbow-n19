@@ -1,7 +1,9 @@
 import {ParserRuleContext, ParseTreeVisitor} from 'antlr4';
 import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
+import {AnnotationsOptContext} from './AnnotationsOptContext';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
+import {QualifiedClassNameContext} from './QualifiedClassNameContext';
 
 export class AnnotatedQualifiedClassNameContext extends GroovyParserRuleContext {
 	annotationsOpt(): AnnotationsOptContext {

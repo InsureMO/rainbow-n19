@@ -3,6 +3,7 @@ import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
 import {ImportDeclarationContext} from './ImportDeclarationContext';
+import {MethodDeclarationContext} from './MethodDeclarationContext';
 import {TypeDeclarationContext} from './TypeDeclarationContext';
 
 export class ScriptStatementContext extends GroovyParserRuleContext {

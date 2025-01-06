@@ -2,17 +2,22 @@ import {ParserRuleContext, ParseTreeVisitor, TerminalNode} from 'antlr4';
 import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
-import {VariableDeclaratorIdContext} from './VariableDeclaratorIdContext';
+import {ModifiersContext} from './ModifiersContext';
+import {TypeContext} from './TypeContext';
+import {TypeNamePairsContext} from './TypeNamePairsContext';
+import {VariableDeclaratorsContext} from './VariableDeclaratorsContext';
 import {VariableInitializerContext} from './VariableInitializerContext';
 
-export interface IVariableDeclaratorContext {
+export interface IVariableDeclarationContext {
 	nls(): Array<NlsContext>;
 	nls(i: number): NlsContext;
 }
 
-export class VariableDeclaratorContext extends GroovyParserRuleContext implements IVariableDeclaratorContext {
-	variableDeclaratorId(): VariableDeclaratorIdContext {
-		return this.getRuleContext(VariableDeclaratorIdContext, 0);
+export class VariableDeclarationContext extends GroovyParserRuleContext implements IVariableDeclarationContext {
+	t: number;
+
+	modifiers(): ModifiersContext {
+		return this.getRuleContext(ModifiersContext, 0);
 	}
 
 	nls(): Array<NlsContext>;
@@ -25,6 +30,14 @@ export class VariableDeclaratorContext extends GroovyParserRuleContext implement
 		}
 	}
 
+	variableDeclarators(): VariableDeclaratorsContext {
+		return this.getRuleContext(VariableDeclaratorsContext, 0);
+	}
+
+	typeNamePairs(): TypeNamePairsContext {
+		return this.getRuleContext(TypeNamePairsContext, 0);
+	}
+
 	ASSIGN(): TerminalNode {
 		return this.getToken(GroovyParser.ASSIGN, 0);
 	}
@@ -33,17 +46,22 @@ export class VariableDeclaratorContext extends GroovyParserRuleContext implement
 		return this.getRuleContext(VariableInitializerContext, 0);
 	}
 
-	constructor(parent?: ParserRuleContext, invokingState?: number) {
+	type(): TypeContext {
+		return this.getRuleContext(TypeContext, 0);
+	}
+
+	constructor(parent?: ParserRuleContext, invokingState?: number, t?: number) {
 		super(parent, invokingState);
+		this.t = t;
 	}
 
 	getRuleIndex(): number {
-		return GroovyParser.RULE_variableDeclarator;
+		return GroovyParser.RULE_variableDeclaration;
 	}
 
 	accept<Result>(visitor: ParseTreeVisitor<Result>): Result {
 		if (visitor instanceof GroovyParserVisitor) {
-			return visitor.visitVariableDeclarator(this);
+			return visitor.visitVariableDeclaration(this);
 		} else {
 			return visitor.visitChildren(this);
 		}

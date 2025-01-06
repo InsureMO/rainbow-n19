@@ -1,8 +1,14 @@
 import {ParserRuleContext, ParseTreeVisitor, TerminalNode} from 'antlr4';
 import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
+import {ElementValueContext} from './ElementValueContext';
+import {FormalParametersContext} from './FormalParametersContext';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
+import {MethodBodyContext} from './MethodBodyContext';
+import {MethodNameContext} from './MethodNameContext';
 import {ModifiersOptContext} from './ModifiersOptContext';
+import {QualifiedClassNameListContext} from './QualifiedClassNameListContext';
+import {ReturnTypeContext} from './ReturnTypeContext';
 import {TypeParametersContext} from './TypeParametersContext';
 
 export interface IMethodDeclarationContext {
@@ -61,10 +67,9 @@ export class MethodDeclarationContext extends GroovyParserRuleContext implements
 	}
 
 	methodBody(): MethodBodyContext {
-		return getRuleContext(MethodBodyContext, 0);
+		return this.getRuleContext(MethodBodyContext, 0);
 	}
 
-	// MethodDeclarationContext(ParserRuleContext parent, int invokingState) { super(parent, invokingState); }
 	constructor(parent?: ParserRuleContext, invokingState?: number, t?: number, ct?: number) {
 		super(parent, invokingState);
 		this.t = t;

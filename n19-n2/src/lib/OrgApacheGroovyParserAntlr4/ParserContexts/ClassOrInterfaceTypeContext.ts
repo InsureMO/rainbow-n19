@@ -2,6 +2,9 @@ import {ParserRuleContext, ParseTreeVisitor} from 'antlr4';
 import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
+import {QualifiedClassNameContext} from './QualifiedClassNameContext';
+import {QualifiedStandardClassNameContext} from './QualifiedStandardClassNameContext';
+import {TypeArgumentsContext} from './TypeArgumentsContext';
 
 export class ClassOrInterfaceTypeContext extends GroovyParserRuleContext {
 	qualifiedClassName(): QualifiedClassNameContext {

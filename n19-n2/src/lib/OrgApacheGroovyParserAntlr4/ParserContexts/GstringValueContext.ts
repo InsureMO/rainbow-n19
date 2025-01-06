@@ -1,7 +1,9 @@
 import {ParserRuleContext, ParseTreeVisitor} from 'antlr4';
 import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
+import {ClosureContext} from './ClosureContext';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
+import {GstringPathContext} from './GstringPathContext';
 
 export class GstringValueContext extends GroovyParserRuleContext {
 	gstringPath(): GstringPathContext {

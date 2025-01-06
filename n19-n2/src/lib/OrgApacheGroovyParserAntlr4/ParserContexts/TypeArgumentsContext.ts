@@ -2,6 +2,7 @@ import {ParserRuleContext, ParseTreeVisitor, TerminalNode} from 'antlr4';
 import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
+import {TypeArgumentContext} from './TypeArgumentContext';
 
 export interface ITypeArgumentsContext {
 	nls(): Array<NlsContext>;

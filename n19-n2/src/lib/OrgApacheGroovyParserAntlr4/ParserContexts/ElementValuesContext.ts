@@ -1,6 +1,7 @@
 import {ParserRuleContext, ParseTreeVisitor} from 'antlr4';
 import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
+import {ElementValueContext} from './ElementValueContext';
 import {ElementValuePairsContext} from './ElementValuePairsContext';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
 
@@ -10,10 +11,10 @@ export class ElementValuesContext extends GroovyParserRuleContext {
 	}
 
 	elementValue(): ElementValueContext {
-		return getRuleContext(ElementValueContext, 0);
+		return this.getRuleContext(ElementValueContext, 0);
 	}
 
-	constructor(parent?: ParserRuleContext, invokingState: number) {
+	constructor(parent?: ParserRuleContext, invokingState?: number) {
 		super(parent, invokingState);
 	}
 
