@@ -1,16 +1,15 @@
 import {ParserRuleContext, ParseTreeVisitor} from 'antlr4';
 import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
-import {ClassOrInterfaceModifiersOptContext} from './ClassOrInterfaceModifiersOptContext';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
 
-export class TypeDeclarationContext extends GroovyParserRuleContext {
-	classOrInterfaceModifiersOpt(): ClassOrInterfaceModifiersOptContext {
-		return this.getRuleContext(ClassOrInterfaceModifiersOptContext, 0);
+export class LambdaBodyContext extends GroovyParserRuleContext {
+	block(): BlockContext {
+		return this.getRuleContext(BlockContext, 0);
 	}
 
-	classDeclaration(): ClassDeclarationContext {
-		return this.getRuleContext(ClassDeclarationContext, 0);
+	statementExpression(): StatementExpressionContext {
+		return this.getRuleContext(StatementExpressionContext, 0);
 	}
 
 	constructor(parent?: ParserRuleContext, invokingState?: number) {
@@ -18,12 +17,12 @@ export class TypeDeclarationContext extends GroovyParserRuleContext {
 	}
 
 	getRuleIndex(): number {
-		return GroovyParser.RULE_typeDeclaration;
+		return GroovyParser.RULE_lambdaBody;
 	}
 
 	accept<Result>(visitor: ParseTreeVisitor<Result>): Result {
 		if (visitor instanceof GroovyParserVisitor) {
-			return visitor.visitTypeDeclaration(this);
+			return visitor.visitLambdaBody(this);
 		} else {
 			return visitor.visitChildren(this);
 		}

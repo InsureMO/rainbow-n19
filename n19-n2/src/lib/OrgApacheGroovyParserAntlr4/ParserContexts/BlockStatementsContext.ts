@@ -2,23 +2,22 @@ import {ParserRuleContext, ParseTreeVisitor} from 'antlr4';
 import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
-import {ScriptStatementContext} from './ScriptStatementContext';
 
-export interface IScriptStatementsContext {
-	scriptStatement(): Array<ScriptStatementContext>;
-	scriptStatement(i: number): ScriptStatementContext;
+export interface IBlockStatementsContext {
+	blockStatement(): Array<BlockStatementContext>;
+	blockStatement(i: number): BlockStatementContext;
 	sep(): Array<SepContext>;
 	sep(i: number): SepContext;
 }
 
-export class ScriptStatementsContext extends GroovyParserRuleContext implements IScriptStatementsContext {
-	scriptStatement(): Array<ScriptStatementContext>;
-	scriptStatement(i: number): ScriptStatementContext;
-	scriptStatement(i?: number): Array<ScriptStatementContext> | ScriptStatementContext {
+export class BlockStatementsContext extends GroovyParserRuleContext implements IBlockStatementsContext {
+	blockStatement(): Array<BlockStatementContext>;
+	blockStatement(i: number): BlockStatementContext;
+	blockStatement(i?: number): Array<BlockStatementContext> | BlockStatementContext {
 		if (i == null) {
-			return this.getRuleContexts(ScriptStatementContext);
+			return this.getRuleContexts(BlockStatementContext);
 		} else {
-			return this.getRuleContext<ScriptStatementContext>(ScriptStatementContext, i);
+			return this.getRuleContext<BlockStatementContext>(BlockStatementContext, i);
 		}
 	}
 
@@ -37,12 +36,12 @@ export class ScriptStatementsContext extends GroovyParserRuleContext implements 
 	}
 
 	getRuleIndex(): number {
-		return GroovyParser.RULE_scriptStatements;
+		return GroovyParser.RULE_blockStatements;
 	}
 
 	accept<Result>(visitor: ParseTreeVisitor<Result>): Result {
 		if (visitor instanceof GroovyParserVisitor) {
-			return visitor.visitScriptStatements(this);
+			return visitor.visitBlockStatements(this);
 		} else {
 			return visitor.visitChildren(this);
 		}

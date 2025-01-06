@@ -1,11 +1,22 @@
 import {ParseTreeVisitor} from 'antlr4';
 import {
+	ClassOrInterfaceModifierContext,
+	ClassOrInterfaceModifiersContext,
+	ClassOrInterfaceModifiersOptContext,
 	CompilationUnitContext,
 	ImportDeclarationContext,
+	ModifierContext,
+	ModifiersContext,
+	ModifiersOptContext,
 	PackageDeclarationContext,
 	ScriptStatementContext,
 	ScriptStatementsContext,
-	TypeDeclarationContext
+	TypeDeclarationContext,
+	TypeParameterContext,
+	TypeParametersContext,
+	VariableModifierContext,
+	VariableModifiersContext,
+	VariableModifiersOptContext
 } from './ParserContexts';
 
 export class GroovyParserVisitor<Result> extends ParseTreeVisitor<Result> {
