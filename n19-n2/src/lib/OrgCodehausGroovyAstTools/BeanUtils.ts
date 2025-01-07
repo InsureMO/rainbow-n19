@@ -1,12 +1,13 @@
 import {AnnotatedNodeUtils} from '../OrgApacheGroovyAstTools';
 import {ClassHelper, ClassNode, MethodNode, PropertyNode} from '../OrgCodehausGroovyAst';
 import {Statement} from '../OrgCodehausGroovyAstStmt';
+import {GroovyAstMakeFirst} from '../TsAddon';
 
 export class BeanUtils {
 	static readonly GET_PREFIX: string = 'get';
 	static readonly SET_PREFIX: string = 'set';
 	static readonly IS_PREFIX: string = 'is';
-	private static readonly INTERNAL_TYPE: ClassNode = ClassHelper.make(Internal.class);
+	private static readonly INTERNAL_TYPE: ClassNode = ClassHelper.make(GroovyAstMakeFirst.GroovyTransform.Internal);
 
 	private constructor() {
 		// avoid extend

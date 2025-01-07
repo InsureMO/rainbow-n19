@@ -2,9 +2,11 @@ import {RuntimeException} from '../JavaExceptions';
 import {JavaFunction} from '../JavaUtil';
 import {BlockStatement, Statement} from '../OrgCodehausGroovyAstStmt';
 import {GeneralUtils} from '../OrgCodehausGroovyAstTools';
+import {GeneratorContext} from '../OrgCodehausGroovyClassgen';
 import {SourceUnit} from '../OrgCodehausGroovyControl';
+import {BaseScriptASTTransformation} from '../OrgCodehausGroovyTransform';
 import {Opcodes} from '../OrgObjectwebAsm';
-import {Optional} from '../TsAddon';
+import {GroovyAstMakeFirst, Optional} from '../TsAddon';
 import {AnnotationNode} from './AnnotationNode';
 import {ASTNode} from './ASTNode';
 import {ClassHelper} from './ClassHelper';
@@ -306,7 +308,7 @@ export class ModuleNode extends ASTNode {
 				ClassNode.EMPTY_ARRAY,
 				GeneralUtils.stmt(
 					GeneralUtils.callX(
-						ClassHelper.make(InvokerHelper.class),
+						ClassHelper.make(GroovyAstMakeFirst.OrgCodehausGroovyRuntime.InvokerHelper),
 						'runScript',
 						GeneralUtils.args(GeneralUtils.classX(classNode), GeneralUtils.varX('args'))
 					)
@@ -336,7 +338,7 @@ export class ModuleNode extends ASTNode {
 
 		classNode.addConstructor(
 			Opcodes.ACC_PUBLIC,
-			ModuleNode.finalParam(ClassHelper.make(Binding.class), 'context'),
+			ModuleNode.finalParam(ClassHelper.make(GroovyAstMakeFirst.GroovyLang.Binding), 'context'),
 			ClassNode.EMPTY_ARRAY,
 			stmt);
 

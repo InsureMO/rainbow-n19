@@ -2,7 +2,9 @@ import {ClassExpression, Expression, ListExpression} from '../OrgCodehausGroovyA
 import {BlockStatement} from '../OrgCodehausGroovyAstStmt';
 import {GeneralUtils} from '../OrgCodehausGroovyAstTools';
 import {SourceUnit} from '../OrgCodehausGroovyControl';
+import {AbstractASTTransformation} from '../OrgCodehausGroovyTransform';
 import {Opcodes} from '../OrgObjectwebAsm';
+import {GroovyAstMakeFirst} from '../TsAddon';
 import {AnnotatedNode} from './AnnotatedNode';
 import {AnnotationNode} from './AnnotationNode';
 import {ASTNode} from './ASTNode';
@@ -15,7 +17,7 @@ import {Parameter} from './Parameter';
  */
 // TODO COPY FROM GROOVY: @GroovyASTTransformation(phase = CompilePhase.CANONICALIZATION)
 export class MixinASTTransformation extends AbstractASTTransformation {
-	private static readonly MY_TYPE: ClassNode = ClassHelper.make(Mixin.class);
+	private static readonly MY_TYPE: ClassNode = ClassHelper.make(GroovyAstMakeFirst.GroovyLang.Mixin);
 
 	visit(nodes: Array<ASTNode>, source: SourceUnit): void {
 		this.init(nodes, source);

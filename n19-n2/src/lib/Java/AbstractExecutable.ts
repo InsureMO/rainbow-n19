@@ -1,4 +1,3 @@
-import {UnsupportedOperationException} from '../JavaExceptions';
 import {Optional} from '../TsAddon';
 import {
 	IAnnotationConstructorArgs,

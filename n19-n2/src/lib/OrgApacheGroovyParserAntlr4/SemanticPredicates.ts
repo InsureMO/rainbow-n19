@@ -2,6 +2,12 @@ import {CharStream, Token, TokenStream} from 'antlr4';
 import {GroovyBugError} from '../OrgCodehausGroovy';
 import {ModifierNode} from '../OrgCodehausGroovyAst';
 import {GroovyLexer} from './GroovyLexer';
+import {
+	ExpressionContext,
+	PathExpressionContext,
+	PostfixExprAltContext,
+	PostfixExpressionContext
+} from './ParserContexts';
 
 export class SemanticPredicates {
 	private static readonly NONSPACES_PATTERN = /\S+?/;

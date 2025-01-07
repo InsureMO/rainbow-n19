@@ -29,6 +29,7 @@ export class ExceptionMessage extends GroovyControlMessage {
 	/**
 	 * Writes out a nicely formatted summary of the exception.
 	 */
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	write(output: PrintWriter, _janitor: Janitor): void {
 		const description = 'General error during ' + this.owner.phaseDescription + ': ';
 

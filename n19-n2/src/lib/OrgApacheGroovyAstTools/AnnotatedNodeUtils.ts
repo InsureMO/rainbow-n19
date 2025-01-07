@@ -1,7 +1,8 @@
 import {AnnotatedNode, AnnotationNode, ClassHelper, ClassNode} from '../OrgCodehausGroovyAst';
+import {GroovyAstMakeFirst} from '../TsAddon';
 
 export class AnnotatedNodeUtils {
-	private static readonly GENERATED_TYPE: ClassNode = ClassHelper.make(Generated.class);
+	private static readonly GENERATED_TYPE: ClassNode = ClassHelper.make(GroovyAstMakeFirst.GroovyTransform.Generated);
 
 	private constructor() {
 		// avoid extend

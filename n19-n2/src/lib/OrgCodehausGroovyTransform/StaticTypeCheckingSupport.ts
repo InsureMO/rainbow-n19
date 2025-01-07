@@ -59,7 +59,7 @@ export class StaticTypeCheckingSupport {
 		}
 		// noinspection RedundantIfStatementJS
 		if (ClassHelper.isGroovyObjectType(superOrInterface) && StaticTypeCheckingSupport.isBeingCompiled(type) && !type.isInterface) {
-			//TODO COPY FROM GROOVY: !POJO !Trait
+			// TODO COPY FROM GROOVY: !POJO !Trait
 			return true;
 		}
 		return false;

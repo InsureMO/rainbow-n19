@@ -82,6 +82,7 @@ export class CastExpression extends Expression {
 		return '(' + this.type.toString(false) + ') ' + this.expression.text;
 	}
 
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	setType(_type: ClassNode): void {
 		throw new UnsupportedOperationException();
 	}

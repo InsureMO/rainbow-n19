@@ -1,4 +1,5 @@
 import {GroovyClassLoader} from '../GroovyLang';
+import {UnsupportedOperationException} from '../JavaExceptions';
 import {CompilerConfiguration} from './CompilerConfiguration';
 import {ErrorCollector} from './ErrorCollector';
 import { Phases } from './Phases';
@@ -85,6 +86,7 @@ export abstract class ProcessingUnit {
 		//     if (parent == null) parent = ProcessingUnit.class.getClassLoader();
 		//     return new GroovyClassLoader(parent, getConfiguration());
 		//  });
+		throw new UnsupportedOperationException('Not implemented yet.');
 	}
 
 	/**

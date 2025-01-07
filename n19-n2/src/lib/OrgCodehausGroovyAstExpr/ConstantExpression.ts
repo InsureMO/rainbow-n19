@@ -1,5 +1,5 @@
 import {ClassHelper, GroovyCodeVisitor} from '../OrgCodehausGroovyAst';
-import {Optional} from '../TsAddon';
+import {JavaBoolean, JavaCharacter, JavaDouble, JavaFloat, JavaInteger, JavaLong, JavaVoid, Optional} from '../TsAddon';
 import {Expression} from './Expression';
 import {ExpressionTransformer} from './ExpressionTransformer';
 
@@ -14,28 +14,29 @@ export class ConstantExpression extends Expression {
 	static PRIM_TRUE: ConstantExpression = new ConstantExpression(true, true);
 	static PRIM_FALSE: ConstantExpression = new ConstantExpression(false, true);
 	// the following fields are only used internally; there are no user-defined expressions of the same kind
-	static VOID: ConstantExpression = new ConstantExpression(Void.class);
+	static VOID: ConstantExpression = new ConstantExpression(JavaVoid);
 	static EMPTY_EXPRESSION: ConstantExpression = new ConstantExpression(null);
-
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	private readonly _value: any;
 	private _constantName: string;
 
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	constructor(value: any, keepPrimitive: boolean = false) {
 		super();
 		this._value = value;
 		if (value != null) {
 			if (keepPrimitive) {
-				if (value instanceof Integer) {
+				if (value instanceof JavaInteger) {
 					this.setType(ClassHelper.int_TYPE);
-				} else if (value instanceof Long) {
+				} else if (value instanceof JavaLong) {
 					this.setType(ClassHelper.long_TYPE);
-				} else if (value instanceof Boolean) {
+				} else if (value instanceof JavaBoolean) {
 					this.setType(ClassHelper.boolean_TYPE);
-				} else if (value instanceof Double) {
+				} else if (value instanceof JavaDouble) {
 					this.setType(ClassHelper.double_TYPE);
-				} else if (value instanceof Float) {
+				} else if (value instanceof JavaFloat) {
 					this.setType(ClassHelper.float_TYPE);
-				} else if (value instanceof Character) {
+				} else if (value instanceof JavaCharacter) {
 					this.setType(ClassHelper.char_TYPE);
 				} else {
 					this.setType(ClassHelper.make(value.getClass()));
@@ -55,6 +56,7 @@ export class ConstantExpression extends Expression {
 		visitor.visitConstantExpression(this);
 	}
 
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	transformExpression(_transformer: ExpressionTransformer): Expression {
 		return this;
 	}
@@ -62,6 +64,7 @@ export class ConstantExpression extends Expression {
 	/**
 	 * @return the value of this constant expression
 	 */
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	get value(): Optional<any> {
 		return this._value;
 	}

@@ -7,6 +7,7 @@ export class GroovydocHolderConstants {
 	}
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export interface GroovydocHolder<T = any> {
 	readonly groovydoc: IGroovydoc;
 	readonly instance: T;

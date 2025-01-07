@@ -76,6 +76,7 @@ export class ClosureExpression extends Expression {
 
 	}
 
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	transformExpression(_transformer: ExpressionTransformer): Expression {
 		return this;
 	}

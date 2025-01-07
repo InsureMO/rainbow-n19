@@ -211,7 +211,8 @@ export abstract class CSTNode {
 	 * Adds an element to the node.  Returns the element for convenience.
 	 * Not all nodes support this operation!
 	 */
-	add(element: CSTNode): CSTNode {
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	add(_element: CSTNode): CSTNode {
 		throw new GroovyBugError('add() not supported for this CSTNode type');
 	}
 
@@ -229,7 +230,8 @@ export abstract class CSTNode {
 	 * Sets an element node in at the specified index.  Returns the element
 	 * for convenience.  Not all nodes support this operation!
 	 */
-	set(index: number, element: CSTNode): CSTNode {
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	set(_index: number, _element: CSTNode): CSTNode {
 		throw new GroovyBugError('set() not supported for this CSTNode type');
 	}
 

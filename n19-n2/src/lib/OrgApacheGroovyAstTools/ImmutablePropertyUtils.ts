@@ -2,13 +2,14 @@ import {IClass} from '../Java';
 import {AnnotationNode, ClassHelper, ClassNode} from '../OrgCodehausGroovyAst';
 import {ClassExpression, ConstantExpression, Expression, ListExpression} from '../OrgCodehausGroovyAstExpr';
 import {GeneralUtils} from '../OrgCodehausGroovyAstTools';
+import {AbstractASTTransformation} from '../OrgCodehausGroovyTransform';
+import {GroovyAstMakeFirst} from '../TsAddon';
 
 export class ImmutablePropertyUtils {
-	private static readonly CLONEABLE_TYPE: ClassNode = ClassHelper.make(Cloneable.class);
-	private static readonly DATE_TYPE: ClassNode = ClassHelper.make(Date.class);
-	private static readonly OBJECT_UTIL_TYPE: ClassNode = ClassHelper.make(ObjectUtil.class);
-	private static readonly IMMUTABLE_OPTIONS_CLASS: IClass = ImmutableOptions.class;
-	static readonly IMMUTABLE_OPTIONS_TYPE: ClassNode = ClassHelper.makeWithoutCaching(ImmutablePropertyUtils.IMMUTABLE_OPTIONS_CLASS, false);
+	private static readonly CLONEABLE_TYPE: ClassNode = ClassHelper.make(GroovyAstMakeFirst.JavaLang.Cloneable);
+	private static readonly DATE_TYPE: ClassNode = ClassHelper.make(GroovyAstMakeFirst.JavaUtil.Date);
+	private static readonly OBJECT_UTIL_TYPE: ClassNode = ClassHelper.make(GroovyAstMakeFirst.OrgCodehausGroovyRuntime.ObjectUtil);
+	static readonly IMMUTABLE_OPTIONS_TYPE: ClassNode = ClassHelper.makeWithoutCaching(GroovyAstMakeFirst.GroovyTransform.ImmutableOptions, false);
 	private static readonly MEMBER_KNOWN_IMMUTABLE_CLASSES: string = 'knownImmutableClasses';
 	private static readonly MEMBER_KNOWN_IMMUTABLES: string = 'knownImmutables';
 	/*

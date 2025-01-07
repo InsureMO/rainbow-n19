@@ -481,7 +481,6 @@ export class Types {
 				return specific >= Types.NEWLINE && specific <= Types.PIPE;
 
 			case Types.LITERAL:
-
 			case Types.LITERAL_EXPRESSION:
 				return specific >= Types.STRING && specific <= Types.DECIMAL_NUMBER;
 
@@ -503,7 +502,6 @@ export class Types {
 				return specific == Types.KEYWORD_TRUE || specific == Types.KEYWORD_FALSE;
 
 			case Types.TYPE_NAME:
-
 			case Types.CREATABLE_TYPE_NAME:
 				if (specific == Types.IDENTIFIER) {
 					return true;
@@ -795,7 +793,6 @@ export class Types {
 			case Types.SYNTH_MIXIN:
 			case Types.SYNTH_METHOD:
 			case Types.SYNTH_PROPERTY:
-
 			case Types.SYNTH_VARIABLE_DECLARATION:
 				return actual == Types.IDENTIFIER;
 

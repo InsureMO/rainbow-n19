@@ -7,6 +7,7 @@ export class GroovyControlLocatedMessage extends GroovyControlSimpleMessage {
 	/** The CSTNode that indicates the location to which the message applies. */
 	private readonly _context: CSTNode;
 
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	constructor(message: string, context: CSTNode, source: SourceUnit, data?: any) {
 		super(message, source, data);
 		this._context = context;

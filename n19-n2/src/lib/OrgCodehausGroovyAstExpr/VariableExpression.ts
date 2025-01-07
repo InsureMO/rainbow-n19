@@ -47,7 +47,8 @@ export class VariableExpression extends Expression implements Variable {
 		visitor.visitVariableExpression(this);
 	}
 
-	transformExpression(transformer: ExpressionTransformer): Expression {
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	transformExpression(_transformer: ExpressionTransformer): Expression {
 		return this;
 	}
 

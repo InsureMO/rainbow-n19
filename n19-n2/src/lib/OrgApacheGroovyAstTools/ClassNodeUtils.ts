@@ -12,6 +12,7 @@ import {
 import {Expression, MapExpression, SpreadExpression, TupleExpression} from '../OrgCodehausGroovyAstExpr';
 import {Statement} from '../OrgCodehausGroovyAstStmt';
 import {BeanUtils, GeneralUtils} from '../OrgCodehausGroovyAstTools';
+import {AbstractASTTransformation} from '../OrgCodehausGroovyTransform';
 import {Opcodes} from '../OrgObjectwebAsm';
 import {Optional} from '../TsAddon';
 import {AnnotatedNodeUtils} from './AnnotatedNodeUtils';
@@ -425,6 +426,7 @@ export class ClassNodeUtils {
 	 */
 	static getField(classNode: ClassNode, fieldName: string, test?: (node: FieldNode) => boolean): Optional<FieldNode> {
 		if (test == null) {
+			// eslint-disable-next-line @typescript-eslint/no-unused-vars
 			return ClassNodeUtils.getField(classNode, fieldName, _node => true);
 		} else {
 			const todo = [classNode];

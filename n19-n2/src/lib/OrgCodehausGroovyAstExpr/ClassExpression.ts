@@ -12,7 +12,8 @@ export class ClassExpression extends Expression {
 		visitor.visitClassExpression(this);
 	}
 
-	transformExpression(transformer: ExpressionTransformer): Expression {
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	transformExpression(_transformer: ExpressionTransformer): Expression {
 		return this;
 	}
 

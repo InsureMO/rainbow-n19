@@ -16,6 +16,7 @@ export abstract class GroovyControlMessage {
 	/**
 	 * Creates a new {@code Message} from the specified text and data.
 	 */
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	static createOnData(text: string, data: any, owner: ProcessingUnit): GroovyControlSimpleMessage {
 		return new GroovyControlSimpleMessage(text, data, owner);
 	}

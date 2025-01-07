@@ -1,3 +1,7 @@
+export * from './AbstractASTTransformation';
+export * from './ASTTransformation';
+export * from './BaseScriptASTTransformation';
+export * from './ErrorCollecting';
 export * from './GroovyErrorCollecting';
 export * from './IncorrectTypeHintException';
 export * from './StaticTypeCheckingSupport';

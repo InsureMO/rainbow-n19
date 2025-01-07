@@ -124,7 +124,8 @@ export class ErrorCollector {
 	/**
 	 * Adds a warning to the message set if it is relevant.
 	 */
-	addWarning(importanceOrMessage: number | WarningMessage, text?: string, context?: CSTNode, source?: SourceUnit, data?: Object): void {
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	addWarning(importanceOrMessage: number | WarningMessage, text?: string, context?: CSTNode, source?: SourceUnit, data?: any): void {
 		if (importanceOrMessage instanceof WarningMessage) {
 			if (importanceOrMessage.isRelevant(this._configuration.warningLevel)) {
 				if (this._warnings == null) {

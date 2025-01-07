@@ -2,14 +2,14 @@ import {ClassHelper, ClassNode, PropertyNode} from '../OrgCodehausGroovyAst';
 import {ConstructorCallExpression, MethodCallExpression, VariableExpression} from '../OrgCodehausGroovyAstExpr';
 import {BlockStatement, ExpressionStatement, Statement} from '../OrgCodehausGroovyAstStmt';
 import {GeneralUtils} from '../OrgCodehausGroovyAstTools';
-import {Optional} from '../TsAddon';
-import { MethodCallUtils } from './MethodCallUtils';
+import {GroovyAstMakeFirst, Optional} from '../TsAddon';
+import {MethodCallUtils} from './MethodCallUtils';
 
 export class ConstructorNodeUtils {
-	private static readonly EXCEPTION: ClassNode = ClassHelper.make(IllegalArgumentException.class);
-	private static readonly IMMUTABLE_TYPE: ClassNode = ClassHelper.make(ImmutableASTTransformation.class);
-	private static readonly STRINGBUILDER_TYPE: ClassNode = ClassHelper.make(StringBuilder.class);
-	private static readonly INVOKER_TYPE: ClassNode = ClassHelper.make(InvokerHelper.class);
+	private static readonly EXCEPTION: ClassNode = ClassHelper.make(GroovyAstMakeFirst.JavaLang.IllegalArgumentException);
+	private static readonly IMMUTABLE_TYPE: ClassNode = ClassHelper.make(GroovyAstMakeFirst.OrgCodehausGroovyTransform.ImmutableASTTransformation);
+	private static readonly STRINGBUILDER_TYPE: ClassNode = ClassHelper.make(GroovyAstMakeFirst.JavaLang.StringBuilder);
+	private static readonly INVOKER_TYPE: ClassNode = ClassHelper.make(GroovyAstMakeFirst.OrgCodehausGroovyRuntime.InvokerHelper);
 
 	private ConstructorNodeUtils() {
 	}

@@ -5,6 +5,7 @@ import {TupleExpression} from './TupleExpression';
 import {VariableExpression} from './VariableExpression';
 
 export class ArgumentListExpression extends TupleExpression {
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	static readonly EMPTY_ARRAY: ReadonlyArray<any> = [];
 	static readonly EMPTY_ARGUMENTS = new ArgumentListExpression();
 

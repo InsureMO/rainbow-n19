@@ -12,6 +12,7 @@ import {Reduction, SyntaxException, Token} from '../OrgCodehausGroovySyntax';
 import {CompilerConfiguration} from './CompilerConfiguration';
 import {ErrorCollector} from './ErrorCollector';
 import {Janitor} from './Janitor';
+import {ParserPlugin} from './ParserPlugin';
 import {Phases} from './Phases';
 import {ProcessingUnit} from './ProcessingUnit';
 

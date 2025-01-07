@@ -37,6 +37,7 @@ export class WarningMessage extends GroovyControlLocatedMessage {
 	 * @param owner
 	 * @param data
 	 */
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	constructor(importance: number, message: string, context: CSTNode, owner: SourceUnit, data?: any) {
 		super(message, context, owner, data);
 		this._importance = importance;
