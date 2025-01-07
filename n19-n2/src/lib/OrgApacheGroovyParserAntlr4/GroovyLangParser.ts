@@ -20,13 +20,13 @@ export class GroovyLangParser extends GroovyParser {
 
 	constructor(input: TokenStream) {
 		super(input);
+		// no need to recreate antoher one, they are same actaully
+		// this._interp = new ParserATNSimulator(this, ParserAtnManager.INSTANCE.getATN());
 
-		this._interp = new ParserATNSimulator(this, ParserAtnManager.INSTANCE.getATN());
-
-		if (GroovyLangParser.GROOVY_PARSER_PROFILING_ENABLED) {
-			// no profile in js version
-			// this.setProfile(true);
-		}
+		// no profile in js version
+		// if (GroovyLangParser.GROOVY_PARSER_PROFILING_ENABLED) {
+		// 	this.setProfile(true);
+		// }
 	}
 
 	protected createFailedPredicateException(predicate: string, message?: string): FailedPredicateException {
