@@ -4,6 +4,7 @@ import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {BlockContext} from './BlockContext';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
 import {MemberDeclarationContext} from './MemberDeclarationContext';
+import {NlsContext} from './NlsContext';
 
 export class ClassBodyDeclarationContext extends GroovyParserRuleContext {
 	t: number;

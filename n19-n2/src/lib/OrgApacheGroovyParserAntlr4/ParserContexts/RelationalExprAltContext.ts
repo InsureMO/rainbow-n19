@@ -3,6 +3,7 @@ import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {ExpressionContext} from './ExpressionContext';
 import {TypeContext} from './TypeContext';
+import { NlsContext } from './NlsContext';
 
 export interface IRelationalExprAltContext {
 	nls(): Array<NlsContext>;

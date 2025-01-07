@@ -3,6 +3,7 @@ import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
 import {VariableInitializersContext} from './VariableInitializersContext';
+import { NlsContext } from './NlsContext';
 
 export interface IArrayInitializerContext {
 	nls(): Array<NlsContext>;

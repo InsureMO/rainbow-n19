@@ -1,6 +1,7 @@
 import {ParserRuleContext, ParseTreeVisitor, TerminalNode} from 'antlr4';
 import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
+import {ExpressionContext} from './ExpressionContext';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
 
 export class YieldStatementContext extends GroovyParserRuleContext {

@@ -2,6 +2,8 @@ import {ParserRuleContext, ParseTreeVisitor, TerminalNode} from 'antlr4';
 import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
+import {RparenContext} from './RparenContext';
+import {TypeNamePairContext} from './TypeNamePairContext';
 
 export interface ITypeNamePairsContext {
 	typeNamePair(): Array<TypeNamePairContext>;
@@ -26,7 +28,7 @@ export class TypeNamePairsContext extends GroovyParserRuleContext implements ITy
 	}
 
 	rparen(): RparenContext {
-		return this.getRuleContext(RparenContext.class, 0);
+		return this.getRuleContext(RparenContext, 0);
 	}
 
 	COMMA(): Array<TerminalNode>;

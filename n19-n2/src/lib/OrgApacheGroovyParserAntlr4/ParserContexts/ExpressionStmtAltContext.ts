@@ -1,6 +1,7 @@
 import {ParseTreeVisitor} from 'antlr4';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {StatementContext} from './StatementContext';
+import {StatementExpressionContext} from './StatementExpressionContext';
 
 export class ExpressionStmtAltContext extends StatementContext {
 	statementExpression(): StatementExpressionContext {

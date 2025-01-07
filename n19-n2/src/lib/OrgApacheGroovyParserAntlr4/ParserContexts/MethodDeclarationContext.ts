@@ -10,6 +10,7 @@ import {ModifiersOptContext} from './ModifiersOptContext';
 import {QualifiedClassNameListContext} from './QualifiedClassNameListContext';
 import {ReturnTypeContext} from './ReturnTypeContext';
 import {TypeParametersContext} from './TypeParametersContext';
+import { NlsContext } from './NlsContext';
 
 export interface IMethodDeclarationContext {
 	nls(): Array<NlsContext>;

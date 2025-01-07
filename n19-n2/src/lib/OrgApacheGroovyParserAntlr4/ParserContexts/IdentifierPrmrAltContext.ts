@@ -1,5 +1,6 @@
 import {ParseTreeVisitor} from 'antlr4';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
+import {IdentifierContext} from './IdentifierContext';
 import {PrimaryContext} from './PrimaryContext';
 import {TypeArgumentsContext} from './TypeArgumentsContext';
 

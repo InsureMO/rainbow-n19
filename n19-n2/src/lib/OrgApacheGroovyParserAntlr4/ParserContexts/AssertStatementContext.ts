@@ -2,6 +2,8 @@ import {ParserRuleContext, ParseTreeVisitor, TerminalNode} from 'antlr4';
 import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
+import { ExpressionContext } from './ExpressionContext';
+import {NlsContext} from './NlsContext';
 
 export interface IAssertStatementContext {
 	expression(): Array<ExpressionContext>;

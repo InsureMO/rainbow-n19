@@ -2,7 +2,10 @@ import {ParserRuleContext, ParseTreeVisitor, TerminalNode} from 'antlr4';
 import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
+import {NlsContext} from './NlsContext';
 import {ResourceListContext} from './ResourceListContext';
+import {RparenContext} from './RparenContext';
+import {SepContext} from './SepContext';
 
 export class ResourcesContext extends GroovyParserRuleContext {
 	LPAREN(): TerminalNode {

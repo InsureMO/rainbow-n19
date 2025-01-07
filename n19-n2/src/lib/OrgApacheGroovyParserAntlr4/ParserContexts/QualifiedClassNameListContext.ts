@@ -3,6 +3,7 @@ import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {AnnotatedQualifiedClassNameContext} from './AnnotatedQualifiedClassNameContext';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
+import { NlsContext } from './NlsContext';
 
 export interface IQualifiedClassNameListContext {
 	annotatedQualifiedClassName(): Array<AnnotatedQualifiedClassNameContext>;

@@ -3,6 +3,7 @@ import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
 import {LambdaBodyContext} from './LambdaBodyContext';
+import {NlsContext} from './NlsContext';
 import {StandardLambdaParametersContext} from './StandardLambdaParametersContext';
 
 export interface IStandardLambdaExpressionContext {

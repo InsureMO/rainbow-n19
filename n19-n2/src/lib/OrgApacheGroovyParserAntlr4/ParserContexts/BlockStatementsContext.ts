@@ -3,6 +3,7 @@ import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {BlockStatementContext} from './BlockStatementContext';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
+import {SepContext} from './SepContext';
 
 export interface IBlockStatementsContext {
 	blockStatement(): Array<BlockStatementContext>;

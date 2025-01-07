@@ -2,6 +2,8 @@ import {ParseTreeVisitor, TerminalNode} from 'antlr4';
 import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {BlockContext} from './BlockContext';
+import {ExpressionInParContext} from './ExpressionInParContext';
+import {NlsContext} from './NlsContext';
 import {StatementContext} from './StatementContext';
 
 export class SynchronizedStmtAltContext extends StatementContext {

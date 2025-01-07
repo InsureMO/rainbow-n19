@@ -1,8 +1,15 @@
 import {ParserRuleContext, ParseTreeVisitor, TerminalNode} from 'antlr4';
 import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
+import {ArgumentsContext} from './ArgumentsContext';
 import {ClosureOrLambdaExpressionContext} from './ClosureOrLambdaExpressionContext';
+import {CreatorContext} from './CreatorContext';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
+import {IndexPropertyArgsContext} from './IndexPropertyArgsContext';
+import {NamedPropertyArgsContext} from './NamedPropertyArgsContext';
+import {NamePartContext} from './NamePartContext';
+import { NlsContext } from './NlsContext';
+import {NonWildcardTypeArgumentsContext} from './NonWildcardTypeArgumentsContext';
 
 export interface IPathElementContext {
 	nls(): Array<NlsContext>;

@@ -1,7 +1,11 @@
 import {ParseTreeVisitor, TerminalNode} from 'antlr4';
 import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
+import {ForControlContext} from './ForControlContext';
 import {LoopStatementContext} from './LoopStatementContext';
+import {NlsContext} from './NlsContext';
+import {RparenContext} from './RparenContext';
+import {StatementContext} from './StatementContext';
 
 export class ForStmtAltContext extends LoopStatementContext {
 	FOR(): TerminalNode {

@@ -1,6 +1,8 @@
 import {ParserRuleContext, ParseTreeVisitor} from 'antlr4';
 import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
+import {ClassicalForControlContext} from './ClassicalForControlContext';
+import {EnhancedForControlContext} from './EnhancedForControlContext';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
 
 export class ForControlContext extends GroovyParserRuleContext {
@@ -29,3 +31,4 @@ export class ForControlContext extends GroovyParserRuleContext {
 			}
 		}
 	}
+}

@@ -1,7 +1,10 @@
 import {ParserRuleContext, ParseTreeVisitor} from 'antlr4';
 import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
+import {EnhancedArgumentListInParContext} from './EnhancedArgumentListInParContext';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
+import {PathElementContext} from './PathElementContext';
+import {PrimaryContext} from './PrimaryContext';
 
 export interface ICommandArgumentContext {
 	pathElement(): Array<PathElementContext>;

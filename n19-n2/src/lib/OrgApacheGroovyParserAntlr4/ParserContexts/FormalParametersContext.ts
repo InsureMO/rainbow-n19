@@ -3,6 +3,7 @@ import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {FormalParameterListContext} from './FormalParameterListContext';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
+import {RparenContext} from './RparenContext';
 
 export class FormalParametersContext extends GroovyParserRuleContext {
 	LPAREN(): TerminalNode {

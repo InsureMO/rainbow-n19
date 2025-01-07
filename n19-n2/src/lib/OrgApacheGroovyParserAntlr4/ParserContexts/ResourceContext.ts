@@ -1,6 +1,7 @@
 import {ParserRuleContext, ParseTreeVisitor} from 'antlr4';
 import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
+import {ExpressionContext} from './ExpressionContext';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
 import {LocalVariableDeclarationContext} from './LocalVariableDeclarationContext';
 

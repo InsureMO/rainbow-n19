@@ -4,6 +4,8 @@ import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {AnnotationNameContext} from './AnnotationNameContext';
 import {ElementValuesContext} from './ElementValuesContext';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
+import {NlsContext} from './NlsContext';
+import {RparenContext} from './RparenContext';
 
 export class AnnotationContext extends GroovyParserRuleContext {
 	AT(): TerminalNode {

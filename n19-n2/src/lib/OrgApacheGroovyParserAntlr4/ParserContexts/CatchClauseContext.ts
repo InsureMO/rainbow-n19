@@ -2,7 +2,11 @@ import {ParserRuleContext, ParseTreeVisitor, TerminalNode} from 'antlr4';
 import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {BlockContext} from './BlockContext';
+import {CatchTypeContext} from './CatchTypeContext';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
+import {IdentifierContext} from './IdentifierContext';
+import {NlsContext} from './NlsContext';
+import {RparenContext} from './RparenContext';
 import {VariableModifiersOptContext} from './VariableModifiersOptContext';
 
 export class CatchClauseContext extends GroovyParserRuleContext {

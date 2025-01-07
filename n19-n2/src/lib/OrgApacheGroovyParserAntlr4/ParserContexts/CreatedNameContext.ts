@@ -5,6 +5,7 @@ import {AnnotationsOptContext} from './AnnotationsOptContext';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
 import {PrimitiveTypeContext} from './PrimitiveTypeContext';
 import {QualifiedClassNameContext} from './QualifiedClassNameContext';
+import {TypeArgumentsOrDiamondContext} from './TypeArgumentsOrDiamondContext';
 
 export class CreatedNameContext extends GroovyParserRuleContext {
 	annotationsOpt(): AnnotationsOptContext {

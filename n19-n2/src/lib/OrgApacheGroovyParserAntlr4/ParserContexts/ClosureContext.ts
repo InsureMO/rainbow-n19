@@ -4,6 +4,8 @@ import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {BlockStatementsOptContext} from './BlockStatementsOptContext';
 import {FormalParameterListContext} from './FormalParameterListContext';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
+import {NlsContext} from './NlsContext';
+import {SepContext} from './SepContext';
 
 export interface IClosureContext {
 	nls(): Array<NlsContext>;

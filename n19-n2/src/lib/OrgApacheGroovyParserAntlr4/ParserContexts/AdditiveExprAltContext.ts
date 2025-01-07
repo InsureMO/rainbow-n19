@@ -2,6 +2,7 @@ import {ParseTreeVisitor, TerminalNode, Token} from 'antlr4';
 import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {ExpressionContext} from './ExpressionContext';
+import {NlsContext} from './NlsContext';
 
 export interface IAdditiveExprAltContext {
 	nls(): Array<NlsContext>;

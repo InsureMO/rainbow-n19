@@ -4,6 +4,7 @@ import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
 import {ImportDeclarationContext} from './ImportDeclarationContext';
 import {MethodDeclarationContext} from './MethodDeclarationContext';
+import {StatementContext} from './StatementContext';
 import {TypeDeclarationContext} from './TypeDeclarationContext';
 
 export class ScriptStatementContext extends GroovyParserRuleContext {

@@ -3,6 +3,8 @@ import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {ExpressionInParContext} from './ExpressionInParContext';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
+import { NlsContext } from './NlsContext';
+import {SwitchBlockStatementExpressionGroupContext} from './SwitchBlockStatementExpressionGroupContext';
 
 export interface ISwitchExpressionContext {
 	nls(): Array<NlsContext>;

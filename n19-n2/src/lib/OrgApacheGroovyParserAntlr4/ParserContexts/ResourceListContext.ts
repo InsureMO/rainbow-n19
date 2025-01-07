@@ -2,6 +2,8 @@ import {ParserRuleContext, ParseTreeVisitor} from 'antlr4';
 import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
+import {ResourceContext} from './ResourceContext';
+import {SepContext} from './SepContext';
 
 export interface IResourceListContext {
 	resource(): Array<ResourceContext>;

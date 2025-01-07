@@ -1,7 +1,11 @@
 import {ParserRuleContext, ParseTreeVisitor, TerminalNode} from 'antlr4';
 import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
+import {ExpressionInParContext} from './ExpressionInParContext';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
+import { NlsContext } from './NlsContext';
+import {SepContext} from './SepContext';
+import {StatementContext} from './StatementContext';
 
 export interface IIfElseStatementContext {
 	nls(): Array<NlsContext>;
@@ -19,7 +23,7 @@ export class IfElseStatementContext extends GroovyParserRuleContext implements I
 	}
 
 	expressionInPar(): ExpressionInParContext {
-		return getRuleContext(ExpressionInParContext, 0);
+		return this.getRuleContext(ExpressionInParContext, 0);
 	}
 
 	nls(): Array<NlsContext>;

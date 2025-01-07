@@ -1,6 +1,8 @@
 import {ParseTreeVisitor, TerminalNode} from 'antlr4';
 import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
+import {CreatorContext} from './CreatorContext';
+import {NlsContext} from './NlsContext';
 import {PrimaryContext} from './PrimaryContext';
 
 export class NewPrmrAltContext extends PrimaryContext {

@@ -3,6 +3,8 @@ import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {BlockStatementsContext} from './BlockStatementsContext';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
+import {NlsContext} from './NlsContext';
+import { SwitchExpressionLabelContext } from './SwitchExpressionLabelContext';
 
 export interface ISwitchBlockStatementExpressionGroupContext {
 	switchExpressionLabel(): Array<SwitchExpressionLabelContext>;

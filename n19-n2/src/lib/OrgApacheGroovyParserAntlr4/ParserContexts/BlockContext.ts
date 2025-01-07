@@ -3,6 +3,7 @@ import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {BlockStatementsOptContext} from './BlockStatementsOptContext';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
+import {SepContext} from './SepContext';
 
 export class BlockContext extends GroovyParserRuleContext {
 	LBRACE(): TerminalNode {

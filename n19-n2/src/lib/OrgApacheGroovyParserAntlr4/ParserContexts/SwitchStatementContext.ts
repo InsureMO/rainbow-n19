@@ -1,7 +1,10 @@
 import {ParserRuleContext, ParseTreeVisitor, TerminalNode} from 'antlr4';
 import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
+import {ExpressionInParContext} from './ExpressionInParContext';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
+import {NlsContext} from './NlsContext';
+import { SwitchBlockStatementGroupContext } from './SwitchBlockStatementGroupContext';
 
 export interface ISwitchStatementContext {
 	nls(): Array<NlsContext>;

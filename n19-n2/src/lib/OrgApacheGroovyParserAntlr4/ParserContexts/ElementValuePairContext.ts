@@ -4,6 +4,7 @@ import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {ElementValueContext} from './ElementValueContext';
 import {ElementValuePairNameContext} from './ElementValuePairNameContext';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
+import { NlsContext } from './NlsContext';
 
 export interface IElementValuePairContext {
 	nls(): Array<NlsContext>;

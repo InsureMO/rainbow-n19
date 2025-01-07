@@ -3,6 +3,7 @@ import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {FormalParameterContext} from './FormalParameterContext';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
+import {NlsContext} from './NlsContext';
 import {ThisFormalParameterContext} from './ThisFormalParameterContext';
 
 export interface IFormalParameterListContext {

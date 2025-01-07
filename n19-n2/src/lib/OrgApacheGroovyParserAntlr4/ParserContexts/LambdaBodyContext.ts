@@ -3,6 +3,7 @@ import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {BlockContext} from './BlockContext';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
+import {StatementExpressionContext} from './StatementExpressionContext';
 
 export class LambdaBodyContext extends GroovyParserRuleContext {
 	block(): BlockContext {

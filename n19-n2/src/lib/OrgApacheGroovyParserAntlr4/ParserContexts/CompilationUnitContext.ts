@@ -2,8 +2,10 @@ import {ParserRuleContext, ParseTreeVisitor, TerminalNode} from 'antlr4';
 import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
+import {NlsContext} from './NlsContext';
 import {PackageDeclarationContext} from './PackageDeclarationContext';
 import {ScriptStatementsContext} from './ScriptStatementsContext';
+import {SepContext} from './SepContext';
 
 export class CompilationUnitContext extends GroovyParserRuleContext {
 	nls(): NlsContext {

@@ -2,7 +2,10 @@ import {ParserRuleContext, ParseTreeVisitor} from 'antlr4';
 import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {AnnotationsOptContext} from './AnnotationsOptContext';
+import {AnonymousInnerClassDeclarationContext} from './AnonymousInnerClassDeclarationContext';
+import {ArgumentsContext} from './ArgumentsContext';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
+import {IdentifierContext} from './IdentifierContext';
 
 export class EnumConstantContext extends GroovyParserRuleContext {
 	annotationsOpt(): AnnotationsOptContext {

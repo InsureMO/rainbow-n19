@@ -1,6 +1,7 @@
 import {ParserRuleContext, ParseTreeVisitor, TerminalNode} from 'antlr4';
 import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
+import {ClassNameContext} from './ClassNameContext';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
 import {QualifiedNameElementsContext} from './QualifiedNameElementsContext';
 

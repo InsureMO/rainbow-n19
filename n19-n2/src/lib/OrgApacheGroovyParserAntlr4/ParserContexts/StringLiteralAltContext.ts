@@ -1,6 +1,7 @@
 import {ParseTreeVisitor} from 'antlr4';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {LiteralContext} from './LiteralContext';
+import {StringLiteralContext} from './StringLiteralContext';
 
 export class StringLiteralAltContext extends LiteralContext {
 	stringLiteral(): StringLiteralContext {

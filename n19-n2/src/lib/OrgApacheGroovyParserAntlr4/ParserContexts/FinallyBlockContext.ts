@@ -3,6 +3,7 @@ import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {BlockContext} from './BlockContext';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
+import {NlsContext} from './NlsContext';
 
 export class FinallyBlockContext extends GroovyParserRuleContext {
 	FINALLY(): TerminalNode {

@@ -4,6 +4,8 @@ import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {ClassBodyDeclarationContext} from './ClassBodyDeclarationContext';
 import {EnumConstantsContext} from './EnumConstantsContext';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
+import { NlsContext } from './NlsContext';
+import {SepContext} from './SepContext';
 
 export interface IClassBodyContext {
 	nls(): Array<NlsContext>;

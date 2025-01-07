@@ -3,6 +3,7 @@ import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {AnnotationContext} from './AnnotationContext';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
+import {NlsContext} from './NlsContext';
 
 export interface IAnnotationsOptContext {
 	annotation(): Array<AnnotationContext>;

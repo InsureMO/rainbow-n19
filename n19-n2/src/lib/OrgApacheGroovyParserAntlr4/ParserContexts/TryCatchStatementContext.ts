@@ -2,7 +2,11 @@ import {ParserRuleContext, ParseTreeVisitor, TerminalNode} from 'antlr4';
 import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {BlockContext} from './BlockContext';
+import {CatchClauseContext} from './CatchClauseContext';
+import {FinallyBlockContext} from './FinallyBlockContext';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
+import { NlsContext } from './NlsContext';
+import {ResourcesContext} from './ResourcesContext';
 
 export interface ITryCatchStatementContext {
 	nls(): Array<NlsContext>;

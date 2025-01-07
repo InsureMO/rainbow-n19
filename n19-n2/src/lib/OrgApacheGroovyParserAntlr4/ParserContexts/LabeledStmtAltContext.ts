@@ -1,6 +1,8 @@
 import {ParseTreeVisitor, TerminalNode} from 'antlr4';
 import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
+import {IdentifierContext} from './IdentifierContext';
+import {NlsContext} from './NlsContext';
 import {StatementContext} from './StatementContext';
 
 export class LabeledStmtAltContext extends StatementContext {

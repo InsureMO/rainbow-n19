@@ -4,6 +4,7 @@ import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
 import {MethodBodyContext} from './MethodBodyContext';
 import {MethodNameContext} from './MethodNameContext';
+import {NlsContext} from './NlsContext';
 
 export class CompactConstructorDeclarationContext extends GroovyParserRuleContext {
 	methodName(): MethodNameContext {

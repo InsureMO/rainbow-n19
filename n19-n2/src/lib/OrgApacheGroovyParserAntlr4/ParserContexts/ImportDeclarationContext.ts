@@ -3,6 +3,7 @@ import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {AnnotationsOptContext} from './AnnotationsOptContext';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
+import {IdentifierContext} from './IdentifierContext';
 import {QualifiedNameContext} from './QualifiedNameContext';
 
 export class ImportDeclarationContext extends GroovyParserRuleContext {

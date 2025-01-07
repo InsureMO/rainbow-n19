@@ -3,6 +3,8 @@ import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {ExpressionContext} from './ExpressionContext';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
+import {MapEntryLabelContext} from './MapEntryLabelContext';
+import {NlsContext} from './NlsContext';
 
 export class MapEntryContext extends GroovyParserRuleContext {
 	mapEntryLabel(): MapEntryLabelContext {

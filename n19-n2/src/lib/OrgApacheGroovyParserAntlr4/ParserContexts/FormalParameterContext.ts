@@ -1,10 +1,12 @@
 import {ParserRuleContext, ParseTreeVisitor, TerminalNode} from 'antlr4';
 import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
+import {ExpressionContext} from './ExpressionContext';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
 import {TypeContext} from './TypeContext';
 import {VariableDeclaratorIdContext} from './VariableDeclaratorIdContext';
 import {VariableModifiersOptContext} from './VariableModifiersOptContext';
+import { NlsContext } from './NlsContext';
 
 export interface IFormalParameterContext {
 	nls(): Array<NlsContext>;

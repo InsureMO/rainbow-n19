@@ -3,6 +3,7 @@ import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
 import {ScriptStatementContext} from './ScriptStatementContext';
+import {SepContext} from './SepContext';
 
 export interface IScriptStatementsContext {
 	scriptStatement(): Array<ScriptStatementContext>;

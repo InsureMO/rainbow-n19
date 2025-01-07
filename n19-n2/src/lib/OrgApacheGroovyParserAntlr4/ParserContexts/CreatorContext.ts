@@ -1,7 +1,13 @@
 import {ParserRuleContext, ParseTreeVisitor} from 'antlr4';
 import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
+import {AnonymousInnerClassDeclarationContext} from './AnonymousInnerClassDeclarationContext';
+import {ArgumentsContext} from './ArgumentsContext';
+import {CreatedNameContext} from './CreatedNameContext';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
+import { DimContext } from './DimContext';
+import {NlsContext} from './NlsContext';
+import { ArrayInitializerContext } from './ArrayInitializerContext';
 
 export interface ICreatorContext {
 	dim(): Array<DimContext>;

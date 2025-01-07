@@ -2,6 +2,8 @@ import {ParserRuleContext, ParseTreeVisitor} from 'antlr4';
 import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
+import {IdentifierContext} from './IdentifierContext';
+import {KeywordsContext} from './KeywordsContext';
 
 export class ElementValuePairNameContext extends GroovyParserRuleContext {
 	identifier(): IdentifierContext {

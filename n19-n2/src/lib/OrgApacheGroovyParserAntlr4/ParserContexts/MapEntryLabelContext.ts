@@ -2,6 +2,7 @@ import {ParserRuleContext, ParseTreeVisitor} from 'antlr4';
 import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
+import {KeywordsContext} from './KeywordsContext';
 import {PrimaryContext} from './PrimaryContext';
 
 export class MapEntryLabelContext extends GroovyParserRuleContext {

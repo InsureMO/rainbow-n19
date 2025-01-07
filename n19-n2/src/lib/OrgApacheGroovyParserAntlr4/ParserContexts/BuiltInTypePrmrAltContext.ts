@@ -1,5 +1,6 @@
 import {ParseTreeVisitor} from 'antlr4';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
+import {BuiltInTypeContext} from './BuiltInTypeContext';
 import {PrimaryContext} from './PrimaryContext';
 
 export class BuiltInTypePrmrAltContext extends PrimaryContext {

@@ -3,6 +3,7 @@ import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {ClassOrInterfaceModifierContext} from './ClassOrInterfaceModifierContext';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
+import {NlsContext} from './NlsContext';
 
 export interface IClassOrInterfaceModifiersContext {
 	classOrInterfaceModifier(): Array<ClassOrInterfaceModifierContext>;
@@ -28,7 +29,7 @@ export class ClassOrInterfaceModifiersContext extends GroovyParserRuleContext im
 		if (i == null) {
 			return this.getRuleContexts(NlsContext);
 		} else {
-			return this.getRuleContext(NlsContext, i);
+			return this.getRuleContext<NlsContext>(NlsContext, i);
 		}
 	}
 

@@ -19,6 +19,7 @@ import {
 	AnnotationNameContext,
 	AnnotationsOptContext,
 	AnonymousInnerClassDeclarationContext,
+	ArgumentsContext,
 	ArrayInitializerContext,
 	AssertStatementContext,
 	AssertStmtAltContext,
@@ -31,6 +32,7 @@ import {
 	BooleanLiteralAltContext,
 	BreakStatementContext,
 	BreakStmtAltContext,
+	BuiltInTypeContext,
 	BuiltInTypePrmrAltContext,
 	CastExprAltContext,
 	CastParExpressionContext,
@@ -39,6 +41,8 @@ import {
 	ClassBodyContext,
 	ClassBodyDeclarationContext,
 	ClassDeclarationContext,
+	ClassicalForControlContext,
+	ClassNameContext,
 	ClassOrInterfaceModifierContext,
 	ClassOrInterfaceModifiersContext,
 	ClassOrInterfaceModifiersOptContext,
@@ -70,6 +74,8 @@ import {
 	EmptyDimsContext,
 	EmptyDimsOptContext,
 	EmptyStmtAltContext,
+	EnhancedArgumentListElementContext,
+	EnhancedArgumentListInParContext,
 	EnhancedForControlContext,
 	EnhancedStatementExpressionContext,
 	EnumConstantContext,
@@ -77,6 +83,7 @@ import {
 	EqualityExprAltContext,
 	ExclusiveOrExprAltContext,
 	ExpressionContext,
+	ExpressionInParContext,
 	ExpressionListContext,
 	ExpressionListElementContext,
 	ExpressionStmtAltContext,
@@ -95,12 +102,14 @@ import {
 	GstringPathContext,
 	GstringPrmrAltContext,
 	GstringValueContext,
+	IdentifierContext,
 	IdentifierPrmrAltContext,
 	IfElseStatementContext,
 	ImportDeclarationContext,
 	InclusiveOrExprAltContext,
 	IndexPropertyArgsContext,
 	IntegerLiteralAltContext,
+	KeywordsContext,
 	LabeledStmtAltContext,
 	LambdaBodyContext,
 	ListContext,
@@ -130,6 +139,8 @@ import {
 	NamedPropertyArgsContext,
 	NamePartContext,
 	NewPrmrAltContext,
+	NlsContext,
+	NonWildcardTypeArgumentsContext,
 	NullLiteralAltContext,
 	PackageDeclarationContext,
 	ParenPrmrAltContext,
@@ -154,15 +165,19 @@ import {
 	ResourcesContext,
 	ReturnStmtAltContext,
 	ReturnTypeContext,
+	RparenContext,
 	ScriptStatementContext,
 	ScriptStatementsContext,
+	SepContext,
 	ShiftExprAltContext,
 	StandardLambdaExpressionContext,
 	StandardLambdaParametersContext,
 	StatementContext,
 	StatementExpressionContext,
 	StringLiteralAltContext,
+	StringLiteralContext,
 	SuperPrmrAltContext,
+	SwitchBlockStatementExpressionGroupContext,
 	SwitchBlockStatementGroupContext,
 	SwitchExprAltContext,
 	SwitchExpressionContext,
@@ -173,9 +188,11 @@ import {
 	ThisFormalParameterContext,
 	ThisPrmrAltContext,
 	ThrowStmtAltContext,
+	TryCatchStatementContext,
 	TryCatchStmtAltContext,
 	TypeArgumentContext,
 	TypeArgumentsContext,
+	TypeArgumentsOrDiamondContext,
 	TypeBoundContext,
 	TypeContext,
 	TypeDeclarationContext,
@@ -200,7 +217,6 @@ import {
 	YieldStatementContext,
 	YieldStmtAltContext
 } from './ParserContexts';
-import {SwitchBlockStatementExpressionGroupContext} from './ParserContexts/SwitchBlockStatementExpressionGroupContext';
 import {SemanticPredicates} from './SemanticPredicates';
 import {Vocabulary} from './Vocabulary';
 
@@ -6106,6 +6122,7 @@ export class GroovyParser extends AbstractParser {
 								}
 									break;
 								default:
+									// noinspection ExceptionCaughtLocallyJS
 									throw new NoViableAltException(this);
 							}
 							this.state = 1494;
@@ -6437,6 +6454,7 @@ export class GroovyParser extends AbstractParser {
 				}
 					break;
 				default:
+					// noinspection ExceptionCaughtLocallyJS
 					throw new NoViableAltException(this);
 			}
 		} catch (re /* RecognitionException */) {
@@ -6823,6 +6841,7 @@ export class GroovyParser extends AbstractParser {
 				}
 					break;
 				default:
+					// noinspection ExceptionCaughtLocallyJS
 					throw new NoViableAltException(this);
 			}
 		} catch (re /* RecognitionException */) {
@@ -7725,5 +7744,488 @@ export class GroovyParser extends AbstractParser {
 			this.exitRule();
 		}
 		return _localCtx;
+	}
+
+	nonWildcardTypeArguments(): NonWildcardTypeArgumentsContext /* throws RecognitionException */ {
+		const _localCtx = new NonWildcardTypeArgumentsContext(this._ctx, this.state);
+		this.enterRule(_localCtx, 298, GroovyParser.RULE_nonWildcardTypeArguments);
+		try {
+			this.enterOuterAlt(_localCtx, 1);
+			{
+				this.state = 1737;
+				this.match(GroovyParser.LT);
+				this.state = 1738;
+				this.nls();
+				this.state = 1739;
+				this.typeList();
+				this.state = 1740;
+				this.nls();
+				this.state = 1741;
+				this.match(GroovyParser.GT);
+			}
+		} catch (re /* RecognitionException */) {
+			this.handleRecognitionExceptionOrRethrow(_localCtx, re);
+		} finally {
+			this.exitRule();
+		}
+		return _localCtx;
+	}
+
+	typeArgumentsOrDiamond(): TypeArgumentsOrDiamondContext /* throws RecognitionException */ {
+		const _localCtx = new TypeArgumentsOrDiamondContext(this._ctx, this.state);
+		this.enterRule(_localCtx, 300, GroovyParser.RULE_typeArgumentsOrDiamond);
+		try {
+			this.state = 1746;
+			this._errHandler.sync(this);
+			switch (this._interp.adaptivePredict(this._input, 187, this._ctx)) {
+				case 1:
+					this.enterOuterAlt(_localCtx, 1);
+				{
+					this.state = 1743;
+					this.match(GroovyParser.LT);
+					this.state = 1744;
+					this.match(GroovyParser.GT);
+				}
+					break;
+				case 2:
+					this.enterOuterAlt(_localCtx, 2);
+				{
+					this.state = 1745;
+					this.typeArguments();
+				}
+					break;
+			}
+		} catch (re /* RecognitionException */) {
+			this.handleRecognitionExceptionOrRethrow(_localCtx, re);
+		} finally {
+			this.exitRule();
+		}
+		return _localCtx;
+	}
+
+	arguments(): ArgumentsContext /* throws RecognitionException */ {
+		const _localCtx = new ArgumentsContext(this._ctx, this.state);
+		this.enterRule(_localCtx, 302, GroovyParser.RULE_arguments);
+		let _la: number;
+		try {
+			this.enterOuterAlt(_localCtx, 1);
+			{
+				this.state = 1748;
+				this.match(GroovyParser.LPAREN);
+				this.state = 1750;
+				this._errHandler.sync(this);
+				switch (this._interp.adaptivePredict(this._input, 188, this._ctx)) {
+					case 1: {
+						this.state = 1749;
+						this.enhancedArgumentListInPar();
+					}
+						break;
+				}
+				this.state = 1753;
+				this._errHandler.sync(this);
+				_la = this._input.LA(1);
+				if (_la == GroovyParser.COMMA) {
+					{
+						this.state = 1752;
+						this.match(GroovyParser.COMMA);
+					}
+				}
+
+				this.state = 1755;
+				this.rparen();
+			}
+		} catch (re /* RecognitionException */) {
+			this.handleRecognitionExceptionOrRethrow(_localCtx, re);
+		} finally {
+			this.exitRule();
+		}
+		return _localCtx;
+	}
+
+	argumentList(): EnhancedArgumentListInParContext /* throws RecognitionException */ {
+		const _localCtx = new EnhancedArgumentListInParContext(this._ctx, this.state);
+		this.enterRule(_localCtx, 304, GroovyParser.RULE_argumentList);
+		try {
+			let _alt: number;
+			this.enterOuterAlt(_localCtx, 1);
+			{
+				this.state = 1757;
+				this.firstArgumentListElement();
+				this.state = 1764;
+				this._errHandler.sync(this);
+				_alt = this._interp.adaptivePredict(this._input, 190, this._ctx);
+				while (_alt != 2 && _alt != ATN.INVALID_ALT_NUMBER) {
+					if (_alt == 1) {
+						{
+							{
+								this.state = 1758;
+								this.match(GroovyParser.COMMA);
+								this.state = 1759;
+								this.nls();
+								this.state = 1760;
+								this.argumentListElement();
+							}
+						}
+					}
+					this.state = 1766;
+					this._errHandler.sync(this);
+					_alt = this._interp.adaptivePredict(this._input, 190, this._ctx);
+				}
+			}
+		} catch (re /* RecognitionException */) {
+			this.handleRecognitionExceptionOrRethrow(_localCtx, re);
+		} finally {
+			this.exitRule();
+		}
+		return _localCtx;
+	}
+
+	enhancedArgumentListInPar(): EnhancedArgumentListInParContext /* throws RecognitionException */ {
+		const _localCtx = new EnhancedArgumentListInParContext(this._ctx, this.state);
+		this.enterRule(_localCtx, 306, GroovyParser.RULE_enhancedArgumentListInPar);
+		try {
+			let _alt: number;
+			this.enterOuterAlt(_localCtx, 1);
+			{
+				this.state = 1767;
+				this.enhancedArgumentListElement();
+				this.state = 1774;
+				this._errHandler.sync(this);
+				_alt = this._interp.adaptivePredict(this._input, 191, this._ctx);
+				while (_alt != 2 && _alt != ATN.INVALID_ALT_NUMBER) {
+					if (_alt == 1) {
+						{
+							{
+								this.state = 1768;
+								this.match(GroovyParser.COMMA);
+								this.state = 1769;
+								this.nls();
+								this.state = 1770;
+								this.enhancedArgumentListElement();
+							}
+						}
+					}
+					this.state = 1776;
+					this._errHandler.sync(this);
+					_alt = this._interp.adaptivePredict(this._input, 191, this._ctx);
+				}
+			}
+		} catch (re /* RecognitionException */) {
+			this.handleRecognitionExceptionOrRethrow(_localCtx, re);
+		} finally {
+			this.exitRule();
+		}
+		return _localCtx;
+	}
+
+	firstArgumentListElement(): EnhancedArgumentListElementContext /* throws RecognitionException */ {
+		const _localCtx = new EnhancedArgumentListElementContext(this._ctx, this.state);
+		this.enterRule(_localCtx, 308, GroovyParser.RULE_firstArgumentListElement);
+		try {
+			this.state = 1779;
+			this._errHandler.sync(this);
+			switch (this._interp.adaptivePredict(this._input, 192, this._ctx)) {
+				case 1:
+					this.enterOuterAlt(_localCtx, 1);
+				{
+					this.state = 1777;
+					this.expressionListElement(true);
+				}
+					break;
+				case 2:
+					this.enterOuterAlt(_localCtx, 2);
+				{
+					this.state = 1778;
+					this.namedArg();
+				}
+					break;
+			}
+		} catch (re /* RecognitionException */) {
+			this.handleRecognitionExceptionOrRethrow(_localCtx, re);
+		} finally {
+			this.exitRule();
+		}
+		return _localCtx;
+	}
+
+	argumentListElement(): EnhancedArgumentListElementContext /* throws RecognitionException */ {
+		const _localCtx = new EnhancedArgumentListElementContext(this._ctx, this.state);
+		this.enterRule(_localCtx, 310, GroovyParser.RULE_argumentListElement);
+		try {
+			this.state = 1783;
+			this._errHandler.sync(this);
+			switch (this._interp.adaptivePredict(this._input, 193, this._ctx)) {
+				case 1:
+					this.enterOuterAlt(_localCtx, 1);
+				{
+					this.state = 1781;
+					this.expressionListElement(true);
+				}
+					break;
+				case 2:
+					this.enterOuterAlt(_localCtx, 2);
+				{
+					this.state = 1782;
+					this.namedPropertyArg();
+				}
+					break;
+			}
+		} catch (re /* RecognitionException */) {
+			this.handleRecognitionExceptionOrRethrow(_localCtx, re);
+		} finally {
+			this.exitRule();
+		}
+		return _localCtx;
+	}
+
+	enhancedArgumentListElement(): EnhancedArgumentListElementContext /* throws RecognitionException */ {
+		const _localCtx = new EnhancedArgumentListElementContext(this._ctx, this.state);
+		this.enterRule(_localCtx, 312, GroovyParser.RULE_enhancedArgumentListElement);
+		try {
+			this.state = 1788;
+			this._errHandler.sync(this);
+			switch (this._interp.adaptivePredict(this._input, 194, this._ctx)) {
+				case 1:
+					this.enterOuterAlt(_localCtx, 1);
+				{
+					this.state = 1785;
+					this.expressionListElement(true);
+				}
+					break;
+				case 2:
+					this.enterOuterAlt(_localCtx, 2);
+				{
+					this.state = 1786;
+					this.standardLambdaExpression();
+				}
+					break;
+				case 3:
+					this.enterOuterAlt(_localCtx, 3);
+				{
+					this.state = 1787;
+					this.namedPropertyArg();
+				}
+					break;
+			}
+		} catch (re /* RecognitionException */) {
+			this.handleRecognitionExceptionOrRethrow(_localCtx, re);
+		} finally {
+			this.exitRule();
+		}
+		return _localCtx;
+	}
+
+	stringLiteral(): StringLiteralContext /* throws RecognitionException */ {
+		const _localCtx = new StringLiteralContext(this._ctx, this.state);
+		this.enterRule(_localCtx, 314, GroovyParser.RULE_stringLiteral);
+		try {
+			this.enterOuterAlt(_localCtx, 1);
+			{
+				this.state = 1790;
+				this.match(GroovyParser.StringLiteral);
+			}
+		} catch (re /* RecognitionException */) {
+			this.handleRecognitionExceptionOrRethrow(_localCtx, re);
+		} finally {
+			this.exitRule();
+		}
+		return _localCtx;
+	}
+
+	className(): ClassNameContext /* throws RecognitionException */ {
+		const _localCtx = new ClassNameContext(this._ctx, this.state);
+		this.enterRule(_localCtx, 316, GroovyParser.RULE_className);
+		try {
+			this.enterOuterAlt(_localCtx, 1);
+			{
+				this.state = 1792;
+				this.match(GroovyParser.CapitalizedIdentifier);
+			}
+		} catch (re /* RecognitionException */) {
+			this.handleRecognitionExceptionOrRethrow(_localCtx, re);
+		} finally {
+			this.exitRule();
+		}
+		return _localCtx;
+	}
+
+	identifier(): IdentifierContext /* throws RecognitionException */ {
+		const _localCtx = new IdentifierContext(this._ctx, this.state);
+		this.enterRule(_localCtx, 318, GroovyParser.RULE_identifier);
+		let _la: number;
+		try {
+			this.enterOuterAlt(_localCtx, 1);
+			{
+				this.state = 1794;
+				_la = this._input.LA(1);
+				if (!((((_la) & ~0x3f) == 0 && ((1 << _la) & ((1 << GroovyParser.AS) | (1 << GroovyParser.IN) | (1 << GroovyParser.TRAIT) | (1 << GroovyParser.VAR) | (1 << GroovyParser.YIELD) | (1 << GroovyParser.PERMITS) | (1 << GroovyParser.RECORD) | (1 << GroovyParser.SEALED))) != 0) || _la == GroovyParser.CapitalizedIdentifier || _la == GroovyParser.Identifier)) {
+					this._errHandler.recoverInline(this);
+				} else {
+					if (this._input.LA(1) == Token.EOF) {
+						this.matchedEOF = true;
+					}
+
+					this._errHandler.reportMatch(this);
+					this.consume();
+				}
+			}
+		} catch (re /* RecognitionException */) {
+			this.handleRecognitionExceptionOrRethrow(_localCtx, re);
+		} finally {
+			this.exitRule();
+		}
+		return _localCtx;
+	}
+
+	builtInType(): BuiltInTypeContext /* throws RecognitionException */ {
+		const _localCtx = new BuiltInTypeContext(this._ctx, this.state);
+		this.enterRule(_localCtx, 320, GroovyParser.RULE_builtInType);
+		let _la: number;
+		try {
+			this.enterOuterAlt(_localCtx, 1);
+			{
+				this.state = 1796;
+				_la = this._input.LA(1);
+				if (!(_la == GroovyParser.BuiltInPrimitiveType || _la == GroovyParser.VOID)) {
+					this._errHandler.recoverInline(this);
+				} else {
+					if (this._input.LA(1) == Token.EOF) {
+						this.matchedEOF = true;
+					}
+
+					this._errHandler.reportMatch(this);
+					this.consume();
+				}
+			}
+		} catch (re /* RecognitionException */) {
+			this.handleRecognitionExceptionOrRethrow(_localCtx, re);
+		} finally {
+			this.exitRule();
+		}
+		return _localCtx;
+	}
+
+	keywords(): KeywordsContext /* throws RecognitionException */ {
+		const _localCtx = new KeywordsContext(this._ctx, this.state);
+		this.enterRule(_localCtx, 322, GroovyParser.RULE_keywords);
+		let _la: number;
+		try {
+			this.enterOuterAlt(_localCtx, 1);
+			{
+				this.state = 1798;
+				_la = this._input.LA(1);
+				if (!(((((_la - 7)) & ~0x3f) == 0 && ((1 << (_la - 7)) & ((1 << (GroovyParser.AS - 7)) | (1 << (GroovyParser.DEF - 7)) | (1 << (GroovyParser.IN - 7)) | (1 << (GroovyParser.TRAIT - 7)) | (1 << (GroovyParser.THREADSAFE - 7)) | (1 << (GroovyParser.VAR - 7)) | (1 << (GroovyParser.BuiltInPrimitiveType - 7)) | (1 << (GroovyParser.ABSTRACT - 7)) | (1 << (GroovyParser.ASSERT - 7)) | (1 << (GroovyParser.BREAK - 7)) | (1 << (GroovyParser.YIELD - 7)) | (1 << (GroovyParser.CASE - 7)) | (1 << (GroovyParser.CATCH - 7)) | (1 << (GroovyParser.CLASS - 7)) | (1 << (GroovyParser.CONST - 7)) | (1 << (GroovyParser.CONTINUE - 7)) | (1 << (GroovyParser.DEFAULT - 7)) | (1 << (GroovyParser.DO - 7)) | (1 << (GroovyParser.ELSE - 7)) | (1 << (GroovyParser.ENUM - 7)) | (1 << (GroovyParser.EXTENDS - 7)) | (1 << (GroovyParser.FINAL - 7)) | (1 << (GroovyParser.FINALLY - 7)) | (1 << (GroovyParser.FOR - 7)) | (1 << (GroovyParser.IF - 7)) | (1 << (GroovyParser.GOTO - 7)) | (1 << (GroovyParser.IMPLEMENTS - 7)) | (1 << (GroovyParser.IMPORT - 7)) | (1 << (GroovyParser.INSTANCEOF - 7)) | (1 << (GroovyParser.INTERFACE - 7)) | (1 << (GroovyParser.NATIVE - 7)) | (1 << (GroovyParser.NEW - 7)) | (1 << (GroovyParser.NON_SEALED - 7)) | (1 << (GroovyParser.PACKAGE - 7)) | (1 << (GroovyParser.PERMITS - 7)) | (1 << (GroovyParser.PRIVATE - 7)) | (1 << (GroovyParser.PROTECTED - 7)) | (1 << (GroovyParser.PUBLIC - 7)) | (1 << (GroovyParser.RECORD - 7)) | (1 << (GroovyParser.RETURN - 7)) | (1 << (GroovyParser.SEALED - 7)) | (1 << (GroovyParser.STATIC - 7)) | (1 << (GroovyParser.STRICTFP - 7)) | (1 << (GroovyParser.SUPER - 7)) | (1 << (GroovyParser.SWITCH - 7)) | (1 << (GroovyParser.SYNCHRONIZED - 7)) | (1 << (GroovyParser.THIS - 7)) | (1 << (GroovyParser.THROW - 7)) | (1 << (GroovyParser.THROWS - 7)) | (1 << (GroovyParser.TRANSIENT - 7)) | (1 << (GroovyParser.TRY - 7)) | (1 << (GroovyParser.VOID - 7)) | (1 << (GroovyParser.VOLATILE - 7)) | (1 << (GroovyParser.WHILE - 7)) | (1 << (GroovyParser.BooleanLiteral - 7)) | (1 << (GroovyParser.NullLiteral - 7)))) != 0))) {
+					this._errHandler.recoverInline(this);
+				} else {
+					if (this._input.LA(1) == Token.EOF) {
+						this.matchedEOF = true;
+					}
+
+					this._errHandler.reportMatch(this);
+					this.consume();
+				}
+			}
+		} catch (re /* RecognitionException */) {
+			this.handleRecognitionExceptionOrRethrow(_localCtx, re);
+		} finally {
+			this.exitRule();
+		}
+		return _localCtx;
+	}
+
+	rparen(): RparenContext /* throws RecognitionException */ {
+		const _localCtx = new RparenContext(this._ctx, this.state);
+		this.enterRule(_localCtx, 324, GroovyParser.RULE_rparen);
+		try {
+			this.enterOuterAlt(_localCtx, 1);
+			{
+				this.state = 1800;
+				this.match(GroovyParser.RPAREN);
+			}
+		} catch (re /* RecognitionException */) {
+			this.handleRecognitionExceptionOrRethrow(_localCtx, re);
+		} finally {
+			this.exitRule();
+		}
+		return _localCtx;
+	}
+
+	nls(): NlsContext /* throws RecognitionException */ {
+		const _localCtx = new NlsContext(this._ctx, this.state);
+		this.enterRule(_localCtx, 326, GroovyParser.RULE_nls);
+		try {
+			let _alt: number;
+			this.enterOuterAlt(_localCtx, 1);
+			{
+				this.state = 1805;
+				this._errHandler.sync(this);
+				_alt = this._interp.adaptivePredict(this._input, 195, this._ctx);
+				while (_alt != 2 && _alt != ATN.INVALID_ALT_NUMBER) {
+					if (_alt == 1) {
+						{
+							{
+								this.state = 1802;
+								this.match(GroovyParser.NL);
+							}
+						}
+					}
+					this.state = 1807;
+					this._errHandler.sync(this);
+					_alt = this._interp.adaptivePredict(this._input, 195, this._ctx);
+				}
+			}
+		} catch (re /* RecognitionException */) {
+			this.handleRecognitionExceptionOrRethrow(_localCtx, re);
+		} finally {
+			this.exitRule();
+		}
+		return _localCtx;
+	}
+
+	sep(): SepContext /* throws RecognitionException */ {
+		const _localctx = new SepContext(this._ctx, this.state);
+		this.enterRule(_localctx, 328, GroovyParser.RULE_sep);
+		let _la: number;
+		try {
+			let _alt: number;
+			this.enterOuterAlt(_localctx, 1);
+			{
+				this.state = 1809;
+				this._errHandler.sync(this);
+				_alt = 1;
+				do {
+					switch (_alt) {
+						case 1: {
+							{
+								this.state = 1808;
+								_la = this._input.LA(1);
+								if (!(_la == GroovyParser.SEMI || _la == GroovyParser.NL)) {
+									this._errHandler.recoverInline(this);
+								} else {
+									if (this._input.LA(1) == Token.EOF) {
+										this.matchedEOF = true;
+									}
+
+									this._errHandler.reportMatch(this);
+									this.consume();
+								}
+							}
+						}
+							break;
+						default:
+							// noinspection ExceptionCaughtLocallyJS
+							throw new NoViableAltException(this);
+					}
+					this.state = 1811;
+					this._errHandler.sync(this);
+					_alt = this._interp.adaptivePredict(this._input, 196, this._ctx);
+				} while (_alt != 2 && _alt != ATN.INVALID_ALT_NUMBER);
+			}
+		} catch (re /* RecognitionException */) {
+			this.handleRecognitionExceptionOrRethrow(_localctx, re);
+		} finally {
+			this.exitRule();
+		}
+		return _localctx;
 	}
 }

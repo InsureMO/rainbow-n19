@@ -1,7 +1,10 @@
 import {ParseTreeVisitor, TerminalNode} from 'antlr4';
 import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
+import {ExpressionInParContext} from './ExpressionInParContext';
 import {LoopStatementContext} from './LoopStatementContext';
+import {NlsContext} from './NlsContext';
+import {StatementContext} from './StatementContext';
 
 export interface IDoWhileStmtAltContext {
 	nls(): Array<NlsContext>;

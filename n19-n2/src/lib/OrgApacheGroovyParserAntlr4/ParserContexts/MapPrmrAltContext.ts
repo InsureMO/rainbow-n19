@@ -1,5 +1,6 @@
 import {ParseTreeVisitor} from 'antlr4';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
+import {MapContext} from './MapContext';
 import {PrimaryContext} from './PrimaryContext';
 
 export class MapPrmrAltContext extends PrimaryContext {

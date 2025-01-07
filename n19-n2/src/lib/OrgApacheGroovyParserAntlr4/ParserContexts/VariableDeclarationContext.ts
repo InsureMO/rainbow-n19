@@ -3,6 +3,7 @@ import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
 import {ModifiersContext} from './ModifiersContext';
+import {NlsContext} from './NlsContext';
 import {TypeContext} from './TypeContext';
 import {TypeNamePairsContext} from './TypeNamePairsContext';
 import {VariableDeclaratorsContext} from './VariableDeclaratorsContext';

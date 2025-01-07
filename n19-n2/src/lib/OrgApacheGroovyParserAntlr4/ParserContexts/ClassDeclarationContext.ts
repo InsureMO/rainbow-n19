@@ -1,7 +1,10 @@
 import {ParserRuleContext, ParseTreeVisitor, TerminalNode} from 'antlr4';
 import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
+import {FormalParametersContext} from './FormalParametersContext';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
+import {IdentifierContext} from './IdentifierContext';
+import {NlsContext} from './NlsContext';
 import {TypeListContext} from './TypeListContext';
 import {TypeParametersContext} from './TypeParametersContext';
 import { ClassBodyContext } from './ClassBodyContext';

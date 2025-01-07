@@ -1,6 +1,7 @@
 import {ParseTreeVisitor, TerminalNode} from 'antlr4';
 import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
+import {ExpressionContext} from './ExpressionContext';
 import {StatementContext} from './StatementContext';
 
 export class ThrowStmtAltContext extends StatementContext {

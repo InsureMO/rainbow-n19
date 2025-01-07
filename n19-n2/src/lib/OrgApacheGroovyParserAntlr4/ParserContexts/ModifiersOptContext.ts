@@ -3,6 +3,7 @@ import {GroovyParser} from '../GroovyParser';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
 import {GroovyParserRuleContext} from './GroovyParserRuleContext';
 import {ModifiersContext} from './ModifiersContext';
+import {NlsContext} from './NlsContext';
 
 export class ModifiersOptContext extends GroovyParserRuleContext {
 	modifiers(): ModifiersContext {
