@@ -1,5 +1,4 @@
 import {FailedPredicateException, Parser, ParserATNSimulator, TokenStream} from 'antlr4';
-import {Throwable} from '../JavaExceptions';
 import {GroovyParser} from './GroovyParser';
 
 class LightWeightFailedPredicateException extends FailedPredicateException {
@@ -25,7 +24,8 @@ export class GroovyLangParser extends GroovyParser {
 		this._interp = new ParserATNSimulator(this, ParserAtnManager.INSTANCE.getATN());
 
 		if (GroovyLangParser.GROOVY_PARSER_PROFILING_ENABLED) {
-			this.setProfile(true);
+			// no profile in js version
+			// this.setProfile(true);
 		}
 	}
 

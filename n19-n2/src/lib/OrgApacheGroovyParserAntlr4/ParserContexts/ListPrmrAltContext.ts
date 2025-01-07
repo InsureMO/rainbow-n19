@@ -1,20 +1,20 @@
 import {ParseTreeVisitor} from 'antlr4';
 import {GroovyParserVisitor} from '../GroovyParserVisitor';
-import {LiteralContext} from './LiteralContext';
+import {PrimaryContext} from './PrimaryContext';
 
-export class StringLiteralAltContext extends LiteralContext {
-	stringLiteral(): StringLiteralContext {
-		return this.getRuleContext(StringLiteralContext, 0);
+export class ListPrmrAltContext extends PrimaryContext {
+	list(): ListContext {
+		return this.getRuleContext(ListContext, 0);
 	}
 
-	constructor(ctx: LiteralContext) {
+	constructor(ctx: PrimaryContext) {
 		super();
 		this.copyFrom(ctx);
 	}
 
 	accept<Result>(visitor: ParseTreeVisitor<Result>): Result {
 		if (visitor instanceof GroovyParserVisitor) {
-			return visitor.visitStringLiteralAlt(this);
+			return visitor.visitListPrmrAlt(this);
 		} else {
 			return visitor.visitChildren(this);
 		}
