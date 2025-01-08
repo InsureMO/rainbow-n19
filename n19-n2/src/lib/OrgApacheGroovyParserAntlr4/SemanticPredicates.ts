@@ -1,7 +1,8 @@
 import {CharStream, Token, TokenStream} from 'antlr4';
 import {GroovyBugError} from '../OrgCodehausGroovy';
-import {ModifierNode} from '../OrgCodehausGroovyAst';
+import {Opcodes} from '../OrgObjectwebAsm';
 import {GroovyLexer} from './GroovyLexer';
+import {GroovyParser} from './GroovyParser';
 import {
 	ExpressionContext,
 	PathExpressionContext,
@@ -105,7 +106,31 @@ export class SemanticPredicates {
 			&& GroovyLexer.LPAREN == ts.LT(2).type;
 	}
 
-	private static readonly MODIFIER_ARRAY: Array<number> = Array.from(ModifierNode.MODIFIER_OPCODE_MAP.keys()).sort();
+	private static readonly ANNOTATION_TYPE: number = -999;
+	private static readonly MODIFIER_OPCODE_MAP: Map<number, number> = (() => {
+		const map = new Map<number, number>();
+		map.set(SemanticPredicates.ANNOTATION_TYPE, 0);
+		map.set(GroovyParser.DEF, 0);
+		map.set(GroovyParser.VAR, 0);
+
+		map.set(GroovyParser.NATIVE, Opcodes.ACC_NATIVE);
+		map.set(GroovyParser.SYNCHRONIZED, Opcodes.ACC_SYNCHRONIZED);
+		map.set(GroovyParser.TRANSIENT, Opcodes.ACC_TRANSIENT);
+		map.set(GroovyParser.VOLATILE, Opcodes.ACC_VOLATILE);
+
+		map.set(GroovyParser.PUBLIC, Opcodes.ACC_PUBLIC);
+		map.set(GroovyParser.PROTECTED, Opcodes.ACC_PROTECTED);
+		map.set(GroovyParser.PRIVATE, Opcodes.ACC_PRIVATE);
+		map.set(GroovyParser.STATIC, Opcodes.ACC_STATIC);
+		map.set(GroovyParser.ABSTRACT, Opcodes.ACC_ABSTRACT);
+		map.set(GroovyParser.SEALED, 0);
+		map.set(GroovyParser.NON_SEALED, 0);
+		map.set(GroovyParser.FINAL, Opcodes.ACC_FINAL);
+		map.set(GroovyParser.STRICTFP, Opcodes.ACC_STRICT);
+		map.set(GroovyParser.DEFAULT, 0); // no flag for specifying a default method in the JVM spec, hence no ACC_DEFAULT flag in ASM
+		return map;
+	})();
+	private static readonly MODIFIER_ARRAY: Array<number> = Array.from(SemanticPredicates.MODIFIER_OPCODE_MAP.keys()).sort();
 
 	/**
 	 * Distinguish between local variable declaration and method call, e.g. `a b`

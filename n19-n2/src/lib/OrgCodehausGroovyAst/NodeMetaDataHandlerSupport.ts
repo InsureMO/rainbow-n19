@@ -4,6 +4,7 @@ import {Optional} from '../TsAddon';
 import {NodeMetaDataHandler} from './NodeMetaDataHandler';
 
 export class NodeMetaDataHandlerSupport {
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	private static EMPTY_MAP: Map<any, any> = new Map();
 	private readonly _handler: NodeMetaDataHandler;
 
@@ -11,6 +12,7 @@ export class NodeMetaDataHandlerSupport {
 		this._handler = handler;
 	}
 
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	get nodeMetaData(): Map<any, any> {
 		const metaDataMap = this._handler.metaDataMap;
 		if (metaDataMap == null) {
@@ -19,6 +21,7 @@ export class NodeMetaDataHandlerSupport {
 		return metaDataMap;
 	}
 
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	getNodeMetaData<T>(key: any, valFn?: JavaFunction<any, T>): Optional<T> {
 		if (key == null) {
 			throw new GroovyBugError('Tried to get/set meta data with null key on ' + this + '.');
@@ -57,6 +60,7 @@ export class NodeMetaDataHandlerSupport {
 		}
 	}
 
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	setNodeMetaData(key: any, value: any): void {
 		const old = this._handler.putNodeMetaData(key, value);
 		if (old != null) {
@@ -64,6 +68,7 @@ export class NodeMetaDataHandlerSupport {
 		}
 	}
 
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	putNodeMetaData(key: any, value: any): Optional<any> {
 		if (key == null) {
 			throw new GroovyBugError('Tried to set meta data with null key on ' + this + '.');
@@ -79,6 +84,7 @@ export class NodeMetaDataHandlerSupport {
 		return exists;
 	}
 
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	removeNodeMetaData(key: any): void {
 		if (key == null) {
 			throw new GroovyBugError('Tried to remove meta data with null key ' + this + '.');
