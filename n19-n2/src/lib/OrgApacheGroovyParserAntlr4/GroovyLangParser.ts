@@ -1,4 +1,4 @@
-import {FailedPredicateException, Parser, ParserATNSimulator, TokenStream} from 'antlr4';
+import {FailedPredicateException, Parser, TokenStream} from 'antlr4';
 import {GroovyParser} from './GroovyParser';
 
 class LightWeightFailedPredicateException extends FailedPredicateException {

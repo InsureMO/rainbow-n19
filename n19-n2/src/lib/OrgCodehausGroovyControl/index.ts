@@ -9,4 +9,6 @@ export * from './ParserPlugin';
 export * from './ParserPluginFactory';
 export * from './Phases';
 export * from './ProcessingUnit';
+export * from './ReaderSource';
 export * from './SourceUnit';
+export * from './StringReaderSource';

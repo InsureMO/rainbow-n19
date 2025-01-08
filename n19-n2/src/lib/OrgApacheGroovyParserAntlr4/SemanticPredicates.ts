@@ -9,10 +9,12 @@ import {
 	PostfixExpressionContext
 } from './ParserContexts';
 
+// noinspection RegExpRedundantEscape
 export class SemanticPredicates {
 	private static readonly NONSPACES_PATTERN = /\S+?/;
-	// noinspection RegExpRedundantEscape
+	// eslint-disable-next-line no-useless-escape
 	private static readonly LETTER_AND_LEFTCURLY_PATTERN = /[a-zA-Z_\{]/;
+	// eslint-disable-next-line no-control-regex
 	private static readonly NONSURROGATE_PATTERN = /[^\u0000-\u007F\uD800-\uDBFF]/;
 	private static readonly SURROGATE_PAIR1_PATTERN = /[\uD800-\uDBFF]/;
 	private static readonly SURROGATE_PAIR2_PATTERN = /[\uDC00-\uDFFF]/;
@@ -110,10 +112,7 @@ export class SemanticPredicates {
 	 */
 	static isInvalidLocalVariableDeclaration(ts: TokenStream): boolean {
 		let index = 2;
-		let token: Token;
-		let tokenType;
 		let tokenType2 = ts.LT(index).type;
-		let tokenType3;
 
 		if (GroovyLexer.DOT == tokenType2) {
 			let tokeTypeN = tokenType2;
@@ -133,14 +132,14 @@ export class SemanticPredicates {
 			index = 1;
 		}
 
-		token = ts.LT(index);
-		tokenType = token.type;
-		tokenType3 = ts.LT(index + 2).type;
+		const token = ts.LT(index);
+		const tokenType = token.type;
+		const tokenType3 = ts.LT(index + 2).type;
 		const nextCodePoint = token.text.codePointAt(0);
 		const nextChar = String.fromCodePoint(nextCodePoint);
 
 		// VOID == tokenType ||
-		return !(GroovyLexer.BuiltInPrimitiveType == tokenType || SemanticPredicates.MODIFIER_ARRAY.findIndex(tokenType) >= 0)
+		return !(GroovyLexer.BuiltInPrimitiveType == tokenType || SemanticPredicates.MODIFIER_ARRAY.findIndex(modifier => modifier === tokenType) >= 0)
 			&& nextChar !== nextChar.toUpperCase()
 			&& nextCodePoint !== SemanticPredicates.AT_CODE_POINT
 			&& !(GroovyLexer.ASSIGN == tokenType3 || (GroovyLexer.LT == tokenType2 || GroovyLexer.LBRACK == tokenType2));
@@ -156,7 +155,8 @@ export class SemanticPredicates {
 		return !!s.match(/^[a-zA-Z_$]$/);
 	}
 
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	static isIdentifierIgnorable(_char: number): boolean {
 		return false;
-	};
+	}
 }

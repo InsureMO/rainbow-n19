@@ -1,4 +1,5 @@
 import {IClassLoader} from '../Java';
+import {Reader} from '../JavaIO';
 import {ModuleNode} from '../OrgCodehausGroovyAst';
 import {Reduction} from '../OrgCodehausGroovySyntax';
 import {SourceUnit} from './SourceUnit';

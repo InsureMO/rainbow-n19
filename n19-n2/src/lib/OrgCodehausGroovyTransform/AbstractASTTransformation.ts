@@ -1,10 +1,12 @@
 import {UnsupportedOperationException} from '../JavaExceptions';
-import {AnnotationNode, ASTNode, ClassNode} from '../OrgCodehausGroovyAst';
+import {AnnotationNode, ASTNode, ClassHelper, ClassNode} from '../OrgCodehausGroovyAst';
 import {SourceUnit} from '../OrgCodehausGroovyControl';
+import {GroovyAstMakeFirst} from '../TsAddon';
 import {ASTTransformation} from './ASTTransformation';
 import {ErrorCollecting} from './ErrorCollecting';
 
 export abstract class AbstractASTTransformation implements ASTTransformation, ErrorCollecting {
+	public static readonly RETENTION_CLASSNODE = ClassHelper.makeWithoutCaching(GroovyAstMakeFirst.JavaLangAnnotation.Retention);
 	// TODO IMPLEMENTS ME!
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	protected init(nodes: Array<ASTNode>, sourceUnit: SourceUnit): void {

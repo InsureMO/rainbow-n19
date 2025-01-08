@@ -1,7 +1,7 @@
 import {IllegalArgumentException} from '../JavaExceptions';
 import {ClosureExpression, MethodCallExpression} from '../OrgCodehausGroovyAstExpr';
 import {ClosureUtils} from '../OrgCodehausGroovyAstTools';
-import {SourceUnit} from '../OrgCodehausGroovyControl';
+import {ReaderSource, SourceUnit} from '../OrgCodehausGroovyControl';
 import {SyntaxErrorMessage} from '../OrgCodehausGroovyControlMessages';
 import {SyntaxException} from '../OrgCodehausGroovySyntax';
 import {ASTNode} from './ASTNode';
@@ -24,7 +24,7 @@ export abstract class MethodInvocationTrap extends CodeVisitorSupport {
 	}
 
 	private get sourceUnit(): SourceUnit {
-		return this._source;
+		return this._sourceUnit;
 	}
 
 	/**

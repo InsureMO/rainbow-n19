@@ -15,6 +15,8 @@ import {Janitor} from './Janitor';
 import {ParserPlugin} from './ParserPlugin';
 import {Phases} from './Phases';
 import {ProcessingUnit} from './ProcessingUnit';
+import {ReaderSource} from './ReaderSource';
+import {StringReaderSource} from './StringReaderSource';
 
 export class SourceUnit extends ProcessingUnit {
 	/**

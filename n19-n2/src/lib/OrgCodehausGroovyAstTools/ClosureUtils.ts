@@ -1,6 +1,7 @@
 import {Exception} from '../JavaExceptions';
 import {Parameter} from '../OrgCodehausGroovyAst';
 import {ClosureExpression} from '../OrgCodehausGroovyAstExpr';
+import {ReaderSource} from '../OrgCodehausGroovyControl';
 import {GeneralUtils} from './GeneralUtils';
 
 export class ClosureUtils {

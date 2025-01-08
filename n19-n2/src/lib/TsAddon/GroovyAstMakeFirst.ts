@@ -24,6 +24,9 @@ export const GroovyAstMakeFirst = {
 		IllegalArgumentException: 'java.lang.IllegalArgumentException',
 		StringBuilder: 'java.lang.StringBuilder'
 	},
+	JavaLangAnnotation: {
+		Retention: 'java.lang.annotation.Retention'
+	},
 	JavaUtil: {
 		Date: 'java.util.Date'
 	}

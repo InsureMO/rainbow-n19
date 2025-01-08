@@ -6,6 +6,14 @@ export class CompilerConfiguration {
 	// TODO IMPLEMENTS ME!
 	static readonly DEFAULT: CompilerConfiguration = new CompilerConfiguration();
 
+	get isGroovydocEnabled(): boolean {
+		return true;
+	}
+
+	get isRuntimeGroovydocEnabled(): boolean {
+		return true;
+	}
+
 	get scriptBaseClass(): string {
 		throw new UnsupportedOperationException('Not implemented yet.');
 	}

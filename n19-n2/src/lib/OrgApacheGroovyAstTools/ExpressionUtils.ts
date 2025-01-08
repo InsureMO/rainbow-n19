@@ -1,4 +1,5 @@
 import {Modifier} from '../Java';
+import {UnsupportedOperationException} from '../JavaExceptions';
 import {ClassHelper, ClassNode, FieldNode} from '../OrgCodehausGroovyAst';
 import {
 	BinaryExpression,
@@ -11,7 +12,7 @@ import {
 	VariableExpression
 } from '../OrgCodehausGroovyAstExpr';
 import {Types} from '../OrgCodehausGroovySyntax';
-import {Optional} from '../TsAddon';
+import {JavaBigDecimal, JavaInteger, Optional} from '../TsAddon';
 import {ClassNodeUtils} from './ClassNodeUtils';
 
 export class ExpressionUtils {
@@ -266,11 +267,16 @@ export class ExpressionUtils {
 						const field = type.redirect().typeClass.getField(pe.propertyAsString);
 						if (field != null && Modifier.isStatic(field.modifiers) && Modifier.isFinal(field.modifiers)) {
 							// TODO GET VALUE FROM CLASS ITSELF, SO HOW TO DEAL WITH IT?
-							const ce = new ConstantExpression(field.get(null), true);
-							ExpressionUtils.configure(exp, ce);
-							return ce;
+							// noinspection ExceptionCaughtLocallyJS
+							throw new UnsupportedOperationException(`Cannot get field[${field.name}] value from class[${field.declaringClass.name}] definition, since it is javascript.`);
+							// const ce = new ConstantExpression(field.get(null), true);
+							// ExpressionUtils.configure(exp, ce);
+							// return ce;
 						}
 					} catch (e /* Exception | LinkageError */) {
+						if (e instanceof UnsupportedOperationException) {
+							console.error(e);
+						}
 						// ignore, leave property expression in place and we'll report later
 					}
 				}
@@ -289,7 +295,7 @@ export class ExpressionUtils {
 		} else if (exp instanceof ConstantExpression) {
 			const value = exp.value;
 			const targetType = ClassHelper.getWrapper(attrType);
-			if (value instanceof Integer) {
+			if (value instanceof JavaInteger) {
 				const integer = value;
 				if (ClassHelper.isWrapperByte(targetType)) {
 					return ExpressionUtils.configure(exp, new ConstantExpression(integer.byteValue(), true));
@@ -309,7 +315,7 @@ export class ExpressionUtils {
 				if (ClassHelper.isWrapperCharacter(targetType)) {
 					return ExpressionUtils.configure(exp, new ConstantExpression(integer.intValue(), true));
 				}
-			} else if (value instanceof BigDecimal) {
+			} else if (value instanceof JavaBigDecimal) {
 				const decimal = value;
 				if (ClassHelper.isWrapperFloat(targetType)) {
 					return ExpressionUtils.configure(exp, new ConstantExpression(decimal.floatValue(), true));

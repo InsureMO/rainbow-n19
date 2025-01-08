@@ -697,6 +697,7 @@ export class GroovyParser extends AbstractParser {
 		this._interp = new ParserATNSimulator(this, GroovyParser._ATN, GroovyParser._DECISIONS_TO_DFA, new PredictionContextCache());
 	}
 
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	private handleRecognitionExceptionOrRethrow(localCtx: GroovyParserRuleContext, e: any): void {
 		if (e instanceof RecognitionException) {
 			localCtx.exception = e;
@@ -825,6 +826,7 @@ export class GroovyParser extends AbstractParser {
 					this.enterOuterAlt(_localCtx, 3);
 				{
 					this.state = 356;
+					// eslint-disable-next-line no-extra-boolean-cast
 					if (!(!SemanticPredicates.isInvalidMethodDeclaration(this._input))) {
 						// noinspection ExceptionCaughtLocallyJS
 						throw this.createFailedPredicateException(' !SemanticPredicates.isInvalidMethodDeclaration(_input) ');
@@ -1644,6 +1646,7 @@ export class GroovyParser extends AbstractParser {
 					}
 						break;
 					case 2: {
+						// nothing
 					}
 						break;
 				}
@@ -3857,6 +3860,7 @@ export class GroovyParser extends AbstractParser {
 			this.enterOuterAlt(_localCtx, 1);
 			{
 				this.state = 1003;
+				// eslint-disable-next-line no-extra-boolean-cast
 				if (!(!SemanticPredicates.isInvalidLocalVariableDeclaration(this._input))) {
 					// noinspection ExceptionCaughtLocallyJS
 					throw this.createFailedPredicateException(' !SemanticPredicates.isInvalidLocalVariableDeclaration(_input) ');
@@ -6064,7 +6068,8 @@ export class GroovyParser extends AbstractParser {
 				switch (this._interp.adaptivePredict(this._input, 148, this._ctx)) {
 					case 1: {
 						this.state = 1479;
-						if (!(!SemanticPredicates.isFollowingArgumentsOrClosure(_localCtx.expression))) {
+						// eslint-disable-next-line no-extra-boolean-cast
+						if (!(!SemanticPredicates.isFollowingArgumentsOrClosure(_localCtx._expression))) {
 							// noinspection ExceptionCaughtLocallyJS
 							throw this.createFailedPredicateException(' !SemanticPredicates.isFollowingArgumentsOrClosure($expression.ctx) ');
 						}
@@ -6073,6 +6078,7 @@ export class GroovyParser extends AbstractParser {
 					}
 						break;
 					case 2: {
+						// nothing
 					}
 						break;
 				}
@@ -8325,7 +8331,7 @@ export class GroovyParser extends AbstractParser {
 	private commandExpression_sempred(_localCtx: CommandExpressionContext, predIndex: number): boolean {
 		switch (predIndex) {
 			case 19:
-				return !SemanticPredicates.isFollowingArgumentsOrClosure(_localCtx.expression);
+				return !SemanticPredicates.isFollowingArgumentsOrClosure(_localCtx._expression);
 		}
 		return true;
 	}

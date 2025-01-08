@@ -56,7 +56,9 @@ import {
 	TryCatchStatement
 } from '../OrgCodehausGroovyAstStmt';
 import {BytecodeExpression} from '../OrgCodehausGroovyClassgen';
+import {ReaderSource} from '../OrgCodehausGroovyControl';
 import {Token, Types} from '../OrgCodehausGroovySyntax';
+import {AbstractASTTransformation} from '../OrgCodehausGroovyTransform';
 import {MethodVisitor} from '../OrgObjectwebAsm';
 import {BeanUtils} from './BeanUtils';
 import {GenericsUtils} from './GenericsUtils';
@@ -793,7 +795,7 @@ export class GeneralUtils {
 		for (let x = expression.lineNumber, y = expression.lastLineNumber; x <= y; x += 1) {
 			let line: string = readerSource.getLine(x, null);
 			if (line == null) {
-				throw new Exception('Error calculating source code for expression. Trying to read line ' + x + ' from ' + readerSource.getClass()
+				throw new Exception('Error calculating source code for expression. Trying to read line ' + x + ' from ' + readerSource.constructor.name
 				);
 			}
 			if (x == expression.lastLineNumber) {

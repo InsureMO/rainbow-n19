@@ -28,7 +28,7 @@ export const buildConfig = (lint) => {
 			}
 		},
 		external(id) {
-			return ['antlr', '@rainbow-n19/n1'].includes(id);
+			return ['antlr4', '@rainbow-n19/n1'].includes(id);
 		}
 	}];
 };

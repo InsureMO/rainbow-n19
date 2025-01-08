@@ -23,6 +23,7 @@ export class PositionInfo {
 		this._column = column;
 	}
 
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	equals(o: any): boolean {
 		if (this == o) {
 			return true;

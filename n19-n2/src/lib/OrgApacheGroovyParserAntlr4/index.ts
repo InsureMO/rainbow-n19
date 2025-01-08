@@ -2,6 +2,7 @@ export * from './AbstractLexer';
 export * from './AbstractParser';
 export * from './Antlr4ParserPlugin';
 export * from './Antlr4PluginFactory';
+export * from './AstBuilder';
 export * from './GroovyLangLexer';
 export * from './GroovyLangParser';
 export * from './GroovyLexer';

@@ -46,6 +46,7 @@ class Paren {
 		return this._column;
 	}
 
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	equals(obj: any): boolean {
 		if (obj === this) {
 			return true;
@@ -382,10 +383,12 @@ export class GroovyLexer extends AbstractLexer {
 	protected rollbackOneChar(): void {
 	}
 
-	protected enterParenCallback(text: string): void {
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	protected enterParenCallback(_text: string): void {
 	}
 
-	protected exitParenCallback(text: string): void {
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	protected exitParenCallback(_text: string): void {
 	}
 
 	private readonly _parenStack: Array<Paren> = [];
@@ -465,7 +468,8 @@ export class GroovyLexer extends AbstractLexer {
 		return Number.MIN_VALUE;
 	}
 
-	private addComment(type: number): void {
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	private addComment(_type: number): void {
 		// TODO: for what?
 		// const text =
 		this._input.getText(this._tokenStartCharIndex, this._input.index - 1);
@@ -579,6 +583,7 @@ export class GroovyLexer extends AbstractLexer {
 		switch (actionIndex) {
 			case 1:
 				// a trick to handle GStrings followed by EOF properly
+				// eslint-disable-next-line no-case-declarations
 				const readChar = this._input.LA(-1);
 				if (Token.EOF == this._input.LA(1) && ('"'.charCodeAt(0) == readChar || '/'.charCodeAt(0) == readChar)) {
 					this._type = GroovyLexer.GStringEnd;
@@ -849,6 +854,7 @@ export class GroovyLexer extends AbstractLexer {
 	private CapitalizedIdentifier_sempred(_localCtx: RuleContext, predIndex: number): boolean {
 		switch (predIndex) {
 			case 15:
+				// eslint-disable-next-line no-case-declarations
 				const char = String.fromCharCode(this._input.LA(-1));
 				return char === char.toUpperCase();
 		}

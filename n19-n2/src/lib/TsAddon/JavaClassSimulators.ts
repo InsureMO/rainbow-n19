@@ -24,3 +24,9 @@ export class JavaShort {
 
 export class JavaByte {
 }
+
+export class JavaBigInteger {
+}
+
+export class JavaBigDecimal {
+}
