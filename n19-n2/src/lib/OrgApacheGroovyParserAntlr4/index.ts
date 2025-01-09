@@ -10,7 +10,6 @@ export * from './GroovyParserRuleContext';
 export * from './GroovyParserVisitor';
 export * from './GroovySyntaxError';
 export * from './GroovySyntaxSource';
-export * from './ParseTreeListenerAdapter';
 export * from './PositionInfo';
 export * from './SemanticPredicates';
 export * from './SyntaxErrorReportable';

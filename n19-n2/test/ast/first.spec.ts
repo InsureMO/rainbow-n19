@@ -1,15 +1,18 @@
-import {ParserRuleContext} from 'antlr4';
-import {AstBuilder, ParseTreeListenerAdapter} from '../../src/lib/OrgApacheGroovyParserAntlr4';
+import {AstBuilder} from '../../src/lib/OrgApacheGroovyParserAntlr4';
+import {IntactParseListener} from '../../src/lib/ParsedGroovyAst';
 
 describe('Simple groovy syntax test', () => {
-	const parseListener = new class extends ParseTreeListenerAdapter {
-		enterEveryRule(ctx: ParserRuleContext) {
-			super.enterEveryRule(ctx);
-		}
-	}();
-	const opts = {parseListener};
+	// warm
+	beforeAll(async () => {
+		AstBuilder.ast('def x = 1');
+	});
+
 	test('def x = 1', async () => {
+		console.time('Parse def x = 1');
+		const parseListener = new IntactParseListener();
+		const opts = {parseListener};
 		const ast = AstBuilder.ast('def x = 1', opts);
-		console.log(ast);
+		console.timeEnd('Parse def x = 1');
+		console.log(parseListener.compilationUnit);
 	});
 });
