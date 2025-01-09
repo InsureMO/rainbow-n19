@@ -26,31 +26,31 @@ export class IntactParseListener extends GroovyParserListener {
 		return this._stackedNodes;
 	}
 
-	enterCompilationUnit = (ctx: CompilationUnitContext): void => {
+	enterCompilationUnit = (_ctx: CompilationUnitContext): void => {
 		this._compilationUnit = new ParsedCompilationUnit();
 		this._currentNode = this._compilationUnit;
 		this._stackedNodes.unshift(this._currentNode);
 	};
-	exitCompilationUnit = (ctx: CompilationUnitContext): void => {
+	exitCompilationUnit = (_ctx: CompilationUnitContext): void => {
 		// clear stack
 		this._stackedNodes.length = 0;
 		// remove current node
 		this._currentNode = null;
 	};
 
-	visitTerminal(node: TerminalNode): void {
+	visitTerminal(_node: TerminalNode): void {
 		// console.log('terminal node');
 	}
 
-	visitErrorNode(node: ErrorNode): void {
+	visitErrorNode(_node: ErrorNode): void {
 		// console.log('error node');
 	}
 
-	enterEveryRule(ctx: ParserRuleContext): void {
+	enterEveryRule(_ctx: ParserRuleContext): void {
 		// console.log('enter rule: ' + ctx.constructor.name);
 	}
 
-	exitEveryRule(ctx: ParserRuleContext): void {
+	exitEveryRule(_ctx: ParserRuleContext): void {
 		// console.log('exit rule: ' + ctx.constructor.name);
 	}
 }
