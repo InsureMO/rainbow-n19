@@ -16,11 +16,11 @@ class LightWeightFailedPredicateException extends FailedPredicateException {
 
 export class GroovyLangParser extends GroovyParser {
 	/** SystemUtil.getBooleanSafe("groovy.antlr4.profile"); */
-	private static readonly GROOVY_PARSER_PROFILING_ENABLED: boolean = false;
+	// private static readonly GROOVY_PARSER_PROFILING_ENABLED: boolean = false;
 
 	constructor(input: TokenStream) {
 		super(input);
-		// no need to recreate antoher one, they are same actaully
+		// no need to recreate another one, they are same actually
 		// this._interp = new ParserATNSimulator(this, ParserAtnManager.INSTANCE.getATN());
 
 		// no profile in js version

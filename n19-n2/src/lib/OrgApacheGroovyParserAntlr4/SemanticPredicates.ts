@@ -2,13 +2,13 @@ import {CharStream, Token, TokenStream} from 'antlr4';
 import {GroovyBugError} from '../OrgCodehausGroovy';
 import {Opcodes} from '../OrgObjectwebAsm';
 import {GroovyLexer} from './GroovyLexer';
-import {GroovyParser} from './GroovyParser';
 import {
 	ExpressionContext,
+	GroovyParser,
 	PathExpressionContext,
 	PostfixExprAltContext,
 	PostfixExpressionContext
-} from './ParserContexts';
+} from './GroovyParser';
 
 // noinspection RegExpRedundantEscape
 export class SemanticPredicates {
@@ -183,5 +183,10 @@ export class SemanticPredicates {
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	static isIdentifierIgnorable(_char: number): boolean {
 		return false;
+	}
+
+	static isUpperCase(char: number) {
+		const s = String.fromCharCode(char);
+		return s === s.toUpperCase();
 	}
 }

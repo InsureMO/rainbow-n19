@@ -25,7 +25,7 @@ export class GroovyLangLexer extends GroovyLexer {
 	constructor(input: CharStream) {
 		super(input);
 
-		this._interp = new PositionAdjustingLexerATNSimulator(this, GroovyLexer._ATN, GroovyLexer._DECISIONS_TO_DFA, new PredictionContextCache());
+		this._interp = new PositionAdjustingLexerATNSimulator(this, GroovyLexer._ATN, GroovyLexer.DecisionsToDFA, new PredictionContextCache());
 	}
 
 	recover(e: NoViableAltException): void {

@@ -21,7 +21,8 @@
 		"url": "https://github.com/InsureMO/rainbow-n19/issues"
 	},
 	"dependencies": {
-		"@rainbow-n19/n1": "0.1.1"
+		"@rainbow-n19/n1": "0.1.1",
+		"antlr4": "^4.13.2"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.23.9",
@@ -34,7 +35,7 @@
 		"@types/node": "18.16.12",
 		"@typescript-eslint/eslint-plugin": "^8.13.0",
 		"@typescript-eslint/parser": "^8.13.0",
-		"antlr4": "^4.13.2",
+		"antlr4ts": "^0.5.0-alpha.4",
 		"eslint": "^9.8.0",
 		"jest": "29.5.0",
 		"rollup": "^3.29.5",

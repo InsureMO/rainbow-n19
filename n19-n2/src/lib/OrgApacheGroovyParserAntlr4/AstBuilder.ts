@@ -1,10 +1,18 @@
-import {CharStreams, CommonTokenStream, ErrorListener, PredictionMode, RecognitionException, Recognizer} from 'antlr4';
+import {
+	CharStreams,
+	CommonTokenStream,
+	ErrorListener,
+	ParseTreeListener,
+	PredictionMode,
+	RecognitionException,
+	Recognizer
+} from 'antlr4';
 import {GroovyLangLexer} from './GroovyLangLexer';
 import {GroovyLangParser} from './GroovyLangParser';
 import {GroovyParserVisitor} from './GroovyParserVisitor';
 import {GroovySyntaxError} from './GroovySyntaxError';
 import {GroovySyntaxSource} from './GroovySyntaxSource';
-import {GroovyParserRuleContext} from './ParserContexts';
+import {GroovyParserRuleContext} from './GroovyParserRuleContext';
 
 declare module 'antlr4' {
 	interface TokenStream {
@@ -12,7 +20,12 @@ declare module 'antlr4' {
 	}
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type GroovyAst = any
+
+export interface AstBuilderOpts {
+	parseListener?: ParseTreeListener;
+}
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export class AstBuilder extends GroovyParserVisitor<any> {
@@ -21,8 +34,12 @@ export class AstBuilder extends GroovyParserVisitor<any> {
 	private readonly lexer: GroovyLangLexer;
 	private readonly parser: GroovyLangParser;
 
-	static ast(source: string): GroovyAst {
-		return new AstBuilder(source).buildAST();
+	static ast(source: string, opts?: AstBuilderOpts): GroovyAst {
+		const builder = new AstBuilder(source);
+		if (opts?.parseListener != null) {
+			builder.addParserListener(opts?.parseListener);
+		}
+		return builder.buildAST();
 	}
 
 	constructor(source: string) {
@@ -82,6 +99,7 @@ export class AstBuilder extends GroovyParserVisitor<any> {
 				super();
 			}
 
+			// eslint-disable-next-line @typescript-eslint/no-unused-vars
 			syntaxError(recognizer: Recognizer<TSymbol>, offendingSymbol: TSymbol, line: number, column: number, msg: string, e: RecognitionException | undefined): void {
 
 			}
@@ -99,5 +117,17 @@ export class AstBuilder extends GroovyParserVisitor<any> {
 
 		this.parser.removeErrorListeners();
 		this.parser.addErrorListener(this.createANTLRErrorListener());
+	}
+
+	removeParserListener(listener: ParseTreeListener): void {
+		this.parser.removeParseListener(listener);
+	}
+
+	removeParserListeners(): void {
+		this.parser.removeParseListeners();
+	}
+
+	addParserListener(listener: ParseTreeListener): void {
+		this.parser.addParseListener(listener);
 	}
 }

@@ -1,3 +1,5 @@
+// Generated from grammar/GroovyParser.g4 by ANTLR 4.13.2
+
 import {ParseTreeVisitor} from 'antlr4';
 import {
 	AdditiveExprAltContext,
@@ -7,6 +9,8 @@ import {
 	AnnotationNameContext,
 	AnnotationsOptContext,
 	AnonymousInnerClassDeclarationContext,
+	ArgumentListContext,
+	ArgumentListElementContext,
 	ArgumentsContext,
 	ArrayInitializerContext,
 	AssertStatementContext,
@@ -23,6 +27,7 @@ import {
 	BuiltInTypeContext,
 	BuiltInTypePrmrAltContext,
 	CastExprAltContext,
+	CastOperandExpressionContext,
 	CastParExpressionContext,
 	CatchClauseContext,
 	CatchTypeContext,
@@ -41,6 +46,7 @@ import {
 	CommandArgumentContext,
 	CommandExprAltContext,
 	CommandExpressionContext,
+	CommandPrimaryContext,
 	CompactConstructorDeclarationContext,
 	CompilationUnitContext,
 	ConditionalExprAltContext,
@@ -70,13 +76,13 @@ import {
 	EnumConstantsContext,
 	EqualityExprAltContext,
 	ExclusiveOrExprAltContext,
-	ExpressionContext,
 	ExpressionInParContext,
 	ExpressionListContext,
 	ExpressionListElementContext,
 	ExpressionStmtAltContext,
 	FieldDeclarationContext,
 	FinallyBlockContext,
+	FirstArgumentListElementContext,
 	FloatingPointLiteralAltContext,
 	ForControlContext,
 	ForInitContext,
@@ -85,6 +91,7 @@ import {
 	FormalParametersContext,
 	ForStmtAltContext,
 	ForUpdateContext,
+	GeneralClassOrInterfaceTypeContext,
 	GstringContext,
 	GstringPathContext,
 	GstringPrmrAltContext,
@@ -99,15 +106,15 @@ import {
 	KeywordsContext,
 	LabeledStmtAltContext,
 	LambdaBodyContext,
+	LambdaExpressionContext,
+	LambdaParametersContext,
 	ListContext,
 	ListPrmrAltContext,
-	LiteralContext,
 	LiteralPrmrAltContext,
 	LocalVariableDeclarationContext,
 	LocalVariableDeclarationStmtAltContext,
 	LogicalAndExprAltContext,
 	LogicalOrExprAltContext,
-	LoopStatementContext,
 	LoopStmtAltContext,
 	MapContext,
 	MapEntryContext,
@@ -123,6 +130,13 @@ import {
 	ModifiersOptContext,
 	MultipleAssignmentExprAltContext,
 	MultiplicativeExprAltContext,
+	NamedArgContext,
+	NamedArgLabelContext,
+	NamedArgPrimaryContext,
+	NamedPropertyArgContext,
+	NamedPropertyArgLabelContext,
+	NamedPropertyArgListContext,
+	NamedPropertyArgPrimaryContext,
 	NamedPropertyArgsContext,
 	NamePartContext,
 	NewPrmrAltContext,
@@ -137,7 +151,6 @@ import {
 	PostfixExprAltContext,
 	PostfixExpressionContext,
 	PowerExprAltContext,
-	PrimaryContext,
 	PrimitiveTypeContext,
 	QualifiedClassNameContext,
 	QualifiedClassNameListContext,
@@ -157,10 +170,10 @@ import {
 	ScriptStatementsContext,
 	SepContext,
 	ShiftExprAltContext,
+	StandardClassOrInterfaceTypeContext,
 	StandardLambdaExpressionContext,
 	StandardLambdaParametersContext,
-	StatementContext,
-	StatementExpressionContext,
+	StandardTypeContext,
 	StringLiteralAltContext,
 	StringLiteralContext,
 	SuperPrmrAltContext,
@@ -203,1630 +216,1354 @@ import {
 	WhileStmtAltContext,
 	YieldStatementContext,
 	YieldStmtAltContext
-} from './ParserContexts';
+} from './GroovyParser';
 
+/**
+ * This interface defines a complete generic visitor for a parse tree produced
+ * by `GroovyParser`.
+ *
+ * @param <Result> The return type of the visit operation. Use `void` for
+ * operations with no return type.
+ */
 export class GroovyParserVisitor<Result> extends ParseTreeVisitor<Result> {
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitIdentifierPrmrAlt(ctx: IdentifierPrmrAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.compilationUnit`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitCompilationUnit?: (ctx: CompilationUnitContext) => Result;
+	/**
+	 * Visit a parse tree produced by `GroovyParser.scriptStatements`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitScriptStatements?: (ctx: ScriptStatementsContext) => Result;
+	/**
+	 * Visit a parse tree produced by `GroovyParser.scriptStatement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitScriptStatement?: (ctx: ScriptStatementContext) => Result;
+	/**
+	 * Visit a parse tree produced by `GroovyParser.packageDeclaration`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitPackageDeclaration?: (ctx: PackageDeclarationContext) => Result;
+	/**
+	 * Visit a parse tree produced by `GroovyParser.importDeclaration`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitImportDeclaration?: (ctx: ImportDeclarationContext) => Result;
+	/**
+	 * Visit a parse tree produced by `GroovyParser.typeDeclaration`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitTypeDeclaration?: (ctx: TypeDeclarationContext) => Result;
+	/**
+	 * Visit a parse tree produced by `GroovyParser.modifier`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitModifier?: (ctx: ModifierContext) => Result;
+	/**
+	 * Visit a parse tree produced by `GroovyParser.modifiersOpt`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitModifiersOpt?: (ctx: ModifiersOptContext) => Result;
+	/**
+	 * Visit a parse tree produced by `GroovyParser.modifiers`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitModifiers?: (ctx: ModifiersContext) => Result;
+	/**
+	 * Visit a parse tree produced by `GroovyParser.classOrInterfaceModifiersOpt`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitClassOrInterfaceModifiersOpt?: (ctx: ClassOrInterfaceModifiersOptContext) => Result;
+	/**
+	 * Visit a parse tree produced by `GroovyParser.classOrInterfaceModifiers`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitClassOrInterfaceModifiers?: (ctx: ClassOrInterfaceModifiersContext) => Result;
+	/**
+	 * Visit a parse tree produced by `GroovyParser.classOrInterfaceModifier`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitClassOrInterfaceModifier?: (ctx: ClassOrInterfaceModifierContext) => Result;
+	/**
+	 * Visit a parse tree produced by `GroovyParser.variableModifier`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitVariableModifier?: (ctx: VariableModifierContext) => Result;
+	/**
+	 * Visit a parse tree produced by `GroovyParser.variableModifiersOpt`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitVariableModifiersOpt?: (ctx: VariableModifiersOptContext) => Result;
+	/**
+	 * Visit a parse tree produced by `GroovyParser.variableModifiers`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitVariableModifiers?: (ctx: VariableModifiersContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitLiteralPrmrAlt(ctx: LiteralPrmrAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.typeParameters`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitTypeParameters?: (ctx: TypeParametersContext) => Result;
+	/**
+	 * Visit a parse tree produced by `GroovyParser.typeParameter`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitTypeParameter?: (ctx: TypeParameterContext) => Result;
+	/**
+	 * Visit a parse tree produced by `GroovyParser.typeBound`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitTypeBound?: (ctx: TypeBoundContext) => Result;
+	/**
+	 * Visit a parse tree produced by `GroovyParser.typeList`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitTypeList?: (ctx: TypeListContext) => Result;
+	/**
+	 * Visit a parse tree produced by `GroovyParser.classDeclaration`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitClassDeclaration?: (ctx: ClassDeclarationContext) => Result;
+	/**
+	 * Visit a parse tree produced by `GroovyParser.classBody`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitClassBody?: (ctx: ClassBodyContext) => Result;
+	/**
+	 * Visit a parse tree produced by `GroovyParser.enumConstants`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitEnumConstants?: (ctx: EnumConstantsContext) => Result;
+	/**
+	 * Visit a parse tree produced by `GroovyParser.enumConstant`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitEnumConstant?: (ctx: EnumConstantContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitGstringPrmrAlt(ctx: GstringPrmrAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.classBodyDeclaration`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitClassBodyDeclaration?: (ctx: ClassBodyDeclarationContext) => Result;
+	/**
+	 * Visit a parse tree produced by `GroovyParser.memberDeclaration`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitMemberDeclaration?: (ctx: MemberDeclarationContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitNewPrmrAlt(ctx: NewPrmrAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.methodDeclaration`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitMethodDeclaration?: (ctx: MethodDeclarationContext) => Result;
+	/**
+	 * Visit a parse tree produced by `GroovyParser.compactConstructorDeclaration`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitCompactConstructorDeclaration?: (ctx: CompactConstructorDeclarationContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitThisPrmrAlt(ctx: ThisPrmrAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.methodName`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitMethodName?: (ctx: MethodNameContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitSuperPrmrAlt(ctx: SuperPrmrAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.returnType`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitReturnType?: (ctx: ReturnTypeContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitParenPrmrAlt(ctx: ParenPrmrAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.fieldDeclaration`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitFieldDeclaration?: (ctx: FieldDeclarationContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitClosureOrLambdaExpressionPrmrAlt(ctx: ClosureOrLambdaExpressionPrmrAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.variableDeclarators`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitVariableDeclarators?: (ctx: VariableDeclaratorsContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitListPrmrAlt(ctx: ListPrmrAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.variableDeclarator`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitVariableDeclarator?: (ctx: VariableDeclaratorContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitMapPrmrAlt(ctx: MapPrmrAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.variableDeclaratorId`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitVariableDeclaratorId?: (ctx: VariableDeclaratorIdContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitBuiltInTypePrmrAlt(ctx: BuiltInTypePrmrAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.variableInitializer`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitVariableInitializer?: (ctx: VariableInitializerContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitIntegerLiteralAlt(ctx: IntegerLiteralAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.variableInitializers`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitVariableInitializers?: (ctx: VariableInitializersContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitFloatingPointLiteralAlt(ctx: FloatingPointLiteralAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.emptyDims`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitEmptyDims?: (ctx: EmptyDimsContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitStringLiteralAlt(ctx: StringLiteralAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.emptyDimsOpt`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitEmptyDimsOpt?: (ctx: EmptyDimsOptContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitBooleanLiteralAlt(ctx: BooleanLiteralAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.standardType`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitStandardType?: (ctx: StandardTypeContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitNullLiteralAlt(ctx: NullLiteralAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.type`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitType?: (ctx: TypeContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitCastExprAlt(ctx: CastExprAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.classOrInterfaceType`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitClassOrInterfaceType?: (ctx: ClassOrInterfaceTypeContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitPostfixExprAlt(ctx: PostfixExprAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.generalClassOrInterfaceType`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitGeneralClassOrInterfaceType?: (ctx: GeneralClassOrInterfaceTypeContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitSwitchExprAlt(ctx: SwitchExprAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.standardClassOrInterfaceType`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitStandardClassOrInterfaceType?: (ctx: StandardClassOrInterfaceTypeContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitUnaryNotExprAlt(ctx: UnaryNotExprAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.primitiveType`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitPrimitiveType?: (ctx: PrimitiveTypeContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitPowerExprAlt(ctx: PowerExprAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.typeArguments`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitTypeArguments?: (ctx: TypeArgumentsContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitUnaryAddExprAlt(ctx: UnaryAddExprAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.typeArgument`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitTypeArgument?: (ctx: TypeArgumentContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitMultiplicativeExprAlt(ctx: MultiplicativeExprAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.annotatedQualifiedClassName`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitAnnotatedQualifiedClassName?: (ctx: AnnotatedQualifiedClassNameContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitAdditiveExprAlt(ctx: AdditiveExprAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.qualifiedClassNameList`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitQualifiedClassNameList?: (ctx: QualifiedClassNameListContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitShiftExprAlt(ctx: ShiftExprAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.formalParameters`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitFormalParameters?: (ctx: FormalParametersContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitRelationalExprAlt(ctx: RelationalExprAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.formalParameterList`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitFormalParameterList?: (ctx: FormalParameterListContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitEqualityExprAlt(ctx: EqualityExprAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.thisFormalParameter`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitThisFormalParameter?: (ctx: ThisFormalParameterContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitRegexExprAlt(ctx: RegexExprAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.formalParameter`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitFormalParameter?: (ctx: FormalParameterContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitAndExprAlt(ctx: AndExprAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.methodBody`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitMethodBody?: (ctx: MethodBodyContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitExclusiveOrExprAlt(ctx: ExclusiveOrExprAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.qualifiedName`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitQualifiedName?: (ctx: QualifiedNameContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitInclusiveOrExprAlt(ctx: InclusiveOrExprAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.qualifiedNameElement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitQualifiedNameElement?: (ctx: QualifiedNameElementContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitLogicalAndExprAlt(ctx: LogicalAndExprAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.qualifiedNameElements`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitQualifiedNameElements?: (ctx: QualifiedNameElementsContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitLogicalOrExprAlt(ctx: LogicalOrExprAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.qualifiedClassName`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitQualifiedClassName?: (ctx: QualifiedClassNameContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitConditionalExprAlt(ctx: ConditionalExprAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.qualifiedStandardClassName`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitQualifiedStandardClassName?: (ctx: QualifiedStandardClassNameContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitMultipleAssignmentExprAlt(ctx: MultipleAssignmentExprAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `integerLiteralAlt`
+	 * labeled alternative in `GroovyParser.literal`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitIntegerLiteralAlt?: (ctx: IntegerLiteralAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitAssignmentExprAlt(ctx: AssignmentExprAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `floatingPointLiteralAlt`
+	 * labeled alternative in `GroovyParser.literal`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitFloatingPointLiteralAlt?: (ctx: FloatingPointLiteralAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitBlockStmtAlt(ctx: BlockStmtAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `stringLiteralAlt`
+	 * labeled alternative in `GroovyParser.literal`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitStringLiteralAlt?: (ctx: StringLiteralAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitConditionalStmtAlt(ctx: ConditionalStmtAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `booleanLiteralAlt`
+	 * labeled alternative in `GroovyParser.literal`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitBooleanLiteralAlt?: (ctx: BooleanLiteralAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitLoopStmtAlt(ctx: LoopStmtAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `nullLiteralAlt`
+	 * labeled alternative in `GroovyParser.literal`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitNullLiteralAlt?: (ctx: NullLiteralAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitTryCatchStmtAlt(ctx: TryCatchStmtAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.gstring`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitGstring?: (ctx: GstringContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitSynchronizedStmtAlt(ctx: SynchronizedStmtAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.gstringValue`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitGstringValue?: (ctx: GstringValueContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitReturnStmtAlt(ctx: ReturnStmtAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.gstringPath`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitGstringPath?: (ctx: GstringPathContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitThrowStmtAlt(ctx: ThrowStmtAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.lambdaExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitLambdaExpression?: (ctx: LambdaExpressionContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitBreakStmtAlt(ctx: BreakStmtAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.standardLambdaExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitStandardLambdaExpression?: (ctx: StandardLambdaExpressionContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitContinueStmtAlt(ctx: ContinueStmtAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.lambdaParameters`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitLambdaParameters?: (ctx: LambdaParametersContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitYieldStmtAlt(ctx: YieldStmtAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.standardLambdaParameters`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitStandardLambdaParameters?: (ctx: StandardLambdaParametersContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitLabeledStmtAlt(ctx: LabeledStmtAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.lambdaBody`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitLambdaBody?: (ctx: LambdaBodyContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitAssertStmtAlt(ctx: AssertStmtAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.closure`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitClosure?: (ctx: ClosureContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitLocalVariableDeclarationStmtAlt(ctx: LocalVariableDeclarationStmtAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.closureOrLambdaExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitClosureOrLambdaExpression?: (ctx: ClosureOrLambdaExpressionContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitExpressionStmtAlt(ctx: ExpressionStmtAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.blockStatementsOpt`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitBlockStatementsOpt?: (ctx: BlockStatementsOptContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitEmptyStmtAlt(ctx: EmptyStmtAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.blockStatements`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitBlockStatements?: (ctx: BlockStatementsContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitCommandExprAlt(ctx: CommandExprAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.annotationsOpt`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitAnnotationsOpt?: (ctx: AnnotationsOptContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitForStmtAlt(ctx: ForStmtAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.annotation`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitAnnotation?: (ctx: AnnotationContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitWhileStmtAlt(ctx: WhileStmtAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.elementValues`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitElementValues?: (ctx: ElementValuesContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitDoWhileStmtAlt(ctx: DoWhileStmtAltContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.annotationName`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitAnnotationName?: (ctx: AnnotationNameContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitCompilationUnit(ctx: CompilationUnitContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.elementValuePairs`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitElementValuePairs?: (ctx: ElementValuePairsContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitScriptStatements(ctx: ScriptStatementsContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.elementValuePair`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitElementValuePair?: (ctx: ElementValuePairContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitScriptStatement(ctx: ScriptStatementContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.elementValuePairName`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitElementValuePairName?: (ctx: ElementValuePairNameContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitPackageDeclaration(ctx: PackageDeclarationContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.elementValue`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitElementValue?: (ctx: ElementValueContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitImportDeclaration(ctx: ImportDeclarationContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.elementValueArrayInitializer`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitElementValueArrayInitializer?: (ctx: ElementValueArrayInitializerContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitTypeDeclaration(ctx: TypeDeclarationContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.block`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitBlock?: (ctx: BlockContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitModifier(ctx: ModifierContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.blockStatement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitBlockStatement?: (ctx: BlockStatementContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitModifiersOpt(ctx: ModifiersOptContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.localVariableDeclaration`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitLocalVariableDeclaration?: (ctx: LocalVariableDeclarationContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitModifiers(ctx: ModifiersContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.variableDeclaration`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitVariableDeclaration?: (ctx: VariableDeclarationContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitClassOrInterfaceModifiersOpt(ctx: ClassOrInterfaceModifiersOptContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.typeNamePairs`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitTypeNamePairs?: (ctx: TypeNamePairsContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitClassOrInterfaceModifiers(ctx: ClassOrInterfaceModifiersContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.typeNamePair`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitTypeNamePair?: (ctx: TypeNamePairContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitClassOrInterfaceModifier(ctx: ClassOrInterfaceModifierContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.variableNames`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitVariableNames?: (ctx: VariableNamesContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitVariableModifier(ctx: VariableModifierContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.conditionalStatement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitConditionalStatement?: (ctx: ConditionalStatementContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitVariableModifiersOpt(ctx: VariableModifiersOptContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.ifElseStatement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitIfElseStatement?: (ctx: IfElseStatementContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitVariableModifiers(ctx: VariableModifiersContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.switchStatement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSwitchStatement?: (ctx: SwitchStatementContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitTypeParameters(ctx: TypeParametersContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `forStmtAlt`
+	 * labeled alternative in `GroovyParser.loopStatement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitForStmtAlt?: (ctx: ForStmtAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitTypeParameter(ctx: TypeParameterContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `whileStmtAlt`
+	 * labeled alternative in `GroovyParser.loopStatement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitWhileStmtAlt?: (ctx: WhileStmtAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitTypeBound(ctx: TypeBoundContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `doWhileStmtAlt`
+	 * labeled alternative in `GroovyParser.loopStatement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitDoWhileStmtAlt?: (ctx: DoWhileStmtAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitTypeList(ctx: TypeListContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.continueStatement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitContinueStatement?: (ctx: ContinueStatementContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitClassDeclaration(ctx: ClassDeclarationContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.breakStatement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitBreakStatement?: (ctx: BreakStatementContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitClassBody(ctx: ClassBodyContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.yieldStatement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitYieldStatement?: (ctx: YieldStatementContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitEnumConstants(ctx: EnumConstantsContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.tryCatchStatement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitTryCatchStatement?: (ctx: TryCatchStatementContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitEnumConstant(ctx: EnumConstantContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.assertStatement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitAssertStatement?: (ctx: AssertStatementContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitClassBodyDeclaration(ctx: ClassBodyDeclarationContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `blockStmtAlt`
+	 * labeled alternative in `GroovyParser.statement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitBlockStmtAlt?: (ctx: BlockStmtAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitMemberDeclaration(ctx: MemberDeclarationContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `conditionalStmtAlt`
+	 * labeled alternative in `GroovyParser.statement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitConditionalStmtAlt?: (ctx: ConditionalStmtAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitMethodDeclaration(ctx: MethodDeclarationContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `loopStmtAlt`
+	 * labeled alternative in `GroovyParser.statement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitLoopStmtAlt?: (ctx: LoopStmtAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitCompactConstructorDeclaration(ctx: CompactConstructorDeclarationContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `tryCatchStmtAlt`
+	 * labeled alternative in `GroovyParser.statement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitTryCatchStmtAlt?: (ctx: TryCatchStmtAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitMethodName(ctx: MethodNameContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `synchronizedStmtAlt`
+	 * labeled alternative in `GroovyParser.statement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSynchronizedStmtAlt?: (ctx: SynchronizedStmtAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitReturnType(ctx: ReturnTypeContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `returnStmtAlt`
+	 * labeled alternative in `GroovyParser.statement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitReturnStmtAlt?: (ctx: ReturnStmtAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitFieldDeclaration(ctx: FieldDeclarationContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `throwStmtAlt`
+	 * labeled alternative in `GroovyParser.statement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitThrowStmtAlt?: (ctx: ThrowStmtAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitVariableDeclarators(ctx: VariableDeclaratorsContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `breakStmtAlt`
+	 * labeled alternative in `GroovyParser.statement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitBreakStmtAlt?: (ctx: BreakStmtAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitVariableDeclarator(ctx: VariableDeclaratorContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `continueStmtAlt`
+	 * labeled alternative in `GroovyParser.statement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitContinueStmtAlt?: (ctx: ContinueStmtAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitVariableDeclaratorId(ctx: VariableDeclaratorIdContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `yieldStmtAlt`
+	 * labeled alternative in `GroovyParser.statement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitYieldStmtAlt?: (ctx: YieldStmtAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitVariableInitializer(ctx: VariableInitializerContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `labeledStmtAlt`
+	 * labeled alternative in `GroovyParser.statement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitLabeledStmtAlt?: (ctx: LabeledStmtAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitVariableInitializers(ctx: VariableInitializersContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `assertStmtAlt`
+	 * labeled alternative in `GroovyParser.statement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitAssertStmtAlt?: (ctx: AssertStmtAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitEmptyDims(ctx: EmptyDimsContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `localVariableDeclarationStmtAlt`
+	 * labeled alternative in `GroovyParser.statement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitLocalVariableDeclarationStmtAlt?: (ctx: LocalVariableDeclarationStmtAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitEmptyDimsOpt(ctx: EmptyDimsOptContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `expressionStmtAlt`
+	 * labeled alternative in `GroovyParser.statement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitExpressionStmtAlt?: (ctx: ExpressionStmtAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitType(ctx: TypeContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `emptyStmtAlt`
+	 * labeled alternative in `GroovyParser.statement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitEmptyStmtAlt?: (ctx: EmptyStmtAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitClassOrInterfaceType(ctx: ClassOrInterfaceTypeContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.catchClause`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitCatchClause?: (ctx: CatchClauseContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitPrimitiveType(ctx: PrimitiveTypeContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.catchType`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitCatchType?: (ctx: CatchTypeContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitTypeArguments(ctx: TypeArgumentsContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.finallyBlock`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitFinallyBlock?: (ctx: FinallyBlockContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitTypeArgument(ctx: TypeArgumentContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.resources`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitResources?: (ctx: ResourcesContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitAnnotatedQualifiedClassName(ctx: AnnotatedQualifiedClassNameContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.resourceList`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitResourceList?: (ctx: ResourceListContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitQualifiedClassNameList(ctx: QualifiedClassNameListContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.resource`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitResource?: (ctx: ResourceContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitFormalParameters(ctx: FormalParametersContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.switchBlockStatementGroup`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSwitchBlockStatementGroup?: (ctx: SwitchBlockStatementGroupContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitFormalParameterList(ctx: FormalParameterListContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.switchLabel`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSwitchLabel?: (ctx: SwitchLabelContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitThisFormalParameter(ctx: ThisFormalParameterContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.forControl`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitForControl?: (ctx: ForControlContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitFormalParameter(ctx: FormalParameterContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.enhancedForControl`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitEnhancedForControl?: (ctx: EnhancedForControlContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitMethodBody(ctx: MethodBodyContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.classicalForControl`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitClassicalForControl?: (ctx: ClassicalForControlContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitQualifiedName(ctx: QualifiedNameContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.forInit`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitForInit?: (ctx: ForInitContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitQualifiedNameElement(ctx: QualifiedNameElementContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.forUpdate`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitForUpdate?: (ctx: ForUpdateContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitQualifiedNameElements(ctx: QualifiedNameElementsContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.castParExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitCastParExpression?: (ctx: CastParExpressionContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitQualifiedClassName(ctx: QualifiedClassNameContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.parExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitParExpression?: (ctx: ParExpressionContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitQualifiedStandardClassName(ctx: QualifiedStandardClassNameContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.expressionInPar`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitExpressionInPar?: (ctx: ExpressionInParContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitLiteral(ctx: LiteralContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.expressionList`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitExpressionList?: (ctx: ExpressionListContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitGstring(ctx: GstringContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.expressionListElement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitExpressionListElement?: (ctx: ExpressionListElementContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitGstringValue(ctx: GstringValueContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.enhancedStatementExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitEnhancedStatementExpression?: (ctx: EnhancedStatementExpressionContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitGstringPath(ctx: GstringPathContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `commandExprAlt`
+	 * labeled alternative in `GroovyParser.statementExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitCommandExprAlt?: (ctx: CommandExprAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitStandardLambdaExpression(ctx: StandardLambdaExpressionContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.postfixExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitPostfixExpression?: (ctx: PostfixExpressionContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitStandardLambdaParameters(ctx: StandardLambdaParametersContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.switchExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSwitchExpression?: (ctx: SwitchExpressionContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitLambdaBody(ctx: LambdaBodyContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.switchBlockStatementExpressionGroup`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSwitchBlockStatementExpressionGroup?: (ctx: SwitchBlockStatementExpressionGroupContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitClosure(ctx: ClosureContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.switchExpressionLabel`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSwitchExpressionLabel?: (ctx: SwitchExpressionLabelContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitClosureOrLambdaExpression(ctx: ClosureOrLambdaExpressionContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `postfixExprAlt`
+	 * labeled alternative in `GroovyParser.expression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitPostfixExprAlt?: (ctx: PostfixExprAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitBlockStatementsOpt(ctx: BlockStatementsOptContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `unaryNotExprAlt`
+	 * labeled alternative in `GroovyParser.expression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitUnaryNotExprAlt?: (ctx: UnaryNotExprAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitBlockStatements(ctx: BlockStatementsContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `shiftExprAlt`
+	 * labeled alternative in `GroovyParser.expression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitShiftExprAlt?: (ctx: ShiftExprAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitAnnotationsOpt(ctx: AnnotationsOptContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `castExprAlt`
+	 * labeled alternative in `GroovyParser.expression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitCastExprAlt?: (ctx: CastExprAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitAnnotation(ctx: AnnotationContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `switchExprAlt`
+	 * labeled alternative in `GroovyParser.expression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSwitchExprAlt?: (ctx: SwitchExprAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitElementValues(ctx: ElementValuesContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `multipleAssignmentExprAlt`
+	 * labeled alternative in `GroovyParser.expression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitMultipleAssignmentExprAlt?: (ctx: MultipleAssignmentExprAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitAnnotationName(ctx: AnnotationNameContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `exclusiveOrExprAlt`
+	 * labeled alternative in `GroovyParser.expression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitExclusiveOrExprAlt?: (ctx: ExclusiveOrExprAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitElementValuePairs(ctx: ElementValuePairsContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `additiveExprAlt`
+	 * labeled alternative in `GroovyParser.expression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitAdditiveExprAlt?: (ctx: AdditiveExprAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitElementValuePair(ctx: ElementValuePairContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `regexExprAlt`
+	 * labeled alternative in `GroovyParser.expression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitRegexExprAlt?: (ctx: RegexExprAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitElementValuePairName(ctx: ElementValuePairNameContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `conditionalExprAlt`
+	 * labeled alternative in `GroovyParser.expression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitConditionalExprAlt?: (ctx: ConditionalExprAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitElementValue(ctx: ElementValueContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `powerExprAlt`
+	 * labeled alternative in `GroovyParser.expression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitPowerExprAlt?: (ctx: PowerExprAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitElementValueArrayInitializer(ctx: ElementValueArrayInitializerContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `relationalExprAlt`
+	 * labeled alternative in `GroovyParser.expression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitRelationalExprAlt?: (ctx: RelationalExprAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitBlock(ctx: BlockContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `logicalAndExprAlt`
+	 * labeled alternative in `GroovyParser.expression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitLogicalAndExprAlt?: (ctx: LogicalAndExprAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitBlockStatement(ctx: BlockStatementContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `assignmentExprAlt`
+	 * labeled alternative in `GroovyParser.expression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitAssignmentExprAlt?: (ctx: AssignmentExprAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitLocalVariableDeclaration(ctx: LocalVariableDeclarationContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `unaryAddExprAlt`
+	 * labeled alternative in `GroovyParser.expression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitUnaryAddExprAlt?: (ctx: UnaryAddExprAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitVariableDeclaration(ctx: VariableDeclarationContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `multiplicativeExprAlt`
+	 * labeled alternative in `GroovyParser.expression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitMultiplicativeExprAlt?: (ctx: MultiplicativeExprAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitTypeNamePairs(ctx: TypeNamePairsContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `inclusiveOrExprAlt`
+	 * labeled alternative in `GroovyParser.expression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitInclusiveOrExprAlt?: (ctx: InclusiveOrExprAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitTypeNamePair(ctx: TypeNamePairContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `logicalOrExprAlt`
+	 * labeled alternative in `GroovyParser.expression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitLogicalOrExprAlt?: (ctx: LogicalOrExprAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitVariableNames(ctx: VariableNamesContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `equalityExprAlt`
+	 * labeled alternative in `GroovyParser.expression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitEqualityExprAlt?: (ctx: EqualityExprAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitConditionalStatement(ctx: ConditionalStatementContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `andExprAlt`
+	 * labeled alternative in `GroovyParser.expression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitAndExprAlt?: (ctx: AndExprAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitIfElseStatement(ctx: IfElseStatementContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.castOperandExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitCastOperandExpression?: (ctx: CastOperandExpressionContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitSwitchStatement(ctx: SwitchStatementContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.commandExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitCommandExpression?: (ctx: CommandExpressionContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitLoopStatement(ctx: LoopStatementContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.commandArgument`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitCommandArgument?: (ctx: CommandArgumentContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitContinueStatement(ctx: ContinueStatementContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.pathExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitPathExpression?: (ctx: PathExpressionContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitBreakStatement(ctx: BreakStatementContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.pathElement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitPathElement?: (ctx: PathElementContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitYieldStatement(ctx: YieldStatementContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.namePart`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitNamePart?: (ctx: NamePartContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitTryCatchStatement(ctx: TryCatchStatementContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.dynamicMemberName`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitDynamicMemberName?: (ctx: DynamicMemberNameContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitAssertStatement(ctx: AssertStatementContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.indexPropertyArgs`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitIndexPropertyArgs?: (ctx: IndexPropertyArgsContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitStatement(ctx: StatementContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.namedPropertyArgs`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitNamedPropertyArgs?: (ctx: NamedPropertyArgsContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitCatchClause(ctx: CatchClauseContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `identifierPrmrAlt`
+	 * labeled alternative in `GroovyParser.primary`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitIdentifierPrmrAlt?: (ctx: IdentifierPrmrAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitCatchType(ctx: CatchTypeContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `literalPrmrAlt`
+	 * labeled alternative in `GroovyParser.primary`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitLiteralPrmrAlt?: (ctx: LiteralPrmrAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitFinallyBlock(ctx: FinallyBlockContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `gstringPrmrAlt`
+	 * labeled alternative in `GroovyParser.primary`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitGstringPrmrAlt?: (ctx: GstringPrmrAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitResources(ctx: ResourcesContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `newPrmrAlt`
+	 * labeled alternative in `GroovyParser.primary`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitNewPrmrAlt?: (ctx: NewPrmrAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitResourceList(ctx: ResourceListContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `thisPrmrAlt`
+	 * labeled alternative in `GroovyParser.primary`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitThisPrmrAlt?: (ctx: ThisPrmrAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitResource(ctx: ResourceContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `superPrmrAlt`
+	 * labeled alternative in `GroovyParser.primary`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSuperPrmrAlt?: (ctx: SuperPrmrAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitSwitchBlockStatementGroup(ctx: SwitchBlockStatementGroupContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `parenPrmrAlt`
+	 * labeled alternative in `GroovyParser.primary`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitParenPrmrAlt?: (ctx: ParenPrmrAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitSwitchLabel(ctx: SwitchLabelContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `closureOrLambdaExpressionPrmrAlt`
+	 * labeled alternative in `GroovyParser.primary`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitClosureOrLambdaExpressionPrmrAlt?: (ctx: ClosureOrLambdaExpressionPrmrAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitForControl(ctx: ForControlContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `listPrmrAlt`
+	 * labeled alternative in `GroovyParser.primary`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitListPrmrAlt?: (ctx: ListPrmrAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitEnhancedForControl(ctx: EnhancedForControlContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `mapPrmrAlt`
+	 * labeled alternative in `GroovyParser.primary`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitMapPrmrAlt?: (ctx: MapPrmrAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitClassicalForControl(ctx: ClassicalForControlContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by the `builtInTypePrmrAlt`
+	 * labeled alternative in `GroovyParser.primary`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitBuiltInTypePrmrAlt?: (ctx: BuiltInTypePrmrAltContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitForInit(ctx: ForInitContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.namedPropertyArgPrimary`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitNamedPropertyArgPrimary?: (ctx: NamedPropertyArgPrimaryContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitForUpdate(ctx: ForUpdateContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.namedArgPrimary`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitNamedArgPrimary?: (ctx: NamedArgPrimaryContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitCastParExpression(ctx: CastParExpressionContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.commandPrimary`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitCommandPrimary?: (ctx: CommandPrimaryContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitParExpression(ctx: ParExpressionContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.list`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitList?: (ctx: ListContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitExpressionInPar(ctx: ExpressionInParContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.map`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitMap?: (ctx: MapContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitExpressionList(ctx: ExpressionListContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.mapEntryList`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitMapEntryList?: (ctx: MapEntryListContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitExpressionListElement(ctx: ExpressionListElementContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.namedPropertyArgList`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitNamedPropertyArgList?: (ctx: NamedPropertyArgListContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitEnhancedStatementExpression(ctx: EnhancedStatementExpressionContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.mapEntry`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitMapEntry?: (ctx: MapEntryContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitStatementExpression(ctx: StatementExpressionContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.namedPropertyArg`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitNamedPropertyArg?: (ctx: NamedPropertyArgContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitPostfixExpression(ctx: PostfixExpressionContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.namedArg`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitNamedArg?: (ctx: NamedArgContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitSwitchExpression(ctx: SwitchExpressionContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.mapEntryLabel`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitMapEntryLabel?: (ctx: MapEntryLabelContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitSwitchBlockStatementExpressionGroup(ctx: SwitchBlockStatementExpressionGroupContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.namedPropertyArgLabel`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitNamedPropertyArgLabel?: (ctx: NamedPropertyArgLabelContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitSwitchExpressionLabel(ctx: SwitchExpressionLabelContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.namedArgLabel`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitNamedArgLabel?: (ctx: NamedArgLabelContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitExpression(ctx: ExpressionContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.creator`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitCreator?: (ctx: CreatorContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitCommandExpression(ctx: CommandExpressionContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.dim`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitDim?: (ctx: DimContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitCommandArgument(ctx: CommandArgumentContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.arrayInitializer`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitArrayInitializer?: (ctx: ArrayInitializerContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitPathExpression(ctx: PathExpressionContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.anonymousInnerClassDeclaration`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitAnonymousInnerClassDeclaration?: (ctx: AnonymousInnerClassDeclarationContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitPathElement(ctx: PathElementContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.createdName`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitCreatedName?: (ctx: CreatedNameContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitNamePart(ctx: NamePartContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.nonWildcardTypeArguments`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitNonWildcardTypeArguments?: (ctx: NonWildcardTypeArgumentsContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitDynamicMemberName(ctx: DynamicMemberNameContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.typeArgumentsOrDiamond`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitTypeArgumentsOrDiamond?: (ctx: TypeArgumentsOrDiamondContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitIndexPropertyArgs(ctx: IndexPropertyArgsContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.arguments`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitArguments?: (ctx: ArgumentsContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitNamedPropertyArgs(ctx: NamedPropertyArgsContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.argumentList`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitArgumentList?: (ctx: ArgumentListContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitPrimary(ctx: PrimaryContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.enhancedArgumentListInPar`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitEnhancedArgumentListInPar?: (ctx: EnhancedArgumentListInParContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitList(ctx: ListContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.firstArgumentListElement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitFirstArgumentListElement?: (ctx: FirstArgumentListElementContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitMap(ctx: MapContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.argumentListElement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitArgumentListElement?: (ctx: ArgumentListElementContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitMapEntryList(ctx: MapEntryListContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.enhancedArgumentListElement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitEnhancedArgumentListElement?: (ctx: EnhancedArgumentListElementContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitMapEntry(ctx: MapEntryContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.stringLiteral`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitStringLiteral?: (ctx: StringLiteralContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitMapEntryLabel(ctx: MapEntryLabelContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.className`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitClassName?: (ctx: ClassNameContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitCreator(ctx: CreatorContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.identifier`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitIdentifier?: (ctx: IdentifierContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitDim(ctx: DimContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.builtInType`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitBuiltInType?: (ctx: BuiltInTypeContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitArrayInitializer(ctx: ArrayInitializerContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.keywords`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitKeywords?: (ctx: KeywordsContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitAnonymousInnerClassDeclaration(ctx: AnonymousInnerClassDeclarationContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.rparen`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitRparen?: (ctx: RparenContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitCreatedName(ctx: CreatedNameContext): Result {
-		return this.visitChildren(ctx);
-	}
-
+	 * Visit a parse tree produced by `GroovyParser.nls`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitNls?: (ctx: NlsContext) => Result;
 	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitNonWildcardTypeArguments(ctx: NonWildcardTypeArgumentsContext): Result {
-		return this.visitChildren(ctx);
-	}
-
-	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitTypeArgumentsOrDiamond(ctx: TypeArgumentsOrDiamondContext): Result {
-		return this.visitChildren(ctx);
-	}
-
-	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitArguments(ctx: ArgumentsContext): Result {
-		return this.visitChildren(ctx);
-	}
-
-	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitEnhancedArgumentListInPar(ctx: EnhancedArgumentListInParContext): Result {
-		return this.visitChildren(ctx);
-	}
-
-	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitEnhancedArgumentListElement(ctx: EnhancedArgumentListElementContext): Result {
-		return this.visitChildren(ctx);
-	}
-
-	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitStringLiteral(ctx: StringLiteralContext): Result {
-		return this.visitChildren(ctx);
-	}
-
-	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitClassName(ctx: ClassNameContext): Result {
-		return this.visitChildren(ctx);
-	}
-
-	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitIdentifier(ctx: IdentifierContext): Result {
-		return this.visitChildren(ctx);
-	}
-
-	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitBuiltInType(ctx: BuiltInTypeContext): Result {
-		return this.visitChildren(ctx);
-	}
-
-	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitKeywords(ctx: KeywordsContext): Result {
-		return this.visitChildren(ctx);
-	}
-
-	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitRparen(ctx: RparenContext): Result {
-		return this.visitChildren(ctx);
-	}
-
-	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitNls(ctx: NlsContext): Result {
-		return this.visitChildren(ctx);
-	}
-
-	/**
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	visitSep(ctx: SepContext): Result {
-		return this.visitChildren(ctx);
-	}
+	 * Visit a parse tree produced by `GroovyParser.sep`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSep?: (ctx: SepContext) => Result;
 }
+
