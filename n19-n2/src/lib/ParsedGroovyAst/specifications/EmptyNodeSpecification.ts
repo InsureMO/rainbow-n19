@@ -7,6 +7,7 @@ export class EmptyNodeSpecification implements ParsedNodeSpecification {
 		// avoid extend
 	}
 
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	get properties(): Array<[string, any]> {
 		return [];
 	}

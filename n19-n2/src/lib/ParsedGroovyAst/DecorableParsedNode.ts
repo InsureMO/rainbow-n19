@@ -8,7 +8,7 @@ export class DecorableParsedNode {
 
 	constructor(node: ParsedNode) {
 		this._node = node;
-		if (node.endLine === node.startLine && node.endColumn < node.startColumn) {
+		if (node.endLine === node.startLine && node.endColumn <= node.startColumn) {
 			// just guard, decorable node must have text, otherwise it's meaningless
 			const text = node.text ?? '';
 			if (text.length === 0) {

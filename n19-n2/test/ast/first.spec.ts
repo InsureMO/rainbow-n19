@@ -17,9 +17,9 @@ describe('Simple groovy syntax test', () => {
 		const opts = {parseListener};
 		AstBuilder.ast('def x = 1', opts);
 		console.timeEnd('Parse def x = 1');
-		// console.log(parseListener.compilationUnit.toString());
-		// console.error(parseListener.debugger.missedLogics);
 		const visitor = new ParsedNodeVisitor(parseListener.compilationUnit);
 		console.log(visitor.atomicNodes.map(node => node.toString()).join('\n'));
+		console.log(parseListener.compilationUnit.toString());
+		console.error(parseListener.debugger.missedLogics);
 	});
 });

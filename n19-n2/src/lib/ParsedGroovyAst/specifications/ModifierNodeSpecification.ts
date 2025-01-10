@@ -20,7 +20,7 @@ export class ModifierNodeSpecification implements ParsedNodeSpecification {
 		return this._type;
 	}
 
-	get text(): string {
+	get typeText(): string {
 		switch (this._type) {
 			case ModifierNodeType.CLASS_OR_INTERFACE_MODIFIER:
 				return '';
@@ -29,10 +29,11 @@ export class ModifierNodeSpecification implements ParsedNodeSpecification {
 		}
 	}
 
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	get properties(): Array<[string, any]> {
 		return [
 			['type', this.type],
-			['text', this.text]
+			['type.text', this.typeText]
 		];
 	}
 

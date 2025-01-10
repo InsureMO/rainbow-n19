@@ -7,6 +7,7 @@ import {LiteralNodeSpecification} from './LiteralNodeSpecification';
 import {ModifierNodeSpecification} from './ModifierNodeSpecification';
 
 export class ParsedNodeSpecificationReader {
+	// noinspection JSUnusedLocalSymbols
 	private constructor() {
 		// avoid extend
 	}
