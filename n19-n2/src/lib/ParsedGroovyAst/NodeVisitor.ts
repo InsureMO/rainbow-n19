@@ -6,7 +6,9 @@ import {ParsedNode} from './Node';
 
 export class ParsedNodeVisitor {
 	private readonly _root: DecorableParsedNode;
-	// sorted
+	/**
+	 * sorted, and ignored some context, for example, assign operator of variable declarator statement.
+	 */
 	private readonly _atomicNodes: Array<DecorableParsedNode>;
 
 	constructor(root: ParsedNode) {
@@ -82,5 +84,63 @@ export class ParsedNodeVisitor {
 
 		// not found
 		return (void 0);
+	}
+
+	findNodeOrNearestPrevious(line: number, column: number): Optional<DecorableParsedNode> {
+		let startIndex = 0;
+		let endIndex = this._atomicNodes.length - 1;
+		let result: Optional<DecorableParsedNode> = (void 0);
+
+		while (startIndex <= endIndex) {
+			const midIndex = Math.floor((startIndex + endIndex) / 2);
+			const node = this._atomicNodes[midIndex];
+
+			if (node.startLine <= line && node.startColumn <= column && node.endLine >= line && node.endColumn >= column) {
+				// found, return
+				return node;
+			} else if (node.endLine < line || (node.endLine === line && node.endColumn < column)) {
+				// not found,
+				// current node is before given position, cache it
+				// continue finding on right part when position is after current node
+				result = node;
+				startIndex = midIndex + 1;
+			} else {
+				// not found,
+				// current node is after given position
+				// continue finding on left part when given position is before current node
+				endIndex = midIndex - 1;
+			}
+		}
+
+		return result;
+	}
+
+	findNodeOrNearestNext(line: number, column: number): Optional<DecorableParsedNode> {
+		let startIndex = 0;
+		let endIndex = this._atomicNodes.length - 1;
+		let result: Optional<DecorableParsedNode> = (void 0);
+
+		while (startIndex <= endIndex) {
+			const midIndex = Math.floor((startIndex + endIndex) / 2);
+			const node = this._atomicNodes[midIndex];
+
+			if (node.startLine <= line && node.startColumn <= column && node.endLine >= line && node.endColumn >= column) {
+				// found, return
+				return node;
+			} else if (node.endLine < line || (node.endLine === line && node.endColumn < column)) {
+				// not found,
+				// current node is before given position
+				// continue finding on right part when position is after current node
+				startIndex = midIndex + 1;
+			} else {
+				// not found,
+				// current node is after given position, cache it
+				// continue finding on left part when given position is before current node
+				result = node;
+				endIndex = midIndex - 1;
+			}
+		}
+
+		return result;
 	}
 }
