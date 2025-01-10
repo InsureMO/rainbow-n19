@@ -1,7 +1,7 @@
 import {GroovyParser} from '../OrgApacheGroovyParserAntlr4';
 import {Optional} from '../TsAddon';
 
-export class NodeUtils {
+export class ParsedNodeUtils {
 	private constructor() {
 		// avoid extend
 	}

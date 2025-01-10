@@ -1,4 +1,3 @@
-import {ValueOperator} from '@rainbow-n19/n1';
 import {IClass, IClassLoaderHolder} from '../Interfaces';
 import {ClassName} from '../TypeAlias';
 import {AbstractClassLoaderDelegate} from './AbstractClassLoaderDelegate';
@@ -26,7 +25,7 @@ export class ClassSupport<T extends IClassLoaderHolder> extends AbstractClassLoa
 	}
 
 	isNamePresent(): boolean {
-		return ValueOperator.of(this.name).isNotBlank().ok();
+		return this._className != null && this._className.trim().length !== 0;
 	}
 
 	/**

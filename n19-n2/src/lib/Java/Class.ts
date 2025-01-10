@@ -1,4 +1,3 @@
-import {ValueOperator} from '@rainbow-n19/n1';
 import {UnsupportedOperationException} from '../JavaExceptions';
 import {Optional} from '../TsAddon';
 import {Constructor} from './Constructor';
@@ -231,7 +230,7 @@ export class Class implements IClass {
 	 *    3. set package name with part before first ".".
 	 */
 	private initByName(): void {
-		if (ValueOperator.of(this.name).isNotBlank().ok()) {
+		if (this.name != null && this.name.trim().length !== 0) {
 			if (this.name.startsWith(BuiltInConstants.ARR_HEAD)) {
 				this._isMemberClass = false;
 				this._isAnonymousClass = false;
@@ -558,7 +557,7 @@ export class Class implements IClass {
 	}
 
 	get packageName(): Optional<PackageName> {
-		if (ValueOperator.of(this._packageName).isBlank().ok()) {
+		if (this._packageName == null || this._packageName.length === 0) {
 			return BuiltInConstants.EMPTY_PACKAGE_NAME;
 		} else {
 			return this._packageName;

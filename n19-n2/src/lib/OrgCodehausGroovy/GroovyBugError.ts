@@ -1,4 +1,3 @@
-import {ValueOperator} from '@rainbow-n19/n1';
 import {AssertionError, AssertionErrorConstructorArgs} from '../JavaExceptions';
 import {Optional} from '../TsAddon';
 
@@ -20,7 +19,7 @@ export class GroovyBugError extends AssertionError {
 	}
 
 	setBugText(bugText?: string): void {
-		if (ValueOperator.of(bugText).isBlank().ok()) {
+		if (bugText == null || this.bugText.trim().length === 0) {
 			this._bugText = (void 0);
 		} else {
 			this._bugText = bugText;

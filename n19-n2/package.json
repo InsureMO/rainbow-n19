@@ -21,7 +21,6 @@
 		"url": "https://github.com/InsureMO/rainbow-n19/issues"
 	},
 	"dependencies": {
-		"@rainbow-n19/n1": "0.1.1",
 		"antlr4": "^4.13.2"
 	},
 	"devDependencies": {

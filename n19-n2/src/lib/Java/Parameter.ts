@@ -1,4 +1,3 @@
-import {ValueOperator} from '@rainbow-n19/n1';
 import {UnsupportedOperationException} from '../JavaExceptions';
 import {Optional} from '../TsAddon';
 import {IAnnotationConstructorArgs, IParameterConstructorArgs} from './ConstructorArgs';
@@ -46,7 +45,7 @@ export class Parameter implements IParameter {
 	}
 
 	get isNamePresent(): boolean {
-		return ValueOperator.of(this._name).isNotBlank().ok();
+		return this._name != null && this._name.trim().length !== 0;
 	}
 
 	get name(): string {

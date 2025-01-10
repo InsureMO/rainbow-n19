@@ -1,8 +1,10 @@
 import {ParserRuleContext} from 'antlr4';
 import {GroovyParser} from '../OrgApacheGroovyParserAntlr4';
 import {Optional} from '../TsAddon';
-import {NodeUtils} from './NodeUtils';
-import {ParsedAstDebugger} from './ParsedAstDebugger';
+import {ParsedAstDebugger} from './AstDebugger';
+import {ParsedNodeSpecification} from './NodeSpecification';
+import {ParsedNodeUtils} from './NodeUtils';
+import {ParsedNodeSpecificationReader} from './specifications';
 
 export class ParsedNode {
 	// debugger
@@ -15,14 +17,15 @@ export class ParsedNode {
 	private _previousSibling?: Optional<ParsedNode>;
 	/** nothing when it has no next sibling */
 	private _nextSibling?: Optional<ParsedNode>;
-	// my properties
+	// common properties
 	private readonly _type: number;
 	private _startLine: number;
 	private _startColumn: number;
 	private _endLine: number;
 	private _endColumn: number;
 	private _text: Optional<string>;
-	// children
+	// specific properties
+	private _specification: ParsedNodeSpecification;
 	private readonly _children: Array<ParsedNode> = [];
 
 	/**
@@ -59,6 +62,10 @@ export class ParsedNode {
 
 	get text(): Optional<string> {
 		return this._text;
+	}
+
+	get specification(): ParsedNodeSpecification {
+		return this._specification;
 	}
 
 	get root(): ParsedNode {
@@ -115,11 +122,18 @@ export class ParsedNode {
 		this._endLine = ctx.stop?.line ?? ctx.start.line;
 		this._endColumn = ctx.stop?.column ?? ctx.start.column;
 		this.doCopyText(ctx);
+		this.doReadSpecificProperties(ctx);
 	}
 
-	private doCopyText(ctx: ParserRuleContext): void {
+	protected doCopyText(ctx: ParserRuleContext): void {
 		switch (this._type) {
+			case GroovyParser.RULE_compilationUnit:
+			case GroovyParser.RULE_scriptStatements:
+			case GroovyParser.RULE_modifiers:
+				// container node, ignore text to improve performance
+				break;
 			case GroovyParser.RULE_nls:
+				// irrelevant node, but add debugger to monitor to enable monitor
 				this._debugger.addMissedLogics(() => {
 					const text = ctx.getText();
 					if (text != null && text.length !== 0) {
@@ -134,21 +148,21 @@ export class ParsedNode {
 		}
 	}
 
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	protected getMoreProperties(): Array<[string, any]> {
-		return [];
+	protected doReadSpecificProperties(ctx: ParserRuleContext): void {
+		this._specification = ParsedNodeSpecificationReader.read(this.type, ctx);
 	}
 
 	toString(indent: number = 0): string {
 		const indentString = new Array<string>(indent).fill('').map(() => '\t').join('');
+		// noinspection DuplicatedCode
 		const props = [
-			['type', NodeUtils.getRuleName(this.type)],
+			['type', ParsedNodeUtils.getRuleName(this.type)],
 			['text', this.text],
 			['startLine', this.startLine],
 			['startColumn', this.startColumn],
 			['endLine', this.endLine],
 			['endColumn', this.endColumn],
-			...this.getMoreProperties()
+			...(this.specification.properties.map(([key, value]) => [`spec.${key}`, value]))
 		].map(([name, value]) => `${name}=${value ?? ''}`).join(', ');
 		let s = `${indentString}Rule[${props}]`;
 		if (this.childCount !== 0) {
