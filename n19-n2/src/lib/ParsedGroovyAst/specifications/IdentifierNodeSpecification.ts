@@ -79,6 +79,7 @@ export class IdentifierNodeSpecification implements ParsedNodeSpecification {
 			// this identifier is name of variable
 			spec._purpose = IdentifierNodePurpose.VARIABLE;
 		} else {
+			// TODO more identifier purposes need to be identified
 			throw new UnsupportedOperationException('TODO hey, implements me please!');
 		}
 		return spec;
