@@ -40,6 +40,7 @@ export class ParsedNodeVisitor {
 			case GroovyParser.RULE_postfixExpression:
 			case GroovyParser.RULE_pathExpression:
 			case GroovyParser.RULE_primary:
+			case GroovyParser.RULE_nls:
 				return false;
 			case GroovyParser.RULE_modifier:
 			case GroovyParser.RULE_identifier:
