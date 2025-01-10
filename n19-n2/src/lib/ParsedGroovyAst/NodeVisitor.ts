@@ -44,9 +44,15 @@ export class ParsedNodeVisitor {
 			case GroovyParser.RULE_primary:
 			case GroovyParser.RULE_nls:
 				return false;
+			case GroovyParser.RULE_packageDeclaration:
+			case GroovyParser.RULE_qualifiedName:
+			case GroovyParser.RULE_qualifiedNameElement:
+			case GroovyParser.RULE_annotationsOpt:
 			case GroovyParser.RULE_modifier:
 			case GroovyParser.RULE_identifier:
 			case GroovyParser.RULE_literal:
+				return true;
+			case GroovyParser.RULE_sep:
 				return true;
 			default:
 				throw new IllegalArgumentException(`Node type[${node.type}] is not supported yet.`);

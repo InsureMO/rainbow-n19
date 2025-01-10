@@ -6,20 +6,24 @@ describe('Simple groovy syntax test', () => {
 		missedLogicCheckEnabled: true,
 		ruleProcessingLogsEnabled: true
 	};
+
+	const parseAst = ( source: string, title?: string) => {
+		const label = `Parse ${title}`;
+		console.time(label);
+		const parseListener = new IntactParseListener(debuggerOptions);
+		AstBuilder.ast(source, {parseListener});
+		console.timeEnd(label);
+		const visitor = new ParsedNodeVisitor(parseListener.compilationUnit);
+		console.log(visitor.atomicNodes.map(node => node.toString()).join('\n'));
+		console.log(parseListener.compilationUnit.toString());
+		console.error(parseListener.debugger.missedLogics);
+	}
+
 	// warm
 	beforeAll(async () => {
 		AstBuilder.ast('def x = 1');
 	});
 
-	test('def x = 1', async () => {
-		console.time('Parse def x = 1');
-		const parseListener = new IntactParseListener(debuggerOptions);
-		const opts = {parseListener};
-		AstBuilder.ast('def x = 1', opts);
-		console.timeEnd('Parse def x = 1');
-		const visitor = new ParsedNodeVisitor(parseListener.compilationUnit);
-		console.log(visitor.atomicNodes.map(node => node.toString()).join('\n'));
-		console.log(parseListener.compilationUnit.toString());
-		console.error(parseListener.debugger.missedLogics);
-	});
+	test('package abc.def', async () => parseAst('package abc.def;'));
+	test('def x = 1', async () => parseAst('def x = 1'));
 });

@@ -1,10 +1,13 @@
 import {TerminalNode} from 'antlr4';
-import {IllegalArgumentException, UnsupportedOperationException} from '../../JavaExceptions';
+import {IllegalArgumentException} from '../../JavaExceptions';
 import {
 	EnhancedForControlContext,
 	FormalParameterContext,
 	GroovyParser,
 	IdentifierContext,
+	PackageDeclarationContext,
+	QualifiedNameContext,
+	QualifiedNameElementContext,
 	StandardLambdaParametersContext,
 	TypeNamePairContext,
 	VariableDeclaratorContext,
@@ -33,6 +36,7 @@ export enum IdentifierNodePurpose {
 	TYPE_NAME_PAIR = GroovyParser.RULE_typeNamePair,
 	VARIABLE_NAMES = GroovyParser.RULE_variableNames,
 	ENHANCED_FOR_CONTROL = GroovyParser.RULE_enhancedForControl,
+	PACKAGE_DECLARATION = GroovyParser.RULE_packageDeclaration
 }
 
 export class IdentifierNodeSpecification implements ParsedNodeSpecification {
@@ -106,11 +110,25 @@ export class IdentifierNodeSpecification implements ParsedNodeSpecification {
 			} else if (parentOfIdCtx instanceof EnhancedForControlContext) {
 				spec._purpose = IdentifierNodePurpose.ENHANCED_FOR_CONTROL;
 			} else {
-				throw new IllegalArgumentException(`Parent context[${ctx.parentCtx.parentCtx.constructor.name}] of VariableDeclaratorIdContext and IdentifierContext is not supported yet.`);
+				throw new IllegalArgumentException(`Parent context[${ctx.parentCtx.parentCtx.constructor.name}] of VariableDeclaratorIdContext/IdentifierContext is not supported yet.`);
+			}
+		} else if (ctx.parentCtx instanceof QualifiedNameElementContext) {
+			const parentOfQneCtx = ctx.parentCtx.parentCtx;
+			if (parentOfQneCtx instanceof QualifiedNameContext) {
+				const parentOfQnCtx = parentOfQneCtx.parentCtx;
+				if (parentOfQnCtx instanceof PackageDeclarationContext) {
+					spec._purpose = IdentifierNodePurpose.PACKAGE_DECLARATION;
+				} else {
+					// TODO more identifier purposes need to be identified
+					throw new IllegalArgumentException(`Parent context[${ctx.parentCtx.parentCtx.constructor.name}] of QualifiedNameContext/QualifiedNameElementContext/IdentifierContext is not supported yet.`);
+				}
+			} else {
+				// TODO more identifier purposes need to be identified
+				throw new IllegalArgumentException(`Parent context[${ctx.parentCtx.parentCtx.constructor.name}] of QualifiedNameElementContext/IdentifierContext is not supported yet.`);
 			}
 		} else {
 			// TODO more identifier purposes need to be identified
-			throw new UnsupportedOperationException('TODO hey, implements me please!');
+			throw new IllegalArgumentException('TODO hey, implements me please!');
 		}
 		return spec;
 	}

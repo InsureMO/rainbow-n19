@@ -4,24 +4,9 @@ import {ParsedNodeUtils} from './NodeUtils';
 
 export class DecorableParsedNode {
 	private readonly _node: ParsedNode;
-	private readonly _endColumn: number;
 
 	constructor(node: ParsedNode) {
 		this._node = node;
-		if (node.endLine === node.startLine && node.endColumn <= node.startColumn) {
-			// just guard, decorable node must have text, otherwise it's meaningless
-			const text = node.text ?? '';
-			if (text.length === 0) {
-				// no text, end is same as start
-				this._endColumn = node.startColumn;
-			} else {
-				// has text, length is end - start + 1
-				this._endColumn = node.startColumn + (node.text ?? '').length - 1;
-			}
-		} else {
-			this._endColumn = node.endColumn;
-		}
-
 	}
 
 	get underlay(): ParsedNode {
@@ -45,7 +30,7 @@ export class DecorableParsedNode {
 	}
 
 	get endColumn(): number {
-		return this._endColumn;
+		return this._node.endColumn;
 	}
 
 	get text(): string {

@@ -14,6 +14,10 @@ export class ParsedNodeSpecificationReader {
 
 	static read(type: number, ctx: ParserRuleContext): ParsedNodeSpecification {
 		switch (type) {
+			case GroovyParser.RULE_annotationsOpt:
+			case GroovyParser.RULE_qualifiedName:
+				// TODO implement me!
+				return EmptyNodeSpecification.INSTANCE;
 			case GroovyParser.RULE_modifier:
 				return ModifierNodeSpecification.read(ctx as ModifierContext);
 			case GroovyParser.RULE_identifier:

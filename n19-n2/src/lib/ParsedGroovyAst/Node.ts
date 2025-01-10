@@ -96,16 +96,16 @@ export class ParsedNode {
 		return this._children[index];
 	}
 
-	firstChild(): Optional<ParsedNode> {
+	get firstChild(): Optional<ParsedNode> {
 		return this._children[0];
 	}
 
-	lastChild(): Optional<ParsedNode> {
+	get lastChild(): Optional<ParsedNode> {
 		return this._children.length === 0 ? (void 0) : this._children[this._children.length - 1];
 	}
 
 	appendChild(child: ParsedNode): this {
-		const originalLastChild = this.lastChild();
+		const originalLastChild = this.lastChild;
 		this._children.push(child);
 		child._root = this.root;
 		child._parent = this;
@@ -119,8 +119,14 @@ export class ParsedNode {
 	copyKeyData(ctx: ParserRuleContext): void {
 		this._startLine = ctx.start.line;
 		this._startColumn = ctx.start.column;
-		this._endLine = ctx.stop?.line ?? ctx.start.line;
-		this._endColumn = ctx.stop?.column ?? ctx.start.column;
+		const lastChild = this.lastChild;
+		// TODO not sure, seems its the only way to get end position when it has no child
+		// get from last child,
+		// or get from ctx stop token when there is not child
+		// or use the same position of ctx start token
+		this._endLine = lastChild?._endLine ?? ctx.stop?.line ?? ctx.start.line;
+		// TODO not sure, seems stop is the end column, according to tracing, :)
+		this._endColumn = lastChild?._endColumn ?? ctx.stop?.stop ?? ctx.start.stop;
 		this.doCopyText(ctx);
 		this.doReadSpecificProperties(ctx);
 	}
@@ -130,7 +136,8 @@ export class ParsedNode {
 			case GroovyParser.RULE_compilationUnit:
 			case GroovyParser.RULE_scriptStatements:
 			case GroovyParser.RULE_modifiers:
-				// container node, ignore text to improve performance
+			case GroovyParser.RULE_packageDeclaration:
+				// ignore text to improve performance
 				break;
 			case GroovyParser.RULE_nls:
 				// irrelevant node, but add debugger to monitor to enable monitor
