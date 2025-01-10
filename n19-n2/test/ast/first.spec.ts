@@ -11,12 +11,17 @@ describe('Simple groovy syntax test', () => {
 		const label = `Parse ${title}`;
 		console.time(label);
 		const parseListener = new IntactParseListener(debuggerOptions);
-		AstBuilder.ast(source, {parseListener});
-		console.timeEnd(label);
-		const visitor = new ParsedNodeVisitor(parseListener.compilationUnit);
-		console.log(visitor.atomicNodes.map(node => node.toString()).join('\n'));
-		console.log(parseListener.compilationUnit.toString());
-		console.error(parseListener.debugger.missedLogics);
+		try {
+			AstBuilder.ast(source, {parseListener});
+			console.timeEnd(label);
+			const visitor = new ParsedNodeVisitor(parseListener.compilationUnit);
+			console.log(visitor.atomicNodes.map(node => node.toString()).join('\n'));
+			console.log(parseListener.compilationUnit.toString());
+			console.error(parseListener.debugger.missedLogics);
+		} catch (error) {
+			console.error(parseListener.debugger.ruleProcessingLogs.join('\n'));
+			console.error(error);
+		}
 	}
 
 	// warm

@@ -1,4 +1,3 @@
-import {IllegalArgumentException} from '../JavaExceptions';
 import {GroovyParser} from '../OrgApacheGroovyParserAntlr4';
 import {Optional} from '../TsAddon';
 import {DecorableParsedNode} from './DecorableParsedNode';
@@ -55,7 +54,8 @@ export class ParsedNodeVisitor {
 			case GroovyParser.RULE_sep:
 				return true;
 			default:
-				throw new IllegalArgumentException(`Node type[${node.type}] is not supported yet.`);
+				console.error(`Node type[${node.type}] is not supported yet.`);
+				return false;
 		}
 	}
 

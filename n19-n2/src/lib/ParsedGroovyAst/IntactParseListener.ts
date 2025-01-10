@@ -7,8 +7,8 @@ import {
 	GroovyParserRuleContext
 } from '../OrgApacheGroovyParserAntlr4';
 import {Optional} from '../TsAddon';
-import {ParsedNode} from './Node';
 import {ParsedAstDebugger, ParsedAstDebuggerOptions} from './AstDebugger';
+import {ParsedNode} from './Node';
 
 export class IntactParseListener extends GroovyParserListener {
 	private readonly _debugger: ParsedAstDebugger;
@@ -43,7 +43,19 @@ export class IntactParseListener extends GroovyParserListener {
 		return this._stackedNodes;
 	}
 
-	protected enterRuleContext(node: ParsedNode) {
+	protected enterRuleContext(ctx: GroovyParserRuleContext): void {
+		let node: ParsedNode;
+		if (this.shouldIgnore(ctx)) {
+			this.debugger.ignoreRule(ctx);
+			return;
+		}
+
+		if (ctx instanceof CompilationUnitContext) {
+			node = new ParsedNode(GroovyParser.RULE_compilationUnit, this._debugger);
+			this._compilationUnit = node;
+		} else if (ctx instanceof GroovyParserRuleContext) {
+			node = new ParsedNode(ctx.ruleIndex, this._debugger);
+		}
 		const currentNode = this._currentNode;
 		if (currentNode != null) {
 			currentNode.appendChild(node);
@@ -52,11 +64,14 @@ export class IntactParseListener extends GroovyParserListener {
 		this._stackedNodes.unshift(node);
 	}
 
-	protected exitRuleContext<N extends ParsedNode>(ctx: ParserRuleContext): N {
+	protected exitRuleContext(ctx: GroovyParserRuleContext): Optional<ParsedNode> {
+		if (this.shouldIgnore(ctx)) {
+			return (void 0);
+		}
 		const exited = this._stackedNodes.shift();
 		exited.copyKeyData(ctx);
 		this._currentNode = this._stackedNodes[0];
-		return exited as N;
+		return exited;
 	}
 
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -80,15 +95,8 @@ export class IntactParseListener extends GroovyParserListener {
 
 	enterEveryRule(ctx: ParserRuleContext): void {
 		this.debugger.enterRule(ctx);
-		if (ctx instanceof CompilationUnitContext) {
-			this._compilationUnit = new ParsedNode(GroovyParser.RULE_compilationUnit, this._debugger);
-			this.enterRuleContext(this._compilationUnit);
-		} else if (ctx instanceof GroovyParserRuleContext) {
-			if (this.shouldIgnore(ctx)) {
-				this.debugger.ignoreRule(ctx);
-			} else {
-				this.enterRuleContext(new ParsedNode(ctx.ruleIndex, this._debugger));
-			}
+		if (ctx instanceof GroovyParserRuleContext) {
+			this.enterRuleContext(ctx);
 		} else {
 			throw new IllegalArgumentException(`Parser rule context[${ctx.constructor.name}] not supported yet.`);
 		}
@@ -96,9 +104,6 @@ export class IntactParseListener extends GroovyParserListener {
 
 	exitEveryRule(ctx: ParserRuleContext): void {
 		this.debugger.exitRule(ctx);
-		// error raised in #enterEveryRule, which means context here is GroovyParserRuleContext
-		if (!this.shouldIgnore(ctx as GroovyParserRuleContext)) {
-			this.exitRuleContext(ctx);
-		}
+		this.exitRuleContext(ctx as GroovyParserRuleContext);
 	}
 }
