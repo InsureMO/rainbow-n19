@@ -21,9 +21,11 @@ export class ParsedAstDebugger {
 		return this._missedLogicCheckEnabled;
 	}
 
-	addMissedLogics(check: () => Optional<string>): void {
+	addMissedLogics(logic: string): void;
+	addMissedLogics(logic: () => Optional<string>): void;
+	addMissedLogics(logic: string | (() => Optional<string>)): void {
 		if (this.isMissedLogicCheckEnabled) {
-			const missedLogic = check();
+			const missedLogic = typeof logic === 'string' ? logic : logic();
 			if (missedLogic != null) {
 				this._missedLogics.push(missedLogic);
 			}
@@ -47,6 +49,12 @@ export class ParsedAstDebugger {
 	ignoreRule(ctx: ParserRuleContext) {
 		if (this.isRuleProcessingLogsEnabled) {
 			this._ruleProcessingLogs.push(`Ignore rule ${ctx.constructor.name}`);
+		}
+	}
+
+	ignoreUnsupportedRule(ctx: ParserRuleContext) {
+		if (this.isRuleProcessingLogsEnabled) {
+			this._ruleProcessingLogs.push(`Ignore unsupported rule ${ctx.constructor.name}`);
 		}
 	}
 

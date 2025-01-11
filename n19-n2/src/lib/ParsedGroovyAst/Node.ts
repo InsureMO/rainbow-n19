@@ -156,7 +156,7 @@ export class ParsedNode {
 	}
 
 	protected doReadSpecificProperties(ctx: ParserRuleContext): void {
-		this._specification = ParsedNodeSpecificationReader.read(this.type, ctx);
+		this._specification = ParsedNodeSpecificationReader.read(this.type, ctx, this._debugger);
 	}
 
 	toString(indent: number = 0): string {

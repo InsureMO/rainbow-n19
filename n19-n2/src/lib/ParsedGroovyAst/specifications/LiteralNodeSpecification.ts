@@ -1,6 +1,6 @@
 import {TerminalNode} from 'antlr4';
-import {IllegalArgumentException} from '../../JavaExceptions';
 import {GroovyParser, LiteralContext, StringLiteralContext} from '../../OrgApacheGroovyParserAntlr4';
+import {ParsedAstDebugger} from '../AstDebugger';
 import {ParsedNodeSpecification} from '../NodeSpecification';
 
 export enum LiteralNodeType {
@@ -26,11 +26,11 @@ export class LiteralNodeSpecification implements ParsedNodeSpecification {
 	get properties(): Array<[string, any]> {
 		return [
 			['type', this.type],
-			['type.text', this.typeText],
+			['type.text', this.typeText]
 		];
 	}
 
-	static read(ctx: LiteralContext): LiteralNodeSpecification {
+	static read(ctx: LiteralContext, _debugger: ParsedAstDebugger): LiteralNodeSpecification {
 		const spec = new LiteralNodeSpecification();
 		// there is only one child in literal context
 		const child = ctx.getChild(0);
@@ -43,12 +43,12 @@ export class LiteralNodeSpecification implements ParsedNodeSpecification {
 					spec._type = child.symbol.type;
 					break;
 				default:
-					throw new IllegalArgumentException(`The only terminal child symbol type[${child.symbol.type}] is not supported yet.`);
+					_debugger.addMissedLogics(() => `The only terminal child symbol type[${child.symbol.type}] is not supported yet.`);
 			}
 		} else if (child instanceof StringLiteralContext) {
 			spec._type = LiteralNodeType.STRING;
 		} else {
-			throw new IllegalArgumentException(`The only child[${child.constructor.name}] is not supported yet.`);
+			_debugger.addMissedLogics(() => `The only child[${child.constructor.name}] is not supported yet.`);
 		}
 		return spec;
 	}

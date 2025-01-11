@@ -7,28 +7,28 @@ describe('Simple groovy syntax test', () => {
 		ruleProcessingLogsEnabled: true
 	};
 
-	const parseAst = ( source: string, title?: string) => {
+	const parseAst = (source: string, title?: string) => {
 		const label = `Parse ${title}`;
 		console.time(label);
 		const parseListener = new IntactParseListener(debuggerOptions);
 		try {
 			AstBuilder.ast(source, {parseListener});
 			console.timeEnd(label);
-			const visitor = new ParsedNodeVisitor(parseListener.compilationUnit);
+			const visitor = new ParsedNodeVisitor(parseListener.compilationUnits);
 			console.log(visitor.atomicNodes.map(node => node.toString()).join('\n'));
-			console.log(parseListener.compilationUnit.toString());
+			parseListener.compilationUnits.forEach(compilationUnit => console.log(compilationUnit.toString()));
 			console.error(parseListener.debugger.missedLogics);
 		} catch (error) {
 			console.error(parseListener.debugger.ruleProcessingLogs.join('\n'));
 			console.error(error);
 		}
-	}
+	};
 
 	// warm
 	beforeAll(async () => {
 		AstBuilder.ast('def x = 1');
 	});
 
-	test('package abc.def', async () => parseAst('package abc.def;'));
+	test('package abc.def', async () => parseAst('package @X abc.de;'));
 	test('def x = 1', async () => parseAst('def x = 1'));
 });

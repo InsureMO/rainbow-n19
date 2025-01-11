@@ -1,6 +1,6 @@
 import {TerminalNode} from 'antlr4';
-import {IllegalArgumentException} from '../../JavaExceptions';
 import {ClassOrInterfaceModifierContext, GroovyParser, ModifierContext} from '../../OrgApacheGroovyParserAntlr4';
+import {ParsedAstDebugger} from '../AstDebugger';
 import {ParsedNodeSpecification} from '../NodeSpecification';
 
 export enum ModifierNodeType {
@@ -37,7 +37,7 @@ export class ModifierNodeSpecification implements ParsedNodeSpecification {
 		];
 	}
 
-	static read(ctx: ModifierContext): ModifierNodeSpecification {
+	static read(ctx: ModifierContext, _debugger: ParsedAstDebugger): ModifierNodeSpecification {
 		const spec = new ModifierNodeSpecification();
 		// there is only one child in modifier context
 		const child = ctx.getChild(0);
@@ -52,12 +52,12 @@ export class ModifierNodeSpecification implements ParsedNodeSpecification {
 					spec._type = child.symbol.type;
 					break;
 				default:
-					throw new IllegalArgumentException(`The only terminal child symbol type[${child.symbol.type}] is not supported yet.`);
+					_debugger.addMissedLogics(() => `The only terminal child symbol type[${child.symbol.type}] is not supported yet.`);
 			}
 		} else if (child instanceof ClassOrInterfaceModifierContext) {
 			spec._type = ModifierNodeType.CLASS_OR_INTERFACE_MODIFIER;
 		} else {
-			throw new IllegalArgumentException(`The only child[${child.constructor.name}] is not supported yet.`);
+			_debugger.addMissedLogics(() => `The only child[${child.constructor.name}] is not supported yet.`);
 		}
 		return spec;
 	}

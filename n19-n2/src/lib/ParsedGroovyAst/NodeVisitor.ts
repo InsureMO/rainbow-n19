@@ -4,16 +4,15 @@ import {DecorableParsedNode} from './DecorableParsedNode';
 import {ParsedNode} from './Node';
 
 export class ParsedNodeVisitor {
-	private readonly _root: DecorableParsedNode;
+	private readonly _roots: Array<DecorableParsedNode> = [];
 	/**
 	 * sorted, and ignored some context, for example, assign operator of variable declarator statement.
 	 */
-	private readonly _atomicNodes: Array<DecorableParsedNode>;
+	private readonly _atomicNodes: Array<DecorableParsedNode> = [];
 
-	constructor(root: ParsedNode) {
-		this._root = new DecorableParsedNode(root);
-		this._atomicNodes = [];
-		this.initBuild(this._root);
+	constructor(roots: Array<ParsedNode>) {
+		this._roots.push(...(roots.map(root => new DecorableParsedNode(root))));
+		this._roots.forEach(root => this.initBuild(root));
 	}
 
 	protected initBuild(node: DecorableParsedNode): void {

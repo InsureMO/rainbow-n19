@@ -1,5 +1,4 @@
 import {ErrorNode, ParserRuleContext, TerminalNode} from 'antlr4';
-import {IllegalArgumentException} from '../JavaExceptions';
 import {
 	CompilationUnitContext,
 	GroovyParser,
@@ -13,7 +12,7 @@ import {ParsedNode} from './Node';
 export class IntactParseListener extends GroovyParserListener {
 	private readonly _debugger: ParsedAstDebugger;
 	// root
-	private _compilationUnit: ParsedNode;
+	private _compilationUnits: Array<ParsedNode> = [];
 	// visiting
 	private _currentNode: ParsedNode;
 	// 0 is the nearest
@@ -31,8 +30,8 @@ export class IntactParseListener extends GroovyParserListener {
 	/**
 	 * get compilation unit after ast parsed, otherwise returns null
 	 */
-	get compilationUnit(): Optional<ParsedNode> {
-		return this._compilationUnit;
+	get compilationUnits(): Array<ParsedNode> {
+		return this._compilationUnits;
 	}
 
 	protected get current(): Optional<ParsedNode> {
@@ -52,7 +51,7 @@ export class IntactParseListener extends GroovyParserListener {
 
 		if (ctx instanceof CompilationUnitContext) {
 			node = new ParsedNode(GroovyParser.RULE_compilationUnit, this._debugger);
-			this._compilationUnit = node;
+			this._compilationUnits.push(node);
 		} else if (ctx instanceof GroovyParserRuleContext) {
 			node = new ParsedNode(ctx.ruleIndex, this._debugger);
 		}
@@ -98,12 +97,14 @@ export class IntactParseListener extends GroovyParserListener {
 		if (ctx instanceof GroovyParserRuleContext) {
 			this.enterRuleContext(ctx);
 		} else {
-			throw new IllegalArgumentException(`Parser rule context[${ctx.constructor.name}] not supported yet.`);
+			this.debugger.ignoreUnsupportedRule(ctx);
 		}
 	}
 
 	exitEveryRule(ctx: ParserRuleContext): void {
 		this.debugger.exitRule(ctx);
-		this.exitRuleContext(ctx as GroovyParserRuleContext);
+		if (ctx instanceof GroovyParserRuleContext) {
+			this.exitRuleContext(ctx);
+		}
 	}
 }
