@@ -50,10 +50,10 @@ export class IntactParseListener extends GroovyParserListener {
 		}
 
 		if (ctx instanceof CompilationUnitContext) {
-			node = new ParsedNode(GroovyParser.RULE_compilationUnit, this._debugger);
+			node = new ParsedNode(ctx, this._debugger);
 			this._compilationUnits.push(node);
 		} else if (ctx instanceof GroovyParserRuleContext) {
-			node = new ParsedNode(ctx.ruleIndex, this._debugger);
+			node = new ParsedNode(ctx, this._debugger);
 		}
 		const currentNode = this._currentNode;
 		if (currentNode != null) {

@@ -1,5 +1,5 @@
 import {ParserRuleContext} from 'antlr4';
-import {GroovyParser} from '../OrgApacheGroovyParserAntlr4';
+import {GroovyParser, GroovyParserRuleContext} from '../OrgApacheGroovyParserAntlr4';
 import {Optional} from '../TsAddon';
 import {ParsedAstDebugger} from './AstDebugger';
 import {ParsedNodeSpecification} from './NodeSpecification';
@@ -7,6 +7,7 @@ import {ParsedNodeUtils} from './NodeUtils';
 import {ParsedNodeSpecificationReader} from './specifications';
 
 export class ParsedNode {
+	private readonly _ctx: GroovyParserRuleContext;
 	// debugger
 	private readonly _debugger: ParsedAstDebugger;
 	// noinspection TypeScriptFieldCanBeMadeReadonly
@@ -28,16 +29,17 @@ export class ParsedNode {
 	private _specification: ParsedNodeSpecification;
 	private readonly _children: Array<ParsedNode> = [];
 
-	/**
-	 * @param type from {@link GroovyParser#RULE_compilationUnit} to {@link GroovyParser#RULE_sep}
-	 * @param _debugger debugger
-	 */
-	constructor(type: number, _debugger: ParsedAstDebugger) {
-		this._type = type;
+	constructor(ctx: GroovyParserRuleContext, _debugger: ParsedAstDebugger) {
+		this._ctx = ctx;
+		this._type = ctx.ruleIndex;
 		this._debugger = _debugger;
-		if (type === GroovyParser.RULE_compilationUnit) {
+		if (this._type === GroovyParser.RULE_compilationUnit) {
 			this._root = this;
 		}
+	}
+
+	get groovyParserRuleContext(): GroovyParserRuleContext {
+		return this._ctx;
 	}
 
 	get type(): number {

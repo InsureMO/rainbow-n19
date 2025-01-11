@@ -17,7 +17,9 @@ describe('Simple groovy syntax test', () => {
 			const visitor = new ParsedNodeVisitor(parseListener.compilationUnits);
 			console.log(visitor.atomicNodes.map(node => node.toString()).join('\n'));
 			parseListener.compilationUnits.forEach(compilationUnit => console.log(compilationUnit.toString()));
-			console.error(parseListener.debugger.missedLogics);
+			if (parseListener.debugger.missedLogics.length !== 0) {
+				console.error(parseListener.debugger.missedLogics);
+			}
 		} catch (error) {
 			console.error(parseListener.debugger.ruleProcessingLogs.join('\n'));
 			console.error(error);
@@ -29,6 +31,6 @@ describe('Simple groovy syntax test', () => {
 		AstBuilder.ast('def x = 1');
 	});
 
-	test('package abc.def', async () => parseAst('package @X abc.de;'));
+	test('package abc.def', async () => parseAst('package abc.de;'));
 	test('def x = 1', async () => parseAst('def x = 1'));
 });

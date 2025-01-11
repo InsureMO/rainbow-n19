@@ -93,8 +93,8 @@ export class IdentifierNodeSpecification implements ParsedNodeSpecification {
 		}
 	}
 
-	private static readPurposeIfIsVariableDeclaratorId(ctx: IdentifierContext, parentCtx: ParserRuleContext, spec: IdentifierNodeSpecification, _debugger: ParsedAstDebugger): boolean {
-		if (parentCtx instanceof VariableDeclaratorIdContext) {
+	private static readPurposeIfParentIsVariableDeclaratorId(ctx: IdentifierContext, parentCtx: ParserRuleContext, spec: IdentifierNodeSpecification, _debugger: ParsedAstDebugger): boolean {
+		if (!(parentCtx instanceof VariableDeclaratorIdContext)) {
 			return false;
 		}
 		const parentOfVariableDeclaratorIdContext = parentCtx.parentCtx;
@@ -117,7 +117,7 @@ export class IdentifierNodeSpecification implements ParsedNodeSpecification {
 		return true;
 	}
 
-	private static readPurposeIfIsQualifiedNameElement(ctx: IdentifierContext, parentCtx: ParserRuleContext, spec: IdentifierNodeSpecification, _debugger: ParsedAstDebugger): boolean {
+	private static readPurposeIfParentIsQualifiedNameElement(ctx: IdentifierContext, parentCtx: ParserRuleContext, spec: IdentifierNodeSpecification, _debugger: ParsedAstDebugger): boolean {
 		if (!(parentCtx instanceof QualifiedNameElementContext)) {
 			return false;
 		}
@@ -139,9 +139,9 @@ export class IdentifierNodeSpecification implements ParsedNodeSpecification {
 
 	private static readPurpose(ctx: IdentifierContext, spec: IdentifierNodeSpecification, _debugger: ParsedAstDebugger) {
 		const parentOfIdentifierContext = ctx.parentCtx;
-		if (IdentifierNodeSpecification.readPurposeIfIsVariableDeclaratorId(ctx, parentOfIdentifierContext, spec, _debugger)) {
+		if (IdentifierNodeSpecification.readPurposeIfParentIsVariableDeclaratorId(ctx, parentOfIdentifierContext, spec, _debugger)) {
 			// nothing
-		} else if (IdentifierNodeSpecification.readPurposeIfIsQualifiedNameElement(ctx, parentOfIdentifierContext, spec, _debugger)) {
+		} else if (IdentifierNodeSpecification.readPurposeIfParentIsQualifiedNameElement(ctx, parentOfIdentifierContext, spec, _debugger)) {
 			// nothing
 		} else {
 			// TODO more identifier purposes need to be identified
