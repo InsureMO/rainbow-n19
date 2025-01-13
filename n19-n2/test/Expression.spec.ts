@@ -1,5 +1,5 @@
 import {GroovyParser, IdentifierContext} from '../src/lib/OrgApacheGroovyParserAntlr4';
-import {gprc} from '../src/lib/ParsedGroovyAst';
+import {ParsedAstUtils} from '../src/lib/ParsedGroovyAst';
 
 describe('Expression Test', () => {
 	class X extends IdentifierContext {
@@ -25,7 +25,7 @@ describe('Expression Test', () => {
 		console.timeEnd('use instanceof');
 		console.time('use gprc');
 		for (let i = 0; i < 1000000; i++) {
-			const x = gprc(y).ruleIndex === GroovyParser.RULE_identifier;
+			const x = ParsedAstUtils.gprc(y).ruleIndex === GroovyParser.RULE_identifier;
 		}
 		console.timeEnd('use gprc');
 		// expect(testIsSth(y, X)).toBe(true);

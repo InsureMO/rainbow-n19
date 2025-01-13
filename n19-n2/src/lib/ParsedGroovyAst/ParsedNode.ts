@@ -1,10 +1,10 @@
-import {ParserRuleContext} from 'antlr4';
 import {GroovyParser, GroovyParserRuleContext} from '../OrgApacheGroovyParserAntlr4';
 import {Optional} from '../TsAddon';
 import {ParsedAstDebugger} from './ParsedAstDebugger';
 import {ParsedNodeSpecification} from './ParsedNodeSpecification';
 import {ParsedNodeUtils} from './ParsedNodeUtils';
-import {ParsedNodeSpecificationReader} from './specifications';
+import {PostNodeProcessorRegistry} from './PostNodeProcessorRegistry';
+import {EmptyNodeSpecification} from './specifications';
 
 export class ParsedNode {
 	private readonly _ctx: GroovyParserRuleContext;
@@ -26,7 +26,7 @@ export class ParsedNode {
 	private _endColumn: number;
 	private _text: Optional<string>;
 	// specific properties
-	private _specification: ParsedNodeSpecification;
+	private _specification: Optional<ParsedNodeSpecification>;
 	private readonly _children: Array<ParsedNode> = [];
 
 	constructor(ctx: GroovyParserRuleContext, _debugger: ParsedAstDebugger) {
@@ -70,8 +70,16 @@ export class ParsedNode {
 		return this._text;
 	}
 
+	setText(text: string): void {
+		this._text = text;
+	}
+
 	get specification(): ParsedNodeSpecification {
-		return this._specification;
+		return this._specification ?? EmptyNodeSpecification.INSTANCE;
+	}
+
+	setSpecification(specification: ParsedNodeSpecification): void {
+		this._specification = specification;
 	}
 
 	get root(): ParsedNode {
@@ -122,7 +130,7 @@ export class ParsedNode {
 		return this;
 	}
 
-	copyKeyData(ctx: ParserRuleContext): void {
+	copyKeyData(ctx: GroovyParserRuleContext): void {
 		this._startLine = ctx.start.line;
 		this._startColumn = ctx.start.column;
 		const lastChild = this.lastChild;
@@ -137,33 +145,18 @@ export class ParsedNode {
 		this.doReadSpecificProperties(ctx);
 	}
 
-	protected doCopyText(ctx: ParserRuleContext): void {
-		switch (this._type) {
-			case GroovyParser.RULE_compilationUnit:
-			case GroovyParser.RULE_scriptStatements:
-			case GroovyParser.RULE_modifiers:
-			case GroovyParser.RULE_packageDeclaration:
-			case GroovyParser.RULE_importDeclaration:
-				// ignore text to improve performance
-				break;
-			case GroovyParser.RULE_nls:
-				// irrelevant node, but add debugger to monitor to enable monitor
-				this._debugger.addMissedLogics(() => {
-					const text = ctx.getText();
-					if (text != null && text.length !== 0) {
-						return `Text[${text}] is miss caught by node for rule[${this._type}]`;
-					} else {
-						return (void 0);
-					}
-				});
-				break;
-			default:
-				this._text = ctx.getText();
+	protected doCopyText(ctx: GroovyParserRuleContext): void {
+		const processor = PostNodeProcessorRegistry.getProcessor(ctx.ruleIndex);
+		if (processor.needCopyTextOnToParsed(ctx)) {
+			processor.copyTextOnToParsed(this, ctx);
 		}
 	}
 
-	protected doReadSpecificProperties(ctx: ParserRuleContext): void {
-		this._specification = ParsedNodeSpecificationReader.read(this.type, ctx, this._debugger);
+	protected doReadSpecificProperties(ctx: GroovyParserRuleContext): void {
+		const processor = PostNodeProcessorRegistry.getProcessor(ctx.ruleIndex);
+		if (processor.needReadSpecificationOnToParsed(ctx)) {
+			processor.readSpecificationOnToParsed(this, ctx);
+		}
 	}
 
 	toString(indent: number = 0): string {

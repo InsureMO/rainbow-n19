@@ -1,5 +1,4 @@
-import {GroovyParser, PackageDeclarationContext} from '../../OrgApacheGroovyParserAntlr4';
-import {ParsedAstDebugger} from '../ParsedAstDebugger';
+import {GroovyParser} from '../../OrgApacheGroovyParserAntlr4';
 import {ParsedNodeSpecification} from '../ParsedNodeSpecification';
 
 export enum PackageDeclarationNodePurpose {
@@ -11,6 +10,10 @@ export class PackageDeclarationNodeSpecification implements ParsedNodeSpecificat
 
 	get purpose(): PackageDeclarationNodePurpose {
 		return this._purpose;
+	}
+
+	setPurpose(purpose: PackageDeclarationNodePurpose): void {
+		this._purpose = purpose;
 	}
 
 	get purposeText(): string {
@@ -28,15 +31,6 @@ export class PackageDeclarationNodeSpecification implements ParsedNodeSpecificat
 	clone(): ParsedNodeSpecification {
 		const spec = new PackageDeclarationNodeSpecification();
 		spec._purpose = this._purpose;
-		return spec;
-	}
-
-	/**
-	 * default purpose is {@link PackageDeclarationNodePurpose#IMPORT}
-	 */
-	static read(_ctx: PackageDeclarationContext, _debugger: ParsedAstDebugger): PackageDeclarationNodeSpecification {
-		const spec = new PackageDeclarationNodeSpecification();
-		spec._purpose = PackageDeclarationNodePurpose.PACKAGE;
 		return spec;
 	}
 }

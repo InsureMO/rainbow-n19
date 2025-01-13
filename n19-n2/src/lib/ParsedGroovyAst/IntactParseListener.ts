@@ -1,13 +1,9 @@
 import {ErrorNode, ParserRuleContext, TerminalNode} from 'antlr4';
-import {
-	CompilationUnitContext,
-	GroovyParser,
-	GroovyParserListener,
-	GroovyParserRuleContext
-} from '../OrgApacheGroovyParserAntlr4';
+import {CompilationUnitContext, GroovyParserListener, GroovyParserRuleContext} from '../OrgApacheGroovyParserAntlr4';
 import {Optional} from '../TsAddon';
 import {ParsedAstDebugger, ParsedAstDebuggerOptions} from './ParsedAstDebugger';
 import {ParsedNode} from './ParsedNode';
+import {PostNodeProcessorRegistry} from './PostNodeProcessorRegistry';
 
 export class IntactParseListener extends GroovyParserListener {
 	private readonly _debugger: ParsedAstDebugger;
@@ -84,12 +80,7 @@ export class IntactParseListener extends GroovyParserListener {
 	}
 
 	protected shouldIgnore(ctx: GroovyParserRuleContext): boolean {
-		switch (ctx.ruleIndex) {
-			case GroovyParser.RULE_nls:
-				return true;
-		}
-
-		return false;
+		return PostNodeProcessorRegistry.getProcessor(ctx.ruleIndex).ignoreToParsed(ctx);
 	}
 
 	enterEveryRule(ctx: ParserRuleContext): void {

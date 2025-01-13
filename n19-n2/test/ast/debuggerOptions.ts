@@ -7,7 +7,10 @@ export const debuggerOptions: ParsedAstDebuggerOptions = {
 };
 
 export const parseAst = (source: string, title?: string) => {
-	const label = `Parse ${title}`;
+	if (title == null || title.trim().length === 0) {
+		title = source.split('\n')[0] ?? 'Unknown source';
+	}
+	const label = `Parse [${title}]`;
 	console.time(label);
 	const parseListener = new IntactParseListener(debuggerOptions);
 	try {

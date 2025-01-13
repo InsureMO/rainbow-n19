@@ -6,6 +6,8 @@ describe('Import declaration', () => {
 
 	test('import abc', async () => parseAst('import abc'));
 	test('import abc.de', async () => parseAst('import abc.de'));
+	test('import abc.de.*', async () => parseAst('import abc.de.*'));
 
 	test('import static abc.x', async () => parseAst('import static abc.x'));
+	test('import static abc.x.*', async () => parseAst('import static abc.x.*'));
 });

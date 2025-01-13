@@ -38,13 +38,5 @@ export class ImportDeclarationNodeSpecification implements ParsedNodeSpecificati
 		spec._purpose = this._purpose;
 		return spec;
 	}
-
-	/**
-	 * default purpose is {@link ImportDeclarationNodePurpose#IMPORT}
-	 */
-	static read(_ctx: ImportDeclarationContext, _debugger: ParsedAstDebugger): ImportDeclarationNodeSpecification {
-		const spec = new ImportDeclarationNodeSpecification();
-		spec._purpose = ImportDeclarationNodePurpose.IMPORT;
-		return spec;
-	}
 }
+

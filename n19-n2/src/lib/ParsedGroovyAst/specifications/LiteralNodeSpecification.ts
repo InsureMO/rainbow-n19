@@ -1,6 +1,4 @@
-import {TerminalNode} from 'antlr4';
-import {GroovyParser, LiteralContext, StringLiteralContext} from '../../OrgApacheGroovyParserAntlr4';
-import {ParsedAstDebugger} from '../ParsedAstDebugger';
+import {GroovyParser} from '../../OrgApacheGroovyParserAntlr4';
 import {ParsedNodeSpecification} from '../ParsedNodeSpecification';
 
 export enum LiteralNodeType {
@@ -18,6 +16,10 @@ export class LiteralNodeSpecification implements ParsedNodeSpecification {
 		return this._type;
 	}
 
+	setType(type: LiteralNodeType): void {
+		this._type = type;
+	}
+
 	get typeText(): string {
 		return GroovyParser.symbolicNames[this._type];
 	}
@@ -33,29 +35,6 @@ export class LiteralNodeSpecification implements ParsedNodeSpecification {
 	clone(): ParsedNodeSpecification {
 		const spec = new LiteralNodeSpecification();
 		spec._type = this._type;
-		return spec;
-	}
-
-	static read(ctx: LiteralContext, _debugger: ParsedAstDebugger): LiteralNodeSpecification {
-		const spec = new LiteralNodeSpecification();
-		// there is only one child in literal context
-		const child = ctx.getChild(0);
-		if (child instanceof TerminalNode) {
-			switch (child.symbol.type) {
-				case GroovyParser.BooleanLiteral:
-				case GroovyParser.IntegerLiteral:
-				case GroovyParser.FloatingPointLiteral:
-				case GroovyParser.NullLiteral:
-					spec._type = child.symbol.type;
-					break;
-				default:
-					_debugger.addMissedLogics(() => `The only terminal child symbol type[${child.symbol.type}] is not supported yet.`);
-			}
-		} else if (child instanceof StringLiteralContext) {
-			spec._type = LiteralNodeType.STRING;
-		} else {
-			_debugger.addMissedLogics(() => `The only child[${child.constructor.name}] is not supported yet.`);
-		}
 		return spec;
 	}
 }

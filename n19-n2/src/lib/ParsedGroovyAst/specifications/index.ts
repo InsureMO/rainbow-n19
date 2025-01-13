@@ -4,6 +4,5 @@ export * from './IdentifierNodeSpecification';
 export * from './ImportDeclarationNodeSpecification';
 export * from './LiteralNodeSpecification';
 export * from './ModifierNodeSpecification';
-export * from './NodeSpecificationReader';
 export * from './PackageDeclarationNodeSpecification';
 export * from './QualifiedNameElementNodeSpecification';
