@@ -1,8 +1,8 @@
 import {GroovyParser, PackageDeclarationContext} from '../OrgApacheGroovyParserAntlr4';
 import {Optional} from '../TsAddon';
-import {ParsedNode} from './Node';
-import {ParsedNodeSpecification} from './NodeSpecification';
-import {ParsedNodeUtils} from './NodeUtils';
+import {ParsedNode} from './ParsedNode';
+import {ParsedNodeSpecification} from './ParsedNodeSpecification';
+import {ParsedNodeUtils} from './ParsedNodeUtils';
 
 /**
  * instance created only in {@link ParsedNodeVisitor},

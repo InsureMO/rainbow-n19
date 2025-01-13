@@ -1,7 +1,7 @@
 import {TerminalNode} from 'antlr4';
 import {ClassOrInterfaceModifierContext, GroovyParser, ModifierContext} from '../../OrgApacheGroovyParserAntlr4';
-import {ParsedAstDebugger} from '../AstDebugger';
-import {ParsedNodeSpecification} from '../NodeSpecification';
+import {ParsedAstDebugger} from '../ParsedAstDebugger';
+import {ParsedNodeSpecification} from '../ParsedNodeSpecification';
 
 export enum ModifierNodeType {
 	NATIVE = GroovyParser.NATIVE,

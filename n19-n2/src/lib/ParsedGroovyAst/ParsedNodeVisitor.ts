@@ -1,21 +1,25 @@
 import {GroovyParser} from '../OrgApacheGroovyParserAntlr4';
 import {Optional} from '../TsAddon';
 import {DecorableParsedNode} from './DecorableParsedNode';
-import {ParsedNode} from './Node';
+import {ParsedNode} from './ParsedNode';
+import {gprc} from './utils';
+
+export type NodeCollectorCheckOnEntering = (node: DecorableParsedNode) => boolean;
+export type NodeCollectorOnExiting = (node: DecorableParsedNode, firstAtomicNodeIndex: number, atomicNodes: Array<DecorableParsedNode>) => void;
 
 export class ParsedNodeVisitor {
-	private static readonly ATOMIC_LIST_COLLECTOR: Map<number, (node: DecorableParsedNode) => boolean> = new Map();
+	private static readonly ATOMIC_LIST_COLLECTOR_ON_ENTERING: Map<number, NodeCollectorCheckOnEntering> = new Map();
 	static {
 		// false
-		ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_compilationUnit, ParsedNodeVisitor.notRequireToAtomicList);
-		ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_scriptStatements, ParsedNodeVisitor.notRequireToAtomicList);
-		ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_scriptStatement, ParsedNodeVisitor.notRequireToAtomicList);
-		ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_packageDeclaration, ParsedNodeVisitor.requireToAtomicList);
+		ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR_ON_ENTERING.set(GroovyParser.RULE_compilationUnit, ParsedNodeVisitor.notRequireToAtomicListAtEntering);
+		ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR_ON_ENTERING.set(GroovyParser.RULE_scriptStatements, ParsedNodeVisitor.notRequireToAtomicListAtEntering);
+		ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR_ON_ENTERING.set(GroovyParser.RULE_scriptStatement, ParsedNodeVisitor.notRequireToAtomicListAtEntering);
+		ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR_ON_ENTERING.set(GroovyParser.RULE_packageDeclaration, ParsedNodeVisitor.notRequireToAtomicListAtEntering);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_importDeclaration, ParsedNodeVisitor.notRequireToAtomicList);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_typeDeclaration, ParsedNodeVisitor.notRequireToAtomicList);
-		ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_modifier, ParsedNodeVisitor.requireToAtomicList);
+		ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR_ON_ENTERING.set(GroovyParser.RULE_modifier, ParsedNodeVisitor.requireToAtomicListAtEntering);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_modifiersOpt, ParsedNodeVisitor.notRequireToAtomicList);
-		ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_modifiers, ParsedNodeVisitor.notRequireToAtomicList);
+		ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR_ON_ENTERING.set(GroovyParser.RULE_modifiers, ParsedNodeVisitor.notRequireToAtomicListAtEntering);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_classOrInterfaceModifiersOpt, ParsedNodeVisitor.notRequireToAtomicList);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_classOrInterfaceModifiers, ParsedNodeVisitor.notRequireToAtomicList);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_classOrInterfaceModifier, ParsedNodeVisitor.notRequireToAtomicList);
@@ -37,9 +41,9 @@ export class ParsedNodeVisitor {
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_methodName, ParsedNodeVisitor.notRequireToAtomicList);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_returnType, ParsedNodeVisitor.notRequireToAtomicList);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_fieldDeclaration, ParsedNodeVisitor.notRequireToAtomicList);
-		ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_variableDeclarators, ParsedNodeVisitor.notRequireToAtomicList);
-		ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_variableDeclarator, ParsedNodeVisitor.notRequireToAtomicList);
-		ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_variableDeclaratorId, ParsedNodeVisitor.notRequireToAtomicList);
+		ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR_ON_ENTERING.set(GroovyParser.RULE_variableDeclarators, ParsedNodeVisitor.notRequireToAtomicListAtEntering);
+		ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR_ON_ENTERING.set(GroovyParser.RULE_variableDeclarator, ParsedNodeVisitor.notRequireToAtomicListAtEntering);
+		ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR_ON_ENTERING.set(GroovyParser.RULE_variableDeclaratorId, ParsedNodeVisitor.notRequireToAtomicListAtEntering);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_variableInitializer, ParsedNodeVisitor.notRequireToAtomicList);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_variableInitializers, ParsedNodeVisitor.notRequireToAtomicList);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_emptyDims, ParsedNodeVisitor.notRequireToAtomicList);
@@ -59,12 +63,12 @@ export class ParsedNodeVisitor {
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_thisFormalParameter, ParsedNodeVisitor.notRequireToAtomicList);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_formalParameter, ParsedNodeVisitor.notRequireToAtomicList);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_methodBody, ParsedNodeVisitor.notRequireToAtomicList);
-		ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_qualifiedName, ParsedNodeVisitor.requireToAtomicList);
-		ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_qualifiedNameElement, ParsedNodeVisitor.requireToAtomicList);
+		ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR_ON_ENTERING.set(GroovyParser.RULE_qualifiedName, ParsedNodeVisitor.notRequireToAtomicListAtEntering);
+		ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR_ON_ENTERING.set(GroovyParser.RULE_qualifiedNameElement, ParsedNodeVisitor.requireToAtomicListAtEntering);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_qualifiedNameElements, ParsedNodeVisitor.notRequireToAtomicList);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_qualifiedClassName, ParsedNodeVisitor.notRequireToAtomicList);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_qualifiedStandardClassName, ParsedNodeVisitor.notRequireToAtomicList);
-		ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_literal, ParsedNodeVisitor.requireToAtomicList);
+		ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR_ON_ENTERING.set(GroovyParser.RULE_literal, ParsedNodeVisitor.requireToAtomicListAtEntering);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_gstring, ParsedNodeVisitor.notRequireToAtomicList);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_gstringValue, ParsedNodeVisitor.notRequireToAtomicList);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_gstringPath, ParsedNodeVisitor.notRequireToAtomicList);
@@ -77,7 +81,7 @@ export class ParsedNodeVisitor {
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_closureOrLambdaExpression, ParsedNodeVisitor.notRequireToAtomicList);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_blockStatementsOpt, ParsedNodeVisitor.notRequireToAtomicList);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_blockStatements, ParsedNodeVisitor.notRequireToAtomicList);
-		ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_annotationsOpt, ParsedNodeVisitor.requireToAtomicList);
+		ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR_ON_ENTERING.set(GroovyParser.RULE_annotationsOpt, ParsedNodeVisitor.notRequireToAtomicListAtEntering);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_annotation, ParsedNodeVisitor.notRequireToAtomicList);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_elementValues, ParsedNodeVisitor.notRequireToAtomicList);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_annotationName, ParsedNodeVisitor.notRequireToAtomicList);
@@ -102,7 +106,7 @@ export class ParsedNodeVisitor {
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_yieldStatement, ParsedNodeVisitor.notRequireToAtomicList);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_tryCatchStatement, ParsedNodeVisitor.notRequireToAtomicList);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_assertStatement, ParsedNodeVisitor.notRequireToAtomicList);
-		ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_statement, ParsedNodeVisitor.notRequireToAtomicList);
+		ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR_ON_ENTERING.set(GroovyParser.RULE_statement, ParsedNodeVisitor.notRequireToAtomicListAtEntering);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_catchClause, ParsedNodeVisitor.notRequireToAtomicList);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_catchType, ParsedNodeVisitor.notRequireToAtomicList);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_finallyBlock, ParsedNodeVisitor.notRequireToAtomicList);
@@ -121,23 +125,23 @@ export class ParsedNodeVisitor {
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_expressionInPar, ParsedNodeVisitor.notRequireToAtomicList);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_expressionList, ParsedNodeVisitor.notRequireToAtomicList);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_expressionListElement, ParsedNodeVisitor.notRequireToAtomicList);
-		ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_enhancedStatementExpression, ParsedNodeVisitor.notRequireToAtomicList);
-		ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_statementExpression, ParsedNodeVisitor.notRequireToAtomicList);
-		ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_postfixExpression, ParsedNodeVisitor.notRequireToAtomicList);
+		ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR_ON_ENTERING.set(GroovyParser.RULE_enhancedStatementExpression, ParsedNodeVisitor.notRequireToAtomicListAtEntering);
+		ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR_ON_ENTERING.set(GroovyParser.RULE_statementExpression, ParsedNodeVisitor.notRequireToAtomicListAtEntering);
+		ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR_ON_ENTERING.set(GroovyParser.RULE_postfixExpression, ParsedNodeVisitor.notRequireToAtomicListAtEntering);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_switchExpression, ParsedNodeVisitor.notRequireToAtomicList);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_switchBlockStatementExpressionGroup, ParsedNodeVisitor.notRequireToAtomicList);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_switchExpressionLabel, ParsedNodeVisitor.notRequireToAtomicList);
-		ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_expression, ParsedNodeVisitor.notRequireToAtomicList);
+		ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR_ON_ENTERING.set(GroovyParser.RULE_expression, ParsedNodeVisitor.notRequireToAtomicListAtEntering);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_castOperandExpression, ParsedNodeVisitor.notRequireToAtomicList);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_commandExpression, ParsedNodeVisitor.notRequireToAtomicList);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_commandArgument, ParsedNodeVisitor.notRequireToAtomicList);
-		ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_pathExpression, ParsedNodeVisitor.notRequireToAtomicList);
+		ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR_ON_ENTERING.set(GroovyParser.RULE_pathExpression, ParsedNodeVisitor.notRequireToAtomicListAtEntering);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_pathElement, ParsedNodeVisitor.notRequireToAtomicList);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_namePart, ParsedNodeVisitor.notRequireToAtomicList);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_dynamicMemberName, ParsedNodeVisitor.notRequireToAtomicList);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_indexPropertyArgs, ParsedNodeVisitor.notRequireToAtomicList);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_namedPropertyArgs, ParsedNodeVisitor.notRequireToAtomicList);
-		ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_primary, ParsedNodeVisitor.notRequireToAtomicList);
+		ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR_ON_ENTERING.set(GroovyParser.RULE_primary, ParsedNodeVisitor.notRequireToAtomicListAtEntering);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_namedPropertyArgPrimary, ParsedNodeVisitor.notRequireToAtomicList);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_namedArgPrimary, ParsedNodeVisitor.notRequireToAtomicList);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_commandPrimary, ParsedNodeVisitor.notRequireToAtomicList);
@@ -166,20 +170,61 @@ export class ParsedNodeVisitor {
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_enhancedArgumentListElement, ParsedNodeVisitor.notRequireToAtomicList);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_stringLiteral, ParsedNodeVisitor.notRequireToAtomicList);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_className, ParsedNodeVisitor.notRequireToAtomicList);
-		ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_identifier, ParsedNodeVisitor.requireToAtomicList);
+		ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR_ON_ENTERING.set(GroovyParser.RULE_identifier, ParsedNodeVisitor.collectIdentifierOnEntering);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_builtInType, ParsedNodeVisitor.notRequireToAtomicList);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_keywords, ParsedNodeVisitor.notRequireToAtomicList);
 		// ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_rparen, ParsedNodeVisitor.notRequireToAtomicList);
-		ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_nls, ParsedNodeVisitor.notRequireToAtomicList);
-		ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.set(GroovyParser.RULE_sep, ParsedNodeVisitor.requireToAtomicList);
+		ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR_ON_ENTERING.set(GroovyParser.RULE_nls, ParsedNodeVisitor.notRequireToAtomicListAtEntering);
+		ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR_ON_ENTERING.set(GroovyParser.RULE_sep, ParsedNodeVisitor.requireToAtomicListAtEntering);
 	}
 
-	private static requireToAtomicList(_node: DecorableParsedNode): boolean {
+	private static readonly ATOMIC_LIST_COLLECTOR_ON_EXITING: Map<number, NodeCollectorOnExiting> = new Map();
+	static {
+		ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR_ON_EXITING.set(GroovyParser.RULE_packageDeclaration, ParsedNodeVisitor.collectPackageDeclarationOnExiting);
+	}
+
+	private static requireToAtomicListAtEntering(_node: DecorableParsedNode): boolean {
 		return true;
 	}
 
-	private static notRequireToAtomicList(_node: DecorableParsedNode): boolean {
+	private static notRequireToAtomicListAtEntering(_node: DecorableParsedNode): boolean {
 		return false;
+	}
+
+	private static collectIdentifierOnEntering(node: DecorableParsedNode): boolean {
+		const ctx = node.underlay.groovyParserRuleContext;
+		if (gprc(ctx.parentCtx).ruleIndex === GroovyParser.RULE_qualifiedNameElement && gprc(ctx.parentCtx.parentCtx).ruleIndex === GroovyParser.RULE_qualifiedName) {
+			const ruleIndex = gprc(ctx.parentCtx.parentCtx.parentCtx).ruleIndex;
+			if (ruleIndex === GroovyParser.RULE_packageDeclaration) {
+				// ignore when under package declaration
+				return false;
+			}
+		}
+		return true;
+	}
+
+	private static collectPackageDeclarationOnExiting(node: DecorableParsedNode, firstAtomicNodeIndex: number, atomicNodes: Array<DecorableParsedNode>): void {
+		if (firstAtomicNodeIndex === atomicNodes.length) {
+			// no child node appended, add myself
+			atomicNodes.push(node);
+		} else {
+			let childNodeIndex = firstAtomicNodeIndex;
+			let childNode = atomicNodes[firstAtomicNodeIndex];
+			while (childNode.type !== GroovyParser.RULE_qualifiedNameElement) {
+				childNodeIndex = childNodeIndex + 1;
+				childNode = atomicNodes[childNodeIndex];
+				if (childNode == null) {
+					break;
+				}
+			}
+			if (childNode != null) {
+				// qualifiedNameElement found
+				atomicNodes.splice(childNodeIndex, 0, node);
+			} else {
+				// qualifiedNameElement not found
+				atomicNodes.push(node);
+			}
+		}
 	}
 
 	private readonly _roots: Array<DecorableParsedNode> = [];
@@ -190,16 +235,17 @@ export class ParsedNodeVisitor {
 
 	constructor(roots: Array<ParsedNode>) {
 		this._roots.push(...(roots.map(root => new DecorableParsedNode(root))));
-		this._roots.forEach(root => this.initBuild(root));
+		this._roots.forEach(root => {
+			const startIndex = this._atomicNodes.length;
+			this.enterNode(root);
+			this.processChildren(root);
+			// this.initBuild(root)
+			this.exitNode(root, startIndex);
+		});
 	}
 
-	protected initBuild(node: DecorableParsedNode): void {
-		this.collectToAtomicList(node);
-		node.underlay.children.forEach(child => this.initBuild(new DecorableParsedNode(child)));
-	}
-
-	protected shouldCollectToAtomicList(node: DecorableParsedNode): boolean {
-		const check = ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR.get(node.type);
+	protected shouldCollectToAtomicListOnEntering(node: DecorableParsedNode): boolean {
+		const check = ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR_ON_ENTERING.get(node.type);
 		if (check != null) {
 			return check(node);
 		} else {
@@ -208,10 +254,35 @@ export class ParsedNodeVisitor {
 		}
 	}
 
-	protected collectToAtomicList(node: DecorableParsedNode): void {
-		if (this.shouldCollectToAtomicList(node)) {
+	protected collectToAtomicListOnEntering(node: DecorableParsedNode): void {
+		if (this.shouldCollectToAtomicListOnEntering(node)) {
 			this._atomicNodes.push(node);
 		}
+	}
+
+	protected enterNode(node: DecorableParsedNode): void {
+		this.collectToAtomicListOnEntering(node);
+	}
+
+	protected processChildren(node: DecorableParsedNode): void {
+		node.underlay.children.forEach(child => {
+			const node = new DecorableParsedNode(child);
+			const startIndex = this._atomicNodes.length;
+			this.enterNode(node);
+			this.processChildren(node);
+			this.exitNode(node, startIndex);
+		});
+	}
+
+	protected collectToAtomicListOnExiting(node: DecorableParsedNode, firstAtomicNodeIndex: number): void {
+		const collect = ParsedNodeVisitor.ATOMIC_LIST_COLLECTOR_ON_EXITING.get(node.type);
+		if (collect != null) {
+			collect(node, firstAtomicNodeIndex, this._atomicNodes);
+		}
+	}
+
+	protected exitNode(node: DecorableParsedNode, firstAtomicNodeIndex: number): void {
+		this.collectToAtomicListOnExiting(node, firstAtomicNodeIndex);
 	}
 
 	get atomicNodes(): Array<DecorableParsedNode> {

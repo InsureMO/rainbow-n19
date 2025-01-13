@@ -1,4 +1,4 @@
-import {ParsedNodeSpecification} from '../NodeSpecification';
+import {ParsedNodeSpecification} from '../ParsedNodeSpecification';
 
 export class EmptyNodeSpecification implements ParsedNodeSpecification {
 	static INSTANCE = new EmptyNodeSpecification();

@@ -1,9 +1,9 @@
 import {ParserRuleContext} from 'antlr4';
 import {GroovyParser, GroovyParserRuleContext} from '../OrgApacheGroovyParserAntlr4';
 import {Optional} from '../TsAddon';
-import {ParsedAstDebugger} from './AstDebugger';
-import {ParsedNodeSpecification} from './NodeSpecification';
-import {ParsedNodeUtils} from './NodeUtils';
+import {ParsedAstDebugger} from './ParsedAstDebugger';
+import {ParsedNodeSpecification} from './ParsedNodeSpecification';
+import {ParsedNodeUtils} from './ParsedNodeUtils';
 import {ParsedNodeSpecificationReader} from './specifications';
 
 export class ParsedNode {

@@ -13,8 +13,8 @@ import {
 	VariableDeclaratorIdContext,
 	VariableNamesContext
 } from '../../OrgApacheGroovyParserAntlr4';
-import {ParsedAstDebugger} from '../AstDebugger';
-import {ParsedNodeSpecification} from '../NodeSpecification';
+import {ParsedAstDebugger} from '../ParsedAstDebugger';
+import {ParsedNodeSpecification} from '../ParsedNodeSpecification';
 
 export enum IdentifierNodeType {
 	IDENTIFIER = GroovyParser.Identifier,

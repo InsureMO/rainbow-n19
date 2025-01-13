@@ -6,8 +6,8 @@ import {
 	GroovyParserRuleContext
 } from '../OrgApacheGroovyParserAntlr4';
 import {Optional} from '../TsAddon';
-import {ParsedAstDebugger, ParsedAstDebuggerOptions} from './AstDebugger';
-import {ParsedNode} from './Node';
+import {ParsedAstDebugger, ParsedAstDebuggerOptions} from './ParsedAstDebugger';
+import {ParsedNode} from './ParsedNode';
 
 export class IntactParseListener extends GroovyParserListener {
 	private readonly _debugger: ParsedAstDebugger;
