@@ -5,5 +5,5 @@ describe('Package declaration', () => {
 	beforeAll(async () => warmup());
 
 	test('package abc', async () => parseAst('package abc'));
-	test('package abc.de', async () => parseAst('package abc.de;'));
+	test('package abc.de;', async () => parseAst('package abc.de;'));
 });
