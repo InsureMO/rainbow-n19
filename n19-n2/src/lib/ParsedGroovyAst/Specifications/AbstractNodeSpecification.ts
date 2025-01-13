@@ -36,14 +36,14 @@ export abstract class AbstractNodeSpecification<Type, Purpose> implements Parsed
 
 	abstract createClone(): ParsedNodeSpecification<Type, Purpose>;
 
-	/** default do nothing */
+	/** copy properties to given specification, default do nothing */
 	copyProperties(to: ParsedNodeSpecification<Type, Purpose>): void {
+		to.setType(this.type);
+		to.setPurpose(this.purpose);
 	}
 
 	clone(): ParsedNodeSpecification<Type, Purpose> {
 		const cloned = this.createClone();
-		cloned.setType(this.type);
-		cloned.setPurpose(this.purpose);
 		this.copyProperties(cloned);
 		return cloned;
 	}
