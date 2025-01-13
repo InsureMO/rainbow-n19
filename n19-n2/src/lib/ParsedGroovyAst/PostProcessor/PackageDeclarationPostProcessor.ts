@@ -1,4 +1,4 @@
-import {GroovyParser, GroovyParserRuleContext} from '../../OrgApacheGroovyParserAntlr4';
+import {GroovyParser, GroovyParserRuleContext, PackageDeclarationContext} from '../../OrgApacheGroovyParserAntlr4';
 import {DecorableParsedNode} from '../DecorableParsedNode';
 import {ParsedNode} from '../ParsedNode';
 import {PackageDeclarationNodePurpose, PackageDeclarationNodeSpecification} from '../specifications';
@@ -17,6 +17,20 @@ export class PackageDeclarationPostProcessor extends PostNodeProcessorAdapter {
 		const spec = new PackageDeclarationNodeSpecification();
 		spec.setPurpose(PackageDeclarationNodePurpose.PACKAGE);
 		node.setSpecification(spec);
+	}
+
+	shouldDecorate(_node: DecorableParsedNode): boolean {
+		return true;
+	}
+
+	/**
+	 * since package declaration doesn't have a child context to describe the keyword "package",
+	 * here we use the package declaration node to simulate it
+	 * so read the position from package terminal node
+	 */
+	decorate(node: DecorableParsedNode) {
+		const ctx = node.underlay.groovyParserRuleContext as PackageDeclarationContext;
+		DecorableParsedNode.copyPositionAndTextFromToken(node, ctx.PACKAGE().symbol);
 	}
 
 	shouldCollectToAtomicNodeOnExitingVisitor(node: DecorableParsedNode): boolean {

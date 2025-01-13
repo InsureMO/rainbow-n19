@@ -1,4 +1,3 @@
-import {GroovyParser} from '../OrgApacheGroovyParserAntlr4';
 import {Optional} from '../TsAddon';
 import {DecorableParsedNode} from './DecorableParsedNode';
 import {ParsedNode} from './ParsedNode';

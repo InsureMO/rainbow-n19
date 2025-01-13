@@ -17,6 +17,7 @@ describe('Expression Test', () => {
 	};
 
 	test('Test 1', async () => {
+		const z = new Z();
 		const y = new Y();
 		console.time('use instanceof');
 		for (let i = 0; i < 1000000; i++) {

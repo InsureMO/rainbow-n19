@@ -40,6 +40,15 @@ export class PostNodeProcessorAdapter implements PostNodeProcessor {
 	readSpecificationOnToParsed(_node: ParsedNode, _ctx: GroovyParserRuleContext): void {
 	}
 
+	/** always returns false */
+	shouldDecorate(_node: DecorableParsedNode): boolean {
+		return false;
+	}
+
+	/** always do nothing */
+	decorate(_node: DecorableParsedNode): void {
+	}
+
 	/**
 	 * always returns false
 	 */

@@ -1,58 +1,21 @@
 import {Token} from 'antlr4';
-import {GroovyParser, ImportDeclarationContext, PackageDeclarationContext} from '../OrgApacheGroovyParserAntlr4';
 import {Optional} from '../TsAddon';
 import {ParsedNode} from './ParsedNode';
 import {ParsedNodeSpecification} from './ParsedNodeSpecification';
 import {ParsedNodeUtils} from './ParsedNodeUtils';
-import {ImportDeclarationNodePurpose, ImportDeclarationNodeSpecification} from './specifications';
+import {PostNodeProcessorRegistry} from './PostNodeProcessorRegistry';
 
 /**
  * instance created only in {@link ParsedNodeVisitor},
  * which means the given {@link ParsedNode} already finish the lifecycle of {@link GroovyParserRuleContext}, all information are read-in.
  */
 export class DecorableParsedNode {
-	private static readonly NODE_DECORATORS: Map<number, (node: DecorableParsedNode) => void> = new Map();
-	static {
-		DecorableParsedNode.NODE_DECORATORS.set(GroovyParser.RULE_packageDeclaration, DecorableParsedNode.decoratePackageDeclaration);
-		DecorableParsedNode.NODE_DECORATORS.set(GroovyParser.RULE_importDeclaration, DecorableParsedNode.decorateImportDeclaration);
-	}
-
 	public static copyPositionAndTextFromToken(node: DecorableParsedNode, token: Token): void {
 		node._startLine = token.line;
 		node._startColumn = token.column;
 		node._endLine = token.line;
 		node._endColumn = token.stop;
 		node._text = token.text;
-	}
-
-	/**
-	 * since package declaration doesn't have a child context to describe the keyword package,
-	 * here we use the package declaration node to simulate it
-	 * so read the position from package terminal node
-	 */
-	private static decoratePackageDeclaration(node: DecorableParsedNode): void {
-		const ctx = node._node.groovyParserRuleContext as PackageDeclarationContext;
-		DecorableParsedNode.copyPositionAndTextFromToken(node, ctx.PACKAGE().symbol);
-	}
-
-	private static decorateImportDeclaration(node: DecorableParsedNode): void {
-		const ctx = node._node.groovyParserRuleContext as ImportDeclarationContext;
-		DecorableParsedNode.copyPositionAndTextFromToken(node, ctx.IMPORT().symbol);
-	}
-
-	public static decorateImportDeclarationForStaticKeyword(node: DecorableParsedNode): Optional<DecorableParsedNode> {
-		const ctx = node.underlay.groovyParserRuleContext as ImportDeclarationContext;
-		let staticNode: Optional<DecorableParsedNode> = (void 0);
-		const staticTerminalNode = ctx.STATIC();
-		if (staticTerminalNode != null) {
-			// create a static node, share the same underlay node
-			staticNode = new DecorableParsedNode(node.underlay, true);
-			const spec = staticNode.specification as ImportDeclarationNodeSpecification;
-			spec.setPurpose(ImportDeclarationNodePurpose.STATIC);
-			DecorableParsedNode.copyPositionAndTextFromToken(staticNode, staticTerminalNode.symbol);
-		}
-
-		return staticNode;
 	}
 
 	private readonly _node: ParsedNode;
@@ -72,7 +35,10 @@ export class DecorableParsedNode {
 	}
 
 	protected decorate() {
-		DecorableParsedNode.NODE_DECORATORS.get(this._node.type)?.(this);
+		const processor = PostNodeProcessorRegistry.getProcessor(this.type);
+		if (processor.shouldDecorate(this)) {
+			processor.decorate(this);
+		}
 	}
 
 	get underlay(): ParsedNode {
