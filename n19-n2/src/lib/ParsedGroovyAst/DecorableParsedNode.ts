@@ -1,8 +1,10 @@
-import {GroovyParser, PackageDeclarationContext} from '../OrgApacheGroovyParserAntlr4';
+import {Token} from 'antlr4';
+import {GroovyParser, ImportDeclarationContext, PackageDeclarationContext} from '../OrgApacheGroovyParserAntlr4';
 import {Optional} from '../TsAddon';
 import {ParsedNode} from './ParsedNode';
 import {ParsedNodeSpecification} from './ParsedNodeSpecification';
 import {ParsedNodeUtils} from './ParsedNodeUtils';
+import {ImportDeclarationNodePurpose, ImportDeclarationNodeSpecification} from './specifications';
 
 /**
  * instance created only in {@link ParsedNodeVisitor},
@@ -12,6 +14,15 @@ export class DecorableParsedNode {
 	private static readonly NODE_DECORATORS: Map<number, (node: DecorableParsedNode) => void> = new Map();
 	static {
 		DecorableParsedNode.NODE_DECORATORS.set(GroovyParser.RULE_packageDeclaration, DecorableParsedNode.decoratePackageDeclaration);
+		DecorableParsedNode.NODE_DECORATORS.set(GroovyParser.RULE_importDeclaration, DecorableParsedNode.decorateImportDeclaration);
+	}
+
+	public static copyPositionAndTextFromToken(node: DecorableParsedNode, token: Token): void {
+		node._startLine = token.line;
+		node._startColumn = token.column;
+		node._endLine = token.line;
+		node._endColumn = token.stop;
+		node._text = token.text;
 	}
 
 	/**
@@ -21,12 +32,27 @@ export class DecorableParsedNode {
 	 */
 	private static decoratePackageDeclaration(node: DecorableParsedNode): void {
 		const ctx = node._node.groovyParserRuleContext as PackageDeclarationContext;
-		const token = ctx.PACKAGE().symbol;
-		node._startLine = token.line;
-		node._startColumn = token.column;
-		node._endLine = token.line;
-		node._endColumn = token.stop;
-		node._text = token.text;
+		DecorableParsedNode.copyPositionAndTextFromToken(node, ctx.PACKAGE().symbol);
+	}
+
+	private static decorateImportDeclaration(node: DecorableParsedNode): void {
+		const ctx = node._node.groovyParserRuleContext as ImportDeclarationContext;
+		DecorableParsedNode.copyPositionAndTextFromToken(node, ctx.IMPORT().symbol);
+	}
+
+	public static decorateImportDeclarationForStaticKeyword(node: DecorableParsedNode): Optional<DecorableParsedNode> {
+		const ctx = node.underlay.groovyParserRuleContext as ImportDeclarationContext;
+		let staticNode: Optional<DecorableParsedNode> = (void 0);
+		const staticTerminalNode = ctx.STATIC();
+		if (staticTerminalNode != null) {
+			// create a static node, share the same underlay node
+			staticNode = new DecorableParsedNode(node.underlay, true);
+			const spec = staticNode.specification as ImportDeclarationNodeSpecification;
+			spec.setPurpose(ImportDeclarationNodePurpose.STATIC);
+			DecorableParsedNode.copyPositionAndTextFromToken(staticNode, staticTerminalNode.symbol);
+		}
+
+		return staticNode;
 	}
 
 	private readonly _node: ParsedNode;
@@ -35,9 +61,13 @@ export class DecorableParsedNode {
 	private _endLine: Optional<number> = (void 0);
 	private _endColumn: Optional<number> = (void 0);
 	private _text: Optional<string> = (void 0);
+	private _specification: Optional<ParsedNodeSpecification> = (void 0);
 
-	constructor(node: ParsedNode) {
+	constructor(node: ParsedNode, cloneSpecification?: boolean) {
 		this._node = node;
+		if (cloneSpecification === true) {
+			this._specification = this._node.specification.clone();
+		}
 		this.decorate();
 	}
 
@@ -74,7 +104,7 @@ export class DecorableParsedNode {
 	}
 
 	get specification(): ParsedNodeSpecification {
-		return this._node.specification;
+		return this._specification ?? this._node.specification;
 	}
 
 	toString(): string {

@@ -37,6 +37,12 @@ export class ModifierNodeSpecification implements ParsedNodeSpecification {
 		];
 	}
 
+	clone(): ParsedNodeSpecification {
+		const spec = new ModifierNodeSpecification();
+		spec._type = this._type;
+		return spec;
+	}
+
 	static read(ctx: ModifierContext, _debugger: ParsedAstDebugger): ModifierNodeSpecification {
 		const spec = new ModifierNodeSpecification();
 		// there is only one child in modifier context

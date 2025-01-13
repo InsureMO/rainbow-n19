@@ -4,6 +4,7 @@ import {
 	FormalParameterContext,
 	GroovyParser,
 	IdentifierContext,
+	ImportDeclarationContext,
 	PackageDeclarationContext,
 	QualifiedNameContext,
 	QualifiedNameElementContext,
@@ -36,7 +37,8 @@ export enum IdentifierNodePurpose {
 	TYPE_NAME_PAIR = GroovyParser.RULE_typeNamePair,
 	VARIABLE_NAMES = GroovyParser.RULE_variableNames,
 	ENHANCED_FOR_CONTROL = GroovyParser.RULE_enhancedForControl,
-	PACKAGE_DECLARATION = GroovyParser.RULE_packageDeclaration
+	PACKAGE_DECLARATION = GroovyParser.RULE_packageDeclaration,
+	IMPORT_DECLARATION = GroovyParser.RULE_importDeclaration,
 }
 
 export class IdentifierNodeSpecification implements ParsedNodeSpecification {
@@ -67,6 +69,13 @@ export class IdentifierNodeSpecification implements ParsedNodeSpecification {
 			['purpose', this.purpose],
 			['purpose.text', this.purposeText]
 		];
+	}
+
+	clone(): ParsedNodeSpecification {
+		const spec = new IdentifierNodeSpecification();
+		spec._type = this._type;
+		spec._purpose = this._purpose;
+		return spec;
 	}
 
 	private static readType(ctx: IdentifierContext, spec: IdentifierNodeSpecification, _debugger: ParsedAstDebugger) {
@@ -126,6 +135,8 @@ export class IdentifierNodeSpecification implements ParsedNodeSpecification {
 			const parentOfQualifiedNameContext = parentOfQualifiedNameElementContext.parentCtx;
 			if (parentOfQualifiedNameContext instanceof PackageDeclarationContext) {
 				spec._purpose = IdentifierNodePurpose.PACKAGE_DECLARATION;
+			} else if (parentOfQualifiedNameContext instanceof ImportDeclarationContext) {
+				spec._purpose = IdentifierNodePurpose.IMPORT_DECLARATION;
 			} else {
 				// TODO more identifier purposes need to be identified
 				_debugger.addMissedLogics(() => `Context[${parentOfQualifiedNameContext.constructor.name}] of QualifiedNameContext/QualifiedNameElementContext/IdentifierContext is not supported yet.`);

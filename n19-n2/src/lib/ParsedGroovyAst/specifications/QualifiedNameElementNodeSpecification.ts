@@ -2,6 +2,7 @@ import {ParserRuleContext, TerminalNode} from 'antlr4';
 import {
 	GroovyParser,
 	IdentifierContext,
+	ImportDeclarationContext,
 	PackageDeclarationContext,
 	QualifiedNameContext,
 	QualifiedNameElementContext
@@ -19,6 +20,7 @@ export enum QualifiedNameElementNodeType {
 
 export enum QualifiedNameElementNodePurpose {
 	PACKAGE_DECLARATION = GroovyParser.RULE_packageDeclaration,
+	IMPORT_DECLARATION = GroovyParser.RULE_importDeclaration
 }
 
 export class QualifiedNameElementNodeSpecification implements ParsedNodeSpecification {
@@ -51,6 +53,13 @@ export class QualifiedNameElementNodeSpecification implements ParsedNodeSpecific
 		];
 	}
 
+	clone(): ParsedNodeSpecification {
+		const spec = new QualifiedNameElementNodeSpecification();
+		spec._type = this._type;
+		spec._purpose = this._purpose;
+		return spec;
+	}
+
 	static read(ctx: QualifiedNameElementContext, _debugger: ParsedAstDebugger): QualifiedNameElementNodeSpecification {
 		const spec = new QualifiedNameElementNodeSpecification();
 		QualifiedNameElementNodeSpecification.readType(ctx, spec, _debugger);
@@ -79,7 +88,7 @@ export class QualifiedNameElementNodeSpecification implements ParsedNodeSpecific
 		}
 	}
 
-	private static readPurposeIfAncestorIsPackageDeclaration(ctx: QualifiedNameElementContext, parentCtx: ParserRuleContext, spec: QualifiedNameElementNodeSpecification, _debugger: ParsedAstDebugger): boolean {
+	private static readPurposeIfAncestorIsPackageOrImportDeclaration(_ctx: QualifiedNameElementContext, parentCtx: ParserRuleContext, spec: QualifiedNameElementNodeSpecification, _debugger: ParsedAstDebugger): boolean {
 		if (!(parentCtx instanceof QualifiedNameContext)) {
 			return false;
 		}
@@ -87,6 +96,8 @@ export class QualifiedNameElementNodeSpecification implements ParsedNodeSpecific
 		const parentOfQualifiedNameContext = parentCtx.parentCtx;
 		if (parentOfQualifiedNameContext instanceof PackageDeclarationContext) {
 			spec._purpose = QualifiedNameElementNodePurpose.PACKAGE_DECLARATION;
+		} else if (parentOfQualifiedNameContext instanceof ImportDeclarationContext) {
+			spec._purpose = QualifiedNameElementNodePurpose.IMPORT_DECLARATION;
 		} else {
 			// TODO more qualified name element purposes need to be identified
 			_debugger.addMissedLogics(() => `Context[${parentOfQualifiedNameContext.constructor.name}] of QualifiedNameContext/QualifiedNameElementContext is not supported yet.`);
@@ -96,7 +107,7 @@ export class QualifiedNameElementNodeSpecification implements ParsedNodeSpecific
 
 	private static readPurpose(ctx: QualifiedNameElementContext, spec: QualifiedNameElementNodeSpecification, _debugger: ParsedAstDebugger) {
 		const parentOfIdentifierContext = ctx.parentCtx;
-		if (QualifiedNameElementNodeSpecification.readPurposeIfAncestorIsPackageDeclaration(ctx, parentOfIdentifierContext, spec, _debugger)) {
+		if (QualifiedNameElementNodeSpecification.readPurposeIfAncestorIsPackageOrImportDeclaration(ctx, parentOfIdentifierContext, spec, _debugger)) {
 			// nothing
 		} else {
 			// TODO more identifier purposes need to be identified

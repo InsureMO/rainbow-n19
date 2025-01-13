@@ -42,6 +42,10 @@ export class ParsedNode {
 		return this._ctx;
 	}
 
+	get debugger(): ParsedAstDebugger {
+		return this._debugger;
+	}
+
 	get type(): number {
 		return this._type;
 	}
@@ -139,6 +143,7 @@ export class ParsedNode {
 			case GroovyParser.RULE_scriptStatements:
 			case GroovyParser.RULE_modifiers:
 			case GroovyParser.RULE_packageDeclaration:
+			case GroovyParser.RULE_importDeclaration:
 				// ignore text to improve performance
 				break;
 			case GroovyParser.RULE_nls:

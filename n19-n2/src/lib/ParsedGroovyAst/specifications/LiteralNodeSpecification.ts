@@ -30,6 +30,12 @@ export class LiteralNodeSpecification implements ParsedNodeSpecification {
 		];
 	}
 
+	clone(): ParsedNodeSpecification {
+		const spec = new LiteralNodeSpecification();
+		spec._type = this._type;
+		return spec;
+	}
+
 	static read(ctx: LiteralContext, _debugger: ParsedAstDebugger): LiteralNodeSpecification {
 		const spec = new LiteralNodeSpecification();
 		// there is only one child in literal context
