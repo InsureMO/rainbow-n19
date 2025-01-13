@@ -4,7 +4,8 @@ import {ParsedAstDebugger} from './ParsedAstDebugger';
 import {ParsedNodeSpecification} from './ParsedNodeSpecification';
 import {ParsedNodeUtils} from './ParsedNodeUtils';
 import {PostNodeProcessorRegistry} from './PostNodeProcessorRegistry';
-import {EmptyNodeSpecification} from './specifications';
+import {EmptyNodeSpecification} from './Specifications';
+import {RuleIndex} from './Types';
 
 export class ParsedNode {
 	private readonly _ctx: GroovyParserRuleContext;
@@ -19,14 +20,14 @@ export class ParsedNode {
 	/** nothing when it has no next sibling */
 	private _nextSibling?: Optional<ParsedNode>;
 	// common properties
-	private readonly _type: number;
+	private readonly _type: RuleIndex;
 	private _startLine: number;
 	private _startColumn: number;
 	private _endLine: number;
 	private _endColumn: number;
 	private _text: Optional<string>;
 	// specific properties
-	private _specification: Optional<ParsedNodeSpecification>;
+	private _specification: Optional<ParsedNodeSpecification<any, any>>;
 	private readonly _children: Array<ParsedNode> = [];
 
 	constructor(ctx: GroovyParserRuleContext, _debugger: ParsedAstDebugger) {
@@ -46,7 +47,7 @@ export class ParsedNode {
 		return this._debugger;
 	}
 
-	get type(): number {
+	get type(): RuleIndex {
 		return this._type;
 	}
 
@@ -74,11 +75,11 @@ export class ParsedNode {
 		this._text = text;
 	}
 
-	get specification(): ParsedNodeSpecification {
+	get specification(): ParsedNodeSpecification<any, any> {
 		return this._specification ?? EmptyNodeSpecification.INSTANCE;
 	}
 
-	setSpecification(specification: ParsedNodeSpecification): void {
+	setSpecification(specification: ParsedNodeSpecification<any, any>): void {
 		this._specification = specification;
 	}
 

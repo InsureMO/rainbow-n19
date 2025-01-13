@@ -2,7 +2,7 @@ import {TerminalNode} from 'antlr4';
 import {GroovyParser, GroovyParserRuleContext, StringLiteralContext} from '../../OrgApacheGroovyParserAntlr4';
 import {DecorableParsedNode} from '../DecorableParsedNode';
 import {ParsedNode} from '../ParsedNode';
-import {LiteralNodeSpecification, LiteralNodeType} from '../specifications';
+import {LiteralNodeSpecification, LiteralNodeType} from '../Specifications';
 import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
 
 export class LiteralPostProcessor extends PostNodeProcessorAdapter {
@@ -32,6 +32,7 @@ export class LiteralPostProcessor extends PostNodeProcessorAdapter {
 					break;
 				default:
 					node.debugger.addMissedLogics(() => `The only terminal child symbol type[${child.symbol.type}] is not supported yet.`);
+					break;
 			}
 		} else if (child instanceof StringLiteralContext) {
 			spec.setType(LiteralNodeType.STRING);

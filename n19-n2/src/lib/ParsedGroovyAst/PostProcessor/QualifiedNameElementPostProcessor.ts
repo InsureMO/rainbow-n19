@@ -14,7 +14,7 @@ import {
 	QualifiedNameElementNodePurpose,
 	QualifiedNameElementNodeSpecification,
 	QualifiedNameElementNodeType
-} from '../specifications';
+} from '../Specifications';
 import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
 
 export class QualifiedNameElementPostProcessor extends PostNodeProcessorAdapter {

@@ -1,7 +1,7 @@
 import {GroovyParser, GroovyParserRuleContext, PackageDeclarationContext} from '../../OrgApacheGroovyParserAntlr4';
 import {DecorableParsedNode} from '../DecorableParsedNode';
 import {ParsedNode} from '../ParsedNode';
-import {PackageDeclarationNodePurpose, PackageDeclarationNodeSpecification} from '../specifications';
+import {PackageDeclarationNodeSpecification} from '../Specifications';
 import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
 
 export class PackageDeclarationPostProcessor extends PostNodeProcessorAdapter {
@@ -15,7 +15,6 @@ export class PackageDeclarationPostProcessor extends PostNodeProcessorAdapter {
 
 	readSpecificationOnToParsed(node: ParsedNode, _ctx: GroovyParserRuleContext): void {
 		const spec = new PackageDeclarationNodeSpecification();
-		spec.setPurpose(PackageDeclarationNodePurpose.PACKAGE);
 		node.setSpecification(spec);
 	}
 
@@ -26,7 +25,7 @@ export class PackageDeclarationPostProcessor extends PostNodeProcessorAdapter {
 	/**
 	 * since package declaration doesn't have a child context to describe the keyword "package",
 	 * here we use the package declaration node to simulate it
-	 * so read the position from package terminal node
+	 * so read the position from PACKAGE terminal node
 	 */
 	decorate(node: DecorableParsedNode) {
 		const ctx = node.underlay.groovyParserRuleContext as PackageDeclarationContext;

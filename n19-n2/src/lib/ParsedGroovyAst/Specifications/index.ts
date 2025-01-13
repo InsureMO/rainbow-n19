@@ -1,3 +1,4 @@
+export * from './AbstractNodeSpecification';
 export * from './EmptyNodeSpecification';
 export * from './FreeNodeSpecification';
 export * from './IdentifierNodeSpecification';

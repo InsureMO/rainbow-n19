@@ -17,7 +17,7 @@ import {
 } from '../../OrgApacheGroovyParserAntlr4';
 import {DecorableParsedNode} from '../DecorableParsedNode';
 import {ParsedNode} from '../ParsedNode';
-import {IdentifierNodePurpose, IdentifierNodeSpecification} from '../specifications';
+import {IdentifierNodePurpose, IdentifierNodeSpecification} from '../Specifications';
 import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
 
 export class IdentifierPostProcessor extends PostNodeProcessorAdapter {
@@ -105,16 +105,23 @@ export class IdentifierPostProcessor extends PostNodeProcessorAdapter {
 		return true;
 	}
 
+	protected readPurposeIfParentIsImportDeclaration(_node: ParsedNode, spec: IdentifierNodeSpecification,
+	                                                 _ctx: IdentifierContext, parentCtx: ParserRuleContext): boolean {
+		if (!(parentCtx instanceof ImportDeclarationContext)) {
+			return false;
+		}
+
+		spec.setPurpose(IdentifierNodePurpose.IMPORT_DECLARATION);
+		return true;
+	}
+
 	protected readPurpose(node: ParsedNode, spec: IdentifierNodeSpecification, ctx: IdentifierContext) {
 		const parentOfIdentifierContext = ctx.parentCtx;
-		if (this.readPurposeIfParentIsVariableDeclaratorId(node, spec, ctx, parentOfIdentifierContext)) {
-			// nothing
-		} else if (this.readPurposeIfParentIsQualifiedNameElement(node, spec, ctx, parentOfIdentifierContext)) {
-			// nothing
-		} else {
-			// TODO more identifier purposes need to be identified
-			node.debugger.addMissedLogics(() => `Context[${parentOfIdentifierContext.constructor.name}] of IdentifierContext is not supported yet.`);
-		}
+		this.readPurposeIfParentIsVariableDeclaratorId(node, spec, ctx, parentOfIdentifierContext)
+		|| this.readPurposeIfParentIsQualifiedNameElement(node, spec, ctx, parentOfIdentifierContext)
+		|| this.readPurposeIfParentIsImportDeclaration(node, spec, ctx, parentOfIdentifierContext)
+		// TODO more identifier purposes need to be identified
+		|| node.debugger.addMissedLogics(() => `Context[${parentOfIdentifierContext.constructor.name}] of IdentifierContext is not supported yet.`);
 	}
 
 	readSpecificationOnToParsed(node: ParsedNode, ctx: GroovyParserRuleContext): void {

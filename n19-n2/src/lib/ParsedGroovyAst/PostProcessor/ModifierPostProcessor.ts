@@ -6,7 +6,7 @@ import {
 } from '../../OrgApacheGroovyParserAntlr4';
 import {DecorableParsedNode} from '../DecorableParsedNode';
 import {ParsedNode} from '../ParsedNode';
-import {ModifierNodeSpecification, ModifierNodeType} from '../specifications';
+import {ModifierNodeSpecification, ModifierNodeType} from '../Specifications';
 import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
 
 export class ModifierPostProcessor extends PostNodeProcessorAdapter {

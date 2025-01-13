@@ -1,5 +1,5 @@
 import {GroovyParser} from '../../OrgApacheGroovyParserAntlr4';
-import {ParsedNodeSpecification} from '../ParsedNodeSpecification';
+import {AbstractNodeSpecification} from './AbstractNodeSpecification';
 
 export enum IdentifierNodeType {
 	IDENTIFIER = GroovyParser.Identifier,
@@ -25,32 +25,13 @@ export enum IdentifierNodePurpose {
 	IMPORT_DECLARATION = GroovyParser.RULE_importDeclaration,
 }
 
-export class IdentifierNodeSpecification implements ParsedNodeSpecification {
-	private _type: IdentifierNodeType;
-	private _purpose: IdentifierNodePurpose;
-
-	get type(): IdentifierNodeType {
-		return this._type;
-	}
-
-	setType(type: IdentifierNodeType) {
-		this._type = type;
-	}
-
+export class IdentifierNodeSpecification extends AbstractNodeSpecification<IdentifierNodeType, IdentifierNodePurpose> {
 	get typeText(): string {
-		return GroovyParser.symbolicNames[this._type];
-	}
-
-	get purpose(): IdentifierNodePurpose {
-		return this._purpose;
-	}
-
-	setPurpose(purpose: IdentifierNodePurpose) {
-		this._purpose = purpose;
+		return GroovyParser.symbolicNames[this.type];
 	}
 
 	get purposeText(): string {
-		return GroovyParser.ruleNames[this._purpose];
+		return GroovyParser.ruleNames[this.purpose];
 	}
 
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -63,10 +44,7 @@ export class IdentifierNodeSpecification implements ParsedNodeSpecification {
 		];
 	}
 
-	clone(): ParsedNodeSpecification {
-		const spec = new IdentifierNodeSpecification();
-		spec._type = this._type;
-		spec._purpose = this._purpose;
-		return spec;
+	createClone(): IdentifierNodeSpecification {
+		return new IdentifierNodeSpecification();
 	}
 }

@@ -8,3 +8,7 @@ export * from './ParsedNodeUtils';
 export * from './ParsedNodeVisitor';
 export * from './PostNodeProcessor';
 export * from './PostNodeProcessorRegistry';
+export * from './Types';
+
+export * from './PostProcessor';
+export * from './Specifications';

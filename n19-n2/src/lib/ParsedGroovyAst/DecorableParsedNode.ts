@@ -24,7 +24,7 @@ export class DecorableParsedNode {
 	private _endLine: Optional<number> = (void 0);
 	private _endColumn: Optional<number> = (void 0);
 	private _text: Optional<string> = (void 0);
-	private _specification: Optional<ParsedNodeSpecification> = (void 0);
+	private readonly _specification: Optional<ParsedNodeSpecification<any, any>> = (void 0);
 
 	constructor(node: ParsedNode, cloneSpecification?: boolean) {
 		this._node = node;
@@ -69,7 +69,7 @@ export class DecorableParsedNode {
 		return this._text ?? this._node.text ?? '';
 	}
 
-	get specification(): ParsedNodeSpecification {
+	get specification(): ParsedNodeSpecification<any, any> {
 		return this._specification ?? this._node.specification;
 	}
 

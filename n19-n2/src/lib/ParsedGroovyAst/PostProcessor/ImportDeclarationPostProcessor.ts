@@ -1,8 +1,8 @@
 import {GroovyParser, GroovyParserRuleContext, ImportDeclarationContext} from '../../OrgApacheGroovyParserAntlr4';
-import {Optional} from '../../TsAddon';
+import {asT, Optional} from '../../TsAddon';
 import {DecorableParsedNode} from '../DecorableParsedNode';
 import {ParsedNode} from '../ParsedNode';
-import {ImportDeclarationNodePurpose, ImportDeclarationNodeSpecification} from '../specifications';
+import {ImportDeclarationNodeSpecification, ImportDeclarationNodeType} from '../Specifications';
 import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
 
 export class ImportDeclarationPostProcessor extends PostNodeProcessorAdapter {
@@ -16,7 +16,7 @@ export class ImportDeclarationPostProcessor extends PostNodeProcessorAdapter {
 
 	readSpecificationOnToParsed(node: ParsedNode, _ctx: GroovyParserRuleContext): void {
 		const spec = new ImportDeclarationNodeSpecification();
-		spec.setPurpose(ImportDeclarationNodePurpose.IMPORT);
+		spec.setType(ImportDeclarationNodeType.IMPORT);
 		node.setSpecification(spec);
 	}
 
@@ -41,9 +41,9 @@ export class ImportDeclarationPostProcessor extends PostNodeProcessorAdapter {
 	/**
 	 * since import declaration doesn't have a child context to describe the keyword "static",
 	 * here we use the import declaration node to simulate it
-	 * so read the position from static terminal node
+	 * so read the position from STATIC terminal node
 	 */
-	protected decorateImportDeclarationForStaticKeyword(node: DecorableParsedNode): Optional<DecorableParsedNode> {
+	protected decorateForStaticKeyword(node: DecorableParsedNode): Optional<DecorableParsedNode> {
 		const ctx = node.underlay.groovyParserRuleContext as ImportDeclarationContext;
 		let staticNode: Optional<DecorableParsedNode> = (void 0);
 		const staticTerminalNode = ctx.STATIC();
@@ -51,7 +51,7 @@ export class ImportDeclarationPostProcessor extends PostNodeProcessorAdapter {
 			// create a static node, share the same underlay node
 			staticNode = new DecorableParsedNode(node.underlay, true);
 			const spec = staticNode.specification as ImportDeclarationNodeSpecification;
-			spec.setPurpose(ImportDeclarationNodePurpose.STATIC);
+			spec.setType(ImportDeclarationNodeType.STATIC);
 			DecorableParsedNode.copyPositionAndTextFromToken(staticNode, staticTerminalNode.symbol);
 		}
 
@@ -59,11 +59,58 @@ export class ImportDeclarationPostProcessor extends PostNodeProcessorAdapter {
 	}
 
 	/**
+	 * since import declaration doesn't have a child context to describe the keywords ".*",
+	 * here we use the import declaration node to simulate it
+	 * so read the position from DOT and MUL terminal node
+	 */
+	protected decorateForDotStarKeywords(node: DecorableParsedNode): Optional<[DecorableParsedNode, DecorableParsedNode]> {
+		const ctx = node.underlay.groovyParserRuleContext as ImportDeclarationContext;
+		let dotNode: Optional<DecorableParsedNode> = (void 0);
+		let starNode: Optional<DecorableParsedNode> = (void 0);
+		const starTerminalNode = ctx.MUL();
+		if (starTerminalNode != null) {
+			// create a dot node, share the same underlay node
+			dotNode = new DecorableParsedNode(node.underlay, true);
+			let spec = dotNode.specification as ImportDeclarationNodeSpecification;
+			spec.setType(ImportDeclarationNodeType.DOT);
+			DecorableParsedNode.copyPositionAndTextFromToken(dotNode, ctx.DOT().symbol);
+			// create a star node, share the same underlay node
+			starNode = new DecorableParsedNode(node.underlay, true);
+			spec = starNode.specification as ImportDeclarationNodeSpecification;
+			spec.setType(ImportDeclarationNodeType.STAR);
+			DecorableParsedNode.copyPositionAndTextFromToken(starNode, starTerminalNode.symbol);
+			return [dotNode, starNode];
+		}
+
+		return (void 0);
+	}
+
+	/**
+	 * since import declaration doesn't have a child context to describe the keyword "as",
+	 * here we use the import declaration node to simulate it
+	 * so read the position from AS terminal node
+	 */
+	protected decorateForAsKeyword(node: DecorableParsedNode): Optional<DecorableParsedNode> {
+		const ctx = node.underlay.groovyParserRuleContext as ImportDeclarationContext;
+		let asNode: Optional<DecorableParsedNode> = (void 0);
+		const asTerminalNode = ctx.AS();
+		if (asTerminalNode != null) {
+			// create a static node, share the same underlay node
+			asNode = new DecorableParsedNode(node.underlay, true);
+			const spec = asNode.specification as ImportDeclarationNodeSpecification;
+			spec.setType(ImportDeclarationNodeType.AS);
+			DecorableParsedNode.copyPositionAndTextFromToken(asNode, asTerminalNode.symbol);
+		}
+
+		return asNode;
+	}
+
+	/**
 	 * insert import declaration node into atomic nodes, placing before all qualified name element nodes that are led by this import declaration.<br>
 	 */
 	collectToAtomicNodeOnExitingVisitor(node: DecorableParsedNode, firstNodeIndex: number, atomicNodes: Array<DecorableParsedNode>) {
 		const nodes = [node];
-		const staticNode = this.decorateImportDeclarationForStaticKeyword(node);
+		const staticNode = this.decorateForStaticKeyword(node);
 		if (staticNode != null) {
 			nodes.push(staticNode);
 		}
@@ -80,6 +127,20 @@ export class ImportDeclarationPostProcessor extends PostNodeProcessorAdapter {
 			} else {
 				// qualifiedNameElement not found
 				atomicNodes.push(...nodes);
+			}
+		}
+
+		const dotStarNodes = this.decorateForDotStarKeywords(node);
+		if (dotStarNodes != null) {
+			atomicNodes.push(...dotStarNodes);
+		}
+
+		const asNode = this.decorateForAsKeyword(node);
+		if (asNode != null) {
+			if (asT<ImportDeclarationContext>(node.underlay.groovyParserRuleContext).identifier() != null) {
+				atomicNodes.splice(atomicNodes.length - 1, 0, asNode);
+			} else {
+				atomicNodes.push(asNode);
 			}
 		}
 	}
