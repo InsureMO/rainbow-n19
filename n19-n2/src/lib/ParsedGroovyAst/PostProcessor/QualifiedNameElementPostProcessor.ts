@@ -17,10 +17,12 @@ import {
 import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
 
 export class QualifiedNameElementPostProcessor extends PostNodeProcessorAdapter<QualifiedNameElementContext> {
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	needCopyTextOnToParsed(_ctx: QualifiedNameElementContext): boolean {
 		return true;
 	}
 
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	needReadSpecificationOnToParsed(_ctx: QualifiedNameElementContext): boolean {
 		return true;
 	}
@@ -81,6 +83,7 @@ export class QualifiedNameElementPostProcessor extends PostNodeProcessorAdapter<
 		node.setSpecification(spec);
 	}
 
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	shouldCollectToAtomicNodeOnEnteringVisitor(_node: DecorableParsedNode): boolean {
 		return true;
 	}

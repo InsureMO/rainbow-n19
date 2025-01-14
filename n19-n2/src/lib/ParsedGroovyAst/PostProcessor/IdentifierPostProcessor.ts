@@ -14,10 +14,12 @@ import {IdentifierNodePurpose, IdentifierNodeSpecification} from '../Specificati
 import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
 
 export class IdentifierPostProcessor extends PostNodeProcessorAdapter<IdentifierContext> {
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	needCopyTextOnToParsed(_ctx: IdentifierContext): boolean {
 		return true;
 	}
 
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	needReadSpecificationOnToParsed(_ctx: IdentifierContext): boolean {
 		return true;
 	}
@@ -46,8 +48,10 @@ export class IdentifierPostProcessor extends PostNodeProcessorAdapter<Identifier
 		}
 	}
 
-	protected readPurposeIfParentIsVariableDeclaratorId(node: ParsedNode, spec: IdentifierNodeSpecification,
-	                                                    _ctx: IdentifierContext, parentCtx: ParserRuleContext): boolean {
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	protected readPurposeIfParentIsVariableDeclaratorId(_node: ParsedNode, _spec: IdentifierNodeSpecification,
+	                                                    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+	                                                    _ctx: IdentifierContext, _parentCtx: ParserRuleContext): boolean {
 		return false;
 		// if (!(parentCtx instanceof VariableDeclaratorIdContext)) {
 		// 	return false;
@@ -117,6 +121,7 @@ export class IdentifierPostProcessor extends PostNodeProcessorAdapter<Identifier
 
 	protected readPurpose(node: ParsedNode, spec: IdentifierNodeSpecification, ctx: IdentifierContext) {
 		const parentOfIdentifierContext = ctx.parentCtx;
+		// eslint-disable-next-line @typescript-eslint/no-unused-expressions
 		this.readPurposeIfParentIsVariableDeclaratorId(node, spec, ctx, parentOfIdentifierContext)
 		|| this.readPurposeIfParentIsQualifiedNameElement(node, spec, ctx, parentOfIdentifierContext)
 		|| this.readPurposeIfParentIsImportDeclaration(node, spec, ctx, parentOfIdentifierContext)

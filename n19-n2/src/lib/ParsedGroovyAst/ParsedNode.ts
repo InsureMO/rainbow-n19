@@ -27,6 +27,7 @@ export class ParsedNode {
 	private _endColumn: number;
 	private _text: Optional<string>;
 	// specific properties
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	private _specification: Optional<ParsedNodeSpecification<any, any>>;
 	private readonly _children: Array<ParsedNode> = [];
 
@@ -75,10 +76,12 @@ export class ParsedNode {
 		this._text = text;
 	}
 
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	get specification(): ParsedNodeSpecification<any, any> {
 		return this._specification ?? EmptyNodeSpecification.INSTANCE;
 	}
 
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	setSpecification(specification: ParsedNodeSpecification<any, any>): void {
 		this._specification = specification;
 	}

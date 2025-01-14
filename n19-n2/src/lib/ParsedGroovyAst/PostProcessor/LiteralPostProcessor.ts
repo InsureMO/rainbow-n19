@@ -6,10 +6,12 @@ import {LiteralNodeSpecification, LiteralNodeType} from '../Specifications';
 import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
 
 export class LiteralPostProcessor extends PostNodeProcessorAdapter<LiteralContext> {
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	needCopyTextOnToParsed(_ctx: LiteralContext): boolean {
 		return true;
 	}
 
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	needReadSpecificationOnToParsed(_ctx: LiteralContext): boolean {
 		return true;
 	}
@@ -38,6 +40,7 @@ export class LiteralPostProcessor extends PostNodeProcessorAdapter<LiteralContex
 		node.setSpecification(spec);
 	}
 
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	shouldCollectToAtomicNodeOnEnteringVisitor(_node: DecorableParsedNode): boolean {
 		return true;
 	}

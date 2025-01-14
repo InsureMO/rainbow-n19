@@ -14,6 +14,7 @@ export class PackageDeclarationNodeSpecification extends AbstractNodeSpecificati
 		return PackageDeclarationNodeType.PACKAGE;
 	}
 
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	setType(_type: PackageDeclarationNodeType) {
 	}
 
@@ -25,6 +26,7 @@ export class PackageDeclarationNodeSpecification extends AbstractNodeSpecificati
 		return PackageDeclarationNodePurpose.PACKAGE_DECLARATION;
 	}
 
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	setPurpose(_purpose: PackageDeclarationNodePurpose): void {
 	}
 

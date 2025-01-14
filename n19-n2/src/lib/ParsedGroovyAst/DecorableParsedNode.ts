@@ -24,6 +24,7 @@ export class DecorableParsedNode {
 	private _endLine: Optional<number> = (void 0);
 	private _endColumn: Optional<number> = (void 0);
 	private _text: Optional<string> = (void 0);
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	private readonly _specification: Optional<ParsedNodeSpecification<any, any>> = (void 0);
 
 	constructor(node: ParsedNode, cloneSpecification?: boolean) {
@@ -69,6 +70,7 @@ export class DecorableParsedNode {
 		return this._text ?? this._node.text ?? '';
 	}
 
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	get specification(): ParsedNodeSpecification<any, any> {
 		return this._specification ?? this._node.specification;
 	}

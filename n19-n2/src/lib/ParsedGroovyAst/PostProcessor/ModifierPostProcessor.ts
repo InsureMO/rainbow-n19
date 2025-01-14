@@ -6,10 +6,12 @@ import {ModifierNodeSpecification, ModifierNodeType} from '../Specifications';
 import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
 
 export class ModifierPostProcessor extends PostNodeProcessorAdapter<ModifierContext> {
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	needCopyTextOnToParsed(_ctx: ModifierContext): boolean {
 		return true;
 	}
 
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	needReadSpecificationOnToParsed(_ctx: ModifierContext): boolean {
 		return true;
 	}
@@ -39,6 +41,7 @@ export class ModifierPostProcessor extends PostNodeProcessorAdapter<ModifierCont
 		node.setSpecification(spec);
 	}
 
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	shouldCollectToAtomicNodeOnEnteringVisitor(_node: DecorableParsedNode): boolean {
 		return true;
 	}

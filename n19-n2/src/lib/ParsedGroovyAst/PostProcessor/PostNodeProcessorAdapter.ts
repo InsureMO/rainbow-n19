@@ -5,17 +5,19 @@ import {ParsedNode} from '../ParsedNode';
 import {PostNodeProcessor} from '../PostNodeProcessor';
 
 export class PostNodeProcessorAdapter<C extends GroovyParserRuleContext> implements PostNodeProcessor<C> {
-	/** always include */
+	/** default include (not ignore) */
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	ignoreToParsed(_ctx: C): boolean {
 		return false;
 	}
 
-	/** always returns false */
+	/** default returns false */
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	needCopyTextOnToParsed(_ctx: C): boolean {
 		return false;
 	}
 
-	/** always do nothing */
+	/** default copy text from context to node */
 	copyTextOnToParsed(node: ParsedNode, ctx: C): void {
 		node.setText(ctx.getText());
 	}
@@ -31,39 +33,42 @@ export class PostNodeProcessorAdapter<C extends GroovyParserRuleContext> impleme
 		});
 	}
 
-	/** always returns false */
+	/** default returns false */
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	needReadSpecificationOnToParsed(_ctx: C): boolean {
 		return false;
 	}
 
-	/** always do nothing */
+	/** default do nothing */
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	readSpecificationOnToParsed(_node: ParsedNode, _ctx: C): void {
 	}
 
-	/** always returns false */
+	/** default returns false */
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	shouldDecorate(_node: DecorableParsedNode): boolean {
 		return false;
 	}
 
-	/** always do nothing */
+	/** default do nothing */
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	decorate(_node: DecorableParsedNode): void {
 	}
 
-	/**
-	 * always returns false
-	 */
+	/** default returns false */
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	shouldCollectToAtomicNodeOnEnteringVisitor(_node: DecorableParsedNode): boolean {
 		return false;
 	}
 
-	/**
-	 * always returns false
-	 */
+	/** default returns false */
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	shouldCollectToAtomicNodeOnExitingVisitor(_node: DecorableParsedNode): boolean {
 		return false;
 	}
 
-	/** always do nothing */
+	/** default do nothing */
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	collectToAtomicNodeOnExitingVisitor(_node: DecorableParsedNode, _firstNodeIndex: number, _atomicNodes: Array<DecorableParsedNode>): void {
 	}
 

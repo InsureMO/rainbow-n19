@@ -6,16 +6,19 @@ import {ImportDeclarationNodeSpecification, ImportDeclarationNodeType} from '../
 import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
 
 export class ImportDeclarationPostProcessor extends PostNodeProcessorAdapter<ImportDeclarationContext> {
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	needReadSpecificationOnToParsed(_ctx: ImportDeclarationContext): boolean {
 		return true;
 	}
 
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	readSpecificationOnToParsed(node: ParsedNode, _ctx: ImportDeclarationContext): void {
 		const spec = new ImportDeclarationNodeSpecification();
 		spec.setType(ImportDeclarationNodeType.IMPORT);
 		node.setSpecification(spec);
 	}
 
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	shouldDecorate(_node: DecorableParsedNode): boolean {
 		return true;
 	}
@@ -30,7 +33,8 @@ export class ImportDeclarationPostProcessor extends PostNodeProcessorAdapter<Imp
 		DecorableParsedNode.copyPositionAndTextFromToken(node, ctx.IMPORT().symbol);
 	}
 
-	shouldCollectToAtomicNodeOnExitingVisitor(node: DecorableParsedNode): boolean {
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	shouldCollectToAtomicNodeOnExitingVisitor(_node: DecorableParsedNode): boolean {
 		return true;
 	}
 

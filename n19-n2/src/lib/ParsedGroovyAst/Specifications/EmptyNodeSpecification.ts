@@ -13,6 +13,7 @@ export class EmptyNodeSpecification extends AbstractNodeSpecification<-1, -1> {
 		return -1;
 	}
 
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	setType(_type: -1): void {
 	}
 
@@ -24,6 +25,7 @@ export class EmptyNodeSpecification extends AbstractNodeSpecification<-1, -1> {
 		return -1;
 	}
 
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	setPurpose(_purpose: -1): void {
 	}
 

@@ -23,6 +23,7 @@ export class ImportDeclarationNodeSpecification extends AbstractNodeSpecificatio
 		return ImportDeclarationNodePurpose.IMPORT_DECLARATION;
 	}
 
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	setPurpose(_purpose: ImportDeclarationNodePurpose) {
 	}
 

@@ -22,6 +22,7 @@ export class LiteralNodeSpecification extends AbstractNodeSpecification<LiteralN
 		return LiteralNodePurpose.LITERAL;
 	}
 
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	setPurpose(_purpose: LiteralNodePurpose) {
 	}
 
