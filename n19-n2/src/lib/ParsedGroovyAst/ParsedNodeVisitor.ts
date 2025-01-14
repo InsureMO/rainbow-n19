@@ -1,10 +1,8 @@
 import {Optional} from '../TsAddon';
 import {DecorableParsedNode} from './DecorableParsedNode';
+import {HierarchicalDecorableParsedNode} from './HierarchicalDecorableParsedNode';
 import {ParsedNode} from './ParsedNode';
 import {PostNodeProcessorRegistry} from './PostNodeProcessorRegistry';
-
-export type NodeCollectorCheckOnEntering = (node: DecorableParsedNode) => boolean;
-export type NodeCollectorOnExiting = (node: DecorableParsedNode, firstAtomicNodeIndex: number, atomicNodes: Array<DecorableParsedNode>) => void;
 
 export class ParsedNodeVisitor {
 	private readonly _roots: Array<DecorableParsedNode> = [];
@@ -16,44 +14,54 @@ export class ParsedNodeVisitor {
 	constructor(roots: Array<ParsedNode>) {
 		this._roots.push(...(roots.map(root => new DecorableParsedNode(root))));
 		this._roots.forEach(root => {
+			const hierarchicalRoot = new HierarchicalDecorableParsedNode(root);
 			const startIndex = this._atomicNodes.length;
-			this.enterNode(root);
-			this.processChildren(root);
-			// this.initBuild(root)
-			this.exitNode(root, startIndex);
+			this.enterNode(hierarchicalRoot);
+			this.processChildren(hierarchicalRoot);
+			this.exitNode(hierarchicalRoot, startIndex);
 		});
 	}
 
-	protected collectToAtomicListOnEntering(node: DecorableParsedNode): void {
+	protected collectToAtomicListOnEntering(hierarchicalNode: HierarchicalDecorableParsedNode): void {
+		const node = hierarchicalNode.node;
 		const processor = PostNodeProcessorRegistry.getProcessor(node.type);
-		if (processor.shouldCollectToAtomicNodeOnEnteringVisitor(node)) {
+		if (processor.shouldCollectToAtomicNodesOnEnteringVisitor(node)) {
 			this._atomicNodes.push(node);
 		}
-	}
-
-	protected enterNode(node: DecorableParsedNode): void {
-		this.collectToAtomicListOnEntering(node);
-	}
-
-	protected processChildren(node: DecorableParsedNode): void {
-		node.underlay.children.forEach(child => {
-			const node = new DecorableParsedNode(child);
-			const startIndex = this._atomicNodes.length;
-			this.enterNode(node);
-			this.processChildren(node);
-			this.exitNode(node, startIndex);
-		});
-	}
-
-	protected collectToAtomicListOnExiting(node: DecorableParsedNode, firstAtomicNodeIndex: number): void {
-		const processor = PostNodeProcessorRegistry.getProcessor(node.type);
-		if (processor.shouldCollectToAtomicNodeOnExitingVisitor(node)) {
-			processor.collectToAtomicNodeOnExitingVisitor(node, firstAtomicNodeIndex, this._atomicNodes);
+		if (processor.shouldCollectMoreToAtomicNodesOnEnteringVisitor(hierarchicalNode)) {
+			processor.collectMoreToAtomicNodesOnEnteringVisitor(hierarchicalNode);
 		}
 	}
 
-	protected exitNode(node: DecorableParsedNode, firstAtomicNodeIndex: number): void {
-		this.collectToAtomicListOnExiting(node, firstAtomicNodeIndex);
+	protected enterNode(hierarchicalNode: HierarchicalDecorableParsedNode): void {
+		this.collectToAtomicListOnEntering(hierarchicalNode);
+	}
+
+	protected processChildren(parentHierarchicalNode: HierarchicalDecorableParsedNode): void {
+		const parentNode = parentHierarchicalNode.node;
+		parentNode.underlay.children.forEach(child => {
+			const node = new DecorableParsedNode(child);
+			const hierarchicalNode = new HierarchicalDecorableParsedNode(node, parentHierarchicalNode);
+			const startIndex = this._atomicNodes.length;
+			this.enterNode(hierarchicalNode);
+			this.processChildren(hierarchicalNode);
+			this.exitNode(hierarchicalNode, startIndex);
+		});
+	}
+
+	protected collectToAtomicListOnExiting(hierarchicalNode: HierarchicalDecorableParsedNode, firstAtomicNodeIndex: number): void {
+		const node = hierarchicalNode.node;
+		const processor = PostNodeProcessorRegistry.getProcessor(node.type);
+		if (processor.shouldCollectToAtomicNodesOnExitingVisitor(node)) {
+			processor.collectToAtomicNodesOnExitingVisitor(node, firstAtomicNodeIndex, this._atomicNodes);
+		}
+		if (processor.shouldCollectMoreToAtomicNodesOnExitingVisitor(hierarchicalNode)) {
+			processor.collectMoreToAtomicNodesOnExitingVisitor(hierarchicalNode, firstAtomicNodeIndex, this._atomicNodes);
+		}
+	}
+
+	protected exitNode(hierarchicalNode: HierarchicalDecorableParsedNode, firstAtomicNodeIndex: number): void {
+		this.collectToAtomicListOnExiting(hierarchicalNode, firstAtomicNodeIndex);
 	}
 
 	get atomicNodes(): Array<DecorableParsedNode> {

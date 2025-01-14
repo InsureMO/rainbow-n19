@@ -9,7 +9,7 @@ export class SepPostProcessor extends PostNodeProcessorAdapter<SepContext> {
 	}
 
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	shouldCollectToAtomicNodeOnEnteringVisitor(_node: DecorableParsedNode): boolean {
+	shouldCollectToAtomicNodesOnEnteringVisitor(_node: DecorableParsedNode): boolean {
 		return true;
 	}
 }

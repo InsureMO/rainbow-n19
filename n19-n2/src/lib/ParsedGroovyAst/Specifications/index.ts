@@ -1,6 +1,7 @@
 export * from './AbstractNodeSpecification';
 export * from './ClassBodyNodeSpecification';
 export * from './ClassDeclarationNodeSpecification';
+export * from './ClassNameNodeSpecification';
 export * from './EmptyNodeSpecification';
 export * from './FreeNodeSpecification';
 export * from './IdentifierNodeSpecification';
@@ -9,3 +10,6 @@ export * from './LiteralNodeSpecification';
 export * from './ModifierNodeSpecification';
 export * from './PackageDeclarationNodeSpecification';
 export * from './QualifiedNameElementNodeSpecification';
+export * from './TypeBoundNodeSpecification';
+export * from './TypeParameterNodeSpecification';
+export * from './TypeParametersNodeSpecification';

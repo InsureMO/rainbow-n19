@@ -175,7 +175,7 @@ export class ParsedNode {
 			['endColumn', this.endColumn],
 			...(this.specification.properties.map(([key, value]) => [`spec.${key}`, value]))
 		].map(([name, value]) => `${name}=${value ?? ''}`).join(', ');
-		let s = `${indentString}Rule[${props}]`;
+		let s = `${indentString}Parsed Node[${props}]`;
 		if (this.childCount !== 0) {
 			s += '\n' + this.children.map(child => child.toString(indent + 1)).join('\n');
 		}

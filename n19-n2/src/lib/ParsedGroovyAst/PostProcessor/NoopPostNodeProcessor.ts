@@ -1,4 +1,4 @@
-import {GroovyParserRuleContext} from '../../OrgApacheGroovyParserAntlr4';
+import {GroovyParser, GroovyParserRuleContext} from '../../OrgApacheGroovyParserAntlr4';
 import {DecorableParsedNode} from '../DecorableParsedNode';
 import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
 
@@ -6,8 +6,8 @@ export class NoopPostNodeProcessor extends PostNodeProcessorAdapter<GroovyParser
 	/**
 	 * always returns false
 	 */
-	shouldCollectToAtomicNodeOnEnteringVisitor(node: DecorableParsedNode): boolean {
-		console.error(`Node type[${node.type}] is not supported yet.`);
+	shouldCollectToAtomicNodesOnEnteringVisitor(node: DecorableParsedNode): boolean {
+		console.error(`Node[type=${node.type}, name=${GroovyParser.ruleNames[node.type]}] is not supported yet.`);
 		return false;
 	}
 }

@@ -54,25 +54,25 @@ export class QualifiedNameElementPostProcessor extends PostNodeProcessorAdapter<
 			return false;
 		}
 
-		const parentOfQualifiedNameContext = parentCtx.parentCtx;
-		if (parentOfQualifiedNameContext instanceof PackageDeclarationContext) {
+		const parentCtxOfParent = parentCtx.parentCtx;
+		if (parentCtxOfParent instanceof PackageDeclarationContext) {
 			spec.setPurpose(QualifiedNameElementNodePurpose.PACKAGE_DECLARATION);
-		} else if (parentOfQualifiedNameContext instanceof ImportDeclarationContext) {
+		} else if (parentCtxOfParent instanceof ImportDeclarationContext) {
 			spec.setPurpose(QualifiedNameElementNodePurpose.IMPORT_DECLARATION);
 		} else {
 			// TODO more qualified name element purposes need to be identified
-			node.debugger.addMissedLogics(() => `Context[${parentOfQualifiedNameContext.constructor.name}] of QualifiedNameContext/QualifiedNameElementContext is not supported yet.`);
+			node.debugger.addMissedLogics(() => `Context[${parentCtxOfParent.constructor.name}] of QualifiedNameContext/QualifiedNameElementContext is not supported yet.`);
 		}
 		return true;
 	}
 
 	protected readPurpose(node: ParsedNode, spec: QualifiedNameElementNodeSpecification, ctx: QualifiedNameElementContext) {
-		const parentOfIdentifierContext = ctx.parentCtx;
-		if (this.readPurposeIfAncestorIsPackageOrImportDeclaration(node, spec, ctx, parentOfIdentifierContext)) {
+		const parentCtx = ctx.parentCtx;
+		if (this.readPurposeIfAncestorIsPackageOrImportDeclaration(node, spec, ctx, parentCtx)) {
 			// nothing
 		} else {
 			// TODO more identifier purposes need to be identified
-			node.debugger.addMissedLogics(() => `Context[${parentOfIdentifierContext.constructor.name}] of QualifiedNameElementContext is not supported yet.`);
+			node.debugger.addMissedLogics(() => `Context[${parentCtx.constructor.name}] of QualifiedNameElementContext is not supported yet.`);
 		}
 	}
 
@@ -84,7 +84,7 @@ export class QualifiedNameElementPostProcessor extends PostNodeProcessorAdapter<
 	}
 
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	shouldCollectToAtomicNodeOnEnteringVisitor(_node: DecorableParsedNode): boolean {
+	shouldCollectToAtomicNodesOnEnteringVisitor(_node: DecorableParsedNode): boolean {
 		return true;
 	}
 }

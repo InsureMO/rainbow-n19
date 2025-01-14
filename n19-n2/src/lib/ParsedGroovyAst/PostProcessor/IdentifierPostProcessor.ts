@@ -120,14 +120,14 @@ export class IdentifierPostProcessor extends PostNodeProcessorAdapter<Identifier
 	}
 
 	protected readPurpose(node: ParsedNode, spec: IdentifierNodeSpecification, ctx: IdentifierContext) {
-		const parentOfIdentifierContext = ctx.parentCtx;
+		const parentCtx = ctx.parentCtx;
 		// eslint-disable-next-line @typescript-eslint/no-unused-expressions
-		this.readPurposeIfParentIsVariableDeclaratorId(node, spec, ctx, parentOfIdentifierContext)
-		|| this.readPurposeIfParentIsQualifiedNameElement(node, spec, ctx, parentOfIdentifierContext)
-		|| this.readPurposeIfParentIsImportDeclaration(node, spec, ctx, parentOfIdentifierContext)
-		|| this.readPurposeIfParentIsClassDeclaration(node, spec, ctx, parentOfIdentifierContext)
+		this.readPurposeIfParentIsVariableDeclaratorId(node, spec, ctx, parentCtx)
+		|| this.readPurposeIfParentIsQualifiedNameElement(node, spec, ctx, parentCtx)
+		|| this.readPurposeIfParentIsImportDeclaration(node, spec, ctx, parentCtx)
+		|| this.readPurposeIfParentIsClassDeclaration(node, spec, ctx, parentCtx)
 		// TODO more identifier purposes need to be identified
-		|| node.debugger.addMissedLogics(() => `Context[${parentOfIdentifierContext.constructor.name}] of IdentifierContext is not supported yet.`);
+		|| node.debugger.addMissedLogics(() => `Context[${parentCtx.constructor.name}] of IdentifierContext is not supported yet.`);
 	}
 
 	readSpecificationOnToParsed(node: ParsedNode, ctx: IdentifierContext): void {
@@ -138,7 +138,7 @@ export class IdentifierPostProcessor extends PostNodeProcessorAdapter<Identifier
 		node.setSpecification(spec);
 	}
 
-	shouldCollectToAtomicNodeOnEnteringVisitor(node: DecorableParsedNode): boolean {
+	shouldCollectToAtomicNodesOnEnteringVisitor(node: DecorableParsedNode): boolean {
 		const ctx = node.underlay.groovyParserRuleContext;
 		let ancestorCtx = ctx.parentCtx;
 		if (ancestorCtx instanceof QualifiedNameElementContext) {

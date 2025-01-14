@@ -1,6 +1,7 @@
 import {GroovyParserRuleContext} from '../../OrgApacheGroovyParserAntlr4';
 import {Optional} from '../../TsAddon';
 import {DecorableParsedNode} from '../DecorableParsedNode';
+import {HierarchicalDecorableParsedNode} from '../HierarchicalDecorableParsedNode';
 import {ParsedNode} from '../ParsedNode';
 import {PostNodeProcessor} from '../PostNodeProcessor';
 
@@ -63,19 +64,41 @@ export class PostNodeProcessorAdapter<C extends GroovyParserRuleContext> impleme
 
 	/** default returns false */
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	shouldCollectToAtomicNodeOnEnteringVisitor(_node: DecorableParsedNode): boolean {
+	shouldCollectToAtomicNodesOnEnteringVisitor(_node: DecorableParsedNode): boolean {
 		return false;
 	}
 
-	/** default returns false */
+	/** default return false */
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	shouldCollectToAtomicNodeOnExitingVisitor(_node: DecorableParsedNode): boolean {
+	shouldCollectMoreToAtomicNodesOnEnteringVisitor(_hierarchicalNode: HierarchicalDecorableParsedNode): boolean {
 		return false;
 	}
 
 	/** default do nothing */
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	collectToAtomicNodeOnExitingVisitor(_node: DecorableParsedNode, _firstNodeIndex: number, _atomicNodes: Array<DecorableParsedNode>): void {
+	collectMoreToAtomicNodesOnEnteringVisitor(_hierarchicalNode: HierarchicalDecorableParsedNode): void {
+	}
+
+	/** default returns false */
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	shouldCollectToAtomicNodesOnExitingVisitor(_node: DecorableParsedNode): boolean {
+		return false;
+	}
+
+	/** default do nothing */
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	collectToAtomicNodesOnExitingVisitor(_node: DecorableParsedNode, _firstNodeIndex: number, _atomicNodes: Array<DecorableParsedNode>): void {
+	}
+
+	/** default returns false */
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	shouldCollectMoreToAtomicNodesOnExitingVisitor(_hierarchicalNode: HierarchicalDecorableParsedNode): boolean {
+		return false;
+	}
+
+	/** default do nothing */
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	collectMoreToAtomicNodesOnExitingVisitor(_hierarchicalNode: HierarchicalDecorableParsedNode, _firstNodeIndex: number, _atomicNodes: Array<DecorableParsedNode>): void {
 	}
 
 	protected findFirstNodeOfTypeFromAtomicNodes(startIndex: number, atomicNodes: Array<DecorableParsedNode>,

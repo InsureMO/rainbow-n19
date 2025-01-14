@@ -23,30 +23,26 @@ export class ClassBodyPostProcessor extends PostNodeProcessorAdapter<ClassBodyCo
 		return true;
 	}
 
-	/**
-	 * since package declaration doesn't have a child context to describe the keyword "package",
-	 * here we use the package declaration node to simulate it
-	 * so read the position from PACKAGE terminal node
-	 */
 	decorate(node: DecorableParsedNode) {
 		const ctx = node.underlay.groovyParserRuleContext as ClassBodyContext;
 		DecorableParsedNode.copyPositionAndTextFromToken(node, ctx.LBRACE().symbol);
 	}
 
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	shouldCollectToAtomicNodeOnEnteringVisitor(_node: DecorableParsedNode): boolean {
+	shouldCollectToAtomicNodesOnEnteringVisitor(_node: DecorableParsedNode): boolean {
 		return true;
 	}
 
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	shouldCollectToAtomicNodeOnExitingVisitor(_node: DecorableParsedNode): boolean {
+	shouldCollectToAtomicNodesOnExitingVisitor(_node: DecorableParsedNode): boolean {
 		return true;
 	}
 
 	/**
-	 * insert package declaration node into atomic nodes, placing before all qualified name element nodes that are led by this package declaration
+	 * insert class body node into atomic nodes, placing at tail
 	 */
-	collectToAtomicNodeOnExitingVisitor(node: DecorableParsedNode, firstNodeIndex: number, atomicNodes: Array<DecorableParsedNode>) {
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	collectToAtomicNodesOnExitingVisitor(node: DecorableParsedNode, _firstNodeIndex: number, atomicNodes: Array<DecorableParsedNode>) {
 		const ctx = node.underlay.groovyParserRuleContext as ClassBodyContext;
 		const rightBraceTerminalNode = ctx.RBRACE();
 		// create a right brace node, share the same underlay node

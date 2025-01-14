@@ -1,5 +1,6 @@
 import {GroovyParserRuleContext} from '../OrgApacheGroovyParserAntlr4';
 import {DecorableParsedNode} from './DecorableParsedNode';
+import {HierarchicalDecorableParsedNode} from './HierarchicalDecorableParsedNode';
 import {ParsedNode} from './ParsedNode';
 
 export interface PostNodeProcessor<C extends GroovyParserRuleContext> {
@@ -34,17 +35,37 @@ export interface PostNodeProcessor<C extends GroovyParserRuleContext> {
 	/**
 	 * should collect to atomic node list on entering visitor
 	 */
-	shouldCollectToAtomicNodeOnEnteringVisitor(node: DecorableParsedNode): boolean;
+	shouldCollectToAtomicNodesOnEnteringVisitor(node: DecorableParsedNode): boolean;
+	/**
+	 * should collect more to atomic node list on entering visitor.<br>
+	 * with hierarchy provided
+	 */
+	shouldCollectMoreToAtomicNodesOnEnteringVisitor(hierarchicalNode: HierarchicalDecorableParsedNode): boolean;
+	/**
+	 * collect more to atomic node list on entering visitor.<br>
+	 * with hierarchy provided
+	 */
+	collectMoreToAtomicNodesOnEnteringVisitor(hierarchicalNode: HierarchicalDecorableParsedNode): void;
 	/**
 	 * should collect to atomic node list on exiting visitor
 	 */
-	shouldCollectToAtomicNodeOnExitingVisitor(node: DecorableParsedNode): boolean;
+	shouldCollectToAtomicNodesOnExitingVisitor(node: DecorableParsedNode): boolean;
 	/**
 	 * collect to atomic nodes list.
 	 * @param node current node
 	 * @param firstNodeIndex the position of the first node, provided that this node generates atomic nodes.
 	 * @param atomicNodes
 	 */
-	collectToAtomicNodeOnExitingVisitor(node: DecorableParsedNode, firstNodeIndex: number, atomicNodes: Array<DecorableParsedNode>): void;
+	collectToAtomicNodesOnExitingVisitor(node: DecorableParsedNode, firstNodeIndex: number, atomicNodes: Array<DecorableParsedNode>): void;
+	/**
+	 * should collect more to atomic node list on exiting visitor.<br>
+	 * with hierarchy provided
+	 */
+	shouldCollectMoreToAtomicNodesOnExitingVisitor(hierarchicalNode: HierarchicalDecorableParsedNode): boolean;
+	/**
+	 * collect more to atomic node list on exiting visitor.<br>
+	 * with hierarchy provided
+	 */
+	collectMoreToAtomicNodesOnExitingVisitor(hierarchicalNode: HierarchicalDecorableParsedNode, firstNodeIndex: number, atomicNodes: Array<DecorableParsedNode>): void;
 }
 

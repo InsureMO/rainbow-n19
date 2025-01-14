@@ -85,19 +85,16 @@ export class ClassDeclarationPostProcessor extends PostNodeProcessorAdapter<Clas
 	}
 
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	shouldCollectToAtomicNodeOnEnteringVisitor(_node: DecorableParsedNode): boolean {
+	shouldCollectToAtomicNodesOnEnteringVisitor(_node: DecorableParsedNode): boolean {
 		return true;
 	}
 
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	shouldCollectToAtomicNodeOnExitingVisitor(_node: DecorableParsedNode): boolean {
+	shouldCollectToAtomicNodesOnExitingVisitor(_node: DecorableParsedNode): boolean {
 		return true;
 	}
 
-	/**
-	 * insert package declaration node into atomic nodes, placing before all qualified name element nodes that are led by this package declaration
-	 */
-	collectToAtomicNodeOnExitingVisitor(node: DecorableParsedNode, firstNodeIndex: number, atomicNodes: Array<DecorableParsedNode>) {
+	collectToAtomicNodesOnExitingVisitor(node: DecorableParsedNode, firstNodeIndex: number, atomicNodes: Array<DecorableParsedNode>) {
 		const ctx = node.underlay.groovyParserRuleContext as ClassDeclarationContext;
 		if (node.specification.type === ClassDeclarationNodeType.INTERFACE) {
 			let atNode: Optional<DecorableParsedNode> = (void 0);

@@ -1,4 +1,5 @@
 export * from './DecorableParsedNode';
+export * from './HierarchicalDecorableParsedNode';
 export * from './IntactParseListener';
 export * from './ParsedAstDebugger';
 export * from './ParsedAstUtils';

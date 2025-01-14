@@ -27,25 +27,17 @@ export class PackageDeclarationPostProcessor extends PostNodeProcessorAdapter<Pa
 		return true;
 	}
 
-	/**
-	 * since package declaration doesn't have a child context to describe the keyword "package",
-	 * here we use the package declaration node to simulate it
-	 * so read the position from PACKAGE terminal node
-	 */
 	decorate(node: DecorableParsedNode) {
 		const ctx = node.underlay.groovyParserRuleContext as PackageDeclarationContext;
 		DecorableParsedNode.copyPositionAndTextFromToken(node, ctx.PACKAGE().symbol);
 	}
 
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	shouldCollectToAtomicNodeOnExitingVisitor(_node: DecorableParsedNode): boolean {
+	shouldCollectToAtomicNodesOnExitingVisitor(_node: DecorableParsedNode): boolean {
 		return true;
 	}
 
-	/**
-	 * insert package declaration node into atomic nodes, placing before all qualified name element nodes that are led by this package declaration
-	 */
-	collectToAtomicNodeOnExitingVisitor(node: DecorableParsedNode, firstNodeIndex: number, atomicNodes: Array<DecorableParsedNode>) {
+	collectToAtomicNodesOnExitingVisitor(node: DecorableParsedNode, firstNodeIndex: number, atomicNodes: Array<DecorableParsedNode>) {
 		if (firstNodeIndex === atomicNodes.length) {
 			// no child node appended, add myself
 			atomicNodes.push(node);

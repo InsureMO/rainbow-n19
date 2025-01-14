@@ -44,7 +44,7 @@ export class ModifierPostProcessor extends PostNodeProcessorAdapter<ModifierCont
 	}
 
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	shouldCollectToAtomicNodeOnEnteringVisitor(_node: DecorableParsedNode): boolean {
+	shouldCollectToAtomicNodesOnEnteringVisitor(_node: DecorableParsedNode): boolean {
 		return true;
 	}
 }

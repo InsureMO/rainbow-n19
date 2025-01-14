@@ -39,7 +39,7 @@ export class ImportDeclarationPostProcessor extends PostNodeProcessorAdapter<Imp
 	}
 
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	shouldCollectToAtomicNodeOnExitingVisitor(_node: DecorableParsedNode): boolean {
+	shouldCollectToAtomicNodesOnExitingVisitor(_node: DecorableParsedNode): boolean {
 		return true;
 	}
 
@@ -113,7 +113,7 @@ export class ImportDeclarationPostProcessor extends PostNodeProcessorAdapter<Imp
 	/**
 	 * insert import declaration node into atomic nodes, placing before all qualified name element nodes that are led by this import declaration.<br>
 	 */
-	collectToAtomicNodeOnExitingVisitor(node: DecorableParsedNode, firstNodeIndex: number, atomicNodes: Array<DecorableParsedNode>) {
+	collectToAtomicNodesOnExitingVisitor(node: DecorableParsedNode, firstNodeIndex: number, atomicNodes: Array<DecorableParsedNode>) {
 		const nodes = [node];
 		const staticNode = this.decorateForStaticKeyword(node);
 		if (staticNode != null) {
