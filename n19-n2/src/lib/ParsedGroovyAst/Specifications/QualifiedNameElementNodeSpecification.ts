@@ -11,7 +11,8 @@ export enum QualifiedNameElementNodeType {
 
 export enum QualifiedNameElementNodePurpose {
 	PACKAGE_DECLARATION = GroovyParser.RULE_packageDeclaration,
-	IMPORT_DECLARATION = GroovyParser.RULE_importDeclaration
+	IMPORT_DECLARATION = GroovyParser.RULE_importDeclaration,
+	QUALIFIED_CLASS_NAME = GroovyParser.RULE_qualifiedClassName
 }
 
 export class QualifiedNameElementNodeSpecification extends AbstractNodeSpecification<QualifiedNameElementNodeType, QualifiedNameElementNodePurpose> {

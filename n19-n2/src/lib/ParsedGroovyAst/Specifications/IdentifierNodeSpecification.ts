@@ -24,6 +24,7 @@ export enum IdentifierNodePurpose {
 	PACKAGE_DECLARATION = GroovyParser.RULE_packageDeclaration,
 	IMPORT_DECLARATION = GroovyParser.RULE_importDeclaration,
 	CLASS_DECLARATION = GroovyParser.RULE_classDeclaration,
+	QUALIFIED_CLASS_NAME = GroovyParser.RULE_qualifiedClassName
 }
 
 export class IdentifierNodeSpecification extends AbstractNodeSpecification<IdentifierNodeType, IdentifierNodePurpose> {

@@ -12,4 +12,6 @@ describe('Interface declaration', () => {
 	test('interface Abc<X extends Number, Y> {}', async () => parseAst('interface Abc<X extends Number, Y> {}'));
 	test('interface Abc<X, Y extends Number> {}', async () => parseAst('interface Abc<X, Y extends Number> {}'));
 	test('interface Abc<X extends Number & Clonable> {}', async () => parseAst('interface Abc<X extends Number & Clonable> {}'));
+	test('interface Abc<X extends Number & java.lang.Clonable> {}', async () => parseAst('interface Abc<X extends Number & java.lang.Clonable> {}'));
+	test('interface Abc<X extends Number & java.lang.Clonable, Y> {}', async () => parseAst('interface Abc<X extends Number & java.lang.Clonable, Y> {}'));
 });

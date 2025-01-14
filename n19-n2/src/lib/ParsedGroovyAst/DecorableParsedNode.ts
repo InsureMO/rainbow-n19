@@ -80,11 +80,11 @@ export class DecorableParsedNode {
 		const props = [
 			['type', ParsedNodeUtils.getRuleName(this.type)],
 			['text', this.text],
+			...(this.specification.properties.map(([key, value]) => [`spec.${key}`, value])),
 			['startLine', this.startLine],
 			['startColumn', this.startColumn],
 			['endLine', this.endLine],
-			['endColumn', this.endColumn],
-			...(this.specification.properties.map(([key, value]) => [`spec.${key}`, value]))
+			['endColumn', this.endColumn]
 		].map(([name, value]) => `${name}=${value ?? ''}`).join(', ');
 		return `Decorable Node[${props}]`;
 	}

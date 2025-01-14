@@ -5,8 +5,10 @@ import {
 	IdentifierContext,
 	ImportDeclarationContext,
 	PackageDeclarationContext,
+	QualifiedClassNameContext,
 	QualifiedNameContext,
-	QualifiedNameElementContext
+	QualifiedNameElementContext,
+	QualifiedNameElementsContext
 } from '../../OrgApacheGroovyParserAntlr4';
 import {DecorableParsedNode} from '../DecorableParsedNode';
 import {ParsedNode} from '../ParsedNode';
@@ -81,20 +83,28 @@ export class IdentifierPostProcessor extends PostNodeProcessorAdapter<Identifier
 		if (!(parentCtx instanceof QualifiedNameElementContext)) {
 			return false;
 		}
-		const parentOfQualifiedNameElementContext = parentCtx.parentCtx;
-		if (parentOfQualifiedNameElementContext instanceof QualifiedNameContext) {
-			const parentOfQualifiedNameContext = parentOfQualifiedNameElementContext.parentCtx;
-			if (parentOfQualifiedNameContext instanceof PackageDeclarationContext) {
+		const parentCtx2 = parentCtx.parentCtx;
+		if (parentCtx2 instanceof QualifiedNameContext) {
+			const parentCtx3 = parentCtx2.parentCtx;
+			if (parentCtx3 instanceof PackageDeclarationContext) {
 				spec.setPurpose(IdentifierNodePurpose.PACKAGE_DECLARATION);
-			} else if (parentOfQualifiedNameContext instanceof ImportDeclarationContext) {
+			} else if (parentCtx3 instanceof ImportDeclarationContext) {
 				spec.setPurpose(IdentifierNodePurpose.IMPORT_DECLARATION);
 			} else {
 				// TODO more identifier purposes need to be identified
-				node.debugger.addMissedLogics(() => `Context[${parentOfQualifiedNameContext.constructor.name}] of QualifiedNameContext/QualifiedNameElementContext/IdentifierContext is not supported yet.`);
+				node.debugger.addMissedLogics(() => `Context[${parentCtx3.constructor.name}] of QualifiedNameContext/QualifiedNameElementContext/IdentifierContext is not supported yet.`);
+			}
+		} else if (parentCtx2 instanceof QualifiedNameElementsContext) {
+			const parentCtx3 = parentCtx2.parentCtx;
+			if (parentCtx3 instanceof QualifiedClassNameContext) {
+				spec.setPurpose(IdentifierNodePurpose.QUALIFIED_CLASS_NAME);
+			} else {
+				// TODO more identifier purposes need to be identified
+				node.debugger.addMissedLogics(() => `Context[${parentCtx3.constructor.name}] of QualifiedNameElementsContext/QualifiedNameElementContext/IdentifierContext is not supported yet.`);
 			}
 		} else {
 			// TODO more identifier purposes need to be identified
-			node.debugger.addMissedLogics(() => `Context[${parentOfQualifiedNameElementContext.constructor.name}] of QualifiedNameElementContext/IdentifierContext is not supported yet.`);
+			node.debugger.addMissedLogics(() => `Context[${parentCtx2.constructor.name}] of QualifiedNameElementContext/IdentifierContext is not supported yet.`);
 		}
 		return true;
 	}
@@ -119,6 +129,16 @@ export class IdentifierPostProcessor extends PostNodeProcessorAdapter<Identifier
 		return true;
 	}
 
+	protected readPurposeIfParentIsQualifiedClassName(_node: ParsedNode, spec: IdentifierNodeSpecification,
+	                                                  _ctx: IdentifierContext, parentCtx: ParserRuleContext): boolean {
+		if (!(parentCtx instanceof QualifiedClassNameContext)) {
+			return false;
+		}
+
+		spec.setPurpose(IdentifierNodePurpose.QUALIFIED_CLASS_NAME);
+		return true;
+	}
+
 	protected readPurpose(node: ParsedNode, spec: IdentifierNodeSpecification, ctx: IdentifierContext) {
 		const parentCtx = ctx.parentCtx;
 		// eslint-disable-next-line @typescript-eslint/no-unused-expressions
@@ -126,6 +146,7 @@ export class IdentifierPostProcessor extends PostNodeProcessorAdapter<Identifier
 		|| this.readPurposeIfParentIsQualifiedNameElement(node, spec, ctx, parentCtx)
 		|| this.readPurposeIfParentIsImportDeclaration(node, spec, ctx, parentCtx)
 		|| this.readPurposeIfParentIsClassDeclaration(node, spec, ctx, parentCtx)
+		|| this.readPurposeIfParentIsQualifiedClassName(node, spec, ctx, parentCtx)
 		// TODO more identifier purposes need to be identified
 		|| node.debugger.addMissedLogics(() => `Context[${parentCtx.constructor.name}] of IdentifierContext is not supported yet.`);
 	}
@@ -140,13 +161,16 @@ export class IdentifierPostProcessor extends PostNodeProcessorAdapter<Identifier
 
 	shouldCollectToAtomicNodesOnEnteringVisitor(node: DecorableParsedNode): boolean {
 		const ctx = node.underlay.groovyParserRuleContext;
-		let ancestorCtx = ctx.parentCtx;
-		if (ancestorCtx instanceof QualifiedNameElementContext) {
-			ancestorCtx = ancestorCtx.parentCtx;
-			if (ancestorCtx instanceof QualifiedNameContext) {
-				ancestorCtx = ancestorCtx.parentCtx;
+		let parentCtx = ctx.parentCtx;
+		if (parentCtx instanceof QualifiedNameElementContext) {
+			const parentCtxOfParent = parentCtx.parentCtx;
+			if (parentCtxOfParent instanceof QualifiedNameContext) {
+				const parentCtxOfParent2 = parentCtxOfParent.parentCtx;
 				// ignore when under package or import declaration
-				return !(ancestorCtx instanceof PackageDeclarationContext) && !(ancestorCtx instanceof ImportDeclarationContext);
+				return !(parentCtxOfParent2 instanceof PackageDeclarationContext) && !(parentCtxOfParent2 instanceof ImportDeclarationContext);
+			} else if (parentCtxOfParent instanceof QualifiedNameElementsContext) {
+				const parentCtxOfParent2 = parentCtxOfParent.parentCtx;
+				return !(parentCtxOfParent2 instanceof QualifiedClassNameContext);
 			}
 		}
 		return true;

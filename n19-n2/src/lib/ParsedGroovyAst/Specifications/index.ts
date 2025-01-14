@@ -10,6 +10,7 @@ export * from './LiteralNodeSpecification';
 export * from './ModifierNodeSpecification';
 export * from './PackageDeclarationNodeSpecification';
 export * from './QualifiedNameElementNodeSpecification';
+export * from './QualifiedNameElementsNodeSpecification';
 export * from './TypeBoundNodeSpecification';
 export * from './TypeParameterNodeSpecification';
 export * from './TypeParametersNodeSpecification';
