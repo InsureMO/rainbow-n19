@@ -1,8 +1,5 @@
-import {GroovyParserRuleContext} from '../../OrgApacheGroovyParserAntlr4';
+import {ScriptStatementContext} from '../../OrgApacheGroovyParserAntlr4';
 import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
 
-export class ScriptStatementPostProcessor extends PostNodeProcessorAdapter {
-	ignoreToParsed(_ctx: GroovyParserRuleContext): boolean {
-		return false;
-	}
+export class ScriptStatementPostProcessor extends PostNodeProcessorAdapter<ScriptStatementContext> {
 }

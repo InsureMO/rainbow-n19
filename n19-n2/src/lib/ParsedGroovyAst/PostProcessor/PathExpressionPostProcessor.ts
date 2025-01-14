@@ -1,8 +1,5 @@
-import {GroovyParserRuleContext} from '../../OrgApacheGroovyParserAntlr4';
+import {PathExpressionContext} from '../../OrgApacheGroovyParserAntlr4';
 import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
 
-export class PathExpressionPostProcessor extends PostNodeProcessorAdapter {
-	ignoreToParsed(_ctx: GroovyParserRuleContext): boolean {
-		return false;
-	}
+export class PathExpressionPostProcessor extends PostNodeProcessorAdapter<PathExpressionContext> {
 }

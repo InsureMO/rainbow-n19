@@ -4,23 +4,23 @@ import {DecorableParsedNode} from '../DecorableParsedNode';
 import {ParsedNode} from '../ParsedNode';
 import {PostNodeProcessor} from '../PostNodeProcessor';
 
-export class PostNodeProcessorAdapter implements PostNodeProcessor {
-	/** always ignore */
-	ignoreToParsed(_ctx: GroovyParserRuleContext): boolean {
-		return true;
+export class PostNodeProcessorAdapter<C extends GroovyParserRuleContext> implements PostNodeProcessor<C> {
+	/** always include */
+	ignoreToParsed(_ctx: C): boolean {
+		return false;
 	}
 
 	/** always returns false */
-	needCopyTextOnToParsed(_ctx: GroovyParserRuleContext): boolean {
+	needCopyTextOnToParsed(_ctx: C): boolean {
 		return false;
 	}
 
 	/** always do nothing */
-	copyTextOnToParsed(node: ParsedNode, ctx: GroovyParserRuleContext): void {
+	copyTextOnToParsed(node: ParsedNode, ctx: C): void {
 		node.setText(ctx.getText());
 	}
 
-	protected logCopyTextToParsedAsMissedLogic(node: ParsedNode, ctx: GroovyParserRuleContext) {
+	protected logCopyTextToParsedAsMissedLogic(node: ParsedNode, ctx: C) {
 		node.debugger.addMissedLogics(() => {
 			const text = ctx.getText();
 			if (text != null && text.length !== 0) {
@@ -32,12 +32,12 @@ export class PostNodeProcessorAdapter implements PostNodeProcessor {
 	}
 
 	/** always returns false */
-	needReadSpecificationOnToParsed(_ctx: GroovyParserRuleContext): boolean {
+	needReadSpecificationOnToParsed(_ctx: C): boolean {
 		return false;
 	}
 
 	/** always do nothing */
-	readSpecificationOnToParsed(_node: ParsedNode, _ctx: GroovyParserRuleContext): void {
+	readSpecificationOnToParsed(_node: ParsedNode, _ctx: C): void {
 	}
 
 	/** always returns false */

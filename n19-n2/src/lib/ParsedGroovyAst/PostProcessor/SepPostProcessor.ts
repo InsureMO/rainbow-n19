@@ -1,13 +1,9 @@
-import {GroovyParserRuleContext} from '../../OrgApacheGroovyParserAntlr4';
+import {SepContext} from '../../OrgApacheGroovyParserAntlr4';
 import {DecorableParsedNode} from '../DecorableParsedNode';
 import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
 
-export class SepPostProcessor extends PostNodeProcessorAdapter {
-	ignoreToParsed(_ctx: GroovyParserRuleContext): boolean {
-		return false;
-	}
-
-	needCopyTextOnToParsed(_ctx: GroovyParserRuleContext): boolean {
+export class SepPostProcessor extends PostNodeProcessorAdapter<SepContext> {
+	needCopyTextOnToParsed(_ctx: SepContext): boolean {
 		return true;
 	}
 

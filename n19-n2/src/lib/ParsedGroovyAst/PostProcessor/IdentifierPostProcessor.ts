@@ -1,35 +1,24 @@
 import {ParserRuleContext, TerminalNode} from 'antlr4';
 import {
-	EnhancedForControlContext,
-	FormalParameterContext,
+	ClassDeclarationContext,
 	GroovyParser,
-	GroovyParserRuleContext,
 	IdentifierContext,
 	ImportDeclarationContext,
 	PackageDeclarationContext,
 	QualifiedNameContext,
-	QualifiedNameElementContext,
-	StandardLambdaParametersContext,
-	TypeNamePairContext,
-	VariableDeclaratorContext,
-	VariableDeclaratorIdContext,
-	VariableNamesContext
+	QualifiedNameElementContext
 } from '../../OrgApacheGroovyParserAntlr4';
 import {DecorableParsedNode} from '../DecorableParsedNode';
 import {ParsedNode} from '../ParsedNode';
 import {IdentifierNodePurpose, IdentifierNodeSpecification} from '../Specifications';
 import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
 
-export class IdentifierPostProcessor extends PostNodeProcessorAdapter {
-	ignoreToParsed(_ctx: GroovyParserRuleContext): boolean {
-		return false;
-	}
-
-	needCopyTextOnToParsed(_ctx: GroovyParserRuleContext): boolean {
+export class IdentifierPostProcessor extends PostNodeProcessorAdapter<IdentifierContext> {
+	needCopyTextOnToParsed(_ctx: IdentifierContext): boolean {
 		return true;
 	}
 
-	needReadSpecificationOnToParsed(_ctx: GroovyParserRuleContext): boolean {
+	needReadSpecificationOnToParsed(_ctx: IdentifierContext): boolean {
 		return true;
 	}
 
@@ -59,27 +48,28 @@ export class IdentifierPostProcessor extends PostNodeProcessorAdapter {
 
 	protected readPurposeIfParentIsVariableDeclaratorId(node: ParsedNode, spec: IdentifierNodeSpecification,
 	                                                    _ctx: IdentifierContext, parentCtx: ParserRuleContext): boolean {
-		if (!(parentCtx instanceof VariableDeclaratorIdContext)) {
-			return false;
-		}
-		const parentOfVariableDeclaratorIdContext = parentCtx.parentCtx;
-		if (parentOfVariableDeclaratorIdContext instanceof VariableDeclaratorContext) {
-			// this identifier is name of variable
-			spec.setPurpose(IdentifierNodePurpose.VARIABLE_DECLARATOR);
-		} else if (parentOfVariableDeclaratorIdContext instanceof FormalParameterContext) {
-			spec.setPurpose(IdentifierNodePurpose.FORMAL_PARAMETER);
-		} else if (parentOfVariableDeclaratorIdContext instanceof StandardLambdaParametersContext) {
-			spec.setPurpose(IdentifierNodePurpose.STANDARD_LAMBDA_PARAMETERS);
-		} else if (parentOfVariableDeclaratorIdContext instanceof TypeNamePairContext) {
-			spec.setPurpose(IdentifierNodePurpose.TYPE_NAME_PAIR);
-		} else if (parentOfVariableDeclaratorIdContext instanceof VariableNamesContext) {
-			spec.setPurpose(IdentifierNodePurpose.VARIABLE_NAMES);
-		} else if (parentOfVariableDeclaratorIdContext instanceof EnhancedForControlContext) {
-			spec.setPurpose(IdentifierNodePurpose.ENHANCED_FOR_CONTROL);
-		} else {
-			node.debugger.addMissedLogics(() => `Context[${parentOfVariableDeclaratorIdContext.constructor.name}] of VariableDeclaratorIdContext/IdentifierContext is not supported yet.`);
-		}
-		return true;
+		return false;
+		// if (!(parentCtx instanceof VariableDeclaratorIdContext)) {
+		// 	return false;
+		// }
+		// const parentOfVariableDeclaratorIdContext = parentCtx.parentCtx;
+		// if (parentOfVariableDeclaratorIdContext instanceof VariableDeclaratorContext) {
+		// 	// this identifier is name of variable
+		// 	spec.setPurpose(IdentifierNodePurpose.VARIABLE_DECLARATOR);
+		// } else if (parentOfVariableDeclaratorIdContext instanceof FormalParameterContext) {
+		// 	spec.setPurpose(IdentifierNodePurpose.FORMAL_PARAMETER);
+		// } else if (parentOfVariableDeclaratorIdContext instanceof StandardLambdaParametersContext) {
+		// 	spec.setPurpose(IdentifierNodePurpose.STANDARD_LAMBDA_PARAMETERS);
+		// } else if (parentOfVariableDeclaratorIdContext instanceof TypeNamePairContext) {
+		// 	spec.setPurpose(IdentifierNodePurpose.TYPE_NAME_PAIR);
+		// } else if (parentOfVariableDeclaratorIdContext instanceof VariableNamesContext) {
+		// 	spec.setPurpose(IdentifierNodePurpose.VARIABLE_NAMES);
+		// } else if (parentOfVariableDeclaratorIdContext instanceof EnhancedForControlContext) {
+		// 	spec.setPurpose(IdentifierNodePurpose.ENHANCED_FOR_CONTROL);
+		// } else {
+		// 	node.debugger.addMissedLogics(() => `Context[${parentOfVariableDeclaratorIdContext.constructor.name}] of VariableDeclaratorIdContext/IdentifierContext is not supported yet.`);
+		// }
+		// return true;
 	}
 
 	protected readPurposeIfParentIsQualifiedNameElement(node: ParsedNode, spec: IdentifierNodeSpecification,
@@ -115,20 +105,31 @@ export class IdentifierPostProcessor extends PostNodeProcessorAdapter {
 		return true;
 	}
 
+	protected readPurposeIfParentIsClassDeclaration(_node: ParsedNode, spec: IdentifierNodeSpecification,
+	                                                _ctx: IdentifierContext, parentCtx: ParserRuleContext): boolean {
+		if (!(parentCtx instanceof ClassDeclarationContext)) {
+			return false;
+		}
+
+		spec.setPurpose(IdentifierNodePurpose.CLASS_DECLARATION);
+		return true;
+	}
+
 	protected readPurpose(node: ParsedNode, spec: IdentifierNodeSpecification, ctx: IdentifierContext) {
 		const parentOfIdentifierContext = ctx.parentCtx;
 		this.readPurposeIfParentIsVariableDeclaratorId(node, spec, ctx, parentOfIdentifierContext)
 		|| this.readPurposeIfParentIsQualifiedNameElement(node, spec, ctx, parentOfIdentifierContext)
 		|| this.readPurposeIfParentIsImportDeclaration(node, spec, ctx, parentOfIdentifierContext)
+		|| this.readPurposeIfParentIsClassDeclaration(node, spec, ctx, parentOfIdentifierContext)
 		// TODO more identifier purposes need to be identified
 		|| node.debugger.addMissedLogics(() => `Context[${parentOfIdentifierContext.constructor.name}] of IdentifierContext is not supported yet.`);
 	}
 
-	readSpecificationOnToParsed(node: ParsedNode, ctx: GroovyParserRuleContext): void {
+	readSpecificationOnToParsed(node: ParsedNode, ctx: IdentifierContext): void {
 		const spec = new IdentifierNodeSpecification();
 		// there is only one child in identifier context
-		this.readType(node, spec, ctx as IdentifierContext);
-		this.readPurpose(node, spec, ctx as IdentifierContext);
+		this.readType(node, spec, ctx);
+		this.readPurpose(node, spec, ctx);
 		node.setSpecification(spec);
 	}
 

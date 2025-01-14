@@ -1,7 +1,6 @@
 import {ParserRuleContext, TerminalNode} from 'antlr4';
 import {
 	GroovyParser,
-	GroovyParserRuleContext,
 	IdentifierContext,
 	ImportDeclarationContext,
 	PackageDeclarationContext,
@@ -17,16 +16,12 @@ import {
 } from '../Specifications';
 import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
 
-export class QualifiedNameElementPostProcessor extends PostNodeProcessorAdapter {
-	ignoreToParsed(_ctx: GroovyParserRuleContext): boolean {
-		return false;
-	}
-
-	needCopyTextOnToParsed(_ctx: GroovyParserRuleContext): boolean {
+export class QualifiedNameElementPostProcessor extends PostNodeProcessorAdapter<QualifiedNameElementContext> {
+	needCopyTextOnToParsed(_ctx: QualifiedNameElementContext): boolean {
 		return true;
 	}
 
-	needReadSpecificationOnToParsed(_ctx: GroovyParserRuleContext): boolean {
+	needReadSpecificationOnToParsed(_ctx: QualifiedNameElementContext): boolean {
 		return true;
 	}
 
@@ -79,10 +74,10 @@ export class QualifiedNameElementPostProcessor extends PostNodeProcessorAdapter 
 		}
 	}
 
-	readSpecificationOnToParsed(node: ParsedNode, ctx: GroovyParserRuleContext): void {
+	readSpecificationOnToParsed(node: ParsedNode, ctx: QualifiedNameElementContext): void {
 		const spec = new QualifiedNameElementNodeSpecification();
-		this.readType(node, spec, ctx as QualifiedNameElementContext);
-		this.readPurpose(node, spec, ctx as QualifiedNameElementContext);
+		this.readType(node, spec, ctx);
+		this.readPurpose(node, spec, ctx);
 		node.setSpecification(spec);
 	}
 

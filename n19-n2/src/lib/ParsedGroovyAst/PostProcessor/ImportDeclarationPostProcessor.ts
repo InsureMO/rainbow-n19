@@ -1,20 +1,16 @@
-import {GroovyParser, GroovyParserRuleContext, ImportDeclarationContext} from '../../OrgApacheGroovyParserAntlr4';
+import {GroovyParser, ImportDeclarationContext} from '../../OrgApacheGroovyParserAntlr4';
 import {asT, Optional} from '../../TsAddon';
 import {DecorableParsedNode} from '../DecorableParsedNode';
 import {ParsedNode} from '../ParsedNode';
 import {ImportDeclarationNodeSpecification, ImportDeclarationNodeType} from '../Specifications';
 import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
 
-export class ImportDeclarationPostProcessor extends PostNodeProcessorAdapter {
-	ignoreToParsed(_ctx: GroovyParserRuleContext): boolean {
-		return false;
-	}
-
-	needReadSpecificationOnToParsed(_ctx: GroovyParserRuleContext): boolean {
+export class ImportDeclarationPostProcessor extends PostNodeProcessorAdapter<ImportDeclarationContext> {
+	needReadSpecificationOnToParsed(_ctx: ImportDeclarationContext): boolean {
 		return true;
 	}
 
-	readSpecificationOnToParsed(node: ParsedNode, _ctx: GroovyParserRuleContext): void {
+	readSpecificationOnToParsed(node: ParsedNode, _ctx: ImportDeclarationContext): void {
 		const spec = new ImportDeclarationNodeSpecification();
 		spec.setType(ImportDeclarationNodeType.IMPORT);
 		node.setSpecification(spec);

@@ -1,28 +1,20 @@
 import {TerminalNode} from 'antlr4';
-import {
-	ClassOrInterfaceModifierContext,
-	GroovyParser,
-	GroovyParserRuleContext
-} from '../../OrgApacheGroovyParserAntlr4';
+import {ClassOrInterfaceModifierContext, GroovyParser, ModifierContext} from '../../OrgApacheGroovyParserAntlr4';
 import {DecorableParsedNode} from '../DecorableParsedNode';
 import {ParsedNode} from '../ParsedNode';
 import {ModifierNodeSpecification, ModifierNodeType} from '../Specifications';
 import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
 
-export class ModifierPostProcessor extends PostNodeProcessorAdapter {
-	ignoreToParsed(_ctx: GroovyParserRuleContext): boolean {
-		return false;
-	}
-
-	needCopyTextOnToParsed(_ctx: GroovyParserRuleContext): boolean {
+export class ModifierPostProcessor extends PostNodeProcessorAdapter<ModifierContext> {
+	needCopyTextOnToParsed(_ctx: ModifierContext): boolean {
 		return true;
 	}
 
-	needReadSpecificationOnToParsed(_ctx: GroovyParserRuleContext): boolean {
+	needReadSpecificationOnToParsed(_ctx: ModifierContext): boolean {
 		return true;
 	}
 
-	readSpecificationOnToParsed(node: ParsedNode, ctx: GroovyParserRuleContext): void {
+	readSpecificationOnToParsed(node: ParsedNode, ctx: ModifierContext): void {
 		const spec = new ModifierNodeSpecification();
 		// there is only one child in modifier context
 		const child = ctx.getChild(0);

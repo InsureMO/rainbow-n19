@@ -2,27 +2,27 @@ import {GroovyParserRuleContext} from '../OrgApacheGroovyParserAntlr4';
 import {DecorableParsedNode} from './DecorableParsedNode';
 import {ParsedNode} from './ParsedNode';
 
-export interface PostNodeProcessor {
+export interface PostNodeProcessor<C extends GroovyParserRuleContext> {
 	/**
 	 * ignore to transform to {@link ParsedNode}
 	 */
-	ignoreToParsed(ctx: GroovyParserRuleContext): boolean;
+	ignoreToParsed(ctx: C): boolean;
 	/**
 	 * need copy text from context to parsed node or not
 	 */
-	needCopyTextOnToParsed(ctx: GroovyParserRuleContext): boolean;
+	needCopyTextOnToParsed(ctx: C): boolean;
 	/**
 	 * copy text from context to parsed node
 	 */
-	copyTextOnToParsed(node: ParsedNode, ctx: GroovyParserRuleContext): void;
+	copyTextOnToParsed(node: ParsedNode, ctx: C): void;
 	/**
 	 * need read specification from context to parsed node or not
 	 */
-	needReadSpecificationOnToParsed(ctx: GroovyParserRuleContext): boolean;
+	needReadSpecificationOnToParsed(ctx: C): boolean;
 	/**
 	 * read specification from context to parsed node
 	 */
-	readSpecificationOnToParsed(node: ParsedNode, ctx: GroovyParserRuleContext): void;
+	readSpecificationOnToParsed(node: ParsedNode, ctx: C): void;
 	/**
 	 * should decorate given node or not
 	 */

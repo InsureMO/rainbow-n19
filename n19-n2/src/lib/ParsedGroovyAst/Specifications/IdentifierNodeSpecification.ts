@@ -23,6 +23,7 @@ export enum IdentifierNodePurpose {
 	ENHANCED_FOR_CONTROL = GroovyParser.RULE_enhancedForControl,
 	PACKAGE_DECLARATION = GroovyParser.RULE_packageDeclaration,
 	IMPORT_DECLARATION = GroovyParser.RULE_importDeclaration,
+	CLASS_DECLARATION = GroovyParser.RULE_classDeclaration,
 }
 
 export class IdentifierNodeSpecification extends AbstractNodeSpecification<IdentifierNodeType, IdentifierNodePurpose> {

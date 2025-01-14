@@ -1,24 +1,20 @@
 import {TerminalNode} from 'antlr4';
-import {GroovyParser, GroovyParserRuleContext, StringLiteralContext} from '../../OrgApacheGroovyParserAntlr4';
+import {GroovyParser, LiteralContext, StringLiteralContext} from '../../OrgApacheGroovyParserAntlr4';
 import {DecorableParsedNode} from '../DecorableParsedNode';
 import {ParsedNode} from '../ParsedNode';
 import {LiteralNodeSpecification, LiteralNodeType} from '../Specifications';
 import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
 
-export class LiteralPostProcessor extends PostNodeProcessorAdapter {
-	ignoreToParsed(_ctx: GroovyParserRuleContext): boolean {
-		return false;
-	}
-
-	needCopyTextOnToParsed(_ctx: GroovyParserRuleContext): boolean {
+export class LiteralPostProcessor extends PostNodeProcessorAdapter<LiteralContext> {
+	needCopyTextOnToParsed(_ctx: LiteralContext): boolean {
 		return true;
 	}
 
-	needReadSpecificationOnToParsed(_ctx: GroovyParserRuleContext): boolean {
+	needReadSpecificationOnToParsed(_ctx: LiteralContext): boolean {
 		return true;
 	}
 
-	readSpecificationOnToParsed(node: ParsedNode, ctx: GroovyParserRuleContext): void {
+	readSpecificationOnToParsed(node: ParsedNode, ctx: LiteralContext): void {
 		const spec = new LiteralNodeSpecification();
 		// there is only one child in literal context
 		const child = ctx.getChild(0);

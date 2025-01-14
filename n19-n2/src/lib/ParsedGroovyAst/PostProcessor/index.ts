@@ -1,4 +1,7 @@
 export * from './AnnotationsOptPostProcessor';
+export * from './ClassBodyPostProcessor';
+export * from './ClassDeclarationPostProcessor';
+export * from './ClassOrInterfaceModifiersOptPostProcessor';
 export * from './CompilationUnitPostProcessor';
 export * from './EnhancedStatementExpressionPostProcessor';
 export * from './ExpressionPostProcessor';
@@ -21,6 +24,7 @@ export * from './ScriptStatementsPostProcessor';
 export * from './SepPostProcessor';
 export * from './StatementExpressionPostProcessor';
 export * from './StatementPostProcessor';
+export * from './TypeDeclarationPostProcessor';
 export * from './VariableDeclaratorIdPostProcessor';
 export * from './VariableDeclaratorPostProcessor';
 export * from './VariableDeclaratorsPostProcessor';
