@@ -17,7 +17,9 @@ import {
 	QualifiedNameElementNodeSpecification,
 	QualifiedNameElementNodeType,
 	QualifiedNameElementsNodeSpecification,
-	QualifiedNameElementsNodeType
+	QualifiedNameElementsNodeType,
+	QualifiedNameNodeSpecification,
+	QualifiedNameNodeType
 } from '../Specifications';
 import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
 
@@ -124,6 +126,17 @@ export class QualifiedNameElementPostProcessor extends PostNodeProcessorAdapter<
 			spec.setType(QualifiedNameElementsNodeType.DOT);
 			DecorableParsedNode.copyPositionAndTextFromToken(dotNode, parentCtx.DOT(index).symbol);
 			atomicNodes.push(dotNode);
+		} else if (parentCtx instanceof QualifiedNameContext) {
+			const qualifiedNameElementList = parentCtx.qualifiedNameElement_list();
+			const index = qualifiedNameElementList.indexOf(hierarchicalNode.node.underlay.groovyParserRuleContext as QualifiedNameElementContext);
+			if (index !== qualifiedNameElementList.length - 1) {
+				// append to atomic nodes
+				const dotNode = new DecorableParsedNode(parentNode.underlay, true);
+				const spec = dotNode.specification as QualifiedNameNodeSpecification;
+				spec.setType(QualifiedNameNodeType.DOT);
+				DecorableParsedNode.copyPositionAndTextFromToken(dotNode, parentCtx.DOT(index).symbol);
+				atomicNodes.push(dotNode);
+			}
 		}
 	}
 }
