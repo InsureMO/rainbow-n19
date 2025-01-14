@@ -38,6 +38,8 @@ export class ModifierPostProcessor extends PostNodeProcessorAdapter<ModifierCont
 		} else {
 			node.debugger.addMissedLogics(() => `The only child[${child.constructor.name}] is not supported yet.`);
 		}
+		// TODO set purpose of this modifier
+		// spec.setPurpose(ModifierNodePurpose.VARIABLE_DECLARATOR_ID)
 		node.setSpecification(spec);
 	}
 

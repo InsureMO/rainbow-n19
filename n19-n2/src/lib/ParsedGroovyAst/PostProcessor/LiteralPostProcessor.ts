@@ -2,7 +2,7 @@ import {TerminalNode} from 'antlr4';
 import {GroovyParser, LiteralContext, StringLiteralContext} from '../../OrgApacheGroovyParserAntlr4';
 import {DecorableParsedNode} from '../DecorableParsedNode';
 import {ParsedNode} from '../ParsedNode';
-import {LiteralNodeSpecification, LiteralNodeType} from '../Specifications';
+import {LiteralNodePurpose, LiteralNodeSpecification, LiteralNodeType} from '../Specifications';
 import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
 
 export class LiteralPostProcessor extends PostNodeProcessorAdapter<LiteralContext> {
@@ -37,6 +37,7 @@ export class LiteralPostProcessor extends PostNodeProcessorAdapter<LiteralContex
 		} else {
 			node.debugger.addMissedLogics(() => `The only child[${child.constructor.name}] is not supported yet.`);
 		}
+		spec.setPurpose(LiteralNodePurpose.LITERAL);
 		node.setSpecification(spec);
 	}
 

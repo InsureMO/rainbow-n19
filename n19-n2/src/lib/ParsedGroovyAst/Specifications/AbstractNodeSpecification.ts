@@ -4,6 +4,9 @@ export abstract class AbstractNodeSpecification<Type, Purpose> implements Parsed
 	private _type: Type;
 	private _purpose: Purpose;
 
+	/**
+	 * Indicates the type of the current node within the specified purpose, with typical values being the Symbols of the Parser.
+	 */
 	get type(): Type {
 		return this._type;
 	}
@@ -14,6 +17,9 @@ export abstract class AbstractNodeSpecification<Type, Purpose> implements Parsed
 
 	abstract get typeText(): string;
 
+	/**
+	 * Indicate the purpose of the current node, typical values are Parser’s Rules.
+	 */
 	get purpose(): Purpose {
 		return this._purpose;
 	}

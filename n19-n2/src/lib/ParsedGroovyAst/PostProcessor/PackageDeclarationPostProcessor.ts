@@ -1,7 +1,11 @@
 import {GroovyParser, PackageDeclarationContext} from '../../OrgApacheGroovyParserAntlr4';
 import {DecorableParsedNode} from '../DecorableParsedNode';
 import {ParsedNode} from '../ParsedNode';
-import {PackageDeclarationNodeSpecification} from '../Specifications';
+import {
+	PackageDeclarationNodePurpose,
+	PackageDeclarationNodeSpecification,
+	PackageDeclarationNodeType
+} from '../Specifications';
 import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
 
 export class PackageDeclarationPostProcessor extends PostNodeProcessorAdapter<PackageDeclarationContext> {
@@ -13,6 +17,8 @@ export class PackageDeclarationPostProcessor extends PostNodeProcessorAdapter<Pa
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	readSpecificationOnToParsed(node: ParsedNode, _ctx: PackageDeclarationContext): void {
 		const spec = new PackageDeclarationNodeSpecification();
+		spec.setType(PackageDeclarationNodeType.PACKAGE);
+		spec.setPurpose(PackageDeclarationNodePurpose.PACKAGE_DECLARATION);
 		node.setSpecification(spec);
 	}
 

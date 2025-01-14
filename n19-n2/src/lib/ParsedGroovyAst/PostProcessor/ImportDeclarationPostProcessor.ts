@@ -2,7 +2,11 @@ import {GroovyParser, ImportDeclarationContext} from '../../OrgApacheGroovyParse
 import {asT, Optional} from '../../TsAddon';
 import {DecorableParsedNode} from '../DecorableParsedNode';
 import {ParsedNode} from '../ParsedNode';
-import {ImportDeclarationNodeSpecification, ImportDeclarationNodeType} from '../Specifications';
+import {
+	ImportDeclarationNodePurpose,
+	ImportDeclarationNodeSpecification,
+	ImportDeclarationNodeType
+} from '../Specifications';
 import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
 
 export class ImportDeclarationPostProcessor extends PostNodeProcessorAdapter<ImportDeclarationContext> {
@@ -15,6 +19,7 @@ export class ImportDeclarationPostProcessor extends PostNodeProcessorAdapter<Imp
 	readSpecificationOnToParsed(node: ParsedNode, _ctx: ImportDeclarationContext): void {
 		const spec = new ImportDeclarationNodeSpecification();
 		spec.setType(ImportDeclarationNodeType.IMPORT);
+		spec.setPurpose(ImportDeclarationNodePurpose.IMPORT_DECLARATION);
 		node.setSpecification(spec);
 	}
 

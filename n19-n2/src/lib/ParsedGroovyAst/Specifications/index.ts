@@ -1,4 +1,6 @@
 export * from './AbstractNodeSpecification';
+export * from './ClassBodyNodeSpecification';
+export * from './ClassDeclarationNodeSpecification';
 export * from './EmptyNodeSpecification';
 export * from './FreeNodeSpecification';
 export * from './IdentifierNodeSpecification';

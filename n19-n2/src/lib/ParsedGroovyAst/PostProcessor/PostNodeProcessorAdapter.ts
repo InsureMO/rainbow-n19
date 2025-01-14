@@ -44,13 +44,19 @@ export class PostNodeProcessorAdapter<C extends GroovyParserRuleContext> impleme
 	readSpecificationOnToParsed(_node: ParsedNode, _ctx: C): void {
 	}
 
-	/** default returns false */
+	/**
+	 * decorate given node when it is constructed<br>
+	 * default returns false
+	 */
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	shouldDecorate(_node: DecorableParsedNode): boolean {
 		return false;
 	}
 
-	/** default do nothing */
+	/**
+	 * decorate given node when it is constructed<br>
+	 * default do nothing
+	 */
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	decorate(_node: DecorableParsedNode): void {
 	}
