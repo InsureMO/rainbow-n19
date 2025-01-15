@@ -3,6 +3,7 @@ export * from './AnnotationNodeSpecification';
 export * from './ClassBodyNodeSpecification';
 export * from './ClassDeclarationNodeSpecification';
 export * from './ClassNameNodeSpecification';
+export * from './ElementValueArrayInitializerNodeSpecification';
 export * from './ElementValuePairNodeSpecification';
 export * from './ElementValuePairsNodeSpecification';
 export * from './EmptyNodeSpecification';

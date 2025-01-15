@@ -1,6 +1,7 @@
 import {ParserRuleContext, TerminalNode} from 'antlr4';
 import {
 	ClassDeclarationContext,
+	ElementValuePairNameContext,
 	GroovyParser,
 	IdentifierContext,
 	ImportDeclarationContext,
@@ -48,34 +49,6 @@ export class IdentifierPostProcessor extends PostNodeProcessorAdapter<Identifier
 		} else {
 			node.debugger.addMissedLogics(() => `The only child[${child.constructor.name}] is not supported yet.`);
 		}
-	}
-
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	protected readPurposeIfParentIsVariableDeclaratorId(_node: ParsedNode, _spec: IdentifierNodeSpecification,
-	                                                    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-	                                                    _ctx: IdentifierContext, _parentCtx: ParserRuleContext): boolean {
-		return false;
-		// if (!(parentCtx instanceof VariableDeclaratorIdContext)) {
-		// 	return false;
-		// }
-		// const parentOfVariableDeclaratorIdContext = parentCtx.parentCtx;
-		// if (parentOfVariableDeclaratorIdContext instanceof VariableDeclaratorContext) {
-		// 	// this identifier is name of variable
-		// 	spec.setPurpose(IdentifierNodePurpose.VARIABLE_DECLARATOR);
-		// } else if (parentOfVariableDeclaratorIdContext instanceof FormalParameterContext) {
-		// 	spec.setPurpose(IdentifierNodePurpose.FORMAL_PARAMETER);
-		// } else if (parentOfVariableDeclaratorIdContext instanceof StandardLambdaParametersContext) {
-		// 	spec.setPurpose(IdentifierNodePurpose.STANDARD_LAMBDA_PARAMETERS);
-		// } else if (parentOfVariableDeclaratorIdContext instanceof TypeNamePairContext) {
-		// 	spec.setPurpose(IdentifierNodePurpose.TYPE_NAME_PAIR);
-		// } else if (parentOfVariableDeclaratorIdContext instanceof VariableNamesContext) {
-		// 	spec.setPurpose(IdentifierNodePurpose.VARIABLE_NAMES);
-		// } else if (parentOfVariableDeclaratorIdContext instanceof EnhancedForControlContext) {
-		// 	spec.setPurpose(IdentifierNodePurpose.ENHANCED_FOR_CONTROL);
-		// } else {
-		// 	node.debugger.addMissedLogics(() => `Context[${parentOfVariableDeclaratorIdContext.constructor.name}] of VariableDeclaratorIdContext/IdentifierContext is not supported yet.`);
-		// }
-		// return true;
 	}
 
 	protected readPurposeIfParentIsQualifiedNameElement(node: ParsedNode, spec: IdentifierNodeSpecification,
@@ -139,14 +112,24 @@ export class IdentifierPostProcessor extends PostNodeProcessorAdapter<Identifier
 		return true;
 	}
 
+	protected readPurposeIfParentIsElementValuePairName(_node: ParsedNode, spec: IdentifierNodeSpecification,
+	                                                    _ctx: IdentifierContext, parentCtx: ParserRuleContext): boolean {
+		if (!(parentCtx instanceof ElementValuePairNameContext)) {
+			return false;
+		}
+
+		spec.setPurpose(IdentifierNodePurpose.ELEMENT_VALUE_PAIR_NAME);
+		return true;
+	}
+
 	protected readPurpose(node: ParsedNode, spec: IdentifierNodeSpecification, ctx: IdentifierContext): void {
 		const parentCtx = ctx.parentCtx;
 		// eslint-disable-next-line @typescript-eslint/no-unused-expressions
-		this.readPurposeIfParentIsVariableDeclaratorId(node, spec, ctx, parentCtx)
-		|| this.readPurposeIfParentIsQualifiedNameElement(node, spec, ctx, parentCtx)
+		this.readPurposeIfParentIsQualifiedNameElement(node, spec, ctx, parentCtx)
 		|| this.readPurposeIfParentIsImportDeclaration(node, spec, ctx, parentCtx)
 		|| this.readPurposeIfParentIsClassDeclaration(node, spec, ctx, parentCtx)
 		|| this.readPurposeIfParentIsQualifiedClassName(node, spec, ctx, parentCtx)
+		|| this.readPurposeIfParentIsElementValuePairName(node, spec, ctx, parentCtx)
 		// TODO more identifier purposes need to be identified
 		|| node.debugger.addMissedLogics(() => `Context[${parentCtx.constructor.name}] of IdentifierContext is not supported yet.`);
 	}

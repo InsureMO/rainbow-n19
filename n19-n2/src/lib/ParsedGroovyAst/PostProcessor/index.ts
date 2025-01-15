@@ -6,6 +6,7 @@ export * from './ClassDeclarationPostProcessor';
 export * from './ClassOrInterfaceModifiersOptPostProcessor';
 export * from './ClassNamePostProcessor';
 export * from './CompilationUnitPostProcessor';
+export * from './ElementValueArrayInitializerPostProcessor';
 export * from './ElementValuePairNamePostProcessor';
 export * from './ElementValuePairPostProcessor';
 export * from './ElementValuePairsPostProcessor';

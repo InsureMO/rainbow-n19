@@ -15,16 +15,11 @@ export enum IdentifierNodeType {
 }
 
 export enum IdentifierNodePurpose {
-	VARIABLE_DECLARATOR = GroovyParser.RULE_variableDeclarator,
-	FORMAL_PARAMETER = GroovyParser.RULE_formalParameter,
-	STANDARD_LAMBDA_PARAMETERS = GroovyParser.RULE_standardLambdaParameters,
-	TYPE_NAME_PAIR = GroovyParser.RULE_typeNamePair,
-	VARIABLE_NAMES = GroovyParser.RULE_variableNames,
-	ENHANCED_FOR_CONTROL = GroovyParser.RULE_enhancedForControl,
 	PACKAGE_DECLARATION = GroovyParser.RULE_packageDeclaration,
 	IMPORT_DECLARATION = GroovyParser.RULE_importDeclaration,
 	CLASS_DECLARATION = GroovyParser.RULE_classDeclaration,
-	QUALIFIED_CLASS_NAME = GroovyParser.RULE_qualifiedClassName
+	QUALIFIED_CLASS_NAME = GroovyParser.RULE_qualifiedClassName,
+	ELEMENT_VALUE_PAIR_NAME = GroovyParser.RULE_elementValuePairName
 }
 
 export class IdentifierNodeSpecification extends AbstractNodeSpecification<IdentifierNodeType, IdentifierNodePurpose> {

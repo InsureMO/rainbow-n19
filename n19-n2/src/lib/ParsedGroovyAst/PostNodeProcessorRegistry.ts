@@ -9,6 +9,7 @@ import {
 	ClassNamePostProcessor,
 	ClassOrInterfaceModifiersOptPostProcessor,
 	CompilationUnitPostProcessor,
+	ElementValueArrayInitializerPostProcessor,
 	ElementValuePairNamePostProcessor,
 	ElementValuePairPostProcessor,
 	ElementValuePairsPostProcessor,
@@ -131,7 +132,7 @@ export class PostNodeProcessorRegistry {
 		PostNodeProcessorRegistry.PROCESSORS.set(GroovyParser.RULE_elementValuePair, new ElementValuePairPostProcessor());
 		PostNodeProcessorRegistry.PROCESSORS.set(GroovyParser.RULE_elementValuePairName, new ElementValuePairNamePostProcessor());
 		PostNodeProcessorRegistry.PROCESSORS.set(GroovyParser.RULE_elementValue, new ElementValuePostProcessor());
-		// PostNodeProcessorRegistry.PROCESSORS.set(GroovyParser.RULE_elementValueArrayInitializer, ParsedNodeVisitor.notRequireToAtomicList);
+		PostNodeProcessorRegistry.PROCESSORS.set(GroovyParser.RULE_elementValueArrayInitializer, new ElementValueArrayInitializerPostProcessor());
 		// PostNodeProcessorRegistry.PROCESSORS.set(GroovyParser.RULE_block, ParsedNodeVisitor.notRequireToAtomicList);
 		// PostNodeProcessorRegistry.PROCESSORS.set(GroovyParser.RULE_blockStatement, ParsedNodeVisitor.notRequireToAtomicList);
 		// PostNodeProcessorRegistry.PROCESSORS.set(GroovyParser.RULE_localVariableDeclaration, ParsedNodeVisitor.notRequireToAtomicList);
