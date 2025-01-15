@@ -10,9 +10,8 @@ import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
  * 2. add itself as a container node,<br>
  */
 export class ElementValuePairPostProcessor extends PostNodeProcessorAdapter<ElementValuePairContext> {
-	shouldCountIntoHierarchy(node: HierarchicalNode): boolean | [Array<DecoratedNode>, true] {
+	collectBeforeEnter(node: HierarchicalNode): Array<DecoratedNode> {
 		const decorated = node.decorated;
-		decorated.setRole(GroovyParser.RULE_elementValuePair, DecoratedNode.RULE_ROLE);
 		const ctx = decorated.parsed.groovyParserRuleContext as ElementValuePairContext;
 		const parentCtx = ctx.parentCtx as ElementValuePairsContext;
 		const valueList = parentCtx.elementValuePair_list();
@@ -21,9 +20,15 @@ export class ElementValuePairPostProcessor extends PostNodeProcessorAdapter<Elem
 			const commaTerminalNode = parentCtx.COMMA(valueIndex - 1);
 			if (commaTerminalNode != null) {
 				const commaNode = DecoratedNode.createSymbol(node.parent.decorated.parsed, GroovyParser.COMMA, commaTerminalNode);
-				return [[commaNode], true];
+				return [commaNode];
 			}
 		}
+		return [];
+	}
+
+	shouldCountIntoHierarchy(node: HierarchicalNode): boolean {
+		const decorated = node.decorated;
+		decorated.setRole(GroovyParser.RULE_elementValuePair, DecoratedNode.RULE_ROLE);
 		return true;
 	}
 }

@@ -20,13 +20,12 @@ import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
  * 3. put a "." node after itself, when parent is qualified name elements.
  */
 export class QualifiedNameElementPostProcessor extends PostNodeProcessorAdapter<QualifiedNameElementContext> {
-	protected useMyself(ctx: QualifiedNameElementContext): boolean {
-		return ctx.identifier() == null;
-	}
+	collectOnEntering(node: HierarchicalNode): Array<DecoratedNode> {
+		const decorated = node.decorated;
+		const ctx = decorated.parsed.groovyParserRuleContext as QualifiedNameElementContext;
 
-	protected collectMyself(decorated: DecoratedNode, ctx: QualifiedNameElementContext): Optional<DecoratedNode> {
-		if (!this.useMyself(ctx)) {
-			return (void 0);
+		if (ctx.identifier() != null) {
+			return [];
 		}
 
 		let terminalNode: Optional<TerminalNode>;
@@ -43,69 +42,24 @@ export class QualifiedNameElementPostProcessor extends PostNodeProcessorAdapter<
 
 		if (decorated.role !== DecoratedNode.NO_ROLE_SPECIFIED) {
 			DecoratedNode.copyPositionAndTextFromToken(decorated, terminalNode!.symbol);
-			return decorated;
-		} else {
-			return (void 0);
+			return [decorated];
 		}
-
+		return [];
 	}
 
-	collectOnEntering(node: HierarchicalNode): Array<DecoratedNode> {
+	collectAfterExit(node: HierarchicalNode): Array<DecoratedNode> {
 		const decorated = node.decorated;
 		const ctx = decorated.parsed.groovyParserRuleContext as QualifiedNameElementContext;
 
-		const parentCtx = ctx.parentCtx;
-		if (parentCtx instanceof QualifiedNameElementsContext) {
-			// dot after each element, handle it on exiting
-		} else if (parentCtx instanceof QualifiedNameContext) {
-			// dot before each element except first one
-			const collected = this.collectMyself(decorated, ctx);
-			const elementList = parentCtx.qualifiedNameElement_list();
-			const elementIndex = elementList.indexOf(ctx);
-			if (elementIndex === 0) {
-				return collected == null ? [] : [collected];
-			}
-			const dotTerminalNode = parentCtx.DOT(elementIndex - 1);
-			if (dotTerminalNode == null) {
-				return collected == null ? [] : [collected];
-			}
-			if (collected == null) {
-				// reuse decorated node
-				decorated.setRole(GroovyParser.DOT, DecoratedNode.SYMBOL_ROLE);
-				DecoratedNode.copyPositionAndTextFromToken(decorated, dotTerminalNode.symbol);
-				return [decorated];
-			} else {
-				const dotNode = DecoratedNode.createSymbol(decorated.parsed, GroovyParser.DOT, dotTerminalNode);
-				return [dotNode, decorated];
-			}
-		} else {
-			decorated.parsed.debugger.addMissedLogics(`Parent context[${parentCtx.constructor.name}] of QualifiedNameElementContext is not supported yet.`);
+		const parentCtx = ctx.parentCtx as QualifiedNameElementsContext | QualifiedNameContext;
+		// dot after each element
+		const elementList = parentCtx.qualifiedNameElement_list();
+		const elementIndex = elementList.indexOf(ctx);
+		const dotTerminalNode = parentCtx.DOT(elementIndex);
+		if (dotTerminalNode != null) {
+			const dotNode = DecoratedNode.createSymbol(decorated.parsed, GroovyParser.DOT, dotTerminalNode);
+			return [dotNode];
 		}
-	}
-
-	collectAfterExisted(node: HierarchicalNode): Array<DecoratedNode> {
-		const decorated = node.decorated;
-		const ctx = decorated.parsed.groovyParserRuleContext as QualifiedNameElementContext;
-
-		const parentCtx = ctx.parentCtx;
-		if (parentCtx instanceof QualifiedNameElementsContext) {
-			// dot after each element
-			const collected = this.collectMyself(decorated, ctx);
-			const elementList = parentCtx.qualifiedNameElement_list();
-			const elementIndex = elementList.indexOf(ctx);
-			const dotTerminalNode = parentCtx.DOT(elementIndex);
-			if (dotTerminalNode == null) {
-				return collected == null ? [] : [collected];
-			}
-			if (collected == null) {
-				// reuse decorated node
-				decorated.setRole(GroovyParser.DOT, DecoratedNode.SYMBOL_ROLE);
-				DecoratedNode.copyPositionAndTextFromToken(decorated, dotTerminalNode.symbol);
-				return [decorated];
-			} else {
-				const dotNode = DecoratedNode.createSymbol(decorated.parsed, GroovyParser.DOT, dotTerminalNode);
-				return [decorated, dotNode];
-			}
-		}
+		return [];
 	}
 }

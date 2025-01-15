@@ -25,9 +25,15 @@ export class PostNodeProcessorAdapter<C extends GroovyParserRuleContext> impleme
 		node.setText(ctx.getText());
 	}
 
+	/** default returns empty array */
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	collectBeforeEnter(_node: HierarchicalNode): Array<DecoratedNode> {
+		return [];
+	}
+
 	/** default returns false */
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	shouldCountIntoHierarchy(_node: HierarchicalNode): boolean | [Array<DecoratedNode>, true] {
+	shouldCountIntoHierarchy(_node: HierarchicalNode): boolean {
 		return false;
 	}
 
@@ -45,7 +51,7 @@ export class PostNodeProcessorAdapter<C extends GroovyParserRuleContext> impleme
 
 	/** default returns empty array */
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	collectAfterExisted(_node: HierarchicalNode): Array<DecoratedNode> {
-		return undefined;
+	collectAfterExit(_node: HierarchicalNode): Array<DecoratedNode> {
+		return [];
 	}
 }

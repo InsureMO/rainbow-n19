@@ -9,7 +9,7 @@ import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
  * 1. add a "=" node after itself.
  */
 export class ElementValuePairNamePostProcessor extends PostNodeProcessorAdapter<ElementValuePairNameContext> {
-	collectAfterExisted(node: HierarchicalNode): Array<DecoratedNode> {
+	collectAfterExit(node: HierarchicalNode): Array<DecoratedNode> {
 		const decorated = node.decorated;
 		const ctx = decorated.parsed.groovyParserRuleContext as ElementValuePairNameContext;
 		const parentCtx = ctx.parentCtx as ElementValuePairContext;

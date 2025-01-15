@@ -8,21 +8,18 @@ import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
  * 1. package declaration,<br>
  * 2. import declaration.<br>
  * doing:<br>
- * 1. put a "package" node before itself, when parent is package declaration and PACKAGE exists,<br>
- * 2. put an "import" node before itself, when parent is import declaration and IMPORT exists,<br>
- * 3. put a "static" node before itself, when parent is import declaration and STATIC exists,<br>
- * 4. add itself as a container node,<br>
- * 5. put a "." node after itself, when parent is import declaration and DOT node exists,<br>
- * 6. put a "*" node after itself, when parent is import declaration and MUL node exists,<br>
+ * 1. add itself as a container node,<br>
+ * 2. put a "." node after itself, when parent is import declaration and DOT node exists,<br>
+ * 3. put a "*" node after itself, when parent is import declaration and MUL node exists,<br>
  */
 export class QualifiedNamePostProcessor extends PostNodeProcessorAdapter<QualifiedNameContext> {
-	shouldCountIntoHierarchy(node: HierarchicalNode): boolean | [Array<DecoratedNode>, true] {
+	shouldCountIntoHierarchy(node: HierarchicalNode): boolean {
 		const decorated = node.decorated;
 		decorated.setRole(GroovyParser.RULE_qualifiedName, DecoratedNode.RULE_ROLE);
 		return true;
 	}
 
-	collectAfterExisted(node: HierarchicalNode): Array<DecoratedNode> {
+	collectAfterExit(node: HierarchicalNode): Array<DecoratedNode> {
 		const decorated = node.decorated;
 		const ctx = decorated.parsed.groovyParserRuleContext as QualifiedNameContext;
 		const parentCtx = ctx.parentCtx;

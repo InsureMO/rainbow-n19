@@ -37,46 +37,43 @@ export class ParsedNodeVisitor {
 		this._positionedNodeStack.shift();
 	}
 
+	protected collectNode(node: DecoratedNode, parent: Optional<PositionedNode>): void {
+		this._atomicNodes.push(node);
+		// has no effect on position hierarchy
+		new PositionedNode(node, parent).positioning();
+	}
+
 	protected visitNode(node: DecoratedNode, parent?: HierarchicalNode): void {
 		const hierarchicalNode = new HierarchicalNode(node, parent);
-		const processor = PostNodeProcessorRegistry.getProcessor(node.type);
-		const countIntoHierarchy = processor.shouldCountIntoHierarchy(hierarchicalNode);
 		let parentPositionedNode = this.findParentPositionedNode();
+
+		const processor = PostNodeProcessorRegistry.getProcessor(node.type);
+		// collect before enter node
+		processor.collectBeforeEnter(hierarchicalNode).forEach(node => this.collectNode(node, parentPositionedNode));
+		// count into node as a container or not
+		const countIntoHierarchy = processor.shouldCountIntoHierarchy(hierarchicalNode);
 		let positionedNode: Optional<PositionedNode>;
 		if (countIntoHierarchy === true) {
 			positionedNode = new PositionedNode(node, parentPositionedNode);
 			this.startPositionedNode(positionedNode);
 			// set parent to new one
 			parentPositionedNode = positionedNode;
-		} else if (Array.isArray(countIntoHierarchy)) {
-			const [nodes] = countIntoHierarchy;
-			nodes.forEach(node => new PositionedNode(node, parentPositionedNode).positioning());
-			positionedNode = new PositionedNode(node, parentPositionedNode);
-			this.startPositionedNode(positionedNode);
-			// set parent to new one
-			parentPositionedNode = positionedNode;
 		}
-		processor.collectOnEntering(hierarchicalNode).forEach(node => {
-			this._atomicNodes.push(node);
-			// has no effect on position hierarchy
-			new PositionedNode(node, parentPositionedNode).positioning();
-		});
+		// collect on entering
+		processor.collectOnEntering(hierarchicalNode).forEach(node => this.collectNode(node, parentPositionedNode));
+		// handle children
 		node.parsed.children.forEach(child => this.visitNode(new DecoratedNode(child), hierarchicalNode));
-		processor.collectOnExiting(hierarchicalNode).forEach(node => {
-			this._atomicNodes.push(node);
-			// has no effect on position hierarchy
-			new PositionedNode(node, parentPositionedNode).positioning();
-		});
+		// collect on exiting
+		processor.collectOnExiting(hierarchicalNode).forEach(node => this.collectNode(node, parentPositionedNode));
+		// shift count-in node if needed
 		if (positionedNode != null) {
 			positionedNode.positioning();
 			this.endPositionedNode(positionedNode);
 		}
+		// set parent to origin one
 		parentPositionedNode = this.findParentPositionedNode();
-		processor.collectAfterExisted(hierarchicalNode).forEach(node => {
-			this._atomicNodes.push(node);
-			// has no effect on position hierarchy
-			new PositionedNode(node, parentPositionedNode).positioning();
-		});
+		// collect after exit
+		processor.collectAfterExit(hierarchicalNode).forEach(node => this.collectNode(node, parentPositionedNode));
 	}
 
 	get atomicNodes(): Array<DecoratedNode> {

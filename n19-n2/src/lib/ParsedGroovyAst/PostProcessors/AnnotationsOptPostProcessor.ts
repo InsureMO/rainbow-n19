@@ -22,10 +22,12 @@ import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
  * 10. dim,<br>
  * 11. created name.<br>
  * <br>
- * nothing needs to proceed on this level.
+ * 1. put a "package" node after itself, when parent is package declaration and PACKAGE exists,<br>
+ * 2. put an "import" node after itself, when parent is import declaration and IMPORT exists,<br>
+ * 3. put a "static" node after itself, when parent is import declaration and STATIC exists,<br>
  */
 export class AnnotationsOptPostProcessor extends PostNodeProcessorAdapter<AnnotationsOptContext> {
-	collectAfterExisted(node: HierarchicalNode): Array<DecoratedNode> {
+	collectAfterExit(node: HierarchicalNode): Array<DecoratedNode> {
 		const decorated = node.decorated;
 		const ctx = decorated.parsed.groovyParserRuleContext as AnnotationsOptContext;
 		const parentCtx = ctx.parentCtx;

@@ -63,11 +63,3 @@
 		- annotations
 
 # AST
-
-TODO:
-
-packageDeclaration
-annotationsOpt
-annotation
-
- 

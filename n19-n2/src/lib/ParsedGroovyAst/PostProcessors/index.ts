@@ -22,3 +22,4 @@ export * from './RparenPostProcessor';
 export * from './ScriptStatementPostProcessor';
 export * from './ScriptStatementsPostProcessor';
 export * from './SepPostProcessor';
+export * from './TypeDeclarationPostProcessor';
