@@ -170,7 +170,6 @@ export class PostNodeProcessorRegistry {
 		PostNodeProcessorRegistry.PROCESSORS.set(GroovyParser.RULE_rparen, new PostProcessors.RparenPostProcessor());
 		PostNodeProcessorRegistry.PROCESSORS.set(GroovyParser.RULE_nls, new PostProcessors.NlsPostProcessor());
 		PostNodeProcessorRegistry.PROCESSORS.set(GroovyParser.RULE_sep, new PostProcessors.SepPostProcessor());
-
 	}
 	private static NOOP_PROCESSOR = new PostProcessors.NoopPostNodeProcessor();
 

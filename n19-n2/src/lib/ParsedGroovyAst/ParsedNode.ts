@@ -1,10 +1,8 @@
 import {GroovyParser, GroovyParserRuleContext} from '../OrgApacheGroovyParserAntlr4';
 import {Optional} from '../TsAddon';
 import {ParsedAstDebugger} from './ParsedAstDebugger';
-import {ParsedNodeSpecification} from './ParsedNodeSpecification';
 import {ParsedNodeUtils} from './ParsedNodeUtils';
 import {PostNodeProcessorRegistry} from './PostNodeProcessorRegistry';
-import {EmptyNodeSpecification} from './Specifications';
 import {RuleIndex} from './Types';
 
 export class ParsedNode {
@@ -26,9 +24,6 @@ export class ParsedNode {
 	private _endLine: number;
 	private _endColumn: number;
 	private _text: Optional<string>;
-	// specific properties
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	private _specification: Optional<ParsedNodeSpecification<any, any>>;
 	private readonly _children: Array<ParsedNode> = [];
 
 	constructor(ctx: GroovyParserRuleContext, _debugger: ParsedAstDebugger) {
@@ -74,16 +69,6 @@ export class ParsedNode {
 
 	setText(text: string): void {
 		this._text = text;
-	}
-
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	get specification(): ParsedNodeSpecification<any, any> {
-		return this._specification ?? EmptyNodeSpecification.INSTANCE;
-	}
-
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	setSpecification(specification: ParsedNodeSpecification<any, any>): void {
-		this._specification = specification;
 	}
 
 	get root(): ParsedNode {
@@ -146,20 +131,12 @@ export class ParsedNode {
 		// TODO not sure, seems stop is the end column, according to tracing, :)
 		this._endColumn = lastChild?._endColumn ?? ctx.stop?.stop ?? ctx.start.stop;
 		this.doCopyText(ctx);
-		this.doReadSpecificProperties(ctx);
 	}
 
 	protected doCopyText(ctx: GroovyParserRuleContext): void {
 		const processor = PostNodeProcessorRegistry.getProcessor(ctx.ruleIndex);
 		if (processor.needCopyTextOnToParsed(ctx)) {
 			processor.copyTextOnToParsed(this, ctx);
-		}
-	}
-
-	protected doReadSpecificProperties(ctx: GroovyParserRuleContext): void {
-		const processor = PostNodeProcessorRegistry.getProcessor(ctx.ruleIndex);
-		if (processor.needReadSpecificationOnToParsed(ctx)) {
-			processor.readSpecificationOnToParsed(this, ctx);
 		}
 	}
 
@@ -172,8 +149,7 @@ export class ParsedNode {
 			['startLine', this.startLine],
 			['startColumn', this.startColumn],
 			['endLine', this.endLine],
-			['endColumn', this.endColumn],
-			...(this.specification.properties.map(([key, value]) => [`spec.${key}`, value]))
+			['endColumn', this.endColumn]
 		].map(([name, value]) => `${name}=${value ?? ''}`).join(', ');
 		let s = `${indentString}Parsed Node[${props}]`;
 		if (this.childCount !== 0) {

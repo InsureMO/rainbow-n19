@@ -1,74 +1,74 @@
 import {Optional} from '../TsAddon';
-import {DecorableParsedNode} from './DecorableParsedNode';
-import {HierarchicalDecorableParsedNode} from './HierarchicalDecorableParsedNode';
+import {DecoratedNode} from './DecoratedNode';
+import {HierarchicalNode} from './HierarchicalNode';
 import {ParsedNode} from './ParsedNode';
+import {PositionedNode} from './PositionedNode';
 import {PostNodeProcessorRegistry} from './PostNodeProcessorRegistry';
 
 export class ParsedNodeVisitor {
-	private readonly _roots: Array<DecorableParsedNode> = [];
+	private readonly _roots: Array<DecoratedNode> = [];
 	/**
-	 * sorted, and ignored some context, for example, assign operator of variable declarator statement.
+	 * sorted, and ignored some context
 	 */
-	private readonly _atomicNodes: Array<DecorableParsedNode> = [];
+	private readonly _atomicNodes: Array<DecoratedNode> = [];
+	/**
+	 * sorted, and ignored some context
+	 */
+	private readonly _positionedNodes: Array<PositionedNode> = [];
+	private readonly _positionedNodeStack: Array<PositionedNode> = [];
 
 	constructor(roots: Array<ParsedNode>) {
-		this._roots.push(...(roots.map(root => new DecorableParsedNode(root))));
-		this._roots.forEach(root => {
-			const hierarchicalRoot = new HierarchicalDecorableParsedNode(root);
-			const startIndex = this._atomicNodes.length;
-			this.enterNode(hierarchicalRoot, startIndex);
-			this.processChildren(hierarchicalRoot);
-			this.exitNode(hierarchicalRoot, startIndex);
-		});
+		this._roots.push(...(roots.map(root => new DecoratedNode(root))));
+		this._roots.forEach(root => this.visitNode(root));
 	}
 
-	protected collectToAtomicListOnEntering(hierarchicalNode: HierarchicalDecorableParsedNode, firstAtomicNodeIndex: number): void {
-		const node = hierarchicalNode.node;
+	protected findParentPositionedNode(): Optional<PositionedNode> {
+		return this._positionedNodeStack[0];
+	}
+
+	protected startPositionedNode(node: PositionedNode) {
+		if (this._positionedNodeStack.length === 0) {
+			this._positionedNodes.push(node);
+		}
+		this._positionedNodeStack.unshift(node);
+	}
+
+	protected endPositionedNode(_node: PositionedNode) {
+		this._positionedNodeStack.shift();
+	}
+
+	protected visitNode(node: DecoratedNode, parent?: HierarchicalNode): void {
 		const processor = PostNodeProcessorRegistry.getProcessor(node.type);
-		if (processor.shouldCollectToAtomicNodesOnEnteringVisitor(node)) {
+		const countIntoHierarchy = processor.shouldCountIntoHierarchy(node);
+		const parentPositionedNode = this.findParentPositionedNode();
+		let positionedNode: Optional<PositionedNode>;
+		if (countIntoHierarchy) {
+			positionedNode = new PositionedNode(node, parentPositionedNode);
+			this.startPositionedNode(positionedNode);
+		}
+		const hierarchicalNode = new HierarchicalNode(node, parent);
+		processor.collectOnEntering(hierarchicalNode).forEach(node => {
 			this._atomicNodes.push(node);
-		}
-		if (processor.shouldCollectMoreToAtomicNodesOnEnteringVisitor(hierarchicalNode)) {
-			processor.collectMoreToAtomicNodesOnEnteringVisitor(hierarchicalNode, firstAtomicNodeIndex, this._atomicNodes);
-		}
-	}
-
-	protected enterNode(hierarchicalNode: HierarchicalDecorableParsedNode, firstAtomicNodeIndex: number): void {
-		this.collectToAtomicListOnEntering(hierarchicalNode, firstAtomicNodeIndex);
-	}
-
-	protected processChildren(parentHierarchicalNode: HierarchicalDecorableParsedNode): void {
-		const parentNode = parentHierarchicalNode.node;
-		parentNode.underlay.children.forEach(child => {
-			const node = new DecorableParsedNode(child);
-			const hierarchicalNode = new HierarchicalDecorableParsedNode(node, parentHierarchicalNode);
-			const startIndex = this._atomicNodes.length;
-			this.enterNode(hierarchicalNode, startIndex);
-			this.processChildren(hierarchicalNode);
-			this.exitNode(hierarchicalNode, startIndex);
+			// has no effect on position hierarchy
+			new PositionedNode(node, parentPositionedNode).positioning();
 		});
-	}
-
-	protected collectToAtomicListOnExiting(hierarchicalNode: HierarchicalDecorableParsedNode, firstAtomicNodeIndex: number): void {
-		const node = hierarchicalNode.node;
-		const processor = PostNodeProcessorRegistry.getProcessor(node.type);
-		if (processor.shouldCollectToAtomicNodesOnExitingVisitor(node)) {
-			processor.collectToAtomicNodesOnExitingVisitor(node, firstAtomicNodeIndex, this._atomicNodes);
+		node.parsed.children.forEach(child => this.visitNode(new DecoratedNode(child), hierarchicalNode));
+		processor.collectOnExiting(hierarchicalNode).forEach(node => {
+			this._atomicNodes.push(node);
+			// has no effect on position hierarchy
+			new PositionedNode(node, parentPositionedNode).positioning();
+		});
+		if (positionedNode != null) {
+			positionedNode.positioning();
+			this.endPositionedNode(positionedNode);
 		}
-		if (processor.shouldCollectMoreToAtomicNodesOnExitingVisitor(hierarchicalNode)) {
-			processor.collectMoreToAtomicNodesOnExitingVisitor(hierarchicalNode, firstAtomicNodeIndex, this._atomicNodes);
-		}
 	}
 
-	protected exitNode(hierarchicalNode: HierarchicalDecorableParsedNode, firstAtomicNodeIndex: number): void {
-		this.collectToAtomicListOnExiting(hierarchicalNode, firstAtomicNodeIndex);
-	}
-
-	get atomicNodes(): Array<DecorableParsedNode> {
+	get atomicNodes(): Array<DecoratedNode> {
 		return this._atomicNodes;
 	}
 
-	findAtomicNode(line: number, column: number): Optional<DecorableParsedNode> {
+	findAtomicNode(line: number, column: number): Optional<DecoratedNode> {
 		let startIndex = 0;
 		let endIndex = this._atomicNodes.length - 1;
 		while (startIndex <= endIndex) {
@@ -91,10 +91,10 @@ export class ParsedNodeVisitor {
 		return (void 0);
 	}
 
-	findNodeOrNearestPrevious(line: number, column: number): Optional<DecorableParsedNode> {
+	findNodeOrNearestPrevious(line: number, column: number): Optional<DecoratedNode> {
 		let startIndex = 0;
 		let endIndex = this._atomicNodes.length - 1;
-		let result: Optional<DecorableParsedNode> = (void 0);
+		let result: Optional<DecoratedNode> = (void 0);
 
 		while (startIndex <= endIndex) {
 			const midIndex = Math.floor((startIndex + endIndex) / 2);
@@ -120,10 +120,10 @@ export class ParsedNodeVisitor {
 		return result;
 	}
 
-	findNodeOrNearestNext(line: number, column: number): Optional<DecorableParsedNode> {
+	findNodeOrNearestNext(line: number, column: number): Optional<DecoratedNode> {
 		let startIndex = 0;
 		let endIndex = this._atomicNodes.length - 1;
-		let result: Optional<DecorableParsedNode> = (void 0);
+		let result: Optional<DecoratedNode> = (void 0);
 
 		while (startIndex <= endIndex) {
 			const midIndex = Math.floor((startIndex + endIndex) / 2);
@@ -147,5 +147,9 @@ export class ParsedNodeVisitor {
 		}
 
 		return result;
+	}
+
+	get positionedNodes(): Array<PositionedNode> {
+		return this._positionedNodes;
 	}
 }

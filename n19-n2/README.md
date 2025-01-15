@@ -66,11 +66,8 @@
 
 TODO:
 
-- packageDeclaration.annotationsOpt
-- importDeclaration.annotationsOpt
-- typeDeclaration.classOrInterfaceModifiersOpt
-- classDeclaration.formalParameters
-- classDeclaration.EXTENDS
-- classDeclaration.IMPLEMENTS
-- classDeclaration.PERMITS
-- 
+packageDeclaration
+annotationsOpt
+annotation
+
+ 
