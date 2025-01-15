@@ -10,7 +10,7 @@ import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
  * 3. annotations opt,<br>
  * 4. element value.<br>
  * doing:<br>
- * 1. add itself as a container node,<br>
+ * 1. put itself as a container node,<br>
  * 2. put a "@" node as its first child.
  */
 export class AnnotationPostProcessor extends PostNodeProcessorAdapter<AnnotationContext> {

@@ -8,7 +8,7 @@ import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
  * 1. package declaration,<br>
  * 2. import declaration.<br>
  * doing:<br>
- * 1. add itself as a container node,<br>
+ * 1. put itself as a container node,<br>
  * 2. put a "." node after itself, when parent is import declaration and DOT node exists,<br>
  * 3. put a "*" node after itself, when parent is import declaration and MUL node exists,<br>
  */

@@ -6,7 +6,7 @@ import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
 /**
  * could be child of script statement.<br>
  * doing:<br>
- * 1. add itself as a container node.
+ * 1. put itself as a container node.
  */
 export class ImportDeclarationPostProcessor extends PostNodeProcessorAdapter<ImportDeclarationContext> {
 	shouldCountIntoHierarchy(node: HierarchicalNode): boolean {

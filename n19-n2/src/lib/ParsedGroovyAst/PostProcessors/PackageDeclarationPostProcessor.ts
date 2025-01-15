@@ -6,7 +6,7 @@ import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
 /**
  * could be child of compilation unit.<br>
  * doing:<br>
- * 1. add itself as a container node.
+ * 1. put itself as a container node.
  */
 export class PackageDeclarationPostProcessor extends PostNodeProcessorAdapter<PackageDeclarationContext> {
 	shouldCountIntoHierarchy(node: HierarchicalNode): boolean {

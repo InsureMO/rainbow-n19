@@ -6,7 +6,7 @@ import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
 /**
  * could be child of element value pair.<br>
  * <br>
- * 1. add a "=" node after itself.
+ * 1. put a "=" node after itself.
  */
 export class ElementValuePairNamePostProcessor extends PostNodeProcessorAdapter<ElementValuePairNameContext> {
 	collectAfterExit(node: HierarchicalNode): Array<DecoratedNode> {

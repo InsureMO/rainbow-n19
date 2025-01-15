@@ -7,7 +7,7 @@ import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
  * could be child of element value pairs.<br>
  * doing:<br>
  * 1. put a "," node before itself, when itself is not the first child of parent,<br>
- * 2. add itself as a container node,<br>
+ * 2. put itself as a container node,<br>
  */
 export class ElementValuePairPostProcessor extends PostNodeProcessorAdapter<ElementValuePairContext> {
 	collectBeforeEnter(node: HierarchicalNode): Array<DecoratedNode> {
