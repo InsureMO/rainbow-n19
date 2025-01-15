@@ -36,7 +36,7 @@ export class TypeParameterPostProcessor extends PostNodeProcessorAdapter<TypePar
 		return true;
 	}
 
-	protected readPurpose(node: ParsedNode, spec: TypeParameterNodeSpecification, ctx: TypeParameterContext) {
+	protected readPurpose(node: ParsedNode, spec: TypeParameterNodeSpecification, ctx: TypeParameterContext): void {
 		const parentCtx = ctx.parentCtx;
 		// eslint-disable-next-line @typescript-eslint/no-unused-expressions
 		this.readPurposeIfAncestorIsClassDeclaration(node, spec, ctx, parentCtx)
@@ -55,7 +55,7 @@ export class TypeParameterPostProcessor extends PostNodeProcessorAdapter<TypePar
 		return true;
 	}
 
-	collectMoreToAtomicNodesOnExitingVisitor(hierarchicalNode: HierarchicalDecorableParsedNode, _firstNodeIndex: number, atomicNodes: Array<DecorableParsedNode>) {
+	collectMoreToAtomicNodesOnExitingVisitor(hierarchicalNode: HierarchicalDecorableParsedNode, _firstNodeIndex: number, atomicNodes: Array<DecorableParsedNode>): void {
 		const parentNode = hierarchicalNode.parent.node;
 		const parentCtx = parentNode.underlay.groovyParserRuleContext as TypeParametersContext;
 		const typeParameterList = parentCtx.typeParameter_list();

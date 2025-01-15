@@ -39,7 +39,7 @@ export class TypeBoundPostProcessor extends PostNodeProcessorAdapter<TypeBoundCo
 		return true;
 	}
 
-	protected readPurpose(node: ParsedNode, spec: TypeBoundNodeSpecification, ctx: TypeBoundContext) {
+	protected readPurpose(node: ParsedNode, spec: TypeBoundNodeSpecification, ctx: TypeBoundContext): void {
 		const parentCtx = ctx.parentCtx;
 		// eslint-disable-next-line @typescript-eslint/no-unused-expressions
 		this.readPurposeIfAncestorIsClassDeclaration(node, spec, ctx, parentCtx)

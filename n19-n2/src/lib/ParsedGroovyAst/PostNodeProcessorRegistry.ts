@@ -1,12 +1,19 @@
 import {GroovyParser, GroovyParserRuleContext} from '../OrgApacheGroovyParserAntlr4';
 import {PostNodeProcessor} from './PostNodeProcessor';
 import {
+	AnnotationNamePostProcessor,
+	AnnotationPostProcessor,
 	AnnotationsOptPostProcessor,
 	ClassBodyPostProcessor,
 	ClassDeclarationPostProcessor,
 	ClassNamePostProcessor,
 	ClassOrInterfaceModifiersOptPostProcessor,
 	CompilationUnitPostProcessor,
+	ElementValuePairNamePostProcessor,
+	ElementValuePairPostProcessor,
+	ElementValuePairsPostProcessor,
+	ElementValuePostProcessor,
+	ElementValuesPostProcessor,
 	EmptyDimsOptPostProcessor,
 	EnhancedStatementExpressionPostProcessor,
 	ExpressionPostProcessor,
@@ -26,11 +33,13 @@ import {
 	QualifiedNameElementPostProcessor,
 	QualifiedNameElementsPostProcessor,
 	QualifiedNamePostProcessor,
+	RparenPostProcessor,
 	ScriptStatementPostProcessor,
 	ScriptStatementsPostProcessor,
 	SepPostProcessor,
 	StatementExpressionPostProcessor,
 	StatementPostProcessor,
+	StringLiteralPostProcessor,
 	TypeBoundPostProcessor,
 	TypeDeclarationPostProcessor,
 	TypeParameterPostProcessor,
@@ -115,13 +124,13 @@ export class PostNodeProcessorRegistry {
 		// PostNodeProcessorRegistry.PROCESSORS.set(GroovyParser.RULE_blockStatementsOpt, ParsedNodeVisitor.notRequireToAtomicList);
 		// PostNodeProcessorRegistry.PROCESSORS.set(GroovyParser.RULE_blockStatements, ParsedNodeVisitor.notRequireToAtomicList);
 		PostNodeProcessorRegistry.PROCESSORS.set(GroovyParser.RULE_annotationsOpt, new AnnotationsOptPostProcessor());
-		// PostNodeProcessorRegistry.PROCESSORS.set(GroovyParser.RULE_annotation, ParsedNodeVisitor.notRequireToAtomicList);
-		// PostNodeProcessorRegistry.PROCESSORS.set(GroovyParser.RULE_elementValues, ParsedNodeVisitor.notRequireToAtomicList);
-		// PostNodeProcessorRegistry.PROCESSORS.set(GroovyParser.RULE_annotationName, ParsedNodeVisitor.notRequireToAtomicList);
-		// PostNodeProcessorRegistry.PROCESSORS.set(GroovyParser.RULE_elementValuePairs, ParsedNodeVisitor.notRequireToAtomicList);
-		// PostNodeProcessorRegistry.PROCESSORS.set(GroovyParser.RULE_elementValuePair, ParsedNodeVisitor.notRequireToAtomicList);
-		// PostNodeProcessorRegistry.PROCESSORS.set(GroovyParser.RULE_elementValuePairName, ParsedNodeVisitor.notRequireToAtomicList);
-		// PostNodeProcessorRegistry.PROCESSORS.set(GroovyParser.RULE_elementValue, ParsedNodeVisitor.notRequireToAtomicList);
+		PostNodeProcessorRegistry.PROCESSORS.set(GroovyParser.RULE_annotation, new AnnotationPostProcessor());
+		PostNodeProcessorRegistry.PROCESSORS.set(GroovyParser.RULE_elementValues, new ElementValuesPostProcessor());
+		PostNodeProcessorRegistry.PROCESSORS.set(GroovyParser.RULE_annotationName, new AnnotationNamePostProcessor());
+		PostNodeProcessorRegistry.PROCESSORS.set(GroovyParser.RULE_elementValuePairs, new ElementValuePairsPostProcessor());
+		PostNodeProcessorRegistry.PROCESSORS.set(GroovyParser.RULE_elementValuePair, new ElementValuePairPostProcessor());
+		PostNodeProcessorRegistry.PROCESSORS.set(GroovyParser.RULE_elementValuePairName, new ElementValuePairNamePostProcessor());
+		PostNodeProcessorRegistry.PROCESSORS.set(GroovyParser.RULE_elementValue, new ElementValuePostProcessor());
 		// PostNodeProcessorRegistry.PROCESSORS.set(GroovyParser.RULE_elementValueArrayInitializer, ParsedNodeVisitor.notRequireToAtomicList);
 		// PostNodeProcessorRegistry.PROCESSORS.set(GroovyParser.RULE_block, ParsedNodeVisitor.notRequireToAtomicList);
 		// PostNodeProcessorRegistry.PROCESSORS.set(GroovyParser.RULE_blockStatement, ParsedNodeVisitor.notRequireToAtomicList);
@@ -201,12 +210,12 @@ export class PostNodeProcessorRegistry {
 		// PostNodeProcessorRegistry.PROCESSORS.set(GroovyParser.RULE_firstArgumentListElement, ParsedNodeVisitor.notRequireToAtomicList);
 		// PostNodeProcessorRegistry.PROCESSORS.set(GroovyParser.RULE_argumentListElement, ParsedNodeVisitor.notRequireToAtomicList);
 		// PostNodeProcessorRegistry.PROCESSORS.set(GroovyParser.RULE_enhancedArgumentListElement, ParsedNodeVisitor.notRequireToAtomicList);
-		// PostNodeProcessorRegistry.PROCESSORS.set(GroovyParser.RULE_stringLiteral, ParsedNodeVisitor.notRequireToAtomicList);
+		PostNodeProcessorRegistry.PROCESSORS.set(GroovyParser.RULE_stringLiteral, new StringLiteralPostProcessor());
 		PostNodeProcessorRegistry.PROCESSORS.set(GroovyParser.RULE_className, new ClassNamePostProcessor());
 		PostNodeProcessorRegistry.PROCESSORS.set(GroovyParser.RULE_identifier, new IdentifierPostProcessor());
 		// PostNodeProcessorRegistry.PROCESSORS.set(GroovyParser.RULE_builtInType, ParsedNodeVisitor.notRequireToAtomicList);
 		// PostNodeProcessorRegistry.PROCESSORS.set(GroovyParser.RULE_keywords, ParsedNodeVisitor.notRequireToAtomicList);
-		// PostNodeProcessorRegistry.PROCESSORS.set(GroovyParser.RULE_rparen, ParsedNodeVisitor.notRequireToAtomicList);
+		PostNodeProcessorRegistry.PROCESSORS.set(GroovyParser.RULE_rparen, new RparenPostProcessor());
 		PostNodeProcessorRegistry.PROCESSORS.set(GroovyParser.RULE_nls, new NlsPostProcessor());
 		PostNodeProcessorRegistry.PROCESSORS.set(GroovyParser.RULE_sep, new SepPostProcessor());
 

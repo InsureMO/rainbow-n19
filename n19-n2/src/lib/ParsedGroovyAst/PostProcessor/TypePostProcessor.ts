@@ -9,7 +9,7 @@ export class TypePostProcessor extends PostNodeProcessorAdapter<TypeContext> {
 		return true;
 	}
 
-	collectMoreToAtomicNodesOnExitingVisitor(hierarchicalNode: HierarchicalDecorableParsedNode, _firstNodeIndex: number, atomicNodes: Array<DecorableParsedNode>) {
+	collectMoreToAtomicNodesOnExitingVisitor(hierarchicalNode: HierarchicalDecorableParsedNode, _firstNodeIndex: number, atomicNodes: Array<DecorableParsedNode>): void {
 		const parentNode = hierarchicalNode.parent.node;
 		const parentCtx = parentNode.underlay.groovyParserRuleContext;
 		if (parentCtx instanceof TypeBoundContext) {

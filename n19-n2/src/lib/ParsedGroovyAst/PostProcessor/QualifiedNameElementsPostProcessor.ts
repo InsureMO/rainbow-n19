@@ -9,7 +9,8 @@ export class QualifiedNameElementsPostProcessor extends PostNodeProcessorAdapter
 		return true;
 	}
 
-	readSpecificationOnToParsed(node: ParsedNode, ctx: QualifiedNameElementsContext): void {
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	readSpecificationOnToParsed(node: ParsedNode, _ctx: QualifiedNameElementsContext): void {
 		const spec = new QualifiedNameElementsNodeSpecification();
 		spec.setType(QualifiedNameElementsNodeType.DOT);
 		// TODO this.readPurpose(node, spec, ctx);

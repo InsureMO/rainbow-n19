@@ -23,7 +23,7 @@ export class PostNodeProcessorAdapter<C extends GroovyParserRuleContext> impleme
 		node.setText(ctx.getText());
 	}
 
-	protected logCopyTextToParsedAsMissedLogic(node: ParsedNode, ctx: C) {
+	protected logCopyTextToParsedAsMissedLogic(node: ParsedNode, ctx: C): void {
 		node.debugger.addMissedLogics(() => {
 			const text = ctx.getText();
 			if (text != null && text.length !== 0) {
@@ -76,7 +76,7 @@ export class PostNodeProcessorAdapter<C extends GroovyParserRuleContext> impleme
 
 	/** default do nothing */
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	collectMoreToAtomicNodesOnEnteringVisitor(_hierarchicalNode: HierarchicalDecorableParsedNode): void {
+	collectMoreToAtomicNodesOnEnteringVisitor(_hierarchicalNode: HierarchicalDecorableParsedNode, _firstNodeIndex: number, _atomicNodes: Array<DecorableParsedNode>): void {
 	}
 
 	/** default returns false */

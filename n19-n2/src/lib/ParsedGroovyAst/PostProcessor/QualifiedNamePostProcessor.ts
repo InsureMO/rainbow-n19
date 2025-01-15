@@ -27,7 +27,7 @@ export class QualifiedNamePostProcessor extends PostNodeProcessorAdapter<Qualifi
 		return true;
 	}
 
-	protected readPurpose(node: ParsedNode, spec: QualifiedNameNodeSpecification, ctx: QualifiedNameContext) {
+	protected readPurpose(node: ParsedNode, spec: QualifiedNameNodeSpecification, ctx: QualifiedNameContext): void {
 		const parentCtx = ctx.parentCtx;
 		this.readPurposeIfParentIsPackageOrImportDeclaration(node, spec, ctx, parentCtx);
 	}

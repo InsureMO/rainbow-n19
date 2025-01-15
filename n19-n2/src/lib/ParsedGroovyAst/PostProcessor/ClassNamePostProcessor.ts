@@ -41,7 +41,7 @@ export class ClassNamePostProcessor extends PostNodeProcessorAdapter<ClassNameCo
 	}
 
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	collectMoreToAtomicNodesOnExitingVisitor(hierarchicalNode: HierarchicalDecorableParsedNode, _firstNodeIndex: number, atomicNodes: Array<DecorableParsedNode>) {
+	collectMoreToAtomicNodesOnExitingVisitor(hierarchicalNode: HierarchicalDecorableParsedNode, _firstNodeIndex: number, atomicNodes: Array<DecorableParsedNode>): void {
 		// check if there is EXTENDS declared in parent type parameter context, append if exists
 		const parentNode = hierarchicalNode.parent.node;
 		const parentCtx = parentNode.underlay.groovyParserRuleContext;

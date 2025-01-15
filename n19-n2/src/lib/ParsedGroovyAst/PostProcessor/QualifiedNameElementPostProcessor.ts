@@ -89,7 +89,7 @@ export class QualifiedNameElementPostProcessor extends PostNodeProcessorAdapter<
 		return true;
 	}
 
-	protected readPurpose(node: ParsedNode, spec: QualifiedNameElementNodeSpecification, ctx: QualifiedNameElementContext) {
+	protected readPurpose(node: ParsedNode, spec: QualifiedNameElementNodeSpecification, ctx: QualifiedNameElementContext): void {
 		const parentCtx = ctx.parentCtx;
 		this.readPurposeIfAncestorIsPackageOrImportDeclaration(node, spec, ctx, parentCtx)
 		|| this.readPurposeIfAncestorIsQualifiedClassName(node, spec, ctx, parentCtx)
@@ -114,7 +114,8 @@ export class QualifiedNameElementPostProcessor extends PostNodeProcessorAdapter<
 		return true;
 	}
 
-	collectMoreToAtomicNodesOnExitingVisitor(hierarchicalNode: HierarchicalDecorableParsedNode, _firstNodeIndex: number, atomicNodes: Array<DecorableParsedNode>) {
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	collectMoreToAtomicNodesOnExitingVisitor(hierarchicalNode: HierarchicalDecorableParsedNode, _firstNodeIndex: number, atomicNodes: Array<DecorableParsedNode>): void {
 		const parentNode = hierarchicalNode.parent.node;
 		const parentCtx = parentNode.underlay.groovyParserRuleContext;
 		if (parentCtx instanceof QualifiedNameElementsContext) {

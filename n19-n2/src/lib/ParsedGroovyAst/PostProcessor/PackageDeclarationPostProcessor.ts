@@ -27,7 +27,7 @@ export class PackageDeclarationPostProcessor extends PostNodeProcessorAdapter<Pa
 		return true;
 	}
 
-	decorate(node: DecorableParsedNode) {
+	decorate(node: DecorableParsedNode): void {
 		const ctx = node.underlay.groovyParserRuleContext as PackageDeclarationContext;
 		DecorableParsedNode.copyPositionAndTextFromToken(node, ctx.PACKAGE().symbol);
 	}
@@ -37,7 +37,7 @@ export class PackageDeclarationPostProcessor extends PostNodeProcessorAdapter<Pa
 		return true;
 	}
 
-	collectToAtomicNodesOnExitingVisitor(node: DecorableParsedNode, firstNodeIndex: number, atomicNodes: Array<DecorableParsedNode>) {
+	collectToAtomicNodesOnExitingVisitor(node: DecorableParsedNode, firstNodeIndex: number, atomicNodes: Array<DecorableParsedNode>): void {
 		if (firstNodeIndex === atomicNodes.length) {
 			// no child node appended, add myself
 			atomicNodes.push(node);

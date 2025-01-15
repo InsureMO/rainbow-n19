@@ -26,7 +26,7 @@ export class IdentifierPostProcessor extends PostNodeProcessorAdapter<Identifier
 		return true;
 	}
 
-	protected readType(node: ParsedNode, spec: IdentifierNodeSpecification, ctx: IdentifierContext) {
+	protected readType(node: ParsedNode, spec: IdentifierNodeSpecification, ctx: IdentifierContext): void {
 		const child = ctx.getChild(0);
 		if (child instanceof TerminalNode) {
 			switch (child.symbol.type) {
@@ -139,7 +139,7 @@ export class IdentifierPostProcessor extends PostNodeProcessorAdapter<Identifier
 		return true;
 	}
 
-	protected readPurpose(node: ParsedNode, spec: IdentifierNodeSpecification, ctx: IdentifierContext) {
+	protected readPurpose(node: ParsedNode, spec: IdentifierNodeSpecification, ctx: IdentifierContext): void {
 		const parentCtx = ctx.parentCtx;
 		// eslint-disable-next-line @typescript-eslint/no-unused-expressions
 		this.readPurposeIfParentIsVariableDeclaratorId(node, spec, ctx, parentCtx)

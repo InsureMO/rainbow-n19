@@ -16,25 +16,25 @@ export class ParsedNodeVisitor {
 		this._roots.forEach(root => {
 			const hierarchicalRoot = new HierarchicalDecorableParsedNode(root);
 			const startIndex = this._atomicNodes.length;
-			this.enterNode(hierarchicalRoot);
+			this.enterNode(hierarchicalRoot, startIndex);
 			this.processChildren(hierarchicalRoot);
 			this.exitNode(hierarchicalRoot, startIndex);
 		});
 	}
 
-	protected collectToAtomicListOnEntering(hierarchicalNode: HierarchicalDecorableParsedNode): void {
+	protected collectToAtomicListOnEntering(hierarchicalNode: HierarchicalDecorableParsedNode, firstAtomicNodeIndex: number): void {
 		const node = hierarchicalNode.node;
 		const processor = PostNodeProcessorRegistry.getProcessor(node.type);
 		if (processor.shouldCollectToAtomicNodesOnEnteringVisitor(node)) {
 			this._atomicNodes.push(node);
 		}
 		if (processor.shouldCollectMoreToAtomicNodesOnEnteringVisitor(hierarchicalNode)) {
-			processor.collectMoreToAtomicNodesOnEnteringVisitor(hierarchicalNode);
+			processor.collectMoreToAtomicNodesOnEnteringVisitor(hierarchicalNode, firstAtomicNodeIndex, this._atomicNodes);
 		}
 	}
 
-	protected enterNode(hierarchicalNode: HierarchicalDecorableParsedNode): void {
-		this.collectToAtomicListOnEntering(hierarchicalNode);
+	protected enterNode(hierarchicalNode: HierarchicalDecorableParsedNode, firstAtomicNodeIndex: number): void {
+		this.collectToAtomicListOnEntering(hierarchicalNode, firstAtomicNodeIndex);
 	}
 
 	protected processChildren(parentHierarchicalNode: HierarchicalDecorableParsedNode): void {
@@ -43,7 +43,7 @@ export class ParsedNodeVisitor {
 			const node = new DecorableParsedNode(child);
 			const hierarchicalNode = new HierarchicalDecorableParsedNode(node, parentHierarchicalNode);
 			const startIndex = this._atomicNodes.length;
-			this.enterNode(hierarchicalNode);
+			this.enterNode(hierarchicalNode, startIndex);
 			this.processChildren(hierarchicalNode);
 			this.exitNode(hierarchicalNode, startIndex);
 		});

@@ -63,7 +63,7 @@ export class ClassDeclarationPostProcessor extends PostNodeProcessorAdapter<Clas
 	 * here we use the class declaration node to simulate it
 	 * so read the position from INTERFACE/ENUM/CLASS/RECORD/TRAIT terminal node
 	 */
-	decorate(node: DecorableParsedNode) {
+	decorate(node: DecorableParsedNode): void {
 		const ctx = node.underlay.groovyParserRuleContext as ClassDeclarationContext;
 		switch (node.specification.type) {
 			case ClassDeclarationNodeType.INTERFACE:
@@ -94,7 +94,7 @@ export class ClassDeclarationPostProcessor extends PostNodeProcessorAdapter<Clas
 		return true;
 	}
 
-	collectToAtomicNodesOnExitingVisitor(node: DecorableParsedNode, firstNodeIndex: number, atomicNodes: Array<DecorableParsedNode>) {
+	collectToAtomicNodesOnExitingVisitor(node: DecorableParsedNode, firstNodeIndex: number, atomicNodes: Array<DecorableParsedNode>): void {
 		const ctx = node.underlay.groovyParserRuleContext as ClassDeclarationContext;
 		if (node.specification.type === ClassDeclarationNodeType.INTERFACE) {
 			let atNode: Optional<DecorableParsedNode> = (void 0);

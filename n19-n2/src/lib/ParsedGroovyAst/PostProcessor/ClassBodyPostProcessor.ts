@@ -23,7 +23,7 @@ export class ClassBodyPostProcessor extends PostNodeProcessorAdapter<ClassBodyCo
 		return true;
 	}
 
-	decorate(node: DecorableParsedNode) {
+	decorate(node: DecorableParsedNode): void {
 		const ctx = node.underlay.groovyParserRuleContext as ClassBodyContext;
 		DecorableParsedNode.copyPositionAndTextFromToken(node, ctx.LBRACE().symbol);
 	}
@@ -42,7 +42,7 @@ export class ClassBodyPostProcessor extends PostNodeProcessorAdapter<ClassBodyCo
 	 * insert class body node into atomic nodes, placing at tail
 	 */
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	collectToAtomicNodesOnExitingVisitor(node: DecorableParsedNode, _firstNodeIndex: number, atomicNodes: Array<DecorableParsedNode>) {
+	collectToAtomicNodesOnExitingVisitor(node: DecorableParsedNode, _firstNodeIndex: number, atomicNodes: Array<DecorableParsedNode>): void {
 		const ctx = node.underlay.groovyParserRuleContext as ClassBodyContext;
 		const rightBraceTerminalNode = ctx.RBRACE();
 		// create a right brace node, share the same underlay node

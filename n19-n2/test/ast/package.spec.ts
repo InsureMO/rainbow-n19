@@ -6,4 +6,8 @@ describe('Package declaration', () => {
 
 	test('package abc', async () => parseAst('package abc'));
 	test('package abc.de;', async () => parseAst('package abc.de;'));
+	test('@X package abc.de;', async () => parseAst('@X package abc.de;'));
+	test('@X(1) package abc.de;', async () => parseAst('@X(1) package abc.de;'));
+	test('@X(a = 1) package abc.de;', async () => parseAst('@X(a = 1) package abc.de;'));
+	test('@X(a = 1, b = "2") package abc.de;', async () => parseAst('@X(a = 1, b = "2") package abc.de;'));
 });

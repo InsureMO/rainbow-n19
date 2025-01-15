@@ -33,7 +33,7 @@ export class ImportDeclarationPostProcessor extends PostNodeProcessorAdapter<Imp
 	 * here we use the import declaration node to simulate it
 	 * so read the position from import terminal node
 	 */
-	decorate(node: DecorableParsedNode) {
+	decorate(node: DecorableParsedNode): void {
 		const ctx = node.underlay.groovyParserRuleContext as ImportDeclarationContext;
 		DecorableParsedNode.copyPositionAndTextFromToken(node, ctx.IMPORT().symbol);
 	}
@@ -113,7 +113,7 @@ export class ImportDeclarationPostProcessor extends PostNodeProcessorAdapter<Imp
 	/**
 	 * insert import declaration node into atomic nodes, placing before all qualified name element nodes that are led by this import declaration.<br>
 	 */
-	collectToAtomicNodesOnExitingVisitor(node: DecorableParsedNode, firstNodeIndex: number, atomicNodes: Array<DecorableParsedNode>) {
+	collectToAtomicNodesOnExitingVisitor(node: DecorableParsedNode, firstNodeIndex: number, atomicNodes: Array<DecorableParsedNode>): void {
 		const nodes = [node];
 		const staticNode = this.decorateForStaticKeyword(node);
 		if (staticNode != null) {

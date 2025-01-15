@@ -13,7 +13,7 @@ export class NlsPostProcessor extends PostNodeProcessorAdapter<NlsContext> {
 		return true;
 	}
 
-	copyTextOnToParsed(node: ParsedNode, ctx: NlsContext) {
+	copyTextOnToParsed(node: ParsedNode, ctx: NlsContext): void {
 		this.logCopyTextToParsedAsMissedLogic(node, ctx);
 	}
 }

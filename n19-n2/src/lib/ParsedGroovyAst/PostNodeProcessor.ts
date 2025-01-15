@@ -44,8 +44,11 @@ export interface PostNodeProcessor<C extends GroovyParserRuleContext> {
 	/**
 	 * collect more to atomic node list on entering visitor.<br>
 	 * with hierarchy provided
+	 * @param hierarchicalNode current node, could be appended to atomic node list or not, depends on {@link #shouldCollectToAtomicNodesOnEnteringVisitor}.
+	 * @param firstNodeIndex the position of the first node, provided that this node generates atomic nodes.
+	 * @param atomicNodes
 	 */
-	collectMoreToAtomicNodesOnEnteringVisitor(hierarchicalNode: HierarchicalDecorableParsedNode): void;
+	collectMoreToAtomicNodesOnEnteringVisitor(hierarchicalNode: HierarchicalDecorableParsedNode, firstNodeIndex: number, atomicNodes: Array<DecorableParsedNode>): void;
 	/**
 	 * should collect to atomic node list on exiting visitor
 	 */

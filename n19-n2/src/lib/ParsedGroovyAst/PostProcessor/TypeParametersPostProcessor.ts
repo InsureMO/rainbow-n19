@@ -22,7 +22,7 @@ export class TypeParametersPostProcessor extends PostNodeProcessorAdapter<TypePa
 		return true;
 	}
 
-	protected readPurpose(node: ParsedNode, spec: TypeParametersNodeSpecification, ctx: TypeParametersContext) {
+	protected readPurpose(node: ParsedNode, spec: TypeParametersNodeSpecification, ctx: TypeParametersContext): void {
 		const parentCtx = ctx.parentCtx;
 		// eslint-disable-next-line @typescript-eslint/no-unused-expressions
 		this.readPurposeIfParentIsClassDeclaration(node, spec, ctx, parentCtx)
@@ -47,7 +47,7 @@ export class TypeParametersPostProcessor extends PostNodeProcessorAdapter<TypePa
 	 * here we use the type parameters node to simulate it
 	 * so read the position from LT terminal node
 	 */
-	decorate(node: DecorableParsedNode) {
+	decorate(node: DecorableParsedNode): void {
 		const ctx = node.underlay.groovyParserRuleContext as TypeParametersContext;
 		DecorableParsedNode.copyPositionAndTextFromToken(node, ctx.LT().symbol);
 	}
@@ -63,7 +63,7 @@ export class TypeParametersPostProcessor extends PostNodeProcessorAdapter<TypePa
 	}
 
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	collectToAtomicNodesOnExitingVisitor(node: DecorableParsedNode, _firstNodeIndex: number, atomicNodes: Array<DecorableParsedNode>) {
+	collectToAtomicNodesOnExitingVisitor(node: DecorableParsedNode, _firstNodeIndex: number, atomicNodes: Array<DecorableParsedNode>): void {
 		const ctx = node.underlay.groovyParserRuleContext as TypeParametersContext;
 		const gtTerminalNode = ctx.GT();
 		// create a gt (">") node, share the same underlay node

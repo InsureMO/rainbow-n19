@@ -2,6 +2,8 @@
 
 # n19/n2
 
+# Class Meta
+
 - AnnotatedElement: annotations
 - GenericDeclaration: generic types
 	- implements: AnnotatedElement
@@ -59,3 +61,16 @@
 		- name
 		- generic type
 		- annotations
+
+# AST
+
+TODO:
+
+- packageDeclaration.annotationsOpt
+- importDeclaration.annotationsOpt
+- typeDeclaration.classOrInterfaceModifiersOpt
+- classDeclaration.formalParameters
+- classDeclaration.EXTENDS
+- classDeclaration.IMPLEMENTS
+- classDeclaration.PERMITS
+- 
