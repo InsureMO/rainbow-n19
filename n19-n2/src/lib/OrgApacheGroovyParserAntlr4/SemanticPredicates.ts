@@ -20,12 +20,12 @@ export class SemanticPredicates {
 	private static readonly SURROGATE_PAIR1_PATTERN = /[\uD800-\uDBFF]/;
 	private static readonly SURROGATE_PAIR2_PATTERN = /[\uDC00-\uDFFF]/;
 
-	public static readonly WIN_ENTER_CHAR = '\r'.charCodeAt(0);
-	public static readonly UNIX_ENTER_CHAR = '\n'.charCodeAt(0);
-	public static readonly DOLLAR_CHAR = '$'.charCodeAt(0);
-	public static readonly SINGLE_QUOTE_CHAR = '\''.charCodeAt(0);
-	public static readonly DOUBLE_QUOTE_CHAR = '"'.charCodeAt(0);
-	public static readonly ASTERISK_CHAR = '*'.charCodeAt(0);
+	static readonly WIN_ENTER_CHAR = '\r'.charCodeAt(0);
+	static readonly UNIX_ENTER_CHAR = '\n'.charCodeAt(0);
+	static readonly DOLLAR_CHAR = '$'.charCodeAt(0);
+	static readonly SINGLE_QUOTE_CHAR = '\''.charCodeAt(0);
+	static readonly DOUBLE_QUOTE_CHAR = '"'.charCodeAt(0);
+	static readonly ASTERISK_CHAR = '*'.charCodeAt(0);
 	private static readonly AT_CODE_POINT = '@'.codePointAt(0);
 
 	static isFollowedByWhiteSpaces(cs: CharStream): boolean {

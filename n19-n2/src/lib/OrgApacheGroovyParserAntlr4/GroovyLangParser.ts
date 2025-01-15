@@ -7,7 +7,7 @@ class LightWeightFailedPredicateException extends FailedPredicateException {
 	}
 
 	// TODO remove this method, seems it is used only in java
-	// public fillInStackTrace(): Throwable {
+	// fillInStackTrace(): Throwable {
 	// 	// `FailedPredicateException` is used to change the control flow,
 	// 	// so its stack trace can be eliminated for better performance
 	// 	return this;

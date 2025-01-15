@@ -11,5 +11,5 @@ export * from './PostNodeProcessor';
 export * from './PostNodeProcessorRegistry';
 export * from './Types';
 
-export * from './PostProcessor';
+export * from './PostProcessors';
 export * from './Specifications';

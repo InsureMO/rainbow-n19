@@ -1,5 +1,4 @@
 export * from './AssertionError';
-export * from './BufferOverflowException';
 export * from './ClassCastException';
 export * from './Exception';
 export * from './IllegalArgumentException';
