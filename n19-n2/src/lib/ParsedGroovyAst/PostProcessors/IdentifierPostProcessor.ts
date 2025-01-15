@@ -5,12 +5,30 @@ import {DecoratedNode} from '../DecoratedNode';
 import {HierarchicalNode} from '../HierarchicalNode';
 import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
 
+/**
+ * could be child of following:<br>
+ * 1. import declaration,<br>
+ * 2. class declaration,<br>
+ * 3. enum constant,<br>
+ * 4. method name,<br>
+ * 5. variable declarator id,<br>
+ * 6. qualified name element,<br>
+ * 7. qualified class name,<br>
+ * 8. gstring path,<br>
+ * 9, element value pair name,<br>
+ * 10. continue statement,<br>
+ * 11. break statement,<br>
+ * 12. statement,<br>
+ * 13. catch clause,<br>
+ * 14. name part,<br>
+ * 15. primary,<br>
+ * 16. named property arg primary,<br>
+ * 17. named arg primary,<br>
+ * 18. command primary.<br>
+ * doing:<br>
+ * check all possible terminal nodes and put as a node.
+ */
 export class IdentifierPostProcessor extends PostNodeProcessorAdapter<IdentifierContext> {
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	needCopyTextOnToParsed(_ctx: IdentifierContext): boolean {
-		return true;
-	}
-
 	collectOnEntering(node: HierarchicalNode): Array<DecoratedNode> {
 		const decorated = node.decorated;
 		const ctx = decorated.parsed.groovyParserRuleContext as IdentifierContext;

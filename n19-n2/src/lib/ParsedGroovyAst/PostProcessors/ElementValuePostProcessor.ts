@@ -7,6 +7,15 @@ import {DecoratedNode} from '../DecoratedNode';
 import {HierarchicalNode} from '../HierarchicalNode';
 import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
 
+/**
+ * could be child of following:<br>
+ * 1. element value array initializer,<br>
+ * 2. element value pair,<br>
+ * 3. method declaration,<br>
+ * 4. element values.<br>
+ * doing:<br>
+ * 1. put a "," node before itself, when parent is element value array initializer and itself is not the first element value of parent.
+ */
 export class ElementValuePostProcessor extends PostNodeProcessorAdapter<ElementValueContext> {
 	collectOnEntering(node: HierarchicalNode): Array<DecoratedNode> {
 		const decorated = node.decorated;
@@ -22,7 +31,7 @@ export class ElementValuePostProcessor extends PostNodeProcessorAdapter<ElementV
 				return [commaNode];
 			}
 		} else {
-			decorated.parsed.debugger.addMissedLogics(`Parent context[${parentCtx.constructor.name}] of ElementValueContext is not supported yet.`);
+			// decorated.parsed.debugger.addMissedLogics(`Parent context[${parentCtx.constructor.name}] of ElementValueContext is not supported yet.`);
 		}
 		return [];
 	}

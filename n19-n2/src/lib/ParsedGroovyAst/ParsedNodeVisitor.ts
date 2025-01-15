@@ -38,15 +38,24 @@ export class ParsedNodeVisitor {
 	}
 
 	protected visitNode(node: DecoratedNode, parent?: HierarchicalNode): void {
+		const hierarchicalNode = new HierarchicalNode(node, parent);
 		const processor = PostNodeProcessorRegistry.getProcessor(node.type);
-		const countIntoHierarchy = processor.shouldCountIntoHierarchy(node);
-		const parentPositionedNode = this.findParentPositionedNode();
+		const countIntoHierarchy = processor.shouldCountIntoHierarchy(hierarchicalNode);
+		let parentPositionedNode = this.findParentPositionedNode();
 		let positionedNode: Optional<PositionedNode>;
-		if (countIntoHierarchy) {
+		if (countIntoHierarchy === true) {
 			positionedNode = new PositionedNode(node, parentPositionedNode);
 			this.startPositionedNode(positionedNode);
+			// set parent to new one
+			parentPositionedNode = positionedNode;
+		} else if (Array.isArray(countIntoHierarchy)) {
+			const [nodes] = countIntoHierarchy;
+			nodes.forEach(node => new PositionedNode(node, parentPositionedNode).positioning());
+			positionedNode = new PositionedNode(node, parentPositionedNode);
+			this.startPositionedNode(positionedNode);
+			// set parent to new one
+			parentPositionedNode = positionedNode;
 		}
-		const hierarchicalNode = new HierarchicalNode(node, parent);
 		processor.collectOnEntering(hierarchicalNode).forEach(node => {
 			this._atomicNodes.push(node);
 			// has no effect on position hierarchy
@@ -62,6 +71,12 @@ export class ParsedNodeVisitor {
 			positionedNode.positioning();
 			this.endPositionedNode(positionedNode);
 		}
+		parentPositionedNode = this.findParentPositionedNode();
+		processor.collectAfterExisted(hierarchicalNode).forEach(node => {
+			this._atomicNodes.push(node);
+			// has no effect on position hierarchy
+			new PositionedNode(node, parentPositionedNode).positioning();
+		});
 	}
 
 	get atomicNodes(): Array<DecoratedNode> {

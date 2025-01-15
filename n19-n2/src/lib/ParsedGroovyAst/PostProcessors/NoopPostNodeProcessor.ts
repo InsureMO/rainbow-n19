@@ -1,13 +1,17 @@
+import * as console from 'node:console';
 import {GroovyParser, GroovyParserRuleContext} from '../../OrgApacheGroovyParserAntlr4';
 import {DecoratedNode} from '../DecoratedNode';
+import {HierarchicalNode} from '../HierarchicalNode';
 import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
 
+/**
+ * a guard, not real use in runtime.
+ */
 export class NoopPostNodeProcessor extends PostNodeProcessorAdapter<GroovyParserRuleContext> {
-	/**
-	 * always returns false
-	 */
-	shouldCollectToAtomicNodesOnEntering(node: DecoratedNode): boolean {
-		console.error(`Node[type=${node.type}, name=${GroovyParser.ruleNames[node.type]}] is not supported yet.`);
-		return false;
+	collectOnEntering(node: HierarchicalNode): Array<DecoratedNode> {
+		const decorated = node.decorated;
+		const type = decorated.type;
+		console.error(`Node[type=${type}, name=${GroovyParser.ruleNames[type]}] is not supported yet.`);
+		return [decorated];
 	}
 }

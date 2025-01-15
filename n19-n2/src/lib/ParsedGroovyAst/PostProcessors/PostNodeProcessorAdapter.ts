@@ -4,6 +4,9 @@ import {HierarchicalNode} from '../HierarchicalNode';
 import {ParsedNode} from '../ParsedNode';
 import {PostNodeProcessor} from '../PostNodeProcessor';
 
+/**
+ * fulfill interface with default behaviours.
+ */
 export class PostNodeProcessorAdapter<C extends GroovyParserRuleContext> implements PostNodeProcessor<C> {
 	/** default include (not ignore) */
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -24,7 +27,7 @@ export class PostNodeProcessorAdapter<C extends GroovyParserRuleContext> impleme
 
 	/** default returns false */
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	shouldCountIntoHierarchy(_node: DecoratedNode): boolean {
+	shouldCountIntoHierarchy(_node: HierarchicalNode): boolean | [Array<DecoratedNode>, true] {
 		return false;
 	}
 
@@ -38,5 +41,11 @@ export class PostNodeProcessorAdapter<C extends GroovyParserRuleContext> impleme
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	collectOnExiting(_node: HierarchicalNode): Array<DecoratedNode> {
 		return [];
+	}
+
+	/** default returns empty array */
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	collectAfterExisted(_node: HierarchicalNode): Array<DecoratedNode> {
+		return undefined;
 	}
 }

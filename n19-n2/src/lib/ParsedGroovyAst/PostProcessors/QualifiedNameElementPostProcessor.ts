@@ -10,13 +10,18 @@ import {DecoratedNode} from '../DecoratedNode';
 import {HierarchicalNode} from '../HierarchicalNode';
 import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
 
+/**
+ * could be child of following:<br>
+ * 1. qualified name,<br>
+ * 2. qualified name elements.<br>
+ * doing:<br>
+ * 1. put a "." node before itself, when parent is qualified name and itself is not the first element value of parent,<br>
+ * 2. put itself as a node, when it doesn't have an identifier,<br>
+ * 3. put a "." node after itself, when parent is qualified name elements.
+ */
 export class QualifiedNameElementPostProcessor extends PostNodeProcessorAdapter<QualifiedNameElementContext> {
 	protected useMyself(ctx: QualifiedNameElementContext): boolean {
 		return ctx.identifier() == null;
-	}
-
-	needCopyTextOnToParsed(ctx: QualifiedNameElementContext): boolean {
-		return this.useMyself(ctx);
 	}
 
 	protected collectMyself(decorated: DecoratedNode, ctx: QualifiedNameElementContext): Optional<DecoratedNode> {
@@ -78,7 +83,7 @@ export class QualifiedNameElementPostProcessor extends PostNodeProcessorAdapter<
 		}
 	}
 
-	collectOnExiting(node: HierarchicalNode): Array<DecoratedNode> {
+	collectAfterExisted(node: HierarchicalNode): Array<DecoratedNode> {
 		const decorated = node.decorated;
 		const ctx = decorated.parsed.groovyParserRuleContext as QualifiedNameElementContext;
 

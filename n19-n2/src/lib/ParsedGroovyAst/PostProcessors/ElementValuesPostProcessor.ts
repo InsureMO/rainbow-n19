@@ -3,6 +3,11 @@ import {DecoratedNode} from '../DecoratedNode';
 import {HierarchicalNode} from '../HierarchicalNode';
 import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
 
+/**
+ * could be child of annotation.<br>
+ * doing:<br>
+ * 1. put a "(" before itself.
+ */
 export class ElementValuesPostProcessor extends PostNodeProcessorAdapter<ElementValuesContext> {
 	collectOnEntering(node: HierarchicalNode): Array<DecoratedNode> {
 		const decorated = node.decorated;
@@ -16,7 +21,7 @@ export class ElementValuesPostProcessor extends PostNodeProcessorAdapter<Element
 				return [lparenNode];
 			}
 		} else {
-			decorated.parsed.debugger.addMissedLogics(`Parent context[${parentCtx.constructor.name}] of ElementValuesContext is not supported yet.`);
+			// decorated.parsed.debugger.addMissedLogics(`Parent context[${parentCtx.constructor.name}] of ElementValuesContext is not supported yet.`);
 		}
 		return [];
 	}
