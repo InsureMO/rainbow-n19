@@ -1,18 +1,34 @@
+import {TerminalNode} from 'antlr4';
 import {GroovyParser, ImportDeclarationContext, QualifiedNameContext} from '../../OrgApacheGroovyParserAntlr4';
+import {Optional} from '../../TsAddon';
 import {DecoratedNode} from '../DecoratedNode';
 import {HierarchicalNode} from '../HierarchicalNode';
+import {SymbolIndex} from '../Types';
 import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
+
+type TerminalNodeGet = (ctx: ImportDeclarationContext) => Optional<TerminalNode>;
+type TerminalNodePair = [TerminalNodeGet, SymbolIndex];
 
 /**
  * could be child of following:
  * 1. package declaration,<br>
  * 2. import declaration.<br>
  * doing:<br>
- * 1. put itself as a container node,<br>
- * 2. put a "." node after itself, when parent is import declaration and DOT node exists,<br>
- * 3. put a "*" node after itself, when parent is import declaration and MUL node exists,<br>
+ * 1. put me as a container node,<br>
+ * 2. find and put a "." node after me, when parent is import declaration,<br>
+ * 3. find and put a "*" node after me, when parent is import declaration,<br>
+ * 4. find and put a "AS" node after me, when parent is import declaration.
  */
 export class QualifiedNamePostProcessor extends PostNodeProcessorAdapter<QualifiedNameContext> {
+	private static DOT: TerminalNodePair = [(ctx: ImportDeclarationContext) => ctx.DOT(), GroovyParser.DOT];
+	private static MUL: TerminalNodePair = [(ctx: ImportDeclarationContext) => ctx.MUL(), GroovyParser.MUL];
+	private static AS: TerminalNodePair = [(ctx: ImportDeclarationContext) => ctx.AS(), GroovyParser.AS];
+	private static IMPORT_TERMINALS = [
+		QualifiedNamePostProcessor.DOT,
+		QualifiedNamePostProcessor.MUL,
+		QualifiedNamePostProcessor.AS
+	];
+
 	shouldCountIntoHierarchy(node: HierarchicalNode): boolean {
 		const decorated = node.decorated;
 		decorated.setRole(GroovyParser.RULE_qualifiedName, DecoratedNode.RULE_ROLE);
@@ -24,25 +40,11 @@ export class QualifiedNamePostProcessor extends PostNodeProcessorAdapter<Qualifi
 		const ctx = decorated.parsed.groovyParserRuleContext as QualifiedNameContext;
 		const parentCtx = ctx.parentCtx;
 		if (parentCtx instanceof ImportDeclarationContext) {
-			const nodes: Array<DecoratedNode> = [];
-			// for star import part
-			const dotTerminalNode = parentCtx.DOT();
-			if (dotTerminalNode != null) {
-				const dotNode = DecoratedNode.createSymbol(node.parent.decorated.parsed, GroovyParser.DOT, dotTerminalNode);
-				nodes.push(dotNode);
-			}
-			const mulTerminalNode = parentCtx.MUL();
-			if (mulTerminalNode != null) {
-				const mulNode = DecoratedNode.createSymbol(node.parent.decorated.parsed, GroovyParser.DOT, mulTerminalNode);
-				nodes.push(mulNode);
-			}
-			// for alias part
-			const asTerminalNode = parentCtx.AS();
-			if (asTerminalNode != null) {
-				const asNode = DecoratedNode.createSymbol(node.parent.decorated.parsed, GroovyParser.AS, asTerminalNode);
-				nodes.push(asNode);
-			}
-			return nodes;
+			return this.collectTerminalNodes({
+				decorated: node.parent.decorated,
+				terminals: QualifiedNamePostProcessor.IMPORT_TERMINALS,
+				firstOnly: false
+			});
 		}
 		return [];
 	}

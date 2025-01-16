@@ -1,12 +1,20 @@
+import {TerminalNode} from 'antlr4';
 import {
 	AnnotationsOptContext,
 	GroovyParser,
 	ImportDeclarationContext,
 	PackageDeclarationContext
 } from '../../OrgApacheGroovyParserAntlr4';
+import {Optional} from '../../TsAddon';
 import {DecoratedNode} from '../DecoratedNode';
 import {HierarchicalNode} from '../HierarchicalNode';
+import {SymbolIndex} from '../Types';
 import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
+
+type TerminalNodeGetFromPackageDeclaration = (ctx: PackageDeclarationContext) => Optional<TerminalNode>;
+type TerminalNodePairForPackageDeclaration = [TerminalNodeGetFromPackageDeclaration, SymbolIndex];
+type TerminalNodeGetFromImportDeclaration = (ctx: ImportDeclarationContext) => Optional<TerminalNode>;
+type TerminalNodePairForImportDeclaration = [TerminalNodeGetFromImportDeclaration, SymbolIndex];
 
 /**
  * could be child of following:<br>
@@ -27,30 +35,29 @@ import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
  * 3. put a "static" node after itself, when parent is import declaration and STATIC exists,<br>
  */
 export class AnnotationsOptPostProcessor extends PostNodeProcessorAdapter<AnnotationsOptContext> {
+	private static PACKAGE: TerminalNodePairForPackageDeclaration = [(ctx) => ctx.PACKAGE(), GroovyParser.PACKAGE];
+	private static IMPORT: TerminalNodePairForImportDeclaration = [(ctx) => ctx.IMPORT(), GroovyParser.IMPORT];
+	private static STATIC: TerminalNodePairForImportDeclaration = [(ctx) => ctx.STATIC(), GroovyParser.STATIC];
+	private static IMPORT_TERMINALS = [
+		AnnotationsOptPostProcessor.IMPORT,
+		AnnotationsOptPostProcessor.STATIC
+	];
+
 	collectAfterExit(node: HierarchicalNode): Array<DecoratedNode> {
 		const decorated = node.decorated;
 		const ctx = decorated.parsed.groovyParserRuleContext as AnnotationsOptContext;
 		const parentCtx = ctx.parentCtx;
 		if (parentCtx instanceof PackageDeclarationContext) {
-			const packageTerminalNode = parentCtx.PACKAGE();
-			if (packageTerminalNode != null) {
-				const packageNode = DecoratedNode.createSymbol(node.parent.decorated.parsed, GroovyParser.PACKAGE, packageTerminalNode);
-				return [packageNode];
-			}
+			return this.collectTerminalNodeToArray({
+				decorated: node.parent.decorated,
+				terminal: AnnotationsOptPostProcessor.PACKAGE
+			});
 		} else if (parentCtx instanceof ImportDeclarationContext) {
-			const nodes: Array<DecoratedNode> = [];
-			const importTerminalNode = parentCtx.IMPORT();
-			if (importTerminalNode != null) {
-				const importNode = DecoratedNode.createSymbol(node.parent.decorated.parsed, GroovyParser.IMPORT, importTerminalNode);
-				nodes.push(importNode);
-			}
-			const staticTerminalNode = parentCtx.STATIC();
-			if (staticTerminalNode != null) {
-				const staticNode = DecoratedNode.createSymbol(node.parent.decorated.parsed, GroovyParser.STATIC, staticTerminalNode);
-				nodes.push(staticNode);
-			}
-
-			return nodes;
+			return this.collectTerminalNodes({
+				decorated: node.parent.decorated,
+				terminals: AnnotationsOptPostProcessor.IMPORT_TERMINALS,
+				firstOnly: false
+			});
 		}
 		return [];
 	}

@@ -6,7 +6,7 @@ import {PostNodeProcessorRegistry} from './PostNodeProcessorRegistry';
 import {RuleIndex} from './Types';
 
 export class ParsedNode {
-	private readonly _ctx: GroovyParserRuleContext;
+	private _ctx: GroovyParserRuleContext;
 	// debugger
 	private readonly _debugger: ParsedAstDebugger;
 	// noinspection TypeScriptFieldCanBeMadeReadonly
@@ -37,6 +37,10 @@ export class ParsedNode {
 
 	get groovyParserRuleContext(): GroovyParserRuleContext {
 		return this._ctx;
+	}
+
+	replaceGroovyParserRuleContext(ctx: GroovyParserRuleContext): void {
+		this._ctx = ctx;
 	}
 
 	get debugger(): ParsedAstDebugger {

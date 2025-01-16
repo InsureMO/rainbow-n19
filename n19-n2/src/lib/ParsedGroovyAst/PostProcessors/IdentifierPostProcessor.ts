@@ -3,7 +3,11 @@ import {GroovyParser, IdentifierContext} from '../../OrgApacheGroovyParserAntlr4
 import {Optional} from '../../TsAddon';
 import {DecoratedNode} from '../DecoratedNode';
 import {HierarchicalNode} from '../HierarchicalNode';
+import {SymbolIndex} from '../Types';
 import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
+
+type TerminalNodeGet = (ctx: IdentifierContext) => Optional<TerminalNode>;
+type TerminalNodePair = [TerminalNodeGet, SymbolIndex];
 
 /**
  * could be child of following:<br>
@@ -29,37 +33,34 @@ import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
  * check all possible terminal nodes and put as a node.
  */
 export class IdentifierPostProcessor extends PostNodeProcessorAdapter<IdentifierContext> {
-	collectOnEntering(node: HierarchicalNode): Array<DecoratedNode> {
-		const decorated = node.decorated;
-		const ctx = decorated.parsed.groovyParserRuleContext as IdentifierContext;
-		let terminalNode: Optional<TerminalNode>;
-		if ((terminalNode = ctx.AS()) != null) {
-			decorated.setRole(GroovyParser.AS, DecoratedNode.SYMBOL_ROLE);
-		} else if ((terminalNode = ctx.IN()) != null) {
-			decorated.setRole(GroovyParser.IN, DecoratedNode.SYMBOL_ROLE);
-		} else if ((terminalNode = ctx.PERMITS()) != null) {
-			decorated.setRole(GroovyParser.PERMITS, DecoratedNode.SYMBOL_ROLE);
-		} else if ((terminalNode = ctx.RECORD()) != null) {
-			decorated.setRole(GroovyParser.RECORD, DecoratedNode.SYMBOL_ROLE);
-		} else if ((terminalNode = ctx.SEALED()) != null) {
-			decorated.setRole(GroovyParser.SEALED, DecoratedNode.SYMBOL_ROLE);
-		} else if ((terminalNode = ctx.TRAIT()) != null) {
-			decorated.setRole(GroovyParser.TRAIT, DecoratedNode.SYMBOL_ROLE);
-		} else if ((terminalNode = ctx.VAR()) != null) {
-			decorated.setRole(GroovyParser.VAR, DecoratedNode.SYMBOL_ROLE);
-		} else if ((terminalNode = ctx.YIELD()) != null) {
-			decorated.setRole(GroovyParser.YIELD, DecoratedNode.SYMBOL_ROLE);
-		} else if ((terminalNode = ctx.Identifier()) != null) {
-			decorated.setRole(GroovyParser.Identifier, DecoratedNode.SYMBOL_ROLE);
-		} else if ((terminalNode = ctx.CapitalizedIdentifier()) != null) {
-			decorated.setRole(GroovyParser.CapitalizedIdentifier, DecoratedNode.SYMBOL_ROLE);
-		}
+	private static Identifier: TerminalNodePair = [(ctx: IdentifierContext) => ctx.Identifier(), GroovyParser.Identifier];
+	private static CapitalizedIdentifier: TerminalNodePair = [(ctx: IdentifierContext) => ctx.CapitalizedIdentifier(), GroovyParser.CapitalizedIdentifier];
+	private static AS: TerminalNodePair = [(ctx: IdentifierContext) => ctx.AS(), GroovyParser.AS];
+	private static IN: TerminalNodePair = [(ctx: IdentifierContext) => ctx.IN(), GroovyParser.IN];
+	private static PERMITS: TerminalNodePair = [(ctx: IdentifierContext) => ctx.PERMITS(), GroovyParser.PERMITS];
+	private static RECORD: TerminalNodePair = [(ctx: IdentifierContext) => ctx.RECORD(), GroovyParser.RECORD];
+	private static SEALED: TerminalNodePair = [(ctx: IdentifierContext) => ctx.SEALED(), GroovyParser.SEALED];
+	private static TRAIT: TerminalNodePair = [(ctx: IdentifierContext) => ctx.TRAIT(), GroovyParser.TRAIT];
+	private static VAR: TerminalNodePair = [(ctx: IdentifierContext) => ctx.VAR(), GroovyParser.VAR];
+	private static YIELD: TerminalNodePair = [(ctx: IdentifierContext) => ctx.YIELD(), GroovyParser.YIELD];
+	private static TERMINALS = [
+		IdentifierPostProcessor.Identifier,
+		IdentifierPostProcessor.CapitalizedIdentifier,
+		IdentifierPostProcessor.AS,
+		IdentifierPostProcessor.IN,
+		IdentifierPostProcessor.PERMITS,
+		IdentifierPostProcessor.RECORD,
+		IdentifierPostProcessor.SEALED,
+		IdentifierPostProcessor.TRAIT,
+		IdentifierPostProcessor.VAR,
+		IdentifierPostProcessor.YIELD
+	];
 
-		if (decorated.role !== DecoratedNode.NO_ROLE_SPECIFIED) {
-			DecoratedNode.copyPositionAndTextFromToken(decorated, terminalNode!.symbol);
-			return [decorated];
-		} else {
-			return [];
-		}
+	collectOnEntering(node: HierarchicalNode): Array<DecoratedNode> {
+		return this.collectTerminalNodes({
+			decorated: node.decorated,
+			terminals: IdentifierPostProcessor.TERMINALS,
+			firstOnly: true
+		});
 	}
 }

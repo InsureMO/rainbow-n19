@@ -8,57 +8,74 @@ import {
 import {Optional} from '../../TsAddon';
 import {DecoratedNode} from '../DecoratedNode';
 import {HierarchicalNode} from '../HierarchicalNode';
+import {SymbolIndex} from '../Types';
 import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
+
+type TerminalNodeGet = (ctx: QualifiedNameElementContext) => Optional<TerminalNode>;
+type TerminalNodePair = [TerminalNodeGet, SymbolIndex];
+type TerminalNodeGetFromQualifiedNameElements = (ctx: QualifiedNameElementsContext, index: number) => Optional<TerminalNode>;
+type TerminalNodePairForQualifiedNameElements = [TerminalNodeGetFromQualifiedNameElements, SymbolIndex];
+type TerminalNodeGetFromQualifiedName = (ctx: QualifiedNameContext, index: number) => Optional<TerminalNode>;
+type TerminalNodePairForQualifiedName = [TerminalNodeGetFromQualifiedName, SymbolIndex];
 
 /**
  * could be child of following:<br>
  * 1. qualified name,<br>
  * 2. qualified name elements.<br>
  * doing:<br>
- * 1. put a "." node before itself, when parent is qualified name and itself is not the first element value of parent,<br>
- * 2. put itself as a node, when it doesn't have an identifier,<br>
+ * 1. put me as a node, when it doesn't have an identifier,<br>
+ * 2. put a "." node before itself, when parent is qualified name,<br>
  * 3. put a "." node after itself, when parent is qualified name elements.
  */
 export class QualifiedNameElementPostProcessor extends PostNodeProcessorAdapter<QualifiedNameElementContext> {
+	private static DEF: TerminalNodePair = [(ctx) => ctx.DEF(), GroovyParser.DEF];
+	private static IN: TerminalNodePair = [(ctx) => ctx.IN(), GroovyParser.IN];
+	private static AS: TerminalNodePair = [(ctx) => ctx.AS(), GroovyParser.AS];
+	private static TRAIT: TerminalNodePair = [(ctx) => ctx.TRAIT(), GroovyParser.TRAIT];
+	private static TERMINALS = [
+		QualifiedNameElementPostProcessor.DEF,
+		QualifiedNameElementPostProcessor.IN,
+		QualifiedNameElementPostProcessor.AS,
+		QualifiedNameElementPostProcessor.TRAIT
+	];
+	private static IGNORE_TERMINAL_CHECK = (ctx: QualifiedNameElementContext) => ctx.identifier() != null;
+	private static QUALIFIED_NAME_ELEMENTS_DOT: TerminalNodePairForQualifiedNameElements = [
+		(ctx, index) => ctx.DOT(index), GroovyParser.DOT
+	];
+	private static QUALIFIED_NAME_DOT: TerminalNodePairForQualifiedName = [
+		(ctx, index) => ctx.DOT(index), GroovyParser.DOT
+	];
+
 	collectOnEntering(node: HierarchicalNode): Array<DecoratedNode> {
 		const decorated = node.decorated;
-		const ctx = decorated.parsed.groovyParserRuleContext as QualifiedNameElementContext;
-
-		if (ctx.identifier() != null) {
-			return [];
-		}
-
-		let terminalNode: Optional<TerminalNode>;
-		// decorated node not used now, reuse it
-		if ((terminalNode = ctx.DEF()) != null) {
-			decorated.setRole(GroovyParser.DEF, DecoratedNode.SYMBOL_ROLE);
-		} else if ((terminalNode = ctx.AS()) != null) {
-			decorated.setRole(GroovyParser.AS, DecoratedNode.SYMBOL_ROLE);
-		} else if ((terminalNode = ctx.TRAIT()) != null) {
-			decorated.setRole(GroovyParser.TRAIT, DecoratedNode.SYMBOL_ROLE);
-		} else if ((terminalNode = ctx.IN()) != null) {
-			decorated.setRole(GroovyParser.IN, DecoratedNode.SYMBOL_ROLE);
-		}
-
-		if (decorated.role !== DecoratedNode.NO_ROLE_SPECIFIED) {
-			DecoratedNode.copyPositionAndTextFromToken(decorated, terminalNode!.symbol);
-			return [decorated];
-		}
-		return [];
+		return this.collectTerminalNodes({
+			decorated,
+			ignoreTerminalsCheck: QualifiedNameElementPostProcessor.IGNORE_TERMINAL_CHECK,
+			terminals: QualifiedNameElementPostProcessor.TERMINALS,
+			firstOnly: true
+		});
 	}
 
 	collectAfterExit(node: HierarchicalNode): Array<DecoratedNode> {
 		const decorated = node.decorated;
 		const ctx = decorated.parsed.groovyParserRuleContext as QualifiedNameElementContext;
-
-		const parentCtx = ctx.parentCtx as QualifiedNameElementsContext | QualifiedNameContext;
-		// dot after each element
-		const elementList = parentCtx.qualifiedNameElement_list();
-		const elementIndex = elementList.indexOf(ctx);
-		const dotTerminalNode = parentCtx.DOT(elementIndex);
-		if (dotTerminalNode != null) {
-			const dotNode = DecoratedNode.createSymbol(decorated.parsed, GroovyParser.DOT, dotTerminalNode);
-			return [dotNode];
+		const parentCtx = ctx.parentCtx;
+		if (parentCtx instanceof QualifiedNameElementsContext) {
+			return this.collectTerminalNodeWithIndexToArray({
+				decorated,
+				siblings: (ctx: QualifiedNameElementsContext) => ctx.qualifiedNameElement_list(),
+				indexOffset: 0,
+				terminal: QualifiedNameElementPostProcessor.QUALIFIED_NAME_ELEMENTS_DOT,
+				parentDecorated: node.parent.decorated
+			});
+		} else if (parentCtx instanceof QualifiedNameContext) {
+			return this.collectTerminalNodeWithIndexToArray({
+				decorated,
+				siblings: (ctx: QualifiedNameContext) => ctx.qualifiedNameElement_list(),
+				indexOffset: 0,
+				terminal: QualifiedNameElementPostProcessor.QUALIFIED_NAME_DOT,
+				parentDecorated: node.parent.decorated
+			});
 		}
 		return [];
 	}

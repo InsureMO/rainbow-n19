@@ -16,7 +16,7 @@ import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
  * 9. expression in par,<br>
  * 10. arguments.<br>
  * doing:<br>
- * 1. put itself as a node.
+ * 1. put me as a node.
  */
 export class RparenPostProcessor extends PostNodeProcessorAdapter<RparenContext> {
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -31,6 +31,7 @@ export class RparenPostProcessor extends PostNodeProcessorAdapter<RparenContext>
 		if (terminalNode != null) {
 			decorated.setRole(GroovyParser.RPAREN, DecoratedNode.SYMBOL_ROLE);
 			DecoratedNode.copyPositionAndTextFromToken(decorated, terminalNode.symbol);
+			return [decorated];
 		}
 
 		return [];

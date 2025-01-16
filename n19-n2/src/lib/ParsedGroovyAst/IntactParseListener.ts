@@ -64,6 +64,12 @@ export class IntactParseListener extends GroovyParserListener {
 			return (void 0);
 		}
 		const exited = this._stackedNodes.shift();
+		// some context will be recreated with its extended context
+		// e.g. LiteralContext on enter rule, but StringLiteralAltContext on exit rule.
+		// in these cases, replace with the context which given on exit phase.
+		if (exited.groovyParserRuleContext !== ctx) {
+			exited.replaceGroovyParserRuleContext(ctx);
+		}
 		exited.copyKeyData(ctx);
 		this._currentNode = this._stackedNodes[0];
 		return exited;
