@@ -55,8 +55,6 @@ export class ClassNamePostProcessor extends PostNodeProcessorAdapter<ClassNameCo
 				terminal: ClassNamePostProcessor.DOT,
 				parentDecorated: node.parent.decorated
 			});
-		} else {
-			// decorated.parsed.debugger.addMissedLogics(`Parent context[${parentCtx.constructor.name}] of ClassNameContext is not supported yet.`);
 		}
 	}
 }

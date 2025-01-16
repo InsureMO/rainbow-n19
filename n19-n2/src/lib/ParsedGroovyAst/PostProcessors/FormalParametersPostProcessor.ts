@@ -1,10 +1,15 @@
 import {TerminalNode} from 'antlr4';
-import {FormalParametersContext, GroovyParser, MethodDeclarationContext} from '../../OrgApacheGroovyParserAntlr4';
+import {
+	ClassDeclarationContext,
+	FormalParametersContext,
+	GroovyParser,
+	MethodDeclarationContext
+} from '../../OrgApacheGroovyParserAntlr4';
 import {Optional} from '../../TsAddon';
 import {DecoratedNode} from '../DecoratedNode';
 import {HierarchicalNode} from '../HierarchicalNode';
 import {SymbolIndex} from '../Types';
-import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
+import {ForTypeListUnderClassDeclarationPostProcessor} from './ClassDeclarationPostProcessor';
 
 type TerminalNodeGet = (ctx: FormalParametersContext) => Optional<TerminalNode>;
 type TerminalNodePair = [TerminalNodeGet, SymbolIndex];
@@ -22,8 +27,11 @@ type TerminalNodePairForMethodDeclaration = [TerminalNodeGetFromMethodDeclaratio
  * 2. find and put a "(" node as my first child,<br>
  * 3. find and put a "DEFAULT" node after me, when parent is method declaration,<br>
  * 4. find and put a "THROWS" node after me, when parent is method declaration.<br>
+ * 5. find and put an "EXTENDS" node after me, when parent is class declaration,<br>
+ * 6. find and put an "IMPLEMENTS" node after me, when parent is class declaration, and "EXTENDS" not exists,<br>
+ * 7. find and put an "PERMITS" node after me, when parent is class declaration, and none of "EXTENDS", "IMPLEMENTS" exists.
  */
-export class FormalParametersPostProcessor extends PostNodeProcessorAdapter<FormalParametersContext> {
+export class FormalParametersPostProcessor extends ForTypeListUnderClassDeclarationPostProcessor<FormalParametersContext> {
 	private static LPAREN: TerminalNodePair = [(ctx) => ctx.LPAREN(), GroovyParser.LPAREN];
 	private static METHOD_DECLARATION_DEFAULT: TerminalNodePairForMethodDeclaration = [(ctx) => ctx.DEFAULT(), GroovyParser.DEFAULT];
 	private static METHOD_DECLARATION_THROWS: TerminalNodePairForMethodDeclaration = [(ctx) => ctx.THROWS(), GroovyParser.THROWS];
@@ -45,10 +53,22 @@ export class FormalParametersPostProcessor extends PostNodeProcessorAdapter<Form
 	}
 
 	collectAfterExit(node: HierarchicalNode): Array<DecoratedNode> {
-		return this.collectTerminalNodes({
-			decorated: node.parent.decorated,
-			terminals: FormalParametersPostProcessor.METHOD_DECLARATION_TERMINALS,
-			firstOnly: true
-		});
+		const decorated = node.decorated;
+		const ctx = decorated.parsed.groovyParserRuleContext as FormalParametersContext;
+		const parentCtx = ctx.parentCtx;
+		if (parentCtx instanceof MethodDeclarationContext) {
+			return this.collectTerminalNodes({
+				decorated: node.parent.decorated,
+				terminals: FormalParametersPostProcessor.METHOD_DECLARATION_TERMINALS,
+				firstOnly: true
+			});
+		} else if (parentCtx instanceof ClassDeclarationContext) {
+			const firstOfExtendsImplementsPermitsNode =
+				this.collectFirstOfExtendsImplementsPermits(node, _ctx => true);
+			if (firstOfExtendsImplementsPermitsNode != null) {
+				return [firstOfExtendsImplementsPermitsNode];
+			}
+		}
+		return [];
 	}
 }

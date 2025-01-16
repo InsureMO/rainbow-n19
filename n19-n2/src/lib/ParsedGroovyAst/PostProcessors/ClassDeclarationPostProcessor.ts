@@ -1,5 +1,5 @@
 import {TerminalNode} from 'antlr4';
-import {ClassDeclarationContext, GroovyParser} from '../../OrgApacheGroovyParserAntlr4';
+import {ClassDeclarationContext, GroovyParser, GroovyParserRuleContext} from '../../OrgApacheGroovyParserAntlr4';
 import {Optional} from '../../TsAddon';
 import {DecoratedNode} from '../DecoratedNode';
 import {HierarchicalNode} from '../HierarchicalNode';
@@ -55,5 +55,36 @@ export class ClassDeclarationPostProcessor extends PostNodeProcessorAdapter<Clas
 				firstOnly: true
 			});
 		}
+	}
+}
+
+export class ForTypeListUnderClassDeclarationPostProcessor<C extends GroovyParserRuleContext> extends PostNodeProcessorAdapter<C> {
+	protected static CLASS_DECLARATION_EXTENDS: TerminalNodePair = [(ctx: ClassDeclarationContext) => ctx.EXTENDS(), GroovyParser.EXTENDS];
+	protected static CLASS_DECLARATION_IMPLEMENTS: TerminalNodePair = [(ctx: ClassDeclarationContext) => ctx.IMPLEMENTS(), GroovyParser.IMPLEMENTS];
+	protected static CLASS_DECLARATION_PERMITS: TerminalNodePair = [(ctx: ClassDeclarationContext) => ctx.PERMITS(), GroovyParser.PERMITS];
+
+	protected collectFirstOfExtendsImplementsPermits(node: HierarchicalNode, doCollectCheck: (ctx: ClassDeclarationContext) => boolean): Optional<DecoratedNode> {
+		const decorated = node.decorated;
+		const ctx = decorated.parsed.groovyParserRuleContext;
+		const parentCtx = ctx.parentCtx as ClassDeclarationContext;
+		if (doCollectCheck(parentCtx)) {
+			if (parentCtx._scs != null) {
+				return this.collectTerminalNode({
+					decorated: node.parent.decorated,
+					terminal: ForTypeListUnderClassDeclarationPostProcessor.CLASS_DECLARATION_EXTENDS
+				});
+			} else if (parentCtx._is != null) {
+				return this.collectTerminalNode({
+					decorated: node.parent.decorated,
+					terminal: ForTypeListUnderClassDeclarationPostProcessor.CLASS_DECLARATION_IMPLEMENTS
+				});
+			} else if (parentCtx._ps != null) {
+				return this.collectTerminalNode({
+					decorated: node.parent.decorated,
+					terminal: ForTypeListUnderClassDeclarationPostProcessor.CLASS_DECLARATION_PERMITS
+				});
+			}
+		}
+		return (void 0);
 	}
 }
