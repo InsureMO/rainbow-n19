@@ -1,4 +1,4 @@
-import {ScriptStatementContext, ScriptStatementsContext} from '../../OrgApacheGroovyParserAntlr4';
+import {ScriptStatementContext} from '../../OrgApacheGroovyParserAntlr4';
 import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
 
 /**

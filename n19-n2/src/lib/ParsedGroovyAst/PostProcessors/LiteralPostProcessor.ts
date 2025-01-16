@@ -46,7 +46,6 @@ export class LiteralPostProcessor extends PostNodeProcessorAdapter<LiteralContex
 
 	collectOnEntering(node: HierarchicalNode): Array<DecoratedNode> {
 		const decorated = node.decorated;
-		const ctx = decorated.parsed.groovyParserRuleContext as LiteralContext;
 		return this.collectTerminalNodes({
 			decorated,
 			ignoreTerminalsCheck: (ctx) => ctx instanceof StringLiteralAltContext,

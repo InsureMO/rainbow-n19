@@ -123,7 +123,7 @@ export class PostNodeProcessorAdapter<C extends GroovyParserRuleContext> impleme
 		// dot after each element
 		const elementList = siblings(parentCtx);
 		const elementIndex = elementList.indexOf(ctx);
-		const dotTerminalNode = get(parentCtx, elementIndex);
+		const dotTerminalNode = get(parentCtx, elementIndex + indexOffset);
 		if (dotTerminalNode != null) {
 			return DecoratedNode.createSymbol(parentDecorated.parsed, symbol, dotTerminalNode);
 		}
