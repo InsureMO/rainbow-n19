@@ -5,6 +5,7 @@ import {HierarchicalNode} from '../HierarchicalNode';
 import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
 
 /**
+ * TODO: The order needs to be considered. Would it be more appropriate for the preceding nodes to initiate the process earlier?
  * could be child of following:<br>
  * 1. class declaration,<br>
  * 2. non wildcard type arguments.<br>

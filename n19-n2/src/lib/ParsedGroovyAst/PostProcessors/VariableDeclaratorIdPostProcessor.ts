@@ -40,7 +40,6 @@ type TerminalNodePairForEnhancedForControl = [TerminalNodeGetFromEnhancedForCont
  */
 export class VariableDeclaratorIdPostProcessor extends PostNodeProcessorAdapter<VariableDeclaratorIdContext> {
 	private static VARIABLE_DECLARATOR_ASSIGN: TerminalNodePairForVariableDeclarator = [(ctx) => ctx.ASSIGN(), GroovyParser.ASSIGN];
-	private static FORMAL_PARAMETER_ELLIPSIS: TerminalNodePairForFormalParameter = [(ctx) => ctx.ELLIPSIS(), GroovyParser.ELLIPSIS];
 	private static FORMAL_PARAMETER_ASSIGN: TerminalNodePairForFormalParameter = [(ctx) => ctx.ASSIGN(), GroovyParser.ASSIGN];
 	private static VARIABLE_NAMES_COMMA: TerminalNodePairForVariableNames = [(ctx, index) => ctx.COMMA(index), GroovyParser.COMMA];
 	private static ENHANCE_FOR_CONTROL_COLON: TerminalNodePairForEnhancedForControl = [(ctx) => ctx.COLON(), GroovyParser.COLON];
@@ -49,19 +48,6 @@ export class VariableDeclaratorIdPostProcessor extends PostNodeProcessorAdapter<
 		VariableDeclaratorIdPostProcessor.ENHANCE_FOR_CONTROL_COLON,
 		VariableDeclaratorIdPostProcessor.ENHANCE_FOR_CONTROL_IN
 	];
-
-	collectBeforeEnter(node: HierarchicalNode): Array<DecoratedNode> {
-		const decorated = node.decorated;
-		const ctx = decorated.parsed.groovyParserRuleContext as VariableDeclaratorIdContext;
-		const parentCtx = ctx.parentCtx;
-		if (parentCtx instanceof FormalParameterContext) {
-			return this.collectTerminalNodeToArray({
-				decorated: node.parent.decorated,
-				terminal: VariableDeclaratorIdPostProcessor.FORMAL_PARAMETER_ELLIPSIS
-			});
-		}
-		return [];
-	}
 
 	shouldCountIntoHierarchy(node: HierarchicalNode): boolean {
 		node.decorated.setRole(GroovyParser.RULE_variableDeclaratorId, DecoratedNode.RULE_ROLE);

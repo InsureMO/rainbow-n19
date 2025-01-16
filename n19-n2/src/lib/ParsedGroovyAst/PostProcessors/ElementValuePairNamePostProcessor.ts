@@ -12,7 +12,7 @@ type TerminalNodePairForElementValuePair = [TerminalNodeGetFromElementValuePair,
 /**
  * could be child of element value pair.<br>
  * <br>
- * 1. find and put a "=" node after itself.
+ * 1. find and put a "=" node after me.
  */
 export class ElementValuePairNamePostProcessor extends PostNodeProcessorAdapter<ElementValuePairNameContext> {
 	private static ASSIGN: TerminalNodePairForElementValuePair = [(ctx: ElementValuePairContext) => ctx.ASSIGN(), GroovyParser.ASSIGN];
