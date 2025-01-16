@@ -18,8 +18,8 @@ type TerminalNodePair = [TerminalNodeGet, SymbolIndex];
  * 5. type arguments or diamond.<br>
  * doing:<br>
  * 1. put me as a container node,<br>
- * 2. put a "<" node as my first child,<br>
- * 3. put a ">" node as my last child.
+ * 2. find and put a "<" node as my first child,<br>
+ * 3. find and put a ">" node as my last child.
  */
 export class TypeArgumentsPostProcessor extends PostNodeProcessorAdapter<TypeArgumentsContext> {
 	private static LT: TerminalNodePair = [(ctx) => ctx.LT(), GroovyParser.LT];

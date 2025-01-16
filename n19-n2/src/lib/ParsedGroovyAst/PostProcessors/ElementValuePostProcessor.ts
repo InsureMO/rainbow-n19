@@ -20,7 +20,7 @@ type TerminalNodePairForElementValueArrayInitializer = [TerminalNodeGetFromEleme
  * 3. method declaration,<br>
  * 4. element values.<br>
  * doing:<br>
- * 1. put a "," node before itself, when parent is element value array initializer and itself is not the first element value of parent.
+ * 1. find and put a "," node after me, when parent is element value array initializer.
  */
 export class ElementValuePostProcessor extends PostNodeProcessorAdapter<ElementValueContext> {
 	private static COMMA: TerminalNodePairForElementValueArrayInitializer = [(ctx, index) => ctx.COMMA(index), GroovyParser.COMMA];

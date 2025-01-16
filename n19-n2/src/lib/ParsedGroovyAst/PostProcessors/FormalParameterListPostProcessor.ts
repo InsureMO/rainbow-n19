@@ -20,9 +20,15 @@ export class FormalParameterListPostProcessor extends PostNodeProcessorAdapter<F
 	private static ARROW: TerminalNodePairForClosure = [(ctx) => ctx.ARROW(), GroovyParser.ARROW];
 
 	collectAfterExit(node: HierarchicalNode): Array<DecoratedNode> {
-		return this.collectTerminalNodeToArray({
-			decorated: node.parent.decorated,
-			terminal: FormalParameterListPostProcessor.ARROW
-		});
+		const decorated = node.decorated;
+		const ctx = decorated.parsed.groovyParserRuleContext as FormalParameterListContext;
+		const parentCtx = ctx.parentCtx;
+		if (parentCtx instanceof ClosureContext) {
+			return this.collectTerminalNodeToArray({
+				decorated: node.parent.decorated,
+				terminal: FormalParameterListPostProcessor.ARROW
+			});
+		}
+		return [];
 	}
 }

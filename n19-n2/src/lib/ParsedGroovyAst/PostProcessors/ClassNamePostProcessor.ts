@@ -23,8 +23,8 @@ type TerminalNodePairForQualifiedStandardClassName = [TerminalNodeGetFromQualifi
  * 1. type parameter,<br>
  * 2. qualified standard class name
  * doing:<br>
- * 1. put an "extends" node before itself, when parent is type parameter,<br>
- * 2. put a "." node after itself, when parent is qualified standard class name.
+ * 1. find and put an "EXTENDS" node after me, when parent is type parameter,<br>
+ * 2. find and put a "." node after me, when parent is qualified standard class name.
  */
 export class ClassNamePostProcessor extends PostNodeProcessorAdapter<ClassNameContext> {
 	private static CapitalizedIdentifier: TerminalNodePair = [(ctx) => ctx.CapitalizedIdentifier(), GroovyParser.CapitalizedIdentifier];

@@ -12,7 +12,7 @@ type TerminalNodePairForMethodDeclaration = [TerminalNodeGetFromMethodDeclaratio
 /**
  * could be child of method declaration.<br>
  * doing:<br>
- * 1. put a "THROWS" node in front of me.
+ * 1. find and put a "THROWS" node in front of me.
  */
 export class QualifiedClassNameListPostProcessor extends PostNodeProcessorAdapter<QualifiedClassNameListContext> {
 	private static THROWS: TerminalNodePairForMethodDeclaration = [(ctx) => ctx.THROWS(), GroovyParser.THROWS];

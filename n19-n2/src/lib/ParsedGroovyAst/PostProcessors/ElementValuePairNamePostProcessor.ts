@@ -6,16 +6,16 @@ import {HierarchicalNode} from '../HierarchicalNode';
 import {SymbolIndex} from '../Types';
 import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
 
-type TerminalNodeGet = (ctx: ElementValuePairContext) => Optional<TerminalNode>;
-type TerminalNodePair = [TerminalNodeGet, SymbolIndex];
+type TerminalNodeGetFromElementValuePair = (ctx: ElementValuePairContext) => Optional<TerminalNode>;
+type TerminalNodePairForElementValuePair = [TerminalNodeGetFromElementValuePair, SymbolIndex];
 
 /**
  * could be child of element value pair.<br>
  * <br>
- * 1. put a "=" node after itself.
+ * 1. find and put a "=" node after itself.
  */
 export class ElementValuePairNamePostProcessor extends PostNodeProcessorAdapter<ElementValuePairNameContext> {
-	private static ASSIGN: TerminalNodePair = [(ctx: ElementValuePairContext) => ctx.ASSIGN(), GroovyParser.ASSIGN];
+	private static ASSIGN: TerminalNodePairForElementValuePair = [(ctx: ElementValuePairContext) => ctx.ASSIGN(), GroovyParser.ASSIGN];
 
 	collectAfterExit(node: HierarchicalNode): Array<DecoratedNode> {
 		return this.collectTerminalNodeToArray({

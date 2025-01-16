@@ -18,8 +18,8 @@ type TerminalNodePair = [TerminalNodeGet, SymbolIndex];
  * 5. command primary.<br>
  * doing:<br>
  * 1. put me as a container node,<br>
- * 2. put a '"' node as my first child,<br>
- * 3. put a '"' node as my last child.
+ * 2. find and put a '"' node as my first child,<br>
+ * 3. find and put a '"' node as my last child.
  */
 export class GstringPostProcessor extends PostNodeProcessorAdapter<GstringContext> {
 	private static GStringBegin: TerminalNodePair = [(ctx) => ctx.GStringBegin(), GroovyParser.GStringBegin];

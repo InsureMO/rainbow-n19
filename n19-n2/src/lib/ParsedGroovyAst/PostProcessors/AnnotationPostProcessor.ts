@@ -17,7 +17,7 @@ type TerminalNodePair = [TerminalNodeGet, SymbolIndex];
  * 4. element value.<br>
  * doing:<br>
  * 1. put me as a container node,<br>
- * 2. put a "@" node as its first child.
+ * 2. find and put a "@" node as its first child.
  */
 export class AnnotationPostProcessor extends PostNodeProcessorAdapter<AnnotationContext> {
 	private static AT: TerminalNodePair = [(ctx) => ctx.AT(), GroovyParser.AT];

@@ -13,7 +13,7 @@ type TerminalNodePairForTypeParameters = [TerminalNodeGetFromTypeParameters, Sym
  * could be child of type parameters.<br>
  * doing:<br>
  * 1. put me as a container node,<br>
- * 2. put a "," node after itself, when next is a comma node.
+ * 2. find and put a "," node after me, when next is a comma node.
  */
 export class TypeParameterPostProcessor extends PostNodeProcessorAdapter<TypeParameterContext> {
 	private static COMMA: TerminalNodePairForTypeParameters = [(ctx, index) => ctx.COMMA(index), GroovyParser.COMMA];

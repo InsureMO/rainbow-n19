@@ -15,8 +15,8 @@ type TerminalNodePair = [TerminalNodeGet, SymbolIndex];
  * 2. anonymous inner class declaration.<br>
  * doing:<br>
  * 1. put me as a container node,<br>
- * 2. put a "{" node as first child of me,<br>
- * 3. put a "}" node as last child of me.
+ * 2. find and put a "{" node as first child of me,<br>
+ * 3. find and put a "}" node as last child of me.
  */
 export class ClassBodyPostProcessor extends PostNodeProcessorAdapter<ClassBodyContext> {
 	private static LBRACE: TerminalNodePair = [(ctx) => ctx.LBRACE(), GroovyParser.LBRACE];

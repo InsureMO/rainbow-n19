@@ -12,8 +12,8 @@ type TerminalNodePairForElementValuePairs = [TerminalNodeGetFromElementValuePair
 /**
  * could be child of element value pairs.<br>
  * doing:<br>
- * 1. put a "," node before itself, when itself is not the first child of parent,<br>
- * 2. put me as a container node,<br>
+ * 1. put me as a container node,<br>
+ * 2. find and put a "," node after me.
  */
 export class ElementValuePairPostProcessor extends PostNodeProcessorAdapter<ElementValuePairContext> {
 	private static COMMA: TerminalNodePairForElementValuePairs = [(ctx, index) => ctx.COMMA(index), GroovyParser.COMMA];

@@ -24,8 +24,8 @@ type TerminalNodePairForQualifiedName = [TerminalNodeGetFromQualifiedName, Symbo
  * 2. qualified name elements.<br>
  * doing:<br>
  * 1. put me as a node, when it doesn't have an identifier,<br>
- * 2. put a "." node before itself, when parent is qualified name,<br>
- * 3. put a "." node after itself, when parent is qualified name elements.
+ * 2. find and put a "." node after me, when parent is qualified name,<br>
+ * 3. find and put a "." node after me, when parent is qualified name elements.
  */
 export class QualifiedNameElementPostProcessor extends PostNodeProcessorAdapter<QualifiedNameElementContext> {
 	private static DEF: TerminalNodePair = [(ctx) => ctx.DEF(), GroovyParser.DEF];

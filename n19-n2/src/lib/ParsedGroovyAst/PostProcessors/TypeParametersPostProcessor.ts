@@ -15,8 +15,8 @@ type TerminalNodePair = [TerminalNodeGet, SymbolIndex];
  * 2. method declaration.<br>
  * doing:<br>
  * 1. put me as a container node,<br>
- * 2. put a "<" node as my first child,<br>
- * 3. put a ">" node as my last child.<br>
+ * 2. find and put a "<" node as my first child,<br>
+ * 3. find and put a ">" node as my last child.<br>
  */
 export class TypeParametersPostProcessor extends PostNodeProcessorAdapter<TypeParametersContext> {
 	private static LT: TerminalNodePair = [(ctx: TypeParametersContext) => ctx.LT(), GroovyParser.LT];

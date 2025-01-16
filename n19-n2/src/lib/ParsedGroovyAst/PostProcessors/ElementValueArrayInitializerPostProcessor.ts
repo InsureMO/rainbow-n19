@@ -13,9 +13,8 @@ type TerminalNodePair = [TerminalNodeGet, SymbolIndex];
  * could be child of element value.<br>
  * doing:<br>
  * 1. put me as a container node,<br>
- * 2. put a "[" node as its first child,<br>
- * 3. put a "," node before "]" node, when there is a comma tailing,<br>
- * 4. put a "]" node as its last child.
+ * 2. find and put a "[" node as its first child,<br>
+ * 3. find and put a "]" node as its last child.
  */
 export class ElementValueArrayInitializerPostProcessor extends PostNodeProcessorAdapter<ElementValueArrayInitializerContext> {
 	private static LBRACK: TerminalNodePair = [(ctx) => ctx.LBRACK(), GroovyParser.LBRACK];

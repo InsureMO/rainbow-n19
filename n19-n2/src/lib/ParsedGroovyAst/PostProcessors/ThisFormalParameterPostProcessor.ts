@@ -13,7 +13,7 @@ type TerminalNodePair = [TerminalNodeGet, SymbolIndex];
  * could be child of formal parameter list.<br>
  * doing:<br>
  * 1. put me as a container node,<br>
- * 2. put a "THIS" node as my last child,<br>
+ * 2. find and put a "THIS" node as my last child,<br>
  * 3. find and put a "," node after me.
  */
 export class ThisFormalParameterPostProcessor extends PostNodeProcessorAdapter<ThisFormalParameterContext> {
