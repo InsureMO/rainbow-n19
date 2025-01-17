@@ -15,12 +15,12 @@ type TerminalNodePairForAnnotation = [TerminalNodeGetFromAnnotation, SymbolIndex
  * 1. find and put a "(" node after me.
  */
 export class AnnotationNamePostProcessor extends PostNodeProcessorAdapter<AnnotationNameContext> {
-	private static LPAREN: TerminalNodePairForAnnotation = [(ctx) => ctx.LPAREN(), GroovyParser.LPAREN];
+	private static ANNOTATION__LPAREN: TerminalNodePairForAnnotation = [(ctx) => ctx.LPAREN(), GroovyParser.LPAREN];
 
 	collectAfterExit(node: HierarchicalNode): Array<DecoratedNode> {
 		return this.collectTerminalNodeToArray({
 			decorated: node.parent.decorated,
-			terminal: AnnotationNamePostProcessor.LPAREN
+			terminal: AnnotationNamePostProcessor.ANNOTATION__LPAREN
 		});
 	}
 }

@@ -18,7 +18,7 @@ type TerminalNodePairForVariableInitializers = [TerminalNodeGetFromVariableIniti
  * 1. find and put a "," node after me, when parent is variable initializers.
  */
 export class VariableInitializerPostProcessor extends PostNodeProcessorAdapter<VariableInitializerContext> {
-	private static COMMA: TerminalNodePairForVariableInitializers = [(ctx, index) => ctx.COMMA(index), GroovyParser.COMMA];
+	private static VARIABLE_INITIALIZERS__COMMA: TerminalNodePairForVariableInitializers = [(ctx, index) => ctx.COMMA(index), GroovyParser.COMMA];
 
 	collectAfterExit(node: HierarchicalNode): Array<DecoratedNode> {
 		const decorated = node.decorated;
@@ -29,7 +29,7 @@ export class VariableInitializerPostProcessor extends PostNodeProcessorAdapter<V
 				decorated,
 				siblings: (ctx: VariableInitializersContext) => ctx.variableInitializer_list(),
 				indexOffset: 0,
-				terminal: VariableInitializerPostProcessor.COMMA,
+				terminal: VariableInitializerPostProcessor.VARIABLE_INITIALIZERS__COMMA,
 				parentDecorated: node.parent.decorated
 			});
 		}

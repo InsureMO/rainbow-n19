@@ -22,7 +22,7 @@ type TerminalNodePairForCatchType = [TerminalNodeGetFromCatchType, SymbolIndex];
  * 2. find and put a "|" node after me, when parent is catch type.
  */
 export class QualifiedClassNamePostProcessor extends PostNodeProcessorAdapter<QualifiedClassNameContext> {
-	private static BITOR: TerminalNodePairForCatchType = [(ctx, index) => ctx.BITOR(index), GroovyParser.BITOR];
+	private static CATCH_TYPE__BITOR: TerminalNodePairForCatchType = [(ctx, index) => ctx.BITOR(index), GroovyParser.BITOR];
 
 	shouldCountIntoHierarchy(node: HierarchicalNode): boolean {
 		node.decorated.setRole(GroovyParser.RULE_qualifiedClassName, DecoratedNode.RULE_ROLE);
@@ -38,7 +38,7 @@ export class QualifiedClassNamePostProcessor extends PostNodeProcessorAdapter<Qu
 				decorated,
 				siblings: (ctx: CatchTypeContext) => ctx.qualifiedClassName_list(),
 				indexOffset: 0,
-				terminal: QualifiedClassNamePostProcessor.BITOR,
+				terminal: QualifiedClassNamePostProcessor.CATCH_TYPE__BITOR,
 				parentDecorated: node.parent.decorated
 			});
 		}

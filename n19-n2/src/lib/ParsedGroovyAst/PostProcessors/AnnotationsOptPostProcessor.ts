@@ -53,24 +53,24 @@ type TerminalNodePairForDim = [TerminalNodeGetFromDim, SymbolIndex];
  * 9. find and put a "[" node after me, when parent is dim.
  */
 export class AnnotationsOptPostProcessor extends PostNodeProcessorAdapter<AnnotationsOptContext> {
-	private static PACKAGE_DECLARATION_PACKAGE: TerminalNodePairForPackageDeclaration = [(ctx) => ctx.PACKAGE(), GroovyParser.PACKAGE];
-	private static IMPORT_DECLARATION_IMPORT: TerminalNodePairForImportDeclaration = [(ctx) => ctx.IMPORT(), GroovyParser.IMPORT];
-	private static IMPORT_DECLARATION_STATIC: TerminalNodePairForImportDeclaration = [(ctx) => ctx.STATIC(), GroovyParser.STATIC];
-	private static IMPORT_DECLARATION_TERMINALS = [
-		AnnotationsOptPostProcessor.IMPORT_DECLARATION_IMPORT,
-		AnnotationsOptPostProcessor.IMPORT_DECLARATION_STATIC
+	private static PACKAGE_DECLARATION__PACKAGE: TerminalNodePairForPackageDeclaration = [(ctx) => ctx.PACKAGE(), GroovyParser.PACKAGE];
+	private static IMPORT_DECLARATION__IMPORT: TerminalNodePairForImportDeclaration = [(ctx) => ctx.IMPORT(), GroovyParser.IMPORT];
+	private static IMPORT_DECLARATION__STATIC: TerminalNodePairForImportDeclaration = [(ctx) => ctx.STATIC(), GroovyParser.STATIC];
+	private static IMPORT_DECLARATION__TERMINALS = [
+		AnnotationsOptPostProcessor.IMPORT_DECLARATION__IMPORT,
+		AnnotationsOptPostProcessor.IMPORT_DECLARATION__STATIC
 	];
-	private static EMPTY_DIMS_LBRACK: TerminalNodePairForEmptyDims = [(ctx, index) => ctx.LBRACK(index), GroovyParser.LBRACK];
-	private static EMPTY_DIMS_RBRACK: TerminalNodePairForEmptyDims = [(ctx, index) => ctx.RBRACK(index), GroovyParser.RBRACK];
-	private static TYPE_VOID: TerminalNodePairForType = [(ctx) => ctx.VOID(), GroovyParser.VOID];
-	private static TYPE_ARGUMENT_QUESTION: TerminalNodePairForTypeArgument = [(ctx) => ctx.QUESTION(), GroovyParser.QUESTION];
-	private static TYPE_ARGUMENT_EXTENDS: TerminalNodePairForTypeArgument = [(ctx) => ctx.EXTENDS(), GroovyParser.EXTENDS];
-	private static TYPE_ARGUMENT_SUPER: TerminalNodePairForTypeArgument = [(ctx) => ctx.SUPER(), GroovyParser.SUPER];
-	private static TYPE_ARGUMENT_TERMINALS = [
-		AnnotationsOptPostProcessor.TYPE_ARGUMENT_EXTENDS,
-		AnnotationsOptPostProcessor.TYPE_ARGUMENT_SUPER
+	private static EMPTY_DIMS__LBRACK: TerminalNodePairForEmptyDims = [(ctx, index) => ctx.LBRACK(index), GroovyParser.LBRACK];
+	private static EMPTY_DIMS__RBRACK: TerminalNodePairForEmptyDims = [(ctx, index) => ctx.RBRACK(index), GroovyParser.RBRACK];
+	private static TYPE__VOID: TerminalNodePairForType = [(ctx) => ctx.VOID(), GroovyParser.VOID];
+	private static TYPE_ARGUMENT__QUESTION: TerminalNodePairForTypeArgument = [(ctx) => ctx.QUESTION(), GroovyParser.QUESTION];
+	private static TYPE_ARGUMENT__EXTENDS: TerminalNodePairForTypeArgument = [(ctx) => ctx.EXTENDS(), GroovyParser.EXTENDS];
+	private static TYPE_ARGUMENT__SUPER: TerminalNodePairForTypeArgument = [(ctx) => ctx.SUPER(), GroovyParser.SUPER];
+	private static TYPE_ARGUMENT__TERMINALS = [
+		AnnotationsOptPostProcessor.TYPE_ARGUMENT__EXTENDS,
+		AnnotationsOptPostProcessor.TYPE_ARGUMENT__SUPER
 	];
-	private static DIM_LBRACK: TerminalNodePairForDim = [(ctx) => ctx.LBRACK(), GroovyParser.LBRACK];
+	private static DIM__LBRACK: TerminalNodePairForDim = [(ctx) => ctx.LBRACK(), GroovyParser.LBRACK];
 
 	collectAfterExit(node: HierarchicalNode): Array<DecoratedNode> {
 		const decorated = node.decorated;
@@ -79,12 +79,12 @@ export class AnnotationsOptPostProcessor extends PostNodeProcessorAdapter<Annota
 		if (parentCtx instanceof PackageDeclarationContext) {
 			return this.collectTerminalNodeToArray({
 				decorated: node.parent.decorated,
-				terminal: AnnotationsOptPostProcessor.PACKAGE_DECLARATION_PACKAGE
+				terminal: AnnotationsOptPostProcessor.PACKAGE_DECLARATION__PACKAGE
 			});
 		} else if (parentCtx instanceof ImportDeclarationContext) {
 			return this.collectTerminalNodes({
 				decorated: node.parent.decorated,
-				terminals: AnnotationsOptPostProcessor.IMPORT_DECLARATION_TERMINALS,
+				terminals: AnnotationsOptPostProcessor.IMPORT_DECLARATION__TERMINALS,
 				firstOnly: false
 			});
 		} else if (parentCtx instanceof EmptyDimsContext) {
@@ -93,7 +93,7 @@ export class AnnotationsOptPostProcessor extends PostNodeProcessorAdapter<Annota
 				decorated,
 				siblings: (ctx: EmptyDimsContext) => ctx.annotationsOpt_list(),
 				indexOffset: 0,
-				terminal: AnnotationsOptPostProcessor.EMPTY_DIMS_LBRACK,
+				terminal: AnnotationsOptPostProcessor.EMPTY_DIMS__LBRACK,
 				parentDecorated: node.parent.decorated
 			});
 			if (lbrackNode != null) {
@@ -103,7 +103,7 @@ export class AnnotationsOptPostProcessor extends PostNodeProcessorAdapter<Annota
 				decorated,
 				siblings: (ctx: EmptyDimsContext) => ctx.annotationsOpt_list(),
 				indexOffset: 0,
-				terminal: AnnotationsOptPostProcessor.EMPTY_DIMS_RBRACK,
+				terminal: AnnotationsOptPostProcessor.EMPTY_DIMS__RBRACK,
 				parentDecorated: node.parent.decorated
 			});
 			if (rbrackNode != null) {
@@ -113,20 +113,20 @@ export class AnnotationsOptPostProcessor extends PostNodeProcessorAdapter<Annota
 		} else if (parentCtx instanceof TypeContext) {
 			return this.collectTerminalNodeToArray({
 				decorated: node.parent.decorated,
-				terminal: AnnotationsOptPostProcessor.TYPE_VOID
+				terminal: AnnotationsOptPostProcessor.TYPE__VOID
 			});
 		} else if (parentCtx instanceof TypeArgumentContext) {
 			const nodes: Array<DecoratedNode> = [];
 			const questionNode = this.collectTerminalNode({
 				decorated: node.parent.decorated,
-				terminal: AnnotationsOptPostProcessor.TYPE_ARGUMENT_QUESTION
+				terminal: AnnotationsOptPostProcessor.TYPE_ARGUMENT__QUESTION
 			});
 			if (questionNode != null) {
 				nodes.push(questionNode);
 			}
 			const extendsOrSuperNode = this.collectTerminalNodes({
 				decorated: node.parent.decorated,
-				terminals: AnnotationsOptPostProcessor.TYPE_ARGUMENT_TERMINALS,
+				terminals: AnnotationsOptPostProcessor.TYPE_ARGUMENT__TERMINALS,
 				firstOnly: true
 			});
 			nodes.push(...extendsOrSuperNode);
@@ -134,7 +134,7 @@ export class AnnotationsOptPostProcessor extends PostNodeProcessorAdapter<Annota
 		} else if (parentCtx instanceof DimContext) {
 			return this.collectTerminalNodeToArray({
 				decorated: node.parent.decorated,
-				terminal: AnnotationsOptPostProcessor.DIM_LBRACK
+				terminal: AnnotationsOptPostProcessor.DIM__LBRACK
 			});
 		}
 		return [];

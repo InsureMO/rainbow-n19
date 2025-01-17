@@ -21,7 +21,7 @@ type TerminalNodePairForTypeArguments = [TerminalNodeGetFromTypeArguments, Symbo
  * 2. find and put a "," node after me.
  */
 export class TypeArgumentPostProcessor extends PostNodeProcessorAdapter<TypeArgumentContext> {
-	private static COMMA: TerminalNodePairForTypeArguments = [(ctx, index) => ctx.COMMA(index), GroovyParser.COMMA];
+	private static TYPE_ARGUMENTS__COMMA: TerminalNodePairForTypeArguments = [(ctx, index) => ctx.COMMA(index), GroovyParser.COMMA];
 
 	shouldCountIntoHierarchy(node: HierarchicalNode): boolean {
 		node.decorated.setRole(GroovyParser.RULE_typeArgument, DecoratedNode.RULE_ROLE);
@@ -34,7 +34,7 @@ export class TypeArgumentPostProcessor extends PostNodeProcessorAdapter<TypeArgu
 			decorated,
 			siblings: (ctx: TypeParametersContext) => ctx.typeParameter_list(),
 			indexOffset: 0,
-			terminal: TypeArgumentPostProcessor.COMMA,
+			terminal: TypeArgumentPostProcessor.TYPE_ARGUMENTS__COMMA,
 			parentDecorated: node.parent.decorated
 		});
 	}

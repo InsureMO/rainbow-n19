@@ -33,11 +33,11 @@ type TerminalNodePairForMethodDeclaration = [TerminalNodeGetFromMethodDeclaratio
  */
 export class FormalParametersPostProcessor extends ForTypeListUnderClassDeclarationPostProcessor<FormalParametersContext> {
 	private static LPAREN: TerminalNodePair = [(ctx) => ctx.LPAREN(), GroovyParser.LPAREN];
-	private static METHOD_DECLARATION_DEFAULT: TerminalNodePairForMethodDeclaration = [(ctx) => ctx.DEFAULT(), GroovyParser.DEFAULT];
-	private static METHOD_DECLARATION_THROWS: TerminalNodePairForMethodDeclaration = [(ctx) => ctx.THROWS(), GroovyParser.THROWS];
-	private static METHOD_DECLARATION_TERMINALS = [
-		FormalParametersPostProcessor.METHOD_DECLARATION_DEFAULT,
-		FormalParametersPostProcessor.METHOD_DECLARATION_THROWS
+	private static METHOD_DECLARATION__DEFAULT: TerminalNodePairForMethodDeclaration = [(ctx) => ctx.DEFAULT(), GroovyParser.DEFAULT];
+	private static METHOD_DECLARATION__THROWS: TerminalNodePairForMethodDeclaration = [(ctx) => ctx.THROWS(), GroovyParser.THROWS];
+	private static METHOD_DECLARATION__TERMINALS = [
+		FormalParametersPostProcessor.METHOD_DECLARATION__DEFAULT,
+		FormalParametersPostProcessor.METHOD_DECLARATION__THROWS
 	];
 
 	shouldCountIntoHierarchy(node: HierarchicalNode): boolean {
@@ -59,7 +59,7 @@ export class FormalParametersPostProcessor extends ForTypeListUnderClassDeclarat
 		if (parentCtx instanceof MethodDeclarationContext) {
 			return this.collectTerminalNodes({
 				decorated: node.parent.decorated,
-				terminals: FormalParametersPostProcessor.METHOD_DECLARATION_TERMINALS,
+				terminals: FormalParametersPostProcessor.METHOD_DECLARATION__TERMINALS,
 				firstOnly: true
 			});
 		} else if (parentCtx instanceof ClassDeclarationContext) {

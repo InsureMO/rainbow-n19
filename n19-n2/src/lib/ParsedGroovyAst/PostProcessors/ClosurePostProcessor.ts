@@ -15,9 +15,9 @@ type TerminalNodePair = [TerminalNodeGet, SymbolIndex];
  * 2. closure or lambada expression.<br>
  * doing:<br>
  * 1. put me as a container node,<br>
- * 2. find and put a "{" node as first child of me,<br>
+ * 2. find and put a "{" node as my first child of me,<br>
  * 3. find and put a "->" node as next child of me, when formal parameter list not exists,<br>
- * 4. find and put a "}" node as last child of me.
+ * 4. find and put a "}" node as my last child of me.
  */
 export class ClosurePostProcessor extends PostNodeProcessorAdapter<ClosureContext> {
 	private static LBRACE: TerminalNodePair = [(ctx) => ctx.LBRACE(), GroovyParser.LBRACE];

@@ -16,7 +16,7 @@ type TerminalNodePairForElementValuePairs = [TerminalNodeGetFromElementValuePair
  * 2. find and put a "," node after me.
  */
 export class ElementValuePairPostProcessor extends PostNodeProcessorAdapter<ElementValuePairContext> {
-	private static COMMA: TerminalNodePairForElementValuePairs = [(ctx, index) => ctx.COMMA(index), GroovyParser.COMMA];
+	private static ELEMENT_VALUE_PAIRS__COMMA: TerminalNodePairForElementValuePairs = [(ctx, index) => ctx.COMMA(index), GroovyParser.COMMA];
 
 	shouldCountIntoHierarchy(node: HierarchicalNode): boolean {
 		const decorated = node.decorated;
@@ -30,7 +30,7 @@ export class ElementValuePairPostProcessor extends PostNodeProcessorAdapter<Elem
 			decorated,
 			siblings: (ctx: ElementValuePairsContext) => ctx.elementValuePair_list(),
 			indexOffset: 0,
-			terminal: ElementValuePairPostProcessor.COMMA,
+			terminal: ElementValuePairPostProcessor.ELEMENT_VALUE_PAIRS__COMMA,
 			parentDecorated: node.parent.decorated
 		});
 	}

@@ -18,7 +18,7 @@ type TerminalNodePairForFormalParameter = [TerminalNodeGetFromFormalParameter, S
  * 1. find and put a "..." node after me, when parent is formal parameter and next type node not exists.
  */
 export class VariableModifiersOptPostProcessor extends PostNodeProcessorAdapter<VariableModifiersOptContext> {
-	private static FORMAL_PARAMETER_ELLIPSIS: TerminalNodePairForFormalParameter = [(ctx) => ctx.ELLIPSIS(), GroovyParser.ELLIPSIS];
+	private static FORMAL_PARAMETER__ELLIPSIS: TerminalNodePairForFormalParameter = [(ctx) => ctx.ELLIPSIS(), GroovyParser.ELLIPSIS];
 
 	collectAfterExit(node: HierarchicalNode): Array<DecoratedNode> {
 		const decorated = node.decorated;
@@ -28,7 +28,7 @@ export class VariableModifiersOptPostProcessor extends PostNodeProcessorAdapter<
 			if (parentCtx.type_() == null) {
 				return this.collectTerminalNodeToArray({
 					decorated: node.parent.decorated,
-					terminal: VariableModifiersOptPostProcessor.FORMAL_PARAMETER_ELLIPSIS
+					terminal: VariableModifiersOptPostProcessor.FORMAL_PARAMETER__ELLIPSIS
 				});
 			}
 		}

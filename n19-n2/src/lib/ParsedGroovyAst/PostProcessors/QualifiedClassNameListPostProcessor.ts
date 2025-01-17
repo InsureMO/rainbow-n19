@@ -1,11 +1,5 @@
-import {TerminalNode} from 'antlr4';
-import {MethodDeclarationContext, QualifiedClassNameListContext} from '../../OrgApacheGroovyParserAntlr4';
-import {Optional} from '../../TsAddon';
-import {SymbolIndex} from '../Types';
+import {QualifiedClassNameListContext} from '../../OrgApacheGroovyParserAntlr4';
 import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
-
-type TerminalNodeGetFromMethodDeclaration = (ctx: MethodDeclarationContext) => Optional<TerminalNode>;
-type TerminalNodePairForMethodDeclaration = [TerminalNodeGetFromMethodDeclaration, SymbolIndex];
 
 /**
  * could be child of method declaration.<br>

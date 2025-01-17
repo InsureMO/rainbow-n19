@@ -15,9 +15,9 @@ type TerminalNodePair = [TerminalNodeGet, SymbolIndex];
  * 2. member declaration.<br>
  * doing:<br>
  * 1. put me as a container node,<br>
- * 2. find and put a "@" node as first child of me,<br>
- * 3. find and put a "INTERFACE" node as second child of me, when "@" found,<br>
- * 4. find and put one of "CLASS"/"INTERFACE"/"ENUM"/"TRAIT"/"RECORD" node as first child of me, when "@" not found.
+ * 2. find and put a "@" node as my first child,<br>
+ * 3. find and put a "INTERFACE" node as my second child, when "@" exists, or as my first child when "@" not exists,<br>
+ * 4. find and put one of "CLASS"/"INTERFACE"/"ENUM"/"TRAIT"/"RECORD" node as my first child, when "@" not exists.
  */
 export class ClassDeclarationPostProcessor extends PostNodeProcessorAdapter<ClassDeclarationContext> {
 	private static CLASS: TerminalNodePair = [(ctx: ClassDeclarationContext) => ctx.CLASS(), GroovyParser.CLASS];

@@ -23,7 +23,7 @@ type TerminalNodePairForElementValueArrayInitializer = [TerminalNodeGetFromEleme
  * 1. find and put a "," node after me, when parent is element value array initializer.
  */
 export class ElementValuePostProcessor extends PostNodeProcessorAdapter<ElementValueContext> {
-	private static COMMA: TerminalNodePairForElementValueArrayInitializer = [(ctx, index) => ctx.COMMA(index), GroovyParser.COMMA];
+	private static ELEMENT_VALUE_ARRAY_INITIALIZER__COMMA: TerminalNodePairForElementValueArrayInitializer = [(ctx, index) => ctx.COMMA(index), GroovyParser.COMMA];
 
 	collectAfterExit(node: HierarchicalNode): Array<DecoratedNode> {
 		const decorated = node.decorated;
@@ -34,7 +34,7 @@ export class ElementValuePostProcessor extends PostNodeProcessorAdapter<ElementV
 				decorated,
 				siblings: (ctx: ElementValueArrayInitializerContext) => ctx.elementValue_list(),
 				indexOffset: 0,
-				terminal: ElementValuePostProcessor.COMMA,
+				terminal: ElementValuePostProcessor.ELEMENT_VALUE_ARRAY_INITIALIZER__COMMA,
 				parentDecorated: node.parent.decorated
 			});
 		}

@@ -13,7 +13,7 @@ type TerminalNodePair = [TerminalNodeGet, SymbolIndex];
  * could be child of method declaration.<br>
  * doing:<br>
  * 1. put me as a container node,<br>
- * 2. find and put "VOID" as first child of me.
+ * 2. find and put "VOID" as my first child.
  */
 export class ReturnTypePostProcessor extends PostNodeProcessorAdapter<ReturnTypeContext> {
 	private static VOID: TerminalNodePair = [(ctx) => ctx.VOID(), GroovyParser.VOID];

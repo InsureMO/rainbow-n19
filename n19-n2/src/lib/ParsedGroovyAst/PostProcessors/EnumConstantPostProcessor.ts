@@ -16,7 +16,7 @@ type TerminalNodePairForEnumConstants = [TerminalNodeGetFromEnumConstants, Symbo
  * 2. find and put "," node after me.
  */
 export class EnumConstantPostProcessor extends PostNodeProcessorAdapter<EnumConstantContext> {
-	private static COMMA: TerminalNodePairForEnumConstants = [(ctx, index) => ctx.COMMA(index), GroovyParser.COMMA];
+	private static ENUM_CONSTANTS__COMMA: TerminalNodePairForEnumConstants = [(ctx, index) => ctx.COMMA(index), GroovyParser.COMMA];
 
 	collectAfterExit(node: HierarchicalNode): Array<DecoratedNode> {
 		const decorated = node.decorated;
@@ -24,7 +24,7 @@ export class EnumConstantPostProcessor extends PostNodeProcessorAdapter<EnumCons
 			decorated,
 			siblings: (ctx: EnumConstantsContext) => ctx.enumConstant_list(),
 			indexOffset: 0,
-			terminal: EnumConstantPostProcessor.COMMA,
+			terminal: EnumConstantPostProcessor.ENUM_CONSTANTS__COMMA,
 			parentDecorated: node.parent.decorated
 		});
 	}

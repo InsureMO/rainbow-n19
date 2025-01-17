@@ -28,8 +28,8 @@ type TerminalNodePairForQualifiedStandardClassName = [TerminalNodeGetFromQualifi
  */
 export class ClassNamePostProcessor extends PostNodeProcessorAdapter<ClassNameContext> {
 	private static CapitalizedIdentifier: TerminalNodePair = [(ctx) => ctx.CapitalizedIdentifier(), GroovyParser.CapitalizedIdentifier];
-	private static EXTENDS: TerminalNodePairForTypeParameter = [(ctx) => ctx.EXTENDS(), GroovyParser.EXTENDS];
-	private static DOT: TerminalNodePairForQualifiedStandardClassName = [(ctx, index) => ctx.DOT(index), GroovyParser.DOT];
+	private static TYPE_PARAMETER__EXTENDS: TerminalNodePairForTypeParameter = [(ctx) => ctx.EXTENDS(), GroovyParser.EXTENDS];
+	private static QUALIFIED_STANDARD_CLASS_NAME__DOT: TerminalNodePairForQualifiedStandardClassName = [(ctx, index) => ctx.DOT(index), GroovyParser.DOT];
 
 	collectOnEntering(node: HierarchicalNode): Array<DecoratedNode> {
 		return this.collectTerminalNodeToArray({
@@ -45,14 +45,14 @@ export class ClassNamePostProcessor extends PostNodeProcessorAdapter<ClassNameCo
 		if (parentCtx instanceof TypeParameterContext) {
 			return this.collectTerminalNodeToArray({
 				decorated: node.parent.decorated,
-				terminal: ClassNamePostProcessor.EXTENDS
+				terminal: ClassNamePostProcessor.TYPE_PARAMETER__EXTENDS
 			});
 		} else if (parentCtx instanceof QualifiedStandardClassNameContext) {
 			return this.collectTerminalNodeWithIndexToArray({
 				decorated,
 				siblings: (ctx: QualifiedStandardClassNameContext) => ctx.className_list(),
 				indexOffset: 0,
-				terminal: ClassNamePostProcessor.DOT,
+				terminal: ClassNamePostProcessor.QUALIFIED_STANDARD_CLASS_NAME__DOT,
 				parentDecorated: node.parent.decorated
 			});
 		}

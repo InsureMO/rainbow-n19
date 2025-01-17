@@ -15,12 +15,12 @@ type TerminalNodePairForLambdaExpression = [TerminalNodeGetFromLambdaExpression,
  * 1. find and put a "->" node after me.
  */
 export class LambdaParametersPostProcessor extends PostNodeProcessorAdapter<LambdaParametersContext> {
-	private static ARROW: TerminalNodePairForLambdaExpression = [(ctx) => ctx.ARROW(), GroovyParser.ARROW];
+	private static LAMBDA_EXPRESSION__ARROW: TerminalNodePairForLambdaExpression = [(ctx) => ctx.ARROW(), GroovyParser.ARROW];
 
 	collectAfterExit(node: HierarchicalNode): Array<DecoratedNode> {
 		return this.collectTerminalNodeToArray({
 			decorated: node.parent.decorated,
-			terminal: LambdaParametersPostProcessor.ARROW
+			terminal: LambdaParametersPostProcessor.LAMBDA_EXPRESSION__ARROW
 		});
 	}
 }

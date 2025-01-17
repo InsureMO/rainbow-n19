@@ -16,7 +16,7 @@ type TerminalNodePairForFormalParameterList = [TerminalNodeGetFromFormalParamete
  * 2. find and put a "," node after me.
  */
 export class FormalParameterPostProcessor extends PostNodeProcessorAdapter<FormalParameterContext> {
-	private static COMMA: TerminalNodePairForFormalParameterList = [(ctx, index) => ctx.COMMA(index), GroovyParser.COMMA];
+	private static FORMAL_PARAMETER_LIST__COMMA: TerminalNodePairForFormalParameterList = [(ctx, index) => ctx.COMMA(index), GroovyParser.COMMA];
 
 	shouldCountIntoHierarchy(node: HierarchicalNode): boolean {
 		node.decorated.setRole(GroovyParser.RULE_formalParameter, DecoratedNode.RULE_ROLE);
@@ -34,7 +34,7 @@ export class FormalParameterPostProcessor extends PostNodeProcessorAdapter<Forma
 			decorated,
 			siblings: (ctx: FormalParameterListContext) => ctx.formalParameter_list(),
 			indexOffset: thisFormalParameterExists ? 1 : 0,
-			terminal: FormalParameterPostProcessor.COMMA,
+			terminal: FormalParameterPostProcessor.FORMAL_PARAMETER_LIST__COMMA,
 			parentDecorated: node.parent.decorated
 		});
 	}

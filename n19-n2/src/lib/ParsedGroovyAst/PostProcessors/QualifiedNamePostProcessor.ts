@@ -23,7 +23,7 @@ export class QualifiedNamePostProcessor extends PostNodeProcessorAdapter<Qualifi
 	private static DOT: TerminalNodePair = [(ctx: ImportDeclarationContext) => ctx.DOT(), GroovyParser.DOT];
 	private static MUL: TerminalNodePair = [(ctx: ImportDeclarationContext) => ctx.MUL(), GroovyParser.MUL];
 	private static AS: TerminalNodePair = [(ctx: ImportDeclarationContext) => ctx.AS(), GroovyParser.AS];
-	private static IMPORT_TERMINALS = [
+	private static IMPORT__TERMINALS = [
 		QualifiedNamePostProcessor.DOT,
 		QualifiedNamePostProcessor.MUL,
 		QualifiedNamePostProcessor.AS
@@ -42,7 +42,7 @@ export class QualifiedNamePostProcessor extends PostNodeProcessorAdapter<Qualifi
 		if (parentCtx instanceof ImportDeclarationContext) {
 			return this.collectTerminalNodes({
 				decorated: node.parent.decorated,
-				terminals: QualifiedNamePostProcessor.IMPORT_TERMINALS,
+				terminals: QualifiedNamePostProcessor.IMPORT__TERMINALS,
 				firstOnly: false
 			});
 		}

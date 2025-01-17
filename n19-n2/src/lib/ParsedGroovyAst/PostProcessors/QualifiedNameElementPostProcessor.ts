@@ -39,10 +39,10 @@ export class QualifiedNameElementPostProcessor extends PostNodeProcessorAdapter<
 		QualifiedNameElementPostProcessor.TRAIT
 	];
 	private static IGNORE_TERMINAL_CHECK = (ctx: QualifiedNameElementContext) => ctx.identifier() != null;
-	private static QUALIFIED_NAME_ELEMENTS_DOT: TerminalNodePairForQualifiedNameElements = [
+	private static QUALIFIED_NAME_ELEMENTS__DOT: TerminalNodePairForQualifiedNameElements = [
 		(ctx, index) => ctx.DOT(index), GroovyParser.DOT
 	];
-	private static QUALIFIED_NAME_DOT: TerminalNodePairForQualifiedName = [
+	private static QUALIFIED_NAME__DOT: TerminalNodePairForQualifiedName = [
 		(ctx, index) => ctx.DOT(index), GroovyParser.DOT
 	];
 
@@ -65,7 +65,7 @@ export class QualifiedNameElementPostProcessor extends PostNodeProcessorAdapter<
 				decorated,
 				siblings: (ctx: QualifiedNameElementsContext) => ctx.qualifiedNameElement_list(),
 				indexOffset: 0,
-				terminal: QualifiedNameElementPostProcessor.QUALIFIED_NAME_ELEMENTS_DOT,
+				terminal: QualifiedNameElementPostProcessor.QUALIFIED_NAME_ELEMENTS__DOT,
 				parentDecorated: node.parent.decorated
 			});
 		} else if (parentCtx instanceof QualifiedNameContext) {
@@ -73,7 +73,7 @@ export class QualifiedNameElementPostProcessor extends PostNodeProcessorAdapter<
 				decorated,
 				siblings: (ctx: QualifiedNameContext) => ctx.qualifiedNameElement_list(),
 				indexOffset: 0,
-				terminal: QualifiedNameElementPostProcessor.QUALIFIED_NAME_DOT,
+				terminal: QualifiedNameElementPostProcessor.QUALIFIED_NAME__DOT,
 				parentDecorated: node.parent.decorated
 			});
 		}

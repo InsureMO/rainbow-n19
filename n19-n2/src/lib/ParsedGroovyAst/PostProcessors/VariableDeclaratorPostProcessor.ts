@@ -16,7 +16,7 @@ type TerminalNodePairForVariableDeclarators = [TerminalNodeGetFromVariableDeclar
  * 2. find and put a "," node after me.
  */
 export class VariableDeclaratorPostProcessor extends PostNodeProcessorAdapter<VariableDeclaratorContext> {
-	private static COMMA: TerminalNodePairForVariableDeclarators = [(ctx, index) => ctx.COMMA(index), GroovyParser.COMMA];
+	private static VARIABLE_DECLARATORS__COMMA: TerminalNodePairForVariableDeclarators = [(ctx, index) => ctx.COMMA(index), GroovyParser.COMMA];
 
 	shouldCountIntoHierarchy(node: HierarchicalNode): boolean {
 		node.decorated.setRole(GroovyParser.RULE_variableDeclarator, DecoratedNode.RULE_ROLE);
@@ -32,7 +32,7 @@ export class VariableDeclaratorPostProcessor extends PostNodeProcessorAdapter<Va
 				decorated,
 				siblings: (ctx: VariableDeclaratorsContext) => ctx.variableDeclarator_list(),
 				indexOffset: 0,
-				terminal: VariableDeclaratorPostProcessor.COMMA,
+				terminal: VariableDeclaratorPostProcessor.VARIABLE_DECLARATORS__COMMA,
 				parentDecorated: node.parent.decorated
 			});
 		}

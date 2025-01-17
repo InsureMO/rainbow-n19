@@ -17,7 +17,7 @@ type TerminalNodePairForClosure = [TerminalNodeGetFromClosure, SymbolIndex];
  * 1. find and put a "->" node after me, when parent is closure.
  */
 export class FormalParameterListPostProcessor extends PostNodeProcessorAdapter<FormalParameterListContext> {
-	private static ARROW: TerminalNodePairForClosure = [(ctx) => ctx.ARROW(), GroovyParser.ARROW];
+	private static CLOSURE__ARROW: TerminalNodePairForClosure = [(ctx) => ctx.ARROW(), GroovyParser.ARROW];
 
 	collectAfterExit(node: HierarchicalNode): Array<DecoratedNode> {
 		const decorated = node.decorated;
@@ -26,7 +26,7 @@ export class FormalParameterListPostProcessor extends PostNodeProcessorAdapter<F
 		if (parentCtx instanceof ClosureContext) {
 			return this.collectTerminalNodeToArray({
 				decorated: node.parent.decorated,
-				terminal: FormalParameterListPostProcessor.ARROW
+				terminal: FormalParameterListPostProcessor.CLOSURE__ARROW
 			});
 		}
 		return [];

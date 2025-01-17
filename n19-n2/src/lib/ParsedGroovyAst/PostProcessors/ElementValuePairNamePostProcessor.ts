@@ -15,12 +15,12 @@ type TerminalNodePairForElementValuePair = [TerminalNodeGetFromElementValuePair,
  * 1. find and put a "=" node after me.
  */
 export class ElementValuePairNamePostProcessor extends PostNodeProcessorAdapter<ElementValuePairNameContext> {
-	private static ASSIGN: TerminalNodePairForElementValuePair = [(ctx: ElementValuePairContext) => ctx.ASSIGN(), GroovyParser.ASSIGN];
+	private static ELEMENT_VALUE_PAIR__ASSIGN: TerminalNodePairForElementValuePair = [(ctx: ElementValuePairContext) => ctx.ASSIGN(), GroovyParser.ASSIGN];
 
 	collectAfterExit(node: HierarchicalNode): Array<DecoratedNode> {
 		return this.collectTerminalNodeToArray({
 			decorated: node.parent.decorated,
-			terminal: ElementValuePairNamePostProcessor.ASSIGN
+			terminal: ElementValuePairNamePostProcessor.ELEMENT_VALUE_PAIR__ASSIGN
 		});
 	}
 }

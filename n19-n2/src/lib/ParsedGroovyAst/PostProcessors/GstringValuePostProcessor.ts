@@ -16,7 +16,7 @@ type TerminalNodePairForGstring = [TerminalNodeGetFromGstring, SymbolIndex];
  * 2. find and put a "$" node after me.
  */
 export class GstringValuePostProcessor extends PostNodeProcessorAdapter<GstringValueContext> {
-	private static GStringPart: TerminalNodePairForGstring = [(ctx, index) => ctx.GStringPart(index), GroovyParser.GStringPart];
+	private static GSTRING__GStringPart: TerminalNodePairForGstring = [(ctx, index) => ctx.GStringPart(index), GroovyParser.GStringPart];
 
 	shouldCountIntoHierarchy(node: HierarchicalNode): boolean {
 		node.decorated.setRole(GroovyParser.RULE_gstringValue, DecoratedNode.RULE_ROLE);
@@ -28,7 +28,7 @@ export class GstringValuePostProcessor extends PostNodeProcessorAdapter<GstringV
 			decorated: node.decorated,
 			siblings: (ctx: GstringContext) => ctx.gstringValue_list(),
 			indexOffset: 0,
-			terminal: GstringValuePostProcessor.GStringPart,
+			terminal: GstringValuePostProcessor.GSTRING__GStringPart,
 			parentDecorated: node.parent.decorated
 		});
 	}

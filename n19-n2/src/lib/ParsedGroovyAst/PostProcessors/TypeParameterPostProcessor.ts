@@ -16,7 +16,7 @@ type TerminalNodePairForTypeParameters = [TerminalNodeGetFromTypeParameters, Sym
  * 2. find and put a "," node after me, when next is a comma node.
  */
 export class TypeParameterPostProcessor extends PostNodeProcessorAdapter<TypeParameterContext> {
-	private static COMMA: TerminalNodePairForTypeParameters = [(ctx, index) => ctx.COMMA(index), GroovyParser.COMMA];
+	private static TYPE_PARAMETERS__COMMA: TerminalNodePairForTypeParameters = [(ctx, index) => ctx.COMMA(index), GroovyParser.COMMA];
 
 	shouldCountIntoHierarchy(node: HierarchicalNode): boolean {
 		node.decorated.setRole(GroovyParser.RULE_typeParameter, DecoratedNode.RULE_ROLE);
@@ -29,7 +29,7 @@ export class TypeParameterPostProcessor extends PostNodeProcessorAdapter<TypePar
 			decorated,
 			siblings: (ctx: TypeParametersContext) => ctx.typeParameter_list(),
 			indexOffset: 0,
-			terminal: TypeParameterPostProcessor.COMMA,
+			terminal: TypeParameterPostProcessor.TYPE_PARAMETERS__COMMA,
 			parentDecorated: node.parent.decorated
 		});
 	}

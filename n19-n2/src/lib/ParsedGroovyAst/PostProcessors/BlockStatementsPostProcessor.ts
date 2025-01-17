@@ -8,12 +8,8 @@ import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
  * 1. block statements opt,<br>
  * 2. switch block statement group,<br>
  * 3. switch block statement expression group.<br>
- * doing:<br>
- * 1. put me as a container node.
+ * <br>
+ * nothing needs to proceed on this level.
  */
 export class BlockStatementsPostProcessor extends PostNodeProcessorAdapter<BlockStatementsContext> {
-	shouldCountIntoHierarchy(node: HierarchicalNode): boolean {
-		node.decorated.setRole(GroovyParser.RULE_blockStatements, DecoratedNode.RULE_ROLE);
-		return true;
-	}
 }

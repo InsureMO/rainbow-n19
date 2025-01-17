@@ -29,8 +29,8 @@ type TerminalNodePairForTypeList = [TerminalNodeGetFromTypeList, SymbolIndex];
  * 3. find and put a "," node after me, when parent is type list,<br>
  */
 export class TypePostProcessor extends PostNodeProcessorAdapter<TypeContext> {
-	private static TYPE_BOUND_BITAND: TerminalNodePairForTypeBound = [(ctx, index) => ctx.BITAND(index), GroovyParser.BITAND];
-	private static TYPE_LIST_COMMA: TerminalNodePairForTypeList = [(ctx, index) => ctx.COMMA(index), GroovyParser.COMMA];
+	private static TYPE_BOUND__BITAND: TerminalNodePairForTypeBound = [(ctx, index) => ctx.BITAND(index), GroovyParser.BITAND];
+	private static TYPE_LIST__COMMA: TerminalNodePairForTypeList = [(ctx, index) => ctx.COMMA(index), GroovyParser.COMMA];
 
 	shouldCountIntoHierarchy(node: HierarchicalNode): boolean {
 		node.decorated.setRole(GroovyParser.RULE_type, DecoratedNode.RULE_ROLE);
@@ -46,7 +46,7 @@ export class TypePostProcessor extends PostNodeProcessorAdapter<TypeContext> {
 				decorated,
 				siblings: (ctx: TypeBoundContext) => ctx.type__list(),
 				indexOffset: 0,
-				terminal: TypePostProcessor.TYPE_BOUND_BITAND,
+				terminal: TypePostProcessor.TYPE_BOUND__BITAND,
 				parentDecorated: node.parent.decorated
 			});
 		} else if (parentCtx instanceof TypeListContext) {
@@ -54,7 +54,7 @@ export class TypePostProcessor extends PostNodeProcessorAdapter<TypeContext> {
 				decorated,
 				siblings: (ctx: TypeListContext) => ctx.type__list(),
 				indexOffset: 0,
-				terminal: TypePostProcessor.TYPE_LIST_COMMA,
+				terminal: TypePostProcessor.TYPE_LIST__COMMA,
 				parentDecorated: node.parent.decorated
 			});
 		}

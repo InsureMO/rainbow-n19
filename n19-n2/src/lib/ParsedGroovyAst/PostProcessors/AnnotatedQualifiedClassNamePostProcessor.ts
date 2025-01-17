@@ -20,7 +20,7 @@ type TerminalNodePairForQualifiedClassNameList = [TerminalNodeGetFromQualifiedCl
  * 2. find and put a "," node after me.
  */
 export class AnnotatedQualifiedClassNamePostProcessor extends PostNodeProcessorAdapter<AnnotatedQualifiedClassNameContext> {
-	private static COMMA: TerminalNodePairForQualifiedClassNameList = [(ctx, index) => ctx.COMMA(index), GroovyParser.COMMA];
+	private static QUALIFIED_CLASS_NAME_LIST__COMMA: TerminalNodePairForQualifiedClassNameList = [(ctx, index) => ctx.COMMA(index), GroovyParser.COMMA];
 
 	shouldCountIntoHierarchy(node: HierarchicalNode): boolean {
 		node.decorated.setRole(GroovyParser.RULE_typeArgument, DecoratedNode.RULE_ROLE);
@@ -33,7 +33,7 @@ export class AnnotatedQualifiedClassNamePostProcessor extends PostNodeProcessorA
 			decorated,
 			siblings: (ctx: QualifiedClassNameListContext) => ctx.annotatedQualifiedClassName_list(),
 			indexOffset: 0,
-			terminal: AnnotatedQualifiedClassNamePostProcessor.COMMA,
+			terminal: AnnotatedQualifiedClassNamePostProcessor.QUALIFIED_CLASS_NAME_LIST__COMMA,
 			parentDecorated: node.parent.decorated
 		});
 	}
