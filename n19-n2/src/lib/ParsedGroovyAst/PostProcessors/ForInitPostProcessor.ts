@@ -1,26 +1,30 @@
-import {TerminalNode} from 'antlr4';
 import {ClassicalForControlContext, ForInitContext, GroovyParser} from '../../OrgApacheGroovyParserAntlr4';
-import {Optional} from '../../TsAddon';
 import {DecoratedNode} from '../DecoratedNode';
 import {HierarchicalNode} from '../HierarchicalNode';
-import {SymbolIndex} from '../Types';
 import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
-
-type TerminalNodeGet = (ctx: ClassicalForControlContext) => Optional<TerminalNode>;
-type TerminalNodePair = [TerminalNodeGet, SymbolIndex];
 
 /**
  * could be child of classical for control.<br>
  * doing:<br>
- * 1. find and put a ";" node after me.
+ * 1. find and put a ";" node after me,<br>
+ * 2. find and put next ";" node after me, when next expression node not exists.
  */
 export class ForInitPostProcessor extends PostNodeProcessorAdapter<ForInitContext> {
-	private static CLASSICAL_FOR_CONTROL__SEMI: TerminalNodePair = [(ctx) => ctx.SEMI(0), GroovyParser.SEMI];
-
 	collectAfterExit(node: HierarchicalNode): Array<DecoratedNode> {
-		return this.collectTerminalNodeToArray({
-			decorated: node.parent.decorated,
-			terminal: ForInitPostProcessor.CLASSICAL_FOR_CONTROL__SEMI
-		});
+		const nodes: Array<DecoratedNode> = [];
+		const decorated = node.decorated;
+		const ctx = decorated.parsed.groovyParserRuleContext as ClassicalForControlContext;
+		// noinspection DuplicatedCode
+		const semiTerminalNode = ctx.SEMI(0);
+		if (semiTerminalNode != null) {
+			nodes.push(DecoratedNode.createSymbol(decorated.parsed, GroovyParser.SEMI, semiTerminalNode));
+		}
+		if (ctx.expression() == null) {
+			const semiTerminalNode = ctx.SEMI(1);
+			if (semiTerminalNode != null) {
+				nodes.push(DecoratedNode.createSymbol(decorated.parsed, GroovyParser.SEMI, semiTerminalNode));
+			}
+		}
+		return nodes;
 	}
 }
