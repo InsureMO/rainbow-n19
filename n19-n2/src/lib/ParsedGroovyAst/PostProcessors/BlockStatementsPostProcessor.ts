@@ -1,6 +1,4 @@
-import {BlockStatementsContext, GroovyParser} from '../../OrgApacheGroovyParserAntlr4';
-import {DecoratedNode} from '../DecoratedNode';
-import {HierarchicalNode} from '../HierarchicalNode';
+import {BlockStatementsContext} from '../../OrgApacheGroovyParserAntlr4';
 import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
 
 /**
