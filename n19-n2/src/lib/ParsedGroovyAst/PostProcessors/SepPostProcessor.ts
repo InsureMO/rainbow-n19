@@ -4,6 +4,7 @@ import {HierarchicalNode} from '../HierarchicalNode';
 import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
 
 export class SepPostProcessor extends PostNodeProcessorAdapter<SepContext> {
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	needCopyTextOnToParsed(_ctx: SepContext): boolean {
 		return true;
 	}

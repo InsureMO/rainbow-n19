@@ -33,6 +33,7 @@ export class ParsedNodeVisitor {
 		this._positionedNodeStack.unshift(node);
 	}
 
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	protected endPositionedNode(_node: PositionedNode) {
 		this._positionedNodeStack.shift();
 	}

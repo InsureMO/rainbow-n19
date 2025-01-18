@@ -1,4 +1,3 @@
-import * as console from 'node:console';
 import {GroovyParser, GroovyParserRuleContext} from '../../OrgApacheGroovyParserAntlr4';
 import {DecoratedNode} from '../DecoratedNode';
 import {HierarchicalNode} from '../HierarchicalNode';

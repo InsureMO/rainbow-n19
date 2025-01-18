@@ -64,6 +64,7 @@ export class FormalParametersPostProcessor extends ForTypeListUnderClassDeclarat
 			});
 		} else if (parentCtx instanceof ClassDeclarationContext) {
 			const firstOfExtendsImplementsPermitsNode =
+				// eslint-disable-next-line @typescript-eslint/no-unused-vars
 				this.collectFirstOfExtendsImplementsPermits(node, _ctx => true);
 			if (firstOfExtendsImplementsPermitsNode != null) {
 				return [firstOfExtendsImplementsPermitsNode];
