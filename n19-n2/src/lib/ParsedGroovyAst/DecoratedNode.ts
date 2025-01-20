@@ -18,6 +18,13 @@ export class DecoratedNode {
 		node._text = token.text;
 	}
 
+	static copyPosition(node: DecoratedNode, startLine: number, startColumn: number, endLine: number, endColumn: number): void {
+		node._startLine = startLine;
+		node._startColumn = startColumn;
+		node._endLine = endLine;
+		node._endColumn = endColumn;
+	}
+
 	static createSymbol(node: ParsedNode, role: SymbolIndex, terminalNode: TerminalNode): DecoratedNode {
 		const decorable = new DecoratedNode(node);
 		decorable.setRole(role);

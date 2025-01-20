@@ -17,8 +17,9 @@ export const parseAst = (source: string, title?: string) => {
 		AstBuilder.ast(source, {parseListener});
 		console.timeEnd(label);
 		const visitor = new ParsedNodeVisitor(parseListener.compilationUnits);
-		console.log(visitor.atomicNodes.map(node => node.toString()).join('\n'));
-		parseListener.compilationUnits.forEach(compilationUnit => console.log(compilationUnit.toString()));
+		console.log('Atomic nodes:\n' + visitor.atomicNodes.map(node => node.toString()).join('\n'));
+		console.log('Positioned nodes:\n' + visitor.positionedNodes.map(node => node.toString()).join('\n'));
+		// parseListener.compilationUnits.forEach(compilationUnit => console.log(compilationUnit.toString()));
 		if (parseListener.debugger.missedLogics.length !== 0) {
 			console.error(parseListener.debugger.missedLogics);
 		}
