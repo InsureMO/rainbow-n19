@@ -4,7 +4,7 @@ import {Optional} from '../../TsAddon';
 import {DecoratedNode} from '../DecoratedNode';
 import {HierarchicalNode} from '../HierarchicalNode';
 import {SymbolIndex} from '../Types';
-import {PostNodeProcessorAdapter} from './index';
+import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
 
 type TerminalNodeGet = (ctx: ModifierContext) => Optional<TerminalNode>;
 type TerminalNodePair = [TerminalNodeGet, SymbolIndex];

@@ -42,5 +42,6 @@ export class QualifiedClassNamePostProcessor extends PostNodeProcessorAdapter<Qu
 				parentDecorated: node.parent.decorated
 			});
 		}
+		return [];
 	}
 }

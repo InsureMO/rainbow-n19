@@ -64,5 +64,6 @@ export class ExpressionInParPostProcessor extends PostNodeProcessorAdapter<Expre
 				terminal: ExpressionInParPostProcessor.SWITCH_EXPRESSION__LBRACE
 			});
 		}
+		return [];
 	}
 }

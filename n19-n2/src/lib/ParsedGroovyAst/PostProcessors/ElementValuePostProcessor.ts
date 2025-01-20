@@ -38,5 +38,6 @@ export class ElementValuePostProcessor extends PostNodeProcessorAdapter<ElementV
 				parentDecorated: node.parent.decorated
 			});
 		}
+		return [];
 	}
 }

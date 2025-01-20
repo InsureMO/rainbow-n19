@@ -57,5 +57,6 @@ export class ClassNamePostProcessor extends PostNodeProcessorAdapter<ClassNameCo
 				parentDecorated: node.parent.decorated
 			});
 		}
+		return [];
 	}
 }

@@ -5,8 +5,7 @@ import {
 	GroovyParser,
 	IntegerLiteralAltContext,
 	LiteralContext,
-	NullLiteralAltContext,
-	StringLiteralAltContext
+	NullLiteralAltContext
 } from '../../OrgApacheGroovyParserAntlr4';
 import {Optional} from '../../TsAddon';
 import {DecoratedNode} from '../DecoratedNode';
@@ -37,20 +36,31 @@ export class LiteralPostProcessor extends PostNodeProcessorAdapter<LiteralContex
 	private static FloatingPointLiteral: TerminalNodePairForFloat = [(ctx) => ctx.FloatingPointLiteral(), GroovyParser.FloatingPointLiteral];
 	private static BooleanLiteral: TerminalNodePairForBoolean = [(ctx) => ctx.BooleanLiteral(), GroovyParser.BooleanLiteral];
 	private static NullLiteral: TerminalNodePairForNull = [(ctx) => ctx.NullLiteral(), GroovyParser.NullLiteral];
-	private static TERMINALS = [
-		LiteralPostProcessor.IntegerLiteral,
-		LiteralPostProcessor.FloatingPointLiteral,
-		LiteralPostProcessor.BooleanLiteral,
-		LiteralPostProcessor.NullLiteral
-	];
 
 	collectOnEntering(node: HierarchicalNode): Array<DecoratedNode> {
 		const decorated = node.decorated;
-		return this.collectTerminalNodes({
-			decorated,
-			ignoreTerminalsCheck: (ctx) => ctx instanceof StringLiteralAltContext,
-			terminals: LiteralPostProcessor.TERMINALS,
-			firstOnly: true
-		});
+		const ctx = decorated.parsed.groovyParserRuleContext as LiteralContext;
+		if (ctx instanceof IntegerLiteralAltContext) {
+			return this.collectTerminalNodeToArray({
+				decorated,
+				terminal: LiteralPostProcessor.IntegerLiteral
+			});
+		} else if (ctx instanceof FloatingPointLiteralAltContext) {
+			return this.collectTerminalNodeToArray({
+				decorated,
+				terminal: LiteralPostProcessor.FloatingPointLiteral
+			});
+		} else if (ctx instanceof BooleanLiteralAltContext) {
+			return this.collectTerminalNodeToArray({
+				decorated,
+				terminal: LiteralPostProcessor.BooleanLiteral
+			});
+		} else if (ctx instanceof NullLiteralAltContext) {
+			return this.collectTerminalNodeToArray({
+				decorated,
+				terminal: LiteralPostProcessor.NullLiteral
+			});
+		}
+		return [];
 	}
 }
