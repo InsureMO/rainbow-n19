@@ -27,7 +27,8 @@ export class IndexPropertyArgsPostProcessor extends PostNodeProcessorAdapter<Ind
 	private static RBRACK: TerminalNodePair = [(ctx) => ctx.RBRACK(), GroovyParser.RBRACK];
 
 	shouldCountIntoHierarchy(node: HierarchicalNode): boolean {
-		return super.shouldCountIntoHierarchy(node);
+		node.decorated.setRole(GroovyParser.RULE_indexPropertyArgs, DecoratedNode.RULE_ROLE);
+		return true;
 	}
 
 	collectOnEntering(node: HierarchicalNode): Array<DecoratedNode> {

@@ -30,8 +30,7 @@ export class QualifiedNamePostProcessor extends PostNodeProcessorAdapter<Qualifi
 	];
 
 	shouldCountIntoHierarchy(node: HierarchicalNode): boolean {
-		const decorated = node.decorated;
-		decorated.setRole(GroovyParser.RULE_qualifiedName, DecoratedNode.RULE_ROLE);
+		node.decorated.setRole(GroovyParser.RULE_qualifiedName, DecoratedNode.RULE_ROLE);
 		return true;
 	}
 

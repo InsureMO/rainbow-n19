@@ -34,7 +34,7 @@ export class TypePostProcessor extends PostNodeProcessorAdapter<TypeContext> {
 
 	shouldCountIntoHierarchy(node: HierarchicalNode): boolean {
 		node.decorated.setRole(GroovyParser.RULE_type, DecoratedNode.RULE_ROLE);
-		return;
+		return true;
 	}
 
 	collectAfterExit(node: HierarchicalNode): Array<DecoratedNode> {
