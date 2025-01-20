@@ -14,15 +14,22 @@ export class DecoratedNode {
 		node._startLine = token.line;
 		node._startColumn = token.column;
 		node._endLine = token.line;
-		node._endColumn = token.stop;
+		node._endColumn = token.column + (token.text ?? '').length;
+		node._startOffset = token.start;
+		node._endOffset = token.stop;
 		node._text = token.text;
 	}
 
-	static copyPosition(node: DecoratedNode, startLine: number, startColumn: number, endLine: number, endColumn: number): void {
+	static copyPosition(node: DecoratedNode,
+	                    startLine: number, startColumn: number,
+	                    endLine: number, endColumn: number,
+	                    startOffset: number, endOffset: number): void {
 		node._startLine = startLine;
 		node._startColumn = startColumn;
 		node._endLine = endLine;
 		node._endColumn = endColumn;
+		node._startOffset = startOffset;
+		node._endOffset = endOffset;
 	}
 
 	static createSymbol(node: ParsedNode, role: SymbolIndex, terminalNode: TerminalNode): DecoratedNode {
@@ -43,6 +50,8 @@ export class DecoratedNode {
 	private _startColumn: Optional<number> = (void 0);
 	private _endLine: Optional<number> = (void 0);
 	private _endColumn: Optional<number> = (void 0);
+	private _startOffset: Optional<number> = (void 0);
+	private _endOffset: Optional<number> = (void 0);
 	private _text: Optional<string> = (void 0);
 
 	constructor(node: ParsedNode) {
@@ -89,6 +98,14 @@ export class DecoratedNode {
 
 	get endColumn(): number {
 		return this._endColumn ?? this._parsed.endColumn;
+	}
+
+	get startOffset(): number {
+		return this._startOffset ?? -1;
+	}
+
+	get endOffset(): number {
+		return this._endOffset ?? -1;
 	}
 
 	get text(): string {

@@ -127,13 +127,19 @@ export class ParsedNode {
 		this._startLine = ctx.start.line;
 		this._startColumn = ctx.start.column;
 		const lastChild = this.lastChild;
-		// TODO not sure, seems its the only way to get end position when it has no child
 		// get from last child,
-		// or get from ctx stop token when there is not child
-		// or use the same position of ctx start token
-		this._endLine = lastChild?._endLine ?? ctx.stop?.line ?? ctx.start.line;
-		// TODO not sure, seems stop is the end column, according to tracing, :)
-		this._endColumn = lastChild?._endColumn ?? ctx.stop?.stop ?? ctx.start.stop;
+		// or get from ctx stop token when there is no child
+		// or get from ctx start token
+		if (lastChild != null) {
+			this._endLine = lastChild?._endLine;
+			this._endColumn = lastChild?._endColumn;
+		} else if (ctx.stop != null) {
+			this._endLine = ctx.stop.line;
+			this._endColumn = ctx.stop.column + (ctx.stop.text ?? '').length - 1;
+		} else {
+			this._endLine = this._startLine;
+			this._endColumn = this._startColumn + (ctx.start.text ?? '').length - 1;
+		}
 		this.doCopyText(ctx);
 	}
 

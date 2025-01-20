@@ -27,11 +27,17 @@ export class PositionedNode extends HierarchicalNode {
 		let startColumn = 999_999_999;
 		let endLine = -1;
 		let endColumn = -1;
+		let startOffset = 999_999_999;
+		let endOffset = -1;
 		if (this.childCount === 0) {
 			// do nothing
 		} else {
 			this.children.forEach(child => {
-				const {startLine: l1, startColumn: c1, endLine: l2, endColumn: c2} = child.decorated;
+				const {
+					startLine: l1, startColumn: c1,
+					endLine: l2, endColumn: c2,
+					startOffset: so, endOffset: eo
+				} = child.decorated;
 				if (l1 < startLine) {
 					startLine = l1;
 					startColumn = c1;
@@ -44,8 +50,14 @@ export class PositionedNode extends HierarchicalNode {
 				} else if (l2 === endLine && c2 > endColumn) {
 					endColumn = c2;
 				}
+				if (so < startOffset) {
+					startOffset = so;
+				}
+				if (eo > endOffset) {
+					endOffset = eo;
+				}
 			});
-			DecoratedNode.copyPosition(this.decorated, startLine, startColumn, endLine, endColumn);
+			DecoratedNode.copyPosition(this.decorated, startLine, startColumn, endLine, endColumn, startOffset, endOffset);
 		}
 	}
 
