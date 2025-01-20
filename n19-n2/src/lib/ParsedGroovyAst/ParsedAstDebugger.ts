@@ -13,7 +13,7 @@ export class ParsedAstDebugger {
 	private readonly _ruleProcessingLogs: Array<string> = [];
 
 	constructor(options?: ParsedAstDebuggerOptions) {
-		this._missedLogicCheckEnabled = options.missedLogicCheckEnabled ?? false;
+		this._missedLogicCheckEnabled = options?.missedLogicCheckEnabled ?? false;
 		this._ruleProcessingLogsEnabled = options?.ruleProcessingLogsEnabled ?? false;
 	}
 
