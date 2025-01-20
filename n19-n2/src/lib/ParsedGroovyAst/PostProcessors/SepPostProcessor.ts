@@ -1,4 +1,4 @@
-import {SepContext} from '../../OrgApacheGroovyParserAntlr4';
+import {GroovyParser, SepContext} from '../../OrgApacheGroovyParserAntlr4';
 import {DecoratedNode} from '../DecoratedNode';
 import {HierarchicalNode} from '../HierarchicalNode';
 import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
@@ -10,6 +10,11 @@ export class SepPostProcessor extends PostNodeProcessorAdapter<SepContext> {
 	}
 
 	collectOnEntering(node: HierarchicalNode): Array<DecoratedNode> {
-		return [node.decorated];
+		const parsed = node.decorated.parsed;
+		const ctx = parsed.groovyParserRuleContext as SepContext;
+		const semiTerminalNodes = ctx.SEMI_list();
+		return (semiTerminalNodes ?? []).map(semiTerminalNode => {
+			return DecoratedNode.createSymbol(parsed, GroovyParser.SEMI, semiTerminalNode);
+		});
 	}
 }
