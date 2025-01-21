@@ -1,9 +1,9 @@
 import {NodeType} from '@lezer/common';
 import {Groovy} from '@rainbow-n19/n2';
-import {Token} from './tokens';
+import {SymbolToken} from './tokens';
 
 const GroovyParser = Groovy.GroovyParser;
-export const TokenToNodeType: { [key in Token | 'compilationUnit']: NodeType } = {
+export const TokenToNodeType: { [key in SymbolToken | 'compilationUnit']: NodeType } = {
 	compilationUnit: NodeType.define({id: GroovyParser.RULE_compilationUnit, name: 'compilationUnit', top: true}),
 	StringLiteral: NodeType.define({id: GroovyParser.StringLiteral, name: 'StringLiteral'}),
 	GStringBegin: NodeType.define({id: GroovyParser.GStringBegin, name: 'GStringBegin'}),

@@ -1,5 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const tokens = [
+const symbolTokens = [
 	'StringLiteral',
 	'GStringBegin',
 	'GStringEnd',
@@ -138,4 +138,10 @@ const tokens = [
 	'SH_COMMENT',
 	'UNEXPECTED_CHAR'
 ] as const;
-export type Token = (typeof tokens)[number];
+export type SymbolToken = (typeof symbolTokens)[number];
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const additionalTokens = [
+	'AT_for_class_declaration'
+] as const;
+export type AdditionalToken = (typeof additionalTokens)[number]

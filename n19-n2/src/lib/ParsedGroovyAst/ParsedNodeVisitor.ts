@@ -81,16 +81,39 @@ export class ParsedNodeVisitor {
 		return this._atomicNodes;
 	}
 
-	findAtomicNode(line: number, column: number): Optional<DecoratedNode> {
+	static findAtomicNodeByOffset(atomicNodes: Array<DecoratedNode>, start: number, end: number): [Optional<DecoratedNode>, number] {
 		let startIndex = 0;
-		let endIndex = this._atomicNodes.length - 1;
+		let endIndex = atomicNodes.length - 1;
 		while (startIndex <= endIndex) {
 			const midIndex = Math.floor((startIndex + endIndex) / 2);
-			const node = this._atomicNodes[midIndex];
+			const node = atomicNodes[midIndex];
+
+			if (node.startOffset === start && node.endOffset === end) {
+				// found, return
+				return [node, midIndex];
+			} else if (node.startOffset < start) {
+				// not found, continue finding on right part when position is after current node
+				startIndex = midIndex + 1;
+			} else {
+				// not found, continue finding on left part when given position is before current node
+				endIndex = midIndex - 1;
+			}
+		}
+
+		// not found
+		return [(void 0), -1];
+	}
+
+	static findAtomicNode(atomicNodes: Array<DecoratedNode>, line: number, column: number): [Optional<DecoratedNode>, number] {
+		let startIndex = 0;
+		let endIndex = atomicNodes.length - 1;
+		while (startIndex <= endIndex) {
+			const midIndex = Math.floor((startIndex + endIndex) / 2);
+			const node = atomicNodes[midIndex];
 
 			if (node.startLine <= line && node.startColumn <= column && node.endLine >= line && node.endColumn >= column) {
 				// found, return
-				return node;
+				return [node, midIndex];
 			} else if (node.endLine < line || (node.endLine === line && node.endColumn < column)) {
 				// not found, continue finding on right part when position is after current node
 				startIndex = midIndex + 1;
@@ -101,26 +124,26 @@ export class ParsedNodeVisitor {
 		}
 
 		// not found
-		return (void 0);
+		return [(void 0), -1];
 	}
 
-	findNodeOrNearestPrevious(line: number, column: number): Optional<DecoratedNode> {
+	static findNodeOrNearestPrevious(atomicNodes: Array<DecoratedNode>, line: number, column: number): [Optional<DecoratedNode>, number] {
 		let startIndex = 0;
-		let endIndex = this._atomicNodes.length - 1;
-		let result: Optional<DecoratedNode> = (void 0);
+		let endIndex = atomicNodes.length - 1;
+		let result: [Optional<DecoratedNode>, number] = [(void 0), -1];
 
 		while (startIndex <= endIndex) {
 			const midIndex = Math.floor((startIndex + endIndex) / 2);
-			const node = this._atomicNodes[midIndex];
+			const node = atomicNodes[midIndex];
 
 			if (node.startLine <= line && node.startColumn <= column && node.endLine >= line && node.endColumn >= column) {
 				// found, return
-				return node;
+				return [node, midIndex];
 			} else if (node.endLine < line || (node.endLine === line && node.endColumn < column)) {
 				// not found,
 				// current node is before given position, cache it
 				// continue finding on right part when position is after current node
-				result = node;
+				result = [node, midIndex];
 				startIndex = midIndex + 1;
 			} else {
 				// not found,
@@ -133,18 +156,18 @@ export class ParsedNodeVisitor {
 		return result;
 	}
 
-	findNodeOrNearestNext(line: number, column: number): Optional<DecoratedNode> {
+	static findNodeOrNearestNext(atomicNodes: Array<DecoratedNode>, line: number, column: number): [Optional<DecoratedNode>, number] {
 		let startIndex = 0;
-		let endIndex = this._atomicNodes.length - 1;
-		let result: Optional<DecoratedNode> = (void 0);
+		let endIndex = atomicNodes.length - 1;
+		let result: [Optional<DecoratedNode>, number] = [(void 0), -1];
 
 		while (startIndex <= endIndex) {
 			const midIndex = Math.floor((startIndex + endIndex) / 2);
-			const node = this._atomicNodes[midIndex];
+			const node = atomicNodes[midIndex];
 
 			if (node.startLine <= line && node.startColumn <= column && node.endLine >= line && node.endColumn >= column) {
 				// found, return
-				return node;
+				return [node, midIndex];
 			} else if (node.endLine < line || (node.endLine === line && node.endColumn < column)) {
 				// not found,
 				// current node is before given position
@@ -154,7 +177,7 @@ export class ParsedNodeVisitor {
 				// not found,
 				// current node is after given position, cache it
 				// continue finding on left part when given position is before current node
-				result = node;
+				result = [node, midIndex];
 				endIndex = midIndex - 1;
 			}
 		}

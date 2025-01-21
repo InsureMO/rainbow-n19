@@ -21,6 +21,11 @@ export const DecorationStyles = css`
     }
 
     span.sig {
+        &.sig-at.sig-at-interface {
+            color: #0033B3;
+            font-weight: 900;
+        }
+
         &.sig-semi {
             color: #888;
         }
