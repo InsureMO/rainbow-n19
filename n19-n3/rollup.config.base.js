@@ -29,8 +29,8 @@ export const buildConfig = (lint) => {
 		},
 		external(id) {
 			return [
-				'@lezer/common', '@lezer/highlight',
-				'@codemirror/language', '@codemirror/state',
+				'@lezer/common',
+				'@codemirror/language', '@codemirror/state', '@codemirror/view',
 				'@rainbow-n19/n2'
 			].includes(id);
 		}

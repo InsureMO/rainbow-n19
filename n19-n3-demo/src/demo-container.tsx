@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import styled from 'styled-components';
-import {Editor} from './editor.tsx';
+import {Editor} from './editor';
 
 const Container = styled.div`
     display: grid;

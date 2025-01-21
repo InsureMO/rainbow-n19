@@ -3,7 +3,7 @@ import {indentUnit} from '@codemirror/language';
 import {lintGutter} from '@codemirror/lint';
 import {Compartment, EditorState as CodeMirrorState} from '@codemirror/state';
 import {EditorView, keymap} from '@codemirror/view';
-import {GroovyLanguageSupport, GroovySyntaxHighlight} from '@rainbow-n19/n3';
+import {createGroovyExtensions} from '@rainbow-n19/n3';
 import {basicSetup} from 'codemirror';
 import {Dispatch, SetStateAction, useEffect, useRef} from 'react';
 
@@ -36,10 +36,9 @@ export const useInitEditor = <S extends CodeEditorState>(options: UseInitEditorO
 					indentUnit.of('  '),
 					keymap.of([indentWithTab]),
 					lintGutter(),
-					GroovySyntaxHighlight,
-					GroovyLanguageSupport,
+					createGroovyExtensions(),
 					changeListener.of(EditorView.updateListener.of((view) => {
-						view.state.update({})
+						view.state.update({});
 					}))
 				]
 			}),

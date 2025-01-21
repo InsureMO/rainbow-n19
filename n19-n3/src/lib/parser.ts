@@ -1,6 +1,7 @@
 import {Input, Parser, PartialParse, Tree} from '@lezer/common';
 import {Parsed} from '@rainbow-n19/n2';
-import {GroovyLanguageServer} from './language-server';
+import {GroovyFacetParsedCache} from './facet';
+import {GroovyLanguageServer, GroovyLanguageServerOptions} from './language-server';
 import {NodeSet} from './node-set';
 import {TokenToNodeType} from './token-to-node-type';
 
@@ -10,8 +11,24 @@ type DecoratedNode = Parsed.DecoratedNode;
 
 const DEFAULT_NODE_GROUP_SIZE = 4;
 
+export interface GroovyParserOptions extends GroovyLanguageServerOptions {
+	parsedCache: GroovyFacetParsedCache;
+}
+
 export class GroovyParser extends Parser {
-	private readonly _languageServer = new GroovyLanguageServer();
+	private readonly _parsedCache: GroovyFacetParsedCache;
+	private readonly _languageServer: GroovyLanguageServer;
+
+	constructor(options: GroovyParserOptions) {
+		super();
+		const {parsedCache, ...rest} = options;
+		this._parsedCache = parsedCache;
+		this._languageServer = new GroovyLanguageServer(rest);
+	}
+
+	protected get parsedCache(): GroovyFacetParsedCache {
+		return this._parsedCache;
+	}
 
 	get languageServer(): GroovyLanguageServer {
 		return this._languageServer;
@@ -39,12 +56,15 @@ export class GroovyParser extends Parser {
 
 		buffer.push(topNodeId, startOffset, endOffset, topNodeSize);
 
-		console.log(buffer);
+		// console.log(buffer);
 		return buffer;
 	}
 
 	private buildTree(document: string) {
-		const [atomics] = this.languageServer.parse(document);
+		const [atomics, positions] = this.languageServer.parse(document);
+		// cache, copy to facet data
+		this._parsedCache.atomicNodes = atomics;
+		this._parsedCache.positionedNodes = positions;
 
 		if (atomics.length < 1) {
 			return Tree.build({

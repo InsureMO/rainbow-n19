@@ -1,7 +1,31 @@
 import {useState} from 'react';
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 import {CodeEditorState, useInitEditor} from './use-init-editor.ts';
 
+export const DecorationStyles = css`
+    span.rkw {
+        color: #0033B3;
+
+        &.rkw-interface {
+        }
+
+        &.rkw-class {
+        }
+    }
+
+    span.blk {
+        &.blk-brace {
+            color: #B09633;
+            font-style: italic;
+        }
+    }
+
+    span.sig {
+        &.sig-semi {
+            color: #888;
+        }
+    }
+`;
 const EditorContainer = styled.div`
     display: block;
     position: relative;
@@ -27,15 +51,7 @@ const EditorContainer = styled.div`
         }
 
         div.cm-line {
-            span.rw-keywords {
-                color: #0033B3;
-
-                &.rw-interface {
-                }
-
-                &.rw-class {
-                }
-            }
+            ${DecorationStyles}
         }
     }
 `;
