@@ -39,12 +39,18 @@ export class ExpressionListElementPostProcessor extends PostNodeProcessorAdapter
 	}
 
 	collectAfterExit(node: HierarchicalNode): Array<DecoratedNode> {
-		return this.collectTerminalNodeWithIndexToArray({
-			decorated: node.decorated,
-			siblings: (ctx: ExpressionListContext) => ctx.expressionListElement_list(),
-			indexOffset: 0,
-			terminal: ExpressionListElementPostProcessor.EXPRESSION_LIST__COMMA,
-			parentDecorated: node.parent.decorated
-		});
+		const decorated = node.decorated;
+		const ctx = decorated.parsed.groovyParserRuleContext as ExpressionListElementContext;
+		const parentCtx = ctx.parentCtx;
+		if (parentCtx instanceof ExpressionListContext) {
+			return this.collectTerminalNodeWithIndexToArray({
+				decorated: node.decorated,
+				siblings: (ctx: ExpressionListContext) => ctx.expressionListElement_list(),
+				indexOffset: 0,
+				terminal: ExpressionListElementPostProcessor.EXPRESSION_LIST__COMMA,
+				parentDecorated: node.parent.decorated
+			});
+		}
+		return [];
 	}
 }

@@ -78,7 +78,9 @@ export class GroovyParser extends Parser {
 			// eslint-disable-next-line @typescript-eslint/no-unused-vars
 			stopAt: (_) => {
 			},
-			advance: () => tree
+			advance: () => {
+				return tree;
+			}
 		};
 	}
 }

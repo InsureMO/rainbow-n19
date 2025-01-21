@@ -38,7 +38,8 @@ export const useInitEditor = <S extends CodeEditorState>(options: UseInitEditorO
 					lintGutter(),
 					GroovySyntaxHighlight,
 					GroovyLanguageSupport,
-					changeListener.of(EditorView.updateListener.of(() => {
+					changeListener.of(EditorView.updateListener.of((view) => {
+						view.state.update({})
 					}))
 				]
 			}),
