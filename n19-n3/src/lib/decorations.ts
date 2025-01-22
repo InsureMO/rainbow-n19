@@ -298,7 +298,7 @@ export const DefaultSyntaxNodeMarkers: { [key in SymbolToken]: SyntaxNodeMark } 
 	Identifier: (_n, _pc) => DefaultSyntaxNodeDecorations.Identifier,
 	AT: (sn, parsedCache) => {
 		const [node] = ParsedNodeVisitor.findAtomicNodeByOffset(parsedCache.atomicNodes, sn.from, sn.to - 1);
-		if (node.parsed.type === Groovy.GroovyParser.RULE_classDeclaration) {
+		if (node?.parsed?.type === Groovy.GroovyParser.RULE_classDeclaration) {
 			return DefaultSyntaxNodeDecorations.AT_for_class_declaration;
 		}
 		return DefaultSyntaxNodeDecorations.AT;

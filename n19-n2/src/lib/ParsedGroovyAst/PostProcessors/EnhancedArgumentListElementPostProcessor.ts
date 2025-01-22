@@ -1,6 +1,5 @@
 import {TerminalNode} from 'antlr4';
 import {
-	ArgumentListContext,
 	EnhancedArgumentListElementContext,
 	EnhancedArgumentListInParContext,
 	GroovyParser
@@ -31,7 +30,7 @@ export class EnhancedArgumentListElementPostProcessor extends PostNodeProcessorA
 	collectAfterExit(node: HierarchicalNode): Array<DecoratedNode> {
 		return this.collectTerminalNodeWithIndexToArray({
 			decorated: node.decorated,
-			siblings: (ctx: ArgumentListContext) => ctx.argumentListElement_list(),
+			siblings: (ctx: EnhancedArgumentListInParContext) => ctx.enhancedArgumentListElement_list(),
 			indexOffset: 0,
 			terminal: EnhancedArgumentListElementPostProcessor.ENHANCED_ARGUMENT_LIST_IN_PAR__COMMA,
 			parentDecorated: node.parent.decorated

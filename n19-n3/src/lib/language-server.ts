@@ -36,8 +36,8 @@ export class GroovyLanguageServer {
 		if (this.debuggerOptions.atomicNodesLogEnabled !== true) {
 			return;
 		}
-		console.groupCollapsed('Atomic nodes:');
-		console.log('Atomic nodes:\n' + atomicNodes.map(node => node.toString()).join('\n'));
+		console.groupCollapsed('Atomic nodes');
+		console.log(atomicNodes.map(node => node.toString()).join('\n'));
 		console.groupEnd();
 	}
 
@@ -45,8 +45,8 @@ export class GroovyLanguageServer {
 		if (this.debuggerOptions.positionedNodesLogEnabled !== true) {
 			return;
 		}
-		console.groupCollapsed('Positioned nodes:');
-		console.log('Positioned nodes:\n' + positionedNodes.map(node => node.toString()).join('\n'));
+		console.groupCollapsed('Positioned nodes');
+		console.log(positionedNodes.map(node => node.toString()).join('\n'));
 		console.groupEnd();
 	}
 
@@ -55,21 +55,18 @@ export class GroovyLanguageServer {
 			return;
 		}
 		if (missedLogics != null && missedLogics.length !== 0) {
-			console.groupCollapsed('Missed logics:')
+			console.groupCollapsed('Missed logics');
 			console.error(missedLogics);
 			console.groupEnd();
 		}
 	}
 
-	protected logProcessingLogs(listener: IntactParseListener, error?: Error): void {
+	protected logProcessingLogs(listener: IntactParseListener): void {
 		if (this.debuggerOptions.ruleProcessingLogsEnabled !== true) {
 			return;
 		}
-		console.groupCollapsed('Rule processing logs:');
-		console.error(listener.debugger.ruleProcessingLogs.join('\n'));
-		if (error !== null) {
-			console.error(error);
-		}
+		console.groupCollapsed('Rule processing logs');
+		console.log(listener.debugger.ruleProcessingLogs.join('\n'));
 		console.groupEnd();
 	}
 
@@ -105,7 +102,8 @@ export class GroovyLanguageServer {
 				this.logParsedResult(parseListener, visitor);
 				return [visitor.atomicNodes, visitor.positionedNodes];
 			} catch (error) {
-				this.logProcessingLogs(parseListener, error);
+				this.logProcessingLogs(parseListener);
+				console.error(error);
 				return [[], []];
 			}
 		});

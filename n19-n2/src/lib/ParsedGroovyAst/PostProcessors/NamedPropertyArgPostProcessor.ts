@@ -1,10 +1,5 @@
 import {TerminalNode} from 'antlr4';
-import {
-	GroovyParser,
-	MapEntryListContext,
-	NamedPropertyArgContext,
-	NamedPropertyArgListContext
-} from '../../OrgApacheGroovyParserAntlr4';
+import {GroovyParser, NamedPropertyArgContext, NamedPropertyArgListContext} from '../../OrgApacheGroovyParserAntlr4';
 import {Optional} from '../../TsAddon';
 import {DecoratedNode} from '../DecoratedNode';
 import {HierarchicalNode} from '../HierarchicalNode';
@@ -55,12 +50,18 @@ export class NamedPropertyArgPostProcessor extends PostNodeProcessorAdapter<Name
 	}
 
 	collectAfterExit(node: HierarchicalNode): Array<DecoratedNode> {
-		return this.collectTerminalNodeWithIndexToArray({
-			decorated: node.decorated,
-			siblings: (ctx: MapEntryListContext) => ctx.mapEntry_list(),
-			indexOffset: 0,
-			terminal: NamedPropertyArgPostProcessor.NAMED_PROPERTY_ARG_LIST__COMMA,
-			parentDecorated: node.parent.decorated
-		});
+		const decorated = node.decorated;
+		const ctx = decorated.parsed.groovyParserRuleContext as NamedPropertyArgContext;
+		const parentCtx = ctx.parentCtx;
+		if (parentCtx instanceof NamedPropertyArgListContext) {
+			return this.collectTerminalNodeWithIndexToArray({
+				decorated: node.decorated,
+				siblings: (ctx: NamedPropertyArgListContext) => ctx.namedPropertyArg_list(),
+				indexOffset: 0,
+				terminal: NamedPropertyArgPostProcessor.NAMED_PROPERTY_ARG_LIST__COMMA,
+				parentDecorated: node.parent.decorated
+			});
+		}
+		return [];
 	}
 }
