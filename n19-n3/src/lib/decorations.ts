@@ -23,10 +23,10 @@ export enum DecorationMarkTypes {
 export type SyntaxNodeMark = (node: SyntaxNodeRef, parsedCache: GroovyFacetParsedCache) => Decoration;
 export const DefaultSyntaxNodeDecorations: { [key in SymbolToken | AdditionalToken]: Decoration } = {
 	StringLiteral: Decoration.mark({class: 'ltl ltl-string-literal'}),
-	GStringBegin: Decoration.mark({class: 'gstring-begin'}),
-	GStringEnd: Decoration.mark({class: 'gstring-end'}),
-	GStringPart: Decoration.mark({class: 'gstring-part'}),
-	GStringPathPart: Decoration.mark({class: 'gstring-path-part'}),
+	GStringBegin: Decoration.mark({class: 'gst gst-gstring-begin'}),
+	GStringEnd: Decoration.mark({class: 'gst gst-gstring-end'}),
+	GStringPart: Decoration.mark({class: 'gst gst-gstring-part'}),
+	GStringPathPart: Decoration.mark({class: 'gst gst-gstring-path-part'}),
 	RollBackOne: Decoration.mark({class: 'rollback-one'}),
 	AS: Decoration.mark({class: 'rkw rkw-as'}),
 	DEF: Decoration.mark({class: 'rkw rkw-def'}),
@@ -156,12 +156,17 @@ export const DefaultSyntaxNodeDecorations: { [key in SymbolToken | AdditionalTok
 	AT: Decoration.mark({class: 'sig sig-at'}),
 	ELLIPSIS: Decoration.mark({class: 'sig sig-ellipsis'}),
 	WS: Decoration.mark({class: 'whitespace'}),
-	NL: Decoration.mark({class: 'sig-nl'}),
+	NL: Decoration.mark({class: 'sig sig-nl'}),
 	SH_COMMENT: Decoration.mark({class: 'sh-comment'}),
 	UNEXPECTED_CHAR: Decoration.mark({class: 'unexpected-char'}),
 
 	// additional decorations
-	AT_for_class_declaration: Decoration.mark({class: 'sig sig-at sig-at-interface'})
+	AT_for_class_declaration: Decoration.mark({class: 'sig sig-at sig-at-interface'}),
+	ARROW_for_closure: Decoration.mark({class: 'sig sig-arrow sig-arrow-for-closure'}),
+	LBRACE_for_closure: Decoration.mark({class: 'blk blk-brace blk-lbrace blk-brace-for-closure blk-lbrace-for-closure'}),
+	RBRACE_for_closure: Decoration.mark({class: 'blk blk-brace blk-rbrace blk-brace-for-closure blk-rbrace-for-closure'}),
+	NL_for_sl_comment: Decoration.mark({class: 'sig sig-nl sig-nl-for-sl-comment'}),
+	NL_for_ml_comment: Decoration.mark({class: 'sig sig-nl sig-nl-for-ml-comment'})
 };
 /* eslint-disable @typescript-eslint/no-unused-vars */
 export const DefaultSyntaxNodeMarkers: { [key in SymbolToken]: SyntaxNodeMark } = {
@@ -247,13 +252,31 @@ export const DefaultSyntaxNodeMarkers: { [key in SymbolToken]: SyntaxNodeMark } 
 	SPACESHIP: (_n, _pc) => DefaultSyntaxNodeDecorations.SPACESHIP,
 	IDENTICAL: (_n, _pc) => DefaultSyntaxNodeDecorations.IDENTICAL,
 	NOT_IDENTICAL: (_n, _pc) => DefaultSyntaxNodeDecorations.NOT_IDENTICAL,
-	ARROW: (_n, _pc) => DefaultSyntaxNodeDecorations.ARROW,
+	ARROW: (sn, parsedCache) => {
+		const [node] = ParsedNodeVisitor.findAtomicNodeByOffset(parsedCache.atomicNodes, sn.from, sn.to - 1);
+		if (node?.parsed?.type === Groovy.GroovyParser.RULE_closure) {
+			return DefaultSyntaxNodeDecorations.ARROW_for_closure;
+		}
+		return DefaultSyntaxNodeDecorations.ARROW;
+	},
 	NOT_INSTANCEOF: (_n, _pc) => DefaultSyntaxNodeDecorations.NOT_INSTANCEOF,
 	NOT_IN: (_n, _pc) => DefaultSyntaxNodeDecorations.NOT_IN,
 	LPAREN: (_n, _pc) => DefaultSyntaxNodeDecorations.LPAREN,
 	RPAREN: (_n, _pc) => DefaultSyntaxNodeDecorations.RPAREN,
-	LBRACE: (_n, _pc) => DefaultSyntaxNodeDecorations.LBRACE,
-	RBRACE: (_n, _pc) => DefaultSyntaxNodeDecorations.RBRACE,
+	LBRACE: (sn, parsedCache) => {
+		const [node] = ParsedNodeVisitor.findAtomicNodeByOffset(parsedCache.atomicNodes, sn.from, sn.to - 1);
+		if (node?.parsed?.type === Groovy.GroovyParser.RULE_closure) {
+			return DefaultSyntaxNodeDecorations.LBRACE_for_closure;
+		}
+		return DefaultSyntaxNodeDecorations.LBRACE;
+	},
+	RBRACE: (sn, parsedCache) => {
+		const [node] = ParsedNodeVisitor.findAtomicNodeByOffset(parsedCache.atomicNodes, sn.from, sn.to - 1);
+		if (node?.parsed?.type === Groovy.GroovyParser.RULE_closure) {
+			return DefaultSyntaxNodeDecorations.RBRACE_for_closure;
+		}
+		return DefaultSyntaxNodeDecorations.RBRACE;
+	},
 	LBRACK: (_n, _pc) => DefaultSyntaxNodeDecorations.LBRACK,
 	RBRACK: (_n, _pc) => DefaultSyntaxNodeDecorations.RBRACK,
 	SEMI: (_n, _pc) => DefaultSyntaxNodeDecorations.SEMI,
@@ -305,7 +328,16 @@ export const DefaultSyntaxNodeMarkers: { [key in SymbolToken]: SyntaxNodeMark } 
 	},
 	ELLIPSIS: (_n, _pc) => DefaultSyntaxNodeDecorations.ELLIPSIS,
 	WS: (_n, _pc) => DefaultSyntaxNodeDecorations.WS,
-	NL: (_n, _pc) => DefaultSyntaxNodeDecorations.NL,
+	NL: (sn, parsedCache) => {
+		const [node] = ParsedNodeVisitor.findAtomicNodeByOffset(parsedCache.atomicNodes, sn.from, sn.to - 1);
+		const text = node?.text ?? '';
+		if (text.startsWith('//') === true) {
+			return DefaultSyntaxNodeDecorations.NL_for_sl_comment;
+		} else if (text.startsWith('/*') && text.endsWith('*/')) {
+			return DefaultSyntaxNodeDecorations.NL_for_ml_comment;
+		}
+		return DefaultSyntaxNodeDecorations.NL;
+	},
 	SH_COMMENT: (_n, _pc) => DefaultSyntaxNodeDecorations.SH_COMMENT,
 	UNEXPECTED_CHAR: (_n, _pc) => DefaultSyntaxNodeDecorations.UNEXPECTED_CHAR
 };

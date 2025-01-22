@@ -18,14 +18,15 @@ export interface UseInitEditorOptions<S extends CodeEditorState> {
 }
 
 // noinspection JSValidateJSDoc,JSUnresolvedReference,CommaExpressionJS,UnreachableCodeJS,BadExpressionStatementJS,JSAnnotator,JSUndeclaredVariable,UnnecessaryLabelOnContinueStatementJS,JSUnusedLocalSymbols,UnnecessaryContinueJS
-const testCode = `package highlighting
+let testCode = `// hello world
+package highlighting
 
-
+// sl
 /**
 * This is Groovydoc comment
 * @see java.lang.String#equals
 */
-@Annotation(parameter = 'value')
+@Annotation(parameter = 'value') // sl
 class C {
 
   def property = new I() {}
@@ -80,7 +81,12 @@ enum E {}
 @interface Annotation {
   String parameter()
 }
-`
+`;
+
+// testCode = `
+// package a.b
+// // sl
+// `
 export const useInitEditor = <S extends CodeEditorState>(options: UseInitEditorOptions<S>) => {
 	const {setState} = options;
 
@@ -102,10 +108,10 @@ export const useInitEditor = <S extends CodeEditorState>(options: UseInitEditorO
 					lintGutter(),
 					createGroovyExtensions({
 						languageServer: {
-							positionedNodesLogEnabled: true,
+							// positionedNodesLogEnabled: true,
 							// atomicNodesLogEnabled: true,
-							ruleProcessingLogsEnabled: true,
-							timeSpentLogEnabled: true,
+							// ruleProcessingLogsEnabled: true,
+							// timeSpentLogEnabled: true,
 						}
 					}),
 					changeListener.of(EditorView.updateListener.of((view) => {

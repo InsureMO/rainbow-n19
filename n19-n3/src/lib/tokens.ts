@@ -142,6 +142,11 @@ export type SymbolToken = (typeof symbolTokens)[number];
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const additionalTokens = [
-	'AT_for_class_declaration'
+	'AT_for_class_declaration',
+	'ARROW_for_closure',
+	'LBRACE_for_closure',
+	'RBRACE_for_closure',
+	'NL_for_sl_comment',
+	'NL_for_ml_comment'
 ] as const;
 export type AdditionalToken = (typeof additionalTokens)[number]

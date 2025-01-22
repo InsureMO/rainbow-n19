@@ -1,36 +1,9 @@
 import {useState} from 'react';
-import styled, {css} from 'styled-components';
+import styled from 'styled-components';
+import {DecorationStyles, DecorationStyleVariables} from './styles.ts';
 import {CodeEditorState, useInitEditor} from './use-init-editor.ts';
 
-export const DecorationStyles = css`
-    span.rkw {
-        color: #0033B3;
-
-        &.rkw-interface {
-        }
-
-        &.rkw-class {
-        }
-    }
-
-    span.blk {
-        &.blk-brace {
-            color: #B09633;
-            font-style: italic;
-        }
-    }
-
-    span.sig {
-        &.sig-at.sig-at-interface {
-            color: #0033B3;
-            font-weight: 900;
-        }
-
-        &.sig-semi {
-            color: #888;
-        }
-    }
-`;
+// noinspection CssUnresolvedCustomProperty
 const EditorContainer = styled.div`
     display: block;
     position: relative;
@@ -50,6 +23,8 @@ const EditorContainer = styled.div`
 
     > div.cm-editor {
         height: 100%;
+        ${DecorationStyleVariables};
+        font-size: var(--groovy-font-size);
 
         &.cm-focused {
             outline: none;
