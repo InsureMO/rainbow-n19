@@ -1,5 +1,24 @@
 import {ErrorNode, ParserRuleContext, TerminalNode} from 'antlr4';
-import {CompilationUnitContext, GroovyParserListener, GroovyParserRuleContext} from '../OrgApacheGroovyParserAntlr4';
+import {
+	AdditiveExprAltContext,
+	AndExprAltContext,
+	AssignmentExprAltContext,
+	CompilationUnitContext,
+	ConditionalExprAltContext,
+	EqualityExprAltContext,
+	ExclusiveOrExprAltContext,
+	ExpressionContext,
+	GroovyParserListener,
+	GroovyParserRuleContext,
+	InclusiveOrExprAltContext,
+	LogicalAndExprAltContext,
+	LogicalOrExprAltContext,
+	MultiplicativeExprAltContext,
+	PowerExprAltContext,
+	RegexExprAltContext,
+	RelationalExprAltContext,
+	ShiftExprAltContext
+} from '../OrgApacheGroovyParserAntlr4';
 import {Optional} from '../TsAddon';
 import {ParsedAstDebugger, ParsedAstDebuggerOptions} from './ParsedAstDebugger';
 import {ParsedNode} from './ParsedNode';
@@ -13,6 +32,7 @@ export class IntactParseListener extends GroovyParserListener {
 	private _currentNode: ParsedNode;
 	// 0 is the nearest
 	private readonly _stackedNodes: Array<ParsedNode> = [];
+	private readonly _nodeIndexes: Array<number> = [0];
 
 	constructor(options?: ParsedAstDebuggerOptions) {
 		super();
@@ -38,10 +58,10 @@ export class IntactParseListener extends GroovyParserListener {
 		return this._stackedNodes;
 	}
 
-	protected enterRuleContext(ctx: GroovyParserRuleContext): void {
+	protected enterRuleContext(ctx: GroovyParserRuleContext, indexLabel: Array<number>): void {
 		let node: ParsedNode;
 		if (this.shouldIgnore(ctx)) {
-			this.debugger.ignoreRule(ctx);
+			this.debugger.ignoreRule(ctx, indexLabel);
 			return;
 		}
 
@@ -53,6 +73,32 @@ export class IntactParseListener extends GroovyParserListener {
 		}
 		const currentNode = this._currentNode;
 		if (currentNode != null) {
+			if (ctx instanceof ExpressionContext) {
+				// special logic for expression.
+				// in parser, the left/con part will be parsed first, and put as child
+				// and if parser find the next statement sentence can be treated as following types
+				// the parsed part will be set as left/con part of following,
+				// and cut the parent/child relationship with original parent, rebuild as child of following.
+				// so the
+				if (ctx instanceof PowerExprAltContext
+					|| ctx instanceof MultiplicativeExprAltContext
+					|| ctx instanceof AdditiveExprAltContext
+					|| ctx instanceof ShiftExprAltContext
+					|| ctx instanceof RelationalExprAltContext
+					|| ctx instanceof EqualityExprAltContext
+					|| ctx instanceof RegexExprAltContext
+					|| ctx instanceof AndExprAltContext
+					|| ctx instanceof ExclusiveOrExprAltContext
+					|| ctx instanceof InclusiveOrExprAltContext
+					|| ctx instanceof LogicalAndExprAltContext
+					|| ctx instanceof LogicalOrExprAltContext
+					|| ctx instanceof RelationalExprAltContext
+					|| ctx instanceof AssignmentExprAltContext
+					|| ctx instanceof ConditionalExprAltContext) {
+					const lastChild = currentNode.removeLastChild();
+					node.appendChild(lastChild);
+				}
+			}
 			currentNode.appendChild(node);
 		}
 		this._currentNode = node;
@@ -90,16 +136,19 @@ export class IntactParseListener extends GroovyParserListener {
 	}
 
 	enterEveryRule(ctx: ParserRuleContext): void {
-		this.debugger.enterRule(ctx);
+		this._nodeIndexes[this._nodeIndexes.length - 1] = this._nodeIndexes[this._nodeIndexes.length - 1] + 1;
+		this.debugger.enterRule(ctx, this._nodeIndexes);
 		if (ctx instanceof GroovyParserRuleContext) {
-			this.enterRuleContext(ctx);
+			this.enterRuleContext(ctx, this._nodeIndexes);
 		} else {
-			this.debugger.ignoreUnsupportedRule(ctx);
+			this.debugger.ignoreUnsupportedRule(ctx, this._nodeIndexes);
 		}
+		this._nodeIndexes.push(0);
 	}
 
 	exitEveryRule(ctx: ParserRuleContext): void {
-		this.debugger.exitRule(ctx);
+		this._nodeIndexes.length = this._nodeIndexes.length - 1;
+		this.debugger.exitRule(ctx, this._nodeIndexes);
 		if (ctx instanceof GroovyParserRuleContext) {
 			this.exitRuleContext(ctx);
 		}

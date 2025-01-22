@@ -36,7 +36,12 @@ export const useInitEditor = <S extends CodeEditorState>(options: UseInitEditorO
 					indentUnit.of('  '),
 					keymap.of([indentWithTab]),
 					lintGutter(),
-					createGroovyExtensions(),
+					createGroovyExtensions({
+						languageServer: {
+							atomicNodesLogEnabled: true,
+							ruleProcessingLogsEnabled: true,
+						}
+					}),
 					changeListener.of(EditorView.updateListener.of((view) => {
 						view.state.update({});
 					}))

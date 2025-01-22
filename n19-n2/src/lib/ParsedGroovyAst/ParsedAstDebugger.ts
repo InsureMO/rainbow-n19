@@ -40,27 +40,27 @@ export class ParsedAstDebugger {
 		return this._ruleProcessingLogsEnabled;
 	}
 
-	enterRule(ctx: ParserRuleContext) {
+	enterRule(ctx: ParserRuleContext, indexLabel: Array<number>) {
 		if (this.isRuleProcessingLogsEnabled) {
-			this._ruleProcessingLogs.push(`Enter rule ${ctx.constructor.name}`);
+			this._ruleProcessingLogs.push(`${indexLabel.join('.')}: Enter rule ${ctx.constructor.name}`);
 		}
 	}
 
-	ignoreRule(ctx: ParserRuleContext) {
+	ignoreRule(ctx: ParserRuleContext, indexLabel: Array<number>) {
 		if (this.isRuleProcessingLogsEnabled) {
-			this._ruleProcessingLogs.push(`Ignore rule ${ctx.constructor.name}`);
+			this._ruleProcessingLogs.push(`${indexLabel.join('.')}: Ignore rule ${ctx.constructor.name}`);
 		}
 	}
 
-	ignoreUnsupportedRule(ctx: ParserRuleContext) {
+	ignoreUnsupportedRule(ctx: ParserRuleContext, indexLabel: Array<number>) {
 		if (this.isRuleProcessingLogsEnabled) {
-			this._ruleProcessingLogs.push(`Ignore unsupported rule ${ctx.constructor.name}`);
+			this._ruleProcessingLogs.push(`${indexLabel.join('.')}: Ignore unsupported rule ${ctx.constructor.name}`);
 		}
 	}
 
-	exitRule(ctx: ParserRuleContext) {
+	exitRule(ctx: ParserRuleContext, indexLabel: Array<number>) {
 		if (this.isRuleProcessingLogsEnabled) {
-			this._ruleProcessingLogs.push(`Exit rule ${ctx.constructor.name}`);
+			this._ruleProcessingLogs.push(`${indexLabel.join('.')}: Exit rule ${ctx.constructor.name}`);
 		}
 	}
 

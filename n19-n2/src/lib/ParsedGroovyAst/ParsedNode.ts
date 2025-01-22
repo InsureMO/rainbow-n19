@@ -111,6 +111,17 @@ export class ParsedNode {
 		return this._children.length === 0 ? (void 0) : this._children[this._children.length - 1];
 	}
 
+	removeLastChild(): Optional<ParsedNode> {
+		const length = this._children.length;
+		if (length === 0) {
+			return (void 0);
+		} else {
+			const last = this._children[length - 1];
+			this._children.length = length - 1;
+			return last;
+		}
+	}
+
 	appendChild(child: ParsedNode): this {
 		const originalLastChild = this.lastChild;
 		this._children.push(child);

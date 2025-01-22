@@ -19,7 +19,7 @@ export const createGroovyExtensions = (options?: GroovyExtensionOptions): Extens
 	const facet = GroovyFacet.of({...(options?.facetData ?? {}), parsedCache});
 	// const facetData: GroovyFacetData = facet.
 	const language = createGroovyLanguage({
-		...(options ?? {}),
+		...(options?.languageServer ?? {}),
 		parsedCache: parsedCache
 	});
 	return [
