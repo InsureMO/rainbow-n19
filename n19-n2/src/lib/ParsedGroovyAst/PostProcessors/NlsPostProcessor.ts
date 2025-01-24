@@ -1,12 +1,12 @@
 import {GroovyParser, NlsContext} from '../../OrgApacheGroovyParserAntlr4';
 import {DecoratedNode} from '../DecoratedNode';
 import {HierarchicalNode} from '../HierarchicalNode';
-import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
+import {CommentsNodeProcessorAdapter} from './CommentsNodeProcessorAdapter';
 
 /**
  * ignored
  */
-export class NlsPostProcessor extends PostNodeProcessorAdapter<NlsContext> {
+export class NlsPostProcessor extends CommentsNodeProcessorAdapter<NlsContext> {
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	ignoreToParsed(ctx: NlsContext): boolean {
 		const terminalNodes = ctx.NL_list();
@@ -28,7 +28,7 @@ export class NlsPostProcessor extends PostNodeProcessorAdapter<NlsContext> {
 		const ctx = parsed.groovyParserRuleContext as NlsContext;
 		const terminalNodes = ctx.NL_list();
 		return (terminalNodes ?? [])
-			.filter(node => node.symbol?.text?.startsWith('//') === true)
+			.filter(node => this.isSingleLineComment(node) || this.isMultipleLineComment(node))
 			.map(node => DecoratedNode.createSymbol(parsed, GroovyParser.NL, node));
 	}
 }

@@ -186,7 +186,7 @@ options {
             return;
         }
 
-        this._channel = Token.HIDDEN_CHANNEL;
+        // this._channel = Token.HIDDEN_CHANNEL;
     }
     
     private ignoreMultiLineCommentConditionally(): void {
@@ -194,7 +194,7 @@ options {
             return;
         }
 
-        this._channel = Token.HIDDEN_CHANNEL;
+        // this._channel = Token.HIDDEN_CHANNEL;
     }
 
     get syntaxErrorSource(): number {

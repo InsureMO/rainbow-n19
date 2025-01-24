@@ -11,6 +11,7 @@ import {
 	RuleContext,
 	Token
 } from 'antlr4';
+
 import {AbstractLexer} from './AbstractLexer';
 import {GroovySyntaxSource} from './GroovySyntaxSource';
 import {SemanticPredicates} from './SemanticPredicates';
@@ -530,7 +531,7 @@ export class GroovyLexer extends AbstractLexer {
 			return;
 		}
 
-		this._channel = Token.HIDDEN_CHANNEL;
+		// this._channel = Token.HIDDEN_CHANNEL;
 	}
 
 	private ignoreMultiLineCommentConditionally(): void {
@@ -538,7 +539,7 @@ export class GroovyLexer extends AbstractLexer {
 			return;
 		}
 
-		this._channel = Token.HIDDEN_CHANNEL;
+		// this._channel = Token.HIDDEN_CHANNEL;
 	}
 
 	get syntaxErrorSource(): number {

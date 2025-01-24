@@ -353,12 +353,18 @@ export const decorateGroovy = (view: EditorView) => {
 				const name = node.name;
 				const mark: SyntaxNodeMark = DefaultSyntaxNodeMarkers[name];
 				if (mark != null) {
+					// console.log(name, node.from, node.to);
 					rangedDecorations.push(mark(node, config.parsedCache).range(node.from, node.to));
 				}
 			}
 		});
 	}
-	return Decoration.set(rangedDecorations);
+	try {
+		return Decoration.set(rangedDecorations.sort((r1, r2) => r1.from - r2.from));
+	} catch (e) {
+		console.error(e);
+		return Decoration.set([]);
+	}
 };
 
 export const GroovyDecorationPlugin = ViewPlugin.fromClass(class {

@@ -2,9 +2,9 @@ import {TerminalNode} from 'antlr4';
 import {GroovyParser, SepContext} from '../../OrgApacheGroovyParserAntlr4';
 import {DecoratedNode} from '../DecoratedNode';
 import {HierarchicalNode} from '../HierarchicalNode';
-import {PostNodeProcessorAdapter} from './PostNodeProcessorAdapter';
+import {CommentsNodeProcessorAdapter} from './CommentsNodeProcessorAdapter';
 
-export class SepPostProcessor extends PostNodeProcessorAdapter<SepContext> {
+export class SepPostProcessor extends CommentsNodeProcessorAdapter<SepContext> {
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	// needCopyTextOnToParsed(_ctx: SepContext): boolean {
 	// 	return false;
@@ -20,9 +20,7 @@ export class SepPostProcessor extends PostNodeProcessorAdapter<SepContext> {
 			if (node.symbol.type === GroovyParser.SEMI) {
 				return DecoratedNode.createSymbol(parsed, GroovyParser.SEMI, node);
 			} else if (node.symbol.type === GroovyParser.NL) {
-				const text = node.symbol.text ?? '';
-				if (text.startsWith('//')
-					|| (text.startsWith('/*') && text.endsWith('*/'))) {
+				if (this.isSingleLineComment(node) || this.isMultipleLineComment(node)) {
 					return DecoratedNode.createSymbol(parsed, GroovyParser.NL, node);
 				}
 			} else {

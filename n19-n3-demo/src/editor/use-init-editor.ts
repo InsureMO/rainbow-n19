@@ -26,6 +26,7 @@ package highlighting
 * This is Groovydoc comment
 * @see java.lang.String#equals
 */
+// sl
 @Annotation(parameter = 'value') // sl
 class C {
 
@@ -83,9 +84,13 @@ enum E {}
 }
 `;
 
-// testCode = `
-// package a.b
-// // sl
+// testCode = `class /* ml */ C { // sl
+//   T /* ml */ instanceMethod() { // sl
+//
+//     // sl
+//     return /* ml */ parameter
+//   }
+// }
 // `
 export const useInitEditor = <S extends CodeEditorState>(options: UseInitEditorOptions<S>) => {
 	const {setState} = options;

@@ -32,6 +32,7 @@ export * from './ClosurePostProcessor';
 export * from './CommandArgumentPostProcessor';
 export * from './CommandExpressionPostProcessor';
 export * from './CommandPrimaryPostProcessor';
+export * from './CommentsNodeProcessorAdapter';
 export * from './CompactConstructorDeclarationPostProcessor';
 export * from './CompilationUnitPostProcessor';
 export * from './ConditionalStatementPostProcessor';
