@@ -89,7 +89,7 @@ class C {
 }
 
 def c = new C()
-c.instanceMethod("Hello", 'world')
+c.instanceMethod("Hello\\n", 'world') // TODO \\x')
 println c.stuff
 
 C.staticMethod(namedArg: 1)
