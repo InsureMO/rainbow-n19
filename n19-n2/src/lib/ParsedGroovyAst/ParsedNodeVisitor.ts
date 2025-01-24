@@ -104,6 +104,55 @@ export class ParsedNodeVisitor {
 		return [(void 0), -1];
 	}
 
+	/**
+	 * in returned nodes, there should be a node which start offset equals given start
+	 */
+	static findAtomicNodesAtSameLineByOffset(atomicNodes: Array<DecoratedNode>, start: number): Array<DecoratedNode> {
+		let startIndex = 0;
+		let endIndex = atomicNodes.length - 1;
+		let foundNode: Optional<DecoratedNode> = null;
+		let foundNodeIndex: number;
+		while (startIndex <= endIndex) {
+			const nodeIndex = Math.floor((startIndex + endIndex) / 2);
+			const node = atomicNodes[nodeIndex];
+
+			if (node.startOffset === start) {
+				// found, return
+				foundNode = node;
+				foundNodeIndex = nodeIndex;
+				break;
+			} else if (node.startOffset < start) {
+				// not found, continue finding on right part when position is after current node
+				startIndex = nodeIndex + 1;
+			} else {
+				// not found, continue finding on left part when given position is before current node
+				endIndex = nodeIndex - 1;
+			}
+		}
+		if (foundNode == null) {
+			return [];
+		}
+		let firstNodeIndexOfLine = foundNodeIndex;
+		for (let index = foundNodeIndex - 1; index >= 0; index--) {
+			const node = atomicNodes[index];
+			if (node.startLine === node.endLine && node.startLine === foundNode.startLine) {
+				firstNodeIndexOfLine = index;
+			} else {
+				break;
+			}
+		}
+		let lastNodeIndexOfLine = foundNodeIndex;
+		for (let index = foundNodeIndex + 1, length = atomicNodes.length; index < length; index++) {
+			const node = atomicNodes[index];
+			if (node.startLine === node.endLine && node.startLine === foundNode.startLine) {
+				lastNodeIndexOfLine = index;
+			} else {
+				break;
+			}
+		}
+		return atomicNodes.slice(firstNodeIndexOfLine, lastNodeIndexOfLine + 1);
+	}
+
 	static findAtomicNode(atomicNodes: Array<DecoratedNode>, line: number, column: number): [Optional<DecoratedNode>, number] {
 		let startIndex = 0;
 		let endIndex = atomicNodes.length - 1;

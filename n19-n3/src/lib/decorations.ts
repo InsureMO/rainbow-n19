@@ -341,7 +341,6 @@ export const DefaultSyntaxNodeMarkers: { [key in SymbolToken]: SyntaxNodeMark } 
 	SH_COMMENT: (_n, _pc) => DefaultSyntaxNodeDecorations.SH_COMMENT,
 	UNEXPECTED_CHAR: (_n, _pc) => DefaultSyntaxNodeDecorations.UNEXPECTED_CHAR
 };
-/* eslint-enable @typescript-eslint/no-unused-vars */
 
 export const decorateGroovy = (view: EditorView) => {
 	const rangedDecorations: Array<Range<Decoration>> = [];
@@ -360,7 +359,7 @@ export const decorateGroovy = (view: EditorView) => {
 		});
 	}
 	try {
-		return Decoration.set(rangedDecorations.sort((r1, r2) => r1.from - r2.from));
+		return Decoration.set(rangedDecorations, true);
 	} catch (e) {
 		console.error(e);
 		return Decoration.set([]);

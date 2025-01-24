@@ -13,8 +13,9 @@ export class DecoratedNode {
 	static copyPositionAndTextFromToken(node: DecoratedNode, token: Token): void {
 		node._startLine = token.line;
 		node._startColumn = token.column;
-		node._endLine = token.line;
-		node._endColumn = token.column + (token.text ?? '').length;
+		const lines = (token.text ?? '').split('\n');
+		node._endLine = token.line + lines.length - 1;
+		node._endColumn = token.column + lines[lines.length - 1].length;
 		node._startOffset = token.start;
 		node._endOffset = token.stop;
 		node._text = token.text;

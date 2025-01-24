@@ -1,10 +1,30 @@
-import {indentWithTab} from '@codemirror/commands';
-import {indentUnit} from '@codemirror/language';
-import {lintGutter} from '@codemirror/lint';
-import {Compartment, EditorState as CodeMirrorState} from '@codemirror/state';
-import {EditorView, keymap} from '@codemirror/view';
+import {autocompletion, closeBrackets, closeBracketsKeymap, completionKeymap} from '@codemirror/autocomplete';
+import {defaultKeymap, history, historyKeymap, indentWithTab} from '@codemirror/commands';
+import {
+	bracketMatching,
+	defaultHighlightStyle,
+	foldGutter,
+	foldKeymap,
+	indentOnInput,
+	indentUnit,
+	syntaxHighlighting
+} from '@codemirror/language';
+import {lintKeymap} from '@codemirror/lint';
+import {highlightSelectionMatches, searchKeymap} from '@codemirror/search';
+import {Compartment, EditorState, EditorState as CodeMirrorState} from '@codemirror/state';
+import {
+	crosshairCursor,
+	drawSelection,
+	dropCursor,
+	EditorView,
+	highlightActiveLine,
+	highlightActiveLineGutter,
+	highlightSpecialChars,
+	keymap,
+	lineNumbers,
+	rectangularSelection
+} from '@codemirror/view';
 import {createGroovyExtensions} from '@rainbow-n19/n3';
-import {basicSetup} from 'codemirror';
 import {Dispatch, SetStateAction, useEffect, useRef} from 'react';
 
 export interface CodeEditorState {
@@ -46,19 +66,19 @@ class C {
 
   static def staticMethod(int i) {
     /* This is a block comment */
-    Map map = [key1: 1, key2: 2] //, (22): 33]
+    Map map = [key1: 1, key2: 2, (22): 33]
 
     def cl = { a -> a }
     // def lambda = b -> { b }
 
-    // File f = ['path']
+    File f = ['path']
     def a = 'JetBrains'.matches(/Jw+Bw+/)
 
     label:
     for (entry in map) {
       if (entry.value > 1 && i < 2) {
         a = unresolvedReference
-        // continue label
+        continue label
       } else {
         a = entry
       }
@@ -107,10 +127,37 @@ export const useInitEditor = <S extends CodeEditorState>(options: UseInitEditorO
 			state: CodeMirrorState.create({
 				doc: testCode,
 				extensions: [
-					basicSetup,
+					// copied from basic step
+					[
+						lineNumbers(),
+						highlightActiveLineGutter(),
+						highlightSpecialChars(),
+						history(),
+						foldGutter(),
+						drawSelection(),
+						dropCursor(),
+						EditorState.allowMultipleSelections.of(true),
+						indentOnInput(),
+						syntaxHighlighting(defaultHighlightStyle, {fallback: true}),
+						bracketMatching(),
+						closeBrackets(),
+						autocompletion(),
+						rectangularSelection(),
+						crosshairCursor(),
+						highlightActiveLine(),
+						highlightSelectionMatches(),
+						keymap.of([
+							...closeBracketsKeymap,
+							...defaultKeymap,
+							...searchKeymap,
+							...historyKeymap,
+							...foldKeymap,
+							...completionKeymap,
+							...lintKeymap
+						])
+					],
 					indentUnit.of('  '),
 					keymap.of([indentWithTab]),
-					lintGutter(),
 					createGroovyExtensions({
 						languageServer: {
 							// positionedNodesLogEnabled: true,
@@ -119,8 +166,8 @@ export const useInitEditor = <S extends CodeEditorState>(options: UseInitEditorO
 							// timeSpentLogEnabled: true,
 						}
 					}),
-					changeListener.of(EditorView.updateListener.of((view) => {
-						view.state.update({});
+					changeListener.of(EditorView.updateListener.of(() => {
+						// view.state.update({});
 					}))
 				]
 			}),

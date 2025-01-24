@@ -1,3 +1,4 @@
+import {Optional} from '../TsAddon';
 import {DecoratedNode} from './DecoratedNode';
 import {HierarchicalNode} from './HierarchicalNode';
 
@@ -20,6 +21,18 @@ export class PositionedNode extends HierarchicalNode {
 
 	get endColumn(): number {
 		return this.decorated.endColumn;
+	}
+
+	get parent(): Optional<PositionedNode> {
+		return super.parent as Optional<PositionedNode>;
+	}
+
+	get children(): Array<PositionedNode> {
+		return super.children as Array<PositionedNode>;
+	}
+
+	appendChild(node: PositionedNode): void {
+		super.appendChild(node);
 	}
 
 	positioning(): void {

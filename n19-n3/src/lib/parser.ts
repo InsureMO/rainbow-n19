@@ -61,12 +61,11 @@ export class GroovyParser extends Parser {
 	}
 
 	private buildTree(document: string) {
-		const [atomics, positions] = this.languageServer.parse(document);
+		const [atomicNodes, positionedNodes] = this.languageServer.parse(document);
 		// cache, copy to facet data
-		this._parsedCache.atomicNodes = atomics;
-		this._parsedCache.positionedNodes = positions;
+		this._parsedCache.install({atomicNodes, positionedNodes});
 
-		if (atomics.length < 1) {
+		if (atomicNodes.length < 1) {
 			return Tree.build({
 				buffer: [
 					TokenToNodeType.compilationUnit.id,
@@ -79,7 +78,7 @@ export class GroovyParser extends Parser {
 			});
 		} else {
 			return Tree.build({
-				buffer: this.createBufferFromTokens(atomics),
+				buffer: this.createBufferFromTokens(atomicNodes),
 				nodeSet: NodeSet,
 				topID: TokenToNodeType.compilationUnit.id
 			});

@@ -1,24 +1,10 @@
-import {defineLanguageFacet, languageDataProp} from '@codemirror/language';
 import {NodeType} from '@lezer/common';
 import {Groovy} from '@rainbow-n19/n2';
 import {SymbolToken} from './tokens';
 
 const GroovyParser = Groovy.GroovyParser;
 export const TokenToNodeType: { [key in SymbolToken | 'compilationUnit']: NodeType } = {
-	compilationUnit: NodeType.define({
-		id: GroovyParser.RULE_compilationUnit, name: 'compilationUnit', top: true,
-		props: [
-			[
-				languageDataProp,
-				defineLanguageFacet({
-					commentTokens: {
-						block: {open: '/*', close: '*/'},
-						line: '//'
-					}
-				})
-			]
-		]
-	}),
+	compilationUnit: NodeType.define({id: GroovyParser.RULE_compilationUnit, name: 'compilationUnit', top: true}),
 	StringLiteral: NodeType.define({id: GroovyParser.StringLiteral, name: 'StringLiteral'}),
 	GStringBegin: NodeType.define({id: GroovyParser.GStringBegin, name: 'GStringBegin'}),
 	GStringEnd: NodeType.define({id: GroovyParser.GStringEnd, name: 'GStringEnd'}),
