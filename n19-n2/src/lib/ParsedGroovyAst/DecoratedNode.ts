@@ -10,6 +10,12 @@ import {SymbolIndex} from './Types';
  * which means the given {@link ParsedNode} already finish the lifecycle of {@link GroovyParserRuleContext}, all information are read-in.
  */
 export class DecoratedNode {
+	static alertIncorrectOffset(node: DecoratedNode): void {
+		if (node.startOffset < 0 || node.endOffset < 0) {
+			console.error(`Detected incorrect offset: decorated node[type=${ParsedNodeUtils.getRuleName(node.type)}, role=${node.roleText}, position=L${node.startLine}C${node.startColumn}, L${node.endLine}C${node.endColumn}, text=${node.text ?? ''}] with offset[start=${node.startOffset}, end=${node.endOffset}].`);
+		}
+	}
+
 	static copyPositionAndTextFromToken(node: DecoratedNode, token: Token): void {
 		node._startLine = token.line;
 		node._startColumn = token.column;
@@ -19,6 +25,7 @@ export class DecoratedNode {
 		node._startOffset = token.start;
 		node._endOffset = token.stop;
 		node._text = token.text;
+		DecoratedNode.alertIncorrectOffset(node);
 	}
 
 	static copyPosition(node: DecoratedNode,
@@ -31,6 +38,7 @@ export class DecoratedNode {
 		node._endColumn = endColumn;
 		node._startOffset = startOffset;
 		node._endOffset = endOffset;
+		DecoratedNode.alertIncorrectOffset(node);
 	}
 
 	static createSymbol(node: ParsedNode, role: SymbolIndex, terminalNode: TerminalNode): DecoratedNode {
