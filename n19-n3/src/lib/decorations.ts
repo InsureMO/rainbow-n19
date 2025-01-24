@@ -161,7 +161,10 @@ export const DefaultSyntaxNodeDecorations: { [key in SymbolToken | AdditionalTok
 	UNEXPECTED_CHAR: Decoration.mark({class: 'unexpected-char'}),
 
 	// additional decorations
-	AT_for_class_declaration: Decoration.mark({class: 'sig sig-at sig-at-interface'}),
+	AT_for_class_declaration: Decoration.mark({class: 'sig sig-at sig-at-for-interface'}),
+	AT_for_annotation: Decoration.mark({class: 'sig sig-at sig-at-for-annotation'}),
+	CapitalizedIdentifier_for_annotation: Decoration.mark({class: 'idt idt-capitalized-identifier idt-capitalized-identifier-for-annotation'}),
+	Identifier_for_annotation: Decoration.mark({class: 'idt idt-identifier idt-identifier-for-annotation'}),
 	ARROW_for_closure: Decoration.mark({class: 'sig sig-arrow sig-arrow-for-closure'}),
 	LBRACE_for_closure: Decoration.mark({class: 'blk blk-brace blk-lbrace blk-brace-for-closure blk-lbrace-for-closure'}),
 	RBRACE_for_closure: Decoration.mark({class: 'blk blk-brace blk-rbrace blk-brace-for-closure blk-rbrace-for-closure'}),
@@ -317,12 +320,35 @@ export const DefaultSyntaxNodeMarkers: { [key in SymbolToken]: SyntaxNodeMark } 
 	RSHIFT_ASSIGN: (_n, _pc) => DefaultSyntaxNodeDecorations.RSHIFT_ASSIGN,
 	URSHIFT_ASSIGN: (_n, _pc) => DefaultSyntaxNodeDecorations.URSHIFT_ASSIGN,
 	ELVIS_ASSIGN: (_n, _pc) => DefaultSyntaxNodeDecorations.ELVIS_ASSIGN,
-	CapitalizedIdentifier: (_n, _pc) => DefaultSyntaxNodeDecorations.CapitalizedIdentifier,
-	Identifier: (_n, _pc) => DefaultSyntaxNodeDecorations.Identifier,
+	CapitalizedIdentifier: (sn, parsedCache) => {
+		const [node] = ParsedNodeVisitor.findAtomicNodeByOffset(parsedCache.atomicNodes, sn.from, sn.to - 1);
+		if (node != null) {
+			const positioned = parsedCache.findPositionedNode(node);
+			if (positioned.parent?.role === Groovy.GroovyParser.RULE_qualifiedClassName
+				&& positioned.parent?.parent?.role === Groovy.GroovyParser.RULE_annotation) {
+				return DefaultSyntaxNodeDecorations.CapitalizedIdentifier_for_annotation;
+			}
+		}
+		return DefaultSyntaxNodeDecorations.CapitalizedIdentifier;
+	},
+	Identifier: (sn, parsedCache) => {
+		const [node] = ParsedNodeVisitor.findAtomicNodeByOffset(parsedCache.atomicNodes, sn.from, sn.to - 1);
+		if (node != null) {
+			const positioned = parsedCache.findPositionedNode(node);
+			if (positioned.parent?.role === Groovy.GroovyParser.RULE_qualifiedClassName
+				&& positioned.parent?.parent?.role === Groovy.GroovyParser.RULE_annotation) {
+				return DefaultSyntaxNodeDecorations.Identifier_for_annotation;
+			}
+		}
+		return DefaultSyntaxNodeDecorations.Identifier;
+	},
 	AT: (sn, parsedCache) => {
 		const [node] = ParsedNodeVisitor.findAtomicNodeByOffset(parsedCache.atomicNodes, sn.from, sn.to - 1);
 		if (node?.parsed?.type === Groovy.GroovyParser.RULE_classDeclaration) {
 			return DefaultSyntaxNodeDecorations.AT_for_class_declaration;
+		}
+		if (node?.parsed?.type === Groovy.GroovyParser.RULE_annotation) {
+			return DefaultSyntaxNodeDecorations.AT_for_annotation;
 		}
 		return DefaultSyntaxNodeDecorations.AT;
 	},

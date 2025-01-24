@@ -143,6 +143,9 @@ export type SymbolToken = (typeof symbolTokens)[number];
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const additionalTokens = [
 	'AT_for_class_declaration',
+	'AT_for_annotation',
+	'CapitalizedIdentifier_for_annotation',
+	'Identifier_for_annotation',
 	'ARROW_for_closure',
 	'LBRACE_for_closure',
 	'RBRACE_for_closure',

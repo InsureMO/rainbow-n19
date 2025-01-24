@@ -19,6 +19,14 @@ export const DecorationStyleVariables = css`
     --groovy-reserved-keyword-color: #0033B3;
     --groovy-reserved-keyword-background-color: transparent;
 
+    --groovy-identifier-for-annotation-color: #9E880D;
+    --groovy-capitalized-identifier-for-annotation-color: #9E880D;
+
+    --groovy-string-literal-color: #067D17;
+    --groovy-number-literal-color: #1750EB;
+
+    --groovy-gstring-color: #067D17;
+
     --groovy-brace-color: #B09633;
     --groovy-brace-font-style: italic;
     --groovy-brace-for-closure-color: #871094;
@@ -31,14 +39,10 @@ export const DecorationStyleVariables = css`
 
     --groovy-semi-color: #888;
 
-    --groovy-string-literal-color: #067D17;
-
-    --groovy-gstring-color: #067D17;
-
-    --groovy-number-literal-color: #1750EB;
-
     --groovy-at-for-interface-color: #0033B3;
     --groovy-at-for-interface-font-weight: 900;
+    --groovy-at-for-annotation-color: #9E880D;
+    --groovy-at-for-annotation-font-weight: 900;
 
     --groovy-nl-for-sl-comment-color: #8C8C8C;
     --groovy-nl-for-sl-comment-font-style: italic;
@@ -50,6 +54,20 @@ export const DecorationStyleVariables = css`
 export const DecorationStyles = css`
     span.rkw {
         ${styledBy('reserved-keyword')}
+    }
+
+    span.idt {
+        &.idt-identifier {
+            &.idt-identifier-for-annotation {
+                ${styledBy('identifier-for-annotation')}
+            }
+        }
+
+        &.idt-capitalized-identifier {
+            &.idt-capitalized-identifier-for-annotation {
+                ${styledBy('capitalized-identifier-for-annotation')}
+            }
+        }
     }
 
     span.ltl {
@@ -77,8 +95,12 @@ export const DecorationStyles = css`
     }
 
     span.sig {
-        &.sig-at.sig-at-interface {
+        &.sig-at.sig-at-for-interface {
             ${styledBy('at-for-interface')}
+        }
+
+        &.sig-at.sig-at-for-annotation {
+            ${styledBy('at-for-annotation')}
         }
 
         &.sig-arrow {
