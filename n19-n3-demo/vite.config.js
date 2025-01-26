@@ -1,12 +1,33 @@
+import {createFilter} from '@rollup/pluginutils';
 import react from "@vitejs/plugin-react";
 import {defineConfig, loadEnv} from "vite";
 
 export default ({mode}) => {
+	const groovyPlugin = () => {
+		const include = (void 0);
+		const exclude = (void 0);
+		const filter = createFilter(include, exclude);
+		return {
+			name: 'vite:transform-groovy',
+			enforce: 'pre',
+			async transform(code, id) {
+				if (/\.groovy$/.test(id)) {
+					// Filters the filesystem for files to include/exclude. Includes all files by default.
+
+					if (!filter(id)) {
+						return null;
+					}
+					return {code: `export default ${JSON.stringify(code)};`}
+				}
+				return null;
+			}
+		}
+	};
 	return defineConfig({
 		define: {
 			'process.env': {...process.env, ...loadEnv(mode, process.cwd())}
 		},
-		plugins: [react()],
+		plugins: [groovyPlugin(), react()],
 		server: {host: true, port: 3000, strictPort: true, open: '/'},
 		base: '/rainbow-n19-n3/',
 		build: {

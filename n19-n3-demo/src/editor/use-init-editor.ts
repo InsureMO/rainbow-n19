@@ -26,6 +26,7 @@ import {
 } from '@codemirror/view';
 import {createGroovyExtensions} from '@rainbow-n19/n3';
 import {Dispatch, SetStateAction, useEffect, useRef} from 'react';
+import TestGroovy1 from './test-groovy-1.groovy';
 
 export interface CodeEditorState {
 	editor?: EditorView;
@@ -37,80 +38,7 @@ export interface UseInitEditorOptions<S extends CodeEditorState> {
 	setState: Dispatch<SetStateAction<S>>;
 }
 
-// noinspection JSValidateJSDoc,JSUnresolvedReference,CommaExpressionJS,UnreachableCodeJS,BadExpressionStatementJS,JSAnnotator,JSUndeclaredVariable,UnnecessaryLabelOnContinueStatementJS,JSUnusedLocalSymbols,UnnecessaryContinueJS
-let testCode = `// hello world
-package highlighting
-
-// sl
-/**
-* This is Groovydoc comment
-* TODO this is a todo
-* @see java.lang.String#equals
-*/
-// sl
-@Annotation(parameter = 'value') // sl
-class C {
-
-  def property = new I() {}
-  static def staticProperty = []
-
-  C() {}
-
-  def <T> T instanceMethod(T parameter, reassignedParameter) {
-    reassignedParameter = 1
-    //This is a line comment
-    // TODO this is a todo
-    return parameter
-  }
-
-  def getStuff() { 42 }
-  static boolean isStaticStuff() { true }
-
-  static def staticMethod(int i) {
-    /* This is TODO a block comment */
-    Map map = [key1: 1, key2: 2, (22): 33]
-
-    def cl = { a -> a }
-    def lambda = (b) -> { b }
-
-    File f = ['path']
-    def a = 'JetBrains'.matches(/Jw+Bw+/)
-
-    label:
-    for (entry in map) {
-      if (entry.value > 1 && i < 2) {
-        a = unresolvedReference
-        continue label
-      } else {
-        a = entry
-      }
-    }
-
-    print map.key1
-  }
-}
-
-def c = new C()
-c.instanceMethod("Hello\\n", 'world') // TODO \\x')
-println c.stuff
-
-C.staticMethod(namedArg: 1)
-C.staticStuff
-
-abstract class AbstractClass {}
-interface I {}
-trait T {}
-enum E {}
-@interface Annotation {
-  String parameter()
-}
-`;
-
-// testCode = `def cl = {
-//     def cl = { a -> a }
-//     def lambda = (b) -> { b }
-// }
-// `
+let testCode = TestGroovy1;
 
 export const useInitEditor = <S extends CodeEditorState>(options: UseInitEditorOptions<S>) => {
 	const {setState} = options;
