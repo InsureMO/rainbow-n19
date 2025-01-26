@@ -111,6 +111,7 @@ enum E {}
 //     def lambda = (b) -> { b }
 // }
 // `
+
 export const useInitEditor = <S extends CodeEditorState>(options: UseInitEditorOptions<S>) => {
 	const {setState} = options;
 
@@ -163,12 +164,6 @@ export const useInitEditor = <S extends CodeEditorState>(options: UseInitEditorO
 							// atomicNodesLogEnabled: true,
 							// ruleProcessingLogsEnabled: true,
 							// timeSpentLogEnabled: true,
-						}
-					}),
-					EditorView.updateListener.of((update) => {
-						if (update.selectionSet) {
-							const selection = update.state.selection.main;
-							console.log("Selection changed:", selection);
 						}
 					}),
 					changeListener.of(EditorView.updateListener.of(() => {

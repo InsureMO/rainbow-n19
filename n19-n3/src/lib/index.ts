@@ -1,6 +1,7 @@
 export * from './decorations';
 export * from './facet';
 export * from './fold-service';
+export * from './keymap-service';
 export * from './language';
 export * from './language-server';
 export * from './parser';

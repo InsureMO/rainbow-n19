@@ -3,6 +3,7 @@ import {Extension, Facet} from '@codemirror/state';
 import {GroovyDecorationOptions, GroovyDecorationPlugin} from './decorations';
 import {DefaultGroovyFacetParsedCache, GroovyFacet, GroovyFacetData, GroovyFacetParsedCache} from './facet';
 import {FoldServicePlugin} from './fold-service';
+import {KeymapServicePlugin} from './keymap-service';
 import {GroovyLanguageServerOptions} from './language-server';
 import {GroovyParser, GroovyParserOptions} from './parser';
 
@@ -26,7 +27,8 @@ export const createGroovyExtensions = (options?: GroovyExtensionOptions): Extens
 		new LanguageSupport(language, [
 			facet,
 			GroovyDecorationPlugin(options?.decorations),
-			FoldServicePlugin
+			FoldServicePlugin,
+			KeymapServicePlugin
 		])
 	];
 };
