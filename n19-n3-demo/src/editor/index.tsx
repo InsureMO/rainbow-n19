@@ -31,6 +31,10 @@ const EditorContainer = styled.div`
         }
 
         div.cm-line {
+            .cm-nonmatchingBracket {
+                background-color: transparent;
+            }
+
             ${DecorationStyles}
         }
     }

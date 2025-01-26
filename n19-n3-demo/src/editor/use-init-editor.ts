@@ -71,7 +71,7 @@ class C {
     Map map = [key1: 1, key2: 2, (22): 33]
 
     def cl = { a -> a }
-    // def lambda = b -> { b }
+    def lambda = (b) -> { b }
 
     File f = ['path']
     def a = 'JetBrains'.matches(/Jw+Bw+/)
@@ -106,12 +106,9 @@ enum E {}
 }
 `;
 
-// testCode = `class /* ml */ C { // sl
-//   T /* ml */ instanceMethod() { // sl
-//
-//     // sl
-//     return /* ml */ parameter
-//   }
+// testCode = `def cl = {
+//     def cl = { a -> a }
+//     def lambda = (b) -> { b }
 // }
 // `
 export const useInitEditor = <S extends CodeEditorState>(options: UseInitEditorOptions<S>) => {
@@ -166,6 +163,12 @@ export const useInitEditor = <S extends CodeEditorState>(options: UseInitEditorO
 							// atomicNodesLogEnabled: true,
 							// ruleProcessingLogsEnabled: true,
 							// timeSpentLogEnabled: true,
+						}
+					}),
+					EditorView.updateListener.of((update) => {
+						if (update.selectionSet) {
+							const selection = update.state.selection.main;
+							console.log("Selection changed:", selection);
 						}
 					}),
 					changeListener.of(EditorView.updateListener.of(() => {

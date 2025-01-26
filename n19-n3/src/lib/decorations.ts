@@ -439,7 +439,44 @@ export class GroovyDecoration {
 		return [defaultMark(sn, parsedCache).range(sn.from, sn.to)];
 	}
 
-	protected decorateNode(node: SyntaxNodeRef, parsedCache: GroovyFacetParsedCache): Array<Range<Decoration>> {
+	protected decorateBraceBrackParen(sn: SyntaxNodeRef, parsedCache: GroovyFacetParsedCache, selections: Array<[number, number]>, defaultMark: SyntaxNodeMark): Array<Range<Decoration>> {
+		const selectionFromOffsets = selections.map(selection => selection[0]);
+		if (selectionFromOffsets.includes(sn.from)) {
+			// I am the one of selection
+			return [defaultMark(sn, parsedCache).range(sn.from, sn.to)];
+		}
+
+		// check another one of my pair is in selections or not.
+		const [node] = ParsedNodeVisitor.findAtomicNodeByOffset(parsedCache.atomicNodes, sn.from, sn.to - 1);
+		if (node == null) {
+			return [defaultMark(sn, parsedCache).range(sn.from, sn.to)];
+		}
+		const positioned = parsedCache.findPositionedNode(node);
+		if (positioned == null) {
+			return [defaultMark(sn, parsedCache).range(sn.from, sn.to)];
+		}
+		const parent = positioned?.parent;
+		const children = parent.children;
+		// find another part
+		const anotherRole = {
+			[Groovy.GroovyParser.LBRACE]: Groovy.GroovyParser.RBRACE,
+			[Groovy.GroovyParser.RBRACE]: Groovy.GroovyParser.LBRACE,
+			[Groovy.GroovyParser.LBRACK]: Groovy.GroovyParser.RBRACK,
+			[Groovy.GroovyParser.RBRACK]: Groovy.GroovyParser.LBRACK,
+			[Groovy.GroovyParser.LPAREN]: Groovy.GroovyParser.RPAREN,
+			[Groovy.GroovyParser.RPAREN]: Groovy.GroovyParser.LPAREN
+		}[node.role];
+		const another = children.find(child => child.role === anotherRole);
+		if (another == null || !selectionFromOffsets.includes(another.decorated.startOffset)) {
+			return [defaultMark(sn, parsedCache).range(sn.from, sn.to)];
+		}
+		// another part is in selection
+		const decoration = defaultMark(sn, parsedCache);
+		const {spec: {class: className, ...rest}} = decoration;
+		return [Decoration.mark({class: `${className} blk-matched-side`, ...rest}).range(sn.from, sn.to)];
+	}
+
+	protected decorateNode(node: SyntaxNodeRef, parsedCache: GroovyFacetParsedCache, selections: Array<[number, number]>): Array<Range<Decoration>> {
 		const name = node.name;
 		const mark: SyntaxNodeMark = DefaultSyntaxNodeMarkers[name];
 		if (mark == null) {
@@ -449,6 +486,13 @@ export class GroovyDecoration {
 		switch (mark) {
 			case DefaultSyntaxNodeMarkers.NL:
 				return this.decorateNLNode(node, parsedCache, mark);
+			case DefaultSyntaxNodeMarkers.LBRACE:
+			case DefaultSyntaxNodeMarkers.RBRACE:
+			case DefaultSyntaxNodeMarkers.LBRACK:
+			case DefaultSyntaxNodeMarkers.RBRACK:
+			case DefaultSyntaxNodeMarkers.LPAREN:
+			case DefaultSyntaxNodeMarkers.RPAREN:
+				return this.decorateBraceBrackParen(node, parsedCache, selections, mark);
 			default:
 				return [mark(node, parsedCache).range(node.from, node.to)];
 		}
@@ -456,12 +500,28 @@ export class GroovyDecoration {
 
 	decorate(view: EditorView): DecorationSet {
 		const rangedDecorations: Array<Range<Decoration>> = [];
+		const selections: Array<[number, number]> = (view.state.selection.ranges ?? []).map(range => {
+			if (range.from === range.to) {
+				if ('{}[]()'.includes(view.state.doc.slice(range.from - 1, range.from).toString())) {
+					return [range.from - 1, range.from] as [number, number];
+				}
+				if ('{}[]()'.includes(view.state.doc.slice(range.from, range.from + 1).toString())) {
+					return [range.from, range.from + 1] as [number, number];
+				}
+			} else if (range.from === range.to - 1) {
+				if ('{}[]()'.includes(view.state.doc.slice(range.from, range.to).toString())) {
+					return [range.from, range.to] as [number, number];
+				}
+			}
+			return null;
+		}).filter(x => x != null);
+
 		for (const {from, to} of view.visibleRanges) {
 			const config = view.state.facet(GroovyFacet);
 			syntaxTree(view.state).iterate({
 				from, to,
 				enter: (node) => {
-					const decorations = this.decorateNode(node, config.parsedCache);
+					const decorations = this.decorateNode(node, config.parsedCache, selections);
 					if (decorations != null && decorations.length !== 0) {
 						rangedDecorations.push(...decorations);
 					}

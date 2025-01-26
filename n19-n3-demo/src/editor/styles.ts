@@ -34,6 +34,8 @@ export const DecorationStyleVariables = css`
     --groovy-brace-for-closure-font-weight: 600;
     --groovy-brace-for-closure-font-style: var(--groovy-brace-font-style);
 
+    --groovy-block-matched-side-background-color: #FF0000B3;
+
     --groovy-arrow-font-weight: 600;
     --groovy-arrow-for-closure-color: #871094;
     --groovy-arrow-for-closure-font-weight: var(--groovy-arrow-font-weight);
@@ -101,6 +103,14 @@ export const DecorationStyles = css`
             ${styledBy('brace')}
             &.blk-brace-for-closure {
                 ${styledBy('brace-for-closure')}
+            }
+        }
+
+        &.blk-brace, &.blk-brack, &.blk-paren,
+        &.blk-brace.blk-brace-for-closure {
+            &.blk-matched-side {
+                color: inherit;
+                background-color: var(--groovy-block-matched-side-background-color);
             }
         }
     }
