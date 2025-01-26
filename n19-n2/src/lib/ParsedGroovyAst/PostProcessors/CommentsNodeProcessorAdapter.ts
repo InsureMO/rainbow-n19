@@ -13,4 +13,8 @@ export abstract class CommentsNodeProcessorAdapter<C extends NlsContext | SepCon
 			&& node.symbol.text?.startsWith('/*') === true
 			&& node.symbol.text?.endsWith('*/') === true;
 	}
+
+	protected isComment(node: TerminalNode): boolean {
+		return this.isSingleLineComment(node) || this.isMultipleLineComment(node);
+	}
 }

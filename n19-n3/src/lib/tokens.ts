@@ -150,6 +150,8 @@ const additionalTokens = [
 	'LBRACE_for_closure',
 	'RBRACE_for_closure',
 	'NL_for_sl_comment',
-	'NL_for_ml_comment'
+	'NL_for_ml_comment',
+	'NL_for_sl_comment_todo',
+	'NL_for_ml_comment_todo'
 ] as const;
 export type AdditionalToken = (typeof additionalTokens)[number]

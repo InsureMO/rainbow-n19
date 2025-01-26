@@ -28,7 +28,7 @@ export class NlsPostProcessor extends CommentsNodeProcessorAdapter<NlsContext> {
 		const ctx = parsed.groovyParserRuleContext as NlsContext;
 		const terminalNodes = ctx.NL_list();
 		return (terminalNodes ?? [])
-			.filter(node => this.isSingleLineComment(node) || this.isMultipleLineComment(node))
+			.filter(node => this.isComment(node))
 			.map(node => DecoratedNode.createSymbol(parsed, GroovyParser.NL, node));
 	}
 }

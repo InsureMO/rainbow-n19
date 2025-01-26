@@ -1,6 +1,6 @@
 import {Language, LanguageSupport} from '@codemirror/language';
 import {Extension, Facet} from '@codemirror/state';
-import {GroovyDecorationPlugin} from './decorations';
+import {GroovyDecorationOptions, GroovyDecorationPlugin} from './decorations';
 import {DefaultGroovyFacetParsedCache, GroovyFacet, GroovyFacetData, GroovyFacetParsedCache} from './facet';
 import {FoldServicePlugin} from './fold-service';
 import {GroovyLanguageServerOptions} from './language-server';
@@ -9,6 +9,7 @@ import {GroovyParser, GroovyParserOptions} from './parser';
 export interface GroovyExtensionOptions {
 	languageServer?: GroovyLanguageServerOptions;
 	facetData?: Omit<GroovyFacetData, 'parsedCache'>;
+	decorations?: GroovyDecorationOptions;
 	parsedCache?: GroovyFacetParsedCache;
 }
 
@@ -24,7 +25,7 @@ export const createGroovyExtensions = (options?: GroovyExtensionOptions): Extens
 	return [
 		new LanguageSupport(language, [
 			facet,
-			GroovyDecorationPlugin,
+			GroovyDecorationPlugin(options?.decorations),
 			FoldServicePlugin
 		])
 	];

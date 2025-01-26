@@ -2,7 +2,7 @@ import {syntaxTree} from '@codemirror/language';
 import {Range} from '@codemirror/state';
 import {Decoration, DecorationSet, EditorView, ViewPlugin, ViewUpdate} from '@codemirror/view';
 import {SyntaxNodeRef} from '@lezer/common';
-import {Groovy, Parsed} from '@rainbow-n19/n2';
+import {Groovy, Optional, Parsed} from '@rainbow-n19/n2';
 import {GroovyFacet, GroovyFacetParsedCache} from './facet';
 import {AdditionalToken, SymbolToken} from './tokens';
 
@@ -86,33 +86,33 @@ export const DefaultSyntaxNodeDecorations: { [key in SymbolToken | AdditionalTok
 	FloatingPointLiteral: Decoration.mark({class: 'ltl ltl-floating-literal'}),
 	BooleanLiteral: Decoration.mark({class: 'ltl ltl-boolean-literal'}),
 	NullLiteral: Decoration.mark({class: 'ltl ltl-null-literal'}),
-	RANGE_INCLUSIVE: Decoration.mark({class: 'sig sig-range_inclusive'}),
-	RANGE_EXCLUSIVE_LEFT: Decoration.mark({class: 'sig sig-range_exclusive_left'}),
-	RANGE_EXCLUSIVE_RIGHT: Decoration.mark({class: 'sig sig-range_exclusive_right'}),
-	RANGE_EXCLUSIVE_FULL: Decoration.mark({class: 'sig sig-range_exclusive_full'}),
-	SPREAD_DOT: Decoration.mark({class: 'sig sig-spread_dot'}),
-	SAFE_DOT: Decoration.mark({class: 'sig sig-safe_dot'}),
-	SAFE_INDEX: Decoration.mark({class: 'sig sig-safe_index'}),
-	SAFE_CHAIN_DOT: Decoration.mark({class: 'sig sig-safe_chain_dot'}),
+	RANGE_INCLUSIVE: Decoration.mark({class: 'sig sig-range-inclusive'}),
+	RANGE_EXCLUSIVE_LEFT: Decoration.mark({class: 'sig sig-range-exclusive-left'}),
+	RANGE_EXCLUSIVE_RIGHT: Decoration.mark({class: 'sig sig-range-exclusive-right'}),
+	RANGE_EXCLUSIVE_FULL: Decoration.mark({class: 'sig sig-range-exclusive-full'}),
+	SPREAD_DOT: Decoration.mark({class: 'sig sig-spread-dot'}),
+	SAFE_DOT: Decoration.mark({class: 'sig sig-safe-dot'}),
+	SAFE_INDEX: Decoration.mark({class: 'sig sig-safe-index'}),
+	SAFE_CHAIN_DOT: Decoration.mark({class: 'sig sig-safe-chain-dot'}),
 	ELVIS: Decoration.mark({class: 'sig sig-elvis'}),
-	METHOD_POINTER: Decoration.mark({class: 'sig sig--method_pointer'}),
-	METHOD_REFERENCE: Decoration.mark({class: 'sig sig--method_reference'}),
-	REGEX_FIND: Decoration.mark({class: 'sig sig--regex_find'}),
-	REGEX_MATCH: Decoration.mark({class: 'sig sig--regex_match'}),
+	METHOD_POINTER: Decoration.mark({class: 'sig sig-method-pointer'}),
+	METHOD_REFERENCE: Decoration.mark({class: 'sig sig-method-reference'}),
+	REGEX_FIND: Decoration.mark({class: 'sig sig-regex-find'}),
+	REGEX_MATCH: Decoration.mark({class: 'sig sig-regex-match'}),
 	POWER: Decoration.mark({class: 'mat mat-power'}),
 	POWER_ASSIGN: Decoration.mark({class: 'asg asg-power-assign'}),
 	SPACESHIP: Decoration.mark({class: 'lgc lgc-spaceship'}),
 	IDENTICAL: Decoration.mark({class: 'lgc lgc-identical'}),
 	NOT_IDENTICAL: Decoration.mark({class: 'lgc lgc-not-identical'}),
 	ARROW: Decoration.mark({class: 'sig sig-arrow'}),
-	NOT_INSTANCEOF: Decoration.mark({class: 'lgc lgc--not-instanceof'}),
+	NOT_INSTANCEOF: Decoration.mark({class: 'lgc lgc-not-instanceof'}),
 	NOT_IN: Decoration.mark({class: 'lgc lgc-not-in'}),
 	LPAREN: Decoration.mark({class: 'blk blk-paren blk-lparen'}),
 	RPAREN: Decoration.mark({class: 'blk blk-paren blk-rparen'}),
 	LBRACE: Decoration.mark({class: 'blk blk-brace blk-lbrace'}),
 	RBRACE: Decoration.mark({class: 'blk blk-brace blk-rbrace'}),
 	LBRACK: Decoration.mark({class: 'blk blk-brack blk-lbrack'}),
-	RBRACK: Decoration.mark({class: 'blk blk-brack blk--rbrack'}),
+	RBRACK: Decoration.mark({class: 'blk blk-brack blk-rbrack'}),
 	SEMI: Decoration.mark({class: 'sig sig-semi'}),
 	COMMA: Decoration.mark({class: 'sig sig-comma'}),
 	DOT: Decoration.mark({class: 'sig sig-dot'}),
@@ -139,18 +139,18 @@ export const DefaultSyntaxNodeDecorations: { [key in SymbolToken | AdditionalTok
 	BITOR: Decoration.mark({class: 'mat mat-bitor'}),
 	XOR: Decoration.mark({class: 'mat mat-xor'}),
 	MOD: Decoration.mark({class: 'mat mat-mod'}),
-	ADD_ASSIGN: Decoration.mark({class: 'asg asg-add_assign'}),
-	SUB_ASSIGN: Decoration.mark({class: 'asg asg-sub_assign'}),
-	MUL_ASSIGN: Decoration.mark({class: 'asg asg-mul_assign'}),
-	DIV_ASSIGN: Decoration.mark({class: 'asg asg-div_assign'}),
-	AND_ASSIGN: Decoration.mark({class: 'asg asg-and_assign'}),
-	OR_ASSIGN: Decoration.mark({class: 'asg asg-or_assign'}),
-	XOR_ASSIGN: Decoration.mark({class: 'asg asg-xor_assign'}),
-	MOD_ASSIGN: Decoration.mark({class: 'asg asg-mod_assign'}),
-	LSHIFT_ASSIGN: Decoration.mark({class: 'asg asg-lshift_assign'}),
-	RSHIFT_ASSIGN: Decoration.mark({class: 'asg asg-rshift_assign'}),
-	URSHIFT_ASSIGN: Decoration.mark({class: 'asg asg-urshift_assign'}),
-	ELVIS_ASSIGN: Decoration.mark({class: 'asg asg-elvis_assign'}),
+	ADD_ASSIGN: Decoration.mark({class: 'asg asg-add-assign'}),
+	SUB_ASSIGN: Decoration.mark({class: 'asg asg-sub-assign'}),
+	MUL_ASSIGN: Decoration.mark({class: 'asg asg-mul-assign'}),
+	DIV_ASSIGN: Decoration.mark({class: 'asg asg-div-assign'}),
+	AND_ASSIGN: Decoration.mark({class: 'asg asg-and-assign'}),
+	OR_ASSIGN: Decoration.mark({class: 'asg asg-or-assign'}),
+	XOR_ASSIGN: Decoration.mark({class: 'asg asg-xor-assign'}),
+	MOD_ASSIGN: Decoration.mark({class: 'asg asg-mod-assign'}),
+	LSHIFT_ASSIGN: Decoration.mark({class: 'asg asg-lshift-assign'}),
+	RSHIFT_ASSIGN: Decoration.mark({class: 'asg asg-rshift-assign'}),
+	URSHIFT_ASSIGN: Decoration.mark({class: 'asg asg-urshift-assign'}),
+	ELVIS_ASSIGN: Decoration.mark({class: 'asg asg-elvis-assign'}),
 	CapitalizedIdentifier: Decoration.mark({class: 'idt idt-capitalized-identifier'}),
 	Identifier: Decoration.mark({class: 'idt idt-identifier'}),
 	AT: Decoration.mark({class: 'sig sig-at'}),
@@ -169,7 +169,9 @@ export const DefaultSyntaxNodeDecorations: { [key in SymbolToken | AdditionalTok
 	LBRACE_for_closure: Decoration.mark({class: 'blk blk-brace blk-lbrace blk-brace-for-closure blk-lbrace-for-closure'}),
 	RBRACE_for_closure: Decoration.mark({class: 'blk blk-brace blk-rbrace blk-brace-for-closure blk-rbrace-for-closure'}),
 	NL_for_sl_comment: Decoration.mark({class: 'sig sig-nl sig-nl-for-sl-comment'}),
-	NL_for_ml_comment: Decoration.mark({class: 'sig sig-nl sig-nl-for-ml-comment'})
+	NL_for_ml_comment: Decoration.mark({class: 'sig sig-nl sig-nl-for-ml-comment'}),
+	NL_for_sl_comment_todo: Decoration.mark({class: 'sig sig-nl sig-nl-for-sl-comment sig-nl-for-sl-comment-todo'}),
+	NL_for_ml_comment_todo: Decoration.mark({class: 'sig sig-nl sig-nl-for-ml-comment sig-nl-for-ml-comment-todo'})
 };
 /* eslint-disable @typescript-eslint/no-unused-vars */
 export const DefaultSyntaxNodeMarkers: { [key in SymbolToken]: SyntaxNodeMark } = {
@@ -354,54 +356,143 @@ export const DefaultSyntaxNodeMarkers: { [key in SymbolToken]: SyntaxNodeMark } 
 	},
 	ELLIPSIS: (_n, _pc) => DefaultSyntaxNodeDecorations.ELLIPSIS,
 	WS: (_n, _pc) => DefaultSyntaxNodeDecorations.WS,
-	NL: (sn, parsedCache) => {
-		const [node] = ParsedNodeVisitor.findAtomicNodeByOffset(parsedCache.atomicNodes, sn.from, sn.to - 1);
-		const text = node?.text ?? '';
-		if (text.startsWith('//') === true) {
-			return DefaultSyntaxNodeDecorations.NL_for_sl_comment;
-		} else if (text.startsWith('/*') && text.endsWith('*/')) {
-			return DefaultSyntaxNodeDecorations.NL_for_ml_comment;
-		}
-		return DefaultSyntaxNodeDecorations.NL;
-	},
+	NL: (_n, _pc) => DefaultSyntaxNodeDecorations.NL,
 	SH_COMMENT: (_n, _pc) => DefaultSyntaxNodeDecorations.SH_COMMENT,
 	UNEXPECTED_CHAR: (_n, _pc) => DefaultSyntaxNodeDecorations.UNEXPECTED_CHAR
 };
 
-export const decorateGroovy = (view: EditorView) => {
-	const rangedDecorations: Array<Range<Decoration>> = [];
-	for (const {from, to} of view.visibleRanges) {
-		const config = view.state.facet(GroovyFacet);
-		syntaxTree(view.state).iterate({
-			from, to,
-			enter: (node) => {
-				const name = node.name;
-				const mark: SyntaxNodeMark = DefaultSyntaxNodeMarkers[name];
-				if (mark != null) {
-					// console.log(name, node.from, node.to);
-					rangedDecorations.push(mark(node, config.parsedCache).range(node.from, node.to));
+export interface GroovyDecorationOptions {
+	todos: Array<string>;
+}
+
+// TODO
+export class GroovyDecoration {
+	private readonly _todoKeywords: Array<string>;
+
+	constructor(options?: GroovyDecorationOptions) {
+		const todos = options?.todos ?? ['TODO'];
+		if (!todos.includes('TODO')) {
+			todos.push('TODO');
+		}
+		this._todoKeywords = todos.map(keyword => keyword.trim() + ' ');
+	}
+
+	get todoKeywords(): Array<string> {
+		return this._todoKeywords;
+	}
+
+	protected findTodoKeywords(text: string): [Optional<string>, number] {
+		return this.todoKeywords
+			.map(keyword => [keyword, text.indexOf(keyword)] as [string, number])
+			.filter(([, index]) => index >= 0)
+			.reduce((first, found) => {
+				if (first[1] === -1) {
+					return found;
+				} else if (found[1] < first[1]) {
+					return found;
+				} else {
+					return first;
 				}
+			}, [(void 0), -1] as [Optional<string>, number]);
+	}
+
+	protected decorateNLNode(sn: SyntaxNodeRef, parsedCache: GroovyFacetParsedCache, defaultMark: SyntaxNodeMark): Array<Range<Decoration>> {
+		const [node] = ParsedNodeVisitor.findAtomicNodeByOffset(parsedCache.atomicNodes, sn.from, sn.to - 1);
+		const text = node?.text ?? '';
+		const isSl = text.startsWith('//') === true;
+		const isMl = text.length > 3 && text.startsWith('/*') && text.endsWith('*/');
+		if (isSl) {
+			const [, index] = this.findTodoKeywords(text);
+			if (index === -1) {
+				// no "t odo" identified
+				return [DefaultSyntaxNodeDecorations.NL_for_sl_comment.range(sn.from, sn.to)];
+			} else {
+				return [
+					DefaultSyntaxNodeDecorations.NL_for_sl_comment.range(sn.from, sn.from + index),
+					DefaultSyntaxNodeDecorations.NL_for_sl_comment_todo.range(sn.from + index, sn.to)
+				];
 			}
-		});
+		}
+		if (isMl) {
+			let from = sn.from;
+			return text.split('\n').map(line => {
+				const [, index] = this.findTodoKeywords(line);
+				const lineFrom = from;
+				from = from + line.length + 1;
+				if (index === -1) {
+					return [DefaultSyntaxNodeDecorations.NL_for_ml_comment.range(lineFrom, lineFrom + line.length)];
+				} else if (line.endsWith('*/')) {
+					const todoTo = lineFrom + line.length - 2;
+					return [
+						DefaultSyntaxNodeDecorations.NL_for_ml_comment.range(lineFrom, lineFrom + index),
+						DefaultSyntaxNodeDecorations.NL_for_ml_comment_todo.range(lineFrom + index, todoTo),
+						DefaultSyntaxNodeDecorations.NL_for_ml_comment.range(todoTo, todoTo + 2)
+					];
+				} else {
+					return [
+						DefaultSyntaxNodeDecorations.NL_for_ml_comment.range(lineFrom, lineFrom + index),
+						DefaultSyntaxNodeDecorations.NL_for_ml_comment_todo.range(lineFrom + index, lineFrom + line.length)
+					];
+				}
+			}).flat();
+		}
+		return [defaultMark(sn, parsedCache).range(sn.from, sn.to)];
 	}
-	try {
-		return Decoration.set(rangedDecorations, true);
-	} catch (e) {
-		console.error(e);
-		return Decoration.set([]);
-	}
-};
 
-export const GroovyDecorationPlugin = ViewPlugin.fromClass(class {
-	public decorations: DecorationSet;
+	protected decorateNode(node: SyntaxNodeRef, parsedCache: GroovyFacetParsedCache): Array<Range<Decoration>> {
+		const name = node.name;
+		const mark: SyntaxNodeMark = DefaultSyntaxNodeMarkers[name];
+		if (mark == null) {
+			return [];
+		}
 
-	constructor(view: EditorView) {
-		this.decorations = decorateGroovy(view);
-	}
-
-	public update(update: ViewUpdate) {
-		if (update.docChanged || update.viewportChanged || syntaxTree(update.startState) != syntaxTree(update.state)) {
-			this.decorations = decorateGroovy(update.view);
+		switch (mark) {
+			case DefaultSyntaxNodeMarkers.NL:
+				return this.decorateNLNode(node, parsedCache, mark);
+			default:
+				return [mark(node, parsedCache).range(node.from, node.to)];
 		}
 	}
-}, {decorations: v => v.decorations});
+
+	decorate(view: EditorView): DecorationSet {
+		const rangedDecorations: Array<Range<Decoration>> = [];
+		for (const {from, to} of view.visibleRanges) {
+			const config = view.state.facet(GroovyFacet);
+			syntaxTree(view.state).iterate({
+				from, to,
+				enter: (node) => {
+					const decorations = this.decorateNode(node, config.parsedCache);
+					if (decorations != null && decorations.length !== 0) {
+						rangedDecorations.push(...decorations);
+					}
+				}
+			});
+		}
+		try {
+			return Decoration.set(rangedDecorations, true);
+		} catch (e) {
+			console.error(e);
+			return Decoration.set([]);
+		}
+	}
+}
+
+export const GroovyDecorationPlugin = (options?: GroovyDecorationOptions) => {
+	const decoration = new GroovyDecoration(options);
+	const decorate = (view: EditorView): DecorationSet => {
+		return decoration.decorate(view);
+	};
+	return ViewPlugin.fromClass(class {
+		decorations: DecorationSet;
+
+		constructor(view: EditorView) {
+			this.decorations = decorate(view);
+		}
+
+		update(update: ViewUpdate) {
+			if (update.docChanged || update.viewportChanged || syntaxTree(update.startState) != syntaxTree(update.state)) {
+				this.decorations = decorate(update.view);
+			}
+		}
+	}, {decorations: v => v.decorations});
+};

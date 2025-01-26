@@ -20,7 +20,7 @@ export class SepPostProcessor extends CommentsNodeProcessorAdapter<SepContext> {
 			if (node.symbol.type === GroovyParser.SEMI) {
 				return DecoratedNode.createSymbol(parsed, GroovyParser.SEMI, node);
 			} else if (node.symbol.type === GroovyParser.NL) {
-				if (this.isSingleLineComment(node) || this.isMultipleLineComment(node)) {
+				if (this.isComment(node)) {
 					return DecoratedNode.createSymbol(parsed, GroovyParser.NL, node);
 				}
 			} else {

@@ -24,6 +24,7 @@ export const DecorationStyleVariables = css`
 
     --groovy-string-literal-color: #067D17;
     --groovy-number-literal-color: #1750EB;
+    --groovy-boolean-literal-color: #1750EB;
 
     --groovy-gstring-color: #067D17;
 
@@ -46,11 +47,17 @@ export const DecorationStyleVariables = css`
 
     --groovy-nl-for-sl-comment-color: #8C8C8C;
     --groovy-nl-for-sl-comment-font-style: italic;
+    --groovy-nl-for-sl-comment-todo-color: #008DDE;
+    --groovy-nl-for-sl-comment-todo-font-style: italic;
+    --groovy-nl-for-sl-comment-todo-font-weight: 600;
 
     --groovy-nl-for-ml-comment-color: #8C8C8C;
     --groovy-nl-for-ml-comment-font-style: italic;
+    --groovy-nl-for-ml-comment-todo-color: #008DDE;
+    --groovy-nl-for-ml-comment-todo-font-style: italic;
+    --groovy-nl-for-ml-comment-todo-font-weight: 600;
 `;
-// noinspection CssUnresolvedCustomProperty
+// noinspection CssUnresolvedCustomProperty,CssUnusedSymbol
 export const DecorationStyles = css`
     span.rkw {
         ${styledBy('reserved-keyword')}
@@ -73,6 +80,10 @@ export const DecorationStyles = css`
     span.ltl {
         &.ltl-string-literal {
             ${styledBy('string-literal')}
+        }
+
+        &.ltl-boolean-literal {
+            ${styledBy('boolean-literal')}
         }
 
         &.ltl-integer-literal,
@@ -116,10 +127,16 @@ export const DecorationStyles = css`
 
         &.sig-nl.sig-nl-for-sl-comment {
             ${styledBy('nl-for-sl-comment')}
+            &.sig-nl-for-sl-comment-todo {
+                ${styledBy('nl-for-sl-comment-todo')}
+            }
         }
 
         &.sig-nl.sig-nl-for-ml-comment {
             ${styledBy('nl-for-ml-comment')}
+            &.sig-nl-for-ml-comment-todo {
+                ${styledBy('nl-for-ml-comment-todo')}
+            }
         }
     }
 `;

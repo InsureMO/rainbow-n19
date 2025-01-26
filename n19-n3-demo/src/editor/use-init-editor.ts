@@ -44,6 +44,7 @@ package highlighting
 // sl
 /**
 * This is Groovydoc comment
+* TODO this is a todo
 * @see java.lang.String#equals
 */
 // sl
@@ -58,6 +59,7 @@ class C {
   def <T> T instanceMethod(T parameter, reassignedParameter) {
     reassignedParameter = 1
     //This is a line comment
+    // TODO this is a todo
     return parameter
   }
 
@@ -65,7 +67,7 @@ class C {
   static boolean isStaticStuff() { true }
 
   static def staticMethod(int i) {
-    /* This is a block comment */
+    /* This is TODO a block comment */
     Map map = [key1: 1, key2: 2, (22): 33]
 
     def cl = { a -> a }
