@@ -9,14 +9,14 @@ package highlighting
 */
 // sl
 @Annotation(parameter = 'value') // sl
-class C {
+class C { // sl
 
-  def property = new I() {}
+  def property = new I() {} // sl
   static def staticProperty = []
 
   C() {}
 
-  def <T> T instanceMethod(T parameter, reassignedParameter) {
+  def <T> T instanceMethod(T parameter, reassignedParameter) { // sl
     reassignedParameter = 1
     //This is a line comment
     // TODO this is a todo
@@ -24,7 +24,7 @@ class C {
   }
 
   def getStuff() { 42 }
-  static boolean isStaticStuff() { true }
+  static boolean isStaticStuff() { true } // sl
 
   static def staticMethod(int i) {
     /* This is TODO a block comment */
