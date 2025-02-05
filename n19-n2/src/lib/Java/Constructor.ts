@@ -1,9 +1,9 @@
 import {AbstractExecutable} from './AbstractExecutable';
 import {IConstructorConstructorArgs} from './ConstructorArgs';
 import {Modifier, ParameterHelper} from './Helpers';
-import {IClass, MemberType} from './Interfaces';
+import {IClass, IConstructor, MemberType} from './Interfaces';
 
-export class Constructor extends AbstractExecutable {
+export class Constructor extends AbstractExecutable implements IConstructor {
 	constructor(declaringClass: IClass,
 	            more?: IConstructorConstructorArgs) {
 		super(declaringClass, more);

@@ -14,3 +14,6 @@ export * from './Parameter';
 export * from './Returned';
 export * from './Thrown';
 export * from './UnexpectedError';
+
+export * from './AbstractClassLoader';
+export * from './JREClassLoader';

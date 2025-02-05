@@ -4,9 +4,12 @@ import {IClass} from './IClass';
 import {IPackage} from './IPackage';
 
 export interface IClassLoader {
+	root(): IClassLoader;
+	parent(): Optional<IClassLoader>;
 	findClass(className: ClassName): Optional<IClass>;
 	findClass(className: ClassName, orCreate: () => IClass): IClass;
-	findDeclaredClassesOf(clazz: IClass): Array<IClass>;
 	findPackage(packageName: PackageName): IPackage;
+	findClassesOfPackage(packageName: PackageName): Array<IClass>;
+	findDeclaredClassesOf(clazz: IClass): Array<IClass>;
 	findNestMembersOf(clazz: IClass): Array<IClass>;
 }
