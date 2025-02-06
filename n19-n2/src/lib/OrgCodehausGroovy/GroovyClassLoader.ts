@@ -1,11 +1,11 @@
-import {AbstractClassLoader, JREClassLoader} from '../Java';
+import {JREClassLoader, NonJREClassLoader} from '../Java';
 
 export type GroovyVersion = string;
 
 /**
  * Groovy jars
  */
-export class GroovyClassLoader extends AbstractClassLoader {
+export class GroovyClassLoader extends NonJREClassLoader {
 	private readonly _version: GroovyVersion;
 
 	constructor(parent: JREClassLoader, version: GroovyVersion) {

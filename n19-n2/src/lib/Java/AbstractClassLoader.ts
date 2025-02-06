@@ -210,4 +210,9 @@ export abstract class AbstractClassLoader implements IClassLoader {
 			classesInPackage.splice(index, 1);
 		}
 	}
+
+	protected onMe(classOrName: ClassName | IClass): boolean {
+		const className = typeof classOrName === 'string' ? classOrName : classOrName.name;
+		return this._classes.has(className);
+	}
 }

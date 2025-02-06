@@ -17,3 +17,4 @@ export * from './UnexpectedError';
 
 export * from './AbstractClassLoader';
 export * from './JREClassLoader';
+export * from './NonJREClassLoader';

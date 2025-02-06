@@ -8,7 +8,7 @@ export type JREVersion = string;
 export class JREClassLoader extends AbstractClassLoader {
 	private readonly _version: JREVersion;
 
-	constructor(version: string) {
+	constructor(version: JREVersion) {
 		super();
 		this._version = version;
 	}
