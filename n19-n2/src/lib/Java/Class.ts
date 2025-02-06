@@ -125,8 +125,8 @@ export class Class implements IClass {
 		}
 		this.setName(more?.name)
 			.setModifiers(more?.modifiers)
-			.setSuperclass(more?.superclassTypeOrName)
-			.setInterfaces(more?.interfaceTypesOrNames)
+			.setSuperclass(more?.superclassTypeOrName?.(this))
+			.setInterfaces(more?.interfaceTypesOrNames?.(this))
 			.setDeclaredAnnotations(more?.declaredAnnotations?.(this))
 			.setTypeParameters(more?.typeParameters?.(this))
 			.setDeclaredConstructors(more?.declaredConstructors?.(this))

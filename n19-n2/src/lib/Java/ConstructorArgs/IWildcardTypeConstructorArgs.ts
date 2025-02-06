@@ -1,6 +1,6 @@
-import {IType} from '../Interfaces';
+import {TypeOrName} from '../TypeAlias';
 
 export interface IWildcardTypeConstructorArgs {
-	upperBounds?: Array<IType>;
-	lowerBounds?: Array<IType>;
+	upperBounds?: Array<TypeOrName>;
+	lowerBounds?: Array<TypeOrName>;
 }

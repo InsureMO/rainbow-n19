@@ -1,7 +1,7 @@
 import {Optional} from '../../TsAddon';
 import {IParameterizedTypeConstructorArgs} from '../ConstructorArgs';
 import {IClass, IClassLoader, IGenericDeclaration, IParameterizedType, IType} from '../Interfaces';
-import {ClassName, TypeName} from '../TypeAlias';
+import {ClassName, TypeName, TypeOrName} from '../TypeAlias';
 
 /**
  * Collection<String>, Collection<T>, Collection<Comparable<T>>
@@ -10,16 +10,16 @@ import {ClassName, TypeName} from '../TypeAlias';
 export class ParameterizedType implements IParameterizedType {
 	/** define on where, could be class, constructor or method */
 	private readonly _declaration: IGenericDeclaration;
-	private readonly _actualTypeArguments: Array<IType> = [];
+	private readonly _actualTypeArguments: Array<TypeOrName> = [];
 	private _rawTypeName: ClassName;
-	private _ownerType: Optional<IType>;
+	private _ownerType: Optional<TypeOrName>;
 
 	constructor(declaration: IGenericDeclaration,
 	            more?: IParameterizedTypeConstructorArgs) {
 		this._declaration = declaration;
-		this.setActualTypeArguments(more?.actualTypeArguments)
+		this.setActualTypeArguments(more?.actualTypeArguments?.(this.genericDeclaration))
 			.setRawTypeName(more?.rawTypeName)
-			.setOwnerType(more?.ownerType);
+			.setOwnerType(more?.ownerType?.(this.genericDeclaration));
 	}
 
 	get genericDeclaration(): IGenericDeclaration {
@@ -31,10 +31,16 @@ export class ParameterizedType implements IParameterizedType {
 	}
 
 	get actualTypeArguments(): Array<IType> {
-		return this._actualTypeArguments ?? [];
+		return (this._actualTypeArguments ?? []).map(bound => {
+			if (typeof bound === 'string') {
+				return this.genericDeclaration.classLoader.findClass(bound);
+			} else {
+				return bound;
+			}
+		});
 	}
 
-	setActualTypeArguments(actualTypeArguments: Array<IType>): this {
+	setActualTypeArguments(actualTypeArguments: Array<TypeOrName>): this {
 		this._actualTypeArguments.length = 0;
 		this._actualTypeArguments.push(...(actualTypeArguments ?? []));
 		return this;
@@ -50,10 +56,12 @@ export class ParameterizedType implements IParameterizedType {
 	}
 
 	get ownerType(): Optional<IType> {
-		return this._ownerType;
+		return typeof this._ownerType === 'string'
+			? this.genericDeclaration.classLoader.findClass(this._ownerType)
+			: this._ownerType;
 	}
 
-	setOwnerType(ownerType?: IType): this {
+	setOwnerType(ownerType?: TypeOrName): this {
 		this._ownerType = ownerType;
 		return this;
 	}

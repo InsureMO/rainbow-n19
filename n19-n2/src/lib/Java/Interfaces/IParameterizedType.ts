@@ -1,15 +1,15 @@
 import {Optional} from '../../TsAddon';
-import {ClassName} from '../TypeAlias';
+import {ClassName, TypeOrName} from '../TypeAlias';
 import {IClass} from './IClass';
 import {IClassLoaderHolder} from './IClassLoaderHolder';
 import {IType} from './IType';
 
 export interface IParameterizedType extends IType, IClassLoaderHolder {
 	readonly actualTypeArguments: Array<IType>;
-	setActualTypeArguments(actualTypeArguments: Array<IType>): this;
+	setActualTypeArguments(actualTypeArguments: Array<TypeOrName>): this;
 	readonly rawType: IClass;
 	setRawTypeName(rawTypeName: ClassName): this;
 	readonly ownerType: Optional<IType>;
-	setOwnerType(ownerType?: IType): this;
+	setOwnerType(ownerType?: TypeOrName): this;
 	toString(): string;
 }

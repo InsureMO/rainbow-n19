@@ -1,5 +1,5 @@
-import {IType} from '../Interfaces';
+import {TypeOrName} from '../TypeAlias';
 
 export interface IGenericArrayTypeConstructorArgs {
-	genericComponentType?: IType;
+	genericComponentType?: TypeOrName;
 }

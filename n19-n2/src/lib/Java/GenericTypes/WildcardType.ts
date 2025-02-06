@@ -2,13 +2,13 @@ import {Class} from '../Class';
 import {IWildcardTypeConstructorArgs} from '../ConstructorArgs';
 import {BuiltInConstants} from '../Helpers';
 import {IClassLoader, IGenericDeclaration, IType, IWildcardType} from '../Interfaces';
-import {TypeName} from '../TypeAlias';
+import {TypeName, TypeOrName} from '../TypeAlias';
 
 export class WildcardType implements IWildcardType {
 	/** define on where, could be class, constructor or method */
 	private readonly _declaration: IGenericDeclaration;
-	private _upperBounds: Array<IType>;
-	private _lowerBounds: Array<IType>;
+	private readonly _upperBounds: Array<TypeOrName> = [];
+	private readonly _lowerBounds: Array<TypeOrName> = [];
 
 	constructor(declaration: IGenericDeclaration,
 	            more?: IWildcardTypeConstructorArgs) {
@@ -26,20 +26,34 @@ export class WildcardType implements IWildcardType {
 	}
 
 	get upperBounds(): Array<IType> {
-		return this._upperBounds ?? [];
+		return (this._upperBounds ?? []).map(bound => {
+			if (typeof bound === 'string') {
+				return this.genericDeclaration.classLoader.findClass(bound);
+			} else {
+				return bound;
+			}
+		});
 	}
 
-	setUpperBounds(bounds: Array<IType>): this {
-		this._upperBounds = bounds;
+	setUpperBounds(bounds: Array<TypeOrName>): this {
+		this._upperBounds.length = 0;
+		this._upperBounds.push(...bounds);
 		return this;
 	}
 
 	get lowerBounds(): Array<IType> {
-		return this._lowerBounds ?? [];
+		return (this._lowerBounds ?? []).map(bound => {
+			if (typeof bound === 'string') {
+				return this.genericDeclaration.classLoader.findClass(bound);
+			} else {
+				return bound;
+			}
+		});
 	}
 
-	setLowerBounds(bounds: Array<IType>): this {
-		this._lowerBounds = bounds;
+	setLowerBounds(bounds: Array<TypeOrName>): this {
+		this._lowerBounds.length = 0;
+		this._lowerBounds.push(...bounds);
 		return this;
 	}
 

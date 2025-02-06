@@ -13,7 +13,7 @@ export class Thrown implements IThrown {
 	constructor(executable: IExecutable,
 	            more?: IThrownConstructorArgs) {
 		this._executable = executable;
-		this.setTypeOrName(more?.typeOrName)
+		this.setTypeOrName(more?.typeOrName?.(this.executable))
 			.setDeclaredAnnotations(more?.declaredAnnotations?.(this));
 	}
 

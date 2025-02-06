@@ -9,6 +9,7 @@ import {
 	IFieldConstructorArgs,
 	IMethodConstructorArgs,
 	IParameterConstructorArgs,
+	IParameterizedTypeConstructorArgs,
 	ITypeVariableConstructorArgs
 } from '../ConstructorArgs';
 import {Field} from '../Field';
@@ -25,14 +26,15 @@ import {
 	IMethod,
 	IParameter,
 	IThrown,
-	IType,
 	ITypeVariable
 } from '../Interfaces';
 import {Method} from '../Method';
 import {Parameter} from '../Parameter';
 import {Thrown} from '../Thrown';
 import {AnnotationValue, ClassName, EnumValue, NotClassType, TypeOrName} from '../TypeAlias';
+import {BuiltInConstants} from './BuiltInConstants';
 
+// noinspection DuplicatedCode
 /** value is plain, or plain array */
 export type ClassCreateAnnotationValue1Args = ['p', string, Exclude<AnnotationValue, IAnnotation | Array<IAnnotation>>];
 /** value is annotation */
@@ -45,27 +47,37 @@ export type ClassCreateAnnotationArgs = [
 ];
 export type ClassCreateTypeVariableArgs = [
 	Optional<ITypeVariableConstructorArgs['name']>,
-	Optional<Array<ClassCreateTypeOrNameArgs>>,
-	Optional<Array<ClassCreateAnnotationArgs>>
+	Optional<Array<ClassCreateTypeOrNameArgs>>, // bounds
+	Optional<Array<ClassCreateAnnotationArgs>> // declared annotations
 ];
-export type ClassCreateParameterizedTypeArgs = [];
-export type ClassCreateGenericArrayTypeArgs = [];
-export type ClassCreateWildcardTypeArgs = [];
+export type ClassCreateParameterizedTypeArgs = [
+	Optional<Array<ClassCreateTypeOrNameArgs>>, // actual type arguments
+	Optional<IParameterizedTypeConstructorArgs['rawTypeName']>,
+	Optional<ClassCreateTypeOrNameArgs> // owner type
+];
+export type ClassCreateGenericArrayTypeArgs = [
+	Optional<ClassCreateTypeOrNameArgs> // generic component type
+];
+export type ClassCreateWildcardTypeArgs = [
+	Optional<Array<ClassCreateTypeOrNameArgs>>, // upper bounds
+	Optional<Array<ClassCreateTypeOrNameArgs>> // lower bounds
+];
 export type ClassCreateTypeArgs =
-	| ClassCreateTypeVariableArgs
-	| ClassCreateParameterizedTypeArgs
-	| ClassCreateGenericArrayTypeArgs
-	| ClassCreateWildcardTypeArgs;
+	| ['tv', ClassCreateTypeVariableArgs]
+	| ['pt', ClassCreateParameterizedTypeArgs]
+	| ['ga', ClassCreateGenericArrayTypeArgs]
+	| ['wt', ClassCreateWildcardTypeArgs];
+// noinspection DuplicatedCode
 export type ClassCreateTypeOrNameArgs = ClassName | ClassCreateTypeArgs;
 export type ClassCreateParameterArgs = [
 	Optional<IParameterConstructorArgs['name']>,
-	ClassCreateTypeOrNameArgs,
+	ClassCreateTypeOrNameArgs, // type or Name
 	IParameterConstructorArgs['modifiers'],
-	Optional<Array<ClassCreateAnnotationArgs>>
+	Optional<Array<ClassCreateAnnotationArgs>> // declared annotations
 ];
 export type ClassCreateThrownArgs = [
-	ClassCreateTypeOrNameArgs,
-	Optional<Array<ClassCreateAnnotationArgs>>
+	ClassCreateTypeOrNameArgs, // type or Name
+	Optional<Array<ClassCreateAnnotationArgs>> // declared annotations
 ];
 export type ClassCreateConstructorArgs = [
 	Optional<Array<ClassCreateParameterArgs>>, // parameters
@@ -85,7 +97,8 @@ export type ClassCreateMethodArgs = [
 ];
 export type ClassCreateFieldArgs = [
 	IFieldConstructorArgs['name'],
-	ClassCreateTypeOrNameArgs,
+	ClassCreateTypeOrNameArgs, // type or name
+	Optional<Array<ClassCreateAnnotationArgs>>, // declared annotations
 	IFieldConstructorArgs['modifiers']
 ]
 export type ClassCreateEnumValueArgs = [
@@ -93,7 +106,7 @@ export type ClassCreateEnumValueArgs = [
 	EnumValue['ordinal'],
 	// other values
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	...[string, any][]
+	...[string, any][] // other values
 ];
 export type ClassCreateClassArgs = [
 	Optional<ClassCreateTypeOrNameArgs>, // super class
@@ -122,18 +135,35 @@ export class ClassCreateHelper {
 		return new ClassCreateHelper(classLoader);
 	}
 
-	protected _notClassType(args: ClassCreateTypeArgs): NotClassType {
-		// TODO
-		return (void 0);
+	protected _typeVariable(declaration: IGenericDeclaration, args: ClassCreateTypeVariableArgs): ITypeVariable {
+		// noinspection DuplicatedCode
+		return new TypeVariable(declaration, {
+			name: args[0],
+			bounds: args[1] == null ? (void 0) : declaration => args[1].map(args => this._typeOrName(declaration, args)),
+			declaredAnnotations: args[2] == null ? (void 0) : annotatedElement => args[2].map(args => this._annotation(annotatedElement, args))
+		});
 	}
 
-	protected _typeOrName(args: ClassCreateTypeOrNameArgs): TypeOrName {
-		return typeof args === 'string' ? args : this._notClassType(args);
+	protected _notClassType(declaration: IGenericDeclaration, args: ClassCreateTypeArgs): NotClassType {
+		const [type, value] = args;
+		switch (type) {
+			case 'tv':
+				return this._typeVariable(declaration, value);
+			case 'pt':
+				// return this._parameterizedType(declaration, value);
+			case 'ga':
+				// return this._genericArrayType(declaration, value);
+			case 'wt':
+				// return this._wildcardType(declaration, value);
+			default: {
+				const data = JSON.stringify({type, value});
+				throw new Error(`Cannot create annotation value by given [${data}].`);
+			}
+		}
 	}
 
-	protected _type(args: ClassCreateTypeOrNameArgs): IType {
-		// TODO
-		return (void 0);
+	protected _typeOrName(declaration: IGenericDeclaration, args: ClassCreateTypeOrNameArgs): TypeOrName {
+		return typeof args === 'string' ? args : this._notClassType(declaration, args);
 	}
 
 	protected _annotation(annotatedElement: IAnnotatedElement, args: ClassCreateAnnotationArgs): IAnnotation {
@@ -158,9 +188,10 @@ export class ClassCreateHelper {
 	}
 
 	protected _typeParameter(declaration: IGenericDeclaration, args: ClassCreateTypeVariableArgs): ITypeVariable {
+		// noinspection DuplicatedCode
 		return new TypeVariable(declaration, {
 			name: args[0],
-			bounds: args[1] == null ? (void 0) : args[1].map(args => this._type(args)),
+			bounds: args[1] == null ? (void 0) : declaration => args[1].map(args => this._typeOrName(declaration, args)),
 			declaredAnnotations: args[2] == null ? (void 0) : annotatedElement => args[2].map(args => this._annotation(annotatedElement, args))
 		});
 	}
@@ -168,7 +199,7 @@ export class ClassCreateHelper {
 	protected _parameter(executable: IExecutable, args: ClassCreateParameterArgs): IParameter {
 		return new Parameter(executable, {
 			name: args[0],
-			typeOrName: this._typeOrName(args[1]),
+			typeOrName: declaration => this._typeOrName(declaration, args[1]),
 			modifiers: args[2],
 			declaredAnnotations: args[3] == null ? (void 0) : annotatedElement => args[3].map(args => this._annotation(annotatedElement, args))
 		});
@@ -176,7 +207,7 @@ export class ClassCreateHelper {
 
 	protected _thrown(executable: IExecutable, args: ClassCreateThrownArgs): IThrown {
 		return new Thrown(executable, {
-			typeOrName: this._typeOrName(args[0]),
+			typeOrName: declaration => this._typeOrName(declaration, args[0]),
 			declaredAnnotations: args[1] == null ? (void 0) : annotatedElement => args[1].map(args => this._annotation(annotatedElement, args))
 		});
 	}
@@ -195,7 +226,7 @@ export class ClassCreateHelper {
 		return new Method(declaringClass, {
 			name: args[0],
 			parameters: args[1] == null ? (void 0) : executable => args[1].map(args => this._parameter(executable, args)),
-			returnedTypeOrName: args[2] == null ? 'void' : this._typeOrName(args[2]),
+			returnedTypeOrName: args[2] == null ? () => BuiltInConstants.P_VOID : declaration => this._typeOrName(declaration, args[2]),
 			throwns: args[3] == null ? (void 0) : executable => args[3].map(args => this._thrown(executable, args)),
 			modifiers: args[4],
 			declaredAnnotations: args[5] == null ? (void 0) : annotatedElement => args[5].map(args => this._annotation(annotatedElement, args)),
@@ -206,8 +237,9 @@ export class ClassCreateHelper {
 	protected _field(declaringClass: IClass, args: ClassCreateFieldArgs): IField {
 		return new Field(declaringClass, {
 			name: args[0],
-			typeOrName: this._typeOrName(args[1]),
-			modifiers: args[2]
+			typeOrName: declaration => this._typeOrName(declaration, args[1]),
+			declaredAnnotations: args[2] == null ? (void 0) : field => args[2].map(args => this._annotation(field, args)),
+			modifiers: args[3]
 		});
 	}
 
@@ -222,10 +254,10 @@ export class ClassCreateHelper {
 	class(name: ClassName, args: ClassCreateClassArgs): IClass {
 		const clazz = new Class(this._classLoader, {
 			name,
-			superclassTypeOrName: args[0] == null ? (void 0) : this._typeOrName(args[0]),
-			interfaceTypesOrNames: args[1] == null ? (void 0) : args[1].map(args => this._typeOrName(args)),
+			superclassTypeOrName: args[0] == null ? (void 0) : declaringClass => this._typeOrName(declaringClass, args[0]),
+			interfaceTypesOrNames: args[1] == null ? (void 0) : declaringClass => args[1].map(args => this._typeOrName(declaringClass, args)),
 			modifiers: args[2],
-			declaredAnnotations: args[3] == null ? (void 0) : annotatedElement => args[3].map(args => this._annotation(annotatedElement, args)),
+			declaredAnnotations: args[3] == null ? (void 0) : declaringClass => args[3].map(args => this._annotation(declaringClass, args)),
 			typeParameters: args[4] == null ? (void 0) : declaringClass => args[4].map(args => this._typeParameter(declaringClass, args)),
 			declaredConstructors: args[5] == null ? (void 0) : declaringClass => args[5].map(args => this._constructor(declaringClass, args)),
 			declaredMethods: args[6] == null ? (void 0) : declaringClass => args[6].map(args => this._method(declaringClass, args)),

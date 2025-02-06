@@ -13,7 +13,7 @@ export class Method extends AbstractExecutable implements IMethod {
 	            more?: IMethodConstructorArgs) {
 		super(declaringClass, more);
 		// default returns void
-		this.setReturnedTypeOrName(more?.returnedTypeOrName ?? BuiltInConstants.P_VOID);
+		this.setReturnedTypeOrName(more?.returnedTypeOrName == null ? BuiltInConstants.P_VOID : more.returnedTypeOrName(this));
 	}
 
 	get memberType(): MemberType.METHOD {
@@ -85,11 +85,12 @@ export class Method extends AbstractExecutable implements IMethod {
 				this._returned.setTypeOrName(typeOrNameOrArgs);
 			}
 		} else {
+			const args = typeOrNameOrArgs as IReturnedConstructorArgs;
 			if (this._returned == null) {
-				this._returned = new Returned(this, typeOrNameOrArgs);
+				this._returned = new Returned(this, args);
 			} else {
-				this._returned.setTypeOrName(typeOrNameOrArgs.typeOrName);
-				this._returned.setDeclaredAnnotations(typeOrNameOrArgs.declaredAnnotations?.(this._returned));
+				this._returned.setTypeOrName(args.typeOrName);
+				this._returned.setDeclaredAnnotations(args.declaredAnnotations?.(this._returned));
 			}
 		}
 

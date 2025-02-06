@@ -1,6 +1,6 @@
-import {GenericArrayType, ParameterizedType, TypeVariable, WildcardType} from '../GenericTypes';
+import {IGenericArrayType, IParameterizedType, ITypeVariable, IWildcardType} from '../Interfaces';
 
 /**
- * {@link TypeVariable}, {@link ParameterizedType}, {@link GenericArrayType}, {@link WildcardType}
+ * {@link ITypeVariable}, {@link IParameterizedType}, {@link IGenericArrayType}, {@link IWildcardType}
  */
-export type NotClassType = TypeVariable | ParameterizedType | GenericArrayType | WildcardType;
+export type NotClassType = ITypeVariable | IParameterizedType | IGenericArrayType | IWildcardType;

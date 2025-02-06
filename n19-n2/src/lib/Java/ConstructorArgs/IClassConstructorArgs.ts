@@ -3,8 +3,8 @@ import {ClassName, EnumValue, ModifiersValue, TypeOrName} from '../TypeAlias';
 
 export interface IClassConstructorArgs {
 	name?: ClassName;
-	superclassTypeOrName?: TypeOrName;
-	interfaceTypesOrNames?: Array<TypeOrName>;
+	superclassTypeOrName?: (declaringClass: IClass) => TypeOrName;
+	interfaceTypesOrNames?: (declaringClass: IClass) => Array<TypeOrName>;
 	modifiers?: ModifiersValue;
 	declaredAnnotations?: (declaringClass: IClass) => Array<IAnnotation>;
 	typeParameters?: (declaringClass: IClass) => Array<ITypeVariable>;

@@ -1,7 +1,8 @@
-import {IAnnotatedElement, IAnnotation, IType} from '../Interfaces';
+import {IAnnotatedElement, IAnnotation, IGenericDeclaration} from '../Interfaces';
+import {TypeOrName} from '../TypeAlias';
 
 export interface ITypeVariableConstructorArgs {
 	name?: string;
-	bounds?: Array<IType>;
+	bounds?: (declaration: IGenericDeclaration) => Array<TypeOrName>;
 	declaredAnnotations?: (annotatedElement: IAnnotatedElement) => Array<IAnnotation>;
 }
