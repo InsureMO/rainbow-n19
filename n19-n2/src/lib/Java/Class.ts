@@ -514,7 +514,7 @@ export class Class implements IClass {
 
 	setInterfaces(interfaceTypesOrNames: Array<TypeOrName>): this {
 		this._interfacesSupport.length = 0;
-		this._interfacesSupport.push(...interfaceTypesOrNames.map(typeOrName => {
+		this._interfacesSupport.push(...(interfaceTypesOrNames ?? []).map(typeOrName => {
 			const support = new TypeSupport<IClass>(this);
 			support.setTypeOrName(typeOrName);
 			return support;

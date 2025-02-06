@@ -6,8 +6,6 @@ export interface IExecutableConstructorArgs {
 	parameters?: Array<IParameter>;
 	throwns?: Array<IThrown>;
 	modifiers?: ModifiersValue;
-	/** declaring class name */
-	declaringClassName?: ClassName;
 	declaredAnnotations?: Array<IAnnotation>;
 	typeParameters?: Array<ITypeVariable>;
 }

@@ -8,6 +8,7 @@ export * from './AbstractExecutable';
 export * from './Annotation';
 export * from './Class';
 export * from './Constructor';
+export * from './Method';
 export * from './Field';
 export * from './Package';
 export * from './Parameter';
