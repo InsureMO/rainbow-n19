@@ -5,22 +5,21 @@ describe('ClassLoader Test', () => {
 	test('Add object class', async () => {
 		const clazz = new Class(classLoader, {
 			name: 'java.lang.Object',
-			modifiers: Modifier.PUBLIC
-		});
-		const constructor = new Constructor(clazz, {modifiers: Modifier.PUBLIC});
-		clazz.setDeclaredConstructors([constructor]);
-		const method = new Method(clazz, {
-			name: 'equals',
 			modifiers: Modifier.PUBLIC,
-			returnedTypeOrName: 'boolean'
+			declaredConstructors: (declaringClass) => {
+				return [new Constructor(declaringClass, {modifiers: Modifier.PUBLIC})];
+			},
+			declaredMethods: (declaringClass) => {
+				return [new Method(declaringClass, {
+					name: 'equals',
+					modifiers: Modifier.PUBLIC,
+					parameters: (executable) => {
+						return [new Parameter(executable, {name: 'obj', typeOrName: 'java.lang.Object'})];
+					},
+					returnedTypeOrName: 'boolean'
+				})];
+			}
 		});
-		const parameter = new Parameter(method, {
-			name: 'obj',
-			typeOrName: 'java.lang.Object'
-		});
-		method.setParameters([parameter]);
-		clazz.setDeclaredMethods([method]);
-
 		classLoader.addClass(clazz);
 		console.log(classLoader);
 	});

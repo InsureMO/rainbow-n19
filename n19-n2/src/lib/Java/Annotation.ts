@@ -16,6 +16,7 @@ export class Annotation implements IAnnotation {
 	            more?: IAnnotationConstructorArgs) {
 		this._annotatedElement = annotatedElement;
 		this.setTypeName(more.className);
+		(more.values ?? []).forEach(([name, value]) => this.set(name, value));
 	}
 
 	get annotatedElement(): IAnnotatedElement {

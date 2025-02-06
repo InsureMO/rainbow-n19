@@ -1,3 +1,4 @@
+import {IAnnotation, IField} from '../Interfaces';
 import {ModifiersValue, TypeOrName} from '../TypeAlias';
 
 export interface IFieldConstructorArgs {
@@ -5,6 +6,7 @@ export interface IFieldConstructorArgs {
 	name?: string;
 	/** field type */
 	typeOrName?: TypeOrName;
+	declaredAnnotations?: (field: IField) => Array<IAnnotation>;
 	/** modifiers */
 	modifiers?: ModifiersValue;
 }

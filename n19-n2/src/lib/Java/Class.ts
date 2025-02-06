@@ -127,11 +127,11 @@ export class Class implements IClass {
 			.setModifiers(more?.modifiers)
 			.setSuperclass(more?.superclassTypeOrName)
 			.setInterfaces(more?.interfaceTypesOrNames)
-			.setDeclaredAnnotations(more?.declaredAnnotations)
-			.setTypeParameters(more?.typeParameters)
-			.setDeclaredConstructors(more?.declaredConstructors)
-			.setDeclaredMethods(more?.declaredMethods)
-			.setDeclaredFields(more?.declaredFields);
+			.setDeclaredAnnotations(more?.declaredAnnotations?.(this))
+			.setTypeParameters(more?.typeParameters?.(this))
+			.setDeclaredConstructors(more?.declaredConstructors?.(this))
+			.setDeclaredMethods(more?.declaredMethods?.(this))
+			.setDeclaredFields(more?.declaredFields?.(this));
 	}
 
 	get classLoader(): IClassLoader {

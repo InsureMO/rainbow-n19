@@ -29,7 +29,7 @@ export class Parameter implements IParameter {
 		this.setName(more?.name)
 			.setTypeOrName(more?.typeOrName)
 			.setModifiers(more?.modifiers)
-			.setDeclaredAnnotations(more?.declaredAnnotations);
+			.setDeclaredAnnotations(more?.declaredAnnotations?.(this));
 	}
 
 	get executable(): IExecutable {

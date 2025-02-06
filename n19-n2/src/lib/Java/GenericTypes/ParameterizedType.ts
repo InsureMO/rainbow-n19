@@ -1,5 +1,5 @@
 import {Optional} from '../../TsAddon';
-import {IParameterizedTypeTypeConstructorArgs} from '../ConstructorArgs';
+import {IParameterizedTypeConstructorArgs} from '../ConstructorArgs';
 import {IClass, IClassLoader, IGenericDeclaration, IParameterizedType, IType} from '../Interfaces';
 import {ClassName, TypeName} from '../TypeAlias';
 
@@ -15,7 +15,7 @@ export class ParameterizedType implements IParameterizedType {
 	private _ownerType: Optional<IType>;
 
 	constructor(declaration: IGenericDeclaration,
-	            more?: IParameterizedTypeTypeConstructorArgs) {
+	            more?: IParameterizedTypeConstructorArgs) {
 		this._declaration = declaration;
 		this.setActualTypeArguments(more?.actualTypeArguments)
 			.setRawTypeName(more?.rawTypeName)

@@ -34,7 +34,7 @@ export class TypeVariable implements ITypeVariable {
 		this._declaration = declaration;
 		this.setName(more?.name)
 			.setBounds(more?.bounds)
-			.setDeclaredAnnotations(more?.declaredAnnotations);
+			.setDeclaredAnnotations(more?.declaredAnnotations?.(this));
 	}
 
 	get genericDeclaration(): IGenericDeclaration {

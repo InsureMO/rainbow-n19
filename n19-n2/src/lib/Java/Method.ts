@@ -89,7 +89,7 @@ export class Method extends AbstractExecutable implements IMethod {
 				this._returned = new Returned(this, typeOrNameOrArgs);
 			} else {
 				this._returned.setTypeOrName(typeOrNameOrArgs.typeOrName);
-				this._returned.setDeclaredAnnotations(typeOrNameOrArgs.declaredAnnotations);
+				this._returned.setDeclaredAnnotations(typeOrNameOrArgs.declaredAnnotations?.(this._returned));
 			}
 		}
 

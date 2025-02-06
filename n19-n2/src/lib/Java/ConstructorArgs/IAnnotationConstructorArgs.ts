@@ -1,6 +1,7 @@
-import {ClassName} from '../TypeAlias';
+import {AnnotationValue, ClassName} from '../TypeAlias';
 
 export interface IAnnotationConstructorArgs {
 	/** class name */
-	className?: ClassName;
+	className: ClassName;
+	values?: Array<[string, AnnotationValue]>;
 }

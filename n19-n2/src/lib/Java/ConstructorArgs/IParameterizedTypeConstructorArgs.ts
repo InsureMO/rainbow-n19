@@ -1,7 +1,7 @@
 import {IType} from '../Interfaces';
 import {ClassName} from '../TypeAlias';
 
-export interface IParameterizedTypeTypeConstructorArgs {
+export interface IParameterizedTypeConstructorArgs {
 	actualTypeArguments?: Array<IType>;
 	rawTypeName?: ClassName;
 	ownerType?: IType;

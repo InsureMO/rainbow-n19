@@ -6,7 +6,7 @@ export * from './IFieldConstructorArgs';
 export * from './IGenericArrayTypeConstructorArgs';
 export * from './IMethodConstructorArgs';
 export * from './IParameterConstructorArgs';
-export * from './IParameterizedTypeTypeConstructorArgs';
+export * from './IParameterizedTypeConstructorArgs';
 export * from './IReturnedConstructorArgs';
 export * from './IThrownConstructorArgs';
 export * from './ITypeVariableConstructorArgs';

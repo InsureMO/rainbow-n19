@@ -18,6 +18,7 @@ export class Field implements IField {
 		this._declaringClass = declaringClass;
 		this.setName(more?.name)
 			.setTypeOrName(more?.typeOrName)
+			.setDeclaredAnnotations(more?.declaredAnnotations?.(this))
 			.setModifiers(more?.modifiers);
 	}
 

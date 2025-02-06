@@ -14,7 +14,7 @@ export class Returned implements IReturned {
 	            more?: IReturnedConstructorArgs) {
 		this._executable = executable;
 		this.setTypeOrName(more?.typeOrName)
-			.setDeclaredAnnotations(more?.declaredAnnotations);
+			.setDeclaredAnnotations(more?.declaredAnnotations?.(this));
 	}
 
 	get executable(): IExecutable {
