@@ -2,7 +2,9 @@ import {AbstractClassLoader} from './AbstractClassLoader';
 
 export type JREVersion = string;
 
-/** top level */
+/**
+ * root class loader, for JRE
+ */
 export class JREClassLoader extends AbstractClassLoader {
 	private readonly _version: JREVersion;
 

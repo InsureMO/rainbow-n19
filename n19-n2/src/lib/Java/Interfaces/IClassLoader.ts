@@ -9,7 +9,16 @@ export interface IClassLoader {
 	findClass(className: ClassName): Optional<IClass>;
 	findClass(className: ClassName, orCreate: () => IClass): IClass;
 	findPackage(packageName: PackageName): IPackage;
+	/**
+	 * classes with given package name, including ancestors
+	 */
 	findClassesOfPackage(packageName: PackageName): Array<IClass>;
 	findDeclaredClassesOf(clazz: IClass): Array<IClass>;
 	findNestMembersOf(clazz: IClass): Array<IClass>;
+	/**
+	 * including packages from ancestors, only packages have classes are returned
+	 */
+	allPackages(): Array<IPackage>;
+	addClass(clazz: IClass): void;
+	removeClass(className: ClassName): void;
 }

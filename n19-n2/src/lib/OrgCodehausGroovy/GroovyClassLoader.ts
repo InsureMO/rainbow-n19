@@ -2,6 +2,9 @@ import {AbstractClassLoader, JREClassLoader} from '../Java';
 
 export type GroovyVersion = string;
 
+/**
+ * Groovy jars
+ */
 export class GroovyClassLoader extends AbstractClassLoader {
 	private readonly _version: GroovyVersion;
 

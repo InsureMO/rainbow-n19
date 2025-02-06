@@ -365,7 +365,6 @@ export interface GroovyDecorationOptions {
 	todos: Array<string>;
 }
 
-// TODO
 export class GroovyDecoration {
 	private readonly _todoKeywords: Array<string>;
 

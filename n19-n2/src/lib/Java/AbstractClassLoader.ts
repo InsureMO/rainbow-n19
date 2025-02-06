@@ -46,7 +46,7 @@ export abstract class AbstractClassLoader implements IClassLoader {
 	}
 
 	findPackage(packageName: PackageName): IPackage {
-		let pkg = this._packages.get(packageName);
+		let pkg = this._packages.get(packageName) ?? this._parent?.findPackage(packageName);
 		if (pkg == null) {
 			pkg = new Package().setName(packageName);
 			this._packages.set(packageName, pkg);
@@ -73,6 +73,25 @@ export abstract class AbstractClassLoader implements IClassLoader {
 		const nestHostClassName = index === -1 ? clazz.name : clazz.name.substring(0, index);
 		// at least itself is
 		return this._nestMembers.get(nestHostClassName) ?? [clazz];
+	}
+
+	allPackages(): Array<IPackage> {
+		const myPackages = [...this._packages.values()];
+		const packagesFromAncestors = this._parent?.allPackages() ?? [];
+		return [...[...packagesFromAncestors, ...myPackages].reduce((map, pkg) => {
+			const packageName = pkg.name;
+			if (!this._classesOfPackages.has(packageName)) {
+				// no class in this package,
+				// then check the package exists in ancestors or not, replace it when exists,
+				// or ignore it
+				if (map.has(packageName)) {
+					map.set(packageName, pkg);
+				}
+			} else {
+				map.set(pkg.name, pkg);
+			}
+			return map;
+		}, new Map<PackageName, IPackage>()).values()];
 	}
 
 	addClass(clazz: IClass): void {
@@ -166,6 +185,29 @@ export abstract class AbstractClassLoader implements IClassLoader {
 		} else {
 			// add class
 			nestMembers.push(clazz);
+		}
+	}
+
+	removeClass(className: ClassName): void {
+		const exists = this._classes.get(className);
+		if (exists == null) {
+			this._parent?.removeClass(className);
+			return;
+		}
+		this._declaredClasses.delete(className);
+		const indexOf$ = className.indexOf(BuiltInConstants.SUB_CLASS_$);
+		if (indexOf$ === -1) {
+			// top level
+			this._nestMembers.delete(className);
+		}
+		const packageName = exists.packageName;
+		const classesInPackage = this._classesOfPackages.get(packageName);
+		if (classesInPackage.length === 1) {
+			this._classesOfPackages.delete(packageName);
+			this._packages.delete(packageName);
+		} else {
+			const index = classesInPackage.indexOf(exists);
+			classesInPackage.splice(index, 1);
 		}
 	}
 }
