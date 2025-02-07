@@ -3,7 +3,6 @@ package com.insuremo.rainbow.n19n4
 import java.io.File
 import kotlin.contracts.ExperimentalContracts
 
-
 fun initializeEnv(args: Array<String>): Envs {
 	return object : Envs {
 		// constants
@@ -158,10 +157,11 @@ fun initializeEnv(args: Array<String>): Envs {
 	}
 }
 
-private fun rmdir(dir: String): Boolean {
-	return File(dir).takeIf { it.exists() }?.deleteRecursively() != false
-}
 
 fun finalizeEnv(envs: Envs) {
+	fun rmdir(dir: String): Boolean {
+		return File(dir).takeIf { it.exists() }?.deleteRecursively() != false
+	}
+
 	envs.shouldDeleteMod2JarTempdir().takeIf { it }?.apply { rmdir(envs.mod2JarTempdir()) }
 }

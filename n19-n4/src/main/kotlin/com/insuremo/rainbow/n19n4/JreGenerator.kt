@@ -6,7 +6,7 @@ import java.util.zip.ZipEntry
 import java.util.zip.ZipFile
 import java.util.zip.ZipOutputStream
 
-fun createJarFromJmod(modFilePath: String, envs: Envs) {
+private fun createJarFromJmod(modFilePath: String, envs: Envs) {
 	try {
 		val moduleFile = ZipFile(modFilePath)
 		val zipOutputStream =
@@ -30,7 +30,7 @@ fun createJarFromJmod(modFilePath: String, envs: Envs) {
 	}
 }
 
-fun findJmods(envs: Envs) {
+fun generateJre(envs: Envs) {
 	File(System.getProperty("java.home") + File.separator + "jmods")
 		.takeIf { folder -> folder.exists() && folder.isDirectory }
 		?.listFiles { file -> file.isFile && file.extension == "jmod" }

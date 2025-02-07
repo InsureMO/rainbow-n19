@@ -7,7 +7,7 @@ fun main(args: Array<String>) {
 	val envs = initializeEnv(args)
 	if (!envs.printHelp()) {
 		try {
-			findJmods(envs)
+			generateJre(envs)
 		} finally {
 			finalizeEnv(envs)
 		}
