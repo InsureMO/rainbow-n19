@@ -13,8 +13,8 @@ export class WildcardType implements IWildcardType {
 	constructor(declaration: IGenericDeclaration,
 	            more?: IWildcardTypeConstructorArgs) {
 		this._declaration = declaration;
-		this.setUpperBounds(more?.upperBounds)
-			.setLowerBounds(more?.lowerBounds);
+		this.setUpperBounds(more?.upperBounds?.(this))
+			.setLowerBounds(more?.lowerBounds?.(this));
 	}
 
 	get genericDeclaration(): IGenericDeclaration {

@@ -33,7 +33,7 @@ export class TypeVariable implements ITypeVariable {
 	            more?: ITypeVariableConstructorArgs) {
 		this._declaration = declaration;
 		this.setName(more?.name)
-			.setBounds(more?.bounds?.(this.genericDeclaration))
+			.setBounds(more?.bounds?.(this))
 			.setDeclaredAnnotations(more?.declaredAnnotations?.(this));
 	}
 

@@ -1,8 +1,8 @@
-import {IGenericDeclaration} from '../Interfaces';
+import {IParameterizedType} from '../Interfaces';
 import {ClassName, TypeOrName} from '../TypeAlias';
 
 export interface IParameterizedTypeConstructorArgs {
-	actualTypeArguments?: (declaration: IGenericDeclaration) => Array<TypeOrName>;
+	actualTypeArguments?: (parameterizedType: IParameterizedType) => Array<TypeOrName>;
 	rawTypeName?: ClassName;
-	ownerType?: (declaration: IGenericDeclaration) => TypeOrName;
+	ownerType?: (parameterizedType: IParameterizedType) => TypeOrName;
 }

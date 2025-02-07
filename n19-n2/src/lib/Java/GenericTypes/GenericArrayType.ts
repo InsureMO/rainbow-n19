@@ -10,7 +10,7 @@ export class GenericArrayType implements IGenericArrayType {
 	constructor(declaration: IGenericDeclaration,
 	            more?: IGenericArrayTypeConstructorArgs) {
 		this._declaration = declaration;
-		this.setGenericComponentType(more?.genericComponentType);
+		this.setGenericComponentType(more?.genericComponentType?.(this));
 	}
 
 	get genericDeclaration(): IGenericDeclaration {

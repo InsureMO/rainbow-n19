@@ -13,7 +13,7 @@ import {
 	ITypeVariableConstructorArgs
 } from '../ConstructorArgs';
 import {Field} from '../Field';
-import {TypeVariable} from '../GenericTypes';
+import {GenericArrayType, ParameterizedType, TypeVariable, WildcardType} from '../GenericTypes';
 import {
 	IAnnotatedElement,
 	IAnnotation,
@@ -22,11 +22,14 @@ import {
 	IConstructor,
 	IExecutable,
 	IField,
+	IGenericArrayType,
 	IGenericDeclaration,
 	IMethod,
 	IParameter,
+	IParameterizedType,
 	IThrown,
-	ITypeVariable
+	ITypeVariable,
+	IWildcardType
 } from '../Interfaces';
 import {Method} from '../Method';
 import {Parameter} from '../Parameter';
@@ -139,8 +142,29 @@ export class ClassCreateHelper {
 		// noinspection DuplicatedCode
 		return new TypeVariable(declaration, {
 			name: args[0],
-			bounds: args[1] == null ? (void 0) : declaration => args[1].map(args => this._typeOrName(declaration, args)),
-			declaredAnnotations: args[2] == null ? (void 0) : annotatedElement => args[2].map(args => this._annotation(annotatedElement, args))
+			bounds: args[1] == null ? (void 0) : typeVariable => args[1].map(args => this._typeOrName(typeVariable.genericDeclaration, args)),
+			declaredAnnotations: args[2] == null ? (void 0) : typeVariable => args[2].map(args => this._annotation(typeVariable, args))
+		});
+	}
+
+	protected _parameterizedType(declaration: IGenericDeclaration, args: ClassCreateParameterizedTypeArgs): IParameterizedType {
+		return new ParameterizedType(declaration, {
+			actualTypeArguments: args[0] == null ? (void 0) : parameterizedType => args[0].map(args => this._typeOrName(parameterizedType.genericDeclaration, args)),
+			rawTypeName: args[1],
+			ownerType: args[2] == null ? (void 0) : parameterizedType => this._typeOrName(parameterizedType.genericDeclaration, args[2])
+		});
+	}
+
+	protected _genericArrayType(declaration: IGenericDeclaration, args: ClassCreateGenericArrayTypeArgs): IGenericArrayType {
+		return new GenericArrayType(declaration, {
+			genericComponentType: args[0] == null ? (void 0) : genericArrayType => this._typeOrName(genericArrayType.genericDeclaration, args[0])
+		});
+	}
+
+	protected _wildcardType(declaration: IGenericDeclaration, args: ClassCreateWildcardTypeArgs): IWildcardType {
+		return new WildcardType(declaration, {
+			upperBounds: args[0] == null ? (void 0) : wildcardType => args[0].map(args => this._typeOrName(wildcardType.genericDeclaration, args)),
+			lowerBounds: args[1] == null ? (void 0) : wildcardType => args[1].map(args => this._typeOrName(wildcardType.genericDeclaration, args))
 		});
 	}
 
@@ -150,11 +174,11 @@ export class ClassCreateHelper {
 			case 'tv':
 				return this._typeVariable(declaration, value);
 			case 'pt':
-				// return this._parameterizedType(declaration, value);
+				return this._parameterizedType(declaration, value);
 			case 'ga':
-				// return this._genericArrayType(declaration, value);
+				return this._genericArrayType(declaration, value);
 			case 'wt':
-				// return this._wildcardType(declaration, value);
+				return this._wildcardType(declaration, value);
 			default: {
 				const data = JSON.stringify({type, value});
 				throw new Error(`Cannot create annotation value by given [${data}].`);
@@ -191,53 +215,53 @@ export class ClassCreateHelper {
 		// noinspection DuplicatedCode
 		return new TypeVariable(declaration, {
 			name: args[0],
-			bounds: args[1] == null ? (void 0) : declaration => args[1].map(args => this._typeOrName(declaration, args)),
-			declaredAnnotations: args[2] == null ? (void 0) : annotatedElement => args[2].map(args => this._annotation(annotatedElement, args))
+			bounds: args[1] == null ? (void 0) : typeVariable => args[1].map(args => this._typeOrName(typeVariable.genericDeclaration, args)),
+			declaredAnnotations: args[2] == null ? (void 0) : typeVariable => args[2].map(args => this._annotation(typeVariable, args))
 		});
 	}
 
 	protected _parameter(executable: IExecutable, args: ClassCreateParameterArgs): IParameter {
 		return new Parameter(executable, {
 			name: args[0],
-			typeOrName: declaration => this._typeOrName(declaration, args[1]),
+			typeOrName: parameter => this._typeOrName(parameter.executable, args[1]),
 			modifiers: args[2],
-			declaredAnnotations: args[3] == null ? (void 0) : annotatedElement => args[3].map(args => this._annotation(annotatedElement, args))
+			declaredAnnotations: args[3] == null ? (void 0) : parameter => args[3].map(args => this._annotation(parameter, args))
 		});
 	}
 
 	protected _thrown(executable: IExecutable, args: ClassCreateThrownArgs): IThrown {
 		return new Thrown(executable, {
-			typeOrName: declaration => this._typeOrName(declaration, args[0]),
-			declaredAnnotations: args[1] == null ? (void 0) : annotatedElement => args[1].map(args => this._annotation(annotatedElement, args))
+			typeOrName: thrown => this._typeOrName(thrown.executable, args[0]),
+			declaredAnnotations: args[1] == null ? (void 0) : thrown => args[1].map(args => this._annotation(thrown, args))
 		});
 	}
 
 	protected _constructor(declaringClass: IClass, args: ClassCreateConstructorArgs): IConstructor {
 		return new Constructor(declaringClass, {
-			parameters: args[0] == null ? (void 0) : executable => args[0].map(args => this._parameter(executable, args)),
-			throwns: args[1] == null ? (void 0) : executable => args[1].map(args => this._thrown(executable, args)),
+			parameters: args[0] == null ? (void 0) : cons => args[0].map(args => this._parameter(cons, args)),
+			throwns: args[1] == null ? (void 0) : cons => args[1].map(args => this._thrown(cons, args)),
 			modifiers: args[2],
-			declaredAnnotations: args[3] == null ? (void 0) : annotatedElement => args[3].map(args => this._annotation(annotatedElement, args)),
-			typeParameters: args[4] == null ? (void 0) : executable => args[4].map(args => this._typeParameter(executable, args))
+			declaredAnnotations: args[3] == null ? (void 0) : cons => args[3].map(args => this._annotation(cons, args)),
+			typeParameters: args[4] == null ? (void 0) : cons => args[4].map(args => this._typeParameter(cons, args))
 		});
 	}
 
 	protected _method(declaringClass: IClass, args: ClassCreateMethodArgs): IMethod {
 		return new Method(declaringClass, {
 			name: args[0],
-			parameters: args[1] == null ? (void 0) : executable => args[1].map(args => this._parameter(executable, args)),
-			returnedTypeOrName: args[2] == null ? () => BuiltInConstants.P_VOID : declaration => this._typeOrName(declaration, args[2]),
-			throwns: args[3] == null ? (void 0) : executable => args[3].map(args => this._thrown(executable, args)),
+			parameters: args[1] == null ? (void 0) : method => args[1].map(args => this._parameter(method, args)),
+			returnedTypeOrName: args[2] == null ? () => BuiltInConstants.P_VOID : method => this._typeOrName(method, args[2]),
+			throwns: args[3] == null ? (void 0) : method => args[3].map(args => this._thrown(method, args)),
 			modifiers: args[4],
-			declaredAnnotations: args[5] == null ? (void 0) : annotatedElement => args[5].map(args => this._annotation(annotatedElement, args)),
-			typeParameters: args[6] == null ? (void 0) : executable => args[6].map(args => this._typeParameter(executable, args))
+			declaredAnnotations: args[5] == null ? (void 0) : method => args[5].map(args => this._annotation(method, args)),
+			typeParameters: args[6] == null ? (void 0) : method => args[6].map(args => this._typeParameter(method, args))
 		});
 	}
 
 	protected _field(declaringClass: IClass, args: ClassCreateFieldArgs): IField {
 		return new Field(declaringClass, {
 			name: args[0],
-			typeOrName: declaration => this._typeOrName(declaration, args[1]),
+			typeOrName: field => this._typeOrName(field.declaringClass, args[1]),
 			declaredAnnotations: args[2] == null ? (void 0) : field => args[2].map(args => this._annotation(field, args)),
 			modifiers: args[3]
 		});

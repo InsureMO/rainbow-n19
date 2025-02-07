@@ -17,9 +17,9 @@ export class ParameterizedType implements IParameterizedType {
 	constructor(declaration: IGenericDeclaration,
 	            more?: IParameterizedTypeConstructorArgs) {
 		this._declaration = declaration;
-		this.setActualTypeArguments(more?.actualTypeArguments?.(this.genericDeclaration))
+		this.setActualTypeArguments(more?.actualTypeArguments?.(this))
 			.setRawTypeName(more?.rawTypeName)
-			.setOwnerType(more?.ownerType?.(this.genericDeclaration));
+			.setOwnerType(more?.ownerType?.(this));
 	}
 
 	get genericDeclaration(): IGenericDeclaration {

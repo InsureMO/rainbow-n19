@@ -27,7 +27,7 @@ export class Parameter implements IParameter {
 	            more?: IParameterConstructorArgs) {
 		this._executable = executable;
 		this.setName(more?.name)
-			.setTypeOrName(more?.typeOrName?.(this.executable))
+			.setTypeOrName(more?.typeOrName?.(this))
 			.setModifiers(more?.modifiers)
 			.setDeclaredAnnotations(more?.declaredAnnotations?.(this));
 	}

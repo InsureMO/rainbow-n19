@@ -1,5 +1,6 @@
+import {IGenericArrayType} from '../Interfaces';
 import {TypeOrName} from '../TypeAlias';
 
 export interface IGenericArrayTypeConstructorArgs {
-	genericComponentType?: TypeOrName;
+	genericComponentType?: (genericArrayType: IGenericArrayType) => TypeOrName;
 }
