@@ -141,7 +141,7 @@ fun initializeEnv(args: Array<String>): Envs {
 		}
 
 		override fun outputDir(): String {
-			return outputDir;
+			return outputDir
 		}
 
 		override fun shouldCleanOutputDir(): Boolean {
