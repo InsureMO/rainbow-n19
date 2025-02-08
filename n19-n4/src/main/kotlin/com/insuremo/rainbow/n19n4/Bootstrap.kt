@@ -4,12 +4,14 @@ import kotlin.contracts.ExperimentalContracts
 
 @OptIn(ExperimentalContracts::class)
 fun main(args: Array<String>) {
-	val envs = initializeEnv(args)
-	if (!envs.printHelp()) {
+	initializeEnv(args)
+	if (!Envs.printHelp()) {
 		try {
-			generateJre(envs)
+			cleanOutputDir()
+			generateJre()
 		} finally {
-			finalizeEnv(envs)
+			finalizeEnv()
+			Logs.log("\u001B[31mDone!", 0)
 		}
 	}
 }

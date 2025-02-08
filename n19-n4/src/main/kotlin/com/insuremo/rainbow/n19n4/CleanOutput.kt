@@ -1,9 +1,10 @@
 package com.insuremo.rainbow.n19n4
 
-fun cleanOutputDir(envs: Envs) {
-	if (!envs.shouldCleanOutputDir()) {
-		return
+fun cleanOutputDir() {
+	Logs.log("Checking output directory", 0)
+	val dir = Envs.outputDir()
+	if (Envs.shouldCleanOutputDir()) {
+		Logs.log("Cleaning output directory", 1)
+		cleanDir(dir)
 	}
-	val dir = envs.outputDir()
-
 }
