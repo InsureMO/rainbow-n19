@@ -2,8 +2,14 @@ package com.insuremo.rainbow.n19n4
 
 import java.util.zip.ZipFile
 
-fun generateJar(jarPath: String, classLoaderInfo: ClassLoaderInfo) {
-	val classes = ZipFile(jarPath).entries().toList().filter { entry -> entry.name.endsWith(".class") }
+data class JarGeneratingTargetInfo(
+	val classCreateHelperName: String,
+	val classLoaderFileName: String,
+	val rootDir: String
+)
+
+fun generateJar(jarFilePath: String, targetInfo: JarGeneratingTargetInfo) {
+	val classes = ZipFile(jarFilePath).entries().toList().filter { entry -> entry.name.endsWith(".class") }
 	val filtered = classes
 		.map { entry -> entry.name.substring(0, entry.name.length - 6) }
 		.map { name -> name.replace('/', '.') }
@@ -26,7 +32,7 @@ fun generateJar(jarPath: String, classLoaderInfo: ClassLoaderInfo) {
 	}
 
 	filtered.forEach {
-		generateClass(Envs.jreDir, it, classLoaderInfo)
+		generateClass(it, targetInfo)
 		Summary.addTreatedClass(it)
 	}
 }

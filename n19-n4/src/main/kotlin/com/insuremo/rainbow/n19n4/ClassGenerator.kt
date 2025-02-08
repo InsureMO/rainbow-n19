@@ -3,11 +3,6 @@ package com.insuremo.rainbow.n19n4
 import java.io.File
 import java.util.Locale
 
-data class ClassLoaderInfo(
-	val name: String,
-	val fileName: String
-)
-
 private fun createPackageDir(targetDir: String, packageName: String): Pair<String, Int> {
 	var dir: String
 	var level: Int
@@ -19,8 +14,15 @@ private fun createPackageDir(targetDir: String, packageName: String): Pair<Strin
 		}
 
 		OutputMode.TILED -> {
-			dir =
-				names.joinToString("") { it.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() } }
+			dir = targetDir + File.separator + names.joinToString("") {
+				it.replaceFirstChar {
+					if (it.isLowerCase()) {
+						it.titlecase(Locale.getDefault())
+					} else {
+						it.toString()
+					}
+				}
+			}
 			level = 1
 		}
 	}
@@ -28,19 +30,19 @@ private fun createPackageDir(targetDir: String, packageName: String): Pair<Strin
 	return Pair(dir, level)
 }
 
-fun generateClass(targetDir: String, className: String, classLoaderInfo: ClassLoaderInfo) {
+fun generateClass(className: String, targetInfo: JarGeneratingTargetInfo) {
 	val clazz = Class.forName(className)
 	val packageName = clazz.packageName
-	val (packageDir, packageLevel) = createPackageDir(targetDir, packageName)
+	val (packageDir, packageLevel) = createPackageDir(targetInfo.rootDir, packageName)
 
 	val simpleName = clazz.simpleName
 	writeFile(
 		packageDir + File.separator + simpleName + ".ts",
-		"import {${classLoaderInfo.name}} from '${"../".repeat(packageLevel)}${classLoaderInfo.fileName}';\n" +
+		"import {${targetInfo.classCreateHelperName}} from '${"../".repeat(packageLevel)}${targetInfo.classLoaderFileName}';\n" +
 				"import {UDF} from '${"../".repeat(packageLevel + 1)}utils';\n" +
 				"\n" +
 				"// noinspection JSConsecutiveCommasInArrayLiteral\n" +
-				"${classLoaderInfo.name}.class('${className}', [\n" +
+				"${targetInfo.classCreateHelperName}.class('${className}', [\n" +
 				"\t/* super class */,\n" +
 				"\t/* interfaces */,\n" +
 				"\t/* modifiers */\n" +

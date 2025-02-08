@@ -27,8 +27,8 @@ object Envs {
 	private val DEFAULT_EXCLUDE_PACKAGES = listOf(
 		"apple.security", "apple.laf", "com.apple",
 		"java.applet", "java.awt", "javax.swing",
-		"java.rmi",
-		"javax.smartcardio", "javax.accessibility",
+		"java.rmi", "javax.rmi", "javax.print",
+		"javax.smartcardio", "javax.accessibility", "javax.sound",
 		"jdk",
 		"com.sun", "sun",
 		"netscape.javascript",

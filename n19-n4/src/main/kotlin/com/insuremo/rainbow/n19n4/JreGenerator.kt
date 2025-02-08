@@ -55,7 +55,6 @@ private fun createClassLoaderFile(targetDir: String) {
 			"export const JdkClassLoader = new JDKClassLoader();\n" +
 			"export const JdkClassCreateHelper = Java.ClassCreateHelper.on(JdkClassLoader);\n"
 	writeFile(targetDir + File.separator + "JdkClassLoader.ts", content)
-	appendToIndexFile(Envs.jreDir, "export * from './JdkClassLoader';\n")
 }
 
 fun generateJre() {
@@ -74,9 +73,26 @@ fun generateJre() {
 
 	Logs.log("Preparing JDK directory", 0)
 	createIndexFile(Envs.jreDir)
-	appendToIndexFile(Envs.libDir, "export * from './Jdk';\n")
+	appendToIndexFile(Envs.libDir, "import {JdkClassLoader} from './Jdk';\n")
 	createClassLoaderFile(Envs.jreDir)
 
 	Logs.log("Generating from temporary JAR files", 1)
-	generateJars(jarsDir, ClassLoaderInfo(name = "JdkClassCreateHelper", fileName = "JdkClassLoader"))
+	generateJars(
+		jarsDir, JarGeneratingTargetInfo(
+			classCreateHelperName = "JdkClassCreateHelper",
+			classLoaderFileName = "JdkClassLoader",
+			rootDir = Envs.jreDir
+		)
+	)
+
+	// import all class files
+	val imports = File(Envs.jreDir)
+		.listFiles { file -> file.isDirectory }
+		?.joinToString("\n") { file -> "import './${file.name}';" }
+		?: ""
+
+	appendToIndexFile(
+		Envs.jreDir,
+		"${if (imports.isEmpty()) imports else (imports + "\n\n")}export {JdkClassLoader} from './JdkClassLoader';\n"
+	)
 }
