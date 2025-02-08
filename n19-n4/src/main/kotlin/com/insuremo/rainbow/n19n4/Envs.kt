@@ -21,6 +21,15 @@ object Envs {
 	private const val OUTPUT_MODE = "outputMode"
 	private const val OUTPUT_MODE_TILED = "tiled"
 	private const val OUTPUT_MODE_HIERARCHICAL = "package"
+	private const val EXCLUDE_PACKAGES = "excludePackages"
+	private val DEFAULT_EXCLUDE_PACKAGES = listOf(
+		"apple.security", "apple.laf", "com.apple",
+		"java.applet", "java.awt", "javax.swing",
+		"jdk",
+		"com.sun", "sun"
+	).joinToString(",")
+	private const val EXCLUDE_CLASSES = "excludeClasses"
+	private const val DEFAULT_EXCLUDE_CLASSES = ""
 
 	// dev constants
 	private const val TRANSFORM_MOD_2_JAR = "dev.transformMod2Jar"
@@ -28,8 +37,8 @@ object Envs {
 	// instances
 	private val envsMap = mutableMapOf<String, String?>()
 	val workPath: String = File(".").absolutePath
-	val mod2jarTempdir by lazy { this.askDir(envsMap[MOD2JAR_TEMP_DIR] ?: DEFAULT_MOD2JAR_TEMP_DIR) }
-	val outputDir by lazy { this.askDir(envsMap[OUTPUT_DIR] ?: DEFAULT_OUTPUT_DIR) }
+	val mod2jarTempdir by lazy { this.askDir(this.get(MOD2JAR_TEMP_DIR, DEFAULT_MOD2JAR_TEMP_DIR)) }
+	val outputDir by lazy { this.askDir(this.get(OUTPUT_DIR, DEFAULT_OUTPUT_DIR)) }
 	val shouldCleanOutputDir by lazy { this.isEnabled(CLEAN_OUTPUT_DIR, true) }
 	val outputMode by lazy {
 		when (this.get(OUTPUT_MODE, OUTPUT_MODE_HIERARCHICAL).lowercase()) {
@@ -41,9 +50,20 @@ object Envs {
 	val shouldGenerateJre by lazy { this.isEnabled(GENERATE_JDK, false) }
 	val shouldCleanMod2jarTempdir by lazy { this.isEnabled(CLEAN_MOD2JAR_TEMP_DIR, true) }
 	val shouldDeleteMod2jarTempdirOnFinalization by lazy { this.isEnabled(TEMP_DIR_MOD2JAR_POST_DEL, true) }
+	val excludedPackages by lazy {
+		this.get(EXCLUDE_PACKAGES, DEFAULT_EXCLUDE_PACKAGES).split(",").map { name -> "${name}." }
+	}
+	val excludedClasses by lazy {
+		this.get(EXCLUDE_CLASSES, DEFAULT_EXCLUDE_CLASSES).split(",").toList().associate { Pair(it, true) }
+	}
 
 	// dev
 	val shouldTransformMod2jar by lazy { this.isEnabled(TRANSFORM_MOD_2_JAR, true) }
+
+	// values
+	val libDir by lazy { outputDir + File.separator + "lib" }
+	val jreDir by lazy { libDir + File.separator + "Jdk" }
+	val groovyDir by lazy { libDir + File.separator + "Groovy" }
 
 	fun initialize(args: Array<String>) {
 		envsMap.putAll(this.argsToMap(args))
@@ -164,5 +184,15 @@ object Envs {
 	fun isEnabled(envKey: String, defaultValue: Boolean): Boolean {
 		val v = this.get(envKey)
 		return if (v == null) defaultValue else this.toBoolean(v)
+	}
+
+	fun isClassExcluded(className: String): Boolean {
+		if (this.excludedClasses.containsKey(className)) {
+			return true
+		}
+		if (this.excludedPackages.any { className.startsWith(it) }) {
+			return true
+		}
+		return false
 	}
 }

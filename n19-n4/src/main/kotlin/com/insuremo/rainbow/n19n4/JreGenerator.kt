@@ -12,11 +12,12 @@ private fun createJarFromJmod(modFilePath: String, targetDir: String) {
 		"Transform JDK modular file[\u001B[33m\u001B[3m${modFileName}\u001B[0m] "
 				+ "to [\u001B[32m\u001B[3m${modFileName}.jar\u001B[0m]", 2
 	)
+	val targetFileName = targetDir + File.separator + "${modFileName}.jar"
 	if (!Envs.shouldTransformMod2jar) {
 		return
 	}
 	val moduleFile = ZipFile(modFilePath)
-	val zipOutputStream = ZipOutputStream(FileOutputStream(targetDir + File.separator + "${modFileName}.jar"))
+	val zipOutputStream = ZipOutputStream(FileOutputStream(targetFileName))
 	moduleFile.entries().toList().forEach { entry ->
 		entry.name
 			.takeIf { name -> (name.startsWith("classes") && !name.contains("module-info")) || name.startsWith("resources") }
@@ -41,6 +42,42 @@ private fun extractJarsFromJre(targetDir: String) {
 		?.forEach { createJarFromJmod(it.absolutePath, targetDir) }
 }
 
+private fun createClassLoaderFile(targetDir: String) {
+	val content = "import {Java} from '@rainbow-n19/n2';\n\n" +
+			"export class JDKClassLoader extends Java.JREClassLoader {\n" +
+			"\tconstructor() {\n" +
+			"\t\tsuper('${System.getProperty("java.version")}');\n" +
+			"\t}\n\n" +
+			"\tvendor(): string{\n" +
+			"\t\treturn '${System.getProperty("java.vendor")}';\n" +
+			"\t}\n" +
+			"}\n"
+	writeFile(targetDir + File.separator + "JdkClassLoader.ts", content)
+	appendToIndexFile(Envs.jreDir, "export * from './JdkClassLoader';\n")
+}
+
+private fun generateFromJar(path: String) {
+	val classes = ZipFile(path).entries().toList().filter { entry -> entry.name.endsWith(".class") }
+	val filtered = classes
+		.map { entry -> entry.name.substring(0, entry.name.length - 6) }
+		.map { name -> name.replace('/', '.') }
+		.filter { name -> !Envs.isClassExcluded(name) }
+	if (filtered.size != classes.size) {
+		Logs.log("Total ${classes.size} classes detected, ${classes.size - filtered.size} filtered", -1)
+	} else {
+		Logs.log("Total ${classes.size} classes detected", -1)
+	}
+}
+
+private fun generateFromJars(targetDir: String) {
+	File(targetDir)
+		.listFiles { it.name.endsWith(".jar") }
+		?.forEach {
+			Logs.log("Generating from temporary JAR file[\u001B[33m\u001B[3m${it.name}\u001B[0m]", 2)
+			generateFromJar(it.absolutePath)
+		}
+}
+
 fun generateJre() {
 	if (!Envs.shouldGenerateJre) {
 		return
@@ -54,4 +91,12 @@ fun generateJre() {
 	}
 
 	extractJarsFromJre(targetDir)
+
+	Logs.log("Preparing JDK directory", 0)
+	createIndexFile(Envs.jreDir)
+	appendToIndexFile(Envs.libDir, "export * from './Jdk';\n")
+	createClassLoaderFile(Envs.jreDir)
+
+	Logs.log("Generating from temporary JAR files", 1)
+	generateFromJars(targetDir)
 }

@@ -8,6 +8,7 @@ fun main(args: Array<String>) {
 	if (!Envs.printHelp()) {
 		try {
 			cleanOutputDir()
+			prepareOutputDir()
 			generateJre()
 		} finally {
 			finalizeEnv()

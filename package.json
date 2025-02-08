@@ -4,17 +4,20 @@
 		"n19-n1",
 		"n19-n2",
 		"n19-n3",
-		"n19-n3-demo"
+		"n19-n3-demo",
+		"n19-n5"
 	],
 	"scripts": {
 		"n1:build": "cd ./n19-n1 && yarn build",
 		"n2:build": "cd ./n19-n2 && yarn build",
 		"n3:build": "cd ./n19-n3 && yarn build",
-		"all:build": "yarn n1:build && yarn n2:build && yarn n3:build",
+		"j17:build": "cd ./n19-j17 && yarn build",
+		"all:build": "yarn n1:build && yarn n2:build && yarn n3:build && yarn j17:build",
 		"n1:build:ci": "cd ./n19-n1 && yarn build:ci",
 		"n2:build:ci": "cd ./n19-n2 && yarn build:ci",
 		"n3:build:ci": "cd ./n19-n3 && yarn build:ci",
-		"all:build:ci": "yarn n1:build:ci && yarn n2:build:ci && yarn n3:build:ci"
+		"j17:build:ci": "cd ./n19-j17 && yarn build:ci",
+		"all:build:ci": "yarn n1:build:ci && yarn n2:build:ci && yarn n3:build:ci && yarn j17:build:ci"
 	},
 	"volta": {
 		"node": "22.11.0",
