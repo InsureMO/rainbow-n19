@@ -12,7 +12,7 @@ private fun createJarFromJmod(modFilePath: String, targetDir: String) {
 		"Transform JDK modular file[\u001B[33m\u001B[3m${modFileName}\u001B[0m] "
 				+ "to [\u001B[32m\u001B[3m${modFileName}.jar\u001B[0m]", 2
 	)
-	if (!Envs.shouldTransformMod2Jar()) {
+	if (!Envs.shouldTransformMod2jar) {
 		return
 	}
 	val moduleFile = ZipFile(modFilePath)
@@ -42,13 +42,13 @@ private fun extractJarsFromJre(targetDir: String) {
 }
 
 fun generateJre() {
-	if (!Envs.shouldGenerateJre()) {
+	if (!Envs.shouldGenerateJre) {
 		return
 	}
 
 	Logs.log("Checking temporary directory for saving the JAR files transformed from JDK modular files", 0)
-	val targetDir = Envs.mod2JarTempdir()
-	if (Envs.shouldCleanMod2JarTempdir()) {
+	val targetDir = Envs.mod2jarTempdir
+	if (Envs.shouldCleanMod2jarTempdir) {
 		Logs.log("Cleaning temporary directory for saving the JAR files transformed from JDK modular files", 1)
 		cleanDir(targetDir)
 	}

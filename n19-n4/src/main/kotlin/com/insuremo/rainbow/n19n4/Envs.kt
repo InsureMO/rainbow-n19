@@ -27,11 +27,23 @@ object Envs {
 
 	// instances
 	private val envsMap = mutableMapOf<String, String?>()
-	private val workPath = File(".").absolutePath
-	private val mod2jarTempdir by lazy {
-		this.askDir(envsMap[MOD2JAR_TEMP_DIR] ?: DEFAULT_MOD2JAR_TEMP_DIR)
+	val workPath: String = File(".").absolutePath
+	val mod2jarTempdir by lazy { this.askDir(envsMap[MOD2JAR_TEMP_DIR] ?: DEFAULT_MOD2JAR_TEMP_DIR) }
+	val outputDir by lazy { this.askDir(envsMap[OUTPUT_DIR] ?: DEFAULT_OUTPUT_DIR) }
+	val shouldCleanOutputDir by lazy { this.isEnabled(CLEAN_OUTPUT_DIR, true) }
+	val outputMode by lazy {
+		when (this.get(OUTPUT_MODE, OUTPUT_MODE_HIERARCHICAL).lowercase()) {
+			OUTPUT_MODE_TILED -> OutputMode.TILED
+			OUTPUT_MODE_HIERARCHICAL -> OutputMode.HIERARCHICAL
+			else -> OutputMode.HIERARCHICAL
+		}
 	}
-	private val outputDir by lazy { this.askDir(envsMap[OUTPUT_DIR] ?: DEFAULT_OUTPUT_DIR) }
+	val shouldGenerateJre by lazy { this.isEnabled(GENERATE_JDK, false) }
+	val shouldCleanMod2jarTempdir by lazy { this.isEnabled(CLEAN_MOD2JAR_TEMP_DIR, true) }
+	val shouldDeleteMod2jarTempdirOnFinalization by lazy { this.isEnabled(TEMP_DIR_MOD2JAR_POST_DEL, true) }
+
+	// dev
+	val shouldTransformMod2jar by lazy { this.isEnabled(TRANSFORM_MOD_2_JAR, true) }
 
 	fun initialize(args: Array<String>) {
 		envsMap.putAll(this.argsToMap(args))
@@ -123,10 +135,6 @@ object Envs {
 		return true
 	}
 
-	fun workPath(): String {
-		return workPath
-	}
-
 	fun get(envKey: String): String? {
 		return envsMap[envKey]
 	}
@@ -156,42 +164,5 @@ object Envs {
 	fun isEnabled(envKey: String, defaultValue: Boolean): Boolean {
 		val v = this.get(envKey)
 		return if (v == null) defaultValue else this.toBoolean(v)
-	}
-
-	fun shouldGenerateJre(): Boolean {
-		return this.isEnabled(GENERATE_JDK, false)
-	}
-
-	fun mod2JarTempdir(): String {
-		return mod2jarTempdir
-	}
-
-	fun shouldCleanMod2JarTempdir(): Boolean {
-		return this.isEnabled(CLEAN_MOD2JAR_TEMP_DIR, true)
-	}
-
-	fun shouldDeleteMod2JarTempdirOnFinalization(): Boolean {
-		return this.isEnabled(TEMP_DIR_MOD2JAR_POST_DEL, true)
-	}
-
-	fun outputDir(): String {
-		return outputDir
-	}
-
-	fun shouldCleanOutputDir(): Boolean {
-		return this.isEnabled(CLEAN_OUTPUT_DIR, true)
-	}
-
-	fun outputMode(): OutputMode {
-		return when (this.get(OUTPUT_MODE, OUTPUT_MODE_HIERARCHICAL).lowercase()) {
-			OUTPUT_MODE_TILED -> OutputMode.TILED
-			OUTPUT_MODE_HIERARCHICAL -> OutputMode.HIERARCHICAL
-			else -> OutputMode.HIERARCHICAL
-		}
-	}
-
-	// dev
-	fun shouldTransformMod2Jar(): Boolean {
-		return this.isEnabled(TRANSFORM_MOD_2_JAR, true)
 	}
 }
