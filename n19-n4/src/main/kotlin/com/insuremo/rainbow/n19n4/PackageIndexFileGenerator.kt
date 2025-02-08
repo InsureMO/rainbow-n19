@@ -1,7 +1,6 @@
 package com.insuremo.rainbow.n19n4
 
 import java.io.File
-import kotlin.collections.sorted
 
 fun generatePackageIndexFile(dir: String) {
 	val content = File(dir).listFiles()
