@@ -5,7 +5,10 @@ export class JDKClassLoader extends Java.JREClassLoader {
 		super('17.0.4.1');
 	}
 
-	vendor(): string{
+	vendor(): string {
 		return 'Amazon.com Inc.';
 	}
 }
+
+export const JdkClassLoader = new JDKClassLoader();
+export const JdkClassCreateHelper = Java.ClassCreateHelper.on(JdkClassLoader);
