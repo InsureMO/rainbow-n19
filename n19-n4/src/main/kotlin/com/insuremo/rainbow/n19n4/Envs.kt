@@ -13,7 +13,8 @@ interface Envs {
 	fun getInt(envKey: String, defaultValue: Int): Int
 	fun isEnabled(envKey: String, defaultValue: Boolean = false): Boolean
 	fun mod2JarTempdir(): String
-	fun shouldDeleteMod2JarTempdir(): Boolean
+	fun shouldCleanMod2JarTempdir(): Boolean
+	fun shouldDeleteMod2JarTempdirOnFinalization(): Boolean
 	fun outputDir(): String
 	fun shouldCleanOutputDir(): Boolean
 	fun outputMode(): OutputMode

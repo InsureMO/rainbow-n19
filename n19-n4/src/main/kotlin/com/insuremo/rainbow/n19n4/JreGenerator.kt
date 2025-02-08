@@ -6,11 +6,11 @@ import java.util.zip.ZipEntry
 import java.util.zip.ZipFile
 import java.util.zip.ZipOutputStream
 
-private fun createJarFromJmod(modFilePath: String, envs: Envs) {
+private fun createJarFromJmod(modFilePath: String, targetDir: String) {
 	try {
 		val moduleFile = ZipFile(modFilePath)
 		val zipOutputStream =
-			ZipOutputStream(FileOutputStream(envs.mod2JarTempdir() + File.separator + "${File(modFilePath).name}.jar"))
+			ZipOutputStream(FileOutputStream(targetDir + File.separator + "${File(modFilePath).name}.jar"))
 		moduleFile.entries().toList().forEach { entry ->
 			entry.name
 				.takeIf { name -> (name.startsWith("classes") && !name.contains("module-info")) || name.startsWith("resources") }
@@ -31,8 +31,13 @@ private fun createJarFromJmod(modFilePath: String, envs: Envs) {
 }
 
 fun generateJre(envs: Envs) {
+	val targetDir = envs.mod2JarTempdir()
+	if (envs.shouldCleanMod2JarTempdir()) {
+		cleanDir(targetDir)
+	}
+
 	File(System.getProperty("java.home") + File.separator + "jmods")
 		.takeIf { folder -> folder.exists() && folder.isDirectory }
 		?.listFiles { file -> file.isFile && file.extension == "jmod" }
-		?.forEach { createJarFromJmod(it.absolutePath, envs) }
+		?.forEach { createJarFromJmod(it.absolutePath, targetDir) }
 }

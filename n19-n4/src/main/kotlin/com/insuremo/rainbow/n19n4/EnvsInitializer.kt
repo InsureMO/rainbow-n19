@@ -8,12 +8,13 @@ fun initializeEnv(args: Array<String>): Envs {
 		// constants
 		private val KEY_PREFIX = "n19n4."
 		private val HELP = "help"
-		private val TEMP_DIR_MOD2JAR = "mod2jarTempdir"
-		private val DEFAULT_TEMP_DIR_MOD2JAR = ".temp${File.separator}.mod2jar"
+		private val MOD2JAR_TEMP_DIR = "mod2jarTempdir"
+		private val CLEAN_MOD2JAR_TEMP_DIR = "cleanMod2jarTempDir"
+		private val DEFAULT_MOD2JAR_TEMP_DIR = ".temp${File.separator}.mod2jar"
 		private val TEMP_DIR_MOD2JAR_POST_DEL = "mod2jarTempDirPostDel"
 		private val OUTPUT_DIR = "outputDir"
-		private val DEFAULT_OUTPUT_DIR = "output"
-		private val CLEAN_OUTPUT_DIR = "outputClean"
+		private val DEFAULT_OUTPUT_DIR = "output${File.separator}src"
+		private val CLEAN_OUTPUT_DIR = "cleanOutputDir"
 		private val OUTPUT_MODE = "outputMode"
 		private val OUTPUT_MODE_TILED = "tiled"
 		private val OUTPUT_MODE_HIERARCHICAL = "package"
@@ -22,23 +23,36 @@ fun initializeEnv(args: Array<String>): Envs {
 		private val envsMap: Map<String, String?> = this.argsToMap(args)
 		private val workPath = File(".").absolutePath
 		private val mod2jarTempdir by lazy {
-			this.askDir(workPath, envsMap[TEMP_DIR_MOD2JAR] ?: DEFAULT_TEMP_DIR_MOD2JAR)
+			this.askDir(workPath, envsMap[MOD2JAR_TEMP_DIR] ?: DEFAULT_MOD2JAR_TEMP_DIR)
 		}
 		private val outputDir by lazy { this.askDir(workPath, envsMap[OUTPUT_DIR] ?: DEFAULT_OUTPUT_DIR) }
 
 		private fun argsToMap(args: Array<String>): Map<String, String?> {
-			return args.map {
-				it.takeIf { it.startsWith(KEY_PREFIX) }?.substring(6)?.trim()?.split("=")
-					?.let { Pair(it[0], if (it.size == 1) null else it[1]) }
-			}.filter { it != null }.associate { it!!.first to it.second }
+			return args
+				.map {
+					it.takeIf { it.startsWith(KEY_PREFIX) }?.substring(6)?.trim()?.split("=")
+						?.let { Pair(it[0], if (it.size == 1) null else it[1]) }
+				}
+				.filter { it != null }
+				.associate { it!!.first to it.second }
 		}
 
+		/**
+		 * raise exception when given path exists and is a file
+		 */
 		@OptIn(ExperimentalContracts::class)
 		private fun askDir(workPath: String, dir: String): String {
-			return File(File(dir).takeIf { it.isAbsolute }?.absolutePath ?: ("$workPath${File.separator}$dir"))
-				.throwIf({ it.exists() }, { RuntimeException("[${it.absolutePath}] exists.") })
-				.apply { this.mkdirs() }
-				.absolutePath
+			val folder = File(File(dir).takeIf { it.isAbsolute }?.absolutePath ?: ("$workPath${File.separator}$dir"))
+			return folder
+				.takeIf { !it.exists() || it.isDirectory }
+				?.apply {
+					if (!this.exists()) {
+						this.mkdirs()
+					}
+				}
+				?.absolutePath
+			// exists and is a file
+				?: throw RuntimeException("[${folder.absolutePath}] exists and is a file.")
 		}
 
 		override fun printHelp(): Boolean {
@@ -58,9 +72,12 @@ fun initializeEnv(args: Array<String>): Envs {
 
 			val args = mapOf(
 				"${KEY_PREFIX}${HELP}" to "Print help, ignoring all other arguments",
-				"${KEY_PREFIX}${TEMP_DIR_MOD2JAR}"
-						to "Directory for saving the JAR files transformed from JDK modular files. "
-						+ "Default \"${cdv(DEFAULT_TEMP_DIR_MOD2JAR)}\"",
+				"${KEY_PREFIX}${MOD2JAR_TEMP_DIR}"
+						to "Temporary directory for saving the JAR files transformed from JDK modular files. "
+						+ "Default \"${cdv(DEFAULT_MOD2JAR_TEMP_DIR)}\"",
+				"${KEY_PREFIX}${CLEAN_MOD2JAR_TEMP_DIR}"
+						to "Clean the temporary directory for JAR files transformed from JDK modular files. "
+						+ "Default \"${cdv("true")}\"",
 				"${KEY_PREFIX}${TEMP_DIR_MOD2JAR_POST_DEL}"
 						to "Delete temporary JAR files after generation is completed. Default \"${cdv("true")}\"",
 				"${KEY_PREFIX}${OUTPUT_DIR}"
@@ -135,7 +152,11 @@ fun initializeEnv(args: Array<String>): Envs {
 			return mod2jarTempdir
 		}
 
-		override fun shouldDeleteMod2JarTempdir(): Boolean {
+		override fun shouldCleanMod2JarTempdir(): Boolean {
+			return this.isEnabled(CLEAN_MOD2JAR_TEMP_DIR, true)
+		}
+
+		override fun shouldDeleteMod2JarTempdirOnFinalization(): Boolean {
 			return this.isEnabled(TEMP_DIR_MOD2JAR_POST_DEL, true)
 		}
 
@@ -155,13 +176,4 @@ fun initializeEnv(args: Array<String>): Envs {
 			}
 		}
 	}
-}
-
-
-fun finalizeEnv(envs: Envs) {
-	fun rmdir(dir: String): Boolean {
-		return File(dir).takeIf { it.exists() }?.deleteRecursively() != false
-	}
-
-	envs.shouldDeleteMod2JarTempdir().takeIf { it }?.apply { rmdir(envs.mod2JarTempdir()) }
 }
