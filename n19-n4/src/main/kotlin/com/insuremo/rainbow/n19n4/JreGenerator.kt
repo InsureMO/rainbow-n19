@@ -58,57 +58,19 @@ private fun createClassLoaderFile(targetDir: String) {
 	appendToIndexFile(Envs.jreDir, "export * from './JdkClassLoader';\n")
 }
 
-private fun generateFromJar(path: String, classLoaderInfo: ClassLoaderInfo) {
-	val classes = ZipFile(path).entries().toList().filter { entry -> entry.name.endsWith(".class") }
-	val filtered = classes
-		.map { entry -> entry.name.substring(0, entry.name.length - 6) }
-		.map { name -> name.replace('/', '.') }
-		.filter { name ->
-			if (Envs.isClassExcluded(name)) {
-				Summary.addIgnoredClass(name)
-				false
-			} else if (name.contains("$")) {
-				// put into mediator, if this class is found being used publicly, generate it at that time
-				Mediator.addClass(name)
-				false
-			} else {
-				true
-			}
-		}
-	if (filtered.size != classes.size) {
-		Logs.log("Total ${classes.size} classes detected, ${classes.size - filtered.size} filtered", -1)
-	} else {
-		Logs.log("Total ${classes.size} classes detected", -1)
-	}
-
-	filtered.forEach {
-		generateClass(Envs.jreDir, it, classLoaderInfo)
-		Summary.addTreatedClass(it)
-	}
-}
-
-private fun generateFromJars(targetDir: String, classLoaderInfo: ClassLoaderInfo) {
-	File(targetDir)
-		.listFiles { it.name.endsWith(".jar") }
-		?.forEach {
-			Logs.log("Generating from temporary JAR file[\u001B[33m\u001B[3m${it.name}\u001B[0m]", 2)
-			generateFromJar(it.absolutePath, classLoaderInfo)
-		}
-}
-
 fun generateJre() {
 	if (!Envs.shouldGenerateJre) {
 		return
 	}
 
 	Logs.log("Checking temporary directory for saving the JAR files transformed from JDK modular files", 0)
-	val targetDir = Envs.mod2jarTempdir
+	val jarsDir = Envs.mod2jarTempdir
 	if (Envs.shouldCleanMod2jarTempdir) {
 		Logs.log("Cleaning temporary directory for saving the JAR files transformed from JDK modular files", 1)
-		cleanDir(targetDir)
+		cleanDir(jarsDir)
 	}
 
-	extractJarsFromJre(targetDir)
+	extractJarsFromJre(jarsDir)
 
 	Logs.log("Preparing JDK directory", 0)
 	createIndexFile(Envs.jreDir)
@@ -116,5 +78,5 @@ fun generateJre() {
 	createClassLoaderFile(Envs.jreDir)
 
 	Logs.log("Generating from temporary JAR files", 1)
-	generateFromJars(targetDir, ClassLoaderInfo(name = "JdkClassCreateHelper", fileName = "JdkClassLoader"))
+	generateJars(jarsDir, ClassLoaderInfo(name = "JdkClassCreateHelper", fileName = "JdkClassLoader"))
 }

@@ -36,8 +36,22 @@ fun generateClass(targetDir: String, className: String, classLoaderInfo: ClassLo
 	val simpleName = clazz.simpleName
 	writeFile(
 		packageDir + File.separator + simpleName + ".ts",
-		"import {${classLoaderInfo.name}} from '${"../".repeat(packageLevel)}${classLoaderInfo.fileName}';\n\n" +
+		"import {${classLoaderInfo.name}} from '${"../".repeat(packageLevel)}${classLoaderInfo.fileName}';\n" +
+				"import {UDF} from '${"../".repeat(packageLevel + 1)}utils';\n" +
+				"\n" +
+				"// noinspection JSConsecutiveCommasInArrayLiteral\n" +
 				"${classLoaderInfo.name}.class('${className}', [\n" +
+				"\t/* super class */,\n" +
+				"\t/* interfaces */,\n" +
+				"\t/* modifiers */\n" +
+				"\t${clazz.modifiers},\n" +
+				"\t/* declared annotations */,\n" +
+				"\t/* type parameters */,\n" +
+				"\t/* declared constructors */,\n" +
+				"\t/* declared methods */,\n" +
+				"\t/* declared fields */,\n" +
+				"\t/* enum values */\n" +
+				"\tUDF\n" +
 				"]);\n"
 	)
 	appendToIndexFile(packageDir, "import './${simpleName}';\n")
