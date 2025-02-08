@@ -46,3 +46,4 @@ bin/
 /.temp/
 /gradle/
 /.output/
+/.summary.txt

@@ -21,6 +21,12 @@ object Logs {
 		return indexes.joinToString(".") + ". "
 	}
 
+	fun verbose(msg: String, indent: Int) {
+		if (Envs.isVerboseEnabled) {
+			println("${linePrefix(indent)}${msg}")
+		}
+	}
+
 	fun log(msg: String, indent: Int) {
 		println("${linePrefix(indent)}${msg}")
 	}

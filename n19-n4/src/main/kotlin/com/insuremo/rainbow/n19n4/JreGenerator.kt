@@ -48,33 +48,51 @@ private fun createClassLoaderFile(targetDir: String) {
 			"\tconstructor() {\n" +
 			"\t\tsuper('${System.getProperty("java.version")}');\n" +
 			"\t}\n\n" +
-			"\tvendor(): string{\n" +
+			"\tvendor(): string {\n" +
 			"\t\treturn '${System.getProperty("java.vendor")}';\n" +
 			"\t}\n" +
-			"}\n"
+			"}\n\n" +
+			"export const JdkClassLoader = new JDKClassLoader();\n" +
+			"export const JdkClassCreateHelper = Java.ClassCreateHelper.on(JdkClassLoader);\n"
 	writeFile(targetDir + File.separator + "JdkClassLoader.ts", content)
 	appendToIndexFile(Envs.jreDir, "export * from './JdkClassLoader';\n")
 }
 
-private fun generateFromJar(path: String) {
+private fun generateFromJar(path: String, classLoaderInfo: ClassLoaderInfo) {
 	val classes = ZipFile(path).entries().toList().filter { entry -> entry.name.endsWith(".class") }
 	val filtered = classes
 		.map { entry -> entry.name.substring(0, entry.name.length - 6) }
 		.map { name -> name.replace('/', '.') }
-		.filter { name -> !Envs.isClassExcluded(name) }
+		.filter { name ->
+			if (Envs.isClassExcluded(name)) {
+				Summary.addIgnoredClass(name)
+				false
+			} else if (name.contains("$")) {
+				// put into mediator, if this class is found being used publicly, generate it at that time
+				Mediator.addClass(name)
+				false
+			} else {
+				true
+			}
+		}
 	if (filtered.size != classes.size) {
 		Logs.log("Total ${classes.size} classes detected, ${classes.size - filtered.size} filtered", -1)
 	} else {
 		Logs.log("Total ${classes.size} classes detected", -1)
 	}
+
+	filtered.forEach {
+		generateClass(Envs.jreDir, it, classLoaderInfo)
+		Summary.addTreatedClass(it)
+	}
 }
 
-private fun generateFromJars(targetDir: String) {
+private fun generateFromJars(targetDir: String, classLoaderInfo: ClassLoaderInfo) {
 	File(targetDir)
 		.listFiles { it.name.endsWith(".jar") }
 		?.forEach {
 			Logs.log("Generating from temporary JAR file[\u001B[33m\u001B[3m${it.name}\u001B[0m]", 2)
-			generateFromJar(it.absolutePath)
+			generateFromJar(it.absolutePath, classLoaderInfo)
 		}
 }
 
@@ -98,5 +116,5 @@ fun generateJre() {
 	createClassLoaderFile(Envs.jreDir)
 
 	Logs.log("Generating from temporary JAR files", 1)
-	generateFromJars(targetDir)
+	generateFromJars(targetDir, ClassLoaderInfo(name = "JdkClassCreateHelper", fileName = "JdkClassLoader"))
 }

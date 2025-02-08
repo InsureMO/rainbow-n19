@@ -10,6 +10,7 @@ object Envs {
 	// constants
 	private const val KEY_PREFIX = "n19n4."
 	private const val HELP = "help"
+	private const val VERBOSE = "verbose"
 	private const val GENERATE_JDK = "generateJdk"
 	private const val MOD2JAR_TEMP_DIR = "mod2jarTempdir"
 	private const val CLEAN_MOD2JAR_TEMP_DIR = "cleanMod2jarTempDir"
@@ -21,21 +22,27 @@ object Envs {
 	private const val OUTPUT_MODE = "outputMode"
 	private const val OUTPUT_MODE_TILED = "tiled"
 	private const val OUTPUT_MODE_HIERARCHICAL = "package"
+	private const val INCLUDE_CLASSES = "includeClasses"
 	private const val EXCLUDE_PACKAGES = "excludePackages"
 	private val DEFAULT_EXCLUDE_PACKAGES = listOf(
 		"apple.security", "apple.laf", "com.apple",
 		"java.applet", "java.awt", "javax.swing",
+		"java.rmi",
+		"javax.smartcardio", "javax.accessibility",
 		"jdk",
-		"com.sun", "sun"
+		"com.sun", "sun",
+		"netscape.javascript",
+		"org.ietf.jgss", "org.jcp.xml", "org.w3c.dom", "org.xml.sax"
 	).joinToString(",")
 	private const val EXCLUDE_CLASSES = "excludeClasses"
-	private const val DEFAULT_EXCLUDE_CLASSES = ""
 
 	// dev constants
 	private const val TRANSFORM_MOD_2_JAR = "dev.transformMod2Jar"
+	const val SUMMARY_FILE = ".summary.txt"
 
 	// instances
 	private val envsMap = mutableMapOf<String, String?>()
+	val isVerboseEnabled by lazy { this.isEnabled(VERBOSE, false) }
 	val workPath: String = File(".").absolutePath
 	val mod2jarTempdir by lazy { this.askDir(this.get(MOD2JAR_TEMP_DIR, DEFAULT_MOD2JAR_TEMP_DIR)) }
 	val outputDir by lazy { this.askDir(this.get(OUTPUT_DIR, DEFAULT_OUTPUT_DIR)) }
@@ -50,11 +57,14 @@ object Envs {
 	val shouldGenerateJre by lazy { this.isEnabled(GENERATE_JDK, false) }
 	val shouldCleanMod2jarTempdir by lazy { this.isEnabled(CLEAN_MOD2JAR_TEMP_DIR, true) }
 	val shouldDeleteMod2jarTempdirOnFinalization by lazy { this.isEnabled(TEMP_DIR_MOD2JAR_POST_DEL, true) }
+	val includeClasses by lazy {
+		this.get(INCLUDE_CLASSES, "").split(",").toList().associate { Pair(it, true) }
+	}
 	val excludedPackages by lazy {
 		this.get(EXCLUDE_PACKAGES, DEFAULT_EXCLUDE_PACKAGES).split(",").map { name -> "${name}." }
 	}
 	val excludedClasses by lazy {
-		this.get(EXCLUDE_CLASSES, DEFAULT_EXCLUDE_CLASSES).split(",").toList().associate { Pair(it, true) }
+		this.get(EXCLUDE_CLASSES, "").split(",").toList().associate { Pair(it, true) }
 	}
 
 	// dev
@@ -113,6 +123,8 @@ object Envs {
 
 		val args = mapOf(
 			"${KEY_PREFIX}${HELP}" to "Print help, ignoring all other arguments",
+			"${KEY_PREFIX}${VERBOSE}" to "\u001B[31m\u001B[3mMore logs, an extraordinary amount of more logs!\u001B[0m. "
+					+ "Default \"${cdv("false")}\"",
 			"${KEY_PREFIX}${GENERATE_JDK}" to "Generate JDK modular files. Default \"${cdv("false")}\"",
 			"${KEY_PREFIX}${MOD2JAR_TEMP_DIR}"
 					to "Temporary directory for saving the JAR files transformed from JDK modular files. "
@@ -130,6 +142,14 @@ object Envs {
 					to "Structure of output files, either "
 					+ "\"${cpv(OUTPUT_MODE_TILED)}\" or \"${cpv(OUTPUT_MODE_HIERARCHICAL)}\". "
 					+ "Default \"${cdv(OUTPUT_MODE_HIERARCHICAL)}\"",
+			"${KEY_PREFIX}${INCLUDE_CLASSES}"
+					to "Classes that must be included, separated by commas, taking priority over [${cpv(EXCLUDE_PACKAGES)}] "
+					+ "and [${cpv(EXCLUDE_CLASSES)}] declarations. "
+					+ "No default value.",
+			"${KEY_PREFIX}${EXCLUDE_PACKAGES}"
+					to "Packages that be excluded, separated by commas. "
+					+ "Default \"${cdv(DEFAULT_EXCLUDE_PACKAGES)}\".",
+			"${KEY_PREFIX}${EXCLUDE_CLASSES}" to "Classes that be excluded, separated by commas. No default value.",
 		)
 
 		val maxCommandLength = args.keys.maxOf { it.length } + 5
@@ -187,6 +207,9 @@ object Envs {
 	}
 
 	fun isClassExcluded(className: String): Boolean {
+		if (this.includeClasses.containsKey(className)) {
+			return false
+		}
 		if (this.excludedClasses.containsKey(className)) {
 			return true
 		}
