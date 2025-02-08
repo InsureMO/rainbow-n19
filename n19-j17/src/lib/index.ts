@@ -1,1 +1,1 @@
-import {JdkClassLoader} from './Jdk';
+export {JdkClassLoader} from './Jdk';

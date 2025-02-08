@@ -73,7 +73,7 @@ fun generateJre() {
 
 	Logs.log("Preparing JDK directory", 0)
 	createIndexFile(Envs.jreDir)
-	appendToIndexFile(Envs.libDir, "import {JdkClassLoader} from './Jdk';\n")
+	appendToIndexFile(Envs.libDir, "export {JdkClassLoader} from './Jdk';\n")
 	createClassLoaderFile(Envs.jreDir)
 
 	Logs.log("Generating from temporary JAR files", 1)
