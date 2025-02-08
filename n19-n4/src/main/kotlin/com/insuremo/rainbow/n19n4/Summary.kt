@@ -18,10 +18,10 @@ object Summary {
 	fun printSummary() {
 		val content = listOf<String>(
 			"Classes Treated: ${treatedClasses.size}",
-			treatedClasses.sorted().joinToString("\n"),
+			treatedClasses.sortedBy { it.lowercase() }.joinToString("\n"),
 			"",
 			"Classes Ignored: ${ignoredClasses.size}",
-			ignoredClasses.sorted().joinToString("\n"),
+			ignoredClasses.sortedBy { it.lowercase() }.joinToString("\n"),
 			""
 		).joinToString("\n")
 

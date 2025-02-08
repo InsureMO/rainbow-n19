@@ -26,7 +26,6 @@ private fun createPackageDir(targetDir: String, packageName: String): Pair<Strin
 			level = 1
 		}
 	}
-	createIndexFile(dir)
 	return Pair(dir, level)
 }
 
@@ -56,5 +55,4 @@ fun generateClass(className: String, targetInfo: JarGeneratingTargetInfo) {
 				"\tUDF\n" +
 				"]);\n"
 	)
-	appendToIndexFile(packageDir, "import './${simpleName}';\n")
 }

@@ -1,1 +1,4 @@
-export * from './JdkClassLoader';
+import './java';
+import './javax';
+
+export {JdkClassLoader} from './JdkClassLoader';

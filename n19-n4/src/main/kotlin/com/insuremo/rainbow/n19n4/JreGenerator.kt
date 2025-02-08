@@ -88,6 +88,8 @@ fun generateJre() {
 	// import all class files
 	val imports = File(Envs.jreDir)
 		.listFiles { file -> file.isDirectory }
+		?.apply { this.forEach { generatePackageIndexFile(it.absolutePath) } }
+		?.sortedBy { it.name.lowercase() }
 		?.joinToString("\n") { file -> "import './${file.name}';" }
 		?: ""
 
