@@ -16,11 +16,16 @@ object Summary {
 	}
 
 	fun printSummary() {
+		val treated = treatedClasses.filter { className -> !Mediator.exists(className) }
+		val classesIgnoredOnProcessing = Mediator.classes()
 		val content = listOf<String>(
-			"Classes Treated: ${treatedClasses.size}",
-			treatedClasses.sortedBy { it.lowercase() }.joinToString("\n"),
+			"Classes Treated: ${treated.size}",
+			treated.sortedBy { it.lowercase() }.joinToString("\n"),
 			"",
-			"Classes Ignored: ${ignoredClasses.size}",
+			"Classes Ignored On Processing: ${classesIgnoredOnProcessing.size}",
+			classesIgnoredOnProcessing.sortedBy { it.lowercase() }.joinToString("\n"),
+			"",
+			"Classes Ignored On Declaration: ${ignoredClasses.size}",
 			ignoredClasses.sortedBy { it.lowercase() }.joinToString("\n"),
 			""
 		).joinToString("\n")

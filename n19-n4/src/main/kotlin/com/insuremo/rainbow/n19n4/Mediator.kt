@@ -4,6 +4,14 @@ object Mediator {
 	private val classes = mutableMapOf<String, Boolean>()
 
 	fun addClass(className: String) {
-		classes.put(className, true)
+		this.classes.put(className, true)
+	}
+
+	fun exists(className: String): Boolean {
+		return this.classes.containsKey(className)
+	}
+
+	fun classes(): List<String> {
+		return this.classes.keys.toList()
 	}
 }
