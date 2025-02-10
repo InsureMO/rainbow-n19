@@ -46,15 +46,15 @@ private fun generateTypeVariable(tv: TypeVariable, indent: String): String {
 	return ""
 }
 
-private fun generateGenericArrayType(tv: GenericArrayType, indent: String): String {
+private fun generateGenericArrayType(ga: GenericArrayType, indent: String): String {
 	return ""
 }
 
-private fun generateParameterizedType(tv: ParameterizedType, indent: String): String {
+private fun generateParameterizedType(pt: ParameterizedType, indent: String): String {
 	return ""
 }
 
-private fun generateWildcardType(tv: WildcardType, indent: String): String {
+private fun generateWildcardType(wt: WildcardType, indent: String): String {
 	return ""
 }
 
@@ -77,7 +77,7 @@ private fun generateSuperClass(clazz: Class<*>): String {
 	}
 
 	return listOf<String>(
-		generateComment("/* super class */", "\t"),
+		generateComment("/* super class, extends ${superclass.typeName} */", "\t"),
 		generateType(superclass, "\t")
 	).joinToString("\n")
 }
@@ -89,8 +89,7 @@ private fun generateInterfaces(clazz: Class<*>): String {
 	}
 
 	return listOf<String>(
-		generateComment("/* interfaces */", "\t"),
-		"\t[",
+		"\t[ /* interfaces, implements ${interfaces.joinToString(", ") { it.typeName }} */",
 		interfaces.joinToString(",\n") { generateType(it, "\t\t") },
 		"\t]"
 	).joinToString("\n")
@@ -104,8 +103,8 @@ fun generateClass(className: String, targetInfo: JarGeneratingTargetInfo) {
 	val simpleName = clazz.simpleName
 	writeFile(
 		packageDir + File.separator + simpleName + ".ts",
-		"import {${targetInfo.classCreateHelperName}} from '${"../".repeat(packageLevel)}${targetInfo.classLoaderFileName}';\n" +
-				"import {UDF} from '${"../".repeat(packageLevel + 1)}utils';\n" +
+		"import {UDF} from '${"../".repeat(packageLevel + 1)}utils';\n" +
+				"import {${targetInfo.classCreateHelperName}} from '${"../".repeat(packageLevel)}${targetInfo.classLoaderFileName}';\n" +
 				"\n" +
 				"// noinspection JSConsecutiveCommasInArrayLiteral\n" +
 				"${targetInfo.classCreateHelperName}.class('${className}', [\n" +
