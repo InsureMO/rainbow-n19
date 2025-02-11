@@ -79,23 +79,11 @@ fun generateJre(): JarGeneratingTargetInfo? {
 	Logs.log("Generating from temporary JAR files", 1)
 	val targetInfo = JarGeneratingTargetInfo(
 		classCreateHelperName = "JdkClassCreateHelper",
+		classLoaderName = "JdkClassLoader",
 		classLoaderFileName = "JdkClassLoader",
 		rootDir = Envs.jreDir
 	)
 	generateJars(jarsDir, targetInfo)
-
-	// import all class files
-	val imports = File(Envs.jreDir)
-		.listFiles { file -> file.isDirectory }
-		?.apply { this.forEach { generatePackageIndexFile(it.absolutePath) } }
-		?.sortedBy { it.name.lowercase() }
-		?.joinToString("\n") { file -> "import './${file.name}';" }
-		?: ""
-
-	appendToIndexFile(
-		Envs.jreDir,
-		"${if (imports.isEmpty()) imports else (imports + "\n\n")}export {JdkClassLoader} from './JdkClassLoader';\n"
-	)
 
 	return targetInfo
 }

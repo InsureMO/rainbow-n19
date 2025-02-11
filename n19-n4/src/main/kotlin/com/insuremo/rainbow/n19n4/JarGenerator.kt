@@ -4,6 +4,7 @@ import java.util.zip.ZipFile
 
 data class JarGeneratingTargetInfo(
 	val classCreateHelperName: String,
+	val classLoaderName: String,
 	val classLoaderFileName: String,
 	val rootDir: String
 )

@@ -12,6 +12,7 @@ fun main(args: Array<String>) {
 			var targetInfo: JarGeneratingTargetInfo? = generateJre()
 			if (targetInfo != null) {
 				generateTakenBackClasses(targetInfo)
+				buildClassIndexFiles(targetInfo)
 			}
 		} finally {
 			finalizeEnv()

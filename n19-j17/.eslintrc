@@ -15,6 +15,7 @@
 			"error",
 			"smart-tabs"
 		],
+		"no-sparse-arrays": 0,
 		"@typescript-eslint/no-empty-interface": "off",
 		"@typescript/no-non-null-assertion": "off",
 		"@typescript-eslint/adjacent-overload-signatures": "off",

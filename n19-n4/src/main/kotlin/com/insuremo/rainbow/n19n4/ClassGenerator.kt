@@ -8,6 +8,10 @@ import java.lang.reflect.TypeVariable
 import java.lang.reflect.Type
 import java.lang.reflect.WildcardType
 import java.util.Locale
+import kotlin.jvm.javaClass
+
+val IGNORE_ANNOTATION_TYPE_NAMES = listOf("jdk.internal.util.random.RandomSupport\$RandomGeneratorProperties", "")
+val IGNORE_ANNOTATION_METHOD_NAMES = listOf("annotationType", "equals", "hashCode", "toString")
 
 fun createPackageDir(targetDir: String, packageName: String): Pair<String, Int> {
 	var dir: String
@@ -145,7 +149,6 @@ private fun generateLowerBoundsOfWildcardType(wt: WildcardType, indent: String):
 
 private fun generateWildcardType(wt: WildcardType, indent: String): String {
 	val indent1 = indent + "\t"
-
 	return listOf(
 		"${indent}[/* wildcard type */ 'wt', [",
 		generateUpperBoundsOfWildcardType(wt, indent1) + ",",
@@ -188,8 +191,98 @@ fun generateInterfaces(clazz: Class<*>): String {
 	}
 
 	return listOf<String>(
-		"\t[ /* interfaces, implements ${interfaces.joinToString(", ") { it.typeName }} */",
+		"\t[/* interfaces, implements ${interfaces.joinToString(", ") { it.typeName }} */",
 		interfaces.joinToString(",\n") { generateType(it, "\t\t") },
+		"\t]"
+	).joinToString("\n")
+}
+
+fun generateAnnotation(annotation: Annotation, indent: String): String {
+	val methods = annotation.javaClass.declaredMethods.filter { method ->
+		Modifier.isPublic(method.modifiers)
+				&& method.parameters.isEmpty()
+				&& !IGNORE_ANNOTATION_METHOD_NAMES.contains(method.name)
+	}
+	if (methods.isEmpty()) {
+		return "${indent}['${annotation.annotationClass.java.name}']"
+	}
+	val indent1 = indent + "\t"
+	if (annotation is java.lang.Deprecated) {
+		return listOf(
+			"${indent1}['p', 'since', '${annotation.since}']",
+			"${indent1}['p', 'forRemoval', ${annotation.forRemoval}]"
+		).joinToString(",n")
+	} else {
+		return listOf(
+			"${indent}[",
+			"${indent1}'${annotation.annotationClass.java.name}',",
+			methods.joinToString(",\n") { method ->
+				val name = method.name
+				try {
+					method.isAccessible = true
+					val value = method.invoke(annotation)
+					return@joinToString when (value) {
+						is Annotation -> "${indent1}['a', '$name', ${generateAnnotation(value, indent1)}]"
+						is Enum<*> -> "${indent1}['p', '$name', '${value.javaClass.name}.${value.name}']"
+						is Class<*> -> "${indent1}['p', '$name', '${value.name}']"
+						is String, Char -> "${indent1}['p', '$name', '$value']"
+						is Int, Long, Short, Float, Double, Byte, Boolean -> "${indent1}['p', '$name', $value]"
+						is Array<*> -> {
+							val indent2 = indent1 + "\n"
+							val type = method.returnType.componentType
+							when {
+								Annotation::class.java.isAssignableFrom(type) -> {
+									listOf(
+										"${indent1}['m', '$name', [",
+										@Suppress("UNCHECKED_CAST")
+										(value as Array<Annotation>).joinToString(",\n") {
+											"'${generateAnnotation(it, indent2)}'"
+										},
+										"${indent1}]]"
+									).joinToString("\n")
+								}
+
+								Enum::class.java.isAssignableFrom(type) -> {
+									@Suppress("UNCHECKED_CAST")
+									"${indent1}['p', '$name', [${(value as Array<Enum<*>>).joinToString(", ") { "'${it.javaClass.name}.${it.name}'" }}]]"
+								}
+
+								Class::class.java.isAssignableFrom(type) -> {
+									@Suppress("UNCHECKED_CAST")
+									"${indent1}['p', '$name', [${(value as Array<Class<*>>).joinToString(", ") { "'${it.name}'" }}]]"
+								}
+
+								type == String.javaClass || type == Char.javaClass -> {
+									@Suppress("UNCHECKED_CAST")
+									"${indent1}['p', '$name', [${(value as Array<String>).joinToString(", ") { "'${it}'" }}]]"
+								}
+
+								type.isPrimitive -> "['p', '$name', [${value.map { it }.joinToString(", ")}]]"
+								else -> throw RuntimeException("Cannot recognize annotation value[class=${value.javaClass}, value=${value}].")
+							}
+						}
+
+						else -> throw RuntimeException("Cannot recognize annotation value[class=${value.javaClass}, value=${value}].")
+					}
+				} catch (_: Throwable) {
+					return@joinToString "${indent1}['p', '$name', '\$Unreadable Value']"
+				}
+			},
+			"${indent}]",
+		).joinToString("\n")
+	}
+}
+
+fun generateAnnotations(clazz: Class<*>): String {
+	val annotations = clazz.declaredAnnotations.filter { annotation ->
+		!IGNORE_ANNOTATION_TYPE_NAMES.contains(annotation.annotationClass.java.name)
+	}
+	if (annotations.isEmpty()) {
+		return generateComment("/* declared annotations */", "\t")
+	}
+	return listOf<String>(
+		"\t[/* declared annotations */",
+		annotations.joinToString(",\n") { generateAnnotation(it, "\t\t") },
 		"\t]"
 	).joinToString("\n")
 }
@@ -220,7 +313,7 @@ fun generateClass(className: String, targetInfo: JarGeneratingTargetInfo, checkV
 	val packageName = clazz.packageName
 	val (packageDir, packageLevel) = createPackageDir(targetInfo.rootDir, packageName)
 
-	val simpleName = clazz.simpleName
+	val simpleName = className.substring(className.lastIndexOf('.') + 1)
 	writeFile(
 		packageDir + File.separator + simpleName + ".ts",
 		"import {UDF} from '${"../".repeat(packageLevel + 1)}utils';\n" +
@@ -231,7 +324,7 @@ fun generateClass(className: String, targetInfo: JarGeneratingTargetInfo, checkV
 				"${generateSuperClass(clazz)},\n" +
 				"${generateInterfaces(clazz)},\n" +
 				"\t/* modifiers */ ${clazz.modifiers},\n" +
-				"\t/* declared annotations */,\n" +
+				"${generateAnnotations(clazz)},\n" +
 				"${generateClassTypeParameters(clazz)},\n" +
 				"\t/* declared constructors */,\n" +
 				"\t/* declared methods */,\n" +
