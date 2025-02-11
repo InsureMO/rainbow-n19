@@ -1,4 +1,4 @@
-import {ClassName, TypeName, TypeOrName} from '../TypeAlias';
+import {ClassName, TypeName, TypeOrNameOrTypeVariableRef} from '../TypeAlias';
 import {IAnnotatedType} from './IAnnotatedType';
 import {IClass} from './IClass';
 import {IType} from './IType';
@@ -26,5 +26,5 @@ export interface ITypedElement {
 	 */
 	get genericType(): IType;
 	get annotatedType(): IAnnotatedType;
-	setTypeOrName(typeOrName: TypeOrName): this;
+	setTypeOrName(typeOrName: TypeOrNameOrTypeVariableRef): this;
 }

@@ -8,3 +8,17 @@ import {NotClassType} from './NotClassType';
  * or {@link ClassName}
  */
 export type TypeOrName = ClassName | NotClassType;
+
+export class TypeVariableRef {
+	private readonly _name: string;
+
+	constructor(name: string) {
+		this._name = name;
+	}
+
+	get name(): string {
+		return this._name;
+	}
+}
+
+export type TypeOrNameOrTypeVariableRef = TypeOrName | TypeVariableRef;

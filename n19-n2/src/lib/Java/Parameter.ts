@@ -4,7 +4,7 @@ import {IAnnotationConstructorArgs, IParameterConstructorArgs} from './Construct
 import {Modifier} from './Helpers';
 import {IAnnotatedType, IAnnotation, IClass, IClassLoader, IExecutable, IParameter, IType} from './Interfaces';
 import {AnnotatedElementParameterSupport, ModifiersSupport, TypeSupport} from './Supports';
-import {ClassName, ModifiersValue, TypeName, TypeOrName} from './TypeAlias';
+import {ClassName, ModifiersValue, TypeName, TypeOrNameOrTypeVariableRef} from './TypeAlias';
 
 /**
  * Is attached on an {@link IExecutable}.<br>
@@ -93,7 +93,7 @@ export class Parameter implements IParameter {
 		throw new UnsupportedOperationException('Not implemented yet.');
 	}
 
-	setTypeOrName(typeOrName: TypeOrName): this {
+	setTypeOrName(typeOrName: TypeOrNameOrTypeVariableRef): this {
 		this._typeSupport.setTypeOrName(typeOrName);
 		return this;
 	}

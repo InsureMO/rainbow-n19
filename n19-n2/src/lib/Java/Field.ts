@@ -4,7 +4,7 @@ import {IAnnotationConstructorArgs, IFieldConstructorArgs} from './ConstructorAr
 import {Modifier} from './Helpers';
 import {IAnnotatedType, IAnnotation, IClass, IClassLoader, IField, IType, MemberType} from './Interfaces';
 import {AnnotatedElementMemberSupport, ModifiersSupport, TypeSupport} from './Supports';
-import {ClassName, ModifiersValue, TypeName, TypeOrName} from './TypeAlias';
+import {ClassName, ModifiersValue, TypeName, TypeOrNameOrTypeVariableRef} from './TypeAlias';
 
 export class Field implements IField {
 	private readonly _declaringClass: IClass;
@@ -79,7 +79,7 @@ export class Field implements IField {
 		throw new UnsupportedOperationException('Not implemented yet.');
 	}
 
-	setTypeOrName(typeOrName: TypeOrName): this {
+	setTypeOrName(typeOrName: TypeOrNameOrTypeVariableRef): this {
 		this._typeSupport.setTypeOrName(typeOrName);
 		return this;
 	}

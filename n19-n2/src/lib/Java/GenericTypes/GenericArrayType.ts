@@ -1,11 +1,12 @@
 import {IGenericArrayTypeConstructorArgs} from '../ConstructorArgs';
 import {IClassLoader, IGenericArrayType, IGenericDeclaration, IType} from '../Interfaces';
-import {TypeOrName} from '../TypeAlias';
+import {TypeSupport} from '../Supports';
+import {TypeOrNameOrTypeVariableRef} from '../TypeAlias';
 
 export class GenericArrayType implements IGenericArrayType {
 	/** define on where, could be class, constructor or method */
 	private readonly _declaration: IGenericDeclaration;
-	private _genericComponentType: TypeOrName;
+	private readonly _typeSupport: TypeSupport<IGenericArrayType> = new TypeSupport<IGenericArrayType>(this);
 
 	constructor(declaration: IGenericDeclaration,
 	            more?: IGenericArrayTypeConstructorArgs) {
@@ -22,13 +23,11 @@ export class GenericArrayType implements IGenericArrayType {
 	}
 
 	get genericComponentType(): IType {
-		return typeof this._genericComponentType === 'string'
-			? this.genericDeclaration.classLoader.findClass(this._genericComponentType)
-			: this._genericComponentType;
+		return this._typeSupport.genericType;
 	}
 
-	setGenericComponentType(genericComponentType: TypeOrName): this {
-		this._genericComponentType = genericComponentType;
+	setGenericComponentType(genericComponentType: TypeOrNameOrTypeVariableRef): this {
+		this._typeSupport.setTypeOrName(genericComponentType);
 		return this;
 	}
 

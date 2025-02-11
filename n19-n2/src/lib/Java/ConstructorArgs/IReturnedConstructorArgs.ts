@@ -1,8 +1,8 @@
 import {IAnnotation, IReturned} from '../Interfaces';
-import {TypeOrName} from '../TypeAlias';
+import {TypeOrNameOrTypeVariableRef} from '../TypeAlias';
 
 export interface IReturnedConstructorArgs {
 	/** thrown type */
-	typeOrName?: TypeOrName;
+	typeOrName?: TypeOrNameOrTypeVariableRef;
 	declaredAnnotations?: (ret: IReturned) => Array<IAnnotation>;
 }

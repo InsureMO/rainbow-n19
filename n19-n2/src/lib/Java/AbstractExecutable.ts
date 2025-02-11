@@ -50,11 +50,11 @@ export abstract class AbstractExecutable implements IExecutable {
 	                      more?: IExecutableConstructorArgs) {
 		this._declaringClass = declaringClass;
 		this.setName(more?.name)
+			.setTypeParameters(more?.typeParameters?.(this))
 			.setParameters(more?.parameters?.(this))
 			.setThrowns(more?.throwns?.(this))
 			.setModifiers(more?.modifiers)
-			.setDeclaredAnnotations(more?.declaredAnnotations?.(this))
-			.setTypeParameters(more?.typeParameters?.(this));
+			.setDeclaredAnnotations(more?.declaredAnnotations?.(this));
 	}
 
 	abstract get memberType(): MemberType;

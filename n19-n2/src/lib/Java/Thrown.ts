@@ -3,7 +3,7 @@ import {Optional} from '../TsAddon';
 import {IAnnotationConstructorArgs, IThrownConstructorArgs} from './ConstructorArgs';
 import {IAnnotatedType, IAnnotation, IClass, IClassLoader, IExecutable, IThrown, IType} from './Interfaces';
 import {AnnotatedElementThrownSupport, TypeSupport} from './Supports';
-import {ClassName, TypeName, TypeOrName} from './TypeAlias';
+import {ClassName, TypeName, TypeOrNameOrTypeVariableRef} from './TypeAlias';
 
 export class Thrown implements IThrown {
 	private readonly _executable: IExecutable;
@@ -61,7 +61,7 @@ export class Thrown implements IThrown {
 		return this._typeSupport.genericType;
 	}
 
-	setTypeOrName(typeOrName: TypeOrName): this {
+	setTypeOrName(typeOrName: TypeOrNameOrTypeVariableRef): this {
 		this._typeSupport.setTypeOrName(typeOrName);
 		return this;
 	}

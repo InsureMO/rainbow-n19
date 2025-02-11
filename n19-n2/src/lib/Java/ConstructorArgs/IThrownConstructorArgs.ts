@@ -1,8 +1,8 @@
 import {IAnnotation, IThrown} from '../Interfaces';
-import {TypeOrName} from '../TypeAlias';
+import {TypeOrNameOrTypeVariableRef} from '../TypeAlias';
 
 export interface IThrownConstructorArgs {
 	/** thrown type */
-	typeOrName?: (thrown: IThrown) => TypeOrName;
+	typeOrName?: (thrown: IThrown) => TypeOrNameOrTypeVariableRef;
 	declaredAnnotations?: (thrown: IThrown) => Array<IAnnotation>;
 }

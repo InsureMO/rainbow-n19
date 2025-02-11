@@ -10,8 +10,8 @@ import {
 	IType,
 	ITypeVariable
 } from '../Interfaces';
-import {AnnotatedElementTypeVariableSupport} from '../Supports';
-import {ClassName, TypeOrName} from '../TypeAlias';
+import {AnnotatedElementTypeVariableSupport, TypeSupport} from '../Supports';
+import {ClassName, TypeOrNameOrTypeVariableRef} from '../TypeAlias';
 
 /**
  * T refers to type parameter \<T\> which defined in class/constructor/method.<br/>
@@ -26,7 +26,7 @@ export class TypeVariable implements ITypeVariable {
 	/** define on where, could be class, constructor or method */
 	private readonly _declaration: IGenericDeclaration;
 	private _name: string;
-	private readonly _bounds: Array<TypeOrName>;
+	private readonly _typeSupportOfBounds: Array<TypeSupport<ITypeVariable>> = [];
 	private readonly _annotatedElementSupport: AnnotatedElementTypeVariableSupport = new AnnotatedElementTypeVariableSupport(this);
 
 	constructor(declaration: IGenericDeclaration,
@@ -63,18 +63,12 @@ export class TypeVariable implements ITypeVariable {
 	}
 
 	get bounds(): Array<IType> {
-		return (this._bounds ?? []).map(bound => {
-			if (typeof bound === 'string') {
-				return this.genericDeclaration.classLoader.findClass(bound);
-			} else {
-				return bound;
-			}
-		});
+		return this._typeSupportOfBounds.map(bound => bound.genericType);
 	}
 
-	setBounds(bounds: Array<TypeOrName>): this {
-		this._bounds.length = 0;
-		this._bounds.push(...(bounds ?? []));
+	setBounds(bounds: Array<TypeOrNameOrTypeVariableRef>): this {
+		this._typeSupportOfBounds.length = 0;
+		this._typeSupportOfBounds.push(...(bounds ?? []).map(bound => new TypeSupport<ITypeVariable>(this).setTypeOrName(bound)));
 		return this;
 	}
 

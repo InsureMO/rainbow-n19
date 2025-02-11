@@ -1,15 +1,79 @@
+import {Optional} from '../../TsAddon';
+import {AbstractExecutable} from '../AbstractExecutable';
 import {Class} from '../Class';
+import {Constructor} from '../Constructor';
+import {Field} from '../Field';
 import {GenericArrayType, ParameterizedType, TypeVariable, WildcardType} from '../GenericTypes';
 import {BuiltInConstants} from '../Helpers';
-import {IClass, IClassLoaderHolder, IType} from '../Interfaces';
-import {ClassName, NotClassType, TypeName, TypeOrName} from '../TypeAlias';
+import {IClass, IClassLoaderHolder, IGenericDeclaration, IType, ITypeVariable} from '../Interfaces';
+import {Method} from '../Method';
+import {Parameter} from '../Parameter';
+import {Returned} from '../Returned';
+import {Thrown} from '../Thrown';
+import {ClassName, NotClassType, TypeName, TypeOrNameOrTypeVariableRef, TypeVariableRef} from '../TypeAlias';
 import {AbstractClassLoaderDelegate} from './AbstractClassLoaderDelegate';
 
 export class TypeSupport<T extends IClassLoaderHolder> extends AbstractClassLoaderDelegate<T> {
-	private _typeOrName: TypeOrName;
+	private _typeOrName: TypeOrNameOrTypeVariableRef;
 
 	constructor(target: T) {
 		super(target);
+	}
+
+	protected getTypeDeclaration(type: NotClassType | TypeVariableRef): NotClassType {
+		if (type instanceof TypeVariableRef) {
+			const target = this.target;
+			let declaration: IGenericDeclaration;
+			if (target instanceof TypeVariable) {
+				declaration = target.genericDeclaration;
+			} else if (target instanceof ParameterizedType) {
+				declaration = target.genericDeclaration;
+			} else if (target instanceof GenericArrayType) {
+				declaration = target.genericDeclaration;
+			} else if (target instanceof WildcardType) {
+				declaration = target.genericDeclaration;
+			} else if (target instanceof Field) {
+				declaration = target.declaringClass;
+			} else if (target instanceof Method) {
+				declaration = target;
+			} else if (target instanceof Constructor) {
+				declaration = target;
+			} else if (target instanceof Parameter) {
+				declaration = target.executable;
+			} else if (target instanceof Returned) {
+				declaration = target.executable;
+			} else if (target instanceof Thrown) {
+				declaration = target.executable;
+			}
+			const name = type.name;
+			let clazz: IClass;
+			if (declaration instanceof AbstractExecutable) {
+				const typeVariable = declaration.typeParameters?.find(p => p.name === name);
+				if (typeVariable != null) {
+					return typeVariable;
+				} else {
+					clazz = declaration.declaringClass;
+				}
+			} else {
+				clazz = declaration as IClass;
+			}
+			let typeVariable: Optional<ITypeVariable> = null;
+			while (typeVariable == null && clazz != null) {
+				typeVariable = clazz.typeParameters?.find(p => p.name === name);
+				if (typeVariable == null) {
+					clazz = clazz.enclosingClass;
+					if (clazz == null) {
+						break;
+					}
+				}
+			}
+			if (typeVariable == null) {
+				throw new Error(`Type['${name}'] not found.`);
+			}
+			return typeVariable;
+		} else {
+			return type;
+		}
 	}
 
 	protected getRawClassName(type: NotClassType): ClassName {
@@ -67,11 +131,11 @@ export class TypeSupport<T extends IClassLoaderHolder> extends AbstractClassLoad
 		if (typeof this._typeOrName === 'string') {
 			return this._typeOrName;
 		} else {
-			return this.getRawClassName(this._typeOrName);
+			return this.getRawClassName(this.getTypeDeclaration(this._typeOrName));
 		}
 	}
 
-	setTypeOrName(typeOrName: TypeOrName): this {
+	setTypeOrName(typeOrName: TypeOrNameOrTypeVariableRef): this {
 		this._typeOrName = typeOrName;
 		return this;
 	}
@@ -97,7 +161,7 @@ export class TypeSupport<T extends IClassLoaderHolder> extends AbstractClassLoad
 		if (typeof this._typeOrName === 'string') {
 			return this.type;
 		} else {
-			return this._typeOrName;
+			return this.getTypeDeclaration(this._typeOrName);
 		}
 	}
 }

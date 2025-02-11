@@ -1,11 +1,11 @@
 import {IAnnotation, IParameter} from '../Interfaces';
-import {ModifiersValue, TypeOrName} from '../TypeAlias';
+import {ModifiersValue, TypeOrNameOrTypeVariableRef} from '../TypeAlias';
 
 export interface IParameterConstructorArgs {
 	/** parameter name */
 	name?: string;
 	/** parameter type */
-	typeOrName?: (parameter: IParameter) => TypeOrName;
+	typeOrName?: (parameter: IParameter) => TypeOrNameOrTypeVariableRef;
 	modifiers?: ModifiersValue;
 	declaredAnnotations?: (parameter: IParameter) => Array<IAnnotation>;
 }

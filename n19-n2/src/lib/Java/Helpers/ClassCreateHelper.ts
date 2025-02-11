@@ -34,7 +34,14 @@ import {
 import {Method} from '../Method';
 import {Parameter} from '../Parameter';
 import {Thrown} from '../Thrown';
-import {AnnotationValue, ClassName, EnumValue, NotClassType, TypeOrName} from '../TypeAlias';
+import {
+	AnnotationValue,
+	ClassName,
+	EnumValue,
+	TypeOrName,
+	TypeOrNameOrTypeVariableRef,
+	TypeVariableRef
+} from '../TypeAlias';
 import {BuiltInConstants} from './BuiltInConstants';
 
 // noinspection DuplicatedCode
@@ -65,11 +72,13 @@ export type ClassCreateWildcardTypeArgs = [
 	Optional<Array<ClassCreateTypeOrNameArgs>>, // upper bounds
 	Optional<Array<ClassCreateTypeOrNameArgs>> // lower bounds
 ];
+export type ClassCreateTypeVariableRefArgs = [Optional<TypeVariableRef['name']>]
 export type ClassCreateTypeArgs =
 	| ['tv', ClassCreateTypeVariableArgs]
 	| ['pt', ClassCreateParameterizedTypeArgs]
 	| ['ga', ClassCreateGenericArrayTypeArgs]
-	| ['wt', ClassCreateWildcardTypeArgs];
+	| ['wt', ClassCreateWildcardTypeArgs]
+	| ['tr', ClassCreateTypeVariableRefArgs];
 // noinspection DuplicatedCode
 export type ClassCreateTypeOrNameArgs = ClassName | ClassCreateTypeArgs;
 export type ClassCreateParameterArgs = [
@@ -168,7 +177,11 @@ export class ClassCreateHelper {
 		});
 	}
 
-	protected _notClassType(declaration: IGenericDeclaration, args: ClassCreateTypeArgs): NotClassType {
+	protected _typeVariableRef(_declaration: IGenericDeclaration, args: ClassCreateTypeVariableRefArgs): TypeVariableRef {
+		return new TypeVariableRef(args[0]);
+	}
+
+	protected _notClassType(declaration: IGenericDeclaration, args: ClassCreateTypeArgs): Exclude<TypeOrNameOrTypeVariableRef, ClassName> {
 		const [type, value] = args;
 		switch (type) {
 			case 'tv':
@@ -179,6 +192,8 @@ export class ClassCreateHelper {
 				return this._genericArrayType(declaration, value);
 			case 'wt':
 				return this._wildcardType(declaration, value);
+			case 'tr':
+				return this._typeVariableRef(declaration, value);
 			default: {
 				const data = JSON.stringify({type, value});
 				throw new Error(`Cannot create annotation value by given [${data}].`);
@@ -186,7 +201,7 @@ export class ClassCreateHelper {
 		}
 	}
 
-	protected _typeOrName(declaration: IGenericDeclaration, args: ClassCreateTypeOrNameArgs): TypeOrName {
+	protected _typeOrName(declaration: IGenericDeclaration, args: ClassCreateTypeOrNameArgs): TypeOrNameOrTypeVariableRef {
 		return typeof args === 'string' ? args : this._notClassType(declaration, args);
 	}
 
@@ -278,8 +293,8 @@ export class ClassCreateHelper {
 	class(name: ClassName, args: ClassCreateClassArgs): IClass {
 		const clazz = new Class(this._classLoader, {
 			name,
-			superclassTypeOrName: args[0] == null ? (void 0) : declaringClass => this._typeOrName(declaringClass, args[0]),
-			interfaceTypesOrNames: args[1] == null ? (void 0) : declaringClass => args[1].map(args => this._typeOrName(declaringClass, args)),
+			superclassTypeOrName: args[0] == null ? (void 0) : declaringClass => this._typeOrName(declaringClass, args[0]) as TypeOrName,
+			interfaceTypesOrNames: args[1] == null ? (void 0) : declaringClass => args[1].map(args => this._typeOrName(declaringClass, args)) as Array<TypeOrName>,
 			modifiers: args[2],
 			declaredAnnotations: args[3] == null ? (void 0) : declaringClass => args[3].map(args => this._annotation(declaringClass, args)),
 			typeParameters: args[4] == null ? (void 0) : declaringClass => args[4].map(args => this._typeParameter(declaringClass, args)),

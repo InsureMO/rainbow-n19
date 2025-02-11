@@ -4,7 +4,7 @@ import {GenericArrayType, ParameterizedType, TypeVariable, WildcardType} from '.
 import {BuiltInConstants, Modifier, ParameterHelper} from './Helpers';
 import {IAnnotatedType, IClass, IMethod, IReturned, IType, MemberType} from './Interfaces';
 import {Returned} from './Returned';
-import {TypeOrName} from './TypeAlias';
+import {TypeOrNameOrTypeVariableRef, TypeVariableRef} from './TypeAlias';
 
 export class Method extends AbstractExecutable implements IMethod {
 	private _returned: IReturned = null;
@@ -69,7 +69,7 @@ export class Method extends AbstractExecutable implements IMethod {
 		return this.returned.annotatedType;
 	}
 
-	setReturnedTypeOrName(typeOrNameOrArgs?: TypeOrName | IReturnedConstructorArgs): this {
+	setReturnedTypeOrName(typeOrNameOrArgs?: TypeOrNameOrTypeVariableRef | IReturnedConstructorArgs): this {
 		if (typeOrNameOrArgs == null) {
 			if (this._returned == null) {
 				this._returned = new Returned(this);
@@ -78,7 +78,8 @@ export class Method extends AbstractExecutable implements IMethod {
 			|| typeOrNameOrArgs instanceof TypeVariable
 			|| typeOrNameOrArgs instanceof ParameterizedType
 			|| typeOrNameOrArgs instanceof GenericArrayType
-			|| typeOrNameOrArgs instanceof WildcardType) {
+			|| typeOrNameOrArgs instanceof WildcardType
+			|| typeOrNameOrArgs instanceof TypeVariableRef) {
 			if (this._returned == null) {
 				this._returned = new Returned(this, {typeOrName: typeOrNameOrArgs});
 			} else {

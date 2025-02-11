@@ -2,13 +2,14 @@ import {Class} from '../Class';
 import {IWildcardTypeConstructorArgs} from '../ConstructorArgs';
 import {BuiltInConstants} from '../Helpers';
 import {IClassLoader, IGenericDeclaration, IType, IWildcardType} from '../Interfaces';
-import {TypeName, TypeOrName} from '../TypeAlias';
+import {TypeSupport} from '../Supports';
+import {TypeName, TypeOrNameOrTypeVariableRef} from '../TypeAlias';
 
 export class WildcardType implements IWildcardType {
 	/** define on where, could be class, constructor or method */
 	private readonly _declaration: IGenericDeclaration;
-	private readonly _upperBounds: Array<TypeOrName> = [];
-	private readonly _lowerBounds: Array<TypeOrName> = [];
+	private readonly _typeSupportOfUpperBounds: Array<TypeSupport<IWildcardType>> = [];
+	private readonly _typeSupportOfLowerBounds: Array<TypeSupport<IWildcardType>> = [];
 
 	constructor(declaration: IGenericDeclaration,
 	            more?: IWildcardTypeConstructorArgs) {
@@ -26,34 +27,22 @@ export class WildcardType implements IWildcardType {
 	}
 
 	get upperBounds(): Array<IType> {
-		return (this._upperBounds ?? []).map(bound => {
-			if (typeof bound === 'string') {
-				return this.genericDeclaration.classLoader.findClass(bound);
-			} else {
-				return bound;
-			}
-		});
+		return (this._typeSupportOfUpperBounds ?? []).map(bound => bound.genericType);
 	}
 
-	setUpperBounds(bounds: Array<TypeOrName>): this {
-		this._upperBounds.length = 0;
-		this._upperBounds.push(...bounds);
+	setUpperBounds(bounds: Array<TypeOrNameOrTypeVariableRef>): this {
+		this._typeSupportOfUpperBounds.length = 0;
+		this._typeSupportOfUpperBounds.push(...(bounds ?? []).map(bound => new TypeSupport<IWildcardType>(this).setTypeOrName(bound)));
 		return this;
 	}
 
 	get lowerBounds(): Array<IType> {
-		return (this._lowerBounds ?? []).map(bound => {
-			if (typeof bound === 'string') {
-				return this.genericDeclaration.classLoader.findClass(bound);
-			} else {
-				return bound;
-			}
-		});
+		return (this._typeSupportOfLowerBounds ?? []).map(bound => bound.genericType);
 	}
 
-	setLowerBounds(bounds: Array<TypeOrName>): this {
-		this._lowerBounds.length = 0;
-		this._lowerBounds.push(...bounds);
+	setLowerBounds(bounds: Array<TypeOrNameOrTypeVariableRef>): this {
+		this._typeSupportOfLowerBounds.length = 0;
+		this._typeSupportOfLowerBounds.push(...(bounds ?? []).map(bound => new TypeSupport<IWildcardType>(this).setTypeOrName(bound)));
 		return this;
 	}
 

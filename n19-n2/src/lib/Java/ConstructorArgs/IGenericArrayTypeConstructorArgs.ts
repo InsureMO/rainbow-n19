@@ -1,6 +1,6 @@
 import {IGenericArrayType} from '../Interfaces';
-import {TypeOrName} from '../TypeAlias';
+import {TypeOrNameOrTypeVariableRef} from '../TypeAlias';
 
 export interface IGenericArrayTypeConstructorArgs {
-	genericComponentType?: (genericArrayType: IGenericArrayType) => TypeOrName;
+	genericComponentType?: (genericArrayType: IGenericArrayType) => TypeOrNameOrTypeVariableRef;
 }

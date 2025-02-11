@@ -3,7 +3,7 @@ import {Optional} from '../TsAddon';
 import {IAnnotationConstructorArgs, IReturnedConstructorArgs} from './ConstructorArgs';
 import {IAnnotatedType, IAnnotation, IClass, IClassLoader, IExecutable, IMethod, IReturned, IType} from './Interfaces';
 import {AnnotatedElementReturnedSupport, TypeSupport} from './Supports';
-import {ClassName, TypeName, TypeOrName} from './TypeAlias';
+import {ClassName, TypeName, TypeOrNameOrTypeVariableRef} from './TypeAlias';
 
 export class Returned implements IReturned {
 	private readonly _executable: IExecutable;
@@ -57,7 +57,7 @@ export class Returned implements IReturned {
 		throw new UnsupportedOperationException('Not implemented yet.');
 	}
 
-	setTypeOrName(typeOrName: TypeOrName): this {
+	setTypeOrName(typeOrName: TypeOrNameOrTypeVariableRef): this {
 		this._typeSupport.setTypeOrName(typeOrName);
 		return this;
 	}
