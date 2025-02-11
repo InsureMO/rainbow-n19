@@ -1,32 +1,61 @@
 package com.insuremo.rainbow.n19n4
 
 import java.io.File
-import kotlin.collections.mutableListOf
 
 object Summary {
-	private val treatedClasses = mutableListOf<String>()
-	private val ignoredClasses = mutableListOf<String>()
+	private val treatedClasses = mutableMapOf<String, Boolean>()
+	private val ignoredClasses = mutableMapOf<String, Boolean>()
+	private val temporarilyIgnoredClasses = mutableMapOf<String, Boolean>()
+	private val necessaryClasses = mutableMapOf<String, Boolean>()
+	private val takenBackClasses = mutableMapOf<String, Boolean>()
 
 	fun addTreatedClass(className: String) {
-		treatedClasses += className
+		this.treatedClasses.put(className, true)
 	}
 
 	fun addIgnoredClass(className: String) {
-		ignoredClasses += className
+		this.ignoredClasses.put(className, true)
+	}
+
+	fun markClassAsIgnoredTemporarily(className: String) {
+		this.temporarilyIgnoredClasses.put(className, true)
+	}
+
+	fun takeBack(className: String) {
+		@Suppress("ControlFlowWithEmptyBody")
+		if (this.temporarilyIgnoredClasses.containsKey(className)) {
+			this.temporarilyIgnoredClasses.remove(className)
+			this.necessaryClasses.put(className, true)
+		} else if (this.ignoredClasses.contains(className)) {
+			this.ignoredClasses.remove(className)
+			this.necessaryClasses.put(className, true)
+		} else if (this.necessaryClasses.containsKey(className)) {
+			// do nothing, already marked as necessary
+		} else {
+			// class is not in jar, do nothing
+		}
+	}
+
+	fun retrieveTakenBackClasses(): List<String> {
+		val cloned = this.necessaryClasses.keys.toList()
+		this.takenBackClasses.putAll(this.necessaryClasses)
+		this.necessaryClasses.clear()
+		return cloned
 	}
 
 	fun printSummary() {
-		val treated = treatedClasses.filter { className -> !Mediator.exists(className) }
-		val classesIgnoredOnProcessing = Mediator.classes()
 		val content = listOf<String>(
-			"Classes Treated: ${treated.size}",
-			treated.sortedBy { it.lowercase() }.joinToString("\n"),
+			"Classes Treated: ${this.treatedClasses.size}",
+			this.treatedClasses.keys.sortedBy { it.lowercase() }.joinToString("\n"),
 			"",
-			"Classes Ignored On Processing: ${classesIgnoredOnProcessing.size}",
-			classesIgnoredOnProcessing.sortedBy { it.lowercase() }.joinToString("\n"),
+			"Classes Taken Back: ${takenBackClasses.size}",
+			this.takenBackClasses.keys.sortedBy { it.lowercase() }.joinToString("\n"),
+			"",
+			"Classes Ignored On Processing: ${this.temporarilyIgnoredClasses.size}",
+			this.temporarilyIgnoredClasses.keys.sortedBy { it.lowercase() }.joinToString("\n"),
 			"",
 			"Classes Ignored On Declaration: ${ignoredClasses.size}",
-			ignoredClasses.sortedBy { it.lowercase() }.joinToString("\n"),
+			this.ignoredClasses.keys.sortedBy { it.lowercase() }.joinToString("\n"),
 			""
 		).joinToString("\n")
 

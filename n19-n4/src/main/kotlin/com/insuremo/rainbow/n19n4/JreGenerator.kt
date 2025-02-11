@@ -57,9 +57,9 @@ private fun createClassLoaderFile(targetDir: String) {
 	writeFile(targetDir + File.separator + "JdkClassLoader.ts", content)
 }
 
-fun generateJre() {
+fun generateJre(): JarGeneratingTargetInfo? {
 	if (!Envs.shouldGenerateJre) {
-		return
+		return null
 	}
 
 	Logs.log("Checking temporary directory for saving the JAR files transformed from JDK modular files", 0)
@@ -77,13 +77,12 @@ fun generateJre() {
 	createClassLoaderFile(Envs.jreDir)
 
 	Logs.log("Generating from temporary JAR files", 1)
-	generateJars(
-		jarsDir, JarGeneratingTargetInfo(
-			classCreateHelperName = "JdkClassCreateHelper",
-			classLoaderFileName = "JdkClassLoader",
-			rootDir = Envs.jreDir
-		)
+	val targetInfo = JarGeneratingTargetInfo(
+		classCreateHelperName = "JdkClassCreateHelper",
+		classLoaderFileName = "JdkClassLoader",
+		rootDir = Envs.jreDir
 	)
+	generateJars(jarsDir, targetInfo)
 
 	// import all class files
 	val imports = File(Envs.jreDir)
@@ -97,4 +96,6 @@ fun generateJre() {
 		Envs.jreDir,
 		"${if (imports.isEmpty()) imports else (imports + "\n\n")}export {JdkClassLoader} from './JdkClassLoader';\n"
 	)
+
+	return targetInfo
 }

@@ -9,7 +9,10 @@ fun main(args: Array<String>) {
 		try {
 			cleanOutputDir()
 			prepareOutputDir()
-			generateJre()
+			var targetInfo: JarGeneratingTargetInfo? = generateJre()
+			if (targetInfo != null) {
+				generateTakenBackClasses(targetInfo)
+			}
 		} finally {
 			finalizeEnv()
 			Logs.log("\u001B[31mDone!", 0)

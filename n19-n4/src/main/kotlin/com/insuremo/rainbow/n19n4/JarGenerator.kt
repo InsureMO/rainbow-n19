@@ -18,8 +18,8 @@ fun generateJar(jarFilePath: String, targetInfo: JarGeneratingTargetInfo) {
 				Summary.addIgnoredClass(name)
 				false
 			} else if (name.contains("$")) {
-				// put into mediator, if this class is found being used publicly, generate it at that time
-				Mediator.addClass(name)
+				// mark as temporarily ignored, if this class is found being used publicly, generate it at that time
+				Summary.markClassAsIgnoredTemporarily(name)
 				false
 			} else {
 				true
