@@ -203,7 +203,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodType', [
 			/* name */ 'appendParameterTypes',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ptypesToInsert',
 					/* type */ [/* generic array type */ 'ga', [[/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -363,13 +363,13 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodType', [
 			/* name */ 'insertParameterTypes',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'num',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'ptypesToInsert',
 					/* type */ [/* generic array type */ 'ga', [[/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -750,7 +750,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodType', [
 			/* name */ 'methodType',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'rtype',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -767,7 +767,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodType', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'ptype0',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -784,7 +784,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodType', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'ptypes',
 					/* type */ [/* generic array type */ 'ga', [[/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -811,7 +811,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodType', [
 			/* name */ 'methodType',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'rtype',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -828,7 +828,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodType', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'ptypes',
 					/* type */ [/* generic array type */ 'ga', [[/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

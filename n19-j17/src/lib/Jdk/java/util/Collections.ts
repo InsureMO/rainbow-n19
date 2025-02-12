@@ -1176,7 +1176,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'addAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'c',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1195,7 +1195,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'elements',
 					/* type */ [/* generic array type */ 'ga', [[/* type variable ref */ 'tr', [/* name */ 'T']]]],
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -381,7 +381,7 @@ JdkClassCreateHelper.class('java.util.Objects', [
 			/* name */ 'hash',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'values',
 					/* type */ '[Ljava.lang.Object;',
 					/* modifiers */ 0,
 					/* annotations */ UDF

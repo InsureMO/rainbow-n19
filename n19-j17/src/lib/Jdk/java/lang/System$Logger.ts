@@ -151,19 +151,19 @@ JdkClassCreateHelper.class('java.lang.System$Logger', [
 			/* name */ 'log',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'level',
 					/* type */ 'java.lang.System$Logger$Level',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'format',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'params',
 					/* type */ '[Ljava.lang.Object;',
 					/* modifiers */ 0,
 					/* annotations */ UDF

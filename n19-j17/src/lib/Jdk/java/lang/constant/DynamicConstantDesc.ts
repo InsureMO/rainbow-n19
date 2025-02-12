@@ -23,25 +23,25 @@ JdkClassCreateHelper.class('java.lang.constant.DynamicConstantDesc', [
 		[/* protected java.lang.constant.DynamicConstantDesc(java.lang.constant.DirectMethodHandleDesc,java.lang.String,java.lang.constant.ClassDesc,java.lang.constant.ConstantDesc...) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'bootstrapMethod',
 					/* type */ 'java.lang.constant.DirectMethodHandleDesc',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'constantName',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'constantType',
 					/* type */ 'java.lang.constant.ClassDesc',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg3',
+					/* name */ 'bootstrapArgs',
 					/* type */ '[Ljava.lang.constant.ConstantDesc;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -164,25 +164,25 @@ JdkClassCreateHelper.class('java.lang.constant.DynamicConstantDesc', [
 			/* name */ 'ofCanonical',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'bootstrapMethod',
 					/* type */ 'java.lang.constant.DirectMethodHandleDesc',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'constantName',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'constantType',
 					/* type */ 'java.lang.constant.ClassDesc',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg3',
+					/* name */ 'bootstrapArgs',
 					/* type */ '[Ljava.lang.constant.ConstantDesc;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -236,13 +236,13 @@ JdkClassCreateHelper.class('java.lang.constant.DynamicConstantDesc', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'bootstrapMethod',
 					/* type */ 'java.lang.constant.DirectMethodHandleDesc',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'bootstrapArgs',
 					/* type */ '[Ljava.lang.constant.ConstantDesc;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -272,25 +272,25 @@ JdkClassCreateHelper.class('java.lang.constant.DynamicConstantDesc', [
 			/* name */ 'ofNamed',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'bootstrapMethod',
 					/* type */ 'java.lang.constant.DirectMethodHandleDesc',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'constantName',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'constantType',
 					/* type */ 'java.lang.constant.ClassDesc',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg3',
+					/* name */ 'bootstrapArgs',
 					/* type */ '[Ljava.lang.constant.ConstantDesc;',
 					/* modifiers */ 0,
 					/* annotations */ UDF

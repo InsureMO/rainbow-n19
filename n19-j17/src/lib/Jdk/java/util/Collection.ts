@@ -286,7 +286,7 @@ JdkClassCreateHelper.class('java.util.Collection', [
 			/* name */ 'toArray',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'generator',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* generic array type */ 'ga', [[/* type variable ref */ 'tr', [/* name */ 'T']]]]

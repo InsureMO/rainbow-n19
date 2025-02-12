@@ -787,7 +787,7 @@ JdkClassCreateHelper.class('java.math.BigInteger', [
 			/* name */ 'divideAndRemainder',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'val',
 					/* type */ 'java.math.BigInteger',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -473,7 +473,7 @@ JdkClassCreateHelper.class('java.nio.channels.FileChannel', [
 			/* name */ 'read',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'dsts',
 					/* type */ '[Ljava.nio.ByteBuffer;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -494,7 +494,7 @@ JdkClassCreateHelper.class('java.nio.channels.FileChannel', [
 			/* name */ 'write',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'srcs',
 					/* type */ '[Ljava.nio.ByteBuffer;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -557,13 +557,13 @@ JdkClassCreateHelper.class('java.nio.channels.FileChannel', [
 			/* name */ 'open',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'path',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'options',
 					/* type */ '[Ljava.nio.file.OpenOption;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -584,13 +584,13 @@ JdkClassCreateHelper.class('java.nio.channels.FileChannel', [
 			/* name */ 'open',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'path',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'options',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -607,7 +607,7 @@ JdkClassCreateHelper.class('java.nio.channels.FileChannel', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'attrs',
 					/* type */ [/* generic array type */ 'ga', [[/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

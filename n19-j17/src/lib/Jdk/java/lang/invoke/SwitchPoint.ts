@@ -54,7 +54,7 @@ JdkClassCreateHelper.class('java.lang.invoke.SwitchPoint', [
 			/* name */ 'invalidateAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'switchPoints',
 					/* type */ '[Ljava.lang.invoke.SwitchPoint;',
 					/* modifiers */ 0,
 					/* annotations */ UDF

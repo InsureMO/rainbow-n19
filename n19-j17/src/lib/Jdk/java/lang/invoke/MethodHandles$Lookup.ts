@@ -876,19 +876,19 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles$Lookup', [
 			/* name */ 'defineHiddenClass',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'bytes',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'initialize',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'options',
 					/* type */ '[Ljava.lang.invoke.MethodHandles$Lookup$ClassOption;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -909,25 +909,25 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles$Lookup', [
 			/* name */ 'defineHiddenClassWithClassData',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'bytes',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'classData',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'initialize',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg3',
+					/* name */ 'options',
 					/* type */ '[Ljava.lang.invoke.MethodHandles$Lookup$ClassOption;',
 					/* modifiers */ 0,
 					/* annotations */ UDF

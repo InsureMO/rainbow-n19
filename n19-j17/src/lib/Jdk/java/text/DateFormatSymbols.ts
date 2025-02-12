@@ -180,7 +180,7 @@ JdkClassCreateHelper.class('java.text.DateFormatSymbols', [
 			/* name */ 'setAmPmStrings',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newAmpms',
 					/* type */ '[Ljava.lang.String;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -196,7 +196,7 @@ JdkClassCreateHelper.class('java.text.DateFormatSymbols', [
 			/* name */ 'setEras',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newEras',
 					/* type */ '[Ljava.lang.String;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -228,7 +228,7 @@ JdkClassCreateHelper.class('java.text.DateFormatSymbols', [
 			/* name */ 'setMonths',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newMonths',
 					/* type */ '[Ljava.lang.String;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -244,7 +244,7 @@ JdkClassCreateHelper.class('java.text.DateFormatSymbols', [
 			/* name */ 'setShortMonths',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newShortMonths',
 					/* type */ '[Ljava.lang.String;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -260,7 +260,7 @@ JdkClassCreateHelper.class('java.text.DateFormatSymbols', [
 			/* name */ 'setShortWeekdays',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newShortWeekdays',
 					/* type */ '[Ljava.lang.String;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -276,7 +276,7 @@ JdkClassCreateHelper.class('java.text.DateFormatSymbols', [
 			/* name */ 'setWeekdays',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newWeekdays',
 					/* type */ '[Ljava.lang.String;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -292,7 +292,7 @@ JdkClassCreateHelper.class('java.text.DateFormatSymbols', [
 			/* name */ 'setZoneStrings',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newZoneStrings',
 					/* type */ '[[Ljava.lang.String;',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -258,19 +258,19 @@ JdkClassCreateHelper.class('java.lang.invoke.ConstantBootstraps', [
 			/* name */ 'invoke',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'lookup',
 					/* type */ 'java.lang.invoke.MethodHandles$Lookup',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'type',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -287,13 +287,13 @@ JdkClassCreateHelper.class('java.lang.invoke.ConstantBootstraps', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg3',
+					/* name */ 'handle',
 					/* type */ 'java.lang.invoke.MethodHandle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg4',
+					/* name */ 'args',
 					/* type */ '[Ljava.lang.Object;',
 					/* modifiers */ 0,
 					/* annotations */ UDF

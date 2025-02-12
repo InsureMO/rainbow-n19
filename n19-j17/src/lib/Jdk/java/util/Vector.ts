@@ -317,7 +317,7 @@ JdkClassCreateHelper.class('java.util.Vector', [
 			/* name */ 'toArray',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'a',
 					/* type */ [/* generic array type */ 'ga', [[/* type variable ref */ 'tr', [/* name */ 'T']]]],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -756,7 +756,7 @@ JdkClassCreateHelper.class('java.util.Vector', [
 			/* name */ 'copyInto',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'anArray',
 					/* type */ '[Ljava.lang.Object;',
 					/* modifiers */ 0,
 					/* annotations */ UDF

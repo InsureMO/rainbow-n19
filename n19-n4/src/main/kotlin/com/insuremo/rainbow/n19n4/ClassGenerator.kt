@@ -327,7 +327,7 @@ private fun generateParameter(parameter: Parameter, name: String, indent: String
 	).joinToString("\n")
 }
 
-private class MethodVisitorForParameterNames(val parameterNames: MutableList<String>) :
+private class MethodVisitorForParameterNames(val executable: Executable, val parameterNames: MutableList<String?>) :
 	MethodVisitor(Opcodes.ASM9) {
 	override fun visitParameter(name: String?, access: Int) {
 //		name?.let { parameterNames += name }
@@ -337,13 +337,25 @@ private class MethodVisitorForParameterNames(val parameterNames: MutableList<Str
 	override fun visitLocalVariable(
 		name: String, descriptor: String, signature: String?, start: Label, end: Label, index: Int
 	) {
-		if (index > 0) { // Skip 'this' parameter for non - static methods
-			parameterNames.add(name)
+		var nameIndex = -1
+		if (Modifier.isStatic(this.executable.modifiers)) {
+			nameIndex = index
+		} else if (index > 0) { // Skip the first one(this) parameter for non - static methods
+			nameIndex = index - 1
+		}
+		if (nameIndex != -1) {
+			while (parameterNames.size < nameIndex + 1) {
+				parameterNames.add(null)
+			}
+			parameterNames[nameIndex] = name
 		}
 	}
 }
 
-private class ClassVisitorForMethodParameterNames(val executable: Executable, val parameterNames: MutableList<String>) :
+private class ClassVisitorForMethodParameterNames(
+	val executable: Executable,
+	val parameterNames: MutableList<String?>
+) :
 	ClassVisitor(Opcodes.ASM9) {
 	val name: String
 	val descriptor: String
@@ -365,7 +377,7 @@ private class ClassVisitorForMethodParameterNames(val executable: Executable, va
 
 	private fun classToName(clazz: Class<*>): String {
 		return when {
-			clazz.isArray -> clazz.name
+			clazz.isArray -> clazz.name.replace('.', '/')
 			clazz == Byte::class.java -> "B"
 			clazz == Short::class.java -> "S"
 			clazz == Int::class.java -> "I"
@@ -396,14 +408,14 @@ private class ClassVisitorForMethodParameterNames(val executable: Executable, va
 		access: Int, name: String, descriptor: String?, signature: String?, exceptions: Array<String>?
 	): MethodVisitor? {
 		if (name == this.name && this.descriptor == descriptor) {
-			return MethodVisitorForParameterNames(parameterNames)
+			return MethodVisitorForParameterNames(this.executable, parameterNames)
 		}
 		return null
 	}
 }
 
-private fun getParameterNames(executable: Executable): List<String> {
-	val parameterNames = mutableListOf<String>()
+private fun getParameterNames(executable: Executable): List<String?> {
+	val parameterNames = mutableListOf<String?>()
 	val clazz = executable.declaringClass
 	val inputStream = clazz.getResourceAsStream("/" + clazz.getName().replace('.', '/') + ".class")
 	ClassReader(inputStream).accept(ClassVisitorForMethodParameterNames(executable, parameterNames), 0)
@@ -424,9 +436,14 @@ private fun generateParameters(executable: Executable, indent: String): String {
 			if (i >= names.size) {
 				Pair(p.name, p)
 			} else {
-				Pair(names[i], p)
+				Pair(names[i] ?: p.name, p)
 			}
 		}.joinToString(",\n") {
+//			if (it.first.startsWith("arg0")) {
+//				if (names.isNotEmpty()) {
+//					println("${executable}, $names")
+//				}
+//			}
 			generateParameter(it.second, it.first, indent + "\t")
 		},
 		"${indent}]"

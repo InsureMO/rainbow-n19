@@ -517,13 +517,13 @@ JdkClassCreateHelper.class('java.util.EnumSet', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'first',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'rest',
 					/* type */ [/* generic array type */ 'ga', [[/* type variable ref */ 'tr', [/* name */ 'E']]]],
 					/* modifiers */ 0,
 					/* annotations */ UDF

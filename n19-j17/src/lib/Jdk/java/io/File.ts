@@ -459,7 +459,7 @@ JdkClassCreateHelper.class('java.io.File', [
 			/* name */ 'listFiles',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'filter',
 					/* type */ 'java.io.FileFilter',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -475,7 +475,7 @@ JdkClassCreateHelper.class('java.io.File', [
 			/* name */ 'listFiles',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'filter',
 					/* type */ 'java.io.FilenameFilter',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -559,7 +559,7 @@ JdkClassCreateHelper.class('java.io.File', [
 			/* name */ 'list',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'filter',
 					/* type */ 'java.io.FilenameFilter',
 					/* modifiers */ 0,
 					/* annotations */ UDF

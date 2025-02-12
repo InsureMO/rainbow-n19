@@ -536,7 +536,7 @@ JdkClassCreateHelper.class('java.lang.Thread', [
 			/* name */ 'enumerate',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'tarray',
 					/* type */ '[Ljava.lang.Thread;',
 					/* modifiers */ 0,
 					/* annotations */ UDF

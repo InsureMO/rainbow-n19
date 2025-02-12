@@ -13,13 +13,13 @@ JdkClassCreateHelper.class('java.text.ChoiceFormat', [
 		[/* public java.text.ChoiceFormat(double[],java.lang.String[]) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'limits',
 					/* type */ '[D',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'formats',
 					/* type */ '[Ljava.lang.String;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -259,13 +259,13 @@ JdkClassCreateHelper.class('java.text.ChoiceFormat', [
 			/* name */ 'setChoices',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'limits',
 					/* type */ '[D',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'formats',
 					/* type */ '[Ljava.lang.String;',
 					/* modifiers */ 0,
 					/* annotations */ UDF

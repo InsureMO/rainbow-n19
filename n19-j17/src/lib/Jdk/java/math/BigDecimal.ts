@@ -1137,7 +1137,7 @@ JdkClassCreateHelper.class('java.math.BigDecimal', [
 			/* name */ 'divideAndRemainder',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'divisor',
 					/* type */ 'java.math.BigDecimal',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1153,13 +1153,13 @@ JdkClassCreateHelper.class('java.math.BigDecimal', [
 			/* name */ 'divideAndRemainder',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'divisor',
 					/* type */ 'java.math.BigDecimal',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'mc',
 					/* type */ 'java.math.MathContext',
 					/* modifiers */ 0,
 					/* annotations */ UDF

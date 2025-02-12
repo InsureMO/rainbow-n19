@@ -44,7 +44,7 @@ JdkClassCreateHelper.class('java.util.regex.Pattern', [
 			/* name */ 'split',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'input',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -60,13 +60,13 @@ JdkClassCreateHelper.class('java.util.regex.Pattern', [
 			/* name */ 'split',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'input',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'limit',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

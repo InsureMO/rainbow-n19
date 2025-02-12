@@ -52,13 +52,13 @@ JdkClassCreateHelper.class('java.lang.Runtime', [
 			/* name */ 'exec',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'command',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'envp',
 					/* type */ '[Ljava.lang.String;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -79,19 +79,19 @@ JdkClassCreateHelper.class('java.lang.Runtime', [
 			/* name */ 'exec',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'command',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'envp',
 					/* type */ '[Ljava.lang.String;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'dir',
 					/* type */ 'java.io.File',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -112,7 +112,7 @@ JdkClassCreateHelper.class('java.lang.Runtime', [
 			/* name */ 'exec',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'cmdarray',
 					/* type */ '[Ljava.lang.String;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -133,13 +133,13 @@ JdkClassCreateHelper.class('java.lang.Runtime', [
 			/* name */ 'exec',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'cmdarray',
 					/* type */ '[Ljava.lang.String;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'envp',
 					/* type */ '[Ljava.lang.String;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -160,19 +160,19 @@ JdkClassCreateHelper.class('java.lang.Runtime', [
 			/* name */ 'exec',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'cmdarray',
 					/* type */ '[Ljava.lang.String;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'envp',
 					/* type */ '[Ljava.lang.String;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'dir',
 					/* type */ 'java.io.File',
 					/* modifiers */ 0,
 					/* annotations */ UDF

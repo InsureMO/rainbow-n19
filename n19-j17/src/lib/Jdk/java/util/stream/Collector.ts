@@ -113,7 +113,7 @@ JdkClassCreateHelper.class('java.util.stream.Collector', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'supplier',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'A']]
@@ -125,7 +125,7 @@ JdkClassCreateHelper.class('java.util.stream.Collector', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'accumulator',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'A']],
@@ -138,7 +138,7 @@ JdkClassCreateHelper.class('java.util.stream.Collector', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'combiner',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'A']]
@@ -150,7 +150,7 @@ JdkClassCreateHelper.class('java.util.stream.Collector', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg3',
+					/* name */ 'finisher',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'A']],
@@ -163,7 +163,7 @@ JdkClassCreateHelper.class('java.util.stream.Collector', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg4',
+					/* name */ 'characteristics',
 					/* type */ '[Ljava.util.stream.Collector$Characteristics;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -209,7 +209,7 @@ JdkClassCreateHelper.class('java.util.stream.Collector', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'supplier',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'R']]
@@ -221,7 +221,7 @@ JdkClassCreateHelper.class('java.util.stream.Collector', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'accumulator',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'R']],
@@ -234,7 +234,7 @@ JdkClassCreateHelper.class('java.util.stream.Collector', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'combiner',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'R']]
@@ -246,7 +246,7 @@ JdkClassCreateHelper.class('java.util.stream.Collector', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg3',
+					/* name */ 'characteristics',
 					/* type */ '[Ljava.util.stream.Collector$Characteristics;',
 					/* modifiers */ 0,
 					/* annotations */ UDF

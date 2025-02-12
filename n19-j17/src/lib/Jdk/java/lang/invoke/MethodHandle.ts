@@ -74,7 +74,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandle', [
 			/* name */ 'invokeWithArguments',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'arguments',
 					/* type */ '[Ljava.lang.Object;',
 					/* modifiers */ 0,
 					/* annotations */ UDF

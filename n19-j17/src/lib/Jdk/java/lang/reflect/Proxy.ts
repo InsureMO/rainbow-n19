@@ -59,13 +59,13 @@ JdkClassCreateHelper.class('java.lang.reflect.Proxy', [
 			/* name */ 'getProxyClass',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'loader',
 					/* type */ 'java.lang.ClassLoader',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'interfaces',
 					/* type */ [/* generic array type */ 'ga', [[/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -115,13 +115,13 @@ JdkClassCreateHelper.class('java.lang.reflect.Proxy', [
 			/* name */ 'newProxyInstance',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'loader',
 					/* type */ 'java.lang.ClassLoader',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'interfaces',
 					/* type */ [/* generic array type */ 'ga', [[/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -138,7 +138,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Proxy', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'h',
 					/* type */ 'java.lang.reflect.InvocationHandler',
 					/* modifiers */ 0,
 					/* annotations */ UDF

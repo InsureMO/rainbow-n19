@@ -433,13 +433,13 @@ JdkClassCreateHelper.class('java.nio.file.Path', [
 			/* name */ 'register',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'watcher',
 					/* type */ 'java.nio.file.WatchService',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'events',
 					/* type */ [/* generic array type */ 'ga', [[/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -486,13 +486,13 @@ JdkClassCreateHelper.class('java.nio.file.Path', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'first',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'more',
 					/* type */ '[Ljava.lang.String;',
 					/* modifiers */ 0,
 					/* annotations */ UDF

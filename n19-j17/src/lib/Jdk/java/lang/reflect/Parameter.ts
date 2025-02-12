@@ -77,7 +77,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Parameter', [
 			/* name */ 'getAnnotationsByType',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'annotationClass',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'T']]
@@ -107,7 +107,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Parameter', [
 			/* name */ 'getDeclaredAnnotationsByType',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'annotationClass',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'T']]

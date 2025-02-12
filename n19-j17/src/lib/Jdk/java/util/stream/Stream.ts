@@ -1563,7 +1563,7 @@ JdkClassCreateHelper.class('java.util.stream.Stream', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'values',
 					/* type */ [/* generic array type */ 'ga', [[/* type variable ref */ 'tr', [/* name */ 'T']]]],
 					/* modifiers */ 0,
 					/* annotations */ UDF

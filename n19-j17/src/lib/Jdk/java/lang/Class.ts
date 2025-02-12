@@ -107,7 +107,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			/* name */ 'getAnnotationsByType',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'annotationClass',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'A']]
@@ -137,7 +137,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			/* name */ 'getDeclaredAnnotationsByType',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'annotationClass',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'A']]
@@ -899,7 +899,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			/* name */ 'getConstructor',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'parameterTypes',
 					/* type */ [/* generic array type */ 'ga', [[/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -943,7 +943,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			/* name */ 'getDeclaredConstructor',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'parameterTypes',
 					/* type */ [/* generic array type */ 'ga', [[/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1073,13 +1073,13 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			/* name */ 'getDeclaredMethod',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'parameterTypes',
 					/* type */ [/* generic array type */ 'ga', [[/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1133,13 +1133,13 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			/* name */ 'getMethod',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'parameterTypes',
 					/* type */ [/* generic array type */ 'ga', [[/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

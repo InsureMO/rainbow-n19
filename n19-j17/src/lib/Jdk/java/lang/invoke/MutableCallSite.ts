@@ -62,7 +62,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MutableCallSite', [
 			/* name */ 'syncAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'sites',
 					/* type */ '[Ljava.lang.invoke.MutableCallSite;',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -53,7 +53,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Constructor', [
 			/* name */ 'newInstance',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'initargs',
 					/* type */ '[Ljava.lang.Object;',
 					/* modifiers */ 0,
 					/* annotations */ UDF

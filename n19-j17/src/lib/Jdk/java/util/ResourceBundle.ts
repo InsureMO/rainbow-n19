@@ -133,7 +133,7 @@ JdkClassCreateHelper.class('java.util.ResourceBundle', [
 			/* name */ 'getStringArray',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'key',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

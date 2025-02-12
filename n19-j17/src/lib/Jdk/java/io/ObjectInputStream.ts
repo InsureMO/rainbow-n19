@@ -129,7 +129,7 @@ JdkClassCreateHelper.class('java.io.ObjectInputStream', [
 			/* name */ 'resolveProxyClass',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'interfaces',
 					/* type */ '[Ljava.lang.String;',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -180,7 +180,7 @@ JdkClassCreateHelper.class('java.net.URLConnection', [
 			/* name */ 'getContent',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'classes',
 					/* type */ [/* generic array type */ 'ga', [[/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

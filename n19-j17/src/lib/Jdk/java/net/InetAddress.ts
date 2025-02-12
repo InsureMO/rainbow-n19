@@ -323,7 +323,7 @@ JdkClassCreateHelper.class('java.net.InetAddress', [
 			/* name */ 'getAllByName',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'host',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

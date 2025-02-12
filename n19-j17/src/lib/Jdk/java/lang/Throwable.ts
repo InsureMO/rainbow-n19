@@ -241,7 +241,7 @@ JdkClassCreateHelper.class('java.lang.Throwable', [
 			/* name */ 'setStackTrace',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'stackTrace',
 					/* type */ '[Ljava.lang.StackTraceElement;',
 					/* modifiers */ 0,
 					/* annotations */ UDF

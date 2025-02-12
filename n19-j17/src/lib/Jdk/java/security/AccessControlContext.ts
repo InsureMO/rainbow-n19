@@ -39,7 +39,7 @@ JdkClassCreateHelper.class('java.security.AccessControlContext', [
 		[/* public java.security.AccessControlContext(java.security.ProtectionDomain[]) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'context',
 					/* type */ '[Ljava.security.ProtectionDomain;',
 					/* modifiers */ 0,
 					/* annotations */ UDF

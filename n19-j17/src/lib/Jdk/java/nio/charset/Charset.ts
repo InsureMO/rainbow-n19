@@ -21,13 +21,13 @@ JdkClassCreateHelper.class('java.nio.charset.Charset', [
 		[/* protected java.nio.charset.Charset(java.lang.String,java.lang.String[]) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'canonicalName',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'aliases',
 					/* type */ '[Ljava.lang.String;',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -13,19 +13,19 @@ JdkClassCreateHelper.class('java.text.CompactNumberFormat', [
 		[/* public java.text.CompactNumberFormat(java.lang.String,java.text.DecimalFormatSymbols,java.lang.String[]) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'decimalPattern',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'symbols',
 					/* type */ 'java.text.DecimalFormatSymbols',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'compactPatterns',
 					/* type */ '[Ljava.lang.String;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -39,25 +39,25 @@ JdkClassCreateHelper.class('java.text.CompactNumberFormat', [
 		[/* public java.text.CompactNumberFormat(java.lang.String,java.text.DecimalFormatSymbols,java.lang.String[],java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'decimalPattern',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'symbols',
 					/* type */ 'java.text.DecimalFormatSymbols',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'compactPatterns',
 					/* type */ '[Ljava.lang.String;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg3',
+					/* name */ 'pluralRules',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

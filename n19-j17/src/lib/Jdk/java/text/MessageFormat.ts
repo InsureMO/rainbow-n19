@@ -94,19 +94,19 @@ JdkClassCreateHelper.class('java.text.MessageFormat', [
 			/* name */ 'format',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'arguments',
 					/* type */ '[Ljava.lang.Object;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'result',
 					/* type */ 'java.lang.StringBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'pos',
 					/* type */ 'java.text.FieldPosition',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -162,7 +162,7 @@ JdkClassCreateHelper.class('java.text.MessageFormat', [
 			/* name */ 'parse',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'source',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -183,13 +183,13 @@ JdkClassCreateHelper.class('java.text.MessageFormat', [
 			/* name */ 'parse',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'source',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'pos',
 					/* type */ 'java.text.ParsePosition',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -257,13 +257,13 @@ JdkClassCreateHelper.class('java.text.MessageFormat', [
 			/* name */ 'format',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'pattern',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'arguments',
 					/* type */ '[Ljava.lang.Object;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -339,7 +339,7 @@ JdkClassCreateHelper.class('java.text.MessageFormat', [
 			/* name */ 'setFormats',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newFormats',
 					/* type */ '[Ljava.text.Format;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -355,7 +355,7 @@ JdkClassCreateHelper.class('java.text.MessageFormat', [
 			/* name */ 'setFormatsByArgumentIndex',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newFormats',
 					/* type */ '[Ljava.text.Format;',
 					/* modifiers */ 0,
 					/* annotations */ UDF

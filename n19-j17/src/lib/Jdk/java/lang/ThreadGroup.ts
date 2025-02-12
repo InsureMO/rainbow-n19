@@ -272,7 +272,7 @@ JdkClassCreateHelper.class('java.lang.ThreadGroup', [
 			/* name */ 'enumerate',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'list',
 					/* type */ '[Ljava.lang.ThreadGroup;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -288,13 +288,13 @@ JdkClassCreateHelper.class('java.lang.ThreadGroup', [
 			/* name */ 'enumerate',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'list',
 					/* type */ '[Ljava.lang.ThreadGroup;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'recurse',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -310,7 +310,7 @@ JdkClassCreateHelper.class('java.lang.ThreadGroup', [
 			/* name */ 'enumerate',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'list',
 					/* type */ '[Ljava.lang.Thread;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -326,13 +326,13 @@ JdkClassCreateHelper.class('java.lang.ThreadGroup', [
 			/* name */ 'enumerate',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'list',
 					/* type */ '[Ljava.lang.Thread;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'recurse',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF

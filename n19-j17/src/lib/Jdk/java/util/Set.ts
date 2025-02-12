@@ -935,7 +935,7 @@ JdkClassCreateHelper.class('java.util.Set', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'elements',
 					/* type */ [/* generic array type */ 'ga', [[/* type variable ref */ 'tr', [/* name */ 'E']]]],
 					/* modifiers */ 0,
 					/* annotations */ UDF

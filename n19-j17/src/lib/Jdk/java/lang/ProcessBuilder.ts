@@ -13,7 +13,7 @@ JdkClassCreateHelper.class('java.lang.ProcessBuilder', [
 		[/* public java.lang.ProcessBuilder(java.lang.String...) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'command',
 					/* type */ '[Ljava.lang.String;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -82,7 +82,7 @@ JdkClassCreateHelper.class('java.lang.ProcessBuilder', [
 			/* name */ 'command',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'command',
 					/* type */ '[Ljava.lang.String;',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -1752,7 +1752,7 @@ JdkClassCreateHelper.class('java.util.Map', [
 			/* name */ 'ofEntries',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'entries',
 					/* type */ [/* generic array type */ 'ga', [[/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

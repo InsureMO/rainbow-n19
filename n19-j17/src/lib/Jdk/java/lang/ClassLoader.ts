@@ -343,7 +343,7 @@ JdkClassCreateHelper.class('java.lang.ClassLoader', [
 			/* name */ 'setSigners',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'c',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -360,7 +360,7 @@ JdkClassCreateHelper.class('java.lang.ClassLoader', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'signers',
 					/* type */ '[Ljava.lang.Object;',
 					/* modifiers */ 0,
 					/* annotations */ UDF

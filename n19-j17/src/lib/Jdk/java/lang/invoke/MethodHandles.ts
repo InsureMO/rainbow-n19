@@ -469,19 +469,19 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 			/* name */ 'dropArguments',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'target',
 					/* type */ 'java.lang.invoke.MethodHandle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'pos',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'valueTypes',
 					/* type */ [/* generic array type */ 'ga', [[/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -674,19 +674,19 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 			/* name */ 'filterArguments',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'target',
 					/* type */ 'java.lang.invoke.MethodHandle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'pos',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'filters',
 					/* type */ '[Ljava.lang.invoke.MethodHandle;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -829,19 +829,19 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 			/* name */ 'insertArguments',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'target',
 					/* type */ 'java.lang.invoke.MethodHandle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'pos',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'values',
 					/* type */ '[Ljava.lang.Object;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -901,7 +901,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 			/* name */ 'loop',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'clauses',
 					/* type */ '[[Ljava.lang.invoke.MethodHandle;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -967,13 +967,13 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 			/* name */ 'tableSwitch',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'fallback',
 					/* type */ 'java.lang.invoke.MethodHandle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'targets',
 					/* type */ '[Ljava.lang.invoke.MethodHandle;',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -51,7 +51,7 @@ JdkClassCreateHelper.class('java.lang.module.ModuleFinder', [
 			/* name */ 'compose',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'finders',
 					/* type */ '[Ljava.lang.module.ModuleFinder;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -67,7 +67,7 @@ JdkClassCreateHelper.class('java.lang.module.ModuleFinder', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'entries',
 					/* type */ '[Ljava.nio.file.Path;',
 					/* modifiers */ 0,
 					/* annotations */ UDF

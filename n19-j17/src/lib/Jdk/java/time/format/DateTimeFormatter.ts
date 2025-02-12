@@ -194,7 +194,7 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatter', [
 			/* name */ 'withResolverFields',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'resolverFields',
 					/* type */ '[Ljava.time.temporal.TemporalField;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -320,13 +320,13 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatter', [
 			/* name */ 'parseBest',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'text',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'queries',
 					/* type */ [/* generic array type */ 'ga', [[/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

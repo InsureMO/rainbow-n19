@@ -33,25 +33,25 @@ JdkClassCreateHelper.class('java.security.ProtectionDomain', [
 		[/* public java.security.ProtectionDomain(java.security.CodeSource,java.security.PermissionCollection,java.lang.ClassLoader,java.security.Principal[]) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'codesource',
 					/* type */ 'java.security.CodeSource',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'permissions',
 					/* type */ 'java.security.PermissionCollection',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'classloader',
 					/* type */ 'java.lang.ClassLoader',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg3',
+					/* name */ 'principals',
 					/* type */ '[Ljava.security.Principal;',
 					/* modifiers */ 0,
 					/* annotations */ UDF

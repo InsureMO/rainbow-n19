@@ -451,13 +451,13 @@ JdkClassCreateHelper.class('java.nio.channels.AsynchronousFileChannel', [
 			/* name */ 'open',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'file',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'options',
 					/* type */ '[Ljava.nio.file.OpenOption;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -478,13 +478,13 @@ JdkClassCreateHelper.class('java.nio.channels.AsynchronousFileChannel', [
 			/* name */ 'open',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'file',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'options',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -501,13 +501,13 @@ JdkClassCreateHelper.class('java.nio.channels.AsynchronousFileChannel', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'executor',
 					/* type */ 'java.util.concurrent.ExecutorService',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg3',
+					/* name */ 'attrs',
 					/* type */ [/* generic array type */ 'ga', [[/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

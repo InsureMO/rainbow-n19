@@ -104,25 +104,25 @@ JdkClassCreateHelper.class('java.text.AttributedString', [
 		[/* public java.text.AttributedString(java.text.AttributedCharacterIterator,int,int,java.text.AttributedCharacterIterator$Attribute[]) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'text',
 					/* type */ 'java.text.AttributedCharacterIterator',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'beginIndex',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'endIndex',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg3',
+					/* name */ 'attributes',
 					/* type */ '[Ljava.text.AttributedCharacterIterator$Attribute;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -148,7 +148,7 @@ JdkClassCreateHelper.class('java.text.AttributedString', [
 			/* name */ 'getIterator',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'attributes',
 					/* type */ '[Ljava.text.AttributedCharacterIterator$Attribute;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -164,19 +164,19 @@ JdkClassCreateHelper.class('java.text.AttributedString', [
 			/* name */ 'getIterator',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'attributes',
 					/* type */ '[Ljava.text.AttributedCharacterIterator$Attribute;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'beginIndex',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'endIndex',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

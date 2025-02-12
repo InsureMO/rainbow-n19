@@ -308,7 +308,7 @@ JdkClassCreateHelper.class('java.util.TimeZone', [
 			/* name */ 'getAvailableIDs',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'rawOffset',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
