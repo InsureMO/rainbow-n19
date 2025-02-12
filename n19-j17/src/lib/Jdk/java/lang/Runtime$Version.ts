@@ -41,7 +41,7 @@ JdkClassCreateHelper.class('java.lang.Runtime$Version', [
 			/* name */ 'equalsIgnoreOptional',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'that',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -264,7 +264,7 @@ JdkClassCreateHelper.class('java.lang.Runtime$Version', [
 			/* name */ 'parse',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 's',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

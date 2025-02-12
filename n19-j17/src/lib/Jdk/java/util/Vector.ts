@@ -129,7 +129,7 @@ JdkClassCreateHelper.class('java.util.Vector', [
 			/* name */ 'addAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'elementData',
+					/* name */ 'c',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -564,13 +564,13 @@ JdkClassCreateHelper.class('java.util.Vector', [
 			/* name */ 'indexOf',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'o',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -602,13 +602,13 @@ JdkClassCreateHelper.class('java.util.Vector', [
 			/* name */ 'lastIndexOf',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'o',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -788,7 +788,7 @@ JdkClassCreateHelper.class('java.util.Vector', [
 			/* name */ 'forEach',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'action',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -864,7 +864,7 @@ JdkClassCreateHelper.class('java.util.Vector', [
 			/* name */ 'replaceAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'operator',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'E']]
@@ -908,7 +908,7 @@ JdkClassCreateHelper.class('java.util.Vector', [
 			/* name */ 'setSize',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'to',
+					/* name */ 'newSize',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

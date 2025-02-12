@@ -23,37 +23,37 @@ JdkClassCreateHelper.class('java.util.ResourceBundle$Control', [
 			/* name */ 'needsReload',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'ent',
+					/* name */ 'baseName',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'lastModified',
+					/* name */ 'locale',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'connection',
+					/* name */ 'format',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'resourceName',
+					/* name */ 'loader',
 					/* type */ 'java.lang.ClassLoader',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'url',
+					/* name */ 'bundle',
 					/* type */ 'java.util.ResourceBundle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'npe',
+					/* name */ 'loadTime',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -185,31 +185,31 @@ JdkClassCreateHelper.class('java.util.ResourceBundle$Control', [
 			/* name */ 'newBundle',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'otherBundleName',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
 					/* name */ 'baseName',
-					/* type */ 'java.util.Locale',
+					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'locale',
-					/* type */ 'java.lang.String',
+					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'format',
-					/* type */ 'java.lang.ClassLoader',
+					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'loader',
+					/* type */ 'java.lang.ClassLoader',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'reload',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF

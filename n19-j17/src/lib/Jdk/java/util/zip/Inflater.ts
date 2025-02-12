@@ -121,19 +121,19 @@ JdkClassCreateHelper.class('java.util.zip.Inflater', [
 			/* name */ 'inflate',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'result',
+					/* name */ 'output',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'e',
+					/* name */ 'off',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'inputPos',
+					/* name */ 'len',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -154,7 +154,7 @@ JdkClassCreateHelper.class('java.util.zip.Inflater', [
 			/* name */ 'inflate',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'result',
+					/* name */ 'output',
 					/* type */ 'java.nio.ByteBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -255,7 +255,7 @@ JdkClassCreateHelper.class('java.util.zip.Inflater', [
 			/* name */ 'setDictionary',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'address',
+					/* name */ 'dictionary',
 					/* type */ 'java.nio.ByteBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF

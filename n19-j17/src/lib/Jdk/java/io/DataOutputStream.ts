@@ -83,7 +83,7 @@ JdkClassCreateHelper.class('java.io.DataOutputStream', [
 			/* name */ 'writeBytes',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 's',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -125,7 +125,7 @@ JdkClassCreateHelper.class('java.io.DataOutputStream', [
 			/* name */ 'writeChars',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'v',
+					/* name */ 's',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

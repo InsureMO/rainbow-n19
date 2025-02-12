@@ -319,7 +319,7 @@ JdkClassCreateHelper.class('java.lang.Double', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'b',
+					/* name */ 'arg1',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -341,7 +341,7 @@ JdkClassCreateHelper.class('java.lang.Double', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'b',
+					/* name */ 'arg1',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -384,7 +384,7 @@ JdkClassCreateHelper.class('java.lang.Double', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'b',
+					/* name */ 'arg1',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -406,7 +406,7 @@ JdkClassCreateHelper.class('java.lang.Double', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'd2',
+					/* name */ 'arg1',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -477,7 +477,7 @@ JdkClassCreateHelper.class('java.lang.Double', [
 			/* name */ 'toHexString',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'subnormal',
+					/* name */ 'd',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF

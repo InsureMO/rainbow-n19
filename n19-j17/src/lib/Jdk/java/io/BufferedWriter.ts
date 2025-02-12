@@ -92,19 +92,19 @@ JdkClassCreateHelper.class('java.io.BufferedWriter', [
 			/* name */ 'write',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'd',
+					/* name */ 'cbuf',
 					/* type */ '[C',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'b',
+					/* name */ 'off',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 't',
+					/* name */ 'len',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -146,19 +146,19 @@ JdkClassCreateHelper.class('java.io.BufferedWriter', [
 			/* name */ 'write',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'd',
+					/* name */ 's',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'b',
+					/* name */ 'off',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 't',
+					/* name */ 'len',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

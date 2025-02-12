@@ -191,13 +191,13 @@ JdkClassCreateHelper.class('java.text.SimpleDateFormat', [
 			/* name */ 'parse',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'nextTag',
+					/* name */ 'text',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'nextCount',
+					/* name */ 'pos',
 					/* type */ 'java.text.ParsePosition',
 					/* modifiers */ 0,
 					/* annotations */ UDF

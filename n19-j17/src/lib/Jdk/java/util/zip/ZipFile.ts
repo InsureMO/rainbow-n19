@@ -176,7 +176,7 @@ JdkClassCreateHelper.class('java.util.zip.ZipFile', [
 			/* name */ 'getInputStream',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'pos',
+					/* name */ 'entry',
 					/* type */ 'java.util.zip.ZipEntry',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -255,7 +255,7 @@ JdkClassCreateHelper.class('java.util.zip.ZipFile', [
 			/* name */ 'getEntry',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'pos',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

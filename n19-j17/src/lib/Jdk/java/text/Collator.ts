@@ -148,7 +148,7 @@ JdkClassCreateHelper.class('java.text.Collator', [
 			/* name */ 'getInstance',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'cachedColl',
+					/* name */ 'desiredLocale',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF

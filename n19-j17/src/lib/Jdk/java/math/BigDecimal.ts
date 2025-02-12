@@ -61,25 +61,25 @@ JdkClassCreateHelper.class('java.math.BigDecimal', [
 		[/* public java.math.BigDecimal(char[],int,int,java.math.MathContext) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'e',
+					/* name */ 'in',
 					/* type */ '[C',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'digit',
+					/* name */ 'offset',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'digit',
+					/* name */ 'len',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'c',
+					/* name */ 'mc',
 					/* type */ 'java.math.MathContext',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -127,13 +127,13 @@ JdkClassCreateHelper.class('java.math.BigDecimal', [
 		[/* public java.math.BigDecimal(double,java.math.MathContext) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'rb',
+					/* name */ 'val',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'rb',
+					/* name */ 'arg1',
 					/* type */ 'java.math.MathContext',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -161,13 +161,13 @@ JdkClassCreateHelper.class('java.math.BigDecimal', [
 		[/* public java.math.BigDecimal(int,java.math.MathContext) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'drop',
+					/* name */ 'val',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'val',
+					/* name */ 'mc',
 					/* type */ 'java.math.MathContext',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -249,19 +249,19 @@ JdkClassCreateHelper.class('java.math.BigDecimal', [
 		[/* public java.math.BigDecimal(java.math.BigInteger,int,java.math.MathContext) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'drop',
+					/* name */ 'unscaledVal',
 					/* type */ 'java.math.BigInteger',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'drop',
+					/* name */ 'scale',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'mode',
+					/* name */ 'mc',
 					/* type */ 'java.math.MathContext',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -309,13 +309,13 @@ JdkClassCreateHelper.class('java.math.BigDecimal', [
 		[/* public java.math.BigDecimal(long,java.math.MathContext) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'drop',
+					/* name */ 'val',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'drop',
+					/* name */ 'arg1',
 					/* type */ 'java.math.MathContext',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -332,7 +332,7 @@ JdkClassCreateHelper.class('java.math.BigDecimal', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'xDec',
+					/* name */ 'x',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -391,7 +391,7 @@ JdkClassCreateHelper.class('java.math.BigDecimal', [
 			/* name */ 'compareTo',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'xs',
+					/* name */ 'val',
 					/* type */ 'java.math.BigDecimal',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -529,13 +529,13 @@ JdkClassCreateHelper.class('java.math.BigDecimal', [
 			/* name */ 'add',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'precisionDiff',
+					/* name */ 'augend',
 					/* type */ 'java.math.BigDecimal',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'scaleDiff',
+					/* name */ 'mc',
 					/* type */ 'java.math.MathContext',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -551,7 +551,7 @@ JdkClassCreateHelper.class('java.math.BigDecimal', [
 			/* name */ 'divide',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'quotient',
+					/* name */ 'divisor',
 					/* type */ 'java.math.BigDecimal',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -717,13 +717,13 @@ JdkClassCreateHelper.class('java.math.BigDecimal', [
 			/* name */ 'divideToIntegralValue',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'product',
+					/* name */ 'divisor',
 					/* type */ 'java.math.BigDecimal',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'precisionDiff',
+					/* name */ 'mc',
 					/* type */ 'java.math.MathContext',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -907,13 +907,13 @@ JdkClassCreateHelper.class('java.math.BigDecimal', [
 			/* name */ 'pow',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'elength',
+					/* name */ 'n',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'mc',
 					/* type */ 'java.math.MathContext',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1015,13 +1015,13 @@ JdkClassCreateHelper.class('java.math.BigDecimal', [
 			/* name */ 'setScale',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'raise',
+					/* name */ 'newScale',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'rb',
+					/* name */ 'roundingMode',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1065,7 +1065,7 @@ JdkClassCreateHelper.class('java.math.BigDecimal', [
 			/* name */ 'sqrt',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'result',
+					/* name */ 'mc',
 					/* type */ 'java.math.MathContext',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1267,7 +1267,7 @@ JdkClassCreateHelper.class('java.math.BigDecimal', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'scale',
+					/* name */ 'arg1',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

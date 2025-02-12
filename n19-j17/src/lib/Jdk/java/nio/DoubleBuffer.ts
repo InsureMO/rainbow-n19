@@ -756,19 +756,19 @@ JdkClassCreateHelper.class('java.nio.DoubleBuffer', [
 			/* name */ 'wrap',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'x',
+					/* name */ 'array',
 					/* type */ '[D',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'array',
+					/* name */ 'offset',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'offset',
+					/* name */ 'length',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

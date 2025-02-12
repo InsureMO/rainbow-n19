@@ -193,7 +193,7 @@ JdkClassCreateHelper.class('java.lang.reflect.AccessibleObject', [
 			/* name */ 'canAccess',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'targetClass',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF

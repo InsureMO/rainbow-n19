@@ -37,7 +37,7 @@ JdkClassCreateHelper.class('java.util.AbstractSequentialList', [
 			/* name */ 'get',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'exc',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -53,7 +53,7 @@ JdkClassCreateHelper.class('java.util.AbstractSequentialList', [
 			/* name */ 'remove',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'e',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -69,13 +69,13 @@ JdkClassCreateHelper.class('java.util.AbstractSequentialList', [
 			/* name */ 'set',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'e',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'oldVal',
+					/* name */ 'element',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -113,13 +113,13 @@ JdkClassCreateHelper.class('java.util.AbstractSequentialList', [
 			/* name */ 'addAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'e',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'modified',
+					/* name */ 'c',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -161,13 +161,13 @@ JdkClassCreateHelper.class('java.util.AbstractSequentialList', [
 			/* name */ 'add',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'exc',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'index',
+					/* name */ 'element',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF

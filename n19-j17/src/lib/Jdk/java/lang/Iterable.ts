@@ -52,7 +52,7 @@ JdkClassCreateHelper.class('java.lang.Iterable', [
 			/* name */ 'forEach',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 't',
+					/* name */ 'action',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

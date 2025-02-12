@@ -235,7 +235,7 @@ JdkClassCreateHelper.class('java.util.TreeSet', [
 			/* name */ 'addAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'set',
+					/* name */ 'c',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

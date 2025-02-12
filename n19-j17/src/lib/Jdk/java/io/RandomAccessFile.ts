@@ -282,19 +282,19 @@ JdkClassCreateHelper.class('java.io.RandomAccessFile', [
 			/* name */ 'readFully',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'count',
+					/* name */ 'b',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'b',
+					/* name */ 'off',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'off',
+					/* name */ 'len',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -399,7 +399,7 @@ JdkClassCreateHelper.class('java.io.RandomAccessFile', [
 			/* name */ 'writeChars',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 's',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

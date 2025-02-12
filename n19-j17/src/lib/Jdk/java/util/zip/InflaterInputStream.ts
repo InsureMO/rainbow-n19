@@ -127,19 +127,19 @@ JdkClassCreateHelper.class('java.util.zip.InflaterInputStream', [
 			/* name */ 'read',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'n',
+					/* name */ 'b',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 's',
+					/* name */ 'off',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'e',
+					/* name */ 'len',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -160,7 +160,7 @@ JdkClassCreateHelper.class('java.util.zip.InflaterInputStream', [
 			/* name */ 'skip',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'len',
+					/* name */ 'n',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF

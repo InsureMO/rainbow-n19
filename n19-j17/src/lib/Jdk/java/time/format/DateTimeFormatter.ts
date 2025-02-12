@@ -15,13 +15,13 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatter', [
 			/* name */ 'parse',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'ex',
+					/* name */ 'text',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'ex',
+					/* name */ 'query',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'T']]
@@ -282,7 +282,7 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatter', [
 			/* name */ 'parse',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'ex',
+					/* name */ 'text',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -298,13 +298,13 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatter', [
 			/* name */ 'parse',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'ex',
+					/* name */ 'text',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'ex',
+					/* name */ 'position',
 					/* type */ 'java.text.ParsePosition',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -537,13 +537,13 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatter', [
 			/* name */ 'formatTo',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'buf',
+					/* name */ 'temporal',
 					/* type */ 'java.time.temporal.TemporalAccessor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'context',
+					/* name */ 'appendable',
 					/* type */ 'java.lang.Appendable',
 					/* modifiers */ 0,
 					/* annotations */ UDF

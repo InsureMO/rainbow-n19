@@ -17,7 +17,7 @@ JdkClassCreateHelper.class('java.time.zone.ZoneRules', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'other',
+					/* name */ 'otherRules',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -114,7 +114,7 @@ JdkClassCreateHelper.class('java.time.zone.ZoneRules', [
 			/* name */ 'getOffset',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'instant',
 					/* type */ 'java.time.Instant',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -178,7 +178,7 @@ JdkClassCreateHelper.class('java.time.zone.ZoneRules', [
 			/* name */ 'nextTransition',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'trans',
+					/* name */ 'instant',
 					/* type */ 'java.time.Instant',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -194,7 +194,7 @@ JdkClassCreateHelper.class('java.time.zone.ZoneRules', [
 			/* name */ 'previousTransition',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'instant',
 					/* type */ 'java.time.Instant',
 					/* modifiers */ 0,
 					/* annotations */ UDF

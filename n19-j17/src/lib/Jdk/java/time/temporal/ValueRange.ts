@@ -17,7 +17,7 @@ JdkClassCreateHelper.class('java.time.temporal.ValueRange', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'other',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -89,7 +89,7 @@ JdkClassCreateHelper.class('java.time.temporal.ValueRange', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'field',
+					/* name */ 'arg1',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -129,7 +129,7 @@ JdkClassCreateHelper.class('java.time.temporal.ValueRange', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'field',
+					/* name */ 'arg1',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -187,7 +187,7 @@ JdkClassCreateHelper.class('java.time.temporal.ValueRange', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'max',
+					/* name */ 'arg1',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -209,13 +209,13 @@ JdkClassCreateHelper.class('java.time.temporal.ValueRange', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'maxSmallest',
+					/* name */ 'arg1',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'maxLargest',
+					/* name */ 'maxSmallest',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -237,19 +237,19 @@ JdkClassCreateHelper.class('java.time.temporal.ValueRange', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
 					/* name */ 'minLargest',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'maxSmallest',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'maxLargest',
+					/* name */ 'arg3',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF

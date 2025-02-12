@@ -15,7 +15,7 @@ JdkClassCreateHelper.class('java.net.InterfaceAddress', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'cmp',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF

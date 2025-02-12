@@ -119,7 +119,7 @@ JdkClassCreateHelper.class('java.net.URLStreamHandler', [
 			/* name */ 'hashCode',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'host',
+					/* name */ 'u',
 					/* type */ 'java.net.URL',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -194,25 +194,25 @@ JdkClassCreateHelper.class('java.net.URLStreamHandler', [
 			/* name */ 'parseURL',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'queryStart',
+					/* name */ 'u',
 					/* type */ 'java.net.URL',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'nhost',
+					/* name */ 'spec',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'ind',
+					/* name */ 'start',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'ind',
+					/* name */ 'limit',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -228,26 +228,14 @@ JdkClassCreateHelper.class('java.net.URLStreamHandler', [
 			/* name */ 'setURL',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'at',
+					/* name */ 'u',
 					/* type */ 'java.net.URL',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'q',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'u',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
 					/* name */ 'protocol',
-					/* type */ 'int',
+					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
@@ -259,6 +247,18 @@ JdkClassCreateHelper.class('java.net.URLStreamHandler', [
 				],
 				[/* parameter */
 					/* name */ 'port',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'file',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'ref',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -280,14 +280,8 @@ JdkClassCreateHelper.class('java.net.URLStreamHandler', [
 			/* name */ 'setURL',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 's',
-					/* type */ 'java.net.URL',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
 					/* name */ 'u',
-					/* type */ 'java.lang.String',
+					/* type */ 'java.net.URL',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
@@ -299,13 +293,13 @@ JdkClassCreateHelper.class('java.net.URLStreamHandler', [
 				],
 				[/* parameter */
 					/* name */ 'host',
-					/* type */ 'int',
+					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'port',
-					/* type */ 'java.lang.String',
+					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
@@ -329,6 +323,12 @@ JdkClassCreateHelper.class('java.net.URLStreamHandler', [
 				],
 				[/* parameter */
 					/* name */ 'query',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'ref',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

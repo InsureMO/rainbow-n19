@@ -335,7 +335,7 @@ JdkClassCreateHelper.class('java.util.zip.ZipEntry', [
 			/* name */ 'setTime',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'localYear',
+					/* name */ 'time',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF

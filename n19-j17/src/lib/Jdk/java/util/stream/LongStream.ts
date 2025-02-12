@@ -672,13 +672,13 @@ JdkClassCreateHelper.class('java.util.stream.LongStream', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'hasNext',
+					/* name */ 'arg1',
 					/* type */ 'java.util.function.LongPredicate',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'next',
+					/* name */ 'hasNext',
 					/* type */ 'java.util.function.LongUnaryOperator',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -700,7 +700,7 @@ JdkClassCreateHelper.class('java.util.stream.LongStream', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'f',
+					/* name */ 'arg1',
 					/* type */ 'java.util.function.LongUnaryOperator',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -748,13 +748,13 @@ JdkClassCreateHelper.class('java.util.stream.LongStream', [
 			/* name */ 'range',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'm',
+					/* name */ 'startInclusive',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'startInclusive',
+					/* name */ 'arg1',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -770,13 +770,13 @@ JdkClassCreateHelper.class('java.util.stream.LongStream', [
 			/* name */ 'rangeClosed',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'm',
+					/* name */ 'startInclusive',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'startInclusive',
+					/* name */ 'arg1',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF

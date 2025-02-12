@@ -47,7 +47,7 @@ JdkClassCreateHelper.class('java.lang.Module', [
 			/* name */ 'canRead',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'reads',
+					/* name */ 'other',
 					/* type */ 'java.lang.Module',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -175,7 +175,7 @@ JdkClassCreateHelper.class('java.lang.Module', [
 			/* name */ 'getResourceAsStream',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'pn',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -207,13 +207,13 @@ JdkClassCreateHelper.class('java.lang.Module', [
 			/* name */ 'addExports',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'caller',
+					/* name */ 'pn',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'pn',
+					/* name */ 'other',
 					/* type */ 'java.lang.Module',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -231,13 +231,13 @@ JdkClassCreateHelper.class('java.lang.Module', [
 			/* name */ 'addOpens',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'caller',
+					/* name */ 'pn',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'pn',
+					/* name */ 'other',
 					/* type */ 'java.lang.Module',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -255,7 +255,7 @@ JdkClassCreateHelper.class('java.lang.Module', [
 			/* name */ 'addReads',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'caller',
+					/* name */ 'other',
 					/* type */ 'java.lang.Module',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -273,7 +273,7 @@ JdkClassCreateHelper.class('java.lang.Module', [
 			/* name */ 'addUses',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'caller',
+					/* name */ 'service',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

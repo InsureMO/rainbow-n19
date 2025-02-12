@@ -468,7 +468,7 @@ JdkClassCreateHelper.class('java.util.Date', [
 			/* name */ 'from',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'ex',
+					/* name */ 'instant',
 					/* type */ 'java.time.Instant',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -536,7 +536,7 @@ JdkClassCreateHelper.class('java.util.Date', [
 			/* name */ 'parse',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'depth',
+					/* name */ 's',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

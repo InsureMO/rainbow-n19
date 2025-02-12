@@ -529,7 +529,7 @@ JdkClassCreateHelper.class('java.util.List', [
 			/* name */ 'sort',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'e',
+					/* name */ 'c',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

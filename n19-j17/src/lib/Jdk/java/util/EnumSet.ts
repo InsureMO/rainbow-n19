@@ -151,7 +151,7 @@ JdkClassCreateHelper.class('java.util.EnumSet', [
 			/* name */ 'copyOf',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'c',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'E']]

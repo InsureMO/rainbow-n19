@@ -106,7 +106,7 @@ JdkClassCreateHelper.class('java.io.LineNumberInputStream', [
 			/* name */ 'skip',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'nr',
+					/* name */ 'n',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -87,19 +87,19 @@ JdkClassCreateHelper.class('java.io.BufferedReader', [
 			/* name */ 'read',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'n1',
+					/* name */ 'cbuf',
 					/* type */ '[C',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'n',
+					/* name */ 'off',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'cbuf',
+					/* name */ 'len',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -149,7 +149,7 @@ JdkClassCreateHelper.class('java.io.BufferedReader', [
 			/* name */ 'skip',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'd',
+					/* name */ 'n',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF

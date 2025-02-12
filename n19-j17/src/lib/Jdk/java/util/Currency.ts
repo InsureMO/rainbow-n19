@@ -128,7 +128,7 @@ JdkClassCreateHelper.class('java.util.Currency', [
 			/* name */ 'getInstance',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'finalChar',
+					/* name */ 'locale',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF

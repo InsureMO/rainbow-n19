@@ -37,7 +37,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodType', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'o',
+					/* name */ 'x',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -323,13 +323,13 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodType', [
 			/* name */ 'dropParameterTypes',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'nptypes',
+					/* name */ 'start',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'nptypes',
+					/* name */ 'end',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -610,13 +610,13 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodType', [
 			/* name */ 'fromMethodDescriptorString',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'sm',
+					/* name */ 'descriptor',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'descriptor',
+					/* name */ 'loader',
 					/* type */ 'java.lang.ClassLoader',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -657,13 +657,13 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodType', [
 			/* name */ 'genericMethodType',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'mt',
+					/* name */ 'objectArgCount',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'objectArgCount',
+					/* name */ 'finalArray',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF

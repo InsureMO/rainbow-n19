@@ -27,13 +27,13 @@ JdkClassCreateHelper.class('java.nio.channels.FileLock', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'size',
+					/* name */ 'arg2',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'shared',
+					/* name */ 'size',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -59,13 +59,13 @@ JdkClassCreateHelper.class('java.nio.channels.FileLock', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'size',
+					/* name */ 'arg2',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'shared',
+					/* name */ 'size',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -120,7 +120,7 @@ JdkClassCreateHelper.class('java.nio.channels.FileLock', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'size',
+					/* name */ 'arg1',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF

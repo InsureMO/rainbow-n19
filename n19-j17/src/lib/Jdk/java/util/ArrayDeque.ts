@@ -270,7 +270,7 @@ JdkClassCreateHelper.class('java.util.ArrayDeque', [
 			/* name */ 'contains',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'o',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -386,7 +386,7 @@ JdkClassCreateHelper.class('java.util.ArrayDeque', [
 			/* name */ 'removeFirstOccurrence',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'o',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -431,7 +431,7 @@ JdkClassCreateHelper.class('java.util.ArrayDeque', [
 			/* name */ 'removeLastOccurrence',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'o',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -607,7 +607,7 @@ JdkClassCreateHelper.class('java.util.ArrayDeque', [
 			/* name */ 'forEach',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'action',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

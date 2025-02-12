@@ -970,7 +970,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'max',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'next',
+					/* name */ 'coll',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1019,7 +1019,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'min',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'next',
+					/* name */ 'coll',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1068,7 +1068,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'max',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'next',
+					/* name */ 'coll',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1085,7 +1085,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'coll',
+					/* name */ 'comp',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1122,7 +1122,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'min',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'next',
+					/* name */ 'coll',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1139,7 +1139,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'coll',
+					/* name */ 'comp',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1221,7 +1221,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'replaceAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'list',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'T']]
@@ -1233,13 +1233,13 @@ JdkClassCreateHelper.class('java.util.Collections', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'oldVal',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'T']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'newVal',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'T']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -2084,7 +2084,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'copy',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'dest',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -2103,7 +2103,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'src',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -2138,7 +2138,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'fill',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'list',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -2157,7 +2157,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'obj',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'T']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -2230,7 +2230,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'disjoint',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'c1size',
+					/* name */ 'c1',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -2247,7 +2247,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'c2size',
+					/* name */ 'c2',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -2413,7 +2413,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'frequency',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'e',
+					/* name */ 'c',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -2430,7 +2430,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'e',
+					/* name */ 'o',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -2446,7 +2446,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'indexOfSubList',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'source',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -2463,7 +2463,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'j',
+					/* name */ 'target',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -2490,7 +2490,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'lastIndexOfSubList',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'source',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -2507,7 +2507,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'j',
+					/* name */ 'target',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -2534,7 +2534,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'reverse',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'list',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -2621,7 +2621,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'shuffle',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'list',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -2638,7 +2638,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'rnd',
 					/* type */ 'java.util.Random',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -198,13 +198,13 @@ JdkClassCreateHelper.class('java.util.Hashtable', [
 			/* name */ 'compute',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'mc',
+					/* name */ 'key',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'newValue',
+					/* name */ 'remappingFunction',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -288,13 +288,13 @@ JdkClassCreateHelper.class('java.util.Hashtable', [
 			/* name */ 'computeIfPresent',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'mc',
+					/* name */ 'key',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'newValue',
+					/* name */ 'remappingFunction',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -337,7 +337,7 @@ JdkClassCreateHelper.class('java.util.Hashtable', [
 			/* name */ 'get',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'e',
+					/* name */ 'key',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -375,19 +375,19 @@ JdkClassCreateHelper.class('java.util.Hashtable', [
 			/* name */ 'merge',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'mc',
+					/* name */ 'key',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'newValue',
+					/* name */ 'value',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'prev',
+					/* name */ 'remappingFunction',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -430,13 +430,13 @@ JdkClassCreateHelper.class('java.util.Hashtable', [
 			/* name */ 'put',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'old',
+					/* name */ 'key',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'key',
+					/* name */ 'value',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -452,13 +452,13 @@ JdkClassCreateHelper.class('java.util.Hashtable', [
 			/* name */ 'putIfAbsent',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'old',
+					/* name */ 'key',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'key',
+					/* name */ 'value',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -474,7 +474,7 @@ JdkClassCreateHelper.class('java.util.Hashtable', [
 			/* name */ 'remove',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'oldValue',
+					/* name */ 'key',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -490,13 +490,13 @@ JdkClassCreateHelper.class('java.util.Hashtable', [
 			/* name */ 'replace',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'oldValue',
+					/* name */ 'key',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'key',
+					/* name */ 'value',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -512,7 +512,7 @@ JdkClassCreateHelper.class('java.util.Hashtable', [
 			/* name */ 'contains',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'e',
+					/* name */ 'value',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -528,7 +528,7 @@ JdkClassCreateHelper.class('java.util.Hashtable', [
 			/* name */ 'containsKey',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'e',
+					/* name */ 'key',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -544,7 +544,7 @@ JdkClassCreateHelper.class('java.util.Hashtable', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 't',
+					/* name */ 'o',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -569,13 +569,13 @@ JdkClassCreateHelper.class('java.util.Hashtable', [
 			/* name */ 'remove',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'prev',
+					/* name */ 'key',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'key',
+					/* name */ 'value',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -694,7 +694,7 @@ JdkClassCreateHelper.class('java.util.Hashtable', [
 			/* name */ 'forEach',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'entry',
+					/* name */ 'action',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -731,7 +731,7 @@ JdkClassCreateHelper.class('java.util.Hashtable', [
 			/* name */ 'putAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'e',
+					/* name */ 't',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -764,7 +764,7 @@ JdkClassCreateHelper.class('java.util.Hashtable', [
 			/* name */ 'replaceAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'entry',
+					/* name */ 'function',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

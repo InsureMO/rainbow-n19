@@ -33,13 +33,13 @@ JdkClassCreateHelper.class('java.time.chrono.JapaneseChronology', [
 			/* name */ 'prolepticYear',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'jdate',
+					/* name */ 'era',
 					/* type */ 'java.time.chrono.Era',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'era',
+					/* name */ 'yearOfEra',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -396,14 +396,8 @@ JdkClassCreateHelper.class('java.time.chrono.JapaneseChronology', [
 			/* name */ 'date',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'jera',
-					/* type */ 'java.time.chrono.Era',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
 					/* name */ 'era',
-					/* type */ 'int',
+					/* type */ 'java.time.chrono.Era',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
@@ -415,6 +409,12 @@ JdkClassCreateHelper.class('java.time.chrono.JapaneseChronology', [
 				],
 				[/* parameter */
 					/* name */ 'month',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'dayOfMonth',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -598,7 +598,7 @@ JdkClassCreateHelper.class('java.time.chrono.JapaneseChronology', [
 			/* name */ 'range',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'jcal',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.ChronoField',
 					/* modifiers */ 0,
 					/* annotations */ UDF

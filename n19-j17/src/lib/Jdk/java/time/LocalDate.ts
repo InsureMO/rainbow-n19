@@ -302,7 +302,7 @@ JdkClassCreateHelper.class('java.time.LocalDate', [
 			/* name */ 'minus',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'periodToSubtract',
+					/* name */ 'amountToSubtract',
 					/* type */ 'java.time.temporal.TemporalAmount',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -324,7 +324,7 @@ JdkClassCreateHelper.class('java.time.LocalDate', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'unit',
+					/* name */ 'arg1',
 					/* type */ 'java.time.temporal.TemporalUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -404,7 +404,7 @@ JdkClassCreateHelper.class('java.time.LocalDate', [
 			/* name */ 'plus',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'periodToAdd',
+					/* name */ 'amountToAdd',
 					/* type */ 'java.time.temporal.TemporalAmount',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -420,13 +420,13 @@ JdkClassCreateHelper.class('java.time.LocalDate', [
 			/* name */ 'plus',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'chronoUnit',
+					/* name */ 'amountToAdd',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'amountToAdd',
+					/* name */ 'arg1',
 					/* type */ 'java.time.temporal.TemporalUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -442,7 +442,7 @@ JdkClassCreateHelper.class('java.time.LocalDate', [
 			/* name */ 'plusDays',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'monthLen',
+					/* name */ 'daysToAdd',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -522,13 +522,13 @@ JdkClassCreateHelper.class('java.time.LocalDate', [
 			/* name */ 'with',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'chronoField',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'field',
+					/* name */ 'newValue',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -742,7 +742,7 @@ JdkClassCreateHelper.class('java.time.LocalDate', [
 			/* name */ 'until',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'calcDate',
+					/* name */ 'endDateExclusive',
 					/* type */ 'java.time.chrono.ChronoLocalDate',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -758,7 +758,7 @@ JdkClassCreateHelper.class('java.time.LocalDate', [
 			/* name */ 'atStartOfDay',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'rules',
+					/* name */ 'zone',
 					/* type */ 'java.time.ZoneId',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1086,7 +1086,7 @@ JdkClassCreateHelper.class('java.time.LocalDate', [
 			/* name */ 'range',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'chronoField',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1124,13 +1124,13 @@ JdkClassCreateHelper.class('java.time.LocalDate', [
 			/* name */ 'datesUntil',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'steps',
+					/* name */ 'endExclusive',
 					/* type */ 'java.time.LocalDate',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'endExclusive',
+					/* name */ 'step',
 					/* type */ 'java.time.Period',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1334,7 +1334,7 @@ JdkClassCreateHelper.class('java.time.LocalDate', [
 			/* name */ 'ofEpochDay',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'adjustCycles',
+					/* name */ 'epochDay',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF

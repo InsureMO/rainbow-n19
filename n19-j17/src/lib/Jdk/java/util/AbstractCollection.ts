@@ -103,7 +103,7 @@ JdkClassCreateHelper.class('java.util.AbstractCollection', [
 			/* name */ 'addAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'e',
+					/* name */ 'c',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -146,7 +146,7 @@ JdkClassCreateHelper.class('java.util.AbstractCollection', [
 			/* name */ 'containsAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'e',
+					/* name */ 'c',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

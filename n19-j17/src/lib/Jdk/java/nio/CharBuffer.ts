@@ -961,19 +961,19 @@ JdkClassCreateHelper.class('java.nio.CharBuffer', [
 			/* name */ 'put',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'src',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'src',
+					/* name */ 'start',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'start',
+					/* name */ 'end',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1046,19 +1046,19 @@ JdkClassCreateHelper.class('java.nio.CharBuffer', [
 			/* name */ 'wrap',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'x',
+					/* name */ 'array',
 					/* type */ '[C',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'array',
+					/* name */ 'offset',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'offset',
+					/* name */ 'length',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1090,19 +1090,19 @@ JdkClassCreateHelper.class('java.nio.CharBuffer', [
 			/* name */ 'wrap',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'x',
+					/* name */ 'csq',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'csq',
+					/* name */ 'start',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'start',
+					/* name */ 'end',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

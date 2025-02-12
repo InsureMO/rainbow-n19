@@ -87,7 +87,7 @@ JdkClassCreateHelper.class('java.util.zip.Adler32', [
 			/* name */ 'update',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'length',
+					/* name */ 'buffer',
 					/* type */ 'java.nio.ByteBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF

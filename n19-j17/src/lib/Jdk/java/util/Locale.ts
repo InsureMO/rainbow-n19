@@ -208,7 +208,7 @@ JdkClassCreateHelper.class('java.util.Locale', [
 			/* name */ 'getDisplayName',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'result',
+					/* name */ 'inLocale',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -664,7 +664,7 @@ JdkClassCreateHelper.class('java.util.Locale', [
 			/* name */ 'getDefault',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'loc',
+					/* name */ 'category',
 					/* type */ 'java.util.Locale$Category',
 					/* modifiers */ 0,
 					/* annotations */ UDF

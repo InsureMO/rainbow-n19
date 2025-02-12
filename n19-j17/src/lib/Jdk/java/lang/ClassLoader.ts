@@ -213,19 +213,19 @@ JdkClassCreateHelper.class('java.lang.ClassLoader', [
 			/* name */ 'defineClass',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'tb',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'name',
+					/* name */ 'b',
 					/* type */ 'java.nio.ByteBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'b',
+					/* name */ 'protectionDomain',
 					/* type */ 'java.security.ProtectionDomain',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -441,13 +441,13 @@ JdkClassCreateHelper.class('java.lang.ClassLoader', [
 			/* name */ 'loadClass',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 't1',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 't0',
+					/* name */ 'resolve',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -479,7 +479,7 @@ JdkClassCreateHelper.class('java.lang.ClassLoader', [
 			/* name */ 'getClassLoadingLock',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'newLock',
+					/* name */ 'className',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -735,7 +735,7 @@ JdkClassCreateHelper.class('java.lang.ClassLoader', [
 			/* name */ 'getResourceAsStream',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'e',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -792,7 +792,7 @@ JdkClassCreateHelper.class('java.lang.ClassLoader', [
 			/* name */ 'getResource',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'url',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -857,7 +857,7 @@ JdkClassCreateHelper.class('java.lang.ClassLoader', [
 			/* name */ 'getSystemResourceAsStream',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'e',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

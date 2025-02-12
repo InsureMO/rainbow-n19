@@ -301,13 +301,13 @@ JdkClassCreateHelper.class('java.util.Map', [
 			/* name */ 'computeIfAbsent',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'newValue',
+					/* name */ 'key',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'key',
+					/* name */ 'mappingFunction',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -342,13 +342,13 @@ JdkClassCreateHelper.class('java.util.Map', [
 			/* name */ 'computeIfPresent',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'newValue',
+					/* name */ 'key',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'key',
+					/* name */ 'remappingFunction',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -562,7 +562,7 @@ JdkClassCreateHelper.class('java.util.Map', [
 			/* name */ 'forEach',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'k',
+					/* name */ 'action',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -599,7 +599,7 @@ JdkClassCreateHelper.class('java.util.Map', [
 			/* name */ 'replaceAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'k',
+					/* name */ 'function',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

@@ -324,19 +324,19 @@ JdkClassCreateHelper.class('java.io.Writer', [
 			/* name */ 'write',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'cbuf',
+					/* name */ 'str',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'cbuf',
+					/* name */ 'off',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'str',
+					/* name */ 'len',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

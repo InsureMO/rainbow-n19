@@ -304,7 +304,7 @@ JdkClassCreateHelper.class('java.lang.SecurityManager', [
 			/* name */ 'checkPackageAccess',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'tmpPropertyStr',
+					/* name */ 'pkg',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -320,7 +320,7 @@ JdkClassCreateHelper.class('java.lang.SecurityManager', [
 			/* name */ 'checkPackageDefinition',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'tmpPropertyStr',
+					/* name */ 'pkg',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

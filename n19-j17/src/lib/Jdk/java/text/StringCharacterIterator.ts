@@ -84,7 +84,7 @@ JdkClassCreateHelper.class('java.text.StringCharacterIterator', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'that',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF

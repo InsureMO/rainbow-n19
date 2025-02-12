@@ -137,7 +137,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Parameter', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'other',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF

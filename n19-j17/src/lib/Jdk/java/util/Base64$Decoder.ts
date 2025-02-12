@@ -85,7 +85,7 @@ JdkClassCreateHelper.class('java.util.Base64$Decoder', [
 			/* name */ 'decode',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'src',
+					/* name */ 'buffer',
 					/* type */ 'java.nio.ByteBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF

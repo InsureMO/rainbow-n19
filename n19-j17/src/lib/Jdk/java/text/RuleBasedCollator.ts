@@ -110,13 +110,13 @@ JdkClassCreateHelper.class('java.text.RuleBasedCollator', [
 			/* name */ 'compare',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'terSOrder',
+					/* name */ 'source',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'terTOrder',
+					/* name */ 'target',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -132,7 +132,7 @@ JdkClassCreateHelper.class('java.text.RuleBasedCollator', [
 			/* name */ 'getCollationKey',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'mode',
+					/* name */ 'source',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

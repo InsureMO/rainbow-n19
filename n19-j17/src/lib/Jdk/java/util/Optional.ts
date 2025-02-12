@@ -25,7 +25,7 @@ JdkClassCreateHelper.class('java.util.Optional', [
 			/* name */ 'flatMap',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'r',
+					/* name */ 'mapper',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -235,7 +235,7 @@ JdkClassCreateHelper.class('java.util.Optional', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'other',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -322,7 +322,7 @@ JdkClassCreateHelper.class('java.util.Optional', [
 			/* name */ 'or',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'r',
+					/* name */ 'supplier',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

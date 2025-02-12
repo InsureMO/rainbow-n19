@@ -77,7 +77,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Field', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'other',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -93,7 +93,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Field', [
 			/* name */ 'getBoolean',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'caller',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -139,7 +139,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Field', [
 			/* name */ 'getByte',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'caller',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -167,7 +167,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Field', [
 			/* name */ 'getChar',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'caller',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -195,7 +195,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Field', [
 			/* name */ 'getDouble',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'caller',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -223,7 +223,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Field', [
 			/* name */ 'getFloat',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'caller',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -251,7 +251,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Field', [
 			/* name */ 'getInt',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'caller',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -337,7 +337,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Field', [
 			/* name */ 'get',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'caller',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -419,7 +419,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Field', [
 			/* name */ 'getLong',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'caller',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -447,7 +447,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Field', [
 			/* name */ 'getShort',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'caller',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -475,13 +475,13 @@ JdkClassCreateHelper.class('java.lang.reflect.Field', [
 			/* name */ 'set',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'caller',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'obj',
+					/* name */ 'value',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -527,13 +527,13 @@ JdkClassCreateHelper.class('java.lang.reflect.Field', [
 			/* name */ 'setBoolean',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'caller',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'obj',
+					/* name */ 'z',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -561,13 +561,13 @@ JdkClassCreateHelper.class('java.lang.reflect.Field', [
 			/* name */ 'setByte',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'caller',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'obj',
+					/* name */ 'b',
 					/* type */ 'byte',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -595,13 +595,13 @@ JdkClassCreateHelper.class('java.lang.reflect.Field', [
 			/* name */ 'setChar',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'caller',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'obj',
+					/* name */ 'c',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -629,13 +629,13 @@ JdkClassCreateHelper.class('java.lang.reflect.Field', [
 			/* name */ 'setDouble',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'caller',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'obj',
+					/* name */ 'd',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -663,13 +663,13 @@ JdkClassCreateHelper.class('java.lang.reflect.Field', [
 			/* name */ 'setFloat',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'caller',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'obj',
+					/* name */ 'f',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -697,13 +697,13 @@ JdkClassCreateHelper.class('java.lang.reflect.Field', [
 			/* name */ 'setInt',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'caller',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'obj',
+					/* name */ 'i',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -731,13 +731,13 @@ JdkClassCreateHelper.class('java.lang.reflect.Field', [
 			/* name */ 'setLong',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'caller',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'obj',
+					/* name */ 'l',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -765,13 +765,13 @@ JdkClassCreateHelper.class('java.lang.reflect.Field', [
 			/* name */ 'setShort',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'caller',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'obj',
+					/* name */ 's',
 					/* type */ 'short',
 					/* modifiers */ 0,
 					/* annotations */ UDF

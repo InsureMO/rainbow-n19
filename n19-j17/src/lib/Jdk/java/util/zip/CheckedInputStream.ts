@@ -92,7 +92,7 @@ JdkClassCreateHelper.class('java.util.zip.CheckedInputStream', [
 			/* name */ 'skip',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'len',
+					/* name */ 'n',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF

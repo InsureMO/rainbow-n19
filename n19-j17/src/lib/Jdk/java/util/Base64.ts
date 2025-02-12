@@ -60,13 +60,13 @@ JdkClassCreateHelper.class('java.util.Base64', [
 			/* name */ 'getMimeEncoder',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'b',
+					/* name */ 'lineLength',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'lineLength',
+					/* name */ 'lineSeparator',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF

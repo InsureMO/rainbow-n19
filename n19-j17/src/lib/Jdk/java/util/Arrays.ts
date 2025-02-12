@@ -3577,7 +3577,7 @@ JdkClassCreateHelper.class('java.util.Arrays', [
 			/* name */ 'hashCode',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'element',
+					/* name */ 'a',
 					/* type */ '[Z',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -3593,7 +3593,7 @@ JdkClassCreateHelper.class('java.util.Arrays', [
 			/* name */ 'hashCode',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'element',
+					/* name */ 'a',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -3609,7 +3609,7 @@ JdkClassCreateHelper.class('java.util.Arrays', [
 			/* name */ 'hashCode',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'element',
+					/* name */ 'a',
 					/* type */ '[C',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -3625,7 +3625,7 @@ JdkClassCreateHelper.class('java.util.Arrays', [
 			/* name */ 'hashCode',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'bits',
+					/* name */ 'a',
 					/* type */ '[D',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -3641,7 +3641,7 @@ JdkClassCreateHelper.class('java.util.Arrays', [
 			/* name */ 'hashCode',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'element',
+					/* name */ 'a',
 					/* type */ '[F',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -3657,7 +3657,7 @@ JdkClassCreateHelper.class('java.util.Arrays', [
 			/* name */ 'hashCode',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'element',
+					/* name */ 'a',
 					/* type */ '[I',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -3689,7 +3689,7 @@ JdkClassCreateHelper.class('java.util.Arrays', [
 			/* name */ 'hashCode',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'elementHash',
+					/* name */ 'a',
 					/* type */ '[J',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -3705,7 +3705,7 @@ JdkClassCreateHelper.class('java.util.Arrays', [
 			/* name */ 'hashCode',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'element',
+					/* name */ 'a',
 					/* type */ '[S',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -4399,7 +4399,7 @@ JdkClassCreateHelper.class('java.util.Arrays', [
 			/* name */ 'toString',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'a',
 					/* type */ '[Z',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -4415,7 +4415,7 @@ JdkClassCreateHelper.class('java.util.Arrays', [
 			/* name */ 'toString',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'a',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -4431,7 +4431,7 @@ JdkClassCreateHelper.class('java.util.Arrays', [
 			/* name */ 'toString',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'a',
 					/* type */ '[C',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -4447,7 +4447,7 @@ JdkClassCreateHelper.class('java.util.Arrays', [
 			/* name */ 'toString',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'a',
 					/* type */ '[D',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -4463,7 +4463,7 @@ JdkClassCreateHelper.class('java.util.Arrays', [
 			/* name */ 'toString',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'a',
 					/* type */ '[F',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -4479,7 +4479,7 @@ JdkClassCreateHelper.class('java.util.Arrays', [
 			/* name */ 'toString',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'a',
 					/* type */ '[I',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -4511,7 +4511,7 @@ JdkClassCreateHelper.class('java.util.Arrays', [
 			/* name */ 'toString',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'a',
 					/* type */ '[J',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -4527,7 +4527,7 @@ JdkClassCreateHelper.class('java.util.Arrays', [
 			/* name */ 'toString',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'a',
 					/* type */ '[S',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -4907,13 +4907,13 @@ JdkClassCreateHelper.class('java.util.Arrays', [
 			/* name */ 'fill',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'a',
 					/* type */ '[Z',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'len',
+					/* name */ 'val',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -4929,14 +4929,8 @@ JdkClassCreateHelper.class('java.util.Arrays', [
 			/* name */ 'fill',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
-					/* type */ '[Z',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
 					/* name */ 'a',
-					/* type */ 'int',
+					/* type */ '[Z',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
@@ -4948,6 +4942,12 @@ JdkClassCreateHelper.class('java.util.Arrays', [
 				],
 				[/* parameter */
 					/* name */ 'toIndex',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'val',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -4963,13 +4963,13 @@ JdkClassCreateHelper.class('java.util.Arrays', [
 			/* name */ 'fill',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'a',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'len',
+					/* name */ 'val',
 					/* type */ 'byte',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -4985,14 +4985,8 @@ JdkClassCreateHelper.class('java.util.Arrays', [
 			/* name */ 'fill',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
-					/* type */ '[B',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
 					/* name */ 'a',
-					/* type */ 'int',
+					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
@@ -5004,6 +4998,12 @@ JdkClassCreateHelper.class('java.util.Arrays', [
 				],
 				[/* parameter */
 					/* name */ 'toIndex',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'val',
 					/* type */ 'byte',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -5019,13 +5019,13 @@ JdkClassCreateHelper.class('java.util.Arrays', [
 			/* name */ 'fill',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'a',
 					/* type */ '[C',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'len',
+					/* name */ 'val',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -5041,14 +5041,8 @@ JdkClassCreateHelper.class('java.util.Arrays', [
 			/* name */ 'fill',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
-					/* type */ '[C',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
 					/* name */ 'a',
-					/* type */ 'int',
+					/* type */ '[C',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
@@ -5060,6 +5054,12 @@ JdkClassCreateHelper.class('java.util.Arrays', [
 				],
 				[/* parameter */
 					/* name */ 'toIndex',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'val',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -5075,13 +5075,13 @@ JdkClassCreateHelper.class('java.util.Arrays', [
 			/* name */ 'fill',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'a',
 					/* type */ '[D',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'len',
+					/* name */ 'val',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -5097,14 +5097,8 @@ JdkClassCreateHelper.class('java.util.Arrays', [
 			/* name */ 'fill',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
-					/* type */ '[D',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
 					/* name */ 'a',
-					/* type */ 'int',
+					/* type */ '[D',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
@@ -5116,6 +5110,12 @@ JdkClassCreateHelper.class('java.util.Arrays', [
 				],
 				[/* parameter */
 					/* name */ 'toIndex',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'val',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -5131,13 +5131,13 @@ JdkClassCreateHelper.class('java.util.Arrays', [
 			/* name */ 'fill',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'a',
 					/* type */ '[F',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'len',
+					/* name */ 'val',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -5153,14 +5153,8 @@ JdkClassCreateHelper.class('java.util.Arrays', [
 			/* name */ 'fill',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
-					/* type */ '[F',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
 					/* name */ 'a',
-					/* type */ 'int',
+					/* type */ '[F',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
@@ -5172,6 +5166,12 @@ JdkClassCreateHelper.class('java.util.Arrays', [
 				],
 				[/* parameter */
 					/* name */ 'toIndex',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'val',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -5187,13 +5187,13 @@ JdkClassCreateHelper.class('java.util.Arrays', [
 			/* name */ 'fill',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'a',
 					/* type */ '[I',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'len',
+					/* name */ 'val',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -5209,14 +5209,8 @@ JdkClassCreateHelper.class('java.util.Arrays', [
 			/* name */ 'fill',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
-					/* type */ '[I',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
 					/* name */ 'a',
-					/* type */ 'int',
+					/* type */ '[I',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
@@ -5228,6 +5222,12 @@ JdkClassCreateHelper.class('java.util.Arrays', [
 				],
 				[/* parameter */
 					/* name */ 'toIndex',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'val',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -5299,14 +5299,8 @@ JdkClassCreateHelper.class('java.util.Arrays', [
 			/* name */ 'fill',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
-					/* type */ '[J',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
 					/* name */ 'a',
-					/* type */ 'int',
+					/* type */ '[J',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
@@ -5318,6 +5312,12 @@ JdkClassCreateHelper.class('java.util.Arrays', [
 				],
 				[/* parameter */
 					/* name */ 'toIndex',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'val',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -5333,13 +5333,13 @@ JdkClassCreateHelper.class('java.util.Arrays', [
 			/* name */ 'fill',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'a',
 					/* type */ '[J',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'len',
+					/* name */ 'val',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -5355,14 +5355,8 @@ JdkClassCreateHelper.class('java.util.Arrays', [
 			/* name */ 'fill',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
-					/* type */ '[S',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
 					/* name */ 'a',
-					/* type */ 'int',
+					/* type */ '[S',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
@@ -5374,6 +5368,12 @@ JdkClassCreateHelper.class('java.util.Arrays', [
 				],
 				[/* parameter */
 					/* name */ 'toIndex',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'val',
 					/* type */ 'short',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -5389,13 +5389,13 @@ JdkClassCreateHelper.class('java.util.Arrays', [
 			/* name */ 'fill',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'a',
 					/* type */ '[S',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'len',
+					/* name */ 'val',
 					/* type */ 'short',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -5953,13 +5953,13 @@ JdkClassCreateHelper.class('java.util.Arrays', [
 			/* name */ 'setAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'array',
 					/* type */ '[D',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'array',
+					/* name */ 'generator',
 					/* type */ 'java.util.function.IntToDoubleFunction',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -5975,13 +5975,13 @@ JdkClassCreateHelper.class('java.util.Arrays', [
 			/* name */ 'setAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'array',
 					/* type */ '[I',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'array',
+					/* name */ 'generator',
 					/* type */ 'java.util.function.IntUnaryOperator',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -5997,13 +5997,13 @@ JdkClassCreateHelper.class('java.util.Arrays', [
 			/* name */ 'setAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'array',
 					/* type */ '[J',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'array',
+					/* name */ 'generator',
 					/* type */ 'java.util.function.IntToLongFunction',
 					/* modifiers */ 0,
 					/* annotations */ UDF

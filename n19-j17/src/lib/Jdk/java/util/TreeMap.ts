@@ -222,13 +222,13 @@ JdkClassCreateHelper.class('java.util.TreeMap', [
 			/* name */ 'compute',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'newValue',
+					/* name */ 'key',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'cmp',
+					/* name */ 'remappingFunction',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -271,13 +271,13 @@ JdkClassCreateHelper.class('java.util.TreeMap', [
 			/* name */ 'computeIfAbsent',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'newValue',
+					/* name */ 'key',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'cmp',
+					/* name */ 'mappingFunction',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -377,19 +377,19 @@ JdkClassCreateHelper.class('java.util.TreeMap', [
 			/* name */ 'merge',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'cmp',
+					/* name */ 'key',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'parent',
+					/* name */ 'value',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'k',
+					/* name */ 'remappingFunction',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -492,13 +492,13 @@ JdkClassCreateHelper.class('java.util.TreeMap', [
 			/* name */ 'replace',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'oldValue',
+					/* name */ 'key',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'key',
+					/* name */ 'value',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -530,7 +530,7 @@ JdkClassCreateHelper.class('java.util.TreeMap', [
 			/* name */ 'containsValue',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'e',
+					/* name */ 'value',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1051,7 +1051,7 @@ JdkClassCreateHelper.class('java.util.TreeMap', [
 			/* name */ 'forEach',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'e',
+					/* name */ 'action',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1121,7 +1121,7 @@ JdkClassCreateHelper.class('java.util.TreeMap', [
 			/* name */ 'replaceAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'e',
+					/* name */ 'function',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

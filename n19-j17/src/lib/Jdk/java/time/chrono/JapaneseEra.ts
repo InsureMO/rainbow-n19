@@ -90,7 +90,7 @@ JdkClassCreateHelper.class('java.time.chrono.JapaneseEra', [
 			/* name */ 'valueOf',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'era',
+					/* name */ 'japaneseEra',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

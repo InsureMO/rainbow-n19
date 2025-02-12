@@ -97,13 +97,13 @@ JdkClassCreateHelper.class('java.lang.CharSequence', [
 			/* name */ 'compare',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'a',
+					/* name */ 'cs1',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'b',
+					/* name */ 'cs2',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF

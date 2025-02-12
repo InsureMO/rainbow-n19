@@ -24,7 +24,7 @@ JdkClassCreateHelper.class('java.lang.ProcessBuilder$Redirect', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'r',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF

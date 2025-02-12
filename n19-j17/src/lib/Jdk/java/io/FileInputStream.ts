@@ -82,7 +82,7 @@ JdkClassCreateHelper.class('java.io.FileInputStream', [
 			/* name */ 'readNBytes',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'b',
+					/* name */ 'len',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -57,7 +57,7 @@ JdkClassCreateHelper.class('java.time.ZonedDateTime', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'other',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -105,7 +105,7 @@ JdkClassCreateHelper.class('java.time.ZonedDateTime', [
 			/* name */ 'get',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'chronoField',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -299,7 +299,7 @@ JdkClassCreateHelper.class('java.time.ZonedDateTime', [
 			/* name */ 'minus',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'periodToSubtract',
+					/* name */ 'amountToSubtract',
 					/* type */ 'java.time.temporal.TemporalAmount',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -321,7 +321,7 @@ JdkClassCreateHelper.class('java.time.ZonedDateTime', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'unit',
+					/* name */ 'arg1',
 					/* type */ 'java.time.temporal.TemporalUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -465,7 +465,7 @@ JdkClassCreateHelper.class('java.time.ZonedDateTime', [
 			/* name */ 'plus',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'periodToAdd',
+					/* name */ 'amountToAdd',
 					/* type */ 'java.time.temporal.TemporalAmount',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -487,7 +487,7 @@ JdkClassCreateHelper.class('java.time.ZonedDateTime', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'unit',
+					/* name */ 'arg1',
 					/* type */ 'java.time.temporal.TemporalUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -647,7 +647,7 @@ JdkClassCreateHelper.class('java.time.ZonedDateTime', [
 			/* name */ 'with',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'odt',
+					/* name */ 'adjuster',
 					/* type */ 'java.time.temporal.TemporalAdjuster',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -663,13 +663,13 @@ JdkClassCreateHelper.class('java.time.ZonedDateTime', [
 			/* name */ 'with',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'offset',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'chronoField',
+					/* name */ 'newValue',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1184,7 +1184,7 @@ JdkClassCreateHelper.class('java.time.ZonedDateTime', [
 			/* name */ 'getLong',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'chronoField',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1200,13 +1200,13 @@ JdkClassCreateHelper.class('java.time.ZonedDateTime', [
 			/* name */ 'until',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'ex',
+					/* name */ 'endExclusive',
 					/* type */ 'java.time.temporal.Temporal',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'start',
+					/* name */ 'unit',
 					/* type */ 'java.time.temporal.TemporalUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1222,7 +1222,7 @@ JdkClassCreateHelper.class('java.time.ZonedDateTime', [
 			/* name */ 'from',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'epochSecond',
+					/* name */ 'temporal',
 					/* type */ 'java.time.temporal.TemporalAccessor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1437,19 +1437,19 @@ JdkClassCreateHelper.class('java.time.ZonedDateTime', [
 			/* name */ 'ofLocal',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'offset',
+					/* name */ 'localDateTime',
 					/* type */ 'java.time.LocalDateTime',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'trans',
+					/* name */ 'zone',
 					/* type */ 'java.time.ZoneId',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'offset',
+					/* name */ 'preferredOffset',
 					/* type */ 'java.time.ZoneOffset',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1465,19 +1465,19 @@ JdkClassCreateHelper.class('java.time.ZonedDateTime', [
 			/* name */ 'ofStrict',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'trans',
+					/* name */ 'localDateTime',
 					/* type */ 'java.time.LocalDateTime',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'localDateTime',
+					/* name */ 'offset',
 					/* type */ 'java.time.ZoneOffset',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'offset',
+					/* name */ 'zone',
 					/* type */ 'java.time.ZoneId',
 					/* modifiers */ 0,
 					/* annotations */ UDF

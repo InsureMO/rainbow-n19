@@ -317,7 +317,7 @@ JdkClassCreateHelper.class('java.time.Year', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'unit',
+					/* name */ 'arg1',
 					/* type */ 'java.time.temporal.TemporalUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -365,13 +365,13 @@ JdkClassCreateHelper.class('java.time.Year', [
 			/* name */ 'plus',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'chronoUnit',
+					/* name */ 'amountToAdd',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'amountToAdd',
+					/* name */ 'arg1',
 					/* type */ 'java.time.temporal.TemporalUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -419,13 +419,13 @@ JdkClassCreateHelper.class('java.time.Year', [
 			/* name */ 'with',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'chronoField',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'field',
+					/* name */ 'newValue',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -619,7 +619,7 @@ JdkClassCreateHelper.class('java.time.Year', [
 			/* name */ 'getLong',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'chronoField',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -635,13 +635,13 @@ JdkClassCreateHelper.class('java.time.Year', [
 			/* name */ 'until',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'yearsUntil',
+					/* name */ 'endExclusive',
 					/* type */ 'java.time.temporal.Temporal',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'chronoUnit',
+					/* name */ 'unit',
 					/* type */ 'java.time.temporal.TemporalUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -673,7 +673,7 @@ JdkClassCreateHelper.class('java.time.Year', [
 			/* name */ 'from',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'ex',
+					/* name */ 'temporal',
 					/* type */ 'java.time.temporal.TemporalAccessor',
 					/* modifiers */ 0,
 					/* annotations */ UDF

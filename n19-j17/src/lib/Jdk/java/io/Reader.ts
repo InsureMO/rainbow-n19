@@ -145,7 +145,7 @@ JdkClassCreateHelper.class('java.io.Reader', [
 			/* name */ 'read',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'cbuf',
+					/* name */ 'target',
 					/* type */ 'java.nio.CharBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -166,7 +166,7 @@ JdkClassCreateHelper.class('java.io.Reader', [
 			/* name */ 'skip',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'nc',
+					/* name */ 'n',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF

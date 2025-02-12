@@ -172,7 +172,7 @@ JdkClassCreateHelper.class('java.lang.Thread', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'inheritThreadLocals',
+					/* name */ 'arg4',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -277,7 +277,7 @@ JdkClassCreateHelper.class('java.lang.Thread', [
 			/* name */ 'join',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'startTime',
+					/* name */ 'millis',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -304,7 +304,7 @@ JdkClassCreateHelper.class('java.lang.Thread', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'nanos',
+					/* name */ 'arg1',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -676,7 +676,7 @@ JdkClassCreateHelper.class('java.lang.Thread', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'nanos',
+					/* name */ 'arg1',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

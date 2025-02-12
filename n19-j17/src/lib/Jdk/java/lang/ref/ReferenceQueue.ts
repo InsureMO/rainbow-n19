@@ -76,7 +76,7 @@ JdkClassCreateHelper.class('java.lang.ref.ReferenceQueue', [
 			/* name */ 'remove',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'end',
+					/* name */ 'timeout',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF

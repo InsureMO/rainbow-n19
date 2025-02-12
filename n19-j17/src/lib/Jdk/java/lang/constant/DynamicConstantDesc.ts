@@ -58,7 +58,7 @@ JdkClassCreateHelper.class('java.lang.constant.DynamicConstantDesc', [
 			/* name */ 'resolveConstantDesc',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'lookup',
 					/* type */ 'java.lang.invoke.MethodHandles$Lookup',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -79,7 +79,7 @@ JdkClassCreateHelper.class('java.lang.constant.DynamicConstantDesc', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'desc',
+					/* name */ 'o',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF

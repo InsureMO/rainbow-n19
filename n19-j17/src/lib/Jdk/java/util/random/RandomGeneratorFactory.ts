@@ -32,7 +32,7 @@ JdkClassCreateHelper.class('java.util.random.RandomGeneratorFactory', [
 			/* name */ 'create',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'ex',
+					/* name */ 'seed',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -48,7 +48,7 @@ JdkClassCreateHelper.class('java.util.random.RandomGeneratorFactory', [
 			/* name */ 'create',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'ex',
+					/* name */ 'seed',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF

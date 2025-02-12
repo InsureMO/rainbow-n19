@@ -30,7 +30,7 @@ JdkClassCreateHelper.class('java.util.concurrent.TimeUnit', [
 			/* name */ 'convert',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'nanoVal',
+					/* name */ 'duration',
 					/* type */ 'java.time.Duration',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -52,7 +52,7 @@ JdkClassCreateHelper.class('java.util.concurrent.TimeUnit', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'sourceUnit',
+					/* name */ 'arg1',
 					/* type */ 'java.util.concurrent.TimeUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -221,7 +221,7 @@ JdkClassCreateHelper.class('java.util.concurrent.TimeUnit', [
 			/* name */ 'sleep',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'ms',
+					/* name */ 'timeout',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -242,13 +242,13 @@ JdkClassCreateHelper.class('java.util.concurrent.TimeUnit', [
 			/* name */ 'timedJoin',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'ms',
+					/* name */ 'thread',
 					/* type */ 'java.lang.Thread',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'ns',
+					/* name */ 'timeout',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -269,13 +269,13 @@ JdkClassCreateHelper.class('java.util.concurrent.TimeUnit', [
 			/* name */ 'timedWait',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'ms',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'ns',
+					/* name */ 'timeout',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -20,7 +20,7 @@ JdkClassCreateHelper.class('java.time.Period', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'other',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -393,7 +393,7 @@ JdkClassCreateHelper.class('java.time.Period', [
 			/* name */ 'addTo',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'totalMonths',
+					/* name */ 'temporal',
 					/* type */ 'java.time.temporal.Temporal',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -409,7 +409,7 @@ JdkClassCreateHelper.class('java.time.Period', [
 			/* name */ 'subtractFrom',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'totalMonths',
+					/* name */ 'temporal',
 					/* type */ 'java.time.temporal.Temporal',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -487,7 +487,7 @@ JdkClassCreateHelper.class('java.time.Period', [
 			/* name */ 'from',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'unitAmount',
+					/* name */ 'amount',
 					/* type */ 'java.time.temporal.TemporalAmount',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -595,7 +595,7 @@ JdkClassCreateHelper.class('java.time.Period', [
 			/* name */ 'parse',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'years',
+					/* name */ 'text',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF

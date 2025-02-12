@@ -230,7 +230,7 @@ JdkClassCreateHelper.class('java.util.stream.Collectors', [
 			/* name */ 'partitioningBy',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'finisher',
+					/* name */ 'predicate',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -249,7 +249,7 @@ JdkClassCreateHelper.class('java.util.stream.Collectors', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'downstream',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -322,7 +322,7 @@ JdkClassCreateHelper.class('java.util.stream.Collectors', [
 			/* name */ 'groupingByConcurrent',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'accumulator',
+					/* name */ 'classifier',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -347,7 +347,7 @@ JdkClassCreateHelper.class('java.util.stream.Collectors', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'downstreamFinisher',
+					/* name */ 'mapFactory',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'M']]
@@ -359,7 +359,7 @@ JdkClassCreateHelper.class('java.util.stream.Collectors', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'finisher',
+					/* name */ 'downstream',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -656,7 +656,7 @@ JdkClassCreateHelper.class('java.util.stream.Collectors', [
 			/* name */ 'groupingBy',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'downstreamFinisher',
+					/* name */ 'classifier',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -681,7 +681,7 @@ JdkClassCreateHelper.class('java.util.stream.Collectors', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'finisher',
+					/* name */ 'mapFactory',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'M']]
@@ -693,7 +693,7 @@ JdkClassCreateHelper.class('java.util.stream.Collectors', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'classifier',
+					/* name */ 'downstream',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

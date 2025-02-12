@@ -163,13 +163,13 @@ JdkClassCreateHelper.class('java.text.CompactNumberFormat', [
 			/* name */ 'parse',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'positivePrefix',
+					/* name */ 'text',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'negativePrefix',
+					/* name */ 'pos',
 					/* type */ 'java.text.ParsePosition',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -200,13 +200,13 @@ JdkClassCreateHelper.class('java.text.CompactNumberFormat', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'result',
+					/* name */ 'arg1',
 					/* type */ 'java.lang.StringBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'fieldPosition',
+					/* name */ 'result',
 					/* type */ 'java.text.FieldPosition',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -228,13 +228,13 @@ JdkClassCreateHelper.class('java.text.CompactNumberFormat', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'result',
+					/* name */ 'arg1',
 					/* type */ 'java.lang.StringBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'fieldPosition',
+					/* name */ 'result',
 					/* type */ 'java.text.FieldPosition',
 					/* modifiers */ 0,
 					/* annotations */ UDF

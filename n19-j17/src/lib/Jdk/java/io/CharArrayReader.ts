@@ -93,19 +93,19 @@ JdkClassCreateHelper.class('java.io.CharArrayReader', [
 			/* name */ 'read',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'avail',
+					/* name */ 'cbuf',
 					/* type */ '[C',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'cbuf',
+					/* name */ 'off',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'off',
+					/* name */ 'len',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -126,7 +126,7 @@ JdkClassCreateHelper.class('java.io.CharArrayReader', [
 			/* name */ 'read',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'avail',
+					/* name */ 'target',
 					/* type */ 'java.nio.CharBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -147,7 +147,7 @@ JdkClassCreateHelper.class('java.io.CharArrayReader', [
 			/* name */ 'skip',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'avail',
+					/* name */ 'n',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF

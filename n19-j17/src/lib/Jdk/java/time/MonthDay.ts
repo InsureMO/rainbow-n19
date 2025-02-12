@@ -58,7 +58,7 @@ JdkClassCreateHelper.class('java.time.MonthDay', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'other',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -343,7 +343,7 @@ JdkClassCreateHelper.class('java.time.MonthDay', [
 			/* name */ 'getLong',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'chronoField',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -359,7 +359,7 @@ JdkClassCreateHelper.class('java.time.MonthDay', [
 			/* name */ 'from',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'ex',
+					/* name */ 'temporal',
 					/* type */ 'java.time.temporal.TemporalAccessor',
 					/* modifiers */ 0,
 					/* annotations */ UDF

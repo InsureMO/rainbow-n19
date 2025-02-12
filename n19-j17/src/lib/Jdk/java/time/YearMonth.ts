@@ -58,7 +58,7 @@ JdkClassCreateHelper.class('java.time.YearMonth', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'other',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -337,7 +337,7 @@ JdkClassCreateHelper.class('java.time.YearMonth', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'unit',
+					/* name */ 'arg1',
 					/* type */ 'java.time.temporal.TemporalUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -401,13 +401,13 @@ JdkClassCreateHelper.class('java.time.YearMonth', [
 			/* name */ 'plus',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'chronoUnit',
+					/* name */ 'amountToAdd',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'amountToAdd',
+					/* name */ 'arg1',
 					/* type */ 'java.time.temporal.TemporalUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -471,13 +471,13 @@ JdkClassCreateHelper.class('java.time.YearMonth', [
 			/* name */ 'with',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'chronoField',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'field',
+					/* name */ 'newValue',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -671,7 +671,7 @@ JdkClassCreateHelper.class('java.time.YearMonth', [
 			/* name */ 'getLong',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'chronoField',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -687,13 +687,13 @@ JdkClassCreateHelper.class('java.time.YearMonth', [
 			/* name */ 'until',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'monthsUntil',
+					/* name */ 'endExclusive',
 					/* type */ 'java.time.temporal.Temporal',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'chronoUnit',
+					/* name */ 'unit',
 					/* type */ 'java.time.temporal.TemporalUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -709,7 +709,7 @@ JdkClassCreateHelper.class('java.time.YearMonth', [
 			/* name */ 'from',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'ex',
+					/* name */ 'temporal',
 					/* type */ 'java.time.temporal.TemporalAccessor',
 					/* modifiers */ 0,
 					/* annotations */ UDF

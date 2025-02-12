@@ -119,25 +119,25 @@ JdkClassCreateHelper.class('java.util.zip.Deflater', [
 			/* name */ 'deflate',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'params',
+					/* name */ 'output',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'inputPos',
+					/* name */ 'off',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'result',
+					/* name */ 'len',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'inputAddress',
+					/* name */ 'flush',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -169,13 +169,13 @@ JdkClassCreateHelper.class('java.util.zip.Deflater', [
 			/* name */ 'deflate',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'params',
+					/* name */ 'output',
 					/* type */ 'java.nio.ByteBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'result',
+					/* name */ 'flush',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -307,7 +307,7 @@ JdkClassCreateHelper.class('java.util.zip.Deflater', [
 			/* name */ 'setDictionary',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'address',
+					/* name */ 'dictionary',
 					/* type */ 'java.nio.ByteBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -427,7 +427,7 @@ JdkClassCreateHelper.class('java.time.chrono.Chronology', [
 			/* name */ 'localDateTime',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'ex',
+					/* name */ 'temporal',
 					/* type */ 'java.time.temporal.TemporalAccessor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -515,7 +515,7 @@ JdkClassCreateHelper.class('java.time.chrono.Chronology', [
 			/* name */ 'zonedDateTime',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'instant',
+					/* name */ 'temporal',
 					/* type */ 'java.time.temporal.TemporalAccessor',
 					/* modifiers */ 0,
 					/* annotations */ UDF

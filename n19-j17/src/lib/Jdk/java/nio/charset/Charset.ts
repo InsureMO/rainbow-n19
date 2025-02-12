@@ -171,7 +171,7 @@ JdkClassCreateHelper.class('java.nio.charset.Charset', [
 			/* name */ 'encode',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'x',
+					/* name */ 'cb',
 					/* type */ 'java.nio.CharBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -187,7 +187,7 @@ JdkClassCreateHelper.class('java.nio.charset.Charset', [
 			/* name */ 'decode',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'x',
+					/* name */ 'bb',
 					/* type */ 'java.nio.ByteBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF

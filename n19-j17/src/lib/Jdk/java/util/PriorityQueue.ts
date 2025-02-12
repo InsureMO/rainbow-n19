@@ -83,7 +83,7 @@ JdkClassCreateHelper.class('java.util.PriorityQueue', [
 		[/* public java.util.PriorityQueue(java.util.Collection<? extends E>) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'ss',
+					/* name */ 'c',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -456,7 +456,7 @@ JdkClassCreateHelper.class('java.util.PriorityQueue', [
 			/* name */ 'forEach',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'action',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

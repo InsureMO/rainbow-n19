@@ -121,13 +121,13 @@ JdkClassCreateHelper.class('java.util.HashMap', [
 			/* name */ 'compute',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'tab',
+					/* name */ 'key',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'n',
+					/* name */ 'remappingFunction',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -170,13 +170,13 @@ JdkClassCreateHelper.class('java.util.HashMap', [
 			/* name */ 'computeIfAbsent',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'tab',
+					/* name */ 'key',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'n',
+					/* name */ 'mappingFunction',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -211,13 +211,13 @@ JdkClassCreateHelper.class('java.util.HashMap', [
 			/* name */ 'computeIfPresent',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'hash',
+					/* name */ 'key',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'mc',
+					/* name */ 'remappingFunction',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -298,19 +298,19 @@ JdkClassCreateHelper.class('java.util.HashMap', [
 			/* name */ 'merge',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'tab',
+					/* name */ 'key',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'n',
+					/* name */ 'value',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'k',
+					/* name */ 'remappingFunction',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -413,13 +413,13 @@ JdkClassCreateHelper.class('java.util.HashMap', [
 			/* name */ 'replace',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'oldValue',
+					/* name */ 'key',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'key',
+					/* name */ 'value',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -451,7 +451,7 @@ JdkClassCreateHelper.class('java.util.HashMap', [
 			/* name */ 'containsValue',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'v',
+					/* name */ 'value',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -498,19 +498,19 @@ JdkClassCreateHelper.class('java.util.HashMap', [
 			/* name */ 'replace',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'v',
+					/* name */ 'key',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'key',
+					/* name */ 'oldValue',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'oldValue',
+					/* name */ 'newValue',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -605,7 +605,7 @@ JdkClassCreateHelper.class('java.util.HashMap', [
 			/* name */ 'forEach',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'e',
+					/* name */ 'action',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -675,7 +675,7 @@ JdkClassCreateHelper.class('java.util.HashMap', [
 			/* name */ 'replaceAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'e',
+					/* name */ 'function',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

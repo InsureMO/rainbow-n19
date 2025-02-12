@@ -27,13 +27,13 @@ JdkClassCreateHelper.class('java.util.Locale$LanguageRange', [
 		[/* public java.util.Locale$LanguageRange(java.lang.String,double) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'range',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'range',
+					/* name */ 'weight',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -50,7 +50,7 @@ JdkClassCreateHelper.class('java.util.Locale$LanguageRange', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'other',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF

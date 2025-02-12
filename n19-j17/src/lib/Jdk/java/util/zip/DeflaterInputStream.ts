@@ -113,19 +113,19 @@ JdkClassCreateHelper.class('java.util.zip.DeflaterInputStream', [
 			/* name */ 'read',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'n',
+					/* name */ 'b',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'n',
+					/* name */ 'off',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'b',
+					/* name */ 'len',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -146,7 +146,7 @@ JdkClassCreateHelper.class('java.util.zip.DeflaterInputStream', [
 			/* name */ 'skip',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'len',
+					/* name */ 'n',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -85,7 +85,7 @@ JdkClassCreateHelper.class('java.util.ResourceBundle', [
 			/* name */ 'containsKey',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'rb',
+					/* name */ 'key',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

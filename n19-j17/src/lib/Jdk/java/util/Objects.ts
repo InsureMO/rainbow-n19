@@ -457,13 +457,13 @@ JdkClassCreateHelper.class('java.util.Objects', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'size',
+					/* name */ 'arg1',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'length',
+					/* name */ 'size',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -485,13 +485,13 @@ JdkClassCreateHelper.class('java.util.Objects', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'toIndex',
+					/* name */ 'arg1',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'length',
+					/* name */ 'toIndex',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -513,7 +513,7 @@ JdkClassCreateHelper.class('java.util.Objects', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'length',
+					/* name */ 'arg1',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF

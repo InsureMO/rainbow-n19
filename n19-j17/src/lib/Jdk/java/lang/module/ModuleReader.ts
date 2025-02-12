@@ -104,7 +104,7 @@ JdkClassCreateHelper.class('java.lang.module.ModuleReader', [
 			/* name */ 'read',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'in',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

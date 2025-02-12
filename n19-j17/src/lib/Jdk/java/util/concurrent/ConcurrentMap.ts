@@ -132,13 +132,13 @@ JdkClassCreateHelper.class('java.util.concurrent.ConcurrentMap', [
 			/* name */ 'compute',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'newValue',
+					/* name */ 'key',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'oldValue',
+					/* name */ 'remappingFunction',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -181,13 +181,13 @@ JdkClassCreateHelper.class('java.util.concurrent.ConcurrentMap', [
 			/* name */ 'computeIfAbsent',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'newValue',
+					/* name */ 'key',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'key',
+					/* name */ 'mappingFunction',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -222,13 +222,13 @@ JdkClassCreateHelper.class('java.util.concurrent.ConcurrentMap', [
 			/* name */ 'computeIfPresent',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'newValue',
+					/* name */ 'key',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'oldValue',
+					/* name */ 'remappingFunction',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -293,19 +293,19 @@ JdkClassCreateHelper.class('java.util.concurrent.ConcurrentMap', [
 			/* name */ 'merge',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'newValue',
+					/* name */ 'key',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'oldValue',
+					/* name */ 'value',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'key',
+					/* name */ 'remappingFunction',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -348,7 +348,7 @@ JdkClassCreateHelper.class('java.util.concurrent.ConcurrentMap', [
 			/* name */ 'forEach',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'k',
+					/* name */ 'action',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

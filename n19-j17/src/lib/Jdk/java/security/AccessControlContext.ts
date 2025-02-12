@@ -56,7 +56,7 @@ JdkClassCreateHelper.class('java.security.AccessControlContext', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'that',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -90,7 +90,7 @@ JdkClassCreateHelper.class('java.security.AccessControlContext', [
 			/* name */ 'checkPermission',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'perm',
 					/* type */ 'java.security.Permission',
 					/* modifiers */ 0,
 					/* annotations */ UDF

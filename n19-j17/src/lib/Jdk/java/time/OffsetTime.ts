@@ -58,7 +58,7 @@ JdkClassCreateHelper.class('java.time.OffsetTime', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'other',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -319,7 +319,7 @@ JdkClassCreateHelper.class('java.time.OffsetTime', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'unit',
+					/* name */ 'arg1',
 					/* type */ 'java.time.temporal.TemporalUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -421,7 +421,7 @@ JdkClassCreateHelper.class('java.time.OffsetTime', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'unit',
+					/* name */ 'arg1',
 					/* type */ 'java.time.temporal.TemporalUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -533,13 +533,13 @@ JdkClassCreateHelper.class('java.time.OffsetTime', [
 			/* name */ 'with',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'f',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'field',
+					/* name */ 'newValue',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -838,13 +838,13 @@ JdkClassCreateHelper.class('java.time.OffsetTime', [
 			/* name */ 'until',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'nanosUntil',
+					/* name */ 'endExclusive',
 					/* type */ 'java.time.temporal.Temporal',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'chronoUnit',
+					/* name */ 'unit',
 					/* type */ 'java.time.temporal.TemporalUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -860,7 +860,7 @@ JdkClassCreateHelper.class('java.time.OffsetTime', [
 			/* name */ 'from',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'time',
+					/* name */ 'temporal',
 					/* type */ 'java.time.temporal.TemporalAccessor',
 					/* modifiers */ 0,
 					/* annotations */ UDF

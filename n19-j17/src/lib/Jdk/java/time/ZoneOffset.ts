@@ -247,7 +247,7 @@ JdkClassCreateHelper.class('java.time.ZoneOffset', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'hours',
+					/* name */ 'offsetId',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -329,7 +329,7 @@ JdkClassCreateHelper.class('java.time.ZoneOffset', [
 			/* name */ 'ofTotalSeconds',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'totalSecs',
+					/* name */ 'totalSeconds',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

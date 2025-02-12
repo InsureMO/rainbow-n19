@@ -89,19 +89,19 @@ JdkClassCreateHelper.class('java.io.SequenceInputStream', [
 			/* name */ 'read',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'n',
+					/* name */ 'b',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'b',
+					/* name */ 'off',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'off',
+					/* name */ 'len',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -45,7 +45,7 @@ JdkClassCreateHelper.class('java.util.AbstractSet', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'unused',
+					/* name */ 'o',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -61,7 +61,7 @@ JdkClassCreateHelper.class('java.util.AbstractSet', [
 			/* name */ 'removeAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'e',
+					/* name */ 'c',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

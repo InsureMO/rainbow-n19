@@ -92,7 +92,7 @@ JdkClassCreateHelper.class('java.util.Random', [
 			/* name */ 'nextInt',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'u',
+					/* name */ 'bound',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -123,7 +123,7 @@ JdkClassCreateHelper.class('java.util.Random', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'randomNumberBound',
+					/* name */ 'arg1',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -161,13 +161,13 @@ JdkClassCreateHelper.class('java.util.Random', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'randomNumberOrigin',
+					/* name */ 'arg1',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'randomNumberBound',
+					/* name */ 'randomNumberOrigin',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -236,13 +236,13 @@ JdkClassCreateHelper.class('java.util.Random', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'randomNumberOrigin',
+					/* name */ 'arg1',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'randomNumberBound',
+					/* name */ 'randomNumberOrigin',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -289,7 +289,7 @@ JdkClassCreateHelper.class('java.util.Random', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'randomNumberBound',
+					/* name */ 'arg1',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -311,13 +311,13 @@ JdkClassCreateHelper.class('java.util.Random', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'randomNumberOrigin',
+					/* name */ 'arg1',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'randomNumberBound',
+					/* name */ 'randomNumberOrigin',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -367,7 +367,7 @@ JdkClassCreateHelper.class('java.util.Random', [
 			/* name */ 'nextBytes',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'rnd',
+					/* name */ 'bytes',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF

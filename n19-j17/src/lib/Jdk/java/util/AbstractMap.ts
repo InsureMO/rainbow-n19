@@ -61,7 +61,7 @@ JdkClassCreateHelper.class('java.util.AbstractMap', [
 			/* name */ 'get',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'e',
+					/* name */ 'key',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -99,7 +99,7 @@ JdkClassCreateHelper.class('java.util.AbstractMap', [
 			/* name */ 'remove',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'e',
+					/* name */ 'key',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -137,7 +137,7 @@ JdkClassCreateHelper.class('java.util.AbstractMap', [
 			/* name */ 'containsKey',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'e',
+					/* name */ 'key',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -153,7 +153,7 @@ JdkClassCreateHelper.class('java.util.AbstractMap', [
 			/* name */ 'containsValue',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'e',
+					/* name */ 'value',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -169,7 +169,7 @@ JdkClassCreateHelper.class('java.util.AbstractMap', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'm',
+					/* name */ 'o',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -260,7 +260,7 @@ JdkClassCreateHelper.class('java.util.AbstractMap', [
 			/* name */ 'putAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'e',
+					/* name */ 'm',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

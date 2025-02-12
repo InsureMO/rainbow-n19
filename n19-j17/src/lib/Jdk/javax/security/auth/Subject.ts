@@ -198,7 +198,7 @@ JdkClassCreateHelper.class('javax.security.auth.Subject', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'thatPrincipals',
+					/* name */ 'o',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF

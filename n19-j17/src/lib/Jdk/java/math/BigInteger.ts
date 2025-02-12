@@ -196,7 +196,7 @@ JdkClassCreateHelper.class('java.math.BigInteger', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'xInt',
+					/* name */ 'x',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -425,7 +425,7 @@ JdkClassCreateHelper.class('java.math.BigInteger', [
 			/* name */ 'and',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'val',
 					/* type */ 'java.math.BigInteger',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -441,7 +441,7 @@ JdkClassCreateHelper.class('java.math.BigInteger', [
 			/* name */ 'andNot',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'val',
 					/* type */ 'java.math.BigInteger',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -457,7 +457,7 @@ JdkClassCreateHelper.class('java.math.BigInteger', [
 			/* name */ 'clearBit',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'n',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -489,7 +489,7 @@ JdkClassCreateHelper.class('java.math.BigInteger', [
 			/* name */ 'flipBit',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'n',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -585,13 +585,13 @@ JdkClassCreateHelper.class('java.math.BigInteger', [
 			/* name */ 'modPow',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'result',
+					/* name */ 'exponent',
 					/* type */ 'java.math.BigInteger',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'result',
+					/* name */ 'm',
 					/* type */ 'java.math.BigInteger',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -650,7 +650,7 @@ JdkClassCreateHelper.class('java.math.BigInteger', [
 			/* name */ 'or',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'val',
 					/* type */ 'java.math.BigInteger',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -666,7 +666,7 @@ JdkClassCreateHelper.class('java.math.BigInteger', [
 			/* name */ 'pow',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'remainingBits',
+					/* name */ 'exponent',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -698,7 +698,7 @@ JdkClassCreateHelper.class('java.math.BigInteger', [
 			/* name */ 'setBit',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'n',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -771,7 +771,7 @@ JdkClassCreateHelper.class('java.math.BigInteger', [
 			/* name */ 'xor',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'val',
 					/* type */ 'java.math.BigInteger',
 					/* modifiers */ 0,
 					/* annotations */ UDF

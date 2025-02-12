@@ -98,25 +98,25 @@ JdkClassCreateHelper.class('java.lang.String', [
 		[/* public java.lang.String(byte[],int,int,int) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'ascii',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'val',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'ascii',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
 					/* name */ 'hibyte',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'offset',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'count',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -173,25 +173,25 @@ JdkClassCreateHelper.class('java.lang.String', [
 		[/* public java.lang.String(byte[],int,int,java.nio.charset.Charset) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'b2',
+					/* name */ 'bytes',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'b1',
+					/* name */ 'offset',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'buf',
+					/* name */ 'length',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'sl',
+					/* name */ 'charset',
 					/* type */ 'java.nio.charset.Charset',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -290,19 +290,19 @@ JdkClassCreateHelper.class('java.lang.String', [
 		[/* public java.lang.String(int[],int,int) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'val',
+					/* name */ 'codePoints',
 					/* type */ '[I',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'codePoints',
+					/* name */ 'offset',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'offset',
+					/* name */ 'count',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -422,7 +422,7 @@ JdkClassCreateHelper.class('java.lang.String', [
 			/* name */ 'contentEquals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'cs',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -470,7 +470,7 @@ JdkClassCreateHelper.class('java.lang.String', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'aString',
+					/* name */ 'anObject',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -626,13 +626,13 @@ JdkClassCreateHelper.class('java.lang.String', [
 			/* name */ 'startsWith',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'to',
+					/* name */ 'prefix',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'prefix',
+					/* name */ 'toffset',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1088,7 +1088,7 @@ JdkClassCreateHelper.class('java.lang.String', [
 			/* name */ 'indent',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'spaces',
+					/* name */ 'n',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1104,7 +1104,7 @@ JdkClassCreateHelper.class('java.lang.String', [
 			/* name */ 'repeat',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'single',
+					/* name */ 'count',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1120,13 +1120,13 @@ JdkClassCreateHelper.class('java.lang.String', [
 			/* name */ 'replace',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'ret',
+					/* name */ 'oldChar',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'oldChar',
+					/* name */ 'newChar',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1142,13 +1142,13 @@ JdkClassCreateHelper.class('java.lang.String', [
 			/* name */ 'replace',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'thisIsLatin1',
+					/* name */ 'target',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'trgtIsLatin1',
+					/* name */ 'replacement',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1586,13 +1586,13 @@ JdkClassCreateHelper.class('java.lang.String', [
 			/* name */ 'join',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'cs',
+					/* name */ 'delimiter',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'delimiter',
+					/* name */ 'elements',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

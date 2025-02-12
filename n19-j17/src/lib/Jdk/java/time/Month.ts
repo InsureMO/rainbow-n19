@@ -256,7 +256,7 @@ JdkClassCreateHelper.class('java.time.Month', [
 			/* name */ 'from',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'ex',
+					/* name */ 'temporal',
 					/* type */ 'java.time.temporal.TemporalAccessor',
 					/* modifiers */ 0,
 					/* annotations */ UDF

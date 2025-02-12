@@ -271,7 +271,7 @@ JdkClassCreateHelper.class('java.lang.Long', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'y',
+					/* name */ 'arg1',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -293,7 +293,7 @@ JdkClassCreateHelper.class('java.lang.Long', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'y',
+					/* name */ 'arg1',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -377,7 +377,7 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* name */ 'decode',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'result',
+					/* name */ 'nm',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -572,7 +572,7 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* name */ 'toString',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'buf',
+					/* name */ 'i',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -588,13 +588,13 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* name */ 'toString',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'buf',
+					/* name */ 'i',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'charPos',
+					/* name */ 'arg1',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -626,13 +626,13 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* name */ 'toUnsignedString',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'quot',
+					/* name */ 'i',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'rem',
+					/* name */ 'arg1',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -648,13 +648,13 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* name */ 'divideUnsigned',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'q',
+					/* name */ 'dividend',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'r',
+					/* name */ 'arg1',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -708,7 +708,7 @@ JdkClassCreateHelper.class('java.lang.Long', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'b',
+					/* name */ 'arg1',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -730,7 +730,7 @@ JdkClassCreateHelper.class('java.lang.Long', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'b',
+					/* name */ 'arg1',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -746,25 +746,25 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* name */ 'parseLong',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'digit',
+					/* name */ 's',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'firstChar',
+					/* name */ 'beginIndex',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'multmin',
+					/* name */ 'endIndex',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'result',
+					/* name */ 'radix',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -806,13 +806,13 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* name */ 'parseLong',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'digit',
+					/* name */ 's',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'firstChar',
+					/* name */ 'radix',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -833,25 +833,25 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* name */ 'parseUnsignedLong',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'first',
+					/* name */ 's',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'second',
+					/* name */ 'beginIndex',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'result',
+					/* name */ 'endIndex',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'guard',
+					/* name */ 'radix',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -893,13 +893,13 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* name */ 'parseUnsignedLong',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'first',
+					/* name */ 's',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'second',
+					/* name */ 'radix',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -920,13 +920,13 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* name */ 'remainderUnsigned',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'q',
+					/* name */ 'dividend',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'r',
+					/* name */ 'arg1',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -982,7 +982,7 @@ JdkClassCreateHelper.class('java.lang.Long', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'distance',
+					/* name */ 'arg1',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1004,7 +1004,7 @@ JdkClassCreateHelper.class('java.lang.Long', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'distance',
+					/* name */ 'arg1',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1026,7 +1026,7 @@ JdkClassCreateHelper.class('java.lang.Long', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'b',
+					/* name */ 'arg1',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF

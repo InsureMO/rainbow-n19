@@ -87,19 +87,19 @@ JdkClassCreateHelper.class('java.io.PushbackReader', [
 			/* name */ 'read',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'avail',
+					/* name */ 'cbuf',
 					/* type */ '[C',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'e',
+					/* name */ 'off',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'cbuf',
+					/* name */ 'len',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -120,7 +120,7 @@ JdkClassCreateHelper.class('java.io.PushbackReader', [
 			/* name */ 'skip',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'avail',
+					/* name */ 'n',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF

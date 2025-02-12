@@ -358,7 +358,7 @@ JdkClassCreateHelper.class('java.util.Scanner', [
 			/* name */ 'hasNextBigInteger',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 's',
+					/* name */ 'radix',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -392,7 +392,7 @@ JdkClassCreateHelper.class('java.util.Scanner', [
 			/* name */ 'hasNextByte',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 's',
+					/* name */ 'radix',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -435,7 +435,7 @@ JdkClassCreateHelper.class('java.util.Scanner', [
 			/* name */ 'hasNextInt',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 's',
+					/* name */ 'radix',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -469,7 +469,7 @@ JdkClassCreateHelper.class('java.util.Scanner', [
 			/* name */ 'hasNextLong',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 's',
+					/* name */ 'radix',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -494,7 +494,7 @@ JdkClassCreateHelper.class('java.util.Scanner', [
 			/* name */ 'hasNextShort',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 's',
+					/* name */ 'radix',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -528,7 +528,7 @@ JdkClassCreateHelper.class('java.util.Scanner', [
 			/* name */ 'nextByte',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'val',
+					/* name */ 'radix',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -571,7 +571,7 @@ JdkClassCreateHelper.class('java.util.Scanner', [
 			/* name */ 'nextInt',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'val',
+					/* name */ 'radix',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -715,7 +715,7 @@ JdkClassCreateHelper.class('java.util.Scanner', [
 			/* name */ 'next',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'token',
+					/* name */ 'pattern',
 					/* type */ 'java.util.regex.Pattern',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -767,7 +767,7 @@ JdkClassCreateHelper.class('java.util.Scanner', [
 			/* name */ 'nextBigInteger',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'val',
+					/* name */ 'radix',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -865,7 +865,7 @@ JdkClassCreateHelper.class('java.util.Scanner', [
 			/* name */ 'useLocale',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'adapter',
+					/* name */ 'locale',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -983,7 +983,7 @@ JdkClassCreateHelper.class('java.util.Scanner', [
 			/* name */ 'nextLong',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'val',
+					/* name */ 'radix',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1008,7 +1008,7 @@ JdkClassCreateHelper.class('java.util.Scanner', [
 			/* name */ 'nextShort',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'val',
+					/* name */ 'radix',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

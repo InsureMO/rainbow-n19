@@ -252,13 +252,13 @@ JdkClassCreateHelper.class('java.net.InetAddress', [
 			/* name */ 'getByAddress',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'newAddr',
+					/* name */ 'host',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'host',
+					/* name */ 'addr',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF

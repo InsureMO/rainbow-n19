@@ -17,7 +17,7 @@ JdkClassCreateHelper.class('java.time.zone.ZoneOffsetTransitionRule', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'other',
+					/* name */ 'otherRule',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -123,7 +123,7 @@ JdkClassCreateHelper.class('java.time.zone.ZoneOffsetTransitionRule', [
 			/* name */ 'createTransition',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'date',
+					/* name */ 'year',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -924,19 +924,19 @@ JdkClassCreateHelper.class('java.io.PrintWriter', [
 			/* name */ 'write',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'x',
+					/* name */ 'buf',
 					/* type */ '[C',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'x',
+					/* name */ 'off',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'buf',
+					/* name */ 'len',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -952,7 +952,7 @@ JdkClassCreateHelper.class('java.io.PrintWriter', [
 			/* name */ 'write',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'x',
+					/* name */ 'c',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -984,19 +984,19 @@ JdkClassCreateHelper.class('java.io.PrintWriter', [
 			/* name */ 'write',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'x',
+					/* name */ 's',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'x',
+					/* name */ 'off',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 's',
+					/* name */ 'len',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

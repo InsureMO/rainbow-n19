@@ -1258,19 +1258,19 @@ JdkClassCreateHelper.class('java.nio.ByteBuffer', [
 			/* name */ 'wrap',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'x',
+					/* name */ 'array',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'array',
+					/* name */ 'offset',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'offset',
+					/* name */ 'length',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

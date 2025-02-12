@@ -54,7 +54,7 @@ JdkClassCreateHelper.class('java.io.ObjectInputStream', [
 			/* name */ 'enableResolveObject',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'sm',
+					/* name */ 'enable',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -93,7 +93,7 @@ JdkClassCreateHelper.class('java.io.ObjectInputStream', [
 			/* name */ 'resolveClass',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'cl',
+					/* name */ 'desc',
 					/* type */ 'java.io.ObjectStreamClass',
 					/* modifiers */ 0,
 					/* annotations */ UDF

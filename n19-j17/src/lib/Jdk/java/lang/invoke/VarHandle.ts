@@ -694,7 +694,7 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle', [
 			/* name */ 'toMethodHandle',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'mh',
+					/* name */ 'accessMode',
 					/* type */ 'java.lang.invoke.VarHandle$AccessMode',
 					/* modifiers */ 0,
 					/* annotations */ UDF

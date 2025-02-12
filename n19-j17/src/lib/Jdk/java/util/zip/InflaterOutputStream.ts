@@ -118,19 +118,19 @@ JdkClassCreateHelper.class('java.util.zip.InflaterOutputStream', [
 			/* name */ 'write',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'n',
+					/* name */ 'b',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'msg',
+					/* name */ 'off',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'ex',
+					/* name */ 'len',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

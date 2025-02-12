@@ -38,7 +38,7 @@ JdkClassCreateHelper.class('java.io.FilePermission', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'that',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -54,7 +54,7 @@ JdkClassCreateHelper.class('java.io.FilePermission', [
 			/* name */ 'implies',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'that',
+					/* name */ 'p',
 					/* type */ 'java.security.Permission',
 					/* modifiers */ 0,
 					/* annotations */ UDF

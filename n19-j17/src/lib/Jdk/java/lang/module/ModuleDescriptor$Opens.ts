@@ -23,7 +23,7 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Opens', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'other',
+					/* name */ 'ob',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -115,7 +115,7 @@ JdkClassCreateHelper.class('java.util.Observable', [
 			/* name */ 'notifyObservers',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arrLocal',
+					/* name */ 'arg',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -228,19 +228,19 @@ JdkClassCreateHelper.class('java.util.TimeZone', [
 			/* name */ 'getDisplayName',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'sign',
+					/* name */ 'daylight',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'daylight',
+					/* name */ 'style',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'style',
+					/* name */ 'locale',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF

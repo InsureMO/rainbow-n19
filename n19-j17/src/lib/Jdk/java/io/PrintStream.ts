@@ -854,19 +854,19 @@ JdkClassCreateHelper.class('java.io.PrintStream', [
 			/* name */ 'write',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'x',
+					/* name */ 'buf',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'x',
+					/* name */ 'off',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'buf',
+					/* name */ 'len',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -882,7 +882,7 @@ JdkClassCreateHelper.class('java.io.PrintStream', [
 			/* name */ 'write',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'x',
+					/* name */ 'b',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

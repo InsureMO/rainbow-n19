@@ -45,13 +45,13 @@ JdkClassCreateHelper.class('java.util.AbstractList', [
 			/* name */ 'removeRange',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'fromIndex',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'n',
+					/* name */ 'toIndex',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -137,13 +137,13 @@ JdkClassCreateHelper.class('java.util.AbstractList', [
 			/* name */ 'addAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'e',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'index',
+					/* name */ 'c',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -170,7 +170,7 @@ JdkClassCreateHelper.class('java.util.AbstractList', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'o1',
+					/* name */ 'o',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF

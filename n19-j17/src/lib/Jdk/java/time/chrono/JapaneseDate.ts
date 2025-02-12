@@ -26,7 +26,7 @@ JdkClassCreateHelper.class('java.time.chrono.JapaneseDate', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'otherDate',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -295,7 +295,7 @@ JdkClassCreateHelper.class('java.time.chrono.JapaneseDate', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'unit',
+					/* name */ 'arg1',
 					/* type */ 'java.time.temporal.TemporalUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -333,7 +333,7 @@ JdkClassCreateHelper.class('java.time.chrono.JapaneseDate', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'unit',
+					/* name */ 'arg1',
 					/* type */ 'java.time.temporal.TemporalUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -365,13 +365,13 @@ JdkClassCreateHelper.class('java.time.chrono.JapaneseDate', [
 			/* name */ 'with',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'nvalue',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'chronoField',
+					/* name */ 'newValue',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -510,7 +510,7 @@ JdkClassCreateHelper.class('java.time.chrono.JapaneseDate', [
 			/* name */ 'range',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'jcal',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -526,7 +526,7 @@ JdkClassCreateHelper.class('java.time.chrono.JapaneseDate', [
 			/* name */ 'getLong',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'jcal',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF

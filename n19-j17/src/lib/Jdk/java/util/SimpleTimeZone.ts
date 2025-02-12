@@ -264,7 +264,7 @@ JdkClassCreateHelper.class('java.util.SimpleTimeZone', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'that',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -280,7 +280,7 @@ JdkClassCreateHelper.class('java.util.SimpleTimeZone', [
 			/* name */ 'hasSameRules',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'that',
+					/* name */ 'other',
 					/* type */ 'java.util.TimeZone',
 					/* modifiers */ 0,
 					/* annotations */ UDF

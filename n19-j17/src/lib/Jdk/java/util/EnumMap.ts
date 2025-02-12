@@ -90,7 +90,7 @@ JdkClassCreateHelper.class('java.util.EnumMap', [
 		[/* public java.util.EnumMap(java.util.Map<K, ? extends V>) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'em',
+					/* name */ 'm',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'K']],
@@ -189,7 +189,7 @@ JdkClassCreateHelper.class('java.util.EnumMap', [
 			/* name */ 'containsValue',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'val',
+					/* name */ 'value',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -205,7 +205,7 @@ JdkClassCreateHelper.class('java.util.EnumMap', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'm',
+					/* name */ 'o',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -352,7 +352,7 @@ JdkClassCreateHelper.class('java.util.EnumMap', [
 			/* name */ 'putAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'emValue',
+					/* name */ 'm',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

@@ -598,7 +598,7 @@ JdkClassCreateHelper.class('java.time.chrono.MinguoChronology', [
 			/* name */ 'range',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'range',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.ChronoField',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -301,19 +301,19 @@ JdkClassCreateHelper.class('java.io.CharArrayWriter', [
 			/* name */ 'write',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'newcount',
+					/* name */ 'c',
 					/* type */ '[C',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'c',
+					/* name */ 'off',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'off',
+					/* name */ 'len',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -329,7 +329,7 @@ JdkClassCreateHelper.class('java.io.CharArrayWriter', [
 			/* name */ 'write',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'newcount',
+					/* name */ 'c',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -345,19 +345,19 @@ JdkClassCreateHelper.class('java.io.CharArrayWriter', [
 			/* name */ 'write',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'newcount',
+					/* name */ 'str',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'str',
+					/* name */ 'off',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'off',
+					/* name */ 'len',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

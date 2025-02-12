@@ -55,7 +55,7 @@ JdkClassCreateHelper.class('java.nio.file.attribute.FileTime', [
 			/* name */ 'compareTo',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'secs',
+					/* name */ 'other',
 					/* type */ 'java.nio.file.attribute.FileTime',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -98,7 +98,7 @@ JdkClassCreateHelper.class('java.nio.file.attribute.FileTime', [
 			/* name */ 'to',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'secs',
+					/* name */ 'unit',
 					/* type */ 'java.util.concurrent.TimeUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -145,7 +145,7 @@ JdkClassCreateHelper.class('java.nio.file.attribute.FileTime', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'unit',
+					/* name */ 'arg1',
 					/* type */ 'java.util.concurrent.TimeUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -27,7 +27,7 @@ JdkClassCreateHelper.class('java.time.Duration', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'otherDuration',
+					/* name */ 'other',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -212,7 +212,7 @@ JdkClassCreateHelper.class('java.time.Duration', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'unit',
+					/* name */ 'arg1',
 					/* type */ 'java.time.temporal.TemporalUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -365,13 +365,13 @@ JdkClassCreateHelper.class('java.time.Duration', [
 			/* name */ 'plus',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'chronoUnit',
+					/* name */ 'amountToAdd',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'amountToAdd',
+					/* name */ 'arg1',
 					/* type */ 'java.time.temporal.TemporalUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -682,13 +682,13 @@ JdkClassCreateHelper.class('java.time.Duration', [
 			/* name */ 'between',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'nanos',
+					/* name */ 'startInclusive',
 					/* type */ 'java.time.temporal.Temporal',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'ex2',
+					/* name */ 'endExclusive',
 					/* type */ 'java.time.temporal.Temporal',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -704,7 +704,7 @@ JdkClassCreateHelper.class('java.time.Duration', [
 			/* name */ 'from',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'unit',
+					/* name */ 'amount',
 					/* type */ 'java.time.temporal.TemporalAmount',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -726,7 +726,7 @@ JdkClassCreateHelper.class('java.time.Duration', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'unit',
+					/* name */ 'arg1',
 					/* type */ 'java.time.temporal.TemporalUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -844,7 +844,7 @@ JdkClassCreateHelper.class('java.time.Duration', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'nanoAdjustment',
+					/* name */ 'arg1',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -860,7 +860,7 @@ JdkClassCreateHelper.class('java.time.Duration', [
 			/* name */ 'parse',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'ex',
+					/* name */ 'text',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF

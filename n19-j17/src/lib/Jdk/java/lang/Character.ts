@@ -1026,7 +1026,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'toChars',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'result',
+					/* name */ 'codePoint',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1108,13 +1108,13 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'codePointAt',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'c2',
+					/* name */ 'seq',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'seq',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1180,13 +1180,13 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'codePointBefore',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'c1',
+					/* name */ 'seq',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'seq',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1230,19 +1230,19 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'codePointCount',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'seq',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'seq',
+					/* name */ 'beginIndex',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'beginIndex',
+					/* name */ 'endIndex',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1258,7 +1258,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'codePointOf',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'off',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1460,19 +1460,19 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'offsetByCodePoints',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'seq',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'seq',
+					/* name */ 'codePointOffset',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

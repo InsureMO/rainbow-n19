@@ -26,7 +26,7 @@ JdkClassCreateHelper.class('java.time.chrono.ThaiBuddhistDate', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'otherDate',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -270,7 +270,7 @@ JdkClassCreateHelper.class('java.time.chrono.ThaiBuddhistDate', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'unit',
+					/* name */ 'arg1',
 					/* type */ 'java.time.temporal.TemporalUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -308,7 +308,7 @@ JdkClassCreateHelper.class('java.time.chrono.ThaiBuddhistDate', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'unit',
+					/* name */ 'arg1',
 					/* type */ 'java.time.temporal.TemporalUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -340,13 +340,13 @@ JdkClassCreateHelper.class('java.time.chrono.ThaiBuddhistDate', [
 			/* name */ 'with',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'nvalue',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'chronoField',
+					/* name */ 'newValue',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -485,7 +485,7 @@ JdkClassCreateHelper.class('java.time.chrono.ThaiBuddhistDate', [
 			/* name */ 'range',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'range',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -501,7 +501,7 @@ JdkClassCreateHelper.class('java.time.chrono.ThaiBuddhistDate', [
 			/* name */ 'getLong',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'prolepticYear',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF

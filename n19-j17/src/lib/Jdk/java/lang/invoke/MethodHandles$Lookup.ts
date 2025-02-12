@@ -679,7 +679,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles$Lookup', [
 			/* name */ 'findVirtual',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'mh',
+					/* name */ 'refc',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -696,13 +696,13 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles$Lookup', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'mh',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'refc',
+					/* name */ 'type',
 					/* type */ 'java.lang.invoke.MethodType',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -727,7 +727,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles$Lookup', [
 			/* name */ 'unreflect',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'mh',
+					/* name */ 'm',
 					/* type */ 'java.lang.reflect.Method',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -860,7 +860,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles$Lookup', [
 			/* name */ 'revealDirect',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'ex',
+					/* name */ 'target',
 					/* type */ 'java.lang.invoke.MethodHandle',
 					/* modifiers */ 0,
 					/* annotations */ UDF

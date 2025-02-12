@@ -143,7 +143,7 @@ JdkClassCreateHelper.class('java.io.File', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'file',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -685,12 +685,6 @@ JdkClassCreateHelper.class('java.io.File', [
 			/* name */ 'createTempFile',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'se',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
 					/* name */ 'prefix',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
@@ -698,6 +692,12 @@ JdkClassCreateHelper.class('java.io.File', [
 				],
 				[/* parameter */
 					/* name */ 'suffix',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'directory',
 					/* type */ 'java.io.File',
 					/* modifiers */ 0,
 					/* annotations */ UDF

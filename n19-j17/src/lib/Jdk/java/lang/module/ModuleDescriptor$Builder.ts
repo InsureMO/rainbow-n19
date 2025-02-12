@@ -152,7 +152,7 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Builder', [
 			/* name */ 'mainClass',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'pn',
+					/* name */ 'mc',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -318,13 +318,13 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Builder', [
 			/* name */ 'provides',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'name',
+					/* name */ 'service',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'pn',
+					/* name */ 'providers',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.String'
@@ -472,7 +472,7 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Builder', [
 			/* name */ 'version',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'e',
+					/* name */ 'vs',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

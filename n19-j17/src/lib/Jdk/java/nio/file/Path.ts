@@ -508,7 +508,7 @@ JdkClassCreateHelper.class('java.nio.file.Path', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'provider',
+					/* name */ 'uri',
 					/* type */ 'java.net.URI',
 					/* modifiers */ 0,
 					/* annotations */ UDF

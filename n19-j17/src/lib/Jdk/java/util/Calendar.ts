@@ -236,7 +236,7 @@ JdkClassCreateHelper.class('java.util.Calendar', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'that',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -602,12 +602,6 @@ JdkClassCreateHelper.class('java.util.Calendar', [
 			/* name */ 'getDisplayName',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'val',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
 					/* name */ 'field',
 					/* type */ 'int',
 					/* modifiers */ 0,
@@ -615,6 +609,12 @@ JdkClassCreateHelper.class('java.util.Calendar', [
 				],
 				[/* parameter */
 					/* name */ 'style',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'locale',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -639,12 +639,6 @@ JdkClassCreateHelper.class('java.util.Calendar', [
 			/* name */ 'getDisplayNames',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'map',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
 					/* name */ 'field',
 					/* type */ 'int',
 					/* modifiers */ 0,
@@ -652,6 +646,12 @@ JdkClassCreateHelper.class('java.util.Calendar', [
 				],
 				[/* parameter */
 					/* name */ 'style',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'locale',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF

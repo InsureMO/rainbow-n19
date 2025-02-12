@@ -135,13 +135,13 @@ JdkClassCreateHelper.class('java.util.WeakHashMap', [
 			/* name */ 'put',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'oldValue',
+					/* name */ 'key',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'e',
+					/* name */ 'value',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -157,7 +157,7 @@ JdkClassCreateHelper.class('java.util.WeakHashMap', [
 			/* name */ 'remove',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'next',
+					/* name */ 'key',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -189,7 +189,7 @@ JdkClassCreateHelper.class('java.util.WeakHashMap', [
 			/* name */ 'containsValue',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'e',
+					/* name */ 'value',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -284,7 +284,7 @@ JdkClassCreateHelper.class('java.util.WeakHashMap', [
 			/* name */ 'forEach',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'key',
+					/* name */ 'action',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -321,7 +321,7 @@ JdkClassCreateHelper.class('java.util.WeakHashMap', [
 			/* name */ 'putAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'targetCapacity',
+					/* name */ 'm',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -354,7 +354,7 @@ JdkClassCreateHelper.class('java.util.WeakHashMap', [
 			/* name */ 'replaceAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'key',
+					/* name */ 'function',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

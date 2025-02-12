@@ -185,7 +185,7 @@ JdkClassCreateHelper.class('java.nio.charset.CharsetEncoder', [
 			/* name */ 'canEncode',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'cb',
+					/* name */ 'cs',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -244,7 +244,7 @@ JdkClassCreateHelper.class('java.nio.charset.CharsetEncoder', [
 			/* name */ 'encode',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'o',
+					/* name */ 'in',
 					/* type */ 'java.nio.CharBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -331,19 +331,19 @@ JdkClassCreateHelper.class('java.nio.charset.CharsetEncoder', [
 			/* name */ 'encode',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'cr',
+					/* name */ 'in',
 					/* type */ 'java.nio.CharBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'x',
+					/* name */ 'out',
 					/* type */ 'java.nio.ByteBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'cr',
+					/* name */ 'endOfInput',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -359,7 +359,7 @@ JdkClassCreateHelper.class('java.nio.charset.CharsetEncoder', [
 			/* name */ 'flush',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'cr',
+					/* name */ 'out',
 					/* type */ 'java.nio.ByteBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF

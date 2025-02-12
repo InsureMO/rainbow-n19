@@ -84,13 +84,13 @@ JdkClassCreateHelper.class('java.text.ChoiceFormat', [
 			/* name */ 'parse',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'tempString',
+					/* name */ 'text',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'status',
 					/* type */ 'java.text.ParsePosition',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -139,13 +139,13 @@ JdkClassCreateHelper.class('java.text.ChoiceFormat', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'toAppendTo',
+					/* name */ 'arg1',
 					/* type */ 'java.lang.StringBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'status',
+					/* name */ 'toAppendTo',
 					/* type */ 'java.text.FieldPosition',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -167,13 +167,13 @@ JdkClassCreateHelper.class('java.text.ChoiceFormat', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'toAppendTo',
+					/* name */ 'arg1',
 					/* type */ 'java.lang.StringBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'status',
+					/* name */ 'toAppendTo',
 					/* type */ 'java.text.FieldPosition',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -195,7 +195,7 @@ JdkClassCreateHelper.class('java.text.ChoiceFormat', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'positive',
+					/* name */ 'arg1',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -243,7 +243,7 @@ JdkClassCreateHelper.class('java.text.ChoiceFormat', [
 			/* name */ 'applyPattern',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'newPattern',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

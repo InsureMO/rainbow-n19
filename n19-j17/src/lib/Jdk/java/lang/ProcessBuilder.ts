@@ -315,7 +315,7 @@ JdkClassCreateHelper.class('java.lang.ProcessBuilder', [
 			/* name */ 'startPipeline',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'builder',
+					/* name */ 'builders',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.ProcessBuilder'

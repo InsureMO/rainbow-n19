@@ -593,7 +593,7 @@ JdkClassCreateHelper.class('java.nio.file.spi.FileSystemProvider', [
 			/* name */ 'deleteIfExists',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'ignore',
+					/* name */ 'path',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF

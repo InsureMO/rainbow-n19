@@ -51,19 +51,19 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 			/* name */ 'classData',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'e',
+					/* name */ 'caller',
 					/* type */ 'java.lang.invoke.MethodHandles$Lookup',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'e',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'caller',
+					/* name */ 'type',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'T']]
@@ -98,19 +98,19 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 			/* name */ 'classDataAt',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'element',
+					/* name */ 'caller',
 					/* type */ 'java.lang.invoke.MethodHandles$Lookup',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'e',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'e',
+					/* name */ 'type',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'T']]
@@ -122,7 +122,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'caller',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -346,7 +346,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 			/* name */ 'constant',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'w',
+					/* name */ 'type',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -363,7 +363,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'type',
+					/* name */ 'value',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -873,19 +873,19 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 			/* name */ 'iteratedLoop',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'startIter',
+					/* name */ 'iterator',
 					/* type */ 'java.lang.invoke.MethodHandle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'iteratorType',
+					/* name */ 'init',
 					/* type */ 'java.lang.invoke.MethodHandle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'nextVal',
+					/* name */ 'body',
 					/* type */ 'java.lang.invoke.MethodHandle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -917,19 +917,19 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 			/* name */ 'permuteArguments',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'val',
+					/* name */ 'target',
 					/* type */ 'java.lang.invoke.MethodHandle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'srcPos',
+					/* name */ 'newType',
 					/* type */ 'java.lang.invoke.MethodType',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'dstPos',
+					/* name */ 'reorder',
 					/* type */ '[I',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1166,7 +1166,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 			/* name */ 'privateLookupIn',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'pn',
+					/* name */ 'targetClass',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1183,7 +1183,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'targetClass',
+					/* name */ 'caller',
 					/* type */ 'java.lang.invoke.MethodHandles$Lookup',
 					/* modifiers */ 0,
 					/* annotations */ UDF

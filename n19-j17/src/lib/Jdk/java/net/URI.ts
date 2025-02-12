@@ -210,7 +210,7 @@ JdkClassCreateHelper.class('java.net.URI', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'that',
+					/* name */ 'ob',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -523,7 +523,7 @@ JdkClassCreateHelper.class('java.net.URI', [
 			/* name */ 'create',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'x',
+					/* name */ 'str',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

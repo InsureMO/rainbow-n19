@@ -87,19 +87,19 @@ JdkClassCreateHelper.class('java.io.BufferedInputStream', [
 			/* name */ 'read',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'nread',
+					/* name */ 'b',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'input',
+					/* name */ 'off',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'b',
+					/* name */ 'len',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

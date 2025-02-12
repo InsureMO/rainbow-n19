@@ -101,7 +101,7 @@ JdkClassCreateHelper.class('java.util.IdentityHashMap', [
 			/* name */ 'get',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'item',
+					/* name */ 'key',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -117,13 +117,13 @@ JdkClassCreateHelper.class('java.util.IdentityHashMap', [
 			/* name */ 'put',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'oldValue',
+					/* name */ 'key',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'item',
+					/* name */ 'value',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -139,7 +139,7 @@ JdkClassCreateHelper.class('java.util.IdentityHashMap', [
 			/* name */ 'remove',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'oldValue',
+					/* name */ 'key',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -155,7 +155,7 @@ JdkClassCreateHelper.class('java.util.IdentityHashMap', [
 			/* name */ 'containsKey',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'item',
+					/* name */ 'key',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -171,7 +171,7 @@ JdkClassCreateHelper.class('java.util.IdentityHashMap', [
 			/* name */ 'containsValue',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'value',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -187,7 +187,7 @@ JdkClassCreateHelper.class('java.util.IdentityHashMap', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'k',
+					/* name */ 'o',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -300,7 +300,7 @@ JdkClassCreateHelper.class('java.util.IdentityHashMap', [
 			/* name */ 'forEach',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'k',
+					/* name */ 'action',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -337,7 +337,7 @@ JdkClassCreateHelper.class('java.util.IdentityHashMap', [
 			/* name */ 'putAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'e',
+					/* name */ 'm',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -370,7 +370,7 @@ JdkClassCreateHelper.class('java.util.IdentityHashMap', [
 			/* name */ 'replaceAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'k',
+					/* name */ 'function',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

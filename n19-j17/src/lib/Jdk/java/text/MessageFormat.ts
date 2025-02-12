@@ -279,7 +279,7 @@ JdkClassCreateHelper.class('java.text.MessageFormat', [
 			/* name */ 'applyPattern',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'ch',
+					/* name */ 'pattern',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -317,13 +317,13 @@ JdkClassCreateHelper.class('java.text.MessageFormat', [
 			/* name */ 'setFormatByArgumentIndex',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'j',
+					/* name */ 'argumentIndex',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'argumentIndex',
+					/* name */ 'newFormat',
 					/* type */ 'java.text.Format',
 					/* modifiers */ 0,
 					/* annotations */ UDF

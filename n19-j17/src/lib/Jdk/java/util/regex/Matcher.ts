@@ -246,7 +246,7 @@ JdkClassCreateHelper.class('java.util.regex.Matcher', [
 			/* name */ 'replaceAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'sb',
+					/* name */ 'replacement',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -262,7 +262,7 @@ JdkClassCreateHelper.class('java.util.regex.Matcher', [
 			/* name */ 'replaceAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'ec',
+					/* name */ 'replacer',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.util.regex.MatchResult',
@@ -481,7 +481,7 @@ JdkClassCreateHelper.class('java.util.regex.Matcher', [
 			/* name */ 'usePattern',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'newPattern',
 					/* type */ 'java.util.regex.Pattern',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -537,7 +537,7 @@ JdkClassCreateHelper.class('java.util.regex.Matcher', [
 			/* name */ 'quoteReplacement',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'c',
+					/* name */ 's',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

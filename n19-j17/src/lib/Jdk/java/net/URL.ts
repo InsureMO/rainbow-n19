@@ -71,24 +71,6 @@ JdkClassCreateHelper.class('java.net.URL', [
 		[/* public java.net.URL(java.lang.String,java.lang.String,int,java.lang.String,java.net.URLStreamHandler) throws java.net.MalformedURLException */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'sm',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 's',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 's',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
 					/* name */ 'protocol',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
@@ -96,6 +78,24 @@ JdkClassCreateHelper.class('java.net.URL', [
 				],
 				[/* parameter */
 					/* name */ 'host',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'port',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'file',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'handler',
 					/* type */ 'java.net.URLStreamHandler',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -170,19 +170,19 @@ JdkClassCreateHelper.class('java.net.URL', [
 		[/* public java.net.URL(java.net.URL,java.lang.String,java.net.URLStreamHandler) throws java.net.MalformedURLException */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'sm',
+					/* name */ 'context',
 					/* type */ 'java.net.URL',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 's',
+					/* name */ 'spec',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'c',
+					/* name */ 'handler',
 					/* type */ 'java.net.URLStreamHandler',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -204,7 +204,7 @@ JdkClassCreateHelper.class('java.net.URL', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'u2',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -432,7 +432,7 @@ JdkClassCreateHelper.class('java.net.URL', [
 			/* name */ 'openConnection',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'epoint',
+					/* name */ 'proxy',
 					/* type */ 'java.net.Proxy',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -453,7 +453,7 @@ JdkClassCreateHelper.class('java.net.URL', [
 			/* name */ 'setURLStreamHandlerFactory',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'security',
+					/* name */ 'fac',
 					/* type */ 'java.net.URLStreamHandlerFactory',
 					/* modifiers */ 0,
 					/* annotations */ UDF

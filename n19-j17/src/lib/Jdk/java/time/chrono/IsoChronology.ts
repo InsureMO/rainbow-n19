@@ -721,12 +721,6 @@ JdkClassCreateHelper.class('java.time.chrono.IsoChronology', [
 			/* name */ 'epochSecond',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'dom',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
 					/* name */ 'prolepticYear',
 					/* type */ 'int',
 					/* modifiers */ 0,
@@ -758,6 +752,12 @@ JdkClassCreateHelper.class('java.time.chrono.IsoChronology', [
 				],
 				[/* parameter */
 					/* name */ 'second',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'zoneOffset',
 					/* type */ 'java.time.ZoneOffset',
 					/* modifiers */ 0,
 					/* annotations */ UDF

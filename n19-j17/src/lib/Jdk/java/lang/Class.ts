@@ -395,7 +395,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			/* name */ 'getResourceAsStream',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'url',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1259,7 +1259,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			/* name */ 'getResource',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'ioe',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1436,13 +1436,13 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			/* name */ 'forName',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'caller',
+					/* name */ 'module',
 					/* type */ 'java.lang.Module',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'pa',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1505,19 +1505,19 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			/* name */ 'forName',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'ccl',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'name',
+					/* name */ 'initialize',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'initialize',
+					/* name */ 'loader',
 					/* type */ 'java.lang.ClassLoader',
 					/* modifiers */ 0,
 					/* annotations */ UDF

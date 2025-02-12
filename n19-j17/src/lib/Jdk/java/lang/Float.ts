@@ -515,7 +515,7 @@ JdkClassCreateHelper.class('java.lang.Float', [
 			/* name */ 'toHexString',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 's',
+					/* name */ 'f',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF

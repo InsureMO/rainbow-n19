@@ -182,13 +182,13 @@ JdkClassCreateHelper.class('java.text.DecimalFormat', [
 			/* name */ 'parse',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'e',
+					/* name */ 'text',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'bigDecimalResult',
+					/* name */ 'pos',
 					/* type */ 'java.text.ParsePosition',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -267,13 +267,13 @@ JdkClassCreateHelper.class('java.text.DecimalFormat', [
 			/* name */ 'format',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'tempResult',
+					/* name */ 'number',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'number',
+					/* name */ 'arg1',
 					/* type */ 'java.lang.StringBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -301,13 +301,13 @@ JdkClassCreateHelper.class('java.text.DecimalFormat', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'result',
+					/* name */ 'arg1',
 					/* type */ 'java.lang.StringBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'fieldPosition',
+					/* name */ 'result',
 					/* type */ 'java.text.FieldPosition',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -233,7 +233,7 @@ JdkClassCreateHelper.class('java.util.Spliterators', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'characteristics',
+					/* name */ 'arg2',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -435,7 +435,7 @@ JdkClassCreateHelper.class('java.util.Spliterators', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'characteristics',
+					/* name */ 'arg2',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -550,7 +550,7 @@ JdkClassCreateHelper.class('java.util.Spliterators', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'characteristics',
+					/* name */ 'arg2',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -609,7 +609,7 @@ JdkClassCreateHelper.class('java.util.Spliterators', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'characteristics',
+					/* name */ 'arg2',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -182,7 +182,7 @@ JdkClassCreateHelper.class('java.nio.charset.CharsetDecoder', [
 			/* name */ 'decode',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'o',
+					/* name */ 'in',
 					/* type */ 'java.nio.ByteBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -269,19 +269,19 @@ JdkClassCreateHelper.class('java.nio.charset.CharsetDecoder', [
 			/* name */ 'decode',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'cr',
+					/* name */ 'in',
 					/* type */ 'java.nio.ByteBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'x',
+					/* name */ 'out',
 					/* type */ 'java.nio.CharBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'cr',
+					/* name */ 'endOfInput',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -297,7 +297,7 @@ JdkClassCreateHelper.class('java.nio.charset.CharsetDecoder', [
 			/* name */ 'flush',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'cr',
+					/* name */ 'out',
 					/* type */ 'java.nio.CharBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF

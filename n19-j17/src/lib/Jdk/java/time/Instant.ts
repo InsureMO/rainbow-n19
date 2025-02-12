@@ -58,7 +58,7 @@ JdkClassCreateHelper.class('java.time.Instant', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'otherInstant',
+					/* name */ 'other',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -235,7 +235,7 @@ JdkClassCreateHelper.class('java.time.Instant', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'unit',
+					/* name */ 'arg1',
 					/* type */ 'java.time.temporal.TemporalUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -321,7 +321,7 @@ JdkClassCreateHelper.class('java.time.Instant', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'unit',
+					/* name */ 'arg1',
 					/* type */ 'java.time.temporal.TemporalUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -417,13 +417,13 @@ JdkClassCreateHelper.class('java.time.Instant', [
 			/* name */ 'with',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'nval',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'nval',
+					/* name */ 'newValue',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -651,13 +651,13 @@ JdkClassCreateHelper.class('java.time.Instant', [
 			/* name */ 'until',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'chronoUnit',
+					/* name */ 'endExclusive',
 					/* type */ 'java.time.temporal.Temporal',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'endExclusive',
+					/* name */ 'unit',
 					/* type */ 'java.time.temporal.TemporalUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -673,7 +673,7 @@ JdkClassCreateHelper.class('java.time.Instant', [
 			/* name */ 'from',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'instantSecs',
+					/* name */ 'temporal',
 					/* type */ 'java.time.temporal.TemporalAccessor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -752,7 +752,7 @@ JdkClassCreateHelper.class('java.time.Instant', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'nanoAdjustment',
+					/* name */ 'arg1',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF

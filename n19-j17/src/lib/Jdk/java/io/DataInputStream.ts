@@ -302,19 +302,19 @@ JdkClassCreateHelper.class('java.io.DataInputStream', [
 			/* name */ 'readFully',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'count',
+					/* name */ 'b',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'b',
+					/* name */ 'off',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'off',
+					/* name */ 'len',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -335,7 +335,7 @@ JdkClassCreateHelper.class('java.io.DataInputStream', [
 			/* name */ 'readUTF',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'dis',
+					/* name */ 'in',
 					/* type */ 'java.io.DataInput',
 					/* modifiers */ 0,
 					/* annotations */ UDF

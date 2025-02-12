@@ -208,7 +208,7 @@ JdkClassCreateHelper.class('java.lang.ThreadGroup', [
 			/* name */ 'setMaxPriority',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'groupsSnapshot',
+					/* name */ 'pri',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -381,13 +381,13 @@ JdkClassCreateHelper.class('java.lang.ThreadGroup', [
 			/* name */ 'uncaughtException',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'ueh',
+					/* name */ 't',
 					/* type */ 'java.lang.Thread',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 't',
+					/* name */ 'e',
 					/* type */ 'java.lang.Throwable',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -21,19 +21,19 @@ JdkClassCreateHelper.class('java.time.zone.ZoneOffsetTransitionRule$TimeDefiniti
 			/* name */ 'createDateTime',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'difference',
+					/* name */ 'dateTime',
 					/* type */ 'java.time.LocalDateTime',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'difference',
+					/* name */ 'standardOffset',
 					/* type */ 'java.time.ZoneOffset',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'dateTime',
+					/* name */ 'wallOffset',
 					/* type */ 'java.time.ZoneOffset',
 					/* modifiers */ 0,
 					/* annotations */ UDF

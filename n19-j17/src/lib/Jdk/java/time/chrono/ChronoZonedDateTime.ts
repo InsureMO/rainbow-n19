@@ -434,7 +434,7 @@ JdkClassCreateHelper.class('java.time.chrono.ChronoZonedDateTime', [
 			/* name */ 'get',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'chronoField',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -512,7 +512,7 @@ JdkClassCreateHelper.class('java.time.chrono.ChronoZonedDateTime', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'unit',
+					/* name */ 'arg1',
 					/* type */ 'java.time.temporal.TemporalUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -717,7 +717,7 @@ JdkClassCreateHelper.class('java.time.chrono.ChronoZonedDateTime', [
 			/* name */ 'getLong',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'chronoField',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF

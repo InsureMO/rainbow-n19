@@ -28,7 +28,7 @@ JdkClassCreateHelper.class('java.util.UUID', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'leastSigBits',
+					/* name */ 'arg1',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -174,7 +174,7 @@ JdkClassCreateHelper.class('java.util.UUID', [
 			/* name */ 'fromString',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'msb1',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -190,7 +190,7 @@ JdkClassCreateHelper.class('java.util.UUID', [
 			/* name */ 'nameUUIDFromBytes',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'md',
+					/* name */ 'name',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF

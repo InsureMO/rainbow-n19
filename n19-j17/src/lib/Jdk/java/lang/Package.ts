@@ -164,7 +164,7 @@ JdkClassCreateHelper.class('java.lang.Package', [
 			/* name */ 'isCompatibleWith',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'desired',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -194,7 +194,7 @@ JdkClassCreateHelper.class('java.lang.Package', [
 			/* name */ 'isSealed',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'uri',
+					/* name */ 'url',
 					/* type */ 'java.net.URL',
 					/* modifiers */ 0,
 					/* annotations */ UDF

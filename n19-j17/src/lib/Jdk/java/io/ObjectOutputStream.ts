@@ -54,7 +54,7 @@ JdkClassCreateHelper.class('java.io.ObjectOutputStream', [
 			/* name */ 'enableReplaceObject',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'sm',
+					/* name */ 'enable',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -230,7 +230,7 @@ JdkClassCreateHelper.class('java.io.ObjectOutputStream', [
 			/* name */ 'writeObject',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'ex',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -662,7 +662,7 @@ JdkClassCreateHelper.class('java.io.ObjectOutputStream', [
 			/* name */ 'writeUnshared',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'ex',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF

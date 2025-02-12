@@ -290,13 +290,13 @@ JdkClassCreateHelper.class('java.util.LinkedList', [
 			/* name */ 'addAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'pred',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'succ',
+					/* name */ 'c',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -414,7 +414,7 @@ JdkClassCreateHelper.class('java.util.LinkedList', [
 			/* name */ 'remove',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'x',
+					/* name */ 'o',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -446,7 +446,7 @@ JdkClassCreateHelper.class('java.util.LinkedList', [
 			/* name */ 'removeLastOccurrence',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'x',
+					/* name */ 'o',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -462,7 +462,7 @@ JdkClassCreateHelper.class('java.util.LinkedList', [
 			/* name */ 'indexOf',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'x',
+					/* name */ 'o',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -478,7 +478,7 @@ JdkClassCreateHelper.class('java.util.LinkedList', [
 			/* name */ 'lastIndexOf',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'x',
+					/* name */ 'o',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF

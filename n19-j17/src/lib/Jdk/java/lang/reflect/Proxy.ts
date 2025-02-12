@@ -156,7 +156,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Proxy', [
 			/* name */ 'getInvocationHandler',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'ihClass',
+					/* name */ 'proxy',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF

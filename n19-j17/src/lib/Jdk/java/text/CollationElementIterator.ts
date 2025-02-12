@@ -115,7 +115,7 @@ JdkClassCreateHelper.class('java.text.CollationElementIterator', [
 			/* name */ 'setOffset',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'last',
+					/* name */ 'newOffset',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

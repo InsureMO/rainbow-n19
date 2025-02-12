@@ -171,7 +171,7 @@ JdkClassCreateHelper.class('java.util.Properties', [
 			/* name */ 'getProperty',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'defaults',
+					/* name */ 'key',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -906,7 +906,7 @@ JdkClassCreateHelper.class('java.util.Properties', [
 			/* name */ 'list',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'key',
+					/* name */ 'out',
 					/* type */ 'java.io.PrintStream',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -922,7 +922,7 @@ JdkClassCreateHelper.class('java.util.Properties', [
 			/* name */ 'list',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'key',
+					/* name */ 'out',
 					/* type */ 'java.io.PrintWriter',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1047,19 +1047,19 @@ JdkClassCreateHelper.class('java.util.Properties', [
 			/* name */ 'storeToXML',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'charset',
+					/* name */ 'os',
 					/* type */ 'java.io.OutputStream',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'e',
+					/* name */ 'comment',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'os',
+					/* name */ 'encoding',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

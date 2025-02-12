@@ -27,13 +27,13 @@ JdkClassCreateHelper.class('java.text.AttributedString', [
 		[/* public java.text.AttributedString(java.lang.String,java.util.Map<? extends java.text.AttributedCharacterIterator$Attribute, ?>) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'entry',
+					/* name */ 'text',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'newRunAttributes',
+					/* name */ 'attributes',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -248,7 +248,7 @@ JdkClassCreateHelper.class('java.text.AttributedString', [
 			/* name */ 'addAttributes',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'entry',
+					/* name */ 'attributes',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -271,13 +271,13 @@ JdkClassCreateHelper.class('java.text.AttributedString', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'attributes',
+					/* name */ 'beginIndex',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'beginIndex',
+					/* name */ 'endIndex',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
