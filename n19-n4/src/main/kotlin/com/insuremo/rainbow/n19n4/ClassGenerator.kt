@@ -1,7 +1,6 @@
 package com.insuremo.rainbow.n19n4
 
 import java.io.File
-import java.lang.constant.ClassDesc
 import java.lang.reflect.AnnotatedType
 import java.lang.reflect.Constructor
 import java.lang.reflect.Executable
@@ -16,6 +15,11 @@ import java.lang.reflect.Type
 import java.lang.reflect.WildcardType
 import java.util.Locale
 import kotlin.jvm.javaClass
+import org.objectweb.asm.ClassReader
+import org.objectweb.asm.ClassVisitor
+import org.objectweb.asm.Label
+import org.objectweb.asm.MethodVisitor
+import org.objectweb.asm.Opcodes
 
 val IGNORE_ANNOTATION_TYPE_NAMES = listOf("jdk.internal.util.random.RandomSupport\$RandomGeneratorProperties", "")
 val IGNORE_ANNOTATION_METHOD_NAMES = listOf("annotationType", "equals", "hashCode", "toString")
@@ -174,7 +178,9 @@ private fun generateTypeVariable(tv: TypeVariable<*>, indent: String): String {
 }
 
 private fun generateGenericArrayType(ga: GenericArrayType, indent: String): String {
-	return "${indent}[/* generic array type */ 'ga', [${generateType(ga.genericComponentType, "")}]]"
+	return "${indent}[/* generic array type */ 'ga', [${
+		generateType(ga.genericComponentType, indent).substring(indent.length)
+	}]]"
 }
 
 private fun generateActualTypeArgumentsOfParameterizedType(pt: ParameterizedType, indent: String): String {
@@ -308,16 +314,63 @@ private fun generateTypeParameters(typeParameters: List<TypeVariable<*>>?, udf: 
 	).joinToString("\n")
 }
 
-private fun generateParameter(parameter: Parameter, indent: String): String {
+private fun generateParameter(parameter: Parameter, name: String, indent: String): String {
 	val indent1 = indent + "\t"
 	return listOf(
 		"${indent}[/* parameter */",
-		"${indent1}/* name */ '${parameter.name}',",
+		"${indent1}/* name */ '${name}',",
 		"${indent1}/* type */ ${generateType(parameter.annotatedType.type, indent1).substring(indent1.length)},",
 		"${indent1}/* modifiers */ ${parameter.modifiers},",
 		generateAnnotations(parameter.annotations.toList(), "/* annotations */", true, indent1),
 		"${indent}]"
 	).joinToString("\n")
+}
+
+private class MethodVisitorForParameterNames(val parameterNames: MutableList<String>) :
+	MethodVisitor(Opcodes.ASM9) {
+	override fun visitLocalVariable(
+		name: String, descriptor: String, signature: String, start: Label, end: Label, index: Int
+	) {
+		if (index > 0) { // Skip 'this' parameter for non - static methods
+			parameterNames.add(name)
+		}
+	}
+}
+
+private class ClassVisitorForMethodParameterNames(val executable: Executable, val parameterNames: MutableList<String>) :
+	ClassVisitor(Opcodes.ASM9) {
+	val str: String
+
+	init {
+		this.str = executableToStr()
+	}
+
+	private fun executableToStr(): String {
+		return if (executable is Method) {
+			"(${executable.parameters.joinToString("") { p -> p.type.name }})" + executable.returnType.name
+		} else if (executable is Constructor<*>) {
+			"(${executable.parameters.joinToString("") { p -> p.type.name }})"
+		} else {
+			throw RuntimeException("Cannot recognize executable[${executable.javaClass.name}]")
+		}
+	}
+
+	override fun visitMethod(
+		access: Int, name: String, descriptor: String?, signature: String?, exceptions: Array<String>?
+	): MethodVisitor? {
+		if (name == executable.name && this.str == descriptor) {
+			MethodVisitorForParameterNames(parameterNames)
+		}
+		return null
+	}
+}
+
+private fun getParameterNames(executable: Executable): List<String> {
+	val parameterNames = mutableListOf<String>()
+	val clazz = executable.declaringClass
+	val inputStream = clazz.getResourceAsStream("/" + clazz.getName().replace('.', '/') + ".class")
+	ClassReader(inputStream).accept(ClassVisitorForMethodParameterNames(executable, parameterNames), 0)
+	return parameterNames
 }
 
 @Suppress("SameParameterValue")
@@ -326,9 +379,19 @@ private fun generateParameters(executable: Executable, indent: String): String {
 	if (parameters == null || parameters.isEmpty()) {
 		return "${indent}/* parameters */"
 	}
+
+	val names = getParameterNames(executable)
 	return listOf(
 		"${indent}[/* parameters */",
-		parameters.joinToString(",\n") { generateParameter(it, indent + "\t") },
+		parameters.mapIndexed { i, p ->
+			if (names.isEmpty()) {
+				Pair(p.name, p)
+			} else {
+				Pair(names[i], p)
+			}
+		}.joinToString(",\n") {
+			generateParameter(it.second, it.first, indent + "\t")
+		},
 		"${indent}]"
 	).joinToString("\n")
 }

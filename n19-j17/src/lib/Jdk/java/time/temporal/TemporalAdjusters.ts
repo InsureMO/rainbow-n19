@@ -93,6 +93,50 @@ JdkClassCreateHelper.class('java.time.temporal.TemporalAdjusters', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public static java.time.temporal.TemporalAdjuster java.time.temporal.TemporalAdjusters.dayOfWeekInMonth(int,java.time.DayOfWeek) */
+			/* name */ 'dayOfWeekInMonth',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'java.time.DayOfWeek',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.temporal.TemporalAdjuster',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.time.temporal.TemporalAdjuster java.time.temporal.TemporalAdjusters.ofDateAdjuster(java.util.function.UnaryOperator<java.time.LocalDate>) */
+			/* name */ 'ofDateAdjuster',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							'java.time.LocalDate'
+						],
+						/* raw type */ 'java.util.function.UnaryOperator',
+						/* owner type */ UDF
+					]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.temporal.TemporalAdjuster',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public static java.time.temporal.TemporalAdjuster java.time.temporal.TemporalAdjusters.firstDayOfMonth() */
 			/* name */ 'firstDayOfMonth',
 			/* parameters */,
@@ -151,50 +195,6 @@ JdkClassCreateHelper.class('java.time.temporal.TemporalAdjusters', [
 				[/* parameter */
 					/* name */ 'arg0',
 					/* type */ 'java.time.DayOfWeek',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.temporal.TemporalAdjuster',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.time.temporal.TemporalAdjuster java.time.temporal.TemporalAdjusters.dayOfWeekInMonth(int,java.time.DayOfWeek) */
-			/* name */ 'dayOfWeekInMonth',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'java.time.DayOfWeek',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.temporal.TemporalAdjuster',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.time.temporal.TemporalAdjuster java.time.temporal.TemporalAdjusters.ofDateAdjuster(java.util.function.UnaryOperator<java.time.LocalDate>) */
-			/* name */ 'ofDateAdjuster',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							'java.time.LocalDate'
-						],
-						/* raw type */ 'java.util.function.UnaryOperator',
-						/* owner type */ UDF
-					]],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]

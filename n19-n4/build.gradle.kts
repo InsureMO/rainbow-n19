@@ -12,6 +12,7 @@ repositories {
 
 dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect:2.1.10")
+	implementation("org.ow2.asm:asm:9.7.1")
 	testImplementation(kotlin("test"))
 }
 

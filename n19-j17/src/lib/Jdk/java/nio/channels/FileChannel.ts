@@ -406,17 +406,17 @@ JdkClassCreateHelper.class('java.nio.channels.FileChannel', [
 				[/* parameter */
 					/* name */ 'arg2',
 					/* type */ [/* generic array type */ 'ga', [[/* parameterized type */ 'pt', [
-	[/* actual argument types */
-		[/* wildcard type */ 'wt', [
-			[/* upper bounds */
-				'java.lang.Object'
-			],
-			/* lower bounds */ UDF
-		]]
-	],
-	/* raw type */ 'java.nio.file.attribute.FileAttribute',
-	/* owner type */ UDF
-]]]],
+						[/* actual argument types */
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									'java.lang.Object'
+								],
+								/* lower bounds */ UDF
+							]]
+						],
+						/* raw type */ 'java.nio.file.attribute.FileAttribute',
+						/* owner type */ UDF
+					]]]],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]

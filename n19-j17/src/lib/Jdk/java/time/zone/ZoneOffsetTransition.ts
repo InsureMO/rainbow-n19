@@ -193,19 +193,19 @@ JdkClassCreateHelper.class('java.time.zone.ZoneOffsetTransition', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.time.Instant java.time.zone.ZoneOffsetTransition.getInstant() */
-			/* name */ 'getInstant',
+		[/* public boolean java.time.zone.ZoneOffsetTransition.isOverlap() */
+			/* name */ 'isOverlap',
 			/* parameters */,
-			/* return */ 'java.time.Instant',
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public boolean java.time.zone.ZoneOffsetTransition.isOverlap() */
-			/* name */ 'isOverlap',
+		[/* public java.time.Instant java.time.zone.ZoneOffsetTransition.getInstant() */
+			/* name */ 'getInstant',
 			/* parameters */,
-			/* return */ 'boolean',
+			/* return */ 'java.time.Instant',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

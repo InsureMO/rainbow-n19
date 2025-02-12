@@ -1754,23 +1754,23 @@ JdkClassCreateHelper.class('java.util.Map', [
 				[/* parameter */
 					/* name */ 'arg0',
 					/* type */ [/* generic array type */ 'ga', [[/* parameterized type */ 'pt', [
-	[/* actual argument types */
-		[/* wildcard type */ 'wt', [
-			[/* upper bounds */
-				[/* type variable ref */ 'tr', [/* name */ 'K']]
-			],
-			/* lower bounds */ UDF
-		]],
-		[/* wildcard type */ 'wt', [
-			[/* upper bounds */
-				[/* type variable ref */ 'tr', [/* name */ 'V']]
-			],
-			/* lower bounds */ UDF
-		]]
-	],
-	/* raw type */ 'java.util.Map$Entry',
-	/* owner type */ 'java.util.Map'
-]]]],
+						[/* actual argument types */
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									[/* type variable ref */ 'tr', [/* name */ 'K']]
+								],
+								/* lower bounds */ UDF
+							]],
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									[/* type variable ref */ 'tr', [/* name */ 'V']]
+								],
+								/* lower bounds */ UDF
+							]]
+						],
+						/* raw type */ 'java.util.Map$Entry',
+						/* owner type */ 'java.util.Map'
+					]]]],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]

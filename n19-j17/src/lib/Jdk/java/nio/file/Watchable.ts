@@ -22,17 +22,17 @@ JdkClassCreateHelper.class('java.nio.file.Watchable', [
 				[/* parameter */
 					/* name */ 'arg1',
 					/* type */ [/* generic array type */ 'ga', [[/* parameterized type */ 'pt', [
-	[/* actual argument types */
-		[/* wildcard type */ 'wt', [
-			[/* upper bounds */
-				'java.lang.Object'
-			],
-			/* lower bounds */ UDF
-		]]
-	],
-	/* raw type */ 'java.nio.file.WatchEvent$Kind',
-	/* owner type */ 'java.nio.file.WatchEvent'
-]]]],
+						[/* actual argument types */
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									'java.lang.Object'
+								],
+								/* lower bounds */ UDF
+							]]
+						],
+						/* raw type */ 'java.nio.file.WatchEvent$Kind',
+						/* owner type */ 'java.nio.file.WatchEvent'
+					]]]],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
@@ -66,17 +66,17 @@ JdkClassCreateHelper.class('java.nio.file.Watchable', [
 				[/* parameter */
 					/* name */ 'arg1',
 					/* type */ [/* generic array type */ 'ga', [[/* parameterized type */ 'pt', [
-	[/* actual argument types */
-		[/* wildcard type */ 'wt', [
-			[/* upper bounds */
-				'java.lang.Object'
-			],
-			/* lower bounds */ UDF
-		]]
-	],
-	/* raw type */ 'java.nio.file.WatchEvent$Kind',
-	/* owner type */ 'java.nio.file.WatchEvent'
-]]]],
+						[/* actual argument types */
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									'java.lang.Object'
+								],
+								/* lower bounds */ UDF
+							]]
+						],
+						/* raw type */ 'java.nio.file.WatchEvent$Kind',
+						/* owner type */ 'java.nio.file.WatchEvent'
+					]]]],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]

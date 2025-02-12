@@ -433,18 +433,18 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			/* name */ 'getTypeParameters',
 			/* parameters */,
 			/* return */ [/* generic array type */ 'ga', [[/* parameterized type */ 'pt', [
-	[/* actual argument types */
-		[/* parameterized type */ 'pt', [
-			[/* actual argument types */
-				[/* type variable ref */ 'tr', [/* name */ 'T']]
-			],
-			/* raw type */ 'java.lang.Class',
-			/* owner type */ UDF
-		]]
-	],
-	/* raw type */ 'java.lang.reflect.TypeVariable',
-	/* owner type */ UDF
-]]]],
+				[/* actual argument types */
+					[/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* type variable ref */ 'tr', [/* name */ 'T']]
+						],
+						/* raw type */ 'java.lang.Class',
+						/* owner type */ UDF
+					]]
+				],
+				/* raw type */ 'java.lang.reflect.TypeVariable',
+				/* owner type */ UDF
+			]]]],
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -491,17 +491,17 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			/* name */ 'getInterfaces',
 			/* parameters */,
 			/* return */ [/* generic array type */ 'ga', [[/* parameterized type */ 'pt', [
-	[/* actual argument types */
-		[/* wildcard type */ 'wt', [
-			[/* upper bounds */
-				'java.lang.Object'
-			],
-			/* lower bounds */ UDF
-		]]
-	],
-	/* raw type */ 'java.lang.Class',
-	/* owner type */ UDF
-]]]],
+				[/* actual argument types */
+					[/* wildcard type */ 'wt', [
+						[/* upper bounds */
+							'java.lang.Object'
+						],
+						/* lower bounds */ UDF
+					]]
+				],
+				/* raw type */ 'java.lang.Class',
+				/* owner type */ UDF
+			]]]],
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -618,17 +618,17 @@ JdkClassCreateHelper.class('java.lang.Class', [
 				[/* parameter */
 					/* name */ 'arg1',
 					/* type */ [/* generic array type */ 'ga', [[/* parameterized type */ 'pt', [
-	[/* actual argument types */
-		[/* wildcard type */ 'wt', [
-			[/* upper bounds */
-				'java.lang.Object'
-			],
-			/* lower bounds */ UDF
-		]]
-	],
-	/* raw type */ 'java.lang.Class',
-	/* owner type */ UDF
-]]]],
+						[/* actual argument types */
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									'java.lang.Object'
+								],
+								/* lower bounds */ UDF
+							]]
+						],
+						/* raw type */ 'java.lang.Class',
+						/* owner type */ UDF
+					]]]],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -712,17 +712,17 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			/* name */ 'getPermittedSubclasses',
 			/* parameters */,
 			/* return */ [/* generic array type */ 'ga', [[/* parameterized type */ 'pt', [
-	[/* actual argument types */
-		[/* wildcard type */ 'wt', [
-			[/* upper bounds */
-				'java.lang.Object'
-			],
-			/* lower bounds */ UDF
-		]]
-	],
-	/* raw type */ 'java.lang.Class',
-	/* owner type */ UDF
-]]]],
+				[/* actual argument types */
+					[/* wildcard type */ 'wt', [
+						[/* upper bounds */
+							'java.lang.Object'
+						],
+						/* lower bounds */ UDF
+					]]
+				],
+				/* raw type */ 'java.lang.Class',
+				/* owner type */ UDF
+			]]]],
 			/* exceptions */,
 			/* modifiers */ 1,
 			[/* annotations */
@@ -923,17 +923,17 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			/* name */ 'getClasses',
 			/* parameters */,
 			/* return */ [/* generic array type */ 'ga', [[/* parameterized type */ 'pt', [
-	[/* actual argument types */
-		[/* wildcard type */ 'wt', [
-			[/* upper bounds */
-				'java.lang.Object'
-			],
-			/* lower bounds */ UDF
-		]]
-	],
-	/* raw type */ 'java.lang.Class',
-	/* owner type */ UDF
-]]]],
+				[/* actual argument types */
+					[/* wildcard type */ 'wt', [
+						[/* upper bounds */
+							'java.lang.Object'
+						],
+						/* lower bounds */ UDF
+					]]
+				],
+				/* raw type */ 'java.lang.Class',
+				/* owner type */ UDF
+			]]]],
 			/* exceptions */,
 			/* modifiers */ 1,
 			[/* annotations */
@@ -977,17 +977,17 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			/* name */ 'getConstructors',
 			/* parameters */,
 			/* return */ [/* generic array type */ 'ga', [[/* parameterized type */ 'pt', [
-	[/* actual argument types */
-		[/* wildcard type */ 'wt', [
-			[/* upper bounds */
-				'java.lang.Object'
-			],
-			/* lower bounds */ UDF
-		]]
-	],
-	/* raw type */ 'java.lang.reflect.Constructor',
-	/* owner type */ UDF
-]]]],
+				[/* actual argument types */
+					[/* wildcard type */ 'wt', [
+						[/* upper bounds */
+							'java.lang.Object'
+						],
+						/* lower bounds */ UDF
+					]]
+				],
+				/* raw type */ 'java.lang.reflect.Constructor',
+				/* owner type */ UDF
+			]]]],
 			[/* exceptions */
 				[/* exception */
 					/* type */ 'java.lang.SecurityException',
@@ -1033,17 +1033,17 @@ JdkClassCreateHelper.class('java.lang.Class', [
 				[/* parameter */
 					/* name */ 'arg0',
 					/* type */ [/* generic array type */ 'ga', [[/* parameterized type */ 'pt', [
-	[/* actual argument types */
-		[/* wildcard type */ 'wt', [
-			[/* upper bounds */
-				'java.lang.Object'
-			],
-			/* lower bounds */ UDF
-		]]
-	],
-	/* raw type */ 'java.lang.Class',
-	/* owner type */ UDF
-]]]],
+						[/* actual argument types */
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									'java.lang.Object'
+								],
+								/* lower bounds */ UDF
+							]]
+						],
+						/* raw type */ 'java.lang.Class',
+						/* owner type */ UDF
+					]]]],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -1075,17 +1075,17 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			/* name */ 'getDeclaredClasses',
 			/* parameters */,
 			/* return */ [/* generic array type */ 'ga', [[/* parameterized type */ 'pt', [
-	[/* actual argument types */
-		[/* wildcard type */ 'wt', [
-			[/* upper bounds */
-				'java.lang.Object'
-			],
-			/* lower bounds */ UDF
-		]]
-	],
-	/* raw type */ 'java.lang.Class',
-	/* owner type */ UDF
-]]]],
+				[/* actual argument types */
+					[/* wildcard type */ 'wt', [
+						[/* upper bounds */
+							'java.lang.Object'
+						],
+						/* lower bounds */ UDF
+					]]
+				],
+				/* raw type */ 'java.lang.Class',
+				/* owner type */ UDF
+			]]]],
 			[/* exceptions */
 				[/* exception */
 					/* type */ 'java.lang.SecurityException',
@@ -1145,17 +1145,17 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			/* name */ 'getDeclaredConstructors',
 			/* parameters */,
 			/* return */ [/* generic array type */ 'ga', [[/* parameterized type */ 'pt', [
-	[/* actual argument types */
-		[/* wildcard type */ 'wt', [
-			[/* upper bounds */
-				'java.lang.Object'
-			],
-			/* lower bounds */ UDF
-		]]
-	],
-	/* raw type */ 'java.lang.reflect.Constructor',
-	/* owner type */ UDF
-]]]],
+				[/* actual argument types */
+					[/* wildcard type */ 'wt', [
+						[/* upper bounds */
+							'java.lang.Object'
+						],
+						/* lower bounds */ UDF
+					]]
+				],
+				/* raw type */ 'java.lang.reflect.Constructor',
+				/* owner type */ UDF
+			]]]],
 			[/* exceptions */
 				[/* exception */
 					/* type */ 'java.lang.SecurityException',
@@ -1207,17 +1207,17 @@ JdkClassCreateHelper.class('java.lang.Class', [
 				[/* parameter */
 					/* name */ 'arg1',
 					/* type */ [/* generic array type */ 'ga', [[/* parameterized type */ 'pt', [
-	[/* actual argument types */
-		[/* wildcard type */ 'wt', [
-			[/* upper bounds */
-				'java.lang.Object'
-			],
-			/* lower bounds */ UDF
-		]]
-	],
-	/* raw type */ 'java.lang.Class',
-	/* owner type */ UDF
-]]]],
+						[/* actual argument types */
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									'java.lang.Object'
+								],
+								/* lower bounds */ UDF
+							]]
+						],
+						/* raw type */ 'java.lang.Class',
+						/* owner type */ UDF
+					]]]],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -1245,17 +1245,17 @@ JdkClassCreateHelper.class('java.lang.Class', [
 				[/* parameter */
 					/* name */ 'arg0',
 					/* type */ [/* generic array type */ 'ga', [[/* parameterized type */ 'pt', [
-	[/* actual argument types */
-		[/* wildcard type */ 'wt', [
-			[/* upper bounds */
-				'java.lang.Object'
-			],
-			/* lower bounds */ UDF
-		]]
-	],
-	/* raw type */ 'java.lang.Class',
-	/* owner type */ UDF
-]]]],
+						[/* actual argument types */
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									'java.lang.Object'
+								],
+								/* lower bounds */ UDF
+							]]
+						],
+						/* raw type */ 'java.lang.Class',
+						/* owner type */ UDF
+					]]]],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -1520,17 +1520,17 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			/* name */ 'getNestMembers',
 			/* parameters */,
 			/* return */ [/* generic array type */ 'ga', [[/* parameterized type */ 'pt', [
-	[/* actual argument types */
-		[/* wildcard type */ 'wt', [
-			[/* upper bounds */
-				'java.lang.Object'
-			],
-			/* lower bounds */ UDF
-		]]
-	],
-	/* raw type */ 'java.lang.Class',
-	/* owner type */ UDF
-]]]],
+				[/* actual argument types */
+					[/* wildcard type */ 'wt', [
+						[/* upper bounds */
+							'java.lang.Object'
+						],
+						/* lower bounds */ UDF
+					]]
+				],
+				/* raw type */ 'java.lang.Class',
+				/* owner type */ UDF
+			]]]],
 			/* exceptions */,
 			/* modifiers */ 1,
 			[/* annotations */
