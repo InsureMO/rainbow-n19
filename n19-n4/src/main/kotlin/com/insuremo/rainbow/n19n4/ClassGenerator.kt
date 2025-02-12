@@ -1,8 +1,12 @@
 package com.insuremo.rainbow.n19n4
 
 import java.io.File
+import java.lang.reflect.AnnotatedType
+import java.lang.reflect.Constructor
+import java.lang.reflect.Executable
 import java.lang.reflect.GenericArrayType
 import java.lang.reflect.Modifier
+import java.lang.reflect.Parameter
 import java.lang.reflect.ParameterizedType
 import java.lang.reflect.TypeVariable
 import java.lang.reflect.Type
@@ -140,15 +144,15 @@ private fun generateAnnotation(annotation: Annotation, indent: String): String {
 	}
 }
 
-private fun generateAnnotations(annotations: List<Annotation>, indent: String): String {
+private fun generateAnnotations(annotations: List<Annotation>, comment: String, udf: Boolean, indent: String): String {
 	val filtered = annotations.filter { annotation ->
 		!IGNORE_ANNOTATION_TYPE_NAMES.contains(annotation.annotationClass.java.name)
 	}
 	if (filtered.isEmpty()) {
-		return generateComment("/* declared annotations */", indent)
+		return generateComment(if (udf) "$comment UDF" else comment, indent)
 	}
 	return listOf<String>(
-		"${indent}[/* declared annotations */",
+		"${indent}[${comment}",
 		filtered.joinToString(",\n") { generateAnnotation(it, "${indent}\t") },
 		"${indent}]"
 	).joinToString("\n")
@@ -161,10 +165,7 @@ private fun generateTypeVariable(tv: TypeVariable<*>, indent: String): String {
 		"${indent}[/* type variable */",
 		"${indent1}/* name */ '${tv.name}',",
 		generateBoundsOfTypeVariable(tv, indent1) + ",",
-		if (annotations.isEmpty())
-			"${indent1}/* declared annotations */ UDF,"
-		else
-			generateAnnotations(annotations, indent1),
+		generateAnnotations(annotations, "/* annotations */", true, indent1),
 		"${indent}]"
 	).joinToString("\n")
 }
@@ -293,18 +294,87 @@ private fun generateInterfaces(clazz: Class<*>): String {
 	).joinToString("\n")
 }
 
-private fun generateClassAnnotations(clazz: Class<*>): String {
-	return generateAnnotations(clazz.declaredAnnotations.toList(), "\t")
-}
-
-private fun generateClassTypeParameters(clazz: Class<*>): String {
-	val parameters = clazz.typeParameters
-	if (parameters == null || parameters.isEmpty()) {
-		return generateComment("/* type parameters */", "\t")
+private fun generateTypeParameters(typeParameters: List<TypeVariable<*>>?, udf: Boolean, indent: String): String {
+	if (typeParameters == null || typeParameters.isEmpty()) {
+		return generateComment(if (udf) "/* type parameters */ UDF" else "/* type parameters */", indent)
 	}
 	return listOf<String>(
-		"\t[ /* type parameters */",
-		parameters.joinToString(",\n") { generateTypeVariable(it, "\t\t") },
+		"${indent}[/* type parameters */",
+		typeParameters.joinToString(",\n") { generateTypeVariable(it, "${indent}\t") },
+		"${indent}]"
+	).joinToString("\n")
+}
+
+private fun generateParameter(parameter: Parameter, indent: String): String {
+	val indent1 = indent + "\t"
+	return listOf(
+		"${indent}[/* parameter */",
+		"${indent1}/* name */ '${parameter.name}',",
+		generateType(parameter.annotatedType.type, indent1) + ",",
+		"${indent1}/* modifiers */ ${parameter.modifiers},",
+		generateAnnotations(parameter.annotations.toList(), "/* annotations */", true, indent1),
+		"${indent}]"
+	).joinToString("\n")
+}
+
+private fun generateParameters(executable: Executable, indent: String): String {
+	val parameters = executable.parameters
+	if (parameters == null || parameters.isEmpty()) {
+		return "${indent}/* parameters */"
+	}
+	return listOf(
+		"${indent}[/* parameters */",
+		parameters.joinToString(",\n") { generateParameter(it, indent + "\t") },
+		"${indent}]"
+	).joinToString("\n")
+}
+
+private fun generateThrown(thrown: AnnotatedType, indent: String): String {
+	val indent1 = indent + "\t"
+	return listOf(
+		"${indent}[/* exception */",
+		generateType(thrown.type, indent1) + ",",
+		generateAnnotations(thrown.annotations.toList(), "/* annotations */", true, indent1),
+		"${indent}]"
+	).joinToString("\n")
+}
+
+private fun generateThrowns(executable: Executable, indent: String): String {
+	val throwns = executable.annotatedExceptionTypes
+	if (throwns == null || throwns.isEmpty()) {
+		return "${indent}/* exceptions */"
+	}
+	return listOf(
+		"${indent}[/* exceptions */",
+		throwns.joinToString(",\n") { generateThrown(it, indent + "\t") },
+		"${indent}]"
+	).joinToString("\n")
+}
+
+private fun generateConstructor(constructor: Constructor<*>): String {
+	val indent = "\t\t"
+	val indent1 = "\t\t\t"
+	return listOf(
+		"${indent}[/* ${constructor.toGenericString()} */",
+		generateParameters(constructor, indent1) + ",",
+		generateThrowns(constructor, indent1) + ",",
+		"${indent1}/* modifiers */ ${constructor.modifiers},",
+		generateAnnotations(constructor.annotations.toList(), "/* annotations */", true, indent1) + ",",
+		generateTypeParameters(constructor.typeParameters.toList(), true, indent1),
+		"${indent}]"
+	).joinToString("\n")
+}
+
+private fun generateConstructors(clazz: Class<*>): String {
+	val constructors = clazz.declaredConstructors.filter { constructor ->
+		Modifier.isPublic(constructor.modifiers) || Modifier.isProtected(constructor.modifiers)
+	}
+	if (constructors.isEmpty()) {
+		return generateComment("/* declared constructors */", "\t")
+	}
+	return listOf(
+		"\t[/* declared constructors */",
+		constructors.joinToString(",\n") { generateConstructor(it) },
 		"\t]"
 	).joinToString("\n")
 }
@@ -334,9 +404,11 @@ fun generateClass(className: String, targetInfo: JarGeneratingTargetInfo, checkV
 				"${generateSuperClass(clazz)},\n" +
 				"${generateInterfaces(clazz)},\n" +
 				"\t/* modifiers */ ${clazz.modifiers},\n" +
-				"${generateClassAnnotations(clazz)},\n" +
-				"${generateClassTypeParameters(clazz)},\n" +
-				"\t/* declared constructors */,\n" +
+				"${
+					generateAnnotations(clazz.declaredAnnotations.toList(), "/* declared annotations */", false, "\t")
+				},\n" +
+				"${generateTypeParameters(clazz.typeParameters.toList(), false, "\t")},\n" +
+				"${generateConstructors(clazz)},\n" +
 				"\t/* declared methods */,\n" +
 				"\t/* declared fields */,\n" +
 				"\t/* enum values */\n" +
