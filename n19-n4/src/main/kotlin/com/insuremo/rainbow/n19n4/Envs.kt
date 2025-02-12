@@ -1,6 +1,7 @@
 package com.insuremo.rainbow.n19n4
 
 import java.io.File
+import java.lang.reflect.Method
 
 enum class OutputMode {
 	TILED, HIERARCHICAL
@@ -22,19 +23,31 @@ object Envs {
 	private const val OUTPUT_MODE = "outputMode"
 	private const val OUTPUT_MODE_TILED = "tiled"
 	private const val OUTPUT_MODE_HIERARCHICAL = "package"
-	private const val INCLUDE_CLASSES = "includeClasses"
-	private const val EXCLUDE_PACKAGES = "excludePackages"
-	private val DEFAULT_EXCLUDE_PACKAGES = listOf(
+	private const val INCLUDED_CLASSES = "includedClasses"
+	private const val EXCLUDED_PACKAGES = "excludedPackages"
+	private val DEFAULT_EXCLUDED_PACKAGES = listOf(
 		"apple.security", "apple.laf", "com.apple",
-		"java.applet", "java.awt", "javax.swing",
-		"java.rmi", "javax.rmi", "javax.print",
-		"javax.smartcardio", "javax.accessibility", "javax.sound",
+		"java.applet", "java.awt",
+		"java.beans", "java.rmi",
+		"java.lang.constant", "java.lang.instrument", "java.lang.module", "java.lang.management", "java.lang.runtime",
+		"java.net", "java.nio", "java.sql",
+		"java.security",
+		"java.util.concurrent", "java.util.jar", "java.util.logging", "java.util.prefs", "java.util.spi",
+		"javax.rmi", "javax.print",
+		"javax.smartcardio", "javax.accessibility", "javax.sound", "javax.imageio",
+		"javax.swing",
+		"javax.annotation",
+		"javax.crypto", "javax.lang.model", "javax.management", "javax.naming", "javax.net",
+		"javax.script", "javax.security", "javax.sql", "javax.tools", "javax.transaction", "javax.xml",
 		"jdk",
 		"com.sun", "sun",
 		"netscape.javascript",
 		"org.ietf.jgss", "org.jcp.xml", "org.w3c.dom", "org.xml.sax"
 	).joinToString(",")
-	private const val EXCLUDE_CLASSES = "excludeClasses"
+	private const val EXCLUDED_CLASSES = "excludedClasses"
+	private val DEFAULT_EXCLUDED_CLASSES = listOf(
+		"java.beans.AppletInitializer"
+	).joinToString(",")
 
 	// dev constants
 	private const val TRANSFORM_MOD_2_JAR = "dev.transformMod2Jar"
@@ -58,13 +71,31 @@ object Envs {
 	val shouldCleanMod2jarTempdir by lazy { this.isEnabled(CLEAN_MOD2JAR_TEMP_DIR, true) }
 	val shouldDeleteMod2jarTempdirOnFinalization by lazy { this.isEnabled(TEMP_DIR_MOD2JAR_POST_DEL, true) }
 	val includeClasses by lazy {
-		this.get(INCLUDE_CLASSES, "").split(",").toList().associate { Pair(it, true) }
+		this.get(INCLUDED_CLASSES, "").split(",").toList().associate { Pair(it, true) }
 	}
 	val excludedPackages by lazy {
-		this.get(EXCLUDE_PACKAGES, DEFAULT_EXCLUDE_PACKAGES).split(",").map { name -> "${name}." }
+		this.get(EXCLUDED_PACKAGES, DEFAULT_EXCLUDED_PACKAGES).split(",").map { name -> "${name}." }
 	}
 	val excludedClasses by lazy {
-		this.get(EXCLUDE_CLASSES, "").split(",").toList().associate { Pair(it, true) }
+		this.get(EXCLUDED_CLASSES, DEFAULT_EXCLUDED_CLASSES).split(",").toList().associate { Pair(it, true) }
+	}
+
+	/** this is programmatic */
+	val excludeMethods by lazy {
+		{ method: Method ->
+			listOf(
+				"public abstract java.awt.Component java.beans.beancontext.BeanContextChildComponentProxy.getComponent()",
+				"public abstract java.awt.Container java.beans.beancontext.BeanContextContainerProxy.getContainer()",
+				"public abstract java.awt.Image java.beans.BeanInfo.getIcon(int)",
+				"public static java.lang.Object java.beans.Beans.instantiate(java.lang.ClassLoader,java.lang.String,java.beans.beancontext.BeanContext,java.beans.AppletInitializer) throws java.io.IOException,java.lang.ClassNotFoundException",
+				"public abstract void java.beans.PropertyEditor.paintValue(java.awt.Graphics,java.awt.Rectangle)",
+				"public abstract java.awt.Component java.beans.PropertyEditor.getCustomEditor()",
+				"public void java.beans.PropertyEditorSupport.paintValue(java.awt.Graphics,java.awt.Rectangle)",
+				"public java.awt.Component java.beans.PropertyEditorSupport.getCustomEditor()",
+				"public java.awt.Image java.beans.SimpleBeanInfo.loadImage(java.lang.String)",
+				"public java.awt.Image java.beans.SimpleBeanInfo.getIcon(int)"
+			).contains(method.toGenericString())
+		}
 	}
 
 	// dev
@@ -142,14 +173,19 @@ object Envs {
 					to "Structure of output files, either "
 					+ "\"${cpv(OUTPUT_MODE_TILED)}\" or \"${cpv(OUTPUT_MODE_HIERARCHICAL)}\". "
 					+ "Default \"${cdv(OUTPUT_MODE_HIERARCHICAL)}\"",
-			"${KEY_PREFIX}${INCLUDE_CLASSES}"
-					to "Classes that must be included, separated by commas, taking priority over [${cpv(EXCLUDE_PACKAGES)}] "
-					+ "and [${cpv(EXCLUDE_CLASSES)}] declarations. "
+			"${KEY_PREFIX}${INCLUDED_CLASSES}"
+					to "Classes that must be included, separated by commas, taking priority over [${
+				cpv(
+					EXCLUDED_PACKAGES
+				)
+			}] "
+					+ "and [${cpv(EXCLUDED_CLASSES)}] declarations. "
 					+ "No default value.",
-			"${KEY_PREFIX}${EXCLUDE_PACKAGES}"
+			"${KEY_PREFIX}${EXCLUDED_PACKAGES}"
 					to "Packages that be excluded, separated by commas. "
-					+ "Default \"${cdv(DEFAULT_EXCLUDE_PACKAGES)}\".",
-			"${KEY_PREFIX}${EXCLUDE_CLASSES}" to "Classes that be excluded, separated by commas. No default value.",
+					+ "Default \"${cdv(DEFAULT_EXCLUDED_PACKAGES)}\".",
+			"${KEY_PREFIX}${EXCLUDED_CLASSES}" to "Classes that be excluded, separated by commas. " +
+					"Default \"${cdv(DEFAULT_EXCLUDED_CLASSES)}\".",
 		)
 
 		val maxCommandLength = args.keys.maxOf { it.length } + 5
