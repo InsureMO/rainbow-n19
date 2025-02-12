@@ -45,19 +45,19 @@ JdkClassCreateHelper.class('java.text.AttributedString', [
 		[/* public java.text.AttributedString(java.text.AttributedCharacterIterator,int,int) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'text',
 					/* type */ 'java.text.AttributedCharacterIterator',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'beginIndex',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'endIndex',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -71,7 +71,7 @@ JdkClassCreateHelper.class('java.text.AttributedString', [
 		[/* public java.text.AttributedString(java.text.AttributedCharacterIterator) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'text',
 					/* type */ 'java.text.AttributedCharacterIterator',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -85,7 +85,7 @@ JdkClassCreateHelper.class('java.text.AttributedString', [
 		[/* public java.text.AttributedString(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'text',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -99,13 +99,13 @@ JdkClassCreateHelper.class('java.text.AttributedString', [
 		[/* public java.text.AttributedString(java.lang.String,java.util.Map<? extends java.text.AttributedCharacterIterator$Attribute, ?>) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'entry',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'newRunAttributes',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -192,7 +192,7 @@ JdkClassCreateHelper.class('java.text.AttributedString', [
 			/* name */ 'addAttributes',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'entry',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -215,13 +215,13 @@ JdkClassCreateHelper.class('java.text.AttributedString', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'attributes',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'beginIndex',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -237,13 +237,13 @@ JdkClassCreateHelper.class('java.text.AttributedString', [
 			/* name */ 'addAttribute',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'attribute',
 					/* type */ 'java.text.AttributedCharacterIterator$Attribute',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'value',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -259,25 +259,25 @@ JdkClassCreateHelper.class('java.text.AttributedString', [
 			/* name */ 'addAttribute',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'attribute',
 					/* type */ 'java.text.AttributedCharacterIterator$Attribute',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'value',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'beginIndex',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg3',
+					/* name */ 'endIndex',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

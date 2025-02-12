@@ -13,7 +13,7 @@ JdkClassCreateHelper.class('java.lang.annotation.IncompleteAnnotationException',
 		[/* public java.lang.annotation.IncompleteAnnotationException(java.lang.Class<? extends java.lang.annotation.Annotation>,java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'annotationType',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -30,7 +30,7 @@ JdkClassCreateHelper.class('java.lang.annotation.IncompleteAnnotationException',
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'elementName',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

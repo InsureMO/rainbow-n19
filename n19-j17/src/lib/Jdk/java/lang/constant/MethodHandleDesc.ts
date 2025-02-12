@@ -32,19 +32,19 @@ JdkClassCreateHelper.class('java.lang.constant.MethodHandleDesc', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'owner',
 					/* type */ 'java.lang.constant.DirectMethodHandleDesc$Kind',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'name',
 					/* type */ 'java.lang.constant.ClassDesc',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'lookupDescriptor',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -66,7 +66,7 @@ JdkClassCreateHelper.class('java.lang.constant.MethodHandleDesc', [
 			/* name */ 'asType',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'type',
 					/* type */ 'java.lang.constant.MethodTypeDesc',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -82,25 +82,25 @@ JdkClassCreateHelper.class('java.lang.constant.MethodHandleDesc', [
 			/* name */ 'ofField',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'owner',
 					/* type */ 'java.lang.constant.DirectMethodHandleDesc$Kind',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'fieldName',
 					/* type */ 'java.lang.constant.ClassDesc',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'fieldType',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg3',
+					/* name */ 'mtr',
 					/* type */ 'java.lang.constant.ClassDesc',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -116,19 +116,19 @@ JdkClassCreateHelper.class('java.lang.constant.MethodHandleDesc', [
 			/* name */ 'ofMethod',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'owner',
 					/* type */ 'java.lang.constant.DirectMethodHandleDesc$Kind',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'name',
 					/* type */ 'java.lang.constant.ClassDesc',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'lookupMethodType',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

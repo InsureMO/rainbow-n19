@@ -169,7 +169,7 @@ JdkClassCreateHelper.class('java.lang.invoke.SerializedLambda', [
 			/* name */ 'getCapturedArg',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'i',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

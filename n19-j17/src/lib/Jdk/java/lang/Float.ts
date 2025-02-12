@@ -25,7 +25,7 @@ JdkClassCreateHelper.class('java.lang.Float', [
 		[/* public java.lang.Float(java.lang.String) throws java.lang.NumberFormatException */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 's',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -50,7 +50,7 @@ JdkClassCreateHelper.class('java.lang.Float', [
 		[/* public java.lang.Float(double) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'value',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -70,7 +70,7 @@ JdkClassCreateHelper.class('java.lang.Float', [
 		[/* public java.lang.Float(float) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'value',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -93,7 +93,7 @@ JdkClassCreateHelper.class('java.lang.Float', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -159,7 +159,7 @@ JdkClassCreateHelper.class('java.lang.Float', [
 			/* name */ 'min',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'b',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -181,7 +181,7 @@ JdkClassCreateHelper.class('java.lang.Float', [
 			/* name */ 'max',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'b',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -257,7 +257,7 @@ JdkClassCreateHelper.class('java.lang.Float', [
 			/* name */ 'compareTo',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'anotherFloat',
 					/* type */ 'java.lang.Float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -289,13 +289,13 @@ JdkClassCreateHelper.class('java.lang.Float', [
 			/* name */ 'compare',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'f2',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'thisBits',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -406,7 +406,7 @@ JdkClassCreateHelper.class('java.lang.Float', [
 			/* name */ 'toHexString',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 's',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -443,7 +443,7 @@ JdkClassCreateHelper.class('java.lang.Float', [
 			/* name */ 'resolveConstantDesc',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'lookup',
 					/* type */ 'java.lang.invoke.MethodHandles$Lookup',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -499,7 +499,7 @@ JdkClassCreateHelper.class('java.lang.Float', [
 			/* name */ 'sum',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'b',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF

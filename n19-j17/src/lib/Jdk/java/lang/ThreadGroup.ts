@@ -15,7 +15,7 @@ JdkClassCreateHelper.class('java.lang.ThreadGroup', [
 		[/* public java.lang.ThreadGroup(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -29,13 +29,13 @@ JdkClassCreateHelper.class('java.lang.ThreadGroup', [
 		[/* public java.lang.ThreadGroup(java.lang.ThreadGroup,java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'parent',
 					/* type */ 'java.lang.ThreadGroup',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -103,7 +103,7 @@ JdkClassCreateHelper.class('java.lang.ThreadGroup', [
 			/* name */ 'setDaemon',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'daemon',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -258,13 +258,13 @@ JdkClassCreateHelper.class('java.lang.ThreadGroup', [
 			/* name */ 'uncaughtException',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ueh',
 					/* type */ 'java.lang.Thread',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 't',
 					/* type */ 'java.lang.Throwable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -310,7 +310,7 @@ JdkClassCreateHelper.class('java.lang.ThreadGroup', [
 			/* name */ 'setMaxPriority',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'groupsSnapshot',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -365,7 +365,7 @@ JdkClassCreateHelper.class('java.lang.ThreadGroup', [
 			/* name */ 'parentOf',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'g',
 					/* type */ 'java.lang.ThreadGroup',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -381,7 +381,7 @@ JdkClassCreateHelper.class('java.lang.ThreadGroup', [
 			/* name */ 'allowThreadSuspension',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'b',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF

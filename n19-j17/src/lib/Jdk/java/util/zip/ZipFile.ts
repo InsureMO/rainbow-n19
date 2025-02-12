@@ -16,13 +16,13 @@ JdkClassCreateHelper.class('java.util.zip.ZipFile', [
 		[/* public java.util.zip.ZipFile(java.lang.String,java.nio.charset.Charset) throws java.io.IOException */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'charset',
 					/* type */ 'java.nio.charset.Charset',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -41,13 +41,13 @@ JdkClassCreateHelper.class('java.util.zip.ZipFile', [
 		[/* public java.util.zip.ZipFile(java.io.File,java.nio.charset.Charset) throws java.io.IOException */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'file',
 					/* type */ 'java.io.File',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'charset',
 					/* type */ 'java.nio.charset.Charset',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -66,7 +66,7 @@ JdkClassCreateHelper.class('java.util.zip.ZipFile', [
 		[/* public java.util.zip.ZipFile(java.lang.String) throws java.io.IOException */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -85,13 +85,13 @@ JdkClassCreateHelper.class('java.util.zip.ZipFile', [
 		[/* public java.util.zip.ZipFile(java.io.File,int) throws java.io.IOException */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'file',
 					/* type */ 'java.io.File',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'mode',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -110,7 +110,7 @@ JdkClassCreateHelper.class('java.util.zip.ZipFile', [
 		[/* public java.util.zip.ZipFile(java.io.File) throws java.util.zip.ZipException,java.io.IOException */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'file',
 					/* type */ 'java.io.File',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -133,19 +133,19 @@ JdkClassCreateHelper.class('java.util.zip.ZipFile', [
 		[/* public java.util.zip.ZipFile(java.io.File,int,java.nio.charset.Charset) throws java.io.IOException */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'file',
 					/* type */ 'java.io.File',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'mode',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'charset',
 					/* type */ 'java.nio.charset.Charset',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -239,7 +239,7 @@ JdkClassCreateHelper.class('java.util.zip.ZipFile', [
 			/* name */ 'getInputStream',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'pos',
 					/* type */ 'java.util.zip.ZipEntry',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -260,7 +260,7 @@ JdkClassCreateHelper.class('java.util.zip.ZipFile', [
 			/* name */ 'getEntry',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'pos',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

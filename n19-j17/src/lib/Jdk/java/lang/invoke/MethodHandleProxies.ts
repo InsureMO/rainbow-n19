@@ -15,7 +15,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandleProxies', [
 			/* name */ 'asInterfaceInstance',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'caller',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'T']]
@@ -27,7 +27,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandleProxies', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'ccl',
 					/* type */ 'java.lang.invoke.MethodHandle',
 					/* modifiers */ 0,
 					/* annotations */ UDF

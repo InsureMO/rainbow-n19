@@ -24,7 +24,7 @@ JdkClassCreateHelper.class('java.time.zone.ZoneOffsetTransition', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'd',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -58,7 +58,7 @@ JdkClassCreateHelper.class('java.time.zone.ZoneOffsetTransition', [
 			/* name */ 'compareTo',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'transition',
 					/* type */ 'java.time.zone.ZoneOffsetTransition',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -90,13 +90,13 @@ JdkClassCreateHelper.class('java.time.zone.ZoneOffsetTransition', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'offsetBefore',
 					/* type */ 'java.time.LocalDateTime',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'offsetAfter',
 					/* type */ 'java.time.ZoneOffset',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -181,7 +181,7 @@ JdkClassCreateHelper.class('java.time.zone.ZoneOffsetTransition', [
 			/* name */ 'isValidOffset',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'offset',
 					/* type */ 'java.time.ZoneOffset',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -44,19 +44,19 @@ JdkClassCreateHelper.class('java.util.LinkedHashMap', [
 		[/* public java.util.LinkedHashMap(int,float,boolean) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'initialCapacity',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'loadFactor',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'accessOrder',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -77,7 +77,7 @@ JdkClassCreateHelper.class('java.util.LinkedHashMap', [
 		[/* public java.util.LinkedHashMap(int) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'initialCapacity',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -91,13 +91,13 @@ JdkClassCreateHelper.class('java.util.LinkedHashMap', [
 		[/* public java.util.LinkedHashMap(int,float) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'initialCapacity',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'loadFactor',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -111,7 +111,7 @@ JdkClassCreateHelper.class('java.util.LinkedHashMap', [
 		[/* public java.util.LinkedHashMap(java.util.Map<? extends K, ? extends V>) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'm',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -145,7 +145,7 @@ JdkClassCreateHelper.class('java.util.LinkedHashMap', [
 			/* name */ 'get',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'key',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -185,7 +185,7 @@ JdkClassCreateHelper.class('java.util.LinkedHashMap', [
 			/* name */ 'replaceAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'e',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -250,7 +250,7 @@ JdkClassCreateHelper.class('java.util.LinkedHashMap', [
 			/* name */ 'forEach',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'e',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -302,7 +302,7 @@ JdkClassCreateHelper.class('java.util.LinkedHashMap', [
 			/* name */ 'containsValue',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'v',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -318,13 +318,13 @@ JdkClassCreateHelper.class('java.util.LinkedHashMap', [
 			/* name */ 'getOrDefault',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'key',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'defaultValue',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -340,7 +340,7 @@ JdkClassCreateHelper.class('java.util.LinkedHashMap', [
 			/* name */ 'removeEldestEntry',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'eldest',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'K']],

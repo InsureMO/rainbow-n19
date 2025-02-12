@@ -17,7 +17,7 @@ JdkClassCreateHelper.class('java.time.zone.ZoneOffsetTransitionRule', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -51,49 +51,49 @@ JdkClassCreateHelper.class('java.time.zone.ZoneOffsetTransitionRule', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'dayOfMonthIndicator',
 					/* type */ 'java.time.Month',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'dayOfWeek',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'time',
 					/* type */ 'java.time.DayOfWeek',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg3',
+					/* name */ 'timeEndOfDay',
 					/* type */ 'java.time.LocalTime',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg4',
+					/* name */ 'timeDefinition',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg5',
+					/* name */ 'standardOffset',
 					/* type */ 'java.time.zone.ZoneOffsetTransitionRule$TimeDefinition',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg6',
+					/* name */ 'offsetBefore',
 					/* type */ 'java.time.ZoneOffset',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg7',
+					/* name */ 'offsetAfter',
 					/* type */ 'java.time.ZoneOffset',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -142,7 +142,7 @@ JdkClassCreateHelper.class('java.time.zone.ZoneOffsetTransitionRule', [
 			/* name */ 'createTransition',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'date',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

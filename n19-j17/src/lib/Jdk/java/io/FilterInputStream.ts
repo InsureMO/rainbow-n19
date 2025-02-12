@@ -13,7 +13,7 @@ JdkClassCreateHelper.class('java.io.FilterInputStream', [
 		[/* protected java.io.FilterInputStream(java.io.InputStream) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'in',
 					/* type */ 'java.io.InputStream',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -30,19 +30,19 @@ JdkClassCreateHelper.class('java.io.FilterInputStream', [
 			/* name */ 'read',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'b',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'off',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'len',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -63,7 +63,7 @@ JdkClassCreateHelper.class('java.io.FilterInputStream', [
 			/* name */ 'read',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'b',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -112,7 +112,7 @@ JdkClassCreateHelper.class('java.io.FilterInputStream', [
 			/* name */ 'mark',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'readlimit',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -128,7 +128,7 @@ JdkClassCreateHelper.class('java.io.FilterInputStream', [
 			/* name */ 'skip',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'n',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF

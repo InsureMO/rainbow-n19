@@ -20,7 +20,7 @@ JdkClassCreateHelper.class('java.lang.LinkageError', [
 		[/* public java.lang.LinkageError(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 's',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -34,13 +34,13 @@ JdkClassCreateHelper.class('java.lang.LinkageError', [
 		[/* public java.lang.LinkageError(java.lang.String,java.lang.Throwable) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 's',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'cause',
 					/* type */ 'java.lang.Throwable',
 					/* modifiers */ 0,
 					/* annotations */ UDF

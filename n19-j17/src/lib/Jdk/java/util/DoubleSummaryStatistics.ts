@@ -22,25 +22,25 @@ JdkClassCreateHelper.class('java.util.DoubleSummaryStatistics', [
 		[/* public java.util.DoubleSummaryStatistics(long,double,double,double) throws java.lang.IllegalArgumentException */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ncount',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'count',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'min',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg3',
+					/* name */ 'max',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -71,7 +71,7 @@ JdkClassCreateHelper.class('java.util.DoubleSummaryStatistics', [
 			/* name */ 'accept',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'value',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -87,7 +87,7 @@ JdkClassCreateHelper.class('java.util.DoubleSummaryStatistics', [
 			/* name */ 'combine',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ 'java.util.DoubleSummaryStatistics',
 					/* modifiers */ 0,
 					/* annotations */ UDF

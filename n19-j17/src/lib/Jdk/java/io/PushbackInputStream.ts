@@ -13,7 +13,7 @@ JdkClassCreateHelper.class('java.io.PushbackInputStream', [
 		[/* public java.io.PushbackInputStream(java.io.InputStream) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'in',
 					/* type */ 'java.io.InputStream',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -27,13 +27,13 @@ JdkClassCreateHelper.class('java.io.PushbackInputStream', [
 		[/* public java.io.PushbackInputStream(java.io.InputStream,int) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'in',
 					/* type */ 'java.io.InputStream',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'size',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -50,19 +50,19 @@ JdkClassCreateHelper.class('java.io.PushbackInputStream', [
 			/* name */ 'read',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'b',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'off',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'len',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -111,7 +111,7 @@ JdkClassCreateHelper.class('java.io.PushbackInputStream', [
 			/* name */ 'mark',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'readlimit',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -127,7 +127,7 @@ JdkClassCreateHelper.class('java.io.PushbackInputStream', [
 			/* name */ 'skip',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'n',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -185,7 +185,7 @@ JdkClassCreateHelper.class('java.io.PushbackInputStream', [
 			/* name */ 'unread',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'b',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -206,7 +206,7 @@ JdkClassCreateHelper.class('java.io.PushbackInputStream', [
 			/* name */ 'unread',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'b',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -227,19 +227,19 @@ JdkClassCreateHelper.class('java.io.PushbackInputStream', [
 			/* name */ 'unread',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'b',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'off',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'len',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

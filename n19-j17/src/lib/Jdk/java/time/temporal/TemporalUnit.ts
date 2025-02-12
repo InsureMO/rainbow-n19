@@ -63,7 +63,7 @@ JdkClassCreateHelper.class('java.time.temporal.TemporalUnit', [
 			/* name */ 'isSupportedBy',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ex',
 					/* type */ 'java.time.temporal.Temporal',
 					/* modifiers */ 0,
 					/* annotations */ UDF

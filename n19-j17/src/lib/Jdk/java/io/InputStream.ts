@@ -25,19 +25,19 @@ JdkClassCreateHelper.class('java.io.InputStream', [
 			/* name */ 'read',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'b',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'off',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'len',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -58,7 +58,7 @@ JdkClassCreateHelper.class('java.io.InputStream', [
 			/* name */ 'read',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'b',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -107,7 +107,7 @@ JdkClassCreateHelper.class('java.io.InputStream', [
 			/* name */ 'mark',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'readlimit',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -137,7 +137,7 @@ JdkClassCreateHelper.class('java.io.InputStream', [
 			/* name */ 'readNBytes',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'buf',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -158,19 +158,19 @@ JdkClassCreateHelper.class('java.io.InputStream', [
 			/* name */ 'readNBytes',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'count',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'b',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'off',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -191,7 +191,7 @@ JdkClassCreateHelper.class('java.io.InputStream', [
 			/* name */ 'transferTo',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'out',
 					/* type */ 'java.io.OutputStream',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -212,7 +212,7 @@ JdkClassCreateHelper.class('java.io.InputStream', [
 			/* name */ 'skip',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'nr',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -279,7 +279,7 @@ JdkClassCreateHelper.class('java.io.InputStream', [
 			/* name */ 'skipNBytes',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ns',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF

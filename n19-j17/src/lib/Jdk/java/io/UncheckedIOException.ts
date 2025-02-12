@@ -13,13 +13,13 @@ JdkClassCreateHelper.class('java.io.UncheckedIOException', [
 		[/* public java.io.UncheckedIOException(java.lang.String,java.io.IOException) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'message',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'cause',
 					/* type */ 'java.io.IOException',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -33,7 +33,7 @@ JdkClassCreateHelper.class('java.io.UncheckedIOException', [
 		[/* public java.io.UncheckedIOException(java.io.IOException) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'cause',
 					/* type */ 'java.io.IOException',
 					/* modifiers */ 0,
 					/* annotations */ UDF

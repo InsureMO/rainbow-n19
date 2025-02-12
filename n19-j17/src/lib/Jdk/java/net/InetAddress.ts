@@ -17,7 +17,7 @@ JdkClassCreateHelper.class('java.net.InetAddress', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -108,7 +108,7 @@ JdkClassCreateHelper.class('java.net.InetAddress', [
 			/* name */ 'isReachable',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'timeout',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -129,19 +129,19 @@ JdkClassCreateHelper.class('java.net.InetAddress', [
 			/* name */ 'isReachable',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'netif',
 					/* type */ 'java.net.NetworkInterface',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'ttl',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'timeout',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -204,13 +204,13 @@ JdkClassCreateHelper.class('java.net.InetAddress', [
 			/* name */ 'getByAddress',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newAddr',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'addr',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF

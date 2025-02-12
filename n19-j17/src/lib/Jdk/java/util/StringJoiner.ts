@@ -13,7 +13,7 @@ JdkClassCreateHelper.class('java.util.StringJoiner', [
 		[/* public java.util.StringJoiner(java.lang.CharSequence) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'delimiter',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -27,19 +27,19 @@ JdkClassCreateHelper.class('java.util.StringJoiner', [
 		[/* public java.util.StringJoiner(java.lang.CharSequence,java.lang.CharSequence,java.lang.CharSequence) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'delimiter',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'prefix',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'suffix',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -56,7 +56,7 @@ JdkClassCreateHelper.class('java.util.StringJoiner', [
 			/* name */ 'add',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newElement',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -90,7 +90,7 @@ JdkClassCreateHelper.class('java.util.StringJoiner', [
 			/* name */ 'merge',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ 'java.util.StringJoiner',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -106,7 +106,7 @@ JdkClassCreateHelper.class('java.util.StringJoiner', [
 			/* name */ 'setEmptyValue',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'emptyValue',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF

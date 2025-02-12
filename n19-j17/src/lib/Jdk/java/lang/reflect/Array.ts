@@ -317,7 +317,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Array', [
 			/* name */ 'newInstance',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'length',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -355,7 +355,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Array', [
 			/* name */ 'newInstance',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'dimensions',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

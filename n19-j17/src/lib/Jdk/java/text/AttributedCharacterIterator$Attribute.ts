@@ -15,7 +15,7 @@ JdkClassCreateHelper.class('java.text.AttributedCharacterIterator$Attribute', [
 		[/* protected java.text.AttributedCharacterIterator$Attribute(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -41,7 +41,7 @@ JdkClassCreateHelper.class('java.text.AttributedCharacterIterator$Attribute', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF

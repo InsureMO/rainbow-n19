@@ -24,7 +24,7 @@ JdkClassCreateHelper.class('java.lang.module.ResolvedModule', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'that',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF

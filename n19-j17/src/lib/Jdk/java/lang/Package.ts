@@ -44,7 +44,7 @@ JdkClassCreateHelper.class('java.lang.Package', [
 			/* name */ 'isAnnotationPresent',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'annotationClass',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -71,7 +71,7 @@ JdkClassCreateHelper.class('java.lang.Package', [
 			/* name */ 'getPackage',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'l',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -94,7 +94,7 @@ JdkClassCreateHelper.class('java.lang.Package', [
 			/* name */ 'getAnnotation',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'annotationClass',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'A']]
@@ -163,7 +163,7 @@ JdkClassCreateHelper.class('java.lang.Package', [
 			/* name */ 'getDeclaredAnnotation',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'annotationClass',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'A']]
@@ -232,7 +232,7 @@ JdkClassCreateHelper.class('java.lang.Package', [
 			/* name */ 'isSealed',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'uri',
 					/* type */ 'java.net.URL',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -322,7 +322,7 @@ JdkClassCreateHelper.class('java.lang.Package', [
 			/* name */ 'isCompatibleWith',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'i',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

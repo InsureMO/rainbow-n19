@@ -32,7 +32,7 @@ JdkClassCreateHelper.class('java.util.spi.LocaleServiceProvider', [
 			/* name */ 'isSupportedLocale',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'available',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF

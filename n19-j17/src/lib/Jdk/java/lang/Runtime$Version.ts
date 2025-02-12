@@ -25,7 +25,7 @@ JdkClassCreateHelper.class('java.lang.Runtime$Version', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -74,7 +74,7 @@ JdkClassCreateHelper.class('java.lang.Runtime$Version', [
 			/* name */ 'compareTo',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Runtime$Version',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -205,7 +205,7 @@ JdkClassCreateHelper.class('java.lang.Runtime$Version', [
 			/* name */ 'parse',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'i',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -239,7 +239,7 @@ JdkClassCreateHelper.class('java.lang.Runtime$Version', [
 			/* name */ 'equalsIgnoreOptional',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'that',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -264,7 +264,7 @@ JdkClassCreateHelper.class('java.lang.Runtime$Version', [
 			/* name */ 'compareToIgnoreOptional',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Runtime$Version',
 					/* modifiers */ 0,
 					/* annotations */ UDF

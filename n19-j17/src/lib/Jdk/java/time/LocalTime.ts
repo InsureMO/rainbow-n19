@@ -28,7 +28,7 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'get',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -44,7 +44,7 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -94,7 +94,7 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'compareTo',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ 'java.time.LocalTime',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -110,7 +110,7 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'getLong',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -126,7 +126,7 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'format',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'formatter',
 					/* type */ 'java.time.format.DateTimeFormatter',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -142,19 +142,19 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'minute',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'second',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'nanoOfSecond',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -176,7 +176,7 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'minute',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -198,13 +198,13 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'minute',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'second',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -226,7 +226,7 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'from',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'time',
 					/* type */ 'java.time.temporal.TemporalAccessor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -242,7 +242,7 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'query',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'query',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'R']]
@@ -272,7 +272,7 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'range',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -288,7 +288,7 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'isSupported',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -304,7 +304,7 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'isSupported',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'unit',
 					/* type */ 'java.time.temporal.TemporalUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -320,7 +320,7 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'parse',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'formatter',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -358,13 +358,13 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'toEpochSecond',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'date',
 					/* type */ 'java.time.LocalDate',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'offset',
 					/* type */ 'java.time.ZoneOffset',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -407,13 +407,13 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'ofInstant',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'zone',
 					/* type */ 'java.time.Instant',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'offset',
 					/* type */ 'java.time.ZoneId',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -447,7 +447,7 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'now',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'now',
 					/* type */ 'java.time.Clock',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -479,7 +479,7 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'adjustInto',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'temporal',
 					/* type */ 'java.time.temporal.Temporal',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -533,13 +533,13 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'with',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'chronoField',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'field',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -555,7 +555,7 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'with',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'adjuster',
 					/* type */ 'java.time.temporal.TemporalAdjuster',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -587,7 +587,7 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'plus',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'amountToAdd',
 					/* type */ 'java.time.temporal.TemporalAmount',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -603,13 +603,13 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'plus',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'chronoUnit',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'amountToAdd',
 					/* type */ 'java.time.temporal.TemporalUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -647,13 +647,13 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'until',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'nanosUntil',
 					/* type */ 'java.time.temporal.Temporal',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'chronoUnit',
 					/* type */ 'java.time.temporal.TemporalUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -669,7 +669,7 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'plusNanos',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'nanosToAdd',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -685,7 +685,7 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'plusSeconds',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'secondstoAdd',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -701,7 +701,7 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'plusHours',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'hoursToAdd',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -717,7 +717,7 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'plusMinutes',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'minutesToAdd',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -733,7 +733,7 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'minus',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'amountToSubtract',
 					/* type */ 'java.time.temporal.TemporalAmount',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -787,13 +787,13 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'minus',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'amountToSubtract',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'unit',
 					/* type */ 'java.time.temporal.TemporalUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -809,7 +809,7 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'minusHours',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'hoursToSubtract',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -825,7 +825,7 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'minusMinutes',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'minutesToSubtract',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -841,7 +841,7 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'minusSeconds',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'secondsToSubtract',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -857,7 +857,7 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'minusNanos',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'nanosToSubtract',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -873,7 +873,7 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'truncatedTo',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'unit',
 					/* type */ 'java.time.temporal.TemporalUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -889,7 +889,7 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'isAfter',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ 'java.time.LocalTime',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -905,7 +905,7 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'isBefore',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ 'java.time.LocalTime',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -930,7 +930,7 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'ofSecondOfDay',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'hours',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -955,7 +955,7 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'ofNanoOfDay',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'hours',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -971,7 +971,7 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'withHour',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'hour',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -987,7 +987,7 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'withMinute',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'minute',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1003,7 +1003,7 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'withSecond',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'second',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1019,7 +1019,7 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'withNano',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'nanoOfSecond',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1035,7 +1035,7 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'atOffset',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'offset',
 					/* type */ 'java.time.ZoneOffset',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1051,7 +1051,7 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'atDate',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'date',
 					/* type */ 'java.time.LocalDate',
 					/* modifiers */ 0,
 					/* annotations */ UDF

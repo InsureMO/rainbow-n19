@@ -53,7 +53,7 @@ JdkClassCreateHelper.class('java.util.function.BiPredicate', [
 			/* name */ 'or',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -113,7 +113,7 @@ JdkClassCreateHelper.class('java.util.function.BiPredicate', [
 			/* name */ 'and',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

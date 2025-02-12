@@ -13,7 +13,7 @@ JdkClassCreateHelper.class('java.text.ParsePosition', [
 		[/* public java.text.ParsePosition(int) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -30,7 +30,7 @@ JdkClassCreateHelper.class('java.text.ParsePosition', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -82,7 +82,7 @@ JdkClassCreateHelper.class('java.text.ParsePosition', [
 			/* name */ 'setErrorIndex',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ei',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -98,7 +98,7 @@ JdkClassCreateHelper.class('java.text.ParsePosition', [
 			/* name */ 'setIndex',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

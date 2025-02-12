@@ -13,7 +13,7 @@ JdkClassCreateHelper.class('java.util.IllegalFormatPrecisionException', [
 		[/* public java.util.IllegalFormatPrecisionException(int) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'p',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

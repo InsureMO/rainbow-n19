@@ -40,7 +40,7 @@ JdkClassCreateHelper.class('java.util.ServiceLoader', [
 			/* name */ 'load',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'loader',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'S']]
@@ -84,7 +84,7 @@ JdkClassCreateHelper.class('java.util.ServiceLoader', [
 			/* name */ 'load',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'cl',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'S']]
@@ -122,7 +122,7 @@ JdkClassCreateHelper.class('java.util.ServiceLoader', [
 			/* name */ 'load',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'service',
 					/* type */ 'java.lang.ModuleLayer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -217,7 +217,7 @@ JdkClassCreateHelper.class('java.util.ServiceLoader', [
 			/* name */ 'loadInstalled',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'cl',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'S']]

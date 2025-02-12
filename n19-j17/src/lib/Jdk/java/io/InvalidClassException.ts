@@ -13,7 +13,7 @@ JdkClassCreateHelper.class('java.io.InvalidClassException', [
 		[/* public java.io.InvalidClassException(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'reason',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -27,13 +27,13 @@ JdkClassCreateHelper.class('java.io.InvalidClassException', [
 		[/* public java.io.InvalidClassException(java.lang.String,java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'cname',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'reason',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

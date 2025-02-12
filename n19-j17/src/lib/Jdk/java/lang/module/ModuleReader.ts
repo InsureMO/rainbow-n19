@@ -63,7 +63,7 @@ JdkClassCreateHelper.class('java.lang.module.ModuleReader', [
 			/* name */ 'read',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'in',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -104,7 +104,7 @@ JdkClassCreateHelper.class('java.lang.module.ModuleReader', [
 			/* name */ 'open',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -131,7 +131,7 @@ JdkClassCreateHelper.class('java.lang.module.ModuleReader', [
 			/* name */ 'release',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'bb',
 					/* type */ 'java.nio.ByteBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF

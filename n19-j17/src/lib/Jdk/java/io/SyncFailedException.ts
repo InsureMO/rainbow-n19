@@ -13,7 +13,7 @@ JdkClassCreateHelper.class('java.io.SyncFailedException', [
 		[/* public java.io.SyncFailedException(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'desc',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

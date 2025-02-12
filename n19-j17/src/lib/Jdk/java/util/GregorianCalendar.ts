@@ -13,19 +13,19 @@ JdkClassCreateHelper.class('java.util.GregorianCalendar', [
 		[/* public java.util.GregorianCalendar(int,int,int) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'year',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'month',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'dayOfMonth',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -39,31 +39,31 @@ JdkClassCreateHelper.class('java.util.GregorianCalendar', [
 		[/* public java.util.GregorianCalendar(int,int,int,int,int) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'year',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'month',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'dayOfMonth',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg3',
+					/* name */ 'hourOfDay',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg4',
+					/* name */ 'minute',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -77,37 +77,37 @@ JdkClassCreateHelper.class('java.util.GregorianCalendar', [
 		[/* public java.util.GregorianCalendar(int,int,int,int,int,int) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'year',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'month',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'dayOfMonth',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg3',
+					/* name */ 'hourOfDay',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg4',
+					/* name */ 'minute',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg5',
+					/* name */ 'second',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -128,7 +128,7 @@ JdkClassCreateHelper.class('java.util.GregorianCalendar', [
 		[/* public java.util.GregorianCalendar(java.util.TimeZone) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'zone',
 					/* type */ 'java.util.TimeZone',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -142,7 +142,7 @@ JdkClassCreateHelper.class('java.util.GregorianCalendar', [
 		[/* public java.util.GregorianCalendar(java.util.Locale) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'aLocale',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -156,13 +156,13 @@ JdkClassCreateHelper.class('java.util.GregorianCalendar', [
 		[/* public java.util.GregorianCalendar(java.util.TimeZone,java.util.Locale) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'zone',
 					/* type */ 'java.util.TimeZone',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'aLocale',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -179,13 +179,13 @@ JdkClassCreateHelper.class('java.util.GregorianCalendar', [
 			/* name */ 'add',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'year',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'y_amount',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -201,7 +201,7 @@ JdkClassCreateHelper.class('java.util.GregorianCalendar', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -235,7 +235,7 @@ JdkClassCreateHelper.class('java.util.GregorianCalendar', [
 			/* name */ 'from',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ex',
 					/* type */ 'java.time.ZonedDateTime',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -260,7 +260,7 @@ JdkClassCreateHelper.class('java.util.GregorianCalendar', [
 			/* name */ 'getMinimum',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'field',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -276,7 +276,7 @@ JdkClassCreateHelper.class('java.util.GregorianCalendar', [
 			/* name */ 'getMaximum',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'gc',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -292,7 +292,7 @@ JdkClassCreateHelper.class('java.util.GregorianCalendar', [
 			/* name */ 'isLeapYear',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'd',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -308,7 +308,7 @@ JdkClassCreateHelper.class('java.util.GregorianCalendar', [
 			/* name */ 'setTimeZone',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'zone',
 					/* type */ 'java.util.TimeZone',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -351,7 +351,7 @@ JdkClassCreateHelper.class('java.util.GregorianCalendar', [
 			/* name */ 'getLeastMaximum',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'gc',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -376,13 +376,13 @@ JdkClassCreateHelper.class('java.util.GregorianCalendar', [
 			/* name */ 'roll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'rolledValue',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'hourOfDay',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -398,13 +398,13 @@ JdkClassCreateHelper.class('java.util.GregorianCalendar', [
 			/* name */ 'roll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'field',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'up',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -420,7 +420,7 @@ JdkClassCreateHelper.class('java.util.GregorianCalendar', [
 			/* name */ 'getGreatestMinimum',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'd',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -445,19 +445,19 @@ JdkClassCreateHelper.class('java.util.GregorianCalendar', [
 			/* name */ 'setWeekDate',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'weekYear',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'weekOfYear',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'dayOfWeek',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -482,7 +482,7 @@ JdkClassCreateHelper.class('java.util.GregorianCalendar', [
 			/* name */ 'getActualMinimum',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'month1',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -498,7 +498,7 @@ JdkClassCreateHelper.class('java.util.GregorianCalendar', [
 			/* name */ 'getActualMaximum',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'nextJan1',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -514,7 +514,7 @@ JdkClassCreateHelper.class('java.util.GregorianCalendar', [
 			/* name */ 'setGregorianChange',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'date',
 					/* type */ 'java.util.Date',
 					/* modifiers */ 0,
 					/* annotations */ UDF

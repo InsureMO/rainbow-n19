@@ -17,7 +17,7 @@ JdkClassCreateHelper.class('java.util.OptionalDouble', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -103,7 +103,7 @@ JdkClassCreateHelper.class('java.util.OptionalDouble', [
 			/* name */ 'orElse',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -119,7 +119,7 @@ JdkClassCreateHelper.class('java.util.OptionalDouble', [
 			/* name */ 'orElseThrow',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'exceptionSupplier',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -168,7 +168,7 @@ JdkClassCreateHelper.class('java.util.OptionalDouble', [
 			/* name */ 'ifPresent',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'action',
 					/* type */ 'java.util.function.DoubleConsumer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -184,13 +184,13 @@ JdkClassCreateHelper.class('java.util.OptionalDouble', [
 			/* name */ 'ifPresentOrElse',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'action',
 					/* type */ 'java.util.function.DoubleConsumer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'emptyAction',
 					/* type */ 'java.lang.Runnable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -206,7 +206,7 @@ JdkClassCreateHelper.class('java.util.OptionalDouble', [
 			/* name */ 'orElseGet',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'supplier',
 					/* type */ 'java.util.function.DoubleSupplier',
 					/* modifiers */ 0,
 					/* annotations */ UDF

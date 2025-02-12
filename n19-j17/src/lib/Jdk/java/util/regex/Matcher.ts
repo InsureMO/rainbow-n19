@@ -17,7 +17,7 @@ JdkClassCreateHelper.class('java.util.regex.Matcher', [
 			/* name */ 'group',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -33,7 +33,7 @@ JdkClassCreateHelper.class('java.util.regex.Matcher', [
 			/* name */ 'group',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'group',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -76,7 +76,7 @@ JdkClassCreateHelper.class('java.util.regex.Matcher', [
 			/* name */ 'replaceFirst',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'replacement',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -92,7 +92,7 @@ JdkClassCreateHelper.class('java.util.regex.Matcher', [
 			/* name */ 'replaceFirst',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'replacer',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.util.regex.MatchResult',
@@ -115,7 +115,7 @@ JdkClassCreateHelper.class('java.util.regex.Matcher', [
 			/* name */ 'replaceAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ec',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.util.regex.MatchResult',
@@ -138,7 +138,7 @@ JdkClassCreateHelper.class('java.util.regex.Matcher', [
 			/* name */ 'replaceAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'sb',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -154,7 +154,7 @@ JdkClassCreateHelper.class('java.util.regex.Matcher', [
 			/* name */ 'start',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'group',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -179,7 +179,7 @@ JdkClassCreateHelper.class('java.util.regex.Matcher', [
 			/* name */ 'start',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -195,7 +195,7 @@ JdkClassCreateHelper.class('java.util.regex.Matcher', [
 			/* name */ 'end',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -211,7 +211,7 @@ JdkClassCreateHelper.class('java.util.regex.Matcher', [
 			/* name */ 'end',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'group',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -245,7 +245,7 @@ JdkClassCreateHelper.class('java.util.regex.Matcher', [
 			/* name */ 'find',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'start',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -270,7 +270,7 @@ JdkClassCreateHelper.class('java.util.regex.Matcher', [
 			/* name */ 'reset',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'input',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -286,13 +286,13 @@ JdkClassCreateHelper.class('java.util.regex.Matcher', [
 			/* name */ 'region',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'start',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'end',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -317,13 +317,13 @@ JdkClassCreateHelper.class('java.util.regex.Matcher', [
 			/* name */ 'appendReplacement',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'sb',
 					/* type */ 'java.lang.StringBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'replacement',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -339,13 +339,13 @@ JdkClassCreateHelper.class('java.util.regex.Matcher', [
 			/* name */ 'appendReplacement',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'sb',
 					/* type */ 'java.lang.StringBuilder',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'replacement',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -361,7 +361,7 @@ JdkClassCreateHelper.class('java.util.regex.Matcher', [
 			/* name */ 'appendTail',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'sb',
 					/* type */ 'java.lang.StringBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -377,7 +377,7 @@ JdkClassCreateHelper.class('java.util.regex.Matcher', [
 			/* name */ 'appendTail',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'sb',
 					/* type */ 'java.lang.StringBuilder',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -447,7 +447,7 @@ JdkClassCreateHelper.class('java.util.regex.Matcher', [
 			/* name */ 'usePattern',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'i',
 					/* type */ 'java.util.regex.Pattern',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -472,7 +472,7 @@ JdkClassCreateHelper.class('java.util.regex.Matcher', [
 			/* name */ 'quoteReplacement',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'c',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -512,7 +512,7 @@ JdkClassCreateHelper.class('java.util.regex.Matcher', [
 			/* name */ 'useTransparentBounds',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'b',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -537,7 +537,7 @@ JdkClassCreateHelper.class('java.util.regex.Matcher', [
 			/* name */ 'useAnchoringBounds',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'b',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF

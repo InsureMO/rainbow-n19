@@ -16,7 +16,7 @@ JdkClassCreateHelper.class('java.io.ObjectOutputStream', [
 		[/* public java.io.ObjectOutputStream(java.io.OutputStream) throws java.io.IOException */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'out',
 					/* type */ 'java.io.OutputStream',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -68,7 +68,7 @@ JdkClassCreateHelper.class('java.io.ObjectOutputStream', [
 			/* name */ 'write',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'val',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -89,7 +89,7 @@ JdkClassCreateHelper.class('java.io.ObjectOutputStream', [
 			/* name */ 'write',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'buf',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -110,19 +110,19 @@ JdkClassCreateHelper.class('java.io.ObjectOutputStream', [
 			/* name */ 'write',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'buf',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'off',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'len',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -157,7 +157,7 @@ JdkClassCreateHelper.class('java.io.ObjectOutputStream', [
 			/* name */ 'writeObject',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ex',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -220,7 +220,7 @@ JdkClassCreateHelper.class('java.io.ObjectOutputStream', [
 			/* name */ 'writeInt',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'val',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -255,7 +255,7 @@ JdkClassCreateHelper.class('java.io.ObjectOutputStream', [
 			/* name */ 'writeUTF',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'str',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -276,7 +276,7 @@ JdkClassCreateHelper.class('java.io.ObjectOutputStream', [
 			/* name */ 'writeBytes',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'str',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -297,7 +297,7 @@ JdkClassCreateHelper.class('java.io.ObjectOutputStream', [
 			/* name */ 'writeChar',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'val',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -318,7 +318,7 @@ JdkClassCreateHelper.class('java.io.ObjectOutputStream', [
 			/* name */ 'writeFloat',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'val',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -339,7 +339,7 @@ JdkClassCreateHelper.class('java.io.ObjectOutputStream', [
 			/* name */ 'writeBoolean',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'val',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -360,7 +360,7 @@ JdkClassCreateHelper.class('java.io.ObjectOutputStream', [
 			/* name */ 'writeByte',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'val',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -381,7 +381,7 @@ JdkClassCreateHelper.class('java.io.ObjectOutputStream', [
 			/* name */ 'writeShort',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'val',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -402,7 +402,7 @@ JdkClassCreateHelper.class('java.io.ObjectOutputStream', [
 			/* name */ 'writeLong',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'val',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -423,7 +423,7 @@ JdkClassCreateHelper.class('java.io.ObjectOutputStream', [
 			/* name */ 'writeDouble',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'val',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -444,7 +444,7 @@ JdkClassCreateHelper.class('java.io.ObjectOutputStream', [
 			/* name */ 'writeChars',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'str',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -458,20 +458,6 @@ JdkClassCreateHelper.class('java.io.ObjectOutputStream', [
 				]
 			],
 			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* protected void java.io.ObjectOutputStream.drain() throws java.io.IOException */
-			/* name */ 'drain',
-			/* parameters */,
-			/* return */ 'void',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 4,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -493,7 +479,7 @@ JdkClassCreateHelper.class('java.io.ObjectOutputStream', [
 			/* name */ 'writeObjectOverride',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -510,11 +496,25 @@ JdkClassCreateHelper.class('java.io.ObjectOutputStream', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* protected void java.io.ObjectOutputStream.drain() throws java.io.IOException */
+			/* name */ 'drain',
+			/* parameters */,
+			/* return */ 'void',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 4,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* protected java.lang.Object java.io.ObjectOutputStream.replaceObject(java.lang.Object) throws java.io.IOException */
 			/* name */ 'replaceObject',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -535,7 +535,7 @@ JdkClassCreateHelper.class('java.io.ObjectOutputStream', [
 			/* name */ 'annotateProxyClass',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'cl',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -567,7 +567,7 @@ JdkClassCreateHelper.class('java.io.ObjectOutputStream', [
 			/* name */ 'writeClassDescriptor',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'desc',
 					/* type */ 'java.io.ObjectStreamClass',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -588,7 +588,7 @@ JdkClassCreateHelper.class('java.io.ObjectOutputStream', [
 			/* name */ 'annotateClass',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'cl',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -620,7 +620,7 @@ JdkClassCreateHelper.class('java.io.ObjectOutputStream', [
 			/* name */ 'useProtocolVersion',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'version',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -641,7 +641,7 @@ JdkClassCreateHelper.class('java.io.ObjectOutputStream', [
 			/* name */ 'writeUnshared',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ex',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -662,7 +662,7 @@ JdkClassCreateHelper.class('java.io.ObjectOutputStream', [
 			/* name */ 'enableReplaceObject',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'sm',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF

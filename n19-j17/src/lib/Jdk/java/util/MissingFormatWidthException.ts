@@ -13,7 +13,7 @@ JdkClassCreateHelper.class('java.util.MissingFormatWidthException', [
 		[/* public java.util.MissingFormatWidthException(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 's',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

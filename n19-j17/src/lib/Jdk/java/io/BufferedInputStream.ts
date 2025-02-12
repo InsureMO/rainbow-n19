@@ -13,13 +13,13 @@ JdkClassCreateHelper.class('java.io.BufferedInputStream', [
 		[/* public java.io.BufferedInputStream(java.io.InputStream,int) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'in',
 					/* type */ 'java.io.InputStream',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'size',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -33,7 +33,7 @@ JdkClassCreateHelper.class('java.io.BufferedInputStream', [
 		[/* public java.io.BufferedInputStream(java.io.InputStream) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'in',
 					/* type */ 'java.io.InputStream',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -50,19 +50,19 @@ JdkClassCreateHelper.class('java.io.BufferedInputStream', [
 			/* name */ 'read',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'nread',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'input',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'b',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -111,7 +111,7 @@ JdkClassCreateHelper.class('java.io.BufferedInputStream', [
 			/* name */ 'mark',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'readlimit',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -127,7 +127,7 @@ JdkClassCreateHelper.class('java.io.BufferedInputStream', [
 			/* name */ 'skip',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'n',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF

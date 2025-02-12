@@ -25,7 +25,7 @@ JdkClassCreateHelper.class('java.lang.Boolean', [
 		[/* public java.lang.Boolean(boolean) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'value',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -45,7 +45,7 @@ JdkClassCreateHelper.class('java.lang.Boolean', [
 		[/* public java.lang.Boolean(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 's',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -68,7 +68,7 @@ JdkClassCreateHelper.class('java.lang.Boolean', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -134,7 +134,7 @@ JdkClassCreateHelper.class('java.lang.Boolean', [
 			/* name */ 'compareTo',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'b',
 					/* type */ 'java.lang.Boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -166,7 +166,7 @@ JdkClassCreateHelper.class('java.lang.Boolean', [
 			/* name */ 'getBoolean',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'result',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -182,7 +182,7 @@ JdkClassCreateHelper.class('java.lang.Boolean', [
 			/* name */ 'compare',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'y',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -286,7 +286,7 @@ JdkClassCreateHelper.class('java.lang.Boolean', [
 			/* name */ 'logicalAnd',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'b',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -308,7 +308,7 @@ JdkClassCreateHelper.class('java.lang.Boolean', [
 			/* name */ 'logicalOr',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'b',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -330,7 +330,7 @@ JdkClassCreateHelper.class('java.lang.Boolean', [
 			/* name */ 'logicalXor',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'b',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF

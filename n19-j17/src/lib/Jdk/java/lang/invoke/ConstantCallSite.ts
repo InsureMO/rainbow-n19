@@ -13,7 +13,7 @@ JdkClassCreateHelper.class('java.lang.invoke.ConstantCallSite', [
 		[/* public java.lang.invoke.ConstantCallSite(java.lang.invoke.MethodHandle) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'target',
 					/* type */ 'java.lang.invoke.MethodHandle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -27,13 +27,13 @@ JdkClassCreateHelper.class('java.lang.invoke.ConstantCallSite', [
 		[/* protected java.lang.invoke.ConstantCallSite(java.lang.invoke.MethodType,java.lang.invoke.MethodHandle) throws java.lang.Throwable */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'targetType',
 					/* type */ 'java.lang.invoke.MethodType',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'createTargetHook',
 					/* type */ 'java.lang.invoke.MethodHandle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -73,7 +73,7 @@ JdkClassCreateHelper.class('java.lang.invoke.ConstantCallSite', [
 			/* name */ 'setTarget',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ignore',
 					/* type */ 'java.lang.invoke.MethodHandle',
 					/* modifiers */ 0,
 					/* annotations */ UDF

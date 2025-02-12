@@ -13,13 +13,13 @@ JdkClassCreateHelper.class('java.io.OutputStreamWriter', [
 		[/* public java.io.OutputStreamWriter(java.io.OutputStream,java.nio.charset.CharsetEncoder) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'out',
 					/* type */ 'java.io.OutputStream',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'enc',
 					/* type */ 'java.nio.charset.CharsetEncoder',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -33,13 +33,13 @@ JdkClassCreateHelper.class('java.io.OutputStreamWriter', [
 		[/* public java.io.OutputStreamWriter(java.io.OutputStream,java.nio.charset.Charset) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'out',
 					/* type */ 'java.io.OutputStream',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'cs',
 					/* type */ 'java.nio.charset.Charset',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -53,7 +53,7 @@ JdkClassCreateHelper.class('java.io.OutputStreamWriter', [
 		[/* public java.io.OutputStreamWriter(java.io.OutputStream) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'out',
 					/* type */ 'java.io.OutputStream',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -67,13 +67,13 @@ JdkClassCreateHelper.class('java.io.OutputStreamWriter', [
 		[/* public java.io.OutputStreamWriter(java.io.OutputStream,java.lang.String) throws java.io.UnsupportedEncodingException */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'out',
 					/* type */ 'java.io.OutputStream',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'charsetName',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -95,19 +95,19 @@ JdkClassCreateHelper.class('java.io.OutputStreamWriter', [
 			/* name */ 'append',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'csq',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'start',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'end',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -149,7 +149,7 @@ JdkClassCreateHelper.class('java.io.OutputStreamWriter', [
 			/* name */ 'append',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'csq',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -217,19 +217,19 @@ JdkClassCreateHelper.class('java.io.OutputStreamWriter', [
 			/* name */ 'write',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'cbuf',
 					/* type */ '[C',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'off',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'len',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -250,19 +250,19 @@ JdkClassCreateHelper.class('java.io.OutputStreamWriter', [
 			/* name */ 'write',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'str',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'off',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'len',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -283,7 +283,7 @@ JdkClassCreateHelper.class('java.io.OutputStreamWriter', [
 			/* name */ 'write',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'c',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

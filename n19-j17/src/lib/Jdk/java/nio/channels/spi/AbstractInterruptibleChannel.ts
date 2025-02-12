@@ -26,7 +26,7 @@ JdkClassCreateHelper.class('java.nio.channels.spi.AbstractInterruptibleChannel',
 			/* name */ 'end',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'completed',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF

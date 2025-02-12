@@ -15,13 +15,13 @@ JdkClassCreateHelper.class('java.util.zip.ZipInputStream', [
 		[/* public java.util.zip.ZipInputStream(java.io.InputStream,java.nio.charset.Charset) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'in',
 					/* type */ 'java.io.InputStream',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'charset',
 					/* type */ 'java.nio.charset.Charset',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -35,7 +35,7 @@ JdkClassCreateHelper.class('java.util.zip.ZipInputStream', [
 		[/* public java.util.zip.ZipInputStream(java.io.InputStream) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'in',
 					/* type */ 'java.io.InputStream',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -52,19 +52,19 @@ JdkClassCreateHelper.class('java.util.zip.ZipInputStream', [
 			/* name */ 'read',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'b',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'off',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'len',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -99,7 +99,7 @@ JdkClassCreateHelper.class('java.util.zip.ZipInputStream', [
 			/* name */ 'skip',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'len',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -148,7 +148,7 @@ JdkClassCreateHelper.class('java.util.zip.ZipInputStream', [
 			/* name */ 'createZipEntry',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

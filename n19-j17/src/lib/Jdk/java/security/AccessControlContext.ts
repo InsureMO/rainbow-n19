@@ -19,13 +19,13 @@ JdkClassCreateHelper.class('java.security.AccessControlContext', [
 		[/* public java.security.AccessControlContext(java.security.AccessControlContext,java.security.DomainCombiner) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'acc',
 					/* type */ 'java.security.AccessControlContext',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'combiner',
 					/* type */ 'java.security.DomainCombiner',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -56,7 +56,7 @@ JdkClassCreateHelper.class('java.security.AccessControlContext', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'that',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -81,7 +81,7 @@ JdkClassCreateHelper.class('java.security.AccessControlContext', [
 			/* name */ 'checkPermission',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'i',
 					/* type */ 'java.security.Permission',
 					/* modifiers */ 0,
 					/* annotations */ UDF

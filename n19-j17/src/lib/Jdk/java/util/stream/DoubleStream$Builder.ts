@@ -16,7 +16,7 @@ JdkClassCreateHelper.class('java.util.stream.DoubleStream$Builder', [
 			/* name */ 'add',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 't',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF

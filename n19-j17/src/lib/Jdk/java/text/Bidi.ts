@@ -13,37 +13,37 @@ JdkClassCreateHelper.class('java.text.Bidi', [
 		[/* public java.text.Bidi(char[],int,byte[],int,int,int) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'text',
 					/* type */ '[C',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'textStart',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'embeddings',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg3',
+					/* name */ 'embStart',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg4',
+					/* name */ 'paragraphLength',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg5',
+					/* name */ 'flags',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -57,7 +57,7 @@ JdkClassCreateHelper.class('java.text.Bidi', [
 		[/* public java.text.Bidi(java.text.AttributedCharacterIterator) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'paragraph',
 					/* type */ 'java.text.AttributedCharacterIterator',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -71,13 +71,13 @@ JdkClassCreateHelper.class('java.text.Bidi', [
 		[/* public java.text.Bidi(java.lang.String,int) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'paragraph',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'flags',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -112,7 +112,7 @@ JdkClassCreateHelper.class('java.text.Bidi', [
 			/* name */ 'getRunStart',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'run',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -128,7 +128,7 @@ JdkClassCreateHelper.class('java.text.Bidi', [
 			/* name */ 'getRunLimit',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'run',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -180,7 +180,7 @@ JdkClassCreateHelper.class('java.text.Bidi', [
 			/* name */ 'getLevelAt',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'offset',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -196,7 +196,7 @@ JdkClassCreateHelper.class('java.text.Bidi', [
 			/* name */ 'getRunLevel',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'run',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -212,13 +212,13 @@ JdkClassCreateHelper.class('java.text.Bidi', [
 			/* name */ 'requiresBidi',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'start',
 					/* type */ '[C',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'limit',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -280,13 +280,13 @@ JdkClassCreateHelper.class('java.text.Bidi', [
 			/* name */ 'createLineBidi',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'lineStart',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'lineLimit',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

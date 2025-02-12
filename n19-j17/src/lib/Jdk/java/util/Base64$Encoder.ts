@@ -15,7 +15,7 @@ JdkClassCreateHelper.class('java.util.Base64$Encoder', [
 			/* name */ 'wrap',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'os',
 					/* type */ 'java.io.OutputStream',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -31,7 +31,7 @@ JdkClassCreateHelper.class('java.util.Base64$Encoder', [
 			/* name */ 'encode',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'src',
 					/* type */ 'java.nio.ByteBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -47,7 +47,7 @@ JdkClassCreateHelper.class('java.util.Base64$Encoder', [
 			/* name */ 'encode',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'src',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -63,13 +63,13 @@ JdkClassCreateHelper.class('java.util.Base64$Encoder', [
 			/* name */ 'encode',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'src',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'dst',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -85,7 +85,7 @@ JdkClassCreateHelper.class('java.util.Base64$Encoder', [
 			/* name */ 'encodeToString',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'src',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF

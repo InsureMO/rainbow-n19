@@ -31,7 +31,7 @@ JdkClassCreateHelper.class('java.util.Iterator', [
 			/* name */ 'forEachRemaining',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'action',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

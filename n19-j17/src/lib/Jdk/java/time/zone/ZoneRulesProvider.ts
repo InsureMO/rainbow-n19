@@ -23,7 +23,7 @@ JdkClassCreateHelper.class('java.time.zone.ZoneRulesProvider', [
 			/* name */ 'getRules',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'forCaching',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

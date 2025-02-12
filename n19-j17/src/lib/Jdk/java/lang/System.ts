@@ -40,7 +40,7 @@ JdkClassCreateHelper.class('java.lang.System', [
 			/* name */ 'getProperty',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'sm',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -56,13 +56,13 @@ JdkClassCreateHelper.class('java.lang.System', [
 			/* name */ 'getProperty',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'def',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'sm',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -234,7 +234,7 @@ JdkClassCreateHelper.class('java.lang.System', [
 			/* name */ 'setSecurityManager',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'source',
 					/* type */ 'java.lang.SecurityManager',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -266,13 +266,13 @@ JdkClassCreateHelper.class('java.lang.System', [
 			/* name */ 'setProperty',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'value',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'sm',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -288,7 +288,7 @@ JdkClassCreateHelper.class('java.lang.System', [
 			/* name */ 'getenv',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'sm',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -320,13 +320,13 @@ JdkClassCreateHelper.class('java.lang.System', [
 			/* name */ 'getLogger',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'pa',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'bundle',
 					/* type */ 'java.util.ResourceBundle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -344,7 +344,7 @@ JdkClassCreateHelper.class('java.lang.System', [
 			/* name */ 'getLogger',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'caller',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -428,7 +428,7 @@ JdkClassCreateHelper.class('java.lang.System', [
 			/* name */ 'setProperties',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'tempProps',
 					/* type */ 'java.util.Properties',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -444,7 +444,7 @@ JdkClassCreateHelper.class('java.lang.System', [
 			/* name */ 'clearProperty',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'sm',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

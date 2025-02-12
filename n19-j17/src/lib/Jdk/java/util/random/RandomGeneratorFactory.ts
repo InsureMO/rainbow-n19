@@ -56,7 +56,7 @@ JdkClassCreateHelper.class('java.util.random.RandomGeneratorFactory', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'factory',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -82,20 +82,11 @@ JdkClassCreateHelper.class('java.util.random.RandomGeneratorFactory', [
 				]
 			]
 		],
-		[/* public T java.util.random.RandomGeneratorFactory.create() */
-			/* name */ 'create',
-			/* parameters */,
-			/* return */ [/* type variable ref */ 'tr', [/* name */ 'T']],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public T java.util.random.RandomGeneratorFactory.create(byte[]) */
 			/* name */ 'create',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ex',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -111,12 +102,21 @@ JdkClassCreateHelper.class('java.util.random.RandomGeneratorFactory', [
 			/* name */ 'create',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ex',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
+			/* return */ [/* type variable ref */ 'tr', [/* name */ 'T']],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public T java.util.random.RandomGeneratorFactory.create() */
+			/* name */ 'create',
+			/* parameters */,
 			/* return */ [/* type variable ref */ 'tr', [/* name */ 'T']],
 			/* exceptions */,
 			/* modifiers */ 1,
@@ -166,24 +166,6 @@ JdkClassCreateHelper.class('java.util.random.RandomGeneratorFactory', [
 			/* name */ 'period',
 			/* parameters */,
 			/* return */ 'java.math.BigInteger',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.util.random.RandomGeneratorFactory.isStochastic() */
-			/* name */ 'isStochastic',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.util.random.RandomGeneratorFactory.isHardware() */
-			/* name */ 'isHardware',
-			/* parameters */,
-			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -245,6 +227,24 @@ JdkClassCreateHelper.class('java.util.random.RandomGeneratorFactory', [
 		],
 		[/* public boolean java.util.random.RandomGeneratorFactory.isStreamable() */
 			/* name */ 'isStreamable',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.util.random.RandomGeneratorFactory.isStochastic() */
+			/* name */ 'isStochastic',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.util.random.RandomGeneratorFactory.isHardware() */
+			/* name */ 'isHardware',
 			/* parameters */,
 			/* return */ 'boolean',
 			/* exceptions */,

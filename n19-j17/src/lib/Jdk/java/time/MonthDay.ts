@@ -28,7 +28,7 @@ JdkClassCreateHelper.class('java.time.MonthDay', [
 			/* name */ 'get',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -44,7 +44,7 @@ JdkClassCreateHelper.class('java.time.MonthDay', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -94,7 +94,7 @@ JdkClassCreateHelper.class('java.time.MonthDay', [
 			/* name */ 'compareTo',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ 'java.time.MonthDay',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -110,7 +110,7 @@ JdkClassCreateHelper.class('java.time.MonthDay', [
 			/* name */ 'getLong',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'chronoField',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -126,7 +126,7 @@ JdkClassCreateHelper.class('java.time.MonthDay', [
 			/* name */ 'format',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'formatter',
 					/* type */ 'java.time.format.DateTimeFormatter',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -142,7 +142,7 @@ JdkClassCreateHelper.class('java.time.MonthDay', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'dayOfMonth',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -164,7 +164,7 @@ JdkClassCreateHelper.class('java.time.MonthDay', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'dayOfMonth',
 					/* type */ 'java.time.Month',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -186,7 +186,7 @@ JdkClassCreateHelper.class('java.time.MonthDay', [
 			/* name */ 'from',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ex',
 					/* type */ 'java.time.temporal.TemporalAccessor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -202,7 +202,7 @@ JdkClassCreateHelper.class('java.time.MonthDay', [
 			/* name */ 'query',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'query',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'R']]
@@ -232,7 +232,7 @@ JdkClassCreateHelper.class('java.time.MonthDay', [
 			/* name */ 'range',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -248,7 +248,7 @@ JdkClassCreateHelper.class('java.time.MonthDay', [
 			/* name */ 'isSupported',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -264,7 +264,7 @@ JdkClassCreateHelper.class('java.time.MonthDay', [
 			/* name */ 'parse',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'formatter',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -345,7 +345,7 @@ JdkClassCreateHelper.class('java.time.MonthDay', [
 			/* name */ 'now',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'now',
 					/* type */ 'java.time.Clock',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -361,7 +361,7 @@ JdkClassCreateHelper.class('java.time.MonthDay', [
 			/* name */ 'adjustInto',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'temporal',
 					/* type */ 'java.time.temporal.Temporal',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -377,7 +377,7 @@ JdkClassCreateHelper.class('java.time.MonthDay', [
 			/* name */ 'with',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'month',
 					/* type */ 'java.time.Month',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -393,7 +393,7 @@ JdkClassCreateHelper.class('java.time.MonthDay', [
 			/* name */ 'isAfter',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ 'java.time.MonthDay',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -409,7 +409,7 @@ JdkClassCreateHelper.class('java.time.MonthDay', [
 			/* name */ 'isBefore',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ 'java.time.MonthDay',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -434,7 +434,7 @@ JdkClassCreateHelper.class('java.time.MonthDay', [
 			/* name */ 'withMonth',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'month',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -450,7 +450,7 @@ JdkClassCreateHelper.class('java.time.MonthDay', [
 			/* name */ 'withDayOfMonth',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'dayOfMonth',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -466,7 +466,7 @@ JdkClassCreateHelper.class('java.time.MonthDay', [
 			/* name */ 'isValidYear',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'year',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -482,7 +482,7 @@ JdkClassCreateHelper.class('java.time.MonthDay', [
 			/* name */ 'atYear',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'year',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -30,13 +30,13 @@ JdkClassCreateHelper.class('java.lang.constant.DirectMethodHandleDesc$Kind', [
 			/* name */ 'valueOf',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'isInterface',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'i',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF

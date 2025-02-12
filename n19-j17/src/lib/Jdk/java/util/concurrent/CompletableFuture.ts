@@ -64,13 +64,13 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'get',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'timeout',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'unit',
 					/* type */ 'java.util.concurrent.TimeUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -148,7 +148,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'handle',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'fn',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -198,7 +198,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'complete',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'value',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'T']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -247,7 +247,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'cancel',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'mayInterruptIfRunning',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -281,7 +281,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'completeExceptionally',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ex',
 					/* type */ 'java.lang.Throwable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -333,7 +333,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'supplyAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'executor',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'U']]
@@ -422,7 +422,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'completeAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'supplier',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -455,7 +455,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'completeAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'supplier',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -472,7 +472,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'executor',
 					/* type */ 'java.util.concurrent.Executor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -510,7 +510,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'whenComplete',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'action',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -591,7 +591,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'exceptionallyComposeAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'fn',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.Throwable',
@@ -615,7 +615,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'executor',
 					/* type */ 'java.util.concurrent.Executor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -637,7 +637,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'exceptionallyComposeAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'fn',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.Throwable',
@@ -693,7 +693,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'exceptionallyCompose',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'fn',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.Throwable',
@@ -733,7 +733,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'exceptionallyAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'fn',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.Throwable',
@@ -751,7 +751,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'executor',
 					/* type */ 'java.util.concurrent.Executor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -811,7 +811,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'exceptionallyAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'fn',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.Throwable',
@@ -845,7 +845,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'exceptionally',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'fn',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.Throwable',
@@ -911,7 +911,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'whenCompleteAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'action',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -938,7 +938,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'executor',
 					/* type */ 'java.util.concurrent.Executor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -960,7 +960,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'whenCompleteAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'action',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1041,7 +1041,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'handleAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'fn',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1091,7 +1091,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'handleAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'fn',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1117,7 +1117,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'executor',
 					/* type */ 'java.util.concurrent.Executor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1169,7 +1169,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'thenComposeAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'fn',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1262,7 +1262,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'thenComposeAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'fn',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1293,7 +1293,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'executor',
 					/* type */ 'java.util.concurrent.Executor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1323,7 +1323,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'thenCompose',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'fn',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1444,7 +1444,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'runAfterEitherAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1461,13 +1461,13 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'action',
 					/* type */ 'java.lang.Runnable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'executor',
 					/* type */ 'java.util.concurrent.Executor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1489,7 +1489,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'runAfterEitherAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1506,7 +1506,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'action',
 					/* type */ 'java.lang.Runnable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1528,7 +1528,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'runAfterEither',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1545,7 +1545,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'action',
 					/* type */ 'java.lang.Runnable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1589,7 +1589,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'acceptEitherAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1606,7 +1606,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'action',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1663,7 +1663,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'acceptEitherAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1680,7 +1680,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'action',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1699,7 +1699,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'executor',
 					/* type */ 'java.util.concurrent.Executor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1749,7 +1749,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'acceptEither',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1766,7 +1766,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'action',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1823,7 +1823,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'applyToEitherAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1840,7 +1840,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'fn',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1884,7 +1884,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'applyToEitherAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1901,7 +1901,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'fn',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1921,7 +1921,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'executor',
 					/* type */ 'java.util.concurrent.Executor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -2023,7 +2023,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'applyToEither',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -2040,7 +2040,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'fn',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -2084,7 +2084,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'runAfterBothAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -2101,13 +2101,13 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'action',
 					/* type */ 'java.lang.Runnable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'executor',
 					/* type */ 'java.util.concurrent.Executor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -2129,7 +2129,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'runAfterBothAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -2146,7 +2146,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'action',
 					/* type */ 'java.lang.Runnable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -2218,7 +2218,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'runAfterBoth',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -2235,7 +2235,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'action',
 					/* type */ 'java.lang.Runnable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -2279,7 +2279,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'thenAcceptBothAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -2296,7 +2296,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'action',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -2369,7 +2369,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'thenAcceptBothAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -2386,7 +2386,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'action',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -2413,7 +2413,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'executor',
 					/* type */ 'java.util.concurrent.Executor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -2493,7 +2493,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'thenAcceptBoth',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -2510,7 +2510,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'action',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -2561,7 +2561,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'thenCombineAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -2578,7 +2578,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'fn',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -2670,7 +2670,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'thenCombineAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -2687,7 +2687,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'fn',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -2720,7 +2720,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'executor',
 					/* type */ 'java.util.concurrent.Executor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -2779,7 +2779,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'thenCombine',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -2796,7 +2796,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'fn',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -2882,13 +2882,13 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'thenRunAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'action',
 					/* type */ 'java.lang.Runnable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'executor',
 					/* type */ 'java.util.concurrent.Executor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -2910,7 +2910,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'thenRunAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'action',
 					/* type */ 'java.lang.Runnable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -2970,7 +2970,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'thenRun',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'action',
 					/* type */ 'java.lang.Runnable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -3030,7 +3030,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'thenAcceptAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'action',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -3065,7 +3065,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'thenAcceptAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'action',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -3084,7 +3084,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'executor',
 					/* type */ 'java.util.concurrent.Executor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -3138,7 +3138,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'thenAccept',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'action',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -3173,7 +3173,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'thenApplyAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'fn',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -3260,7 +3260,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'thenApplyAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'fn',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -3285,7 +3285,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'executor',
 					/* type */ 'java.util.concurrent.Executor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -3331,7 +3331,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'thenApply',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'fn',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -3380,7 +3380,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'runAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'executor',
 					/* type */ 'java.lang.Runnable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -3460,7 +3460,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'getNow',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'valueIfAbsent',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'T']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -3518,7 +3518,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'obtrudeValue',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'value',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'T']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -3534,7 +3534,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'obtrudeException',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ex',
 					/* type */ 'java.lang.Throwable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -3574,13 +3574,13 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'orTimeout',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'timeout',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'unit',
 					/* type */ 'java.util.concurrent.TimeUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -3602,19 +3602,19 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'completeOnTimeout',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'value',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'T']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'timeout',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'unit',
 					/* type */ 'java.util.concurrent.TimeUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -3636,7 +3636,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'delayedExecutor',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'unit',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -3658,13 +3658,13 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'delayedExecutor',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'unit',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'executor',
 					/* type */ 'java.util.concurrent.TimeUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF

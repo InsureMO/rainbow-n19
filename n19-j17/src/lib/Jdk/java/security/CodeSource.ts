@@ -58,7 +58,7 @@ JdkClassCreateHelper.class('java.security.CodeSource', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -110,7 +110,7 @@ JdkClassCreateHelper.class('java.security.CodeSource', [
 			/* name */ 'implies',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'codesource',
 					/* type */ 'java.security.CodeSource',
 					/* modifiers */ 0,
 					/* annotations */ UDF

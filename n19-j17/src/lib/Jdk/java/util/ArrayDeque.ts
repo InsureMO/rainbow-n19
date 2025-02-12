@@ -44,7 +44,7 @@ JdkClassCreateHelper.class('java.util.ArrayDeque', [
 		[/* public java.util.ArrayDeque(java.util.Collection<? extends E>) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'c',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -69,7 +69,7 @@ JdkClassCreateHelper.class('java.util.ArrayDeque', [
 		[/* public java.util.ArrayDeque(int) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'numElements',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -86,7 +86,7 @@ JdkClassCreateHelper.class('java.util.ArrayDeque', [
 			/* name */ 'add',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'e',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -111,7 +111,7 @@ JdkClassCreateHelper.class('java.util.ArrayDeque', [
 			/* name */ 'remove',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'o',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -231,7 +231,7 @@ JdkClassCreateHelper.class('java.util.ArrayDeque', [
 			/* name */ 'contains',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'i',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -262,7 +262,7 @@ JdkClassCreateHelper.class('java.util.ArrayDeque', [
 			/* name */ 'addAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'c',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -289,7 +289,7 @@ JdkClassCreateHelper.class('java.util.ArrayDeque', [
 			/* name */ 'forEach',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'i',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -336,7 +336,7 @@ JdkClassCreateHelper.class('java.util.ArrayDeque', [
 			/* name */ 'removeIf',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'filter',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -374,7 +374,7 @@ JdkClassCreateHelper.class('java.util.ArrayDeque', [
 			/* name */ 'removeAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'c',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -401,7 +401,7 @@ JdkClassCreateHelper.class('java.util.ArrayDeque', [
 			/* name */ 'retainAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'c',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -428,7 +428,7 @@ JdkClassCreateHelper.class('java.util.ArrayDeque', [
 			/* name */ 'push',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'e',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -453,7 +453,7 @@ JdkClassCreateHelper.class('java.util.ArrayDeque', [
 			/* name */ 'addFirst',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'e',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -469,7 +469,7 @@ JdkClassCreateHelper.class('java.util.ArrayDeque', [
 			/* name */ 'addLast',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'e',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -503,7 +503,7 @@ JdkClassCreateHelper.class('java.util.ArrayDeque', [
 			/* name */ 'offerLast',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'e',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -546,7 +546,7 @@ JdkClassCreateHelper.class('java.util.ArrayDeque', [
 			/* name */ 'removeFirstOccurrence',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'i',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -562,7 +562,7 @@ JdkClassCreateHelper.class('java.util.ArrayDeque', [
 			/* name */ 'offerFirst',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'e',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -605,7 +605,7 @@ JdkClassCreateHelper.class('java.util.ArrayDeque', [
 			/* name */ 'removeLastOccurrence',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'i',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -621,7 +621,7 @@ JdkClassCreateHelper.class('java.util.ArrayDeque', [
 			/* name */ 'offer',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'e',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF

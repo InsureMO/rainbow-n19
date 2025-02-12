@@ -13,7 +13,7 @@ JdkClassCreateHelper.class('java.util.DuplicateFormatFlagsException', [
 		[/* public java.util.DuplicateFormatFlagsException(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'f',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

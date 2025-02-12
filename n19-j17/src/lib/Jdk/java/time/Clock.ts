@@ -25,7 +25,7 @@ JdkClassCreateHelper.class('java.time.Clock', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -50,7 +50,7 @@ JdkClassCreateHelper.class('java.time.Clock', [
 			/* name */ 'offset',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'offsetDuration',
 					/* type */ 'java.time.Clock',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -97,7 +97,7 @@ JdkClassCreateHelper.class('java.time.Clock', [
 			/* name */ 'fixed',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'zone',
 					/* type */ 'java.time.Instant',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -162,13 +162,13 @@ JdkClassCreateHelper.class('java.time.Clock', [
 			/* name */ 'tick',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'tickDuration',
 					/* type */ 'java.time.Clock',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'tickNanos',
 					/* type */ 'java.time.Duration',
 					/* modifiers */ 0,
 					/* annotations */ UDF

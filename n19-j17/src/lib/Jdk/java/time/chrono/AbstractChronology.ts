@@ -25,7 +25,7 @@ JdkClassCreateHelper.class('java.time.chrono.AbstractChronology', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -75,7 +75,7 @@ JdkClassCreateHelper.class('java.time.chrono.AbstractChronology', [
 			/* name */ 'compareTo',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ 'java.time.chrono.Chronology',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -91,7 +91,7 @@ JdkClassCreateHelper.class('java.time.chrono.AbstractChronology', [
 			/* name */ 'resolveDate',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'fieldValues',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.time.temporal.TemporalField',
@@ -104,7 +104,7 @@ JdkClassCreateHelper.class('java.time.chrono.AbstractChronology', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'resolverStyle',
 					/* type */ 'java.time.format.ResolverStyle',
 					/* modifiers */ 0,
 					/* annotations */ UDF

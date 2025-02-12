@@ -13,7 +13,7 @@ JdkClassCreateHelper.class('java.io.CharArrayReader', [
 		[/* public java.io.CharArrayReader(char[]) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'buf',
 					/* type */ '[C',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -27,19 +27,19 @@ JdkClassCreateHelper.class('java.io.CharArrayReader', [
 		[/* public java.io.CharArrayReader(char[],int,int) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'buf',
 					/* type */ '[C',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'offset',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'length',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -56,19 +56,19 @@ JdkClassCreateHelper.class('java.io.CharArrayReader', [
 			/* name */ 'read',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'avail',
 					/* type */ '[C',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'cbuf',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'off',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -89,7 +89,7 @@ JdkClassCreateHelper.class('java.io.CharArrayReader', [
 			/* name */ 'read',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'avail',
 					/* type */ 'java.nio.CharBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -133,7 +133,7 @@ JdkClassCreateHelper.class('java.io.CharArrayReader', [
 			/* name */ 'mark',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'readAheadLimit',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -154,7 +154,7 @@ JdkClassCreateHelper.class('java.io.CharArrayReader', [
 			/* name */ 'skip',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'avail',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF

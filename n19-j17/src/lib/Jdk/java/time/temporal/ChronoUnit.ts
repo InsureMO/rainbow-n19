@@ -57,13 +57,13 @@ JdkClassCreateHelper.class('java.time.temporal.ChronoUnit', [
 			/* name */ 'between',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'temporal1Inclusive',
 					/* type */ 'java.time.temporal.Temporal',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'temporal2Exclusive',
 					/* type */ 'java.time.temporal.Temporal',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -97,7 +97,7 @@ JdkClassCreateHelper.class('java.time.temporal.ChronoUnit', [
 			/* name */ 'isSupportedBy',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'temporal',
 					/* type */ 'java.time.temporal.Temporal',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -131,13 +131,13 @@ JdkClassCreateHelper.class('java.time.temporal.ChronoUnit', [
 			/* name */ 'addTo',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'temporal',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'R']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'amount',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF

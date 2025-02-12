@@ -49,7 +49,7 @@ JdkClassCreateHelper.class('java.lang.SecurityManager', [
 			/* name */ 'checkPackageAccess',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'tmpPropertyStr',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -65,13 +65,13 @@ JdkClassCreateHelper.class('java.lang.SecurityManager', [
 			/* name */ 'checkPermission',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'perm',
 					/* type */ 'java.security.Permission',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'context',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -87,7 +87,7 @@ JdkClassCreateHelper.class('java.lang.SecurityManager', [
 			/* name */ 'checkPermission',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'perm',
 					/* type */ 'java.security.Permission',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -121,7 +121,7 @@ JdkClassCreateHelper.class('java.lang.SecurityManager', [
 			/* name */ 'checkPropertyAccess',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'key',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -155,7 +155,7 @@ JdkClassCreateHelper.class('java.lang.SecurityManager', [
 			/* name */ 'checkAccess',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 't',
 					/* type */ 'java.lang.Thread',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -171,7 +171,7 @@ JdkClassCreateHelper.class('java.lang.SecurityManager', [
 			/* name */ 'checkAccess',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'g',
 					/* type */ 'java.lang.ThreadGroup',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -187,7 +187,7 @@ JdkClassCreateHelper.class('java.lang.SecurityManager', [
 			/* name */ 'checkExit',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'status',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -203,7 +203,7 @@ JdkClassCreateHelper.class('java.lang.SecurityManager', [
 			/* name */ 'checkExec',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'cmd',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -219,7 +219,7 @@ JdkClassCreateHelper.class('java.lang.SecurityManager', [
 			/* name */ 'checkLink',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'lib',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -235,7 +235,7 @@ JdkClassCreateHelper.class('java.lang.SecurityManager', [
 			/* name */ 'checkRead',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'fd',
 					/* type */ 'java.io.FileDescriptor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -251,7 +251,7 @@ JdkClassCreateHelper.class('java.lang.SecurityManager', [
 			/* name */ 'checkRead',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'file',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -267,13 +267,13 @@ JdkClassCreateHelper.class('java.lang.SecurityManager', [
 			/* name */ 'checkRead',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'file',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'context',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -289,7 +289,7 @@ JdkClassCreateHelper.class('java.lang.SecurityManager', [
 			/* name */ 'checkWrite',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'fd',
 					/* type */ 'java.io.FileDescriptor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -305,7 +305,7 @@ JdkClassCreateHelper.class('java.lang.SecurityManager', [
 			/* name */ 'checkWrite',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'file',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -321,7 +321,7 @@ JdkClassCreateHelper.class('java.lang.SecurityManager', [
 			/* name */ 'checkDelete',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'file',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -337,19 +337,19 @@ JdkClassCreateHelper.class('java.lang.SecurityManager', [
 			/* name */ 'checkConnect',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'host',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'port',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'context',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -365,13 +365,13 @@ JdkClassCreateHelper.class('java.lang.SecurityManager', [
 			/* name */ 'checkConnect',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'host',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'port',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -387,7 +387,7 @@ JdkClassCreateHelper.class('java.lang.SecurityManager', [
 			/* name */ 'checkListen',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'port',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -403,13 +403,13 @@ JdkClassCreateHelper.class('java.lang.SecurityManager', [
 			/* name */ 'checkAccept',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'host',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'port',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -425,7 +425,7 @@ JdkClassCreateHelper.class('java.lang.SecurityManager', [
 			/* name */ 'checkMulticast',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'maddr',
 					/* type */ 'java.net.InetAddress',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -441,13 +441,13 @@ JdkClassCreateHelper.class('java.lang.SecurityManager', [
 			/* name */ 'checkMulticast',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'maddr',
 					/* type */ 'java.net.InetAddress',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'ttl',
 					/* type */ 'byte',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -478,7 +478,7 @@ JdkClassCreateHelper.class('java.lang.SecurityManager', [
 			/* name */ 'checkPackageDefinition',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'tmpPropertyStr',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -503,7 +503,7 @@ JdkClassCreateHelper.class('java.lang.SecurityManager', [
 			/* name */ 'checkSecurityAccess',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'target',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

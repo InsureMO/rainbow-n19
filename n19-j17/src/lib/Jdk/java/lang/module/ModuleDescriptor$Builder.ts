@@ -15,7 +15,7 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Builder', [
 			/* name */ 'version',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'e',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -31,7 +31,7 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Builder', [
 			/* name */ 'version',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'v',
 					/* type */ 'java.lang.module.ModuleDescriptor$Version',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -47,7 +47,7 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Builder', [
 			/* name */ 'packages',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'pns',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.String'
@@ -69,7 +69,7 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Builder', [
 			/* name */ 'exports',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'pn',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -85,7 +85,7 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Builder', [
 			/* name */ 'exports',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ms',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.module.ModuleDescriptor$Exports$Modifier'
@@ -97,13 +97,13 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Builder', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'pn',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'targets',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.String'
@@ -125,13 +125,13 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Builder', [
 			/* name */ 'exports',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'pn',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'targets',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.String'
@@ -153,7 +153,7 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Builder', [
 			/* name */ 'exports',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ms',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.module.ModuleDescriptor$Exports$Modifier'
@@ -165,7 +165,7 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Builder', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'pn',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -181,7 +181,7 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Builder', [
 			/* name */ 'exports',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'e',
 					/* type */ 'java.lang.module.ModuleDescriptor$Exports',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -197,7 +197,7 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Builder', [
 			/* name */ 'opens',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'pn',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -213,7 +213,7 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Builder', [
 			/* name */ 'opens',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ms',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.module.ModuleDescriptor$Opens$Modifier'
@@ -225,13 +225,13 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Builder', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'pn',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'targets',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.String'
@@ -253,13 +253,13 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Builder', [
 			/* name */ 'opens',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'pn',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'targets',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.String'
@@ -281,7 +281,7 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Builder', [
 			/* name */ 'opens',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'obj',
 					/* type */ 'java.lang.module.ModuleDescriptor$Opens',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -297,7 +297,7 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Builder', [
 			/* name */ 'opens',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ms',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.module.ModuleDescriptor$Opens$Modifier'
@@ -309,7 +309,7 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Builder', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'pn',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -325,7 +325,7 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Builder', [
 			/* name */ 'uses',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'service',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -341,7 +341,7 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Builder', [
 			/* name */ 'provides',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'p',
 					/* type */ 'java.lang.module.ModuleDescriptor$Provides',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -357,13 +357,13 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Builder', [
 			/* name */ 'provides',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'pn',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.String'
@@ -394,7 +394,7 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Builder', [
 			/* name */ 'requires',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'req',
 					/* type */ 'java.lang.module.ModuleDescriptor$Requires',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -410,7 +410,7 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Builder', [
 			/* name */ 'requires',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ms',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.module.ModuleDescriptor$Requires$Modifier'
@@ -422,13 +422,13 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Builder', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'mn',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'compiledVersion',
 					/* type */ 'java.lang.module.ModuleDescriptor$Version',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -444,7 +444,7 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Builder', [
 			/* name */ 'requires',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'mn',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -460,7 +460,7 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Builder', [
 			/* name */ 'requires',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ms',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.module.ModuleDescriptor$Requires$Modifier'
@@ -472,7 +472,7 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Builder', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'mn',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -488,7 +488,7 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Builder', [
 			/* name */ 'mainClass',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'pn',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

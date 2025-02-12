@@ -84,7 +84,7 @@ JdkClassCreateHelper.class('java.lang.ref.Reference', [
 			/* name */ 'refersTo',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'obj',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'T']],
 					/* modifiers */ 0,
 					/* annotations */ UDF

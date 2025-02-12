@@ -24,7 +24,7 @@ JdkClassCreateHelper.class('java.lang.Byte', [
 		[/* public java.lang.Byte(byte) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'value',
 					/* type */ 'byte',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -44,7 +44,7 @@ JdkClassCreateHelper.class('java.lang.Byte', [
 		[/* public java.lang.Byte(java.lang.String) throws java.lang.NumberFormatException */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 's',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -72,7 +72,7 @@ JdkClassCreateHelper.class('java.lang.Byte', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -138,7 +138,7 @@ JdkClassCreateHelper.class('java.lang.Byte', [
 			/* name */ 'compareTo',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'anotherByte',
 					/* type */ 'java.lang.Byte',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -170,7 +170,7 @@ JdkClassCreateHelper.class('java.lang.Byte', [
 			/* name */ 'compare',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'y',
 					/* type */ 'byte',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -269,7 +269,7 @@ JdkClassCreateHelper.class('java.lang.Byte', [
 			/* name */ 'valueOf',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'offset',
 					/* type */ 'byte',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -287,7 +287,7 @@ JdkClassCreateHelper.class('java.lang.Byte', [
 			/* name */ 'valueOf',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'radix',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -314,7 +314,7 @@ JdkClassCreateHelper.class('java.lang.Byte', [
 			/* name */ 'decode',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'i',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -409,13 +409,13 @@ JdkClassCreateHelper.class('java.lang.Byte', [
 			/* name */ 'parseByte',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'radix',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'i',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -436,7 +436,7 @@ JdkClassCreateHelper.class('java.lang.Byte', [
 			/* name */ 'compareUnsigned',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'y',
 					/* type */ 'byte',
 					/* modifiers */ 0,
 					/* annotations */ UDF

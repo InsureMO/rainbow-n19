@@ -20,7 +20,7 @@ JdkClassCreateHelper.class('java.lang.reflect.GenericSignatureFormatError', [
 		[/* public java.lang.reflect.GenericSignatureFormatError(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'message',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

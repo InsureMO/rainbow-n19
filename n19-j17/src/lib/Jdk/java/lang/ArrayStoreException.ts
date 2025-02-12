@@ -20,7 +20,7 @@ JdkClassCreateHelper.class('java.lang.ArrayStoreException', [
 		[/* public java.lang.ArrayStoreException(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 's',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

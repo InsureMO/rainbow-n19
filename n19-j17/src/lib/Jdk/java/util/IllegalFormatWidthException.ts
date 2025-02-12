@@ -13,7 +13,7 @@ JdkClassCreateHelper.class('java.util.IllegalFormatWidthException', [
 		[/* public java.util.IllegalFormatWidthException(int) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'w',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

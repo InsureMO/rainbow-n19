@@ -13,13 +13,13 @@ JdkClassCreateHelper.class('java.net.Proxy', [
 		[/* public java.net.Proxy(java.net.Proxy$Type,java.net.SocketAddress) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'type',
 					/* type */ 'java.net.Proxy$Type',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'sa',
 					/* type */ 'java.net.SocketAddress',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -45,7 +45,7 @@ JdkClassCreateHelper.class('java.net.Proxy', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'p',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF

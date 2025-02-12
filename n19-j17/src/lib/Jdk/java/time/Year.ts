@@ -28,7 +28,7 @@ JdkClassCreateHelper.class('java.time.Year', [
 			/* name */ 'get',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -44,7 +44,7 @@ JdkClassCreateHelper.class('java.time.Year', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -103,7 +103,7 @@ JdkClassCreateHelper.class('java.time.Year', [
 			/* name */ 'compareTo',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ 'java.time.Year',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -119,7 +119,7 @@ JdkClassCreateHelper.class('java.time.Year', [
 			/* name */ 'getLong',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'chronoField',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -144,7 +144,7 @@ JdkClassCreateHelper.class('java.time.Year', [
 			/* name */ 'format',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'formatter',
 					/* type */ 'java.time.format.DateTimeFormatter',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -176,7 +176,7 @@ JdkClassCreateHelper.class('java.time.Year', [
 			/* name */ 'from',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ex',
 					/* type */ 'java.time.temporal.TemporalAccessor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -192,7 +192,7 @@ JdkClassCreateHelper.class('java.time.Year', [
 			/* name */ 'query',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'query',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'R']]
@@ -222,7 +222,7 @@ JdkClassCreateHelper.class('java.time.Year', [
 			/* name */ 'range',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -238,7 +238,7 @@ JdkClassCreateHelper.class('java.time.Year', [
 			/* name */ 'isSupported',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'unit',
 					/* type */ 'java.time.temporal.TemporalUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -254,7 +254,7 @@ JdkClassCreateHelper.class('java.time.Year', [
 			/* name */ 'isSupported',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -286,7 +286,7 @@ JdkClassCreateHelper.class('java.time.Year', [
 			/* name */ 'parse',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'formatter',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -324,7 +324,7 @@ JdkClassCreateHelper.class('java.time.Year', [
 			/* name */ 'now',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'now',
 					/* type */ 'java.time.Clock',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -349,7 +349,7 @@ JdkClassCreateHelper.class('java.time.Year', [
 			/* name */ 'adjustInto',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'temporal',
 					/* type */ 'java.time.temporal.Temporal',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -365,7 +365,7 @@ JdkClassCreateHelper.class('java.time.Year', [
 			/* name */ 'with',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'adjuster',
 					/* type */ 'java.time.temporal.TemporalAdjuster',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -419,13 +419,13 @@ JdkClassCreateHelper.class('java.time.Year', [
 			/* name */ 'with',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'chronoField',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'field',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -463,7 +463,7 @@ JdkClassCreateHelper.class('java.time.Year', [
 			/* name */ 'plus',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'amountToAdd',
 					/* type */ 'java.time.temporal.TemporalAmount',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -479,13 +479,13 @@ JdkClassCreateHelper.class('java.time.Year', [
 			/* name */ 'plus',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'chronoUnit',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'amountToAdd',
 					/* type */ 'java.time.temporal.TemporalUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -517,13 +517,13 @@ JdkClassCreateHelper.class('java.time.Year', [
 			/* name */ 'until',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'yearsUntil',
 					/* type */ 'java.time.temporal.Temporal',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'chronoUnit',
 					/* type */ 'java.time.temporal.TemporalUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -539,13 +539,13 @@ JdkClassCreateHelper.class('java.time.Year', [
 			/* name */ 'minus',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'amountToSubtract',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'unit',
 					/* type */ 'java.time.temporal.TemporalUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -561,7 +561,7 @@ JdkClassCreateHelper.class('java.time.Year', [
 			/* name */ 'minus',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'amountToSubtract',
 					/* type */ 'java.time.temporal.TemporalAmount',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -615,7 +615,7 @@ JdkClassCreateHelper.class('java.time.Year', [
 			/* name */ 'minusYears',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'yearsToSubtract',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -656,7 +656,7 @@ JdkClassCreateHelper.class('java.time.Year', [
 			/* name */ 'plusYears',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'yearsToAdd',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -672,7 +672,7 @@ JdkClassCreateHelper.class('java.time.Year', [
 			/* name */ 'isAfter',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ 'java.time.Year',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -688,7 +688,7 @@ JdkClassCreateHelper.class('java.time.Year', [
 			/* name */ 'isBefore',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ 'java.time.Year',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -704,7 +704,7 @@ JdkClassCreateHelper.class('java.time.Year', [
 			/* name */ 'isValidMonthDay',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'monthDay',
 					/* type */ 'java.time.MonthDay',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -720,7 +720,7 @@ JdkClassCreateHelper.class('java.time.Year', [
 			/* name */ 'atDay',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'dayOfYear',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -736,7 +736,7 @@ JdkClassCreateHelper.class('java.time.Year', [
 			/* name */ 'atMonth',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'month',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -752,7 +752,7 @@ JdkClassCreateHelper.class('java.time.Year', [
 			/* name */ 'atMonth',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'month',
 					/* type */ 'java.time.Month',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -768,7 +768,7 @@ JdkClassCreateHelper.class('java.time.Year', [
 			/* name */ 'atMonthDay',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'monthDay',
 					/* type */ 'java.time.MonthDay',
 					/* modifiers */ 0,
 					/* annotations */ UDF

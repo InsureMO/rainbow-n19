@@ -66,7 +66,7 @@ JdkClassCreateHelper.class('java.time.temporal.ChronoField', [
 			/* name */ 'getDisplayName',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'locale',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -82,7 +82,7 @@ JdkClassCreateHelper.class('java.time.temporal.ChronoField', [
 			/* name */ 'rangeRefinedBy',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'temporal',
 					/* type */ 'java.time.temporal.TemporalAccessor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -134,7 +134,7 @@ JdkClassCreateHelper.class('java.time.temporal.ChronoField', [
 			/* name */ 'isSupportedBy',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'temporal',
 					/* type */ 'java.time.temporal.TemporalAccessor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -150,7 +150,7 @@ JdkClassCreateHelper.class('java.time.temporal.ChronoField', [
 			/* name */ 'getFrom',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'temporal',
 					/* type */ 'java.time.temporal.TemporalAccessor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -166,13 +166,13 @@ JdkClassCreateHelper.class('java.time.temporal.ChronoField', [
 			/* name */ 'adjustInto',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'temporal',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'R']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'newValue',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -196,7 +196,7 @@ JdkClassCreateHelper.class('java.time.temporal.ChronoField', [
 			/* name */ 'checkValidValue',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'value',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -212,7 +212,7 @@ JdkClassCreateHelper.class('java.time.temporal.ChronoField', [
 			/* name */ 'checkValidIntValue',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'value',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF

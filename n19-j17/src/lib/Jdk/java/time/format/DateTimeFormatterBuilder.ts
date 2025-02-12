@@ -23,7 +23,7 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatterBuilder', [
 			/* name */ 'append',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'formatter',
 					/* type */ 'java.time.format.DateTimeFormatter',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -39,7 +39,7 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatterBuilder', [
 			/* name */ 'appendPattern',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'pattern',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -55,7 +55,7 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatterBuilder', [
 			/* name */ 'toFormatter',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'locale',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -80,13 +80,13 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatterBuilder', [
 			/* name */ 'appendLocalized',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'dateStyle',
 					/* type */ 'java.time.format.FormatStyle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'timeStyle',
 					/* type */ 'java.time.format.FormatStyle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -102,7 +102,7 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatterBuilder', [
 			/* name */ 'appendValue',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -118,25 +118,25 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatterBuilder', [
 			/* name */ 'appendValue',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'minWidth',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'maxWidth',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg3',
+					/* name */ 'signStyle',
 					/* type */ 'java.time.format.SignStyle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -152,13 +152,13 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatterBuilder', [
 			/* name */ 'appendValue',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'width',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -174,7 +174,7 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatterBuilder', [
 			/* name */ 'appendLiteral',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'literal',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -190,7 +190,7 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatterBuilder', [
 			/* name */ 'appendLiteral',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'literal',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -233,25 +233,25 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatterBuilder', [
 			/* name */ 'appendFraction',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'minWidth',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'maxWidth',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg3',
+					/* name */ 'decimalPoint',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -312,7 +312,7 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatterBuilder', [
 			/* name */ 'appendInstant',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'fractionalDigits',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -328,13 +328,13 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatterBuilder', [
 			/* name */ 'appendOffset',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'pattern',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'noOffsetText',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -350,7 +350,7 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatterBuilder', [
 			/* name */ 'appendText',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -366,13 +366,13 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatterBuilder', [
 			/* name */ 'appendText',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'textStyle',
 					/* type */ 'java.time.format.TextStyle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -388,13 +388,13 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatterBuilder', [
 			/* name */ 'appendText',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'textLookup',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.Long',
@@ -426,13 +426,13 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatterBuilder', [
 			/* name */ 'padNext',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'padWidth',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'padChar',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -448,7 +448,7 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatterBuilder', [
 			/* name */ 'padNext',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'padWidth',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -464,13 +464,13 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatterBuilder', [
 			/* name */ 'appendZoneText',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'textStyle',
 					/* type */ 'java.time.format.TextStyle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'preferredZones',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.time.ZoneId'
@@ -492,7 +492,7 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatterBuilder', [
 			/* name */ 'appendZoneText',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'textStyle',
 					/* type */ 'java.time.format.TextStyle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -517,13 +517,13 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatterBuilder', [
 			/* name */ 'appendGenericZoneText',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'textStyle',
 					/* type */ 'java.time.format.TextStyle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'preferredZones',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.time.ZoneId'
@@ -545,7 +545,7 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatterBuilder', [
 			/* name */ 'appendGenericZoneText',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'textStyle',
 					/* type */ 'java.time.format.TextStyle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -561,7 +561,7 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatterBuilder', [
 			/* name */ 'appendLocalizedOffset',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'style',
 					/* type */ 'java.time.format.TextStyle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -577,7 +577,7 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatterBuilder', [
 			/* name */ 'appendDayPeriodText',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'style',
 					/* type */ 'java.time.format.TextStyle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -593,25 +593,25 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatterBuilder', [
 			/* name */ 'appendValueReduced',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'width',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'maxWidth',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg3',
+					/* name */ 'baseValue',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -627,25 +627,25 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatterBuilder', [
 			/* name */ 'appendValueReduced',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'width',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'maxWidth',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg3',
+					/* name */ 'baseDate',
 					/* type */ 'java.time.chrono.ChronoLocalDate',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -661,25 +661,25 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatterBuilder', [
 			/* name */ 'getLocalizedDateTimePattern',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'timeStyle',
 					/* type */ 'java.time.format.FormatStyle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'chrono',
 					/* type */ 'java.time.format.FormatStyle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'locale',
 					/* type */ 'java.time.chrono.Chronology',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg3',
+					/* name */ 'adapter',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -695,13 +695,13 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatterBuilder', [
 			/* name */ 'parseDefaulting',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'value',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -735,7 +735,7 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatterBuilder', [
 			/* name */ 'appendChronologyText',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'textStyle',
 					/* type */ 'java.time.format.TextStyle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -751,7 +751,7 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatterBuilder', [
 			/* name */ 'appendOptional',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'formatter',
 					/* type */ 'java.time.format.DateTimeFormatter',
 					/* modifiers */ 0,
 					/* annotations */ UDF

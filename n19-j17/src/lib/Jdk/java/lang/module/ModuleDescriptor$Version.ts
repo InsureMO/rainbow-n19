@@ -23,7 +23,7 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Version', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ob',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -57,7 +57,7 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Version', [
 			/* name */ 'compareTo',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'that',
 					/* type */ 'java.lang.module.ModuleDescriptor$Version',
 					/* modifiers */ 0,
 					/* annotations */ UDF

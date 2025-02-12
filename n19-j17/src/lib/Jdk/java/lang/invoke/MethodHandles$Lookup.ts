@@ -24,7 +24,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles$Lookup', [
 			/* name */ 'findClass',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'targetName',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -60,7 +60,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles$Lookup', [
 			/* name */ 'defineClass',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'bytes',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -92,7 +92,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles$Lookup', [
 			/* name */ 'in',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'requestedLookupClass',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -119,7 +119,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles$Lookup', [
 			/* name */ 'ensureInitialized',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'targetClass',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -162,7 +162,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles$Lookup', [
 			/* name */ 'revealDirect',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ex',
 					/* type */ 'java.lang.invoke.MethodHandle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -218,7 +218,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles$Lookup', [
 			/* name */ 'findVirtual',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'mh',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -235,13 +235,13 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles$Lookup', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'mh',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'refc',
 					/* type */ 'java.lang.invoke.MethodType',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -266,7 +266,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles$Lookup', [
 			/* name */ 'findStatic',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'refc',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -283,13 +283,13 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles$Lookup', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'type',
 					/* type */ 'java.lang.invoke.MethodType',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -332,7 +332,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles$Lookup', [
 			/* name */ 'accessClass',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'targetClass',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -375,7 +375,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles$Lookup', [
 			/* name */ 'dropLookupMode',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'modeToDrop',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -463,7 +463,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles$Lookup', [
 			/* name */ 'findConstructor',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'refc',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -480,7 +480,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles$Lookup', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'type',
 					/* type */ 'java.lang.invoke.MethodType',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -505,7 +505,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles$Lookup', [
 			/* name */ 'findSpecial',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'refc',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -522,19 +522,19 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles$Lookup', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'type',
 					/* type */ 'java.lang.invoke.MethodType',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg3',
+					/* name */ 'specialCaller',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -570,7 +570,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles$Lookup', [
 			/* name */ 'findGetter',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'refc',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -587,13 +587,13 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles$Lookup', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'type',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -629,7 +629,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles$Lookup', [
 			/* name */ 'findSetter',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'refc',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -646,13 +646,13 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles$Lookup', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'type',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -688,7 +688,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles$Lookup', [
 			/* name */ 'findVarHandle',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'recv',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -705,13 +705,13 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles$Lookup', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'type',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -747,7 +747,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles$Lookup', [
 			/* name */ 'findStaticGetter',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'refc',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -764,13 +764,13 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles$Lookup', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'type',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -806,7 +806,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles$Lookup', [
 			/* name */ 'findStaticSetter',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'refc',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -823,13 +823,13 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles$Lookup', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'type',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -865,7 +865,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles$Lookup', [
 			/* name */ 'findStaticVarHandle',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'decl',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -882,13 +882,13 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles$Lookup', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'type',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -924,19 +924,19 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles$Lookup', [
 			/* name */ 'bind',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'receiver',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'type',
 					/* type */ 'java.lang.invoke.MethodType',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -961,7 +961,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles$Lookup', [
 			/* name */ 'unreflect',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'mh',
 					/* type */ 'java.lang.reflect.Method',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -982,13 +982,13 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles$Lookup', [
 			/* name */ 'unreflectSpecial',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'm',
 					/* type */ 'java.lang.reflect.Method',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'specialCaller',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1020,7 +1020,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles$Lookup', [
 			/* name */ 'unreflectConstructor',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'c',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1052,7 +1052,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles$Lookup', [
 			/* name */ 'unreflectGetter',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'f',
 					/* type */ 'java.lang.reflect.Field',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1073,7 +1073,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles$Lookup', [
 			/* name */ 'unreflectSetter',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'f',
 					/* type */ 'java.lang.reflect.Field',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1094,7 +1094,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles$Lookup', [
 			/* name */ 'unreflectVarHandle',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'f',
 					/* type */ 'java.lang.reflect.Field',
 					/* modifiers */ 0,
 					/* annotations */ UDF

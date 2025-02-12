@@ -16,7 +16,7 @@ JdkClassCreateHelper.class('java.util.zip.ZipEntry', [
 		[/* public java.util.zip.ZipEntry(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -30,7 +30,7 @@ JdkClassCreateHelper.class('java.util.zip.ZipEntry', [
 		[/* public java.util.zip.ZipEntry(java.util.zip.ZipEntry) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'e',
 					/* type */ 'java.util.zip.ZipEntry',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -119,7 +119,7 @@ JdkClassCreateHelper.class('java.util.zip.ZipEntry', [
 			/* name */ 'setLastModifiedTime',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'time',
 					/* type */ 'java.nio.file.attribute.FileTime',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -153,7 +153,7 @@ JdkClassCreateHelper.class('java.util.zip.ZipEntry', [
 			/* name */ 'setTime',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'localYear',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -169,7 +169,7 @@ JdkClassCreateHelper.class('java.util.zip.ZipEntry', [
 			/* name */ 'setTimeLocal',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'time',
 					/* type */ 'java.time.LocalDateTime',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -194,7 +194,7 @@ JdkClassCreateHelper.class('java.util.zip.ZipEntry', [
 			/* name */ 'setLastAccessTime',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'time',
 					/* type */ 'java.nio.file.attribute.FileTime',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -219,7 +219,7 @@ JdkClassCreateHelper.class('java.util.zip.ZipEntry', [
 			/* name */ 'setCreationTime',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'time',
 					/* type */ 'java.nio.file.attribute.FileTime',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -244,7 +244,7 @@ JdkClassCreateHelper.class('java.util.zip.ZipEntry', [
 			/* name */ 'setSize',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'size',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -269,7 +269,7 @@ JdkClassCreateHelper.class('java.util.zip.ZipEntry', [
 			/* name */ 'setCompressedSize',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'csize',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -285,7 +285,7 @@ JdkClassCreateHelper.class('java.util.zip.ZipEntry', [
 			/* name */ 'setCrc',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'crc',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -310,7 +310,7 @@ JdkClassCreateHelper.class('java.util.zip.ZipEntry', [
 			/* name */ 'setMethod',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'method',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -326,7 +326,7 @@ JdkClassCreateHelper.class('java.util.zip.ZipEntry', [
 			/* name */ 'setExtra',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'extra',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -351,7 +351,7 @@ JdkClassCreateHelper.class('java.util.zip.ZipEntry', [
 			/* name */ 'setComment',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'comment',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -28,7 +28,7 @@ JdkClassCreateHelper.class('java.time.OffsetTime', [
 			/* name */ 'get',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -44,7 +44,7 @@ JdkClassCreateHelper.class('java.time.OffsetTime', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -94,7 +94,7 @@ JdkClassCreateHelper.class('java.time.OffsetTime', [
 			/* name */ 'compareTo',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ 'java.time.OffsetTime',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -110,7 +110,7 @@ JdkClassCreateHelper.class('java.time.OffsetTime', [
 			/* name */ 'getLong',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -126,7 +126,7 @@ JdkClassCreateHelper.class('java.time.OffsetTime', [
 			/* name */ 'format',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'formatter',
 					/* type */ 'java.time.format.DateTimeFormatter',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -142,7 +142,7 @@ JdkClassCreateHelper.class('java.time.OffsetTime', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'offset',
 					/* type */ 'java.time.LocalTime',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -164,25 +164,25 @@ JdkClassCreateHelper.class('java.time.OffsetTime', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'minute',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'second',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'nanoOfSecond',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg3',
+					/* name */ 'offset',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -204,7 +204,7 @@ JdkClassCreateHelper.class('java.time.OffsetTime', [
 			/* name */ 'from',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'time',
 					/* type */ 'java.time.temporal.TemporalAccessor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -220,7 +220,7 @@ JdkClassCreateHelper.class('java.time.OffsetTime', [
 			/* name */ 'query',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'query',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'R']]
@@ -259,7 +259,7 @@ JdkClassCreateHelper.class('java.time.OffsetTime', [
 			/* name */ 'range',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -275,7 +275,7 @@ JdkClassCreateHelper.class('java.time.OffsetTime', [
 			/* name */ 'isSupported',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'unit',
 					/* type */ 'java.time.temporal.TemporalUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -291,7 +291,7 @@ JdkClassCreateHelper.class('java.time.OffsetTime', [
 			/* name */ 'isSupported',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -307,7 +307,7 @@ JdkClassCreateHelper.class('java.time.OffsetTime', [
 			/* name */ 'parse',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'formatter',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -345,7 +345,7 @@ JdkClassCreateHelper.class('java.time.OffsetTime', [
 			/* name */ 'isEqual',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ 'java.time.OffsetTime',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -361,7 +361,7 @@ JdkClassCreateHelper.class('java.time.OffsetTime', [
 			/* name */ 'toEpochSecond',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'date',
 					/* type */ 'java.time.LocalDate',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -404,13 +404,13 @@ JdkClassCreateHelper.class('java.time.OffsetTime', [
 			/* name */ 'ofInstant',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'zone',
 					/* type */ 'java.time.Instant',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'rules',
 					/* type */ 'java.time.ZoneId',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -460,7 +460,7 @@ JdkClassCreateHelper.class('java.time.OffsetTime', [
 			/* name */ 'now',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'now',
 					/* type */ 'java.time.Clock',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -476,7 +476,7 @@ JdkClassCreateHelper.class('java.time.OffsetTime', [
 			/* name */ 'adjustInto',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'temporal',
 					/* type */ 'java.time.temporal.Temporal',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -492,7 +492,7 @@ JdkClassCreateHelper.class('java.time.OffsetTime', [
 			/* name */ 'with',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'adjuster',
 					/* type */ 'java.time.temporal.TemporalAdjuster',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -508,13 +508,13 @@ JdkClassCreateHelper.class('java.time.OffsetTime', [
 			/* name */ 'with',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'f',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'field',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -584,13 +584,13 @@ JdkClassCreateHelper.class('java.time.OffsetTime', [
 			/* name */ 'plus',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'amountToAdd',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'unit',
 					/* type */ 'java.time.temporal.TemporalUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -606,7 +606,7 @@ JdkClassCreateHelper.class('java.time.OffsetTime', [
 			/* name */ 'plus',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'amountToAdd',
 					/* type */ 'java.time.temporal.TemporalAmount',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -644,13 +644,13 @@ JdkClassCreateHelper.class('java.time.OffsetTime', [
 			/* name */ 'until',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'nanosUntil',
 					/* type */ 'java.time.temporal.Temporal',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'chronoUnit',
 					/* type */ 'java.time.temporal.TemporalUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -666,7 +666,7 @@ JdkClassCreateHelper.class('java.time.OffsetTime', [
 			/* name */ 'plusNanos',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'nanos',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -682,7 +682,7 @@ JdkClassCreateHelper.class('java.time.OffsetTime', [
 			/* name */ 'plusSeconds',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'seconds',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -698,7 +698,7 @@ JdkClassCreateHelper.class('java.time.OffsetTime', [
 			/* name */ 'plusHours',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'hours',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -714,7 +714,7 @@ JdkClassCreateHelper.class('java.time.OffsetTime', [
 			/* name */ 'plusMinutes',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'minutes',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -768,13 +768,13 @@ JdkClassCreateHelper.class('java.time.OffsetTime', [
 			/* name */ 'minus',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'amountToSubtract',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'unit',
 					/* type */ 'java.time.temporal.TemporalUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -790,7 +790,7 @@ JdkClassCreateHelper.class('java.time.OffsetTime', [
 			/* name */ 'minus',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'amountToSubtract',
 					/* type */ 'java.time.temporal.TemporalAmount',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -806,7 +806,7 @@ JdkClassCreateHelper.class('java.time.OffsetTime', [
 			/* name */ 'minusHours',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'hours',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -822,7 +822,7 @@ JdkClassCreateHelper.class('java.time.OffsetTime', [
 			/* name */ 'minusMinutes',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'minutes',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -838,7 +838,7 @@ JdkClassCreateHelper.class('java.time.OffsetTime', [
 			/* name */ 'minusSeconds',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'seconds',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -854,7 +854,7 @@ JdkClassCreateHelper.class('java.time.OffsetTime', [
 			/* name */ 'minusNanos',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'nanos',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -870,7 +870,7 @@ JdkClassCreateHelper.class('java.time.OffsetTime', [
 			/* name */ 'truncatedTo',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'unit',
 					/* type */ 'java.time.temporal.TemporalUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -886,7 +886,7 @@ JdkClassCreateHelper.class('java.time.OffsetTime', [
 			/* name */ 'isAfter',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ 'java.time.OffsetTime',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -902,7 +902,7 @@ JdkClassCreateHelper.class('java.time.OffsetTime', [
 			/* name */ 'isBefore',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ 'java.time.OffsetTime',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -927,7 +927,7 @@ JdkClassCreateHelper.class('java.time.OffsetTime', [
 			/* name */ 'withHour',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'hour',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -943,7 +943,7 @@ JdkClassCreateHelper.class('java.time.OffsetTime', [
 			/* name */ 'withMinute',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'minute',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -959,7 +959,7 @@ JdkClassCreateHelper.class('java.time.OffsetTime', [
 			/* name */ 'withSecond',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'second',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -975,7 +975,7 @@ JdkClassCreateHelper.class('java.time.OffsetTime', [
 			/* name */ 'withNano',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'nanoOfSecond',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -991,7 +991,7 @@ JdkClassCreateHelper.class('java.time.OffsetTime', [
 			/* name */ 'atDate',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'date',
 					/* type */ 'java.time.LocalDate',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1007,7 +1007,7 @@ JdkClassCreateHelper.class('java.time.OffsetTime', [
 			/* name */ 'withOffsetSameInstant',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'offset',
 					/* type */ 'java.time.ZoneOffset',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1023,7 +1023,7 @@ JdkClassCreateHelper.class('java.time.OffsetTime', [
 			/* name */ 'withOffsetSameLocal',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'offset',
 					/* type */ 'java.time.ZoneOffset',
 					/* modifiers */ 0,
 					/* annotations */ UDF

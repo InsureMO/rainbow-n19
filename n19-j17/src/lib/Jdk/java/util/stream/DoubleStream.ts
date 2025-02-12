@@ -189,13 +189,13 @@ JdkClassCreateHelper.class('java.util.stream.DoubleStream', [
 			/* name */ 'concat',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'b',
 					/* type */ 'java.util.stream.DoubleStream',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'split',
 					/* type */ 'java.util.stream.DoubleStream',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -469,13 +469,13 @@ JdkClassCreateHelper.class('java.util.stream.DoubleStream', [
 			/* name */ 'iterate',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'f',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'spliterator',
 					/* type */ 'java.util.function.DoubleUnaryOperator',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -491,19 +491,19 @@ JdkClassCreateHelper.class('java.util.stream.DoubleStream', [
 			/* name */ 'iterate',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'hasNext',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'next',
 					/* type */ 'java.util.function.DoublePredicate',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'spliterator',
 					/* type */ 'java.util.function.DoubleUnaryOperator',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -594,7 +594,7 @@ JdkClassCreateHelper.class('java.util.stream.DoubleStream', [
 			/* name */ 'mapMulti',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'mapper',
 					/* type */ 'java.util.stream.DoubleStream$DoubleMapMultiConsumer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -610,7 +610,7 @@ JdkClassCreateHelper.class('java.util.stream.DoubleStream', [
 			/* name */ 'takeWhile',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'predicate',
 					/* type */ 'java.util.function.DoublePredicate',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -626,7 +626,7 @@ JdkClassCreateHelper.class('java.util.stream.DoubleStream', [
 			/* name */ 'dropWhile',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'predicate',
 					/* type */ 'java.util.function.DoublePredicate',
 					/* modifiers */ 0,
 					/* annotations */ UDF

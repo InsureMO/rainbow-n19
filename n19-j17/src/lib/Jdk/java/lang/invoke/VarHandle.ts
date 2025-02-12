@@ -136,7 +136,7 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle', [
 			/* name */ 'accessModeType',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'accessMode',
 					/* type */ 'java.lang.invoke.VarHandle$AccessMode',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -152,7 +152,7 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle', [
 			/* name */ 'isAccessModeSupported',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'accessMode',
 					/* type */ 'java.lang.invoke.VarHandle$AccessMode',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -768,7 +768,7 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle', [
 			/* name */ 'toMethodHandle',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'mh',
 					/* type */ 'java.lang.invoke.VarHandle$AccessMode',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -13,7 +13,7 @@ JdkClassCreateHelper.class('java.io.IOError', [
 		[/* public java.io.IOError(java.lang.Throwable) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'cause',
 					/* type */ 'java.lang.Throwable',
 					/* modifiers */ 0,
 					/* annotations */ UDF

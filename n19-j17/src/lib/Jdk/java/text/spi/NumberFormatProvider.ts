@@ -87,13 +87,13 @@ JdkClassCreateHelper.class('java.text.spi.NumberFormatProvider', [
 			/* name */ 'getCompactNumberInstance',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'locale',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'formatStyle',
 					/* type */ 'java.text.NumberFormat$Style',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -13,7 +13,7 @@ JdkClassCreateHelper.class('java.io.PipedReader', [
 		[/* public java.io.PipedReader(int) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'pipeSize',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -34,13 +34,13 @@ JdkClassCreateHelper.class('java.io.PipedReader', [
 		[/* public java.io.PipedReader(java.io.PipedWriter,int) throws java.io.IOException */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'src',
 					/* type */ 'java.io.PipedWriter',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'pipeSize',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -59,7 +59,7 @@ JdkClassCreateHelper.class('java.io.PipedReader', [
 		[/* public java.io.PipedReader(java.io.PipedWriter) throws java.io.IOException */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'src',
 					/* type */ 'java.io.PipedWriter',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -95,19 +95,19 @@ JdkClassCreateHelper.class('java.io.PipedReader', [
 			/* name */ 'read',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'cbuf',
 					/* type */ '[C',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'off',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'len',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -128,7 +128,7 @@ JdkClassCreateHelper.class('java.io.PipedReader', [
 			/* name */ 'connect',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'src',
 					/* type */ 'java.io.PipedWriter',
 					/* modifiers */ 0,
 					/* annotations */ UDF

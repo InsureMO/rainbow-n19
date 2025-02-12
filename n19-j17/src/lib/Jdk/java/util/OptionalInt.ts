@@ -17,7 +17,7 @@ JdkClassCreateHelper.class('java.util.OptionalInt', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -103,7 +103,7 @@ JdkClassCreateHelper.class('java.util.OptionalInt', [
 			/* name */ 'orElse',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -119,7 +119,7 @@ JdkClassCreateHelper.class('java.util.OptionalInt', [
 			/* name */ 'orElseThrow',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'exceptionSupplier',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -168,7 +168,7 @@ JdkClassCreateHelper.class('java.util.OptionalInt', [
 			/* name */ 'ifPresent',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'action',
 					/* type */ 'java.util.function.IntConsumer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -184,13 +184,13 @@ JdkClassCreateHelper.class('java.util.OptionalInt', [
 			/* name */ 'ifPresentOrElse',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'action',
 					/* type */ 'java.util.function.IntConsumer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'emptyAction',
 					/* type */ 'java.lang.Runnable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -206,7 +206,7 @@ JdkClassCreateHelper.class('java.util.OptionalInt', [
 			/* name */ 'orElseGet',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'supplier',
 					/* type */ 'java.util.function.IntSupplier',
 					/* modifiers */ 0,
 					/* annotations */ UDF

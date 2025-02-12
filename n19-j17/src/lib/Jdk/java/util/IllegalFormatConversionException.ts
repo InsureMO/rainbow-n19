@@ -13,13 +13,13 @@ JdkClassCreateHelper.class('java.util.IllegalFormatConversionException', [
 		[/* public java.util.IllegalFormatConversionException(char,java.lang.Class<?>) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'c',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'arg',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

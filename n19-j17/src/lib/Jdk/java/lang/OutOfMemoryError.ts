@@ -20,7 +20,7 @@ JdkClassCreateHelper.class('java.lang.OutOfMemoryError', [
 		[/* public java.lang.OutOfMemoryError(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 's',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

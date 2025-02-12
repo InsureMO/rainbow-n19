@@ -26,7 +26,7 @@ JdkClassCreateHelper.class('java.time.chrono.HijrahChronology', [
 			/* name */ 'range',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'f',
 					/* type */ 'java.time.temporal.ChronoField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -51,7 +51,7 @@ JdkClassCreateHelper.class('java.time.chrono.HijrahChronology', [
 			/* name */ 'isLeapYear',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'prolepticYear',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -67,25 +67,25 @@ JdkClassCreateHelper.class('java.time.chrono.HijrahChronology', [
 			/* name */ 'date',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'era',
 					/* type */ 'java.time.chrono.Era',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'yearOfEra',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'month',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg3',
+					/* name */ 'dayOfMonth',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -179,7 +179,7 @@ JdkClassCreateHelper.class('java.time.chrono.HijrahChronology', [
 			/* name */ 'date',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'temporal',
 					/* type */ 'java.time.temporal.TemporalAccessor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -195,19 +195,19 @@ JdkClassCreateHelper.class('java.time.chrono.HijrahChronology', [
 			/* name */ 'date',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'prolepticYear',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'month',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'dayOfMonth',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -223,7 +223,7 @@ JdkClassCreateHelper.class('java.time.chrono.HijrahChronology', [
 			/* name */ 'dateEpochDay',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'epochDay',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -255,13 +255,13 @@ JdkClassCreateHelper.class('java.time.chrono.HijrahChronology', [
 			/* name */ 'prolepticYear',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'era',
 					/* type */ 'java.time.chrono.Era',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'yearOfEra',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -327,19 +327,19 @@ JdkClassCreateHelper.class('java.time.chrono.HijrahChronology', [
 			/* name */ 'dateYearDay',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'era',
 					/* type */ 'java.time.chrono.Era',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'yearOfEra',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'dayOfYear',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -355,13 +355,13 @@ JdkClassCreateHelper.class('java.time.chrono.HijrahChronology', [
 			/* name */ 'dateYearDay',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'prolepticYear',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'dayOfYear',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -427,7 +427,7 @@ JdkClassCreateHelper.class('java.time.chrono.HijrahChronology', [
 			/* name */ 'dateNow',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'clock',
 					/* type */ 'java.time.Clock',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -443,7 +443,7 @@ JdkClassCreateHelper.class('java.time.chrono.HijrahChronology', [
 			/* name */ 'dateNow',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'zone',
 					/* type */ 'java.time.ZoneId',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -459,7 +459,7 @@ JdkClassCreateHelper.class('java.time.chrono.HijrahChronology', [
 			/* name */ 'zonedDateTime',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'temporal',
 					/* type */ 'java.time.temporal.TemporalAccessor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -481,13 +481,13 @@ JdkClassCreateHelper.class('java.time.chrono.HijrahChronology', [
 			/* name */ 'zonedDateTime',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'instant',
 					/* type */ 'java.time.Instant',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'zone',
 					/* type */ 'java.time.ZoneId',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -509,7 +509,7 @@ JdkClassCreateHelper.class('java.time.chrono.HijrahChronology', [
 			/* name */ 'localDateTime',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'temporal',
 					/* type */ 'java.time.temporal.TemporalAccessor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -547,7 +547,7 @@ JdkClassCreateHelper.class('java.time.chrono.HijrahChronology', [
 			/* name */ 'eraOf',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'eraValue',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -578,7 +578,7 @@ JdkClassCreateHelper.class('java.time.chrono.HijrahChronology', [
 			/* name */ 'resolveDate',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'fieldValues',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.time.temporal.TemporalField',
@@ -591,7 +591,7 @@ JdkClassCreateHelper.class('java.time.chrono.HijrahChronology', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'resolverStyle',
 					/* type */ 'java.time.format.ResolverStyle',
 					/* modifiers */ 0,
 					/* annotations */ UDF

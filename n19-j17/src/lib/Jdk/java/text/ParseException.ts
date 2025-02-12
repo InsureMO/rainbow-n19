@@ -13,13 +13,13 @@ JdkClassCreateHelper.class('java.text.ParseException', [
 		[/* public java.text.ParseException(java.lang.String,int) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 's',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'errorOffset',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

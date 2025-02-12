@@ -81,7 +81,7 @@ JdkClassCreateHelper.class('java.lang.ModuleLayer', [
 			/* name */ 'findModule',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -103,13 +103,13 @@ JdkClassCreateHelper.class('java.lang.ModuleLayer', [
 			/* name */ 'defineModules',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'cf',
 					/* type */ 'java.lang.module.Configuration',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'clf',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.String',
@@ -132,13 +132,13 @@ JdkClassCreateHelper.class('java.lang.ModuleLayer', [
 			/* name */ 'defineModules',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'layer',
 					/* type */ 'java.lang.module.Configuration',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'e',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.ModuleLayer'
@@ -150,7 +150,7 @@ JdkClassCreateHelper.class('java.lang.ModuleLayer', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'parentLayers',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.String',
@@ -173,13 +173,13 @@ JdkClassCreateHelper.class('java.lang.ModuleLayer', [
 			/* name */ 'defineModulesWithOneLoader',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'loader',
 					/* type */ 'java.lang.module.Configuration',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'layer',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.ModuleLayer'
@@ -191,7 +191,7 @@ JdkClassCreateHelper.class('java.lang.ModuleLayer', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'e',
 					/* type */ 'java.lang.ClassLoader',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -207,13 +207,13 @@ JdkClassCreateHelper.class('java.lang.ModuleLayer', [
 			/* name */ 'defineModulesWithOneLoader',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'cf',
 					/* type */ 'java.lang.module.Configuration',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'parentLoader',
 					/* type */ 'java.lang.ClassLoader',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -229,13 +229,13 @@ JdkClassCreateHelper.class('java.lang.ModuleLayer', [
 			/* name */ 'defineModulesWithManyLoaders',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'layer',
 					/* type */ 'java.lang.module.Configuration',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'e',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.ModuleLayer'
@@ -247,7 +247,7 @@ JdkClassCreateHelper.class('java.lang.ModuleLayer', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'parentLayers',
 					/* type */ 'java.lang.ClassLoader',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -263,13 +263,13 @@ JdkClassCreateHelper.class('java.lang.ModuleLayer', [
 			/* name */ 'defineModulesWithManyLoaders',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'cf',
 					/* type */ 'java.lang.module.Configuration',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'parentLoader',
 					/* type */ 'java.lang.ClassLoader',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -285,7 +285,7 @@ JdkClassCreateHelper.class('java.lang.ModuleLayer', [
 			/* name */ 'findLoader',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

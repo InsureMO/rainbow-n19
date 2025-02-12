@@ -31,7 +31,7 @@ JdkClassCreateHelper.class('java.lang.ref.ReferenceQueue', [
 			/* name */ 'remove',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'end',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF

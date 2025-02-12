@@ -167,7 +167,7 @@ JdkClassCreateHelper.class('java.util.Comparator', [
 			/* name */ 'comparing',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'keyComparator',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -242,7 +242,7 @@ JdkClassCreateHelper.class('java.util.Comparator', [
 			/* name */ 'thenComparing',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -277,7 +277,7 @@ JdkClassCreateHelper.class('java.util.Comparator', [
 			/* name */ 'thenComparing',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'keyExtractor',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -302,7 +302,7 @@ JdkClassCreateHelper.class('java.util.Comparator', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'keyComparator',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -345,7 +345,7 @@ JdkClassCreateHelper.class('java.util.Comparator', [
 			/* name */ 'thenComparing',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'keyExtractor',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -551,7 +551,7 @@ JdkClassCreateHelper.class('java.util.Comparator', [
 			/* name */ 'thenComparingInt',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'keyExtractor',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -586,7 +586,7 @@ JdkClassCreateHelper.class('java.util.Comparator', [
 			/* name */ 'thenComparingLong',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'keyExtractor',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -621,7 +621,7 @@ JdkClassCreateHelper.class('java.util.Comparator', [
 			/* name */ 'thenComparingDouble',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'keyExtractor',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

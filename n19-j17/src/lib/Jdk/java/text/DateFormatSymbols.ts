@@ -16,7 +16,7 @@ JdkClassCreateHelper.class('java.text.DateFormatSymbols', [
 		[/* public java.text.DateFormatSymbols(java.util.Locale) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'locale',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -40,7 +40,7 @@ JdkClassCreateHelper.class('java.text.DateFormatSymbols', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -83,7 +83,7 @@ JdkClassCreateHelper.class('java.text.DateFormatSymbols', [
 			/* name */ 'getInstance',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'dfs',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -292,7 +292,7 @@ JdkClassCreateHelper.class('java.text.DateFormatSymbols', [
 			/* name */ 'setLocalPatternChars',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newLocalPatternChars',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

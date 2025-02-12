@@ -57,7 +57,7 @@ JdkClassCreateHelper.class('java.security.Principal', [
 			/* name */ 'implies',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'subject',
 					/* type */ 'javax.security.auth.Subject',
 					/* modifiers */ 0,
 					/* annotations */ UDF

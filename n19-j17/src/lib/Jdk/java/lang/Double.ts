@@ -25,7 +25,7 @@ JdkClassCreateHelper.class('java.lang.Double', [
 		[/* public java.lang.Double(double) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'value',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -45,7 +45,7 @@ JdkClassCreateHelper.class('java.lang.Double', [
 		[/* public java.lang.Double(java.lang.String) throws java.lang.NumberFormatException */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 's',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -73,7 +73,7 @@ JdkClassCreateHelper.class('java.lang.Double', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -114,7 +114,7 @@ JdkClassCreateHelper.class('java.lang.Double', [
 			/* name */ 'hashCode',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'bits',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -139,7 +139,7 @@ JdkClassCreateHelper.class('java.lang.Double', [
 			/* name */ 'min',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'b',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -161,7 +161,7 @@ JdkClassCreateHelper.class('java.lang.Double', [
 			/* name */ 'max',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'b',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -237,7 +237,7 @@ JdkClassCreateHelper.class('java.lang.Double', [
 			/* name */ 'compareTo',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'anotherDouble',
 					/* type */ 'java.lang.Double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -269,13 +269,13 @@ JdkClassCreateHelper.class('java.lang.Double', [
 			/* name */ 'compare',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'd2',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'thisBits',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -386,7 +386,7 @@ JdkClassCreateHelper.class('java.lang.Double', [
 			/* name */ 'toHexString',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'subnormal',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -423,7 +423,7 @@ JdkClassCreateHelper.class('java.lang.Double', [
 			/* name */ 'resolveConstantDesc',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'lookup',
 					/* type */ 'java.lang.invoke.MethodHandles$Lookup',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -479,7 +479,7 @@ JdkClassCreateHelper.class('java.lang.Double', [
 			/* name */ 'sum',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'b',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF

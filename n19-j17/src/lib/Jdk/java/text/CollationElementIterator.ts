@@ -51,7 +51,7 @@ JdkClassCreateHelper.class('java.text.CollationElementIterator', [
 			/* name */ 'setOffset',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'last',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -67,7 +67,7 @@ JdkClassCreateHelper.class('java.text.CollationElementIterator', [
 			/* name */ 'setText',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'source',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -83,7 +83,7 @@ JdkClassCreateHelper.class('java.text.CollationElementIterator', [
 			/* name */ 'setText',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'source',
 					/* type */ 'java.text.CharacterIterator',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -99,7 +99,7 @@ JdkClassCreateHelper.class('java.text.CollationElementIterator', [
 			/* name */ 'getMaxExpansion',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'order',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

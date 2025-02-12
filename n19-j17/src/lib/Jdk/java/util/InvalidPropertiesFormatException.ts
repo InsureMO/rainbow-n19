@@ -13,7 +13,7 @@ JdkClassCreateHelper.class('java.util.InvalidPropertiesFormatException', [
 		[/* public java.util.InvalidPropertiesFormatException(java.lang.Throwable) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'cause',
 					/* type */ 'java.lang.Throwable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -27,7 +27,7 @@ JdkClassCreateHelper.class('java.util.InvalidPropertiesFormatException', [
 		[/* public java.util.InvalidPropertiesFormatException(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'message',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

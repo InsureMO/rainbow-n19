@@ -20,6 +20,7 @@ import org.objectweb.asm.ClassVisitor
 import org.objectweb.asm.Label
 import org.objectweb.asm.MethodVisitor
 import org.objectweb.asm.Opcodes
+import kotlin.jvm.java
 
 val IGNORE_ANNOTATION_TYPE_NAMES = listOf("jdk.internal.util.random.RandomSupport\$RandomGeneratorProperties", "")
 val IGNORE_ANNOTATION_METHOD_NAMES = listOf("annotationType", "equals", "hashCode", "toString")
@@ -329,7 +330,7 @@ private fun generateParameter(parameter: Parameter, name: String, indent: String
 private class MethodVisitorForParameterNames(val parameterNames: MutableList<String>) :
 	MethodVisitor(Opcodes.ASM9) {
 	override fun visitLocalVariable(
-		name: String, descriptor: String, signature: String, start: Label, end: Label, index: Int
+		name: String, descriptor: String, signature: String?, start: Label, end: Label, index: Int
 	) {
 		if (index > 0) { // Skip 'this' parameter for non - static methods
 			parameterNames.add(name)
@@ -339,17 +340,48 @@ private class MethodVisitorForParameterNames(val parameterNames: MutableList<Str
 
 private class ClassVisitorForMethodParameterNames(val executable: Executable, val parameterNames: MutableList<String>) :
 	ClassVisitor(Opcodes.ASM9) {
-	val str: String
+	val name: String
+	val descriptor: String
 
 	init {
-		this.str = executableToStr()
+		this.name = executableToName()
+		this.descriptor = executableToDescriptor()
 	}
 
-	private fun executableToStr(): String {
+	private fun executableToName(): String {
 		return if (executable is Method) {
-			"(${executable.parameters.joinToString("") { p -> p.type.name }})" + executable.returnType.name
+			executable.name
 		} else if (executable is Constructor<*>) {
-			"(${executable.parameters.joinToString("") { p -> p.type.name }})"
+			"<init>"
+		} else {
+			throw RuntimeException("Cannot recognize executable[${executable.javaClass.name}]")
+		}
+	}
+
+	private fun classToName(clazz: Class<*>): String {
+		return when {
+			clazz.isArray -> clazz.name
+			clazz == Byte::class.java -> "B"
+			clazz == Short::class.java -> "S"
+			clazz == Int::class.java -> "I"
+			clazz == Long::class.java -> "J"
+			clazz == Float::class.java -> "F"
+			clazz == Double::class.java -> "D"
+			clazz == Char::class.java -> "C"
+			clazz == Boolean::class.java -> "Z"
+			clazz == Void.TYPE -> "V"
+			else -> "L" + clazz.name.replace('.', '/') + ";"
+		}
+
+	}
+
+	private fun executableToDescriptor(): String {
+		return if (executable is Method) {
+			"(${executable.parameters.joinToString("") { p -> this.classToName(p.type) }})" + this.classToName(
+				executable.returnType
+			)
+		} else if (executable is Constructor<*>) {
+			"(${executable.parameters.joinToString("") { p -> this.classToName(p.type) }})V"
 		} else {
 			throw RuntimeException("Cannot recognize executable[${executable.javaClass.name}]")
 		}
@@ -358,8 +390,8 @@ private class ClassVisitorForMethodParameterNames(val executable: Executable, va
 	override fun visitMethod(
 		access: Int, name: String, descriptor: String?, signature: String?, exceptions: Array<String>?
 	): MethodVisitor? {
-		if (name == executable.name && this.str == descriptor) {
-			MethodVisitorForParameterNames(parameterNames)
+		if (name == this.name && this.descriptor == descriptor) {
+			return MethodVisitorForParameterNames(parameterNames)
 		}
 		return null
 	}
@@ -384,7 +416,7 @@ private fun generateParameters(executable: Executable, indent: String): String {
 	return listOf(
 		"${indent}[/* parameters */",
 		parameters.mapIndexed { i, p ->
-			if (names.isEmpty()) {
+			if (i >= names.size) {
 				Pair(p.name, p)
 			} else {
 				Pair(names[i], p)

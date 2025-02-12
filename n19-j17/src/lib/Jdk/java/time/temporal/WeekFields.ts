@@ -17,7 +17,7 @@ JdkClassCreateHelper.class('java.time.temporal.WeekFields', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'object',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -51,7 +51,7 @@ JdkClassCreateHelper.class('java.time.temporal.WeekFields', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'calDow',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -67,13 +67,13 @@ JdkClassCreateHelper.class('java.time.temporal.WeekFields', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'minimalDaysInFirstWeek',
 					/* type */ 'java.time.DayOfWeek',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'key',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

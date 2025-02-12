@@ -15,13 +15,13 @@ JdkClassCreateHelper.class('java.lang.Thread', [
 		[/* public java.lang.Thread(java.lang.ThreadGroup,java.lang.Runnable) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'group',
 					/* type */ 'java.lang.ThreadGroup',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'target',
 					/* type */ 'java.lang.Runnable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -35,7 +35,7 @@ JdkClassCreateHelper.class('java.lang.Thread', [
 		[/* public java.lang.Thread(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -49,13 +49,13 @@ JdkClassCreateHelper.class('java.lang.Thread', [
 		[/* public java.lang.Thread(java.lang.ThreadGroup,java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'group',
 					/* type */ 'java.lang.ThreadGroup',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -76,7 +76,7 @@ JdkClassCreateHelper.class('java.lang.Thread', [
 		[/* public java.lang.Thread(java.lang.Runnable) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'target',
 					/* type */ 'java.lang.Runnable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -90,31 +90,31 @@ JdkClassCreateHelper.class('java.lang.Thread', [
 		[/* public java.lang.Thread(java.lang.ThreadGroup,java.lang.Runnable,java.lang.String,long,boolean) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'group',
 					/* type */ 'java.lang.ThreadGroup',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'target',
 					/* type */ 'java.lang.Runnable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg3',
+					/* name */ 'stackSize',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg4',
+					/* name */ 'inheritThreadLocals',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -128,25 +128,25 @@ JdkClassCreateHelper.class('java.lang.Thread', [
 		[/* public java.lang.Thread(java.lang.ThreadGroup,java.lang.Runnable,java.lang.String,long) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'group',
 					/* type */ 'java.lang.ThreadGroup',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'target',
 					/* type */ 'java.lang.Runnable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg3',
+					/* name */ 'stackSize',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -160,19 +160,19 @@ JdkClassCreateHelper.class('java.lang.Thread', [
 		[/* public java.lang.Thread(java.lang.ThreadGroup,java.lang.Runnable,java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'group',
 					/* type */ 'java.lang.ThreadGroup',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'target',
 					/* type */ 'java.lang.Runnable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -186,13 +186,13 @@ JdkClassCreateHelper.class('java.lang.Thread', [
 		[/* public java.lang.Thread(java.lang.Runnable,java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'target',
 					/* type */ 'java.lang.Runnable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -286,13 +286,13 @@ JdkClassCreateHelper.class('java.lang.Thread', [
 			/* name */ 'join',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'millis',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'nanos',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -313,7 +313,7 @@ JdkClassCreateHelper.class('java.lang.Thread', [
 			/* name */ 'join',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'startTime',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -352,7 +352,7 @@ JdkClassCreateHelper.class('java.lang.Thread', [
 			/* name */ 'setContextClassLoader',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'cl',
 					/* type */ 'java.lang.ClassLoader',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -417,7 +417,7 @@ JdkClassCreateHelper.class('java.lang.Thread', [
 			/* name */ 'setPriority',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newPriority',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -433,7 +433,7 @@ JdkClassCreateHelper.class('java.lang.Thread', [
 			/* name */ 'setDaemon',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'on',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -470,7 +470,7 @@ JdkClassCreateHelper.class('java.lang.Thread', [
 			/* name */ 'sleep',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'nanos',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -593,7 +593,7 @@ JdkClassCreateHelper.class('java.lang.Thread', [
 			/* name */ 'setDefaultUncaughtExceptionHandler',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'sm',
 					/* type */ 'java.lang.Thread$UncaughtExceptionHandler',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -666,7 +666,7 @@ JdkClassCreateHelper.class('java.lang.Thread', [
 			/* name */ 'setName',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -740,7 +740,7 @@ JdkClassCreateHelper.class('java.lang.Thread', [
 			/* name */ 'setUncaughtExceptionHandler',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'eh',
 					/* type */ 'java.lang.Thread$UncaughtExceptionHandler',
 					/* modifiers */ 0,
 					/* annotations */ UDF

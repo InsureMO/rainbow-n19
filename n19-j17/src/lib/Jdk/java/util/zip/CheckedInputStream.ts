@@ -13,13 +13,13 @@ JdkClassCreateHelper.class('java.util.zip.CheckedInputStream', [
 		[/* public java.util.zip.CheckedInputStream(java.io.InputStream,java.util.zip.Checksum) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'in',
 					/* type */ 'java.io.InputStream',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'cksum',
 					/* type */ 'java.util.zip.Checksum',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -36,19 +36,19 @@ JdkClassCreateHelper.class('java.util.zip.CheckedInputStream', [
 			/* name */ 'read',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'buf',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'off',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'len',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -83,7 +83,7 @@ JdkClassCreateHelper.class('java.util.zip.CheckedInputStream', [
 			/* name */ 'skip',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'len',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF

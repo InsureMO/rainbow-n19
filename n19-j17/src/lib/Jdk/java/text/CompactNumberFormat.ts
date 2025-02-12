@@ -74,7 +74,7 @@ JdkClassCreateHelper.class('java.text.CompactNumberFormat', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -117,19 +117,19 @@ JdkClassCreateHelper.class('java.text.CompactNumberFormat', [
 			/* name */ 'format',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'number',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'toAppendTo',
 					/* type */ 'java.lang.StringBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'fieldPosition',
 					/* type */ 'java.text.FieldPosition',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -145,19 +145,19 @@ JdkClassCreateHelper.class('java.text.CompactNumberFormat', [
 			/* name */ 'format',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'number',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'result',
 					/* type */ 'java.lang.StringBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'fieldPosition',
 					/* type */ 'java.text.FieldPosition',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -173,19 +173,19 @@ JdkClassCreateHelper.class('java.text.CompactNumberFormat', [
 			/* name */ 'format',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'number',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'result',
 					/* type */ 'java.lang.StringBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'fieldPosition',
 					/* type */ 'java.text.FieldPosition',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -201,13 +201,13 @@ JdkClassCreateHelper.class('java.text.CompactNumberFormat', [
 			/* name */ 'parse',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'positivePrefix',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'negativePrefix',
 					/* type */ 'java.text.ParsePosition',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -232,7 +232,7 @@ JdkClassCreateHelper.class('java.text.CompactNumberFormat', [
 			/* name */ 'formatToCharacterIterator',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -248,7 +248,7 @@ JdkClassCreateHelper.class('java.text.CompactNumberFormat', [
 			/* name */ 'setGroupingUsed',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newValue',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -264,7 +264,7 @@ JdkClassCreateHelper.class('java.text.CompactNumberFormat', [
 			/* name */ 'setMinimumIntegerDigits',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newValue',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -280,7 +280,7 @@ JdkClassCreateHelper.class('java.text.CompactNumberFormat', [
 			/* name */ 'setMaximumIntegerDigits',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newValue',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -305,7 +305,7 @@ JdkClassCreateHelper.class('java.text.CompactNumberFormat', [
 			/* name */ 'setParseIntegerOnly',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'value',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -330,7 +330,7 @@ JdkClassCreateHelper.class('java.text.CompactNumberFormat', [
 			/* name */ 'setMaximumFractionDigits',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newValue',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -346,7 +346,7 @@ JdkClassCreateHelper.class('java.text.CompactNumberFormat', [
 			/* name */ 'setMinimumFractionDigits',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newValue',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -362,7 +362,7 @@ JdkClassCreateHelper.class('java.text.CompactNumberFormat', [
 			/* name */ 'setRoundingMode',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'roundingMode',
 					/* type */ 'java.math.RoundingMode',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -396,7 +396,7 @@ JdkClassCreateHelper.class('java.text.CompactNumberFormat', [
 			/* name */ 'setGroupingSize',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newValue',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -412,7 +412,7 @@ JdkClassCreateHelper.class('java.text.CompactNumberFormat', [
 			/* name */ 'setParseBigDecimal',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newValue',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF

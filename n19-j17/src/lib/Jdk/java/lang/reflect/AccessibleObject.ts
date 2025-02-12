@@ -31,7 +31,7 @@ JdkClassCreateHelper.class('java.lang.reflect.AccessibleObject', [
 			/* name */ 'isAnnotationPresent',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'annotationClass',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -58,7 +58,7 @@ JdkClassCreateHelper.class('java.lang.reflect.AccessibleObject', [
 			/* name */ 'getAnnotation',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'annotationClass',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'T']]
@@ -127,7 +127,7 @@ JdkClassCreateHelper.class('java.lang.reflect.AccessibleObject', [
 			/* name */ 'getDeclaredAnnotation',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'annotationClass',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'T']]
@@ -196,7 +196,7 @@ JdkClassCreateHelper.class('java.lang.reflect.AccessibleObject', [
 			/* name */ 'setAccessible',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'flag',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -264,7 +264,7 @@ JdkClassCreateHelper.class('java.lang.reflect.AccessibleObject', [
 			/* name */ 'canAccess',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'targetClass',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF

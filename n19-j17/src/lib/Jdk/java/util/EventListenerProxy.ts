@@ -23,7 +23,7 @@ JdkClassCreateHelper.class('java.util.EventListenerProxy', [
 		[/* public java.util.EventListenerProxy(T) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'listener',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'T']],
 					/* modifiers */ 0,
 					/* annotations */ UDF

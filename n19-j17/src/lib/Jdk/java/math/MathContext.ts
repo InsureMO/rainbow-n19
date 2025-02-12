@@ -15,7 +15,7 @@ JdkClassCreateHelper.class('java.math.MathContext', [
 		[/* public java.math.MathContext(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'fence',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -29,13 +29,13 @@ JdkClassCreateHelper.class('java.math.MathContext', [
 		[/* public java.math.MathContext(int,java.math.RoundingMode) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'setPrecision',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'setRoundingMode',
 					/* type */ 'java.math.RoundingMode',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -49,7 +49,7 @@ JdkClassCreateHelper.class('java.math.MathContext', [
 		[/* public java.math.MathContext(int) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'setPrecision',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -66,7 +66,7 @@ JdkClassCreateHelper.class('java.math.MathContext', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'mc',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF

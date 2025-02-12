@@ -13,7 +13,7 @@ JdkClassCreateHelper.class('java.lang.ProcessBuilder', [
 		[/* public java.lang.ProcessBuilder(java.util.List<java.lang.String>) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'command',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.String'
@@ -73,7 +73,7 @@ JdkClassCreateHelper.class('java.lang.ProcessBuilder', [
 			/* name */ 'directory',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'directory',
 					/* type */ 'java.io.File',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -136,7 +136,7 @@ JdkClassCreateHelper.class('java.lang.ProcessBuilder', [
 			/* name */ 'command',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'command',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.String'
@@ -167,7 +167,7 @@ JdkClassCreateHelper.class('java.lang.ProcessBuilder', [
 			/* name */ 'redirectInput',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'file',
 					/* type */ 'java.io.File',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -183,7 +183,7 @@ JdkClassCreateHelper.class('java.lang.ProcessBuilder', [
 			/* name */ 'redirectInput',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'source',
 					/* type */ 'java.lang.ProcessBuilder$Redirect',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -199,7 +199,7 @@ JdkClassCreateHelper.class('java.lang.ProcessBuilder', [
 			/* name */ 'redirectOutput',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'destination',
 					/* type */ 'java.lang.ProcessBuilder$Redirect',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -224,7 +224,7 @@ JdkClassCreateHelper.class('java.lang.ProcessBuilder', [
 			/* name */ 'redirectOutput',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'file',
 					/* type */ 'java.io.File',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -240,7 +240,7 @@ JdkClassCreateHelper.class('java.lang.ProcessBuilder', [
 			/* name */ 'redirectError',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'file',
 					/* type */ 'java.io.File',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -265,7 +265,7 @@ JdkClassCreateHelper.class('java.lang.ProcessBuilder', [
 			/* name */ 'redirectError',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'destination',
 					/* type */ 'java.lang.ProcessBuilder$Redirect',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -281,7 +281,7 @@ JdkClassCreateHelper.class('java.lang.ProcessBuilder', [
 			/* name */ 'redirectErrorStream',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'redirectErrorStream',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -315,7 +315,7 @@ JdkClassCreateHelper.class('java.lang.ProcessBuilder', [
 			/* name */ 'startPipeline',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'builder',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.ProcessBuilder'

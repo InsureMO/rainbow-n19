@@ -20,7 +20,7 @@ JdkClassCreateHelper.class('java.lang.StringIndexOutOfBoundsException', [
 		[/* public java.lang.StringIndexOutOfBoundsException(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 's',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -34,7 +34,7 @@ JdkClassCreateHelper.class('java.lang.StringIndexOutOfBoundsException', [
 		[/* public java.lang.StringIndexOutOfBoundsException(int) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

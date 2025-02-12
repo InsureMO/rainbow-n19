@@ -265,7 +265,7 @@ JdkClassCreateHelper.class('java.util.Collection', [
 			/* name */ 'removeIf',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'filter',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

@@ -16,7 +16,7 @@ JdkClassCreateHelper.class('java.util.SplittableRandom', [
 		[/* public java.util.SplittableRandom(long) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'seed',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -40,7 +40,7 @@ JdkClassCreateHelper.class('java.util.SplittableRandom', [
 			/* name */ 'split',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'source',
 					/* type */ 'java.util.random.RandomGenerator$SplittableGenerator',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -99,7 +99,7 @@ JdkClassCreateHelper.class('java.util.SplittableRandom', [
 			/* name */ 'doubles',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'streamSize',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -115,13 +115,13 @@ JdkClassCreateHelper.class('java.util.SplittableRandom', [
 			/* name */ 'doubles',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'randomNumberOrigin',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'randomNumberBound',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -137,19 +137,19 @@ JdkClassCreateHelper.class('java.util.SplittableRandom', [
 			/* name */ 'doubles',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'streamSize',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'randomNumberOrigin',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'randomNumberBound',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -174,19 +174,19 @@ JdkClassCreateHelper.class('java.util.SplittableRandom', [
 			/* name */ 'ints',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'streamSize',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'randomNumberOrigin',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'randomNumberBound',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -202,7 +202,7 @@ JdkClassCreateHelper.class('java.util.SplittableRandom', [
 			/* name */ 'ints',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'streamSize',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -218,13 +218,13 @@ JdkClassCreateHelper.class('java.util.SplittableRandom', [
 			/* name */ 'ints',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'randomNumberOrigin',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'randomNumberBound',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -249,7 +249,7 @@ JdkClassCreateHelper.class('java.util.SplittableRandom', [
 			/* name */ 'longs',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'streamSize',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -274,19 +274,19 @@ JdkClassCreateHelper.class('java.util.SplittableRandom', [
 			/* name */ 'longs',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'streamSize',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'randomNumberOrigin',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'randomNumberBound',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -302,13 +302,13 @@ JdkClassCreateHelper.class('java.util.SplittableRandom', [
 			/* name */ 'longs',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'randomNumberOrigin',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'randomNumberBound',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -333,7 +333,7 @@ JdkClassCreateHelper.class('java.util.SplittableRandom', [
 			/* name */ 'nextBytes',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'bytes',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -364,13 +364,13 @@ JdkClassCreateHelper.class('java.util.SplittableRandom', [
 			/* name */ 'splits',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'streamSize',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'source',
 					/* type */ 'java.util.random.RandomGenerator$SplittableGenerator',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -392,7 +392,7 @@ JdkClassCreateHelper.class('java.util.SplittableRandom', [
 			/* name */ 'splits',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'streamSize',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -414,7 +414,7 @@ JdkClassCreateHelper.class('java.util.SplittableRandom', [
 			/* name */ 'splits',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'source',
 					/* type */ 'java.util.random.RandomGenerator$SplittableGenerator',
 					/* modifiers */ 0,
 					/* annotations */ UDF

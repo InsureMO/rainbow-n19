@@ -33,19 +33,19 @@ JdkClassCreateHelper.class('java.lang.module.Configuration', [
 			/* name */ 'resolve',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'before',
 					/* type */ 'java.lang.module.ModuleFinder',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'after',
 					/* type */ 'java.lang.module.ModuleFinder',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'roots',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.String'
@@ -67,13 +67,13 @@ JdkClassCreateHelper.class('java.lang.module.Configuration', [
 			/* name */ 'resolve',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'parents',
 					/* type */ 'java.lang.module.ModuleFinder',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'after',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.module.Configuration'
@@ -85,13 +85,13 @@ JdkClassCreateHelper.class('java.lang.module.Configuration', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'roots',
 					/* type */ 'java.lang.module.ModuleFinder',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg3',
+					/* name */ 'parentList',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.String'
@@ -143,7 +143,7 @@ JdkClassCreateHelper.class('java.lang.module.Configuration', [
 			/* name */ 'findModule',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -165,13 +165,13 @@ JdkClassCreateHelper.class('java.lang.module.Configuration', [
 			/* name */ 'resolveAndBind',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'parents',
 					/* type */ 'java.lang.module.ModuleFinder',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'after',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.module.Configuration'
@@ -183,13 +183,13 @@ JdkClassCreateHelper.class('java.lang.module.Configuration', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'roots',
 					/* type */ 'java.lang.module.ModuleFinder',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg3',
+					/* name */ 'parentList',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.String'
@@ -211,19 +211,19 @@ JdkClassCreateHelper.class('java.lang.module.Configuration', [
 			/* name */ 'resolveAndBind',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'before',
 					/* type */ 'java.lang.module.ModuleFinder',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'after',
 					/* type */ 'java.lang.module.ModuleFinder',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'roots',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.String'

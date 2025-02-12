@@ -75,7 +75,7 @@ JdkClassCreateHelper.class('java.time.chrono.ChronoPeriod', [
 			/* name */ 'between',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'endDateExclusive',
 					/* type */ 'java.time.chrono.ChronoLocalDate',
 					/* modifiers */ 0,
 					/* annotations */ UDF

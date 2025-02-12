@@ -13,13 +13,13 @@ JdkClassCreateHelper.class('java.io.WriteAbortedException', [
 		[/* public java.io.WriteAbortedException(java.lang.String,java.lang.Exception) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 's',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'ex',
 					/* type */ 'java.lang.Exception',
 					/* modifiers */ 0,
 					/* annotations */ UDF

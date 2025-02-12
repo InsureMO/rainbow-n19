@@ -77,13 +77,13 @@ JdkClassCreateHelper.class('java.lang.Process', [
 			/* name */ 'waitFor',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'timeout',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'unit',
 					/* type */ 'java.util.concurrent.TimeUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -129,20 +129,11 @@ JdkClassCreateHelper.class('java.lang.Process', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.io.OutputStream java.lang.Process.getOutputStream() */
-			/* name */ 'getOutputStream',
-			/* parameters */,
-			/* return */ 'java.io.OutputStream',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public final java.io.BufferedReader java.lang.Process.inputReader(java.nio.charset.Charset) */
 			/* name */ 'inputReader',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'charset',
 					/* type */ 'java.nio.charset.Charset',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -163,11 +154,20 @@ JdkClassCreateHelper.class('java.lang.Process', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public final java.io.BufferedReader java.lang.Process.errorReader() */
+			/* name */ 'errorReader',
+			/* parameters */,
+			/* return */ 'java.io.BufferedReader',
+			/* exceptions */,
+			/* modifiers */ 17,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public final java.io.BufferedReader java.lang.Process.errorReader(java.nio.charset.Charset) */
 			/* name */ 'errorReader',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'charset',
 					/* type */ 'java.nio.charset.Charset',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -179,20 +179,11 @@ JdkClassCreateHelper.class('java.lang.Process', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public final java.io.BufferedReader java.lang.Process.errorReader() */
-			/* name */ 'errorReader',
-			/* parameters */,
-			/* return */ 'java.io.BufferedReader',
-			/* exceptions */,
-			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public final java.io.BufferedWriter java.lang.Process.outputWriter(java.nio.charset.Charset) */
 			/* name */ 'outputWriter',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'charset',
 					/* type */ 'java.nio.charset.Charset',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -210,6 +201,15 @@ JdkClassCreateHelper.class('java.lang.Process', [
 			/* return */ 'java.io.BufferedWriter',
 			/* exceptions */,
 			/* modifiers */ 17,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.io.OutputStream java.lang.Process.getOutputStream() */
+			/* name */ 'getOutputStream',
+			/* parameters */,
+			/* return */ 'java.io.OutputStream',
+			/* exceptions */,
+			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],

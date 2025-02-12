@@ -27,13 +27,13 @@ JdkClassCreateHelper.class('java.lang.ref.PhantomReference', [
 		[/* public java.lang.ref.PhantomReference(T,java.lang.ref.ReferenceQueue<? super T>) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'referent',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'T']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'q',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

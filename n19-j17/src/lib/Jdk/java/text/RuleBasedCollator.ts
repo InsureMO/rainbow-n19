@@ -13,7 +13,7 @@ JdkClassCreateHelper.class('java.text.RuleBasedCollator', [
 		[/* public java.text.RuleBasedCollator(java.lang.String) throws java.text.ParseException */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'rules',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -35,7 +35,7 @@ JdkClassCreateHelper.class('java.text.RuleBasedCollator', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -69,13 +69,13 @@ JdkClassCreateHelper.class('java.text.RuleBasedCollator', [
 			/* name */ 'compare',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'terSOrder',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'terTOrder',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -100,7 +100,7 @@ JdkClassCreateHelper.class('java.text.RuleBasedCollator', [
 			/* name */ 'getCollationElementIterator',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'source',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -116,7 +116,7 @@ JdkClassCreateHelper.class('java.text.RuleBasedCollator', [
 			/* name */ 'getCollationElementIterator',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'source',
 					/* type */ 'java.text.CharacterIterator',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -132,7 +132,7 @@ JdkClassCreateHelper.class('java.text.RuleBasedCollator', [
 			/* name */ 'getCollationKey',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'mode',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -16,7 +16,7 @@ JdkClassCreateHelper.class('java.io.Reader', [
 		[/* protected java.io.Reader(java.lang.Object) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'lock',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -40,7 +40,7 @@ JdkClassCreateHelper.class('java.io.Reader', [
 			/* name */ 'read',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'cbuf',
 					/* type */ '[C',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -94,7 +94,7 @@ JdkClassCreateHelper.class('java.io.Reader', [
 			/* name */ 'read',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'cbuf',
 					/* type */ 'java.nio.CharBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -143,7 +143,7 @@ JdkClassCreateHelper.class('java.io.Reader', [
 			/* name */ 'mark',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'readAheadLimit',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -164,7 +164,7 @@ JdkClassCreateHelper.class('java.io.Reader', [
 			/* name */ 'transferTo',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'out',
 					/* type */ 'java.io.Writer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -185,7 +185,7 @@ JdkClassCreateHelper.class('java.io.Reader', [
 			/* name */ 'skip',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'nc',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -225,15 +225,6 @@ JdkClassCreateHelper.class('java.io.Reader', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.io.Reader java.io.Reader.nullReader() */
-			/* name */ 'nullReader',
-			/* parameters */,
-			/* return */ 'java.io.Reader',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public boolean java.io.Reader.ready() throws java.io.IOException */
 			/* name */ 'ready',
 			/* parameters */,
@@ -245,6 +236,15 @@ JdkClassCreateHelper.class('java.io.Reader', [
 				]
 			],
 			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.io.Reader java.io.Reader.nullReader() */
+			/* name */ 'nullReader',
+			/* parameters */,
+			/* return */ 'java.io.Reader',
+			/* exceptions */,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

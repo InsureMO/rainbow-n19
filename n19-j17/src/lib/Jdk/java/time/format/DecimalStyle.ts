@@ -15,7 +15,7 @@ JdkClassCreateHelper.class('java.time.format.DecimalStyle', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -49,7 +49,7 @@ JdkClassCreateHelper.class('java.time.format.DecimalStyle', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'info',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -125,7 +125,7 @@ JdkClassCreateHelper.class('java.time.format.DecimalStyle', [
 			/* name */ 'withZeroDigit',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'zeroDigit',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -141,7 +141,7 @@ JdkClassCreateHelper.class('java.time.format.DecimalStyle', [
 			/* name */ 'withPositiveSign',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'positiveSign',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -157,7 +157,7 @@ JdkClassCreateHelper.class('java.time.format.DecimalStyle', [
 			/* name */ 'withNegativeSign',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'negativeSign',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -173,7 +173,7 @@ JdkClassCreateHelper.class('java.time.format.DecimalStyle', [
 			/* name */ 'withDecimalSeparator',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'decimalSeparator',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF

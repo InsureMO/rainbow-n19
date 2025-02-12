@@ -91,7 +91,7 @@ JdkClassCreateHelper.class('java.lang.constant.ClassDesc', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'className',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -131,7 +131,7 @@ JdkClassCreateHelper.class('java.lang.constant.ClassDesc', [
 			/* name */ 'ofDescriptor',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'depth',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -156,7 +156,7 @@ JdkClassCreateHelper.class('java.lang.constant.ClassDesc', [
 			/* name */ 'arrayType',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'rank',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -190,7 +190,7 @@ JdkClassCreateHelper.class('java.lang.constant.ClassDesc', [
 			/* name */ 'nested',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'nestedName',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

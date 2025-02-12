@@ -13,7 +13,7 @@ JdkClassCreateHelper.class('java.io.StreamTokenizer', [
 		[/* public java.io.StreamTokenizer(java.io.Reader) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'r',
 					/* type */ 'java.io.Reader',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -27,7 +27,7 @@ JdkClassCreateHelper.class('java.io.StreamTokenizer', [
 		[/* public java.io.StreamTokenizer(java.io.InputStream) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'is',
 					/* type */ 'java.io.InputStream',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -82,13 +82,13 @@ JdkClassCreateHelper.class('java.io.StreamTokenizer', [
 			/* name */ 'wordChars',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'low',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'hi',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -104,13 +104,13 @@ JdkClassCreateHelper.class('java.io.StreamTokenizer', [
 			/* name */ 'whitespaceChars',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'low',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'hi',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -126,7 +126,7 @@ JdkClassCreateHelper.class('java.io.StreamTokenizer', [
 			/* name */ 'commentChar',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ch',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -142,7 +142,7 @@ JdkClassCreateHelper.class('java.io.StreamTokenizer', [
 			/* name */ 'quoteChar',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ch',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -176,13 +176,13 @@ JdkClassCreateHelper.class('java.io.StreamTokenizer', [
 			/* name */ 'ordinaryChars',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'low',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'hi',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -198,7 +198,7 @@ JdkClassCreateHelper.class('java.io.StreamTokenizer', [
 			/* name */ 'ordinaryChar',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ch',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -214,7 +214,7 @@ JdkClassCreateHelper.class('java.io.StreamTokenizer', [
 			/* name */ 'eolIsSignificant',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'flag',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -230,7 +230,7 @@ JdkClassCreateHelper.class('java.io.StreamTokenizer', [
 			/* name */ 'slashStarComments',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'flag',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -246,7 +246,7 @@ JdkClassCreateHelper.class('java.io.StreamTokenizer', [
 			/* name */ 'slashSlashComments',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'flag',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -262,7 +262,7 @@ JdkClassCreateHelper.class('java.io.StreamTokenizer', [
 			/* name */ 'lowerCaseMode',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'fl',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF

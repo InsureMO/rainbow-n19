@@ -13,7 +13,7 @@ JdkClassCreateHelper.class('java.net.UnknownHostException', [
 		[/* public java.net.UnknownHostException(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'message',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

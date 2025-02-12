@@ -40,7 +40,7 @@ JdkClassCreateHelper.class('java.util.function.Consumer', [
 			/* name */ 'andThen',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'after',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

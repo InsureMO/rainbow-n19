@@ -112,7 +112,7 @@ JdkClassCreateHelper.class('java.nio.file.Path', [
 			/* name */ 'startsWith',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -181,7 +181,7 @@ JdkClassCreateHelper.class('java.nio.file.Path', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'provider',
 					/* type */ 'java.net.URI',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -213,7 +213,7 @@ JdkClassCreateHelper.class('java.nio.file.Path', [
 			/* name */ 'endsWith',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -320,7 +320,7 @@ JdkClassCreateHelper.class('java.nio.file.Path', [
 			/* name */ 'resolve',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -443,7 +443,7 @@ JdkClassCreateHelper.class('java.nio.file.Path', [
 			/* name */ 'resolveSibling',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -459,7 +459,7 @@ JdkClassCreateHelper.class('java.nio.file.Path', [
 			/* name */ 'resolveSibling',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

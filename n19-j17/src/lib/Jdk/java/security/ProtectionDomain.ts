@@ -13,13 +13,13 @@ JdkClassCreateHelper.class('java.security.ProtectionDomain', [
 		[/* public java.security.ProtectionDomain(java.security.CodeSource,java.security.PermissionCollection) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'codesource',
 					/* type */ 'java.security.CodeSource',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'permissions',
 					/* type */ 'java.security.PermissionCollection',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -95,7 +95,7 @@ JdkClassCreateHelper.class('java.security.ProtectionDomain', [
 			/* name */ 'implies',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'perm',
 					/* type */ 'java.security.Permission',
 					/* modifiers */ 0,
 					/* annotations */ UDF

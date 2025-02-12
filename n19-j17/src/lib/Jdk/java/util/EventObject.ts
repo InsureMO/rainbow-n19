@@ -15,7 +15,7 @@ JdkClassCreateHelper.class('java.util.EventObject', [
 		[/* public java.util.EventObject(java.lang.Object) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'source',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF

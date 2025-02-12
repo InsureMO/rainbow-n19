@@ -13,7 +13,7 @@ JdkClassCreateHelper.class('java.util.IllegalFormatCodePointException', [
 		[/* public java.util.IllegalFormatCodePointException(int) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'c',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

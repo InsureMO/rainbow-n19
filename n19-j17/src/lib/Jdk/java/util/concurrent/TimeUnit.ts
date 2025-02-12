@@ -30,7 +30,7 @@ JdkClassCreateHelper.class('java.util.concurrent.TimeUnit', [
 			/* name */ 'convert',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'nanoVal',
 					/* type */ 'java.time.Duration',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -46,13 +46,13 @@ JdkClassCreateHelper.class('java.util.concurrent.TimeUnit', [
 			/* name */ 'convert',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'sourceDuration',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'sourceUnit',
 					/* type */ 'java.util.concurrent.TimeUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -100,7 +100,7 @@ JdkClassCreateHelper.class('java.util.concurrent.TimeUnit', [
 			/* name */ 'sleep',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ms',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -121,7 +121,7 @@ JdkClassCreateHelper.class('java.util.concurrent.TimeUnit', [
 			/* name */ 'toMillis',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'duration',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -137,7 +137,7 @@ JdkClassCreateHelper.class('java.util.concurrent.TimeUnit', [
 			/* name */ 'toNanos',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'duration',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -153,7 +153,7 @@ JdkClassCreateHelper.class('java.util.concurrent.TimeUnit', [
 			/* name */ 'toMicros',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'duration',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -169,7 +169,7 @@ JdkClassCreateHelper.class('java.util.concurrent.TimeUnit', [
 			/* name */ 'toSeconds',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'duration',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -185,7 +185,7 @@ JdkClassCreateHelper.class('java.util.concurrent.TimeUnit', [
 			/* name */ 'toMinutes',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'duration',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -201,7 +201,7 @@ JdkClassCreateHelper.class('java.util.concurrent.TimeUnit', [
 			/* name */ 'toHours',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'duration',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -217,7 +217,7 @@ JdkClassCreateHelper.class('java.util.concurrent.TimeUnit', [
 			/* name */ 'toDays',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'duration',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -233,13 +233,13 @@ JdkClassCreateHelper.class('java.util.concurrent.TimeUnit', [
 			/* name */ 'timedWait',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ms',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'ns',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -260,13 +260,13 @@ JdkClassCreateHelper.class('java.util.concurrent.TimeUnit', [
 			/* name */ 'timedJoin',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ms',
 					/* type */ 'java.lang.Thread',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'ns',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF

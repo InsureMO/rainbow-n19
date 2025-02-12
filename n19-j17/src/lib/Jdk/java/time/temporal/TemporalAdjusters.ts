@@ -15,7 +15,7 @@ JdkClassCreateHelper.class('java.time.temporal.TemporalAdjusters', [
 			/* name */ 'next',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'dowValue',
 					/* type */ 'java.time.DayOfWeek',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -31,7 +31,7 @@ JdkClassCreateHelper.class('java.time.temporal.TemporalAdjusters', [
 			/* name */ 'previous',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'dowValue',
 					/* type */ 'java.time.DayOfWeek',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -56,7 +56,7 @@ JdkClassCreateHelper.class('java.time.temporal.TemporalAdjusters', [
 			/* name */ 'nextOrSame',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'dowValue',
 					/* type */ 'java.time.DayOfWeek',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -72,7 +72,7 @@ JdkClassCreateHelper.class('java.time.temporal.TemporalAdjusters', [
 			/* name */ 'previousOrSame',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'dowValue',
 					/* type */ 'java.time.DayOfWeek',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -97,13 +97,13 @@ JdkClassCreateHelper.class('java.time.temporal.TemporalAdjusters', [
 			/* name */ 'dayOfWeekInMonth',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'dayOfWeek',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'dowValue',
 					/* type */ 'java.time.DayOfWeek',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -15,7 +15,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Modifier', [
 			/* name */ 'toString',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'sj',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -20,7 +20,7 @@ JdkClassCreateHelper.class('java.net.MalformedURLException', [
 		[/* public java.net.MalformedURLException(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'msg',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

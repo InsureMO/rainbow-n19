@@ -32,7 +32,7 @@ JdkClassCreateHelper.class('java.util.function.IntConsumer', [
 			/* name */ 'andThen',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'after',
 					/* type */ 'java.util.function.IntConsumer',
 					/* modifiers */ 0,
 					/* annotations */ UDF

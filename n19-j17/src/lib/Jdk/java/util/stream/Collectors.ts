@@ -37,13 +37,13 @@ JdkClassCreateHelper.class('java.util.stream.Collectors', [
 			/* name */ 'joining',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'prefix',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'suffix',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -143,7 +143,7 @@ JdkClassCreateHelper.class('java.util.stream.Collectors', [
 			/* name */ 'toMap',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'valueMapper',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -245,7 +245,7 @@ JdkClassCreateHelper.class('java.util.stream.Collectors', [
 			/* name */ 'toMap',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'valueMapper',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -270,7 +270,7 @@ JdkClassCreateHelper.class('java.util.stream.Collectors', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'mergeFunction',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -295,7 +295,7 @@ JdkClassCreateHelper.class('java.util.stream.Collectors', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'mapFactory',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'U']]
@@ -307,7 +307,7 @@ JdkClassCreateHelper.class('java.util.stream.Collectors', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg3',
+					/* name */ 'accumulator',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'M']]
@@ -378,7 +378,7 @@ JdkClassCreateHelper.class('java.util.stream.Collectors', [
 			/* name */ 'toMap',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'valueMapper',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -403,7 +403,7 @@ JdkClassCreateHelper.class('java.util.stream.Collectors', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'mergeFunction',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -591,7 +591,7 @@ JdkClassCreateHelper.class('java.util.stream.Collectors', [
 			/* name */ 'partitioningBy',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'finisher',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -610,7 +610,7 @@ JdkClassCreateHelper.class('java.util.stream.Collectors', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'downstream',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -845,7 +845,7 @@ JdkClassCreateHelper.class('java.util.stream.Collectors', [
 			/* name */ 'reducing',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'op',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'T']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -943,13 +943,13 @@ JdkClassCreateHelper.class('java.util.stream.Collectors', [
 			/* name */ 'reducing',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'mapper',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'U']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'op',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1100,7 +1100,7 @@ JdkClassCreateHelper.class('java.util.stream.Collectors', [
 			/* name */ 'groupingBy',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'downstream',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1205,7 +1205,7 @@ JdkClassCreateHelper.class('java.util.stream.Collectors', [
 			/* name */ 'groupingBy',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'downstreamFinisher',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1230,7 +1230,7 @@ JdkClassCreateHelper.class('java.util.stream.Collectors', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'finisher',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'M']]
@@ -1242,7 +1242,7 @@ JdkClassCreateHelper.class('java.util.stream.Collectors', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'mapFactory',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1329,7 +1329,7 @@ JdkClassCreateHelper.class('java.util.stream.Collectors', [
 			/* name */ 'groupingByConcurrent',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'accumulator',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1354,7 +1354,7 @@ JdkClassCreateHelper.class('java.util.stream.Collectors', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'downstreamFinisher',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'M']]
@@ -1366,7 +1366,7 @@ JdkClassCreateHelper.class('java.util.stream.Collectors', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'finisher',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1453,7 +1453,7 @@ JdkClassCreateHelper.class('java.util.stream.Collectors', [
 			/* name */ 'groupingByConcurrent',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'downstream',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1634,7 +1634,7 @@ JdkClassCreateHelper.class('java.util.stream.Collectors', [
 			/* name */ 'collectingAndThen',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'finisher',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'T']],
@@ -1648,7 +1648,7 @@ JdkClassCreateHelper.class('java.util.stream.Collectors', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'characteristics',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'R']],
@@ -1708,7 +1708,7 @@ JdkClassCreateHelper.class('java.util.stream.Collectors', [
 			/* name */ 'toConcurrentMap',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'valueMapper',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1810,7 +1810,7 @@ JdkClassCreateHelper.class('java.util.stream.Collectors', [
 			/* name */ 'toConcurrentMap',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'valueMapper',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1835,7 +1835,7 @@ JdkClassCreateHelper.class('java.util.stream.Collectors', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'mergeFunction',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1924,7 +1924,7 @@ JdkClassCreateHelper.class('java.util.stream.Collectors', [
 			/* name */ 'toConcurrentMap',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'valueMapper',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1949,7 +1949,7 @@ JdkClassCreateHelper.class('java.util.stream.Collectors', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'mergeFunction',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1974,7 +1974,7 @@ JdkClassCreateHelper.class('java.util.stream.Collectors', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'mapFactory',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'U']]
@@ -1986,7 +1986,7 @@ JdkClassCreateHelper.class('java.util.stream.Collectors', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg3',
+					/* name */ 'accumulator',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'M']]
@@ -2185,7 +2185,7 @@ JdkClassCreateHelper.class('java.util.stream.Collectors', [
 			/* name */ 'mapping',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'downstream',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -2210,7 +2210,7 @@ JdkClassCreateHelper.class('java.util.stream.Collectors', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'downstreamAccumulator',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -2283,7 +2283,7 @@ JdkClassCreateHelper.class('java.util.stream.Collectors', [
 			/* name */ 'flatMapping',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'downstream',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -2319,7 +2319,7 @@ JdkClassCreateHelper.class('java.util.stream.Collectors', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'downstreamAccumulator',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -2392,7 +2392,7 @@ JdkClassCreateHelper.class('java.util.stream.Collectors', [
 			/* name */ 'filtering',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'downstream',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -2411,7 +2411,7 @@ JdkClassCreateHelper.class('java.util.stream.Collectors', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'downstreamAccumulator',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -2757,7 +2757,7 @@ JdkClassCreateHelper.class('java.util.stream.Collectors', [
 			/* name */ 'toUnmodifiableMap',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'valueMapper',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -2859,7 +2859,7 @@ JdkClassCreateHelper.class('java.util.stream.Collectors', [
 			/* name */ 'toUnmodifiableMap',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'valueMapper',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -2884,7 +2884,7 @@ JdkClassCreateHelper.class('java.util.stream.Collectors', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'mergeFunction',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -3123,7 +3123,7 @@ JdkClassCreateHelper.class('java.util.stream.Collectors', [
 			/* name */ 'teeing',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'downstream2',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -3149,7 +3149,7 @@ JdkClassCreateHelper.class('java.util.stream.Collectors', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'merger',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

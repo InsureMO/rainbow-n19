@@ -13,7 +13,7 @@ JdkClassCreateHelper.class('java.io.NotSerializableException', [
 		[/* public java.io.NotSerializableException(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'classname',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

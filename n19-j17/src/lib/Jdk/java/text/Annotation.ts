@@ -13,7 +13,7 @@ JdkClassCreateHelper.class('java.text.Annotation', [
 		[/* public java.text.Annotation(java.lang.Object) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'value',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF

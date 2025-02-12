@@ -13,7 +13,7 @@ JdkClassCreateHelper.class('java.lang.EnumConstantNotPresentException', [
 		[/* public java.lang.EnumConstantNotPresentException(java.lang.Class<? extends java.lang.Enum>,java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'enumType',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -30,7 +30,7 @@ JdkClassCreateHelper.class('java.lang.EnumConstantNotPresentException', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'constantName',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

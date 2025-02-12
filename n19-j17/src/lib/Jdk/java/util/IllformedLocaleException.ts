@@ -13,13 +13,13 @@ JdkClassCreateHelper.class('java.util.IllformedLocaleException', [
 		[/* public java.util.IllformedLocaleException(java.lang.String,int) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'message',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'errorIndex',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -33,7 +33,7 @@ JdkClassCreateHelper.class('java.util.IllformedLocaleException', [
 		[/* public java.util.IllformedLocaleException(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'message',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

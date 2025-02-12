@@ -13,7 +13,7 @@ JdkClassCreateHelper.class('java.util.IllegalFormatFlagsException', [
 		[/* public java.util.IllegalFormatFlagsException(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'f',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

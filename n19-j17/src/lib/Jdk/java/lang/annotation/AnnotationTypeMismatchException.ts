@@ -13,13 +13,13 @@ JdkClassCreateHelper.class('java.lang.annotation.AnnotationTypeMismatchException
 		[/* public java.lang.annotation.AnnotationTypeMismatchException(java.lang.reflect.Method,java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'element',
 					/* type */ 'java.lang.reflect.Method',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'foundType',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -33,13 +33,13 @@ JdkClassCreateHelper.class('java.util.Base64', [
 			/* name */ 'getMimeEncoder',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'b',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'lineSeparator',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -23,7 +23,7 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Provides', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -73,7 +73,7 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Provides', [
 			/* name */ 'compareTo',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'e1',
 					/* type */ 'java.lang.module.ModuleDescriptor$Provides',
 					/* modifiers */ 0,
 					/* annotations */ UDF

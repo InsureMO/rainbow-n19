@@ -13,7 +13,7 @@ JdkClassCreateHelper.class('java.security.PrivilegedActionException', [
 		[/* public java.security.PrivilegedActionException(java.lang.Exception) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'exception',
 					/* type */ 'java.lang.Exception',
 					/* modifiers */ 0,
 					/* annotations */ UDF

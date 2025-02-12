@@ -51,13 +51,13 @@ JdkClassCreateHelper.class('java.lang.System$Logger', [
 			/* name */ 'log',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'level',
 					/* type */ 'java.lang.System$Logger$Level',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'msgSupplier',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.String'
@@ -69,7 +69,7 @@ JdkClassCreateHelper.class('java.lang.System$Logger', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'thrown',
 					/* type */ 'java.lang.Throwable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -85,19 +85,19 @@ JdkClassCreateHelper.class('java.lang.System$Logger', [
 			/* name */ 'log',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'level',
 					/* type */ 'java.lang.System$Logger$Level',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'msg',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'thrown',
 					/* type */ 'java.lang.Throwable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -181,13 +181,13 @@ JdkClassCreateHelper.class('java.lang.System$Logger', [
 			/* name */ 'log',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'level',
 					/* type */ 'java.lang.System$Logger$Level',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'msg',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -203,13 +203,13 @@ JdkClassCreateHelper.class('java.lang.System$Logger', [
 			/* name */ 'log',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'level',
 					/* type */ 'java.lang.System$Logger$Level',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'msgSupplier',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.String'
@@ -231,13 +231,13 @@ JdkClassCreateHelper.class('java.lang.System$Logger', [
 			/* name */ 'log',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'level',
 					/* type */ 'java.lang.System$Logger$Level',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF

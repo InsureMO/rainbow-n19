@@ -13,13 +13,13 @@ JdkClassCreateHelper.class('java.text.DecimalFormat', [
 		[/* public java.text.DecimalFormat(java.lang.String,java.text.DecimalFormatSymbols) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'pattern',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'symbols',
 					/* type */ 'java.text.DecimalFormatSymbols',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -33,7 +33,7 @@ JdkClassCreateHelper.class('java.text.DecimalFormat', [
 		[/* public java.text.DecimalFormat(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'pattern',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -57,7 +57,7 @@ JdkClassCreateHelper.class('java.text.DecimalFormat', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -91,19 +91,19 @@ JdkClassCreateHelper.class('java.text.DecimalFormat', [
 			/* name */ 'format',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'tempResult',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'number',
 					/* type */ 'java.lang.StringBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'result',
 					/* type */ 'java.text.FieldPosition',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -119,19 +119,19 @@ JdkClassCreateHelper.class('java.text.DecimalFormat', [
 			/* name */ 'format',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'number',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'toAppendTo',
 					/* type */ 'java.lang.StringBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'pos',
 					/* type */ 'java.text.FieldPosition',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -147,19 +147,19 @@ JdkClassCreateHelper.class('java.text.DecimalFormat', [
 			/* name */ 'format',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'number',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'result',
 					/* type */ 'java.lang.StringBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'fieldPosition',
 					/* type */ 'java.text.FieldPosition',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -175,13 +175,13 @@ JdkClassCreateHelper.class('java.text.DecimalFormat', [
 			/* name */ 'parse',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'e',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'bigDecimalResult',
 					/* type */ 'java.text.ParsePosition',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -206,7 +206,7 @@ JdkClassCreateHelper.class('java.text.DecimalFormat', [
 			/* name */ 'formatToCharacterIterator',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -222,7 +222,7 @@ JdkClassCreateHelper.class('java.text.DecimalFormat', [
 			/* name */ 'applyPattern',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'pattern',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -238,7 +238,7 @@ JdkClassCreateHelper.class('java.text.DecimalFormat', [
 			/* name */ 'setGroupingUsed',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newValue',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -263,7 +263,7 @@ JdkClassCreateHelper.class('java.text.DecimalFormat', [
 			/* name */ 'setMinimumIntegerDigits',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newValue',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -279,7 +279,7 @@ JdkClassCreateHelper.class('java.text.DecimalFormat', [
 			/* name */ 'setMaximumIntegerDigits',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newValue',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -313,7 +313,7 @@ JdkClassCreateHelper.class('java.text.DecimalFormat', [
 			/* name */ 'applyLocalizedPattern',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'pattern',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -356,7 +356,7 @@ JdkClassCreateHelper.class('java.text.DecimalFormat', [
 			/* name */ 'setMaximumFractionDigits',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newValue',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -381,7 +381,7 @@ JdkClassCreateHelper.class('java.text.DecimalFormat', [
 			/* name */ 'setMinimumFractionDigits',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newValue',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -406,7 +406,7 @@ JdkClassCreateHelper.class('java.text.DecimalFormat', [
 			/* name */ 'setCurrency',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'currency',
 					/* type */ 'java.util.Currency',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -422,7 +422,7 @@ JdkClassCreateHelper.class('java.text.DecimalFormat', [
 			/* name */ 'setRoundingMode',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'roundingMode',
 					/* type */ 'java.math.RoundingMode',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -438,7 +438,7 @@ JdkClassCreateHelper.class('java.text.DecimalFormat', [
 			/* name */ 'setDecimalSeparatorAlwaysShown',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newValue',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -463,7 +463,7 @@ JdkClassCreateHelper.class('java.text.DecimalFormat', [
 			/* name */ 'setDecimalFormatSymbols',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newSymbols',
 					/* type */ 'java.text.DecimalFormatSymbols',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -488,7 +488,7 @@ JdkClassCreateHelper.class('java.text.DecimalFormat', [
 			/* name */ 'setPositivePrefix',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newValue',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -513,7 +513,7 @@ JdkClassCreateHelper.class('java.text.DecimalFormat', [
 			/* name */ 'setNegativePrefix',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newValue',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -538,7 +538,7 @@ JdkClassCreateHelper.class('java.text.DecimalFormat', [
 			/* name */ 'setPositiveSuffix',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newValue',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -563,7 +563,7 @@ JdkClassCreateHelper.class('java.text.DecimalFormat', [
 			/* name */ 'setNegativeSuffix',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newValue',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -588,7 +588,7 @@ JdkClassCreateHelper.class('java.text.DecimalFormat', [
 			/* name */ 'setMultiplier',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newValue',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -613,7 +613,7 @@ JdkClassCreateHelper.class('java.text.DecimalFormat', [
 			/* name */ 'setGroupingSize',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newValue',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -638,7 +638,7 @@ JdkClassCreateHelper.class('java.text.DecimalFormat', [
 			/* name */ 'setParseBigDecimal',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newValue',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF

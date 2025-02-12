@@ -14,7 +14,7 @@ JdkClassCreateHelper.class('java.time.InstantSource', [
 			/* name */ 'offset',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'offsetDuration',
 					/* type */ 'java.time.InstantSource',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -79,7 +79,7 @@ JdkClassCreateHelper.class('java.time.InstantSource', [
 			/* name */ 'withZone',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'zone',
 					/* type */ 'java.time.ZoneId',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -95,7 +95,7 @@ JdkClassCreateHelper.class('java.time.InstantSource', [
 			/* name */ 'tick',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'tickDuration',
 					/* type */ 'java.time.InstantSource',
 					/* modifiers */ 0,
 					/* annotations */ UDF

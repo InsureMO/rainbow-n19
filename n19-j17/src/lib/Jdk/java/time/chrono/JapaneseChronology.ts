@@ -26,7 +26,7 @@ JdkClassCreateHelper.class('java.time.chrono.JapaneseChronology', [
 			/* name */ 'range',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'jcal',
 					/* type */ 'java.time.temporal.ChronoField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -51,7 +51,7 @@ JdkClassCreateHelper.class('java.time.chrono.JapaneseChronology', [
 			/* name */ 'isLeapYear',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'prolepticYear',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -67,19 +67,19 @@ JdkClassCreateHelper.class('java.time.chrono.JapaneseChronology', [
 			/* name */ 'date',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'prolepticYear',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'month',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'dayOfMonth',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -95,7 +95,7 @@ JdkClassCreateHelper.class('java.time.chrono.JapaneseChronology', [
 			/* name */ 'date',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'temporal',
 					/* type */ 'java.time.temporal.TemporalAccessor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -189,25 +189,25 @@ JdkClassCreateHelper.class('java.time.chrono.JapaneseChronology', [
 			/* name */ 'date',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'jera',
 					/* type */ 'java.time.chrono.Era',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'era',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'yearOfEra',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg3',
+					/* name */ 'month',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -223,7 +223,7 @@ JdkClassCreateHelper.class('java.time.chrono.JapaneseChronology', [
 			/* name */ 'dateEpochDay',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'epochDay',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -255,13 +255,13 @@ JdkClassCreateHelper.class('java.time.chrono.JapaneseChronology', [
 			/* name */ 'prolepticYear',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'jdate',
 					/* type */ 'java.time.chrono.Era',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'era',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -277,19 +277,19 @@ JdkClassCreateHelper.class('java.time.chrono.JapaneseChronology', [
 			/* name */ 'dateYearDay',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'era',
 					/* type */ 'java.time.chrono.Era',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'yearOfEra',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'dayOfYear',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -305,13 +305,13 @@ JdkClassCreateHelper.class('java.time.chrono.JapaneseChronology', [
 			/* name */ 'dateYearDay',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'prolepticYear',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'dayOfYear',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -377,7 +377,7 @@ JdkClassCreateHelper.class('java.time.chrono.JapaneseChronology', [
 			/* name */ 'dateNow',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'clock',
 					/* type */ 'java.time.Clock',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -443,7 +443,7 @@ JdkClassCreateHelper.class('java.time.chrono.JapaneseChronology', [
 			/* name */ 'dateNow',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'zone',
 					/* type */ 'java.time.ZoneId',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -459,7 +459,7 @@ JdkClassCreateHelper.class('java.time.chrono.JapaneseChronology', [
 			/* name */ 'zonedDateTime',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'temporal',
 					/* type */ 'java.time.temporal.TemporalAccessor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -481,13 +481,13 @@ JdkClassCreateHelper.class('java.time.chrono.JapaneseChronology', [
 			/* name */ 'zonedDateTime',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'instant',
 					/* type */ 'java.time.Instant',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'zone',
 					/* type */ 'java.time.ZoneId',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -509,7 +509,7 @@ JdkClassCreateHelper.class('java.time.chrono.JapaneseChronology', [
 			/* name */ 'localDateTime',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'temporal',
 					/* type */ 'java.time.temporal.TemporalAccessor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -531,7 +531,7 @@ JdkClassCreateHelper.class('java.time.chrono.JapaneseChronology', [
 			/* name */ 'eraOf',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'eraValue',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -578,7 +578,7 @@ JdkClassCreateHelper.class('java.time.chrono.JapaneseChronology', [
 			/* name */ 'resolveDate',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'fieldValues',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.time.temporal.TemporalField',
@@ -591,7 +591,7 @@ JdkClassCreateHelper.class('java.time.chrono.JapaneseChronology', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'resolverStyle',
 					/* type */ 'java.time.format.ResolverStyle',
 					/* modifiers */ 0,
 					/* annotations */ UDF

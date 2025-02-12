@@ -21,7 +21,7 @@ JdkClassCreateHelper.class('java.text.CollationKey', [
 		[/* protected java.text.CollationKey(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'source',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

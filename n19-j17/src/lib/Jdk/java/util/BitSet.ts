@@ -16,7 +16,7 @@ JdkClassCreateHelper.class('java.util.BitSet', [
 		[/* public java.util.BitSet(int) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'nbits',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -40,13 +40,13 @@ JdkClassCreateHelper.class('java.util.BitSet', [
 			/* name */ 'get',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'i',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'fromIndex',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -62,7 +62,7 @@ JdkClassCreateHelper.class('java.util.BitSet', [
 			/* name */ 'get',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'bitIndex',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -78,7 +78,7 @@ JdkClassCreateHelper.class('java.util.BitSet', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'set',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -130,7 +130,7 @@ JdkClassCreateHelper.class('java.util.BitSet', [
 			/* name */ 'valueOf',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'n',
 					/* type */ '[J',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -146,7 +146,7 @@ JdkClassCreateHelper.class('java.util.BitSet', [
 			/* name */ 'valueOf',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'n',
 					/* type */ 'java.nio.LongBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -178,7 +178,7 @@ JdkClassCreateHelper.class('java.util.BitSet', [
 			/* name */ 'valueOf',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'remaining',
 					/* type */ 'java.nio.ByteBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -194,13 +194,13 @@ JdkClassCreateHelper.class('java.util.BitSet', [
 			/* name */ 'clear',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'i',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'fromIndex',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -216,7 +216,7 @@ JdkClassCreateHelper.class('java.util.BitSet', [
 			/* name */ 'clear',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'bitIndex',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -268,7 +268,7 @@ JdkClassCreateHelper.class('java.util.BitSet', [
 			/* name */ 'set',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'bitIndex',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -284,13 +284,13 @@ JdkClassCreateHelper.class('java.util.BitSet', [
 			/* name */ 'set',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'bitIndex',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'value',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -306,13 +306,13 @@ JdkClassCreateHelper.class('java.util.BitSet', [
 			/* name */ 'set',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'i',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'fromIndex',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -328,19 +328,19 @@ JdkClassCreateHelper.class('java.util.BitSet', [
 			/* name */ 'set',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'fromIndex',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'toIndex',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'value',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -365,7 +365,7 @@ JdkClassCreateHelper.class('java.util.BitSet', [
 			/* name */ 'flip',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'bitIndex',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -381,13 +381,13 @@ JdkClassCreateHelper.class('java.util.BitSet', [
 			/* name */ 'flip',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'i',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'fromIndex',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -403,7 +403,7 @@ JdkClassCreateHelper.class('java.util.BitSet', [
 			/* name */ 'nextClearBit',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'fromIndex',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -419,7 +419,7 @@ JdkClassCreateHelper.class('java.util.BitSet', [
 			/* name */ 'or',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'i',
 					/* type */ 'java.util.BitSet',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -435,7 +435,7 @@ JdkClassCreateHelper.class('java.util.BitSet', [
 			/* name */ 'and',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'i',
 					/* type */ 'java.util.BitSet',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -451,7 +451,7 @@ JdkClassCreateHelper.class('java.util.BitSet', [
 			/* name */ 'xor',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'i',
 					/* type */ 'java.util.BitSet',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -467,7 +467,7 @@ JdkClassCreateHelper.class('java.util.BitSet', [
 			/* name */ 'andNot',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'i',
 					/* type */ 'java.util.BitSet',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -501,7 +501,7 @@ JdkClassCreateHelper.class('java.util.BitSet', [
 			/* name */ 'nextSetBit',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'fromIndex',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -517,7 +517,7 @@ JdkClassCreateHelper.class('java.util.BitSet', [
 			/* name */ 'previousSetBit',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'fromIndex',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -533,7 +533,7 @@ JdkClassCreateHelper.class('java.util.BitSet', [
 			/* name */ 'previousClearBit',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'fromIndex',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -549,7 +549,7 @@ JdkClassCreateHelper.class('java.util.BitSet', [
 			/* name */ 'intersects',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'i',
 					/* type */ 'java.util.BitSet',
 					/* modifiers */ 0,
 					/* annotations */ UDF

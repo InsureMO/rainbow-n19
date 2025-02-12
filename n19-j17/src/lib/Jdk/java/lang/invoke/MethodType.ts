@@ -66,7 +66,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodType', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'o',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -133,7 +133,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodType', [
 			/* name */ 'parameterType',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'num',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -176,13 +176,13 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodType', [
 			/* name */ 'insertParameterTypes',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'num',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'ptypesToInsert',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* parameterized type */ 'pt', [
@@ -270,7 +270,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodType', [
 			/* name */ 'changeReturnType',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'nrtype',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -357,7 +357,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodType', [
 			/* name */ 'methodType',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ptypes',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -451,7 +451,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodType', [
 			/* name */ 'methodType',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ptypes',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -468,7 +468,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodType', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'notrust',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* parameterized type */ 'pt', [
@@ -501,7 +501,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodType', [
 			/* name */ 'methodType',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ptype0',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -594,13 +594,13 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodType', [
 			/* name */ 'dropParameterTypes',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'nptypes',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'nptypes',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -616,7 +616,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodType', [
 			/* name */ 'appendParameterTypes',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ptypesToInsert',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* parameterized type */ 'pt', [
@@ -685,13 +685,13 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodType', [
 			/* name */ 'genericMethodType',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'mt',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'finalArray',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -856,13 +856,13 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodType', [
 			/* name */ 'changeParameterType',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'num',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'nptype',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -907,13 +907,13 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodType', [
 			/* name */ 'fromMethodDescriptorString',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'sm',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'loader',
 					/* type */ 'java.lang.ClassLoader',
 					/* modifiers */ 0,
 					/* annotations */ UDF

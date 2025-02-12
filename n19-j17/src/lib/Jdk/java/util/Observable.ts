@@ -29,7 +29,7 @@ JdkClassCreateHelper.class('java.util.Observable', [
 			/* name */ 'notifyObservers',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'arrLocal',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -63,7 +63,7 @@ JdkClassCreateHelper.class('java.util.Observable', [
 			/* name */ 'addObserver',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'o',
 					/* type */ 'java.util.Observer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -79,7 +79,7 @@ JdkClassCreateHelper.class('java.util.Observable', [
 			/* name */ 'deleteObserver',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'o',
 					/* type */ 'java.util.Observer',
 					/* modifiers */ 0,
 					/* annotations */ UDF

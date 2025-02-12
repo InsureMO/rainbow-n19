@@ -56,19 +56,19 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			/* name */ 'forName',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ccl',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'initialize',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'loader',
 					/* type */ 'java.lang.ClassLoader',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -102,7 +102,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			/* name */ 'forName',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'caller',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -136,13 +136,13 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			/* name */ 'forName',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'caller',
 					/* type */ 'java.lang.Module',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'pa',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -324,7 +324,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			/* name */ 'cast',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -556,7 +556,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			/* name */ 'getResourceAsStream',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'url',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -574,7 +574,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			/* name */ 'getResource',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ioe',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -654,7 +654,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			/* name */ 'isAnnotationPresent',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'annotationClass',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1004,7 +1004,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			/* name */ 'getField',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1172,7 +1172,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			/* name */ 'getDeclaredField',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1296,7 +1296,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			/* name */ 'asSubclass',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'clazz',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'U']]
@@ -1337,7 +1337,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			/* name */ 'getAnnotation',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'annotationClass',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'A']]
@@ -1406,7 +1406,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			/* name */ 'getDeclaredAnnotation',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'annotationClass',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'A']]
@@ -1493,7 +1493,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			/* name */ 'isNestmateOf',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'c',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

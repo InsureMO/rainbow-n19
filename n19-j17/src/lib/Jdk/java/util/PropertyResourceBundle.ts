@@ -13,7 +13,7 @@ JdkClassCreateHelper.class('java.util.PropertyResourceBundle', [
 		[/* public java.util.PropertyResourceBundle(java.io.InputStream) throws java.io.IOException */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'stream',
 					/* type */ 'java.io.InputStream',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -32,7 +32,7 @@ JdkClassCreateHelper.class('java.util.PropertyResourceBundle', [
 		[/* public java.util.PropertyResourceBundle(java.io.Reader) throws java.io.IOException */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'reader',
 					/* type */ 'java.io.Reader',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -69,7 +69,7 @@ JdkClassCreateHelper.class('java.util.PropertyResourceBundle', [
 			/* name */ 'handleGetObject',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'key',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

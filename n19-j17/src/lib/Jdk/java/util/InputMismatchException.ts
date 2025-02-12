@@ -20,7 +20,7 @@ JdkClassCreateHelper.class('java.util.InputMismatchException', [
 		[/* public java.util.InputMismatchException(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 's',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

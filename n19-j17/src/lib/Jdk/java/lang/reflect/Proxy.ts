@@ -15,7 +15,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Proxy', [
 		[/* protected java.lang.reflect.Proxy(java.lang.reflect.InvocationHandler) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'h',
 					/* type */ 'java.lang.reflect.InvocationHandler',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -100,7 +100,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Proxy', [
 			/* name */ 'getInvocationHandler',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ihClass',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF

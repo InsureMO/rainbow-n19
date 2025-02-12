@@ -63,7 +63,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Method', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -199,7 +199,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Method', [
 			/* name */ 'getAnnotation',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'annotationClass',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'T']]
@@ -238,7 +238,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Method', [
 			/* name */ 'setAccessible',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'flag',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF

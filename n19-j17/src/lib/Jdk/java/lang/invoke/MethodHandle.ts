@@ -98,7 +98,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandle', [
 			/* name */ 'asType',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newType',
 					/* type */ 'java.lang.invoke.MethodType',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -135,7 +135,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandle', [
 			/* name */ 'invokeWithArguments',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'arguments',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -167,13 +167,13 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandle', [
 			/* name */ 'asSpreader',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'spreadArgPos',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'arrayType',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -190,7 +190,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandle', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'arrayLength',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -206,7 +206,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandle', [
 			/* name */ 'asSpreader',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'arrayType',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -223,7 +223,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandle', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'arrayLength',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -248,7 +248,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandle', [
 			/* name */ 'asVarargsCollector',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'arrayType',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -275,7 +275,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandle', [
 			/* name */ 'asCollector',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'arrayType',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -292,7 +292,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandle', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'arrayLength',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -308,13 +308,13 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandle', [
 			/* name */ 'asCollector',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'collectArgPos',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'arrayType',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -331,7 +331,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandle', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'arrayLength',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -347,7 +347,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandle', [
 			/* name */ 'withVarargs',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'makeVarargs',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -372,7 +372,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandle', [
 			/* name */ 'bindTo',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'x',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF

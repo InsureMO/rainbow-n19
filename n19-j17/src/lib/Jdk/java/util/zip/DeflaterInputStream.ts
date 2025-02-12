@@ -13,19 +13,19 @@ JdkClassCreateHelper.class('java.util.zip.DeflaterInputStream', [
 		[/* public java.util.zip.DeflaterInputStream(java.io.InputStream,java.util.zip.Deflater,int) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'in',
 					/* type */ 'java.io.InputStream',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'defl',
 					/* type */ 'java.util.zip.Deflater',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'bufLen',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -39,7 +39,7 @@ JdkClassCreateHelper.class('java.util.zip.DeflaterInputStream', [
 		[/* public java.util.zip.DeflaterInputStream(java.io.InputStream) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'in',
 					/* type */ 'java.io.InputStream',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -53,13 +53,13 @@ JdkClassCreateHelper.class('java.util.zip.DeflaterInputStream', [
 		[/* public java.util.zip.DeflaterInputStream(java.io.InputStream,java.util.zip.Deflater) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'in',
 					/* type */ 'java.io.InputStream',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'defl',
 					/* type */ 'java.util.zip.Deflater',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -90,19 +90,19 @@ JdkClassCreateHelper.class('java.util.zip.DeflaterInputStream', [
 			/* name */ 'read',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'n',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'n',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'b',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -137,7 +137,7 @@ JdkClassCreateHelper.class('java.util.zip.DeflaterInputStream', [
 			/* name */ 'mark',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'limit',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -153,7 +153,7 @@ JdkClassCreateHelper.class('java.util.zip.DeflaterInputStream', [
 			/* name */ 'skip',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'len',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -17,7 +17,7 @@ JdkClassCreateHelper.class('java.time.zone.ZoneRules', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'other',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -51,19 +51,19 @@ JdkClassCreateHelper.class('java.time.zone.ZoneRules', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'baseWallOffset',
 					/* type */ 'java.time.ZoneOffset',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'standardOffsetTransitionList',
 					/* type */ 'java.time.ZoneOffset',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'transitionList',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.time.zone.ZoneOffsetTransition'
@@ -75,7 +75,7 @@ JdkClassCreateHelper.class('java.time.zone.ZoneRules', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg3',
+					/* name */ 'lastRules',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.time.zone.ZoneOffsetTransition'
@@ -125,7 +125,7 @@ JdkClassCreateHelper.class('java.time.zone.ZoneRules', [
 			/* name */ 'getOffset',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'localDateTime',
 					/* type */ 'java.time.LocalDateTime',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -141,7 +141,7 @@ JdkClassCreateHelper.class('java.time.zone.ZoneRules', [
 			/* name */ 'getOffset',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'i',
 					/* type */ 'java.time.Instant',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -166,7 +166,7 @@ JdkClassCreateHelper.class('java.time.zone.ZoneRules', [
 			/* name */ 'getValidOffsets',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'localDateTime',
 					/* type */ 'java.time.LocalDateTime',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -188,7 +188,7 @@ JdkClassCreateHelper.class('java.time.zone.ZoneRules', [
 			/* name */ 'getStandardOffset',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'instant',
 					/* type */ 'java.time.Instant',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -204,7 +204,7 @@ JdkClassCreateHelper.class('java.time.zone.ZoneRules', [
 			/* name */ 'getTransition',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'localDateTime',
 					/* type */ 'java.time.LocalDateTime',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -220,7 +220,7 @@ JdkClassCreateHelper.class('java.time.zone.ZoneRules', [
 			/* name */ 'getDaylightSavings',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'instant',
 					/* type */ 'java.time.Instant',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -236,7 +236,7 @@ JdkClassCreateHelper.class('java.time.zone.ZoneRules', [
 			/* name */ 'isDaylightSavings',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'instant',
 					/* type */ 'java.time.Instant',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -252,13 +252,13 @@ JdkClassCreateHelper.class('java.time.zone.ZoneRules', [
 			/* name */ 'isValidOffset',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'localDateTime',
 					/* type */ 'java.time.LocalDateTime',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'offset',
 					/* type */ 'java.time.ZoneOffset',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -274,7 +274,7 @@ JdkClassCreateHelper.class('java.time.zone.ZoneRules', [
 			/* name */ 'nextTransition',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'trans',
 					/* type */ 'java.time.Instant',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -290,7 +290,7 @@ JdkClassCreateHelper.class('java.time.zone.ZoneRules', [
 			/* name */ 'previousTransition',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'i',
 					/* type */ 'java.time.Instant',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -20,7 +20,7 @@ JdkClassCreateHelper.class('java.lang.reflect.MalformedParametersException', [
 		[/* public java.lang.reflect.MalformedParametersException(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'reason',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -258,13 +258,13 @@ JdkClassCreateHelper.class('java.nio.file.spi.FileSystemProvider', [
 			/* name */ 'newFileSystem',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'path',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'env',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.String',
@@ -612,13 +612,13 @@ JdkClassCreateHelper.class('java.nio.file.spi.FileSystemProvider', [
 			/* name */ 'createLink',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'link',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'existing',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -639,7 +639,7 @@ JdkClassCreateHelper.class('java.nio.file.spi.FileSystemProvider', [
 			/* name */ 'deleteIfExists',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ignore',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -660,7 +660,7 @@ JdkClassCreateHelper.class('java.nio.file.spi.FileSystemProvider', [
 			/* name */ 'readSymbolicLink',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'link',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF

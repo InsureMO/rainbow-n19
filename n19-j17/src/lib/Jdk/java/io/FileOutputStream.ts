@@ -13,7 +13,7 @@ JdkClassCreateHelper.class('java.io.FileOutputStream', [
 		[/* public java.io.FileOutputStream(java.io.FileDescriptor) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'fdObj',
 					/* type */ 'java.io.FileDescriptor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -27,13 +27,13 @@ JdkClassCreateHelper.class('java.io.FileOutputStream', [
 		[/* public java.io.FileOutputStream(java.io.File,boolean) throws java.io.FileNotFoundException */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'file',
 					/* type */ 'java.io.File',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'append',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -52,7 +52,7 @@ JdkClassCreateHelper.class('java.io.FileOutputStream', [
 		[/* public java.io.FileOutputStream(java.io.File) throws java.io.FileNotFoundException */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'file',
 					/* type */ 'java.io.File',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -71,13 +71,13 @@ JdkClassCreateHelper.class('java.io.FileOutputStream', [
 		[/* public java.io.FileOutputStream(java.lang.String,boolean) throws java.io.FileNotFoundException */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'append',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -96,7 +96,7 @@ JdkClassCreateHelper.class('java.io.FileOutputStream', [
 		[/* public java.io.FileOutputStream(java.lang.String) throws java.io.FileNotFoundException */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -118,7 +118,7 @@ JdkClassCreateHelper.class('java.io.FileOutputStream', [
 			/* name */ 'write',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'b',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -139,7 +139,7 @@ JdkClassCreateHelper.class('java.io.FileOutputStream', [
 			/* name */ 'write',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'b',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -160,19 +160,19 @@ JdkClassCreateHelper.class('java.io.FileOutputStream', [
 			/* name */ 'write',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'b',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'off',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'len',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

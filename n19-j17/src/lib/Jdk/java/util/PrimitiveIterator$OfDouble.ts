@@ -39,7 +39,7 @@ JdkClassCreateHelper.class('java.util.PrimitiveIterator$OfDouble', [
 			/* name */ 'forEachRemaining',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'action',
 					/* type */ 'java.util.function.DoubleConsumer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -55,7 +55,7 @@ JdkClassCreateHelper.class('java.util.PrimitiveIterator$OfDouble', [
 			/* name */ 'forEachRemaining',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'action',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

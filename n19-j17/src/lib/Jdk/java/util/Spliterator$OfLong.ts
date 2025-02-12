@@ -40,7 +40,7 @@ JdkClassCreateHelper.class('java.util.Spliterator$OfLong', [
 			/* name */ 'forEachRemaining',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'action',
 					/* type */ 'java.util.function.LongConsumer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -56,7 +56,7 @@ JdkClassCreateHelper.class('java.util.Spliterator$OfLong', [
 			/* name */ 'forEachRemaining',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'action',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -128,7 +128,7 @@ JdkClassCreateHelper.class('java.util.Spliterator$OfLong', [
 			/* name */ 'tryAdvance',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'action',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

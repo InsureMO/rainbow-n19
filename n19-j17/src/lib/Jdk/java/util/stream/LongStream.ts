@@ -189,13 +189,13 @@ JdkClassCreateHelper.class('java.util.stream.LongStream', [
 			/* name */ 'concat',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'b',
 					/* type */ 'java.util.stream.LongStream',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'split',
 					/* type */ 'java.util.stream.LongStream',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -451,13 +451,13 @@ JdkClassCreateHelper.class('java.util.stream.LongStream', [
 			/* name */ 'range',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'm',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'endExclusive',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -491,19 +491,19 @@ JdkClassCreateHelper.class('java.util.stream.LongStream', [
 			/* name */ 'iterate',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'hasNext',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'next',
 					/* type */ 'java.util.function.LongPredicate',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'spliterator',
 					/* type */ 'java.util.function.LongUnaryOperator',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -519,13 +519,13 @@ JdkClassCreateHelper.class('java.util.stream.LongStream', [
 			/* name */ 'iterate',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'f',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'spliterator',
 					/* type */ 'java.util.function.LongUnaryOperator',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -616,7 +616,7 @@ JdkClassCreateHelper.class('java.util.stream.LongStream', [
 			/* name */ 'mapMulti',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'mapper',
 					/* type */ 'java.util.stream.LongStream$LongMapMultiConsumer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -632,7 +632,7 @@ JdkClassCreateHelper.class('java.util.stream.LongStream', [
 			/* name */ 'takeWhile',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'predicate',
 					/* type */ 'java.util.function.LongPredicate',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -648,7 +648,7 @@ JdkClassCreateHelper.class('java.util.stream.LongStream', [
 			/* name */ 'dropWhile',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'predicate',
 					/* type */ 'java.util.function.LongPredicate',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -737,13 +737,13 @@ JdkClassCreateHelper.class('java.util.stream.LongStream', [
 			/* name */ 'rangeClosed',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'm',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'endInclusive',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF

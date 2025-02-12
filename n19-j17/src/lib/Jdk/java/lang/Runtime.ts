@@ -24,7 +24,7 @@ JdkClassCreateHelper.class('java.lang.Runtime', [
 			/* name */ 'exit',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'status',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -58,7 +58,7 @@ JdkClassCreateHelper.class('java.lang.Runtime', [
 			/* name */ 'load',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'filename',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -76,7 +76,7 @@ JdkClassCreateHelper.class('java.lang.Runtime', [
 			/* name */ 'loadLibrary',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'libname',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -202,7 +202,7 @@ JdkClassCreateHelper.class('java.lang.Runtime', [
 			/* name */ 'exec',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'command',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -283,7 +283,7 @@ JdkClassCreateHelper.class('java.lang.Runtime', [
 			/* name */ 'halt',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'status',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -299,7 +299,7 @@ JdkClassCreateHelper.class('java.lang.Runtime', [
 			/* name */ 'addShutdownHook',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'hook',
 					/* type */ 'java.lang.Thread',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -315,7 +315,7 @@ JdkClassCreateHelper.class('java.lang.Runtime', [
 			/* name */ 'removeShutdownHook',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'hook',
 					/* type */ 'java.lang.Thread',
 					/* modifiers */ 0,
 					/* annotations */ UDF

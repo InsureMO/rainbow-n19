@@ -13,7 +13,7 @@ JdkClassCreateHelper.class('java.lang.invoke.VolatileCallSite', [
 		[/* public java.lang.invoke.VolatileCallSite(java.lang.invoke.MethodType) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'type',
 					/* type */ 'java.lang.invoke.MethodType',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -27,7 +27,7 @@ JdkClassCreateHelper.class('java.lang.invoke.VolatileCallSite', [
 		[/* public java.lang.invoke.VolatileCallSite(java.lang.invoke.MethodHandle) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'target',
 					/* type */ 'java.lang.invoke.MethodHandle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -62,7 +62,7 @@ JdkClassCreateHelper.class('java.lang.invoke.VolatileCallSite', [
 			/* name */ 'setTarget',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newTarget',
 					/* type */ 'java.lang.invoke.MethodHandle',
 					/* modifiers */ 0,
 					/* annotations */ UDF

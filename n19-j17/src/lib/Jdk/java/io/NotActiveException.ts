@@ -13,7 +13,7 @@ JdkClassCreateHelper.class('java.io.NotActiveException', [
 		[/* public java.io.NotActiveException(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'reason',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

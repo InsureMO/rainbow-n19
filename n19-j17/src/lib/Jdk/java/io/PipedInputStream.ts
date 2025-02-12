@@ -13,7 +13,7 @@ JdkClassCreateHelper.class('java.io.PipedInputStream', [
 		[/* public java.io.PipedInputStream(int) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'pipeSize',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -34,13 +34,13 @@ JdkClassCreateHelper.class('java.io.PipedInputStream', [
 		[/* public java.io.PipedInputStream(java.io.PipedOutputStream,int) throws java.io.IOException */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'src',
 					/* type */ 'java.io.PipedOutputStream',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'pipeSize',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -59,7 +59,7 @@ JdkClassCreateHelper.class('java.io.PipedInputStream', [
 		[/* public java.io.PipedInputStream(java.io.PipedOutputStream) throws java.io.IOException */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'src',
 					/* type */ 'java.io.PipedOutputStream',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -95,19 +95,19 @@ JdkClassCreateHelper.class('java.io.PipedInputStream', [
 			/* name */ 'read',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'available',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'available',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'b',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -128,7 +128,7 @@ JdkClassCreateHelper.class('java.io.PipedInputStream', [
 			/* name */ 'connect',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'src',
 					/* type */ 'java.io.PipedOutputStream',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -177,7 +177,7 @@ JdkClassCreateHelper.class('java.io.PipedInputStream', [
 			/* name */ 'receive',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'b',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

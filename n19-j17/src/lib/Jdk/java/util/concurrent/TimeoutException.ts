@@ -20,7 +20,7 @@ JdkClassCreateHelper.class('java.util.concurrent.TimeoutException', [
 		[/* public java.util.concurrent.TimeoutException(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'message',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

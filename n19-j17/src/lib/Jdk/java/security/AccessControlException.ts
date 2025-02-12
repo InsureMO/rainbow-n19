@@ -19,7 +19,7 @@ JdkClassCreateHelper.class('java.security.AccessControlException', [
 		[/* public java.security.AccessControlException(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 's',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -33,13 +33,13 @@ JdkClassCreateHelper.class('java.security.AccessControlException', [
 		[/* public java.security.AccessControlException(java.lang.String,java.security.Permission) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 's',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'p',
 					/* type */ 'java.security.Permission',
 					/* modifiers */ 0,
 					/* annotations */ UDF

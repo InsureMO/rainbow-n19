@@ -15,13 +15,13 @@ JdkClassCreateHelper.class('java.lang.ref.Cleaner', [
 			/* name */ 'register',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'action',
 					/* type */ 'java.lang.Runnable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -46,7 +46,7 @@ JdkClassCreateHelper.class('java.lang.ref.Cleaner', [
 			/* name */ 'create',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'cleaner',
 					/* type */ 'java.util.concurrent.ThreadFactory',
 					/* modifiers */ 0,
 					/* annotations */ UDF

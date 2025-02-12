@@ -23,7 +23,7 @@ JdkClassCreateHelper.class('java.text.DateFormat', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -57,19 +57,19 @@ JdkClassCreateHelper.class('java.text.DateFormat', [
 			/* name */ 'format',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'toAppendTo',
 					/* type */ 'java.lang.StringBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'fieldPosition',
 					/* type */ 'java.text.FieldPosition',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -85,7 +85,7 @@ JdkClassCreateHelper.class('java.text.DateFormat', [
 			/* name */ 'format',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'date',
 					/* type */ 'java.util.Date',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -160,7 +160,7 @@ JdkClassCreateHelper.class('java.text.DateFormat', [
 			/* name */ 'parse',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'source',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -190,13 +190,13 @@ JdkClassCreateHelper.class('java.text.DateFormat', [
 			/* name */ 'parseObject',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'source',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'pos',
 					/* type */ 'java.text.ParsePosition',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -212,13 +212,13 @@ JdkClassCreateHelper.class('java.text.DateFormat', [
 			/* name */ 'getDateTimeInstance',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'timeStyle',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'aLocale',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -240,7 +240,7 @@ JdkClassCreateHelper.class('java.text.DateFormat', [
 			/* name */ 'getDateTimeInstance',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'timeStyle',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -271,7 +271,7 @@ JdkClassCreateHelper.class('java.text.DateFormat', [
 			/* name */ 'setTimeZone',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'zone',
 					/* type */ 'java.util.TimeZone',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -296,7 +296,7 @@ JdkClassCreateHelper.class('java.text.DateFormat', [
 			/* name */ 'setLenient',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'lenient',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -321,7 +321,7 @@ JdkClassCreateHelper.class('java.text.DateFormat', [
 			/* name */ 'getDateInstance',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'aLocale',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -393,7 +393,7 @@ JdkClassCreateHelper.class('java.text.DateFormat', [
 			/* name */ 'getTimeInstance',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'aLocale',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -415,7 +415,7 @@ JdkClassCreateHelper.class('java.text.DateFormat', [
 			/* name */ 'setCalendar',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newCalendar',
 					/* type */ 'java.util.Calendar',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -440,7 +440,7 @@ JdkClassCreateHelper.class('java.text.DateFormat', [
 			/* name */ 'setNumberFormat',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newNumberFormat',
 					/* type */ 'java.text.NumberFormat',
 					/* modifiers */ 0,
 					/* annotations */ UDF

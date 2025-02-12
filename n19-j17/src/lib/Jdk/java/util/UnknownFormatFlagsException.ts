@@ -13,7 +13,7 @@ JdkClassCreateHelper.class('java.util.UnknownFormatFlagsException', [
 		[/* public java.util.UnknownFormatFlagsException(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'f',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

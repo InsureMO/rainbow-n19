@@ -13,7 +13,7 @@ JdkClassCreateHelper.class('java.text.Format$Field', [
 		[/* protected java.text.Format$Field(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

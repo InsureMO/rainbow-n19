@@ -23,7 +23,7 @@ JdkClassCreateHelper.class('java.text.NumberFormat', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -113,19 +113,19 @@ JdkClassCreateHelper.class('java.text.NumberFormat', [
 			/* name */ 'format',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'number',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'toAppendTo',
 					/* type */ 'java.lang.StringBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'pos',
 					/* type */ 'java.text.FieldPosition',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -141,7 +141,7 @@ JdkClassCreateHelper.class('java.text.NumberFormat', [
 			/* name */ 'format',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'number',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -157,7 +157,7 @@ JdkClassCreateHelper.class('java.text.NumberFormat', [
 			/* name */ 'format',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'number',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -198,7 +198,7 @@ JdkClassCreateHelper.class('java.text.NumberFormat', [
 			/* name */ 'parse',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'source',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -259,13 +259,13 @@ JdkClassCreateHelper.class('java.text.NumberFormat', [
 			/* name */ 'parseObject',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'source',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'pos',
 					/* type */ 'java.text.ParsePosition',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -390,7 +390,7 @@ JdkClassCreateHelper.class('java.text.NumberFormat', [
 			/* name */ 'getCompactNumberInstance',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'formatStyle',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -412,7 +412,7 @@ JdkClassCreateHelper.class('java.text.NumberFormat', [
 			/* name */ 'setGroupingUsed',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newValue',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -428,7 +428,7 @@ JdkClassCreateHelper.class('java.text.NumberFormat', [
 			/* name */ 'setMinimumIntegerDigits',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newValue',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -444,7 +444,7 @@ JdkClassCreateHelper.class('java.text.NumberFormat', [
 			/* name */ 'setMaximumIntegerDigits',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newValue',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -469,7 +469,7 @@ JdkClassCreateHelper.class('java.text.NumberFormat', [
 			/* name */ 'setParseIntegerOnly',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'value',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -521,7 +521,7 @@ JdkClassCreateHelper.class('java.text.NumberFormat', [
 			/* name */ 'setMaximumFractionDigits',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newValue',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -546,7 +546,7 @@ JdkClassCreateHelper.class('java.text.NumberFormat', [
 			/* name */ 'setMinimumFractionDigits',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newValue',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -571,7 +571,7 @@ JdkClassCreateHelper.class('java.text.NumberFormat', [
 			/* name */ 'setCurrency',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'currency',
 					/* type */ 'java.util.Currency',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -587,7 +587,7 @@ JdkClassCreateHelper.class('java.text.NumberFormat', [
 			/* name */ 'setRoundingMode',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'roundingMode',
 					/* type */ 'java.math.RoundingMode',
 					/* modifiers */ 0,
 					/* annotations */ UDF

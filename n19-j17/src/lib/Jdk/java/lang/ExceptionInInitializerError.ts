@@ -13,7 +13,7 @@ JdkClassCreateHelper.class('java.lang.ExceptionInInitializerError', [
 		[/* public java.lang.ExceptionInInitializerError(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 's',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -27,7 +27,7 @@ JdkClassCreateHelper.class('java.lang.ExceptionInInitializerError', [
 		[/* public java.lang.ExceptionInInitializerError(java.lang.Throwable) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'thrown',
 					/* type */ 'java.lang.Throwable',
 					/* modifiers */ 0,
 					/* annotations */ UDF

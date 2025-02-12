@@ -41,7 +41,7 @@ JdkClassCreateHelper.class('java.util.function.IntUnaryOperator', [
 			/* name */ 'compose',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'before',
 					/* type */ 'java.util.function.IntUnaryOperator',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -57,7 +57,7 @@ JdkClassCreateHelper.class('java.util.function.IntUnaryOperator', [
 			/* name */ 'andThen',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'after',
 					/* type */ 'java.util.function.IntUnaryOperator',
 					/* modifiers */ 0,
 					/* annotations */ UDF

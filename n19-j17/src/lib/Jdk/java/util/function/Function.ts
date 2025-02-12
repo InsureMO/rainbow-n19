@@ -71,7 +71,7 @@ JdkClassCreateHelper.class('java.util.function.Function', [
 			/* name */ 'compose',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'before',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -121,7 +121,7 @@ JdkClassCreateHelper.class('java.util.function.Function', [
 			/* name */ 'andThen',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'after',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

@@ -14,7 +14,7 @@ JdkClassCreateHelper.class('java.lang.reflect.AnnotatedElement', [
 			/* name */ 'isAnnotationPresent',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'annotationClass',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -110,7 +110,7 @@ JdkClassCreateHelper.class('java.lang.reflect.AnnotatedElement', [
 			/* name */ 'getDeclaredAnnotation',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'annotation',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'T']]

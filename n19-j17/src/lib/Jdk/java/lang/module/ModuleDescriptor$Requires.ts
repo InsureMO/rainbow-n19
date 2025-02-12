@@ -47,7 +47,7 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Requires', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'that',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -97,7 +97,7 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Requires', [
 			/* name */ 'compareTo',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'that',
 					/* type */ 'java.lang.module.ModuleDescriptor$Requires',
 					/* modifiers */ 0,
 					/* annotations */ UDF

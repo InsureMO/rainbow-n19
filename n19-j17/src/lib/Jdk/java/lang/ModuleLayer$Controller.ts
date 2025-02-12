@@ -15,13 +15,13 @@ JdkClassCreateHelper.class('java.lang.ModuleLayer$Controller', [
 			/* name */ 'addReads',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'source',
 					/* type */ 'java.lang.Module',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'target',
 					/* type */ 'java.lang.Module',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -37,19 +37,19 @@ JdkClassCreateHelper.class('java.lang.ModuleLayer$Controller', [
 			/* name */ 'addExports',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'source',
 					/* type */ 'java.lang.Module',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'pn',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'target',
 					/* type */ 'java.lang.Module',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -65,19 +65,19 @@ JdkClassCreateHelper.class('java.lang.ModuleLayer$Controller', [
 			/* name */ 'addOpens',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'source',
 					/* type */ 'java.lang.Module',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'pn',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'target',
 					/* type */ 'java.lang.Module',
 					/* modifiers */ 0,
 					/* annotations */ UDF

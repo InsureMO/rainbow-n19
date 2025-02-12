@@ -23,7 +23,7 @@ JdkClassCreateHelper.class('java.text.DecimalFormatSymbols', [
 		[/* public java.text.DecimalFormatSymbols(java.util.Locale) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'locale',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -40,7 +40,7 @@ JdkClassCreateHelper.class('java.text.DecimalFormatSymbols', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -74,7 +74,7 @@ JdkClassCreateHelper.class('java.text.DecimalFormatSymbols', [
 			/* name */ 'getInstance',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'adapter',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -144,7 +144,7 @@ JdkClassCreateHelper.class('java.text.DecimalFormatSymbols', [
 			/* name */ 'setCurrency',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'currency',
 					/* type */ 'java.util.Currency',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -178,7 +178,7 @@ JdkClassCreateHelper.class('java.text.DecimalFormatSymbols', [
 			/* name */ 'setZeroDigit',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'zeroDigit',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -203,7 +203,7 @@ JdkClassCreateHelper.class('java.text.DecimalFormatSymbols', [
 			/* name */ 'setGroupingSeparator',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'groupingSeparator',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -219,7 +219,7 @@ JdkClassCreateHelper.class('java.text.DecimalFormatSymbols', [
 			/* name */ 'setDecimalSeparator',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'decimalSeparator',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -244,7 +244,7 @@ JdkClassCreateHelper.class('java.text.DecimalFormatSymbols', [
 			/* name */ 'setPerMill',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'perMill',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -269,7 +269,7 @@ JdkClassCreateHelper.class('java.text.DecimalFormatSymbols', [
 			/* name */ 'setPercent',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'percent',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -294,7 +294,7 @@ JdkClassCreateHelper.class('java.text.DecimalFormatSymbols', [
 			/* name */ 'setDigit',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'digit',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -319,7 +319,7 @@ JdkClassCreateHelper.class('java.text.DecimalFormatSymbols', [
 			/* name */ 'setPatternSeparator',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'patternSeparator',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -344,7 +344,7 @@ JdkClassCreateHelper.class('java.text.DecimalFormatSymbols', [
 			/* name */ 'setInfinity',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'infinity',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -369,7 +369,7 @@ JdkClassCreateHelper.class('java.text.DecimalFormatSymbols', [
 			/* name */ 'setNaN',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'NaN',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -385,7 +385,7 @@ JdkClassCreateHelper.class('java.text.DecimalFormatSymbols', [
 			/* name */ 'setMinusSign',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'minusSign',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -401,7 +401,7 @@ JdkClassCreateHelper.class('java.text.DecimalFormatSymbols', [
 			/* name */ 'setCurrencySymbol',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'currency',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -417,7 +417,7 @@ JdkClassCreateHelper.class('java.text.DecimalFormatSymbols', [
 			/* name */ 'setInternationalCurrencySymbol',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'currencyCode',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -442,7 +442,7 @@ JdkClassCreateHelper.class('java.text.DecimalFormatSymbols', [
 			/* name */ 'setMonetaryDecimalSeparator',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'sep',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -467,7 +467,7 @@ JdkClassCreateHelper.class('java.text.DecimalFormatSymbols', [
 			/* name */ 'setExponentSeparator',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'exp',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -492,7 +492,7 @@ JdkClassCreateHelper.class('java.text.DecimalFormatSymbols', [
 			/* name */ 'setMonetaryGroupingSeparator',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'monetaryGroupingSeparator',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -189,13 +189,13 @@ JdkClassCreateHelper.class('java.util.stream.IntStream', [
 			/* name */ 'concat',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'b',
 					/* type */ 'java.util.stream.IntStream',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'split',
 					/* type */ 'java.util.stream.IntStream',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -451,7 +451,7 @@ JdkClassCreateHelper.class('java.util.stream.IntStream', [
 			/* name */ 'range',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'endExclusive',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -491,13 +491,13 @@ JdkClassCreateHelper.class('java.util.stream.IntStream', [
 			/* name */ 'iterate',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'f',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'spliterator',
 					/* type */ 'java.util.function.IntUnaryOperator',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -513,19 +513,19 @@ JdkClassCreateHelper.class('java.util.stream.IntStream', [
 			/* name */ 'iterate',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'hasNext',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'next',
 					/* type */ 'java.util.function.IntPredicate',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'spliterator',
 					/* type */ 'java.util.function.IntUnaryOperator',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -616,7 +616,7 @@ JdkClassCreateHelper.class('java.util.stream.IntStream', [
 			/* name */ 'mapMulti',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'mapper',
 					/* type */ 'java.util.stream.IntStream$IntMapMultiConsumer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -632,7 +632,7 @@ JdkClassCreateHelper.class('java.util.stream.IntStream', [
 			/* name */ 'takeWhile',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'predicate',
 					/* type */ 'java.util.function.IntPredicate',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -648,7 +648,7 @@ JdkClassCreateHelper.class('java.util.stream.IntStream', [
 			/* name */ 'dropWhile',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'predicate',
 					/* type */ 'java.util.function.IntPredicate',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -737,7 +737,7 @@ JdkClassCreateHelper.class('java.util.stream.IntStream', [
 			/* name */ 'rangeClosed',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'endInclusive',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

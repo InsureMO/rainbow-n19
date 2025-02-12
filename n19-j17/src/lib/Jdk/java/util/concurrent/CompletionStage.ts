@@ -130,7 +130,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 			/* name */ 'exceptionallyComposeAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'fn',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.Throwable',
@@ -154,7 +154,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'executor',
 					/* type */ 'java.util.concurrent.Executor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -176,7 +176,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 			/* name */ 'exceptionallyComposeAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'fn',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.Throwable',
@@ -216,7 +216,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 			/* name */ 'exceptionallyCompose',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'fn',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.Throwable',
@@ -256,7 +256,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 			/* name */ 'exceptionallyAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'fn',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.Throwable',
@@ -274,7 +274,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'executor',
 					/* type */ 'java.util.concurrent.Executor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -296,7 +296,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 			/* name */ 'exceptionallyAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'fn',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.Throwable',

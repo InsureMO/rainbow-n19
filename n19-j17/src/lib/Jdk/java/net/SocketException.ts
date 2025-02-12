@@ -13,7 +13,7 @@ JdkClassCreateHelper.class('java.net.SocketException', [
 		[/* public java.net.SocketException(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'msg',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

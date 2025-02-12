@@ -37,7 +37,7 @@ JdkClassCreateHelper.class('java.lang.InheritableThreadLocal', [
 			/* name */ 'childValue',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'parentValue',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'T']],
 					/* modifiers */ 0,
 					/* annotations */ UDF

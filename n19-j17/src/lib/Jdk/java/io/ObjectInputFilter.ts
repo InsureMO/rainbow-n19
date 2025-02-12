@@ -16,7 +16,7 @@ JdkClassCreateHelper.class('java.io.ObjectInputFilter', [
 			/* name */ 'merge',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'anotherFilter',
 					/* type */ 'java.io.ObjectInputFilter',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -54,7 +54,7 @@ JdkClassCreateHelper.class('java.io.ObjectInputFilter', [
 			/* name */ 'allowFilter',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'otherStatus',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* parameterized type */ 'pt', [
@@ -93,7 +93,7 @@ JdkClassCreateHelper.class('java.io.ObjectInputFilter', [
 			/* name */ 'rejectFilter',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'otherStatus',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* parameterized type */ 'pt', [

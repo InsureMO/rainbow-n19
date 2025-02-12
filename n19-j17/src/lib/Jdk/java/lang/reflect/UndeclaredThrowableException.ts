@@ -13,7 +13,7 @@ JdkClassCreateHelper.class('java.lang.reflect.UndeclaredThrowableException', [
 		[/* public java.lang.reflect.UndeclaredThrowableException(java.lang.Throwable) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'undeclaredThrowable',
 					/* type */ 'java.lang.Throwable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -27,13 +27,13 @@ JdkClassCreateHelper.class('java.lang.reflect.UndeclaredThrowableException', [
 		[/* public java.lang.reflect.UndeclaredThrowableException(java.lang.Throwable,java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'undeclaredThrowable',
 					/* type */ 'java.lang.Throwable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 's',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

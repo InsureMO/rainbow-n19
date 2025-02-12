@@ -32,7 +32,7 @@ JdkClassCreateHelper.class('java.util.function.LongConsumer', [
 			/* name */ 'andThen',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'after',
 					/* type */ 'java.util.function.LongConsumer',
 					/* modifiers */ 0,
 					/* annotations */ UDF

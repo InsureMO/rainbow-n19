@@ -13,19 +13,19 @@ JdkClassCreateHelper.class('java.nio.charset.CharsetDecoder', [
 		[/* protected java.nio.charset.CharsetDecoder(java.nio.charset.Charset,float,float) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'cs',
 					/* type */ 'java.nio.charset.Charset',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'averageCharsPerByte',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'maxCharsPerByte',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -51,7 +51,7 @@ JdkClassCreateHelper.class('java.nio.charset.CharsetDecoder', [
 			/* name */ 'onMalformedInput',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newAction',
 					/* type */ 'java.nio.charset.CodingErrorAction',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -67,7 +67,7 @@ JdkClassCreateHelper.class('java.nio.charset.CharsetDecoder', [
 			/* name */ 'onUnmappableCharacter',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newAction',
 					/* type */ 'java.nio.charset.CodingErrorAction',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -83,7 +83,7 @@ JdkClassCreateHelper.class('java.nio.charset.CharsetDecoder', [
 			/* name */ 'decode',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'o',
 					/* type */ 'java.nio.ByteBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -104,19 +104,19 @@ JdkClassCreateHelper.class('java.nio.charset.CharsetDecoder', [
 			/* name */ 'decode',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'cr',
 					/* type */ 'java.nio.ByteBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'x',
 					/* type */ 'java.nio.CharBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'cr',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -132,7 +132,7 @@ JdkClassCreateHelper.class('java.nio.charset.CharsetDecoder', [
 			/* name */ 'flush',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'cr',
 					/* type */ 'java.nio.CharBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -175,7 +175,7 @@ JdkClassCreateHelper.class('java.nio.charset.CharsetDecoder', [
 			/* name */ 'implFlush',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'out',
 					/* type */ 'java.nio.CharBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -209,7 +209,7 @@ JdkClassCreateHelper.class('java.nio.charset.CharsetDecoder', [
 			/* name */ 'replaceWith',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newReplacement',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -225,7 +225,7 @@ JdkClassCreateHelper.class('java.nio.charset.CharsetDecoder', [
 			/* name */ 'implReplaceWith',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newReplacement',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -241,7 +241,7 @@ JdkClassCreateHelper.class('java.nio.charset.CharsetDecoder', [
 			/* name */ 'implOnMalformedInput',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newAction',
 					/* type */ 'java.nio.charset.CodingErrorAction',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -257,7 +257,7 @@ JdkClassCreateHelper.class('java.nio.charset.CharsetDecoder', [
 			/* name */ 'implOnUnmappableCharacter',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newAction',
 					/* type */ 'java.nio.charset.CodingErrorAction',
 					/* modifiers */ 0,
 					/* annotations */ UDF

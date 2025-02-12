@@ -22,7 +22,7 @@ JdkClassCreateHelper.class('java.util.Spliterator', [
 			/* name */ 'forEachRemaining',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'action',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -122,7 +122,7 @@ JdkClassCreateHelper.class('java.util.Spliterator', [
 			/* name */ 'hasCharacteristics',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'characteristics',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

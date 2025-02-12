@@ -13,7 +13,7 @@ JdkClassCreateHelper.class('java.io.PipedWriter', [
 		[/* public java.io.PipedWriter(java.io.PipedReader) throws java.io.IOException */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'snk',
 					/* type */ 'java.io.PipedReader',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -56,19 +56,19 @@ JdkClassCreateHelper.class('java.io.PipedWriter', [
 			/* name */ 'write',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'cbuf',
 					/* type */ '[C',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'off',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'len',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -89,7 +89,7 @@ JdkClassCreateHelper.class('java.io.PipedWriter', [
 			/* name */ 'write',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'c',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -110,7 +110,7 @@ JdkClassCreateHelper.class('java.io.PipedWriter', [
 			/* name */ 'connect',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'snk',
 					/* type */ 'java.io.PipedReader',
 					/* modifiers */ 0,
 					/* annotations */ UDF

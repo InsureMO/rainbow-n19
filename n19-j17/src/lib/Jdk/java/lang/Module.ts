@@ -35,7 +35,7 @@ JdkClassCreateHelper.class('java.lang.Module', [
 			/* name */ 'addReads',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'caller',
 					/* type */ 'java.lang.Module',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -53,13 +53,13 @@ JdkClassCreateHelper.class('java.lang.Module', [
 			/* name */ 'addExports',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'caller',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'pn',
 					/* type */ 'java.lang.Module',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -77,13 +77,13 @@ JdkClassCreateHelper.class('java.lang.Module', [
 			/* name */ 'addOpens',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'caller',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'pn',
 					/* type */ 'java.lang.Module',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -101,7 +101,7 @@ JdkClassCreateHelper.class('java.lang.Module', [
 			/* name */ 'addUses',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'caller',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -157,7 +157,7 @@ JdkClassCreateHelper.class('java.lang.Module', [
 			/* name */ 'getResourceAsStream',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'pn',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -180,7 +180,7 @@ JdkClassCreateHelper.class('java.lang.Module', [
 			/* name */ 'isOpen',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'pn',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -196,13 +196,13 @@ JdkClassCreateHelper.class('java.lang.Module', [
 			/* name */ 'isOpen',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'pn',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'other',
 					/* type */ 'java.lang.Module',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -218,7 +218,7 @@ JdkClassCreateHelper.class('java.lang.Module', [
 			/* name */ 'getAnnotation',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'annotationClass',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'T']]
@@ -281,7 +281,7 @@ JdkClassCreateHelper.class('java.lang.Module', [
 			/* name */ 'canRead',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'reads',
 					/* type */ 'java.lang.Module',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -297,7 +297,7 @@ JdkClassCreateHelper.class('java.lang.Module', [
 			/* name */ 'canUse',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'service',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -333,13 +333,13 @@ JdkClassCreateHelper.class('java.lang.Module', [
 			/* name */ 'isExported',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'pn',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'other',
 					/* type */ 'java.lang.Module',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -355,7 +355,7 @@ JdkClassCreateHelper.class('java.lang.Module', [
 			/* name */ 'isExported',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'pn',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

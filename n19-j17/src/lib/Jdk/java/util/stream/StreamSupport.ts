@@ -15,7 +15,7 @@ JdkClassCreateHelper.class('java.util.stream.StreamSupport', [
 			/* name */ 'stream',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'characteristics',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -38,7 +38,7 @@ JdkClassCreateHelper.class('java.util.stream.StreamSupport', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'parallel',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -74,7 +74,7 @@ JdkClassCreateHelper.class('java.util.stream.StreamSupport', [
 			/* name */ 'stream',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'parallel',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'T']]
@@ -116,7 +116,7 @@ JdkClassCreateHelper.class('java.util.stream.StreamSupport', [
 			/* name */ 'intStream',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'characteristics',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -133,7 +133,7 @@ JdkClassCreateHelper.class('java.util.stream.StreamSupport', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'parallel',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -155,7 +155,7 @@ JdkClassCreateHelper.class('java.util.stream.StreamSupport', [
 			/* name */ 'intStream',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'parallel',
 					/* type */ 'java.util.Spliterator$OfInt',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -177,7 +177,7 @@ JdkClassCreateHelper.class('java.util.stream.StreamSupport', [
 			/* name */ 'longStream',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'characteristics',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -194,7 +194,7 @@ JdkClassCreateHelper.class('java.util.stream.StreamSupport', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'parallel',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -216,7 +216,7 @@ JdkClassCreateHelper.class('java.util.stream.StreamSupport', [
 			/* name */ 'longStream',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'parallel',
 					/* type */ 'java.util.Spliterator$OfLong',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -238,7 +238,7 @@ JdkClassCreateHelper.class('java.util.stream.StreamSupport', [
 			/* name */ 'doubleStream',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'parallel',
 					/* type */ 'java.util.Spliterator$OfDouble',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -260,7 +260,7 @@ JdkClassCreateHelper.class('java.util.stream.StreamSupport', [
 			/* name */ 'doubleStream',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'characteristics',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -277,7 +277,7 @@ JdkClassCreateHelper.class('java.util.stream.StreamSupport', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'parallel',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

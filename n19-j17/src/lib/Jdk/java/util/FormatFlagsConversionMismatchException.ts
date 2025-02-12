@@ -13,13 +13,13 @@ JdkClassCreateHelper.class('java.util.FormatFlagsConversionMismatchException', [
 		[/* public java.util.FormatFlagsConversionMismatchException(java.lang.String,char) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'f',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'c',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
