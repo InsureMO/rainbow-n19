@@ -149,7 +149,7 @@ JdkClassCreateHelper.class('java.time.format.DecimalStyle', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'info',
+					/* name */ 'locale',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF

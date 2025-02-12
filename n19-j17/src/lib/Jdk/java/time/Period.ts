@@ -465,13 +465,13 @@ JdkClassCreateHelper.class('java.time.Period', [
 			/* name */ 'between',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'endDateExclusive',
+					/* name */ 'startDateInclusive',
 					/* type */ 'java.time.LocalDate',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'endDateExclusive',
 					/* type */ 'java.time.LocalDate',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -503,6 +503,12 @@ JdkClassCreateHelper.class('java.time.Period', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
+					/* name */ 'years',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
 					/* name */ 'months',
 					/* type */ 'int',
 					/* modifiers */ 0,
@@ -510,12 +516,6 @@ JdkClassCreateHelper.class('java.time.Period', [
 				],
 				[/* parameter */
 					/* name */ 'days',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg2',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -531,7 +531,7 @@ JdkClassCreateHelper.class('java.time.Period', [
 			/* name */ 'ofDays',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'days',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -547,7 +547,7 @@ JdkClassCreateHelper.class('java.time.Period', [
 			/* name */ 'ofMonths',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'months',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -563,7 +563,7 @@ JdkClassCreateHelper.class('java.time.Period', [
 			/* name */ 'ofWeeks',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'weeks',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -579,7 +579,7 @@ JdkClassCreateHelper.class('java.time.Period', [
 			/* name */ 'ofYears',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'years',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

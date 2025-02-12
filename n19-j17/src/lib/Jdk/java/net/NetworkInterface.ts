@@ -253,7 +253,7 @@ JdkClassCreateHelper.class('java.net.NetworkInterface', [
 			/* name */ 'getByIndex',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -274,7 +274,7 @@ JdkClassCreateHelper.class('java.net.NetworkInterface', [
 			/* name */ 'getByInetAddress',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'addr',
 					/* type */ 'java.net.InetAddress',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -295,7 +295,7 @@ JdkClassCreateHelper.class('java.net.NetworkInterface', [
 			/* name */ 'getByName',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

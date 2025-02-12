@@ -150,13 +150,13 @@ JdkClassCreateHelper.class('java.util.regex.Pattern', [
 			/* name */ 'matches',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'input',
+					/* name */ 'regex',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'p',
+					/* name */ 'input',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -172,7 +172,7 @@ JdkClassCreateHelper.class('java.util.regex.Pattern', [
 			/* name */ 'quote',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'slashEIndex',
+					/* name */ 's',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -188,7 +188,7 @@ JdkClassCreateHelper.class('java.util.regex.Pattern', [
 			/* name */ 'compile',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'regex',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -204,13 +204,13 @@ JdkClassCreateHelper.class('java.util.regex.Pattern', [
 			/* name */ 'compile',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'flags',
+					/* name */ 'regex',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'flags',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

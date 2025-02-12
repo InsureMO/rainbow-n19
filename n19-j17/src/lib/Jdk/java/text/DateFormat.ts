@@ -239,7 +239,7 @@ JdkClassCreateHelper.class('java.text.DateFormat', [
 			/* name */ 'getDateInstance',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'style',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -255,13 +255,13 @@ JdkClassCreateHelper.class('java.text.DateFormat', [
 			/* name */ 'getDateInstance',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'aLocale',
+					/* name */ 'style',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'aLocale',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -286,13 +286,13 @@ JdkClassCreateHelper.class('java.text.DateFormat', [
 			/* name */ 'getDateTimeInstance',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'timeStyle',
+					/* name */ 'dateStyle',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'timeStyle',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -308,6 +308,12 @@ JdkClassCreateHelper.class('java.text.DateFormat', [
 			/* name */ 'getDateTimeInstance',
 			[/* parameters */
 				[/* parameter */
+					/* name */ 'dateStyle',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
 					/* name */ 'timeStyle',
 					/* type */ 'int',
 					/* modifiers */ 0,
@@ -315,12 +321,6 @@ JdkClassCreateHelper.class('java.text.DateFormat', [
 				],
 				[/* parameter */
 					/* name */ 'aLocale',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg2',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -354,7 +354,7 @@ JdkClassCreateHelper.class('java.text.DateFormat', [
 			/* name */ 'getTimeInstance',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'style',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -370,13 +370,13 @@ JdkClassCreateHelper.class('java.text.DateFormat', [
 			/* name */ 'getTimeInstance',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'aLocale',
+					/* name */ 'style',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'aLocale',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF

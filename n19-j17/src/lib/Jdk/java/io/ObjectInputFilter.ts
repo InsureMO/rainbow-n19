@@ -32,7 +32,7 @@ JdkClassCreateHelper.class('java.io.ObjectInputFilter', [
 			/* name */ 'allowFilter',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'otherStatus',
+					/* name */ 'predicate',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* parameterized type */ 'pt', [
@@ -55,7 +55,7 @@ JdkClassCreateHelper.class('java.io.ObjectInputFilter', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'otherStatus',
 					/* type */ 'java.io.ObjectInputFilter$Status',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -71,13 +71,13 @@ JdkClassCreateHelper.class('java.io.ObjectInputFilter', [
 			/* name */ 'merge',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'anotherFilter',
+					/* name */ 'filter',
 					/* type */ 'java.io.ObjectInputFilter',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'anotherFilter',
 					/* type */ 'java.io.ObjectInputFilter',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -93,7 +93,7 @@ JdkClassCreateHelper.class('java.io.ObjectInputFilter', [
 			/* name */ 'rejectFilter',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'otherStatus',
+					/* name */ 'predicate',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* parameterized type */ 'pt', [
@@ -116,7 +116,7 @@ JdkClassCreateHelper.class('java.io.ObjectInputFilter', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'otherStatus',
 					/* type */ 'java.io.ObjectInputFilter$Status',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -132,7 +132,7 @@ JdkClassCreateHelper.class('java.io.ObjectInputFilter', [
 			/* name */ 'rejectUndecidedClass',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'filter',
 					/* type */ 'java.io.ObjectInputFilter',
 					/* modifiers */ 0,
 					/* annotations */ UDF

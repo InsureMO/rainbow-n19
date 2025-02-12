@@ -364,13 +364,13 @@ JdkClassCreateHelper.class('java.text.NumberFormat', [
 			/* name */ 'getCompactNumberInstance',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'formatStyle',
+					/* name */ 'locale',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'formatStyle',
 					/* type */ 'java.text.NumberFormat$Style',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -386,7 +386,7 @@ JdkClassCreateHelper.class('java.text.NumberFormat', [
 			/* name */ 'getCurrencyInstance',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'inLocale',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -402,7 +402,7 @@ JdkClassCreateHelper.class('java.text.NumberFormat', [
 			/* name */ 'getInstance',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'inLocale',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -418,7 +418,7 @@ JdkClassCreateHelper.class('java.text.NumberFormat', [
 			/* name */ 'getIntegerInstance',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'inLocale',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -434,7 +434,7 @@ JdkClassCreateHelper.class('java.text.NumberFormat', [
 			/* name */ 'getNumberInstance',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'inLocale',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -450,7 +450,7 @@ JdkClassCreateHelper.class('java.text.NumberFormat', [
 			/* name */ 'getPercentInstance',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'inLocale',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF

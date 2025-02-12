@@ -1308,7 +1308,7 @@ JdkClassCreateHelper.class('java.util.stream.Stream', [
 			/* name */ 'concat',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'b',
+					/* name */ 'a',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1325,7 +1325,7 @@ JdkClassCreateHelper.class('java.util.stream.Stream', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'split',
+					/* name */ 'b',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1389,7 +1389,7 @@ JdkClassCreateHelper.class('java.util.stream.Stream', [
 			/* name */ 'generate',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 's',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1430,13 +1430,13 @@ JdkClassCreateHelper.class('java.util.stream.Stream', [
 			/* name */ 'iterate',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'hasNext',
+					/* name */ 'seed',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'T']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'next',
+					/* name */ 'hasNext',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1455,7 +1455,7 @@ JdkClassCreateHelper.class('java.util.stream.Stream', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'spliterator',
+					/* name */ 'next',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'T']]
@@ -1491,13 +1491,13 @@ JdkClassCreateHelper.class('java.util.stream.Stream', [
 			/* name */ 'iterate',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'f',
+					/* name */ 'seed',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'T']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'spliterator',
+					/* name */ 'f',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'T']]
@@ -1533,7 +1533,7 @@ JdkClassCreateHelper.class('java.util.stream.Stream', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 't',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'T']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1595,7 +1595,7 @@ JdkClassCreateHelper.class('java.util.stream.Stream', [
 			/* name */ 'ofNullable',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 't',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'T']],
 					/* modifiers */ 0,
 					/* annotations */ UDF

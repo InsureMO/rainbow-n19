@@ -182,7 +182,7 @@ JdkClassCreateHelper.class('java.util.ResourceBundle', [
 			/* name */ 'getBundle',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'caller',
+					/* name */ 'baseName',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -200,13 +200,13 @@ JdkClassCreateHelper.class('java.util.ResourceBundle', [
 			/* name */ 'getBundle',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'locale',
+					/* name */ 'baseName',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'caller',
+					/* name */ 'locale',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -224,19 +224,19 @@ JdkClassCreateHelper.class('java.util.ResourceBundle', [
 			/* name */ 'getBundle',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'targetLocale',
+					/* name */ 'baseName',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'control',
+					/* name */ 'targetLocale',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'caller',
+					/* name */ 'control',
 					/* type */ 'java.util.ResourceBundle$Control',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -254,13 +254,13 @@ JdkClassCreateHelper.class('java.util.ResourceBundle', [
 			/* name */ 'getBundle',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'control',
+					/* name */ 'baseName',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'caller',
+					/* name */ 'control',
 					/* type */ 'java.util.ResourceBundle$Control',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -289,7 +289,7 @@ JdkClassCreateHelper.class('java.util.ResourceBundle', [
 			/* name */ 'clearCache',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'loader',
 					/* type */ 'java.lang.ClassLoader',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -305,13 +305,13 @@ JdkClassCreateHelper.class('java.util.ResourceBundle', [
 			/* name */ 'getBundle',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'module',
+					/* name */ 'baseName',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'module',
 					/* type */ 'java.lang.Module',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -329,19 +329,19 @@ JdkClassCreateHelper.class('java.util.ResourceBundle', [
 			/* name */ 'getBundle',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'locale',
+					/* name */ 'baseName',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'loader',
+					/* name */ 'locale',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'caller',
+					/* name */ 'loader',
 					/* type */ 'java.lang.ClassLoader',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -359,25 +359,25 @@ JdkClassCreateHelper.class('java.util.ResourceBundle', [
 			/* name */ 'getBundle',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'targetLocale',
+					/* name */ 'baseName',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'loader',
+					/* name */ 'targetLocale',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'control',
+					/* name */ 'loader',
 					/* type */ 'java.lang.ClassLoader',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'caller',
+					/* name */ 'control',
 					/* type */ 'java.util.ResourceBundle$Control',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -395,19 +395,19 @@ JdkClassCreateHelper.class('java.util.ResourceBundle', [
 			/* name */ 'getBundle',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'targetLocale',
+					/* name */ 'baseName',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'module',
+					/* name */ 'targetLocale',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'module',
 					/* type */ 'java.lang.Module',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -309,7 +309,7 @@ JdkClassCreateHelper.class('java.lang.Package', [
 			/* name */ 'getPackage',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'l',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

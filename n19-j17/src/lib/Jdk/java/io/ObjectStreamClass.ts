@@ -91,7 +91,7 @@ JdkClassCreateHelper.class('java.io.ObjectStreamClass', [
 			/* name */ 'lookup',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'cl',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -118,7 +118,7 @@ JdkClassCreateHelper.class('java.io.ObjectStreamClass', [
 			/* name */ 'lookupAny',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'cl',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

@@ -834,7 +834,7 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'from',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'time',
+					/* name */ 'temporal',
 					/* type */ 'java.time.temporal.TemporalAccessor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -859,7 +859,7 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'now',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'now',
+					/* name */ 'clock',
 					/* type */ 'java.time.Clock',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -875,7 +875,7 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'now',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'zone',
 					/* type */ 'java.time.ZoneId',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -891,13 +891,13 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'minute',
+					/* name */ 'hour',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'minute',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -913,6 +913,12 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
+					/* name */ 'hour',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
 					/* name */ 'minute',
 					/* type */ 'int',
 					/* modifiers */ 0,
@@ -920,12 +926,6 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 				],
 				[/* parameter */
 					/* name */ 'second',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg2',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -940,6 +940,12 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 		[/* public static java.time.LocalTime java.time.LocalTime.of(int,int,int,int) */
 			/* name */ 'of',
 			[/* parameters */
+				[/* parameter */
+					/* name */ 'hour',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
 				[/* parameter */
 					/* name */ 'minute',
 					/* type */ 'int',
@@ -957,12 +963,6 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg3',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
 				]
 			],
 			/* return */ 'java.time.LocalTime',
@@ -975,13 +975,13 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'ofInstant',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'zone',
+					/* name */ 'instant',
 					/* type */ 'java.time.Instant',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'offset',
+					/* name */ 'zone',
 					/* type */ 'java.time.ZoneId',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -997,7 +997,7 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'ofNanoOfDay',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'hours',
+					/* name */ 'nanoOfDay',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1013,7 +1013,7 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'ofSecondOfDay',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'hours',
+					/* name */ 'secondOfDay',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1029,7 +1029,7 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'parse',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'text',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1045,13 +1045,13 @@ JdkClassCreateHelper.class('java.time.LocalTime', [
 			/* name */ 'parse',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'formatter',
+					/* name */ 'text',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'formatter',
 					/* type */ 'java.time.format.DateTimeFormatter',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -210,7 +210,7 @@ JdkClassCreateHelper.class('java.lang.ModuleLayer', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'parentLayers',
+					/* name */ 'cf',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.String',
@@ -251,7 +251,7 @@ JdkClassCreateHelper.class('java.lang.ModuleLayer', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'parentLayers',
+					/* name */ 'cf',
 					/* type */ 'java.lang.ClassLoader',
 					/* modifiers */ 0,
 					/* annotations */ UDF

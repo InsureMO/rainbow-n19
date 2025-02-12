@@ -654,7 +654,7 @@ JdkClassCreateHelper.class('java.lang.Thread', [
 			/* name */ 'setDefaultUncaughtExceptionHandler',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'sm',
+					/* name */ 'eh',
 					/* type */ 'java.lang.Thread$UncaughtExceptionHandler',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -670,13 +670,13 @@ JdkClassCreateHelper.class('java.lang.Thread', [
 			/* name */ 'sleep',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'nanos',
+					/* name */ 'millis',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'nanos',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

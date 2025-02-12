@@ -286,13 +286,13 @@ JdkClassCreateHelper.class('javax.security.auth.Subject', [
 			/* name */ 'doAs',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'action',
+					/* name */ 'subject',
 					/* type */ 'javax.security.auth.Subject',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'sm',
+					/* name */ 'action',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'T']]
@@ -322,13 +322,13 @@ JdkClassCreateHelper.class('javax.security.auth.Subject', [
 			/* name */ 'doAs',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'action',
+					/* name */ 'subject',
 					/* type */ 'javax.security.auth.Subject',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'sm',
+					/* name */ 'action',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'T']]
@@ -363,13 +363,13 @@ JdkClassCreateHelper.class('javax.security.auth.Subject', [
 			/* name */ 'doAsPrivileged',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'action',
+					/* name */ 'subject',
 					/* type */ 'javax.security.auth.Subject',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'acc',
+					/* name */ 'action',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'T']]
@@ -381,7 +381,7 @@ JdkClassCreateHelper.class('javax.security.auth.Subject', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'sm',
+					/* name */ 'acc',
 					/* type */ 'java.security.AccessControlContext',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -411,13 +411,13 @@ JdkClassCreateHelper.class('javax.security.auth.Subject', [
 			/* name */ 'doAsPrivileged',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'action',
+					/* name */ 'subject',
 					/* type */ 'javax.security.auth.Subject',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'acc',
+					/* name */ 'action',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'T']]
@@ -429,7 +429,7 @@ JdkClassCreateHelper.class('javax.security.auth.Subject', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'sm',
+					/* name */ 'acc',
 					/* type */ 'java.security.AccessControlContext',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -464,7 +464,7 @@ JdkClassCreateHelper.class('javax.security.auth.Subject', [
 			/* name */ 'getSubject',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'sm',
+					/* name */ 'acc',
 					/* type */ 'java.security.AccessControlContext',
 					/* modifiers */ 0,
 					/* annotations */ UDF

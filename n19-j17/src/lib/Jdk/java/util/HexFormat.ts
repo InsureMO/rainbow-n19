@@ -503,7 +503,7 @@ JdkClassCreateHelper.class('java.util.HexFormat', [
 			/* name */ 'isHexDigit',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ch',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -535,7 +535,7 @@ JdkClassCreateHelper.class('java.util.HexFormat', [
 			/* name */ 'fromHexDigits',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'string',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -557,13 +557,13 @@ JdkClassCreateHelper.class('java.util.HexFormat', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'fromIndex',
+					/* name */ 'string',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'toIndex',
+					/* name */ 'fromIndex',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -588,7 +588,7 @@ JdkClassCreateHelper.class('java.util.HexFormat', [
 			/* name */ 'ofDelimiter',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'delimiter',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -604,7 +604,7 @@ JdkClassCreateHelper.class('java.util.HexFormat', [
 			/* name */ 'fromHexDigitsToLong',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'string',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -626,13 +626,13 @@ JdkClassCreateHelper.class('java.util.HexFormat', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'fromIndex',
+					/* name */ 'string',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'toIndex',
+					/* name */ 'fromIndex',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

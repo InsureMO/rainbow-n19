@@ -895,7 +895,7 @@ JdkClassCreateHelper.class('java.lang.ClassLoader', [
 			/* name */ 'getSystemResource',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -911,7 +911,7 @@ JdkClassCreateHelper.class('java.lang.ClassLoader', [
 			/* name */ 'getSystemResources',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -264,7 +264,7 @@ JdkClassCreateHelper.class('java.util.BitSet', [
 			/* name */ 'valueOf',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'bytes',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -296,7 +296,7 @@ JdkClassCreateHelper.class('java.util.BitSet', [
 			/* name */ 'valueOf',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'n',
+					/* name */ 'lb',
 					/* type */ 'java.nio.LongBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -312,7 +312,7 @@ JdkClassCreateHelper.class('java.util.BitSet', [
 			/* name */ 'valueOf',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'n',
+					/* name */ 'longs',
 					/* type */ '[J',
 					/* modifiers */ 0,
 					/* annotations */ UDF

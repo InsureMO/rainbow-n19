@@ -419,7 +419,7 @@ JdkClassCreateHelper.class('java.util.Comparator', [
 			/* name */ 'comparing',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'keyExtractor',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -488,7 +488,7 @@ JdkClassCreateHelper.class('java.util.Comparator', [
 			/* name */ 'comparing',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'keyComparator',
+					/* name */ 'keyExtractor',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -513,7 +513,7 @@ JdkClassCreateHelper.class('java.util.Comparator', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'keyComparator',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -563,7 +563,7 @@ JdkClassCreateHelper.class('java.util.Comparator', [
 			/* name */ 'comparingDouble',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'keyExtractor',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -606,7 +606,7 @@ JdkClassCreateHelper.class('java.util.Comparator', [
 			/* name */ 'comparingInt',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'keyExtractor',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -649,7 +649,7 @@ JdkClassCreateHelper.class('java.util.Comparator', [
 			/* name */ 'comparingLong',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'keyExtractor',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -692,7 +692,7 @@ JdkClassCreateHelper.class('java.util.Comparator', [
 			/* name */ 'nullsFirst',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'comparator',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -735,7 +735,7 @@ JdkClassCreateHelper.class('java.util.Comparator', [
 			/* name */ 'nullsLast',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'comparator',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

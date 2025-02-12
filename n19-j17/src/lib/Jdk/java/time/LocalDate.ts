@@ -1221,7 +1221,7 @@ JdkClassCreateHelper.class('java.time.LocalDate', [
 			/* name */ 'from',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'date',
+					/* name */ 'temporal',
 					/* type */ 'java.time.temporal.TemporalAccessor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1246,7 +1246,7 @@ JdkClassCreateHelper.class('java.time.LocalDate', [
 			/* name */ 'now',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'now',
+					/* name */ 'clock',
 					/* type */ 'java.time.Clock',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1262,7 +1262,7 @@ JdkClassCreateHelper.class('java.time.LocalDate', [
 			/* name */ 'now',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'zone',
 					/* type */ 'java.time.ZoneId',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1278,6 +1278,12 @@ JdkClassCreateHelper.class('java.time.LocalDate', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
+					/* name */ 'year',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
 					/* name */ 'month',
 					/* type */ 'int',
 					/* modifiers */ 0,
@@ -1285,12 +1291,6 @@ JdkClassCreateHelper.class('java.time.LocalDate', [
 				],
 				[/* parameter */
 					/* name */ 'dayOfMonth',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg2',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1306,19 +1306,19 @@ JdkClassCreateHelper.class('java.time.LocalDate', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'month',
+					/* name */ 'year',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'dayOfMonth',
+					/* name */ 'month',
 					/* type */ 'java.time.Month',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'dayOfMonth',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1350,13 +1350,13 @@ JdkClassCreateHelper.class('java.time.LocalDate', [
 			/* name */ 'ofInstant',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'zone',
+					/* name */ 'instant',
 					/* type */ 'java.time.Instant',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'rules',
+					/* name */ 'zone',
 					/* type */ 'java.time.ZoneId',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1372,13 +1372,13 @@ JdkClassCreateHelper.class('java.time.LocalDate', [
 			/* name */ 'ofYearDay',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'dayOfYear',
+					/* name */ 'year',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'leap',
+					/* name */ 'dayOfYear',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1394,7 +1394,7 @@ JdkClassCreateHelper.class('java.time.LocalDate', [
 			/* name */ 'parse',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'text',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1410,13 +1410,13 @@ JdkClassCreateHelper.class('java.time.LocalDate', [
 			/* name */ 'parse',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'formatter',
+					/* name */ 'text',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'formatter',
 					/* type */ 'java.time.format.DateTimeFormatter',
 					/* modifiers */ 0,
 					/* annotations */ UDF

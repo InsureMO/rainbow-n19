@@ -15,7 +15,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Array', [
 			/* name */ 'newInstance',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'length',
+					/* name */ 'componentType',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -32,7 +32,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Array', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'length',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -53,7 +53,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Array', [
 			/* name */ 'newInstance',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'dimensions',
+					/* name */ 'componentType',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -70,7 +70,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Array', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'dimensions',
 					/* type */ '[I',
 					/* modifiers */ 0,
 					/* annotations */ UDF

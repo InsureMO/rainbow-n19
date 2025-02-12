@@ -115,7 +115,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandleInfo', [
 			/* name */ 'referenceKindToString',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'referenceKind',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -131,13 +131,13 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandleInfo', [
 			/* name */ 'toString',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'defc',
+					/* name */ 'kind',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'name',
+					/* name */ 'defc',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -154,13 +154,13 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandleInfo', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'type',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg3',
+					/* name */ 'type',
 					/* type */ 'java.lang.invoke.MethodType',
 					/* modifiers */ 0,
 					/* annotations */ UDF

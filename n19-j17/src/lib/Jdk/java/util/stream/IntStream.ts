@@ -628,13 +628,13 @@ JdkClassCreateHelper.class('java.util.stream.IntStream', [
 			/* name */ 'concat',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'b',
+					/* name */ 'a',
 					/* type */ 'java.util.stream.IntStream',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'split',
+					/* name */ 'b',
 					/* type */ 'java.util.stream.IntStream',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -659,7 +659,7 @@ JdkClassCreateHelper.class('java.util.stream.IntStream', [
 			/* name */ 'generate',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 's',
 					/* type */ 'java.util.function.IntSupplier',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -675,19 +675,19 @@ JdkClassCreateHelper.class('java.util.stream.IntStream', [
 			/* name */ 'iterate',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'hasNext',
+					/* name */ 'seed',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'next',
+					/* name */ 'hasNext',
 					/* type */ 'java.util.function.IntPredicate',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'spliterator',
+					/* name */ 'next',
 					/* type */ 'java.util.function.IntUnaryOperator',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -703,13 +703,13 @@ JdkClassCreateHelper.class('java.util.stream.IntStream', [
 			/* name */ 'iterate',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'f',
+					/* name */ 'seed',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'spliterator',
+					/* name */ 'f',
 					/* type */ 'java.util.function.IntUnaryOperator',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -725,7 +725,7 @@ JdkClassCreateHelper.class('java.util.stream.IntStream', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 't',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -741,7 +741,7 @@ JdkClassCreateHelper.class('java.util.stream.IntStream', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'values',
 					/* type */ '[I',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -757,13 +757,13 @@ JdkClassCreateHelper.class('java.util.stream.IntStream', [
 			/* name */ 'range',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'endExclusive',
+					/* name */ 'startInclusive',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'endExclusive',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -779,13 +779,13 @@ JdkClassCreateHelper.class('java.util.stream.IntStream', [
 			/* name */ 'rangeClosed',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'endInclusive',
+					/* name */ 'startInclusive',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'endInclusive',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

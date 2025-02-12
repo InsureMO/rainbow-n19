@@ -579,7 +579,7 @@ JdkClassCreateHelper.class('java.time.chrono.ChronoLocalDate', [
 			/* name */ 'from',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'chrono',
+					/* name */ 'temporal',
 					/* type */ 'java.time.temporal.TemporalAccessor',
 					/* modifiers */ 0,
 					/* annotations */ UDF

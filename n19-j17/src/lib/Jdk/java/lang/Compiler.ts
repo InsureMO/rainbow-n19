@@ -21,7 +21,7 @@ JdkClassCreateHelper.class('java.lang.Compiler', [
 			/* name */ 'compileClass',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'clazz',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -48,7 +48,7 @@ JdkClassCreateHelper.class('java.lang.Compiler', [
 			/* name */ 'compileClasses',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'string',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -64,7 +64,7 @@ JdkClassCreateHelper.class('java.lang.Compiler', [
 			/* name */ 'command',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'any',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF

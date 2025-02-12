@@ -189,13 +189,13 @@ JdkClassCreateHelper.class('java.text.ChoiceFormat', [
 			/* name */ 'nextDouble',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'positive',
+					/* name */ 'd',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'positive',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -211,7 +211,7 @@ JdkClassCreateHelper.class('java.text.ChoiceFormat', [
 			/* name */ 'nextDouble',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'd',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -227,7 +227,7 @@ JdkClassCreateHelper.class('java.text.ChoiceFormat', [
 			/* name */ 'previousDouble',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'd',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF

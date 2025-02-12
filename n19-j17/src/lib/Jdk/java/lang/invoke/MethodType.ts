@@ -616,7 +616,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodType', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'loader',
+					/* name */ 'descriptor',
 					/* type */ 'java.lang.ClassLoader',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -641,7 +641,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodType', [
 			/* name */ 'genericMethodType',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'objectArgCount',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -663,7 +663,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodType', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'finalArray',
+					/* name */ 'objectArgCount',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -679,7 +679,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodType', [
 			/* name */ 'methodType',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'rtype',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -706,7 +706,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodType', [
 			/* name */ 'methodType',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'ptype0',
+					/* name */ 'rtype',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -723,7 +723,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodType', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'ptype0',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -855,7 +855,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodType', [
 			/* name */ 'methodType',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'ptypes',
+					/* name */ 'rtype',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -872,7 +872,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodType', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'ptypes',
 					/* type */ 'java.lang.invoke.MethodType',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -888,7 +888,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodType', [
 			/* name */ 'methodType',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'ptypes',
+					/* name */ 'rtype',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -905,7 +905,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodType', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'notrust',
+					/* name */ 'ptypes',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* parameterized type */ 'pt', [

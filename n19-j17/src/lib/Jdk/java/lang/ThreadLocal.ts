@@ -49,7 +49,7 @@ JdkClassCreateHelper.class('java.lang.ThreadLocal', [
 			/* name */ 'withInitial',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'supplier',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

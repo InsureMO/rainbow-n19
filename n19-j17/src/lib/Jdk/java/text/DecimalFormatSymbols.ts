@@ -227,7 +227,7 @@ JdkClassCreateHelper.class('java.text.DecimalFormatSymbols', [
 			/* name */ 'getInstance',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'adapter',
+					/* name */ 'locale',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF

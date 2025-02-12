@@ -204,7 +204,7 @@ JdkClassCreateHelper.class('java.lang.ProcessHandle', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'pid',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF

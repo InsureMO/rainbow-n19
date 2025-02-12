@@ -468,7 +468,7 @@ JdkClassCreateHelper.class('java.net.URLConnection', [
 			/* name */ 'getDefaultUseCaches',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'protoDefault',
+					/* name */ 'protocol',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -484,7 +484,7 @@ JdkClassCreateHelper.class('java.net.URLConnection', [
 			/* name */ 'getDefaultRequestProperty',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'key',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -506,7 +506,7 @@ JdkClassCreateHelper.class('java.net.URLConnection', [
 			/* name */ 'guessContentTypeFromName',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'fname',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -522,7 +522,7 @@ JdkClassCreateHelper.class('java.net.URLConnection', [
 			/* name */ 'guessContentTypeFromStream',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'c1',
+					/* name */ 'is',
 					/* type */ 'java.io.InputStream',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -552,7 +552,7 @@ JdkClassCreateHelper.class('java.net.URLConnection', [
 			/* name */ 'setContentHandlerFactory',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'security',
+					/* name */ 'fac',
 					/* type */ 'java.net.ContentHandlerFactory',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -568,7 +568,7 @@ JdkClassCreateHelper.class('java.net.URLConnection', [
 			/* name */ 'setDefaultAllowUserInteraction',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'defaultallowuserinteraction',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -584,13 +584,13 @@ JdkClassCreateHelper.class('java.net.URLConnection', [
 			/* name */ 'setDefaultRequestProperty',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'value',
+					/* name */ 'key',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'value',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -612,13 +612,13 @@ JdkClassCreateHelper.class('java.net.URLConnection', [
 			/* name */ 'setDefaultUseCaches',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'defaultVal',
+					/* name */ 'protocol',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'defaultVal',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -634,7 +634,7 @@ JdkClassCreateHelper.class('java.net.URLConnection', [
 			/* name */ 'setFileNameMap',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'sm',
+					/* name */ 'map',
 					/* type */ 'java.net.FileNameMap',
 					/* modifiers */ 0,
 					/* annotations */ UDF

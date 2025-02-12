@@ -34,7 +34,7 @@ JdkClassCreateHelper.class('java.util.function.BinaryOperator', [
 			/* name */ 'maxBy',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'comparator',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -77,7 +77,7 @@ JdkClassCreateHelper.class('java.util.function.BinaryOperator', [
 			/* name */ 'minBy',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'comparator',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

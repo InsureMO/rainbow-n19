@@ -15,7 +15,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'checkedCollection',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'type',
+					/* name */ 'c',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'E']]
@@ -27,7 +27,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'type',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'E']]
@@ -63,7 +63,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'checkedList',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'type',
+					/* name */ 'list',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'E']]
@@ -75,7 +75,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'type',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'E']]
@@ -111,7 +111,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'checkedNavigableSet',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'type',
+					/* name */ 's',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'E']]
@@ -123,7 +123,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'type',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'E']]
@@ -182,7 +182,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'checkedQueue',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'type',
+					/* name */ 'queue',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'E']]
@@ -194,7 +194,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'type',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'E']]
@@ -230,7 +230,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'checkedSet',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'type',
+					/* name */ 's',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'E']]
@@ -242,7 +242,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'type',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'E']]
@@ -278,7 +278,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'newSetFromMap',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'map',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'E']],
@@ -315,7 +315,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'checkedSortedSet',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'type',
+					/* name */ 's',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'E']]
@@ -327,7 +327,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'type',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'E']]
@@ -386,7 +386,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'checkedMap',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'keyType',
+					/* name */ 'm',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'K']],
@@ -399,7 +399,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'valueType',
+					/* name */ 'keyType',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'K']]
@@ -411,7 +411,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'valueType',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'V']]
@@ -455,13 +455,13 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'singletonMap',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'value',
+					/* name */ 'key',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'value',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -499,7 +499,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'synchronizedMap',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'm',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'K']],
@@ -544,7 +544,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'unmodifiableMap',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'm',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -599,7 +599,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'checkedNavigableMap',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'keyType',
+					/* name */ 'm',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'K']],
@@ -612,7 +612,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'valueType',
+					/* name */ 'keyType',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'K']]
@@ -624,7 +624,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'valueType',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'V']]
@@ -668,7 +668,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'synchronizedNavigableMap',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'm',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'K']],
@@ -713,7 +713,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'unmodifiableNavigableMap',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'm',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'K']],
@@ -763,7 +763,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'checkedSortedMap',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'keyType',
+					/* name */ 'm',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'K']],
@@ -776,7 +776,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'valueType',
+					/* name */ 'keyType',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'K']]
@@ -788,7 +788,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'valueType',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'V']]
@@ -832,7 +832,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'synchronizedSortedMap',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'm',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'K']],
@@ -877,7 +877,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'unmodifiableSortedMap',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'm',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'K']],
@@ -927,7 +927,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'sort',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'list',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'T']]
@@ -1085,7 +1085,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'comp',
+					/* name */ 'coll',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1139,7 +1139,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'comp',
+					/* name */ 'coll',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1263,7 +1263,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'binarySearch',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'key',
+					/* name */ 'list',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1280,13 +1280,13 @@ JdkClassCreateHelper.class('java.util.Collections', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'c',
+					/* name */ 'key',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'T']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'c',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1323,7 +1323,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'binarySearch',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'key',
+					/* name */ 'list',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1353,7 +1353,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'key',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'T']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1377,7 +1377,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'list',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'l',
+					/* name */ 'e',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'T']]
@@ -1413,7 +1413,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'synchronizedCollection',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'c',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'T']]
@@ -1449,7 +1449,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'unmodifiableCollection',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'c',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1513,7 +1513,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'reverseOrder',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'cmp',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'T']]
@@ -1572,7 +1572,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'enumeration',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'c',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'T']]
@@ -1631,13 +1631,13 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'nCopies',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'o',
+					/* name */ 'n',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'o',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'T']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1667,7 +1667,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'singletonList',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'o',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'T']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1697,7 +1697,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'synchronizedList',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'list',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'T']]
@@ -1733,7 +1733,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'unmodifiableList',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'list',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1797,7 +1797,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'synchronizedNavigableSet',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 's',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'T']]
@@ -1833,7 +1833,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'unmodifiableNavigableSet',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 's',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'T']]
@@ -1869,7 +1869,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'asLifoQueue',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'deque',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'T']]
@@ -1905,7 +1905,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'singleton',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'o',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'T']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1935,7 +1935,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'synchronizedSet',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 's',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'T']]
@@ -1971,7 +1971,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'unmodifiableSet',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 's',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -2012,7 +2012,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'synchronizedSortedSet',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 's',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'T']]
@@ -2048,7 +2048,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'unmodifiableSortedSet',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 's',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'T']]
@@ -2181,7 +2181,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'sort',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'c',
+					/* name */ 'list',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'T']]
@@ -2193,7 +2193,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'c',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -2561,7 +2561,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'rotate',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'distance',
+					/* name */ 'list',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -2578,7 +2578,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'distance',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -2594,7 +2594,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'shuffle',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'rnd',
+					/* name */ 'list',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -2654,7 +2654,7 @@ JdkClassCreateHelper.class('java.util.Collections', [
 			/* name */ 'swap',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'list',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -2671,13 +2671,13 @@ JdkClassCreateHelper.class('java.util.Collections', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'j',
+					/* name */ 'i',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'l',
+					/* name */ 'j',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

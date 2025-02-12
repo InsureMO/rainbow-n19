@@ -652,7 +652,7 @@ JdkClassCreateHelper.class('java.time.chrono.Chronology', [
 			/* name */ 'from',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'obj',
+					/* name */ 'temporal',
 					/* type */ 'java.time.temporal.TemporalAccessor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -668,7 +668,7 @@ JdkClassCreateHelper.class('java.time.chrono.Chronology', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'id',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -684,7 +684,7 @@ JdkClassCreateHelper.class('java.time.chrono.Chronology', [
 			/* name */ 'ofLocale',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'locale',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF

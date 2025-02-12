@@ -183,7 +183,7 @@ JdkClassCreateHelper.class('java.lang.constant.ClassDesc', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -199,13 +199,13 @@ JdkClassCreateHelper.class('java.lang.constant.ClassDesc', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'className',
+					/* name */ 'packageName',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'className',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -221,7 +221,7 @@ JdkClassCreateHelper.class('java.lang.constant.ClassDesc', [
 			/* name */ 'ofDescriptor',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'depth',
+					/* name */ 'descriptor',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

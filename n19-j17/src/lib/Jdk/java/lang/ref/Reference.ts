@@ -88,7 +88,7 @@ JdkClassCreateHelper.class('java.lang.ref.Reference', [
 			/* name */ 'reachabilityFence',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ref',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF

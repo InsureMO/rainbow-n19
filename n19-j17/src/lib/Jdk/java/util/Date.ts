@@ -484,6 +484,12 @@ JdkClassCreateHelper.class('java.util.Date', [
 			/* name */ 'UTC',
 			[/* parameters */
 				[/* parameter */
+					/* name */ 'year',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
 					/* name */ 'month',
 					/* type */ 'int',
 					/* modifiers */ 0,
@@ -509,12 +515,6 @@ JdkClassCreateHelper.class('java.util.Date', [
 				],
 				[/* parameter */
 					/* name */ 'sec',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'y',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

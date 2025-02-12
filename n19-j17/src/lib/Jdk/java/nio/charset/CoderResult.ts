@@ -78,7 +78,7 @@ JdkClassCreateHelper.class('java.nio.charset.CoderResult', [
 			/* name */ 'malformedForLength',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'length',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -94,7 +94,7 @@ JdkClassCreateHelper.class('java.nio.charset.CoderResult', [
 			/* name */ 'unmappableForLength',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'length',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

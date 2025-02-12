@@ -231,7 +231,7 @@ JdkClassCreateHelper.class('java.time.ZoneOffset', [
 			/* name */ 'from',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'offset',
+					/* name */ 'temporal',
 					/* type */ 'java.time.temporal.TemporalAccessor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -263,7 +263,7 @@ JdkClassCreateHelper.class('java.time.ZoneOffset', [
 			/* name */ 'ofHours',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'hours',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -279,13 +279,13 @@ JdkClassCreateHelper.class('java.time.ZoneOffset', [
 			/* name */ 'ofHoursMinutes',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'minutes',
+					/* name */ 'hours',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'minutes',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -301,6 +301,12 @@ JdkClassCreateHelper.class('java.time.ZoneOffset', [
 			/* name */ 'ofHoursMinutesSeconds',
 			[/* parameters */
 				[/* parameter */
+					/* name */ 'hours',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
 					/* name */ 'minutes',
 					/* type */ 'int',
 					/* modifiers */ 0,
@@ -308,12 +314,6 @@ JdkClassCreateHelper.class('java.time.ZoneOffset', [
 				],
 				[/* parameter */
 					/* name */ 'seconds',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'totalSeconds',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -58,7 +58,7 @@ JdkClassCreateHelper.class('java.text.CollationElementIterator', [
 			/* name */ 'primaryOrder',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'order',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -74,7 +74,7 @@ JdkClassCreateHelper.class('java.text.CollationElementIterator', [
 			/* name */ 'secondaryOrder',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'order',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -90,7 +90,7 @@ JdkClassCreateHelper.class('java.text.CollationElementIterator', [
 			/* name */ 'tertiaryOrder',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'order',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

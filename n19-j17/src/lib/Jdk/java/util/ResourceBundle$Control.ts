@@ -260,7 +260,7 @@ JdkClassCreateHelper.class('java.util.ResourceBundle$Control', [
 			/* name */ 'getControl',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'formats',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.String'
@@ -282,7 +282,7 @@ JdkClassCreateHelper.class('java.util.ResourceBundle$Control', [
 			/* name */ 'getNoFallbackControl',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'formats',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.String'

@@ -206,7 +206,7 @@ JdkClassCreateHelper.class('java.lang.constant.DynamicConstantDesc', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'bootstrapMethod',
 					/* type */ 'java.lang.constant.DirectMethodHandleDesc',
 					/* modifiers */ 0,
 					/* annotations */ UDF

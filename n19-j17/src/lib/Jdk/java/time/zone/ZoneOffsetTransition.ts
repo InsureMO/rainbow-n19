@@ -187,19 +187,19 @@ JdkClassCreateHelper.class('java.time.zone.ZoneOffsetTransition', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'offsetBefore',
+					/* name */ 'transition',
 					/* type */ 'java.time.LocalDateTime',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'offsetAfter',
+					/* name */ 'offsetBefore',
 					/* type */ 'java.time.ZoneOffset',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'offsetAfter',
 					/* type */ 'java.time.ZoneOffset',
 					/* modifiers */ 0,
 					/* annotations */ UDF

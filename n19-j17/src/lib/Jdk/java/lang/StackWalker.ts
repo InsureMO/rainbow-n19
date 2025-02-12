@@ -97,7 +97,7 @@ JdkClassCreateHelper.class('java.lang.StackWalker', [
 			/* name */ 'getInstance',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'option',
 					/* type */ 'java.lang.StackWalker$Option',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -113,7 +113,7 @@ JdkClassCreateHelper.class('java.lang.StackWalker', [
 			/* name */ 'getInstance',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'optionSet',
+					/* name */ 'options',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.StackWalker$Option'
@@ -135,7 +135,7 @@ JdkClassCreateHelper.class('java.lang.StackWalker', [
 			/* name */ 'getInstance',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'estimateDepth',
+					/* name */ 'options',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.StackWalker$Option'
@@ -147,7 +147,7 @@ JdkClassCreateHelper.class('java.lang.StackWalker', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'optionSet',
+					/* name */ 'estimateDepth',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

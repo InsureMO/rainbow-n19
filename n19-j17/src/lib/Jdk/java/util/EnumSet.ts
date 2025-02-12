@@ -67,7 +67,7 @@ JdkClassCreateHelper.class('java.util.EnumSet', [
 			/* name */ 'allOf',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'result',
+					/* name */ 'elementType',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'E']]
@@ -109,7 +109,7 @@ JdkClassCreateHelper.class('java.util.EnumSet', [
 			/* name */ 'complementOf',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'result',
+					/* name */ 's',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'E']]
@@ -193,7 +193,7 @@ JdkClassCreateHelper.class('java.util.EnumSet', [
 			/* name */ 'copyOf',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 's',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'E']]
@@ -235,7 +235,7 @@ JdkClassCreateHelper.class('java.util.EnumSet', [
 			/* name */ 'noneOf',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'universe',
+					/* name */ 'elementType',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'E']]
@@ -277,7 +277,7 @@ JdkClassCreateHelper.class('java.util.EnumSet', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'result',
+					/* name */ 'e',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -313,13 +313,13 @@ JdkClassCreateHelper.class('java.util.EnumSet', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'e2',
+					/* name */ 'e1',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'result',
+					/* name */ 'e2',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -355,6 +355,12 @@ JdkClassCreateHelper.class('java.util.EnumSet', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
+					/* name */ 'e1',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
 					/* name */ 'e2',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
@@ -362,12 +368,6 @@ JdkClassCreateHelper.class('java.util.EnumSet', [
 				],
 				[/* parameter */
 					/* name */ 'e3',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'result',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -403,6 +403,12 @@ JdkClassCreateHelper.class('java.util.EnumSet', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
+					/* name */ 'e1',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
 					/* name */ 'e2',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
@@ -416,12 +422,6 @@ JdkClassCreateHelper.class('java.util.EnumSet', [
 				],
 				[/* parameter */
 					/* name */ 'e4',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'result',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -457,6 +457,12 @@ JdkClassCreateHelper.class('java.util.EnumSet', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
+					/* name */ 'e1',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
 					/* name */ 'e2',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
@@ -476,12 +482,6 @@ JdkClassCreateHelper.class('java.util.EnumSet', [
 				],
 				[/* parameter */
 					/* name */ 'e5',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'result',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -561,13 +561,13 @@ JdkClassCreateHelper.class('java.util.EnumSet', [
 			/* name */ 'range',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'to',
+					/* name */ 'from',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'result',
+					/* name */ 'to',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF

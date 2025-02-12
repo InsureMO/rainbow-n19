@@ -15,7 +15,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Modifier', [
 			/* name */ 'isAbstract',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'mod',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -31,7 +31,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Modifier', [
 			/* name */ 'isFinal',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'mod',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -47,7 +47,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Modifier', [
 			/* name */ 'isInterface',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'mod',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -63,7 +63,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Modifier', [
 			/* name */ 'isNative',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'mod',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -79,7 +79,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Modifier', [
 			/* name */ 'isPrivate',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'mod',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -95,7 +95,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Modifier', [
 			/* name */ 'isProtected',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'mod',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -111,7 +111,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Modifier', [
 			/* name */ 'isPublic',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'mod',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -127,7 +127,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Modifier', [
 			/* name */ 'isStatic',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'mod',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -143,7 +143,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Modifier', [
 			/* name */ 'isStrict',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'mod',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -159,7 +159,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Modifier', [
 			/* name */ 'isSynchronized',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'mod',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -175,7 +175,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Modifier', [
 			/* name */ 'isTransient',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'mod',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -191,7 +191,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Modifier', [
 			/* name */ 'isVolatile',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'mod',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -261,7 +261,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Modifier', [
 			/* name */ 'toString',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'sj',
+					/* name */ 'mod',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

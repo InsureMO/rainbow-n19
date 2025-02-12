@@ -190,7 +190,7 @@ JdkClassCreateHelper.class('java.util.random.RandomGeneratorFactory', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'factory',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

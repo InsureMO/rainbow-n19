@@ -384,7 +384,7 @@ JdkClassCreateHelper.class('java.time.MonthDay', [
 			/* name */ 'now',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'now',
+					/* name */ 'clock',
 					/* type */ 'java.time.Clock',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -400,7 +400,7 @@ JdkClassCreateHelper.class('java.time.MonthDay', [
 			/* name */ 'now',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'zone',
 					/* type */ 'java.time.ZoneId',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -416,13 +416,13 @@ JdkClassCreateHelper.class('java.time.MonthDay', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'dayOfMonth',
+					/* name */ 'month',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'dayOfMonth',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -438,13 +438,13 @@ JdkClassCreateHelper.class('java.time.MonthDay', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'dayOfMonth',
+					/* name */ 'month',
 					/* type */ 'java.time.Month',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'dayOfMonth',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -460,7 +460,7 @@ JdkClassCreateHelper.class('java.time.MonthDay', [
 			/* name */ 'parse',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'text',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -476,13 +476,13 @@ JdkClassCreateHelper.class('java.time.MonthDay', [
 			/* name */ 'parse',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'formatter',
+					/* name */ 'text',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'formatter',
 					/* type */ 'java.time.format.DateTimeFormatter',
 					/* modifiers */ 0,
 					/* annotations */ UDF

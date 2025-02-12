@@ -610,13 +610,13 @@ JdkClassCreateHelper.class('java.util.stream.DoubleStream', [
 			/* name */ 'concat',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'b',
+					/* name */ 'a',
 					/* type */ 'java.util.stream.DoubleStream',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'split',
+					/* name */ 'b',
 					/* type */ 'java.util.stream.DoubleStream',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -641,7 +641,7 @@ JdkClassCreateHelper.class('java.util.stream.DoubleStream', [
 			/* name */ 'generate',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 's',
 					/* type */ 'java.util.function.DoubleSupplier',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -657,19 +657,19 @@ JdkClassCreateHelper.class('java.util.stream.DoubleStream', [
 			/* name */ 'iterate',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'hasNext',
+					/* name */ 'seed',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'next',
+					/* name */ 'hasNext',
 					/* type */ 'java.util.function.DoublePredicate',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'spliterator',
+					/* name */ 'next',
 					/* type */ 'java.util.function.DoubleUnaryOperator',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -685,13 +685,13 @@ JdkClassCreateHelper.class('java.util.stream.DoubleStream', [
 			/* name */ 'iterate',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'f',
+					/* name */ 'seed',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'spliterator',
+					/* name */ 'f',
 					/* type */ 'java.util.function.DoubleUnaryOperator',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -707,7 +707,7 @@ JdkClassCreateHelper.class('java.util.stream.DoubleStream', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 't',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -723,7 +723,7 @@ JdkClassCreateHelper.class('java.util.stream.DoubleStream', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'values',
 					/* type */ '[D',
 					/* modifiers */ 0,
 					/* annotations */ UDF

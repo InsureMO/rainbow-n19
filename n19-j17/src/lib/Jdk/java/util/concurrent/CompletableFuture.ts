@@ -3380,7 +3380,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'completedFuture',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'value',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'U']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -3410,7 +3410,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'failedFuture',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ex',
 					/* type */ 'java.lang.Throwable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -3440,7 +3440,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'supplyAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'supplier',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'U']]
@@ -3476,7 +3476,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'supplyAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'executor',
+					/* name */ 'supplier',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'U']]
@@ -3488,7 +3488,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'executor',
 					/* type */ 'java.util.concurrent.Executor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -3518,7 +3518,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'completedStage',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'value',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'U']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -3548,7 +3548,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'failedStage',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ex',
 					/* type */ 'java.lang.Throwable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -3644,7 +3644,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'runAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'runnable',
 					/* type */ 'java.lang.Runnable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -3666,13 +3666,13 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'runAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'executor',
+					/* name */ 'runnable',
 					/* type */ 'java.lang.Runnable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'executor',
 					/* type */ 'java.util.concurrent.Executor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -3694,13 +3694,13 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'delayedExecutor',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'unit',
+					/* name */ 'delay',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'unit',
 					/* type */ 'java.util.concurrent.TimeUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -3716,19 +3716,19 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 			/* name */ 'delayedExecutor',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'unit',
+					/* name */ 'delay',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'executor',
+					/* name */ 'unit',
 					/* type */ 'java.util.concurrent.TimeUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'executor',
 					/* type */ 'java.util.concurrent.Executor',
 					/* modifiers */ 0,
 					/* annotations */ UDF

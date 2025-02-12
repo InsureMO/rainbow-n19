@@ -247,7 +247,7 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			/* name */ 'bitCount',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'i',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -265,13 +265,13 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			/* name */ 'compare',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'y',
+					/* name */ 'x',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'y',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -287,13 +287,13 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			/* name */ 'compareUnsigned',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'y',
+					/* name */ 'x',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'y',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -309,13 +309,13 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			/* name */ 'divideUnsigned',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'divisor',
+					/* name */ 'dividend',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'divisor',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -331,7 +331,7 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			/* name */ 'hashCode',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'value',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -347,7 +347,7 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			/* name */ 'highestOneBit',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'i',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -363,7 +363,7 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			/* name */ 'lowestOneBit',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'i',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -379,13 +379,13 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			/* name */ 'max',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'b',
+					/* name */ 'a',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'b',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -401,13 +401,13 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			/* name */ 'min',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'b',
+					/* name */ 'a',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'b',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -423,7 +423,7 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			/* name */ 'numberOfLeadingZeros',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'n',
+					/* name */ 'i',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -441,7 +441,7 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			/* name */ 'numberOfTrailingZeros',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'n',
+					/* name */ 'i',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -498,7 +498,7 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			/* name */ 'parseInt',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 's',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -558,13 +558,13 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'beginIndex',
+					/* name */ 's',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'endIndex',
+					/* name */ 'beginIndex',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -585,7 +585,7 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			/* name */ 'parseUnsignedInt',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 's',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -633,13 +633,13 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			/* name */ 'remainderUnsigned',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'divisor',
+					/* name */ 'dividend',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'divisor',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -655,7 +655,7 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			/* name */ 'reverse',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'i',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -671,7 +671,7 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			/* name */ 'reverseBytes',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'i',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -689,13 +689,13 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			/* name */ 'rotateLeft',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'distance',
+					/* name */ 'i',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'distance',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -711,13 +711,13 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			/* name */ 'rotateRight',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'distance',
+					/* name */ 'i',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'distance',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -733,7 +733,7 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			/* name */ 'signum',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'i',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -749,13 +749,13 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			/* name */ 'sum',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'b',
+					/* name */ 'a',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'b',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -792,7 +792,7 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			/* name */ 'getInteger',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'nm',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -808,13 +808,13 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			/* name */ 'getInteger',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'val',
+					/* name */ 'nm',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'result',
+					/* name */ 'val',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -830,13 +830,13 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			/* name */ 'getInteger',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'val',
+					/* name */ 'nm',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'v',
+					/* name */ 'val',
 					/* type */ 'java.lang.Integer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -852,7 +852,7 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			/* name */ 'valueOf',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'i',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -870,7 +870,7 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			/* name */ 'valueOf',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 's',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -891,13 +891,13 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			/* name */ 'valueOf',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'radix',
+					/* name */ 's',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'radix',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -918,7 +918,7 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			/* name */ 'toBinaryString',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'i',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -934,7 +934,7 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			/* name */ 'toHexString',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'i',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -950,7 +950,7 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			/* name */ 'toOctalString',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'i',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1006,7 +1006,7 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			/* name */ 'toUnsignedString',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'i',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1022,13 +1022,13 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			/* name */ 'toUnsignedString',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'radix',
+					/* name */ 'i',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'radix',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1044,7 +1044,7 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			/* name */ 'toUnsignedLong',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'x',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -48,7 +48,7 @@ JdkClassCreateHelper.class('java.time.InstantSource', [
 			/* name */ 'fixed',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'fixedInstant',
 					/* type */ 'java.time.Instant',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -64,13 +64,13 @@ JdkClassCreateHelper.class('java.time.InstantSource', [
 			/* name */ 'offset',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'offsetDuration',
+					/* name */ 'baseSource',
 					/* type */ 'java.time.InstantSource',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'offsetDuration',
 					/* type */ 'java.time.Duration',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -95,13 +95,13 @@ JdkClassCreateHelper.class('java.time.InstantSource', [
 			/* name */ 'tick',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'tickDuration',
+					/* name */ 'baseSource',
 					/* type */ 'java.time.InstantSource',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'tickDuration',
 					/* type */ 'java.time.Duration',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -181,13 +181,13 @@ JdkClassCreateHelper.class('java.time.temporal.ValueRange', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'max',
+					/* name */ 'min',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'max',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -203,6 +203,12 @@ JdkClassCreateHelper.class('java.time.temporal.ValueRange', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
+					/* name */ 'min',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
 					/* name */ 'maxSmallest',
 					/* type */ 'long',
 					/* modifiers */ 0,
@@ -210,12 +216,6 @@ JdkClassCreateHelper.class('java.time.temporal.ValueRange', [
 				],
 				[/* parameter */
 					/* name */ 'maxLargest',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg2',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -231,6 +231,12 @@ JdkClassCreateHelper.class('java.time.temporal.ValueRange', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
+					/* name */ 'minSmallest',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
 					/* name */ 'minLargest',
 					/* type */ 'long',
 					/* modifiers */ 0,
@@ -244,12 +250,6 @@ JdkClassCreateHelper.class('java.time.temporal.ValueRange', [
 				],
 				[/* parameter */
 					/* name */ 'maxLargest',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg3',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF

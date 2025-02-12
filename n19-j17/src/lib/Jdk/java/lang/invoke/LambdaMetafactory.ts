@@ -54,14 +54,20 @@ JdkClassCreateHelper.class('java.lang.invoke.LambdaMetafactory', [
 			/* name */ 'metafactory',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'interfaceMethodName',
+					/* name */ 'caller',
 					/* type */ 'java.lang.invoke.MethodHandles$Lookup',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'factoryType',
+					/* name */ 'interfaceMethodName',
 					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'factoryType',
+					/* type */ 'java.lang.invoke.MethodType',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
@@ -73,18 +79,12 @@ JdkClassCreateHelper.class('java.lang.invoke.LambdaMetafactory', [
 				],
 				[/* parameter */
 					/* name */ 'implementation',
-					/* type */ 'java.lang.invoke.MethodType',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'dynamicMethodType',
 					/* type */ 'java.lang.invoke.MethodHandle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'mf',
+					/* name */ 'dynamicMethodType',
 					/* type */ 'java.lang.invoke.MethodType',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -558,7 +558,7 @@ JdkClassCreateHelper.class('java.util.List', [
 			/* name */ 'copyOf',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'coll',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -622,7 +622,7 @@ JdkClassCreateHelper.class('java.util.List', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'e1',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -652,13 +652,13 @@ JdkClassCreateHelper.class('java.util.List', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'e2',
+					/* name */ 'e1',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'e2',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -688,6 +688,12 @@ JdkClassCreateHelper.class('java.util.List', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
+					/* name */ 'e1',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
 					/* name */ 'e2',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
@@ -695,12 +701,6 @@ JdkClassCreateHelper.class('java.util.List', [
 				],
 				[/* parameter */
 					/* name */ 'e3',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg2',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -730,6 +730,12 @@ JdkClassCreateHelper.class('java.util.List', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
+					/* name */ 'e1',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
 					/* name */ 'e2',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
@@ -743,12 +749,6 @@ JdkClassCreateHelper.class('java.util.List', [
 				],
 				[/* parameter */
 					/* name */ 'e4',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg3',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -778,6 +778,12 @@ JdkClassCreateHelper.class('java.util.List', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
+					/* name */ 'e1',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
 					/* name */ 'e2',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
@@ -797,12 +803,6 @@ JdkClassCreateHelper.class('java.util.List', [
 				],
 				[/* parameter */
 					/* name */ 'e5',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg4',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -832,6 +832,12 @@ JdkClassCreateHelper.class('java.util.List', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
+					/* name */ 'e1',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
 					/* name */ 'e2',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
@@ -860,12 +866,6 @@ JdkClassCreateHelper.class('java.util.List', [
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg5',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
 				]
 			],
 			/* return */ [/* parameterized type */ 'pt', [
@@ -891,6 +891,12 @@ JdkClassCreateHelper.class('java.util.List', [
 		[/* public static <E> java.util.List<E> java.util.List.of(E,E,E,E,E,E,E) */
 			/* name */ 'of',
 			[/* parameters */
+				[/* parameter */
+					/* name */ 'e1',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
 				[/* parameter */
 					/* name */ 'e2',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
@@ -926,12 +932,6 @@ JdkClassCreateHelper.class('java.util.List', [
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg6',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
 				]
 			],
 			/* return */ [/* parameterized type */ 'pt', [
@@ -957,6 +957,12 @@ JdkClassCreateHelper.class('java.util.List', [
 		[/* public static <E> java.util.List<E> java.util.List.of(E,E,E,E,E,E,E,E) */
 			/* name */ 'of',
 			[/* parameters */
+				[/* parameter */
+					/* name */ 'e1',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
 				[/* parameter */
 					/* name */ 'e2',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
@@ -998,12 +1004,6 @@ JdkClassCreateHelper.class('java.util.List', [
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg7',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
 				]
 			],
 			/* return */ [/* parameterized type */ 'pt', [
@@ -1029,6 +1029,12 @@ JdkClassCreateHelper.class('java.util.List', [
 		[/* public static <E> java.util.List<E> java.util.List.of(E,E,E,E,E,E,E,E,E) */
 			/* name */ 'of',
 			[/* parameters */
+				[/* parameter */
+					/* name */ 'e1',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
 				[/* parameter */
 					/* name */ 'e2',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
@@ -1076,12 +1082,6 @@ JdkClassCreateHelper.class('java.util.List', [
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg8',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
 				]
 			],
 			/* return */ [/* parameterized type */ 'pt', [
@@ -1107,6 +1107,12 @@ JdkClassCreateHelper.class('java.util.List', [
 		[/* public static <E> java.util.List<E> java.util.List.of(E,E,E,E,E,E,E,E,E,E) */
 			/* name */ 'of',
 			[/* parameters */
+				[/* parameter */
+					/* name */ 'e1',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
 				[/* parameter */
 					/* name */ 'e2',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
@@ -1157,12 +1163,6 @@ JdkClassCreateHelper.class('java.util.List', [
 				],
 				[/* parameter */
 					/* name */ 'e10',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg9',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF

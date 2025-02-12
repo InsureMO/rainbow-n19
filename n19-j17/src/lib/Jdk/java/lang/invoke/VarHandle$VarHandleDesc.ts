@@ -81,7 +81,7 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle$VarHandleDesc', [
 			/* name */ 'ofArray',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'arrayClass',
 					/* type */ 'java.lang.constant.ClassDesc',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -97,19 +97,19 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle$VarHandleDesc', [
 			/* name */ 'ofField',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'name',
+					/* name */ 'declaringClass',
 					/* type */ 'java.lang.constant.ClassDesc',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'fieldType',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'fieldType',
 					/* type */ 'java.lang.constant.ClassDesc',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -125,19 +125,19 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle$VarHandleDesc', [
 			/* name */ 'ofStaticField',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'name',
+					/* name */ 'declaringClass',
 					/* type */ 'java.lang.constant.ClassDesc',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'fieldType',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'fieldType',
 					/* type */ 'java.lang.constant.ClassDesc',
 					/* modifiers */ 0,
 					/* annotations */ UDF

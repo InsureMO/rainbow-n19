@@ -21,7 +21,7 @@ JdkClassCreateHelper.class('java.lang.annotation.RetentionPolicy', [
 			/* name */ 'valueOf',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

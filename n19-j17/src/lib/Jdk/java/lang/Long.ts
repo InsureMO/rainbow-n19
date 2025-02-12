@@ -247,7 +247,7 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* name */ 'bitCount',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'i',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -265,13 +265,13 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* name */ 'compare',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'y',
+					/* name */ 'x',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'y',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -287,13 +287,13 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* name */ 'compareUnsigned',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'y',
+					/* name */ 'x',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'y',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -309,7 +309,7 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* name */ 'hashCode',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'value',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -325,7 +325,7 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* name */ 'numberOfLeadingZeros',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'x',
+					/* name */ 'i',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -343,7 +343,7 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* name */ 'numberOfTrailingZeros',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'x',
+					/* name */ 'i',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -361,7 +361,7 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* name */ 'signum',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'i',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -398,7 +398,7 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* name */ 'getLong',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'nm',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -414,13 +414,13 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* name */ 'getLong',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'val',
+					/* name */ 'nm',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'v',
+					/* name */ 'val',
 					/* type */ 'java.lang.Long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -436,13 +436,13 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* name */ 'getLong',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'val',
+					/* name */ 'nm',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'result',
+					/* name */ 'val',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -458,7 +458,7 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* name */ 'valueOf',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 's',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -479,13 +479,13 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* name */ 'valueOf',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'radix',
+					/* name */ 's',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'radix',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -506,7 +506,7 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* name */ 'valueOf',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'offset',
+					/* name */ 'l',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -524,7 +524,7 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* name */ 'toBinaryString',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'i',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -540,7 +540,7 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* name */ 'toHexString',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'i',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -556,7 +556,7 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* name */ 'toOctalString',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'i',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -610,7 +610,7 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* name */ 'toUnsignedString',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'i',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -670,7 +670,7 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* name */ 'highestOneBit',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'i',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -686,7 +686,7 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* name */ 'lowestOneBit',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'i',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -702,13 +702,13 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* name */ 'max',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'b',
+					/* name */ 'a',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'b',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -724,13 +724,13 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* name */ 'min',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'b',
+					/* name */ 'a',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'b',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -785,7 +785,7 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* name */ 'parseLong',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 's',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -872,7 +872,7 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* name */ 'parseUnsignedLong',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 's',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -942,7 +942,7 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* name */ 'reverse',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'i',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -958,7 +958,7 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* name */ 'reverseBytes',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'i',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -976,13 +976,13 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* name */ 'rotateLeft',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'distance',
+					/* name */ 'i',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'distance',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -998,13 +998,13 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* name */ 'rotateRight',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'distance',
+					/* name */ 'i',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'distance',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1020,13 +1020,13 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* name */ 'sum',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'b',
+					/* name */ 'a',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'b',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF

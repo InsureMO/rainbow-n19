@@ -15,13 +15,13 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'IEEEremainder',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'f2',
+					/* name */ 'f1',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'f2',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -37,7 +37,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'abs',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'a',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -55,7 +55,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'acos',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'a',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -71,7 +71,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'asin',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'a',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -87,7 +87,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'atan',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'a',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -103,13 +103,13 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'atan2',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'x',
+					/* name */ 'y',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'x',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -127,7 +127,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'cbrt',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'a',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -143,7 +143,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'ceil',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'a',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -161,13 +161,13 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'copySign',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'sign',
+					/* name */ 'magnitude',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'sign',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -185,7 +185,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'cos',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'a',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -203,7 +203,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'cosh',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'x',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -219,7 +219,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'exp',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'a',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -237,7 +237,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'expm1',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'x',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -253,7 +253,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'floor',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'a',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -301,13 +301,13 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'hypot',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'y',
+					/* name */ 'x',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'y',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -323,7 +323,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'log',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'a',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -341,7 +341,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'log10',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'a',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -359,7 +359,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'log1p',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'x',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -375,13 +375,13 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'max',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'b',
+					/* name */ 'a',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'b',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -399,13 +399,13 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'min',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'b',
+					/* name */ 'a',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'b',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -445,7 +445,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'nextDown',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'd',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -477,13 +477,13 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'pow',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'b',
+					/* name */ 'a',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'b',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -510,7 +510,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'rint',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'a',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -528,13 +528,13 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'scalb',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'scaleFactor',
+					/* name */ 'd',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'MAX_SCALE',
+					/* name */ 'scaleFactor',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -550,7 +550,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'signum',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'd',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -568,7 +568,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'sin',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'a',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -586,7 +586,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'sinh',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'x',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -602,7 +602,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'sqrt',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'a',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -620,7 +620,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'tan',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'a',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -638,7 +638,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'tanh',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'x',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -654,7 +654,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'toDegrees',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'angrad',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -670,7 +670,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'toRadians',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'angdeg',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -686,7 +686,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'ulp',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'exp',
+					/* name */ 'd',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -702,7 +702,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'abs',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'a',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -720,13 +720,13 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'copySign',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'sign',
+					/* name */ 'magnitude',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'sign',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -744,6 +744,12 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'fma',
 			[/* parameters */
 				[/* parameter */
+					/* name */ 'a',
+					/* type */ 'float',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
 					/* name */ 'b',
 					/* type */ 'float',
 					/* modifiers */ 0,
@@ -751,12 +757,6 @@ JdkClassCreateHelper.class('java.lang.Math', [
 				],
 				[/* parameter */
 					/* name */ 'c',
-					/* type */ 'float',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg2',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -774,13 +774,13 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'max',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'b',
+					/* name */ 'a',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'b',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -798,13 +798,13 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'min',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'b',
+					/* name */ 'a',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'b',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -844,7 +844,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'nextDown',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'f',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -876,13 +876,13 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'scalb',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'scaleFactor',
+					/* name */ 'f',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'MAX_SCALE',
+					/* name */ 'scaleFactor',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -898,7 +898,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'signum',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'f',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -916,7 +916,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'ulp',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'exp',
+					/* name */ 'f',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -932,7 +932,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'abs',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'a',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -950,7 +950,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'absExact',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'a',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -966,13 +966,13 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'addExact',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'y',
+					/* name */ 'x',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'r',
+					/* name */ 'y',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -990,7 +990,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'decrementExact',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'a',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1008,13 +1008,13 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'floorDiv',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'y',
+					/* name */ 'x',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'r',
+					/* name */ 'y',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1030,13 +1030,13 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'floorMod',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'y',
+					/* name */ 'x',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'mod',
+					/* name */ 'y',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1052,13 +1052,13 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'floorMod',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'y',
+					/* name */ 'x',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'y',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1074,7 +1074,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'getExponent',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'd',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1090,7 +1090,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'getExponent',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'f',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1106,7 +1106,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'incrementExact',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'a',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1124,13 +1124,13 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'max',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'b',
+					/* name */ 'a',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'b',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1148,13 +1148,13 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'min',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'b',
+					/* name */ 'a',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'b',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1172,13 +1172,13 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'multiplyExact',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'y',
+					/* name */ 'x',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'r',
+					/* name */ 'y',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1196,7 +1196,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'negateExact',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'a',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1230,13 +1230,13 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'subtractExact',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'y',
+					/* name */ 'x',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'r',
+					/* name */ 'y',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1254,7 +1254,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'toIntExact',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'value',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1270,7 +1270,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'abs',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'a',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1288,7 +1288,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'absExact',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'a',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1304,13 +1304,13 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'addExact',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'y',
+					/* name */ 'x',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'r',
+					/* name */ 'y',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1328,7 +1328,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'decrementExact',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'a',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1346,13 +1346,13 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'floorDiv',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'y',
+					/* name */ 'x',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'y',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1368,13 +1368,13 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'floorDiv',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'y',
+					/* name */ 'x',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'r',
+					/* name */ 'y',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1390,13 +1390,13 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'floorMod',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'y',
+					/* name */ 'x',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'mod',
+					/* name */ 'y',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1412,7 +1412,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'incrementExact',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'a',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1430,13 +1430,13 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'max',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'b',
+					/* name */ 'a',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'b',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1452,13 +1452,13 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'min',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'b',
+					/* name */ 'a',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'b',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1474,13 +1474,13 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'multiplyExact',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'y',
+					/* name */ 'x',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'y',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1496,13 +1496,13 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'multiplyExact',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'y',
+					/* name */ 'x',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'r',
+					/* name */ 'y',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1520,13 +1520,13 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'multiplyFull',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'y',
+					/* name */ 'x',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'y',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1566,7 +1566,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'negateExact',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'a',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1600,13 +1600,13 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* name */ 'subtractExact',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'y',
+					/* name */ 'x',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'r',
+					/* name */ 'y',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF

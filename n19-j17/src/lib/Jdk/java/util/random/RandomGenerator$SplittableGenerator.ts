@@ -165,7 +165,7 @@ JdkClassCreateHelper.class('java.util.random.RandomGenerator$SplittableGenerator
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

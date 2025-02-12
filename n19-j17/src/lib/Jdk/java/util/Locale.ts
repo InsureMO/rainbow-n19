@@ -415,7 +415,7 @@ JdkClassCreateHelper.class('java.util.Locale', [
 			/* name */ 'lookupTag',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'tags',
+					/* name */ 'priorityList',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.util.Locale$LanguageRange'
@@ -427,7 +427,7 @@ JdkClassCreateHelper.class('java.util.Locale', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'tags',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.String'
@@ -467,7 +467,7 @@ JdkClassCreateHelper.class('java.util.Locale', [
 			/* name */ 'filterTags',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'tags',
+					/* name */ 'priorityList',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.util.Locale$LanguageRange'
@@ -479,7 +479,7 @@ JdkClassCreateHelper.class('java.util.Locale', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'tags',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.String'
@@ -507,7 +507,7 @@ JdkClassCreateHelper.class('java.util.Locale', [
 			/* name */ 'filterTags',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'tags',
+					/* name */ 'priorityList',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.util.Locale$LanguageRange'
@@ -519,7 +519,7 @@ JdkClassCreateHelper.class('java.util.Locale', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'mode',
+					/* name */ 'tags',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.String'
@@ -531,7 +531,7 @@ JdkClassCreateHelper.class('java.util.Locale', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'mode',
 					/* type */ 'java.util.Locale$FilteringMode',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -553,7 +553,7 @@ JdkClassCreateHelper.class('java.util.Locale', [
 			/* name */ 'filter',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'locales',
+					/* name */ 'priorityList',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.util.Locale$LanguageRange'
@@ -565,7 +565,7 @@ JdkClassCreateHelper.class('java.util.Locale', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'locales',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.util.Locale'
@@ -593,7 +593,7 @@ JdkClassCreateHelper.class('java.util.Locale', [
 			/* name */ 'filter',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'locales',
+					/* name */ 'priorityList',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.util.Locale$LanguageRange'
@@ -605,7 +605,7 @@ JdkClassCreateHelper.class('java.util.Locale', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'mode',
+					/* name */ 'locales',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.util.Locale'
@@ -617,7 +617,7 @@ JdkClassCreateHelper.class('java.util.Locale', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'mode',
 					/* type */ 'java.util.Locale$FilteringMode',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -639,7 +639,7 @@ JdkClassCreateHelper.class('java.util.Locale', [
 			/* name */ 'forLanguageTag',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'tag',
+					/* name */ 'languageTag',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -680,7 +680,7 @@ JdkClassCreateHelper.class('java.util.Locale', [
 			/* name */ 'lookup',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'locales',
+					/* name */ 'priorityList',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.util.Locale$LanguageRange'
@@ -692,7 +692,7 @@ JdkClassCreateHelper.class('java.util.Locale', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'locales',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.util.Locale'
@@ -723,7 +723,7 @@ JdkClassCreateHelper.class('java.util.Locale', [
 			/* name */ 'getISOCountries',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'type',
 					/* type */ 'java.util.Locale$IsoCountryCode',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -745,13 +745,13 @@ JdkClassCreateHelper.class('java.util.Locale', [
 			/* name */ 'setDefault',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'newLocale',
+					/* name */ 'category',
 					/* type */ 'java.util.Locale$Category',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'sm',
+					/* name */ 'newLocale',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -767,7 +767,7 @@ JdkClassCreateHelper.class('java.util.Locale', [
 			/* name */ 'setDefault',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newLocale',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF

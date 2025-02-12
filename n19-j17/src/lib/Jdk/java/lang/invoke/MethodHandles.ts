@@ -15,7 +15,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 			/* name */ 'reflectAs',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'target',
+					/* name */ 'expected',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'T']]
@@ -27,7 +27,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'smgr',
+					/* name */ 'target',
 					/* type */ 'java.lang.invoke.MethodHandle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -63,7 +63,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'name',
+					/* name */ 'caller',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'T']]
@@ -122,7 +122,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'name',
+					/* name */ 'caller',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -151,7 +151,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 			/* name */ 'arrayConstructor',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'ani',
+					/* name */ 'arrayClass',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -183,7 +183,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 			/* name */ 'arrayElementGetter',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'arrayClass',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -215,7 +215,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 			/* name */ 'arrayElementSetter',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'arrayClass',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -247,7 +247,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 			/* name */ 'arrayLength',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'arrayClass',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -279,13 +279,13 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 			/* name */ 'catchException',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'exType',
+					/* name */ 'target',
 					/* type */ 'java.lang.invoke.MethodHandle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'handler',
+					/* name */ 'exType',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -302,7 +302,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'ttype',
+					/* name */ 'handler',
 					/* type */ 'java.lang.invoke.MethodHandle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -318,19 +318,19 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 			/* name */ 'collectArguments',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'pos',
+					/* name */ 'target',
 					/* type */ 'java.lang.invoke.MethodHandle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'filter',
+					/* name */ 'pos',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'newType',
+					/* name */ 'filter',
 					/* type */ 'java.lang.invoke.MethodHandle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -363,7 +363,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'value',
+					/* name */ 'type',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -379,6 +379,12 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 			/* name */ 'countedLoop',
 			[/* parameters */
 				[/* parameter */
+					/* name */ 'iterations',
+					/* type */ 'java.lang.invoke.MethodHandle',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
 					/* name */ 'init',
 					/* type */ 'java.lang.invoke.MethodHandle',
 					/* modifiers */ 0,
@@ -386,12 +392,6 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 				],
 				[/* parameter */
 					/* name */ 'body',
-					/* type */ 'java.lang.invoke.MethodHandle',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg2',
 					/* type */ 'java.lang.invoke.MethodHandle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -406,6 +406,12 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 		[/* public static java.lang.invoke.MethodHandle java.lang.invoke.MethodHandles.countedLoop(java.lang.invoke.MethodHandle,java.lang.invoke.MethodHandle,java.lang.invoke.MethodHandle,java.lang.invoke.MethodHandle) */
 			/* name */ 'countedLoop',
 			[/* parameters */
+				[/* parameter */
+					/* name */ 'start',
+					/* type */ 'java.lang.invoke.MethodHandle',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
 				[/* parameter */
 					/* name */ 'end',
 					/* type */ 'java.lang.invoke.MethodHandle',
@@ -423,12 +429,6 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 					/* type */ 'java.lang.invoke.MethodHandle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'counterType',
-					/* type */ 'java.lang.invoke.MethodHandle',
-					/* modifiers */ 0,
-					/* annotations */ UDF
 				]
 			],
 			/* return */ 'java.lang.invoke.MethodHandle',
@@ -441,6 +441,12 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 			/* name */ 'doWhileLoop',
 			[/* parameters */
 				[/* parameter */
+					/* name */ 'init',
+					/* type */ 'java.lang.invoke.MethodHandle',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
 					/* name */ 'body',
 					/* type */ 'java.lang.invoke.MethodHandle',
 					/* modifiers */ 0,
@@ -448,12 +454,6 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 				],
 				[/* parameter */
 					/* name */ 'pred',
-					/* type */ 'java.lang.invoke.MethodHandle',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'fini',
 					/* type */ 'java.lang.invoke.MethodHandle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -508,19 +508,19 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 			/* name */ 'dropArguments',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'pos',
+					/* name */ 'target',
 					/* type */ 'java.lang.invoke.MethodHandle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'valueTypes',
+					/* name */ 'pos',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'valueTypes',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* parameterized type */ 'pt', [
@@ -553,19 +553,19 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 			/* name */ 'dropArgumentsToMatch',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'skip',
+					/* name */ 'target',
 					/* type */ 'java.lang.invoke.MethodHandle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'newTypes',
+					/* name */ 'skip',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'pos',
+					/* name */ 'newTypes',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* parameterized type */ 'pt', [
@@ -588,7 +588,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg3',
+					/* name */ 'pos',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -604,7 +604,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 			/* name */ 'dropReturn',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'oldType',
+					/* name */ 'target',
 					/* type */ 'java.lang.invoke.MethodHandle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -620,7 +620,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 			/* name */ 'empty',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'type',
 					/* type */ 'java.lang.invoke.MethodType',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -636,7 +636,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 			/* name */ 'exactInvoker',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'type',
 					/* type */ 'java.lang.invoke.MethodType',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -652,13 +652,13 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 			/* name */ 'explicitCastArguments',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'newType',
+					/* name */ 'target',
 					/* type */ 'java.lang.invoke.MethodHandle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'oldType',
+					/* name */ 'newType',
 					/* type */ 'java.lang.invoke.MethodType',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -702,13 +702,13 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 			/* name */ 'filterReturnValue',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'filter',
+					/* name */ 'target',
 					/* type */ 'java.lang.invoke.MethodHandle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'targetType',
+					/* name */ 'filter',
 					/* type */ 'java.lang.invoke.MethodHandle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -724,19 +724,19 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 			/* name */ 'foldArguments',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'pos',
+					/* name */ 'target',
 					/* type */ 'java.lang.invoke.MethodHandle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'combiner',
+					/* name */ 'pos',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'targetType',
+					/* name */ 'combiner',
 					/* type */ 'java.lang.invoke.MethodHandle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -752,13 +752,13 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 			/* name */ 'foldArguments',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'combiner',
+					/* name */ 'target',
 					/* type */ 'java.lang.invoke.MethodHandle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'combiner',
 					/* type */ 'java.lang.invoke.MethodHandle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -774,6 +774,12 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 			/* name */ 'guardWithTest',
 			[/* parameters */
 				[/* parameter */
+					/* name */ 'test',
+					/* type */ 'java.lang.invoke.MethodHandle',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
 					/* name */ 'target',
 					/* type */ 'java.lang.invoke.MethodHandle',
 					/* modifiers */ 0,
@@ -781,12 +787,6 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 				],
 				[/* parameter */
 					/* name */ 'fallback',
-					/* type */ 'java.lang.invoke.MethodHandle',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'gtype',
 					/* type */ 'java.lang.invoke.MethodHandle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -802,7 +802,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 			/* name */ 'identity',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'btw',
+					/* name */ 'type',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -857,7 +857,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 			/* name */ 'invoker',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'type',
 					/* type */ 'java.lang.invoke.MethodType',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -945,13 +945,13 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 			/* name */ 'spreadInvoker',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'leadingArgCount',
+					/* name */ 'type',
 					/* type */ 'java.lang.invoke.MethodType',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'leadingArgCount',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -989,7 +989,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 			/* name */ 'throwException',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'exType',
+					/* name */ 'returnType',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1006,7 +1006,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'exType',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1033,13 +1033,13 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 			/* name */ 'tryFinally',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'cleanup',
+					/* name */ 'target',
 					/* type */ 'java.lang.invoke.MethodHandle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'targetParamTypes',
+					/* name */ 'cleanup',
 					/* type */ 'java.lang.invoke.MethodHandle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1055,13 +1055,13 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 			/* name */ 'varHandleExactInvoker',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'type',
+					/* name */ 'accessMode',
 					/* type */ 'java.lang.invoke.VarHandle$AccessMode',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'type',
 					/* type */ 'java.lang.invoke.MethodType',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1077,13 +1077,13 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 			/* name */ 'varHandleInvoker',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'type',
+					/* name */ 'accessMode',
 					/* type */ 'java.lang.invoke.VarHandle$AccessMode',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'type',
 					/* type */ 'java.lang.invoke.MethodType',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1099,6 +1099,12 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 			/* name */ 'whileLoop',
 			[/* parameters */
 				[/* parameter */
+					/* name */ 'init',
+					/* type */ 'java.lang.invoke.MethodHandle',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
 					/* name */ 'pred',
 					/* type */ 'java.lang.invoke.MethodHandle',
 					/* modifiers */ 0,
@@ -1106,12 +1112,6 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 				],
 				[/* parameter */
 					/* name */ 'body',
-					/* type */ 'java.lang.invoke.MethodHandle',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'fini',
 					/* type */ 'java.lang.invoke.MethodHandle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1127,7 +1127,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 			/* name */ 'zero',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'type',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1183,7 +1183,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'caller',
+					/* name */ 'targetClass',
 					/* type */ 'java.lang.invoke.MethodHandles$Lookup',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1213,7 +1213,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 			/* name */ 'arrayElementVarHandle',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'arrayClass',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1245,7 +1245,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 			/* name */ 'byteArrayViewVarHandle',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'byteOrder',
+					/* name */ 'viewArrayClass',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1262,7 +1262,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'byteOrder',
 					/* type */ 'java.nio.ByteOrder',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1283,7 +1283,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 			/* name */ 'byteBufferViewVarHandle',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'byteOrder',
+					/* name */ 'viewArrayClass',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1300,7 +1300,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'byteOrder',
 					/* type */ 'java.nio.ByteOrder',
 					/* modifiers */ 0,
 					/* annotations */ UDF

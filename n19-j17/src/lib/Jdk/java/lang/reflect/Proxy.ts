@@ -32,7 +32,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Proxy', [
 			/* name */ 'isProxyClass',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'cl',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

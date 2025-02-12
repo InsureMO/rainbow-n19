@@ -252,19 +252,19 @@ JdkClassCreateHelper.class('java.text.Bidi', [
 			/* name */ 'requiresBidi',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'start',
+					/* name */ 'text',
 					/* type */ '[C',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'limit',
+					/* name */ 'start',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'limit',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

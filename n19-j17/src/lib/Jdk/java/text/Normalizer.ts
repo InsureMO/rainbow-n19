@@ -15,13 +15,13 @@ JdkClassCreateHelper.class('java.text.Normalizer', [
 			/* name */ 'isNormalized',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'form',
+					/* name */ 'src',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'form',
 					/* type */ 'java.text.Normalizer$Form',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -37,13 +37,13 @@ JdkClassCreateHelper.class('java.text.Normalizer', [
 			/* name */ 'normalize',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'form',
+					/* name */ 'src',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'form',
 					/* type */ 'java.text.Normalizer$Form',
 					/* modifiers */ 0,
 					/* annotations */ UDF

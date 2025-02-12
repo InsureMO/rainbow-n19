@@ -21,7 +21,7 @@ JdkClassCreateHelper.class('java.lang.constant.DirectMethodHandleDesc$Kind', [
 			/* name */ 'valueOf',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'refKind',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -37,13 +37,13 @@ JdkClassCreateHelper.class('java.lang.constant.DirectMethodHandleDesc$Kind', [
 			/* name */ 'valueOf',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'isInterface',
+					/* name */ 'refKind',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'isInterface',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -59,7 +59,7 @@ JdkClassCreateHelper.class('java.lang.constant.DirectMethodHandleDesc$Kind', [
 			/* name */ 'valueOf',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

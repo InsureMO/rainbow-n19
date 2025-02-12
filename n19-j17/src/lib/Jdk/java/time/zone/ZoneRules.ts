@@ -262,7 +262,7 @@ JdkClassCreateHelper.class('java.time.zone.ZoneRules', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'offset',
 					/* type */ 'java.time.ZoneOffset',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -278,6 +278,12 @@ JdkClassCreateHelper.class('java.time.zone.ZoneRules', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
+					/* name */ 'baseStandardOffset',
+					/* type */ 'java.time.ZoneOffset',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
 					/* name */ 'baseWallOffset',
 					/* type */ 'java.time.ZoneOffset',
 					/* modifiers */ 0,
@@ -285,7 +291,13 @@ JdkClassCreateHelper.class('java.time.zone.ZoneRules', [
 				],
 				[/* parameter */
 					/* name */ 'standardOffsetTransitionList',
-					/* type */ 'java.time.ZoneOffset',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							'java.time.zone.ZoneOffsetTransition'
+						],
+						/* raw type */ 'java.util.List',
+						/* owner type */ UDF
+					]],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
@@ -303,18 +315,6 @@ JdkClassCreateHelper.class('java.time.zone.ZoneRules', [
 				],
 				[/* parameter */
 					/* name */ 'lastRules',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							'java.time.zone.ZoneOffsetTransition'
-						],
-						/* raw type */ 'java.util.List',
-						/* owner type */ UDF
-					]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg4',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.time.zone.ZoneOffsetTransitionRule'

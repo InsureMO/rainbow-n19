@@ -102,7 +102,7 @@ JdkClassCreateHelper.class('java.util.Locale$LanguageRange', [
 			/* name */ 'mapEquivalents',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'map',
+					/* name */ 'priorityList',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.util.Locale$LanguageRange'
@@ -114,7 +114,7 @@ JdkClassCreateHelper.class('java.util.Locale$LanguageRange', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'map',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.String',
@@ -149,7 +149,7 @@ JdkClassCreateHelper.class('java.util.Locale$LanguageRange', [
 			/* name */ 'parse',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ranges',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -171,13 +171,13 @@ JdkClassCreateHelper.class('java.util.Locale$LanguageRange', [
 			/* name */ 'parse',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'map',
+					/* name */ 'ranges',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'map',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.String',

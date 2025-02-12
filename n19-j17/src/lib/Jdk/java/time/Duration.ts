@@ -720,13 +720,13 @@ JdkClassCreateHelper.class('java.time.Duration', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'unit',
+					/* name */ 'amount',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'unit',
 					/* type */ 'java.time.temporal.TemporalUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -742,7 +742,7 @@ JdkClassCreateHelper.class('java.time.Duration', [
 			/* name */ 'ofDays',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'days',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -758,7 +758,7 @@ JdkClassCreateHelper.class('java.time.Duration', [
 			/* name */ 'ofHours',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'hours',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -774,7 +774,7 @@ JdkClassCreateHelper.class('java.time.Duration', [
 			/* name */ 'ofMillis',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'secs',
+					/* name */ 'millis',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -790,7 +790,7 @@ JdkClassCreateHelper.class('java.time.Duration', [
 			/* name */ 'ofMinutes',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'minutes',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -806,7 +806,7 @@ JdkClassCreateHelper.class('java.time.Duration', [
 			/* name */ 'ofNanos',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'secs',
+					/* name */ 'nanos',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -822,7 +822,7 @@ JdkClassCreateHelper.class('java.time.Duration', [
 			/* name */ 'ofSeconds',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'seconds',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -838,13 +838,13 @@ JdkClassCreateHelper.class('java.time.Duration', [
 			/* name */ 'ofSeconds',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'nanoAdjustment',
+					/* name */ 'seconds',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'secs',
+					/* name */ 'nanoAdjustment',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF

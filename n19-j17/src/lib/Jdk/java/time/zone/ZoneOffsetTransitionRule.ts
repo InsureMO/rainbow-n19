@@ -148,38 +148,44 @@ JdkClassCreateHelper.class('java.time.zone.ZoneOffsetTransitionRule', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'dayOfMonthIndicator',
+					/* name */ 'month',
 					/* type */ 'java.time.Month',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'dayOfWeek',
+					/* name */ 'dayOfMonthIndicator',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'time',
+					/* name */ 'dayOfWeek',
 					/* type */ 'java.time.DayOfWeek',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'timeEndOfDay',
+					/* name */ 'time',
 					/* type */ 'java.time.LocalTime',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'timeDefinition',
+					/* name */ 'timeEndOfDay',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'standardOffset',
+					/* name */ 'timeDefinition',
 					/* type */ 'java.time.zone.ZoneOffsetTransitionRule$TimeDefinition',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'standardOffset',
+					/* type */ 'java.time.ZoneOffset',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
@@ -191,12 +197,6 @@ JdkClassCreateHelper.class('java.time.zone.ZoneOffsetTransitionRule', [
 				],
 				[/* parameter */
 					/* name */ 'offsetAfter',
-					/* type */ 'java.time.ZoneOffset',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg8',
 					/* type */ 'java.time.ZoneOffset',
 					/* modifiers */ 0,
 					/* annotations */ UDF

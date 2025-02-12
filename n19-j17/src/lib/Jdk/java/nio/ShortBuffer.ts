@@ -724,7 +724,7 @@ JdkClassCreateHelper.class('java.nio.ShortBuffer', [
 			/* name */ 'allocate',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'capacity',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -740,7 +740,7 @@ JdkClassCreateHelper.class('java.nio.ShortBuffer', [
 			/* name */ 'wrap',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'array',
 					/* type */ '[S',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -762,13 +762,13 @@ JdkClassCreateHelper.class('java.nio.ShortBuffer', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'offset',
+					/* name */ 'array',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'length',
+					/* name */ 'offset',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

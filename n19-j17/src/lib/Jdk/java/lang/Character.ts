@@ -146,7 +146,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'isAlphabetic',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'codePoint',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -162,7 +162,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'isBmpCodePoint',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'codePoint',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -178,7 +178,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'isDefined',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ch',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -194,7 +194,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'isDefined',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'codePoint',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -210,7 +210,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'isDigit',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ch',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -226,7 +226,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'isDigit',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'codePoint',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -242,7 +242,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'isHighSurrogate',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ch',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -258,7 +258,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'isISOControl',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ch',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -274,7 +274,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'isISOControl',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'codePoint',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -290,7 +290,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'isIdentifierIgnorable',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ch',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -306,7 +306,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'isIdentifierIgnorable',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'codePoint',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -322,7 +322,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'isIdeographic',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'codePoint',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -338,7 +338,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'isJavaIdentifierPart',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ch',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -354,7 +354,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'isJavaIdentifierPart',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'codePoint',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -370,7 +370,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'isJavaIdentifierStart',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ch',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -386,7 +386,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'isJavaIdentifierStart',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'codePoint',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -402,7 +402,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'isJavaLetter',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ch',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -424,7 +424,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'isJavaLetterOrDigit',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ch',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -446,7 +446,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'isLetter',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ch',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -462,7 +462,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'isLetter',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'codePoint',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -478,7 +478,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'isLetterOrDigit',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ch',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -494,7 +494,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'isLetterOrDigit',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'codePoint',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -510,7 +510,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'isLowSurrogate',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ch',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -526,7 +526,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'isLowerCase',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ch',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -542,7 +542,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'isLowerCase',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'codePoint',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -558,7 +558,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'isMirrored',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ch',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -574,7 +574,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'isMirrored',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'codePoint',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -590,7 +590,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'isSpace',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ch',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -612,7 +612,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'isSpaceChar',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ch',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -628,7 +628,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'isSpaceChar',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'codePoint',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -644,7 +644,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'isSupplementaryCodePoint',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'codePoint',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -660,7 +660,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'isSurrogate',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ch',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -676,13 +676,13 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'isSurrogatePair',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'low',
+					/* name */ 'high',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'low',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -698,7 +698,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'isTitleCase',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ch',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -714,7 +714,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'isTitleCase',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'codePoint',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -730,7 +730,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'isUnicodeIdentifierPart',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ch',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -746,7 +746,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'isUnicodeIdentifierPart',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'codePoint',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -762,7 +762,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'isUnicodeIdentifierStart',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ch',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -778,7 +778,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'isUnicodeIdentifierStart',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'codePoint',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -794,7 +794,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'isUpperCase',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ch',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -810,7 +810,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'isUpperCase',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'codePoint',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -826,7 +826,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'isValidCodePoint',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'plane',
+					/* name */ 'codePoint',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -842,7 +842,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'isWhitespace',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ch',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -858,7 +858,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'isWhitespace',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'codePoint',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -874,7 +874,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'getDirectionality',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ch',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -890,7 +890,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'getDirectionality',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'codePoint',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -906,13 +906,13 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'forDigit',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'radix',
+					/* name */ 'digit',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'radix',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -928,7 +928,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'highSurrogate',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'codePoint',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -944,7 +944,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'lowSurrogate',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'codePoint',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -960,7 +960,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'reverseBytes',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ch',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -978,7 +978,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'toLowerCase',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ch',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -994,7 +994,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'toTitleCase',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ch',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1010,7 +1010,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'toUpperCase',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ch',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1042,7 +1042,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'charCount',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'codePoint',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1058,13 +1058,13 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'codePointAt',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'index',
+					/* name */ 'a',
 					/* type */ '[C',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1080,19 +1080,19 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'codePointAt',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'index',
+					/* name */ 'a',
 					/* type */ '[C',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'limit',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'limit',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1114,7 +1114,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'index',
+					/* name */ 'seq',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1130,13 +1130,13 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'codePointBefore',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'index',
+					/* name */ 'a',
 					/* type */ '[C',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1152,19 +1152,19 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'codePointBefore',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'index',
+					/* name */ 'a',
 					/* type */ '[C',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'start',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'start',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1186,7 +1186,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'index',
+					/* name */ 'seq',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1202,19 +1202,19 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'codePointCount',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'offset',
+					/* name */ 'a',
 					/* type */ '[C',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'count',
+					/* name */ 'offset',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'count',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1236,13 +1236,13 @@ JdkClassCreateHelper.class('java.lang.Character', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'beginIndex',
+					/* name */ 'seq',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'endIndex',
+					/* name */ 'beginIndex',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1274,13 +1274,13 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'compare',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'y',
+					/* name */ 'x',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'y',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1296,13 +1296,13 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'digit',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'radix',
+					/* name */ 'ch',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'radix',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1318,13 +1318,13 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'digit',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'radix',
+					/* name */ 'codePoint',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'radix',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1340,7 +1340,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'getNumericValue',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ch',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1356,7 +1356,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'getNumericValue',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'codePoint',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1372,7 +1372,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'getType',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ch',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1388,7 +1388,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'getType',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'codePoint',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1404,7 +1404,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'hashCode',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'value',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1420,8 +1420,14 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'offsetByCodePoints',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'start',
+					/* name */ 'a',
 					/* type */ '[C',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'start',
+					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
@@ -1439,12 +1445,6 @@ JdkClassCreateHelper.class('java.lang.Character', [
 				],
 				[/* parameter */
 					/* name */ 'codePointOffset',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg4',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1472,7 +1472,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'index',
+					/* name */ 'seq',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1488,19 +1488,19 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'toChars',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'dst',
+					/* name */ 'codePoint',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'dstIndex',
+					/* name */ 'dst',
 					/* type */ '[C',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'dstIndex',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1516,13 +1516,13 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'toCodePoint',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'low',
+					/* name */ 'high',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'low',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1538,7 +1538,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'toLowerCase',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'codePoint',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1554,7 +1554,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'toTitleCase',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'codePoint',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1570,7 +1570,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'toUpperCase',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'codePoint',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1586,7 +1586,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'valueOf',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'c',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1604,7 +1604,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'getName',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'name',
+					/* name */ 'codePoint',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1620,7 +1620,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'toString',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'c',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1636,7 +1636,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* name */ 'toString',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'codePoint',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

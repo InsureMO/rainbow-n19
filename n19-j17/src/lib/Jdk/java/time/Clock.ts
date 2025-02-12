@@ -93,13 +93,13 @@ JdkClassCreateHelper.class('java.time.Clock', [
 			/* name */ 'fixed',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'zone',
+					/* name */ 'fixedInstant',
 					/* type */ 'java.time.Instant',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'zone',
 					/* type */ 'java.time.ZoneId',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -115,13 +115,13 @@ JdkClassCreateHelper.class('java.time.Clock', [
 			/* name */ 'offset',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'offsetDuration',
+					/* name */ 'baseClock',
 					/* type */ 'java.time.Clock',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'offsetDuration',
 					/* type */ 'java.time.Duration',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -137,7 +137,7 @@ JdkClassCreateHelper.class('java.time.Clock', [
 			/* name */ 'system',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'zone',
 					/* type */ 'java.time.ZoneId',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -171,13 +171,13 @@ JdkClassCreateHelper.class('java.time.Clock', [
 			/* name */ 'tick',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'tickDuration',
+					/* name */ 'baseClock',
 					/* type */ 'java.time.Clock',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'tickNanos',
+					/* name */ 'tickDuration',
 					/* type */ 'java.time.Duration',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -193,7 +193,7 @@ JdkClassCreateHelper.class('java.time.Clock', [
 			/* name */ 'tickMillis',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'zone',
 					/* type */ 'java.time.ZoneId',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -209,7 +209,7 @@ JdkClassCreateHelper.class('java.time.Clock', [
 			/* name */ 'tickMinutes',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'zone',
 					/* type */ 'java.time.ZoneId',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -225,7 +225,7 @@ JdkClassCreateHelper.class('java.time.Clock', [
 			/* name */ 'tickSeconds',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'zone',
 					/* type */ 'java.time.ZoneId',
 					/* modifiers */ 0,
 					/* annotations */ UDF

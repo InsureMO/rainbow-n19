@@ -46,7 +46,7 @@ JdkClassCreateHelper.class('java.lang.ref.Cleaner', [
 			/* name */ 'create',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'cleaner',
+					/* name */ 'threadFactory',
 					/* type */ 'java.util.concurrent.ThreadFactory',
 					/* modifiers */ 0,
 					/* annotations */ UDF

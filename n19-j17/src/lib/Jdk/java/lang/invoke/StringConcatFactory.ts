@@ -15,19 +15,19 @@ JdkClassCreateHelper.class('java.lang.invoke.StringConcatFactory', [
 			/* name */ 'makeConcat',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'name',
+					/* name */ 'lookup',
 					/* type */ 'java.lang.invoke.MethodHandles$Lookup',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'concatType',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'recipe',
+					/* name */ 'concatType',
 					/* type */ 'java.lang.invoke.MethodType',
 					/* modifiers */ 0,
 					/* annotations */ UDF

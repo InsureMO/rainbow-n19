@@ -188,7 +188,7 @@ JdkClassCreateHelper.class('java.util.Map$Entry', [
 			/* name */ 'comparingByKey',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'cmp',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -245,7 +245,7 @@ JdkClassCreateHelper.class('java.util.Map$Entry', [
 			/* name */ 'comparingByValue',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'cmp',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -302,7 +302,7 @@ JdkClassCreateHelper.class('java.util.Map$Entry', [
 			/* name */ 'copyOf',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'e',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

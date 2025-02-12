@@ -259,7 +259,7 @@ JdkClassCreateHelper.class('java.nio.charset.Charset', [
 			/* name */ 'isSupported',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'charsetName',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -284,7 +284,7 @@ JdkClassCreateHelper.class('java.nio.charset.Charset', [
 			/* name */ 'forName',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'cs',
+					/* name */ 'charsetName',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

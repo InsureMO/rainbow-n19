@@ -15,7 +15,7 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'abs',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'a',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -31,7 +31,7 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'cbrt',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'a',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -47,7 +47,7 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'ceil',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'a',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -63,13 +63,13 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'copySign',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'sign',
+					/* name */ 'magnitude',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'sign',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -85,7 +85,7 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'exp',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'a',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -101,7 +101,7 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'floor',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'a',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -117,6 +117,12 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'fma',
 			[/* parameters */
 				[/* parameter */
+					/* name */ 'a',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
 					/* name */ 'b',
 					/* type */ 'double',
 					/* modifiers */ 0,
@@ -124,12 +130,6 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 				],
 				[/* parameter */
 					/* name */ 'c',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg2',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -145,13 +145,13 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'hypot',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'y',
+					/* name */ 'x',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'y',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -167,13 +167,13 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'max',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'b',
+					/* name */ 'a',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'b',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -191,13 +191,13 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'min',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'b',
+					/* name */ 'a',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'b',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -215,13 +215,13 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'nextAfter',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'direction',
+					/* name */ 'start',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'direction',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -237,7 +237,7 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'nextDown',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'd',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -253,7 +253,7 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'nextUp',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'd',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -269,13 +269,13 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'pow',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'b',
+					/* name */ 'a',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'b',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -300,7 +300,7 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'rint',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'twoToThe52',
+					/* name */ 'a',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -316,13 +316,13 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'scalb',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'scaleFactor',
+					/* name */ 'd',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'scaleFactor',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -338,7 +338,7 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'signum',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'd',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -354,7 +354,7 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'toDegrees',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'angrad',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -370,7 +370,7 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'toRadians',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'angdeg',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -386,7 +386,7 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'ulp',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'd',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -402,7 +402,7 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'abs',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'a',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -418,13 +418,13 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'copySign',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'sign',
+					/* name */ 'magnitude',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'sign',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -440,6 +440,12 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'fma',
 			[/* parameters */
 				[/* parameter */
+					/* name */ 'a',
+					/* type */ 'float',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
 					/* name */ 'b',
 					/* type */ 'float',
 					/* modifiers */ 0,
@@ -447,12 +453,6 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 				],
 				[/* parameter */
 					/* name */ 'c',
-					/* type */ 'float',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg2',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -468,13 +468,13 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'max',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'b',
+					/* name */ 'a',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'b',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -492,13 +492,13 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'min',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'b',
+					/* name */ 'a',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'b',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -516,13 +516,13 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'nextAfter',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'direction',
+					/* name */ 'start',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'direction',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -538,7 +538,7 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'nextDown',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'f',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -554,7 +554,7 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'nextUp',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'f',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -570,13 +570,13 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'scalb',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'scaleFactor',
+					/* name */ 'f',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'scaleFactor',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -592,7 +592,7 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'signum',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'f',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -608,7 +608,7 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'ulp',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'f',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -624,7 +624,7 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'abs',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'a',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -640,7 +640,7 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'absExact',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'a',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -656,13 +656,13 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'addExact',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'y',
+					/* name */ 'x',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'y',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -678,7 +678,7 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'decrementExact',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'a',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -694,13 +694,13 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'floorDiv',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'y',
+					/* name */ 'x',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'y',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -716,13 +716,13 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'floorMod',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'y',
+					/* name */ 'x',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'y',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -738,13 +738,13 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'floorMod',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'y',
+					/* name */ 'x',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'y',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -760,7 +760,7 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'getExponent',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'd',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -776,7 +776,7 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'getExponent',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'f',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -792,7 +792,7 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'incrementExact',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'a',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -808,13 +808,13 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'max',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'b',
+					/* name */ 'a',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'b',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -832,13 +832,13 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'min',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'b',
+					/* name */ 'a',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'b',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -856,13 +856,13 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'multiplyExact',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'y',
+					/* name */ 'x',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'y',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -878,7 +878,7 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'negateExact',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'a',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -894,7 +894,7 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'round',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'a',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -910,13 +910,13 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'subtractExact',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'y',
+					/* name */ 'x',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'y',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -932,7 +932,7 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'toIntExact',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'value',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -948,7 +948,7 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'abs',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'a',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -964,7 +964,7 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'absExact',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'a',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -980,13 +980,13 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'addExact',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'y',
+					/* name */ 'x',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'y',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1002,7 +1002,7 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'decrementExact',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'a',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1018,13 +1018,13 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'floorDiv',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'y',
+					/* name */ 'x',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'y',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1040,13 +1040,13 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'floorDiv',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'y',
+					/* name */ 'x',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'y',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1062,13 +1062,13 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'floorMod',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'y',
+					/* name */ 'x',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'y',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1084,7 +1084,7 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'incrementExact',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'a',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1100,13 +1100,13 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'max',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'b',
+					/* name */ 'a',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'b',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1122,13 +1122,13 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'min',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'b',
+					/* name */ 'a',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'b',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1144,13 +1144,13 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'multiplyExact',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'y',
+					/* name */ 'x',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'y',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1166,13 +1166,13 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'multiplyExact',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'y',
+					/* name */ 'x',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'y',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1188,13 +1188,13 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'multiplyFull',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'y',
+					/* name */ 'x',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'y',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1210,13 +1210,13 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'multiplyHigh',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'y',
+					/* name */ 'x',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'y',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1232,7 +1232,7 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'negateExact',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'a',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1248,7 +1248,7 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'round',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'a',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1264,13 +1264,13 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* name */ 'subtractExact',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'y',
+					/* name */ 'x',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'y',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF

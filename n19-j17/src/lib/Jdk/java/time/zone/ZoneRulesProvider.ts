@@ -101,13 +101,13 @@ JdkClassCreateHelper.class('java.time.zone.ZoneRulesProvider', [
 			/* name */ 'getRules',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'forCaching',
+					/* name */ 'zoneId',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'forCaching',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -123,7 +123,7 @@ JdkClassCreateHelper.class('java.time.zone.ZoneRulesProvider', [
 			/* name */ 'getVersions',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'zoneId',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -161,7 +161,7 @@ JdkClassCreateHelper.class('java.time.zone.ZoneRulesProvider', [
 			/* name */ 'registerProvider',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'provider',
 					/* type */ 'java.time.zone.ZoneRulesProvider',
 					/* modifiers */ 0,
 					/* annotations */ UDF

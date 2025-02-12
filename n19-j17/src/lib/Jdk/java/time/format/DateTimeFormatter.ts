@@ -429,7 +429,7 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatter', [
 			/* name */ 'ofLocalizedDate',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'dateStyle',
 					/* type */ 'java.time.format.FormatStyle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -445,7 +445,7 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatter', [
 			/* name */ 'ofLocalizedDateTime',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'dateTimeStyle',
 					/* type */ 'java.time.format.FormatStyle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -461,13 +461,13 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatter', [
 			/* name */ 'ofLocalizedDateTime',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'timeStyle',
+					/* name */ 'dateStyle',
 					/* type */ 'java.time.format.FormatStyle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'timeStyle',
 					/* type */ 'java.time.format.FormatStyle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -483,7 +483,7 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatter', [
 			/* name */ 'ofLocalizedTime',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'timeStyle',
 					/* type */ 'java.time.format.FormatStyle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -499,7 +499,7 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatter', [
 			/* name */ 'ofPattern',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'pattern',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -515,13 +515,13 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatter', [
 			/* name */ 'ofPattern',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'locale',
+					/* name */ 'pattern',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'locale',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF

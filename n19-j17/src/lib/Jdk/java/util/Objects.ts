@@ -15,7 +15,7 @@ JdkClassCreateHelper.class('java.util.Objects', [
 			/* name */ 'requireNonNull',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'obj',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'T']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -39,13 +39,13 @@ JdkClassCreateHelper.class('java.util.Objects', [
 			/* name */ 'requireNonNull',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'message',
+					/* name */ 'obj',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'T']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'message',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -69,13 +69,13 @@ JdkClassCreateHelper.class('java.util.Objects', [
 			/* name */ 'requireNonNull',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'messageSupplier',
+					/* name */ 'obj',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'T']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'messageSupplier',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.String'
@@ -105,13 +105,13 @@ JdkClassCreateHelper.class('java.util.Objects', [
 			/* name */ 'requireNonNullElse',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'defaultObj',
+					/* name */ 'obj',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'T']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'defaultObj',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'T']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -135,13 +135,13 @@ JdkClassCreateHelper.class('java.util.Objects', [
 			/* name */ 'requireNonNullElseGet',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'supplier',
+					/* name */ 'obj',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'T']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'supplier',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -176,6 +176,12 @@ JdkClassCreateHelper.class('java.util.Objects', [
 			/* name */ 'compare',
 			[/* parameters */
 				[/* parameter */
+					/* name */ 'a',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'T']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
 					/* name */ 'b',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'T']],
 					/* modifiers */ 0,
@@ -183,12 +189,6 @@ JdkClassCreateHelper.class('java.util.Objects', [
 				],
 				[/* parameter */
 					/* name */ 'c',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'T']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg2',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -225,13 +225,13 @@ JdkClassCreateHelper.class('java.util.Objects', [
 			/* name */ 'deepEquals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'b',
+					/* name */ 'a',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'b',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -247,13 +247,13 @@ JdkClassCreateHelper.class('java.util.Objects', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'b',
+					/* name */ 'a',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'b',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -269,7 +269,7 @@ JdkClassCreateHelper.class('java.util.Objects', [
 			/* name */ 'isNull',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -285,7 +285,7 @@ JdkClassCreateHelper.class('java.util.Objects', [
 			/* name */ 'nonNull',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -301,6 +301,12 @@ JdkClassCreateHelper.class('java.util.Objects', [
 			/* name */ 'checkFromIndexSize',
 			[/* parameters */
 				[/* parameter */
+					/* name */ 'fromIndex',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
 					/* name */ 'size',
 					/* type */ 'int',
 					/* modifiers */ 0,
@@ -308,12 +314,6 @@ JdkClassCreateHelper.class('java.util.Objects', [
 				],
 				[/* parameter */
 					/* name */ 'length',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg2',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -329,6 +329,12 @@ JdkClassCreateHelper.class('java.util.Objects', [
 			/* name */ 'checkFromToIndex',
 			[/* parameters */
 				[/* parameter */
+					/* name */ 'fromIndex',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
 					/* name */ 'toIndex',
 					/* type */ 'int',
 					/* modifiers */ 0,
@@ -336,12 +342,6 @@ JdkClassCreateHelper.class('java.util.Objects', [
 				],
 				[/* parameter */
 					/* name */ 'length',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg2',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -357,13 +357,13 @@ JdkClassCreateHelper.class('java.util.Objects', [
 			/* name */ 'checkIndex',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'length',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'length',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -397,7 +397,7 @@ JdkClassCreateHelper.class('java.util.Objects', [
 			/* name */ 'hashCode',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'o',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -413,7 +413,7 @@ JdkClassCreateHelper.class('java.util.Objects', [
 			/* name */ 'toString',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'o',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -429,13 +429,13 @@ JdkClassCreateHelper.class('java.util.Objects', [
 			/* name */ 'toString',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'nullDefault',
+					/* name */ 'o',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'nullDefault',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -451,6 +451,12 @@ JdkClassCreateHelper.class('java.util.Objects', [
 			/* name */ 'checkFromIndexSize',
 			[/* parameters */
 				[/* parameter */
+					/* name */ 'fromIndex',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
 					/* name */ 'size',
 					/* type */ 'long',
 					/* modifiers */ 0,
@@ -458,12 +464,6 @@ JdkClassCreateHelper.class('java.util.Objects', [
 				],
 				[/* parameter */
 					/* name */ 'length',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg2',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -479,6 +479,12 @@ JdkClassCreateHelper.class('java.util.Objects', [
 			/* name */ 'checkFromToIndex',
 			[/* parameters */
 				[/* parameter */
+					/* name */ 'fromIndex',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
 					/* name */ 'toIndex',
 					/* type */ 'long',
 					/* modifiers */ 0,
@@ -486,12 +492,6 @@ JdkClassCreateHelper.class('java.util.Objects', [
 				],
 				[/* parameter */
 					/* name */ 'length',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg2',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -507,13 +507,13 @@ JdkClassCreateHelper.class('java.util.Objects', [
 			/* name */ 'checkIndex',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'length',
+					/* name */ 'index',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'length',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF

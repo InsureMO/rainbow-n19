@@ -153,13 +153,13 @@ JdkClassCreateHelper.class('java.lang.module.Configuration', [
 			/* name */ 'resolve',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'parents',
+					/* name */ 'before',
 					/* type */ 'java.lang.module.ModuleFinder',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'after',
+					/* name */ 'parents',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.module.Configuration'
@@ -171,13 +171,13 @@ JdkClassCreateHelper.class('java.lang.module.Configuration', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'roots',
+					/* name */ 'after',
 					/* type */ 'java.lang.module.ModuleFinder',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'parentList',
+					/* name */ 'roots',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.String'
@@ -199,13 +199,13 @@ JdkClassCreateHelper.class('java.lang.module.Configuration', [
 			/* name */ 'resolveAndBind',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'parents',
+					/* name */ 'before',
 					/* type */ 'java.lang.module.ModuleFinder',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'after',
+					/* name */ 'parents',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.module.Configuration'
@@ -217,13 +217,13 @@ JdkClassCreateHelper.class('java.lang.module.Configuration', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'roots',
+					/* name */ 'after',
 					/* type */ 'java.lang.module.ModuleFinder',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'parentList',
+					/* name */ 'roots',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.String'

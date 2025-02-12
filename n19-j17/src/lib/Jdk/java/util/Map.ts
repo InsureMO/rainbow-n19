@@ -642,13 +642,13 @@ JdkClassCreateHelper.class('java.util.Map', [
 			/* name */ 'entry',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'v',
+					/* name */ 'k',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'v',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -686,7 +686,7 @@ JdkClassCreateHelper.class('java.util.Map', [
 			/* name */ 'copyOf',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'map',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -772,13 +772,13 @@ JdkClassCreateHelper.class('java.util.Map', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'v1',
+					/* name */ 'k1',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'v1',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -816,25 +816,25 @@ JdkClassCreateHelper.class('java.util.Map', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'v1',
+					/* name */ 'k1',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'k2',
+					/* name */ 'v1',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'v2',
+					/* name */ 'k2',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg3',
+					/* name */ 'v2',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -872,37 +872,37 @@ JdkClassCreateHelper.class('java.util.Map', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'v1',
+					/* name */ 'k1',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'v1',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'k2',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'v2',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'k3',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'v3',
+					/* name */ 'k3',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg5',
+					/* name */ 'v3',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -940,49 +940,49 @@ JdkClassCreateHelper.class('java.util.Map', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'v1',
+					/* name */ 'k1',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'v1',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'k2',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'v2',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'k3',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'v3',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'k4',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'v4',
+					/* name */ 'k4',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg7',
+					/* name */ 'v4',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1020,61 +1020,61 @@ JdkClassCreateHelper.class('java.util.Map', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'v1',
+					/* name */ 'k1',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'v1',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'k2',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'v2',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'k3',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'v3',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'k4',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'v4',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'k5',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'v5',
+					/* name */ 'k5',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg9',
+					/* name */ 'v5',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1112,73 +1112,73 @@ JdkClassCreateHelper.class('java.util.Map', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'v1',
+					/* name */ 'k1',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'v1',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'k2',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'v2',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'k3',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'v3',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'k4',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'v4',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'k5',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'v5',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'k6',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'v6',
+					/* name */ 'k6',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg11',
+					/* name */ 'v6',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1216,85 +1216,85 @@ JdkClassCreateHelper.class('java.util.Map', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'v1',
+					/* name */ 'k1',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'v1',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'k2',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'v2',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'k3',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'v3',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'k4',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'v4',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'k5',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'v5',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'k6',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'v6',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'k7',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'v7',
+					/* name */ 'k7',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg13',
+					/* name */ 'v7',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1332,97 +1332,97 @@ JdkClassCreateHelper.class('java.util.Map', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'v1',
+					/* name */ 'k1',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'v1',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'k2',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'v2',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'k3',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'v3',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'k4',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'v4',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'k5',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'v5',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'k6',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'v6',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'k7',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'v7',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'k8',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'v8',
+					/* name */ 'k8',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg15',
+					/* name */ 'v8',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1460,109 +1460,109 @@ JdkClassCreateHelper.class('java.util.Map', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'v1',
+					/* name */ 'k1',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'v1',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'k2',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'v2',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'k3',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'v3',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'k4',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'v4',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'k5',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'v5',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'k6',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'v6',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'k7',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'v7',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'k8',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'v8',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'k9',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'v9',
+					/* name */ 'k9',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg17',
+					/* name */ 'v9',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1600,121 +1600,121 @@ JdkClassCreateHelper.class('java.util.Map', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'v1',
+					/* name */ 'k1',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'v1',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'k2',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'v2',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'k3',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'v3',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'k4',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'v4',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'k5',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'v5',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'k6',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'v6',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'k7',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'v7',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'k8',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'v8',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'k9',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'v9',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'k10',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'v10',
+					/* name */ 'k10',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg19',
+					/* name */ 'v10',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -102,7 +102,7 @@ JdkClassCreateHelper.class('java.time.ZoneId', [
 			/* name */ 'from',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'obj',
+					/* name */ 'temporal',
 					/* type */ 'java.time.temporal.TemporalAccessor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -118,7 +118,7 @@ JdkClassCreateHelper.class('java.time.ZoneId', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'zoneId',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -134,13 +134,13 @@ JdkClassCreateHelper.class('java.time.ZoneId', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'aliasMap',
+					/* name */ 'zoneId',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'id',
+					/* name */ 'aliasMap',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.String',
@@ -163,13 +163,13 @@ JdkClassCreateHelper.class('java.time.ZoneId', [
 			/* name */ 'ofOffset',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'offset',
+					/* name */ 'prefix',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'offset',
 					/* type */ 'java.time.ZoneOffset',
 					/* modifiers */ 0,
 					/* annotations */ UDF

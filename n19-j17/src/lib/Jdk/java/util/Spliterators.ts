@@ -15,7 +15,7 @@ JdkClassCreateHelper.class('java.util.Spliterators', [
 			/* name */ 'iterator',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'spliterator',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -163,7 +163,7 @@ JdkClassCreateHelper.class('java.util.Spliterators', [
 			/* name */ 'spliterator',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'characteristics',
+					/* name */ 'c',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -180,7 +180,7 @@ JdkClassCreateHelper.class('java.util.Spliterators', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'characteristics',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -210,7 +210,7 @@ JdkClassCreateHelper.class('java.util.Spliterators', [
 			/* name */ 'spliterator',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'size',
+					/* name */ 'iterator',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -227,13 +227,13 @@ JdkClassCreateHelper.class('java.util.Spliterators', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'characteristics',
+					/* name */ 'size',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'characteristics',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -263,7 +263,7 @@ JdkClassCreateHelper.class('java.util.Spliterators', [
 			/* name */ 'spliteratorUnknownSize',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'characteristics',
+					/* name */ 'iterator',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -280,7 +280,7 @@ JdkClassCreateHelper.class('java.util.Spliterators', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'characteristics',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -310,7 +310,7 @@ JdkClassCreateHelper.class('java.util.Spliterators', [
 			/* name */ 'iterator',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'spliterator',
 					/* type */ 'java.util.Spliterator$OfDouble',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -326,7 +326,7 @@ JdkClassCreateHelper.class('java.util.Spliterators', [
 			/* name */ 'iterator',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'spliterator',
 					/* type */ 'java.util.Spliterator$OfInt',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -342,7 +342,7 @@ JdkClassCreateHelper.class('java.util.Spliterators', [
 			/* name */ 'iterator',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'spliterator',
 					/* type */ 'java.util.Spliterator$OfLong',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -367,13 +367,13 @@ JdkClassCreateHelper.class('java.util.Spliterators', [
 			/* name */ 'spliterator',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'additionalCharacteristics',
+					/* name */ 'array',
 					/* type */ '[D',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'additionalCharacteristics',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -389,8 +389,14 @@ JdkClassCreateHelper.class('java.util.Spliterators', [
 			/* name */ 'spliterator',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'fromIndex',
+					/* name */ 'array',
 					/* type */ '[D',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'fromIndex',
+					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
@@ -402,12 +408,6 @@ JdkClassCreateHelper.class('java.util.Spliterators', [
 				],
 				[/* parameter */
 					/* name */ 'additionalCharacteristics',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg3',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -423,19 +423,19 @@ JdkClassCreateHelper.class('java.util.Spliterators', [
 			/* name */ 'spliterator',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'size',
+					/* name */ 'iterator',
 					/* type */ 'java.util.PrimitiveIterator$OfDouble',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'characteristics',
+					/* name */ 'size',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'characteristics',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -451,13 +451,13 @@ JdkClassCreateHelper.class('java.util.Spliterators', [
 			/* name */ 'spliteratorUnknownSize',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'characteristics',
+					/* name */ 'iterator',
 					/* type */ 'java.util.PrimitiveIterator$OfDouble',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'characteristics',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -482,13 +482,13 @@ JdkClassCreateHelper.class('java.util.Spliterators', [
 			/* name */ 'spliterator',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'additionalCharacteristics',
+					/* name */ 'array',
 					/* type */ '[I',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'additionalCharacteristics',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -504,8 +504,14 @@ JdkClassCreateHelper.class('java.util.Spliterators', [
 			/* name */ 'spliterator',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'fromIndex',
+					/* name */ 'array',
 					/* type */ '[I',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'fromIndex',
+					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
@@ -517,12 +523,6 @@ JdkClassCreateHelper.class('java.util.Spliterators', [
 				],
 				[/* parameter */
 					/* name */ 'additionalCharacteristics',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg3',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -538,19 +538,19 @@ JdkClassCreateHelper.class('java.util.Spliterators', [
 			/* name */ 'spliterator',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'size',
+					/* name */ 'iterator',
 					/* type */ 'java.util.PrimitiveIterator$OfInt',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'characteristics',
+					/* name */ 'size',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'characteristics',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -566,13 +566,13 @@ JdkClassCreateHelper.class('java.util.Spliterators', [
 			/* name */ 'spliteratorUnknownSize',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'characteristics',
+					/* name */ 'iterator',
 					/* type */ 'java.util.PrimitiveIterator$OfInt',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'characteristics',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -597,19 +597,19 @@ JdkClassCreateHelper.class('java.util.Spliterators', [
 			/* name */ 'spliterator',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'size',
+					/* name */ 'iterator',
 					/* type */ 'java.util.PrimitiveIterator$OfLong',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'characteristics',
+					/* name */ 'size',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'characteristics',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -625,13 +625,13 @@ JdkClassCreateHelper.class('java.util.Spliterators', [
 			/* name */ 'spliterator',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'additionalCharacteristics',
+					/* name */ 'array',
 					/* type */ '[J',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'additionalCharacteristics',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -647,8 +647,14 @@ JdkClassCreateHelper.class('java.util.Spliterators', [
 			/* name */ 'spliterator',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'fromIndex',
+					/* name */ 'array',
 					/* type */ '[J',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'fromIndex',
+					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
@@ -660,12 +666,6 @@ JdkClassCreateHelper.class('java.util.Spliterators', [
 				],
 				[/* parameter */
 					/* name */ 'additionalCharacteristics',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg3',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -681,13 +681,13 @@ JdkClassCreateHelper.class('java.util.Spliterators', [
 			/* name */ 'spliteratorUnknownSize',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'characteristics',
+					/* name */ 'iterator',
 					/* type */ 'java.util.PrimitiveIterator$OfLong',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'characteristics',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

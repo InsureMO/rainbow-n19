@@ -733,6 +733,12 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatterBuilder', [
 			/* name */ 'getLocalizedDateTimePattern',
 			[/* parameters */
 				[/* parameter */
+					/* name */ 'dateStyle',
+					/* type */ 'java.time.format.FormatStyle',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
 					/* name */ 'timeStyle',
 					/* type */ 'java.time.format.FormatStyle',
 					/* modifiers */ 0,
@@ -740,18 +746,12 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatterBuilder', [
 				],
 				[/* parameter */
 					/* name */ 'chrono',
-					/* type */ 'java.time.format.FormatStyle',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'locale',
 					/* type */ 'java.time.chrono.Chronology',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'adapter',
+					/* name */ 'locale',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF

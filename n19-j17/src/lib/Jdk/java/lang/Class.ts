@@ -1471,7 +1471,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			/* name */ 'forName',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'caller',
+					/* name */ 'className',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1511,13 +1511,13 @@ JdkClassCreateHelper.class('java.lang.Class', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'initialize',
+					/* name */ 'name',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'loader',
+					/* name */ 'initialize',
 					/* type */ 'java.lang.ClassLoader',
 					/* modifiers */ 0,
 					/* annotations */ UDF

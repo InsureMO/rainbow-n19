@@ -53,7 +53,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandleProxies', [
 			/* name */ 'isWrapperInstance',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'x',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -69,7 +69,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandleProxies', [
 			/* name */ 'wrapperInstanceType',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'x',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -96,7 +96,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandleProxies', [
 			/* name */ 'wrapperInstanceTarget',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'x',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF

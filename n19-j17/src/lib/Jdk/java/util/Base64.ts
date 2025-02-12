@@ -66,7 +66,7 @@ JdkClassCreateHelper.class('java.util.Base64', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'lineSeparator',
+					/* name */ 'lineLength',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -698,7 +698,7 @@ JdkClassCreateHelper.class('java.time.Instant', [
 			/* name */ 'now',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'clock',
 					/* type */ 'java.time.Clock',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -714,7 +714,7 @@ JdkClassCreateHelper.class('java.time.Instant', [
 			/* name */ 'ofEpochMilli',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'secs',
+					/* name */ 'epochMilli',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -730,7 +730,7 @@ JdkClassCreateHelper.class('java.time.Instant', [
 			/* name */ 'ofEpochSecond',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'epochSecond',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -746,13 +746,13 @@ JdkClassCreateHelper.class('java.time.Instant', [
 			/* name */ 'ofEpochSecond',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'nanoAdjustment',
+					/* name */ 'epochSecond',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'secs',
+					/* name */ 'nanoAdjustment',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -768,7 +768,7 @@ JdkClassCreateHelper.class('java.time.Instant', [
 			/* name */ 'parse',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'text',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF

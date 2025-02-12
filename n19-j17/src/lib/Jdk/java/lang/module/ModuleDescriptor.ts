@@ -275,7 +275,7 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor', [
 			/* name */ 'read',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'in',
 					/* type */ 'java.io.InputStream',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -296,13 +296,13 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor', [
 			/* name */ 'read',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'packageFinder',
+					/* name */ 'in',
 					/* type */ 'java.io.InputStream',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'packageFinder',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* parameterized type */ 'pt', [
@@ -335,7 +335,7 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor', [
 			/* name */ 'read',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'bb',
 					/* type */ 'java.nio.ByteBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -351,13 +351,13 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor', [
 			/* name */ 'read',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'packageFinder',
+					/* name */ 'bb',
 					/* type */ 'java.nio.ByteBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'packageFinder',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* parameterized type */ 'pt', [
@@ -385,7 +385,7 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor', [
 			/* name */ 'newAutomaticModule',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -401,7 +401,7 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor', [
 			/* name */ 'newModule',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -417,13 +417,13 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor', [
 			/* name */ 'newModule',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'ms',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'mods',
+					/* name */ 'ms',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.module.ModuleDescriptor$Modifier'
@@ -445,7 +445,7 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor', [
 			/* name */ 'newOpenModule',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

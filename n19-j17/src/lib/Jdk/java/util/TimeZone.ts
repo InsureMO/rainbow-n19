@@ -283,7 +283,7 @@ JdkClassCreateHelper.class('java.util.TimeZone', [
 			/* name */ 'getTimeZone',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'tzid',
+					/* name */ 'zoneId',
 					/* type */ 'java.time.ZoneId',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -324,7 +324,7 @@ JdkClassCreateHelper.class('java.util.TimeZone', [
 			/* name */ 'getTimeZone',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ID',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -340,7 +340,7 @@ JdkClassCreateHelper.class('java.util.TimeZone', [
 			/* name */ 'setDefault',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'sm',
+					/* name */ 'zone',
 					/* type */ 'java.util.TimeZone',
 					/* modifiers */ 0,
 					/* annotations */ UDF

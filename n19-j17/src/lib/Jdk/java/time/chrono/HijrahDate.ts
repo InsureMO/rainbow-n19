@@ -582,7 +582,7 @@ JdkClassCreateHelper.class('java.time.chrono.HijrahDate', [
 			/* name */ 'from',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'temporal',
 					/* type */ 'java.time.temporal.TemporalAccessor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -607,7 +607,7 @@ JdkClassCreateHelper.class('java.time.chrono.HijrahDate', [
 			/* name */ 'now',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'clock',
 					/* type */ 'java.time.Clock',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -623,7 +623,7 @@ JdkClassCreateHelper.class('java.time.chrono.HijrahDate', [
 			/* name */ 'now',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'zone',
 					/* type */ 'java.time.ZoneId',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -639,6 +639,12 @@ JdkClassCreateHelper.class('java.time.chrono.HijrahDate', [
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
+					/* name */ 'prolepticYear',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
 					/* name */ 'month',
 					/* type */ 'int',
 					/* modifiers */ 0,
@@ -646,12 +652,6 @@ JdkClassCreateHelper.class('java.time.chrono.HijrahDate', [
 				],
 				[/* parameter */
 					/* name */ 'dayOfMonth',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg2',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

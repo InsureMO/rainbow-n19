@@ -839,13 +839,13 @@ JdkClassCreateHelper.class('java.math.BigInteger', [
 			/* name */ 'probablePrime',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'rnd',
+					/* name */ 'bitLength',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'rnd',
 					/* type */ 'java.util.Random',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -861,7 +861,7 @@ JdkClassCreateHelper.class('java.math.BigInteger', [
 			/* name */ 'valueOf',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'val',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
