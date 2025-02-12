@@ -12,8 +12,8 @@ JdkClassCreateHelper.class('java.lang.reflect.WildcardType', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public abstract java.lang.reflect.Type[] java.lang.reflect.WildcardType.getUpperBounds() */
-			/* name */ 'getUpperBounds',
+		[/* public abstract java.lang.reflect.Type[] java.lang.reflect.WildcardType.getLowerBounds() */
+			/* name */ 'getLowerBounds',
 			/* parameters */,
 			/* return */ '[Ljava.lang.reflect.Type;',
 			/* exceptions */,
@@ -21,8 +21,8 @@ JdkClassCreateHelper.class('java.lang.reflect.WildcardType', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.lang.reflect.Type[] java.lang.reflect.WildcardType.getLowerBounds() */
-			/* name */ 'getLowerBounds',
+		[/* public abstract java.lang.reflect.Type[] java.lang.reflect.WildcardType.getUpperBounds() */
+			/* name */ 'getUpperBounds',
 			/* parameters */,
 			/* return */ '[Ljava.lang.reflect.Type;',
 			/* exceptions */,

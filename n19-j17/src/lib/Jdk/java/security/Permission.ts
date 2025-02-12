@@ -29,15 +29,6 @@ JdkClassCreateHelper.class('java.security.Permission', [
 		]
 	],
 	[/* declared methods */
-		[/* public final java.lang.String java.security.Permission.getName() */
-			/* name */ 'getName',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public abstract boolean java.security.Permission.equals(java.lang.Object) */
 			/* name */ 'equals',
 			[/* parameters */
@@ -49,24 +40,6 @@ JdkClassCreateHelper.class('java.security.Permission', [
 				]
 			],
 			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.security.Permission.toString() */
-			/* name */ 'toString',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract int java.security.Permission.hashCode() */
-			/* name */ 'hashCode',
-			/* parameters */,
-			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,
@@ -88,12 +61,39 @@ JdkClassCreateHelper.class('java.security.Permission', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public abstract int java.security.Permission.hashCode() */
+			/* name */ 'hashCode',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public abstract java.lang.String java.security.Permission.getActions() */
 			/* name */ 'getActions',
 			/* parameters */,
 			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public final java.lang.String java.security.Permission.getName() */
+			/* name */ 'getName',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 17,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.security.Permission.toString() */
+			/* name */ 'toString',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],

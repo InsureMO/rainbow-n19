@@ -19,6 +19,52 @@ JdkClassCreateHelper.class('java.util.ResourceBundle$Control', [
 		]
 	],
 	[/* declared methods */
+		[/* public boolean java.util.ResourceBundle$Control.needsReload(java.lang.String,java.util.Locale,java.lang.String,java.lang.ClassLoader,java.util.ResourceBundle,long) */
+			/* name */ 'needsReload',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'ent',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'lastModified',
+					/* type */ 'java.util.Locale',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'connection',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'resourceName',
+					/* type */ 'java.lang.ClassLoader',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'url',
+					/* type */ 'java.util.ResourceBundle',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'npe',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public final java.lang.String java.util.ResourceBundle$Control.toResourceName(java.lang.String,java.lang.String) */
 			/* name */ 'toResourceName',
 			[/* parameters */
@@ -38,78 +84,6 @@ JdkClassCreateHelper.class('java.util.ResourceBundle$Control', [
 			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static final java.util.ResourceBundle$Control java.util.ResourceBundle$Control.getControl(java.util.List<java.lang.String>) */
-			/* name */ 'getControl',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							'java.lang.String'
-						],
-						/* raw type */ 'java.util.List',
-						/* owner type */ UDF
-					]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.util.ResourceBundle$Control',
-			/* exceptions */,
-			/* modifiers */ 25,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.List<java.util.Locale> java.util.ResourceBundle$Control.getCandidateLocales(java.lang.String,java.util.Locale) */
-			/* name */ 'getCandidateLocales',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'baseName',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'locale',
-					/* type */ 'java.util.Locale',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					'java.util.Locale'
-				],
-				/* raw type */ 'java.util.List',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static final java.util.ResourceBundle$Control java.util.ResourceBundle$Control.getNoFallbackControl(java.util.List<java.lang.String>) */
-			/* name */ 'getNoFallbackControl',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							'java.lang.String'
-						],
-						/* raw type */ 'java.util.List',
-						/* owner type */ UDF
-					]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.util.ResourceBundle$Control',
-			/* exceptions */,
-			/* modifiers */ 25,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -148,6 +122,34 @@ JdkClassCreateHelper.class('java.util.ResourceBundle$Control', [
 			/* return */ [/* parameterized type */ 'pt', [
 				[/* actual argument types */
 					'java.lang.String'
+				],
+				/* raw type */ 'java.util.List',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.List<java.util.Locale> java.util.ResourceBundle$Control.getCandidateLocales(java.lang.String,java.util.Locale) */
+			/* name */ 'getCandidateLocales',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'baseName',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'locale',
+					/* type */ 'java.util.Locale',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					'java.util.Locale'
 				],
 				/* raw type */ 'java.util.List',
 				/* owner type */ UDF
@@ -254,49 +256,47 @@ JdkClassCreateHelper.class('java.util.ResourceBundle$Control', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public boolean java.util.ResourceBundle$Control.needsReload(java.lang.String,java.util.Locale,java.lang.String,java.lang.ClassLoader,java.util.ResourceBundle,long) */
-			/* name */ 'needsReload',
+		[/* public static final java.util.ResourceBundle$Control java.util.ResourceBundle$Control.getControl(java.util.List<java.lang.String>) */
+			/* name */ 'getControl',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'ent',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'lastModified',
-					/* type */ 'java.util.Locale',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'connection',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'resourceName',
-					/* type */ 'java.lang.ClassLoader',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'url',
-					/* type */ 'java.util.ResourceBundle',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'npe',
-					/* type */ 'long',
+					/* name */ 'arg0',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							'java.lang.String'
+						],
+						/* raw type */ 'java.util.List',
+						/* owner type */ UDF
+					]],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'boolean',
+			/* return */ 'java.util.ResourceBundle$Control',
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 25,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static final java.util.ResourceBundle$Control java.util.ResourceBundle$Control.getNoFallbackControl(java.util.List<java.lang.String>) */
+			/* name */ 'getNoFallbackControl',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							'java.lang.String'
+						],
+						/* raw type */ 'java.util.List',
+						/* owner type */ UDF
+					]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.util.ResourceBundle$Control',
+			/* exceptions */,
+			/* modifiers */ 25,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

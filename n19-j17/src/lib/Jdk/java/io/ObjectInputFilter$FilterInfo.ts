@@ -10,24 +10,6 @@ JdkClassCreateHelper.class('java.io.ObjectInputFilter$FilterInfo', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public abstract long java.io.ObjectInputFilter$FilterInfo.depth() */
-			/* name */ 'depth',
-			/* parameters */,
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract long java.io.ObjectInputFilter$FilterInfo.arrayLength() */
-			/* name */ 'arrayLength',
-			/* parameters */,
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public abstract java.lang.Class<?> java.io.ObjectInputFilter$FilterInfo.serialClass() */
 			/* name */ 'serialClass',
 			/* parameters */,
@@ -43,6 +25,24 @@ JdkClassCreateHelper.class('java.io.ObjectInputFilter$FilterInfo', [
 				/* raw type */ 'java.lang.Class',
 				/* owner type */ UDF
 			]],
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract long java.io.ObjectInputFilter$FilterInfo.arrayLength() */
+			/* name */ 'arrayLength',
+			/* parameters */,
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract long java.io.ObjectInputFilter$FilterInfo.depth() */
+			/* name */ 'depth',
+			/* parameters */,
+			/* return */ 'long',
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,

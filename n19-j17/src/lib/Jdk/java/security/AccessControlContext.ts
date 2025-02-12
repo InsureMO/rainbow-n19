@@ -77,6 +77,15 @@ JdkClassCreateHelper.class('java.security.AccessControlContext', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public java.security.DomainCombiner java.security.AccessControlContext.getDomainCombiner() */
+			/* name */ 'getDomainCombiner',
+			/* parameters */,
+			/* return */ 'java.security.DomainCombiner',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public void java.security.AccessControlContext.checkPermission(java.security.Permission) throws java.security.AccessControlException */
 			/* name */ 'checkPermission',
 			[/* parameters */
@@ -94,15 +103,6 @@ JdkClassCreateHelper.class('java.security.AccessControlContext', [
 					/* annotations */ UDF
 				]
 			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.security.DomainCombiner java.security.AccessControlContext.getDomainCombiner() */
-			/* name */ 'getDomainCombiner',
-			/* parameters */,
-			/* return */ 'java.security.DomainCombiner',
-			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF

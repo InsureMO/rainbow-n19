@@ -12,17 +12,38 @@ JdkClassCreateHelper.class('java.lang.Thread', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
-		[/* public java.lang.Thread(java.lang.ThreadGroup,java.lang.Runnable) */
+		[/* public java.lang.Thread() */
+			/* parameters */,
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.Thread(java.lang.Runnable) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'group',
-					/* type */ 'java.lang.ThreadGroup',
+					/* name */ 'target',
+					/* type */ 'java.lang.Runnable',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.Thread(java.lang.Runnable,java.lang.String) */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'target',
+					/* type */ 'java.lang.Runnable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'target',
-					/* type */ 'java.lang.Runnable',
+					/* name */ 'name',
+					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -46,11 +67,37 @@ JdkClassCreateHelper.class('java.lang.Thread', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.Thread(java.lang.ThreadGroup,java.lang.String) */
+		[/* public java.lang.Thread(java.lang.ThreadGroup,java.lang.Runnable) */
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'group',
 					/* type */ 'java.lang.ThreadGroup',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'target',
+					/* type */ 'java.lang.Runnable',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.Thread(java.lang.ThreadGroup,java.lang.Runnable,java.lang.String) */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'group',
+					/* type */ 'java.lang.ThreadGroup',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'target',
+					/* type */ 'java.lang.Runnable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
@@ -66,18 +113,29 @@ JdkClassCreateHelper.class('java.lang.Thread', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.Thread() */
-			/* parameters */,
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.Thread(java.lang.Runnable) */
+		[/* public java.lang.Thread(java.lang.ThreadGroup,java.lang.Runnable,java.lang.String,long) */
 			[/* parameters */
+				[/* parameter */
+					/* name */ 'group',
+					/* type */ 'java.lang.ThreadGroup',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
 				[/* parameter */
 					/* name */ 'target',
 					/* type */ 'java.lang.Runnable',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'name',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'stackSize',
+					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -125,69 +183,11 @@ JdkClassCreateHelper.class('java.lang.Thread', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.Thread(java.lang.ThreadGroup,java.lang.Runnable,java.lang.String,long) */
+		[/* public java.lang.Thread(java.lang.ThreadGroup,java.lang.String) */
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'group',
 					/* type */ 'java.lang.ThreadGroup',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'target',
-					/* type */ 'java.lang.Runnable',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'name',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'stackSize',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.Thread(java.lang.ThreadGroup,java.lang.Runnable,java.lang.String) */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'group',
-					/* type */ 'java.lang.ThreadGroup',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'target',
-					/* type */ 'java.lang.Runnable',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'name',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.Thread(java.lang.Runnable,java.lang.String) */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'target',
-					/* type */ 'java.lang.Runnable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
@@ -205,33 +205,6 @@ JdkClassCreateHelper.class('java.lang.Thread', [
 		]
 	],
 	[/* declared methods */
-		[/* public final java.lang.String java.lang.Thread.getName() */
-			/* name */ 'getName',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.lang.Thread.run() */
-			/* name */ 'run',
-			/* parameters */,
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.lang.Thread.toString() */
-			/* name */ 'toString',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* protected java.lang.Object java.lang.Thread.clone() throws java.lang.CloneNotSupportedException */
 			/* name */ 'clone',
 			/* parameters */,
@@ -246,31 +219,70 @@ JdkClassCreateHelper.class('java.lang.Thread', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static native java.lang.Thread java.lang.Thread.currentThread() */
-			/* name */ 'currentThread',
+		[/* public boolean java.lang.Thread.isInterrupted() */
+			/* name */ 'isInterrupted',
 			/* parameters */,
-			/* return */ 'java.lang.Thread',
+			/* return */ 'boolean',
 			/* exceptions */,
-			/* modifiers */ 265,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static void java.lang.Thread.onSpinWait() */
-			/* name */ 'onSpinWait',
+		[/* public final boolean java.lang.Thread.isDaemon() */
+			/* name */ 'isDaemon',
 			/* parameters */,
-			/* return */ 'void',
+			/* return */ 'boolean',
 			/* exceptions */,
-			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* modifiers */ 17,
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public final void java.lang.Thread.join() throws java.lang.InterruptedException */
+		[/* public final int java.lang.Thread.getPriority() */
+			/* name */ 'getPriority',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 17,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public final java.lang.String java.lang.Thread.getName() */
+			/* name */ 'getName',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 17,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public final java.lang.ThreadGroup java.lang.Thread.getThreadGroup() */
+			/* name */ 'getThreadGroup',
+			/* parameters */,
+			/* return */ 'java.lang.ThreadGroup',
+			/* exceptions */,
+			/* modifiers */ 17,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public final native boolean java.lang.Thread.isAlive() */
+			/* name */ 'isAlive',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 273,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public final synchronized void java.lang.Thread.join(long) throws java.lang.InterruptedException */
 			/* name */ 'join',
-			/* parameters */,
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'startTime',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
 			/* return */ 'void',
 			[/* exceptions */
 				[/* exception */
@@ -278,7 +290,7 @@ JdkClassCreateHelper.class('java.lang.Thread', [
 					/* annotations */ UDF
 				]
 			],
-			/* modifiers */ 17,
+			/* modifiers */ 49,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -309,83 +321,19 @@ JdkClassCreateHelper.class('java.lang.Thread', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public final synchronized void java.lang.Thread.join(long) throws java.lang.InterruptedException */
-			/* name */ 'join',
+		[/* public final synchronized void java.lang.Thread.setName(java.lang.String) */
+			/* name */ 'setName',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'startTime',
-					/* type */ 'long',
+					/* name */ 'name',
+					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
 			/* return */ 'void',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.lang.InterruptedException',
-					/* annotations */ UDF
-				]
-			],
+			/* exceptions */,
 			/* modifiers */ 49,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public synchronized void java.lang.Thread.start() */
-			/* name */ 'start',
-			/* parameters */,
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 33,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final java.lang.ThreadGroup java.lang.Thread.getThreadGroup() */
-			/* name */ 'getThreadGroup',
-			/* parameters */,
-			/* return */ 'java.lang.ThreadGroup',
-			/* exceptions */,
-			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.lang.Thread.setContextClassLoader(java.lang.ClassLoader) */
-			/* name */ 'setContextClassLoader',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'cl',
-					/* type */ 'java.lang.ClassLoader',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static native boolean java.lang.Thread.holdsLock(java.lang.Object) */
-			/* name */ 'holdsLock',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 265,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.StackTraceElement[] java.lang.Thread.getStackTrace() */
-			/* name */ 'getStackTrace',
-			/* parameters */,
-			/* return */ '[Ljava.lang.StackTraceElement;',
-			/* exceptions */,
-			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -404,12 +352,48 @@ JdkClassCreateHelper.class('java.lang.Thread', [
 			],
 			/* type parameters */ UDF
 		],
-		[/* public static void java.lang.Thread.dumpStack() */
-			/* name */ 'dumpStack',
+		[/* public final void java.lang.Thread.join() throws java.lang.InterruptedException */
+			/* name */ 'join',
+			/* parameters */,
+			/* return */ 'void',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.lang.InterruptedException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 17,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public final void java.lang.Thread.resume() */
+			/* name */ 'resume',
 			/* parameters */,
 			/* return */ 'void',
 			/* exceptions */,
-			/* modifiers */ 9,
+			/* modifiers */ 17,
+			[/* annotations */
+				[
+					'java.lang.Deprecated',
+					['p', 'since', '1.2'],
+					['p', 'forRemoval', true]
+				]
+			],
+			/* type parameters */ UDF
+		],
+		[/* public final void java.lang.Thread.setDaemon(boolean) */
+			/* name */ 'setDaemon',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'on',
+					/* type */ 'boolean',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 17,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -429,20 +413,191 @@ JdkClassCreateHelper.class('java.lang.Thread', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public final void java.lang.Thread.setDaemon(boolean) */
-			/* name */ 'setDaemon',
+		[/* public final void java.lang.Thread.stop() */
+			/* name */ 'stop',
+			/* parameters */,
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 17,
+			[/* annotations */
+				[
+					'java.lang.Deprecated',
+					['p', 'since', '1.2'],
+					['p', 'forRemoval', false]
+				]
+			],
+			/* type parameters */ UDF
+		],
+		[/* public final void java.lang.Thread.suspend() */
+			/* name */ 'suspend',
+			/* parameters */,
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 17,
+			[/* annotations */
+				[
+					'java.lang.Deprecated',
+					['p', 'since', '1.2'],
+					['p', 'forRemoval', true]
+				]
+			],
+			/* type parameters */ UDF
+		],
+		[/* public int java.lang.Thread.countStackFrames() */
+			/* name */ 'countStackFrames',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			[/* annotations */
+				[
+					'java.lang.Deprecated',
+					['p', 'since', '1.2'],
+					['p', 'forRemoval', true]
+				]
+			],
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.ClassLoader java.lang.Thread.getContextClassLoader() */
+			/* name */ 'getContextClassLoader',
+			/* parameters */,
+			/* return */ 'java.lang.ClassLoader',
+			/* exceptions */,
+			/* modifiers */ 1,
+			[/* annotations */
+				['jdk.internal.reflect.CallerSensitive']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.StackTraceElement[] java.lang.Thread.getStackTrace() */
+			/* name */ 'getStackTrace',
+			/* parameters */,
+			/* return */ '[Ljava.lang.StackTraceElement;',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.lang.Thread.toString() */
+			/* name */ 'toString',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.Thread$State java.lang.Thread.getState() */
+			/* name */ 'getState',
+			/* parameters */,
+			/* return */ 'java.lang.Thread$State',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.Thread$UncaughtExceptionHandler java.lang.Thread.getUncaughtExceptionHandler() */
+			/* name */ 'getUncaughtExceptionHandler',
+			/* parameters */,
+			/* return */ 'java.lang.Thread$UncaughtExceptionHandler',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public long java.lang.Thread.getId() */
+			/* name */ 'getId',
+			/* parameters */,
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static boolean java.lang.Thread.interrupted() */
+			/* name */ 'interrupted',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static int java.lang.Thread.activeCount() */
+			/* name */ 'activeCount',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static int java.lang.Thread.enumerate(java.lang.Thread[]) */
+			/* name */ 'enumerate',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'on',
-					/* type */ 'boolean',
+					/* name */ 'arg0',
+					/* type */ '[Ljava.lang.Thread;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'void',
+			/* return */ 'int',
 			/* exceptions */,
-			/* modifiers */ 17,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.lang.Thread$UncaughtExceptionHandler java.lang.Thread.getDefaultUncaughtExceptionHandler() */
+			/* name */ 'getDefaultUncaughtExceptionHandler',
+			/* parameters */,
+			/* return */ 'java.lang.Thread$UncaughtExceptionHandler',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.util.Map<java.lang.Thread, java.lang.StackTraceElement[]> java.lang.Thread.getAllStackTraces() */
+			/* name */ 'getAllStackTraces',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					'java.lang.Thread',
+					'[Ljava.lang.StackTraceElement;'
+				],
+				/* raw type */ 'java.util.Map',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static native boolean java.lang.Thread.holdsLock(java.lang.Object) */
+			/* name */ 'holdsLock',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 265,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static native java.lang.Thread java.lang.Thread.currentThread() */
+			/* name */ 'currentThread',
+			/* parameters */,
+			/* return */ 'java.lang.Thread',
+			/* exceptions */,
+			/* modifiers */ 265,
+			[/* annotations */
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
 			/* type parameters */ UDF
 		],
 		[/* public static native void java.lang.Thread.sleep(long) throws java.lang.InterruptedException */
@@ -463,6 +618,51 @@ JdkClassCreateHelper.class('java.lang.Thread', [
 				]
 			],
 			/* modifiers */ 265,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static native void java.lang.Thread.yield() */
+			/* name */ 'yield',
+			/* parameters */,
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 265,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static void java.lang.Thread.dumpStack() */
+			/* name */ 'dumpStack',
+			/* parameters */,
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static void java.lang.Thread.onSpinWait() */
+			/* name */ 'onSpinWait',
+			/* parameters */,
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 9,
+			[/* annotations */
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public static void java.lang.Thread.setDefaultUncaughtExceptionHandler(java.lang.Thread$UncaughtExceptionHandler) */
+			/* name */ 'setDefaultUncaughtExceptionHandler',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'sm',
+					/* type */ 'java.lang.Thread$UncaughtExceptionHandler',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -493,56 +693,12 @@ JdkClassCreateHelper.class('java.lang.Thread', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public final boolean java.lang.Thread.isDaemon() */
-			/* name */ 'isDaemon',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final int java.lang.Thread.getPriority() */
-			/* name */ 'getPriority',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.ClassLoader java.lang.Thread.getContextClassLoader() */
-			/* name */ 'getContextClassLoader',
-			/* parameters */,
-			/* return */ 'java.lang.ClassLoader',
-			/* exceptions */,
-			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public final void java.lang.Thread.resume() */
-			/* name */ 'resume',
+		[/* public synchronized void java.lang.Thread.start() */
+			/* name */ 'start',
 			/* parameters */,
 			/* return */ 'void',
 			/* exceptions */,
-			/* modifiers */ 17,
-			[/* annotations */
-				[
-					'java.lang.Deprecated',
-					['p', 'since', '1.2'],
-					['p', 'forRemoval', true]
-				]
-			],
-			/* type parameters */ UDF
-		],
-		[/* public static boolean java.lang.Thread.interrupted() */
-			/* name */ 'interrupted',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 9,
+			/* modifiers */ 33,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -555,184 +711,28 @@ JdkClassCreateHelper.class('java.lang.Thread', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static int java.lang.Thread.activeCount() */
-			/* name */ 'activeCount',
+		[/* public void java.lang.Thread.run() */
+			/* name */ 'run',
 			/* parameters */,
-			/* return */ 'int',
+			/* return */ 'void',
 			/* exceptions */,
-			/* modifiers */ 9,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static int java.lang.Thread.enumerate(java.lang.Thread[]) */
-			/* name */ 'enumerate',
+		[/* public void java.lang.Thread.setContextClassLoader(java.lang.ClassLoader) */
+			/* name */ 'setContextClassLoader',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ '[Ljava.lang.Thread;',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final native boolean java.lang.Thread.isAlive() */
-			/* name */ 'isAlive',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 273,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static void java.lang.Thread.setDefaultUncaughtExceptionHandler(java.lang.Thread$UncaughtExceptionHandler) */
-			/* name */ 'setDefaultUncaughtExceptionHandler',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'sm',
-					/* type */ 'java.lang.Thread$UncaughtExceptionHandler',
+					/* name */ 'cl',
+					/* type */ 'java.lang.ClassLoader',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
 			/* return */ 'void',
 			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.Thread$UncaughtExceptionHandler java.lang.Thread.getUncaughtExceptionHandler() */
-			/* name */ 'getUncaughtExceptionHandler',
-			/* parameters */,
-			/* return */ 'java.lang.Thread$UncaughtExceptionHandler',
-			/* exceptions */,
 			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static native void java.lang.Thread.yield() */
-			/* name */ 'yield',
-			/* parameters */,
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 265,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final void java.lang.Thread.stop() */
-			/* name */ 'stop',
-			/* parameters */,
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 17,
-			[/* annotations */
-				[
-					'java.lang.Deprecated',
-					['p', 'since', '1.2'],
-					['p', 'forRemoval', false]
-				]
-			],
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.lang.Thread.isInterrupted() */
-			/* name */ 'isInterrupted',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final void java.lang.Thread.suspend() */
-			/* name */ 'suspend',
-			/* parameters */,
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 17,
-			[/* annotations */
-				[
-					'java.lang.Deprecated',
-					['p', 'since', '1.2'],
-					['p', 'forRemoval', true]
-				]
-			],
-			/* type parameters */ UDF
-		],
-		[/* public final synchronized void java.lang.Thread.setName(java.lang.String) */
-			/* name */ 'setName',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'name',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 49,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.lang.Thread.countStackFrames() */
-			/* name */ 'countStackFrames',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			[/* annotations */
-				[
-					'java.lang.Deprecated',
-					['p', 'since', '1.2'],
-					['p', 'forRemoval', true]
-				]
-			],
-			/* type parameters */ UDF
-		],
-		[/* public static java.util.Map<java.lang.Thread, java.lang.StackTraceElement[]> java.lang.Thread.getAllStackTraces() */
-			/* name */ 'getAllStackTraces',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					'java.lang.Thread',
-					'[Ljava.lang.StackTraceElement;'
-				],
-				/* raw type */ 'java.util.Map',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public long java.lang.Thread.getId() */
-			/* name */ 'getId',
-			/* parameters */,
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.Thread$State java.lang.Thread.getState() */
-			/* name */ 'getState',
-			/* parameters */,
-			/* return */ 'java.lang.Thread$State',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.lang.Thread$UncaughtExceptionHandler java.lang.Thread.getDefaultUncaughtExceptionHandler() */
-			/* name */ 'getDefaultUncaughtExceptionHandler',
-			/* parameters */,
-			/* return */ 'java.lang.Thread$UncaughtExceptionHandler',
-			/* exceptions */,
-			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],

@@ -12,6 +12,38 @@ JdkClassCreateHelper.class('java.lang.StackTraceElement', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
+		[/* public java.lang.StackTraceElement(java.lang.String,java.lang.String,java.lang.String,int) */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'declaringClass',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'methodName',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'fileName',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'lineNumber',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.lang.StackTraceElement(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,int) */
 			[/* parameters */
 				[/* parameter */
@@ -61,38 +93,6 @@ JdkClassCreateHelper.class('java.lang.StackTraceElement', [
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
-		],
-		[/* public java.lang.StackTraceElement(java.lang.String,java.lang.String,java.lang.String,int) */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'declaringClass',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'methodName',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'fileName',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'lineNumber',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
 		]
 	],
 	[/* declared methods */
@@ -112,37 +112,10 @@ JdkClassCreateHelper.class('java.lang.StackTraceElement', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.lang.StackTraceElement.toString() */
-			/* name */ 'toString',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.lang.StackTraceElement.hashCode() */
-			/* name */ 'hashCode',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public boolean java.lang.StackTraceElement.isNativeMethod() */
 			/* name */ 'isNativeMethod',
 			/* parameters */,
 			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.lang.StackTraceElement.getFileName() */
-			/* name */ 'getFileName',
-			/* parameters */,
-			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -157,19 +130,10 @@ JdkClassCreateHelper.class('java.lang.StackTraceElement', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.lang.StackTraceElement.getModuleName() */
-			/* name */ 'getModuleName',
+		[/* public int java.lang.StackTraceElement.hashCode() */
+			/* name */ 'hashCode',
 			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.lang.StackTraceElement.getModuleVersion() */
-			/* name */ 'getModuleVersion',
-			/* parameters */,
-			/* return */ 'java.lang.String',
+			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -193,8 +157,44 @@ JdkClassCreateHelper.class('java.lang.StackTraceElement', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public java.lang.String java.lang.StackTraceElement.getFileName() */
+			/* name */ 'getFileName',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.lang.String java.lang.StackTraceElement.getMethodName() */
 			/* name */ 'getMethodName',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.lang.StackTraceElement.getModuleName() */
+			/* name */ 'getModuleName',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.lang.StackTraceElement.getModuleVersion() */
+			/* name */ 'getModuleVersion',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.lang.StackTraceElement.toString() */
+			/* name */ 'toString',
 			/* parameters */,
 			/* return */ 'java.lang.String',
 			/* exceptions */,

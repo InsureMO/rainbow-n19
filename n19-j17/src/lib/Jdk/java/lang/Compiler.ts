@@ -17,40 +17,6 @@ JdkClassCreateHelper.class('java.lang.Compiler', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public static java.lang.Object java.lang.Compiler.command(java.lang.Object) */
-			/* name */ 'command',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.Object',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static void java.lang.Compiler.enable() */
-			/* name */ 'enable',
-			/* parameters */,
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static void java.lang.Compiler.disable() */
-			/* name */ 'disable',
-			/* parameters */,
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public static boolean java.lang.Compiler.compileClass(java.lang.Class<?>) */
 			/* name */ 'compileClass',
 			[/* parameters */
@@ -89,6 +55,40 @@ JdkClassCreateHelper.class('java.lang.Compiler', [
 				]
 			],
 			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.lang.Object java.lang.Compiler.command(java.lang.Object) */
+			/* name */ 'command',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.Object',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static void java.lang.Compiler.disable() */
+			/* name */ 'disable',
+			/* parameters */,
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static void java.lang.Compiler.enable() */
+			/* name */ 'enable',
+			/* parameters */,
+			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 9,
 			/* annotations */ UDF,

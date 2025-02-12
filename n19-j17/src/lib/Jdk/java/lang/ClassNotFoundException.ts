@@ -10,21 +10,8 @@ JdkClassCreateHelper.class('java.lang.ClassNotFoundException', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
-		[/* public java.lang.ClassNotFoundException(java.lang.String,java.lang.Throwable) */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 's',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'ex',
-					/* type */ 'java.lang.Throwable',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
+		[/* public java.lang.ClassNotFoundException() */
+			/* parameters */,
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -44,8 +31,21 @@ JdkClassCreateHelper.class('java.lang.ClassNotFoundException', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.ClassNotFoundException() */
-			/* parameters */,
+		[/* public java.lang.ClassNotFoundException(java.lang.String,java.lang.Throwable) */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 's',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'ex',
+					/* type */ 'java.lang.Throwable',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

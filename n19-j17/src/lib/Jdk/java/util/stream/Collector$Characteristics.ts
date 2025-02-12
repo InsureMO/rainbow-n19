@@ -17,15 +17,6 @@ JdkClassCreateHelper.class('java.util.stream.Collector$Characteristics', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public static java.util.stream.Collector$Characteristics[] java.util.stream.Collector$Characteristics.values() */
-			/* name */ 'values',
-			/* parameters */,
-			/* return */ '[Ljava.util.stream.Collector$Characteristics;',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public static java.util.stream.Collector$Characteristics java.util.stream.Collector$Characteristics.valueOf(java.lang.String) */
 			/* name */ 'valueOf',
 			[/* parameters */
@@ -37,6 +28,15 @@ JdkClassCreateHelper.class('java.util.stream.Collector$Characteristics', [
 				]
 			],
 			/* return */ 'java.util.stream.Collector$Characteristics',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.util.stream.Collector$Characteristics[] java.util.stream.Collector$Characteristics.values() */
+			/* name */ 'values',
+			/* parameters */,
+			/* return */ '[Ljava.util.stream.Collector$Characteristics;',
 			/* exceptions */,
 			/* modifiers */ 9,
 			/* annotations */ UDF,

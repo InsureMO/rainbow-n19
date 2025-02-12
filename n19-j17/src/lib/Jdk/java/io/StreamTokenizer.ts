@@ -10,20 +10,6 @@ JdkClassCreateHelper.class('java.io.StreamTokenizer', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
-		[/* public java.io.StreamTokenizer(java.io.Reader) */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'r',
-					/* type */ 'java.io.Reader',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public java.io.StreamTokenizer(java.io.InputStream) */
 			[/* parameters */
 				[/* parameter */
@@ -43,13 +29,27 @@ JdkClassCreateHelper.class('java.io.StreamTokenizer', [
 				]
 			],
 			/* type parameters */ UDF
+		],
+		[/* public java.io.StreamTokenizer(java.io.Reader) */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'r',
+					/* type */ 'java.io.Reader',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
 		]
 	],
 	[/* declared methods */
-		[/* public java.lang.String java.io.StreamTokenizer.toString() */
-			/* name */ 'toString',
+		[/* public int java.io.StreamTokenizer.lineno() */
+			/* name */ 'lineno',
 			/* parameters */,
-			/* return */ 'java.lang.String',
+			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -69,17 +69,81 @@ JdkClassCreateHelper.class('java.io.StreamTokenizer', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.io.StreamTokenizer.pushBack() */
-			/* name */ 'pushBack',
+		[/* public java.lang.String java.io.StreamTokenizer.toString() */
+			/* name */ 'toString',
 			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.io.StreamTokenizer.commentChar(int) */
+			/* name */ 'commentChar',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'ch',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
 			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.io.StreamTokenizer.wordChars(int,int) */
-			/* name */ 'wordChars',
+		[/* public void java.io.StreamTokenizer.eolIsSignificant(boolean) */
+			/* name */ 'eolIsSignificant',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'flag',
+					/* type */ 'boolean',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.io.StreamTokenizer.lowerCaseMode(boolean) */
+			/* name */ 'lowerCaseMode',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'fl',
+					/* type */ 'boolean',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.io.StreamTokenizer.ordinaryChar(int) */
+			/* name */ 'ordinaryChar',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'ch',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.io.StreamTokenizer.ordinaryChars(int,int) */
+			/* name */ 'ordinaryChars',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'low',
@@ -90,6 +154,81 @@ JdkClassCreateHelper.class('java.io.StreamTokenizer', [
 				[/* parameter */
 					/* name */ 'hi',
 					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.io.StreamTokenizer.parseNumbers() */
+			/* name */ 'parseNumbers',
+			/* parameters */,
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.io.StreamTokenizer.pushBack() */
+			/* name */ 'pushBack',
+			/* parameters */,
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.io.StreamTokenizer.quoteChar(int) */
+			/* name */ 'quoteChar',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'ch',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.io.StreamTokenizer.resetSyntax() */
+			/* name */ 'resetSyntax',
+			/* parameters */,
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.io.StreamTokenizer.slashSlashComments(boolean) */
+			/* name */ 'slashSlashComments',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'flag',
+					/* type */ 'boolean',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.io.StreamTokenizer.slashStarComments(boolean) */
+			/* name */ 'slashStarComments',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'flag',
+					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -122,58 +261,8 @@ JdkClassCreateHelper.class('java.io.StreamTokenizer', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.io.StreamTokenizer.commentChar(int) */
-			/* name */ 'commentChar',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'ch',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.io.StreamTokenizer.quoteChar(int) */
-			/* name */ 'quoteChar',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'ch',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.io.StreamTokenizer.parseNumbers() */
-			/* name */ 'parseNumbers',
-			/* parameters */,
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.io.StreamTokenizer.resetSyntax() */
-			/* name */ 'resetSyntax',
-			/* parameters */,
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.io.StreamTokenizer.ordinaryChars(int,int) */
-			/* name */ 'ordinaryChars',
+		[/* public void java.io.StreamTokenizer.wordChars(int,int) */
+			/* name */ 'wordChars',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'low',
@@ -189,95 +278,6 @@ JdkClassCreateHelper.class('java.io.StreamTokenizer', [
 				]
 			],
 			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.io.StreamTokenizer.ordinaryChar(int) */
-			/* name */ 'ordinaryChar',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'ch',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.io.StreamTokenizer.eolIsSignificant(boolean) */
-			/* name */ 'eolIsSignificant',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'flag',
-					/* type */ 'boolean',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.io.StreamTokenizer.slashStarComments(boolean) */
-			/* name */ 'slashStarComments',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'flag',
-					/* type */ 'boolean',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.io.StreamTokenizer.slashSlashComments(boolean) */
-			/* name */ 'slashSlashComments',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'flag',
-					/* type */ 'boolean',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.io.StreamTokenizer.lowerCaseMode(boolean) */
-			/* name */ 'lowerCaseMode',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'fl',
-					/* type */ 'boolean',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.io.StreamTokenizer.lineno() */
-			/* name */ 'lineno',
-			/* parameters */,
-			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

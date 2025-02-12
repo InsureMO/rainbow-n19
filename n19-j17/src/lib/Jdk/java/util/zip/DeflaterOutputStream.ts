@@ -64,7 +64,7 @@ JdkClassCreateHelper.class('java.util.zip.DeflaterOutputStream', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.util.zip.DeflaterOutputStream(java.io.OutputStream,java.util.zip.Deflater,int,boolean) */
+		[/* public java.util.zip.DeflaterOutputStream(java.io.OutputStream,java.util.zip.Deflater,boolean) */
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'out',
@@ -75,12 +75,6 @@ JdkClassCreateHelper.class('java.util.zip.DeflaterOutputStream', [
 				[/* parameter */
 					/* name */ 'def',
 					/* type */ 'java.util.zip.Deflater',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'size',
-					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
@@ -122,7 +116,7 @@ JdkClassCreateHelper.class('java.util.zip.DeflaterOutputStream', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.util.zip.DeflaterOutputStream(java.io.OutputStream,java.util.zip.Deflater,boolean) */
+		[/* public java.util.zip.DeflaterOutputStream(java.io.OutputStream,java.util.zip.Deflater,int,boolean) */
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'out',
@@ -133,6 +127,12 @@ JdkClassCreateHelper.class('java.util.zip.DeflaterOutputStream', [
 				[/* parameter */
 					/* name */ 'def',
 					/* type */ 'java.util.zip.Deflater',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'size',
+					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
@@ -150,8 +150,22 @@ JdkClassCreateHelper.class('java.util.zip.DeflaterOutputStream', [
 		]
 	],
 	[/* declared methods */
-		[/* public void java.util.zip.DeflaterOutputStream.flush() throws java.io.IOException */
-			/* name */ 'flush',
+		[/* protected void java.util.zip.DeflaterOutputStream.deflate() throws java.io.IOException */
+			/* name */ 'deflate',
+			/* parameters */,
+			/* return */ 'void',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 4,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.util.zip.DeflaterOutputStream.close() throws java.io.IOException */
+			/* name */ 'close',
 			/* parameters */,
 			/* return */ 'void',
 			[/* exceptions */
@@ -164,16 +178,23 @@ JdkClassCreateHelper.class('java.util.zip.DeflaterOutputStream', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.util.zip.DeflaterOutputStream.write(int) throws java.io.IOException */
-			/* name */ 'write',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'b',
-					/* type */ 'int',
-					/* modifiers */ 0,
+		[/* public void java.util.zip.DeflaterOutputStream.finish() throws java.io.IOException */
+			/* name */ 'finish',
+			/* parameters */,
+			/* return */ 'void',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
 					/* annotations */ UDF
 				]
 			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.util.zip.DeflaterOutputStream.flush() throws java.io.IOException */
+			/* name */ 'flush',
+			/* parameters */,
 			/* return */ 'void',
 			[/* exceptions */
 				[/* exception */
@@ -218,9 +239,16 @@ JdkClassCreateHelper.class('java.util.zip.DeflaterOutputStream', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.util.zip.DeflaterOutputStream.close() throws java.io.IOException */
-			/* name */ 'close',
-			/* parameters */,
+		[/* public void java.util.zip.DeflaterOutputStream.write(int) throws java.io.IOException */
+			/* name */ 'write',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'b',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
 			/* return */ 'void',
 			[/* exceptions */
 				[/* exception */
@@ -229,34 +257,6 @@ JdkClassCreateHelper.class('java.util.zip.DeflaterOutputStream', [
 				]
 			],
 			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.util.zip.DeflaterOutputStream.finish() throws java.io.IOException */
-			/* name */ 'finish',
-			/* parameters */,
-			/* return */ 'void',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* protected void java.util.zip.DeflaterOutputStream.deflate() throws java.io.IOException */
-			/* name */ 'deflate',
-			/* parameters */,
-			/* return */ 'void',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 4,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

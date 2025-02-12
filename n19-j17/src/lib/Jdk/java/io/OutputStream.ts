@@ -22,6 +22,50 @@ JdkClassCreateHelper.class('java.io.OutputStream', [
 		]
 	],
 	[/* declared methods */
+		[/* public abstract void java.io.OutputStream.write(int) throws java.io.IOException */
+			/* name */ 'write',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.io.OutputStream java.io.OutputStream.nullOutputStream() */
+			/* name */ 'nullOutputStream',
+			/* parameters */,
+			/* return */ 'java.io.OutputStream',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.io.OutputStream.close() throws java.io.IOException */
+			/* name */ 'close',
+			/* parameters */,
+			/* return */ 'void',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public void java.io.OutputStream.flush() throws java.io.IOException */
 			/* name */ 'flush',
 			/* parameters */,
@@ -87,50 +131,6 @@ JdkClassCreateHelper.class('java.io.OutputStream', [
 				]
 			],
 			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract void java.io.OutputStream.write(int) throws java.io.IOException */
-			/* name */ 'write',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.io.OutputStream.close() throws java.io.IOException */
-			/* name */ 'close',
-			/* parameters */,
-			/* return */ 'void',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.io.OutputStream java.io.OutputStream.nullOutputStream() */
-			/* name */ 'nullOutputStream',
-			/* parameters */,
-			/* return */ 'java.io.OutputStream',
-			/* exceptions */,
-			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

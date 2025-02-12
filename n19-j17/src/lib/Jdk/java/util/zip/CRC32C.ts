@@ -21,32 +21,18 @@ JdkClassCreateHelper.class('java.util.zip.CRC32C', [
 		]
 	],
 	[/* declared methods */
-		[/* public void java.util.zip.CRC32C.update(int) */
-			/* name */ 'update',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'b',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
+		[/* public long java.util.zip.CRC32C.getValue() */
+			/* name */ 'getValue',
+			/* parameters */,
+			/* return */ 'long',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.util.zip.CRC32C.update(java.nio.ByteBuffer) */
-			/* name */ 'update',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'length',
-					/* type */ 'java.nio.ByteBuffer',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
+		[/* public void java.util.zip.CRC32C.reset() */
+			/* name */ 'reset',
+			/* parameters */,
 			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
@@ -81,18 +67,32 @@ JdkClassCreateHelper.class('java.util.zip.CRC32C', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public long java.util.zip.CRC32C.getValue() */
-			/* name */ 'getValue',
-			/* parameters */,
-			/* return */ 'long',
+		[/* public void java.util.zip.CRC32C.update(int) */
+			/* name */ 'update',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'b',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.util.zip.CRC32C.reset() */
-			/* name */ 'reset',
-			/* parameters */,
+		[/* public void java.util.zip.CRC32C.update(java.nio.ByteBuffer) */
+			/* name */ 'update',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'length',
+					/* type */ 'java.nio.ByteBuffer',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
 			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,

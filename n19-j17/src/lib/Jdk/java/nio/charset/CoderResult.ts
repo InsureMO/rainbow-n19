@@ -11,19 +11,28 @@ JdkClassCreateHelper.class('java.nio.charset.CoderResult', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public int java.nio.charset.CoderResult.length() */
-			/* name */ 'length',
+		[/* public boolean java.nio.charset.CoderResult.isError() */
+			/* name */ 'isError',
 			/* parameters */,
-			/* return */ 'int',
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.nio.charset.CoderResult.toString() */
-			/* name */ 'toString',
+		[/* public boolean java.nio.charset.CoderResult.isMalformed() */
+			/* name */ 'isMalformed',
 			/* parameters */,
-			/* return */ 'java.lang.String',
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.nio.charset.CoderResult.isOverflow() */
+			/* name */ 'isOverflow',
+			/* parameters */,
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -38,22 +47,8 @@ JdkClassCreateHelper.class('java.nio.charset.CoderResult', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.nio.charset.CoderResult.throwException() throws java.nio.charset.CharacterCodingException */
-			/* name */ 'throwException',
-			/* parameters */,
-			/* return */ 'void',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.nio.charset.CharacterCodingException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.nio.charset.CoderResult.isOverflow() */
-			/* name */ 'isOverflow',
+		[/* public boolean java.nio.charset.CoderResult.isUnmappable() */
+			/* name */ 'isUnmappable',
 			/* parameters */,
 			/* return */ 'boolean',
 			/* exceptions */,
@@ -61,10 +56,19 @@ JdkClassCreateHelper.class('java.nio.charset.CoderResult', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public boolean java.nio.charset.CoderResult.isError() */
-			/* name */ 'isError',
+		[/* public int java.nio.charset.CoderResult.length() */
+			/* name */ 'length',
 			/* parameters */,
-			/* return */ 'boolean',
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.nio.charset.CoderResult.toString() */
+			/* name */ 'toString',
+			/* parameters */,
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -86,24 +90,6 @@ JdkClassCreateHelper.class('java.nio.charset.CoderResult', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public boolean java.nio.charset.CoderResult.isMalformed() */
-			/* name */ 'isMalformed',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.nio.charset.CoderResult.isUnmappable() */
-			/* name */ 'isUnmappable',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public static java.nio.charset.CoderResult java.nio.charset.CoderResult.unmappableForLength(int) */
 			/* name */ 'unmappableForLength',
 			[/* parameters */
@@ -117,6 +103,20 @@ JdkClassCreateHelper.class('java.nio.charset.CoderResult', [
 			/* return */ 'java.nio.charset.CoderResult',
 			/* exceptions */,
 			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.nio.charset.CoderResult.throwException() throws java.nio.charset.CharacterCodingException */
+			/* name */ 'throwException',
+			/* parameters */,
+			/* return */ 'void',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.nio.charset.CharacterCodingException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

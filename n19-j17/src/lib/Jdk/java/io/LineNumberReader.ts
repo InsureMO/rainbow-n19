@@ -46,6 +46,15 @@ JdkClassCreateHelper.class('java.io.LineNumberReader', [
 		]
 	],
 	[/* declared methods */
+		[/* public int java.io.LineNumberReader.getLineNumber() */
+			/* name */ 'getLineNumber',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public int java.io.LineNumberReader.read() throws java.io.IOException */
 			/* name */ 'read',
 			/* parameters */,
@@ -107,27 +116,6 @@ JdkClassCreateHelper.class('java.io.LineNumberReader', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.io.LineNumberReader.mark(int) throws java.io.IOException */
-			/* name */ 'mark',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'readAheadLimit',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public long java.io.LineNumberReader.skip(long) throws java.io.IOException */
 			/* name */ 'skip',
 			[/* parameters */
@@ -149,9 +137,16 @@ JdkClassCreateHelper.class('java.io.LineNumberReader', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.io.LineNumberReader.reset() throws java.io.IOException */
-			/* name */ 'reset',
-			/* parameters */,
+		[/* public void java.io.LineNumberReader.mark(int) throws java.io.IOException */
+			/* name */ 'mark',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'readAheadLimit',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
 			/* return */ 'void',
 			[/* exceptions */
 				[/* exception */
@@ -163,11 +158,16 @@ JdkClassCreateHelper.class('java.io.LineNumberReader', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.io.LineNumberReader.getLineNumber() */
-			/* name */ 'getLineNumber',
+		[/* public void java.io.LineNumberReader.reset() throws java.io.IOException */
+			/* name */ 'reset',
 			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
+			/* return */ 'void',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF

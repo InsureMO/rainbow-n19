@@ -43,19 +43,17 @@ JdkClassCreateHelper.class('java.util.AbstractMap', [
 		]
 	],
 	[/* declared methods */
-		[/* public V java.util.AbstractMap.remove(java.lang.Object) */
-			/* name */ 'remove',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'e',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
+		[/* protected java.lang.Object java.util.AbstractMap.clone() throws java.lang.CloneNotSupportedException */
+			/* name */ 'clone',
+			/* parameters */,
+			/* return */ 'java.lang.Object',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.lang.CloneNotSupportedException',
 					/* annotations */ UDF
 				]
 			],
-			/* return */ [/* type variable ref */ 'tr', [/* name */ 'V']],
-			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 4,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -97,6 +95,76 @@ JdkClassCreateHelper.class('java.util.AbstractMap', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public V java.util.AbstractMap.remove(java.lang.Object) */
+			/* name */ 'remove',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'e',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.util.Set<java.util.Map$Entry<K, V>> java.util.AbstractMap.entrySet() */
+			/* name */ 'entrySet',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* type variable ref */ 'tr', [/* name */ 'K']],
+							[/* type variable ref */ 'tr', [/* name */ 'V']]
+						],
+						/* raw type */ 'java.util.Map$Entry',
+						/* owner type */ 'java.util.Map'
+					]]
+				],
+				/* raw type */ 'java.util.Set',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.util.AbstractMap.containsKey(java.lang.Object) */
+			/* name */ 'containsKey',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'e',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.util.AbstractMap.containsValue(java.lang.Object) */
+			/* name */ 'containsValue',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'e',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public boolean java.util.AbstractMap.equals(java.lang.Object) */
 			/* name */ 'equals',
 			[/* parameters */
@@ -108,6 +176,33 @@ JdkClassCreateHelper.class('java.util.AbstractMap', [
 				]
 			],
 			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.util.AbstractMap.isEmpty() */
+			/* name */ 'isEmpty',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.AbstractMap.hashCode() */
+			/* name */ 'hashCode',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.AbstractMap.size() */
+			/* name */ 'size',
+			/* parameters */,
+			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -137,26 +232,18 @@ JdkClassCreateHelper.class('java.util.AbstractMap', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.util.AbstractMap.hashCode() */
-			/* name */ 'hashCode',
+		[/* public java.util.Set<K> java.util.AbstractMap.keySet() */
+			/* name */ 'keySet',
 			/* parameters */,
-			/* return */ 'int',
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'K']]
+				],
+				/* raw type */ 'java.util.Set',
+				/* owner type */ UDF
+			]],
 			/* exceptions */,
 			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* protected java.lang.Object java.util.AbstractMap.clone() throws java.lang.CloneNotSupportedException */
-			/* name */ 'clone',
-			/* parameters */,
-			/* return */ 'java.lang.Object',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.lang.CloneNotSupportedException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 4,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -166,46 +253,6 @@ JdkClassCreateHelper.class('java.util.AbstractMap', [
 			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.util.AbstractMap.isEmpty() */
-			/* name */ 'isEmpty',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.util.AbstractMap.size() */
-			/* name */ 'size',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.util.Set<java.util.Map$Entry<K, V>> java.util.AbstractMap.entrySet() */
-			/* name */ 'entrySet',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							[/* type variable ref */ 'tr', [/* name */ 'K']],
-							[/* type variable ref */ 'tr', [/* name */ 'V']]
-						],
-						/* raw type */ 'java.util.Map$Entry',
-						/* owner type */ 'java.util.Map'
-					]]
-				],
-				/* raw type */ 'java.util.Set',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -237,53 +284,6 @@ JdkClassCreateHelper.class('java.util.AbstractMap', [
 				]
 			],
 			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.util.AbstractMap.containsKey(java.lang.Object) */
-			/* name */ 'containsKey',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'e',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.Set<K> java.util.AbstractMap.keySet() */
-			/* name */ 'keySet',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* type variable ref */ 'tr', [/* name */ 'K']]
-				],
-				/* raw type */ 'java.util.Set',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.util.AbstractMap.containsValue(java.lang.Object) */
-			/* name */ 'containsValue',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'e',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

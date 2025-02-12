@@ -17,15 +17,6 @@ JdkClassCreateHelper.class('java.text.Normalizer$Form', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public static java.text.Normalizer$Form[] java.text.Normalizer$Form.values() */
-			/* name */ 'values',
-			/* parameters */,
-			/* return */ '[Ljava.text.Normalizer$Form;',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public static java.text.Normalizer$Form java.text.Normalizer$Form.valueOf(java.lang.String) */
 			/* name */ 'valueOf',
 			[/* parameters */
@@ -37,6 +28,15 @@ JdkClassCreateHelper.class('java.text.Normalizer$Form', [
 				]
 			],
 			/* return */ 'java.text.Normalizer$Form',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.text.Normalizer$Form[] java.text.Normalizer$Form.values() */
+			/* name */ 'values',
+			/* parameters */,
+			/* return */ '[Ljava.text.Normalizer$Form;',
 			/* exceptions */,
 			/* modifiers */ 9,
 			/* annotations */ UDF,

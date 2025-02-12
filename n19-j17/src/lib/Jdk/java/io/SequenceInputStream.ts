@@ -10,6 +10,26 @@ JdkClassCreateHelper.class('java.io.SequenceInputStream', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
+		[/* public java.io.SequenceInputStream(java.io.InputStream,java.io.InputStream) */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 's1',
+					/* type */ 'java.io.InputStream',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 's2',
+					/* type */ 'java.io.InputStream',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.io.SequenceInputStream(java.util.Enumeration<? extends java.io.InputStream>) */
 			[/* parameters */
 				[/* parameter */
@@ -34,29 +54,23 @@ JdkClassCreateHelper.class('java.io.SequenceInputStream', [
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
-		],
-		[/* public java.io.SequenceInputStream(java.io.InputStream,java.io.InputStream) */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 's1',
-					/* type */ 'java.io.InputStream',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 's2',
-					/* type */ 'java.io.InputStream',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
 		]
 	],
 	[/* declared methods */
+		[/* public int java.io.SequenceInputStream.available() throws java.io.IOException */
+			/* name */ 'available',
+			/* parameters */,
+			/* return */ 'int',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public int java.io.SequenceInputStream.read() throws java.io.IOException */
 			/* name */ 'read',
 			/* parameters */,
@@ -108,20 +122,6 @@ JdkClassCreateHelper.class('java.io.SequenceInputStream', [
 			/* name */ 'close',
 			/* parameters */,
 			/* return */ 'void',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.io.SequenceInputStream.available() throws java.io.IOException */
-			/* name */ 'available',
-			/* parameters */,
-			/* return */ 'int',
 			[/* exceptions */
 				[/* exception */
 					/* type */ 'java.io.IOException',

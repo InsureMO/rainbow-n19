@@ -86,30 +86,30 @@ JdkClassCreateHelper.class('java.text.CompactNumberFormat', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.text.CompactNumberFormat.hashCode() */
-			/* name */ 'hashCode',
+		[/* public boolean java.text.CompactNumberFormat.isGroupingUsed() */
+			/* name */ 'isGroupingUsed',
 			/* parameters */,
-			/* return */ 'int',
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.text.CompactNumberFormat java.text.CompactNumberFormat.clone() */
-			/* name */ 'clone',
+		[/* public boolean java.text.CompactNumberFormat.isParseBigDecimal() */
+			/* name */ 'isParseBigDecimal',
 			/* parameters */,
-			/* return */ 'java.text.CompactNumberFormat',
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.Object java.text.CompactNumberFormat.clone() */
-			/* name */ 'clone',
+		[/* public boolean java.text.CompactNumberFormat.isParseIntegerOnly() */
+			/* name */ 'isParseIntegerOnly',
 			/* parameters */,
-			/* return */ 'java.lang.Object',
+			/* return */ 'boolean',
 			/* exceptions */,
-			/* modifiers */ 4161,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -141,31 +141,52 @@ JdkClassCreateHelper.class('java.text.CompactNumberFormat', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.StringBuffer java.text.CompactNumberFormat.format(long,java.lang.StringBuffer,java.text.FieldPosition) */
-			/* name */ 'format',
+		[/* public int java.text.CompactNumberFormat.getGroupingSize() */
+			/* name */ 'getGroupingSize',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.text.CompactNumberFormat.hashCode() */
+			/* name */ 'hashCode',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.Number java.text.CompactNumberFormat.parse(java.lang.String,java.text.ParsePosition) */
+			/* name */ 'parse',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'number',
-					/* type */ 'long',
+					/* name */ 'positivePrefix',
+					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'result',
-					/* type */ 'java.lang.StringBuffer',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'fieldPosition',
-					/* type */ 'java.text.FieldPosition',
+					/* name */ 'negativePrefix',
+					/* type */ 'java.text.ParsePosition',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.lang.StringBuffer',
+			/* return */ 'java.lang.Number',
 			/* exceptions */,
 			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.Object java.text.CompactNumberFormat.clone() */
+			/* name */ 'clone',
+			/* parameters */,
+			/* return */ 'java.lang.Object',
+			/* exceptions */,
+			/* modifiers */ 4161,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -197,23 +218,29 @@ JdkClassCreateHelper.class('java.text.CompactNumberFormat', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.Number java.text.CompactNumberFormat.parse(java.lang.String,java.text.ParsePosition) */
-			/* name */ 'parse',
+		[/* public java.lang.StringBuffer java.text.CompactNumberFormat.format(long,java.lang.StringBuffer,java.text.FieldPosition) */
+			/* name */ 'format',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'positivePrefix',
-					/* type */ 'java.lang.String',
+					/* name */ 'number',
+					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'negativePrefix',
-					/* type */ 'java.text.ParsePosition',
+					/* name */ 'result',
+					/* type */ 'java.lang.StringBuffer',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'fieldPosition',
+					/* type */ 'java.text.FieldPosition',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.lang.Number',
+			/* return */ 'java.lang.StringBuffer',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -244,6 +271,31 @@ JdkClassCreateHelper.class('java.text.CompactNumberFormat', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public java.text.CompactNumberFormat java.text.CompactNumberFormat.clone() */
+			/* name */ 'clone',
+			/* parameters */,
+			/* return */ 'java.text.CompactNumberFormat',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.text.CompactNumberFormat.setGroupingSize(int) */
+			/* name */ 'setGroupingSize',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'newValue',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public void java.text.CompactNumberFormat.setGroupingUsed(boolean) */
 			/* name */ 'setGroupingUsed',
 			[/* parameters */
@@ -260,8 +312,8 @@ JdkClassCreateHelper.class('java.text.CompactNumberFormat', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.text.CompactNumberFormat.setMinimumIntegerDigits(int) */
-			/* name */ 'setMinimumIntegerDigits',
+		[/* public void java.text.CompactNumberFormat.setMaximumFractionDigits(int) */
+			/* name */ 'setMaximumFractionDigits',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'newValue',
@@ -292,10 +344,49 @@ JdkClassCreateHelper.class('java.text.CompactNumberFormat', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public boolean java.text.CompactNumberFormat.isParseIntegerOnly() */
-			/* name */ 'isParseIntegerOnly',
-			/* parameters */,
-			/* return */ 'boolean',
+		[/* public void java.text.CompactNumberFormat.setMinimumFractionDigits(int) */
+			/* name */ 'setMinimumFractionDigits',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'newValue',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.text.CompactNumberFormat.setMinimumIntegerDigits(int) */
+			/* name */ 'setMinimumIntegerDigits',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'newValue',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.text.CompactNumberFormat.setParseBigDecimal(boolean) */
+			/* name */ 'setParseBigDecimal',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'newValue',
+					/* type */ 'boolean',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -317,103 +408,12 @@ JdkClassCreateHelper.class('java.text.CompactNumberFormat', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public boolean java.text.CompactNumberFormat.isGroupingUsed() */
-			/* name */ 'isGroupingUsed',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.text.CompactNumberFormat.setMaximumFractionDigits(int) */
-			/* name */ 'setMaximumFractionDigits',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'newValue',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.text.CompactNumberFormat.setMinimumFractionDigits(int) */
-			/* name */ 'setMinimumFractionDigits',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'newValue',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public void java.text.CompactNumberFormat.setRoundingMode(java.math.RoundingMode) */
 			/* name */ 'setRoundingMode',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'roundingMode',
 					/* type */ 'java.math.RoundingMode',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.text.CompactNumberFormat.isParseBigDecimal() */
-			/* name */ 'isParseBigDecimal',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.text.CompactNumberFormat.getGroupingSize() */
-			/* name */ 'getGroupingSize',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.text.CompactNumberFormat.setGroupingSize(int) */
-			/* name */ 'setGroupingSize',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'newValue',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.text.CompactNumberFormat.setParseBigDecimal(boolean) */
-			/* name */ 'setParseBigDecimal',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'newValue',
-					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]

@@ -10,6 +10,168 @@ JdkClassCreateHelper.class('java.util.SimpleTimeZone', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
+		[/* public java.util.SimpleTimeZone(int,java.lang.String) */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'rawOffset',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'ID',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.SimpleTimeZone(int,java.lang.String,int,int,int,int,int,int,int,int) */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'rawOffset',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'ID',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'startMonth',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'startDay',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'startDayOfWeek',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'startTime',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'endMonth',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'endDay',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'endDayOfWeek',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'endTime',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.SimpleTimeZone(int,java.lang.String,int,int,int,int,int,int,int,int,int) */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'rawOffset',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'ID',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'startMonth',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'startDay',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'startDayOfWeek',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'startTime',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'endMonth',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'endDay',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'endDayOfWeek',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'endTime',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'dstSavings',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.util.SimpleTimeZone(int,java.lang.String,int,int,int,int,int,int,int,int,int,int,int) */
 			[/* parameters */
 				[/* parameter */
@@ -95,168 +257,6 @@ JdkClassCreateHelper.class('java.util.SimpleTimeZone', [
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
-		],
-		[/* public java.util.SimpleTimeZone(int,java.lang.String,int,int,int,int,int,int,int,int,int) */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'rawOffset',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'ID',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'startMonth',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'startDay',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'startDayOfWeek',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'startTime',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'endMonth',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'endDay',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'endDayOfWeek',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'endTime',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'dstSavings',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.SimpleTimeZone(int,java.lang.String,int,int,int,int,int,int,int,int) */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'rawOffset',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'ID',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'startMonth',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'startDay',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'startDayOfWeek',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'startTime',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'endMonth',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'endDay',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'endDayOfWeek',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'endTime',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.SimpleTimeZone(int,java.lang.String) */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'rawOffset',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'ID',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
 		]
 	],
 	[/* declared methods */
@@ -276,28 +276,60 @@ JdkClassCreateHelper.class('java.util.SimpleTimeZone', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.util.SimpleTimeZone.toString() */
-			/* name */ 'toString',
-			/* parameters */,
-			/* return */ 'java.lang.String',
+		[/* public boolean java.util.SimpleTimeZone.hasSameRules(java.util.TimeZone) */
+			/* name */ 'hasSameRules',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'that',
+					/* type */ 'java.util.TimeZone',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.util.SimpleTimeZone.hashCode() */
-			/* name */ 'hashCode',
+		[/* public boolean java.util.SimpleTimeZone.inDaylightTime(java.util.Date) */
+			/* name */ 'inDaylightTime',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'date',
+					/* type */ 'java.util.Date',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.util.SimpleTimeZone.observesDaylightTime() */
+			/* name */ 'observesDaylightTime',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.util.SimpleTimeZone.useDaylightTime() */
+			/* name */ 'useDaylightTime',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.SimpleTimeZone.getDSTSavings() */
+			/* name */ 'getDSTSavings',
 			/* parameters */,
 			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.Object java.util.SimpleTimeZone.clone() */
-			/* name */ 'clone',
-			/* parameters */,
-			/* return */ 'java.lang.Object',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -365,31 +397,6 @@ JdkClassCreateHelper.class('java.util.SimpleTimeZone', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.util.SimpleTimeZone.getDSTSavings() */
-			/* name */ 'getDSTSavings',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.util.SimpleTimeZone.hasSameRules(java.util.TimeZone) */
-			/* name */ 'hasSameRules',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'that',
-					/* type */ 'java.util.TimeZone',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public int java.util.SimpleTimeZone.getRawOffset() */
 			/* name */ 'getRawOffset',
 			/* parameters */,
@@ -399,113 +406,38 @@ JdkClassCreateHelper.class('java.util.SimpleTimeZone', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public boolean java.util.SimpleTimeZone.inDaylightTime(java.util.Date) */
-			/* name */ 'inDaylightTime',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'date',
-					/* type */ 'java.util.Date',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.util.SimpleTimeZone.useDaylightTime() */
-			/* name */ 'useDaylightTime',
+		[/* public int java.util.SimpleTimeZone.hashCode() */
+			/* name */ 'hashCode',
 			/* parameters */,
-			/* return */ 'boolean',
+			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.util.SimpleTimeZone.setRawOffset(int) */
-			/* name */ 'setRawOffset',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'offsetMillis',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.util.SimpleTimeZone.observesDaylightTime() */
-			/* name */ 'observesDaylightTime',
+		[/* public java.lang.Object java.util.SimpleTimeZone.clone() */
+			/* name */ 'clone',
 			/* parameters */,
-			/* return */ 'boolean',
+			/* return */ 'java.lang.Object',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.util.SimpleTimeZone.setStartRule(int,int,int,int,boolean) */
-			/* name */ 'setStartRule',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'startMonth',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'startDay',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'startDayOfWeek',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'startTime',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'after',
-					/* type */ 'boolean',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
+		[/* public java.lang.String java.util.SimpleTimeZone.toString() */
+			/* name */ 'toString',
+			/* parameters */,
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.util.SimpleTimeZone.setStartRule(int,int,int) */
-			/* name */ 'setStartRule',
+		[/* public void java.util.SimpleTimeZone.setDSTSavings(int) */
+			/* name */ 'setDSTSavings',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'startMonth',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'startDay',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'startTime',
+					/* name */ 'millisSavedDuringDST',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -517,29 +449,23 @@ JdkClassCreateHelper.class('java.util.SimpleTimeZone', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.util.SimpleTimeZone.setStartRule(int,int,int,int) */
-			/* name */ 'setStartRule',
+		[/* public void java.util.SimpleTimeZone.setEndRule(int,int,int) */
+			/* name */ 'setEndRule',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'startMonth',
+					/* name */ 'endMonth',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'startDay',
+					/* name */ 'endDay',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'startDayOfWeek',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'startTime',
+					/* name */ 'endTime',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -625,24 +551,114 @@ JdkClassCreateHelper.class('java.util.SimpleTimeZone', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.util.SimpleTimeZone.setEndRule(int,int,int) */
-			/* name */ 'setEndRule',
+		[/* public void java.util.SimpleTimeZone.setRawOffset(int) */
+			/* name */ 'setRawOffset',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'endMonth',
+					/* name */ 'offsetMillis',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.util.SimpleTimeZone.setStartRule(int,int,int) */
+			/* name */ 'setStartRule',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'startMonth',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'endDay',
+					/* name */ 'startDay',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'endTime',
+					/* name */ 'startTime',
 					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.util.SimpleTimeZone.setStartRule(int,int,int,int) */
+			/* name */ 'setStartRule',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'startMonth',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'startDay',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'startDayOfWeek',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'startTime',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.util.SimpleTimeZone.setStartRule(int,int,int,int,boolean) */
+			/* name */ 'setStartRule',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'startMonth',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'startDay',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'startDayOfWeek',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'startTime',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'after',
+					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -658,22 +674,6 @@ JdkClassCreateHelper.class('java.util.SimpleTimeZone', [
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'year',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.util.SimpleTimeZone.setDSTSavings(int) */
-			/* name */ 'setDSTSavings',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'millisSavedDuringDST',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

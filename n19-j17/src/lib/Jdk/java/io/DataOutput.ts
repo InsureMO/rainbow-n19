@@ -10,6 +10,27 @@ JdkClassCreateHelper.class('java.io.DataOutput', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
+		[/* public abstract void java.io.DataOutput.write(byte[]) throws java.io.IOException */
+			/* name */ 'write',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ '[B',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public abstract void java.io.DataOutput.write(byte[],int,int) throws java.io.IOException */
 			/* name */ 'write',
 			[/* parameters */
@@ -43,138 +64,12 @@ JdkClassCreateHelper.class('java.io.DataOutput', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract void java.io.DataOutput.write(byte[]) throws java.io.IOException */
-			/* name */ 'write',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ '[B',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public abstract void java.io.DataOutput.write(int) throws java.io.IOException */
 			/* name */ 'write',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
 					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract void java.io.DataOutput.writeInt(int) throws java.io.IOException */
-			/* name */ 'writeInt',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract void java.io.DataOutput.writeUTF(java.lang.String) throws java.io.IOException */
-			/* name */ 'writeUTF',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract void java.io.DataOutput.writeBytes(java.lang.String) throws java.io.IOException */
-			/* name */ 'writeBytes',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract void java.io.DataOutput.writeChar(int) throws java.io.IOException */
-			/* name */ 'writeChar',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract void java.io.DataOutput.writeFloat(float) throws java.io.IOException */
-			/* name */ 'writeFloat',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -232,8 +127,113 @@ JdkClassCreateHelper.class('java.io.DataOutput', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract void java.io.DataOutput.writeShort(int) throws java.io.IOException */
-			/* name */ 'writeShort',
+		[/* public abstract void java.io.DataOutput.writeBytes(java.lang.String) throws java.io.IOException */
+			/* name */ 'writeBytes',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract void java.io.DataOutput.writeChar(int) throws java.io.IOException */
+			/* name */ 'writeChar',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract void java.io.DataOutput.writeChars(java.lang.String) throws java.io.IOException */
+			/* name */ 'writeChars',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract void java.io.DataOutput.writeDouble(double) throws java.io.IOException */
+			/* name */ 'writeDouble',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract void java.io.DataOutput.writeFloat(float) throws java.io.IOException */
+			/* name */ 'writeFloat',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'float',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract void java.io.DataOutput.writeInt(int) throws java.io.IOException */
+			/* name */ 'writeInt',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
@@ -274,12 +274,12 @@ JdkClassCreateHelper.class('java.io.DataOutput', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract void java.io.DataOutput.writeDouble(double) throws java.io.IOException */
-			/* name */ 'writeDouble',
+		[/* public abstract void java.io.DataOutput.writeShort(int) throws java.io.IOException */
+			/* name */ 'writeShort',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
-					/* type */ 'double',
+					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -295,8 +295,8 @@ JdkClassCreateHelper.class('java.io.DataOutput', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract void java.io.DataOutput.writeChars(java.lang.String) throws java.io.IOException */
-			/* name */ 'writeChars',
+		[/* public abstract void java.io.DataOutput.writeUTF(java.lang.String) throws java.io.IOException */
+			/* name */ 'writeUTF',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',

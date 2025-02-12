@@ -10,11 +10,18 @@ JdkClassCreateHelper.class('java.io.IOException', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
-		[/* public java.io.IOException(java.lang.Throwable) */
+		[/* public java.io.IOException() */
+			/* parameters */,
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.io.IOException(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'cause',
-					/* type */ 'java.lang.Throwable',
+					/* name */ 'message',
+					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -44,22 +51,15 @@ JdkClassCreateHelper.class('java.io.IOException', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.io.IOException(java.lang.String) */
+		[/* public java.io.IOException(java.lang.Throwable) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'message',
-					/* type */ 'java.lang.String',
+					/* name */ 'cause',
+					/* type */ 'java.lang.Throwable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.io.IOException() */
-			/* parameters */,
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

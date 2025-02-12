@@ -54,20 +54,6 @@ JdkClassCreateHelper.class('java.text.Bidi', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.text.Bidi(java.text.AttributedCharacterIterator) */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'paragraph',
-					/* type */ 'java.text.AttributedCharacterIterator',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public java.text.Bidi(java.lang.String,int) */
 			[/* parameters */
 				[/* parameter */
@@ -87,13 +73,63 @@ JdkClassCreateHelper.class('java.text.Bidi', [
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
+		],
+		[/* public java.text.Bidi(java.text.AttributedCharacterIterator) */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'paragraph',
+					/* type */ 'java.text.AttributedCharacterIterator',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
 		]
 	],
 	[/* declared methods */
-		[/* public java.lang.String java.text.Bidi.toString() */
-			/* name */ 'toString',
+		[/* public boolean java.text.Bidi.baseIsLeftToRight() */
+			/* name */ 'baseIsLeftToRight',
 			/* parameters */,
-			/* return */ 'java.lang.String',
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.text.Bidi.isLeftToRight() */
+			/* name */ 'isLeftToRight',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.text.Bidi.isMixed() */
+			/* name */ 'isMixed',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.text.Bidi.isRightToLeft() */
+			/* name */ 'isRightToLeft',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.text.Bidi.getBaseLevel() */
+			/* name */ 'getBaseLevel',
+			/* parameters */,
+			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -108,8 +144,33 @@ JdkClassCreateHelper.class('java.text.Bidi', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.text.Bidi.getRunStart(int) */
-			/* name */ 'getRunStart',
+		[/* public int java.text.Bidi.getLevelAt(int) */
+			/* name */ 'getLevelAt',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'offset',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.text.Bidi.getRunCount() */
+			/* name */ 'getRunCount',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.text.Bidi.getRunLevel(int) */
+			/* name */ 'getRunLevel',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'run',
@@ -140,60 +201,8 @@ JdkClassCreateHelper.class('java.text.Bidi', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public boolean java.text.Bidi.isMixed() */
-			/* name */ 'isMixed',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.text.Bidi.isLeftToRight() */
-			/* name */ 'isLeftToRight',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.text.Bidi.isRightToLeft() */
-			/* name */ 'isRightToLeft',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.text.Bidi.baseIsLeftToRight() */
-			/* name */ 'baseIsLeftToRight',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.text.Bidi.getLevelAt(int) */
-			/* name */ 'getLevelAt',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'offset',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.text.Bidi.getRunLevel(int) */
-			/* name */ 'getRunLevel',
+		[/* public int java.text.Bidi.getRunStart(int) */
+			/* name */ 'getRunStart',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'run',
@@ -203,6 +212,37 @@ JdkClassCreateHelper.class('java.text.Bidi', [
 				]
 			],
 			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.text.Bidi.toString() */
+			/* name */ 'toString',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.text.Bidi java.text.Bidi.createLineBidi(int,int) */
+			/* name */ 'createLineBidi',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'lineStart',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'lineLimit',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.text.Bidi',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -273,46 +313,6 @@ JdkClassCreateHelper.class('java.text.Bidi', [
 			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.text.Bidi java.text.Bidi.createLineBidi(int,int) */
-			/* name */ 'createLineBidi',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'lineStart',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'lineLimit',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.text.Bidi',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.text.Bidi.getBaseLevel() */
-			/* name */ 'getBaseLevel',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.text.Bidi.getRunCount() */
-			/* name */ 'getRunCount',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

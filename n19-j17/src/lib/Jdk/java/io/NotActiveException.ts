@@ -10,6 +10,13 @@ JdkClassCreateHelper.class('java.io.NotActiveException', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
+		[/* public java.io.NotActiveException() */
+			/* parameters */,
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.io.NotActiveException(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
@@ -19,13 +26,6 @@ JdkClassCreateHelper.class('java.io.NotActiveException', [
 					/* annotations */ UDF
 				]
 			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.io.NotActiveException() */
-			/* parameters */,
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

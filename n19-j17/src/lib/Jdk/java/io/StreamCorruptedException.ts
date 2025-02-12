@@ -10,6 +10,13 @@ JdkClassCreateHelper.class('java.io.StreamCorruptedException', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
+		[/* public java.io.StreamCorruptedException() */
+			/* parameters */,
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.io.StreamCorruptedException(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
@@ -19,13 +26,6 @@ JdkClassCreateHelper.class('java.io.StreamCorruptedException', [
 					/* annotations */ UDF
 				]
 			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.io.StreamCorruptedException() */
-			/* parameters */,
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

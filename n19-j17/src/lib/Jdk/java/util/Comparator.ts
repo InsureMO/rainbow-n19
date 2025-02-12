@@ -58,6 +58,327 @@ JdkClassCreateHelper.class('java.util.Comparator', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public default <U extends java.lang.Comparable<? super U>> java.util.Comparator<T> java.util.Comparator.thenComparing(java.util.function.Function<? super T, ? extends U>) */
+			/* name */ 'thenComparing',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'keyExtractor',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									'java.lang.Object'
+								],
+								[/* lower bounds */
+									[/* type variable ref */ 'tr', [/* name */ 'T']]
+								]
+							]],
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									[/* type variable ref */ 'tr', [/* name */ 'U']]
+								],
+								/* lower bounds */ UDF
+							]]
+						],
+						/* raw type */ 'java.util.function.Function',
+						/* owner type */ UDF
+					]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'T']]
+				],
+				/* raw type */ 'java.util.Comparator',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			[/* type parameters */
+				[/* type variable */
+					/* name */ 'U',
+					[/* bounds */
+						[/* parameterized type */ 'pt', [
+							[/* actual argument types */
+								[/* wildcard type */ 'wt', [
+									[/* upper bounds */
+										'java.lang.Object'
+									],
+									[/* lower bounds */
+										[/* type variable ref */ 'tr', [/* name */ 'U']]
+									]
+								]]
+							],
+							/* raw type */ 'java.lang.Comparable',
+							/* owner type */ UDF
+						]]
+					],
+					/* annotations */ UDF
+				]
+			]
+		],
+		[/* public default <U> java.util.Comparator<T> java.util.Comparator.thenComparing(java.util.function.Function<? super T, ? extends U>,java.util.Comparator<? super U>) */
+			/* name */ 'thenComparing',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'keyExtractor',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									'java.lang.Object'
+								],
+								[/* lower bounds */
+									[/* type variable ref */ 'tr', [/* name */ 'T']]
+								]
+							]],
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									[/* type variable ref */ 'tr', [/* name */ 'U']]
+								],
+								/* lower bounds */ UDF
+							]]
+						],
+						/* raw type */ 'java.util.function.Function',
+						/* owner type */ UDF
+					]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'keyComparator',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									'java.lang.Object'
+								],
+								[/* lower bounds */
+									[/* type variable ref */ 'tr', [/* name */ 'U']]
+								]
+							]]
+						],
+						/* raw type */ 'java.util.Comparator',
+						/* owner type */ UDF
+					]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'T']]
+				],
+				/* raw type */ 'java.util.Comparator',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			[/* type parameters */
+				[/* type variable */
+					/* name */ 'U',
+					[/* bounds */
+						'java.lang.Object'
+					],
+					/* annotations */ UDF
+				]
+			]
+		],
+		[/* public default java.util.Comparator<T> java.util.Comparator.reversed() */
+			/* name */ 'reversed',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'T']]
+				],
+				/* raw type */ 'java.util.Comparator',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public default java.util.Comparator<T> java.util.Comparator.thenComparing(java.util.Comparator<? super T>) */
+			/* name */ 'thenComparing',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'other',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									'java.lang.Object'
+								],
+								[/* lower bounds */
+									[/* type variable ref */ 'tr', [/* name */ 'T']]
+								]
+							]]
+						],
+						/* raw type */ 'java.util.Comparator',
+						/* owner type */ UDF
+					]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'T']]
+				],
+				/* raw type */ 'java.util.Comparator',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public default java.util.Comparator<T> java.util.Comparator.thenComparingDouble(java.util.function.ToDoubleFunction<? super T>) */
+			/* name */ 'thenComparingDouble',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'keyExtractor',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									'java.lang.Object'
+								],
+								[/* lower bounds */
+									[/* type variable ref */ 'tr', [/* name */ 'T']]
+								]
+							]]
+						],
+						/* raw type */ 'java.util.function.ToDoubleFunction',
+						/* owner type */ UDF
+					]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'T']]
+				],
+				/* raw type */ 'java.util.Comparator',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public default java.util.Comparator<T> java.util.Comparator.thenComparingInt(java.util.function.ToIntFunction<? super T>) */
+			/* name */ 'thenComparingInt',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'keyExtractor',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									'java.lang.Object'
+								],
+								[/* lower bounds */
+									[/* type variable ref */ 'tr', [/* name */ 'T']]
+								]
+							]]
+						],
+						/* raw type */ 'java.util.function.ToIntFunction',
+						/* owner type */ UDF
+					]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'T']]
+				],
+				/* raw type */ 'java.util.Comparator',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public default java.util.Comparator<T> java.util.Comparator.thenComparingLong(java.util.function.ToLongFunction<? super T>) */
+			/* name */ 'thenComparingLong',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'keyExtractor',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									'java.lang.Object'
+								],
+								[/* lower bounds */
+									[/* type variable ref */ 'tr', [/* name */ 'T']]
+								]
+							]]
+						],
+						/* raw type */ 'java.util.function.ToLongFunction',
+						/* owner type */ UDF
+					]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'T']]
+				],
+				/* raw type */ 'java.util.Comparator',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static <T extends java.lang.Comparable<? super T>> java.util.Comparator<T> java.util.Comparator.naturalOrder() */
+			/* name */ 'naturalOrder',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'T']]
+				],
+				/* raw type */ 'java.util.Comparator',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			[/* type parameters */
+				[/* type variable */
+					/* name */ 'T',
+					[/* bounds */
+						[/* parameterized type */ 'pt', [
+							[/* actual argument types */
+								[/* wildcard type */ 'wt', [
+									[/* upper bounds */
+										'java.lang.Object'
+									],
+									[/* lower bounds */
+										[/* type variable ref */ 'tr', [/* name */ 'T']]
+									]
+								]]
+							],
+							/* raw type */ 'java.lang.Comparable',
+							/* owner type */ UDF
+						]]
+					],
+					/* annotations */ UDF
+				]
+			]
+		],
 		[/* public static <T extends java.lang.Comparable<? super T>> java.util.Comparator<T> java.util.Comparator.reverseOrder() */
 			/* name */ 'reverseOrder',
 			/* parameters */,
@@ -238,11 +559,11 @@ JdkClassCreateHelper.class('java.util.Comparator', [
 				]
 			]
 		],
-		[/* public default java.util.Comparator<T> java.util.Comparator.thenComparing(java.util.Comparator<? super T>) */
-			/* name */ 'thenComparing',
+		[/* public static <T> java.util.Comparator<T> java.util.Comparator.comparingDouble(java.util.function.ToDoubleFunction<? super T>) */
+			/* name */ 'comparingDouble',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'other',
+					/* name */ 'arg0',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -254,7 +575,7 @@ JdkClassCreateHelper.class('java.util.Comparator', [
 								]
 							]]
 						],
-						/* raw type */ 'java.util.Comparator',
+						/* raw type */ 'java.util.function.ToDoubleFunction',
 						/* owner type */ UDF
 					]],
 					/* modifiers */ 0,
@@ -269,135 +590,13 @@ JdkClassCreateHelper.class('java.util.Comparator', [
 				/* owner type */ UDF
 			]],
 			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public default <U> java.util.Comparator<T> java.util.Comparator.thenComparing(java.util.function.Function<? super T, ? extends U>,java.util.Comparator<? super U>) */
-			/* name */ 'thenComparing',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'keyExtractor',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							[/* wildcard type */ 'wt', [
-								[/* upper bounds */
-									'java.lang.Object'
-								],
-								[/* lower bounds */
-									[/* type variable ref */ 'tr', [/* name */ 'T']]
-								]
-							]],
-							[/* wildcard type */ 'wt', [
-								[/* upper bounds */
-									[/* type variable ref */ 'tr', [/* name */ 'U']]
-								],
-								/* lower bounds */ UDF
-							]]
-						],
-						/* raw type */ 'java.util.function.Function',
-						/* owner type */ UDF
-					]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'keyComparator',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							[/* wildcard type */ 'wt', [
-								[/* upper bounds */
-									'java.lang.Object'
-								],
-								[/* lower bounds */
-									[/* type variable ref */ 'tr', [/* name */ 'U']]
-								]
-							]]
-						],
-						/* raw type */ 'java.util.Comparator',
-						/* owner type */ UDF
-					]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* type variable ref */ 'tr', [/* name */ 'T']]
-				],
-				/* raw type */ 'java.util.Comparator',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			[/* type parameters */
 				[/* type variable */
-					/* name */ 'U',
+					/* name */ 'T',
 					[/* bounds */
 						'java.lang.Object'
-					],
-					/* annotations */ UDF
-				]
-			]
-		],
-		[/* public default <U extends java.lang.Comparable<? super U>> java.util.Comparator<T> java.util.Comparator.thenComparing(java.util.function.Function<? super T, ? extends U>) */
-			/* name */ 'thenComparing',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'keyExtractor',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							[/* wildcard type */ 'wt', [
-								[/* upper bounds */
-									'java.lang.Object'
-								],
-								[/* lower bounds */
-									[/* type variable ref */ 'tr', [/* name */ 'T']]
-								]
-							]],
-							[/* wildcard type */ 'wt', [
-								[/* upper bounds */
-									[/* type variable ref */ 'tr', [/* name */ 'U']]
-								],
-								/* lower bounds */ UDF
-							]]
-						],
-						/* raw type */ 'java.util.function.Function',
-						/* owner type */ UDF
-					]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* type variable ref */ 'tr', [/* name */ 'T']]
-				],
-				/* raw type */ 'java.util.Comparator',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			[/* type parameters */
-				[/* type variable */
-					/* name */ 'U',
-					[/* bounds */
-						[/* parameterized type */ 'pt', [
-							[/* actual argument types */
-								[/* wildcard type */ 'wt', [
-									[/* upper bounds */
-										'java.lang.Object'
-									],
-									[/* lower bounds */
-										[/* type variable ref */ 'tr', [/* name */ 'U']]
-									]
-								]]
-							],
-							/* raw type */ 'java.lang.Comparable',
-							/* owner type */ UDF
-						]]
 					],
 					/* annotations */ UDF
 				]
@@ -484,205 +683,6 @@ JdkClassCreateHelper.class('java.util.Comparator', [
 					/* name */ 'T',
 					[/* bounds */
 						'java.lang.Object'
-					],
-					/* annotations */ UDF
-				]
-			]
-		],
-		[/* public static <T> java.util.Comparator<T> java.util.Comparator.comparingDouble(java.util.function.ToDoubleFunction<? super T>) */
-			/* name */ 'comparingDouble',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							[/* wildcard type */ 'wt', [
-								[/* upper bounds */
-									'java.lang.Object'
-								],
-								[/* lower bounds */
-									[/* type variable ref */ 'tr', [/* name */ 'T']]
-								]
-							]]
-						],
-						/* raw type */ 'java.util.function.ToDoubleFunction',
-						/* owner type */ UDF
-					]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* type variable ref */ 'tr', [/* name */ 'T']]
-				],
-				/* raw type */ 'java.util.Comparator',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			[/* type parameters */
-				[/* type variable */
-					/* name */ 'T',
-					[/* bounds */
-						'java.lang.Object'
-					],
-					/* annotations */ UDF
-				]
-			]
-		],
-		[/* public default java.util.Comparator<T> java.util.Comparator.reversed() */
-			/* name */ 'reversed',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* type variable ref */ 'tr', [/* name */ 'T']]
-				],
-				/* raw type */ 'java.util.Comparator',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public default java.util.Comparator<T> java.util.Comparator.thenComparingInt(java.util.function.ToIntFunction<? super T>) */
-			/* name */ 'thenComparingInt',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'keyExtractor',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							[/* wildcard type */ 'wt', [
-								[/* upper bounds */
-									'java.lang.Object'
-								],
-								[/* lower bounds */
-									[/* type variable ref */ 'tr', [/* name */ 'T']]
-								]
-							]]
-						],
-						/* raw type */ 'java.util.function.ToIntFunction',
-						/* owner type */ UDF
-					]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* type variable ref */ 'tr', [/* name */ 'T']]
-				],
-				/* raw type */ 'java.util.Comparator',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public default java.util.Comparator<T> java.util.Comparator.thenComparingLong(java.util.function.ToLongFunction<? super T>) */
-			/* name */ 'thenComparingLong',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'keyExtractor',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							[/* wildcard type */ 'wt', [
-								[/* upper bounds */
-									'java.lang.Object'
-								],
-								[/* lower bounds */
-									[/* type variable ref */ 'tr', [/* name */ 'T']]
-								]
-							]]
-						],
-						/* raw type */ 'java.util.function.ToLongFunction',
-						/* owner type */ UDF
-					]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* type variable ref */ 'tr', [/* name */ 'T']]
-				],
-				/* raw type */ 'java.util.Comparator',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public default java.util.Comparator<T> java.util.Comparator.thenComparingDouble(java.util.function.ToDoubleFunction<? super T>) */
-			/* name */ 'thenComparingDouble',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'keyExtractor',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							[/* wildcard type */ 'wt', [
-								[/* upper bounds */
-									'java.lang.Object'
-								],
-								[/* lower bounds */
-									[/* type variable ref */ 'tr', [/* name */ 'T']]
-								]
-							]]
-						],
-						/* raw type */ 'java.util.function.ToDoubleFunction',
-						/* owner type */ UDF
-					]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* type variable ref */ 'tr', [/* name */ 'T']]
-				],
-				/* raw type */ 'java.util.Comparator',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static <T extends java.lang.Comparable<? super T>> java.util.Comparator<T> java.util.Comparator.naturalOrder() */
-			/* name */ 'naturalOrder',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* type variable ref */ 'tr', [/* name */ 'T']]
-				],
-				/* raw type */ 'java.util.Comparator',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			[/* type parameters */
-				[/* type variable */
-					/* name */ 'T',
-					[/* bounds */
-						[/* parameterized type */ 'pt', [
-							[/* actual argument types */
-								[/* wildcard type */ 'wt', [
-									[/* upper bounds */
-										'java.lang.Object'
-									],
-									[/* lower bounds */
-										[/* type variable ref */ 'tr', [/* name */ 'T']]
-									]
-								]]
-							],
-							/* raw type */ 'java.lang.Comparable',
-							/* owner type */ UDF
-						]]
 					],
 					/* annotations */ UDF
 				]

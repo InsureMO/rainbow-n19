@@ -19,53 +19,12 @@ JdkClassCreateHelper.class('java.time.chrono.ThaiBuddhistEra', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public static java.time.chrono.ThaiBuddhistEra[] java.time.chrono.ThaiBuddhistEra.values() */
-			/* name */ 'values',
-			/* parameters */,
-			/* return */ '[Ljava.time.chrono.ThaiBuddhistEra;',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.time.chrono.ThaiBuddhistEra java.time.chrono.ThaiBuddhistEra.valueOf(java.lang.String) */
-			/* name */ 'valueOf',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.chrono.ThaiBuddhistEra',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public int java.time.chrono.ThaiBuddhistEra.getValue() */
 			/* name */ 'getValue',
 			/* parameters */,
 			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.time.chrono.ThaiBuddhistEra java.time.chrono.ThaiBuddhistEra.of(int) */
-			/* name */ 'of',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.chrono.ThaiBuddhistEra',
-			/* exceptions */,
-			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -88,6 +47,47 @@ JdkClassCreateHelper.class('java.time.chrono.ThaiBuddhistEra', [
 			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.time.chrono.ThaiBuddhistEra java.time.chrono.ThaiBuddhistEra.of(int) */
+			/* name */ 'of',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.chrono.ThaiBuddhistEra',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.time.chrono.ThaiBuddhistEra java.time.chrono.ThaiBuddhistEra.valueOf(java.lang.String) */
+			/* name */ 'valueOf',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.chrono.ThaiBuddhistEra',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.time.chrono.ThaiBuddhistEra[] java.time.chrono.ThaiBuddhistEra.values() */
+			/* name */ 'values',
+			/* parameters */,
+			/* return */ '[Ljava.time.chrono.ThaiBuddhistEra;',
+			/* exceptions */,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

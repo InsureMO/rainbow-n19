@@ -34,19 +34,12 @@ JdkClassCreateHelper.class('java.text.CollationKey', [
 		]
 	],
 	[/* declared methods */
-		[/* public int java.text.CollationKey.compareTo(java.lang.Object) */
-			/* name */ 'compareTo',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
+		[/* public abstract byte[] java.text.CollationKey.toByteArray() */
+			/* name */ 'toByteArray',
+			/* parameters */,
+			/* return */ '[B',
 			/* exceptions */,
-			/* modifiers */ 4161,
+			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -66,12 +59,19 @@ JdkClassCreateHelper.class('java.text.CollationKey', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract byte[] java.text.CollationKey.toByteArray() */
-			/* name */ 'toByteArray',
-			/* parameters */,
-			/* return */ '[B',
+		[/* public int java.text.CollationKey.compareTo(java.lang.Object) */
+			/* name */ 'compareTo',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
 			/* exceptions */,
-			/* modifiers */ 1025,
+			/* modifiers */ 4161,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],

@@ -12,11 +12,11 @@ JdkClassCreateHelper.class('java.math.MathContext', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
-		[/* public java.math.MathContext(java.lang.String) */
+		[/* public java.math.MathContext(int) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'fence',
-					/* type */ 'java.lang.String',
+					/* name */ 'setPrecision',
+					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -46,11 +46,11 @@ JdkClassCreateHelper.class('java.math.MathContext', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.math.MathContext(int) */
+		[/* public java.math.MathContext(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'setPrecision',
-					/* type */ 'int',
+					/* name */ 'fence',
+					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -78,10 +78,10 @@ JdkClassCreateHelper.class('java.math.MathContext', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.math.MathContext.toString() */
-			/* name */ 'toString',
+		[/* public int java.math.MathContext.getPrecision() */
+			/* name */ 'getPrecision',
 			/* parameters */,
-			/* return */ 'java.lang.String',
+			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -96,10 +96,10 @@ JdkClassCreateHelper.class('java.math.MathContext', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.math.MathContext.getPrecision() */
-			/* name */ 'getPrecision',
+		[/* public java.lang.String java.math.MathContext.toString() */
+			/* name */ 'toString',
 			/* parameters */,
-			/* return */ 'int',
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

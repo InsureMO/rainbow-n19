@@ -13,24 +13,6 @@ JdkClassCreateHelper.class('java.lang.reflect.RecordComponent', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public java.lang.String java.lang.reflect.RecordComponent.getName() */
-			/* name */ 'getName',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.lang.reflect.RecordComponent.toString() */
-			/* name */ 'toString',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public <T extends java.lang.annotation.Annotation> T java.lang.reflect.RecordComponent.getAnnotation(java.lang.Class<T>) */
 			/* name */ 'getAnnotation',
 			[/* parameters */
@@ -61,37 +43,21 @@ JdkClassCreateHelper.class('java.lang.reflect.RecordComponent', [
 				]
 			]
 		],
-		[/* public java.lang.annotation.Annotation[] java.lang.reflect.RecordComponent.getAnnotations() */
-			/* name */ 'getAnnotations',
+		[/* public java.lang.Class<?> java.lang.reflect.RecordComponent.getDeclaringRecord() */
+			/* name */ 'getDeclaringRecord',
 			/* parameters */,
-			/* return */ '[Ljava.lang.annotation.Annotation;',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.annotation.Annotation[] java.lang.reflect.RecordComponent.getDeclaredAnnotations() */
-			/* name */ 'getDeclaredAnnotations',
-			/* parameters */,
-			/* return */ '[Ljava.lang.annotation.Annotation;',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.lang.reflect.RecordComponent.getGenericSignature() */
-			/* name */ 'getGenericSignature',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.reflect.Type java.lang.reflect.RecordComponent.getGenericType() */
-			/* name */ 'getGenericType',
-			/* parameters */,
-			/* return */ 'java.lang.reflect.Type',
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* wildcard type */ 'wt', [
+						[/* upper bounds */
+							'java.lang.Object'
+						],
+						/* lower bounds */ UDF
+					]]
+				],
+				/* raw type */ 'java.lang.Class',
+				/* owner type */ UDF
+			]],
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -117,6 +83,51 @@ JdkClassCreateHelper.class('java.lang.reflect.RecordComponent', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public java.lang.String java.lang.reflect.RecordComponent.getGenericSignature() */
+			/* name */ 'getGenericSignature',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.lang.reflect.RecordComponent.getName() */
+			/* name */ 'getName',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.lang.reflect.RecordComponent.toString() */
+			/* name */ 'toString',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.annotation.Annotation[] java.lang.reflect.RecordComponent.getAnnotations() */
+			/* name */ 'getAnnotations',
+			/* parameters */,
+			/* return */ '[Ljava.lang.annotation.Annotation;',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.annotation.Annotation[] java.lang.reflect.RecordComponent.getDeclaredAnnotations() */
+			/* name */ 'getDeclaredAnnotations',
+			/* parameters */,
+			/* return */ '[Ljava.lang.annotation.Annotation;',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.lang.reflect.AnnotatedType java.lang.reflect.RecordComponent.getAnnotatedType() */
 			/* name */ 'getAnnotatedType',
 			/* parameters */,
@@ -126,30 +137,19 @@ JdkClassCreateHelper.class('java.lang.reflect.RecordComponent', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.Class<?> java.lang.reflect.RecordComponent.getDeclaringRecord() */
-			/* name */ 'getDeclaringRecord',
+		[/* public java.lang.reflect.Method java.lang.reflect.RecordComponent.getAccessor() */
+			/* name */ 'getAccessor',
 			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* wildcard type */ 'wt', [
-						[/* upper bounds */
-							'java.lang.Object'
-						],
-						/* lower bounds */ UDF
-					]]
-				],
-				/* raw type */ 'java.lang.Class',
-				/* owner type */ UDF
-			]],
+			/* return */ 'java.lang.reflect.Method',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.reflect.Method java.lang.reflect.RecordComponent.getAccessor() */
-			/* name */ 'getAccessor',
+		[/* public java.lang.reflect.Type java.lang.reflect.RecordComponent.getGenericType() */
+			/* name */ 'getGenericType',
 			/* parameters */,
-			/* return */ 'java.lang.reflect.Method',
+			/* return */ 'java.lang.reflect.Type',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

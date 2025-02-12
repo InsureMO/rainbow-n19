@@ -36,21 +36,53 @@ JdkClassCreateHelper.class('java.time.zone.ZoneOffsetTransition', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.time.zone.ZoneOffsetTransition.toString() */
-			/* name */ 'toString',
+		[/* public boolean java.time.zone.ZoneOffsetTransition.isGap() */
+			/* name */ 'isGap',
 			/* parameters */,
-			/* return */ 'java.lang.String',
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.time.zone.ZoneOffsetTransition.hashCode() */
-			/* name */ 'hashCode',
+		[/* public boolean java.time.zone.ZoneOffsetTransition.isOverlap() */
+			/* name */ 'isOverlap',
 			/* parameters */,
-			/* return */ 'int',
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.time.zone.ZoneOffsetTransition.isValidOffset(java.time.ZoneOffset) */
+			/* name */ 'isValidOffset',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'offset',
+					/* type */ 'java.time.ZoneOffset',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.time.zone.ZoneOffsetTransition.compareTo(java.lang.Object) */
+			/* name */ 'compareTo',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 4161,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -70,19 +102,84 @@ JdkClassCreateHelper.class('java.time.zone.ZoneOffsetTransition', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.time.zone.ZoneOffsetTransition.compareTo(java.lang.Object) */
-			/* name */ 'compareTo',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
+		[/* public int java.time.zone.ZoneOffsetTransition.hashCode() */
+			/* name */ 'hashCode',
+			/* parameters */,
 			/* return */ 'int',
 			/* exceptions */,
-			/* modifiers */ 4161,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.time.zone.ZoneOffsetTransition.toString() */
+			/* name */ 'toString',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.Duration java.time.zone.ZoneOffsetTransition.getDuration() */
+			/* name */ 'getDuration',
+			/* parameters */,
+			/* return */ 'java.time.Duration',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.Instant java.time.zone.ZoneOffsetTransition.getInstant() */
+			/* name */ 'getInstant',
+			/* parameters */,
+			/* return */ 'java.time.Instant',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.LocalDateTime java.time.zone.ZoneOffsetTransition.getDateTimeAfter() */
+			/* name */ 'getDateTimeAfter',
+			/* parameters */,
+			/* return */ 'java.time.LocalDateTime',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.LocalDateTime java.time.zone.ZoneOffsetTransition.getDateTimeBefore() */
+			/* name */ 'getDateTimeBefore',
+			/* parameters */,
+			/* return */ 'java.time.LocalDateTime',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.ZoneOffset java.time.zone.ZoneOffsetTransition.getOffsetAfter() */
+			/* name */ 'getOffsetAfter',
+			/* parameters */,
+			/* return */ 'java.time.ZoneOffset',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.ZoneOffset java.time.zone.ZoneOffsetTransition.getOffsetBefore() */
+			/* name */ 'getOffsetBefore',
+			/* parameters */,
+			/* return */ 'java.time.ZoneOffset',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public long java.time.zone.ZoneOffsetTransition.toEpochSecond() */
+			/* name */ 'toEpochSecond',
+			/* parameters */,
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -111,103 +208,6 @@ JdkClassCreateHelper.class('java.time.zone.ZoneOffsetTransition', [
 			/* return */ 'java.time.zone.ZoneOffsetTransition',
 			/* exceptions */,
 			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public long java.time.zone.ZoneOffsetTransition.toEpochSecond() */
-			/* name */ 'toEpochSecond',
-			/* parameters */,
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.Duration java.time.zone.ZoneOffsetTransition.getDuration() */
-			/* name */ 'getDuration',
-			/* parameters */,
-			/* return */ 'java.time.Duration',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.ZoneOffset java.time.zone.ZoneOffsetTransition.getOffsetAfter() */
-			/* name */ 'getOffsetAfter',
-			/* parameters */,
-			/* return */ 'java.time.ZoneOffset',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.time.zone.ZoneOffsetTransition.isGap() */
-			/* name */ 'isGap',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.LocalDateTime java.time.zone.ZoneOffsetTransition.getDateTimeBefore() */
-			/* name */ 'getDateTimeBefore',
-			/* parameters */,
-			/* return */ 'java.time.LocalDateTime',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.LocalDateTime java.time.zone.ZoneOffsetTransition.getDateTimeAfter() */
-			/* name */ 'getDateTimeAfter',
-			/* parameters */,
-			/* return */ 'java.time.LocalDateTime',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.ZoneOffset java.time.zone.ZoneOffsetTransition.getOffsetBefore() */
-			/* name */ 'getOffsetBefore',
-			/* parameters */,
-			/* return */ 'java.time.ZoneOffset',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.time.zone.ZoneOffsetTransition.isValidOffset(java.time.ZoneOffset) */
-			/* name */ 'isValidOffset',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'offset',
-					/* type */ 'java.time.ZoneOffset',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.time.zone.ZoneOffsetTransition.isOverlap() */
-			/* name */ 'isOverlap',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.Instant java.time.zone.ZoneOffsetTransition.getInstant() */
-			/* name */ 'getInstant',
-			/* parameters */,
-			/* return */ 'java.time.Instant',
-			/* exceptions */,
-			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

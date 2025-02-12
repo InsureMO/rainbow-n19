@@ -48,31 +48,6 @@ JdkClassCreateHelper.class('java.util.Spliterator$OfPrimitive', [
 	],
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public default void java.util.Spliterator$OfPrimitive.forEachRemaining(T_CONS) */
-			/* name */ 'forEachRemaining',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'action',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'T_CONS']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public default java.util.Spliterator java.util.Spliterator$OfPrimitive.trySplit() */
-			/* name */ 'trySplit',
-			/* parameters */,
-			/* return */ 'java.util.Spliterator',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public abstract T_SPLITR java.util.Spliterator$OfPrimitive.trySplit() */
 			/* name */ 'trySplit',
 			/* parameters */,
@@ -95,6 +70,31 @@ JdkClassCreateHelper.class('java.util.Spliterator$OfPrimitive', [
 			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public default java.util.Spliterator java.util.Spliterator$OfPrimitive.trySplit() */
+			/* name */ 'trySplit',
+			/* parameters */,
+			/* return */ 'java.util.Spliterator',
+			/* exceptions */,
+			/* modifiers */ 4161,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public default void java.util.Spliterator$OfPrimitive.forEachRemaining(T_CONS) */
+			/* name */ 'forEachRemaining',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'action',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'T_CONS']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

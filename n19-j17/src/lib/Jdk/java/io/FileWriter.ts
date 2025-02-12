@@ -10,31 +10,11 @@ JdkClassCreateHelper.class('java.io.FileWriter', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
-		[/* public java.io.FileWriter(java.io.FileDescriptor) */
+		[/* public java.io.FileWriter(java.io.File) throws java.io.IOException */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'fd',
-					/* type */ 'java.io.FileDescriptor',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.io.FileWriter(java.lang.String,java.nio.charset.Charset) throws java.io.IOException */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'fileName',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'charset',
-					/* type */ 'java.nio.charset.Charset',
+					/* name */ 'file',
+					/* type */ 'java.io.File',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -49,17 +29,11 @@ JdkClassCreateHelper.class('java.io.FileWriter', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.io.FileWriter(java.lang.String,java.nio.charset.Charset,boolean) throws java.io.IOException */
+		[/* public java.io.FileWriter(java.io.File,boolean) throws java.io.IOException */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'fileName',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'charset',
-					/* type */ 'java.nio.charset.Charset',
+					/* name */ 'file',
+					/* type */ 'java.io.File',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
@@ -136,6 +110,20 @@ JdkClassCreateHelper.class('java.io.FileWriter', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public java.io.FileWriter(java.io.FileDescriptor) */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'fd',
+					/* type */ 'java.io.FileDescriptor',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.io.FileWriter(java.lang.String) throws java.io.IOException */
 			[/* parameters */
 				[/* parameter */
@@ -180,11 +168,17 @@ JdkClassCreateHelper.class('java.io.FileWriter', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.io.FileWriter(java.io.File) throws java.io.IOException */
+		[/* public java.io.FileWriter(java.lang.String,java.nio.charset.Charset) throws java.io.IOException */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'file',
-					/* type */ 'java.io.File',
+					/* name */ 'fileName',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'charset',
+					/* type */ 'java.nio.charset.Charset',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -199,11 +193,17 @@ JdkClassCreateHelper.class('java.io.FileWriter', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.io.FileWriter(java.io.File,boolean) throws java.io.IOException */
+		[/* public java.io.FileWriter(java.lang.String,java.nio.charset.Charset,boolean) throws java.io.IOException */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'file',
-					/* type */ 'java.io.File',
+					/* name */ 'fileName',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'charset',
+					/* type */ 'java.nio.charset.Charset',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],

@@ -10,15 +10,8 @@ JdkClassCreateHelper.class('java.util.Timer', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
-		[/* public java.util.Timer(java.lang.String) */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'name',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
+		[/* public java.util.Timer() */
+			/* parameters */,
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -38,8 +31,15 @@ JdkClassCreateHelper.class('java.util.Timer', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.util.Timer() */
-			/* parameters */,
+		[/* public java.util.Timer(java.lang.String) */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'name',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -107,6 +107,34 @@ JdkClassCreateHelper.class('java.util.Timer', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public void java.util.Timer.schedule(java.util.TimerTask,java.util.Date,long) */
+			/* name */ 'schedule',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'task',
+					/* type */ 'java.util.TimerTask',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'firstTime',
+					/* type */ 'java.util.Date',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'period',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public void java.util.Timer.schedule(java.util.TimerTask,long) */
 			/* name */ 'schedule',
 			[/* parameters */
@@ -141,34 +169,6 @@ JdkClassCreateHelper.class('java.util.Timer', [
 				[/* parameter */
 					/* name */ 'delay',
 					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'period',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.util.Timer.schedule(java.util.TimerTask,java.util.Date,long) */
-			/* name */ 'schedule',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'task',
-					/* type */ 'java.util.TimerTask',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'firstTime',
-					/* type */ 'java.util.Date',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],

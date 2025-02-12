@@ -32,19 +32,19 @@ JdkClassCreateHelper.class('java.lang.annotation.AnnotationTypeMismatchException
 		]
 	],
 	[/* declared methods */
-		[/* public java.lang.reflect.Method java.lang.annotation.AnnotationTypeMismatchException.element() */
-			/* name */ 'element',
+		[/* public java.lang.String java.lang.annotation.AnnotationTypeMismatchException.foundType() */
+			/* name */ 'foundType',
 			/* parameters */,
-			/* return */ 'java.lang.reflect.Method',
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.lang.annotation.AnnotationTypeMismatchException.foundType() */
-			/* name */ 'foundType',
+		[/* public java.lang.reflect.Method java.lang.annotation.AnnotationTypeMismatchException.element() */
+			/* name */ 'element',
 			/* parameters */,
-			/* return */ 'java.lang.String',
+			/* return */ 'java.lang.reflect.Method',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

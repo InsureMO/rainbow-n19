@@ -10,6 +10,13 @@ JdkClassCreateHelper.class('java.io.PipedWriter', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
+		[/* public java.io.PipedWriter() */
+			/* parameters */,
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.io.PipedWriter(java.io.PipedReader) throws java.io.IOException */
 			[/* parameters */
 				[/* parameter */
@@ -28,16 +35,30 @@ JdkClassCreateHelper.class('java.io.PipedWriter', [
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
-		],
-		[/* public java.io.PipedWriter() */
-			/* parameters */,
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
 		]
 	],
 	[/* declared methods */
+		[/* public synchronized void java.io.PipedWriter.connect(java.io.PipedReader) throws java.io.IOException */
+			/* name */ 'connect',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'snk',
+					/* type */ 'java.io.PipedReader',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 33,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public synchronized void java.io.PipedWriter.flush() throws java.io.IOException */
 			/* name */ 'flush',
 			/* parameters */,
@@ -49,6 +70,20 @@ JdkClassCreateHelper.class('java.io.PipedWriter', [
 				]
 			],
 			/* modifiers */ 33,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.io.PipedWriter.close() throws java.io.IOException */
+			/* name */ 'close',
+			/* parameters */,
+			/* return */ 'void',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -95,41 +130,6 @@ JdkClassCreateHelper.class('java.io.PipedWriter', [
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'void',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public synchronized void java.io.PipedWriter.connect(java.io.PipedReader) throws java.io.IOException */
-			/* name */ 'connect',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'snk',
-					/* type */ 'java.io.PipedReader',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 33,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.io.PipedWriter.close() throws java.io.IOException */
-			/* name */ 'close',
-			/* parameters */,
 			/* return */ 'void',
 			[/* exceptions */
 				[/* exception */

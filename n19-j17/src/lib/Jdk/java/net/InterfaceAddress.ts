@@ -27,19 +27,19 @@ JdkClassCreateHelper.class('java.net.InterfaceAddress', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.net.InterfaceAddress.toString() */
-			/* name */ 'toString',
+		[/* public int java.net.InterfaceAddress.hashCode() */
+			/* name */ 'hashCode',
 			/* parameters */,
-			/* return */ 'java.lang.String',
+			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.net.InterfaceAddress.hashCode() */
-			/* name */ 'hashCode',
+		[/* public java.lang.String java.net.InterfaceAddress.toString() */
+			/* name */ 'toString',
 			/* parameters */,
-			/* return */ 'int',
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

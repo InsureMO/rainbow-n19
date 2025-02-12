@@ -13,108 +13,6 @@ JdkClassCreateHelper.class('java.util.OptionalInt', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public boolean java.util.OptionalInt.equals(java.lang.Object) */
-			/* name */ 'equals',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'other',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.util.OptionalInt.toString() */
-			/* name */ 'toString',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.util.OptionalInt.hashCode() */
-			/* name */ 'hashCode',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.util.OptionalInt.isEmpty() */
-			/* name */ 'isEmpty',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.stream.IntStream java.util.OptionalInt.stream() */
-			/* name */ 'stream',
-			/* parameters */,
-			/* return */ 'java.util.stream.IntStream',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.util.OptionalInt java.util.OptionalInt.of(int) */
-			/* name */ 'of',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.util.OptionalInt',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.util.OptionalInt java.util.OptionalInt.empty() */
-			/* name */ 'empty',
-			/* parameters */,
-			/* return */ 'java.util.OptionalInt',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.util.OptionalInt.isPresent() */
-			/* name */ 'isPresent',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.util.OptionalInt.orElse(int) */
-			/* name */ 'orElse',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'other',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public <X extends java.lang.Throwable> int java.util.OptionalInt.orElseThrow(java.util.function.Supplier<? extends X>) throws X */
 			/* name */ 'orElseThrow',
 			[/* parameters */
@@ -155,12 +53,139 @@ JdkClassCreateHelper.class('java.util.OptionalInt', [
 				]
 			]
 		],
+		[/* public boolean java.util.OptionalInt.equals(java.lang.Object) */
+			/* name */ 'equals',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'other',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.util.OptionalInt.isEmpty() */
+			/* name */ 'isEmpty',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.util.OptionalInt.isPresent() */
+			/* name */ 'isPresent',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.OptionalInt.getAsInt() */
+			/* name */ 'getAsInt',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.OptionalInt.hashCode() */
+			/* name */ 'hashCode',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.OptionalInt.orElse(int) */
+			/* name */ 'orElse',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'other',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.OptionalInt.orElseGet(java.util.function.IntSupplier) */
+			/* name */ 'orElseGet',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'supplier',
+					/* type */ 'java.util.function.IntSupplier',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public int java.util.OptionalInt.orElseThrow() */
 			/* name */ 'orElseThrow',
 			/* parameters */,
 			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.util.OptionalInt.toString() */
+			/* name */ 'toString',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.stream.IntStream java.util.OptionalInt.stream() */
+			/* name */ 'stream',
+			/* parameters */,
+			/* return */ 'java.util.stream.IntStream',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.util.OptionalInt java.util.OptionalInt.empty() */
+			/* name */ 'empty',
+			/* parameters */,
+			/* return */ 'java.util.OptionalInt',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.util.OptionalInt java.util.OptionalInt.of(int) */
+			/* name */ 'of',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.util.OptionalInt',
+			/* exceptions */,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -197,31 +222,6 @@ JdkClassCreateHelper.class('java.util.OptionalInt', [
 				]
 			],
 			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.util.OptionalInt.orElseGet(java.util.function.IntSupplier) */
-			/* name */ 'orElseGet',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'supplier',
-					/* type */ 'java.util.function.IntSupplier',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.util.OptionalInt.getAsInt() */
-			/* name */ 'getAsInt',
-			/* parameters */,
-			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

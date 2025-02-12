@@ -17,15 +17,6 @@ JdkClassCreateHelper.class('java.text.NumberFormat$Style', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public static java.text.NumberFormat$Style[] java.text.NumberFormat$Style.values() */
-			/* name */ 'values',
-			/* parameters */,
-			/* return */ '[Ljava.text.NumberFormat$Style;',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public static java.text.NumberFormat$Style java.text.NumberFormat$Style.valueOf(java.lang.String) */
 			/* name */ 'valueOf',
 			[/* parameters */
@@ -37,6 +28,15 @@ JdkClassCreateHelper.class('java.text.NumberFormat$Style', [
 				]
 			],
 			/* return */ 'java.text.NumberFormat$Style',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.text.NumberFormat$Style[] java.text.NumberFormat$Style.values() */
+			/* name */ 'values',
+			/* parameters */,
+			/* return */ '[Ljava.text.NumberFormat$Style;',
 			/* exceptions */,
 			/* modifiers */ 9,
 			/* annotations */ UDF,

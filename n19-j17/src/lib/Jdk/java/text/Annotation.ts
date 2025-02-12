@@ -26,19 +26,19 @@ JdkClassCreateHelper.class('java.text.Annotation', [
 		]
 	],
 	[/* declared methods */
-		[/* public java.lang.String java.text.Annotation.toString() */
-			/* name */ 'toString',
+		[/* public java.lang.Object java.text.Annotation.getValue() */
+			/* name */ 'getValue',
 			/* parameters */,
-			/* return */ 'java.lang.String',
+			/* return */ 'java.lang.Object',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.Object java.text.Annotation.getValue() */
-			/* name */ 'getValue',
+		[/* public java.lang.String java.text.Annotation.toString() */
+			/* name */ 'toString',
 			/* parameters */,
-			/* return */ 'java.lang.Object',
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

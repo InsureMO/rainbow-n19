@@ -19,28 +19,33 @@ JdkClassCreateHelper.class('java.lang.Process', [
 		]
 	],
 	[/* declared methods */
-		[/* public java.lang.ProcessHandle$Info java.lang.Process.info() */
-			/* name */ 'info',
+		[/* public abstract int java.lang.Process.exitValue() */
+			/* name */ 'exitValue',
 			/* parameters */,
-			/* return */ 'java.lang.ProcessHandle$Info',
+			/* return */ 'int',
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public boolean java.lang.Process.isAlive() */
-			/* name */ 'isAlive',
+		[/* public abstract int java.lang.Process.waitFor() throws java.lang.InterruptedException */
+			/* name */ 'waitFor',
 			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
+			/* return */ 'int',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.lang.InterruptedException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract void java.lang.Process.destroy() */
-			/* name */ 'destroy',
+		[/* public abstract java.io.InputStream java.lang.Process.getErrorStream() */
+			/* name */ 'getErrorStream',
 			/* parameters */,
-			/* return */ 'void',
+			/* return */ 'java.io.InputStream',
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,
@@ -55,21 +60,39 @@ JdkClassCreateHelper.class('java.lang.Process', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public long java.lang.Process.pid() */
-			/* name */ 'pid',
+		[/* public abstract java.io.OutputStream java.lang.Process.getOutputStream() */
+			/* name */ 'getOutputStream',
 			/* parameters */,
-			/* return */ 'long',
+			/* return */ 'java.io.OutputStream',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract void java.lang.Process.destroy() */
+			/* name */ 'destroy',
+			/* parameters */,
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.lang.Process.isAlive() */
+			/* name */ 'isAlive',
+			/* parameters */,
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.io.InputStream java.lang.Process.getErrorStream() */
-			/* name */ 'getErrorStream',
+		[/* public boolean java.lang.Process.supportsNormalTermination() */
+			/* name */ 'supportsNormalTermination',
 			/* parameters */,
-			/* return */ 'java.io.InputStream',
+			/* return */ 'boolean',
 			/* exceptions */,
-			/* modifiers */ 1025,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -100,60 +123,6 @@ JdkClassCreateHelper.class('java.lang.Process', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract int java.lang.Process.waitFor() throws java.lang.InterruptedException */
-			/* name */ 'waitFor',
-			/* parameters */,
-			/* return */ 'int',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.lang.InterruptedException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.stream.Stream<java.lang.ProcessHandle> java.lang.Process.children() */
-			/* name */ 'children',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					'java.lang.ProcessHandle'
-				],
-				/* raw type */ 'java.util.stream.Stream',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final java.io.BufferedReader java.lang.Process.inputReader(java.nio.charset.Charset) */
-			/* name */ 'inputReader',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'charset',
-					/* type */ 'java.nio.charset.Charset',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.io.BufferedReader',
-			/* exceptions */,
-			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final java.io.BufferedReader java.lang.Process.inputReader() */
-			/* name */ 'inputReader',
-			/* parameters */,
-			/* return */ 'java.io.BufferedReader',
-			/* exceptions */,
-			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public final java.io.BufferedReader java.lang.Process.errorReader() */
 			/* name */ 'errorReader',
 			/* parameters */,
@@ -179,6 +148,40 @@ JdkClassCreateHelper.class('java.lang.Process', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public final java.io.BufferedReader java.lang.Process.inputReader() */
+			/* name */ 'inputReader',
+			/* parameters */,
+			/* return */ 'java.io.BufferedReader',
+			/* exceptions */,
+			/* modifiers */ 17,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public final java.io.BufferedReader java.lang.Process.inputReader(java.nio.charset.Charset) */
+			/* name */ 'inputReader',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'charset',
+					/* type */ 'java.nio.charset.Charset',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.io.BufferedReader',
+			/* exceptions */,
+			/* modifiers */ 17,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public final java.io.BufferedWriter java.lang.Process.outputWriter() */
+			/* name */ 'outputWriter',
+			/* parameters */,
+			/* return */ 'java.io.BufferedWriter',
+			/* exceptions */,
+			/* modifiers */ 17,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public final java.io.BufferedWriter java.lang.Process.outputWriter(java.nio.charset.Charset) */
 			/* name */ 'outputWriter',
 			[/* parameters */
@@ -195,30 +198,12 @@ JdkClassCreateHelper.class('java.lang.Process', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public final java.io.BufferedWriter java.lang.Process.outputWriter() */
-			/* name */ 'outputWriter',
+		[/* public java.lang.Process java.lang.Process.destroyForcibly() */
+			/* name */ 'destroyForcibly',
 			/* parameters */,
-			/* return */ 'java.io.BufferedWriter',
+			/* return */ 'java.lang.Process',
 			/* exceptions */,
-			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.io.OutputStream java.lang.Process.getOutputStream() */
-			/* name */ 'getOutputStream',
-			/* parameters */,
-			/* return */ 'java.io.OutputStream',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract int java.lang.Process.exitValue() */
-			/* name */ 'exitValue',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1025,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -226,6 +211,45 @@ JdkClassCreateHelper.class('java.lang.Process', [
 			/* name */ 'toHandle',
 			/* parameters */,
 			/* return */ 'java.lang.ProcessHandle',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.ProcessHandle$Info java.lang.Process.info() */
+			/* name */ 'info',
+			/* parameters */,
+			/* return */ 'java.lang.ProcessHandle$Info',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.concurrent.CompletableFuture<java.lang.Process> java.lang.Process.onExit() */
+			/* name */ 'onExit',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					'java.lang.Process'
+				],
+				/* raw type */ 'java.util.concurrent.CompletableFuture',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.stream.Stream<java.lang.ProcessHandle> java.lang.Process.children() */
+			/* name */ 'children',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					'java.lang.ProcessHandle'
+				],
+				/* raw type */ 'java.util.stream.Stream',
+				/* owner type */ UDF
+			]],
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -246,34 +270,10 @@ JdkClassCreateHelper.class('java.lang.Process', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.Process java.lang.Process.destroyForcibly() */
-			/* name */ 'destroyForcibly',
+		[/* public long java.lang.Process.pid() */
+			/* name */ 'pid',
 			/* parameters */,
-			/* return */ 'java.lang.Process',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.lang.Process.supportsNormalTermination() */
-			/* name */ 'supportsNormalTermination',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.concurrent.CompletableFuture<java.lang.Process> java.lang.Process.onExit() */
-			/* name */ 'onExit',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					'java.lang.Process'
-				],
-				/* raw type */ 'java.util.concurrent.CompletableFuture',
-				/* owner type */ UDF
-			]],
+			/* return */ 'long',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

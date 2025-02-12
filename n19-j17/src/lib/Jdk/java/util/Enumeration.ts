@@ -18,18 +18,12 @@ JdkClassCreateHelper.class('java.util.Enumeration', [
 	],
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public default java.util.Iterator<E> java.util.Enumeration.asIterator() */
-			/* name */ 'asIterator',
+		[/* public abstract E java.util.Enumeration.nextElement() */
+			/* name */ 'nextElement',
 			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* type variable ref */ 'tr', [/* name */ 'E']]
-				],
-				/* raw type */ 'java.util.Iterator',
-				/* owner type */ UDF
-			]],
+			/* return */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -42,12 +36,18 @@ JdkClassCreateHelper.class('java.util.Enumeration', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract E java.util.Enumeration.nextElement() */
-			/* name */ 'nextElement',
+		[/* public default java.util.Iterator<E> java.util.Enumeration.asIterator() */
+			/* name */ 'asIterator',
 			/* parameters */,
-			/* return */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'E']]
+				],
+				/* raw type */ 'java.util.Iterator',
+				/* owner type */ UDF
+			]],
 			/* exceptions */,
-			/* modifiers */ 1025,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

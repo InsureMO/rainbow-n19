@@ -19,8 +19,8 @@ JdkClassCreateHelper.class('java.text.spi.BreakIteratorProvider', [
 		]
 	],
 	[/* declared methods */
-		[/* public abstract java.text.BreakIterator java.text.spi.BreakIteratorProvider.getWordInstance(java.util.Locale) */
-			/* name */ 'getWordInstance',
+		[/* public abstract java.text.BreakIterator java.text.spi.BreakIteratorProvider.getCharacterInstance(java.util.Locale) */
+			/* name */ 'getCharacterInstance',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
@@ -51,8 +51,8 @@ JdkClassCreateHelper.class('java.text.spi.BreakIteratorProvider', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.text.BreakIterator java.text.spi.BreakIteratorProvider.getCharacterInstance(java.util.Locale) */
-			/* name */ 'getCharacterInstance',
+		[/* public abstract java.text.BreakIterator java.text.spi.BreakIteratorProvider.getSentenceInstance(java.util.Locale) */
+			/* name */ 'getSentenceInstance',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
@@ -67,8 +67,8 @@ JdkClassCreateHelper.class('java.text.spi.BreakIteratorProvider', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.text.BreakIterator java.text.spi.BreakIteratorProvider.getSentenceInstance(java.util.Locale) */
-			/* name */ 'getSentenceInstance',
+		[/* public abstract java.text.BreakIterator java.text.spi.BreakIteratorProvider.getWordInstance(java.util.Locale) */
+			/* name */ 'getWordInstance',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',

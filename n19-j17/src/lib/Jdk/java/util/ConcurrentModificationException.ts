@@ -10,6 +10,27 @@ JdkClassCreateHelper.class('java.util.ConcurrentModificationException', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
+		[/* public java.util.ConcurrentModificationException() */
+			/* parameters */,
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.ConcurrentModificationException(java.lang.String) */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'message',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.util.ConcurrentModificationException(java.lang.String,java.lang.Throwable) */
 			[/* parameters */
 				[/* parameter */
@@ -39,27 +60,6 @@ JdkClassCreateHelper.class('java.util.ConcurrentModificationException', [
 					/* annotations */ UDF
 				]
 			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.ConcurrentModificationException(java.lang.String) */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'message',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.ConcurrentModificationException() */
-			/* parameters */,
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

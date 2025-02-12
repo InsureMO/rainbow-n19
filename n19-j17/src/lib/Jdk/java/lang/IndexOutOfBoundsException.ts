@@ -10,15 +10,8 @@ JdkClassCreateHelper.class('java.lang.IndexOutOfBoundsException', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
-		[/* public java.lang.IndexOutOfBoundsException(long) */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'index',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
+		[/* public java.lang.IndexOutOfBoundsException() */
+			/* parameters */,
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -52,8 +45,15 @@ JdkClassCreateHelper.class('java.lang.IndexOutOfBoundsException', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.IndexOutOfBoundsException() */
-			/* parameters */,
+		[/* public java.lang.IndexOutOfBoundsException(long) */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'index',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

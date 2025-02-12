@@ -12,6 +12,15 @@ JdkClassCreateHelper.class('java.lang.reflect.ParameterizedType', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
+		[/* public abstract java.lang.reflect.Type java.lang.reflect.ParameterizedType.getOwnerType() */
+			/* name */ 'getOwnerType',
+			/* parameters */,
+			/* return */ 'java.lang.reflect.Type',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public abstract java.lang.reflect.Type java.lang.reflect.ParameterizedType.getRawType() */
 			/* name */ 'getRawType',
 			/* parameters */,
@@ -25,15 +34,6 @@ JdkClassCreateHelper.class('java.lang.reflect.ParameterizedType', [
 			/* name */ 'getActualTypeArguments',
 			/* parameters */,
 			/* return */ '[Ljava.lang.reflect.Type;',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.lang.reflect.Type java.lang.reflect.ParameterizedType.getOwnerType() */
-			/* name */ 'getOwnerType',
-			/* parameters */,
-			/* return */ 'java.lang.reflect.Type',
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,

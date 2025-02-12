@@ -11,58 +11,26 @@ JdkClassCreateHelper.class('java.lang.Math', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public static int java.lang.Math.abs(int) */
-			/* name */ 'abs',
+		[/* public static double java.lang.Math.IEEEremainder(double,double) */
+			/* name */ 'IEEEremainder',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'int',
+					/* name */ 'f2',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'int',
+			/* return */ 'double',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public static long java.lang.Math.abs(long) */
-			/* name */ 'abs',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public static float java.lang.Math.abs(float) */
-			/* name */ 'abs',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'float',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'float',
-			/* exceptions */,
-			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static double java.lang.Math.abs(double) */
@@ -83,11 +51,123 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			],
 			/* type parameters */ UDF
 		],
-		[/* public static double java.lang.Math.sin(double) */
-			/* name */ 'sin',
+		[/* public static double java.lang.Math.acos(double) */
+			/* name */ 'acos',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'double',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static double java.lang.Math.asin(double) */
+			/* name */ 'asin',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'double',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static double java.lang.Math.atan(double) */
+			/* name */ 'atan',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'double',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static double java.lang.Math.atan2(double,double) */
+			/* name */ 'atan2',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'x',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'double',
+			/* exceptions */,
+			/* modifiers */ 9,
+			[/* annotations */
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public static double java.lang.Math.cbrt(double) */
+			/* name */ 'cbrt',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'double',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static double java.lang.Math.ceil(double) */
+			/* name */ 'ceil',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'double',
+			/* exceptions */,
+			/* modifiers */ 9,
+			[/* annotations */
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public static double java.lang.Math.copySign(double,double) */
+			/* name */ 'copySign',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'sign',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -119,8 +199,24 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			],
 			/* type parameters */ UDF
 		],
-		[/* public static double java.lang.Math.tan(double) */
-			/* name */ 'tan',
+		[/* public static double java.lang.Math.cosh(double) */
+			/* name */ 'cosh',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'double',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static double java.lang.Math.exp(double) */
+			/* name */ 'exp',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
@@ -137,11 +233,75 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			],
 			/* type parameters */ UDF
 		],
-		[/* public static double java.lang.Math.atan2(double,double) */
-			/* name */ 'atan2',
+		[/* public static double java.lang.Math.expm1(double) */
+			/* name */ 'expm1',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'x',
+					/* name */ 'arg0',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'double',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static double java.lang.Math.floor(double) */
+			/* name */ 'floor',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'double',
+			/* exceptions */,
+			/* modifiers */ 9,
+			[/* annotations */
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public static double java.lang.Math.fma(double,double,double) */
+			/* name */ 'fma',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'product',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'result',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'product',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'double',
+			/* exceptions */,
+			/* modifiers */ 9,
+			[/* annotations */
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public static double java.lang.Math.hypot(double,double) */
+			/* name */ 'hypot',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'y',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -156,27 +316,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* return */ 'double',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public static double java.lang.Math.sqrt(double) */
-			/* name */ 'sqrt',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'double',
-			/* exceptions */,
-			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static double java.lang.Math.log(double) */
@@ -215,32 +355,8 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			],
 			/* type parameters */ UDF
 		],
-		[/* public static double java.lang.Math.pow(double,double) */
-			/* name */ 'pow',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'b',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'double',
-			/* exceptions */,
-			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public static double java.lang.Math.exp(double) */
-			/* name */ 'exp',
+		[/* public static double java.lang.Math.log1p(double) */
+			/* name */ 'log1p',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
@@ -252,79 +368,31 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* return */ 'double',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public static int java.lang.Math.min(int,int) */
-			/* name */ 'min',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'b',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public static float java.lang.Math.min(float,float) */
-			/* name */ 'min',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'b',
-					/* type */ 'float',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'float',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'float',
-			/* exceptions */,
-			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public static long java.lang.Math.min(long,long) */
-			/* name */ 'min',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'b',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 9,
 			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static double java.lang.Math.max(double,double) */
+			/* name */ 'max',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'b',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'double',
+			/* exceptions */,
+			/* modifiers */ 9,
+			[/* annotations */
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
 			/* type parameters */ UDF
 		],
 		[/* public static double java.lang.Math.min(double,double) */
@@ -351,23 +419,350 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			],
 			/* type parameters */ UDF
 		],
-		[/* public static int java.lang.Math.max(int,int) */
-			/* name */ 'max',
+		[/* public static double java.lang.Math.nextAfter(double,double) */
+			/* name */ 'nextAfter',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'transducer',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'transducer',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'double',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static double java.lang.Math.nextDown(double) */
+			/* name */ 'nextDown',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'double',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static double java.lang.Math.nextUp(double) */
+			/* name */ 'nextUp',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'transducer',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'double',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static double java.lang.Math.pow(double,double) */
+			/* name */ 'pow',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'b',
-					/* type */ 'int',
+					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'arg1',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'double',
+			/* exceptions */,
+			/* modifiers */ 9,
+			[/* annotations */
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public static double java.lang.Math.random() */
+			/* name */ 'random',
+			/* parameters */,
+			/* return */ 'double',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static double java.lang.Math.rint(double) */
+			/* name */ 'rint',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'double',
+			/* exceptions */,
+			/* modifiers */ 9,
+			[/* annotations */
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public static double java.lang.Math.scalb(double,int) */
+			/* name */ 'scalb',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'scaleFactor',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'MAX_SCALE',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'int',
+			/* return */ 'double',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static double java.lang.Math.signum(double) */
+			/* name */ 'signum',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'double',
+			/* exceptions */,
+			/* modifiers */ 9,
+			[/* annotations */
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public static double java.lang.Math.sin(double) */
+			/* name */ 'sin',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'double',
+			/* exceptions */,
+			/* modifiers */ 9,
+			[/* annotations */
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public static double java.lang.Math.sinh(double) */
+			/* name */ 'sinh',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'double',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static double java.lang.Math.sqrt(double) */
+			/* name */ 'sqrt',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'double',
+			/* exceptions */,
+			/* modifiers */ 9,
+			[/* annotations */
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public static double java.lang.Math.tan(double) */
+			/* name */ 'tan',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'double',
+			/* exceptions */,
+			/* modifiers */ 9,
+			[/* annotations */
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public static double java.lang.Math.tanh(double) */
+			/* name */ 'tanh',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'double',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static double java.lang.Math.toDegrees(double) */
+			/* name */ 'toDegrees',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'double',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static double java.lang.Math.toRadians(double) */
+			/* name */ 'toRadians',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'double',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static double java.lang.Math.ulp(double) */
+			/* name */ 'ulp',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'exp',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'double',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static float java.lang.Math.abs(float) */
+			/* name */ 'abs',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'float',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'float',
+			/* exceptions */,
+			/* modifiers */ 9,
+			[/* annotations */
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public static float java.lang.Math.copySign(float,float) */
+			/* name */ 'copySign',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'sign',
+					/* type */ 'float',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'float',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'float',
+			/* exceptions */,
+			/* modifiers */ 9,
+			[/* annotations */
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public static float java.lang.Math.fma(float,float,float) */
+			/* name */ 'fma',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'b',
+					/* type */ 'float',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'c',
+					/* type */ 'float',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg2',
+					/* type */ 'float',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'float',
 			/* exceptions */,
 			/* modifiers */ 9,
 			[/* annotations */
@@ -399,45 +794,117 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			],
 			/* type parameters */ UDF
 		],
-		[/* public static long java.lang.Math.max(long,long) */
-			/* name */ 'max',
+		[/* public static float java.lang.Math.min(float,float) */
+			/* name */ 'min',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'b',
-					/* type */ 'long',
+					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'arg1',
-					/* type */ 'long',
+					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'long',
+			/* return */ 'float',
+			/* exceptions */,
+			/* modifiers */ 9,
+			[/* annotations */
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public static float java.lang.Math.nextAfter(float,double) */
+			/* name */ 'nextAfter',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'transducer',
+					/* type */ 'float',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'transducer',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'float',
 			/* exceptions */,
 			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static double java.lang.Math.max(double,double) */
-			/* name */ 'max',
+		[/* public static float java.lang.Math.nextDown(float) */
+			/* name */ 'nextDown',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'b',
-					/* type */ 'double',
+					/* name */ 'arg0',
+					/* type */ 'float',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'float',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static float java.lang.Math.nextUp(float) */
+			/* name */ 'nextUp',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'transducer',
+					/* type */ 'float',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'float',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static float java.lang.Math.scalb(float,int) */
+			/* name */ 'scalb',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'scaleFactor',
+					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'double',
+					/* name */ 'MAX_SCALE',
+					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'double',
+			/* return */ 'float',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static float java.lang.Math.signum(float) */
+			/* name */ 'signum',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'float',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'float',
 			/* exceptions */,
 			/* modifiers */ 9,
 			[/* annotations */
@@ -445,17 +912,33 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			],
 			/* type parameters */ UDF
 		],
-		[/* public static double java.lang.Math.floor(double) */
-			/* name */ 'floor',
+		[/* public static float java.lang.Math.ulp(float) */
+			/* name */ 'ulp',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'double',
+					/* name */ 'exp',
+					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'double',
+			/* return */ 'float',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static int java.lang.Math.abs(int) */
+			/* name */ 'abs',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 9,
 			[/* annotations */
@@ -463,40 +946,20 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			],
 			/* type parameters */ UDF
 		],
-		[/* public static double java.lang.Math.ceil(double) */
-			/* name */ 'ceil',
+		[/* public static int java.lang.Math.absExact(int) */
+			/* name */ 'absExact',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
-					/* type */ 'double',
+					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'double',
+			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public static double java.lang.Math.rint(double) */
-			/* name */ 'rint',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'double',
-			/* exceptions */,
-			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static int java.lang.Math.addExact(int,int) */
@@ -521,6 +984,320 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			[/* annotations */
 				['jdk.internal.vm.annotation.IntrinsicCandidate']
 			],
+			/* type parameters */ UDF
+		],
+		[/* public static int java.lang.Math.decrementExact(int) */
+			/* name */ 'decrementExact',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 9,
+			[/* annotations */
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public static int java.lang.Math.floorDiv(int,int) */
+			/* name */ 'floorDiv',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'y',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'r',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static int java.lang.Math.floorMod(int,int) */
+			/* name */ 'floorMod',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'y',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'mod',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static int java.lang.Math.floorMod(long,int) */
+			/* name */ 'floorMod',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'y',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static int java.lang.Math.getExponent(double) */
+			/* name */ 'getExponent',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static int java.lang.Math.getExponent(float) */
+			/* name */ 'getExponent',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'float',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static int java.lang.Math.incrementExact(int) */
+			/* name */ 'incrementExact',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 9,
+			[/* annotations */
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public static int java.lang.Math.max(int,int) */
+			/* name */ 'max',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'b',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 9,
+			[/* annotations */
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public static int java.lang.Math.min(int,int) */
+			/* name */ 'min',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'b',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 9,
+			[/* annotations */
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public static int java.lang.Math.multiplyExact(int,int) */
+			/* name */ 'multiplyExact',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'y',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'r',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 9,
+			[/* annotations */
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public static int java.lang.Math.negateExact(int) */
+			/* name */ 'negateExact',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 9,
+			[/* annotations */
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public static int java.lang.Math.round(float) */
+			/* name */ 'round',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'r',
+					/* type */ 'float',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static int java.lang.Math.subtractExact(int,int) */
+			/* name */ 'subtractExact',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'y',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'r',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 9,
+			[/* annotations */
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public static int java.lang.Math.toIntExact(long) */
+			/* name */ 'toIntExact',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static long java.lang.Math.abs(long) */
+			/* name */ 'abs',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 9,
+			[/* annotations */
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public static long java.lang.Math.absExact(long) */
+			/* name */ 'absExact',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static long java.lang.Math.addExact(long,long) */
@@ -565,40 +1342,70 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			],
 			/* type parameters */ UDF
 		],
-		[/* public static int java.lang.Math.decrementExact(int) */
-			/* name */ 'decrementExact',
+		[/* public static long java.lang.Math.floorDiv(long,int) */
+			/* name */ 'floorDiv',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'y',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'int',
+			/* return */ 'long',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static int java.lang.Math.incrementExact(int) */
-			/* name */ 'incrementExact',
+		[/* public static long java.lang.Math.floorDiv(long,long) */
+			/* name */ 'floorDiv',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'int',
+					/* name */ 'y',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'r',
+					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'int',
+			/* return */ 'long',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static long java.lang.Math.floorMod(long,long) */
+			/* name */ 'floorMod',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'y',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'mod',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
 			],
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static long java.lang.Math.incrementExact(long) */
@@ -619,28 +1426,70 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			],
 			/* type parameters */ UDF
 		],
-		[/* public static int java.lang.Math.multiplyExact(int,int) */
-			/* name */ 'multiplyExact',
+		[/* public static long java.lang.Math.max(long,long) */
+			/* name */ 'max',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'y',
-					/* type */ 'int',
+					/* name */ 'b',
+					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'r',
+					/* name */ 'arg1',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static long java.lang.Math.min(long,long) */
+			/* name */ 'min',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'b',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static long java.lang.Math.multiplyExact(long,int) */
+			/* name */ 'multiplyExact',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'y',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'int',
+			/* return */ 'long',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static long java.lang.Math.multiplyExact(long,long) */
@@ -667,12 +1516,12 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			],
 			/* type parameters */ UDF
 		],
-		[/* public static long java.lang.Math.multiplyExact(long,int) */
-			/* name */ 'multiplyExact',
+		[/* public static long java.lang.Math.multiplyFull(int,int) */
+			/* name */ 'multiplyFull',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'y',
-					/* type */ 'long',
+					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
@@ -731,46 +1580,20 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			],
 			/* type parameters */ UDF
 		],
-		[/* public static int java.lang.Math.negateExact(int) */
-			/* name */ 'negateExact',
+		[/* public static long java.lang.Math.round(double) */
+			/* name */ 'round',
 			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public static int java.lang.Math.subtractExact(int,int) */
-			/* name */ 'subtractExact',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'y',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
 				[/* parameter */
 					/* name */ 'r',
-					/* type */ 'int',
+					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'int',
+			/* return */ 'long',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static long java.lang.Math.subtractExact(long,long) */
@@ -795,829 +1618,6 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			[/* annotations */
 				['jdk.internal.vm.annotation.IntrinsicCandidate']
 			],
-			/* type parameters */ UDF
-		],
-		[/* public static double java.lang.Math.fma(double,double,double) */
-			/* name */ 'fma',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'product',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'result',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'product',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'double',
-			/* exceptions */,
-			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public static float java.lang.Math.fma(float,float,float) */
-			/* name */ 'fma',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'b',
-					/* type */ 'float',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'c',
-					/* type */ 'float',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg2',
-					/* type */ 'float',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'float',
-			/* exceptions */,
-			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public static float java.lang.Math.copySign(float,float) */
-			/* name */ 'copySign',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'sign',
-					/* type */ 'float',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'float',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'float',
-			/* exceptions */,
-			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public static double java.lang.Math.copySign(double,double) */
-			/* name */ 'copySign',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'sign',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'double',
-			/* exceptions */,
-			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public static float java.lang.Math.signum(float) */
-			/* name */ 'signum',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'float',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'float',
-			/* exceptions */,
-			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public static double java.lang.Math.signum(double) */
-			/* name */ 'signum',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'double',
-			/* exceptions */,
-			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public static double java.lang.Math.scalb(double,int) */
-			/* name */ 'scalb',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'scaleFactor',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'MAX_SCALE',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'double',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static float java.lang.Math.scalb(float,int) */
-			/* name */ 'scalb',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'scaleFactor',
-					/* type */ 'float',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'MAX_SCALE',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'float',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static int java.lang.Math.getExponent(float) */
-			/* name */ 'getExponent',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'float',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static int java.lang.Math.getExponent(double) */
-			/* name */ 'getExponent',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static int java.lang.Math.floorMod(long,int) */
-			/* name */ 'floorMod',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'y',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static int java.lang.Math.floorMod(int,int) */
-			/* name */ 'floorMod',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'y',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'mod',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static long java.lang.Math.floorMod(long,long) */
-			/* name */ 'floorMod',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'y',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'mod',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static double java.lang.Math.asin(double) */
-			/* name */ 'asin',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'double',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static double java.lang.Math.acos(double) */
-			/* name */ 'acos',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'double',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static double java.lang.Math.atan(double) */
-			/* name */ 'atan',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'double',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static double java.lang.Math.cbrt(double) */
-			/* name */ 'cbrt',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'double',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static double java.lang.Math.IEEEremainder(double,double) */
-			/* name */ 'IEEEremainder',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'f2',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'double',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static long java.lang.Math.floorDiv(long,long) */
-			/* name */ 'floorDiv',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'y',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'r',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static int java.lang.Math.floorDiv(int,int) */
-			/* name */ 'floorDiv',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'y',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'r',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static long java.lang.Math.floorDiv(long,int) */
-			/* name */ 'floorDiv',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'y',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static double java.lang.Math.sinh(double) */
-			/* name */ 'sinh',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'double',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static double java.lang.Math.cosh(double) */
-			/* name */ 'cosh',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'double',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static double java.lang.Math.tanh(double) */
-			/* name */ 'tanh',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'double',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static double java.lang.Math.hypot(double,double) */
-			/* name */ 'hypot',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'y',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'double',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static double java.lang.Math.expm1(double) */
-			/* name */ 'expm1',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'double',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static double java.lang.Math.log1p(double) */
-			/* name */ 'log1p',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'double',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static double java.lang.Math.toRadians(double) */
-			/* name */ 'toRadians',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'double',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static double java.lang.Math.toDegrees(double) */
-			/* name */ 'toDegrees',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'double',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static long java.lang.Math.round(double) */
-			/* name */ 'round',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'r',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static int java.lang.Math.round(float) */
-			/* name */ 'round',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'r',
-					/* type */ 'float',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static double java.lang.Math.random() */
-			/* name */ 'random',
-			/* parameters */,
-			/* return */ 'double',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static int java.lang.Math.toIntExact(long) */
-			/* name */ 'toIntExact',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static long java.lang.Math.multiplyFull(int,int) */
-			/* name */ 'multiplyFull',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'y',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static int java.lang.Math.absExact(int) */
-			/* name */ 'absExact',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static long java.lang.Math.absExact(long) */
-			/* name */ 'absExact',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static double java.lang.Math.ulp(double) */
-			/* name */ 'ulp',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'exp',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'double',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static float java.lang.Math.ulp(float) */
-			/* name */ 'ulp',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'exp',
-					/* type */ 'float',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'float',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static double java.lang.Math.nextAfter(double,double) */
-			/* name */ 'nextAfter',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'transducer',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'transducer',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'double',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static float java.lang.Math.nextAfter(float,double) */
-			/* name */ 'nextAfter',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'transducer',
-					/* type */ 'float',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'transducer',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'float',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static double java.lang.Math.nextUp(double) */
-			/* name */ 'nextUp',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'transducer',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'double',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static float java.lang.Math.nextUp(float) */
-			/* name */ 'nextUp',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'transducer',
-					/* type */ 'float',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'float',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static double java.lang.Math.nextDown(double) */
-			/* name */ 'nextDown',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'double',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static float java.lang.Math.nextDown(float) */
-			/* name */ 'nextDown',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'float',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'float',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]
 	],

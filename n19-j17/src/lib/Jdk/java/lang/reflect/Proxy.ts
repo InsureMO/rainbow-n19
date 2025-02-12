@@ -55,6 +55,62 @@ JdkClassCreateHelper.class('java.lang.reflect.Proxy', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public static java.lang.Class<?> java.lang.reflect.Proxy.getProxyClass(java.lang.ClassLoader,java.lang.Class<?>...) throws java.lang.IllegalArgumentException */
+			/* name */ 'getProxyClass',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.ClassLoader',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ [/* generic array type */ 'ga', [[/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									'java.lang.Object'
+								],
+								/* lower bounds */ UDF
+							]]
+						],
+						/* raw type */ 'java.lang.Class',
+						/* owner type */ UDF
+					]]]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* wildcard type */ 'wt', [
+						[/* upper bounds */
+							'java.lang.Object'
+						],
+						/* lower bounds */ UDF
+					]]
+				],
+				/* raw type */ 'java.lang.Class',
+				/* owner type */ UDF
+			]],
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.lang.IllegalArgumentException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 137,
+			[/* annotations */
+				[
+					'java.lang.Deprecated',
+					['p', 'since', ''],
+					['p', 'forRemoval', false]
+				],
+				['jdk.internal.reflect.CallerSensitive']
+			],
+			/* type parameters */ UDF
+		],
 		[/* public static java.lang.Object java.lang.reflect.Proxy.newProxyInstance(java.lang.ClassLoader,java.lang.Class<?>[],java.lang.reflect.InvocationHandler) */
 			/* name */ 'newProxyInstance',
 			[/* parameters */
@@ -115,62 +171,6 @@ JdkClassCreateHelper.class('java.lang.reflect.Proxy', [
 			],
 			/* modifiers */ 9,
 			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public static java.lang.Class<?> java.lang.reflect.Proxy.getProxyClass(java.lang.ClassLoader,java.lang.Class<?>...) throws java.lang.IllegalArgumentException */
-			/* name */ 'getProxyClass',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.ClassLoader',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ [/* generic array type */ 'ga', [[/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							[/* wildcard type */ 'wt', [
-								[/* upper bounds */
-									'java.lang.Object'
-								],
-								/* lower bounds */ UDF
-							]]
-						],
-						/* raw type */ 'java.lang.Class',
-						/* owner type */ UDF
-					]]]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* wildcard type */ 'wt', [
-						[/* upper bounds */
-							'java.lang.Object'
-						],
-						/* lower bounds */ UDF
-					]]
-				],
-				/* raw type */ 'java.lang.Class',
-				/* owner type */ UDF
-			]],
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.lang.IllegalArgumentException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 137,
-			[/* annotations */
-				[
-					'java.lang.Deprecated',
-					['p', 'since', ''],
-					['p', 'forRemoval', false]
-				],
 				['jdk.internal.reflect.CallerSensitive']
 			],
 			/* type parameters */ UDF

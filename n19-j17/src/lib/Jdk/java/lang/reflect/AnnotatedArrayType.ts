@@ -12,8 +12,8 @@ JdkClassCreateHelper.class('java.lang.reflect.AnnotatedArrayType', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public abstract java.lang.reflect.AnnotatedType java.lang.reflect.AnnotatedArrayType.getAnnotatedOwnerType() */
-			/* name */ 'getAnnotatedOwnerType',
+		[/* public abstract java.lang.reflect.AnnotatedType java.lang.reflect.AnnotatedArrayType.getAnnotatedGenericComponentType() */
+			/* name */ 'getAnnotatedGenericComponentType',
 			/* parameters */,
 			/* return */ 'java.lang.reflect.AnnotatedType',
 			/* exceptions */,
@@ -21,8 +21,8 @@ JdkClassCreateHelper.class('java.lang.reflect.AnnotatedArrayType', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.lang.reflect.AnnotatedType java.lang.reflect.AnnotatedArrayType.getAnnotatedGenericComponentType() */
-			/* name */ 'getAnnotatedGenericComponentType',
+		[/* public abstract java.lang.reflect.AnnotatedType java.lang.reflect.AnnotatedArrayType.getAnnotatedOwnerType() */
+			/* name */ 'getAnnotatedOwnerType',
 			/* parameters */,
 			/* return */ 'java.lang.reflect.AnnotatedType',
 			/* exceptions */,

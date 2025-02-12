@@ -22,19 +22,19 @@ JdkClassCreateHelper.class('java.lang.Deprecated', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public abstract java.lang.String java.lang.Deprecated.since() */
-			/* name */ 'since',
+		[/* public abstract boolean java.lang.Deprecated.forRemoval() */
+			/* name */ 'forRemoval',
 			/* parameters */,
-			/* return */ 'java.lang.String',
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract boolean java.lang.Deprecated.forRemoval() */
-			/* name */ 'forRemoval',
+		[/* public abstract java.lang.String java.lang.Deprecated.since() */
+			/* name */ 'since',
 			/* parameters */,
-			/* return */ 'boolean',
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,

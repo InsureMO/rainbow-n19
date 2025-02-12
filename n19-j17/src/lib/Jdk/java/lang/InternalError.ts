@@ -10,11 +10,18 @@ JdkClassCreateHelper.class('java.lang.InternalError', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
-		[/* public java.lang.InternalError(java.lang.Throwable) */
+		[/* public java.lang.InternalError() */
+			/* parameters */,
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.InternalError(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'cause',
-					/* type */ 'java.lang.Throwable',
+					/* name */ 'message',
+					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -44,22 +51,15 @@ JdkClassCreateHelper.class('java.lang.InternalError', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.InternalError(java.lang.String) */
+		[/* public java.lang.InternalError(java.lang.Throwable) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'message',
-					/* type */ 'java.lang.String',
+					/* name */ 'cause',
+					/* type */ 'java.lang.Throwable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.InternalError() */
-			/* parameters */,
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

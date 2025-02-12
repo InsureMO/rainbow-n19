@@ -28,8 +28,8 @@ JdkClassCreateHelper.class('java.util.function.LongPredicate', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public default java.util.function.LongPredicate java.util.function.LongPredicate.or(java.util.function.LongPredicate) */
-			/* name */ 'or',
+		[/* public default java.util.function.LongPredicate java.util.function.LongPredicate.and(java.util.function.LongPredicate) */
+			/* name */ 'and',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'other',
@@ -53,8 +53,8 @@ JdkClassCreateHelper.class('java.util.function.LongPredicate', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public default java.util.function.LongPredicate java.util.function.LongPredicate.and(java.util.function.LongPredicate) */
-			/* name */ 'and',
+		[/* public default java.util.function.LongPredicate java.util.function.LongPredicate.or(java.util.function.LongPredicate) */
+			/* name */ 'or',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'other',

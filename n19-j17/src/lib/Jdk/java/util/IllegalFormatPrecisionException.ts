@@ -26,19 +26,19 @@ JdkClassCreateHelper.class('java.util.IllegalFormatPrecisionException', [
 		]
 	],
 	[/* declared methods */
-		[/* public java.lang.String java.util.IllegalFormatPrecisionException.getMessage() */
-			/* name */ 'getMessage',
+		[/* public int java.util.IllegalFormatPrecisionException.getPrecision() */
+			/* name */ 'getPrecision',
 			/* parameters */,
-			/* return */ 'java.lang.String',
+			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.util.IllegalFormatPrecisionException.getPrecision() */
-			/* name */ 'getPrecision',
+		[/* public java.lang.String java.util.IllegalFormatPrecisionException.getMessage() */
+			/* name */ 'getMessage',
 			/* parameters */,
-			/* return */ 'int',
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

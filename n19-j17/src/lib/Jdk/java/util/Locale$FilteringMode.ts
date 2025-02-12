@@ -17,15 +17,6 @@ JdkClassCreateHelper.class('java.util.Locale$FilteringMode', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public static java.util.Locale$FilteringMode[] java.util.Locale$FilteringMode.values() */
-			/* name */ 'values',
-			/* parameters */,
-			/* return */ '[Ljava.util.Locale$FilteringMode;',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public static java.util.Locale$FilteringMode java.util.Locale$FilteringMode.valueOf(java.lang.String) */
 			/* name */ 'valueOf',
 			[/* parameters */
@@ -37,6 +28,15 @@ JdkClassCreateHelper.class('java.util.Locale$FilteringMode', [
 				]
 			],
 			/* return */ 'java.util.Locale$FilteringMode',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.util.Locale$FilteringMode[] java.util.Locale$FilteringMode.values() */
+			/* name */ 'values',
+			/* parameters */,
+			/* return */ '[Ljava.util.Locale$FilteringMode;',
 			/* exceptions */,
 			/* modifiers */ 9,
 			/* annotations */ UDF,

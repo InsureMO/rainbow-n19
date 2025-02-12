@@ -17,15 +17,6 @@ JdkClassCreateHelper.class('java.lang.annotation.RetentionPolicy', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public static java.lang.annotation.RetentionPolicy[] java.lang.annotation.RetentionPolicy.values() */
-			/* name */ 'values',
-			/* parameters */,
-			/* return */ '[Ljava.lang.annotation.RetentionPolicy;',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public static java.lang.annotation.RetentionPolicy java.lang.annotation.RetentionPolicy.valueOf(java.lang.String) */
 			/* name */ 'valueOf',
 			[/* parameters */
@@ -37,6 +28,15 @@ JdkClassCreateHelper.class('java.lang.annotation.RetentionPolicy', [
 				]
 			],
 			/* return */ 'java.lang.annotation.RetentionPolicy',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.lang.annotation.RetentionPolicy[] java.lang.annotation.RetentionPolicy.values() */
+			/* name */ 'values',
+			/* parameters */,
+			/* return */ '[Ljava.lang.annotation.RetentionPolicy;',
 			/* exceptions */,
 			/* modifiers */ 9,
 			/* annotations */ UDF,

@@ -10,6 +10,13 @@ JdkClassCreateHelper.class('java.io.NotSerializableException', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
+		[/* public java.io.NotSerializableException() */
+			/* parameters */,
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.io.NotSerializableException(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
@@ -19,13 +26,6 @@ JdkClassCreateHelper.class('java.io.NotSerializableException', [
 					/* annotations */ UDF
 				]
 			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.io.NotSerializableException() */
-			/* parameters */,
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

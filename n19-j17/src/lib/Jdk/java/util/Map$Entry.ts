@@ -25,6 +25,40 @@ JdkClassCreateHelper.class('java.util.Map$Entry', [
 	],
 	/* declared constructors */,
 	[/* declared methods */
+		[/* public abstract K java.util.Map$Entry.getKey() */
+			/* name */ 'getKey',
+			/* parameters */,
+			/* return */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract V java.util.Map$Entry.getValue() */
+			/* name */ 'getValue',
+			/* parameters */,
+			/* return */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract V java.util.Map$Entry.setValue(V) */
+			/* name */ 'setValue',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public abstract boolean java.util.Map$Entry.equals(java.lang.Object) */
 			/* name */ 'equals',
 			[/* parameters */
@@ -49,152 +83,6 @@ JdkClassCreateHelper.class('java.util.Map$Entry', [
 			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
-		],
-		[/* public static <K,V> java.util.Map$Entry<K, V> java.util.Map$Entry.copyOf(java.util.Map$Entry<? extends K, ? extends V>) */
-			/* name */ 'copyOf',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							[/* wildcard type */ 'wt', [
-								[/* upper bounds */
-									[/* type variable ref */ 'tr', [/* name */ 'K']]
-								],
-								/* lower bounds */ UDF
-							]],
-							[/* wildcard type */ 'wt', [
-								[/* upper bounds */
-									[/* type variable ref */ 'tr', [/* name */ 'V']]
-								],
-								/* lower bounds */ UDF
-							]]
-						],
-						/* raw type */ 'java.util.Map$Entry',
-						/* owner type */ 'java.util.Map'
-					]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* type variable ref */ 'tr', [/* name */ 'K']],
-					[/* type variable ref */ 'tr', [/* name */ 'V']]
-				],
-				/* raw type */ 'java.util.Map$Entry',
-				/* owner type */ 'java.util.Map'
-			]],
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			[/* type parameters */
-				[/* type variable */
-					/* name */ 'K',
-					[/* bounds */
-						'java.lang.Object'
-					],
-					/* annotations */ UDF
-				],
-				[/* type variable */
-					/* name */ 'V',
-					[/* bounds */
-						'java.lang.Object'
-					],
-					/* annotations */ UDF
-				]
-			]
-		],
-		[/* public abstract V java.util.Map$Entry.getValue() */
-			/* name */ 'getValue',
-			/* parameters */,
-			/* return */ [/* type variable ref */ 'tr', [/* name */ 'V']],
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract K java.util.Map$Entry.getKey() */
-			/* name */ 'getKey',
-			/* parameters */,
-			/* return */ [/* type variable ref */ 'tr', [/* name */ 'K']],
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract V java.util.Map$Entry.setValue(V) */
-			/* name */ 'setValue',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ [/* type variable ref */ 'tr', [/* name */ 'V']],
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static <K,V> java.util.Comparator<java.util.Map$Entry<K, V>> java.util.Map$Entry.comparingByKey(java.util.Comparator<? super K>) */
-			/* name */ 'comparingByKey',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							[/* wildcard type */ 'wt', [
-								[/* upper bounds */
-									'java.lang.Object'
-								],
-								[/* lower bounds */
-									[/* type variable ref */ 'tr', [/* name */ 'K']]
-								]
-							]]
-						],
-						/* raw type */ 'java.util.Comparator',
-						/* owner type */ UDF
-					]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							[/* type variable ref */ 'tr', [/* name */ 'K']],
-							[/* type variable ref */ 'tr', [/* name */ 'V']]
-						],
-						/* raw type */ 'java.util.Map$Entry',
-						/* owner type */ 'java.util.Map'
-					]]
-				],
-				/* raw type */ 'java.util.Comparator',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			[/* type parameters */
-				[/* type variable */
-					/* name */ 'K',
-					[/* bounds */
-						'java.lang.Object'
-					],
-					/* annotations */ UDF
-				],
-				[/* type variable */
-					/* name */ 'V',
-					[/* bounds */
-						'java.lang.Object'
-					],
-					/* annotations */ UDF
-				]
-			]
 		],
 		[/* public static <K extends java.lang.Comparable<? super K>,V> java.util.Comparator<java.util.Map$Entry<K, V>> java.util.Map$Entry.comparingByKey() */
 			/* name */ 'comparingByKey',
@@ -296,6 +184,63 @@ JdkClassCreateHelper.class('java.util.Map$Entry', [
 				]
 			]
 		],
+		[/* public static <K,V> java.util.Comparator<java.util.Map$Entry<K, V>> java.util.Map$Entry.comparingByKey(java.util.Comparator<? super K>) */
+			/* name */ 'comparingByKey',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									'java.lang.Object'
+								],
+								[/* lower bounds */
+									[/* type variable ref */ 'tr', [/* name */ 'K']]
+								]
+							]]
+						],
+						/* raw type */ 'java.util.Comparator',
+						/* owner type */ UDF
+					]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* type variable ref */ 'tr', [/* name */ 'K']],
+							[/* type variable ref */ 'tr', [/* name */ 'V']]
+						],
+						/* raw type */ 'java.util.Map$Entry',
+						/* owner type */ 'java.util.Map'
+					]]
+				],
+				/* raw type */ 'java.util.Comparator',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			[/* type parameters */
+				[/* type variable */
+					/* name */ 'K',
+					[/* bounds */
+						'java.lang.Object'
+					],
+					/* annotations */ UDF
+				],
+				[/* type variable */
+					/* name */ 'V',
+					[/* bounds */
+						'java.lang.Object'
+					],
+					/* annotations */ UDF
+				]
+			]
+		],
 		[/* public static <K,V> java.util.Comparator<java.util.Map$Entry<K, V>> java.util.Map$Entry.comparingByValue(java.util.Comparator<? super V>) */
 			/* name */ 'comparingByValue',
 			[/* parameters */
@@ -332,6 +277,61 @@ JdkClassCreateHelper.class('java.util.Map$Entry', [
 				],
 				/* raw type */ 'java.util.Comparator',
 				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			[/* type parameters */
+				[/* type variable */
+					/* name */ 'K',
+					[/* bounds */
+						'java.lang.Object'
+					],
+					/* annotations */ UDF
+				],
+				[/* type variable */
+					/* name */ 'V',
+					[/* bounds */
+						'java.lang.Object'
+					],
+					/* annotations */ UDF
+				]
+			]
+		],
+		[/* public static <K,V> java.util.Map$Entry<K, V> java.util.Map$Entry.copyOf(java.util.Map$Entry<? extends K, ? extends V>) */
+			/* name */ 'copyOf',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									[/* type variable ref */ 'tr', [/* name */ 'K']]
+								],
+								/* lower bounds */ UDF
+							]],
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									[/* type variable ref */ 'tr', [/* name */ 'V']]
+								],
+								/* lower bounds */ UDF
+							]]
+						],
+						/* raw type */ 'java.util.Map$Entry',
+						/* owner type */ 'java.util.Map'
+					]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'K']],
+					[/* type variable ref */ 'tr', [/* name */ 'V']]
+				],
+				/* raw type */ 'java.util.Map$Entry',
+				/* owner type */ 'java.util.Map'
 			]],
 			/* exceptions */,
 			/* modifiers */ 9,

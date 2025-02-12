@@ -21,6 +21,40 @@ JdkClassCreateHelper.class('java.time.Clock', [
 		]
 	],
 	[/* declared methods */
+		[/* public abstract java.time.Clock java.time.Clock.withZone(java.time.ZoneId) */
+			/* name */ 'withZone',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.time.ZoneId',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.Clock',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.time.Instant java.time.Clock.instant() */
+			/* name */ 'instant',
+			/* parameters */,
+			/* return */ 'java.time.Instant',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.time.ZoneId java.time.Clock.getZone() */
+			/* name */ 'getZone',
+			/* parameters */,
+			/* return */ 'java.time.ZoneId',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public boolean java.time.Clock.equals(java.lang.Object) */
 			/* name */ 'equals',
 			[/* parameters */
@@ -46,50 +80,12 @@ JdkClassCreateHelper.class('java.time.Clock', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.time.Clock java.time.Clock.offset(java.time.Clock,java.time.Duration) */
-			/* name */ 'offset',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'offsetDuration',
-					/* type */ 'java.time.Clock',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'java.time.Duration',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.Clock',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public long java.time.Clock.millis() */
 			/* name */ 'millis',
 			/* parameters */,
 			/* return */ 'long',
 			/* exceptions */,
 			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.time.Clock java.time.Clock.system(java.time.ZoneId) */
-			/* name */ 'system',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.time.ZoneId',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.Clock',
-			/* exceptions */,
-			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -115,26 +111,30 @@ JdkClassCreateHelper.class('java.time.Clock', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.time.Instant java.time.Clock.instant() */
-			/* name */ 'instant',
-			/* parameters */,
-			/* return */ 'java.time.Instant',
+		[/* public static java.time.Clock java.time.Clock.offset(java.time.Clock,java.time.Duration) */
+			/* name */ 'offset',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'offsetDuration',
+					/* type */ 'java.time.Clock',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'java.time.Duration',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.Clock',
 			/* exceptions */,
-			/* modifiers */ 1025,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.time.ZoneId java.time.Clock.getZone() */
-			/* name */ 'getZone',
-			/* parameters */,
-			/* return */ 'java.time.ZoneId',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.time.Clock java.time.Clock.withZone(java.time.ZoneId) */
-			/* name */ 'withZone',
+		[/* public static java.time.Clock java.time.Clock.system(java.time.ZoneId) */
+			/* name */ 'system',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
@@ -145,12 +145,21 @@ JdkClassCreateHelper.class('java.time.Clock', [
 			],
 			/* return */ 'java.time.Clock',
 			/* exceptions */,
-			/* modifiers */ 1025,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static java.time.Clock java.time.Clock.systemDefaultZone() */
 			/* name */ 'systemDefaultZone',
+			/* parameters */,
+			/* return */ 'java.time.Clock',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.time.Clock java.time.Clock.systemUTC() */
+			/* name */ 'systemUTC',
 			/* parameters */,
 			/* return */ 'java.time.Clock',
 			/* exceptions */,
@@ -180,15 +189,6 @@ JdkClassCreateHelper.class('java.time.Clock', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.time.Clock java.time.Clock.systemUTC() */
-			/* name */ 'systemUTC',
-			/* parameters */,
-			/* return */ 'java.time.Clock',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public static java.time.Clock java.time.Clock.tickMillis(java.time.ZoneId) */
 			/* name */ 'tickMillis',
 			[/* parameters */
@@ -205,8 +205,8 @@ JdkClassCreateHelper.class('java.time.Clock', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.time.Clock java.time.Clock.tickSeconds(java.time.ZoneId) */
-			/* name */ 'tickSeconds',
+		[/* public static java.time.Clock java.time.Clock.tickMinutes(java.time.ZoneId) */
+			/* name */ 'tickMinutes',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
@@ -221,8 +221,8 @@ JdkClassCreateHelper.class('java.time.Clock', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.time.Clock java.time.Clock.tickMinutes(java.time.ZoneId) */
-			/* name */ 'tickMinutes',
+		[/* public static java.time.Clock java.time.Clock.tickSeconds(java.time.ZoneId) */
+			/* name */ 'tickSeconds',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',

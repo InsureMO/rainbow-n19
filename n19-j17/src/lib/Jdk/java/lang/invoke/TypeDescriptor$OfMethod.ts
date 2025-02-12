@@ -40,15 +40,6 @@ JdkClassCreateHelper.class('java.lang.invoke.TypeDescriptor$OfMethod', [
 	],
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public abstract F java.lang.invoke.TypeDescriptor$OfMethod.returnType() */
-			/* name */ 'returnType',
-			/* parameters */,
-			/* return */ [/* type variable ref */ 'tr', [/* name */ 'F']],
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public abstract F java.lang.invoke.TypeDescriptor$OfMethod.parameterType(int) */
 			/* name */ 'parameterType',
 			[/* parameters */
@@ -65,8 +56,26 @@ JdkClassCreateHelper.class('java.lang.invoke.TypeDescriptor$OfMethod', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract M java.lang.invoke.TypeDescriptor$OfMethod.insertParameterTypes(int,F...) */
-			/* name */ 'insertParameterTypes',
+		[/* public abstract F java.lang.invoke.TypeDescriptor$OfMethod.returnType() */
+			/* name */ 'returnType',
+			/* parameters */,
+			/* return */ [/* type variable ref */ 'tr', [/* name */ 'F']],
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract F[] java.lang.invoke.TypeDescriptor$OfMethod.parameterArray() */
+			/* name */ 'parameterArray',
+			/* parameters */,
+			/* return */ [/* generic array type */ 'ga', [[/* type variable ref */ 'tr', [/* name */ 'F']]]],
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract M java.lang.invoke.TypeDescriptor$OfMethod.changeParameterType(int,F) */
+			/* name */ 'changeParameterType',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
@@ -76,14 +85,14 @@ JdkClassCreateHelper.class('java.lang.invoke.TypeDescriptor$OfMethod', [
 				],
 				[/* parameter */
 					/* name */ 'arg1',
-					/* type */ [/* generic array type */ 'ga', [[/* type variable ref */ 'tr', [/* name */ 'F']]]],
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'F']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
 			/* return */ [/* type variable ref */ 'tr', [/* name */ 'M']],
 			/* exceptions */,
-			/* modifiers */ 1153,
+			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -125,6 +134,28 @@ JdkClassCreateHelper.class('java.lang.invoke.TypeDescriptor$OfMethod', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public abstract M java.lang.invoke.TypeDescriptor$OfMethod.insertParameterTypes(int,F...) */
+			/* name */ 'insertParameterTypes',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ [/* generic array type */ 'ga', [[/* type variable ref */ 'tr', [/* name */ 'F']]]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* type variable ref */ 'tr', [/* name */ 'M']],
+			/* exceptions */,
+			/* modifiers */ 1153,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public abstract int java.lang.invoke.TypeDescriptor$OfMethod.parameterCount() */
 			/* name */ 'parameterCount',
 			/* parameters */,
@@ -144,37 +175,6 @@ JdkClassCreateHelper.class('java.lang.invoke.TypeDescriptor$OfMethod', [
 				/* raw type */ 'java.util.List',
 				/* owner type */ UDF
 			]],
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract F[] java.lang.invoke.TypeDescriptor$OfMethod.parameterArray() */
-			/* name */ 'parameterArray',
-			/* parameters */,
-			/* return */ [/* generic array type */ 'ga', [[/* type variable ref */ 'tr', [/* name */ 'F']]]],
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract M java.lang.invoke.TypeDescriptor$OfMethod.changeParameterType(int,F) */
-			/* name */ 'changeParameterType',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'F']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ [/* type variable ref */ 'tr', [/* name */ 'M']],
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,

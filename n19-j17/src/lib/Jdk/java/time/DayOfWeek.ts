@@ -20,104 +20,6 @@ JdkClassCreateHelper.class('java.time.DayOfWeek', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public int java.time.DayOfWeek.get(java.time.temporal.TemporalField) */
-			/* name */ 'get',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'field',
-					/* type */ 'java.time.temporal.TemporalField',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.time.DayOfWeek[] java.time.DayOfWeek.values() */
-			/* name */ 'values',
-			/* parameters */,
-			/* return */ '[Ljava.time.DayOfWeek;',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public long java.time.DayOfWeek.getLong(java.time.temporal.TemporalField) */
-			/* name */ 'getLong',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'field',
-					/* type */ 'java.time.temporal.TemporalField',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.time.DayOfWeek java.time.DayOfWeek.valueOf(java.lang.String) */
-			/* name */ 'valueOf',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.DayOfWeek',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.time.DayOfWeek.getValue() */
-			/* name */ 'getValue',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.time.DayOfWeek java.time.DayOfWeek.of(int) */
-			/* name */ 'of',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.DayOfWeek',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.time.DayOfWeek java.time.DayOfWeek.from(java.time.temporal.TemporalAccessor) */
-			/* name */ 'from',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'ex',
-					/* type */ 'java.time.temporal.TemporalAccessor',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.DayOfWeek',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public <R> R java.time.DayOfWeek.query(java.time.temporal.TemporalQuery<R>) */
 			/* name */ 'query',
 			[/* parameters */
@@ -148,22 +50,6 @@ JdkClassCreateHelper.class('java.time.DayOfWeek', [
 				]
 			]
 		],
-		[/* public java.time.temporal.ValueRange java.time.DayOfWeek.range(java.time.temporal.TemporalField) */
-			/* name */ 'range',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'field',
-					/* type */ 'java.time.temporal.TemporalField',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.temporal.ValueRange',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public boolean java.time.DayOfWeek.isSupported(java.time.temporal.TemporalField) */
 			/* name */ 'isSupported',
 			[/* parameters */
@@ -175,6 +61,31 @@ JdkClassCreateHelper.class('java.time.DayOfWeek', [
 				]
 			],
 			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.time.DayOfWeek.get(java.time.temporal.TemporalField) */
+			/* name */ 'get',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'field',
+					/* type */ 'java.time.temporal.TemporalField',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.time.DayOfWeek.getValue() */
+			/* name */ 'getValue',
+			/* parameters */,
+			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -202,17 +113,17 @@ JdkClassCreateHelper.class('java.time.DayOfWeek', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.time.temporal.Temporal java.time.DayOfWeek.adjustInto(java.time.temporal.Temporal) */
-			/* name */ 'adjustInto',
+		[/* public java.time.DayOfWeek java.time.DayOfWeek.minus(long) */
+			/* name */ 'minus',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'temporal',
-					/* type */ 'java.time.temporal.Temporal',
+					/* name */ 'days',
+					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.time.temporal.Temporal',
+			/* return */ 'java.time.DayOfWeek',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -234,19 +145,108 @@ JdkClassCreateHelper.class('java.time.DayOfWeek', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.time.DayOfWeek java.time.DayOfWeek.minus(long) */
-			/* name */ 'minus',
+		[/* public java.time.temporal.Temporal java.time.DayOfWeek.adjustInto(java.time.temporal.Temporal) */
+			/* name */ 'adjustInto',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'days',
-					/* type */ 'long',
+					/* name */ 'temporal',
+					/* type */ 'java.time.temporal.Temporal',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.temporal.Temporal',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.temporal.ValueRange java.time.DayOfWeek.range(java.time.temporal.TemporalField) */
+			/* name */ 'range',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'field',
+					/* type */ 'java.time.temporal.TemporalField',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.temporal.ValueRange',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public long java.time.DayOfWeek.getLong(java.time.temporal.TemporalField) */
+			/* name */ 'getLong',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'field',
+					/* type */ 'java.time.temporal.TemporalField',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.time.DayOfWeek java.time.DayOfWeek.from(java.time.temporal.TemporalAccessor) */
+			/* name */ 'from',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'ex',
+					/* type */ 'java.time.temporal.TemporalAccessor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
 			/* return */ 'java.time.DayOfWeek',
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.time.DayOfWeek java.time.DayOfWeek.of(int) */
+			/* name */ 'of',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.DayOfWeek',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.time.DayOfWeek java.time.DayOfWeek.valueOf(java.lang.String) */
+			/* name */ 'valueOf',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.DayOfWeek',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.time.DayOfWeek[] java.time.DayOfWeek.values() */
+			/* name */ 'values',
+			/* parameters */,
+			/* return */ '[Ljava.time.DayOfWeek;',
+			/* exceptions */,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

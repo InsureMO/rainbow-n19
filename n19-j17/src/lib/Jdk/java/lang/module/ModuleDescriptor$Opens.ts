@@ -19,21 +19,6 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Opens', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public java.util.Set<java.lang.module.ModuleDescriptor$Opens$Modifier> java.lang.module.ModuleDescriptor$Opens.modifiers() */
-			/* name */ 'modifiers',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					'java.lang.module.ModuleDescriptor$Opens$Modifier'
-				],
-				/* raw type */ 'java.util.Set',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public boolean java.lang.module.ModuleDescriptor$Opens.equals(java.lang.Object) */
 			/* name */ 'equals',
 			[/* parameters */
@@ -50,35 +35,10 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Opens', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.lang.module.ModuleDescriptor$Opens.toString() */
-			/* name */ 'toString',
+		[/* public boolean java.lang.module.ModuleDescriptor$Opens.isQualified() */
+			/* name */ 'isQualified',
 			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.lang.module.ModuleDescriptor$Opens.hashCode() */
-			/* name */ 'hashCode',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.lang.module.ModuleDescriptor$Opens.compareTo(java.lang.module.ModuleDescriptor$Opens) */
-			/* name */ 'compareTo',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'that',
-					/* type */ 'java.lang.module.ModuleDescriptor$Opens',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -100,6 +60,31 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Opens', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public int java.lang.module.ModuleDescriptor$Opens.compareTo(java.lang.module.ModuleDescriptor$Opens) */
+			/* name */ 'compareTo',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'that',
+					/* type */ 'java.lang.module.ModuleDescriptor$Opens',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.lang.module.ModuleDescriptor$Opens.hashCode() */
+			/* name */ 'hashCode',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.lang.String java.lang.module.ModuleDescriptor$Opens.source() */
 			/* name */ 'source',
 			/* parameters */,
@@ -109,10 +94,10 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Opens', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public boolean java.lang.module.ModuleDescriptor$Opens.isQualified() */
-			/* name */ 'isQualified',
+		[/* public java.lang.String java.lang.module.ModuleDescriptor$Opens.toString() */
+			/* name */ 'toString',
 			/* parameters */,
-			/* return */ 'boolean',
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -124,6 +109,21 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Opens', [
 			/* return */ [/* parameterized type */ 'pt', [
 				[/* actual argument types */
 					'java.lang.String'
+				],
+				/* raw type */ 'java.util.Set',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.Set<java.lang.module.ModuleDescriptor$Opens$Modifier> java.lang.module.ModuleDescriptor$Opens.modifiers() */
+			/* name */ 'modifiers',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					'java.lang.module.ModuleDescriptor$Opens$Modifier'
 				],
 				/* raw type */ 'java.util.Set',
 				/* owner type */ UDF

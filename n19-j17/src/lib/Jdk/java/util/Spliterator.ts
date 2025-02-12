@@ -18,59 +18,6 @@ JdkClassCreateHelper.class('java.util.Spliterator', [
 	],
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public default void java.util.Spliterator.forEachRemaining(java.util.function.Consumer<? super T>) */
-			/* name */ 'forEachRemaining',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'action',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							[/* wildcard type */ 'wt', [
-								[/* upper bounds */
-									'java.lang.Object'
-								],
-								[/* lower bounds */
-									[/* type variable ref */ 'tr', [/* name */ 'T']]
-								]
-							]]
-						],
-						/* raw type */ 'java.util.function.Consumer',
-						/* owner type */ UDF
-					]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract int java.util.Spliterator.characteristics() */
-			/* name */ 'characteristics',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.util.Spliterator<T> java.util.Spliterator.trySplit() */
-			/* name */ 'trySplit',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* type variable ref */ 'tr', [/* name */ 'T']]
-				],
-				/* raw type */ 'java.util.Spliterator',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public abstract boolean java.util.Spliterator.tryAdvance(java.util.function.Consumer<? super T>) */
 			/* name */ 'tryAdvance',
 			[/* parameters */
@@ -100,21 +47,36 @@ JdkClassCreateHelper.class('java.util.Spliterator', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public abstract int java.util.Spliterator.characteristics() */
+			/* name */ 'characteristics',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.util.Spliterator<T> java.util.Spliterator.trySplit() */
+			/* name */ 'trySplit',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'T']]
+				],
+				/* raw type */ 'java.util.Spliterator',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public abstract long java.util.Spliterator.estimateSize() */
 			/* name */ 'estimateSize',
 			/* parameters */,
 			/* return */ 'long',
 			/* exceptions */,
 			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public default long java.util.Spliterator.getExactSizeIfKnown() */
-			/* name */ 'getExactSizeIfKnown',
-			/* parameters */,
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -151,6 +113,44 @@ JdkClassCreateHelper.class('java.util.Spliterator', [
 				/* raw type */ 'java.util.Comparator',
 				/* owner type */ UDF
 			]],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public default long java.util.Spliterator.getExactSizeIfKnown() */
+			/* name */ 'getExactSizeIfKnown',
+			/* parameters */,
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public default void java.util.Spliterator.forEachRemaining(java.util.function.Consumer<? super T>) */
+			/* name */ 'forEachRemaining',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'action',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									'java.lang.Object'
+								],
+								[/* lower bounds */
+									[/* type variable ref */ 'tr', [/* name */ 'T']]
+								]
+							]]
+						],
+						/* raw type */ 'java.util.function.Consumer',
+						/* owner type */ UDF
+					]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

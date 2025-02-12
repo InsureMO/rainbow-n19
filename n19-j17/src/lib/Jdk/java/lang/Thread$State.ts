@@ -17,15 +17,6 @@ JdkClassCreateHelper.class('java.lang.Thread$State', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public static java.lang.Thread$State[] java.lang.Thread$State.values() */
-			/* name */ 'values',
-			/* parameters */,
-			/* return */ '[Ljava.lang.Thread$State;',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public static java.lang.Thread$State java.lang.Thread$State.valueOf(java.lang.String) */
 			/* name */ 'valueOf',
 			[/* parameters */
@@ -37,6 +28,15 @@ JdkClassCreateHelper.class('java.lang.Thread$State', [
 				]
 			],
 			/* return */ 'java.lang.Thread$State',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.lang.Thread$State[] java.lang.Thread$State.values() */
+			/* name */ 'values',
+			/* parameters */,
+			/* return */ '[Ljava.lang.Thread$State;',
 			/* exceptions */,
 			/* modifiers */ 9,
 			/* annotations */ UDF,

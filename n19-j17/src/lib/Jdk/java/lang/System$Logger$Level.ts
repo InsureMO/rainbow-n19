@@ -17,21 +17,21 @@ JdkClassCreateHelper.class('java.lang.System$Logger$Level', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
+		[/* public final int java.lang.System$Logger$Level.getSeverity() */
+			/* name */ 'getSeverity',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 17,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public final java.lang.String java.lang.System$Logger$Level.getName() */
 			/* name */ 'getName',
 			/* parameters */,
 			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.lang.System$Logger$Level[] java.lang.System$Logger$Level.values() */
-			/* name */ 'values',
-			/* parameters */,
-			/* return */ '[Ljava.lang.System$Logger$Level;',
-			/* exceptions */,
-			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -51,12 +51,12 @@ JdkClassCreateHelper.class('java.lang.System$Logger$Level', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public final int java.lang.System$Logger$Level.getSeverity() */
-			/* name */ 'getSeverity',
+		[/* public static java.lang.System$Logger$Level[] java.lang.System$Logger$Level.values() */
+			/* name */ 'values',
 			/* parameters */,
-			/* return */ 'int',
+			/* return */ '[Ljava.lang.System$Logger$Level;',
 			/* exceptions */,
-			/* modifiers */ 17,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

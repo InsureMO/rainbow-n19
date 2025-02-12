@@ -41,8 +41,46 @@ JdkClassCreateHelper.class('java.util.AbstractList', [
 		]
 	],
 	[/* declared methods */
-		[/* public void java.util.AbstractList.add(int,E) */
-			/* name */ 'add',
+		[/* protected void java.util.AbstractList.removeRange(int,int) */
+			/* name */ 'removeRange',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'i',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'n',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 4,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public E java.util.AbstractList.remove(int) */
+			/* name */ 'remove',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'index',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public E java.util.AbstractList.set(int,E) */
+			/* name */ 'set',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'index',
@@ -53,38 +91,6 @@ JdkClassCreateHelper.class('java.util.AbstractList', [
 				[/* parameter */
 					/* name */ 'element',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.util.AbstractList.add(E) */
-			/* name */ 'add',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'e',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public E java.util.AbstractList.remove(int) */
-			/* name */ 'remove',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'index',
-					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -108,6 +114,55 @@ JdkClassCreateHelper.class('java.util.AbstractList', [
 			/* return */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 			/* exceptions */,
 			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.util.AbstractList.add(E) */
+			/* name */ 'add',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'e',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.util.AbstractList.addAll(int,java.util.Collection<? extends E>) */
+			/* name */ 'addAll',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'e',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'index',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									[/* type variable ref */ 'tr', [/* name */ 'E']]
+								],
+								/* lower bounds */ UDF
+							]]
+						],
+						/* raw type */ 'java.util.Collection',
+						/* owner type */ UDF
+					]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -152,15 +207,6 @@ JdkClassCreateHelper.class('java.util.AbstractList', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.util.AbstractList.clear() */
-			/* name */ 'clear',
-			/* parameters */,
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public int java.util.AbstractList.lastIndexOf(java.lang.Object) */
 			/* name */ 'lastIndexOf',
 			[/* parameters */
@@ -172,6 +218,21 @@ JdkClassCreateHelper.class('java.util.AbstractList', [
 				]
 			],
 			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.Iterator<E> java.util.AbstractList.iterator() */
+			/* name */ 'iterator',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'E']]
+				],
+				/* raw type */ 'java.util.Iterator',
+				/* owner type */ UDF
+			]],
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -202,98 +263,6 @@ JdkClassCreateHelper.class('java.util.AbstractList', [
 			]],
 			/* exceptions */,
 			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.Iterator<E> java.util.AbstractList.iterator() */
-			/* name */ 'iterator',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* type variable ref */ 'tr', [/* name */ 'E']]
-				],
-				/* raw type */ 'java.util.Iterator',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.util.AbstractList.addAll(int,java.util.Collection<? extends E>) */
-			/* name */ 'addAll',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'e',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'index',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							[/* wildcard type */ 'wt', [
-								[/* upper bounds */
-									[/* type variable ref */ 'tr', [/* name */ 'E']]
-								],
-								/* lower bounds */ UDF
-							]]
-						],
-						/* raw type */ 'java.util.Collection',
-						/* owner type */ UDF
-					]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public E java.util.AbstractList.set(int,E) */
-			/* name */ 'set',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'index',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'element',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ [/* type variable ref */ 'tr', [/* name */ 'E']],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* protected void java.util.AbstractList.removeRange(int,int) */
-			/* name */ 'removeRange',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'i',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'n',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 4,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -329,6 +298,37 @@ JdkClassCreateHelper.class('java.util.AbstractList', [
 				/* raw type */ 'java.util.ListIterator',
 				/* owner type */ UDF
 			]],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.util.AbstractList.add(int,E) */
+			/* name */ 'add',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'index',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'element',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.util.AbstractList.clear() */
+			/* name */ 'clear',
+			/* parameters */,
+			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

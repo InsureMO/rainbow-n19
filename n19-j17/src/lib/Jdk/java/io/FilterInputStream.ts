@@ -26,6 +26,64 @@ JdkClassCreateHelper.class('java.io.FilterInputStream', [
 		]
 	],
 	[/* declared methods */
+		[/* public boolean java.io.FilterInputStream.markSupported() */
+			/* name */ 'markSupported',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.io.FilterInputStream.available() throws java.io.IOException */
+			/* name */ 'available',
+			/* parameters */,
+			/* return */ 'int',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.io.FilterInputStream.read() throws java.io.IOException */
+			/* name */ 'read',
+			/* parameters */,
+			/* return */ 'int',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.io.FilterInputStream.read(byte[]) throws java.io.IOException */
+			/* name */ 'read',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'b',
+					/* type */ '[B',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public int java.io.FilterInputStream.read(byte[],int,int) throws java.io.IOException */
 			/* name */ 'read',
 			[/* parameters */
@@ -59,45 +117,17 @@ JdkClassCreateHelper.class('java.io.FilterInputStream', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.io.FilterInputStream.read(byte[]) throws java.io.IOException */
-			/* name */ 'read',
+		[/* public long java.io.FilterInputStream.skip(long) throws java.io.IOException */
+			/* name */ 'skip',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'b',
-					/* type */ '[B',
+					/* name */ 'n',
+					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'int',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.io.FilterInputStream.read() throws java.io.IOException */
-			/* name */ 'read',
-			/* parameters */,
-			/* return */ 'int',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.io.FilterInputStream.close() throws java.io.IOException */
-			/* name */ 'close',
-			/* parameters */,
-			/* return */ 'void',
+			/* return */ 'long',
 			[/* exceptions */
 				[/* exception */
 					/* type */ 'java.io.IOException',
@@ -124,50 +154,6 @@ JdkClassCreateHelper.class('java.io.FilterInputStream', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public long java.io.FilterInputStream.skip(long) throws java.io.IOException */
-			/* name */ 'skip',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'n',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'long',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.io.FilterInputStream.available() throws java.io.IOException */
-			/* name */ 'available',
-			/* parameters */,
-			/* return */ 'int',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.io.FilterInputStream.markSupported() */
-			/* name */ 'markSupported',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public synchronized void java.io.FilterInputStream.reset() throws java.io.IOException */
 			/* name */ 'reset',
 			/* parameters */,
@@ -179,6 +165,20 @@ JdkClassCreateHelper.class('java.io.FilterInputStream', [
 				]
 			],
 			/* modifiers */ 33,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.io.FilterInputStream.close() throws java.io.IOException */
+			/* name */ 'close',
+			/* parameters */,
+			/* return */ 'void',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

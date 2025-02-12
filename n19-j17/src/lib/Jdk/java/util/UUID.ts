@@ -57,26 +57,8 @@ JdkClassCreateHelper.class('java.util.UUID', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.util.UUID.toString() */
-			/* name */ 'toString',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.util.UUID.version() */
-			/* name */ 'version',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.util.UUID.hashCode() */
-			/* name */ 'hashCode',
+		[/* public int java.util.UUID.clockSequence() */
+			/* name */ 'clockSequence',
 			/* parameters */,
 			/* return */ 'int',
 			/* exceptions */,
@@ -116,8 +98,53 @@ JdkClassCreateHelper.class('java.util.UUID', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public long java.util.UUID.timestamp() */
-			/* name */ 'timestamp',
+		[/* public int java.util.UUID.hashCode() */
+			/* name */ 'hashCode',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.UUID.variant() */
+			/* name */ 'variant',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.UUID.version() */
+			/* name */ 'version',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.util.UUID.toString() */
+			/* name */ 'toString',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public long java.util.UUID.getLeastSignificantBits() */
+			/* name */ 'getLeastSignificantBits',
+			/* parameters */,
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public long java.util.UUID.getMostSignificantBits() */
+			/* name */ 'getMostSignificantBits',
 			/* parameters */,
 			/* return */ 'long',
 			/* exceptions */,
@@ -134,18 +161,25 @@ JdkClassCreateHelper.class('java.util.UUID', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.util.UUID.variant() */
-			/* name */ 'variant',
+		[/* public long java.util.UUID.timestamp() */
+			/* name */ 'timestamp',
 			/* parameters */,
-			/* return */ 'int',
+			/* return */ 'long',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.util.UUID java.util.UUID.randomUUID() */
-			/* name */ 'randomUUID',
-			/* parameters */,
+		[/* public static java.util.UUID java.util.UUID.fromString(java.lang.String) */
+			/* name */ 'fromString',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'msb1',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
 			/* return */ 'java.util.UUID',
 			/* exceptions */,
 			/* modifiers */ 9,
@@ -168,46 +202,12 @@ JdkClassCreateHelper.class('java.util.UUID', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.util.UUID java.util.UUID.fromString(java.lang.String) */
-			/* name */ 'fromString',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'msb1',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
+		[/* public static java.util.UUID java.util.UUID.randomUUID() */
+			/* name */ 'randomUUID',
+			/* parameters */,
 			/* return */ 'java.util.UUID',
 			/* exceptions */,
 			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public long java.util.UUID.getLeastSignificantBits() */
-			/* name */ 'getLeastSignificantBits',
-			/* parameters */,
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public long java.util.UUID.getMostSignificantBits() */
-			/* name */ 'getMostSignificantBits',
-			/* parameters */,
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.util.UUID.clockSequence() */
-			/* name */ 'clockSequence',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

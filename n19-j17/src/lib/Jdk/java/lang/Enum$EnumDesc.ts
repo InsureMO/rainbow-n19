@@ -31,6 +31,48 @@ JdkClassCreateHelper.class('java.lang.Enum$EnumDesc', [
 	],
 	/* declared constructors */,
 	[/* declared methods */
+		[/* public E java.lang.Enum$EnumDesc.resolveConstantDesc(java.lang.invoke.MethodHandles$Lookup) throws java.lang.ReflectiveOperationException */
+			/* name */ 'resolveConstantDesc',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'lookup',
+					/* type */ 'java.lang.invoke.MethodHandles$Lookup',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.lang.ReflectiveOperationException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.Object java.lang.Enum$EnumDesc.resolveConstantDesc(java.lang.invoke.MethodHandles$Lookup) throws java.lang.ReflectiveOperationException */
+			/* name */ 'resolveConstantDesc',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.invoke.MethodHandles$Lookup',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.Object',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.lang.ReflectiveOperationException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 4161,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.lang.String java.lang.Enum$EnumDesc.toString() */
 			/* name */ 'toString',
 			/* parameters */,
@@ -81,48 +123,6 @@ JdkClassCreateHelper.class('java.lang.Enum$EnumDesc', [
 					/* annotations */ UDF
 				]
 			]
-		],
-		[/* public java.lang.Object java.lang.Enum$EnumDesc.resolveConstantDesc(java.lang.invoke.MethodHandles$Lookup) throws java.lang.ReflectiveOperationException */
-			/* name */ 'resolveConstantDesc',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.invoke.MethodHandles$Lookup',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.Object',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.lang.ReflectiveOperationException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public E java.lang.Enum$EnumDesc.resolveConstantDesc(java.lang.invoke.MethodHandles$Lookup) throws java.lang.ReflectiveOperationException */
-			/* name */ 'resolveConstantDesc',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'lookup',
-					/* type */ 'java.lang.invoke.MethodHandles$Lookup',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ [/* type variable ref */ 'tr', [/* name */ 'E']],
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.lang.ReflectiveOperationException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
 		]
 	],
 	/* declared fields */,

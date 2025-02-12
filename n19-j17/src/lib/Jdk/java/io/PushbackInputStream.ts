@@ -46,6 +46,43 @@ JdkClassCreateHelper.class('java.io.PushbackInputStream', [
 		]
 	],
 	[/* declared methods */
+		[/* public boolean java.io.PushbackInputStream.markSupported() */
+			/* name */ 'markSupported',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.io.PushbackInputStream.available() throws java.io.IOException */
+			/* name */ 'available',
+			/* parameters */,
+			/* return */ 'int',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.io.PushbackInputStream.read() throws java.io.IOException */
+			/* name */ 'read',
+			/* parameters */,
+			/* return */ 'int',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public int java.io.PushbackInputStream.read(byte[],int,int) throws java.io.IOException */
 			/* name */ 'read',
 			[/* parameters */
@@ -79,10 +116,17 @@ JdkClassCreateHelper.class('java.io.PushbackInputStream', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.io.PushbackInputStream.read() throws java.io.IOException */
-			/* name */ 'read',
-			/* parameters */,
-			/* return */ 'int',
+		[/* public long java.io.PushbackInputStream.skip(long) throws java.io.IOException */
+			/* name */ 'skip',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'n',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'long',
 			[/* exceptions */
 				[/* exception */
 					/* type */ 'java.io.IOException',
@@ -123,50 +167,6 @@ JdkClassCreateHelper.class('java.io.PushbackInputStream', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public long java.io.PushbackInputStream.skip(long) throws java.io.IOException */
-			/* name */ 'skip',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'n',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'long',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.io.PushbackInputStream.available() throws java.io.IOException */
-			/* name */ 'available',
-			/* parameters */,
-			/* return */ 'int',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.io.PushbackInputStream.markSupported() */
-			/* name */ 'markSupported',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public synchronized void java.io.PushbackInputStream.reset() throws java.io.IOException */
 			/* name */ 'reset',
 			/* parameters */,
@@ -202,27 +202,6 @@ JdkClassCreateHelper.class('java.io.PushbackInputStream', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.io.PushbackInputStream.unread(int) throws java.io.IOException */
-			/* name */ 'unread',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'b',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public void java.io.PushbackInputStream.unread(byte[],int,int) throws java.io.IOException */
 			/* name */ 'unread',
 			[/* parameters */
@@ -240,6 +219,27 @@ JdkClassCreateHelper.class('java.io.PushbackInputStream', [
 				],
 				[/* parameter */
 					/* name */ 'len',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.io.PushbackInputStream.unread(int) throws java.io.IOException */
+			/* name */ 'unread',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'b',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

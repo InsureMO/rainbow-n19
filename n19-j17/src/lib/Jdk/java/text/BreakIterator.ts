@@ -21,12 +21,46 @@ JdkClassCreateHelper.class('java.text.BreakIterator', [
 		]
 	],
 	[/* declared methods */
-		[/* public java.lang.Object java.text.BreakIterator.clone() */
-			/* name */ 'clone',
+		[/* public abstract int java.text.BreakIterator.current() */
+			/* name */ 'current',
 			/* parameters */,
-			/* return */ 'java.lang.Object',
+			/* return */ 'int',
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract int java.text.BreakIterator.first() */
+			/* name */ 'first',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract int java.text.BreakIterator.following(int) */
+			/* name */ 'following',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract int java.text.BreakIterator.last() */
+			/* name */ 'last',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -55,33 +89,6 @@ JdkClassCreateHelper.class('java.text.BreakIterator', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract int java.text.BreakIterator.last() */
-			/* name */ 'last',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract int java.text.BreakIterator.first() */
-			/* name */ 'first',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract int java.text.BreakIterator.current() */
-			/* name */ 'current',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public abstract int java.text.BreakIterator.previous() */
 			/* name */ 'previous',
 			/* parameters */,
@@ -91,37 +98,12 @@ JdkClassCreateHelper.class('java.text.BreakIterator', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static synchronized java.util.Locale[] java.text.BreakIterator.getAvailableLocales() */
-			/* name */ 'getAvailableLocales',
-			/* parameters */,
-			/* return */ '[Ljava.util.Locale;',
-			/* exceptions */,
-			/* modifiers */ 41,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public abstract java.text.CharacterIterator java.text.BreakIterator.getText() */
 			/* name */ 'getText',
 			/* parameters */,
 			/* return */ 'java.text.CharacterIterator',
 			/* exceptions */,
 			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.text.BreakIterator.setText(java.lang.String) */
-			/* name */ 'setText',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'newText',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -141,49 +123,49 @@ JdkClassCreateHelper.class('java.text.BreakIterator', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.text.BreakIterator java.text.BreakIterator.getWordInstance(java.util.Locale) */
-			/* name */ 'getWordInstance',
+		[/* public boolean java.text.BreakIterator.isBoundary(int) */
+			/* name */ 'isBoundary',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.util.Locale',
+					/* name */ 'offset',
+					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.text.BreakIterator',
+			/* return */ 'boolean',
 			/* exceptions */,
-			/* modifiers */ 9,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.text.BreakIterator java.text.BreakIterator.getWordInstance() */
-			/* name */ 'getWordInstance',
+		[/* public int java.text.BreakIterator.preceding(int) */
+			/* name */ 'preceding',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'offset',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.Object java.text.BreakIterator.clone() */
+			/* name */ 'clone',
 			/* parameters */,
-			/* return */ 'java.text.BreakIterator',
+			/* return */ 'java.lang.Object',
 			/* exceptions */,
-			/* modifiers */ 9,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.text.BreakIterator java.text.BreakIterator.getLineInstance(java.util.Locale) */
-			/* name */ 'getLineInstance',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.util.Locale',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.text.BreakIterator',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.text.BreakIterator java.text.BreakIterator.getLineInstance() */
-			/* name */ 'getLineInstance',
+		[/* public static java.text.BreakIterator java.text.BreakIterator.getCharacterInstance() */
+			/* name */ 'getCharacterInstance',
 			/* parameters */,
 			/* return */ 'java.text.BreakIterator',
 			/* exceptions */,
@@ -207,9 +189,25 @@ JdkClassCreateHelper.class('java.text.BreakIterator', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.text.BreakIterator java.text.BreakIterator.getCharacterInstance() */
-			/* name */ 'getCharacterInstance',
+		[/* public static java.text.BreakIterator java.text.BreakIterator.getLineInstance() */
+			/* name */ 'getLineInstance',
 			/* parameters */,
+			/* return */ 'java.text.BreakIterator',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.text.BreakIterator java.text.BreakIterator.getLineInstance(java.util.Locale) */
+			/* name */ 'getLineInstance',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.util.Locale',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
 			/* return */ 'java.text.BreakIterator',
 			/* exceptions */,
 			/* modifiers */ 9,
@@ -241,49 +239,51 @@ JdkClassCreateHelper.class('java.text.BreakIterator', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public boolean java.text.BreakIterator.isBoundary(int) */
-			/* name */ 'isBoundary',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'offset',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
+		[/* public static java.text.BreakIterator java.text.BreakIterator.getWordInstance() */
+			/* name */ 'getWordInstance',
+			/* parameters */,
+			/* return */ 'java.text.BreakIterator',
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract int java.text.BreakIterator.following(int) */
-			/* name */ 'following',
+		[/* public static java.text.BreakIterator java.text.BreakIterator.getWordInstance(java.util.Locale) */
+			/* name */ 'getWordInstance',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
-					/* type */ 'int',
+					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'int',
+			/* return */ 'java.text.BreakIterator',
 			/* exceptions */,
-			/* modifiers */ 1025,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.text.BreakIterator.preceding(int) */
-			/* name */ 'preceding',
+		[/* public static synchronized java.util.Locale[] java.text.BreakIterator.getAvailableLocales() */
+			/* name */ 'getAvailableLocales',
+			/* parameters */,
+			/* return */ '[Ljava.util.Locale;',
+			/* exceptions */,
+			/* modifiers */ 41,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.text.BreakIterator.setText(java.lang.String) */
+			/* name */ 'setText',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'offset',
-					/* type */ 'int',
+					/* name */ 'newText',
+					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'int',
+			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

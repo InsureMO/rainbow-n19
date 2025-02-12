@@ -32,6 +32,24 @@ JdkClassCreateHelper.class('java.io.StringBufferInputStream', [
 		]
 	],
 	[/* declared methods */
+		[/* public synchronized int java.io.StringBufferInputStream.available() */
+			/* name */ 'available',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 33,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public synchronized int java.io.StringBufferInputStream.read() */
+			/* name */ 'read',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 33,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public synchronized int java.io.StringBufferInputStream.read(byte[],int,int) */
 			/* name */ 'read',
 			[/* parameters */
@@ -60,15 +78,6 @@ JdkClassCreateHelper.class('java.io.StringBufferInputStream', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public synchronized int java.io.StringBufferInputStream.read() */
-			/* name */ 'read',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 33,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public synchronized long java.io.StringBufferInputStream.skip(long) */
 			/* name */ 'skip',
 			[/* parameters */
@@ -80,15 +89,6 @@ JdkClassCreateHelper.class('java.io.StringBufferInputStream', [
 				]
 			],
 			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 33,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public synchronized int java.io.StringBufferInputStream.available() */
-			/* name */ 'available',
-			/* parameters */,
-			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 33,
 			/* annotations */ UDF,

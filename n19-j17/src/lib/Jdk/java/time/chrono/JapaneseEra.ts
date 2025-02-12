@@ -14,76 +14,10 @@ JdkClassCreateHelper.class('java.time.chrono.JapaneseEra', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public java.lang.String java.time.chrono.JapaneseEra.toString() */
-			/* name */ 'toString',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.time.chrono.JapaneseEra[] java.time.chrono.JapaneseEra.values() */
-			/* name */ 'values',
-			/* parameters */,
-			/* return */ '[Ljava.time.chrono.JapaneseEra;',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.time.chrono.JapaneseEra java.time.chrono.JapaneseEra.valueOf(java.lang.String) */
-			/* name */ 'valueOf',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'era',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.chrono.JapaneseEra',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public int java.time.chrono.JapaneseEra.getValue() */
 			/* name */ 'getValue',
 			/* parameters */,
 			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.time.chrono.JapaneseEra java.time.chrono.JapaneseEra.of(int) */
-			/* name */ 'of',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'i',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.chrono.JapaneseEra',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.temporal.ValueRange java.time.chrono.JapaneseEra.range(java.time.temporal.TemporalField) */
-			/* name */ 'range',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'field',
-					/* type */ 'java.time.temporal.TemporalField',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.temporal.ValueRange',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -108,6 +42,72 @@ JdkClassCreateHelper.class('java.time.chrono.JapaneseEra', [
 			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.time.chrono.JapaneseEra.toString() */
+			/* name */ 'toString',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.temporal.ValueRange java.time.chrono.JapaneseEra.range(java.time.temporal.TemporalField) */
+			/* name */ 'range',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'field',
+					/* type */ 'java.time.temporal.TemporalField',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.temporal.ValueRange',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.time.chrono.JapaneseEra java.time.chrono.JapaneseEra.of(int) */
+			/* name */ 'of',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'i',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.chrono.JapaneseEra',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.time.chrono.JapaneseEra java.time.chrono.JapaneseEra.valueOf(java.lang.String) */
+			/* name */ 'valueOf',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'era',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.chrono.JapaneseEra',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.time.chrono.JapaneseEra[] java.time.chrono.JapaneseEra.values() */
+			/* name */ 'values',
+			/* parameters */,
+			/* return */ '[Ljava.time.chrono.JapaneseEra;',
+			/* exceptions */,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

@@ -12,16 +12,10 @@ JdkClassCreateHelper.class('java.security.BasicPermission', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
-		[/* public java.security.BasicPermission(java.lang.String,java.lang.String) */
+		[/* public java.security.BasicPermission(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'name',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'actions',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -32,10 +26,16 @@ JdkClassCreateHelper.class('java.security.BasicPermission', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.security.BasicPermission(java.lang.String) */
+		[/* public java.security.BasicPermission(java.lang.String,java.lang.String) */
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'name',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'actions',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -64,15 +64,6 @@ JdkClassCreateHelper.class('java.security.BasicPermission', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.security.BasicPermission.hashCode() */
-			/* name */ 'hashCode',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public boolean java.security.BasicPermission.implies(java.security.Permission) */
 			/* name */ 'implies',
 			[/* parameters */
@@ -84,6 +75,15 @@ JdkClassCreateHelper.class('java.security.BasicPermission', [
 				]
 			],
 			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.security.BasicPermission.hashCode() */
+			/* name */ 'hashCode',
+			/* parameters */,
+			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

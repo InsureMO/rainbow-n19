@@ -17,15 +17,6 @@ JdkClassCreateHelper.class('java.lang.StackWalker$Option', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public static java.lang.StackWalker$Option[] java.lang.StackWalker$Option.values() */
-			/* name */ 'values',
-			/* parameters */,
-			/* return */ '[Ljava.lang.StackWalker$Option;',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public static java.lang.StackWalker$Option java.lang.StackWalker$Option.valueOf(java.lang.String) */
 			/* name */ 'valueOf',
 			[/* parameters */
@@ -37,6 +28,15 @@ JdkClassCreateHelper.class('java.lang.StackWalker$Option', [
 				]
 			],
 			/* return */ 'java.lang.StackWalker$Option',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.lang.StackWalker$Option[] java.lang.StackWalker$Option.values() */
+			/* name */ 'values',
+			/* parameters */,
+			/* return */ '[Ljava.lang.StackWalker$Option;',
 			/* exceptions */,
 			/* modifiers */ 9,
 			/* annotations */ UDF,

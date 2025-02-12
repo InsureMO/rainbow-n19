@@ -43,23 +43,49 @@ JdkClassCreateHelper.class('java.util.function.Function', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static <T> java.util.function.Function<T, T> java.util.function.Function.identity() */
-			/* name */ 'identity',
-			/* parameters */,
+		[/* public default <V> java.util.function.Function<T, V> java.util.function.Function.andThen(java.util.function.Function<? super R, ? extends V>) */
+			/* name */ 'andThen',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'after',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									'java.lang.Object'
+								],
+								[/* lower bounds */
+									[/* type variable ref */ 'tr', [/* name */ 'R']]
+								]
+							]],
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									[/* type variable ref */ 'tr', [/* name */ 'V']]
+								],
+								/* lower bounds */ UDF
+							]]
+						],
+						/* raw type */ 'java.util.function.Function',
+						/* owner type */ UDF
+					]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
 			/* return */ [/* parameterized type */ 'pt', [
 				[/* actual argument types */
 					[/* type variable ref */ 'tr', [/* name */ 'T']],
-					[/* type variable ref */ 'tr', [/* name */ 'T']]
+					[/* type variable ref */ 'tr', [/* name */ 'V']]
 				],
 				/* raw type */ 'java.util.function.Function',
 				/* owner type */ UDF
 			]],
 			/* exceptions */,
-			/* modifiers */ 9,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			[/* type parameters */
 				[/* type variable */
-					/* name */ 'T',
+					/* name */ 'V',
 					[/* bounds */
 						'java.lang.Object'
 					],
@@ -117,49 +143,23 @@ JdkClassCreateHelper.class('java.util.function.Function', [
 				]
 			]
 		],
-		[/* public default <V> java.util.function.Function<T, V> java.util.function.Function.andThen(java.util.function.Function<? super R, ? extends V>) */
-			/* name */ 'andThen',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'after',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							[/* wildcard type */ 'wt', [
-								[/* upper bounds */
-									'java.lang.Object'
-								],
-								[/* lower bounds */
-									[/* type variable ref */ 'tr', [/* name */ 'R']]
-								]
-							]],
-							[/* wildcard type */ 'wt', [
-								[/* upper bounds */
-									[/* type variable ref */ 'tr', [/* name */ 'V']]
-								],
-								/* lower bounds */ UDF
-							]]
-						],
-						/* raw type */ 'java.util.function.Function',
-						/* owner type */ UDF
-					]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
+		[/* public static <T> java.util.function.Function<T, T> java.util.function.Function.identity() */
+			/* name */ 'identity',
+			/* parameters */,
 			/* return */ [/* parameterized type */ 'pt', [
 				[/* actual argument types */
 					[/* type variable ref */ 'tr', [/* name */ 'T']],
-					[/* type variable ref */ 'tr', [/* name */ 'V']]
+					[/* type variable ref */ 'tr', [/* name */ 'T']]
 				],
 				/* raw type */ 'java.util.function.Function',
 				/* owner type */ UDF
 			]],
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			[/* type parameters */
 				[/* type variable */
-					/* name */ 'V',
+					/* name */ 'T',
 					[/* bounds */
 						'java.lang.Object'
 					],

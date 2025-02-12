@@ -64,6 +64,17 @@ JdkClassCreateHelper.class('java.lang.Boolean', [
 		]
 	],
 	[/* declared methods */
+		[/* public boolean java.lang.Boolean.booleanValue() */
+			/* name */ 'booleanValue',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			[/* annotations */
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
 		[/* public boolean java.lang.Boolean.equals(java.lang.Object) */
 			/* name */ 'equals',
 			[/* parameters */
@@ -77,56 +88,6 @@ JdkClassCreateHelper.class('java.lang.Boolean', [
 			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.lang.Boolean.toString() */
-			/* name */ 'toString',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.lang.String java.lang.Boolean.toString(boolean) */
-			/* name */ 'toString',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'boolean',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.lang.Boolean.hashCode() */
-			/* name */ 'hashCode',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static int java.lang.Boolean.hashCode(boolean) */
-			/* name */ 'hashCode',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'boolean',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -162,87 +123,22 @@ JdkClassCreateHelper.class('java.lang.Boolean', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static boolean java.lang.Boolean.getBoolean(java.lang.String) */
-			/* name */ 'getBoolean',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'result',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static int java.lang.Boolean.compare(boolean,boolean) */
-			/* name */ 'compare',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'y',
-					/* type */ 'boolean',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'boolean',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
+		[/* public int java.lang.Boolean.hashCode() */
+			/* name */ 'hashCode',
+			/* parameters */,
 			/* return */ 'int',
 			/* exceptions */,
-			/* modifiers */ 9,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public boolean java.lang.Boolean.booleanValue() */
-			/* name */ 'booleanValue',
+		[/* public java.lang.String java.lang.Boolean.toString() */
+			/* name */ 'toString',
 			/* parameters */,
-			/* return */ 'boolean',
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public static java.lang.Boolean java.lang.Boolean.valueOf(java.lang.String) */
-			/* name */ 'valueOf',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.Boolean',
-			/* exceptions */,
-			/* modifiers */ 9,
 			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.lang.Boolean java.lang.Boolean.valueOf(boolean) */
-			/* name */ 'valueOf',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'boolean',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.Boolean',
-			/* exceptions */,
-			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
 			/* type parameters */ UDF
 		],
 		[/* public java.util.Optional<java.lang.constant.DynamicConstantDesc<java.lang.Boolean>> java.lang.Boolean.describeConstable() */
@@ -266,11 +162,11 @@ JdkClassCreateHelper.class('java.lang.Boolean', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static boolean java.lang.Boolean.parseBoolean(java.lang.String) */
-			/* name */ 'parseBoolean',
+		[/* public static boolean java.lang.Boolean.getBoolean(java.lang.String) */
+			/* name */ 'getBoolean',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'result',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -343,6 +239,110 @@ JdkClassCreateHelper.class('java.lang.Boolean', [
 				]
 			],
 			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static boolean java.lang.Boolean.parseBoolean(java.lang.String) */
+			/* name */ 'parseBoolean',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static int java.lang.Boolean.compare(boolean,boolean) */
+			/* name */ 'compare',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'y',
+					/* type */ 'boolean',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'boolean',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static int java.lang.Boolean.hashCode(boolean) */
+			/* name */ 'hashCode',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'boolean',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.lang.Boolean java.lang.Boolean.valueOf(boolean) */
+			/* name */ 'valueOf',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'boolean',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.Boolean',
+			/* exceptions */,
+			/* modifiers */ 9,
+			[/* annotations */
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public static java.lang.Boolean java.lang.Boolean.valueOf(java.lang.String) */
+			/* name */ 'valueOf',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.Boolean',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.lang.String java.lang.Boolean.toString(boolean) */
+			/* name */ 'toString',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'boolean',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 9,
 			/* annotations */ UDF,

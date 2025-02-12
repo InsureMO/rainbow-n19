@@ -19,10 +19,26 @@ JdkClassCreateHelper.class('java.time.chrono.IsoEra', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public static java.time.chrono.IsoEra[] java.time.chrono.IsoEra.values() */
-			/* name */ 'values',
+		[/* public int java.time.chrono.IsoEra.getValue() */
+			/* name */ 'getValue',
 			/* parameters */,
-			/* return */ '[Ljava.time.chrono.IsoEra;',
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.time.chrono.IsoEra java.time.chrono.IsoEra.of(int) */
+			/* name */ 'of',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.chrono.IsoEra',
 			/* exceptions */,
 			/* modifiers */ 9,
 			/* annotations */ UDF,
@@ -44,26 +60,10 @@ JdkClassCreateHelper.class('java.time.chrono.IsoEra', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.time.chrono.IsoEra.getValue() */
-			/* name */ 'getValue',
+		[/* public static java.time.chrono.IsoEra[] java.time.chrono.IsoEra.values() */
+			/* name */ 'values',
 			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.time.chrono.IsoEra java.time.chrono.IsoEra.of(int) */
-			/* name */ 'of',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.chrono.IsoEra',
+			/* return */ '[Ljava.time.chrono.IsoEra;',
 			/* exceptions */,
 			/* modifiers */ 9,
 			/* annotations */ UDF,

@@ -33,10 +33,33 @@ JdkClassCreateHelper.class('java.io.StringWriter', [
 		]
 	],
 	[/* declared methods */
-		[/* public java.lang.String java.io.StringWriter.toString() */
-			/* name */ 'toString',
-			/* parameters */,
-			/* return */ 'java.lang.String',
+		[/* public java.io.StringWriter java.io.StringWriter.append(char) */
+			/* name */ 'append',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'c',
+					/* type */ 'char',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.io.StringWriter',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.io.StringWriter java.io.StringWriter.append(java.lang.CharSequence) */
+			/* name */ 'append',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'csq',
+					/* type */ 'java.lang.CharSequence',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.io.StringWriter',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -70,19 +93,24 @@ JdkClassCreateHelper.class('java.io.StringWriter', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.io.StringWriter java.io.StringWriter.append(char) */
+		[/* public java.io.Writer java.io.StringWriter.append(char) throws java.io.IOException */
 			/* name */ 'append',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'c',
+					/* name */ 'arg0',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.io.StringWriter',
-			/* exceptions */,
-			/* modifiers */ 1,
+			/* return */ 'java.io.Writer',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 4161,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -140,7 +168,7 @@ JdkClassCreateHelper.class('java.io.StringWriter', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.io.Writer java.io.StringWriter.append(char) throws java.io.IOException */
+		[/* public java.lang.Appendable java.io.StringWriter.append(char) throws java.io.IOException */
 			/* name */ 'append',
 			[/* parameters */
 				[/* parameter */
@@ -150,7 +178,7 @@ JdkClassCreateHelper.class('java.io.StringWriter', [
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.io.Writer',
+			/* return */ 'java.lang.Appendable',
 			[/* exceptions */
 				[/* exception */
 					/* type */ 'java.io.IOException',
@@ -215,39 +243,34 @@ JdkClassCreateHelper.class('java.io.StringWriter', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.Appendable java.io.StringWriter.append(char) throws java.io.IOException */
-			/* name */ 'append',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'char',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.Appendable',
+		[/* public java.lang.String java.io.StringWriter.toString() */
+			/* name */ 'toString',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.StringBuffer java.io.StringWriter.getBuffer() */
+			/* name */ 'getBuffer',
+			/* parameters */,
+			/* return */ 'java.lang.StringBuffer',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.io.StringWriter.close() throws java.io.IOException */
+			/* name */ 'close',
+			/* parameters */,
+			/* return */ 'void',
 			[/* exceptions */
 				[/* exception */
 					/* type */ 'java.io.IOException',
 					/* annotations */ UDF
 				]
 			],
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.io.StringWriter java.io.StringWriter.append(java.lang.CharSequence) */
-			/* name */ 'append',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'csq',
-					/* type */ 'java.lang.CharSequence',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.io.StringWriter',
-			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
@@ -289,23 +312,11 @@ JdkClassCreateHelper.class('java.io.StringWriter', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.io.StringWriter.write(java.lang.String,int,int) */
+		[/* public void java.io.StringWriter.write(int) */
 			/* name */ 'write',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'str',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'off',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'len',
+					/* name */ 'c',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -333,40 +344,29 @@ JdkClassCreateHelper.class('java.io.StringWriter', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.io.StringWriter.write(int) */
+		[/* public void java.io.StringWriter.write(java.lang.String,int,int) */
 			/* name */ 'write',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'c',
+					/* name */ 'str',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'off',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'len',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
 			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.io.StringWriter.close() throws java.io.IOException */
-			/* name */ 'close',
-			/* parameters */,
-			/* return */ 'void',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.StringBuffer java.io.StringWriter.getBuffer() */
-			/* name */ 'getBuffer',
-			/* parameters */,
-			/* return */ 'java.lang.StringBuffer',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

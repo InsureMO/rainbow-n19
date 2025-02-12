@@ -13,12 +13,34 @@ JdkClassCreateHelper.class('java.io.Console', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public void java.io.Console.flush() */
-			/* name */ 'flush',
+		[/* public char[] java.io.Console.readPassword() */
+			/* name */ 'readPassword',
 			/* parameters */,
-			/* return */ 'void',
+			/* return */ '[C',
 			/* exceptions */,
 			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public char[] java.io.Console.readPassword(java.lang.String,java.lang.Object...) */
+			/* name */ 'readPassword',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ '[Ljava.lang.Object;',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ '[C',
+			/* exceptions */,
+			/* modifiers */ 129,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -44,15 +66,6 @@ JdkClassCreateHelper.class('java.io.Console', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.nio.charset.Charset java.io.Console.charset() */
-			/* name */ 'charset',
-			/* parameters */,
-			/* return */ 'java.nio.charset.Charset',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public java.io.Console java.io.Console.printf(java.lang.String,java.lang.Object...) */
 			/* name */ 'printf',
 			[/* parameters */
@@ -72,6 +85,24 @@ JdkClassCreateHelper.class('java.io.Console', [
 			/* return */ 'java.io.Console',
 			/* exceptions */,
 			/* modifiers */ 129,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.io.PrintWriter java.io.Console.writer() */
+			/* name */ 'writer',
+			/* parameters */,
+			/* return */ 'java.io.PrintWriter',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.io.Reader java.io.Console.reader() */
+			/* name */ 'reader',
+			/* parameters */,
+			/* return */ 'java.io.Reader',
+			/* exceptions */,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -106,50 +137,19 @@ JdkClassCreateHelper.class('java.io.Console', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.io.Reader java.io.Console.reader() */
-			/* name */ 'reader',
+		[/* public java.nio.charset.Charset java.io.Console.charset() */
+			/* name */ 'charset',
 			/* parameters */,
-			/* return */ 'java.io.Reader',
+			/* return */ 'java.nio.charset.Charset',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.io.PrintWriter java.io.Console.writer() */
-			/* name */ 'writer',
+		[/* public void java.io.Console.flush() */
+			/* name */ 'flush',
 			/* parameters */,
-			/* return */ 'java.io.PrintWriter',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public char[] java.io.Console.readPassword(java.lang.String,java.lang.Object...) */
-			/* name */ 'readPassword',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ '[Ljava.lang.Object;',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ '[C',
-			/* exceptions */,
-			/* modifiers */ 129,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public char[] java.io.Console.readPassword() */
-			/* name */ 'readPassword',
-			/* parameters */,
-			/* return */ '[C',
+			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

@@ -13,38 +13,6 @@ JdkClassCreateHelper.class('java.time.chrono.Era', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public default int java.time.chrono.Era.get(java.time.temporal.TemporalField) */
-			/* name */ 'get',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'field',
-					/* type */ 'java.time.temporal.TemporalField',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public default long java.time.chrono.Era.getLong(java.time.temporal.TemporalField) */
-			/* name */ 'getLong',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'field',
-					/* type */ 'java.time.temporal.TemporalField',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public abstract int java.time.chrono.Era.getValue() */
 			/* name */ 'getValue',
 			/* parameters */,
@@ -84,22 +52,6 @@ JdkClassCreateHelper.class('java.time.chrono.Era', [
 				]
 			]
 		],
-		[/* public default java.time.temporal.ValueRange java.time.chrono.Era.range(java.time.temporal.TemporalField) */
-			/* name */ 'range',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'field',
-					/* type */ 'java.time.temporal.TemporalField',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.temporal.ValueRange',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public default boolean java.time.chrono.Era.isSupported(java.time.temporal.TemporalField) */
 			/* name */ 'isSupported',
 			[/* parameters */
@@ -111,6 +63,22 @@ JdkClassCreateHelper.class('java.time.chrono.Era', [
 				]
 			],
 			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public default int java.time.chrono.Era.get(java.time.temporal.TemporalField) */
+			/* name */ 'get',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'field',
+					/* type */ 'java.time.temporal.TemporalField',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -149,6 +117,38 @@ JdkClassCreateHelper.class('java.time.chrono.Era', [
 				]
 			],
 			/* return */ 'java.time.temporal.Temporal',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public default java.time.temporal.ValueRange java.time.chrono.Era.range(java.time.temporal.TemporalField) */
+			/* name */ 'range',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'field',
+					/* type */ 'java.time.temporal.TemporalField',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.temporal.ValueRange',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public default long java.time.chrono.Era.getLong(java.time.temporal.TemporalField) */
+			/* name */ 'getLong',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'field',
+					/* type */ 'java.time.temporal.TemporalField',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'long',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

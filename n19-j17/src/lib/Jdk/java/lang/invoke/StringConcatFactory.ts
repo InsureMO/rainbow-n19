@@ -11,6 +11,39 @@ JdkClassCreateHelper.class('java.lang.invoke.StringConcatFactory', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
+		[/* public static java.lang.invoke.CallSite java.lang.invoke.StringConcatFactory.makeConcat(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType) throws java.lang.invoke.StringConcatException */
+			/* name */ 'makeConcat',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'name',
+					/* type */ 'java.lang.invoke.MethodHandles$Lookup',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'concatType',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'recipe',
+					/* type */ 'java.lang.invoke.MethodType',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.invoke.CallSite',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.lang.invoke.StringConcatException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public static java.lang.invoke.CallSite java.lang.invoke.StringConcatFactory.makeConcatWithConstants(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object...) throws java.lang.invoke.StringConcatException */
 			/* name */ 'makeConcatWithConstants',
 			[/* parameters */
@@ -53,39 +86,6 @@ JdkClassCreateHelper.class('java.lang.invoke.StringConcatFactory', [
 				]
 			],
 			/* modifiers */ 137,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.lang.invoke.CallSite java.lang.invoke.StringConcatFactory.makeConcat(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType) throws java.lang.invoke.StringConcatException */
-			/* name */ 'makeConcat',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'name',
-					/* type */ 'java.lang.invoke.MethodHandles$Lookup',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'concatType',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'recipe',
-					/* type */ 'java.lang.invoke.MethodType',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.invoke.CallSite',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.lang.invoke.StringConcatException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

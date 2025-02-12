@@ -45,8 +45,17 @@ JdkClassCreateHelper.class('java.lang.ProcessBuilder$Redirect', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.lang.ProcessBuilder$Redirect java.lang.ProcessBuilder$Redirect.to(java.io.File) */
-			/* name */ 'to',
+		[/* public java.io.File java.lang.ProcessBuilder$Redirect.file() */
+			/* name */ 'file',
+			/* parameters */,
+			/* return */ 'java.io.File',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.lang.ProcessBuilder$Redirect java.lang.ProcessBuilder$Redirect.appendTo(java.io.File) */
+			/* name */ 'appendTo',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
@@ -77,17 +86,8 @@ JdkClassCreateHelper.class('java.lang.ProcessBuilder$Redirect', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.io.File java.lang.ProcessBuilder$Redirect.file() */
-			/* name */ 'file',
-			/* parameters */,
-			/* return */ 'java.io.File',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.lang.ProcessBuilder$Redirect java.lang.ProcessBuilder$Redirect.appendTo(java.io.File) */
-			/* name */ 'appendTo',
+		[/* public static java.lang.ProcessBuilder$Redirect java.lang.ProcessBuilder$Redirect.to(java.io.File) */
+			/* name */ 'to',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',

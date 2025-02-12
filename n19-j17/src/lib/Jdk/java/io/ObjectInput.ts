@@ -13,15 +13,46 @@ JdkClassCreateHelper.class('java.io.ObjectInput', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public abstract java.lang.Object java.io.ObjectInput.readObject() throws java.lang.ClassNotFoundException,java.io.IOException */
-			/* name */ 'readObject',
+		[/* public abstract int java.io.ObjectInput.available() throws java.io.IOException */
+			/* name */ 'available',
 			/* parameters */,
-			/* return */ 'java.lang.Object',
+			/* return */ 'int',
 			[/* exceptions */
 				[/* exception */
-					/* type */ 'java.lang.ClassNotFoundException',
+					/* type */ 'java.io.IOException',
 					/* annotations */ UDF
-				],
+				]
+			],
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract int java.io.ObjectInput.read() throws java.io.IOException */
+			/* name */ 'read',
+			/* parameters */,
+			/* return */ 'int',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract int java.io.ObjectInput.read(byte[]) throws java.io.IOException */
+			/* name */ 'read',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ '[B',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			[/* exceptions */
 				[/* exception */
 					/* type */ 'java.io.IOException',
 					/* annotations */ UDF
@@ -64,46 +95,15 @@ JdkClassCreateHelper.class('java.io.ObjectInput', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract int java.io.ObjectInput.read(byte[]) throws java.io.IOException */
-			/* name */ 'read',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ '[B',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
+		[/* public abstract java.lang.Object java.io.ObjectInput.readObject() throws java.lang.ClassNotFoundException,java.io.IOException */
+			/* name */ 'readObject',
+			/* parameters */,
+			/* return */ 'java.lang.Object',
 			[/* exceptions */
 				[/* exception */
-					/* type */ 'java.io.IOException',
+					/* type */ 'java.lang.ClassNotFoundException',
 					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract int java.io.ObjectInput.read() throws java.io.IOException */
-			/* name */ 'read',
-			/* parameters */,
-			/* return */ 'int',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract void java.io.ObjectInput.close() throws java.io.IOException */
-			/* name */ 'close',
-			/* parameters */,
-			/* return */ 'void',
-			[/* exceptions */
+				],
 				[/* exception */
 					/* type */ 'java.io.IOException',
 					/* annotations */ UDF
@@ -134,10 +134,10 @@ JdkClassCreateHelper.class('java.io.ObjectInput', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract int java.io.ObjectInput.available() throws java.io.IOException */
-			/* name */ 'available',
+		[/* public abstract void java.io.ObjectInput.close() throws java.io.IOException */
+			/* name */ 'close',
 			/* parameters */,
-			/* return */ 'int',
+			/* return */ 'void',
 			[/* exceptions */
 				[/* exception */
 					/* type */ 'java.io.IOException',

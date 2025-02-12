@@ -11,22 +11,6 @@ JdkClassCreateHelper.class('java.util.Base64$Decoder', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public byte[] java.util.Base64$Decoder.decode(java.lang.String) */
-			/* name */ 'decode',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'src',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ '[B',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public byte[] java.util.Base64$Decoder.decode(byte[]) */
 			/* name */ 'decode',
 			[/* parameters */
@@ -43,17 +27,17 @@ JdkClassCreateHelper.class('java.util.Base64$Decoder', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.nio.ByteBuffer java.util.Base64$Decoder.decode(java.nio.ByteBuffer) */
+		[/* public byte[] java.util.Base64$Decoder.decode(java.lang.String) */
 			/* name */ 'decode',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'src',
-					/* type */ 'java.nio.ByteBuffer',
+					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.nio.ByteBuffer',
+			/* return */ '[B',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -92,6 +76,22 @@ JdkClassCreateHelper.class('java.util.Base64$Decoder', [
 				]
 			],
 			/* return */ 'java.io.InputStream',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.nio.ByteBuffer java.util.Base64$Decoder.decode(java.nio.ByteBuffer) */
+			/* name */ 'decode',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'src',
+					/* type */ 'java.nio.ByteBuffer',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.nio.ByteBuffer',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

@@ -38,15 +38,6 @@ JdkClassCreateHelper.class('java.util.regex.PatternSyntaxException', [
 		]
 	],
 	[/* declared methods */
-		[/* public java.lang.String java.util.regex.PatternSyntaxException.getMessage() */
-			/* name */ 'getMessage',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public int java.util.regex.PatternSyntaxException.getIndex() */
 			/* name */ 'getIndex',
 			/* parameters */,
@@ -56,8 +47,8 @@ JdkClassCreateHelper.class('java.util.regex.PatternSyntaxException', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.util.regex.PatternSyntaxException.getPattern() */
-			/* name */ 'getPattern',
+		[/* public java.lang.String java.util.regex.PatternSyntaxException.getDescription() */
+			/* name */ 'getDescription',
 			/* parameters */,
 			/* return */ 'java.lang.String',
 			/* exceptions */,
@@ -65,8 +56,17 @@ JdkClassCreateHelper.class('java.util.regex.PatternSyntaxException', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.util.regex.PatternSyntaxException.getDescription() */
-			/* name */ 'getDescription',
+		[/* public java.lang.String java.util.regex.PatternSyntaxException.getMessage() */
+			/* name */ 'getMessage',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.util.regex.PatternSyntaxException.getPattern() */
+			/* name */ 'getPattern',
 			/* parameters */,
 			/* return */ 'java.lang.String',
 			/* exceptions */,

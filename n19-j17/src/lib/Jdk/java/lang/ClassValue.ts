@@ -27,11 +27,11 @@ JdkClassCreateHelper.class('java.lang.ClassValue', [
 		]
 	],
 	[/* declared methods */
-		[/* public void java.lang.ClassValue.remove(java.lang.Class<?>) */
-			/* name */ 'remove',
+		[/* protected abstract T java.lang.ClassValue.computeValue(java.lang.Class<?>) */
+			/* name */ 'computeValue',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'type',
+					/* name */ 'arg0',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -48,9 +48,9 @@ JdkClassCreateHelper.class('java.lang.ClassValue', [
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'void',
+			/* return */ [/* type variable ref */ 'tr', [/* name */ 'T']],
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 1028,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -81,11 +81,11 @@ JdkClassCreateHelper.class('java.lang.ClassValue', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* protected abstract T java.lang.ClassValue.computeValue(java.lang.Class<?>) */
-			/* name */ 'computeValue',
+		[/* public void java.lang.ClassValue.remove(java.lang.Class<?>) */
+			/* name */ 'remove',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'type',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -102,9 +102,9 @@ JdkClassCreateHelper.class('java.lang.ClassValue', [
 					/* annotations */ UDF
 				]
 			],
-			/* return */ [/* type variable ref */ 'tr', [/* name */ 'T']],
+			/* return */ 'void',
 			/* exceptions */,
-			/* modifiers */ 1028,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

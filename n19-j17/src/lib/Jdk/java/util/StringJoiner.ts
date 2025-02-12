@@ -52,22 +52,6 @@ JdkClassCreateHelper.class('java.util.StringJoiner', [
 		]
 	],
 	[/* declared methods */
-		[/* public java.util.StringJoiner java.util.StringJoiner.add(java.lang.CharSequence) */
-			/* name */ 'add',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'newElement',
-					/* type */ 'java.lang.CharSequence',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.util.StringJoiner',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public int java.util.StringJoiner.length() */
 			/* name */ 'length',
 			/* parameters */,
@@ -81,6 +65,22 @@ JdkClassCreateHelper.class('java.util.StringJoiner', [
 			/* name */ 'toString',
 			/* parameters */,
 			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.StringJoiner java.util.StringJoiner.add(java.lang.CharSequence) */
+			/* name */ 'add',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'newElement',
+					/* type */ 'java.lang.CharSequence',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.util.StringJoiner',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

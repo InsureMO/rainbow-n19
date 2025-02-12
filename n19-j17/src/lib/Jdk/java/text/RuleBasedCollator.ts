@@ -65,28 +65,6 @@ JdkClassCreateHelper.class('java.text.RuleBasedCollator', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public synchronized int java.text.RuleBasedCollator.compare(java.lang.String,java.lang.String) */
-			/* name */ 'compare',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'terSOrder',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'terTOrder',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 33,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public java.lang.String java.text.RuleBasedCollator.getRules() */
 			/* name */ 'getRules',
 			/* parameters */,
@@ -125,6 +103,28 @@ JdkClassCreateHelper.class('java.text.RuleBasedCollator', [
 			/* return */ 'java.text.CollationElementIterator',
 			/* exceptions */,
 			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public synchronized int java.text.RuleBasedCollator.compare(java.lang.String,java.lang.String) */
+			/* name */ 'compare',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'terSOrder',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'terTOrder',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 33,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],

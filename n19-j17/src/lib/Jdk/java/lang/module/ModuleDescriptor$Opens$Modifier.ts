@@ -17,15 +17,6 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Opens$Modifier', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public static java.lang.module.ModuleDescriptor$Opens$Modifier[] java.lang.module.ModuleDescriptor$Opens$Modifier.values() */
-			/* name */ 'values',
-			/* parameters */,
-			/* return */ '[Ljava.lang.module.ModuleDescriptor$Opens$Modifier;',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public static java.lang.module.ModuleDescriptor$Opens$Modifier java.lang.module.ModuleDescriptor$Opens$Modifier.valueOf(java.lang.String) */
 			/* name */ 'valueOf',
 			[/* parameters */
@@ -37,6 +28,15 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Opens$Modifier', [
 				]
 			],
 			/* return */ 'java.lang.module.ModuleDescriptor$Opens$Modifier',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.lang.module.ModuleDescriptor$Opens$Modifier[] java.lang.module.ModuleDescriptor$Opens$Modifier.values() */
+			/* name */ 'values',
+			/* parameters */,
+			/* return */ '[Ljava.lang.module.ModuleDescriptor$Opens$Modifier;',
 			/* exceptions */,
 			/* modifiers */ 9,
 			/* annotations */ UDF,

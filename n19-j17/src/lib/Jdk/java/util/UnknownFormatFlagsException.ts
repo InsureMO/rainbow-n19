@@ -26,8 +26,8 @@ JdkClassCreateHelper.class('java.util.UnknownFormatFlagsException', [
 		]
 	],
 	[/* declared methods */
-		[/* public java.lang.String java.util.UnknownFormatFlagsException.getMessage() */
-			/* name */ 'getMessage',
+		[/* public java.lang.String java.util.UnknownFormatFlagsException.getFlags() */
+			/* name */ 'getFlags',
 			/* parameters */,
 			/* return */ 'java.lang.String',
 			/* exceptions */,
@@ -35,8 +35,8 @@ JdkClassCreateHelper.class('java.util.UnknownFormatFlagsException', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.util.UnknownFormatFlagsException.getFlags() */
-			/* name */ 'getFlags',
+		[/* public java.lang.String java.util.UnknownFormatFlagsException.getMessage() */
+			/* name */ 'getMessage',
 			/* parameters */,
 			/* return */ 'java.lang.String',
 			/* exceptions */,

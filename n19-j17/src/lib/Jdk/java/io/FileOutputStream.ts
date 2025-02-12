@@ -10,16 +10,21 @@ JdkClassCreateHelper.class('java.io.FileOutputStream', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
-		[/* public java.io.FileOutputStream(java.io.FileDescriptor) */
+		[/* public java.io.FileOutputStream(java.io.File) throws java.io.FileNotFoundException */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'fdObj',
-					/* type */ 'java.io.FileDescriptor',
+					/* name */ 'file',
+					/* type */ 'java.io.File',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* exceptions */,
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.FileNotFoundException',
+					/* annotations */ UDF
+				]
+			],
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
@@ -49,11 +54,25 @@ JdkClassCreateHelper.class('java.io.FileOutputStream', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.io.FileOutputStream(java.io.File) throws java.io.FileNotFoundException */
+		[/* public java.io.FileOutputStream(java.io.FileDescriptor) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'file',
-					/* type */ 'java.io.File',
+					/* name */ 'fdObj',
+					/* type */ 'java.io.FileDescriptor',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.io.FileOutputStream(java.lang.String) throws java.io.FileNotFoundException */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'name',
+					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -92,38 +111,35 @@ JdkClassCreateHelper.class('java.io.FileOutputStream', [
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
-		],
-		[/* public java.io.FileOutputStream(java.lang.String) throws java.io.FileNotFoundException */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'name',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.FileNotFoundException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
 		]
 	],
 	[/* declared methods */
-		[/* public void java.io.FileOutputStream.write(int) throws java.io.IOException */
-			/* name */ 'write',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'b',
-					/* type */ 'int',
-					/* modifiers */ 0,
+		[/* public final java.io.FileDescriptor java.io.FileOutputStream.getFD() throws java.io.IOException */
+			/* name */ 'getFD',
+			/* parameters */,
+			/* return */ 'java.io.FileDescriptor',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
 					/* annotations */ UDF
 				]
 			],
+			/* modifiers */ 17,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.nio.channels.FileChannel java.io.FileOutputStream.getChannel() */
+			/* name */ 'getChannel',
+			/* parameters */,
+			/* return */ 'java.nio.channels.FileChannel',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.io.FileOutputStream.close() throws java.io.IOException */
+			/* name */ 'close',
+			/* parameters */,
 			/* return */ 'void',
 			[/* exceptions */
 				[/* exception */
@@ -189,9 +205,16 @@ JdkClassCreateHelper.class('java.io.FileOutputStream', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.io.FileOutputStream.close() throws java.io.IOException */
-			/* name */ 'close',
-			/* parameters */,
+		[/* public void java.io.FileOutputStream.write(int) throws java.io.IOException */
+			/* name */ 'write',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'b',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
 			/* return */ 'void',
 			[/* exceptions */
 				[/* exception */
@@ -199,29 +222,6 @@ JdkClassCreateHelper.class('java.io.FileOutputStream', [
 					/* annotations */ UDF
 				]
 			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final java.io.FileDescriptor java.io.FileOutputStream.getFD() throws java.io.IOException */
-			/* name */ 'getFD',
-			/* parameters */,
-			/* return */ 'java.io.FileDescriptor',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.nio.channels.FileChannel java.io.FileOutputStream.getChannel() */
-			/* name */ 'getChannel',
-			/* parameters */,
-			/* return */ 'java.nio.channels.FileChannel',
-			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF

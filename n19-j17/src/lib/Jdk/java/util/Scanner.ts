@@ -19,59 +19,36 @@ JdkClassCreateHelper.class('java.util.Scanner', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
-		[/* public java.util.Scanner(java.io.InputStream,java.lang.String) */
+		[/* public java.util.Scanner(java.io.File) throws java.io.FileNotFoundException */
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'source',
-					/* type */ 'java.io.InputStream',
+					/* type */ 'java.io.File',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.FileNotFoundException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.Scanner(java.io.File,java.lang.String) throws java.io.FileNotFoundException */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'source',
+					/* type */ 'java.io.File',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'charsetName',
 					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.Scanner(java.io.InputStream) */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'source',
-					/* type */ 'java.io.InputStream',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.Scanner(java.lang.Readable) */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'source',
-					/* type */ 'java.lang.Readable',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.Scanner(java.io.File) throws java.io.FileNotFoundException */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'source',
-					/* type */ 'java.io.File',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -111,6 +88,40 @@ JdkClassCreateHelper.class('java.util.Scanner', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public java.util.Scanner(java.io.InputStream) */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'source',
+					/* type */ 'java.io.InputStream',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.Scanner(java.io.InputStream,java.lang.String) */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'source',
+					/* type */ 'java.io.InputStream',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'charsetName',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.util.Scanner(java.io.InputStream,java.nio.charset.Charset) */
 			[/* parameters */
 				[/* parameter */
@@ -122,6 +133,34 @@ JdkClassCreateHelper.class('java.util.Scanner', [
 				[/* parameter */
 					/* name */ 'charset',
 					/* type */ 'java.nio.charset.Charset',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.Scanner(java.lang.Readable) */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'source',
+					/* type */ 'java.lang.Readable',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.Scanner(java.lang.String) */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'source',
+					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -181,31 +220,6 @@ JdkClassCreateHelper.class('java.util.Scanner', [
 				]
 			],
 			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.Scanner(java.io.File,java.lang.String) throws java.io.FileNotFoundException */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'source',
-					/* type */ 'java.io.File',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'charsetName',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.FileNotFoundException',
-					/* annotations */ UDF
-				]
-			],
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
@@ -278,51 +292,12 @@ JdkClassCreateHelper.class('java.util.Scanner', [
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
-		],
-		[/* public java.util.Scanner(java.lang.String) */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'source',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
 		]
 	],
 	[/* declared methods */
-		[/* public void java.util.Scanner.remove() */
-			/* name */ 'remove',
-			/* parameters */,
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.util.Scanner.toString() */
-			/* name */ 'toString',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.util.Scanner.hasNext(java.util.regex.Pattern) */
+		[/* public boolean java.util.Scanner.hasNext() */
 			/* name */ 'hasNext',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'pattern',
-					/* type */ 'java.util.regex.Pattern',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
+			/* parameters */,
 			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
@@ -345,8 +320,24 @@ JdkClassCreateHelper.class('java.util.Scanner', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public boolean java.util.Scanner.hasNext() */
+		[/* public boolean java.util.Scanner.hasNext(java.util.regex.Pattern) */
 			/* name */ 'hasNext',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'pattern',
+					/* type */ 'java.util.regex.Pattern',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.util.Scanner.hasNextBigDecimal() */
+			/* name */ 'hasNextBigDecimal',
 			/* parameters */,
 			/* return */ 'boolean',
 			/* exceptions */,
@@ -354,137 +345,196 @@ JdkClassCreateHelper.class('java.util.Scanner', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.Object java.util.Scanner.next() */
-			/* name */ 'next',
+		[/* public boolean java.util.Scanner.hasNextBigInteger() */
+			/* name */ 'hasNextBigInteger',
 			/* parameters */,
-			/* return */ 'java.lang.Object',
+			/* return */ 'boolean',
 			/* exceptions */,
-			/* modifiers */ 4161,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.util.Scanner.next(java.util.regex.Pattern) */
-			/* name */ 'next',
+		[/* public boolean java.util.Scanner.hasNextBigInteger(int) */
+			/* name */ 'hasNextBigInteger',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'token',
-					/* type */ 'java.util.regex.Pattern',
+					/* name */ 's',
+					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.lang.String',
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.util.Scanner.next(java.lang.String) */
-			/* name */ 'next',
+		[/* public boolean java.util.Scanner.hasNextBoolean() */
+			/* name */ 'hasNextBoolean',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.util.Scanner.hasNextByte() */
+			/* name */ 'hasNextByte',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.util.Scanner.hasNextByte(int) */
+			/* name */ 'hasNextByte',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'pattern',
-					/* type */ 'java.lang.String',
+					/* name */ 's',
+					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.lang.String',
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.util.Scanner.next() */
-			/* name */ 'next',
+		[/* public boolean java.util.Scanner.hasNextDouble() */
+			/* name */ 'hasNextDouble',
 			/* parameters */,
-			/* return */ 'java.lang.String',
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.util.regex.Pattern java.util.Scanner.delimiter() */
-			/* name */ 'delimiter',
+		[/* public boolean java.util.Scanner.hasNextFloat() */
+			/* name */ 'hasNextFloat',
 			/* parameters */,
-			/* return */ 'java.util.regex.Pattern',
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.util.Locale java.util.Scanner.locale() */
-			/* name */ 'locale',
+		[/* public boolean java.util.Scanner.hasNextInt() */
+			/* name */ 'hasNextInt',
 			/* parameters */,
-			/* return */ 'java.util.Locale',
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.util.regex.MatchResult java.util.Scanner.match() */
-			/* name */ 'match',
-			/* parameters */,
-			/* return */ 'java.util.regex.MatchResult',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.util.Scanner.close() */
-			/* name */ 'close',
-			/* parameters */,
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.Scanner java.util.Scanner.skip(java.util.regex.Pattern) */
-			/* name */ 'skip',
+		[/* public boolean java.util.Scanner.hasNextInt(int) */
+			/* name */ 'hasNextInt',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'pattern',
-					/* type */ 'java.util.regex.Pattern',
+					/* name */ 's',
+					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.util.Scanner',
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.util.Scanner java.util.Scanner.skip(java.lang.String) */
-			/* name */ 'skip',
+		[/* public boolean java.util.Scanner.hasNextLine() */
+			/* name */ 'hasNextLine',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.util.Scanner.hasNextLong() */
+			/* name */ 'hasNextLong',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.util.Scanner.hasNextLong(int) */
+			/* name */ 'hasNextLong',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'pattern',
-					/* type */ 'java.lang.String',
+					/* name */ 's',
+					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.util.Scanner',
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.util.Scanner java.util.Scanner.reset() */
-			/* name */ 'reset',
+		[/* public boolean java.util.Scanner.hasNextShort() */
+			/* name */ 'hasNextShort',
 			/* parameters */,
-			/* return */ 'java.util.Scanner',
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.util.Scanner.radix() */
-			/* name */ 'radix',
+		[/* public boolean java.util.Scanner.hasNextShort(int) */
+			/* name */ 'hasNextShort',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 's',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.util.Scanner.nextBoolean() */
+			/* name */ 'nextBoolean',
 			/* parameters */,
-			/* return */ 'int',
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public byte java.util.Scanner.nextByte() */
+			/* name */ 'nextByte',
+			/* parameters */,
+			/* return */ 'byte',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public byte java.util.Scanner.nextByte(int) */
+			/* name */ 'nextByte',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'val',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'byte',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -494,6 +544,15 @@ JdkClassCreateHelper.class('java.util.Scanner', [
 			/* name */ 'nextDouble',
 			/* parameters */,
 			/* return */ 'double',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public float java.util.Scanner.nextFloat() */
+			/* name */ 'nextFloat',
+			/* parameters */,
+			/* return */ 'float',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -524,112 +583,10 @@ JdkClassCreateHelper.class('java.util.Scanner', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.util.stream.Stream<java.util.regex.MatchResult> java.util.Scanner.findAll(java.util.regex.Pattern) */
-			/* name */ 'findAll',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'pattern',
-					/* type */ 'java.util.regex.Pattern',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					'java.util.regex.MatchResult'
-				],
-				/* raw type */ 'java.util.stream.Stream',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.stream.Stream<java.util.regex.MatchResult> java.util.Scanner.findAll(java.lang.String) */
-			/* name */ 'findAll',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'patString',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					'java.util.regex.MatchResult'
-				],
-				/* raw type */ 'java.util.stream.Stream',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.util.Scanner.nextLine() */
-			/* name */ 'nextLine',
+		[/* public int java.util.Scanner.radix() */
+			/* name */ 'radix',
 			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.stream.Stream<java.lang.String> java.util.Scanner.tokens() */
-			/* name */ 'tokens',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					'java.lang.String'
-				],
-				/* raw type */ 'java.util.stream.Stream',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public long java.util.Scanner.nextLong(int) */
-			/* name */ 'nextLong',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'val',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public long java.util.Scanner.nextLong() */
-			/* name */ 'nextLong',
-			/* parameters */,
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.util.Scanner.nextBoolean() */
-			/* name */ 'nextBoolean',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public float java.util.Scanner.nextFloat() */
-			/* name */ 'nextFloat',
-			/* parameters */,
-			/* return */ 'float',
+			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -644,63 +601,12 @@ JdkClassCreateHelper.class('java.util.Scanner', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.util.Scanner java.util.Scanner.useLocale(java.util.Locale) */
-			/* name */ 'useLocale',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'adapter',
-					/* type */ 'java.util.Locale',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.util.Scanner',
+		[/* public java.lang.Object java.util.Scanner.next() */
+			/* name */ 'next',
+			/* parameters */,
+			/* return */ 'java.lang.Object',
 			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.util.Scanner.findWithinHorizon(java.util.regex.Pattern,int) */
-			/* name */ 'findWithinHorizon',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'pattern',
-					/* type */ 'java.util.regex.Pattern',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'horizon',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.util.Scanner.findWithinHorizon(java.lang.String,int) */
-			/* name */ 'findWithinHorizon',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'pattern',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'horizon',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 4161,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -736,176 +642,122 @@ JdkClassCreateHelper.class('java.util.Scanner', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public boolean java.util.Scanner.hasNextByte(int) */
-			/* name */ 'hasNextByte',
+		[/* public java.lang.String java.util.Scanner.findWithinHorizon(java.lang.String,int) */
+			/* name */ 'findWithinHorizon',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 's',
+					/* name */ 'pattern',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'horizon',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'boolean',
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public boolean java.util.Scanner.hasNextByte() */
-			/* name */ 'hasNextByte',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public byte java.util.Scanner.nextByte() */
-			/* name */ 'nextByte',
-			/* parameters */,
-			/* return */ 'byte',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public byte java.util.Scanner.nextByte(int) */
-			/* name */ 'nextByte',
+		[/* public java.lang.String java.util.Scanner.findWithinHorizon(java.util.regex.Pattern,int) */
+			/* name */ 'findWithinHorizon',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'val',
+					/* name */ 'pattern',
+					/* type */ 'java.util.regex.Pattern',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'horizon',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'byte',
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public boolean java.util.Scanner.hasNextShort(int) */
-			/* name */ 'hasNextShort',
+		[/* public java.lang.String java.util.Scanner.next() */
+			/* name */ 'next',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.util.Scanner.next(java.lang.String) */
+			/* name */ 'next',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 's',
-					/* type */ 'int',
+					/* name */ 'pattern',
+					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'boolean',
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public boolean java.util.Scanner.hasNextShort() */
-			/* name */ 'hasNextShort',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public short java.util.Scanner.nextShort() */
-			/* name */ 'nextShort',
-			/* parameters */,
-			/* return */ 'short',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public short java.util.Scanner.nextShort(int) */
-			/* name */ 'nextShort',
+		[/* public java.lang.String java.util.Scanner.next(java.util.regex.Pattern) */
+			/* name */ 'next',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'val',
-					/* type */ 'int',
+					/* name */ 'token',
+					/* type */ 'java.util.regex.Pattern',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'short',
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public boolean java.util.Scanner.hasNextInt(int) */
-			/* name */ 'hasNextInt',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 's',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.util.Scanner.hasNextInt() */
-			/* name */ 'hasNextInt',
+		[/* public java.lang.String java.util.Scanner.nextLine() */
+			/* name */ 'nextLine',
 			/* parameters */,
-			/* return */ 'boolean',
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public boolean java.util.Scanner.hasNextLong(int) */
-			/* name */ 'hasNextLong',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 's',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.util.Scanner.hasNextLong() */
-			/* name */ 'hasNextLong',
+		[/* public java.lang.String java.util.Scanner.toString() */
+			/* name */ 'toString',
 			/* parameters */,
-			/* return */ 'boolean',
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public boolean java.util.Scanner.hasNextBigInteger(int) */
-			/* name */ 'hasNextBigInteger',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 's',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.util.Scanner.hasNextBigInteger() */
-			/* name */ 'hasNextBigInteger',
+		[/* public java.math.BigDecimal java.util.Scanner.nextBigDecimal() */
+			/* name */ 'nextBigDecimal',
 			/* parameters */,
-			/* return */ 'boolean',
+			/* return */ 'java.math.BigDecimal',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.math.BigInteger java.util.Scanner.nextBigInteger() */
+			/* name */ 'nextBigInteger',
+			/* parameters */,
+			/* return */ 'java.math.BigInteger',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -927,21 +779,46 @@ JdkClassCreateHelper.class('java.util.Scanner', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.math.BigInteger java.util.Scanner.nextBigInteger() */
-			/* name */ 'nextBigInteger',
+		[/* public java.util.Locale java.util.Scanner.locale() */
+			/* name */ 'locale',
 			/* parameters */,
-			/* return */ 'java.math.BigInteger',
+			/* return */ 'java.util.Locale',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.util.Scanner java.util.Scanner.useRadix(int) */
-			/* name */ 'useRadix',
+		[/* public java.util.Scanner java.util.Scanner.reset() */
+			/* name */ 'reset',
+			/* parameters */,
+			/* return */ 'java.util.Scanner',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.Scanner java.util.Scanner.skip(java.lang.String) */
+			/* name */ 'skip',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'radix',
-					/* type */ 'int',
+					/* name */ 'pattern',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.util.Scanner',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.Scanner java.util.Scanner.skip(java.util.regex.Pattern) */
+			/* name */ 'skip',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'pattern',
+					/* type */ 'java.util.regex.Pattern',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -984,55 +861,178 @@ JdkClassCreateHelper.class('java.util.Scanner', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public boolean java.util.Scanner.hasNextLine() */
-			/* name */ 'hasNextLine',
-			/* parameters */,
-			/* return */ 'boolean',
+		[/* public java.util.Scanner java.util.Scanner.useLocale(java.util.Locale) */
+			/* name */ 'useLocale',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'adapter',
+					/* type */ 'java.util.Locale',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.util.Scanner',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public boolean java.util.Scanner.hasNextBoolean() */
-			/* name */ 'hasNextBoolean',
-			/* parameters */,
-			/* return */ 'boolean',
+		[/* public java.util.Scanner java.util.Scanner.useRadix(int) */
+			/* name */ 'useRadix',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'radix',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.util.Scanner',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public boolean java.util.Scanner.hasNextFloat() */
-			/* name */ 'hasNextFloat',
+		[/* public java.util.regex.MatchResult java.util.Scanner.match() */
+			/* name */ 'match',
 			/* parameters */,
-			/* return */ 'boolean',
+			/* return */ 'java.util.regex.MatchResult',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public boolean java.util.Scanner.hasNextDouble() */
-			/* name */ 'hasNextDouble',
+		[/* public java.util.regex.Pattern java.util.Scanner.delimiter() */
+			/* name */ 'delimiter',
 			/* parameters */,
-			/* return */ 'boolean',
+			/* return */ 'java.util.regex.Pattern',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public boolean java.util.Scanner.hasNextBigDecimal() */
-			/* name */ 'hasNextBigDecimal',
+		[/* public java.util.stream.Stream<java.lang.String> java.util.Scanner.tokens() */
+			/* name */ 'tokens',
 			/* parameters */,
-			/* return */ 'boolean',
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					'java.lang.String'
+				],
+				/* raw type */ 'java.util.stream.Stream',
+				/* owner type */ UDF
+			]],
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.math.BigDecimal java.util.Scanner.nextBigDecimal() */
-			/* name */ 'nextBigDecimal',
+		[/* public java.util.stream.Stream<java.util.regex.MatchResult> java.util.Scanner.findAll(java.lang.String) */
+			/* name */ 'findAll',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'patString',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					'java.util.regex.MatchResult'
+				],
+				/* raw type */ 'java.util.stream.Stream',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.stream.Stream<java.util.regex.MatchResult> java.util.Scanner.findAll(java.util.regex.Pattern) */
+			/* name */ 'findAll',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'pattern',
+					/* type */ 'java.util.regex.Pattern',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					'java.util.regex.MatchResult'
+				],
+				/* raw type */ 'java.util.stream.Stream',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public long java.util.Scanner.nextLong() */
+			/* name */ 'nextLong',
 			/* parameters */,
-			/* return */ 'java.math.BigDecimal',
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public long java.util.Scanner.nextLong(int) */
+			/* name */ 'nextLong',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'val',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public short java.util.Scanner.nextShort() */
+			/* name */ 'nextShort',
+			/* parameters */,
+			/* return */ 'short',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public short java.util.Scanner.nextShort(int) */
+			/* name */ 'nextShort',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'val',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'short',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.util.Scanner.close() */
+			/* name */ 'close',
+			/* parameters */,
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.util.Scanner.remove() */
+			/* name */ 'remove',
+			/* parameters */,
+			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

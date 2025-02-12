@@ -19,58 +19,6 @@ JdkClassCreateHelper.class('java.time.zone.ZoneRulesProvider', [
 		]
 	],
 	[/* declared methods */
-		[/* public static java.time.zone.ZoneRules java.time.zone.ZoneRulesProvider.getRules(java.lang.String,boolean) */
-			/* name */ 'getRules',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'forCaching',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'boolean',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.zone.ZoneRules',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.util.Set<java.lang.String> java.time.zone.ZoneRulesProvider.getAvailableZoneIds() */
-			/* name */ 'getAvailableZoneIds',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					'java.lang.String'
-				],
-				/* raw type */ 'java.util.Set',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* protected abstract java.util.Set<java.lang.String> java.time.zone.ZoneRulesProvider.provideZoneIds() */
-			/* name */ 'provideZoneIds',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					'java.lang.String'
-				],
-				/* raw type */ 'java.util.Set',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1028,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* protected abstract java.time.zone.ZoneRules java.time.zone.ZoneRulesProvider.provideRules(java.lang.String,boolean) */
 			/* name */ 'provideRules',
 			[/* parameters */
@@ -116,12 +64,58 @@ JdkClassCreateHelper.class('java.time.zone.ZoneRulesProvider', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* protected abstract java.util.Set<java.lang.String> java.time.zone.ZoneRulesProvider.provideZoneIds() */
+			/* name */ 'provideZoneIds',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					'java.lang.String'
+				],
+				/* raw type */ 'java.util.Set',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1028,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* protected boolean java.time.zone.ZoneRulesProvider.provideRefresh() */
 			/* name */ 'provideRefresh',
 			/* parameters */,
 			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 4,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static boolean java.time.zone.ZoneRulesProvider.refresh() */
+			/* name */ 'refresh',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.time.zone.ZoneRules java.time.zone.ZoneRulesProvider.getRules(java.lang.String,boolean) */
+			/* name */ 'getRules',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'forCaching',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'boolean',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.zone.ZoneRules',
+			/* exceptions */,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -148,6 +142,21 @@ JdkClassCreateHelper.class('java.time.zone.ZoneRulesProvider', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public static java.util.Set<java.lang.String> java.time.zone.ZoneRulesProvider.getAvailableZoneIds() */
+			/* name */ 'getAvailableZoneIds',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					'java.lang.String'
+				],
+				/* raw type */ 'java.util.Set',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public static void java.time.zone.ZoneRulesProvider.registerProvider(java.time.zone.ZoneRulesProvider) */
 			/* name */ 'registerProvider',
 			[/* parameters */
@@ -159,15 +168,6 @@ JdkClassCreateHelper.class('java.time.zone.ZoneRulesProvider', [
 				]
 			],
 			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static boolean java.time.zone.ZoneRulesProvider.refresh() */
-			/* name */ 'refresh',
-			/* parameters */,
-			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 9,
 			/* annotations */ UDF,

@@ -28,8 +28,8 @@ JdkClassCreateHelper.class('java.util.function.IntPredicate', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public default java.util.function.IntPredicate java.util.function.IntPredicate.or(java.util.function.IntPredicate) */
-			/* name */ 'or',
+		[/* public default java.util.function.IntPredicate java.util.function.IntPredicate.and(java.util.function.IntPredicate) */
+			/* name */ 'and',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'other',
@@ -53,8 +53,8 @@ JdkClassCreateHelper.class('java.util.function.IntPredicate', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public default java.util.function.IntPredicate java.util.function.IntPredicate.and(java.util.function.IntPredicate) */
-			/* name */ 'and',
+		[/* public default java.util.function.IntPredicate java.util.function.IntPredicate.or(java.util.function.IntPredicate) */
+			/* name */ 'or',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'other',

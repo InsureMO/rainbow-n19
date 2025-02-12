@@ -34,38 +34,8 @@ JdkClassCreateHelper.class('java.util.NavigableMap', [
 	],
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public abstract java.util.NavigableSet<K> java.util.NavigableMap.navigableKeySet() */
-			/* name */ 'navigableKeySet',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* type variable ref */ 'tr', [/* name */ 'K']]
-				],
-				/* raw type */ 'java.util.NavigableSet',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.util.NavigableSet<K> java.util.NavigableMap.descendingKeySet() */
-			/* name */ 'descendingKeySet',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* type variable ref */ 'tr', [/* name */ 'K']]
-				],
-				/* raw type */ 'java.util.NavigableSet',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract K java.util.NavigableMap.lowerKey(K) */
-			/* name */ 'lowerKey',
+		[/* public abstract K java.util.NavigableMap.ceilingKey(K) */
+			/* name */ 'ceilingKey',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
@@ -96,8 +66,8 @@ JdkClassCreateHelper.class('java.util.NavigableMap', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract K java.util.NavigableMap.ceilingKey(K) */
-			/* name */ 'ceilingKey',
+		[/* public abstract K java.util.NavigableMap.higherKey(K) */
+			/* name */ 'higherKey',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
@@ -112,8 +82,8 @@ JdkClassCreateHelper.class('java.util.NavigableMap', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract K java.util.NavigableMap.higherKey(K) */
-			/* name */ 'higherKey',
+		[/* public abstract K java.util.NavigableMap.lowerKey(K) */
+			/* name */ 'lowerKey',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
@@ -123,6 +93,130 @@ JdkClassCreateHelper.class('java.util.NavigableMap', [
 				]
 			],
 			/* return */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.util.Map$Entry<K, V> java.util.NavigableMap.ceilingEntry(K) */
+			/* name */ 'ceilingEntry',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'K']],
+					[/* type variable ref */ 'tr', [/* name */ 'V']]
+				],
+				/* raw type */ 'java.util.Map$Entry',
+				/* owner type */ 'java.util.Map'
+			]],
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.util.Map$Entry<K, V> java.util.NavigableMap.firstEntry() */
+			/* name */ 'firstEntry',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'K']],
+					[/* type variable ref */ 'tr', [/* name */ 'V']]
+				],
+				/* raw type */ 'java.util.Map$Entry',
+				/* owner type */ 'java.util.Map'
+			]],
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.util.Map$Entry<K, V> java.util.NavigableMap.floorEntry(K) */
+			/* name */ 'floorEntry',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'K']],
+					[/* type variable ref */ 'tr', [/* name */ 'V']]
+				],
+				/* raw type */ 'java.util.Map$Entry',
+				/* owner type */ 'java.util.Map'
+			]],
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.util.Map$Entry<K, V> java.util.NavigableMap.higherEntry(K) */
+			/* name */ 'higherEntry',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'K']],
+					[/* type variable ref */ 'tr', [/* name */ 'V']]
+				],
+				/* raw type */ 'java.util.Map$Entry',
+				/* owner type */ 'java.util.Map'
+			]],
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.util.Map$Entry<K, V> java.util.NavigableMap.lastEntry() */
+			/* name */ 'lastEntry',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'K']],
+					[/* type variable ref */ 'tr', [/* name */ 'V']]
+				],
+				/* raw type */ 'java.util.Map$Entry',
+				/* owner type */ 'java.util.Map'
+			]],
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.util.Map$Entry<K, V> java.util.NavigableMap.lowerEntry(K) */
+			/* name */ 'lowerEntry',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'K']],
+					[/* type variable ref */ 'tr', [/* name */ 'V']]
+				],
+				/* raw type */ 'java.util.Map$Entry',
+				/* owner type */ 'java.util.Map'
+			]],
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,
@@ -154,6 +248,51 @@ JdkClassCreateHelper.class('java.util.NavigableMap', [
 				],
 				/* raw type */ 'java.util.Map$Entry',
 				/* owner type */ 'java.util.Map'
+			]],
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.util.NavigableMap<K, V> java.util.NavigableMap.descendingMap() */
+			/* name */ 'descendingMap',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'K']],
+					[/* type variable ref */ 'tr', [/* name */ 'V']]
+				],
+				/* raw type */ 'java.util.NavigableMap',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.util.NavigableMap<K, V> java.util.NavigableMap.headMap(K,boolean) */
+			/* name */ 'headMap',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'boolean',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'K']],
+					[/* type variable ref */ 'tr', [/* name */ 'V']]
+				],
+				/* raw type */ 'java.util.NavigableMap',
+				/* owner type */ UDF
 			]],
 			/* exceptions */,
 			/* modifiers */ 1025,
@@ -201,8 +340,8 @@ JdkClassCreateHelper.class('java.util.NavigableMap', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.util.SortedMap<K, V> java.util.NavigableMap.subMap(K,K) */
-			/* name */ 'subMap',
+		[/* public abstract java.util.NavigableMap<K, V> java.util.NavigableMap.tailMap(K,boolean) */
+			/* name */ 'tailMap',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
@@ -212,7 +351,7 @@ JdkClassCreateHelper.class('java.util.NavigableMap', [
 				],
 				[/* parameter */
 					/* name */ 'arg1',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -222,7 +361,37 @@ JdkClassCreateHelper.class('java.util.NavigableMap', [
 					[/* type variable ref */ 'tr', [/* name */ 'K']],
 					[/* type variable ref */ 'tr', [/* name */ 'V']]
 				],
-				/* raw type */ 'java.util.SortedMap',
+				/* raw type */ 'java.util.NavigableMap',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.util.NavigableSet<K> java.util.NavigableMap.descendingKeySet() */
+			/* name */ 'descendingKeySet',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'K']]
+				],
+				/* raw type */ 'java.util.NavigableSet',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.util.NavigableSet<K> java.util.NavigableMap.navigableKeySet() */
+			/* name */ 'navigableKeySet',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'K']]
+				],
+				/* raw type */ 'java.util.NavigableSet',
 				/* owner type */ UDF
 			]],
 			/* exceptions */,
@@ -253,8 +422,8 @@ JdkClassCreateHelper.class('java.util.NavigableMap', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.util.NavigableMap<K, V> java.util.NavigableMap.headMap(K,boolean) */
-			/* name */ 'headMap',
+		[/* public abstract java.util.SortedMap<K, V> java.util.NavigableMap.subMap(K,K) */
+			/* name */ 'subMap',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
@@ -264,38 +433,9 @@ JdkClassCreateHelper.class('java.util.NavigableMap', [
 				],
 				[/* parameter */
 					/* name */ 'arg1',
-					/* type */ 'boolean',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* type variable ref */ 'tr', [/* name */ 'K']],
-					[/* type variable ref */ 'tr', [/* name */ 'V']]
-				],
-				/* raw type */ 'java.util.NavigableMap',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.util.NavigableMap<K, V> java.util.NavigableMap.tailMap(K,boolean) */
-			/* name */ 'tailMap',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'boolean',
-					/* modifiers */ 0,
-					/* annotations */ UDF
 				]
 			],
 			/* return */ [/* parameterized type */ 'pt', [
@@ -303,7 +443,7 @@ JdkClassCreateHelper.class('java.util.NavigableMap', [
 					[/* type variable ref */ 'tr', [/* name */ 'K']],
 					[/* type variable ref */ 'tr', [/* name */ 'V']]
 				],
-				/* raw type */ 'java.util.NavigableMap',
+				/* raw type */ 'java.util.SortedMap',
 				/* owner type */ UDF
 			]],
 			/* exceptions */,
@@ -328,146 +468,6 @@ JdkClassCreateHelper.class('java.util.NavigableMap', [
 				],
 				/* raw type */ 'java.util.SortedMap',
 				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.util.NavigableMap<K, V> java.util.NavigableMap.descendingMap() */
-			/* name */ 'descendingMap',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* type variable ref */ 'tr', [/* name */ 'K']],
-					[/* type variable ref */ 'tr', [/* name */ 'V']]
-				],
-				/* raw type */ 'java.util.NavigableMap',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.util.Map$Entry<K, V> java.util.NavigableMap.lowerEntry(K) */
-			/* name */ 'lowerEntry',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* type variable ref */ 'tr', [/* name */ 'K']],
-					[/* type variable ref */ 'tr', [/* name */ 'V']]
-				],
-				/* raw type */ 'java.util.Map$Entry',
-				/* owner type */ 'java.util.Map'
-			]],
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.util.Map$Entry<K, V> java.util.NavigableMap.floorEntry(K) */
-			/* name */ 'floorEntry',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* type variable ref */ 'tr', [/* name */ 'K']],
-					[/* type variable ref */ 'tr', [/* name */ 'V']]
-				],
-				/* raw type */ 'java.util.Map$Entry',
-				/* owner type */ 'java.util.Map'
-			]],
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.util.Map$Entry<K, V> java.util.NavigableMap.ceilingEntry(K) */
-			/* name */ 'ceilingEntry',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* type variable ref */ 'tr', [/* name */ 'K']],
-					[/* type variable ref */ 'tr', [/* name */ 'V']]
-				],
-				/* raw type */ 'java.util.Map$Entry',
-				/* owner type */ 'java.util.Map'
-			]],
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.util.Map$Entry<K, V> java.util.NavigableMap.higherEntry(K) */
-			/* name */ 'higherEntry',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* type variable ref */ 'tr', [/* name */ 'K']],
-					[/* type variable ref */ 'tr', [/* name */ 'V']]
-				],
-				/* raw type */ 'java.util.Map$Entry',
-				/* owner type */ 'java.util.Map'
-			]],
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.util.Map$Entry<K, V> java.util.NavigableMap.firstEntry() */
-			/* name */ 'firstEntry',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* type variable ref */ 'tr', [/* name */ 'K']],
-					[/* type variable ref */ 'tr', [/* name */ 'V']]
-				],
-				/* raw type */ 'java.util.Map$Entry',
-				/* owner type */ 'java.util.Map'
-			]],
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.util.Map$Entry<K, V> java.util.NavigableMap.lastEntry() */
-			/* name */ 'lastEntry',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* type variable ref */ 'tr', [/* name */ 'K']],
-					[/* type variable ref */ 'tr', [/* name */ 'V']]
-				],
-				/* raw type */ 'java.util.Map$Entry',
-				/* owner type */ 'java.util.Map'
 			]],
 			/* exceptions */,
 			/* modifiers */ 1025,

@@ -17,15 +17,6 @@ JdkClassCreateHelper.class('java.io.ObjectInputFilter$Status', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public static java.io.ObjectInputFilter$Status[] java.io.ObjectInputFilter$Status.values() */
-			/* name */ 'values',
-			/* parameters */,
-			/* return */ '[Ljava.io.ObjectInputFilter$Status;',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public static java.io.ObjectInputFilter$Status java.io.ObjectInputFilter$Status.valueOf(java.lang.String) */
 			/* name */ 'valueOf',
 			[/* parameters */
@@ -37,6 +28,15 @@ JdkClassCreateHelper.class('java.io.ObjectInputFilter$Status', [
 				]
 			],
 			/* return */ 'java.io.ObjectInputFilter$Status',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.io.ObjectInputFilter$Status[] java.io.ObjectInputFilter$Status.values() */
+			/* name */ 'values',
+			/* parameters */,
+			/* return */ '[Ljava.io.ObjectInputFilter$Status;',
 			/* exceptions */,
 			/* modifiers */ 9,
 			/* annotations */ UDF,

@@ -10,16 +10,10 @@ JdkClassCreateHelper.class('java.text.FieldPosition', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
-		[/* public java.text.FieldPosition(java.text.Format$Field,int) */
+		[/* public java.text.FieldPosition(int) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'attribute',
-					/* type */ 'java.text.Format$Field',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'fieldID',
+					/* name */ 'field',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -44,10 +38,16 @@ JdkClassCreateHelper.class('java.text.FieldPosition', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.text.FieldPosition(int) */
+		[/* public java.text.FieldPosition(java.text.Format$Field,int) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'field',
+					/* name */ 'attribute',
+					/* type */ 'java.text.Format$Field',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'fieldID',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -76,10 +76,28 @@ JdkClassCreateHelper.class('java.text.FieldPosition', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.text.FieldPosition.toString() */
-			/* name */ 'toString',
+		[/* public int java.text.FieldPosition.getBeginIndex() */
+			/* name */ 'getBeginIndex',
 			/* parameters */,
-			/* return */ 'java.lang.String',
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.text.FieldPosition.getEndIndex() */
+			/* name */ 'getEndIndex',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.text.FieldPosition.getField() */
+			/* name */ 'getField',
+			/* parameters */,
+			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -94,10 +112,19 @@ JdkClassCreateHelper.class('java.text.FieldPosition', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.text.FieldPosition.getField() */
-			/* name */ 'getField',
+		[/* public java.lang.String java.text.FieldPosition.toString() */
+			/* name */ 'toString',
 			/* parameters */,
-			/* return */ 'int',
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.text.Format$Field java.text.FieldPosition.getFieldAttribute() */
+			/* name */ 'getFieldAttribute',
+			/* parameters */,
+			/* return */ 'java.text.Format$Field',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -130,33 +157,6 @@ JdkClassCreateHelper.class('java.text.FieldPosition', [
 				]
 			],
 			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.text.Format$Field java.text.FieldPosition.getFieldAttribute() */
-			/* name */ 'getFieldAttribute',
-			/* parameters */,
-			/* return */ 'java.text.Format$Field',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.text.FieldPosition.getBeginIndex() */
-			/* name */ 'getBeginIndex',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.text.FieldPosition.getEndIndex() */
-			/* name */ 'getEndIndex',
-			/* parameters */,
-			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

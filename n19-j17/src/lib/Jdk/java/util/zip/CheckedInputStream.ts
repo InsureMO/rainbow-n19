@@ -32,6 +32,20 @@ JdkClassCreateHelper.class('java.util.zip.CheckedInputStream', [
 		]
 	],
 	[/* declared methods */
+		[/* public int java.util.zip.CheckedInputStream.read() throws java.io.IOException */
+			/* name */ 'read',
+			/* parameters */,
+			/* return */ 'int',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public int java.util.zip.CheckedInputStream.read(byte[],int,int) throws java.io.IOException */
 			/* name */ 'read',
 			[/* parameters */
@@ -65,16 +79,11 @@ JdkClassCreateHelper.class('java.util.zip.CheckedInputStream', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.util.zip.CheckedInputStream.read() throws java.io.IOException */
-			/* name */ 'read',
+		[/* public java.util.zip.Checksum java.util.zip.CheckedInputStream.getChecksum() */
+			/* name */ 'getChecksum',
 			/* parameters */,
-			/* return */ 'int',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
+			/* return */ 'java.util.zip.Checksum',
+			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
@@ -96,15 +105,6 @@ JdkClassCreateHelper.class('java.util.zip.CheckedInputStream', [
 					/* annotations */ UDF
 				]
 			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.zip.Checksum java.util.zip.CheckedInputStream.getChecksum() */
-			/* name */ 'getChecksum',
-			/* parameters */,
-			/* return */ 'java.util.zip.Checksum',
-			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF

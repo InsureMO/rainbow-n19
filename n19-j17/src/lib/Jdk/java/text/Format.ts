@@ -22,12 +22,25 @@ JdkClassCreateHelper.class('java.text.Format', [
 		]
 	],
 	[/* declared methods */
-		[/* public java.lang.Object java.text.Format.clone() */
-			/* name */ 'clone',
-			/* parameters */,
+		[/* public abstract java.lang.Object java.text.Format.parseObject(java.lang.String,java.text.ParsePosition) */
+			/* name */ 'parseObject',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'java.text.ParsePosition',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
 			/* return */ 'java.lang.Object',
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -75,6 +88,15 @@ JdkClassCreateHelper.class('java.text.Format', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public java.lang.Object java.text.Format.clone() */
+			/* name */ 'clone',
+			/* parameters */,
+			/* return */ 'java.lang.Object',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.lang.Object java.text.Format.parseObject(java.lang.String) throws java.text.ParseException */
 			/* name */ 'parseObject',
 			[/* parameters */
@@ -93,28 +115,6 @@ JdkClassCreateHelper.class('java.text.Format', [
 				]
 			],
 			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.lang.Object java.text.Format.parseObject(java.lang.String,java.text.ParsePosition) */
-			/* name */ 'parseObject',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'java.text.ParsePosition',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.Object',
-			/* exceptions */,
-			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],

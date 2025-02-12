@@ -33,26 +33,95 @@ JdkClassCreateHelper.class('java.io.CharArrayWriter', [
 		]
 	],
 	[/* declared methods */
-		[/* public java.lang.String java.io.CharArrayWriter.toString() */
-			/* name */ 'toString',
+		[/* public char[] java.io.CharArrayWriter.toCharArray() */
+			/* name */ 'toCharArray',
 			/* parameters */,
-			/* return */ 'java.lang.String',
+			/* return */ '[C',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.Appendable java.io.CharArrayWriter.append(java.lang.CharSequence) throws java.io.IOException */
+		[/* public int java.io.CharArrayWriter.size() */
+			/* name */ 'size',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.io.CharArrayWriter java.io.CharArrayWriter.append(char) */
 			/* name */ 'append',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'c',
+					/* type */ 'char',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.io.CharArrayWriter',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.io.CharArrayWriter java.io.CharArrayWriter.append(java.lang.CharSequence) */
+			/* name */ 'append',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'csq',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.lang.Appendable',
+			/* return */ 'java.io.CharArrayWriter',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.io.CharArrayWriter java.io.CharArrayWriter.append(java.lang.CharSequence,int,int) */
+			/* name */ 'append',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'csq',
+					/* type */ 'java.lang.CharSequence',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'start',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'end',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.io.CharArrayWriter',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.io.Writer java.io.CharArrayWriter.append(char) throws java.io.IOException */
+			/* name */ 'append',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'char',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.io.Writer',
 			[/* exceptions */
 				[/* exception */
 					/* type */ 'java.io.IOException',
@@ -63,12 +132,12 @@ JdkClassCreateHelper.class('java.io.CharArrayWriter', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.io.Writer java.io.CharArrayWriter.append(char) throws java.io.IOException */
+		[/* public java.io.Writer java.io.CharArrayWriter.append(java.lang.CharSequence) throws java.io.IOException */
 			/* name */ 'append',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
-					/* type */ 'char',
+					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -117,17 +186,17 @@ JdkClassCreateHelper.class('java.io.CharArrayWriter', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.io.Writer java.io.CharArrayWriter.append(java.lang.CharSequence) throws java.io.IOException */
+		[/* public java.lang.Appendable java.io.CharArrayWriter.append(char) throws java.io.IOException */
 			/* name */ 'append',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
-					/* type */ 'java.lang.CharSequence',
+					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.io.Writer',
+			/* return */ 'java.lang.Appendable',
 			[/* exceptions */
 				[/* exception */
 					/* type */ 'java.io.IOException',
@@ -138,12 +207,12 @@ JdkClassCreateHelper.class('java.io.CharArrayWriter', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.Appendable java.io.CharArrayWriter.append(char) throws java.io.IOException */
+		[/* public java.lang.Appendable java.io.CharArrayWriter.append(java.lang.CharSequence) throws java.io.IOException */
 			/* name */ 'append',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
-					/* type */ 'char',
+					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -192,61 +261,19 @@ JdkClassCreateHelper.class('java.io.CharArrayWriter', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.io.CharArrayWriter java.io.CharArrayWriter.append(java.lang.CharSequence,int,int) */
-			/* name */ 'append',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'csq',
-					/* type */ 'java.lang.CharSequence',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'start',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'end',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.io.CharArrayWriter',
+		[/* public java.lang.String java.io.CharArrayWriter.toString() */
+			/* name */ 'toString',
+			/* parameters */,
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.io.CharArrayWriter java.io.CharArrayWriter.append(char) */
-			/* name */ 'append',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'c',
-					/* type */ 'char',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.io.CharArrayWriter',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.io.CharArrayWriter java.io.CharArrayWriter.append(java.lang.CharSequence) */
-			/* name */ 'append',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'csq',
-					/* type */ 'java.lang.CharSequence',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.io.CharArrayWriter',
+		[/* public void java.io.CharArrayWriter.close() */
+			/* name */ 'close',
+			/* parameters */,
+			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -261,62 +288,9 @@ JdkClassCreateHelper.class('java.io.CharArrayWriter', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.io.CharArrayWriter.size() */
-			/* name */ 'size',
+		[/* public void java.io.CharArrayWriter.reset() */
+			/* name */ 'reset',
 			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public char[] java.io.CharArrayWriter.toCharArray() */
-			/* name */ 'toCharArray',
-			/* parameters */,
-			/* return */ '[C',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.io.CharArrayWriter.write(java.lang.String,int,int) */
-			/* name */ 'write',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'newcount',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'str',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'off',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.io.CharArrayWriter.write(int) */
-			/* name */ 'write',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'newcount',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
 			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
@@ -351,18 +325,44 @@ JdkClassCreateHelper.class('java.io.CharArrayWriter', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.io.CharArrayWriter.close() */
-			/* name */ 'close',
-			/* parameters */,
+		[/* public void java.io.CharArrayWriter.write(int) */
+			/* name */ 'write',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'newcount',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
 			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.io.CharArrayWriter.reset() */
-			/* name */ 'reset',
-			/* parameters */,
+		[/* public void java.io.CharArrayWriter.write(java.lang.String,int,int) */
+			/* name */ 'write',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'newcount',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'str',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'off',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
 			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,

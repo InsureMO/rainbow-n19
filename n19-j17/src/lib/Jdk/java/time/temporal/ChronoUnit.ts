@@ -19,114 +19,6 @@ JdkClassCreateHelper.class('java.time.temporal.ChronoUnit', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public java.lang.String java.time.temporal.ChronoUnit.toString() */
-			/* name */ 'toString',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.time.temporal.ChronoUnit[] java.time.temporal.ChronoUnit.values() */
-			/* name */ 'values',
-			/* parameters */,
-			/* return */ '[Ljava.time.temporal.ChronoUnit;',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.time.temporal.ChronoUnit java.time.temporal.ChronoUnit.valueOf(java.lang.String) */
-			/* name */ 'valueOf',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.temporal.ChronoUnit',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public long java.time.temporal.ChronoUnit.between(java.time.temporal.Temporal,java.time.temporal.Temporal) */
-			/* name */ 'between',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'temporal1Inclusive',
-					/* type */ 'java.time.temporal.Temporal',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'temporal2Exclusive',
-					/* type */ 'java.time.temporal.Temporal',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.time.temporal.ChronoUnit.isDateBased() */
-			/* name */ 'isDateBased',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.time.temporal.ChronoUnit.isTimeBased() */
-			/* name */ 'isTimeBased',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.time.temporal.ChronoUnit.isSupportedBy(java.time.temporal.Temporal) */
-			/* name */ 'isSupportedBy',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'temporal',
-					/* type */ 'java.time.temporal.Temporal',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.Duration java.time.temporal.ChronoUnit.getDuration() */
-			/* name */ 'getDuration',
-			/* parameters */,
-			/* return */ 'java.time.Duration',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.time.temporal.ChronoUnit.isDurationEstimated() */
-			/* name */ 'isDurationEstimated',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public <R extends java.time.temporal.Temporal> R java.time.temporal.ChronoUnit.addTo(R,long) */
 			/* name */ 'addTo',
 			[/* parameters */
@@ -156,6 +48,114 @@ JdkClassCreateHelper.class('java.time.temporal.ChronoUnit', [
 					/* annotations */ UDF
 				]
 			]
+		],
+		[/* public boolean java.time.temporal.ChronoUnit.isDateBased() */
+			/* name */ 'isDateBased',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.time.temporal.ChronoUnit.isDurationEstimated() */
+			/* name */ 'isDurationEstimated',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.time.temporal.ChronoUnit.isSupportedBy(java.time.temporal.Temporal) */
+			/* name */ 'isSupportedBy',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'temporal',
+					/* type */ 'java.time.temporal.Temporal',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.time.temporal.ChronoUnit.isTimeBased() */
+			/* name */ 'isTimeBased',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.time.temporal.ChronoUnit.toString() */
+			/* name */ 'toString',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.Duration java.time.temporal.ChronoUnit.getDuration() */
+			/* name */ 'getDuration',
+			/* parameters */,
+			/* return */ 'java.time.Duration',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public long java.time.temporal.ChronoUnit.between(java.time.temporal.Temporal,java.time.temporal.Temporal) */
+			/* name */ 'between',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'temporal1Inclusive',
+					/* type */ 'java.time.temporal.Temporal',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'temporal2Exclusive',
+					/* type */ 'java.time.temporal.Temporal',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.time.temporal.ChronoUnit java.time.temporal.ChronoUnit.valueOf(java.lang.String) */
+			/* name */ 'valueOf',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.temporal.ChronoUnit',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.time.temporal.ChronoUnit[] java.time.temporal.ChronoUnit.values() */
+			/* name */ 'values',
+			/* parameters */,
+			/* return */ '[Ljava.time.temporal.ChronoUnit;',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
 		]
 	],
 	/* declared fields */,

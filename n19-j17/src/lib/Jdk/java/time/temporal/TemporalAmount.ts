@@ -10,24 +10,24 @@ JdkClassCreateHelper.class('java.time.temporal.TemporalAmount', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public abstract long java.time.temporal.TemporalAmount.get(java.time.temporal.TemporalUnit) */
-			/* name */ 'get',
+		[/* public abstract java.time.temporal.Temporal java.time.temporal.TemporalAmount.addTo(java.time.temporal.Temporal) */
+			/* name */ 'addTo',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
-					/* type */ 'java.time.temporal.TemporalUnit',
+					/* type */ 'java.time.temporal.Temporal',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'long',
+			/* return */ 'java.time.temporal.Temporal',
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.time.temporal.Temporal java.time.temporal.TemporalAmount.addTo(java.time.temporal.Temporal) */
-			/* name */ 'addTo',
+		[/* public abstract java.time.temporal.Temporal java.time.temporal.TemporalAmount.subtractFrom(java.time.temporal.Temporal) */
+			/* name */ 'subtractFrom',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
@@ -57,17 +57,17 @@ JdkClassCreateHelper.class('java.time.temporal.TemporalAmount', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.time.temporal.Temporal java.time.temporal.TemporalAmount.subtractFrom(java.time.temporal.Temporal) */
-			/* name */ 'subtractFrom',
+		[/* public abstract long java.time.temporal.TemporalAmount.get(java.time.temporal.TemporalUnit) */
+			/* name */ 'get',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
-					/* type */ 'java.time.temporal.Temporal',
+					/* type */ 'java.time.temporal.TemporalUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.time.temporal.Temporal',
+			/* return */ 'long',
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,

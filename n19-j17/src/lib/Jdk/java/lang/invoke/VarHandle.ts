@@ -13,138 +13,30 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public final native java.lang.Object java.lang.invoke.VarHandle.get(java.lang.Object...) */
-			/* name */ 'get',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ '[Ljava.lang.Object;',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.Object',
-			/* exceptions */,
-			/* modifiers */ 401,
-			[/* annotations */
-				['java.lang.invoke.MethodHandle$PolymorphicSignature'],
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public final java.lang.String java.lang.invoke.VarHandle.toString() */
-			/* name */ 'toString',
+		[/* public abstract java.lang.invoke.VarHandle java.lang.invoke.VarHandle.withInvokeBehavior() */
+			/* name */ 'withInvokeBehavior',
 			/* parameters */,
-			/* return */ 'java.lang.String',
+			/* return */ 'java.lang.invoke.VarHandle',
 			/* exceptions */,
-			/* modifiers */ 17,
+			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static void java.lang.invoke.VarHandle.fullFence() */
-			/* name */ 'fullFence',
+		[/* public abstract java.lang.invoke.VarHandle java.lang.invoke.VarHandle.withInvokeExactBehavior() */
+			/* name */ 'withInvokeExactBehavior',
 			/* parameters */,
-			/* return */ 'void',
+			/* return */ 'java.lang.invoke.VarHandle',
 			/* exceptions */,
-			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.ForceInline']
-			],
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.util.Optional<java.lang.invoke.VarHandle$VarHandleDesc> java.lang.invoke.VarHandle.describeConstable() */
-			/* name */ 'describeConstable',
+		[/* public boolean java.lang.invoke.VarHandle.hasInvokeExactBehavior() */
+			/* name */ 'hasInvokeExactBehavior',
 			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					'java.lang.invoke.VarHandle$VarHandleDesc'
-				],
-				/* raw type */ 'java.util.Optional',
-				/* owner type */ UDF
-			]],
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final native void java.lang.invoke.VarHandle.set(java.lang.Object...) */
-			/* name */ 'set',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ '[Ljava.lang.Object;',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 401,
-			[/* annotations */
-				['java.lang.invoke.MethodHandle$PolymorphicSignature'],
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.Class<?> java.lang.invoke.VarHandle.varType() */
-			/* name */ 'varType',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* wildcard type */ 'wt', [
-						[/* upper bounds */
-							'java.lang.Object'
-						],
-						/* lower bounds */ UDF
-					]]
-				],
-				/* raw type */ 'java.lang.Class',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.List<java.lang.Class<?>> java.lang.invoke.VarHandle.coordinateTypes() */
-			/* name */ 'coordinateTypes',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							[/* wildcard type */ 'wt', [
-								[/* upper bounds */
-									'java.lang.Object'
-								],
-								/* lower bounds */ UDF
-							]]
-						],
-						/* raw type */ 'java.lang.Class',
-						/* owner type */ UDF
-					]]
-				],
-				/* raw type */ 'java.util.List',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final java.lang.invoke.MethodType java.lang.invoke.VarHandle.accessModeType(java.lang.invoke.VarHandle$AccessMode) */
-			/* name */ 'accessModeType',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'accessMode',
-					/* type */ 'java.lang.invoke.VarHandle$AccessMode',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.invoke.MethodType',
-			/* exceptions */,
-			/* modifiers */ 17,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -164,153 +56,109 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static void java.lang.invoke.VarHandle.loadLoadFence() */
-			/* name */ 'loadLoadFence',
+		[/* public final java.lang.String java.lang.invoke.VarHandle.toString() */
+			/* name */ 'toString',
 			/* parameters */,
-			/* return */ 'void',
+			/* return */ 'java.lang.String',
 			/* exceptions */,
-			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.ForceInline']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public static void java.lang.invoke.VarHandle.storeStoreFence() */
-			/* name */ 'storeStoreFence',
-			/* parameters */,
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.ForceInline']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.lang.invoke.VarHandle.hasInvokeExactBehavior() */
-			/* name */ 'hasInvokeExactBehavior',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 17,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public final native java.lang.Object java.lang.invoke.VarHandle.getVolatile(java.lang.Object...) */
-			/* name */ 'getVolatile',
+		[/* public final java.lang.invoke.MethodType java.lang.invoke.VarHandle.accessModeType(java.lang.invoke.VarHandle$AccessMode) */
+			/* name */ 'accessModeType',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ '[Ljava.lang.Object;',
+					/* name */ 'accessMode',
+					/* type */ 'java.lang.invoke.VarHandle$AccessMode',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.lang.Object',
+			/* return */ 'java.lang.invoke.MethodType',
 			/* exceptions */,
-			/* modifiers */ 401,
-			[/* annotations */
-				['java.lang.invoke.MethodHandle$PolymorphicSignature'],
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public final native void java.lang.invoke.VarHandle.setVolatile(java.lang.Object...) */
-			/* name */ 'setVolatile',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ '[Ljava.lang.Object;',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 401,
-			[/* annotations */
-				['java.lang.invoke.MethodHandle$PolymorphicSignature'],
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public final native java.lang.Object java.lang.invoke.VarHandle.getOpaque(java.lang.Object...) */
-			/* name */ 'getOpaque',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ '[Ljava.lang.Object;',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.Object',
-			/* exceptions */,
-			/* modifiers */ 401,
-			[/* annotations */
-				['java.lang.invoke.MethodHandle$PolymorphicSignature'],
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public final native void java.lang.invoke.VarHandle.setOpaque(java.lang.Object...) */
-			/* name */ 'setOpaque',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ '[Ljava.lang.Object;',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 401,
-			[/* annotations */
-				['java.lang.invoke.MethodHandle$PolymorphicSignature'],
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public final native java.lang.Object java.lang.invoke.VarHandle.getAcquire(java.lang.Object...) */
-			/* name */ 'getAcquire',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ '[Ljava.lang.Object;',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.Object',
-			/* exceptions */,
-			/* modifiers */ 401,
-			[/* annotations */
-				['java.lang.invoke.MethodHandle$PolymorphicSignature'],
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public final native void java.lang.invoke.VarHandle.setRelease(java.lang.Object...) */
-			/* name */ 'setRelease',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ '[Ljava.lang.Object;',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 401,
-			[/* annotations */
-				['java.lang.invoke.MethodHandle$PolymorphicSignature'],
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* modifiers */ 17,
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public final native boolean java.lang.invoke.VarHandle.compareAndSet(java.lang.Object...) */
 			/* name */ 'compareAndSet',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ '[Ljava.lang.Object;',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 401,
+			[/* annotations */
+				['java.lang.invoke.MethodHandle$PolymorphicSignature'],
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public final native boolean java.lang.invoke.VarHandle.weakCompareAndSet(java.lang.Object...) */
+			/* name */ 'weakCompareAndSet',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ '[Ljava.lang.Object;',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 401,
+			[/* annotations */
+				['java.lang.invoke.MethodHandle$PolymorphicSignature'],
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public final native boolean java.lang.invoke.VarHandle.weakCompareAndSetAcquire(java.lang.Object...) */
+			/* name */ 'weakCompareAndSetAcquire',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ '[Ljava.lang.Object;',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 401,
+			[/* annotations */
+				['java.lang.invoke.MethodHandle$PolymorphicSignature'],
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public final native boolean java.lang.invoke.VarHandle.weakCompareAndSetPlain(java.lang.Object...) */
+			/* name */ 'weakCompareAndSetPlain',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ '[Ljava.lang.Object;',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 401,
+			[/* annotations */
+				['java.lang.invoke.MethodHandle$PolymorphicSignature'],
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public final native boolean java.lang.invoke.VarHandle.weakCompareAndSetRelease(java.lang.Object...) */
+			/* name */ 'weakCompareAndSetRelease',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
@@ -385,84 +233,8 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle', [
 			],
 			/* type parameters */ UDF
 		],
-		[/* public final native boolean java.lang.invoke.VarHandle.weakCompareAndSetPlain(java.lang.Object...) */
-			/* name */ 'weakCompareAndSetPlain',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ '[Ljava.lang.Object;',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 401,
-			[/* annotations */
-				['java.lang.invoke.MethodHandle$PolymorphicSignature'],
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public final native boolean java.lang.invoke.VarHandle.weakCompareAndSet(java.lang.Object...) */
-			/* name */ 'weakCompareAndSet',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ '[Ljava.lang.Object;',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 401,
-			[/* annotations */
-				['java.lang.invoke.MethodHandle$PolymorphicSignature'],
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public final native boolean java.lang.invoke.VarHandle.weakCompareAndSetAcquire(java.lang.Object...) */
-			/* name */ 'weakCompareAndSetAcquire',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ '[Ljava.lang.Object;',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 401,
-			[/* annotations */
-				['java.lang.invoke.MethodHandle$PolymorphicSignature'],
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public final native boolean java.lang.invoke.VarHandle.weakCompareAndSetRelease(java.lang.Object...) */
-			/* name */ 'weakCompareAndSetRelease',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ '[Ljava.lang.Object;',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 401,
-			[/* annotations */
-				['java.lang.invoke.MethodHandle$PolymorphicSignature'],
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public final native java.lang.Object java.lang.invoke.VarHandle.getAndSet(java.lang.Object...) */
-			/* name */ 'getAndSet',
+		[/* public final native java.lang.Object java.lang.invoke.VarHandle.get(java.lang.Object...) */
+			/* name */ 'get',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
@@ -480,27 +252,8 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle', [
 			],
 			/* type parameters */ UDF
 		],
-		[/* public final native java.lang.Object java.lang.invoke.VarHandle.getAndSetAcquire(java.lang.Object...) */
-			/* name */ 'getAndSetAcquire',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ '[Ljava.lang.Object;',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.Object',
-			/* exceptions */,
-			/* modifiers */ 401,
-			[/* annotations */
-				['java.lang.invoke.MethodHandle$PolymorphicSignature'],
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public final native java.lang.Object java.lang.invoke.VarHandle.getAndSetRelease(java.lang.Object...) */
-			/* name */ 'getAndSetRelease',
+		[/* public final native java.lang.Object java.lang.invoke.VarHandle.getAcquire(java.lang.Object...) */
+			/* name */ 'getAcquire',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
@@ -575,63 +328,6 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle', [
 			],
 			/* type parameters */ UDF
 		],
-		[/* public final native java.lang.Object java.lang.invoke.VarHandle.getAndBitwiseOr(java.lang.Object...) */
-			/* name */ 'getAndBitwiseOr',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ '[Ljava.lang.Object;',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.Object',
-			/* exceptions */,
-			/* modifiers */ 401,
-			[/* annotations */
-				['java.lang.invoke.MethodHandle$PolymorphicSignature'],
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public final native java.lang.Object java.lang.invoke.VarHandle.getAndBitwiseOrAcquire(java.lang.Object...) */
-			/* name */ 'getAndBitwiseOrAcquire',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ '[Ljava.lang.Object;',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.Object',
-			/* exceptions */,
-			/* modifiers */ 401,
-			[/* annotations */
-				['java.lang.invoke.MethodHandle$PolymorphicSignature'],
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public final native java.lang.Object java.lang.invoke.VarHandle.getAndBitwiseOrRelease(java.lang.Object...) */
-			/* name */ 'getAndBitwiseOrRelease',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ '[Ljava.lang.Object;',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.Object',
-			/* exceptions */,
-			/* modifiers */ 401,
-			[/* annotations */
-				['java.lang.invoke.MethodHandle$PolymorphicSignature'],
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
-			/* type parameters */ UDF
-		],
 		[/* public final native java.lang.Object java.lang.invoke.VarHandle.getAndBitwiseAnd(java.lang.Object...) */
 			/* name */ 'getAndBitwiseAnd',
 			[/* parameters */
@@ -672,6 +368,63 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle', [
 		],
 		[/* public final native java.lang.Object java.lang.invoke.VarHandle.getAndBitwiseAndRelease(java.lang.Object...) */
 			/* name */ 'getAndBitwiseAndRelease',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ '[Ljava.lang.Object;',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.Object',
+			/* exceptions */,
+			/* modifiers */ 401,
+			[/* annotations */
+				['java.lang.invoke.MethodHandle$PolymorphicSignature'],
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public final native java.lang.Object java.lang.invoke.VarHandle.getAndBitwiseOr(java.lang.Object...) */
+			/* name */ 'getAndBitwiseOr',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ '[Ljava.lang.Object;',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.Object',
+			/* exceptions */,
+			/* modifiers */ 401,
+			[/* annotations */
+				['java.lang.invoke.MethodHandle$PolymorphicSignature'],
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public final native java.lang.Object java.lang.invoke.VarHandle.getAndBitwiseOrAcquire(java.lang.Object...) */
+			/* name */ 'getAndBitwiseOrAcquire',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ '[Ljava.lang.Object;',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.Object',
+			/* exceptions */,
+			/* modifiers */ 401,
+			[/* annotations */
+				['java.lang.invoke.MethodHandle$PolymorphicSignature'],
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public final native java.lang.Object java.lang.invoke.VarHandle.getAndBitwiseOrRelease(java.lang.Object...) */
+			/* name */ 'getAndBitwiseOrRelease',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
@@ -746,21 +499,194 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle', [
 			],
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.lang.invoke.VarHandle java.lang.invoke.VarHandle.withInvokeExactBehavior() */
-			/* name */ 'withInvokeExactBehavior',
-			/* parameters */,
-			/* return */ 'java.lang.invoke.VarHandle',
+		[/* public final native java.lang.Object java.lang.invoke.VarHandle.getAndSet(java.lang.Object...) */
+			/* name */ 'getAndSet',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ '[Ljava.lang.Object;',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.Object',
 			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
+			/* modifiers */ 401,
+			[/* annotations */
+				['java.lang.invoke.MethodHandle$PolymorphicSignature'],
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.lang.invoke.VarHandle java.lang.invoke.VarHandle.withInvokeBehavior() */
-			/* name */ 'withInvokeBehavior',
-			/* parameters */,
-			/* return */ 'java.lang.invoke.VarHandle',
+		[/* public final native java.lang.Object java.lang.invoke.VarHandle.getAndSetAcquire(java.lang.Object...) */
+			/* name */ 'getAndSetAcquire',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ '[Ljava.lang.Object;',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.Object',
 			/* exceptions */,
-			/* modifiers */ 1025,
+			/* modifiers */ 401,
+			[/* annotations */
+				['java.lang.invoke.MethodHandle$PolymorphicSignature'],
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public final native java.lang.Object java.lang.invoke.VarHandle.getAndSetRelease(java.lang.Object...) */
+			/* name */ 'getAndSetRelease',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ '[Ljava.lang.Object;',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.Object',
+			/* exceptions */,
+			/* modifiers */ 401,
+			[/* annotations */
+				['java.lang.invoke.MethodHandle$PolymorphicSignature'],
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public final native java.lang.Object java.lang.invoke.VarHandle.getOpaque(java.lang.Object...) */
+			/* name */ 'getOpaque',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ '[Ljava.lang.Object;',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.Object',
+			/* exceptions */,
+			/* modifiers */ 401,
+			[/* annotations */
+				['java.lang.invoke.MethodHandle$PolymorphicSignature'],
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public final native java.lang.Object java.lang.invoke.VarHandle.getVolatile(java.lang.Object...) */
+			/* name */ 'getVolatile',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ '[Ljava.lang.Object;',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.Object',
+			/* exceptions */,
+			/* modifiers */ 401,
+			[/* annotations */
+				['java.lang.invoke.MethodHandle$PolymorphicSignature'],
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public final native void java.lang.invoke.VarHandle.set(java.lang.Object...) */
+			/* name */ 'set',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ '[Ljava.lang.Object;',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 401,
+			[/* annotations */
+				['java.lang.invoke.MethodHandle$PolymorphicSignature'],
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public final native void java.lang.invoke.VarHandle.setOpaque(java.lang.Object...) */
+			/* name */ 'setOpaque',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ '[Ljava.lang.Object;',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 401,
+			[/* annotations */
+				['java.lang.invoke.MethodHandle$PolymorphicSignature'],
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public final native void java.lang.invoke.VarHandle.setRelease(java.lang.Object...) */
+			/* name */ 'setRelease',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ '[Ljava.lang.Object;',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 401,
+			[/* annotations */
+				['java.lang.invoke.MethodHandle$PolymorphicSignature'],
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public final native void java.lang.invoke.VarHandle.setVolatile(java.lang.Object...) */
+			/* name */ 'setVolatile',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ '[Ljava.lang.Object;',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 401,
+			[/* annotations */
+				['java.lang.invoke.MethodHandle$PolymorphicSignature'],
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.Class<?> java.lang.invoke.VarHandle.varType() */
+			/* name */ 'varType',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* wildcard type */ 'wt', [
+						[/* upper bounds */
+							'java.lang.Object'
+						],
+						/* lower bounds */ UDF
+					]]
+				],
+				/* raw type */ 'java.lang.Class',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -780,6 +706,47 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public java.util.List<java.lang.Class<?>> java.lang.invoke.VarHandle.coordinateTypes() */
+			/* name */ 'coordinateTypes',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									'java.lang.Object'
+								],
+								/* lower bounds */ UDF
+							]]
+						],
+						/* raw type */ 'java.lang.Class',
+						/* owner type */ UDF
+					]]
+				],
+				/* raw type */ 'java.util.List',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.Optional<java.lang.invoke.VarHandle$VarHandleDesc> java.lang.invoke.VarHandle.describeConstable() */
+			/* name */ 'describeConstable',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					'java.lang.invoke.VarHandle$VarHandleDesc'
+				],
+				/* raw type */ 'java.util.Optional',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public static void java.lang.invoke.VarHandle.acquireFence() */
 			/* name */ 'acquireFence',
 			/* parameters */,
@@ -791,8 +758,41 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle', [
 			],
 			/* type parameters */ UDF
 		],
+		[/* public static void java.lang.invoke.VarHandle.fullFence() */
+			/* name */ 'fullFence',
+			/* parameters */,
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 9,
+			[/* annotations */
+				['jdk.internal.vm.annotation.ForceInline']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public static void java.lang.invoke.VarHandle.loadLoadFence() */
+			/* name */ 'loadLoadFence',
+			/* parameters */,
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 9,
+			[/* annotations */
+				['jdk.internal.vm.annotation.ForceInline']
+			],
+			/* type parameters */ UDF
+		],
 		[/* public static void java.lang.invoke.VarHandle.releaseFence() */
 			/* name */ 'releaseFence',
+			/* parameters */,
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 9,
+			[/* annotations */
+				['jdk.internal.vm.annotation.ForceInline']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public static void java.lang.invoke.VarHandle.storeStoreFence() */
+			/* name */ 'storeStoreFence',
 			/* parameters */,
 			/* return */ 'void',
 			/* exceptions */,

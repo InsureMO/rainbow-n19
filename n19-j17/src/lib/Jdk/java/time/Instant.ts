@@ -24,120 +24,6 @@ JdkClassCreateHelper.class('java.time.Instant', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public int java.time.Instant.get(java.time.temporal.TemporalField) */
-			/* name */ 'get',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'field',
-					/* type */ 'java.time.temporal.TemporalField',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.time.Instant.equals(java.lang.Object) */
-			/* name */ 'equals',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'otherInstant',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.time.Instant.toString() */
-			/* name */ 'toString',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.time.Instant.hashCode() */
-			/* name */ 'hashCode',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.time.Instant.compareTo(java.time.Instant) */
-			/* name */ 'compareTo',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'otherInstant',
-					/* type */ 'java.time.Instant',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.time.Instant.compareTo(java.lang.Object) */
-			/* name */ 'compareTo',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public long java.time.Instant.getLong(java.time.temporal.TemporalField) */
-			/* name */ 'getLong',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'field',
-					/* type */ 'java.time.temporal.TemporalField',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.time.Instant java.time.Instant.from(java.time.temporal.TemporalAccessor) */
-			/* name */ 'from',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'instantSecs',
-					/* type */ 'java.time.temporal.TemporalAccessor',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.Instant',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public <R> R java.time.Instant.query(java.time.temporal.TemporalQuery<R>) */
 			/* name */ 'query',
 			[/* parameters */
@@ -168,17 +54,49 @@ JdkClassCreateHelper.class('java.time.Instant', [
 				]
 			]
 		],
-		[/* public java.time.temporal.ValueRange java.time.Instant.range(java.time.temporal.TemporalField) */
-			/* name */ 'range',
+		[/* public boolean java.time.Instant.equals(java.lang.Object) */
+			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'field',
-					/* type */ 'java.time.temporal.TemporalField',
+					/* name */ 'otherInstant',
+					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.time.temporal.ValueRange',
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.time.Instant.isAfter(java.time.Instant) */
+			/* name */ 'isAfter',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'otherInstant',
+					/* type */ 'java.time.Instant',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.time.Instant.isBefore(java.time.Instant) */
+			/* name */ 'isBefore',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'otherInstant',
+					/* type */ 'java.time.Instant',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -216,35 +134,51 @@ JdkClassCreateHelper.class('java.time.Instant', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.time.Instant java.time.Instant.parse(java.lang.CharSequence) */
-			/* name */ 'parse',
+		[/* public int java.time.Instant.compareTo(java.lang.Object) */
+			/* name */ 'compareTo',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
-					/* type */ 'java.lang.CharSequence',
+					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.time.Instant',
+			/* return */ 'int',
 			/* exceptions */,
-			/* modifiers */ 9,
+			/* modifiers */ 4161,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.time.Instant java.time.Instant.ofEpochMilli(long) */
-			/* name */ 'ofEpochMilli',
+		[/* public int java.time.Instant.compareTo(java.time.Instant) */
+			/* name */ 'compareTo',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'secs',
-					/* type */ 'long',
+					/* name */ 'otherInstant',
+					/* type */ 'java.time.Instant',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.time.Instant',
+			/* return */ 'int',
 			/* exceptions */,
-			/* modifiers */ 9,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.time.Instant.get(java.time.temporal.TemporalField) */
+			/* name */ 'get',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'field',
+					/* type */ 'java.time.temporal.TemporalField',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -257,311 +191,19 @@ JdkClassCreateHelper.class('java.time.Instant', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public long java.time.Instant.getEpochSecond() */
-			/* name */ 'getEpochSecond',
+		[/* public int java.time.Instant.hashCode() */
+			/* name */ 'hashCode',
 			/* parameters */,
-			/* return */ 'long',
+			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.time.Instant java.time.Instant.ofEpochSecond(long,long) */
-			/* name */ 'ofEpochSecond',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'nanoAdjustment',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'secs',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.Instant',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.time.Instant java.time.Instant.ofEpochSecond(long) */
-			/* name */ 'ofEpochSecond',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.Instant',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.time.Instant java.time.Instant.now() */
-			/* name */ 'now',
+		[/* public java.lang.String java.time.Instant.toString() */
+			/* name */ 'toString',
 			/* parameters */,
-			/* return */ 'java.time.Instant',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.time.Instant java.time.Instant.now(java.time.Clock) */
-			/* name */ 'now',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.time.Clock',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.Instant',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.temporal.Temporal java.time.Instant.adjustInto(java.time.temporal.Temporal) */
-			/* name */ 'adjustInto',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'temporal',
-					/* type */ 'java.time.temporal.Temporal',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.temporal.Temporal',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.Instant java.time.Instant.with(java.time.temporal.TemporalAdjuster) */
-			/* name */ 'with',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'adjuster',
-					/* type */ 'java.time.temporal.TemporalAdjuster',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.Instant',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.temporal.Temporal java.time.Instant.with(java.time.temporal.TemporalAdjuster) */
-			/* name */ 'with',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.time.temporal.TemporalAdjuster',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.temporal.Temporal',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.Instant java.time.Instant.with(java.time.temporal.TemporalField,long) */
-			/* name */ 'with',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'nval',
-					/* type */ 'java.time.temporal.TemporalField',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'nval',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.Instant',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.temporal.Temporal java.time.Instant.with(java.time.temporal.TemporalField,long) */
-			/* name */ 'with',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.time.temporal.TemporalField',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.temporal.Temporal',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.temporal.Temporal java.time.Instant.plus(java.time.temporal.TemporalAmount) */
-			/* name */ 'plus',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.time.temporal.TemporalAmount',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.temporal.Temporal',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.Instant java.time.Instant.plus(java.time.temporal.TemporalAmount) */
-			/* name */ 'plus',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'amountToAdd',
-					/* type */ 'java.time.temporal.TemporalAmount',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.Instant',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.Instant java.time.Instant.plus(long,java.time.temporal.TemporalUnit) */
-			/* name */ 'plus',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'amountToAdd',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'unit',
-					/* type */ 'java.time.temporal.TemporalUnit',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.Instant',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.temporal.Temporal java.time.Instant.plus(long,java.time.temporal.TemporalUnit) */
-			/* name */ 'plus',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'java.time.temporal.TemporalUnit',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.temporal.Temporal',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public long java.time.Instant.until(java.time.temporal.Temporal,java.time.temporal.TemporalUnit) */
-			/* name */ 'until',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'chronoUnit',
-					/* type */ 'java.time.temporal.Temporal',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'endExclusive',
-					/* type */ 'java.time.temporal.TemporalUnit',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.Instant java.time.Instant.plusNanos(long) */
-			/* name */ 'plusNanos',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'nanosToAdd',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.Instant',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.Instant java.time.Instant.plusSeconds(long) */
-			/* name */ 'plusSeconds',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'secondsToAdd',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.Instant',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.Instant java.time.Instant.plusMillis(long) */
-			/* name */ 'plusMillis',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'millisToAdd',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.Instant',
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -605,60 +247,6 @@ JdkClassCreateHelper.class('java.time.Instant', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.time.temporal.Temporal java.time.Instant.minus(long,java.time.temporal.TemporalUnit) */
-			/* name */ 'minus',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'java.time.temporal.TemporalUnit',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.temporal.Temporal',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.temporal.Temporal java.time.Instant.minus(java.time.temporal.TemporalAmount) */
-			/* name */ 'minus',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.time.temporal.TemporalAmount',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.temporal.Temporal',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.Instant java.time.Instant.minusSeconds(long) */
-			/* name */ 'minusSeconds',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'secondsToSubtract',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.Instant',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public java.time.Instant java.time.Instant.minusMillis(long) */
 			/* name */ 'minusMillis',
 			[/* parameters */
@@ -691,6 +279,108 @@ JdkClassCreateHelper.class('java.time.Instant', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public java.time.Instant java.time.Instant.minusSeconds(long) */
+			/* name */ 'minusSeconds',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'secondsToSubtract',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.Instant',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.Instant java.time.Instant.plus(java.time.temporal.TemporalAmount) */
+			/* name */ 'plus',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'amountToAdd',
+					/* type */ 'java.time.temporal.TemporalAmount',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.Instant',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.Instant java.time.Instant.plus(long,java.time.temporal.TemporalUnit) */
+			/* name */ 'plus',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'amountToAdd',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'unit',
+					/* type */ 'java.time.temporal.TemporalUnit',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.Instant',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.Instant java.time.Instant.plusMillis(long) */
+			/* name */ 'plusMillis',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'millisToAdd',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.Instant',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.Instant java.time.Instant.plusNanos(long) */
+			/* name */ 'plusNanos',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'nanosToAdd',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.Instant',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.Instant java.time.Instant.plusSeconds(long) */
+			/* name */ 'plusSeconds',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'secondsToAdd',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.Instant',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.time.Instant java.time.Instant.truncatedTo(java.time.temporal.TemporalUnit) */
 			/* name */ 'truncatedTo',
 			[/* parameters */
@@ -707,49 +397,39 @@ JdkClassCreateHelper.class('java.time.Instant', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public boolean java.time.Instant.isAfter(java.time.Instant) */
-			/* name */ 'isAfter',
+		[/* public java.time.Instant java.time.Instant.with(java.time.temporal.TemporalAdjuster) */
+			/* name */ 'with',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'otherInstant',
-					/* type */ 'java.time.Instant',
+					/* name */ 'adjuster',
+					/* type */ 'java.time.temporal.TemporalAdjuster',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'boolean',
+			/* return */ 'java.time.Instant',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public boolean java.time.Instant.isBefore(java.time.Instant) */
-			/* name */ 'isBefore',
+		[/* public java.time.Instant java.time.Instant.with(java.time.temporal.TemporalField,long) */
+			/* name */ 'with',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'otherInstant',
-					/* type */ 'java.time.Instant',
+					/* name */ 'nval',
+					/* type */ 'java.time.temporal.TemporalField',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'nval',
+					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.ZonedDateTime java.time.Instant.atZone(java.time.ZoneId) */
-			/* name */ 'atZone',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'zone',
-					/* type */ 'java.time.ZoneId',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.ZonedDateTime',
+			/* return */ 'java.time.Instant',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -771,12 +451,332 @@ JdkClassCreateHelper.class('java.time.Instant', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public java.time.ZonedDateTime java.time.Instant.atZone(java.time.ZoneId) */
+			/* name */ 'atZone',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'zone',
+					/* type */ 'java.time.ZoneId',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.ZonedDateTime',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.temporal.Temporal java.time.Instant.adjustInto(java.time.temporal.Temporal) */
+			/* name */ 'adjustInto',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'temporal',
+					/* type */ 'java.time.temporal.Temporal',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.temporal.Temporal',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.temporal.Temporal java.time.Instant.minus(java.time.temporal.TemporalAmount) */
+			/* name */ 'minus',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.time.temporal.TemporalAmount',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.temporal.Temporal',
+			/* exceptions */,
+			/* modifiers */ 4161,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.temporal.Temporal java.time.Instant.minus(long,java.time.temporal.TemporalUnit) */
+			/* name */ 'minus',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'java.time.temporal.TemporalUnit',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.temporal.Temporal',
+			/* exceptions */,
+			/* modifiers */ 4161,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.temporal.Temporal java.time.Instant.plus(java.time.temporal.TemporalAmount) */
+			/* name */ 'plus',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.time.temporal.TemporalAmount',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.temporal.Temporal',
+			/* exceptions */,
+			/* modifiers */ 4161,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.temporal.Temporal java.time.Instant.plus(long,java.time.temporal.TemporalUnit) */
+			/* name */ 'plus',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'java.time.temporal.TemporalUnit',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.temporal.Temporal',
+			/* exceptions */,
+			/* modifiers */ 4161,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.temporal.Temporal java.time.Instant.with(java.time.temporal.TemporalAdjuster) */
+			/* name */ 'with',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.time.temporal.TemporalAdjuster',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.temporal.Temporal',
+			/* exceptions */,
+			/* modifiers */ 4161,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.temporal.Temporal java.time.Instant.with(java.time.temporal.TemporalField,long) */
+			/* name */ 'with',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.time.temporal.TemporalField',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.temporal.Temporal',
+			/* exceptions */,
+			/* modifiers */ 4161,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.temporal.ValueRange java.time.Instant.range(java.time.temporal.TemporalField) */
+			/* name */ 'range',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'field',
+					/* type */ 'java.time.temporal.TemporalField',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.temporal.ValueRange',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public long java.time.Instant.getEpochSecond() */
+			/* name */ 'getEpochSecond',
+			/* parameters */,
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public long java.time.Instant.getLong(java.time.temporal.TemporalField) */
+			/* name */ 'getLong',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'field',
+					/* type */ 'java.time.temporal.TemporalField',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public long java.time.Instant.toEpochMilli() */
 			/* name */ 'toEpochMilli',
 			/* parameters */,
 			/* return */ 'long',
 			/* exceptions */,
 			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public long java.time.Instant.until(java.time.temporal.Temporal,java.time.temporal.TemporalUnit) */
+			/* name */ 'until',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'chronoUnit',
+					/* type */ 'java.time.temporal.Temporal',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'endExclusive',
+					/* type */ 'java.time.temporal.TemporalUnit',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.time.Instant java.time.Instant.from(java.time.temporal.TemporalAccessor) */
+			/* name */ 'from',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'instantSecs',
+					/* type */ 'java.time.temporal.TemporalAccessor',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.Instant',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.time.Instant java.time.Instant.now() */
+			/* name */ 'now',
+			/* parameters */,
+			/* return */ 'java.time.Instant',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.time.Instant java.time.Instant.now(java.time.Clock) */
+			/* name */ 'now',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.time.Clock',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.Instant',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.time.Instant java.time.Instant.ofEpochMilli(long) */
+			/* name */ 'ofEpochMilli',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'secs',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.Instant',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.time.Instant java.time.Instant.ofEpochSecond(long) */
+			/* name */ 'ofEpochSecond',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.Instant',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.time.Instant java.time.Instant.ofEpochSecond(long,long) */
+			/* name */ 'ofEpochSecond',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'nanoAdjustment',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'secs',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.Instant',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.time.Instant java.time.Instant.parse(java.lang.CharSequence) */
+			/* name */ 'parse',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.CharSequence',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.Instant',
+			/* exceptions */,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

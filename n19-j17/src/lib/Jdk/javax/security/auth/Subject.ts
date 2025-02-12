@@ -86,64 +86,6 @@ JdkClassCreateHelper.class('javax.security.auth.Subject', [
 		]
 	],
 	[/* declared methods */
-		[/* public boolean javax.security.auth.Subject.equals(java.lang.Object) */
-			/* name */ 'equals',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'thatPrincipals',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String javax.security.auth.Subject.toString() */
-			/* name */ 'toString',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int javax.security.auth.Subject.hashCode() */
-			/* name */ 'hashCode',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void javax.security.auth.Subject.setReadOnly() */
-			/* name */ 'setReadOnly',
-			/* parameters */,
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.Set<java.security.Principal> javax.security.auth.Subject.getPrincipals() */
-			/* name */ 'getPrincipals',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					'java.security.Principal'
-				],
-				/* raw type */ 'java.util.Set',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public <T extends java.security.Principal> java.util.Set<T> javax.security.auth.Subject.getPrincipals(java.lang.Class<T>) */
 			/* name */ 'getPrincipals',
 			[/* parameters */
@@ -180,6 +122,94 @@ JdkClassCreateHelper.class('javax.security.auth.Subject', [
 				]
 			]
 		],
+		[/* public <T> java.util.Set<T> javax.security.auth.Subject.getPrivateCredentials(java.lang.Class<T>) */
+			/* name */ 'getPrivateCredentials',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'c',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* type variable ref */ 'tr', [/* name */ 'T']]
+						],
+						/* raw type */ 'java.lang.Class',
+						/* owner type */ UDF
+					]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'T']]
+				],
+				/* raw type */ 'java.util.Set',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			[/* type parameters */
+				[/* type variable */
+					/* name */ 'T',
+					[/* bounds */
+						'java.lang.Object'
+					],
+					/* annotations */ UDF
+				]
+			]
+		],
+		[/* public <T> java.util.Set<T> javax.security.auth.Subject.getPublicCredentials(java.lang.Class<T>) */
+			/* name */ 'getPublicCredentials',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'c',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* type variable ref */ 'tr', [/* name */ 'T']]
+						],
+						/* raw type */ 'java.lang.Class',
+						/* owner type */ UDF
+					]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'T']]
+				],
+				/* raw type */ 'java.util.Set',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			[/* type parameters */
+				[/* type variable */
+					/* name */ 'T',
+					[/* bounds */
+						'java.lang.Object'
+					],
+					/* annotations */ UDF
+				]
+			]
+		],
+		[/* public boolean javax.security.auth.Subject.equals(java.lang.Object) */
+			/* name */ 'equals',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'thatPrincipals',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public boolean javax.security.auth.Subject.isReadOnly() */
 			/* name */ 'isReadOnly',
 			/* parameters */,
@@ -189,26 +219,67 @@ JdkClassCreateHelper.class('javax.security.auth.Subject', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static javax.security.auth.Subject javax.security.auth.Subject.getSubject(java.security.AccessControlContext) */
-			/* name */ 'getSubject',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'sm',
-					/* type */ 'java.security.AccessControlContext',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'javax.security.auth.Subject',
+		[/* public int javax.security.auth.Subject.hashCode() */
+			/* name */ 'hashCode',
+			/* parameters */,
+			/* return */ 'int',
 			/* exceptions */,
-			/* modifiers */ 9,
-			[/* annotations */
-				[
-					'java.lang.Deprecated',
-					['p', 'since', '17'],
-					['p', 'forRemoval', true]
-				]
-			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String javax.security.auth.Subject.toString() */
+			/* name */ 'toString',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.Set<java.lang.Object> javax.security.auth.Subject.getPrivateCredentials() */
+			/* name */ 'getPrivateCredentials',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					'java.lang.Object'
+				],
+				/* raw type */ 'java.util.Set',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.Set<java.lang.Object> javax.security.auth.Subject.getPublicCredentials() */
+			/* name */ 'getPublicCredentials',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					'java.lang.Object'
+				],
+				/* raw type */ 'java.util.Set',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.Set<java.security.Principal> javax.security.auth.Subject.getPrincipals() */
+			/* name */ 'getPrincipals',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					'java.security.Principal'
+				],
+				/* raw type */ 'java.util.Set',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static <T> T javax.security.auth.Subject.doAs(javax.security.auth.Subject,java.security.PrivilegedAction<T>) */
@@ -389,103 +460,32 @@ JdkClassCreateHelper.class('javax.security.auth.Subject', [
 				]
 			]
 		],
-		[/* public java.util.Set<java.lang.Object> javax.security.auth.Subject.getPublicCredentials() */
-			/* name */ 'getPublicCredentials',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					'java.lang.Object'
-				],
-				/* raw type */ 'java.util.Set',
-				/* owner type */ UDF
-			]],
+		[/* public static javax.security.auth.Subject javax.security.auth.Subject.getSubject(java.security.AccessControlContext) */
+			/* name */ 'getSubject',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'sm',
+					/* type */ 'java.security.AccessControlContext',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'javax.security.auth.Subject',
 			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
+			/* modifiers */ 9,
+			[/* annotations */
+				[
+					'java.lang.Deprecated',
+					['p', 'since', '17'],
+					['p', 'forRemoval', true]
+				]
+			],
 			/* type parameters */ UDF
 		],
-		[/* public <T> java.util.Set<T> javax.security.auth.Subject.getPublicCredentials(java.lang.Class<T>) */
-			/* name */ 'getPublicCredentials',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'c',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							[/* type variable ref */ 'tr', [/* name */ 'T']]
-						],
-						/* raw type */ 'java.lang.Class',
-						/* owner type */ UDF
-					]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* type variable ref */ 'tr', [/* name */ 'T']]
-				],
-				/* raw type */ 'java.util.Set',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			[/* type parameters */
-				[/* type variable */
-					/* name */ 'T',
-					[/* bounds */
-						'java.lang.Object'
-					],
-					/* annotations */ UDF
-				]
-			]
-		],
-		[/* public <T> java.util.Set<T> javax.security.auth.Subject.getPrivateCredentials(java.lang.Class<T>) */
-			/* name */ 'getPrivateCredentials',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'c',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							[/* type variable ref */ 'tr', [/* name */ 'T']]
-						],
-						/* raw type */ 'java.lang.Class',
-						/* owner type */ UDF
-					]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* type variable ref */ 'tr', [/* name */ 'T']]
-				],
-				/* raw type */ 'java.util.Set',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			[/* type parameters */
-				[/* type variable */
-					/* name */ 'T',
-					[/* bounds */
-						'java.lang.Object'
-					],
-					/* annotations */ UDF
-				]
-			]
-		],
-		[/* public java.util.Set<java.lang.Object> javax.security.auth.Subject.getPrivateCredentials() */
-			/* name */ 'getPrivateCredentials',
+		[/* public void javax.security.auth.Subject.setReadOnly() */
+			/* name */ 'setReadOnly',
 			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					'java.lang.Object'
-				],
-				/* raw type */ 'java.util.Set',
-				/* owner type */ UDF
-			]],
+			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

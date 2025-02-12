@@ -11,38 +11,6 @@ JdkClassCreateHelper.class('java.util.Base64$Encoder', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public java.io.OutputStream java.util.Base64$Encoder.wrap(java.io.OutputStream) */
-			/* name */ 'wrap',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'os',
-					/* type */ 'java.io.OutputStream',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.io.OutputStream',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.nio.ByteBuffer java.util.Base64$Encoder.encode(java.nio.ByteBuffer) */
-			/* name */ 'encode',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'src',
-					/* type */ 'java.nio.ByteBuffer',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.nio.ByteBuffer',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public byte[] java.util.Base64$Encoder.encode(byte[]) */
 			/* name */ 'encode',
 			[/* parameters */
@@ -81,6 +49,22 @@ JdkClassCreateHelper.class('java.util.Base64$Encoder', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public java.io.OutputStream java.util.Base64$Encoder.wrap(java.io.OutputStream) */
+			/* name */ 'wrap',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'os',
+					/* type */ 'java.io.OutputStream',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.io.OutputStream',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.lang.String java.util.Base64$Encoder.encodeToString(byte[]) */
 			/* name */ 'encodeToString',
 			[/* parameters */
@@ -92,6 +76,22 @@ JdkClassCreateHelper.class('java.util.Base64$Encoder', [
 				]
 			],
 			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.nio.ByteBuffer java.util.Base64$Encoder.encode(java.nio.ByteBuffer) */
+			/* name */ 'encode',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'src',
+					/* type */ 'java.nio.ByteBuffer',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.nio.ByteBuffer',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

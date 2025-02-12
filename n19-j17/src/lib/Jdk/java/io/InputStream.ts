@@ -21,28 +21,67 @@ JdkClassCreateHelper.class('java.io.InputStream', [
 		]
 	],
 	[/* declared methods */
-		[/* public int java.io.InputStream.read(byte[],int,int) throws java.io.IOException */
+		[/* public abstract int java.io.InputStream.read() throws java.io.IOException */
 			/* name */ 'read',
+			/* parameters */,
+			/* return */ 'int',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.io.InputStream.markSupported() */
+			/* name */ 'markSupported',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public byte[] java.io.InputStream.readAllBytes() throws java.io.IOException */
+			/* name */ 'readAllBytes',
+			/* parameters */,
+			/* return */ '[B',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public byte[] java.io.InputStream.readNBytes(int) throws java.io.IOException */
+			/* name */ 'readNBytes',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'b',
-					/* type */ '[B',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'off',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'len',
+					/* name */ 'buf',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
+			/* return */ '[B',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.io.InputStream.available() throws java.io.IOException */
+			/* name */ 'available',
+			/* parameters */,
 			/* return */ 'int',
 			[/* exceptions */
 				[/* exception */
@@ -75,75 +114,29 @@ JdkClassCreateHelper.class('java.io.InputStream', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract int java.io.InputStream.read() throws java.io.IOException */
+		[/* public int java.io.InputStream.read(byte[],int,int) throws java.io.IOException */
 			/* name */ 'read',
-			/* parameters */,
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'b',
+					/* type */ '[B',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'off',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'len',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
 			/* return */ 'int',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.io.InputStream.close() throws java.io.IOException */
-			/* name */ 'close',
-			/* parameters */,
-			/* return */ 'void',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public synchronized void java.io.InputStream.mark(int) */
-			/* name */ 'mark',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'readlimit',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 33,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public byte[] java.io.InputStream.readAllBytes() throws java.io.IOException */
-			/* name */ 'readAllBytes',
-			/* parameters */,
-			/* return */ '[B',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public byte[] java.io.InputStream.readNBytes(int) throws java.io.IOException */
-			/* name */ 'readNBytes',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'buf',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ '[B',
 			[/* exceptions */
 				[/* exception */
 					/* type */ 'java.io.IOException',
@@ -187,27 +180,6 @@ JdkClassCreateHelper.class('java.io.InputStream', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public long java.io.InputStream.transferTo(java.io.OutputStream) throws java.io.IOException */
-			/* name */ 'transferTo',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'out',
-					/* type */ 'java.io.OutputStream',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'long',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public long java.io.InputStream.skip(long) throws java.io.IOException */
 			/* name */ 'skip',
 			[/* parameters */
@@ -229,10 +201,17 @@ JdkClassCreateHelper.class('java.io.InputStream', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.io.InputStream.available() throws java.io.IOException */
-			/* name */ 'available',
-			/* parameters */,
-			/* return */ 'int',
+		[/* public long java.io.InputStream.transferTo(java.io.OutputStream) throws java.io.IOException */
+			/* name */ 'transferTo',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'out',
+					/* type */ 'java.io.OutputStream',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'long',
 			[/* exceptions */
 				[/* exception */
 					/* type */ 'java.io.IOException',
@@ -243,12 +222,28 @@ JdkClassCreateHelper.class('java.io.InputStream', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public boolean java.io.InputStream.markSupported() */
-			/* name */ 'markSupported',
+		[/* public static java.io.InputStream java.io.InputStream.nullInputStream() */
+			/* name */ 'nullInputStream',
 			/* parameters */,
-			/* return */ 'boolean',
+			/* return */ 'java.io.InputStream',
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public synchronized void java.io.InputStream.mark(int) */
+			/* name */ 'mark',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'readlimit',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 33,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -266,12 +261,17 @@ JdkClassCreateHelper.class('java.io.InputStream', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.io.InputStream java.io.InputStream.nullInputStream() */
-			/* name */ 'nullInputStream',
+		[/* public void java.io.InputStream.close() throws java.io.IOException */
+			/* name */ 'close',
 			/* parameters */,
-			/* return */ 'java.io.InputStream',
-			/* exceptions */,
-			/* modifiers */ 9,
+			/* return */ 'void',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],

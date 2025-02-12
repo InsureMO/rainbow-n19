@@ -28,8 +28,8 @@ JdkClassCreateHelper.class('java.util.function.DoublePredicate', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public default java.util.function.DoublePredicate java.util.function.DoublePredicate.or(java.util.function.DoublePredicate) */
-			/* name */ 'or',
+		[/* public default java.util.function.DoublePredicate java.util.function.DoublePredicate.and(java.util.function.DoublePredicate) */
+			/* name */ 'and',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'other',
@@ -53,8 +53,8 @@ JdkClassCreateHelper.class('java.util.function.DoublePredicate', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public default java.util.function.DoublePredicate java.util.function.DoublePredicate.and(java.util.function.DoublePredicate) */
-			/* name */ 'and',
+		[/* public default java.util.function.DoublePredicate java.util.function.DoublePredicate.or(java.util.function.DoublePredicate) */
+			/* name */ 'or',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'other',

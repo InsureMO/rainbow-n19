@@ -10,17 +10,17 @@ JdkClassCreateHelper.class('java.nio.file.attribute.BasicFileAttributes', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public abstract long java.nio.file.attribute.BasicFileAttributes.size() */
-			/* name */ 'size',
+		[/* public abstract boolean java.nio.file.attribute.BasicFileAttributes.isDirectory() */
+			/* name */ 'isDirectory',
 			/* parameters */,
-			/* return */ 'long',
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract boolean java.nio.file.attribute.BasicFileAttributes.isDirectory() */
-			/* name */ 'isDirectory',
+		[/* public abstract boolean java.nio.file.attribute.BasicFileAttributes.isOther() */
+			/* name */ 'isOther',
 			/* parameters */,
 			/* return */ 'boolean',
 			/* exceptions */,
@@ -46,8 +46,17 @@ JdkClassCreateHelper.class('java.nio.file.attribute.BasicFileAttributes', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.nio.file.attribute.FileTime java.nio.file.attribute.BasicFileAttributes.lastModifiedTime() */
-			/* name */ 'lastModifiedTime',
+		[/* public abstract java.lang.Object java.nio.file.attribute.BasicFileAttributes.fileKey() */
+			/* name */ 'fileKey',
+			/* parameters */,
+			/* return */ 'java.lang.Object',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.nio.file.attribute.FileTime java.nio.file.attribute.BasicFileAttributes.creationTime() */
+			/* name */ 'creationTime',
 			/* parameters */,
 			/* return */ 'java.nio.file.attribute.FileTime',
 			/* exceptions */,
@@ -64,8 +73,8 @@ JdkClassCreateHelper.class('java.nio.file.attribute.BasicFileAttributes', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.nio.file.attribute.FileTime java.nio.file.attribute.BasicFileAttributes.creationTime() */
-			/* name */ 'creationTime',
+		[/* public abstract java.nio.file.attribute.FileTime java.nio.file.attribute.BasicFileAttributes.lastModifiedTime() */
+			/* name */ 'lastModifiedTime',
 			/* parameters */,
 			/* return */ 'java.nio.file.attribute.FileTime',
 			/* exceptions */,
@@ -73,19 +82,10 @@ JdkClassCreateHelper.class('java.nio.file.attribute.BasicFileAttributes', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract boolean java.nio.file.attribute.BasicFileAttributes.isOther() */
-			/* name */ 'isOther',
+		[/* public abstract long java.nio.file.attribute.BasicFileAttributes.size() */
+			/* name */ 'size',
 			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.lang.Object java.nio.file.attribute.BasicFileAttributes.fileKey() */
-			/* name */ 'fileKey',
-			/* parameters */,
-			/* return */ 'java.lang.Object',
+			/* return */ 'long',
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,

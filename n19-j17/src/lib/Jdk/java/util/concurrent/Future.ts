@@ -18,6 +18,24 @@ JdkClassCreateHelper.class('java.util.concurrent.Future', [
 	],
 	/* declared constructors */,
 	[/* declared methods */
+		[/* public abstract V java.util.concurrent.Future.get() throws java.lang.InterruptedException,java.util.concurrent.ExecutionException */
+			/* name */ 'get',
+			/* parameters */,
+			/* return */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.lang.InterruptedException',
+					/* annotations */ UDF
+				],
+				[/* exception */
+					/* type */ 'java.util.concurrent.ExecutionException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public abstract V java.util.concurrent.Future.get(long,java.util.concurrent.TimeUnit) throws java.lang.InterruptedException,java.util.concurrent.ExecutionException,java.util.concurrent.TimeoutException */
 			/* name */ 'get',
 			[/* parameters */
@@ -46,24 +64,6 @@ JdkClassCreateHelper.class('java.util.concurrent.Future', [
 				],
 				[/* exception */
 					/* type */ 'java.util.concurrent.TimeoutException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract V java.util.concurrent.Future.get() throws java.lang.InterruptedException,java.util.concurrent.ExecutionException */
-			/* name */ 'get',
-			/* parameters */,
-			/* return */ [/* type variable ref */ 'tr', [/* name */ 'V']],
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.lang.InterruptedException',
-					/* annotations */ UDF
-				],
-				[/* exception */
-					/* type */ 'java.util.concurrent.ExecutionException',
 					/* annotations */ UDF
 				]
 			],

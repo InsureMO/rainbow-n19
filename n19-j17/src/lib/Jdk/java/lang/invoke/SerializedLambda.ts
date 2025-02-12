@@ -93,19 +93,19 @@ JdkClassCreateHelper.class('java.lang.invoke.SerializedLambda', [
 		]
 	],
 	[/* declared methods */
-		[/* public java.lang.String java.lang.invoke.SerializedLambda.toString() */
-			/* name */ 'toString',
+		[/* public final java.lang.String java.lang.invoke.SerializedLambda.getInstantiatedMethodType() */
+			/* name */ 'getInstantiatedMethodType',
 			/* parameters */,
 			/* return */ 'java.lang.String',
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 17,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.lang.invoke.SerializedLambda.getImplMethodName() */
-			/* name */ 'getImplMethodName',
+		[/* public int java.lang.invoke.SerializedLambda.getCapturedArgCount() */
+			/* name */ 'getCapturedArgCount',
 			/* parameters */,
-			/* return */ 'java.lang.String',
+			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -115,6 +115,31 @@ JdkClassCreateHelper.class('java.lang.invoke.SerializedLambda', [
 			/* name */ 'getImplMethodKind',
 			/* parameters */,
 			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.Object java.lang.invoke.SerializedLambda.getCapturedArg(int) */
+			/* name */ 'getCapturedArg',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'i',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.Object',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.lang.invoke.SerializedLambda.getCapturingClass() */
+			/* name */ 'getCapturingClass',
+			/* parameters */,
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -156,6 +181,15 @@ JdkClassCreateHelper.class('java.lang.invoke.SerializedLambda', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public java.lang.String java.lang.invoke.SerializedLambda.getImplMethodName() */
+			/* name */ 'getImplMethodName',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.lang.String java.lang.invoke.SerializedLambda.getImplMethodSignature() */
 			/* name */ 'getImplMethodSignature',
 			/* parameters */,
@@ -165,44 +199,10 @@ JdkClassCreateHelper.class('java.lang.invoke.SerializedLambda', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.Object java.lang.invoke.SerializedLambda.getCapturedArg(int) */
-			/* name */ 'getCapturedArg',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'i',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.Object',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.lang.invoke.SerializedLambda.getCapturingClass() */
-			/* name */ 'getCapturingClass',
+		[/* public java.lang.String java.lang.invoke.SerializedLambda.toString() */
+			/* name */ 'toString',
 			/* parameters */,
 			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final java.lang.String java.lang.invoke.SerializedLambda.getInstantiatedMethodType() */
-			/* name */ 'getInstantiatedMethodType',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.lang.invoke.SerializedLambda.getCapturedArgCount() */
-			/* name */ 'getCapturedArgCount',
-			/* parameters */,
-			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

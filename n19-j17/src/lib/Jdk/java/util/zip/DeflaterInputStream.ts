@@ -10,32 +10,6 @@ JdkClassCreateHelper.class('java.util.zip.DeflaterInputStream', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
-		[/* public java.util.zip.DeflaterInputStream(java.io.InputStream,java.util.zip.Deflater,int) */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'in',
-					/* type */ 'java.io.InputStream',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'defl',
-					/* type */ 'java.util.zip.Deflater',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'bufLen',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public java.util.zip.DeflaterInputStream(java.io.InputStream) */
 			[/* parameters */
 				[/* parameter */
@@ -69,9 +43,58 @@ JdkClassCreateHelper.class('java.util.zip.DeflaterInputStream', [
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
+		],
+		[/* public java.util.zip.DeflaterInputStream(java.io.InputStream,java.util.zip.Deflater,int) */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'in',
+					/* type */ 'java.io.InputStream',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'defl',
+					/* type */ 'java.util.zip.Deflater',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'bufLen',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
 		]
 	],
 	[/* declared methods */
+		[/* public boolean java.util.zip.DeflaterInputStream.markSupported() */
+			/* name */ 'markSupported',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.zip.DeflaterInputStream.available() throws java.io.IOException */
+			/* name */ 'available',
+			/* parameters */,
+			/* return */ 'int',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public int java.util.zip.DeflaterInputStream.read() throws java.io.IOException */
 			/* name */ 'read',
 			/* parameters */,
@@ -119,6 +142,27 @@ JdkClassCreateHelper.class('java.util.zip.DeflaterInputStream', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public long java.util.zip.DeflaterInputStream.skip(long) throws java.io.IOException */
+			/* name */ 'skip',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'len',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'long',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public void java.util.zip.DeflaterInputStream.close() throws java.io.IOException */
 			/* name */ 'close',
 			/* parameters */,
@@ -144,50 +188,6 @@ JdkClassCreateHelper.class('java.util.zip.DeflaterInputStream', [
 				]
 			],
 			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public long java.util.zip.DeflaterInputStream.skip(long) throws java.io.IOException */
-			/* name */ 'skip',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'len',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'long',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.util.zip.DeflaterInputStream.available() throws java.io.IOException */
-			/* name */ 'available',
-			/* parameters */,
-			/* return */ 'int',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.util.zip.DeflaterInputStream.markSupported() */
-			/* name */ 'markSupported',
-			/* parameters */,
-			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

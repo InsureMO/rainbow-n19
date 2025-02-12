@@ -19,6 +19,56 @@ JdkClassCreateHelper.class('java.text.DateFormat', [
 		]
 	],
 	[/* declared methods */
+		[/* public abstract java.lang.StringBuffer java.text.DateFormat.format(java.util.Date,java.lang.StringBuffer,java.text.FieldPosition) */
+			/* name */ 'format',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.util.Date',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'java.lang.StringBuffer',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg2',
+					/* type */ 'java.text.FieldPosition',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.StringBuffer',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.util.Date java.text.DateFormat.parse(java.lang.String,java.text.ParsePosition) */
+			/* name */ 'parse',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'java.text.ParsePosition',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.util.Date',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public boolean java.text.DateFormat.equals(java.lang.Object) */
 			/* name */ 'equals',
 			[/* parameters */
@@ -35,21 +85,28 @@ JdkClassCreateHelper.class('java.text.DateFormat', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.text.DateFormat.hashCode() */
-			/* name */ 'hashCode',
+		[/* public boolean java.text.DateFormat.isLenient() */
+			/* name */ 'isLenient',
 			/* parameters */,
-			/* return */ 'int',
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.Object java.text.DateFormat.clone() */
-			/* name */ 'clone',
-			/* parameters */,
-			/* return */ 'java.lang.Object',
+		[/* public final java.lang.String java.text.DateFormat.format(java.util.Date) */
+			/* name */ 'format',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'date',
+					/* type */ 'java.util.Date',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.String',
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 17,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -81,78 +138,61 @@ JdkClassCreateHelper.class('java.text.DateFormat', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public final java.lang.String java.text.DateFormat.format(java.util.Date) */
-			/* name */ 'format',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'date',
-					/* type */ 'java.util.Date',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.lang.StringBuffer java.text.DateFormat.format(java.util.Date,java.lang.StringBuffer,java.text.FieldPosition) */
-			/* name */ 'format',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.util.Date',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'java.lang.StringBuffer',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg2',
-					/* type */ 'java.text.FieldPosition',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.StringBuffer',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static final java.text.DateFormat java.text.DateFormat.getInstance() */
-			/* name */ 'getInstance',
+		[/* public int java.text.DateFormat.hashCode() */
+			/* name */ 'hashCode',
 			/* parameters */,
-			/* return */ 'java.text.DateFormat',
+			/* return */ 'int',
 			/* exceptions */,
-			/* modifiers */ 25,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.util.Date java.text.DateFormat.parse(java.lang.String,java.text.ParsePosition) */
-			/* name */ 'parse',
+		[/* public java.lang.Object java.text.DateFormat.clone() */
+			/* name */ 'clone',
+			/* parameters */,
+			/* return */ 'java.lang.Object',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.Object java.text.DateFormat.parseObject(java.lang.String,java.text.ParsePosition) */
+			/* name */ 'parseObject',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'source',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'pos',
 					/* type */ 'java.text.ParsePosition',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.util.Date',
+			/* return */ 'java.lang.Object',
 			/* exceptions */,
-			/* modifiers */ 1025,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.text.NumberFormat java.text.DateFormat.getNumberFormat() */
+			/* name */ 'getNumberFormat',
+			/* parameters */,
+			/* return */ 'java.text.NumberFormat',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.Calendar java.text.DateFormat.getCalendar() */
+			/* name */ 'getCalendar',
+			/* parameters */,
+			/* return */ 'java.util.Calendar',
+			/* exceptions */,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -177,34 +217,90 @@ JdkClassCreateHelper.class('java.text.DateFormat', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.util.Locale[] java.text.DateFormat.getAvailableLocales() */
-			/* name */ 'getAvailableLocales',
+		[/* public java.util.TimeZone java.text.DateFormat.getTimeZone() */
+			/* name */ 'getTimeZone',
 			/* parameters */,
-			/* return */ '[Ljava.util.Locale;',
+			/* return */ 'java.util.TimeZone',
 			/* exceptions */,
-			/* modifiers */ 9,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.Object java.text.DateFormat.parseObject(java.lang.String,java.text.ParsePosition) */
-			/* name */ 'parseObject',
+		[/* public static final java.text.DateFormat java.text.DateFormat.getDateInstance() */
+			/* name */ 'getDateInstance',
+			/* parameters */,
+			/* return */ 'java.text.DateFormat',
+			/* exceptions */,
+			/* modifiers */ 25,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static final java.text.DateFormat java.text.DateFormat.getDateInstance(int) */
+			/* name */ 'getDateInstance',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'source',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'pos',
-					/* type */ 'java.text.ParsePosition',
+					/* name */ 'arg0',
+					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.lang.Object',
+			/* return */ 'java.text.DateFormat',
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 25,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static final java.text.DateFormat java.text.DateFormat.getDateInstance(int,java.util.Locale) */
+			/* name */ 'getDateInstance',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'aLocale',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'java.util.Locale',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.text.DateFormat',
+			/* exceptions */,
+			/* modifiers */ 25,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static final java.text.DateFormat java.text.DateFormat.getDateTimeInstance() */
+			/* name */ 'getDateTimeInstance',
+			/* parameters */,
+			/* return */ 'java.text.DateFormat',
+			/* exceptions */,
+			/* modifiers */ 25,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static final java.text.DateFormat java.text.DateFormat.getDateTimeInstance(int,int) */
+			/* name */ 'getDateTimeInstance',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'timeStyle',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.text.DateFormat',
+			/* exceptions */,
+			/* modifiers */ 25,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -236,127 +332,8 @@ JdkClassCreateHelper.class('java.text.DateFormat', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static final java.text.DateFormat java.text.DateFormat.getDateTimeInstance(int,int) */
-			/* name */ 'getDateTimeInstance',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'timeStyle',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.text.DateFormat',
-			/* exceptions */,
-			/* modifiers */ 25,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static final java.text.DateFormat java.text.DateFormat.getDateTimeInstance() */
-			/* name */ 'getDateTimeInstance',
-			/* parameters */,
-			/* return */ 'java.text.DateFormat',
-			/* exceptions */,
-			/* modifiers */ 25,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.text.DateFormat.setTimeZone(java.util.TimeZone) */
-			/* name */ 'setTimeZone',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'zone',
-					/* type */ 'java.util.TimeZone',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.TimeZone java.text.DateFormat.getTimeZone() */
-			/* name */ 'getTimeZone',
-			/* parameters */,
-			/* return */ 'java.util.TimeZone',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.text.DateFormat.setLenient(boolean) */
-			/* name */ 'setLenient',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'lenient',
-					/* type */ 'boolean',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.text.DateFormat.isLenient() */
-			/* name */ 'isLenient',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static final java.text.DateFormat java.text.DateFormat.getDateInstance(int,java.util.Locale) */
-			/* name */ 'getDateInstance',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'aLocale',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'java.util.Locale',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.text.DateFormat',
-			/* exceptions */,
-			/* modifiers */ 25,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static final java.text.DateFormat java.text.DateFormat.getDateInstance(int) */
-			/* name */ 'getDateInstance',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.text.DateFormat',
-			/* exceptions */,
-			/* modifiers */ 25,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static final java.text.DateFormat java.text.DateFormat.getDateInstance() */
-			/* name */ 'getDateInstance',
+		[/* public static final java.text.DateFormat java.text.DateFormat.getInstance() */
+			/* name */ 'getInstance',
 			/* parameters */,
 			/* return */ 'java.text.DateFormat',
 			/* exceptions */,
@@ -411,6 +388,15 @@ JdkClassCreateHelper.class('java.text.DateFormat', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public static java.util.Locale[] java.text.DateFormat.getAvailableLocales() */
+			/* name */ 'getAvailableLocales',
+			/* parameters */,
+			/* return */ '[Ljava.util.Locale;',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public void java.text.DateFormat.setCalendar(java.util.Calendar) */
 			/* name */ 'setCalendar',
 			[/* parameters */
@@ -427,10 +413,17 @@ JdkClassCreateHelper.class('java.text.DateFormat', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.util.Calendar java.text.DateFormat.getCalendar() */
-			/* name */ 'getCalendar',
-			/* parameters */,
-			/* return */ 'java.util.Calendar',
+		[/* public void java.text.DateFormat.setLenient(boolean) */
+			/* name */ 'setLenient',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'lenient',
+					/* type */ 'boolean',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -452,10 +445,17 @@ JdkClassCreateHelper.class('java.text.DateFormat', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.text.NumberFormat java.text.DateFormat.getNumberFormat() */
-			/* name */ 'getNumberFormat',
-			/* parameters */,
-			/* return */ 'java.text.NumberFormat',
+		[/* public void java.text.DateFormat.setTimeZone(java.util.TimeZone) */
+			/* name */ 'setTimeZone',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'zone',
+					/* type */ 'java.util.TimeZone',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

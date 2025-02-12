@@ -22,31 +22,6 @@ JdkClassCreateHelper.class('java.lang.Float', [
 	],
 	/* type parameters */,
 	[/* declared constructors */
-		[/* public java.lang.Float(java.lang.String) throws java.lang.NumberFormatException */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 's',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.lang.NumberFormatException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			[/* annotations */
-				[
-					'java.lang.Deprecated',
-					['p', 'since', '9'],
-					['p', 'forRemoval', true]
-				]
-			],
-			/* type parameters */ UDF
-		],
 		[/* public java.lang.Float(double) */
 			[/* parameters */
 				[/* parameter */
@@ -86,6 +61,31 @@ JdkClassCreateHelper.class('java.lang.Float', [
 				]
 			],
 			/* type parameters */ UDF
+		],
+		[/* public java.lang.Float(java.lang.String) throws java.lang.NumberFormatException */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 's',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.lang.NumberFormatException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			[/* annotations */
+				[
+					'java.lang.Deprecated',
+					['p', 'since', '9'],
+					['p', 'forRemoval', true]
+				]
+			],
+			/* type parameters */ UDF
 		]
 	],
 	[/* declared methods */
@@ -105,149 +105,48 @@ JdkClassCreateHelper.class('java.lang.Float', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.lang.String java.lang.Float.toString(float) */
-			/* name */ 'toString',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'float',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.lang.Float.toString() */
-			/* name */ 'toString',
+		[/* public boolean java.lang.Float.isInfinite() */
+			/* name */ 'isInfinite',
 			/* parameters */,
-			/* return */ 'java.lang.String',
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static int java.lang.Float.hashCode(float) */
-			/* name */ 'hashCode',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'float',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.lang.Float.hashCode() */
-			/* name */ 'hashCode',
+		[/* public boolean java.lang.Float.isNaN() */
+			/* name */ 'isNaN',
 			/* parameters */,
-			/* return */ 'int',
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static float java.lang.Float.min(float,float) */
-			/* name */ 'min',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'b',
-					/* type */ 'float',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'float',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'float',
+		[/* public byte java.lang.Float.byteValue() */
+			/* name */ 'byteValue',
+			/* parameters */,
+			/* return */ 'byte',
 			/* exceptions */,
-			/* modifiers */ 9,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static float java.lang.Float.max(float,float) */
-			/* name */ 'max',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'b',
-					/* type */ 'float',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'float',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'float',
+		[/* public double java.lang.Float.doubleValue() */
+			/* name */ 'doubleValue',
+			/* parameters */,
+			/* return */ 'double',
 			/* exceptions */,
-			/* modifiers */ 9,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static native int java.lang.Float.floatToRawIntBits(float) */
-			/* name */ 'floatToRawIntBits',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'float',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 265,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public static int java.lang.Float.floatToIntBits(float) */
-			/* name */ 'floatToIntBits',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'float',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public static native float java.lang.Float.intBitsToFloat(int) */
-			/* name */ 'intBitsToFloat',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
+		[/* public float java.lang.Float.floatValue() */
+			/* name */ 'floatValue',
+			/* parameters */,
 			/* return */ 'float',
 			/* exceptions */,
-			/* modifiers */ 265,
+			/* modifiers */ 1,
 			[/* annotations */
 				['jdk.internal.vm.annotation.IntrinsicCandidate']
 			],
@@ -285,41 +184,10 @@ JdkClassCreateHelper.class('java.lang.Float', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static int java.lang.Float.compare(float,float) */
-			/* name */ 'compare',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'f2',
-					/* type */ 'float',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'thisBits',
-					/* type */ 'float',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
+		[/* public int java.lang.Float.hashCode() */
+			/* name */ 'hashCode',
+			/* parameters */,
 			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public byte java.lang.Float.byteValue() */
-			/* name */ 'byteValue',
-			/* parameters */,
-			/* return */ 'byte',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public short java.lang.Float.shortValue() */
-			/* name */ 'shortValue',
-			/* parameters */,
-			/* return */ 'short',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -334,87 +202,19 @@ JdkClassCreateHelper.class('java.lang.Float', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public long java.lang.Float.longValue() */
-			/* name */ 'longValue',
-			/* parameters */,
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public float java.lang.Float.floatValue() */
-			/* name */ 'floatValue',
-			/* parameters */,
-			/* return */ 'float',
-			/* exceptions */,
-			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public double java.lang.Float.doubleValue() */
-			/* name */ 'doubleValue',
-			/* parameters */,
-			/* return */ 'double',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.lang.Float java.lang.Float.valueOf(java.lang.String) throws java.lang.NumberFormatException */
-			/* name */ 'valueOf',
+		[/* public java.lang.Float java.lang.Float.resolveConstantDesc(java.lang.invoke.MethodHandles$Lookup) */
+			/* name */ 'resolveConstantDesc',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.Float',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.lang.NumberFormatException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.lang.Float java.lang.Float.valueOf(float) */
-			/* name */ 'valueOf',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'float',
+					/* name */ 'lookup',
+					/* type */ 'java.lang.invoke.MethodHandles$Lookup',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
 			/* return */ 'java.lang.Float',
 			/* exceptions */,
-			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public static java.lang.String java.lang.Float.toHexString(float) */
-			/* name */ 'toHexString',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 's',
-					/* type */ 'float',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 9,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -439,17 +239,10 @@ JdkClassCreateHelper.class('java.lang.Float', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.Float java.lang.Float.resolveConstantDesc(java.lang.invoke.MethodHandles$Lookup) */
-			/* name */ 'resolveConstantDesc',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'lookup',
-					/* type */ 'java.lang.invoke.MethodHandles$Lookup',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.Float',
+		[/* public java.lang.String java.lang.Float.toString() */
+			/* name */ 'toString',
+			/* parameters */,
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -470,12 +263,53 @@ JdkClassCreateHelper.class('java.lang.Float', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public boolean java.lang.Float.isNaN() */
-			/* name */ 'isNaN',
+		[/* public long java.lang.Float.longValue() */
+			/* name */ 'longValue',
 			/* parameters */,
-			/* return */ 'boolean',
+			/* return */ 'long',
 			/* exceptions */,
 			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public short java.lang.Float.shortValue() */
+			/* name */ 'shortValue',
+			/* parameters */,
+			/* return */ 'short',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static boolean java.lang.Float.isFinite(float) */
+			/* name */ 'isFinite',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'float',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static boolean java.lang.Float.isInfinite(float) */
+			/* name */ 'isInfinite',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'float',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -495,8 +329,30 @@ JdkClassCreateHelper.class('java.lang.Float', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static float java.lang.Float.sum(float,float) */
-			/* name */ 'sum',
+		[/* public static float java.lang.Float.max(float,float) */
+			/* name */ 'max',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'b',
+					/* type */ 'float',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'float',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'float',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static float java.lang.Float.min(float,float) */
+			/* name */ 'min',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'b',
@@ -538,17 +394,52 @@ JdkClassCreateHelper.class('java.lang.Float', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public boolean java.lang.Float.isInfinite() */
-			/* name */ 'isInfinite',
-			/* parameters */,
-			/* return */ 'boolean',
+		[/* public static float java.lang.Float.sum(float,float) */
+			/* name */ 'sum',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'b',
+					/* type */ 'float',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'float',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'float',
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static boolean java.lang.Float.isInfinite(float) */
-			/* name */ 'isInfinite',
+		[/* public static int java.lang.Float.compare(float,float) */
+			/* name */ 'compare',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'f2',
+					/* type */ 'float',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'thisBits',
+					/* type */ 'float',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static int java.lang.Float.floatToIntBits(float) */
+			/* name */ 'floatToIntBits',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
@@ -557,14 +448,16 @@ JdkClassCreateHelper.class('java.lang.Float', [
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'boolean',
+			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 9,
-			/* annotations */ UDF,
+			[/* annotations */
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
 			/* type parameters */ UDF
 		],
-		[/* public static boolean java.lang.Float.isFinite(float) */
-			/* name */ 'isFinite',
+		[/* public static int java.lang.Float.hashCode(float) */
+			/* name */ 'hashCode',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
@@ -573,10 +466,117 @@ JdkClassCreateHelper.class('java.lang.Float', [
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'boolean',
+			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 9,
 			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.lang.Float java.lang.Float.valueOf(float) */
+			/* name */ 'valueOf',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'float',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.Float',
+			/* exceptions */,
+			/* modifiers */ 9,
+			[/* annotations */
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public static java.lang.Float java.lang.Float.valueOf(java.lang.String) throws java.lang.NumberFormatException */
+			/* name */ 'valueOf',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.Float',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.lang.NumberFormatException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.lang.String java.lang.Float.toHexString(float) */
+			/* name */ 'toHexString',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 's',
+					/* type */ 'float',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.lang.String java.lang.Float.toString(float) */
+			/* name */ 'toString',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'float',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static native float java.lang.Float.intBitsToFloat(int) */
+			/* name */ 'intBitsToFloat',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'float',
+			/* exceptions */,
+			/* modifiers */ 265,
+			[/* annotations */
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public static native int java.lang.Float.floatToRawIntBits(float) */
+			/* name */ 'floatToRawIntBits',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'float',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 265,
+			[/* annotations */
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
 			/* type parameters */ UDF
 		]
 	],

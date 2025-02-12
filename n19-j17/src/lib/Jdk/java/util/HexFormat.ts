@@ -11,242 +11,6 @@ JdkClassCreateHelper.class('java.util.HexFormat', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public boolean java.util.HexFormat.equals(java.lang.Object) */
-			/* name */ 'equals',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'o',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.util.HexFormat.toString() */
-			/* name */ 'toString',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.util.HexFormat.hashCode() */
-			/* name */ 'hashCode',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.util.HexFormat.isUpperCase() */
-			/* name */ 'isUpperCase',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.util.HexFormat java.util.HexFormat.of() */
-			/* name */ 'of',
-			/* parameters */,
-			/* return */ 'java.util.HexFormat',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.util.HexFormat.prefix() */
-			/* name */ 'prefix',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.util.HexFormat.suffix() */
-			/* name */ 'suffix',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.util.HexFormat.delimiter() */
-			/* name */ 'delimiter',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.HexFormat java.util.HexFormat.withUpperCase() */
-			/* name */ 'withUpperCase',
-			/* parameters */,
-			/* return */ 'java.util.HexFormat',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.util.HexFormat.toHexDigits(char) */
-			/* name */ 'toHexDigits',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'value',
-					/* type */ 'char',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.util.HexFormat.toHexDigits(short) */
-			/* name */ 'toHexDigits',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'cce',
-					/* type */ 'short',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.util.HexFormat.toHexDigits(long) */
-			/* name */ 'toHexDigits',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'cce',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.util.HexFormat.toHexDigits(int) */
-			/* name */ 'toHexDigits',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'cce',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.util.HexFormat.toHexDigits(byte) */
-			/* name */ 'toHexDigits',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'cce',
-					/* type */ 'byte',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public <A extends java.lang.Appendable> A java.util.HexFormat.toHexDigits(A,byte) */
-			/* name */ 'toHexDigits',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'ioe',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'A']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'out',
-					/* type */ 'byte',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ [/* type variable ref */ 'tr', [/* name */ 'A']],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			[/* type parameters */
-				[/* type variable */
-					/* name */ 'A',
-					[/* bounds */
-						'java.lang.Appendable'
-					],
-					/* annotations */ UDF
-				]
-			]
-		],
-		[/* public java.lang.String java.util.HexFormat.toHexDigits(long,int) */
-			/* name */ 'toHexDigits',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'i',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'cce',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.util.HexFormat.formatHex(byte[]) */
-			/* name */ 'formatHex',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'bytes',
-					/* type */ '[B',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public <A extends java.lang.Appendable> A java.util.HexFormat.formatHex(A,byte[]) */
 			/* name */ 'formatHex',
 			[/* parameters */
@@ -319,89 +83,56 @@ JdkClassCreateHelper.class('java.util.HexFormat', [
 				]
 			]
 		],
-		[/* public java.lang.String java.util.HexFormat.formatHex(byte[],int,int) */
-			/* name */ 'formatHex',
+		[/* public <A extends java.lang.Appendable> A java.util.HexFormat.toHexDigits(A,byte) */
+			/* name */ 'toHexDigits',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'stride',
-					/* type */ '[B',
+					/* name */ 'ioe',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'A']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'capacity',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'sb',
-					/* type */ 'int',
+					/* name */ 'out',
+					/* type */ 'byte',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.lang.String',
+			/* return */ [/* type variable ref */ 'tr', [/* name */ 'A']],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			[/* type parameters */
+				[/* type variable */
+					/* name */ 'A',
+					[/* bounds */
+						'java.lang.Appendable'
+					],
+					/* annotations */ UDF
+				]
+			]
+		],
+		[/* public boolean java.util.HexFormat.equals(java.lang.Object) */
+			/* name */ 'equals',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'o',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public char java.util.HexFormat.toHighHexDigit(int) */
-			/* name */ 'toHighHexDigit',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'value',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'char',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public char java.util.HexFormat.toLowHexDigit(int) */
-			/* name */ 'toLowHexDigit',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'value',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'char',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public byte[] java.util.HexFormat.parseHex(java.lang.CharSequence,int,int) */
-			/* name */ 'parseHex',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'string',
-					/* type */ 'java.lang.CharSequence',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'fromIndex',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'toIndex',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ '[B',
+		[/* public boolean java.util.HexFormat.isUpperCase() */
+			/* name */ 'isUpperCase',
+			/* parameters */,
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -451,11 +182,11 @@ JdkClassCreateHelper.class('java.util.HexFormat', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static int java.util.HexFormat.fromHexDigits(java.lang.CharSequence,int,int) */
-			/* name */ 'fromHexDigits',
+		[/* public byte[] java.util.HexFormat.parseHex(java.lang.CharSequence,int,int) */
+			/* name */ 'parseHex',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'string',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -473,30 +204,14 @@ JdkClassCreateHelper.class('java.util.HexFormat', [
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'int',
+			/* return */ '[B',
 			/* exceptions */,
-			/* modifiers */ 9,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static int java.util.HexFormat.fromHexDigits(java.lang.CharSequence) */
-			/* name */ 'fromHexDigits',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.CharSequence',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static int java.util.HexFormat.fromHexDigit(int) */
-			/* name */ 'fromHexDigit',
+		[/* public char java.util.HexFormat.toHighHexDigit(int) */
+			/* name */ 'toHighHexDigit',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'value',
@@ -505,69 +220,216 @@ JdkClassCreateHelper.class('java.util.HexFormat', [
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'int',
+			/* return */ 'char',
 			/* exceptions */,
-			/* modifiers */ 9,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static long java.util.HexFormat.fromHexDigitsToLong(java.lang.CharSequence,int,int) */
-			/* name */ 'fromHexDigitsToLong',
+		[/* public char java.util.HexFormat.toLowHexDigit(int) */
+			/* name */ 'toLowHexDigit',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'value',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'char',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.HexFormat.hashCode() */
+			/* name */ 'hashCode',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.util.HexFormat.delimiter() */
+			/* name */ 'delimiter',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.util.HexFormat.formatHex(byte[]) */
+			/* name */ 'formatHex',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'bytes',
+					/* type */ '[B',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.util.HexFormat.formatHex(byte[],int,int) */
+			/* name */ 'formatHex',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'stride',
+					/* type */ '[B',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'capacity',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'sb',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.util.HexFormat.prefix() */
+			/* name */ 'prefix',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.util.HexFormat.suffix() */
+			/* name */ 'suffix',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.util.HexFormat.toHexDigits(byte) */
+			/* name */ 'toHexDigits',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'cce',
+					/* type */ 'byte',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.util.HexFormat.toHexDigits(char) */
+			/* name */ 'toHexDigits',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'value',
+					/* type */ 'char',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.util.HexFormat.toHexDigits(int) */
+			/* name */ 'toHexDigits',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'cce',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.util.HexFormat.toHexDigits(long) */
+			/* name */ 'toHexDigits',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'cce',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.util.HexFormat.toHexDigits(long,int) */
+			/* name */ 'toHexDigits',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'i',
-					/* type */ 'java.lang.CharSequence',
+					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'fromIndex',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'toIndex',
+					/* name */ 'cce',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'long',
+			/* return */ 'java.lang.String',
 			/* exceptions */,
-			/* modifiers */ 9,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static long java.util.HexFormat.fromHexDigitsToLong(java.lang.CharSequence) */
-			/* name */ 'fromHexDigitsToLong',
+		[/* public java.lang.String java.util.HexFormat.toHexDigits(short) */
+			/* name */ 'toHexDigits',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.CharSequence',
+					/* name */ 'cce',
+					/* type */ 'short',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'long',
+			/* return */ 'java.lang.String',
 			/* exceptions */,
-			/* modifiers */ 9,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.util.HexFormat java.util.HexFormat.ofDelimiter(java.lang.String) */
-			/* name */ 'ofDelimiter',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.util.HexFormat',
+		[/* public java.lang.String java.util.HexFormat.toString() */
+			/* name */ 'toString',
+			/* parameters */,
+			/* return */ 'java.lang.String',
 			/* exceptions */,
-			/* modifiers */ 9,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -581,6 +443,15 @@ JdkClassCreateHelper.class('java.util.HexFormat', [
 					/* annotations */ UDF
 				]
 			],
+			/* return */ 'java.util.HexFormat',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.HexFormat java.util.HexFormat.withLowerCase() */
+			/* name */ 'withLowerCase',
+			/* parameters */,
 			/* return */ 'java.util.HexFormat',
 			/* exceptions */,
 			/* modifiers */ 1,
@@ -619,8 +490,8 @@ JdkClassCreateHelper.class('java.util.HexFormat', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.util.HexFormat java.util.HexFormat.withLowerCase() */
-			/* name */ 'withLowerCase',
+		[/* public java.util.HexFormat java.util.HexFormat.withUpperCase() */
+			/* name */ 'withUpperCase',
 			/* parameters */,
 			/* return */ 'java.util.HexFormat',
 			/* exceptions */,
@@ -639,6 +510,135 @@ JdkClassCreateHelper.class('java.util.HexFormat', [
 				]
 			],
 			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static int java.util.HexFormat.fromHexDigit(int) */
+			/* name */ 'fromHexDigit',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'value',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static int java.util.HexFormat.fromHexDigits(java.lang.CharSequence) */
+			/* name */ 'fromHexDigits',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.CharSequence',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static int java.util.HexFormat.fromHexDigits(java.lang.CharSequence,int,int) */
+			/* name */ 'fromHexDigits',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'i',
+					/* type */ 'java.lang.CharSequence',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'fromIndex',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'toIndex',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.util.HexFormat java.util.HexFormat.of() */
+			/* name */ 'of',
+			/* parameters */,
+			/* return */ 'java.util.HexFormat',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.util.HexFormat java.util.HexFormat.ofDelimiter(java.lang.String) */
+			/* name */ 'ofDelimiter',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.util.HexFormat',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static long java.util.HexFormat.fromHexDigitsToLong(java.lang.CharSequence) */
+			/* name */ 'fromHexDigitsToLong',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.CharSequence',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static long java.util.HexFormat.fromHexDigitsToLong(java.lang.CharSequence,int,int) */
+			/* name */ 'fromHexDigitsToLong',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'i',
+					/* type */ 'java.lang.CharSequence',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'fromIndex',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'toIndex',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'long',
 			/* exceptions */,
 			/* modifiers */ 9,
 			/* annotations */ UDF,

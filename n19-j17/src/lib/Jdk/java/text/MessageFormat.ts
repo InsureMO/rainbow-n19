@@ -62,21 +62,31 @@ JdkClassCreateHelper.class('java.text.MessageFormat', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.text.MessageFormat.hashCode() */
-			/* name */ 'hashCode',
-			/* parameters */,
-			/* return */ 'int',
+		[/* public final java.lang.StringBuffer java.text.MessageFormat.format(java.lang.Object,java.lang.StringBuffer,java.text.FieldPosition) */
+			/* name */ 'format',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arguments',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'result',
+					/* type */ 'java.lang.StringBuffer',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'pos',
+					/* type */ 'java.text.FieldPosition',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.StringBuffer',
 			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.Object java.text.MessageFormat.clone() */
-			/* name */ 'clone',
-			/* parameters */,
-			/* return */ 'java.lang.Object',
-			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 17,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -108,103 +118,19 @@ JdkClassCreateHelper.class('java.text.MessageFormat', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.lang.String java.text.MessageFormat.format(java.lang.String,java.lang.Object...) */
-			/* name */ 'format',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ '[Ljava.lang.Object;',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 137,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final java.lang.StringBuffer java.text.MessageFormat.format(java.lang.Object,java.lang.StringBuffer,java.text.FieldPosition) */
-			/* name */ 'format',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arguments',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'result',
-					/* type */ 'java.lang.StringBuffer',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'pos',
-					/* type */ 'java.text.FieldPosition',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.StringBuffer',
-			/* exceptions */,
-			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.Object[] java.text.MessageFormat.parse(java.lang.String,java.text.ParsePosition) */
-			/* name */ 'parse',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'java.text.ParsePosition',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ '[Ljava.lang.Object;',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.Object[] java.text.MessageFormat.parse(java.lang.String) throws java.text.ParseException */
-			/* name */ 'parse',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ '[Ljava.lang.Object;',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.text.ParseException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.Locale java.text.MessageFormat.getLocale() */
-			/* name */ 'getLocale',
+		[/* public int java.text.MessageFormat.hashCode() */
+			/* name */ 'hashCode',
 			/* parameters */,
-			/* return */ 'java.util.Locale',
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.Object java.text.MessageFormat.clone() */
+			/* name */ 'clone',
+			/* parameters */,
+			/* return */ 'java.lang.Object',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -232,6 +158,58 @@ JdkClassCreateHelper.class('java.text.MessageFormat', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public java.lang.Object[] java.text.MessageFormat.parse(java.lang.String) throws java.text.ParseException */
+			/* name */ 'parse',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ '[Ljava.lang.Object;',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.text.ParseException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.Object[] java.text.MessageFormat.parse(java.lang.String,java.text.ParsePosition) */
+			/* name */ 'parse',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'java.text.ParsePosition',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ '[Ljava.lang.Object;',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.text.MessageFormat.toPattern() */
+			/* name */ 'toPattern',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.text.AttributedCharacterIterator java.text.MessageFormat.formatToCharacterIterator(java.lang.Object) */
 			/* name */ 'formatToCharacterIterator',
 			[/* parameters */
@@ -248,19 +226,52 @@ JdkClassCreateHelper.class('java.text.MessageFormat', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.text.MessageFormat.setLocale(java.util.Locale) */
-			/* name */ 'setLocale',
+		[/* public java.text.Format[] java.text.MessageFormat.getFormats() */
+			/* name */ 'getFormats',
+			/* parameters */,
+			/* return */ '[Ljava.text.Format;',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.text.Format[] java.text.MessageFormat.getFormatsByArgumentIndex() */
+			/* name */ 'getFormatsByArgumentIndex',
+			/* parameters */,
+			/* return */ '[Ljava.text.Format;',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.Locale java.text.MessageFormat.getLocale() */
+			/* name */ 'getLocale',
+			/* parameters */,
+			/* return */ 'java.util.Locale',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.lang.String java.text.MessageFormat.format(java.lang.String,java.lang.Object...) */
+			/* name */ 'format',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'locale',
-					/* type */ 'java.util.Locale',
+					/* name */ 'arg0',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ '[Ljava.lang.Object;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'void',
+			/* return */ 'java.lang.String',
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 137,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -280,24 +291,6 @@ JdkClassCreateHelper.class('java.text.MessageFormat', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.text.MessageFormat.toPattern() */
-			/* name */ 'toPattern',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.text.Format[] java.text.MessageFormat.getFormats() */
-			/* name */ 'getFormats',
-			/* parameters */,
-			/* return */ '[Ljava.text.Format;',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public void java.text.MessageFormat.setFormat(int,java.text.Format) */
 			/* name */ 'setFormat',
 			[/* parameters */
@@ -310,38 +303,6 @@ JdkClassCreateHelper.class('java.text.MessageFormat', [
 				[/* parameter */
 					/* name */ 'newFormat',
 					/* type */ 'java.text.Format',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.text.MessageFormat.setFormatsByArgumentIndex(java.text.Format[]) */
-			/* name */ 'setFormatsByArgumentIndex',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ '[Ljava.text.Format;',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.text.MessageFormat.setFormats(java.text.Format[]) */
-			/* name */ 'setFormats',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ '[Ljava.text.Format;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -374,10 +335,49 @@ JdkClassCreateHelper.class('java.text.MessageFormat', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.text.Format[] java.text.MessageFormat.getFormatsByArgumentIndex() */
-			/* name */ 'getFormatsByArgumentIndex',
-			/* parameters */,
-			/* return */ '[Ljava.text.Format;',
+		[/* public void java.text.MessageFormat.setFormats(java.text.Format[]) */
+			/* name */ 'setFormats',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ '[Ljava.text.Format;',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.text.MessageFormat.setFormatsByArgumentIndex(java.text.Format[]) */
+			/* name */ 'setFormatsByArgumentIndex',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ '[Ljava.text.Format;',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.text.MessageFormat.setLocale(java.util.Locale) */
+			/* name */ 'setLocale',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'locale',
+					/* type */ 'java.util.Locale',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

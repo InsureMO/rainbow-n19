@@ -33,44 +33,6 @@ JdkClassCreateHelper.class('java.util.AbstractSequentialList', [
 		]
 	],
 	[/* declared methods */
-		[/* public void java.util.AbstractSequentialList.add(int,E) */
-			/* name */ 'add',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'exc',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'index',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public E java.util.AbstractSequentialList.remove(int) */
-			/* name */ 'remove',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'e',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ [/* type variable ref */ 'tr', [/* name */ 'E']],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public E java.util.AbstractSequentialList.get(int) */
 			/* name */ 'get',
 			[/* parameters */
@@ -87,49 +49,17 @@ JdkClassCreateHelper.class('java.util.AbstractSequentialList', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.util.Iterator<E> java.util.AbstractSequentialList.iterator() */
-			/* name */ 'iterator',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* type variable ref */ 'tr', [/* name */ 'E']]
-				],
-				/* raw type */ 'java.util.Iterator',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.util.AbstractSequentialList.addAll(int,java.util.Collection<? extends E>) */
-			/* name */ 'addAll',
+		[/* public E java.util.AbstractSequentialList.remove(int) */
+			/* name */ 'remove',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'e',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'modified',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							[/* wildcard type */ 'wt', [
-								[/* upper bounds */
-									[/* type variable ref */ 'tr', [/* name */ 'E']]
-								],
-								/* lower bounds */ UDF
-							]]
-						],
-						/* raw type */ 'java.util.Collection',
-						/* owner type */ UDF
-					]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
 				]
 			],
-			/* return */ 'boolean',
+			/* return */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -176,6 +106,76 @@ JdkClassCreateHelper.class('java.util.AbstractSequentialList', [
 			]],
 			/* exceptions */,
 			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.util.AbstractSequentialList.addAll(int,java.util.Collection<? extends E>) */
+			/* name */ 'addAll',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'e',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'modified',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									[/* type variable ref */ 'tr', [/* name */ 'E']]
+								],
+								/* lower bounds */ UDF
+							]]
+						],
+						/* raw type */ 'java.util.Collection',
+						/* owner type */ UDF
+					]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.Iterator<E> java.util.AbstractSequentialList.iterator() */
+			/* name */ 'iterator',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'E']]
+				],
+				/* raw type */ 'java.util.Iterator',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.util.AbstractSequentialList.add(int,E) */
+			/* name */ 'add',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'exc',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'index',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

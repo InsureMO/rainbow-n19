@@ -26,15 +26,6 @@ JdkClassCreateHelper.class('java.net.URLConnection', [
 		]
 	],
 	[/* declared methods */
-		[/* public java.lang.String java.net.URLConnection.toString() */
-			/* name */ 'toString',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public abstract void java.net.URLConnection.connect() throws java.io.IOException */
 			/* name */ 'connect',
 			/* parameters */,
@@ -49,10 +40,132 @@ JdkClassCreateHelper.class('java.net.URLConnection', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public boolean java.net.URLConnection.getAllowUserInteraction() */
+			/* name */ 'getAllowUserInteraction',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.net.URLConnection.getDefaultUseCaches() */
+			/* name */ 'getDefaultUseCaches',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.net.URLConnection.getDoInput() */
+			/* name */ 'getDoInput',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.net.URLConnection.getDoOutput() */
+			/* name */ 'getDoOutput',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.net.URLConnection.getUseCaches() */
+			/* name */ 'getUseCaches',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.net.URLConnection.getConnectTimeout() */
+			/* name */ 'getConnectTimeout',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.net.URLConnection.getContentLength() */
+			/* name */ 'getContentLength',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.net.URLConnection.getHeaderFieldInt(java.lang.String,int) */
+			/* name */ 'getHeaderFieldInt',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'name',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'Default',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.net.URLConnection.getReadTimeout() */
+			/* name */ 'getReadTimeout',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.io.InputStream java.net.URLConnection.getInputStream() throws java.io.IOException */
 			/* name */ 'getInputStream',
 			/* parameters */,
 			/* return */ 'java.io.InputStream',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.io.OutputStream java.net.URLConnection.getOutputStream() throws java.io.IOException */
+			/* name */ 'getOutputStream',
+			/* parameters */,
+			/* return */ 'java.io.OutputStream',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.Object java.net.URLConnection.getContent() throws java.io.IOException */
+			/* name */ 'getContent',
+			/* parameters */,
+			/* return */ 'java.lang.Object',
 			[/* exceptions */
 				[/* exception */
 					/* type */ 'java.io.IOException',
@@ -95,173 +208,19 @@ JdkClassCreateHelper.class('java.net.URLConnection', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.Object java.net.URLConnection.getContent() throws java.io.IOException */
-			/* name */ 'getContent',
+		[/* public java.lang.String java.net.URLConnection.getContentEncoding() */
+			/* name */ 'getContentEncoding',
 			/* parameters */,
-			/* return */ 'java.lang.Object',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.security.Permission java.net.URLConnection.getPermission() throws java.io.IOException */
-			/* name */ 'getPermission',
-			/* parameters */,
-			/* return */ 'java.security.Permission',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.net.URLConnection.setUseCaches(boolean) */
-			/* name */ 'setUseCaches',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'usecaches',
-					/* type */ 'boolean',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.net.URLConnection.setRequestProperty(java.lang.String,java.lang.String) */
-			/* name */ 'setRequestProperty',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'key',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'value',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.net.URL java.net.URLConnection.getURL() */
-			/* name */ 'getURL',
+		[/* public java.lang.String java.net.URLConnection.getContentType() */
+			/* name */ 'getContentType',
 			/* parameters */,
-			/* return */ 'java.net.URL',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.net.URLConnection.getContentLength() */
-			/* name */ 'getContentLength',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public long java.net.URLConnection.getLastModified() */
-			/* name */ 'getLastModified',
-			/* parameters */,
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public long java.net.URLConnection.getDate() */
-			/* name */ 'getDate',
-			/* parameters */,
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.io.OutputStream java.net.URLConnection.getOutputStream() throws java.io.IOException */
-			/* name */ 'getOutputStream',
-			/* parameters */,
-			/* return */ 'java.io.OutputStream',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.net.URLConnection.getDefaultUseCaches() */
-			/* name */ 'getDefaultUseCaches',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static boolean java.net.URLConnection.getDefaultUseCaches(java.lang.String) */
-			/* name */ 'getDefaultUseCaches',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'protoDefault',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public long java.net.URLConnection.getContentLengthLong() */
-			/* name */ 'getContentLengthLong',
-			/* parameters */,
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public long java.net.URLConnection.getHeaderFieldLong(java.lang.String,long) */
-			/* name */ 'getHeaderFieldLong',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'name',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'Default',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'long',
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -299,30 +258,40 @@ JdkClassCreateHelper.class('java.net.URLConnection', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public long java.net.URLConnection.getHeaderFieldDate(java.lang.String,long) */
-			/* name */ 'getHeaderFieldDate',
+		[/* public java.lang.String java.net.URLConnection.getHeaderFieldKey(int) */
+			/* name */ 'getHeaderFieldKey',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'name',
+					/* name */ 'n',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.net.URLConnection.getRequestProperty(java.lang.String) */
+			/* name */ 'getRequestProperty',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'key',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'Default',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
 				]
 			],
-			/* return */ 'long',
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.net.URLConnection.getContentType() */
-			/* name */ 'getContentType',
+		[/* public java.lang.String java.net.URLConnection.toString() */
+			/* name */ 'toString',
 			/* parameters */,
 			/* return */ 'java.lang.String',
 			/* exceptions */,
@@ -330,95 +299,25 @@ JdkClassCreateHelper.class('java.net.URLConnection', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.net.FileNameMap java.net.URLConnection.getFileNameMap() */
-			/* name */ 'getFileNameMap',
+		[/* public java.net.URL java.net.URLConnection.getURL() */
+			/* name */ 'getURL',
 			/* parameters */,
-			/* return */ 'java.net.FileNameMap',
+			/* return */ 'java.net.URL',
 			/* exceptions */,
-			/* modifiers */ 9,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static void java.net.URLConnection.setFileNameMap(java.net.FileNameMap) */
-			/* name */ 'setFileNameMap',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'sm',
-					/* type */ 'java.net.FileNameMap',
-					/* modifiers */ 0,
+		[/* public java.security.Permission java.net.URLConnection.getPermission() throws java.io.IOException */
+			/* name */ 'getPermission',
+			/* parameters */,
+			/* return */ 'java.security.Permission',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.net.URLConnection.setConnectTimeout(int) */
-			/* name */ 'setConnectTimeout',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'timeout',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.net.URLConnection.getConnectTimeout() */
-			/* name */ 'getConnectTimeout',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.net.URLConnection.setReadTimeout(int) */
-			/* name */ 'setReadTimeout',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'timeout',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.net.URLConnection.getReadTimeout() */
-			/* name */ 'getReadTimeout',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.net.URLConnection.getContentEncoding() */
-			/* name */ 'getContentEncoding',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public long java.net.URLConnection.getExpiration() */
-			/* name */ 'getExpiration',
-			/* parameters */,
-			/* return */ 'long',
-			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
@@ -440,254 +339,6 @@ JdkClassCreateHelper.class('java.net.URLConnection', [
 				/* raw type */ 'java.util.Map',
 				/* owner type */ UDF
 			]],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.net.URLConnection.getHeaderFieldInt(java.lang.String,int) */
-			/* name */ 'getHeaderFieldInt',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'name',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'Default',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.net.URLConnection.getHeaderFieldKey(int) */
-			/* name */ 'getHeaderFieldKey',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'n',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.net.URLConnection.setDoInput(boolean) */
-			/* name */ 'setDoInput',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'doinput',
-					/* type */ 'boolean',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.net.URLConnection.getDoInput() */
-			/* name */ 'getDoInput',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.net.URLConnection.setDoOutput(boolean) */
-			/* name */ 'setDoOutput',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'dooutput',
-					/* type */ 'boolean',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.net.URLConnection.getDoOutput() */
-			/* name */ 'getDoOutput',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.net.URLConnection.setAllowUserInteraction(boolean) */
-			/* name */ 'setAllowUserInteraction',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'allowuserinteraction',
-					/* type */ 'boolean',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.net.URLConnection.getAllowUserInteraction() */
-			/* name */ 'getAllowUserInteraction',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static void java.net.URLConnection.setDefaultAllowUserInteraction(boolean) */
-			/* name */ 'setDefaultAllowUserInteraction',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'boolean',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static boolean java.net.URLConnection.getDefaultAllowUserInteraction() */
-			/* name */ 'getDefaultAllowUserInteraction',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.net.URLConnection.getUseCaches() */
-			/* name */ 'getUseCaches',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.net.URLConnection.setIfModifiedSince(long) */
-			/* name */ 'setIfModifiedSince',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'ifmodifiedsince',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public long java.net.URLConnection.getIfModifiedSince() */
-			/* name */ 'getIfModifiedSince',
-			/* parameters */,
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static void java.net.URLConnection.setDefaultUseCaches(java.lang.String,boolean) */
-			/* name */ 'setDefaultUseCaches',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'defaultVal',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'boolean',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.net.URLConnection.setDefaultUseCaches(boolean) */
-			/* name */ 'setDefaultUseCaches',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'defaultusecaches',
-					/* type */ 'boolean',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.net.URLConnection.addRequestProperty(java.lang.String,java.lang.String) */
-			/* name */ 'addRequestProperty',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'key',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'value',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.net.URLConnection.getRequestProperty(java.lang.String) */
-			/* name */ 'getRequestProperty',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'key',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -715,32 +366,118 @@ JdkClassCreateHelper.class('java.net.URLConnection', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static void java.net.URLConnection.setDefaultRequestProperty(java.lang.String,java.lang.String) */
-			/* name */ 'setDefaultRequestProperty',
+		[/* public long java.net.URLConnection.getContentLengthLong() */
+			/* name */ 'getContentLengthLong',
+			/* parameters */,
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public long java.net.URLConnection.getDate() */
+			/* name */ 'getDate',
+			/* parameters */,
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public long java.net.URLConnection.getExpiration() */
+			/* name */ 'getExpiration',
+			/* parameters */,
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public long java.net.URLConnection.getHeaderFieldDate(java.lang.String,long) */
+			/* name */ 'getHeaderFieldDate',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'value',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'Default',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public long java.net.URLConnection.getHeaderFieldLong(java.lang.String,long) */
+			/* name */ 'getHeaderFieldLong',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'name',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'Default',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public long java.net.URLConnection.getIfModifiedSince() */
+			/* name */ 'getIfModifiedSince',
+			/* parameters */,
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public long java.net.URLConnection.getLastModified() */
+			/* name */ 'getLastModified',
+			/* parameters */,
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static boolean java.net.URLConnection.getDefaultAllowUserInteraction() */
+			/* name */ 'getDefaultAllowUserInteraction',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static boolean java.net.URLConnection.getDefaultUseCaches(java.lang.String) */
+			/* name */ 'getDefaultUseCaches',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'protoDefault',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'void',
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				[
-					'java.lang.Deprecated',
-					['p', 'since', ''],
-					['p', 'forRemoval', false]
-				]
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static java.lang.String java.net.URLConnection.getDefaultRequestProperty(java.lang.String) */
@@ -763,22 +500,6 @@ JdkClassCreateHelper.class('java.net.URLConnection', [
 					['p', 'forRemoval', false]
 				]
 			],
-			/* type parameters */ UDF
-		],
-		[/* public static synchronized void java.net.URLConnection.setContentHandlerFactory(java.net.ContentHandlerFactory) */
-			/* name */ 'setContentHandlerFactory',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'security',
-					/* type */ 'java.net.ContentHandlerFactory',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 41,
-			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static java.lang.String java.net.URLConnection.guessContentTypeFromName(java.lang.String) */
@@ -815,6 +536,285 @@ JdkClassCreateHelper.class('java.net.URLConnection', [
 				]
 			],
 			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.net.FileNameMap java.net.URLConnection.getFileNameMap() */
+			/* name */ 'getFileNameMap',
+			/* parameters */,
+			/* return */ 'java.net.FileNameMap',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static synchronized void java.net.URLConnection.setContentHandlerFactory(java.net.ContentHandlerFactory) */
+			/* name */ 'setContentHandlerFactory',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'security',
+					/* type */ 'java.net.ContentHandlerFactory',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 41,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static void java.net.URLConnection.setDefaultAllowUserInteraction(boolean) */
+			/* name */ 'setDefaultAllowUserInteraction',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'boolean',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static void java.net.URLConnection.setDefaultRequestProperty(java.lang.String,java.lang.String) */
+			/* name */ 'setDefaultRequestProperty',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'value',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 9,
+			[/* annotations */
+				[
+					'java.lang.Deprecated',
+					['p', 'since', ''],
+					['p', 'forRemoval', false]
+				]
+			],
+			/* type parameters */ UDF
+		],
+		[/* public static void java.net.URLConnection.setDefaultUseCaches(java.lang.String,boolean) */
+			/* name */ 'setDefaultUseCaches',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'defaultVal',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'boolean',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static void java.net.URLConnection.setFileNameMap(java.net.FileNameMap) */
+			/* name */ 'setFileNameMap',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'sm',
+					/* type */ 'java.net.FileNameMap',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.net.URLConnection.addRequestProperty(java.lang.String,java.lang.String) */
+			/* name */ 'addRequestProperty',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'key',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'value',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.net.URLConnection.setAllowUserInteraction(boolean) */
+			/* name */ 'setAllowUserInteraction',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'allowuserinteraction',
+					/* type */ 'boolean',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.net.URLConnection.setConnectTimeout(int) */
+			/* name */ 'setConnectTimeout',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'timeout',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.net.URLConnection.setDefaultUseCaches(boolean) */
+			/* name */ 'setDefaultUseCaches',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'defaultusecaches',
+					/* type */ 'boolean',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.net.URLConnection.setDoInput(boolean) */
+			/* name */ 'setDoInput',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'doinput',
+					/* type */ 'boolean',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.net.URLConnection.setDoOutput(boolean) */
+			/* name */ 'setDoOutput',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'dooutput',
+					/* type */ 'boolean',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.net.URLConnection.setIfModifiedSince(long) */
+			/* name */ 'setIfModifiedSince',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'ifmodifiedsince',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.net.URLConnection.setReadTimeout(int) */
+			/* name */ 'setReadTimeout',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'timeout',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.net.URLConnection.setRequestProperty(java.lang.String,java.lang.String) */
+			/* name */ 'setRequestProperty',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'key',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'value',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.net.URLConnection.setUseCaches(boolean) */
+			/* name */ 'setUseCaches',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'usecaches',
+					/* type */ 'boolean',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

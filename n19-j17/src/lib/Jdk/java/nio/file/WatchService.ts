@@ -12,6 +12,15 @@ JdkClassCreateHelper.class('java.nio.file.WatchService', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
+		[/* public abstract java.nio.file.WatchKey java.nio.file.WatchService.poll() */
+			/* name */ 'poll',
+			/* parameters */,
+			/* return */ 'java.nio.file.WatchKey',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public abstract java.nio.file.WatchKey java.nio.file.WatchService.poll(long,java.util.concurrent.TimeUnit) throws java.lang.InterruptedException */
 			/* name */ 'poll',
 			[/* parameters */
@@ -39,11 +48,16 @@ JdkClassCreateHelper.class('java.nio.file.WatchService', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.nio.file.WatchKey java.nio.file.WatchService.poll() */
-			/* name */ 'poll',
+		[/* public abstract java.nio.file.WatchKey java.nio.file.WatchService.take() throws java.lang.InterruptedException */
+			/* name */ 'take',
 			/* parameters */,
 			/* return */ 'java.nio.file.WatchKey',
-			/* exceptions */,
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.lang.InterruptedException',
+					/* annotations */ UDF
+				]
+			],
 			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
@@ -55,20 +69,6 @@ JdkClassCreateHelper.class('java.nio.file.WatchService', [
 			[/* exceptions */
 				[/* exception */
 					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.nio.file.WatchKey java.nio.file.WatchService.take() throws java.lang.InterruptedException */
-			/* name */ 'take',
-			/* parameters */,
-			/* return */ 'java.nio.file.WatchKey',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.lang.InterruptedException',
 					/* annotations */ UDF
 				]
 			],

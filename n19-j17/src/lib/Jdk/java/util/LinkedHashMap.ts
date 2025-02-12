@@ -41,32 +41,6 @@ JdkClassCreateHelper.class('java.util.LinkedHashMap', [
 		]
 	],
 	[/* declared constructors */
-		[/* public java.util.LinkedHashMap(int,float,boolean) */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'initialCapacity',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'loadFactor',
-					/* type */ 'float',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'accessOrder',
-					/* type */ 'boolean',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public java.util.LinkedHashMap() */
 			/* parameters */,
 			/* exceptions */,
@@ -99,6 +73,32 @@ JdkClassCreateHelper.class('java.util.LinkedHashMap', [
 				[/* parameter */
 					/* name */ 'loadFactor',
 					/* type */ 'float',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.LinkedHashMap(int,float,boolean) */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'initialCapacity',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'loadFactor',
+					/* type */ 'float',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'accessOrder',
+					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -141,6 +141,29 @@ JdkClassCreateHelper.class('java.util.LinkedHashMap', [
 		]
 	],
 	[/* declared methods */
+		[/* protected boolean java.util.LinkedHashMap.removeEldestEntry(java.util.Map$Entry<K, V>) */
+			/* name */ 'removeEldestEntry',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'eldest',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* type variable ref */ 'tr', [/* name */ 'K']],
+							[/* type variable ref */ 'tr', [/* name */ 'V']]
+						],
+						/* raw type */ 'java.util.Map$Entry',
+						/* owner type */ 'java.util.Map'
+					]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 4,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public V java.util.LinkedHashMap.get(java.lang.Object) */
 			/* name */ 'get',
 			[/* parameters */
@@ -152,6 +175,44 @@ JdkClassCreateHelper.class('java.util.LinkedHashMap', [
 				]
 			],
 			/* return */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public V java.util.LinkedHashMap.getOrDefault(java.lang.Object,V) */
+			/* name */ 'getOrDefault',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'key',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'defaultValue',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.util.LinkedHashMap.containsValue(java.lang.Object) */
+			/* name */ 'containsValue',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'v',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -172,9 +233,83 @@ JdkClassCreateHelper.class('java.util.LinkedHashMap', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public java.util.Set<K> java.util.LinkedHashMap.keySet() */
+			/* name */ 'keySet',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'K']]
+				],
+				/* raw type */ 'java.util.Set',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.Set<java.util.Map$Entry<K, V>> java.util.LinkedHashMap.entrySet() */
+			/* name */ 'entrySet',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* type variable ref */ 'tr', [/* name */ 'K']],
+							[/* type variable ref */ 'tr', [/* name */ 'V']]
+						],
+						/* raw type */ 'java.util.Map$Entry',
+						/* owner type */ 'java.util.Map'
+					]]
+				],
+				/* raw type */ 'java.util.Set',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public void java.util.LinkedHashMap.clear() */
 			/* name */ 'clear',
 			/* parameters */,
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.util.LinkedHashMap.forEach(java.util.function.BiConsumer<? super K, ? super V>) */
+			/* name */ 'forEach',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'e',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									'java.lang.Object'
+								],
+								[/* lower bounds */
+									[/* type variable ref */ 'tr', [/* name */ 'K']]
+								]
+							]],
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									'java.lang.Object'
+								],
+								[/* lower bounds */
+									[/* type variable ref */ 'tr', [/* name */ 'V']]
+								]
+							]]
+						],
+						/* raw type */ 'java.util.function.BiConsumer',
+						/* owner type */ UDF
+					]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
 			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
@@ -221,141 +356,6 @@ JdkClassCreateHelper.class('java.util.LinkedHashMap', [
 			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.Set<java.util.Map$Entry<K, V>> java.util.LinkedHashMap.entrySet() */
-			/* name */ 'entrySet',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							[/* type variable ref */ 'tr', [/* name */ 'K']],
-							[/* type variable ref */ 'tr', [/* name */ 'V']]
-						],
-						/* raw type */ 'java.util.Map$Entry',
-						/* owner type */ 'java.util.Map'
-					]]
-				],
-				/* raw type */ 'java.util.Set',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.util.LinkedHashMap.forEach(java.util.function.BiConsumer<? super K, ? super V>) */
-			/* name */ 'forEach',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'e',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							[/* wildcard type */ 'wt', [
-								[/* upper bounds */
-									'java.lang.Object'
-								],
-								[/* lower bounds */
-									[/* type variable ref */ 'tr', [/* name */ 'K']]
-								]
-							]],
-							[/* wildcard type */ 'wt', [
-								[/* upper bounds */
-									'java.lang.Object'
-								],
-								[/* lower bounds */
-									[/* type variable ref */ 'tr', [/* name */ 'V']]
-								]
-							]]
-						],
-						/* raw type */ 'java.util.function.BiConsumer',
-						/* owner type */ UDF
-					]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.Set<K> java.util.LinkedHashMap.keySet() */
-			/* name */ 'keySet',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* type variable ref */ 'tr', [/* name */ 'K']]
-				],
-				/* raw type */ 'java.util.Set',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.util.LinkedHashMap.containsValue(java.lang.Object) */
-			/* name */ 'containsValue',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'v',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public V java.util.LinkedHashMap.getOrDefault(java.lang.Object,V) */
-			/* name */ 'getOrDefault',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'key',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'defaultValue',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ [/* type variable ref */ 'tr', [/* name */ 'V']],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* protected boolean java.util.LinkedHashMap.removeEldestEntry(java.util.Map$Entry<K, V>) */
-			/* name */ 'removeEldestEntry',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'eldest',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							[/* type variable ref */ 'tr', [/* name */ 'K']],
-							[/* type variable ref */ 'tr', [/* name */ 'V']]
-						],
-						/* raw type */ 'java.util.Map$Entry',
-						/* owner type */ 'java.util.Map'
-					]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 4,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

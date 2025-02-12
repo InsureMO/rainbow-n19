@@ -61,32 +61,6 @@ JdkClassCreateHelper.class('java.util.EnumMap', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.util.EnumMap(java.util.Map<K, ? extends V>) */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'em',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							[/* type variable ref */ 'tr', [/* name */ 'K']],
-							[/* wildcard type */ 'wt', [
-								[/* upper bounds */
-									[/* type variable ref */ 'tr', [/* name */ 'V']]
-								],
-								/* lower bounds */ UDF
-							]]
-						],
-						/* raw type */ 'java.util.Map',
-						/* owner type */ UDF
-					]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public java.util.EnumMap(java.util.EnumMap<K, ? extends V>) */
 			[/* parameters */
 				[/* parameter */
@@ -112,25 +86,35 @@ JdkClassCreateHelper.class('java.util.EnumMap', [
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
-		]
-	],
-	[/* declared methods */
-		[/* public V java.util.EnumMap.remove(java.lang.Object) */
-			/* name */ 'remove',
+		],
+		[/* public java.util.EnumMap(java.util.Map<K, ? extends V>) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'key',
-					/* type */ 'java.lang.Object',
+					/* name */ 'em',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* type variable ref */ 'tr', [/* name */ 'K']],
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									[/* type variable ref */ 'tr', [/* name */ 'V']]
+								],
+								/* lower bounds */ UDF
+							]]
+						],
+						/* raw type */ 'java.util.Map',
+						/* owner type */ UDF
+					]],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
-		],
+		]
+	],
+	[/* declared methods */
 		[/* public V java.util.EnumMap.get(java.lang.Object) */
 			/* name */ 'get',
 			[/* parameters */
@@ -144,28 +128,6 @@ JdkClassCreateHelper.class('java.util.EnumMap', [
 			/* return */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 			/* exceptions */,
 			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.Object java.util.EnumMap.put(java.lang.Object,java.lang.Object) */
-			/* name */ 'put',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.Object',
-			/* exceptions */,
-			/* modifiers */ 4161,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -191,6 +153,54 @@ JdkClassCreateHelper.class('java.util.EnumMap', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public V java.util.EnumMap.remove(java.lang.Object) */
+			/* name */ 'remove',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'key',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.util.EnumMap.containsKey(java.lang.Object) */
+			/* name */ 'containsKey',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'key',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.util.EnumMap.containsValue(java.lang.Object) */
+			/* name */ 'containsValue',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'val',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public boolean java.util.EnumMap.equals(java.lang.Object) */
 			/* name */ 'equals',
 			[/* parameters */
@@ -207,23 +217,17 @@ JdkClassCreateHelper.class('java.util.EnumMap', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.util.Collection<V> java.util.EnumMap.values() */
-			/* name */ 'values',
+		[/* public int java.util.EnumMap.hashCode() */
+			/* name */ 'hashCode',
 			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* type variable ref */ 'tr', [/* name */ 'V']]
-				],
-				/* raw type */ 'java.util.Collection',
-				/* owner type */ UDF
-			]],
+			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.util.EnumMap.hashCode() */
-			/* name */ 'hashCode',
+		[/* public int java.util.EnumMap.size() */
+			/* name */ 'size',
 			/* parameters */,
 			/* return */ 'int',
 			/* exceptions */,
@@ -245,6 +249,43 @@ JdkClassCreateHelper.class('java.util.EnumMap', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public java.lang.Object java.util.EnumMap.put(java.lang.Object,java.lang.Object) */
+			/* name */ 'put',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.Object',
+			/* exceptions */,
+			/* modifiers */ 4161,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.Collection<V> java.util.EnumMap.values() */
+			/* name */ 'values',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'V']]
+				],
+				/* raw type */ 'java.util.Collection',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.util.EnumMap<K, V> java.util.EnumMap.clone() */
 			/* name */ 'clone',
 			/* parameters */,
@@ -261,19 +302,16 @@ JdkClassCreateHelper.class('java.util.EnumMap', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.util.EnumMap.clear() */
-			/* name */ 'clear',
+		[/* public java.util.Set<K> java.util.EnumMap.keySet() */
+			/* name */ 'keySet',
 			/* parameters */,
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.util.EnumMap.size() */
-			/* name */ 'size',
-			/* parameters */,
-			/* return */ 'int',
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'K']]
+				],
+				/* raw type */ 'java.util.Set',
+				/* owner type */ UDF
+			]],
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -296,6 +334,15 @@ JdkClassCreateHelper.class('java.util.EnumMap', [
 				/* raw type */ 'java.util.Set',
 				/* owner type */ UDF
 			]],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.util.EnumMap.clear() */
+			/* name */ 'clear',
+			/* parameters */,
+			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -329,53 +376,6 @@ JdkClassCreateHelper.class('java.util.EnumMap', [
 				]
 			],
 			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.util.EnumMap.containsKey(java.lang.Object) */
-			/* name */ 'containsKey',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'key',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.Set<K> java.util.EnumMap.keySet() */
-			/* name */ 'keySet',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* type variable ref */ 'tr', [/* name */ 'K']]
-				],
-				/* raw type */ 'java.util.Set',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.util.EnumMap.containsValue(java.lang.Object) */
-			/* name */ 'containsValue',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'val',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

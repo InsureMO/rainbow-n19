@@ -10,6 +10,20 @@ JdkClassCreateHelper.class('java.util.zip.InflaterOutputStream', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
+		[/* public java.util.zip.InflaterOutputStream(java.io.OutputStream) */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'out',
+					/* type */ 'java.io.OutputStream',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.util.zip.InflaterOutputStream(java.io.OutputStream,java.util.zip.Inflater) */
 			[/* parameters */
 				[/* parameter */
@@ -21,20 +35,6 @@ JdkClassCreateHelper.class('java.util.zip.InflaterOutputStream', [
 				[/* parameter */
 					/* name */ 'infl',
 					/* type */ 'java.util.zip.Inflater',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.zip.InflaterOutputStream(java.io.OutputStream) */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'out',
-					/* type */ 'java.io.OutputStream',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -72,8 +72,8 @@ JdkClassCreateHelper.class('java.util.zip.InflaterOutputStream', [
 		]
 	],
 	[/* declared methods */
-		[/* public void java.util.zip.InflaterOutputStream.flush() throws java.io.IOException */
-			/* name */ 'flush',
+		[/* public void java.util.zip.InflaterOutputStream.close() throws java.io.IOException */
+			/* name */ 'close',
 			/* parameters */,
 			/* return */ 'void',
 			[/* exceptions */
@@ -86,16 +86,23 @@ JdkClassCreateHelper.class('java.util.zip.InflaterOutputStream', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.util.zip.InflaterOutputStream.write(int) throws java.io.IOException */
-			/* name */ 'write',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'b',
-					/* type */ 'int',
-					/* modifiers */ 0,
+		[/* public void java.util.zip.InflaterOutputStream.finish() throws java.io.IOException */
+			/* name */ 'finish',
+			/* parameters */,
+			/* return */ 'void',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
 					/* annotations */ UDF
 				]
 			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.util.zip.InflaterOutputStream.flush() throws java.io.IOException */
+			/* name */ 'flush',
+			/* parameters */,
 			/* return */ 'void',
 			[/* exceptions */
 				[/* exception */
@@ -140,23 +147,16 @@ JdkClassCreateHelper.class('java.util.zip.InflaterOutputStream', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.util.zip.InflaterOutputStream.close() throws java.io.IOException */
-			/* name */ 'close',
-			/* parameters */,
-			/* return */ 'void',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
+		[/* public void java.util.zip.InflaterOutputStream.write(int) throws java.io.IOException */
+			/* name */ 'write',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'b',
+					/* type */ 'int',
+					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.util.zip.InflaterOutputStream.finish() throws java.io.IOException */
-			/* name */ 'finish',
-			/* parameters */,
 			/* return */ 'void',
 			[/* exceptions */
 				[/* exception */

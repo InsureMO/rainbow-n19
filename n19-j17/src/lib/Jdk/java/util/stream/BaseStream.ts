@@ -34,6 +34,58 @@ JdkClassCreateHelper.class('java.util.stream.BaseStream', [
 	],
 	/* declared constructors */,
 	[/* declared methods */
+		[/* public abstract S java.util.stream.BaseStream.onClose(java.lang.Runnable) */
+			/* name */ 'onClose',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.Runnable',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* type variable ref */ 'tr', [/* name */ 'S']],
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract S java.util.stream.BaseStream.parallel() */
+			/* name */ 'parallel',
+			/* parameters */,
+			/* return */ [/* type variable ref */ 'tr', [/* name */ 'S']],
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract S java.util.stream.BaseStream.sequential() */
+			/* name */ 'sequential',
+			/* parameters */,
+			/* return */ [/* type variable ref */ 'tr', [/* name */ 'S']],
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract S java.util.stream.BaseStream.unordered() */
+			/* name */ 'unordered',
+			/* parameters */,
+			/* return */ [/* type variable ref */ 'tr', [/* name */ 'S']],
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract boolean java.util.stream.BaseStream.isParallel() */
+			/* name */ 'isParallel',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public abstract java.util.Iterator<T> java.util.stream.BaseStream.iterator() */
 			/* name */ 'iterator',
 			/* parameters */,
@@ -68,58 +120,6 @@ JdkClassCreateHelper.class('java.util.stream.BaseStream', [
 			/* name */ 'close',
 			/* parameters */,
 			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract S java.util.stream.BaseStream.parallel() */
-			/* name */ 'parallel',
-			/* parameters */,
-			/* return */ [/* type variable ref */ 'tr', [/* name */ 'S']],
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract boolean java.util.stream.BaseStream.isParallel() */
-			/* name */ 'isParallel',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract S java.util.stream.BaseStream.sequential() */
-			/* name */ 'sequential',
-			/* parameters */,
-			/* return */ [/* type variable ref */ 'tr', [/* name */ 'S']],
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract S java.util.stream.BaseStream.unordered() */
-			/* name */ 'unordered',
-			/* parameters */,
-			/* return */ [/* type variable ref */ 'tr', [/* name */ 'S']],
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract S java.util.stream.BaseStream.onClose(java.lang.Runnable) */
-			/* name */ 'onClose',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.Runnable',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ [/* type variable ref */ 'tr', [/* name */ 'S']],
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,

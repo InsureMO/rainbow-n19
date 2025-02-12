@@ -28,44 +28,6 @@ JdkClassCreateHelper.class('java.time.temporal.Temporal', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.time.temporal.Temporal java.time.temporal.Temporal.with(java.time.temporal.TemporalField,long) */
-			/* name */ 'with',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.time.temporal.TemporalField',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.temporal.Temporal',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public default java.time.temporal.Temporal java.time.temporal.Temporal.with(java.time.temporal.TemporalAdjuster) */
-			/* name */ 'with',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'adjuster',
-					/* type */ 'java.time.temporal.TemporalAdjuster',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.temporal.Temporal',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public abstract java.time.temporal.Temporal java.time.temporal.Temporal.plus(long,java.time.temporal.TemporalUnit) */
 			/* name */ 'plus',
 			[/* parameters */
@@ -88,19 +50,25 @@ JdkClassCreateHelper.class('java.time.temporal.Temporal', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public default java.time.temporal.Temporal java.time.temporal.Temporal.plus(java.time.temporal.TemporalAmount) */
-			/* name */ 'plus',
+		[/* public abstract java.time.temporal.Temporal java.time.temporal.Temporal.with(java.time.temporal.TemporalField,long) */
+			/* name */ 'with',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'amount',
-					/* type */ 'java.time.temporal.TemporalAmount',
+					/* name */ 'arg0',
+					/* type */ 'java.time.temporal.TemporalField',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
 			/* return */ 'java.time.temporal.Temporal',
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -154,6 +122,38 @@ JdkClassCreateHelper.class('java.time.temporal.Temporal', [
 				[/* parameter */
 					/* name */ 'unit',
 					/* type */ 'java.time.temporal.TemporalUnit',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.temporal.Temporal',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public default java.time.temporal.Temporal java.time.temporal.Temporal.plus(java.time.temporal.TemporalAmount) */
+			/* name */ 'plus',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'amount',
+					/* type */ 'java.time.temporal.TemporalAmount',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.temporal.Temporal',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public default java.time.temporal.Temporal java.time.temporal.Temporal.with(java.time.temporal.TemporalAdjuster) */
+			/* name */ 'with',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'adjuster',
+					/* type */ 'java.time.temporal.TemporalAdjuster',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]

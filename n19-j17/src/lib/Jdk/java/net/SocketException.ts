@@ -10,6 +10,13 @@ JdkClassCreateHelper.class('java.net.SocketException', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
+		[/* public java.net.SocketException() */
+			/* parameters */,
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.net.SocketException(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
@@ -19,13 +26,6 @@ JdkClassCreateHelper.class('java.net.SocketException', [
 					/* annotations */ UDF
 				]
 			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.net.SocketException() */
-			/* parameters */,
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

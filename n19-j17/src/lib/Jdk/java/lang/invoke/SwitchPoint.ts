@@ -19,6 +19,15 @@ JdkClassCreateHelper.class('java.lang.invoke.SwitchPoint', [
 		]
 	],
 	[/* declared methods */
+		[/* public boolean java.lang.invoke.SwitchPoint.hasBeenInvalidated() */
+			/* name */ 'hasBeenInvalidated',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.lang.invoke.MethodHandle java.lang.invoke.SwitchPoint.guardWithTest(java.lang.invoke.MethodHandle,java.lang.invoke.MethodHandle) */
 			/* name */ 'guardWithTest',
 			[/* parameters */
@@ -36,15 +45,6 @@ JdkClassCreateHelper.class('java.lang.invoke.SwitchPoint', [
 				]
 			],
 			/* return */ 'java.lang.invoke.MethodHandle',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.lang.invoke.SwitchPoint.hasBeenInvalidated() */
-			/* name */ 'hasBeenInvalidated',
-			/* parameters */,
-			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

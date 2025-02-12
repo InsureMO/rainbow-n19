@@ -19,17 +19,6 @@ JdkClassCreateHelper.class('java.lang.ref.Reference', [
 	],
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public T java.lang.ref.Reference.get() */
-			/* name */ 'get',
-			/* parameters */,
-			/* return */ [/* type variable ref */ 'tr', [/* name */ 'T']],
-			/* exceptions */,
-			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
-			/* type parameters */ UDF
-		],
 		[/* protected java.lang.Object java.lang.ref.Reference.clone() throws java.lang.CloneNotSupportedException */
 			/* name */ 'clone',
 			/* parameters */,
@@ -44,12 +33,54 @@ JdkClassCreateHelper.class('java.lang.ref.Reference', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.lang.ref.Reference.clear() */
-			/* name */ 'clear',
+		[/* public T java.lang.ref.Reference.get() */
+			/* name */ 'get',
 			/* parameters */,
-			/* return */ 'void',
+			/* return */ [/* type variable ref */ 'tr', [/* name */ 'T']],
 			/* exceptions */,
 			/* modifiers */ 1,
+			[/* annotations */
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.lang.ref.Reference.enqueue() */
+			/* name */ 'enqueue',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.lang.ref.Reference.isEnqueued() */
+			/* name */ 'isEnqueued',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			[/* annotations */
+				[
+					'java.lang.Deprecated',
+					['p', 'since', '16'],
+					['p', 'forRemoval', false]
+				]
+			],
+			/* type parameters */ UDF
+		],
+		[/* public final boolean java.lang.ref.Reference.refersTo(T) */
+			/* name */ 'refersTo',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'obj',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'T']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 17,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -71,44 +102,13 @@ JdkClassCreateHelper.class('java.lang.ref.Reference', [
 			],
 			/* type parameters */ UDF
 		],
-		[/* public boolean java.lang.ref.Reference.enqueue() */
-			/* name */ 'enqueue',
+		[/* public void java.lang.ref.Reference.clear() */
+			/* name */ 'clear',
 			/* parameters */,
-			/* return */ 'boolean',
+			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final boolean java.lang.ref.Reference.refersTo(T) */
-			/* name */ 'refersTo',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'obj',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'T']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.lang.ref.Reference.isEnqueued() */
-			/* name */ 'isEnqueued',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			[/* annotations */
-				[
-					'java.lang.Deprecated',
-					['p', 'since', '16'],
-					['p', 'forRemoval', false]
-				]
-			],
 			/* type parameters */ UDF
 		]
 	],

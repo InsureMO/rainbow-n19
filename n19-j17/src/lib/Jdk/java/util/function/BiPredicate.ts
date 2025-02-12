@@ -49,8 +49,8 @@ JdkClassCreateHelper.class('java.util.function.BiPredicate', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public default java.util.function.BiPredicate<T, U> java.util.function.BiPredicate.or(java.util.function.BiPredicate<? super T, ? super U>) */
-			/* name */ 'or',
+		[/* public default java.util.function.BiPredicate<T, U> java.util.function.BiPredicate.and(java.util.function.BiPredicate<? super T, ? super U>) */
+			/* name */ 'and',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'other',
@@ -109,8 +109,8 @@ JdkClassCreateHelper.class('java.util.function.BiPredicate', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public default java.util.function.BiPredicate<T, U> java.util.function.BiPredicate.and(java.util.function.BiPredicate<? super T, ? super U>) */
-			/* name */ 'and',
+		[/* public default java.util.function.BiPredicate<T, U> java.util.function.BiPredicate.or(java.util.function.BiPredicate<? super T, ? super U>) */
+			/* name */ 'or',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'other',

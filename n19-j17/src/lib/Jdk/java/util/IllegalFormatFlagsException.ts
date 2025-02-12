@@ -26,8 +26,8 @@ JdkClassCreateHelper.class('java.util.IllegalFormatFlagsException', [
 		]
 	],
 	[/* declared methods */
-		[/* public java.lang.String java.util.IllegalFormatFlagsException.getMessage() */
-			/* name */ 'getMessage',
+		[/* public java.lang.String java.util.IllegalFormatFlagsException.getFlags() */
+			/* name */ 'getFlags',
 			/* parameters */,
 			/* return */ 'java.lang.String',
 			/* exceptions */,
@@ -35,8 +35,8 @@ JdkClassCreateHelper.class('java.util.IllegalFormatFlagsException', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.util.IllegalFormatFlagsException.getFlags() */
-			/* name */ 'getFlags',
+		[/* public java.lang.String java.util.IllegalFormatFlagsException.getMessage() */
+			/* name */ 'getMessage',
 			/* parameters */,
 			/* return */ 'java.lang.String',
 			/* exceptions */,

@@ -19,18 +19,27 @@ JdkClassCreateHelper.class('java.util.ListResourceBundle', [
 		]
 	],
 	[/* declared methods */
-		[/* public java.util.Enumeration<java.lang.String> java.util.ListResourceBundle.getKeys() */
-			/* name */ 'getKeys',
+		[/* protected abstract java.lang.Object[][] java.util.ListResourceBundle.getContents() */
+			/* name */ 'getContents',
+			/* parameters */,
+			/* return */ '[[Ljava.lang.Object;',
+			/* exceptions */,
+			/* modifiers */ 1028,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* protected java.util.Set<java.lang.String> java.util.ListResourceBundle.handleKeySet() */
+			/* name */ 'handleKeySet',
 			/* parameters */,
 			/* return */ [/* parameterized type */ 'pt', [
 				[/* actual argument types */
 					'java.lang.String'
 				],
-				/* raw type */ 'java.util.Enumeration',
+				/* raw type */ 'java.util.Set',
 				/* owner type */ UDF
 			]],
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 4,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -50,27 +59,18 @@ JdkClassCreateHelper.class('java.util.ListResourceBundle', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* protected java.util.Set<java.lang.String> java.util.ListResourceBundle.handleKeySet() */
-			/* name */ 'handleKeySet',
+		[/* public java.util.Enumeration<java.lang.String> java.util.ListResourceBundle.getKeys() */
+			/* name */ 'getKeys',
 			/* parameters */,
 			/* return */ [/* parameterized type */ 'pt', [
 				[/* actual argument types */
 					'java.lang.String'
 				],
-				/* raw type */ 'java.util.Set',
+				/* raw type */ 'java.util.Enumeration',
 				/* owner type */ UDF
 			]],
 			/* exceptions */,
-			/* modifiers */ 4,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* protected abstract java.lang.Object[][] java.util.ListResourceBundle.getContents() */
-			/* name */ 'getContents',
-			/* parameters */,
-			/* return */ '[[Ljava.lang.Object;',
-			/* exceptions */,
-			/* modifiers */ 1028,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

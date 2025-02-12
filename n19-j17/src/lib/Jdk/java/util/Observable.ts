@@ -25,37 +25,39 @@ JdkClassCreateHelper.class('java.util.Observable', [
 		]
 	],
 	[/* declared methods */
-		[/* public void java.util.Observable.notifyObservers(java.lang.Object) */
-			/* name */ 'notifyObservers',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arrLocal',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.util.Observable.notifyObservers() */
-			/* name */ 'notifyObservers',
-			/* parameters */,
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* protected synchronized void java.util.Observable.clearChanged() */
 			/* name */ 'clearChanged',
 			/* parameters */,
 			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 36,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* protected synchronized void java.util.Observable.setChanged() */
+			/* name */ 'setChanged',
+			/* parameters */,
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 36,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public synchronized boolean java.util.Observable.hasChanged() */
+			/* name */ 'hasChanged',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 33,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public synchronized int java.util.Observable.countObservers() */
+			/* name */ 'countObservers',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 33,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -100,30 +102,28 @@ JdkClassCreateHelper.class('java.util.Observable', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* protected synchronized void java.util.Observable.setChanged() */
-			/* name */ 'setChanged',
+		[/* public void java.util.Observable.notifyObservers() */
+			/* name */ 'notifyObservers',
 			/* parameters */,
 			/* return */ 'void',
 			/* exceptions */,
-			/* modifiers */ 36,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public synchronized boolean java.util.Observable.hasChanged() */
-			/* name */ 'hasChanged',
-			/* parameters */,
-			/* return */ 'boolean',
+		[/* public void java.util.Observable.notifyObservers(java.lang.Object) */
+			/* name */ 'notifyObservers',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arrLocal',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
 			/* exceptions */,
-			/* modifiers */ 33,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public synchronized int java.util.Observable.countObservers() */
-			/* name */ 'countObservers',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 33,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

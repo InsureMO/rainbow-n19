@@ -18,15 +18,6 @@ JdkClassCreateHelper.class('java.nio.file.WatchEvent$Kind', [
 	],
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public abstract java.lang.String java.nio.file.WatchEvent$Kind.name() */
-			/* name */ 'name',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public abstract java.lang.Class<T> java.nio.file.WatchEvent$Kind.type() */
 			/* name */ 'type',
 			/* parameters */,
@@ -37,6 +28,15 @@ JdkClassCreateHelper.class('java.nio.file.WatchEvent$Kind', [
 				/* raw type */ 'java.lang.Class',
 				/* owner type */ UDF
 			]],
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.lang.String java.nio.file.WatchEvent$Kind.name() */
+			/* name */ 'name',
+			/* parameters */,
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,

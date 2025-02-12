@@ -13,6 +13,92 @@ JdkClassCreateHelper.class('java.util.Currency', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
+		[/* public int java.util.Currency.getDefaultFractionDigits() */
+			/* name */ 'getDefaultFractionDigits',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.Currency.getNumericCode() */
+			/* name */ 'getNumericCode',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.util.Currency.getCurrencyCode() */
+			/* name */ 'getCurrencyCode',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.util.Currency.getDisplayName() */
+			/* name */ 'getDisplayName',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.util.Currency.getDisplayName(java.util.Locale) */
+			/* name */ 'getDisplayName',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'locale',
+					/* type */ 'java.util.Locale',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.util.Currency.getNumericCodeAsString() */
+			/* name */ 'getNumericCodeAsString',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.util.Currency.getSymbol() */
+			/* name */ 'getSymbol',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.util.Currency.getSymbol(java.util.Locale) */
+			/* name */ 'getSymbol',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'locale',
+					/* type */ 'java.util.Locale',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.lang.String java.util.Currency.toString() */
 			/* name */ 'toString',
 			/* parameters */,
@@ -54,74 +140,6 @@ JdkClassCreateHelper.class('java.util.Currency', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.util.Currency.getDisplayName(java.util.Locale) */
-			/* name */ 'getDisplayName',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'locale',
-					/* type */ 'java.util.Locale',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.util.Currency.getDisplayName() */
-			/* name */ 'getDisplayName',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.util.Currency.getSymbol() */
-			/* name */ 'getSymbol',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.util.Currency.getSymbol(java.util.Locale) */
-			/* name */ 'getSymbol',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'locale',
-					/* type */ 'java.util.Locale',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.util.Currency.getDefaultFractionDigits() */
-			/* name */ 'getDefaultFractionDigits',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.util.Currency.getCurrencyCode() */
-			/* name */ 'getCurrencyCode',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public static java.util.Set<java.util.Currency> java.util.Currency.getAvailableCurrencies() */
 			/* name */ 'getAvailableCurrencies',
 			/* parameters */,
@@ -134,24 +152,6 @@ JdkClassCreateHelper.class('java.util.Currency', [
 			]],
 			/* exceptions */,
 			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.util.Currency.getNumericCode() */
-			/* name */ 'getNumericCode',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.util.Currency.getNumericCodeAsString() */
-			/* name */ 'getNumericCodeAsString',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

@@ -10,19 +10,19 @@ JdkClassCreateHelper.class('java.time.temporal.TemporalAccessor', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public default int java.time.temporal.TemporalAccessor.get(java.time.temporal.TemporalField) */
-			/* name */ 'get',
+		[/* public abstract boolean java.time.temporal.TemporalAccessor.isSupported(java.time.temporal.TemporalField) */
+			/* name */ 'isSupported',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'field',
+					/* name */ 'arg0',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'int',
+			/* return */ 'boolean',
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -72,6 +72,22 @@ JdkClassCreateHelper.class('java.time.temporal.TemporalAccessor', [
 				]
 			]
 		],
+		[/* public default int java.time.temporal.TemporalAccessor.get(java.time.temporal.TemporalField) */
+			/* name */ 'get',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'field',
+					/* type */ 'java.time.temporal.TemporalField',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public default java.time.temporal.ValueRange java.time.temporal.TemporalAccessor.range(java.time.temporal.TemporalField) */
 			/* name */ 'range',
 			[/* parameters */
@@ -85,22 +101,6 @@ JdkClassCreateHelper.class('java.time.temporal.TemporalAccessor', [
 			/* return */ 'java.time.temporal.ValueRange',
 			/* exceptions */,
 			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract boolean java.time.temporal.TemporalAccessor.isSupported(java.time.temporal.TemporalField) */
-			/* name */ 'isSupported',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.time.temporal.TemporalField',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

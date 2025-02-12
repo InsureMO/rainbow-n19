@@ -17,15 +17,6 @@ JdkClassCreateHelper.class('java.util.Locale$IsoCountryCode', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public static java.util.Locale$IsoCountryCode[] java.util.Locale$IsoCountryCode.values() */
-			/* name */ 'values',
-			/* parameters */,
-			/* return */ '[Ljava.util.Locale$IsoCountryCode;',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public static java.util.Locale$IsoCountryCode java.util.Locale$IsoCountryCode.valueOf(java.lang.String) */
 			/* name */ 'valueOf',
 			[/* parameters */
@@ -37,6 +28,15 @@ JdkClassCreateHelper.class('java.util.Locale$IsoCountryCode', [
 				]
 			],
 			/* return */ 'java.util.Locale$IsoCountryCode',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.util.Locale$IsoCountryCode[] java.util.Locale$IsoCountryCode.values() */
+			/* name */ 'values',
+			/* parameters */,
+			/* return */ '[Ljava.util.Locale$IsoCountryCode;',
 			/* exceptions */,
 			/* modifiers */ 9,
 			/* annotations */ UDF,

@@ -10,25 +10,18 @@ JdkClassCreateHelper.class('java.util.NoSuchElementException', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
-		[/* public java.util.NoSuchElementException(java.lang.String) */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 's',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
+		[/* public java.util.NoSuchElementException() */
+			/* parameters */,
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.util.NoSuchElementException(java.lang.Throwable) */
+		[/* public java.util.NoSuchElementException(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'cause',
-					/* type */ 'java.lang.Throwable',
+					/* name */ 's',
+					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -58,8 +51,15 @@ JdkClassCreateHelper.class('java.util.NoSuchElementException', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.util.NoSuchElementException() */
-			/* parameters */,
+		[/* public java.util.NoSuchElementException(java.lang.Throwable) */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'cause',
+					/* type */ 'java.lang.Throwable',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

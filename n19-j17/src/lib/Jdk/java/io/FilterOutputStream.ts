@@ -26,9 +26,44 @@ JdkClassCreateHelper.class('java.io.FilterOutputStream', [
 		]
 	],
 	[/* declared methods */
+		[/* public void java.io.FilterOutputStream.close() throws java.io.IOException */
+			/* name */ 'close',
+			/* parameters */,
+			/* return */ 'void',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public void java.io.FilterOutputStream.flush() throws java.io.IOException */
 			/* name */ 'flush',
 			/* parameters */,
+			/* return */ 'void',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.io.FilterOutputStream.write(byte[]) throws java.io.IOException */
+			/* name */ 'write',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'b',
+					/* type */ '[B',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
 			/* return */ 'void',
 			[/* exceptions */
 				[/* exception */
@@ -73,27 +108,6 @@ JdkClassCreateHelper.class('java.io.FilterOutputStream', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.io.FilterOutputStream.write(byte[]) throws java.io.IOException */
-			/* name */ 'write',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'b',
-					/* type */ '[B',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public void java.io.FilterOutputStream.write(int) throws java.io.IOException */
 			/* name */ 'write',
 			[/* parameters */
@@ -104,20 +118,6 @@ JdkClassCreateHelper.class('java.io.FilterOutputStream', [
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'void',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.io.FilterOutputStream.close() throws java.io.IOException */
-			/* name */ 'close',
-			/* parameters */,
 			/* return */ 'void',
 			[/* exceptions */
 				[/* exception */

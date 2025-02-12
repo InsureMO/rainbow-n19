@@ -48,30 +48,74 @@ JdkClassCreateHelper.class('java.lang.ThreadGroup', [
 		]
 	],
 	[/* declared methods */
+		[/* public boolean java.lang.ThreadGroup.allowThreadSuspension(boolean) */
+			/* name */ 'allowThreadSuspension',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'b',
+					/* type */ 'boolean',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			[/* annotations */
+				[
+					'java.lang.Deprecated',
+					['p', 'since', '1.2'],
+					['p', 'forRemoval', true]
+				]
+			],
+			/* type parameters */ UDF
+		],
+		[/* public final boolean java.lang.ThreadGroup.isDaemon() */
+			/* name */ 'isDaemon',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 17,
+			[/* annotations */
+				[
+					'java.lang.Deprecated',
+					['p', 'since', '16'],
+					['p', 'forRemoval', true]
+				]
+			],
+			/* type parameters */ UDF
+		],
+		[/* public final boolean java.lang.ThreadGroup.parentOf(java.lang.ThreadGroup) */
+			/* name */ 'parentOf',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'g',
+					/* type */ 'java.lang.ThreadGroup',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 17,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public final int java.lang.ThreadGroup.getMaxPriority() */
+			/* name */ 'getMaxPriority',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 17,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public final java.lang.String java.lang.ThreadGroup.getName() */
 			/* name */ 'getName',
 			/* parameters */,
 			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.lang.ThreadGroup.toString() */
-			/* name */ 'toString',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.lang.ThreadGroup.list() */
-			/* name */ 'list',
-			/* parameters */,
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -99,6 +143,45 @@ JdkClassCreateHelper.class('java.lang.ThreadGroup', [
 			],
 			/* type parameters */ UDF
 		],
+		[/* public final void java.lang.ThreadGroup.destroy() */
+			/* name */ 'destroy',
+			/* parameters */,
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 17,
+			[/* annotations */
+				[
+					'java.lang.Deprecated',
+					['p', 'since', '16'],
+					['p', 'forRemoval', true]
+				]
+			],
+			/* type parameters */ UDF
+		],
+		[/* public final void java.lang.ThreadGroup.interrupt() */
+			/* name */ 'interrupt',
+			/* parameters */,
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 17,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public final void java.lang.ThreadGroup.resume() */
+			/* name */ 'resume',
+			/* parameters */,
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 17,
+			[/* annotations */
+				[
+					'java.lang.Deprecated',
+					['p', 'since', '1.2'],
+					['p', 'forRemoval', true]
+				]
+			],
+			/* type parameters */ UDF
+		],
 		[/* public final void java.lang.ThreadGroup.setDaemon(boolean) */
 			/* name */ 'setDaemon',
 			[/* parameters */
@@ -121,23 +204,24 @@ JdkClassCreateHelper.class('java.lang.ThreadGroup', [
 			],
 			/* type parameters */ UDF
 		],
-		[/* public final boolean java.lang.ThreadGroup.isDaemon() */
-			/* name */ 'isDaemon',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 17,
-			[/* annotations */
-				[
-					'java.lang.Deprecated',
-					['p', 'since', '16'],
-					['p', 'forRemoval', true]
+		[/* public final void java.lang.ThreadGroup.setMaxPriority(int) */
+			/* name */ 'setMaxPriority',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'groupsSnapshot',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
 				]
 			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 17,
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public final void java.lang.ThreadGroup.resume() */
-			/* name */ 'resume',
+		[/* public final void java.lang.ThreadGroup.stop() */
+			/* name */ 'stop',
 			/* parameters */,
 			/* return */ 'void',
 			/* exceptions */,
@@ -151,27 +235,49 @@ JdkClassCreateHelper.class('java.lang.ThreadGroup', [
 			],
 			/* type parameters */ UDF
 		],
-		[/* public final void java.lang.ThreadGroup.interrupt() */
-			/* name */ 'interrupt',
+		[/* public final void java.lang.ThreadGroup.suspend() */
+			/* name */ 'suspend',
 			/* parameters */,
 			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final int java.lang.ThreadGroup.getMaxPriority() */
-			/* name */ 'getMaxPriority',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 17,
-			/* annotations */ UDF,
+			[/* annotations */
+				[
+					'java.lang.Deprecated',
+					['p', 'since', '1.2'],
+					['p', 'forRemoval', true]
+				]
+			],
 			/* type parameters */ UDF
 		],
 		[/* public int java.lang.ThreadGroup.activeCount() */
 			/* name */ 'activeCount',
 			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.lang.ThreadGroup.activeGroupCount() */
+			/* name */ 'activeGroupCount',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.lang.ThreadGroup.enumerate(java.lang.ThreadGroup[]) */
+			/* name */ 'enumerate',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ '[Ljava.lang.ThreadGroup;',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
 			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 1,
@@ -190,22 +296,6 @@ JdkClassCreateHelper.class('java.lang.ThreadGroup', [
 				[/* parameter */
 					/* name */ 'arg1',
 					/* type */ 'boolean',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.lang.ThreadGroup.enumerate(java.lang.ThreadGroup[]) */
-			/* name */ 'enumerate',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ '[Ljava.lang.ThreadGroup;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -254,6 +344,39 @@ JdkClassCreateHelper.class('java.lang.ThreadGroup', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public java.lang.String java.lang.ThreadGroup.toString() */
+			/* name */ 'toString',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public synchronized boolean java.lang.ThreadGroup.isDestroyed() */
+			/* name */ 'isDestroyed',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 33,
+			[/* annotations */
+				[
+					'java.lang.Deprecated',
+					['p', 'since', '16'],
+					['p', 'forRemoval', true]
+				]
+			],
+			/* type parameters */ UDF
+		],
+		[/* public void java.lang.ThreadGroup.list() */
+			/* name */ 'list',
+			/* parameters */,
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public void java.lang.ThreadGroup.uncaughtException(java.lang.Thread,java.lang.Throwable) */
 			/* name */ 'uncaughtException',
 			[/* parameters */
@@ -274,129 +397,6 @@ JdkClassCreateHelper.class('java.lang.ThreadGroup', [
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final void java.lang.ThreadGroup.stop() */
-			/* name */ 'stop',
-			/* parameters */,
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 17,
-			[/* annotations */
-				[
-					'java.lang.Deprecated',
-					['p', 'since', '1.2'],
-					['p', 'forRemoval', true]
-				]
-			],
-			/* type parameters */ UDF
-		],
-		[/* public final void java.lang.ThreadGroup.suspend() */
-			/* name */ 'suspend',
-			/* parameters */,
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 17,
-			[/* annotations */
-				[
-					'java.lang.Deprecated',
-					['p', 'since', '1.2'],
-					['p', 'forRemoval', true]
-				]
-			],
-			/* type parameters */ UDF
-		],
-		[/* public final void java.lang.ThreadGroup.setMaxPriority(int) */
-			/* name */ 'setMaxPriority',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'groupsSnapshot',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.lang.ThreadGroup.activeGroupCount() */
-			/* name */ 'activeGroupCount',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final void java.lang.ThreadGroup.destroy() */
-			/* name */ 'destroy',
-			/* parameters */,
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 17,
-			[/* annotations */
-				[
-					'java.lang.Deprecated',
-					['p', 'since', '16'],
-					['p', 'forRemoval', true]
-				]
-			],
-			/* type parameters */ UDF
-		],
-		[/* public synchronized boolean java.lang.ThreadGroup.isDestroyed() */
-			/* name */ 'isDestroyed',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 33,
-			[/* annotations */
-				[
-					'java.lang.Deprecated',
-					['p', 'since', '16'],
-					['p', 'forRemoval', true]
-				]
-			],
-			/* type parameters */ UDF
-		],
-		[/* public final boolean java.lang.ThreadGroup.parentOf(java.lang.ThreadGroup) */
-			/* name */ 'parentOf',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'g',
-					/* type */ 'java.lang.ThreadGroup',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.lang.ThreadGroup.allowThreadSuspension(boolean) */
-			/* name */ 'allowThreadSuspension',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'b',
-					/* type */ 'boolean',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			[/* annotations */
-				[
-					'java.lang.Deprecated',
-					['p', 'since', '1.2'],
-					['p', 'forRemoval', true]
-				]
-			],
 			/* type parameters */ UDF
 		]
 	],

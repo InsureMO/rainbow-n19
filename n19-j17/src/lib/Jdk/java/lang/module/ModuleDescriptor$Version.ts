@@ -35,21 +35,19 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Version', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.lang.module.ModuleDescriptor$Version.toString() */
-			/* name */ 'toString',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.lang.module.ModuleDescriptor$Version.hashCode() */
-			/* name */ 'hashCode',
-			/* parameters */,
+		[/* public int java.lang.module.ModuleDescriptor$Version.compareTo(java.lang.Object) */
+			/* name */ 'compareTo',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
 			/* return */ 'int',
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 4161,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -69,19 +67,21 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Version', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.lang.module.ModuleDescriptor$Version.compareTo(java.lang.Object) */
-			/* name */ 'compareTo',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
+		[/* public int java.lang.module.ModuleDescriptor$Version.hashCode() */
+			/* name */ 'hashCode',
+			/* parameters */,
 			/* return */ 'int',
 			/* exceptions */,
-			/* modifiers */ 4161,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.lang.module.ModuleDescriptor$Version.toString() */
+			/* name */ 'toString',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],

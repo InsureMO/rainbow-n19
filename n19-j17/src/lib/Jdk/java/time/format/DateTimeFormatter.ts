@@ -11,69 +11,6 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatter', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public java.lang.String java.time.format.DateTimeFormatter.toString() */
-			/* name */ 'toString',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.time.format.DateTimeFormatter.format(java.time.temporal.TemporalAccessor) */
-			/* name */ 'format',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'temporal',
-					/* type */ 'java.time.temporal.TemporalAccessor',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.temporal.TemporalAccessor java.time.format.DateTimeFormatter.parse(java.lang.CharSequence,java.text.ParsePosition) */
-			/* name */ 'parse',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'ex',
-					/* type */ 'java.lang.CharSequence',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'ex',
-					/* type */ 'java.text.ParsePosition',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.temporal.TemporalAccessor',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.temporal.TemporalAccessor java.time.format.DateTimeFormatter.parse(java.lang.CharSequence) */
-			/* name */ 'parse',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'ex',
-					/* type */ 'java.lang.CharSequence',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.temporal.TemporalAccessor',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public <T> T java.time.format.DateTimeFormatter.parse(java.lang.CharSequence,java.time.temporal.TemporalQuery<T>) */
 			/* name */ 'parse',
 			[/* parameters */
@@ -110,186 +47,80 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatter', [
 				]
 			]
 		],
-		[/* public java.util.Locale java.time.format.DateTimeFormatter.getLocale() */
-			/* name */ 'getLocale',
-			/* parameters */,
-			/* return */ 'java.util.Locale',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.time.format.DateTimeFormatter.formatTo(java.time.temporal.TemporalAccessor,java.lang.Appendable) */
-			/* name */ 'formatTo',
+		[/* public java.lang.String java.time.format.DateTimeFormatter.format(java.time.temporal.TemporalAccessor) */
+			/* name */ 'format',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'buf',
+					/* name */ 'temporal',
 					/* type */ 'java.time.temporal.TemporalAccessor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'context',
-					/* type */ 'java.lang.Appendable',
-					/* modifiers */ 0,
-					/* annotations */ UDF
 				]
 			],
-			/* return */ 'void',
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.time.format.DateTimeFormatter java.time.format.DateTimeFormatter.ofPattern(java.lang.String) */
-			/* name */ 'ofPattern',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.format.DateTimeFormatter',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.time.format.DateTimeFormatter java.time.format.DateTimeFormatter.ofPattern(java.lang.String,java.util.Locale) */
-			/* name */ 'ofPattern',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'locale',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'java.util.Locale',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.format.DateTimeFormatter',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.time.format.DateTimeFormatter java.time.format.DateTimeFormatter.ofLocalizedDate(java.time.format.FormatStyle) */
-			/* name */ 'ofLocalizedDate',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.time.format.FormatStyle',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.format.DateTimeFormatter',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.time.format.DateTimeFormatter java.time.format.DateTimeFormatter.ofLocalizedTime(java.time.format.FormatStyle) */
-			/* name */ 'ofLocalizedTime',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.time.format.FormatStyle',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.format.DateTimeFormatter',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.time.format.DateTimeFormatter java.time.format.DateTimeFormatter.ofLocalizedDateTime(java.time.format.FormatStyle) */
-			/* name */ 'ofLocalizedDateTime',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.time.format.FormatStyle',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.format.DateTimeFormatter',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.time.format.DateTimeFormatter java.time.format.DateTimeFormatter.ofLocalizedDateTime(java.time.format.FormatStyle,java.time.format.FormatStyle) */
-			/* name */ 'ofLocalizedDateTime',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'timeStyle',
-					/* type */ 'java.time.format.FormatStyle',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'java.time.format.FormatStyle',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.format.DateTimeFormatter',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static final java.time.temporal.TemporalQuery<java.time.Period> java.time.format.DateTimeFormatter.parsedExcessDays() */
-			/* name */ 'parsedExcessDays',
+		[/* public java.lang.String java.time.format.DateTimeFormatter.toString() */
+			/* name */ 'toString',
 			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					'java.time.Period'
-				],
-				/* raw type */ 'java.time.temporal.TemporalQuery',
-				/* owner type */ UDF
-			]],
+			/* return */ 'java.lang.String',
 			/* exceptions */,
-			/* modifiers */ 25,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static final java.time.temporal.TemporalQuery<java.lang.Boolean> java.time.format.DateTimeFormatter.parsedLeapSecond() */
-			/* name */ 'parsedLeapSecond',
+		[/* public java.text.Format java.time.format.DateTimeFormatter.toFormat() */
+			/* name */ 'toFormat',
 			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					'java.lang.Boolean'
-				],
-				/* raw type */ 'java.time.temporal.TemporalQuery',
-				/* owner type */ UDF
-			]],
+			/* return */ 'java.text.Format',
 			/* exceptions */,
-			/* modifiers */ 25,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.time.format.DateTimeFormatter java.time.format.DateTimeFormatter.withLocale(java.util.Locale) */
-			/* name */ 'withLocale',
+		[/* public java.text.Format java.time.format.DateTimeFormatter.toFormat(java.time.temporal.TemporalQuery<?>) */
+			/* name */ 'toFormat',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'locale',
-					/* type */ 'java.util.Locale',
+					/* name */ 'parseQuery',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									'java.lang.Object'
+								],
+								/* lower bounds */ UDF
+							]]
+						],
+						/* raw type */ 'java.time.temporal.TemporalQuery',
+						/* owner type */ UDF
+					]],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.time.format.DateTimeFormatter',
+			/* return */ 'java.text.Format',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.ZoneId java.time.format.DateTimeFormatter.getZone() */
+			/* name */ 'getZone',
+			/* parameters */,
+			/* return */ 'java.time.ZoneId',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.chrono.Chronology java.time.format.DateTimeFormatter.getChronology() */
+			/* name */ 'getChronology',
+			/* parameters */,
+			/* return */ 'java.time.chrono.Chronology',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -311,10 +142,17 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatter', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.time.format.DecimalStyle java.time.format.DateTimeFormatter.getDecimalStyle() */
-			/* name */ 'getDecimalStyle',
-			/* parameters */,
-			/* return */ 'java.time.format.DecimalStyle',
+		[/* public java.time.format.DateTimeFormatter java.time.format.DateTimeFormatter.withChronology(java.time.chrono.Chronology) */
+			/* name */ 'withChronology',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'chrono',
+					/* type */ 'java.time.chrono.Chronology',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.format.DateTimeFormatter',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -336,91 +174,17 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatter', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.time.chrono.Chronology java.time.format.DateTimeFormatter.getChronology() */
-			/* name */ 'getChronology',
-			/* parameters */,
-			/* return */ 'java.time.chrono.Chronology',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.format.DateTimeFormatter java.time.format.DateTimeFormatter.withChronology(java.time.chrono.Chronology) */
-			/* name */ 'withChronology',
+		[/* public java.time.format.DateTimeFormatter java.time.format.DateTimeFormatter.withLocale(java.util.Locale) */
+			/* name */ 'withLocale',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'chrono',
-					/* type */ 'java.time.chrono.Chronology',
+					/* name */ 'locale',
+					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
 			/* return */ 'java.time.format.DateTimeFormatter',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.ZoneId java.time.format.DateTimeFormatter.getZone() */
-			/* name */ 'getZone',
-			/* parameters */,
-			/* return */ 'java.time.ZoneId',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.format.DateTimeFormatter java.time.format.DateTimeFormatter.withZone(java.time.ZoneId) */
-			/* name */ 'withZone',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'zone',
-					/* type */ 'java.time.ZoneId',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.format.DateTimeFormatter',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.format.ResolverStyle java.time.format.DateTimeFormatter.getResolverStyle() */
-			/* name */ 'getResolverStyle',
-			/* parameters */,
-			/* return */ 'java.time.format.ResolverStyle',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.format.DateTimeFormatter java.time.format.DateTimeFormatter.withResolverStyle(java.time.format.ResolverStyle) */
-			/* name */ 'withResolverStyle',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'resolverStyle',
-					/* type */ 'java.time.format.ResolverStyle',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.format.DateTimeFormatter',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.Set<java.time.temporal.TemporalField> java.time.format.DateTimeFormatter.getResolverFields() */
-			/* name */ 'getResolverFields',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					'java.time.temporal.TemporalField'
-				],
-				/* raw type */ 'java.util.Set',
-				/* owner type */ UDF
-			]],
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -459,6 +223,94 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatter', [
 				]
 			],
 			/* return */ 'java.time.format.DateTimeFormatter',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.format.DateTimeFormatter java.time.format.DateTimeFormatter.withResolverStyle(java.time.format.ResolverStyle) */
+			/* name */ 'withResolverStyle',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'resolverStyle',
+					/* type */ 'java.time.format.ResolverStyle',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.format.DateTimeFormatter',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.format.DateTimeFormatter java.time.format.DateTimeFormatter.withZone(java.time.ZoneId) */
+			/* name */ 'withZone',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'zone',
+					/* type */ 'java.time.ZoneId',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.format.DateTimeFormatter',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.format.DecimalStyle java.time.format.DateTimeFormatter.getDecimalStyle() */
+			/* name */ 'getDecimalStyle',
+			/* parameters */,
+			/* return */ 'java.time.format.DecimalStyle',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.format.ResolverStyle java.time.format.DateTimeFormatter.getResolverStyle() */
+			/* name */ 'getResolverStyle',
+			/* parameters */,
+			/* return */ 'java.time.format.ResolverStyle',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.temporal.TemporalAccessor java.time.format.DateTimeFormatter.parse(java.lang.CharSequence) */
+			/* name */ 'parse',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'ex',
+					/* type */ 'java.lang.CharSequence',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.temporal.TemporalAccessor',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.temporal.TemporalAccessor java.time.format.DateTimeFormatter.parse(java.lang.CharSequence,java.text.ParsePosition) */
+			/* name */ 'parse',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'ex',
+					/* type */ 'java.lang.CharSequence',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'ex',
+					/* type */ 'java.text.ParsePosition',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.temporal.TemporalAccessor',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -519,37 +371,185 @@ JdkClassCreateHelper.class('java.time.format.DateTimeFormatter', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.text.Format java.time.format.DateTimeFormatter.toFormat(java.time.temporal.TemporalQuery<?>) */
-			/* name */ 'toFormat',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'parseQuery',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							[/* wildcard type */ 'wt', [
-								[/* upper bounds */
-									'java.lang.Object'
-								],
-								/* lower bounds */ UDF
-							]]
-						],
-						/* raw type */ 'java.time.temporal.TemporalQuery',
-						/* owner type */ UDF
-					]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.text.Format',
+		[/* public java.util.Locale java.time.format.DateTimeFormatter.getLocale() */
+			/* name */ 'getLocale',
+			/* parameters */,
+			/* return */ 'java.util.Locale',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.text.Format java.time.format.DateTimeFormatter.toFormat() */
-			/* name */ 'toFormat',
+		[/* public java.util.Set<java.time.temporal.TemporalField> java.time.format.DateTimeFormatter.getResolverFields() */
+			/* name */ 'getResolverFields',
 			/* parameters */,
-			/* return */ 'java.text.Format',
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					'java.time.temporal.TemporalField'
+				],
+				/* raw type */ 'java.util.Set',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static final java.time.temporal.TemporalQuery<java.lang.Boolean> java.time.format.DateTimeFormatter.parsedLeapSecond() */
+			/* name */ 'parsedLeapSecond',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					'java.lang.Boolean'
+				],
+				/* raw type */ 'java.time.temporal.TemporalQuery',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 25,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static final java.time.temporal.TemporalQuery<java.time.Period> java.time.format.DateTimeFormatter.parsedExcessDays() */
+			/* name */ 'parsedExcessDays',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					'java.time.Period'
+				],
+				/* raw type */ 'java.time.temporal.TemporalQuery',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 25,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.time.format.DateTimeFormatter java.time.format.DateTimeFormatter.ofLocalizedDate(java.time.format.FormatStyle) */
+			/* name */ 'ofLocalizedDate',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.time.format.FormatStyle',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.format.DateTimeFormatter',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.time.format.DateTimeFormatter java.time.format.DateTimeFormatter.ofLocalizedDateTime(java.time.format.FormatStyle) */
+			/* name */ 'ofLocalizedDateTime',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.time.format.FormatStyle',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.format.DateTimeFormatter',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.time.format.DateTimeFormatter java.time.format.DateTimeFormatter.ofLocalizedDateTime(java.time.format.FormatStyle,java.time.format.FormatStyle) */
+			/* name */ 'ofLocalizedDateTime',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'timeStyle',
+					/* type */ 'java.time.format.FormatStyle',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'java.time.format.FormatStyle',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.format.DateTimeFormatter',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.time.format.DateTimeFormatter java.time.format.DateTimeFormatter.ofLocalizedTime(java.time.format.FormatStyle) */
+			/* name */ 'ofLocalizedTime',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.time.format.FormatStyle',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.format.DateTimeFormatter',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.time.format.DateTimeFormatter java.time.format.DateTimeFormatter.ofPattern(java.lang.String) */
+			/* name */ 'ofPattern',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.format.DateTimeFormatter',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.time.format.DateTimeFormatter java.time.format.DateTimeFormatter.ofPattern(java.lang.String,java.util.Locale) */
+			/* name */ 'ofPattern',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'locale',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'java.util.Locale',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.format.DateTimeFormatter',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.time.format.DateTimeFormatter.formatTo(java.time.temporal.TemporalAccessor,java.lang.Appendable) */
+			/* name */ 'formatTo',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'buf',
+					/* type */ 'java.time.temporal.TemporalAccessor',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'context',
+					/* type */ 'java.lang.Appendable',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

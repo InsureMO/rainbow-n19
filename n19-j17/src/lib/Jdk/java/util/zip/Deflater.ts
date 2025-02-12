@@ -53,33 +53,6 @@ JdkClassCreateHelper.class('java.util.zip.Deflater', [
 		]
 	],
 	[/* declared methods */
-		[/* public void java.util.zip.Deflater.end() */
-			/* name */ 'end',
-			/* parameters */,
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.util.zip.Deflater.reset() */
-			/* name */ 'reset',
-			/* parameters */,
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.util.zip.Deflater.finish() */
-			/* name */ 'finish',
-			/* parameters */,
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public boolean java.util.zip.Deflater.finished() */
 			/* name */ 'finished',
 			/* parameters */,
@@ -98,11 +71,27 @@ JdkClassCreateHelper.class('java.util.zip.Deflater', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.util.zip.Deflater.setInput(byte[],int,int) */
-			/* name */ 'setInput',
+		[/* public int java.util.zip.Deflater.deflate(byte[]) */
+			/* name */ 'deflate',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'input',
+					/* name */ 'output',
+					/* type */ '[B',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.zip.Deflater.deflate(byte[],int,int) */
+			/* name */ 'deflate',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'output',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -120,39 +109,115 @@ JdkClassCreateHelper.class('java.util.zip.Deflater', [
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'void',
+			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.util.zip.Deflater.setInput(byte[]) */
-			/* name */ 'setInput',
+		[/* public int java.util.zip.Deflater.deflate(byte[],int,int,int) */
+			/* name */ 'deflate',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'input',
+					/* name */ 'params',
 					/* type */ '[B',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'inputPos',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'result',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'inputAddress',
+					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'void',
+			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.util.zip.Deflater.setInput(java.nio.ByteBuffer) */
-			/* name */ 'setInput',
+		[/* public int java.util.zip.Deflater.deflate(java.nio.ByteBuffer) */
+			/* name */ 'deflate',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'input',
+					/* name */ 'output',
 					/* type */ 'java.nio.ByteBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'void',
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.zip.Deflater.deflate(java.nio.ByteBuffer,int) */
+			/* name */ 'deflate',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'params',
+					/* type */ 'java.nio.ByteBuffer',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'result',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.zip.Deflater.getAdler() */
+			/* name */ 'getAdler',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.zip.Deflater.getTotalIn() */
+			/* name */ 'getTotalIn',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.zip.Deflater.getTotalOut() */
+			/* name */ 'getTotalOut',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public long java.util.zip.Deflater.getBytesRead() */
+			/* name */ 'getBytesRead',
+			/* parameters */,
+			/* return */ 'long',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -162,6 +227,33 @@ JdkClassCreateHelper.class('java.util.zip.Deflater', [
 			/* name */ 'getBytesWritten',
 			/* parameters */,
 			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.util.zip.Deflater.end() */
+			/* name */ 'end',
+			/* parameters */,
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.util.zip.Deflater.finish() */
+			/* name */ 'finish',
+			/* parameters */,
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.util.zip.Deflater.reset() */
+			/* name */ 'reset',
+			/* parameters */,
+			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -227,48 +319,12 @@ JdkClassCreateHelper.class('java.util.zip.Deflater', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.util.zip.Deflater.getAdler() */
-			/* name */ 'getAdler',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public long java.util.zip.Deflater.getBytesRead() */
-			/* name */ 'getBytesRead',
-			/* parameters */,
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.util.zip.Deflater.getTotalIn() */
-			/* name */ 'getTotalIn',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.util.zip.Deflater.getTotalOut() */
-			/* name */ 'getTotalOut',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.util.zip.Deflater.setLevel(int) */
-			/* name */ 'setLevel',
+		[/* public void java.util.zip.Deflater.setInput(byte[]) */
+			/* name */ 'setInput',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'level',
-					/* type */ 'int',
+					/* name */ 'input',
+					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -279,33 +335,11 @@ JdkClassCreateHelper.class('java.util.zip.Deflater', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.util.zip.Deflater.deflate(java.nio.ByteBuffer,int) */
-			/* name */ 'deflate',
+		[/* public void java.util.zip.Deflater.setInput(byte[],int,int) */
+			/* name */ 'setInput',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'params',
-					/* type */ 'java.nio.ByteBuffer',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'result',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.util.zip.Deflater.deflate(byte[],int,int) */
-			/* name */ 'deflate',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'output',
+					/* name */ 'input',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -323,73 +357,39 @@ JdkClassCreateHelper.class('java.util.zip.Deflater', [
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'int',
+			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.util.zip.Deflater.deflate(byte[]) */
-			/* name */ 'deflate',
+		[/* public void java.util.zip.Deflater.setInput(java.nio.ByteBuffer) */
+			/* name */ 'setInput',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'output',
-					/* type */ '[B',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.util.zip.Deflater.deflate(byte[],int,int,int) */
-			/* name */ 'deflate',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'params',
-					/* type */ '[B',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'inputPos',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'result',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'inputAddress',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.util.zip.Deflater.deflate(java.nio.ByteBuffer) */
-			/* name */ 'deflate',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'output',
+					/* name */ 'input',
 					/* type */ 'java.nio.ByteBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'int',
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.util.zip.Deflater.setLevel(int) */
+			/* name */ 'setLevel',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'level',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

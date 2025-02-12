@@ -32,15 +32,6 @@ JdkClassCreateHelper.class('java.net.Proxy', [
 		]
 	],
 	[/* declared methods */
-		[/* public java.net.Proxy$Type java.net.Proxy.type() */
-			/* name */ 'type',
-			/* parameters */,
-			/* return */ 'java.net.Proxy$Type',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public final boolean java.net.Proxy.equals(java.lang.Object) */
 			/* name */ 'equals',
 			[/* parameters */
@@ -57,6 +48,15 @@ JdkClassCreateHelper.class('java.net.Proxy', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public final int java.net.Proxy.hashCode() */
+			/* name */ 'hashCode',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 17,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.lang.String java.net.Proxy.toString() */
 			/* name */ 'toString',
 			/* parameters */,
@@ -66,12 +66,12 @@ JdkClassCreateHelper.class('java.net.Proxy', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public final int java.net.Proxy.hashCode() */
-			/* name */ 'hashCode',
+		[/* public java.net.Proxy$Type java.net.Proxy.type() */
+			/* name */ 'type',
 			/* parameters */,
-			/* return */ 'int',
+			/* return */ 'java.net.Proxy$Type',
 			/* exceptions */,
-			/* modifiers */ 17,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],

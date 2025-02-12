@@ -36,11 +36,62 @@ JdkClassCreateHelper.class('java.util.ServiceLoader', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static <S> java.util.ServiceLoader<S> java.util.ServiceLoader.load(java.lang.Class<S>,java.lang.ClassLoader) */
+		[/* public java.util.Iterator<S> java.util.ServiceLoader.iterator() */
+			/* name */ 'iterator',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'S']]
+				],
+				/* raw type */ 'java.util.Iterator',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.Optional<S> java.util.ServiceLoader.findFirst() */
+			/* name */ 'findFirst',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'S']]
+				],
+				/* raw type */ 'java.util.Optional',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.stream.Stream<java.util.ServiceLoader$Provider<S>> java.util.ServiceLoader.stream() */
+			/* name */ 'stream',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* type variable ref */ 'tr', [/* name */ 'S']]
+						],
+						/* raw type */ 'java.util.ServiceLoader$Provider',
+						/* owner type */ 'java.util.ServiceLoader'
+					]]
+				],
+				/* raw type */ 'java.util.stream.Stream',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static <S> java.util.ServiceLoader<S> java.util.ServiceLoader.load(java.lang.Class<S>) */
 			/* name */ 'load',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'loader',
+					/* name */ 'cl',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'S']]
@@ -48,12 +99,6 @@ JdkClassCreateHelper.class('java.util.ServiceLoader', [
 						/* raw type */ 'java.lang.Class',
 						/* owner type */ UDF
 					]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'java.lang.ClassLoader',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -80,11 +125,11 @@ JdkClassCreateHelper.class('java.util.ServiceLoader', [
 				]
 			]
 		],
-		[/* public static <S> java.util.ServiceLoader<S> java.util.ServiceLoader.load(java.lang.Class<S>) */
+		[/* public static <S> java.util.ServiceLoader<S> java.util.ServiceLoader.load(java.lang.Class<S>,java.lang.ClassLoader) */
 			/* name */ 'load',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'cl',
+					/* name */ 'loader',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'S']]
@@ -92,6 +137,12 @@ JdkClassCreateHelper.class('java.util.ServiceLoader', [
 						/* raw type */ 'java.lang.Class',
 						/* owner type */ UDF
 					]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'java.lang.ClassLoader',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -161,57 +212,6 @@ JdkClassCreateHelper.class('java.util.ServiceLoader', [
 					/* annotations */ UDF
 				]
 			]
-		],
-		[/* public java.util.Iterator<S> java.util.ServiceLoader.iterator() */
-			/* name */ 'iterator',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* type variable ref */ 'tr', [/* name */ 'S']]
-				],
-				/* raw type */ 'java.util.Iterator',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.stream.Stream<java.util.ServiceLoader$Provider<S>> java.util.ServiceLoader.stream() */
-			/* name */ 'stream',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							[/* type variable ref */ 'tr', [/* name */ 'S']]
-						],
-						/* raw type */ 'java.util.ServiceLoader$Provider',
-						/* owner type */ 'java.util.ServiceLoader'
-					]]
-				],
-				/* raw type */ 'java.util.stream.Stream',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.Optional<S> java.util.ServiceLoader.findFirst() */
-			/* name */ 'findFirst',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* type variable ref */ 'tr', [/* name */ 'S']]
-				],
-				/* raw type */ 'java.util.Optional',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
 		],
 		[/* public static <S> java.util.ServiceLoader<S> java.util.ServiceLoader.loadInstalled(java.lang.Class<S>) */
 			/* name */ 'loadInstalled',

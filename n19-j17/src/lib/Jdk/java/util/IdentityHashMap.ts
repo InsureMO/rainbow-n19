@@ -43,6 +43,13 @@ JdkClassCreateHelper.class('java.util.IdentityHashMap', [
 		]
 	],
 	[/* declared constructors */
+		[/* public java.util.IdentityHashMap() */
+			/* parameters */,
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.util.IdentityHashMap(int) */
 			[/* parameters */
 				[/* parameter */
@@ -52,13 +59,6 @@ JdkClassCreateHelper.class('java.util.IdentityHashMap', [
 					/* annotations */ UDF
 				]
 			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.IdentityHashMap() */
-			/* parameters */,
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -97,22 +97,6 @@ JdkClassCreateHelper.class('java.util.IdentityHashMap', [
 		]
 	],
 	[/* declared methods */
-		[/* public V java.util.IdentityHashMap.remove(java.lang.Object) */
-			/* name */ 'remove',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'oldValue',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ [/* type variable ref */ 'tr', [/* name */ 'V']],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public V java.util.IdentityHashMap.get(java.lang.Object) */
 			/* name */ 'get',
 			[/* parameters */
@@ -151,6 +135,54 @@ JdkClassCreateHelper.class('java.util.IdentityHashMap', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public V java.util.IdentityHashMap.remove(java.lang.Object) */
+			/* name */ 'remove',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'oldValue',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.util.IdentityHashMap.containsKey(java.lang.Object) */
+			/* name */ 'containsKey',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'item',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.util.IdentityHashMap.containsValue(java.lang.Object) */
+			/* name */ 'containsValue',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'i',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public boolean java.util.IdentityHashMap.equals(java.lang.Object) */
 			/* name */ 'equals',
 			[/* parameters */
@@ -162,6 +194,42 @@ JdkClassCreateHelper.class('java.util.IdentityHashMap', [
 				]
 			],
 			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.util.IdentityHashMap.isEmpty() */
+			/* name */ 'isEmpty',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.IdentityHashMap.hashCode() */
+			/* name */ 'hashCode',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.IdentityHashMap.size() */
+			/* name */ 'size',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.Object java.util.IdentityHashMap.clone() */
+			/* name */ 'clone',
+			/* parameters */,
+			/* return */ 'java.lang.Object',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -182,89 +250,16 @@ JdkClassCreateHelper.class('java.util.IdentityHashMap', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.util.IdentityHashMap.hashCode() */
-			/* name */ 'hashCode',
+		[/* public java.util.Set<K> java.util.IdentityHashMap.keySet() */
+			/* name */ 'keySet',
 			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.Object java.util.IdentityHashMap.clone() */
-			/* name */ 'clone',
-			/* parameters */,
-			/* return */ 'java.lang.Object',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.util.IdentityHashMap.clear() */
-			/* name */ 'clear',
-			/* parameters */,
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.util.IdentityHashMap.isEmpty() */
-			/* name */ 'isEmpty',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.util.IdentityHashMap.replaceAll(java.util.function.BiFunction<? super K, ? super V, ? extends V>) */
-			/* name */ 'replaceAll',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'k',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							[/* wildcard type */ 'wt', [
-								[/* upper bounds */
-									'java.lang.Object'
-								],
-								[/* lower bounds */
-									[/* type variable ref */ 'tr', [/* name */ 'K']]
-								]
-							]],
-							[/* wildcard type */ 'wt', [
-								[/* upper bounds */
-									'java.lang.Object'
-								],
-								[/* lower bounds */
-									[/* type variable ref */ 'tr', [/* name */ 'V']]
-								]
-							]],
-							[/* wildcard type */ 'wt', [
-								[/* upper bounds */
-									[/* type variable ref */ 'tr', [/* name */ 'V']]
-								],
-								/* lower bounds */ UDF
-							]]
-						],
-						/* raw type */ 'java.util.function.BiFunction',
-						/* owner type */ UDF
-					]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.util.IdentityHashMap.size() */
-			/* name */ 'size',
-			/* parameters */,
-			/* return */ 'int',
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'K']]
+				],
+				/* raw type */ 'java.util.Set',
+				/* owner type */ UDF
+			]],
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -292,33 +287,9 @@ JdkClassCreateHelper.class('java.util.IdentityHashMap', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.util.IdentityHashMap.putAll(java.util.Map<? extends K, ? extends V>) */
-			/* name */ 'putAll',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'e',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							[/* wildcard type */ 'wt', [
-								[/* upper bounds */
-									[/* type variable ref */ 'tr', [/* name */ 'K']]
-								],
-								/* lower bounds */ UDF
-							]],
-							[/* wildcard type */ 'wt', [
-								[/* upper bounds */
-									[/* type variable ref */ 'tr', [/* name */ 'V']]
-								],
-								/* lower bounds */ UDF
-							]]
-						],
-						/* raw type */ 'java.util.Map',
-						/* owner type */ UDF
-					]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
+		[/* public void java.util.IdentityHashMap.clear() */
+			/* name */ 'clear',
+			/* parameters */,
 			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
@@ -362,48 +333,77 @@ JdkClassCreateHelper.class('java.util.IdentityHashMap', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public boolean java.util.IdentityHashMap.containsKey(java.lang.Object) */
-			/* name */ 'containsKey',
+		[/* public void java.util.IdentityHashMap.putAll(java.util.Map<? extends K, ? extends V>) */
+			/* name */ 'putAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'item',
-					/* type */ 'java.lang.Object',
+					/* name */ 'e',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									[/* type variable ref */ 'tr', [/* name */ 'K']]
+								],
+								/* lower bounds */ UDF
+							]],
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									[/* type variable ref */ 'tr', [/* name */ 'V']]
+								],
+								/* lower bounds */ UDF
+							]]
+						],
+						/* raw type */ 'java.util.Map',
+						/* owner type */ UDF
+					]],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'boolean',
+			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.util.Set<K> java.util.IdentityHashMap.keySet() */
-			/* name */ 'keySet',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* type variable ref */ 'tr', [/* name */ 'K']]
-				],
-				/* raw type */ 'java.util.Set',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.util.IdentityHashMap.containsValue(java.lang.Object) */
-			/* name */ 'containsValue',
+		[/* public void java.util.IdentityHashMap.replaceAll(java.util.function.BiFunction<? super K, ? super V, ? extends V>) */
+			/* name */ 'replaceAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
-					/* type */ 'java.lang.Object',
+					/* name */ 'k',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									'java.lang.Object'
+								],
+								[/* lower bounds */
+									[/* type variable ref */ 'tr', [/* name */ 'K']]
+								]
+							]],
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									'java.lang.Object'
+								],
+								[/* lower bounds */
+									[/* type variable ref */ 'tr', [/* name */ 'V']]
+								]
+							]],
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									[/* type variable ref */ 'tr', [/* name */ 'V']]
+								],
+								/* lower bounds */ UDF
+							]]
+						],
+						/* raw type */ 'java.util.function.BiFunction',
+						/* owner type */ UDF
+					]],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'boolean',
+			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

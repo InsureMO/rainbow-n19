@@ -34,22 +34,6 @@ JdkClassCreateHelper.class('java.util.Dictionary', [
 		]
 	],
 	[/* declared methods */
-		[/* public abstract V java.util.Dictionary.remove(java.lang.Object) */
-			/* name */ 'remove',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ [/* type variable ref */ 'tr', [/* name */ 'V']],
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public abstract V java.util.Dictionary.get(java.lang.Object) */
 			/* name */ 'get',
 			[/* parameters */
@@ -88,6 +72,22 @@ JdkClassCreateHelper.class('java.util.Dictionary', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public abstract V java.util.Dictionary.remove(java.lang.Object) */
+			/* name */ 'remove',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public abstract boolean java.util.Dictionary.isEmpty() */
 			/* name */ 'isEmpty',
 			/* parameters */,
@@ -106,12 +106,12 @@ JdkClassCreateHelper.class('java.util.Dictionary', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.util.Enumeration<V> java.util.Dictionary.elements() */
-			/* name */ 'elements',
+		[/* public abstract java.util.Enumeration<K> java.util.Dictionary.keys() */
+			/* name */ 'keys',
 			/* parameters */,
 			/* return */ [/* parameterized type */ 'pt', [
 				[/* actual argument types */
-					[/* type variable ref */ 'tr', [/* name */ 'V']]
+					[/* type variable ref */ 'tr', [/* name */ 'K']]
 				],
 				/* raw type */ 'java.util.Enumeration',
 				/* owner type */ UDF
@@ -121,12 +121,12 @@ JdkClassCreateHelper.class('java.util.Dictionary', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.util.Enumeration<K> java.util.Dictionary.keys() */
-			/* name */ 'keys',
+		[/* public abstract java.util.Enumeration<V> java.util.Dictionary.elements() */
+			/* name */ 'elements',
 			/* parameters */,
 			/* return */ [/* parameterized type */ 'pt', [
 				[/* actual argument types */
-					[/* type variable ref */ 'tr', [/* name */ 'K']]
+					[/* type variable ref */ 'tr', [/* name */ 'V']]
 				],
 				/* raw type */ 'java.util.Enumeration',
 				/* owner type */ UDF

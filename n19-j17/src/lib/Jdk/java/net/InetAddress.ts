@@ -29,67 +29,10 @@ JdkClassCreateHelper.class('java.net.InetAddress', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.net.InetAddress.toString() */
-			/* name */ 'toString',
+		[/* public boolean java.net.InetAddress.isAnyLocalAddress() */
+			/* name */ 'isAnyLocalAddress',
 			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.net.InetAddress.hashCode() */
-			/* name */ 'hashCode',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.net.InetAddress.getHostAddress() */
-			/* name */ 'getHostAddress',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public byte[] java.net.InetAddress.getAddress() */
-			/* name */ 'getAddress',
-			/* parameters */,
-			/* return */ '[B',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.net.InetAddress java.net.InetAddress.getByName(java.lang.String) throws java.net.UnknownHostException */
-			/* name */ 'getByName',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.net.InetAddress',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.net.UnknownHostException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.net.InetAddress.getHostName() */
-			/* name */ 'getHostName',
-			/* parameters */,
-			/* return */ 'java.lang.String',
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -97,6 +40,69 @@ JdkClassCreateHelper.class('java.net.InetAddress', [
 		],
 		[/* public boolean java.net.InetAddress.isLinkLocalAddress() */
 			/* name */ 'isLinkLocalAddress',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.net.InetAddress.isLoopbackAddress() */
+			/* name */ 'isLoopbackAddress',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.net.InetAddress.isMCGlobal() */
+			/* name */ 'isMCGlobal',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.net.InetAddress.isMCLinkLocal() */
+			/* name */ 'isMCLinkLocal',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.net.InetAddress.isMCNodeLocal() */
+			/* name */ 'isMCNodeLocal',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.net.InetAddress.isMCOrgLocal() */
+			/* name */ 'isMCOrgLocal',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.net.InetAddress.isMCSiteLocal() */
+			/* name */ 'isMCSiteLocal',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.net.InetAddress.isMulticastAddress() */
+			/* name */ 'isMulticastAddress',
 			/* parameters */,
 			/* return */ 'boolean',
 			/* exceptions */,
@@ -158,24 +164,66 @@ JdkClassCreateHelper.class('java.net.InetAddress', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.net.InetAddress[] java.net.InetAddress.getAllByName(java.lang.String) throws java.net.UnknownHostException */
-			/* name */ 'getAllByName',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ '[Ljava.net.InetAddress;',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.net.UnknownHostException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 9,
+		[/* public boolean java.net.InetAddress.isSiteLocalAddress() */
+			/* name */ 'isSiteLocalAddress',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public byte[] java.net.InetAddress.getAddress() */
+			/* name */ 'getAddress',
+			/* parameters */,
+			/* return */ '[B',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.net.InetAddress.hashCode() */
+			/* name */ 'hashCode',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.net.InetAddress.getCanonicalHostName() */
+			/* name */ 'getCanonicalHostName',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.net.InetAddress.getHostAddress() */
+			/* name */ 'getHostAddress',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.net.InetAddress.getHostName() */
+			/* name */ 'getHostName',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.net.InetAddress.toString() */
+			/* name */ 'toString',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -227,93 +275,38 @@ JdkClassCreateHelper.class('java.net.InetAddress', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public boolean java.net.InetAddress.isMulticastAddress() */
-			/* name */ 'isMulticastAddress',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
+		[/* public static java.net.InetAddress java.net.InetAddress.getByName(java.lang.String) throws java.net.UnknownHostException */
+			/* name */ 'getByName',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.net.InetAddress',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.net.UnknownHostException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public boolean java.net.InetAddress.isAnyLocalAddress() */
-			/* name */ 'isAnyLocalAddress',
+		[/* public static java.net.InetAddress java.net.InetAddress.getLocalHost() throws java.net.UnknownHostException */
+			/* name */ 'getLocalHost',
 			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.net.InetAddress.isLoopbackAddress() */
-			/* name */ 'isLoopbackAddress',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.net.InetAddress.isSiteLocalAddress() */
-			/* name */ 'isSiteLocalAddress',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.net.InetAddress.isMCGlobal() */
-			/* name */ 'isMCGlobal',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.net.InetAddress.isMCNodeLocal() */
-			/* name */ 'isMCNodeLocal',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.net.InetAddress.isMCLinkLocal() */
-			/* name */ 'isMCLinkLocal',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.net.InetAddress.isMCSiteLocal() */
-			/* name */ 'isMCSiteLocal',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.net.InetAddress.isMCOrgLocal() */
-			/* name */ 'isMCOrgLocal',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.net.InetAddress.getCanonicalHostName() */
-			/* name */ 'getCanonicalHostName',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
+			/* return */ 'java.net.InetAddress',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.net.UnknownHostException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -326,10 +319,17 @@ JdkClassCreateHelper.class('java.net.InetAddress', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.net.InetAddress java.net.InetAddress.getLocalHost() throws java.net.UnknownHostException */
-			/* name */ 'getLocalHost',
-			/* parameters */,
-			/* return */ 'java.net.InetAddress',
+		[/* public static java.net.InetAddress[] java.net.InetAddress.getAllByName(java.lang.String) throws java.net.UnknownHostException */
+			/* name */ 'getAllByName',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ '[Ljava.net.InetAddress;',
 			[/* exceptions */
 				[/* exception */
 					/* type */ 'java.net.UnknownHostException',

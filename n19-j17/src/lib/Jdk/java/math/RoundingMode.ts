@@ -17,10 +17,17 @@ JdkClassCreateHelper.class('java.math.RoundingMode', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public static java.math.RoundingMode[] java.math.RoundingMode.values() */
-			/* name */ 'values',
-			/* parameters */,
-			/* return */ '[Ljava.math.RoundingMode;',
+		[/* public static java.math.RoundingMode java.math.RoundingMode.valueOf(int) */
+			/* name */ 'valueOf',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.math.RoundingMode',
 			/* exceptions */,
 			/* modifiers */ 9,
 			/* annotations */ UDF,
@@ -42,17 +49,10 @@ JdkClassCreateHelper.class('java.math.RoundingMode', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.math.RoundingMode java.math.RoundingMode.valueOf(int) */
-			/* name */ 'valueOf',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.math.RoundingMode',
+		[/* public static java.math.RoundingMode[] java.math.RoundingMode.values() */
+			/* name */ 'values',
+			/* parameters */,
+			/* return */ '[Ljava.math.RoundingMode;',
 			/* exceptions */,
 			/* modifiers */ 9,
 			/* annotations */ UDF,

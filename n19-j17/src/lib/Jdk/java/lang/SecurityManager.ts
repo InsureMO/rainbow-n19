@@ -45,89 +45,10 @@ JdkClassCreateHelper.class('java.lang.SecurityManager', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.lang.SecurityManager.checkPackageAccess(java.lang.String) */
-			/* name */ 'checkPackageAccess',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'tmpPropertyStr',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.lang.SecurityManager.checkPermission(java.security.Permission,java.lang.Object) */
-			/* name */ 'checkPermission',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'perm',
-					/* type */ 'java.security.Permission',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'context',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.lang.SecurityManager.checkPermission(java.security.Permission) */
-			/* name */ 'checkPermission',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'perm',
-					/* type */ 'java.security.Permission',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.lang.SecurityManager.checkCreateClassLoader() */
-			/* name */ 'checkCreateClassLoader',
+		[/* public java.lang.Object java.lang.SecurityManager.getSecurityContext() */
+			/* name */ 'getSecurityContext',
 			/* parameters */,
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.lang.SecurityManager.checkPropertiesAccess() */
-			/* name */ 'checkPropertiesAccess',
-			/* parameters */,
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.lang.SecurityManager.checkPropertyAccess(java.lang.String) */
-			/* name */ 'checkPropertyAccess',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'key',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
+			/* return */ 'java.lang.Object',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -142,10 +63,23 @@ JdkClassCreateHelper.class('java.lang.SecurityManager', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.Object java.lang.SecurityManager.getSecurityContext() */
-			/* name */ 'getSecurityContext',
-			/* parameters */,
-			/* return */ 'java.lang.Object',
+		[/* public void java.lang.SecurityManager.checkAccept(java.lang.String,int) */
+			/* name */ 'checkAccept',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'host',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'port',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -183,12 +117,71 @@ JdkClassCreateHelper.class('java.lang.SecurityManager', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.lang.SecurityManager.checkExit(int) */
-			/* name */ 'checkExit',
+		[/* public void java.lang.SecurityManager.checkConnect(java.lang.String,int) */
+			/* name */ 'checkConnect',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'status',
+					/* name */ 'host',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'port',
 					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.lang.SecurityManager.checkConnect(java.lang.String,int,java.lang.Object) */
+			/* name */ 'checkConnect',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'host',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'port',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'context',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.lang.SecurityManager.checkCreateClassLoader() */
+			/* name */ 'checkCreateClassLoader',
+			/* parameters */,
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.lang.SecurityManager.checkDelete(java.lang.String) */
+			/* name */ 'checkDelete',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'file',
+					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -215,11 +208,191 @@ JdkClassCreateHelper.class('java.lang.SecurityManager', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public void java.lang.SecurityManager.checkExit(int) */
+			/* name */ 'checkExit',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'status',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public void java.lang.SecurityManager.checkLink(java.lang.String) */
 			/* name */ 'checkLink',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'lib',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.lang.SecurityManager.checkListen(int) */
+			/* name */ 'checkListen',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'port',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.lang.SecurityManager.checkMulticast(java.net.InetAddress) */
+			/* name */ 'checkMulticast',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'maddr',
+					/* type */ 'java.net.InetAddress',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.lang.SecurityManager.checkMulticast(java.net.InetAddress,byte) */
+			/* name */ 'checkMulticast',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'maddr',
+					/* type */ 'java.net.InetAddress',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'ttl',
+					/* type */ 'byte',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			[/* annotations */
+				[
+					'java.lang.Deprecated',
+					['p', 'since', '1.4'],
+					['p', 'forRemoval', true]
+				]
+			],
+			/* type parameters */ UDF
+		],
+		[/* public void java.lang.SecurityManager.checkPackageAccess(java.lang.String) */
+			/* name */ 'checkPackageAccess',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'tmpPropertyStr',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.lang.SecurityManager.checkPackageDefinition(java.lang.String) */
+			/* name */ 'checkPackageDefinition',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'tmpPropertyStr',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.lang.SecurityManager.checkPermission(java.security.Permission) */
+			/* name */ 'checkPermission',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'perm',
+					/* type */ 'java.security.Permission',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.lang.SecurityManager.checkPermission(java.security.Permission,java.lang.Object) */
+			/* name */ 'checkPermission',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'perm',
+					/* type */ 'java.security.Permission',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'context',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.lang.SecurityManager.checkPrintJobAccess() */
+			/* name */ 'checkPrintJobAccess',
+			/* parameters */,
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.lang.SecurityManager.checkPropertiesAccess() */
+			/* name */ 'checkPropertiesAccess',
+			/* parameters */,
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.lang.SecurityManager.checkPropertyAccess(java.lang.String) */
+			/* name */ 'checkPropertyAccess',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'key',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -285,6 +458,31 @@ JdkClassCreateHelper.class('java.lang.SecurityManager', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public void java.lang.SecurityManager.checkSecurityAccess(java.lang.String) */
+			/* name */ 'checkSecurityAccess',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'target',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.lang.SecurityManager.checkSetFactory() */
+			/* name */ 'checkSetFactory',
+			/* parameters */,
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public void java.lang.SecurityManager.checkWrite(java.io.FileDescriptor) */
 			/* name */ 'checkWrite',
 			[/* parameters */
@@ -306,204 +504,6 @@ JdkClassCreateHelper.class('java.lang.SecurityManager', [
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'file',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.lang.SecurityManager.checkDelete(java.lang.String) */
-			/* name */ 'checkDelete',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'file',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.lang.SecurityManager.checkConnect(java.lang.String,int,java.lang.Object) */
-			/* name */ 'checkConnect',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'host',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'port',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'context',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.lang.SecurityManager.checkConnect(java.lang.String,int) */
-			/* name */ 'checkConnect',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'host',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'port',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.lang.SecurityManager.checkListen(int) */
-			/* name */ 'checkListen',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'port',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.lang.SecurityManager.checkAccept(java.lang.String,int) */
-			/* name */ 'checkAccept',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'host',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'port',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.lang.SecurityManager.checkMulticast(java.net.InetAddress) */
-			/* name */ 'checkMulticast',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'maddr',
-					/* type */ 'java.net.InetAddress',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.lang.SecurityManager.checkMulticast(java.net.InetAddress,byte) */
-			/* name */ 'checkMulticast',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'maddr',
-					/* type */ 'java.net.InetAddress',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'ttl',
-					/* type */ 'byte',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			[/* annotations */
-				[
-					'java.lang.Deprecated',
-					['p', 'since', '1.4'],
-					['p', 'forRemoval', true]
-				]
-			],
-			/* type parameters */ UDF
-		],
-		[/* public void java.lang.SecurityManager.checkPrintJobAccess() */
-			/* name */ 'checkPrintJobAccess',
-			/* parameters */,
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.lang.SecurityManager.checkPackageDefinition(java.lang.String) */
-			/* name */ 'checkPackageDefinition',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'tmpPropertyStr',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.lang.SecurityManager.checkSetFactory() */
-			/* name */ 'checkSetFactory',
-			/* parameters */,
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.lang.SecurityManager.checkSecurityAccess(java.lang.String) */
-			/* name */ 'checkSecurityAccess',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'target',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

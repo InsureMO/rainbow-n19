@@ -29,10 +29,10 @@ JdkClassCreateHelper.class('java.time.temporal.WeekFields', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.time.temporal.WeekFields.toString() */
-			/* name */ 'toString',
+		[/* public int java.time.temporal.WeekFields.getMinimalDaysInFirstWeek() */
+			/* name */ 'getMinimalDaysInFirstWeek',
 			/* parameters */,
-			/* return */ 'java.lang.String',
+			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -47,48 +47,10 @@ JdkClassCreateHelper.class('java.time.temporal.WeekFields', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.time.temporal.WeekFields java.time.temporal.WeekFields.of(java.util.Locale) */
-			/* name */ 'of',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'calDow',
-					/* type */ 'java.util.Locale',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.temporal.WeekFields',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.time.temporal.WeekFields java.time.temporal.WeekFields.of(java.time.DayOfWeek,int) */
-			/* name */ 'of',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'minimalDaysInFirstWeek',
-					/* type */ 'java.time.DayOfWeek',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'key',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.temporal.WeekFields',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.temporal.TemporalField java.time.temporal.WeekFields.dayOfWeek() */
-			/* name */ 'dayOfWeek',
+		[/* public java.lang.String java.time.temporal.WeekFields.toString() */
+			/* name */ 'toString',
 			/* parameters */,
-			/* return */ 'java.time.temporal.TemporalField',
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -103,17 +65,17 @@ JdkClassCreateHelper.class('java.time.temporal.WeekFields', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.time.temporal.WeekFields.getMinimalDaysInFirstWeek() */
-			/* name */ 'getMinimalDaysInFirstWeek',
+		[/* public java.time.temporal.TemporalField java.time.temporal.WeekFields.dayOfWeek() */
+			/* name */ 'dayOfWeek',
 			/* parameters */,
-			/* return */ 'int',
+			/* return */ 'java.time.temporal.TemporalField',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.time.temporal.TemporalField java.time.temporal.WeekFields.weekOfYear() */
-			/* name */ 'weekOfYear',
+		[/* public java.time.temporal.TemporalField java.time.temporal.WeekFields.weekBasedYear() */
+			/* name */ 'weekBasedYear',
 			/* parameters */,
 			/* return */ 'java.time.temporal.TemporalField',
 			/* exceptions */,
@@ -139,12 +101,50 @@ JdkClassCreateHelper.class('java.time.temporal.WeekFields', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.time.temporal.TemporalField java.time.temporal.WeekFields.weekBasedYear() */
-			/* name */ 'weekBasedYear',
+		[/* public java.time.temporal.TemporalField java.time.temporal.WeekFields.weekOfYear() */
+			/* name */ 'weekOfYear',
 			/* parameters */,
 			/* return */ 'java.time.temporal.TemporalField',
 			/* exceptions */,
 			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.time.temporal.WeekFields java.time.temporal.WeekFields.of(java.time.DayOfWeek,int) */
+			/* name */ 'of',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'minimalDaysInFirstWeek',
+					/* type */ 'java.time.DayOfWeek',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'key',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.temporal.WeekFields',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.time.temporal.WeekFields java.time.temporal.WeekFields.of(java.util.Locale) */
+			/* name */ 'of',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'calDow',
+					/* type */ 'java.util.Locale',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.temporal.WeekFields',
+			/* exceptions */,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

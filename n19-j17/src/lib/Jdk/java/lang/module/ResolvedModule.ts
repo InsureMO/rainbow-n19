@@ -11,15 +11,6 @@ JdkClassCreateHelper.class('java.lang.module.ResolvedModule', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public java.lang.String java.lang.module.ResolvedModule.name() */
-			/* name */ 'name',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public boolean java.lang.module.ResolvedModule.equals(java.lang.Object) */
 			/* name */ 'equals',
 			[/* parameters */
@@ -36,6 +27,24 @@ JdkClassCreateHelper.class('java.lang.module.ResolvedModule', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public int java.lang.module.ResolvedModule.hashCode() */
+			/* name */ 'hashCode',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.lang.module.ResolvedModule.name() */
+			/* name */ 'name',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.lang.String java.lang.module.ResolvedModule.toString() */
 			/* name */ 'toString',
 			/* parameters */,
@@ -45,10 +54,19 @@ JdkClassCreateHelper.class('java.lang.module.ResolvedModule', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.lang.module.ResolvedModule.hashCode() */
-			/* name */ 'hashCode',
+		[/* public java.lang.module.Configuration java.lang.module.ResolvedModule.configuration() */
+			/* name */ 'configuration',
 			/* parameters */,
-			/* return */ 'int',
+			/* return */ 'java.lang.module.Configuration',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.module.ModuleReference java.lang.module.ResolvedModule.reference() */
+			/* name */ 'reference',
+			/* parameters */,
+			/* return */ 'java.lang.module.ModuleReference',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -64,24 +82,6 @@ JdkClassCreateHelper.class('java.lang.module.ResolvedModule', [
 				/* raw type */ 'java.util.Set',
 				/* owner type */ UDF
 			]],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.module.ModuleReference java.lang.module.ResolvedModule.reference() */
-			/* name */ 'reference',
-			/* parameters */,
-			/* return */ 'java.lang.module.ModuleReference',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.module.Configuration java.lang.module.ResolvedModule.configuration() */
-			/* name */ 'configuration',
-			/* parameters */,
-			/* return */ 'java.lang.module.Configuration',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

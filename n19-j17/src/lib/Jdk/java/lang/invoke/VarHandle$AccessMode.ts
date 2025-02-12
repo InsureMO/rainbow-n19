@@ -17,21 +17,28 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle$AccessMode', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public static java.lang.invoke.VarHandle$AccessMode[] java.lang.invoke.VarHandle$AccessMode.values() */
-			/* name */ 'values',
-			/* parameters */,
-			/* return */ '[Ljava.lang.invoke.VarHandle$AccessMode;',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public java.lang.String java.lang.invoke.VarHandle$AccessMode.methodName() */
 			/* name */ 'methodName',
 			/* parameters */,
 			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.lang.invoke.VarHandle$AccessMode java.lang.invoke.VarHandle$AccessMode.valueFromMethodName(java.lang.String) */
+			/* name */ 'valueFromMethodName',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.invoke.VarHandle$AccessMode',
+			/* exceptions */,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -51,17 +58,10 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle$AccessMode', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.lang.invoke.VarHandle$AccessMode java.lang.invoke.VarHandle$AccessMode.valueFromMethodName(java.lang.String) */
-			/* name */ 'valueFromMethodName',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.invoke.VarHandle$AccessMode',
+		[/* public static java.lang.invoke.VarHandle$AccessMode[] java.lang.invoke.VarHandle$AccessMode.values() */
+			/* name */ 'values',
+			/* parameters */,
+			/* return */ '[Ljava.lang.invoke.VarHandle$AccessMode;',
 			/* exceptions */,
 			/* modifiers */ 9,
 			/* annotations */ UDF,

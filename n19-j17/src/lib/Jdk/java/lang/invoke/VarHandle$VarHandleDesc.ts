@@ -17,15 +17,6 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle$VarHandleDesc', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public java.lang.String java.lang.invoke.VarHandle$VarHandleDesc.toString() */
-			/* name */ 'toString',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public java.lang.Object java.lang.invoke.VarHandle$VarHandleDesc.resolveConstantDesc(java.lang.invoke.MethodHandles$Lookup) throws java.lang.ReflectiveOperationException */
 			/* name */ 'resolveConstantDesc',
 			[/* parameters */
@@ -47,6 +38,24 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle$VarHandleDesc', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public java.lang.String java.lang.invoke.VarHandle$VarHandleDesc.toString() */
+			/* name */ 'toString',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.constant.ClassDesc java.lang.invoke.VarHandle$VarHandleDesc.varType() */
+			/* name */ 'varType',
+			/* parameters */,
+			/* return */ 'java.lang.constant.ClassDesc',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.lang.invoke.VarHandle java.lang.invoke.VarHandle$VarHandleDesc.resolveConstantDesc(java.lang.invoke.MethodHandles$Lookup) throws java.lang.ReflectiveOperationException */
 			/* name */ 'resolveConstantDesc',
 			[/* parameters */
@@ -65,6 +74,22 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle$VarHandleDesc', [
 				]
 			],
 			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.lang.invoke.VarHandle$VarHandleDesc java.lang.invoke.VarHandle$VarHandleDesc.ofArray(java.lang.constant.ClassDesc) */
+			/* name */ 'ofArray',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.constant.ClassDesc',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.invoke.VarHandle$VarHandleDesc',
+			/* exceptions */,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -96,15 +121,6 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle$VarHandleDesc', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.constant.ClassDesc java.lang.invoke.VarHandle$VarHandleDesc.varType() */
-			/* name */ 'varType',
-			/* parameters */,
-			/* return */ 'java.lang.constant.ClassDesc',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public static java.lang.invoke.VarHandle$VarHandleDesc java.lang.invoke.VarHandle$VarHandleDesc.ofStaticField(java.lang.constant.ClassDesc,java.lang.String,java.lang.constant.ClassDesc) */
 			/* name */ 'ofStaticField',
 			[/* parameters */
@@ -122,22 +138,6 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle$VarHandleDesc', [
 				],
 				[/* parameter */
 					/* name */ 'arg2',
-					/* type */ 'java.lang.constant.ClassDesc',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.invoke.VarHandle$VarHandleDesc',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.lang.invoke.VarHandle$VarHandleDesc java.lang.invoke.VarHandle$VarHandleDesc.ofArray(java.lang.constant.ClassDesc) */
-			/* name */ 'ofArray',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
 					/* type */ 'java.lang.constant.ClassDesc',
 					/* modifiers */ 0,
 					/* annotations */ UDF

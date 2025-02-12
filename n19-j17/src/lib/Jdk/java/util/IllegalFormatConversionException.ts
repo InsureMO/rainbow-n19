@@ -43,15 +43,6 @@ JdkClassCreateHelper.class('java.util.IllegalFormatConversionException', [
 		]
 	],
 	[/* declared methods */
-		[/* public java.lang.String java.util.IllegalFormatConversionException.getMessage() */
-			/* name */ 'getMessage',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public char java.util.IllegalFormatConversionException.getConversion() */
 			/* name */ 'getConversion',
 			/* parameters */,
@@ -76,6 +67,15 @@ JdkClassCreateHelper.class('java.util.IllegalFormatConversionException', [
 				/* raw type */ 'java.lang.Class',
 				/* owner type */ UDF
 			]],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.util.IllegalFormatConversionException.getMessage() */
+			/* name */ 'getMessage',
+			/* parameters */,
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

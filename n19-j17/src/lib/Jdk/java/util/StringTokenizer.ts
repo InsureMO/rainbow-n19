@@ -18,6 +18,20 @@ JdkClassCreateHelper.class('java.util.StringTokenizer', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
+		[/* public java.util.StringTokenizer(java.lang.String) */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'str',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.util.StringTokenizer(java.lang.String,java.lang.String) */
 			[/* parameters */
 				[/* parameter */
@@ -63,23 +77,27 @@ JdkClassCreateHelper.class('java.util.StringTokenizer', [
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
-		],
-		[/* public java.util.StringTokenizer(java.lang.String) */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'str',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
+		]
+	],
+	[/* declared methods */
+		[/* public boolean java.util.StringTokenizer.hasMoreElements() */
+			/* name */ 'hasMoreElements',
+			/* parameters */,
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
-		]
-	],
-	[/* declared methods */
+		],
+		[/* public boolean java.util.StringTokenizer.hasMoreTokens() */
+			/* name */ 'hasMoreTokens',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public int java.util.StringTokenizer.countTokens() */
 			/* name */ 'countTokens',
 			/* parameters */,
@@ -89,10 +107,19 @@ JdkClassCreateHelper.class('java.util.StringTokenizer', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public boolean java.util.StringTokenizer.hasMoreElements() */
-			/* name */ 'hasMoreElements',
+		[/* public java.lang.Object java.util.StringTokenizer.nextElement() */
+			/* name */ 'nextElement',
 			/* parameters */,
-			/* return */ 'boolean',
+			/* return */ 'java.lang.Object',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.util.StringTokenizer.nextToken() */
+			/* name */ 'nextToken',
+			/* parameters */,
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -109,33 +136,6 @@ JdkClassCreateHelper.class('java.util.StringTokenizer', [
 				]
 			],
 			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.util.StringTokenizer.nextToken() */
-			/* name */ 'nextToken',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.Object java.util.StringTokenizer.nextElement() */
-			/* name */ 'nextElement',
-			/* parameters */,
-			/* return */ 'java.lang.Object',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.util.StringTokenizer.hasMoreTokens() */
-			/* name */ 'hasMoreTokens',
-			/* parameters */,
-			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

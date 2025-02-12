@@ -26,19 +26,10 @@ JdkClassCreateHelper.class('java.lang.invoke.TypeDescriptor$OfField', [
 	],
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public abstract boolean java.lang.invoke.TypeDescriptor$OfField.isArray() */
-			/* name */ 'isArray',
+		[/* public abstract F java.lang.invoke.TypeDescriptor$OfField.arrayType() */
+			/* name */ 'arrayType',
 			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract boolean java.lang.invoke.TypeDescriptor$OfField.isPrimitive() */
-			/* name */ 'isPrimitive',
-			/* parameters */,
-			/* return */ 'boolean',
+			/* return */ [/* type variable ref */ 'tr', [/* name */ 'F']],
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,
@@ -53,10 +44,19 @@ JdkClassCreateHelper.class('java.lang.invoke.TypeDescriptor$OfField', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract F java.lang.invoke.TypeDescriptor$OfField.arrayType() */
-			/* name */ 'arrayType',
+		[/* public abstract boolean java.lang.invoke.TypeDescriptor$OfField.isArray() */
+			/* name */ 'isArray',
 			/* parameters */,
-			/* return */ [/* type variable ref */ 'tr', [/* name */ 'F']],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract boolean java.lang.invoke.TypeDescriptor$OfField.isPrimitive() */
+			/* name */ 'isPrimitive',
+			/* parameters */,
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,

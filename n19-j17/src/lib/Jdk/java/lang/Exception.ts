@@ -42,11 +42,18 @@ JdkClassCreateHelper.class('java.lang.Exception', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.Exception(java.lang.Throwable) */
+		[/* public java.lang.Exception() */
+			/* parameters */,
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.Exception(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'cause',
-					/* type */ 'java.lang.Throwable',
+					/* name */ 'message',
+					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -76,22 +83,15 @@ JdkClassCreateHelper.class('java.lang.Exception', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.Exception(java.lang.String) */
+		[/* public java.lang.Exception(java.lang.Throwable) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'message',
-					/* type */ 'java.lang.String',
+					/* name */ 'cause',
+					/* type */ 'java.lang.Throwable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.Exception() */
-			/* parameters */,
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

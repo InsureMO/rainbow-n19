@@ -17,15 +17,6 @@ JdkClassCreateHelper.class('java.net.Proxy$Type', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public static java.net.Proxy$Type[] java.net.Proxy$Type.values() */
-			/* name */ 'values',
-			/* parameters */,
-			/* return */ '[Ljava.net.Proxy$Type;',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public static java.net.Proxy$Type java.net.Proxy$Type.valueOf(java.lang.String) */
 			/* name */ 'valueOf',
 			[/* parameters */
@@ -37,6 +28,15 @@ JdkClassCreateHelper.class('java.net.Proxy$Type', [
 				]
 			],
 			/* return */ 'java.net.Proxy$Type',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.net.Proxy$Type[] java.net.Proxy$Type.values() */
+			/* name */ 'values',
+			/* parameters */,
+			/* return */ '[Ljava.net.Proxy$Type;',
 			/* exceptions */,
 			/* modifiers */ 9,
 			/* annotations */ UDF,

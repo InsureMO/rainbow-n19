@@ -52,6 +52,70 @@ JdkClassCreateHelper.class('java.io.ByteArrayInputStream', [
 		]
 	],
 	[/* declared methods */
+		[/* public boolean java.io.ByteArrayInputStream.markSupported() */
+			/* name */ 'markSupported',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.io.ByteArrayInputStream.readNBytes(byte[],int,int) */
+			/* name */ 'readNBytes',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'b',
+					/* type */ '[B',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'off',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'len',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public synchronized byte[] java.io.ByteArrayInputStream.readAllBytes() */
+			/* name */ 'readAllBytes',
+			/* parameters */,
+			/* return */ '[B',
+			/* exceptions */,
+			/* modifiers */ 33,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public synchronized int java.io.ByteArrayInputStream.available() */
+			/* name */ 'available',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 33,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public synchronized int java.io.ByteArrayInputStream.read() */
+			/* name */ 'read',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 33,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public synchronized int java.io.ByteArrayInputStream.read(byte[],int,int) */
 			/* name */ 'read',
 			[/* parameters */
@@ -80,10 +144,47 @@ JdkClassCreateHelper.class('java.io.ByteArrayInputStream', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public synchronized int java.io.ByteArrayInputStream.read() */
-			/* name */ 'read',
+		[/* public synchronized long java.io.ByteArrayInputStream.skip(long) */
+			/* name */ 'skip',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'n',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 33,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public synchronized long java.io.ByteArrayInputStream.transferTo(java.io.OutputStream) throws java.io.IOException */
+			/* name */ 'transferTo',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'out',
+					/* type */ 'java.io.OutputStream',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'long',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 33,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public synchronized void java.io.ByteArrayInputStream.reset() */
+			/* name */ 'reset',
 			/* parameters */,
-			/* return */ 'int',
+			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 33,
 			/* annotations */ UDF,
@@ -116,107 +217,6 @@ JdkClassCreateHelper.class('java.io.ByteArrayInputStream', [
 			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public synchronized byte[] java.io.ByteArrayInputStream.readAllBytes() */
-			/* name */ 'readAllBytes',
-			/* parameters */,
-			/* return */ '[B',
-			/* exceptions */,
-			/* modifiers */ 33,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.io.ByteArrayInputStream.readNBytes(byte[],int,int) */
-			/* name */ 'readNBytes',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'b',
-					/* type */ '[B',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'off',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'len',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public synchronized long java.io.ByteArrayInputStream.transferTo(java.io.OutputStream) throws java.io.IOException */
-			/* name */ 'transferTo',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'out',
-					/* type */ 'java.io.OutputStream',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'long',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 33,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public synchronized long java.io.ByteArrayInputStream.skip(long) */
-			/* name */ 'skip',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'n',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 33,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public synchronized int java.io.ByteArrayInputStream.available() */
-			/* name */ 'available',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 33,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.io.ByteArrayInputStream.markSupported() */
-			/* name */ 'markSupported',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public synchronized void java.io.ByteArrayInputStream.reset() */
-			/* name */ 'reset',
-			/* parameters */,
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 33,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

@@ -22,6 +22,26 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 	],
 	/* type parameters */,
 	[/* declared constructors */
+		[/* public java.lang.Integer(int) */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'value',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* exceptions */,
+			/* modifiers */ 1,
+			[/* annotations */
+				[
+					'java.lang.Deprecated',
+					['p', 'since', '9'],
+					['p', 'forRemoval', true]
+				]
+			],
+			/* type parameters */ UDF
+		],
 		[/* public java.lang.Integer(java.lang.String) throws java.lang.NumberFormatException */
 			[/* parameters */
 				[/* parameter */
@@ -46,83 +66,9 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 				]
 			],
 			/* type parameters */ UDF
-		],
-		[/* public java.lang.Integer(int) */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'value',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			[/* annotations */
-				[
-					'java.lang.Deprecated',
-					['p', 'since', '9'],
-					['p', 'forRemoval', true]
-				]
-			],
-			/* type parameters */ UDF
 		]
 	],
 	[/* declared methods */
-		[/* public static int java.lang.Integer.numberOfLeadingZeros(int) */
-			/* name */ 'numberOfLeadingZeros',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'n',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public static int java.lang.Integer.numberOfTrailingZeros(int) */
-			/* name */ 'numberOfTrailingZeros',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'n',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public static int java.lang.Integer.bitCount(int) */
-			/* name */ 'bitCount',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
-			/* type parameters */ UDF
-		],
 		[/* public boolean java.lang.Integer.equals(java.lang.Object) */
 			/* name */ 'equals',
 			[/* parameters */
@@ -139,156 +85,31 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.lang.String java.lang.Integer.toString(int) */
-			/* name */ 'toString',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'buf',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.lang.Integer.toString() */
-			/* name */ 'toString',
+		[/* public byte java.lang.Integer.byteValue() */
+			/* name */ 'byteValue',
 			/* parameters */,
-			/* return */ 'java.lang.String',
+			/* return */ 'byte',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.lang.String java.lang.Integer.toString(int,int) */
-			/* name */ 'toString',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'buf',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'negative',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.lang.Integer.hashCode() */
-			/* name */ 'hashCode',
+		[/* public double java.lang.Integer.doubleValue() */
+			/* name */ 'doubleValue',
 			/* parameters */,
-			/* return */ 'int',
+			/* return */ 'double',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static int java.lang.Integer.hashCode(int) */
-			/* name */ 'hashCode',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
+		[/* public float java.lang.Integer.floatValue() */
+			/* name */ 'floatValue',
+			/* parameters */,
+			/* return */ 'float',
 			/* exceptions */,
-			/* modifiers */ 9,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static int java.lang.Integer.min(int,int) */
-			/* name */ 'min',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'b',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static int java.lang.Integer.max(int,int) */
-			/* name */ 'max',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'b',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static int java.lang.Integer.signum(int) */
-			/* name */ 'signum',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static int java.lang.Integer.reverseBytes(int) */
-			/* name */ 'reverseBytes',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
 			/* type parameters */ UDF
 		],
 		[/* public int java.lang.Integer.compareTo(java.lang.Integer) */
@@ -323,41 +144,10 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static int java.lang.Integer.compare(int,int) */
-			/* name */ 'compare',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'y',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
+		[/* public int java.lang.Integer.hashCode() */
+			/* name */ 'hashCode',
+			/* parameters */,
 			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public byte java.lang.Integer.byteValue() */
-			/* name */ 'byteValue',
-			/* parameters */,
-			/* return */ 'byte',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public short java.lang.Integer.shortValue() */
-			/* name */ 'shortValue',
-			/* parameters */,
-			/* return */ 'short',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -374,133 +164,19 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			],
 			/* type parameters */ UDF
 		],
-		[/* public long java.lang.Integer.longValue() */
-			/* name */ 'longValue',
-			/* parameters */,
-			/* return */ 'long',
+		[/* public java.lang.Integer java.lang.Integer.resolveConstantDesc(java.lang.invoke.MethodHandles$Lookup) */
+			/* name */ 'resolveConstantDesc',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'lookup',
+					/* type */ 'java.lang.invoke.MethodHandles$Lookup',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.Integer',
 			/* exceptions */,
 			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public float java.lang.Integer.floatValue() */
-			/* name */ 'floatValue',
-			/* parameters */,
-			/* return */ 'float',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public double java.lang.Integer.doubleValue() */
-			/* name */ 'doubleValue',
-			/* parameters */,
-			/* return */ 'double',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.lang.Integer java.lang.Integer.valueOf(java.lang.String,int) throws java.lang.NumberFormatException */
-			/* name */ 'valueOf',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'radix',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.Integer',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.lang.NumberFormatException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.lang.Integer java.lang.Integer.valueOf(java.lang.String) throws java.lang.NumberFormatException */
-			/* name */ 'valueOf',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.Integer',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.lang.NumberFormatException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.lang.Integer java.lang.Integer.valueOf(int) */
-			/* name */ 'valueOf',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.Integer',
-			/* exceptions */,
-			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public static java.lang.String java.lang.Integer.toHexString(int) */
-			/* name */ 'toHexString',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.lang.Integer java.lang.Integer.decode(java.lang.String) throws java.lang.NumberFormatException */
-			/* name */ 'decode',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'result',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.Integer',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.lang.NumberFormatException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -525,17 +201,10 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.Integer java.lang.Integer.resolveConstantDesc(java.lang.invoke.MethodHandles$Lookup) */
-			/* name */ 'resolveConstantDesc',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'lookup',
-					/* type */ 'java.lang.invoke.MethodHandles$Lookup',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.Integer',
+		[/* public java.lang.String java.lang.Integer.toString() */
+			/* name */ 'toString',
+			/* parameters */,
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -556,8 +225,110 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static int java.lang.Integer.reverse(int) */
-			/* name */ 'reverse',
+		[/* public long java.lang.Integer.longValue() */
+			/* name */ 'longValue',
+			/* parameters */,
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public short java.lang.Integer.shortValue() */
+			/* name */ 'shortValue',
+			/* parameters */,
+			/* return */ 'short',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static int java.lang.Integer.bitCount(int) */
+			/* name */ 'bitCount',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 9,
+			[/* annotations */
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public static int java.lang.Integer.compare(int,int) */
+			/* name */ 'compare',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'y',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static int java.lang.Integer.compareUnsigned(int,int) */
+			/* name */ 'compareUnsigned',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'y',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static int java.lang.Integer.divideUnsigned(int,int) */
+			/* name */ 'divideUnsigned',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'divisor',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static int java.lang.Integer.hashCode(int) */
+			/* name */ 'hashCode',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
@@ -572,8 +343,8 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static long java.lang.Integer.toUnsignedLong(int) */
-			/* name */ 'toUnsignedLong',
+		[/* public static int java.lang.Integer.highestOneBit(int) */
+			/* name */ 'highestOneBit',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
@@ -582,14 +353,30 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'long',
+			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static int java.lang.Integer.sum(int,int) */
-			/* name */ 'sum',
+		[/* public static int java.lang.Integer.lowestOneBit(int) */
+			/* name */ 'lowestOneBit',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static int java.lang.Integer.max(int,int) */
+			/* name */ 'max',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'b',
@@ -608,6 +395,64 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			/* exceptions */,
 			/* modifiers */ 9,
 			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static int java.lang.Integer.min(int,int) */
+			/* name */ 'min',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'b',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static int java.lang.Integer.numberOfLeadingZeros(int) */
+			/* name */ 'numberOfLeadingZeros',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'n',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 9,
+			[/* annotations */
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public static int java.lang.Integer.numberOfTrailingZeros(int) */
+			/* name */ 'numberOfTrailingZeros',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'n',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 9,
+			[/* annotations */
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
 			/* type parameters */ UDF
 		],
 		[/* public static int java.lang.Integer.parseInt(java.lang.CharSequence,int,int,int) throws java.lang.NumberFormatException */
@@ -697,93 +542,6 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static int java.lang.Integer.compareUnsigned(int,int) */
-			/* name */ 'compareUnsigned',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'y',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.lang.String java.lang.Integer.toUnsignedString(int,int) */
-			/* name */ 'toUnsignedString',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'radix',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.lang.String java.lang.Integer.toUnsignedString(int) */
-			/* name */ 'toUnsignedString',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static int java.lang.Integer.parseUnsignedInt(java.lang.String,int) throws java.lang.NumberFormatException */
-			/* name */ 'parseUnsignedInt',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'ell',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'firstChar',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.lang.NumberFormatException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public static int java.lang.Integer.parseUnsignedInt(java.lang.CharSequence,int,int,int) throws java.lang.NumberFormatException */
 			/* name */ 'parseUnsignedInt',
 			[/* parameters */
@@ -844,24 +602,188 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.lang.Integer java.lang.Integer.getInteger(java.lang.String,java.lang.Integer) */
-			/* name */ 'getInteger',
+		[/* public static int java.lang.Integer.parseUnsignedInt(java.lang.String,int) throws java.lang.NumberFormatException */
+			/* name */ 'parseUnsignedInt',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'val',
+					/* name */ 'ell',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'v',
-					/* type */ 'java.lang.Integer',
+					/* name */ 'firstChar',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.lang.NumberFormatException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static int java.lang.Integer.remainderUnsigned(int,int) */
+			/* name */ 'remainderUnsigned',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'divisor',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static int java.lang.Integer.reverse(int) */
+			/* name */ 'reverse',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static int java.lang.Integer.reverseBytes(int) */
+			/* name */ 'reverseBytes',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 9,
+			[/* annotations */
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public static int java.lang.Integer.rotateLeft(int,int) */
+			/* name */ 'rotateLeft',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'distance',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static int java.lang.Integer.rotateRight(int,int) */
+			/* name */ 'rotateRight',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'distance',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static int java.lang.Integer.signum(int) */
+			/* name */ 'signum',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static int java.lang.Integer.sum(int,int) */
+			/* name */ 'sum',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'b',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.lang.Integer java.lang.Integer.decode(java.lang.String) throws java.lang.NumberFormatException */
+			/* name */ 'decode',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'result',
+					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
 			/* return */ 'java.lang.Integer',
-			/* exceptions */,
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.lang.NumberFormatException',
+					/* annotations */ UDF
+				]
+			],
 			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
@@ -904,8 +826,30 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.lang.String java.lang.Integer.toOctalString(int) */
-			/* name */ 'toOctalString',
+		[/* public static java.lang.Integer java.lang.Integer.getInteger(java.lang.String,java.lang.Integer) */
+			/* name */ 'getInteger',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'val',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'v',
+					/* type */ 'java.lang.Integer',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.Integer',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.lang.Integer java.lang.Integer.valueOf(int) */
+			/* name */ 'valueOf',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
@@ -914,8 +858,58 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.lang.String',
+			/* return */ 'java.lang.Integer',
 			/* exceptions */,
+			/* modifiers */ 9,
+			[/* annotations */
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public static java.lang.Integer java.lang.Integer.valueOf(java.lang.String) throws java.lang.NumberFormatException */
+			/* name */ 'valueOf',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.Integer',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.lang.NumberFormatException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.lang.Integer java.lang.Integer.valueOf(java.lang.String,int) throws java.lang.NumberFormatException */
+			/* name */ 'valueOf',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'radix',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.Integer',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.lang.NumberFormatException',
+					/* annotations */ UDF
+				]
+			],
 			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
@@ -936,52 +930,8 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static int java.lang.Integer.divideUnsigned(int,int) */
-			/* name */ 'divideUnsigned',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'divisor',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static int java.lang.Integer.remainderUnsigned(int,int) */
-			/* name */ 'remainderUnsigned',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'divisor',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static int java.lang.Integer.highestOneBit(int) */
-			/* name */ 'highestOneBit',
+		[/* public static java.lang.String java.lang.Integer.toHexString(int) */
+			/* name */ 'toHexString',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
@@ -990,14 +940,14 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'int',
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static int java.lang.Integer.lowestOneBit(int) */
-			/* name */ 'lowestOneBit',
+		[/* public static java.lang.String java.lang.Integer.toOctalString(int) */
+			/* name */ 'toOctalString',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
@@ -1006,17 +956,73 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'int',
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static int java.lang.Integer.rotateLeft(int,int) */
-			/* name */ 'rotateLeft',
+		[/* public static java.lang.String java.lang.Integer.toString(int) */
+			/* name */ 'toString',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'distance',
+					/* name */ 'buf',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 9,
+			[/* annotations */
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public static java.lang.String java.lang.Integer.toString(int,int) */
+			/* name */ 'toString',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'buf',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'negative',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.lang.String java.lang.Integer.toUnsignedString(int) */
+			/* name */ 'toUnsignedString',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.lang.String java.lang.Integer.toUnsignedString(int,int) */
+			/* name */ 'toUnsignedString',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'radix',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1028,29 +1034,23 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'int',
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static int java.lang.Integer.rotateRight(int,int) */
-			/* name */ 'rotateRight',
+		[/* public static long java.lang.Integer.toUnsignedLong(int) */
+			/* name */ 'toUnsignedLong',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'distance',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'arg0',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'int',
+			/* return */ 'long',
 			/* exceptions */,
 			/* modifiers */ 9,
 			/* annotations */ UDF,

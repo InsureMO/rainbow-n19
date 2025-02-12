@@ -26,19 +26,19 @@ JdkClassCreateHelper.class('java.security.PrivilegedActionException', [
 		]
 	],
 	[/* declared methods */
-		[/* public java.lang.String java.security.PrivilegedActionException.toString() */
-			/* name */ 'toString',
+		[/* public java.lang.Exception java.security.PrivilegedActionException.getException() */
+			/* name */ 'getException',
 			/* parameters */,
-			/* return */ 'java.lang.String',
+			/* return */ 'java.lang.Exception',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.Exception java.security.PrivilegedActionException.getException() */
-			/* name */ 'getException',
+		[/* public java.lang.String java.security.PrivilegedActionException.toString() */
+			/* name */ 'toString',
 			/* parameters */,
-			/* return */ 'java.lang.Exception',
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

@@ -41,17 +41,10 @@ JdkClassCreateHelper.class('java.util.AbstractQueue', [
 		]
 	],
 	[/* declared methods */
-		[/* public boolean java.util.AbstractQueue.add(E) */
-			/* name */ 'add',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'e',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
+		[/* public E java.util.AbstractQueue.element() */
+			/* name */ 'element',
+			/* parameters */,
+			/* return */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -66,10 +59,17 @@ JdkClassCreateHelper.class('java.util.AbstractQueue', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.util.AbstractQueue.clear() */
-			/* name */ 'clear',
-			/* parameters */,
-			/* return */ 'void',
+		[/* public boolean java.util.AbstractQueue.add(E) */
+			/* name */ 'add',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'e',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -102,10 +102,10 @@ JdkClassCreateHelper.class('java.util.AbstractQueue', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public E java.util.AbstractQueue.element() */
-			/* name */ 'element',
+		[/* public void java.util.AbstractQueue.clear() */
+			/* name */ 'clear',
 			/* parameters */,
-			/* return */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

@@ -12,15 +12,6 @@ JdkClassCreateHelper.class('java.util.function.DoubleUnaryOperator', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public static java.util.function.DoubleUnaryOperator java.util.function.DoubleUnaryOperator.identity() */
-			/* name */ 'identity',
-			/* parameters */,
-			/* return */ 'java.util.function.DoubleUnaryOperator',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public abstract double java.util.function.DoubleUnaryOperator.applyAsDouble(double) */
 			/* name */ 'applyAsDouble',
 			[/* parameters */
@@ -34,6 +25,22 @@ JdkClassCreateHelper.class('java.util.function.DoubleUnaryOperator', [
 			/* return */ 'double',
 			/* exceptions */,
 			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public default java.util.function.DoubleUnaryOperator java.util.function.DoubleUnaryOperator.andThen(java.util.function.DoubleUnaryOperator) */
+			/* name */ 'andThen',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'after',
+					/* type */ 'java.util.function.DoubleUnaryOperator',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.util.function.DoubleUnaryOperator',
+			/* exceptions */,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -53,19 +60,12 @@ JdkClassCreateHelper.class('java.util.function.DoubleUnaryOperator', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public default java.util.function.DoubleUnaryOperator java.util.function.DoubleUnaryOperator.andThen(java.util.function.DoubleUnaryOperator) */
-			/* name */ 'andThen',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'after',
-					/* type */ 'java.util.function.DoubleUnaryOperator',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
+		[/* public static java.util.function.DoubleUnaryOperator java.util.function.DoubleUnaryOperator.identity() */
+			/* name */ 'identity',
+			/* parameters */,
 			/* return */ 'java.util.function.DoubleUnaryOperator',
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

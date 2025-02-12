@@ -12,38 +12,6 @@ JdkClassCreateHelper.class('java.nio.channels.FileLock', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
-		[/* protected java.nio.channels.FileLock(java.nio.channels.FileChannel,long,long,boolean) */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'channel',
-					/* type */ 'java.nio.channels.FileChannel',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'position',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'size',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'shared',
-					/* type */ 'boolean',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* exceptions */,
-			/* modifiers */ 4,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* protected java.nio.channels.FileLock(java.nio.channels.AsynchronousFileChannel,long,long,boolean) */
 			[/* parameters */
 				[/* parameter */
@@ -75,13 +43,108 @@ JdkClassCreateHelper.class('java.nio.channels.FileLock', [
 			/* modifiers */ 4,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
+		],
+		[/* protected java.nio.channels.FileLock(java.nio.channels.FileChannel,long,long,boolean) */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'channel',
+					/* type */ 'java.nio.channels.FileChannel',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'position',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'size',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'shared',
+					/* type */ 'boolean',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* exceptions */,
+			/* modifiers */ 4,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
 		]
 	],
 	[/* declared methods */
+		[/* public abstract boolean java.nio.channels.FileLock.isValid() */
+			/* name */ 'isValid',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract void java.nio.channels.FileLock.release() throws java.io.IOException */
+			/* name */ 'release',
+			/* parameters */,
+			/* return */ 'void',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public final boolean java.nio.channels.FileLock.isShared() */
+			/* name */ 'isShared',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 17,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public final boolean java.nio.channels.FileLock.overlaps(long,long) */
+			/* name */ 'overlaps',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'position',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'size',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 17,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public final java.lang.String java.nio.channels.FileLock.toString() */
 			/* name */ 'toString',
 			/* parameters */,
 			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 17,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public final java.nio.channels.FileChannel java.nio.channels.FileLock.channel() */
+			/* name */ 'channel',
+			/* parameters */,
+			/* return */ 'java.nio.channels.FileChannel',
 			/* exceptions */,
 			/* modifiers */ 17,
 			/* annotations */ UDF,
@@ -119,75 +182,12 @@ JdkClassCreateHelper.class('java.nio.channels.FileLock', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract void java.nio.channels.FileLock.release() throws java.io.IOException */
-			/* name */ 'release',
-			/* parameters */,
-			/* return */ 'void',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final java.nio.channels.FileChannel java.nio.channels.FileLock.channel() */
-			/* name */ 'channel',
-			/* parameters */,
-			/* return */ 'java.nio.channels.FileChannel',
-			/* exceptions */,
-			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract boolean java.nio.channels.FileLock.isValid() */
-			/* name */ 'isValid',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public java.nio.channels.Channel java.nio.channels.FileLock.acquiredBy() */
 			/* name */ 'acquiredBy',
 			/* parameters */,
 			/* return */ 'java.nio.channels.Channel',
 			/* exceptions */,
 			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final boolean java.nio.channels.FileLock.isShared() */
-			/* name */ 'isShared',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final boolean java.nio.channels.FileLock.overlaps(long,long) */
-			/* name */ 'overlaps',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'position',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'size',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 17,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

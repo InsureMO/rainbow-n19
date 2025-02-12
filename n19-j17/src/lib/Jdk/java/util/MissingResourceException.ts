@@ -38,8 +38,8 @@ JdkClassCreateHelper.class('java.util.MissingResourceException', [
 		]
 	],
 	[/* declared methods */
-		[/* public java.lang.String java.util.MissingResourceException.getKey() */
-			/* name */ 'getKey',
+		[/* public java.lang.String java.util.MissingResourceException.getClassName() */
+			/* name */ 'getClassName',
 			/* parameters */,
 			/* return */ 'java.lang.String',
 			/* exceptions */,
@@ -47,8 +47,8 @@ JdkClassCreateHelper.class('java.util.MissingResourceException', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.util.MissingResourceException.getClassName() */
-			/* name */ 'getClassName',
+		[/* public java.lang.String java.util.MissingResourceException.getKey() */
+			/* name */ 'getKey',
 			/* parameters */,
 			/* return */ 'java.lang.String',
 			/* exceptions */,

@@ -11,24 +11,8 @@ JdkClassCreateHelper.class('java.lang.reflect.Modifier', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public static java.lang.String java.lang.reflect.Modifier.toString(int) */
-			/* name */ 'toString',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'sj',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static boolean java.lang.reflect.Modifier.isInterface(int) */
-			/* name */ 'isInterface',
+		[/* public static boolean java.lang.reflect.Modifier.isAbstract(int) */
+			/* name */ 'isAbstract',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
@@ -38,81 +22,6 @@ JdkClassCreateHelper.class('java.lang.reflect.Modifier', [
 				]
 			],
 			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static int java.lang.reflect.Modifier.classModifiers() */
-			/* name */ 'classModifiers',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static boolean java.lang.reflect.Modifier.isStatic(int) */
-			/* name */ 'isStatic',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static boolean java.lang.reflect.Modifier.isPublic(int) */
-			/* name */ 'isPublic',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static boolean java.lang.reflect.Modifier.isProtected(int) */
-			/* name */ 'isProtected',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static int java.lang.reflect.Modifier.methodModifiers() */
-			/* name */ 'methodModifiers',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static int java.lang.reflect.Modifier.constructorModifiers() */
-			/* name */ 'constructorModifiers',
-			/* parameters */,
-			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 9,
 			/* annotations */ UDF,
@@ -134,8 +43,8 @@ JdkClassCreateHelper.class('java.lang.reflect.Modifier', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static boolean java.lang.reflect.Modifier.isAbstract(int) */
-			/* name */ 'isAbstract',
+		[/* public static boolean java.lang.reflect.Modifier.isInterface(int) */
+			/* name */ 'isInterface',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
@@ -150,8 +59,8 @@ JdkClassCreateHelper.class('java.lang.reflect.Modifier', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static boolean java.lang.reflect.Modifier.isVolatile(int) */
-			/* name */ 'isVolatile',
+		[/* public static boolean java.lang.reflect.Modifier.isNative(int) */
+			/* name */ 'isNative',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
@@ -182,8 +91,56 @@ JdkClassCreateHelper.class('java.lang.reflect.Modifier', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static boolean java.lang.reflect.Modifier.isNative(int) */
-			/* name */ 'isNative',
+		[/* public static boolean java.lang.reflect.Modifier.isProtected(int) */
+			/* name */ 'isProtected',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static boolean java.lang.reflect.Modifier.isPublic(int) */
+			/* name */ 'isPublic',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static boolean java.lang.reflect.Modifier.isStatic(int) */
+			/* name */ 'isStatic',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static boolean java.lang.reflect.Modifier.isStrict(int) */
+			/* name */ 'isStrict',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
@@ -230,8 +187,8 @@ JdkClassCreateHelper.class('java.lang.reflect.Modifier', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static boolean java.lang.reflect.Modifier.isStrict(int) */
-			/* name */ 'isStrict',
+		[/* public static boolean java.lang.reflect.Modifier.isVolatile(int) */
+			/* name */ 'isVolatile',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
@@ -246,8 +203,17 @@ JdkClassCreateHelper.class('java.lang.reflect.Modifier', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static int java.lang.reflect.Modifier.interfaceModifiers() */
-			/* name */ 'interfaceModifiers',
+		[/* public static int java.lang.reflect.Modifier.classModifiers() */
+			/* name */ 'classModifiers',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static int java.lang.reflect.Modifier.constructorModifiers() */
+			/* name */ 'constructorModifiers',
 			/* parameters */,
 			/* return */ 'int',
 			/* exceptions */,
@@ -264,10 +230,44 @@ JdkClassCreateHelper.class('java.lang.reflect.Modifier', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public static int java.lang.reflect.Modifier.interfaceModifiers() */
+			/* name */ 'interfaceModifiers',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static int java.lang.reflect.Modifier.methodModifiers() */
+			/* name */ 'methodModifiers',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public static int java.lang.reflect.Modifier.parameterModifiers() */
 			/* name */ 'parameterModifiers',
 			/* parameters */,
 			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.lang.String java.lang.reflect.Modifier.toString(int) */
+			/* name */ 'toString',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'sj',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 9,
 			/* annotations */ UDF,

@@ -13,108 +13,6 @@ JdkClassCreateHelper.class('java.util.OptionalDouble', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public boolean java.util.OptionalDouble.equals(java.lang.Object) */
-			/* name */ 'equals',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'other',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.util.OptionalDouble.toString() */
-			/* name */ 'toString',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.util.OptionalDouble.hashCode() */
-			/* name */ 'hashCode',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.util.OptionalDouble.isEmpty() */
-			/* name */ 'isEmpty',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.stream.DoubleStream java.util.OptionalDouble.stream() */
-			/* name */ 'stream',
-			/* parameters */,
-			/* return */ 'java.util.stream.DoubleStream',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.util.OptionalDouble java.util.OptionalDouble.of(double) */
-			/* name */ 'of',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.util.OptionalDouble',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.util.OptionalDouble java.util.OptionalDouble.empty() */
-			/* name */ 'empty',
-			/* parameters */,
-			/* return */ 'java.util.OptionalDouble',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.util.OptionalDouble.isPresent() */
-			/* name */ 'isPresent',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public double java.util.OptionalDouble.orElse(double) */
-			/* name */ 'orElse',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'other',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'double',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public <X extends java.lang.Throwable> double java.util.OptionalDouble.orElseThrow(java.util.function.Supplier<? extends X>) throws X */
 			/* name */ 'orElseThrow',
 			[/* parameters */
@@ -155,12 +53,139 @@ JdkClassCreateHelper.class('java.util.OptionalDouble', [
 				]
 			]
 		],
+		[/* public boolean java.util.OptionalDouble.equals(java.lang.Object) */
+			/* name */ 'equals',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'other',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.util.OptionalDouble.isEmpty() */
+			/* name */ 'isEmpty',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.util.OptionalDouble.isPresent() */
+			/* name */ 'isPresent',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public double java.util.OptionalDouble.getAsDouble() */
+			/* name */ 'getAsDouble',
+			/* parameters */,
+			/* return */ 'double',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public double java.util.OptionalDouble.orElse(double) */
+			/* name */ 'orElse',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'other',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'double',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public double java.util.OptionalDouble.orElseGet(java.util.function.DoubleSupplier) */
+			/* name */ 'orElseGet',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'supplier',
+					/* type */ 'java.util.function.DoubleSupplier',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'double',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public double java.util.OptionalDouble.orElseThrow() */
 			/* name */ 'orElseThrow',
 			/* parameters */,
 			/* return */ 'double',
 			/* exceptions */,
 			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.OptionalDouble.hashCode() */
+			/* name */ 'hashCode',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.util.OptionalDouble.toString() */
+			/* name */ 'toString',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.stream.DoubleStream java.util.OptionalDouble.stream() */
+			/* name */ 'stream',
+			/* parameters */,
+			/* return */ 'java.util.stream.DoubleStream',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.util.OptionalDouble java.util.OptionalDouble.empty() */
+			/* name */ 'empty',
+			/* parameters */,
+			/* return */ 'java.util.OptionalDouble',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.util.OptionalDouble java.util.OptionalDouble.of(double) */
+			/* name */ 'of',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.util.OptionalDouble',
+			/* exceptions */,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -197,31 +222,6 @@ JdkClassCreateHelper.class('java.util.OptionalDouble', [
 				]
 			],
 			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public double java.util.OptionalDouble.orElseGet(java.util.function.DoubleSupplier) */
-			/* name */ 'orElseGet',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'supplier',
-					/* type */ 'java.util.function.DoubleSupplier',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'double',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public double java.util.OptionalDouble.getAsDouble() */
-			/* name */ 'getAsDouble',
-			/* parameters */,
-			/* return */ 'double',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

@@ -64,12 +64,28 @@ JdkClassCreateHelper.class('java.security.ProtectionDomain', [
 		]
 	],
 	[/* declared methods */
-		[/* public java.lang.String java.security.ProtectionDomain.toString() */
-			/* name */ 'toString',
-			/* parameters */,
-			/* return */ 'java.lang.String',
+		[/* public boolean java.security.ProtectionDomain.implies(java.security.Permission) */
+			/* name */ 'implies',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'perm',
+					/* type */ 'java.security.Permission',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public final boolean java.security.ProtectionDomain.staticPermissionsOnly() */
+			/* name */ 'staticPermissionsOnly',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 17,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -91,22 +107,6 @@ JdkClassCreateHelper.class('java.security.ProtectionDomain', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public boolean java.security.ProtectionDomain.implies(java.security.Permission) */
-			/* name */ 'implies',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'perm',
-					/* type */ 'java.security.Permission',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public final java.security.PermissionCollection java.security.ProtectionDomain.getPermissions() */
 			/* name */ 'getPermissions',
 			/* parameters */,
@@ -125,12 +125,12 @@ JdkClassCreateHelper.class('java.security.ProtectionDomain', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public final boolean java.security.ProtectionDomain.staticPermissionsOnly() */
-			/* name */ 'staticPermissionsOnly',
+		[/* public java.lang.String java.security.ProtectionDomain.toString() */
+			/* name */ 'toString',
 			/* parameters */,
-			/* return */ 'boolean',
+			/* return */ 'java.lang.String',
 			/* exceptions */,
-			/* modifiers */ 17,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

@@ -26,33 +26,8 @@ JdkClassCreateHelper.class('java.util.Queue', [
 	],
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public abstract boolean java.util.Queue.add(E) */
-			/* name */ 'add',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract E java.util.Queue.remove() */
-			/* name */ 'remove',
-			/* parameters */,
-			/* return */ [/* type variable ref */ 'tr', [/* name */ 'E']],
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract E java.util.Queue.poll() */
-			/* name */ 'poll',
+		[/* public abstract E java.util.Queue.element() */
+			/* name */ 'element',
 			/* parameters */,
 			/* return */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 			/* exceptions */,
@@ -69,10 +44,35 @@ JdkClassCreateHelper.class('java.util.Queue', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract E java.util.Queue.element() */
-			/* name */ 'element',
+		[/* public abstract E java.util.Queue.poll() */
+			/* name */ 'poll',
 			/* parameters */,
 			/* return */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract E java.util.Queue.remove() */
+			/* name */ 'remove',
+			/* parameters */,
+			/* return */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract boolean java.util.Queue.add(E) */
+			/* name */ 'add',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,

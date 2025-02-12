@@ -10,6 +10,27 @@ JdkClassCreateHelper.class('java.text.SimpleDateFormat', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
+		[/* public java.text.SimpleDateFormat() */
+			/* parameters */,
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.text.SimpleDateFormat(java.lang.String) */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'pattern',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.text.SimpleDateFormat(java.lang.String,java.text.DateFormatSymbols) */
 			[/* parameters */
 				[/* parameter */
@@ -45,27 +66,6 @@ JdkClassCreateHelper.class('java.text.SimpleDateFormat', [
 					/* annotations */ UDF
 				]
 			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.text.SimpleDateFormat(java.lang.String) */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'pattern',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.text.SimpleDateFormat() */
-			/* parameters */,
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -107,6 +107,24 @@ JdkClassCreateHelper.class('java.text.SimpleDateFormat', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public java.lang.String java.text.SimpleDateFormat.toLocalizedPattern() */
+			/* name */ 'toLocalizedPattern',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.text.SimpleDateFormat.toPattern() */
+			/* name */ 'toPattern',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.lang.StringBuffer java.text.SimpleDateFormat.format(java.util.Date,java.lang.StringBuffer,java.text.FieldPosition) */
 			/* name */ 'format',
 			[/* parameters */
@@ -135,6 +153,40 @@ JdkClassCreateHelper.class('java.text.SimpleDateFormat', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public java.text.AttributedCharacterIterator java.text.SimpleDateFormat.formatToCharacterIterator(java.lang.Object) */
+			/* name */ 'formatToCharacterIterator',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'obj',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.text.AttributedCharacterIterator',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.text.DateFormatSymbols java.text.SimpleDateFormat.getDateFormatSymbols() */
+			/* name */ 'getDateFormatSymbols',
+			/* parameters */,
+			/* return */ 'java.text.DateFormatSymbols',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.Date java.text.SimpleDateFormat.get2DigitYearStart() */
+			/* name */ 'get2DigitYearStart',
+			/* parameters */,
+			/* return */ 'java.util.Date',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.util.Date java.text.SimpleDateFormat.parse(java.lang.String,java.text.ParsePosition) */
 			/* name */ 'parse',
 			[/* parameters */
@@ -157,17 +209,17 @@ JdkClassCreateHelper.class('java.text.SimpleDateFormat', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.text.AttributedCharacterIterator java.text.SimpleDateFormat.formatToCharacterIterator(java.lang.Object) */
-			/* name */ 'formatToCharacterIterator',
+		[/* public void java.text.SimpleDateFormat.applyLocalizedPattern(java.lang.String) */
+			/* name */ 'applyLocalizedPattern',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'obj',
-					/* type */ 'java.lang.Object',
+					/* name */ 'pattern',
+					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.text.AttributedCharacterIterator',
+			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -189,15 +241,6 @@ JdkClassCreateHelper.class('java.text.SimpleDateFormat', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.text.SimpleDateFormat.toPattern() */
-			/* name */ 'toPattern',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public void java.text.SimpleDateFormat.set2DigitYearStart(java.util.Date) */
 			/* name */ 'set2DigitYearStart',
 			[/* parameters */
@@ -209,49 +252,6 @@ JdkClassCreateHelper.class('java.text.SimpleDateFormat', [
 				]
 			],
 			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.Date java.text.SimpleDateFormat.get2DigitYearStart() */
-			/* name */ 'get2DigitYearStart',
-			/* parameters */,
-			/* return */ 'java.util.Date',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.text.SimpleDateFormat.toLocalizedPattern() */
-			/* name */ 'toLocalizedPattern',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.text.SimpleDateFormat.applyLocalizedPattern(java.lang.String) */
-			/* name */ 'applyLocalizedPattern',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'pattern',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.text.DateFormatSymbols java.text.SimpleDateFormat.getDateFormatSymbols() */
-			/* name */ 'getDateFormatSymbols',
-			/* parameters */,
-			/* return */ 'java.text.DateFormatSymbols',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

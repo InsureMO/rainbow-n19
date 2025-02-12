@@ -34,19 +34,17 @@ JdkClassCreateHelper.class('java.time.chrono.Chronology', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.lang.String java.time.chrono.Chronology.toString() */
-			/* name */ 'toString',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract int java.time.chrono.Chronology.hashCode() */
-			/* name */ 'hashCode',
-			/* parameters */,
-			/* return */ 'int',
+		[/* public abstract boolean java.time.chrono.Chronology.isLeapYear(long) */
+			/* name */ 'isLeapYear',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,
@@ -68,51 +66,43 @@ JdkClassCreateHelper.class('java.time.chrono.Chronology', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public default int java.time.chrono.Chronology.compareTo(java.lang.Object) */
-			/* name */ 'compareTo',
+		[/* public abstract int java.time.chrono.Chronology.hashCode() */
+			/* name */ 'hashCode',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract int java.time.chrono.Chronology.prolepticYear(java.time.chrono.Era,int) */
+			/* name */ 'prolepticYear',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
-					/* type */ 'java.lang.Object',
+					/* type */ 'java.time.chrono.Era',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
 			/* return */ 'int',
 			/* exceptions */,
-			/* modifiers */ 4161,
+			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.time.chrono.Chronology java.time.chrono.Chronology.of(java.lang.String) */
-			/* name */ 'of',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.chrono.Chronology',
+		[/* public abstract java.lang.String java.time.chrono.Chronology.getCalendarType() */
+			/* name */ 'getCalendarType',
+			/* parameters */,
+			/* return */ 'java.lang.String',
 			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.time.chrono.Chronology java.time.chrono.Chronology.from(java.time.temporal.TemporalAccessor) */
-			/* name */ 'from',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'obj',
-					/* type */ 'java.time.temporal.TemporalAccessor',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.chrono.Chronology',
-			/* exceptions */,
-			/* modifiers */ 9,
+			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -120,6 +110,142 @@ JdkClassCreateHelper.class('java.time.chrono.Chronology', [
 			/* name */ 'getId',
 			/* parameters */,
 			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.lang.String java.time.chrono.Chronology.toString() */
+			/* name */ 'toString',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.time.chrono.ChronoLocalDate java.time.chrono.Chronology.date(int,int,int) */
+			/* name */ 'date',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg2',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.chrono.ChronoLocalDate',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.time.chrono.ChronoLocalDate java.time.chrono.Chronology.date(java.time.temporal.TemporalAccessor) */
+			/* name */ 'date',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.time.temporal.TemporalAccessor',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.chrono.ChronoLocalDate',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.time.chrono.ChronoLocalDate java.time.chrono.Chronology.dateEpochDay(long) */
+			/* name */ 'dateEpochDay',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.chrono.ChronoLocalDate',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.time.chrono.ChronoLocalDate java.time.chrono.Chronology.dateYearDay(int,int) */
+			/* name */ 'dateYearDay',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.chrono.ChronoLocalDate',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.time.chrono.ChronoLocalDate java.time.chrono.Chronology.resolveDate(java.util.Map<java.time.temporal.TemporalField, java.lang.Long>,java.time.format.ResolverStyle) */
+			/* name */ 'resolveDate',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							'java.time.temporal.TemporalField',
+							'java.lang.Long'
+						],
+						/* raw type */ 'java.util.Map',
+						/* owner type */ UDF
+					]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'java.time.format.ResolverStyle',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.chrono.ChronoLocalDate',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.time.chrono.Era java.time.chrono.Chronology.eraOf(int) */
+			/* name */ 'eraOf',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.chrono.Era',
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,
@@ -138,6 +264,37 @@ JdkClassCreateHelper.class('java.time.chrono.Chronology', [
 			/* return */ 'java.time.temporal.ValueRange',
 			/* exceptions */,
 			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.util.List<java.time.chrono.Era> java.time.chrono.Chronology.eras() */
+			/* name */ 'eras',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					'java.time.chrono.Era'
+				],
+				/* raw type */ 'java.util.List',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public default int java.time.chrono.Chronology.compareTo(java.lang.Object) */
+			/* name */ 'compareTo',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 4161,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -160,63 +317,6 @@ JdkClassCreateHelper.class('java.time.chrono.Chronology', [
 			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.time.chrono.Chronology java.time.chrono.Chronology.ofLocale(java.util.Locale) */
-			/* name */ 'ofLocale',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.util.Locale',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.chrono.Chronology',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.lang.String java.time.chrono.Chronology.getCalendarType() */
-			/* name */ 'getCalendarType',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract boolean java.time.chrono.Chronology.isLeapYear(long) */
-			/* name */ 'isLeapYear',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.time.chrono.ChronoLocalDate java.time.chrono.Chronology.date(java.time.temporal.TemporalAccessor) */
-			/* name */ 'date',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.time.temporal.TemporalAccessor',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.chrono.ChronoLocalDate',
-			/* exceptions */,
-			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -254,84 +354,44 @@ JdkClassCreateHelper.class('java.time.chrono.Chronology', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.time.chrono.ChronoLocalDate java.time.chrono.Chronology.date(int,int,int) */
-			/* name */ 'date',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg2',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.chrono.ChronoLocalDate',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.time.chrono.ChronoLocalDate java.time.chrono.Chronology.dateEpochDay(long) */
-			/* name */ 'dateEpochDay',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.chrono.ChronoLocalDate',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.util.Set<java.time.chrono.Chronology> java.time.chrono.Chronology.getAvailableChronologies() */
-			/* name */ 'getAvailableChronologies',
+		[/* public default java.time.chrono.ChronoLocalDate java.time.chrono.Chronology.dateNow() */
+			/* name */ 'dateNow',
 			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					'java.time.chrono.Chronology'
-				],
-				/* raw type */ 'java.util.Set',
-				/* owner type */ UDF
-			]],
+			/* return */ 'java.time.chrono.ChronoLocalDate',
 			/* exceptions */,
-			/* modifiers */ 9,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract int java.time.chrono.Chronology.prolepticYear(java.time.chrono.Era,int) */
-			/* name */ 'prolepticYear',
+		[/* public default java.time.chrono.ChronoLocalDate java.time.chrono.Chronology.dateNow(java.time.Clock) */
+			/* name */ 'dateNow',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.time.chrono.Era',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'int',
+					/* name */ 'clock',
+					/* type */ 'java.time.Clock',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'int',
+			/* return */ 'java.time.chrono.ChronoLocalDate',
 			/* exceptions */,
-			/* modifiers */ 1025,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public default java.time.chrono.ChronoLocalDate java.time.chrono.Chronology.dateNow(java.time.ZoneId) */
+			/* name */ 'dateNow',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'zone',
+					/* type */ 'java.time.ZoneId',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.chrono.ChronoLocalDate',
+			/* exceptions */,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -363,64 +423,56 @@ JdkClassCreateHelper.class('java.time.chrono.Chronology', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.time.chrono.ChronoLocalDate java.time.chrono.Chronology.dateYearDay(int,int) */
-			/* name */ 'dateYearDay',
+		[/* public default java.time.chrono.ChronoLocalDateTime<? extends java.time.chrono.ChronoLocalDate> java.time.chrono.Chronology.localDateTime(java.time.temporal.TemporalAccessor) */
+			/* name */ 'localDateTime',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'ex',
+					/* type */ 'java.time.temporal.TemporalAccessor',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* wildcard type */ 'wt', [
+						[/* upper bounds */
+							'java.time.chrono.ChronoLocalDate'
+						],
+						/* lower bounds */ UDF
+					]]
+				],
+				/* raw type */ 'java.time.chrono.ChronoLocalDateTime',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public default java.time.chrono.ChronoPeriod java.time.chrono.Chronology.period(int,int,int) */
+			/* name */ 'period',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'years',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'months',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'days',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.time.chrono.ChronoLocalDate',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public default java.time.chrono.ChronoLocalDate java.time.chrono.Chronology.dateNow() */
-			/* name */ 'dateNow',
-			/* parameters */,
-			/* return */ 'java.time.chrono.ChronoLocalDate',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public default java.time.chrono.ChronoLocalDate java.time.chrono.Chronology.dateNow(java.time.ZoneId) */
-			/* name */ 'dateNow',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'zone',
-					/* type */ 'java.time.ZoneId',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.chrono.ChronoLocalDate',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public default java.time.chrono.ChronoLocalDate java.time.chrono.Chronology.dateNow(java.time.Clock) */
-			/* name */ 'dateNow',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'clock',
-					/* type */ 'java.time.Clock',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.chrono.ChronoLocalDate',
+			/* return */ 'java.time.chrono.ChronoPeriod',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -486,28 +538,53 @@ JdkClassCreateHelper.class('java.time.chrono.Chronology', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public default java.time.chrono.ChronoLocalDateTime<? extends java.time.chrono.ChronoLocalDate> java.time.chrono.Chronology.localDateTime(java.time.temporal.TemporalAccessor) */
-			/* name */ 'localDateTime',
+		[/* public default long java.time.chrono.Chronology.epochSecond(int,int,int,int,int,int,java.time.ZoneOffset) */
+			/* name */ 'epochSecond',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'ex',
-					/* type */ 'java.time.temporal.TemporalAccessor',
+					/* name */ 'prolepticYear',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'month',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'dayOfMonth',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'hour',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'minute',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'second',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'zoneOffset',
+					/* type */ 'java.time.ZoneOffset',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* wildcard type */ 'wt', [
-						[/* upper bounds */
-							'java.time.chrono.ChronoLocalDate'
-						],
-						/* lower bounds */ UDF
-					]]
-				],
-				/* raw type */ 'java.time.chrono.ChronoLocalDateTime',
-				/* owner type */ UDF
-			]],
+			/* return */ 'long',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -571,143 +648,66 @@ JdkClassCreateHelper.class('java.time.chrono.Chronology', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public default long java.time.chrono.Chronology.epochSecond(int,int,int,int,int,int,java.time.ZoneOffset) */
-			/* name */ 'epochSecond',
+		[/* public static java.time.chrono.Chronology java.time.chrono.Chronology.from(java.time.temporal.TemporalAccessor) */
+			/* name */ 'from',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'prolepticYear',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'month',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'dayOfMonth',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'hour',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'minute',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'second',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'zoneOffset',
-					/* type */ 'java.time.ZoneOffset',
+					/* name */ 'obj',
+					/* type */ 'java.time.temporal.TemporalAccessor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'long',
+			/* return */ 'java.time.chrono.Chronology',
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.time.chrono.Era java.time.chrono.Chronology.eraOf(int) */
-			/* name */ 'eraOf',
+		[/* public static java.time.chrono.Chronology java.time.chrono.Chronology.of(java.lang.String) */
+			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
-					/* type */ 'int',
+					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.time.chrono.Era',
+			/* return */ 'java.time.chrono.Chronology',
 			/* exceptions */,
-			/* modifiers */ 1025,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.util.List<java.time.chrono.Era> java.time.chrono.Chronology.eras() */
-			/* name */ 'eras',
+		[/* public static java.time.chrono.Chronology java.time.chrono.Chronology.ofLocale(java.util.Locale) */
+			/* name */ 'ofLocale',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.util.Locale',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.chrono.Chronology',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.util.Set<java.time.chrono.Chronology> java.time.chrono.Chronology.getAvailableChronologies() */
+			/* name */ 'getAvailableChronologies',
 			/* parameters */,
 			/* return */ [/* parameterized type */ 'pt', [
 				[/* actual argument types */
-					'java.time.chrono.Era'
+					'java.time.chrono.Chronology'
 				],
-				/* raw type */ 'java.util.List',
+				/* raw type */ 'java.util.Set',
 				/* owner type */ UDF
 			]],
 			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.time.chrono.ChronoLocalDate java.time.chrono.Chronology.resolveDate(java.util.Map<java.time.temporal.TemporalField, java.lang.Long>,java.time.format.ResolverStyle) */
-			/* name */ 'resolveDate',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							'java.time.temporal.TemporalField',
-							'java.lang.Long'
-						],
-						/* raw type */ 'java.util.Map',
-						/* owner type */ UDF
-					]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'java.time.format.ResolverStyle',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.chrono.ChronoLocalDate',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public default java.time.chrono.ChronoPeriod java.time.chrono.Chronology.period(int,int,int) */
-			/* name */ 'period',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'years',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'months',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'days',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.chrono.ChronoPeriod',
-			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

@@ -12,6 +12,20 @@ JdkClassCreateHelper.class('java.util.zip.ZipOutputStream', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
+		[/* public java.util.zip.ZipOutputStream(java.io.OutputStream) */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'out',
+					/* type */ 'java.io.OutputStream',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.util.zip.ZipOutputStream(java.io.OutputStream,java.nio.charset.Charset) */
 			[/* parameters */
 				[/* parameter */
@@ -23,20 +37,6 @@ JdkClassCreateHelper.class('java.util.zip.ZipOutputStream', [
 				[/* parameter */
 					/* name */ 'charset',
 					/* type */ 'java.nio.charset.Charset',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.zip.ZipOutputStream(java.io.OutputStream) */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'out',
-					/* type */ 'java.io.OutputStream',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -95,6 +95,20 @@ JdkClassCreateHelper.class('java.util.zip.ZipOutputStream', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public void java.util.zip.ZipOutputStream.closeEntry() throws java.io.IOException */
+			/* name */ 'closeEntry',
+			/* parameters */,
+			/* return */ 'void',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public void java.util.zip.ZipOutputStream.finish() throws java.io.IOException */
 			/* name */ 'finish',
 			/* parameters */,
@@ -109,18 +123,23 @@ JdkClassCreateHelper.class('java.util.zip.ZipOutputStream', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.util.zip.ZipOutputStream.setMethod(int) */
-			/* name */ 'setMethod',
+		[/* public void java.util.zip.ZipOutputStream.putNextEntry(java.util.zip.ZipEntry) throws java.io.IOException */
+			/* name */ 'putNextEntry',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'method',
-					/* type */ 'int',
+					/* name */ 'e',
+					/* type */ 'java.util.zip.ZipEntry',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
 			/* return */ 'void',
-			/* exceptions */,
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
@@ -157,37 +176,18 @@ JdkClassCreateHelper.class('java.util.zip.ZipOutputStream', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.util.zip.ZipOutputStream.putNextEntry(java.util.zip.ZipEntry) throws java.io.IOException */
-			/* name */ 'putNextEntry',
+		[/* public void java.util.zip.ZipOutputStream.setMethod(int) */
+			/* name */ 'setMethod',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'e',
-					/* type */ 'java.util.zip.ZipEntry',
+					/* name */ 'method',
+					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
 			/* return */ 'void',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.util.zip.ZipOutputStream.closeEntry() throws java.io.IOException */
-			/* name */ 'closeEntry',
-			/* parameters */,
-			/* return */ 'void',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
+			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF

@@ -10,6 +10,13 @@ JdkClassCreateHelper.class('java.io.ObjectStreamException', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
+		[/* protected java.io.ObjectStreamException() */
+			/* parameters */,
+			/* exceptions */,
+			/* modifiers */ 4,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* protected java.io.ObjectStreamException(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
@@ -19,13 +26,6 @@ JdkClassCreateHelper.class('java.io.ObjectStreamException', [
 					/* annotations */ UDF
 				]
 			],
-			/* exceptions */,
-			/* modifiers */ 4,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* protected java.io.ObjectStreamException() */
-			/* parameters */,
 			/* exceptions */,
 			/* modifiers */ 4,
 			/* annotations */ UDF,

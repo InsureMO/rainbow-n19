@@ -26,19 +26,19 @@ JdkClassCreateHelper.class('java.util.IllegalFormatCodePointException', [
 		]
 	],
 	[/* declared methods */
-		[/* public java.lang.String java.util.IllegalFormatCodePointException.getMessage() */
-			/* name */ 'getMessage',
+		[/* public int java.util.IllegalFormatCodePointException.getCodePoint() */
+			/* name */ 'getCodePoint',
 			/* parameters */,
-			/* return */ 'java.lang.String',
+			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.util.IllegalFormatCodePointException.getCodePoint() */
-			/* name */ 'getCodePoint',
+		[/* public java.lang.String java.util.IllegalFormatCodePointException.getMessage() */
+			/* name */ 'getMessage',
 			/* parameters */,
-			/* return */ 'int',
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

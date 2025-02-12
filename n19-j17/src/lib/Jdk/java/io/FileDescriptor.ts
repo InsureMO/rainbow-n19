@@ -19,6 +19,15 @@ JdkClassCreateHelper.class('java.io.FileDescriptor', [
 		]
 	],
 	[/* declared methods */
+		[/* public boolean java.io.FileDescriptor.valid() */
+			/* name */ 'valid',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public native void java.io.FileDescriptor.sync() throws java.io.SyncFailedException */
 			/* name */ 'sync',
 			/* parameters */,
@@ -30,15 +39,6 @@ JdkClassCreateHelper.class('java.io.FileDescriptor', [
 				]
 			],
 			/* modifiers */ 257,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.io.FileDescriptor.valid() */
-			/* name */ 'valid',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

@@ -27,19 +27,14 @@ JdkClassCreateHelper.class('java.lang.reflect.AccessibleObject', [
 		]
 	],
 	[/* declared methods */
-		[/* public boolean java.lang.reflect.AccessibleObject.isAnnotationPresent(java.lang.Class<? extends java.lang.annotation.Annotation>) */
-			/* name */ 'isAnnotationPresent',
+		[/* public <T extends java.lang.annotation.Annotation> T java.lang.reflect.AccessibleObject.getAnnotation(java.lang.Class<T>) */
+			/* name */ 'getAnnotation',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'annotationClass',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
-							[/* wildcard type */ 'wt', [
-								[/* upper bounds */
-									'java.lang.annotation.Annotation'
-								],
-								/* lower bounds */ UDF
-							]]
+							[/* type variable ref */ 'tr', [/* name */ 'T']]
 						],
 						/* raw type */ 'java.lang.Class',
 						/* owner type */ UDF
@@ -48,14 +43,22 @@ JdkClassCreateHelper.class('java.lang.reflect.AccessibleObject', [
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'boolean',
+			/* return */ [/* type variable ref */ 'tr', [/* name */ 'T']],
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
-			/* type parameters */ UDF
+			[/* type parameters */
+				[/* type variable */
+					/* name */ 'T',
+					[/* bounds */
+						'java.lang.annotation.Annotation'
+					],
+					/* annotations */ UDF
+				]
+			]
 		],
-		[/* public <T extends java.lang.annotation.Annotation> T java.lang.reflect.AccessibleObject.getAnnotation(java.lang.Class<T>) */
-			/* name */ 'getAnnotation',
+		[/* public <T extends java.lang.annotation.Annotation> T java.lang.reflect.AccessibleObject.getDeclaredAnnotation(java.lang.Class<T>) */
+			/* name */ 'getDeclaredAnnotation',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'annotationClass',
@@ -114,45 +117,6 @@ JdkClassCreateHelper.class('java.lang.reflect.AccessibleObject', [
 				]
 			]
 		],
-		[/* public java.lang.annotation.Annotation[] java.lang.reflect.AccessibleObject.getAnnotations() */
-			/* name */ 'getAnnotations',
-			/* parameters */,
-			/* return */ '[Ljava.lang.annotation.Annotation;',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public <T extends java.lang.annotation.Annotation> T java.lang.reflect.AccessibleObject.getDeclaredAnnotation(java.lang.Class<T>) */
-			/* name */ 'getDeclaredAnnotation',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'annotationClass',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							[/* type variable ref */ 'tr', [/* name */ 'T']]
-						],
-						/* raw type */ 'java.lang.Class',
-						/* owner type */ UDF
-					]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ [/* type variable ref */ 'tr', [/* name */ 'T']],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			[/* type parameters */
-				[/* type variable */
-					/* name */ 'T',
-					[/* bounds */
-						'java.lang.annotation.Annotation'
-					],
-					/* annotations */ UDF
-				]
-			]
-		],
 		[/* public <T extends java.lang.annotation.Annotation> T[] java.lang.reflect.AccessibleObject.getDeclaredAnnotationsByType(java.lang.Class<T>) */
 			/* name */ 'getDeclaredAnnotationsByType',
 			[/* parameters */
@@ -183,8 +147,79 @@ JdkClassCreateHelper.class('java.lang.reflect.AccessibleObject', [
 				]
 			]
 		],
-		[/* public java.lang.annotation.Annotation[] java.lang.reflect.AccessibleObject.getDeclaredAnnotations() */
-			/* name */ 'getDeclaredAnnotations',
+		[/* public boolean java.lang.reflect.AccessibleObject.isAccessible() */
+			/* name */ 'isAccessible',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			[/* annotations */
+				[
+					'java.lang.Deprecated',
+					['p', 'since', '9'],
+					['p', 'forRemoval', false]
+				]
+			],
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.lang.reflect.AccessibleObject.isAnnotationPresent(java.lang.Class<? extends java.lang.annotation.Annotation>) */
+			/* name */ 'isAnnotationPresent',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'annotationClass',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									'java.lang.annotation.Annotation'
+								],
+								/* lower bounds */ UDF
+							]]
+						],
+						/* raw type */ 'java.lang.Class',
+						/* owner type */ UDF
+					]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public final boolean java.lang.reflect.AccessibleObject.canAccess(java.lang.Object) */
+			/* name */ 'canAccess',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'targetClass',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 17,
+			[/* annotations */
+				['jdk.internal.reflect.CallerSensitive']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public final boolean java.lang.reflect.AccessibleObject.trySetAccessible() */
+			/* name */ 'trySetAccessible',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 17,
+			[/* annotations */
+				['jdk.internal.reflect.CallerSensitive']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.annotation.Annotation[] java.lang.reflect.AccessibleObject.getAnnotations() */
+			/* name */ 'getAnnotations',
 			/* parameters */,
 			/* return */ '[Ljava.lang.annotation.Annotation;',
 			/* exceptions */,
@@ -192,22 +227,13 @@ JdkClassCreateHelper.class('java.lang.reflect.AccessibleObject', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.lang.reflect.AccessibleObject.setAccessible(boolean) */
-			/* name */ 'setAccessible',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'flag',
-					/* type */ 'boolean',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
+		[/* public java.lang.annotation.Annotation[] java.lang.reflect.AccessibleObject.getDeclaredAnnotations() */
+			/* name */ 'getDeclaredAnnotations',
+			/* parameters */,
+			/* return */ '[Ljava.lang.annotation.Annotation;',
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static void java.lang.reflect.AccessibleObject.setAccessible(java.lang.reflect.AccessibleObject[],boolean) */
@@ -234,45 +260,19 @@ JdkClassCreateHelper.class('java.lang.reflect.AccessibleObject', [
 			],
 			/* type parameters */ UDF
 		],
-		[/* public final boolean java.lang.reflect.AccessibleObject.trySetAccessible() */
-			/* name */ 'trySetAccessible',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 17,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.lang.reflect.AccessibleObject.isAccessible() */
-			/* name */ 'isAccessible',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			[/* annotations */
-				[
-					'java.lang.Deprecated',
-					['p', 'since', '9'],
-					['p', 'forRemoval', false]
-				]
-			],
-			/* type parameters */ UDF
-		],
-		[/* public final boolean java.lang.reflect.AccessibleObject.canAccess(java.lang.Object) */
-			/* name */ 'canAccess',
+		[/* public void java.lang.reflect.AccessibleObject.setAccessible(boolean) */
+			/* name */ 'setAccessible',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'targetClass',
-					/* type */ 'java.lang.Object',
+					/* name */ 'flag',
+					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'boolean',
+			/* return */ 'void',
 			/* exceptions */,
-			/* modifiers */ 17,
+			/* modifiers */ 1,
 			[/* annotations */
 				['jdk.internal.reflect.CallerSensitive']
 			],

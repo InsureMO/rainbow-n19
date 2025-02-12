@@ -10,17 +10,24 @@ JdkClassCreateHelper.class('java.util.concurrent.ExecutionException', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
-		[/* public java.util.concurrent.ExecutionException(java.lang.Throwable) */
+		[/* protected java.util.concurrent.ExecutionException() */
+			/* parameters */,
+			/* exceptions */,
+			/* modifiers */ 4,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* protected java.util.concurrent.ExecutionException(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'cause',
-					/* type */ 'java.lang.Throwable',
+					/* name */ 'message',
+					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 4,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -44,24 +51,17 @@ JdkClassCreateHelper.class('java.util.concurrent.ExecutionException', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* protected java.util.concurrent.ExecutionException(java.lang.String) */
+		[/* public java.util.concurrent.ExecutionException(java.lang.Throwable) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'message',
-					/* type */ 'java.lang.String',
+					/* name */ 'cause',
+					/* type */ 'java.lang.Throwable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
 			/* exceptions */,
-			/* modifiers */ 4,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* protected java.util.concurrent.ExecutionException() */
-			/* parameters */,
-			/* exceptions */,
-			/* modifiers */ 4,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

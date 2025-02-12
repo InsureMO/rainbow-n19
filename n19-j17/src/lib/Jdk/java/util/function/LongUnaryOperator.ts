@@ -12,15 +12,6 @@ JdkClassCreateHelper.class('java.util.function.LongUnaryOperator', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public static java.util.function.LongUnaryOperator java.util.function.LongUnaryOperator.identity() */
-			/* name */ 'identity',
-			/* parameters */,
-			/* return */ 'java.util.function.LongUnaryOperator',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public abstract long java.util.function.LongUnaryOperator.applyAsLong(long) */
 			/* name */ 'applyAsLong',
 			[/* parameters */
@@ -34,6 +25,22 @@ JdkClassCreateHelper.class('java.util.function.LongUnaryOperator', [
 			/* return */ 'long',
 			/* exceptions */,
 			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public default java.util.function.LongUnaryOperator java.util.function.LongUnaryOperator.andThen(java.util.function.LongUnaryOperator) */
+			/* name */ 'andThen',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'after',
+					/* type */ 'java.util.function.LongUnaryOperator',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.util.function.LongUnaryOperator',
+			/* exceptions */,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -53,19 +60,12 @@ JdkClassCreateHelper.class('java.util.function.LongUnaryOperator', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public default java.util.function.LongUnaryOperator java.util.function.LongUnaryOperator.andThen(java.util.function.LongUnaryOperator) */
-			/* name */ 'andThen',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'after',
-					/* type */ 'java.util.function.LongUnaryOperator',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
+		[/* public static java.util.function.LongUnaryOperator java.util.function.LongUnaryOperator.identity() */
+			/* name */ 'identity',
+			/* parameters */,
 			/* return */ 'java.util.function.LongUnaryOperator',
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

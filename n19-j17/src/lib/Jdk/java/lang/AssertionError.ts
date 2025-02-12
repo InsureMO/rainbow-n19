@@ -10,11 +10,18 @@ JdkClassCreateHelper.class('java.lang.AssertionError', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
-		[/* public java.lang.AssertionError(int) */
+		[/* public java.lang.AssertionError() */
+			/* parameters */,
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.AssertionError(boolean) */
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'detailMessage',
-					/* type */ 'int',
+					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -24,11 +31,25 @@ JdkClassCreateHelper.class('java.lang.AssertionError', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.AssertionError(long) */
+		[/* public java.lang.AssertionError(char) */
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'detailMessage',
-					/* type */ 'long',
+					/* type */ 'char',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.AssertionError(double) */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'detailMessage',
+					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -52,11 +73,25 @@ JdkClassCreateHelper.class('java.lang.AssertionError', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.AssertionError(double) */
+		[/* public java.lang.AssertionError(int) */
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'detailMessage',
-					/* type */ 'double',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.AssertionError(java.lang.Object) */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'detailMessage',
+					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -86,46 +121,11 @@ JdkClassCreateHelper.class('java.lang.AssertionError', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.AssertionError() */
-			/* parameters */,
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.AssertionError(java.lang.Object) */
+		[/* public java.lang.AssertionError(long) */
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'detailMessage',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.AssertionError(boolean) */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'detailMessage',
-					/* type */ 'boolean',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.AssertionError(char) */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'detailMessage',
-					/* type */ 'char',
+					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]

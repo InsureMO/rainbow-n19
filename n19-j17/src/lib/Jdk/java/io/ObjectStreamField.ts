@@ -88,21 +88,19 @@ JdkClassCreateHelper.class('java.io.ObjectStreamField', [
 		]
 	],
 	[/* declared methods */
-		[/* public java.lang.String java.io.ObjectStreamField.getName() */
-			/* name */ 'getName',
-			/* parameters */,
-			/* return */ 'java.lang.String',
+		[/* protected void java.io.ObjectStreamField.setOffset(int) */
+			/* name */ 'setOffset',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'offset',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
 			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.io.ObjectStreamField.toString() */
-			/* name */ 'toString',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 4,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -110,6 +108,24 @@ JdkClassCreateHelper.class('java.io.ObjectStreamField', [
 			/* name */ 'isPrimitive',
 			/* parameters */,
 			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.io.ObjectStreamField.isUnshared() */
+			/* name */ 'isUnshared',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public char java.io.ObjectStreamField.getTypeCode() */
+			/* name */ 'getTypeCode',
+			/* parameters */,
+			/* return */ 'char',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -125,6 +141,15 @@ JdkClassCreateHelper.class('java.io.ObjectStreamField', [
 					/* annotations */ UDF
 				]
 			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.io.ObjectStreamField.getOffset() */
+			/* name */ 'getOffset',
+			/* parameters */,
 			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 1,
@@ -153,10 +178,10 @@ JdkClassCreateHelper.class('java.io.ObjectStreamField', [
 			],
 			/* type parameters */ UDF
 		],
-		[/* public char java.io.ObjectStreamField.getTypeCode() */
-			/* name */ 'getTypeCode',
+		[/* public java.lang.String java.io.ObjectStreamField.getName() */
+			/* name */ 'getName',
 			/* parameters */,
-			/* return */ 'char',
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -171,35 +196,10 @@ JdkClassCreateHelper.class('java.io.ObjectStreamField', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.io.ObjectStreamField.getOffset() */
-			/* name */ 'getOffset',
+		[/* public java.lang.String java.io.ObjectStreamField.toString() */
+			/* name */ 'toString',
 			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* protected void java.io.ObjectStreamField.setOffset(int) */
-			/* name */ 'setOffset',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'offset',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 4,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.io.ObjectStreamField.isUnshared() */
-			/* name */ 'isUnshared',
-			/* parameters */,
-			/* return */ 'boolean',
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

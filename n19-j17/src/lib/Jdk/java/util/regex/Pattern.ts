@@ -13,15 +13,6 @@ JdkClassCreateHelper.class('java.util.regex.Pattern', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public java.lang.String java.util.regex.Pattern.toString() */
-			/* name */ 'toString',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public int java.util.regex.Pattern.flags() */
 			/* name */ 'flags',
 			/* parameters */,
@@ -31,77 +22,19 @@ JdkClassCreateHelper.class('java.util.regex.Pattern', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static boolean java.util.regex.Pattern.matches(java.lang.String,java.lang.CharSequence) */
-			/* name */ 'matches',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'input',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'p',
-					/* type */ 'java.lang.CharSequence',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
+		[/* public java.lang.String java.util.regex.Pattern.pattern() */
+			/* name */ 'pattern',
+			/* parameters */,
+			/* return */ 'java.lang.String',
 			/* exceptions */,
-			/* modifiers */ 9,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.util.regex.Pattern java.util.regex.Pattern.compile(java.lang.String) */
-			/* name */ 'compile',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.util.regex.Pattern',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.util.regex.Pattern java.util.regex.Pattern.compile(java.lang.String,int) */
-			/* name */ 'compile',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'flags',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.util.regex.Pattern',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.regex.Matcher java.util.regex.Pattern.matcher(java.lang.CharSequence) */
-			/* name */ 'matcher',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'input',
-					/* type */ 'java.lang.CharSequence',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.util.regex.Matcher',
+		[/* public java.lang.String java.util.regex.Pattern.toString() */
+			/* name */ 'toString',
+			/* parameters */,
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -145,26 +78,16 @@ JdkClassCreateHelper.class('java.util.regex.Pattern', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.lang.String java.util.regex.Pattern.quote(java.lang.String) */
-			/* name */ 'quote',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'slashEIndex',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.util.regex.Pattern.pattern() */
-			/* name */ 'pattern',
+		[/* public java.util.function.Predicate<java.lang.String> java.util.regex.Pattern.asMatchPredicate() */
+			/* name */ 'asMatchPredicate',
 			/* parameters */,
-			/* return */ 'java.lang.String',
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					'java.lang.String'
+				],
+				/* raw type */ 'java.util.function.Predicate',
+				/* owner type */ UDF
+			]],
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -185,16 +108,17 @@ JdkClassCreateHelper.class('java.util.regex.Pattern', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.util.function.Predicate<java.lang.String> java.util.regex.Pattern.asMatchPredicate() */
-			/* name */ 'asMatchPredicate',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					'java.lang.String'
-				],
-				/* raw type */ 'java.util.function.Predicate',
-				/* owner type */ UDF
-			]],
+		[/* public java.util.regex.Matcher java.util.regex.Pattern.matcher(java.lang.CharSequence) */
+			/* name */ 'matcher',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'input',
+					/* type */ 'java.lang.CharSequence',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.util.regex.Matcher',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -219,6 +143,82 @@ JdkClassCreateHelper.class('java.util.regex.Pattern', [
 			]],
 			/* exceptions */,
 			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static boolean java.util.regex.Pattern.matches(java.lang.String,java.lang.CharSequence) */
+			/* name */ 'matches',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'input',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'p',
+					/* type */ 'java.lang.CharSequence',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.lang.String java.util.regex.Pattern.quote(java.lang.String) */
+			/* name */ 'quote',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'slashEIndex',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.util.regex.Pattern java.util.regex.Pattern.compile(java.lang.String) */
+			/* name */ 'compile',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.util.regex.Pattern',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.util.regex.Pattern java.util.regex.Pattern.compile(java.lang.String,int) */
+			/* name */ 'compile',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'flags',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.util.regex.Pattern',
+			/* exceptions */,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

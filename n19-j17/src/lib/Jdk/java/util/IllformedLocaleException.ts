@@ -10,21 +10,8 @@ JdkClassCreateHelper.class('java.util.IllformedLocaleException', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
-		[/* public java.util.IllformedLocaleException(java.lang.String,int) */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'message',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'errorIndex',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
+		[/* public java.util.IllformedLocaleException() */
+			/* parameters */,
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -44,8 +31,21 @@ JdkClassCreateHelper.class('java.util.IllformedLocaleException', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.util.IllformedLocaleException() */
-			/* parameters */,
+		[/* public java.util.IllformedLocaleException(java.lang.String,int) */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'message',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'errorIndex',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

@@ -10,23 +10,10 @@ JdkClassCreateHelper.class('java.lang.reflect.InvocationTargetException', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
-		[/* public java.lang.reflect.InvocationTargetException(java.lang.Throwable,java.lang.String) */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'target',
-					/* type */ 'java.lang.Throwable',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 's',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
+		[/* protected java.lang.reflect.InvocationTargetException() */
+			/* parameters */,
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 4,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -44,10 +31,23 @@ JdkClassCreateHelper.class('java.lang.reflect.InvocationTargetException', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* protected java.lang.reflect.InvocationTargetException() */
-			/* parameters */,
+		[/* public java.lang.reflect.InvocationTargetException(java.lang.Throwable,java.lang.String) */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'target',
+					/* type */ 'java.lang.Throwable',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 's',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
 			/* exceptions */,
-			/* modifiers */ 4,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

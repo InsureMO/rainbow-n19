@@ -52,10 +52,28 @@ JdkClassCreateHelper.class('java.util.Random', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public boolean java.util.Random.nextBoolean() */
+			/* name */ 'nextBoolean',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public double java.util.Random.nextDouble() */
 			/* name */ 'nextDouble',
 			/* parameters */,
 			/* return */ 'double',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public float java.util.Random.nextFloat() */
+			/* name */ 'nextFloat',
+			/* parameters */,
+			/* return */ 'float',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -81,6 +99,37 @@ JdkClassCreateHelper.class('java.util.Random', [
 				]
 			],
 			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.stream.DoubleStream java.util.Random.doubles() */
+			/* name */ 'doubles',
+			/* parameters */,
+			/* return */ 'java.util.stream.DoubleStream',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.stream.DoubleStream java.util.Random.doubles(double,double) */
+			/* name */ 'doubles',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'randomNumberOrigin',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'randomNumberBound',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.util.stream.DoubleStream',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -130,53 +179,6 @@ JdkClassCreateHelper.class('java.util.Random', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.util.stream.DoubleStream java.util.Random.doubles() */
-			/* name */ 'doubles',
-			/* parameters */,
-			/* return */ 'java.util.stream.DoubleStream',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.stream.DoubleStream java.util.Random.doubles(double,double) */
-			/* name */ 'doubles',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'randomNumberOrigin',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'randomNumberBound',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.util.stream.DoubleStream',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.stream.IntStream java.util.Random.ints(long) */
-			/* name */ 'ints',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'streamSize',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.util.stream.IntStream',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public java.util.stream.IntStream java.util.Random.ints() */
 			/* name */ 'ints',
 			/* parameters */,
@@ -198,6 +200,22 @@ JdkClassCreateHelper.class('java.util.Random', [
 				[/* parameter */
 					/* name */ 'randomNumberBound',
 					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.util.stream.IntStream',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.stream.IntStream java.util.Random.ints(long) */
+			/* name */ 'ints',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'streamSize',
+					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -236,28 +254,9 @@ JdkClassCreateHelper.class('java.util.Random', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.util.stream.LongStream java.util.Random.longs(long,long,long) */
+		[/* public java.util.stream.LongStream java.util.Random.longs() */
 			/* name */ 'longs',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'streamSize',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'randomNumberOrigin',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'randomNumberBound',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
+			/* parameters */,
 			/* return */ 'java.util.stream.LongStream',
 			/* exceptions */,
 			/* modifiers */ 1,
@@ -274,15 +273,6 @@ JdkClassCreateHelper.class('java.util.Random', [
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.util.stream.LongStream',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.stream.LongStream java.util.Random.longs() */
-			/* name */ 'longs',
-			/* parameters */,
 			/* return */ 'java.util.stream.LongStream',
 			/* exceptions */,
 			/* modifiers */ 1,
@@ -311,44 +301,38 @@ JdkClassCreateHelper.class('java.util.Random', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public long java.util.Random.nextLong() */
-			/* name */ 'nextLong',
-			/* parameters */,
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.util.Random.nextBoolean() */
-			/* name */ 'nextBoolean',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.util.Random.nextBytes(byte[]) */
-			/* name */ 'nextBytes',
+		[/* public java.util.stream.LongStream java.util.Random.longs(long,long,long) */
+			/* name */ 'longs',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'rnd',
-					/* type */ '[B',
+					/* name */ 'streamSize',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'randomNumberOrigin',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'randomNumberBound',
+					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'void',
+			/* return */ 'java.util.stream.LongStream',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public float java.util.Random.nextFloat() */
-			/* name */ 'nextFloat',
+		[/* public long java.util.Random.nextLong() */
+			/* name */ 'nextLong',
 			/* parameters */,
-			/* return */ 'float',
+			/* return */ 'long',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -376,6 +360,22 @@ JdkClassCreateHelper.class('java.util.Random', [
 			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 33,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.util.Random.nextBytes(byte[]) */
+			/* name */ 'nextBytes',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'rnd',
+					/* type */ '[B',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

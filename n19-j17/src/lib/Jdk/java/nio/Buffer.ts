@@ -11,71 +11,12 @@ JdkClassCreateHelper.class('java.nio.Buffer', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public java.nio.Buffer java.nio.Buffer.clear() */
-			/* name */ 'clear',
+		[/* public abstract boolean java.nio.Buffer.hasArray() */
+			/* name */ 'hasArray',
 			/* parameters */,
-			/* return */ 'java.nio.Buffer',
+			/* return */ 'boolean',
 			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final int java.nio.Buffer.position() */
-			/* name */ 'position',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.nio.Buffer java.nio.Buffer.position(int) */
-			/* name */ 'position',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'newPosition',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.nio.Buffer',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.nio.Buffer java.nio.Buffer.limit(int) */
-			/* name */ 'limit',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'newLimit',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.nio.Buffer',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final int java.nio.Buffer.limit() */
-			/* name */ 'limit',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final int java.nio.Buffer.remaining() */
-			/* name */ 'remaining',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 17,
+			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -88,19 +29,10 @@ JdkClassCreateHelper.class('java.nio.Buffer', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract boolean java.nio.Buffer.hasArray() */
-			/* name */ 'hasArray',
+		[/* public abstract boolean java.nio.Buffer.isReadOnly() */
+			/* name */ 'isReadOnly',
 			/* parameters */,
 			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.lang.Object java.nio.Buffer.array() */
-			/* name */ 'array',
-			/* parameters */,
-			/* return */ 'java.lang.Object',
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,
@@ -115,64 +47,28 @@ JdkClassCreateHelper.class('java.nio.Buffer', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public final int java.nio.Buffer.capacity() */
-			/* name */ 'capacity',
+		[/* public abstract java.lang.Object java.nio.Buffer.array() */
+			/* name */ 'array',
 			/* parameters */,
-			/* return */ 'int',
+			/* return */ 'java.lang.Object',
 			/* exceptions */,
-			/* modifiers */ 17,
+			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.nio.Buffer java.nio.Buffer.mark() */
-			/* name */ 'mark',
+		[/* public abstract java.nio.Buffer java.nio.Buffer.duplicate() */
+			/* name */ 'duplicate',
 			/* parameters */,
 			/* return */ 'java.nio.Buffer',
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.nio.Buffer java.nio.Buffer.reset() */
-			/* name */ 'reset',
+		[/* public abstract java.nio.Buffer java.nio.Buffer.slice() */
+			/* name */ 'slice',
 			/* parameters */,
 			/* return */ 'java.nio.Buffer',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.nio.Buffer java.nio.Buffer.flip() */
-			/* name */ 'flip',
-			/* parameters */,
-			/* return */ 'java.nio.Buffer',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.nio.Buffer java.nio.Buffer.rewind() */
-			/* name */ 'rewind',
-			/* parameters */,
-			/* return */ 'java.nio.Buffer',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final boolean java.nio.Buffer.hasRemaining() */
-			/* name */ 'hasRemaining',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract boolean java.nio.Buffer.isReadOnly() */
-			/* name */ 'isReadOnly',
-			/* parameters */,
-			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,
@@ -200,21 +96,125 @@ JdkClassCreateHelper.class('java.nio.Buffer', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.nio.Buffer java.nio.Buffer.slice() */
-			/* name */ 'slice',
+		[/* public final boolean java.nio.Buffer.hasRemaining() */
+			/* name */ 'hasRemaining',
 			/* parameters */,
-			/* return */ 'java.nio.Buffer',
+			/* return */ 'boolean',
 			/* exceptions */,
-			/* modifiers */ 1025,
+			/* modifiers */ 17,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.nio.Buffer java.nio.Buffer.duplicate() */
-			/* name */ 'duplicate',
+		[/* public final int java.nio.Buffer.capacity() */
+			/* name */ 'capacity',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 17,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public final int java.nio.Buffer.limit() */
+			/* name */ 'limit',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 17,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public final int java.nio.Buffer.position() */
+			/* name */ 'position',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 17,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public final int java.nio.Buffer.remaining() */
+			/* name */ 'remaining',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 17,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.nio.Buffer java.nio.Buffer.clear() */
+			/* name */ 'clear',
 			/* parameters */,
 			/* return */ 'java.nio.Buffer',
 			/* exceptions */,
-			/* modifiers */ 1025,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.nio.Buffer java.nio.Buffer.flip() */
+			/* name */ 'flip',
+			/* parameters */,
+			/* return */ 'java.nio.Buffer',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.nio.Buffer java.nio.Buffer.limit(int) */
+			/* name */ 'limit',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'newLimit',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.nio.Buffer',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.nio.Buffer java.nio.Buffer.mark() */
+			/* name */ 'mark',
+			/* parameters */,
+			/* return */ 'java.nio.Buffer',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.nio.Buffer java.nio.Buffer.position(int) */
+			/* name */ 'position',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'newPosition',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.nio.Buffer',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.nio.Buffer java.nio.Buffer.reset() */
+			/* name */ 'reset',
+			/* parameters */,
+			/* return */ 'java.nio.Buffer',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.nio.Buffer java.nio.Buffer.rewind() */
+			/* name */ 'rewind',
+			/* parameters */,
+			/* return */ 'java.nio.Buffer',
+			/* exceptions */,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

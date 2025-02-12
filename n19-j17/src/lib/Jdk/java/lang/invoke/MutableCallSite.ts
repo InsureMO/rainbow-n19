@@ -10,11 +10,11 @@ JdkClassCreateHelper.class('java.lang.invoke.MutableCallSite', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
-		[/* public java.lang.invoke.MutableCallSite(java.lang.invoke.MethodType) */
+		[/* public java.lang.invoke.MutableCallSite(java.lang.invoke.MethodHandle) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'type',
-					/* type */ 'java.lang.invoke.MethodType',
+					/* name */ 'target',
+					/* type */ 'java.lang.invoke.MethodHandle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -24,11 +24,11 @@ JdkClassCreateHelper.class('java.lang.invoke.MutableCallSite', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.invoke.MutableCallSite(java.lang.invoke.MethodHandle) */
+		[/* public java.lang.invoke.MutableCallSite(java.lang.invoke.MethodType) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'target',
-					/* type */ 'java.lang.invoke.MethodHandle',
+					/* name */ 'type',
+					/* type */ 'java.lang.invoke.MethodType',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -58,22 +58,6 @@ JdkClassCreateHelper.class('java.lang.invoke.MutableCallSite', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.lang.invoke.MutableCallSite.setTarget(java.lang.invoke.MethodHandle) */
-			/* name */ 'setTarget',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'newTarget',
-					/* type */ 'java.lang.invoke.MethodHandle',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public static void java.lang.invoke.MutableCallSite.syncAll(java.lang.invoke.MutableCallSite[]) */
 			/* name */ 'syncAll',
 			[/* parameters */
@@ -87,6 +71,22 @@ JdkClassCreateHelper.class('java.lang.invoke.MutableCallSite', [
 			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.lang.invoke.MutableCallSite.setTarget(java.lang.invoke.MethodHandle) */
+			/* name */ 'setTarget',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'newTarget',
+					/* type */ 'java.lang.invoke.MethodHandle',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

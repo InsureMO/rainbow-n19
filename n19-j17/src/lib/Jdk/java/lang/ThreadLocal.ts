@@ -27,12 +27,12 @@ JdkClassCreateHelper.class('java.lang.ThreadLocal', [
 		]
 	],
 	[/* declared methods */
-		[/* public void java.lang.ThreadLocal.remove() */
-			/* name */ 'remove',
+		[/* protected T java.lang.ThreadLocal.initialValue() */
+			/* name */ 'initialValue',
 			/* parameters */,
-			/* return */ 'void',
+			/* return */ [/* type variable ref */ 'tr', [/* name */ 'T']],
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 4,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -42,31 +42,6 @@ JdkClassCreateHelper.class('java.lang.ThreadLocal', [
 			/* return */ [/* type variable ref */ 'tr', [/* name */ 'T']],
 			/* exceptions */,
 			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.lang.ThreadLocal.set(T) */
-			/* name */ 'set',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'value',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'T']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* protected T java.lang.ThreadLocal.initialValue() */
-			/* name */ 'initialValue',
-			/* parameters */,
-			/* return */ [/* type variable ref */ 'tr', [/* name */ 'T']],
-			/* exceptions */,
-			/* modifiers */ 4,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -110,6 +85,31 @@ JdkClassCreateHelper.class('java.lang.ThreadLocal', [
 					/* annotations */ UDF
 				]
 			]
+		],
+		[/* public void java.lang.ThreadLocal.remove() */
+			/* name */ 'remove',
+			/* parameters */,
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.lang.ThreadLocal.set(T) */
+			/* name */ 'set',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'value',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'T']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
 		]
 	],
 	/* declared fields */,

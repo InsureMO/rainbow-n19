@@ -35,19 +35,19 @@ JdkClassCreateHelper.class('java.lang.Record', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.lang.String java.lang.Record.toString() */
-			/* name */ 'toString',
+		[/* public abstract int java.lang.Record.hashCode() */
+			/* name */ 'hashCode',
 			/* parameters */,
-			/* return */ 'java.lang.String',
+			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract int java.lang.Record.hashCode() */
-			/* name */ 'hashCode',
+		[/* public abstract java.lang.String java.lang.Record.toString() */
+			/* name */ 'toString',
 			/* parameters */,
-			/* return */ 'int',
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,

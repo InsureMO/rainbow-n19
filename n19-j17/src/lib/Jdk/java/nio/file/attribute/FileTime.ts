@@ -35,21 +35,19 @@ JdkClassCreateHelper.class('java.nio.file.attribute.FileTime', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.nio.file.attribute.FileTime.toString() */
-			/* name */ 'toString',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.nio.file.attribute.FileTime.hashCode() */
-			/* name */ 'hashCode',
-			/* parameters */,
+		[/* public int java.nio.file.attribute.FileTime.compareTo(java.lang.Object) */
+			/* name */ 'compareTo',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
 			/* return */ 'int',
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 4161,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -69,19 +67,30 @@ JdkClassCreateHelper.class('java.nio.file.attribute.FileTime', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.nio.file.attribute.FileTime.compareTo(java.lang.Object) */
-			/* name */ 'compareTo',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
+		[/* public int java.nio.file.attribute.FileTime.hashCode() */
+			/* name */ 'hashCode',
+			/* parameters */,
 			/* return */ 'int',
 			/* exceptions */,
-			/* modifiers */ 4161,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.nio.file.attribute.FileTime.toString() */
+			/* name */ 'toString',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.Instant java.nio.file.attribute.FileTime.toInstant() */
+			/* name */ 'toInstant',
+			/* parameters */,
+			/* return */ 'java.time.Instant',
+			/* exceptions */,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -98,6 +107,31 @@ JdkClassCreateHelper.class('java.nio.file.attribute.FileTime', [
 			/* return */ 'long',
 			/* exceptions */,
 			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public long java.nio.file.attribute.FileTime.toMillis() */
+			/* name */ 'toMillis',
+			/* parameters */,
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.nio.file.attribute.FileTime java.nio.file.attribute.FileTime.from(java.time.Instant) */
+			/* name */ 'from',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.time.Instant',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.nio.file.attribute.FileTime',
+			/* exceptions */,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -120,40 +154,6 @@ JdkClassCreateHelper.class('java.nio.file.attribute.FileTime', [
 			/* return */ 'java.nio.file.attribute.FileTime',
 			/* exceptions */,
 			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.nio.file.attribute.FileTime java.nio.file.attribute.FileTime.from(java.time.Instant) */
-			/* name */ 'from',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.time.Instant',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.nio.file.attribute.FileTime',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public long java.nio.file.attribute.FileTime.toMillis() */
-			/* name */ 'toMillis',
-			/* parameters */,
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.Instant java.nio.file.attribute.FileTime.toInstant() */
-			/* name */ 'toInstant',
-			/* parameters */,
-			/* return */ 'java.time.Instant',
-			/* exceptions */,
-			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],

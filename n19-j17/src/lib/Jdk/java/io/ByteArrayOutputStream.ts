@@ -33,6 +33,55 @@ JdkClassCreateHelper.class('java.io.ByteArrayOutputStream', [
 		]
 	],
 	[/* declared methods */
+		[/* public synchronized byte[] java.io.ByteArrayOutputStream.toByteArray() */
+			/* name */ 'toByteArray',
+			/* parameters */,
+			/* return */ '[B',
+			/* exceptions */,
+			/* modifiers */ 33,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public synchronized int java.io.ByteArrayOutputStream.size() */
+			/* name */ 'size',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 33,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public synchronized java.lang.String java.io.ByteArrayOutputStream.toString() */
+			/* name */ 'toString',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 33,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public synchronized java.lang.String java.io.ByteArrayOutputStream.toString(int) */
+			/* name */ 'toString',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'hibyte',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 33,
+			[/* annotations */
+				[
+					'java.lang.Deprecated',
+					['p', 'since', ''],
+					['p', 'forRemoval', false]
+				]
+			],
+			/* type parameters */ UDF
+		],
 		[/* public synchronized java.lang.String java.io.ByteArrayOutputStream.toString(java.lang.String) throws java.io.UnsupportedEncodingException */
 			/* name */ 'toString',
 			[/* parameters */
@@ -70,56 +119,9 @@ JdkClassCreateHelper.class('java.io.ByteArrayOutputStream', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public synchronized java.lang.String java.io.ByteArrayOutputStream.toString() */
-			/* name */ 'toString',
+		[/* public synchronized void java.io.ByteArrayOutputStream.reset() */
+			/* name */ 'reset',
 			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 33,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public synchronized java.lang.String java.io.ByteArrayOutputStream.toString(int) */
-			/* name */ 'toString',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'hibyte',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 33,
-			[/* annotations */
-				[
-					'java.lang.Deprecated',
-					['p', 'since', ''],
-					['p', 'forRemoval', false]
-				]
-			],
-			/* type parameters */ UDF
-		],
-		[/* public synchronized int java.io.ByteArrayOutputStream.size() */
-			/* name */ 'size',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 33,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public synchronized void java.io.ByteArrayOutputStream.write(int) */
-			/* name */ 'write',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'b',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
 			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 33,
@@ -154,51 +156,19 @@ JdkClassCreateHelper.class('java.io.ByteArrayOutputStream', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.io.ByteArrayOutputStream.close() throws java.io.IOException */
-			/* name */ 'close',
-			/* parameters */,
-			/* return */ 'void',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public synchronized byte[] java.io.ByteArrayOutputStream.toByteArray() */
-			/* name */ 'toByteArray',
-			/* parameters */,
-			/* return */ '[B',
-			/* exceptions */,
-			/* modifiers */ 33,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public synchronized void java.io.ByteArrayOutputStream.reset() */
-			/* name */ 'reset',
-			/* parameters */,
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 33,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.io.ByteArrayOutputStream.writeBytes(byte[]) */
-			/* name */ 'writeBytes',
+		[/* public synchronized void java.io.ByteArrayOutputStream.write(int) */
+			/* name */ 'write',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'b',
-					/* type */ '[B',
+					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
 			/* return */ 'void',
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 33,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -220,6 +190,36 @@ JdkClassCreateHelper.class('java.io.ByteArrayOutputStream', [
 				]
 			],
 			/* modifiers */ 33,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.io.ByteArrayOutputStream.close() throws java.io.IOException */
+			/* name */ 'close',
+			/* parameters */,
+			/* return */ 'void',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.io.ByteArrayOutputStream.writeBytes(byte[]) */
+			/* name */ 'writeBytes',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'b',
+					/* type */ '[B',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

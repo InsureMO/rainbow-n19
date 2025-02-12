@@ -10,6 +10,20 @@ JdkClassCreateHelper.class('java.util.zip.InflaterInputStream', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
+		[/* public java.util.zip.InflaterInputStream(java.io.InputStream) */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'in',
+					/* type */ 'java.io.InputStream',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.util.zip.InflaterInputStream(java.io.InputStream,java.util.zip.Inflater) */
 			[/* parameters */
 				[/* parameter */
@@ -55,20 +69,6 @@ JdkClassCreateHelper.class('java.util.zip.InflaterInputStream', [
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
-		],
-		[/* public java.util.zip.InflaterInputStream(java.io.InputStream) */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'in',
-					/* type */ 'java.io.InputStream',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
 		]
 	],
 	[/* declared methods */
@@ -83,6 +83,29 @@ JdkClassCreateHelper.class('java.util.zip.InflaterInputStream', [
 				]
 			],
 			/* modifiers */ 4,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.util.zip.InflaterInputStream.markSupported() */
+			/* name */ 'markSupported',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.zip.InflaterInputStream.available() throws java.io.IOException */
+			/* name */ 'available',
+			/* parameters */,
+			/* return */ 'int',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -133,10 +156,17 @@ JdkClassCreateHelper.class('java.util.zip.InflaterInputStream', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.util.zip.InflaterInputStream.close() throws java.io.IOException */
-			/* name */ 'close',
-			/* parameters */,
-			/* return */ 'void',
+		[/* public long java.util.zip.InflaterInputStream.skip(long) throws java.io.IOException */
+			/* name */ 'skip',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'len',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'long',
 			[/* exceptions */
 				[/* exception */
 					/* type */ 'java.io.IOException',
@@ -163,50 +193,6 @@ JdkClassCreateHelper.class('java.util.zip.InflaterInputStream', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public long java.util.zip.InflaterInputStream.skip(long) throws java.io.IOException */
-			/* name */ 'skip',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'len',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'long',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.util.zip.InflaterInputStream.available() throws java.io.IOException */
-			/* name */ 'available',
-			/* parameters */,
-			/* return */ 'int',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.util.zip.InflaterInputStream.markSupported() */
-			/* name */ 'markSupported',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public synchronized void java.util.zip.InflaterInputStream.reset() throws java.io.IOException */
 			/* name */ 'reset',
 			/* parameters */,
@@ -218,6 +204,20 @@ JdkClassCreateHelper.class('java.util.zip.InflaterInputStream', [
 				]
 			],
 			/* modifiers */ 33,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.util.zip.InflaterInputStream.close() throws java.io.IOException */
+			/* name */ 'close',
+			/* parameters */,
+			/* return */ 'void',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

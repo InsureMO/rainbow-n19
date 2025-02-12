@@ -28,6 +28,20 @@ JdkClassCreateHelper.class('java.text.AttributedCharacterIterator$Attribute', [
 		]
 	],
 	[/* declared methods */
+		[/* protected java.lang.Object java.text.AttributedCharacterIterator$Attribute.readResolve() throws java.io.InvalidObjectException */
+			/* name */ 'readResolve',
+			/* parameters */,
+			/* return */ 'java.lang.Object',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.InvalidObjectException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 4,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* protected java.lang.String java.text.AttributedCharacterIterator$Attribute.getName() */
 			/* name */ 'getName',
 			/* parameters */,
@@ -53,15 +67,6 @@ JdkClassCreateHelper.class('java.text.AttributedCharacterIterator$Attribute', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.text.AttributedCharacterIterator$Attribute.toString() */
-			/* name */ 'toString',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public final int java.text.AttributedCharacterIterator$Attribute.hashCode() */
 			/* name */ 'hashCode',
 			/* parameters */,
@@ -71,17 +76,12 @@ JdkClassCreateHelper.class('java.text.AttributedCharacterIterator$Attribute', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* protected java.lang.Object java.text.AttributedCharacterIterator$Attribute.readResolve() throws java.io.InvalidObjectException */
-			/* name */ 'readResolve',
+		[/* public java.lang.String java.text.AttributedCharacterIterator$Attribute.toString() */
+			/* name */ 'toString',
 			/* parameters */,
-			/* return */ 'java.lang.Object',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.InvalidObjectException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 4,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

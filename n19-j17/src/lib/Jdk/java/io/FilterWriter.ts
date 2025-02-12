@@ -26,8 +26,8 @@ JdkClassCreateHelper.class('java.io.FilterWriter', [
 		]
 	],
 	[/* declared methods */
-		[/* public void java.io.FilterWriter.flush() throws java.io.IOException */
-			/* name */ 'flush',
+		[/* public void java.io.FilterWriter.close() throws java.io.IOException */
+			/* name */ 'close',
 			/* parameters */,
 			/* return */ 'void',
 			[/* exceptions */
@@ -40,28 +40,9 @@ JdkClassCreateHelper.class('java.io.FilterWriter', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.io.FilterWriter.write(java.lang.String,int,int) throws java.io.IOException */
-			/* name */ 'write',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'str',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'off',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'len',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
+		[/* public void java.io.FilterWriter.flush() throws java.io.IOException */
+			/* name */ 'flush',
+			/* parameters */,
 			/* return */ 'void',
 			[/* exceptions */
 				[/* exception */
@@ -127,9 +108,28 @@ JdkClassCreateHelper.class('java.io.FilterWriter', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.io.FilterWriter.close() throws java.io.IOException */
-			/* name */ 'close',
-			/* parameters */,
+		[/* public void java.io.FilterWriter.write(java.lang.String,int,int) throws java.io.IOException */
+			/* name */ 'write',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'str',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'off',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'len',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
 			/* return */ 'void',
 			[/* exceptions */
 				[/* exception */

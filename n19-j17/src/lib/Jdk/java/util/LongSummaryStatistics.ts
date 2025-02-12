@@ -59,6 +59,51 @@ JdkClassCreateHelper.class('java.util.LongSummaryStatistics', [
 		]
 	],
 	[/* declared methods */
+		[/* public final double java.util.LongSummaryStatistics.getAverage() */
+			/* name */ 'getAverage',
+			/* parameters */,
+			/* return */ 'double',
+			/* exceptions */,
+			/* modifiers */ 17,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public final long java.util.LongSummaryStatistics.getCount() */
+			/* name */ 'getCount',
+			/* parameters */,
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 17,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public final long java.util.LongSummaryStatistics.getMax() */
+			/* name */ 'getMax',
+			/* parameters */,
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 17,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public final long java.util.LongSummaryStatistics.getMin() */
+			/* name */ 'getMin',
+			/* parameters */,
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 17,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public final long java.util.LongSummaryStatistics.getSum() */
+			/* name */ 'getSum',
+			/* parameters */,
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 17,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.lang.String java.util.LongSummaryStatistics.toString() */
 			/* name */ 'toString',
 			/* parameters */,
@@ -113,51 +158,6 @@ JdkClassCreateHelper.class('java.util.LongSummaryStatistics', [
 			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final long java.util.LongSummaryStatistics.getCount() */
-			/* name */ 'getCount',
-			/* parameters */,
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final long java.util.LongSummaryStatistics.getSum() */
-			/* name */ 'getSum',
-			/* parameters */,
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final long java.util.LongSummaryStatistics.getMin() */
-			/* name */ 'getMin',
-			/* parameters */,
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final double java.util.LongSummaryStatistics.getAverage() */
-			/* name */ 'getAverage',
-			/* parameters */,
-			/* return */ 'double',
-			/* exceptions */,
-			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final long java.util.LongSummaryStatistics.getMax() */
-			/* name */ 'getMax',
-			/* parameters */,
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 17,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

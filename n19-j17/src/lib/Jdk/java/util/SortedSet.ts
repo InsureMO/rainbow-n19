@@ -26,8 +26,8 @@ JdkClassCreateHelper.class('java.util.SortedSet', [
 	],
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public abstract E java.util.SortedSet.last() */
-			/* name */ 'last',
+		[/* public abstract E java.util.SortedSet.first() */
+			/* name */ 'first',
 			/* parameters */,
 			/* return */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 			/* exceptions */,
@@ -35,23 +35,8 @@ JdkClassCreateHelper.class('java.util.SortedSet', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public default java.util.Spliterator<E> java.util.SortedSet.spliterator() */
-			/* name */ 'spliterator',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* type variable ref */ 'tr', [/* name */ 'E']]
-				],
-				/* raw type */ 'java.util.Spliterator',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract E java.util.SortedSet.first() */
-			/* name */ 'first',
+		[/* public abstract E java.util.SortedSet.last() */
+			/* name */ 'last',
 			/* parameters */,
 			/* return */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 			/* exceptions */,
@@ -81,17 +66,11 @@ JdkClassCreateHelper.class('java.util.SortedSet', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.util.SortedSet<E> java.util.SortedSet.subSet(E,E) */
-			/* name */ 'subSet',
+		[/* public abstract java.util.SortedSet<E> java.util.SortedSet.headSet(E) */
+			/* name */ 'headSet',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -109,11 +88,17 @@ JdkClassCreateHelper.class('java.util.SortedSet', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.util.SortedSet<E> java.util.SortedSet.headSet(E) */
-			/* name */ 'headSet',
+		[/* public abstract java.util.SortedSet<E> java.util.SortedSet.subSet(E,E) */
+			/* name */ 'subSet',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -150,6 +135,21 @@ JdkClassCreateHelper.class('java.util.SortedSet', [
 			]],
 			/* exceptions */,
 			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public default java.util.Spliterator<E> java.util.SortedSet.spliterator() */
+			/* name */ 'spliterator',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'E']]
+				],
+				/* raw type */ 'java.util.Spliterator',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

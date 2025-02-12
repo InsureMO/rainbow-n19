@@ -35,8 +35,26 @@ JdkClassCreateHelper.class('java.lang.constant.ClassDesc', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public abstract java.lang.String java.lang.constant.ClassDesc.descriptorString() */
+			/* name */ 'descriptorString',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public default boolean java.lang.constant.ClassDesc.isArray() */
 			/* name */ 'isArray',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public default boolean java.lang.constant.ClassDesc.isClassOrInterface() */
+			/* name */ 'isClassOrInterface',
 			/* parameters */,
 			/* return */ 'boolean',
 			/* exceptions */,
@@ -53,59 +71,12 @@ JdkClassCreateHelper.class('java.lang.constant.ClassDesc', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public default java.lang.invoke.TypeDescriptor$OfField java.lang.constant.ClassDesc.componentType() */
-			/* name */ 'componentType',
+		[/* public default java.lang.String java.lang.constant.ClassDesc.displayName() */
+			/* name */ 'displayName',
 			/* parameters */,
-			/* return */ 'java.lang.invoke.TypeDescriptor$OfField',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public default java.lang.constant.ClassDesc java.lang.constant.ClassDesc.componentType() */
-			/* name */ 'componentType',
-			/* parameters */,
-			/* return */ 'java.lang.constant.ClassDesc',
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.lang.constant.ClassDesc java.lang.constant.ClassDesc.of(java.lang.String) */
-			/* name */ 'of',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.constant.ClassDesc',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.lang.constant.ClassDesc java.lang.constant.ClassDesc.of(java.lang.String,java.lang.String) */
-			/* name */ 'of',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'className',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.constant.ClassDesc',
-			/* exceptions */,
-			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -118,37 +89,12 @@ JdkClassCreateHelper.class('java.lang.constant.ClassDesc', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.lang.String java.lang.constant.ClassDesc.descriptorString() */
-			/* name */ 'descriptorString',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.lang.constant.ClassDesc java.lang.constant.ClassDesc.ofDescriptor(java.lang.String) */
-			/* name */ 'ofDescriptor',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'depth',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.constant.ClassDesc',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public default java.lang.invoke.TypeDescriptor$OfField java.lang.constant.ClassDesc.arrayType() */
+		[/* public default java.lang.constant.ClassDesc java.lang.constant.ClassDesc.arrayType() */
 			/* name */ 'arrayType',
 			/* parameters */,
-			/* return */ 'java.lang.invoke.TypeDescriptor$OfField',
+			/* return */ 'java.lang.constant.ClassDesc',
 			/* exceptions */,
-			/* modifiers */ 4161,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -168,19 +114,10 @@ JdkClassCreateHelper.class('java.lang.constant.ClassDesc', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public default java.lang.constant.ClassDesc java.lang.constant.ClassDesc.arrayType() */
-			/* name */ 'arrayType',
+		[/* public default java.lang.constant.ClassDesc java.lang.constant.ClassDesc.componentType() */
+			/* name */ 'componentType',
 			/* parameters */,
 			/* return */ 'java.lang.constant.ClassDesc',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public default java.lang.String java.lang.constant.ClassDesc.displayName() */
-			/* name */ 'displayName',
-			/* parameters */,
-			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -224,12 +161,75 @@ JdkClassCreateHelper.class('java.lang.constant.ClassDesc', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public default boolean java.lang.constant.ClassDesc.isClassOrInterface() */
-			/* name */ 'isClassOrInterface',
+		[/* public default java.lang.invoke.TypeDescriptor$OfField java.lang.constant.ClassDesc.arrayType() */
+			/* name */ 'arrayType',
 			/* parameters */,
-			/* return */ 'boolean',
+			/* return */ 'java.lang.invoke.TypeDescriptor$OfField',
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 4161,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public default java.lang.invoke.TypeDescriptor$OfField java.lang.constant.ClassDesc.componentType() */
+			/* name */ 'componentType',
+			/* parameters */,
+			/* return */ 'java.lang.invoke.TypeDescriptor$OfField',
+			/* exceptions */,
+			/* modifiers */ 4161,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.lang.constant.ClassDesc java.lang.constant.ClassDesc.of(java.lang.String) */
+			/* name */ 'of',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.constant.ClassDesc',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.lang.constant.ClassDesc java.lang.constant.ClassDesc.of(java.lang.String,java.lang.String) */
+			/* name */ 'of',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'className',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.constant.ClassDesc',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.lang.constant.ClassDesc java.lang.constant.ClassDesc.ofDescriptor(java.lang.String) */
+			/* name */ 'ofDescriptor',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'depth',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.constant.ClassDesc',
+			/* exceptions */,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

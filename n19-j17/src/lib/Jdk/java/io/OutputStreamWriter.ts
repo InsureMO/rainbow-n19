@@ -10,46 +10,6 @@ JdkClassCreateHelper.class('java.io.OutputStreamWriter', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
-		[/* public java.io.OutputStreamWriter(java.io.OutputStream,java.nio.charset.CharsetEncoder) */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'out',
-					/* type */ 'java.io.OutputStream',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'enc',
-					/* type */ 'java.nio.charset.CharsetEncoder',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.io.OutputStreamWriter(java.io.OutputStream,java.nio.charset.Charset) */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'out',
-					/* type */ 'java.io.OutputStream',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'cs',
-					/* type */ 'java.nio.charset.Charset',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public java.io.OutputStreamWriter(java.io.OutputStream) */
 			[/* parameters */
 				[/* parameter */
@@ -88,9 +48,70 @@ JdkClassCreateHelper.class('java.io.OutputStreamWriter', [
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
+		],
+		[/* public java.io.OutputStreamWriter(java.io.OutputStream,java.nio.charset.Charset) */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'out',
+					/* type */ 'java.io.OutputStream',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'cs',
+					/* type */ 'java.nio.charset.Charset',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.io.OutputStreamWriter(java.io.OutputStream,java.nio.charset.CharsetEncoder) */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'out',
+					/* type */ 'java.io.OutputStream',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'enc',
+					/* type */ 'java.nio.charset.CharsetEncoder',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
 		]
 	],
 	[/* declared methods */
+		[/* public java.io.Writer java.io.OutputStreamWriter.append(java.lang.CharSequence) throws java.io.IOException */
+			/* name */ 'append',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'csq',
+					/* type */ 'java.lang.CharSequence',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.io.Writer',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.io.Writer java.io.OutputStreamWriter.append(java.lang.CharSequence,int,int) throws java.io.IOException */
 			/* name */ 'append',
 			[/* parameters */
@@ -145,27 +166,6 @@ JdkClassCreateHelper.class('java.io.OutputStreamWriter', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.io.Writer java.io.OutputStreamWriter.append(java.lang.CharSequence) throws java.io.IOException */
-			/* name */ 'append',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'csq',
-					/* type */ 'java.lang.CharSequence',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.io.Writer',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public java.lang.Appendable java.io.OutputStreamWriter.append(java.lang.CharSequence,int,int) throws java.io.IOException */
 			/* name */ 'append',
 			[/* parameters */
@@ -196,6 +196,29 @@ JdkClassCreateHelper.class('java.io.OutputStreamWriter', [
 				]
 			],
 			/* modifiers */ 4161,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.io.OutputStreamWriter.getEncoding() */
+			/* name */ 'getEncoding',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.io.OutputStreamWriter.close() throws java.io.IOException */
+			/* name */ 'close',
+			/* parameters */,
+			/* return */ 'void',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -246,6 +269,27 @@ JdkClassCreateHelper.class('java.io.OutputStreamWriter', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public void java.io.OutputStreamWriter.write(int) throws java.io.IOException */
+			/* name */ 'write',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'c',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public void java.io.OutputStreamWriter.write(java.lang.String,int,int) throws java.io.IOException */
 			/* name */ 'write',
 			[/* parameters */
@@ -275,50 +319,6 @@ JdkClassCreateHelper.class('java.io.OutputStreamWriter', [
 					/* annotations */ UDF
 				]
 			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.io.OutputStreamWriter.write(int) throws java.io.IOException */
-			/* name */ 'write',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'c',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.io.OutputStreamWriter.close() throws java.io.IOException */
-			/* name */ 'close',
-			/* parameters */,
-			/* return */ 'void',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.io.OutputStreamWriter.getEncoding() */
-			/* name */ 'getEncoding',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF

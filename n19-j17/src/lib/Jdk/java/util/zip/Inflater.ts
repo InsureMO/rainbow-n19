@@ -10,6 +10,13 @@ JdkClassCreateHelper.class('java.util.zip.Inflater', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
+		[/* public java.util.zip.Inflater() */
+			/* parameters */,
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.util.zip.Inflater(boolean) */
 			[/* parameters */
 				[/* parameter */
@@ -23,33 +30,68 @@ JdkClassCreateHelper.class('java.util.zip.Inflater', [
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
-		],
-		[/* public java.util.zip.Inflater() */
+		]
+	],
+	[/* declared methods */
+		[/* public boolean java.util.zip.Inflater.finished() */
+			/* name */ 'finished',
 			/* parameters */,
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
-		]
-	],
-	[/* declared methods */
-		[/* public int java.util.zip.Inflater.inflate(java.nio.ByteBuffer) throws java.util.zip.DataFormatException */
-			/* name */ 'inflate',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'result',
-					/* type */ 'java.nio.ByteBuffer',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
+		],
+		[/* public boolean java.util.zip.Inflater.needsDictionary() */
+			/* name */ 'needsDictionary',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.util.zip.Inflater.needsInput() */
+			/* name */ 'needsInput',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.zip.Inflater.getAdler() */
+			/* name */ 'getAdler',
+			/* parameters */,
 			/* return */ 'int',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.util.zip.DataFormatException',
-					/* annotations */ UDF
-				]
-			],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.zip.Inflater.getRemaining() */
+			/* name */ 'getRemaining',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.zip.Inflater.getTotalIn() */
+			/* name */ 'getTotalIn',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.zip.Inflater.getTotalOut() */
+			/* name */ 'getTotalOut',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
@@ -108,106 +150,31 @@ JdkClassCreateHelper.class('java.util.zip.Inflater', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.util.zip.Inflater.end() */
-			/* name */ 'end',
-			/* parameters */,
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.util.zip.Inflater.reset() */
-			/* name */ 'reset',
-			/* parameters */,
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.util.zip.Inflater.finished() */
-			/* name */ 'finished',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.util.zip.Inflater.needsDictionary() */
-			/* name */ 'needsDictionary',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.util.zip.Inflater.needsInput() */
-			/* name */ 'needsInput',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.util.zip.Inflater.setInput(byte[],int,int) */
-			/* name */ 'setInput',
+		[/* public int java.util.zip.Inflater.inflate(java.nio.ByteBuffer) throws java.util.zip.DataFormatException */
+			/* name */ 'inflate',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'input',
-					/* type */ '[B',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'off',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'len',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.util.zip.Inflater.setInput(byte[]) */
-			/* name */ 'setInput',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'input',
-					/* type */ '[B',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.util.zip.Inflater.setInput(java.nio.ByteBuffer) */
-			/* name */ 'setInput',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'input',
+					/* name */ 'result',
 					/* type */ 'java.nio.ByteBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'void',
+			/* return */ 'int',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.util.zip.DataFormatException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public long java.util.zip.Inflater.getBytesRead() */
+			/* name */ 'getBytesRead',
+			/* parameters */,
+			/* return */ 'long',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -222,16 +189,18 @@ JdkClassCreateHelper.class('java.util.zip.Inflater', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.util.zip.Inflater.setDictionary(java.nio.ByteBuffer) */
-			/* name */ 'setDictionary',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'address',
-					/* type */ 'java.nio.ByteBuffer',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
+		[/* public void java.util.zip.Inflater.end() */
+			/* name */ 'end',
+			/* parameters */,
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.util.zip.Inflater.reset() */
+			/* name */ 'reset',
+			/* parameters */,
 			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
@@ -282,46 +251,77 @@ JdkClassCreateHelper.class('java.util.zip.Inflater', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.util.zip.Inflater.getAdler() */
-			/* name */ 'getAdler',
-			/* parameters */,
-			/* return */ 'int',
+		[/* public void java.util.zip.Inflater.setDictionary(java.nio.ByteBuffer) */
+			/* name */ 'setDictionary',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'address',
+					/* type */ 'java.nio.ByteBuffer',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public long java.util.zip.Inflater.getBytesRead() */
-			/* name */ 'getBytesRead',
-			/* parameters */,
-			/* return */ 'long',
+		[/* public void java.util.zip.Inflater.setInput(byte[]) */
+			/* name */ 'setInput',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'input',
+					/* type */ '[B',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.util.zip.Inflater.getRemaining() */
-			/* name */ 'getRemaining',
-			/* parameters */,
-			/* return */ 'int',
+		[/* public void java.util.zip.Inflater.setInput(byte[],int,int) */
+			/* name */ 'setInput',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'input',
+					/* type */ '[B',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'off',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'len',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.util.zip.Inflater.getTotalIn() */
-			/* name */ 'getTotalIn',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.util.zip.Inflater.getTotalOut() */
-			/* name */ 'getTotalOut',
-			/* parameters */,
-			/* return */ 'int',
+		[/* public void java.util.zip.Inflater.setInput(java.nio.ByteBuffer) */
+			/* name */ 'setInput',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'input',
+					/* type */ 'java.nio.ByteBuffer',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

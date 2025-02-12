@@ -65,22 +65,6 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandleProxies', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.lang.invoke.MethodHandle java.lang.invoke.MethodHandleProxies.wrapperInstanceTarget(java.lang.Object) */
-			/* name */ 'wrapperInstanceTarget',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.invoke.MethodHandle',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public static java.lang.Class<?> java.lang.invoke.MethodHandleProxies.wrapperInstanceType(java.lang.Object) */
 			/* name */ 'wrapperInstanceType',
 			[/* parameters */
@@ -103,6 +87,22 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandleProxies', [
 				/* raw type */ 'java.lang.Class',
 				/* owner type */ UDF
 			]],
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.lang.invoke.MethodHandle java.lang.invoke.MethodHandleProxies.wrapperInstanceTarget(java.lang.Object) */
+			/* name */ 'wrapperInstanceTarget',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.invoke.MethodHandle',
 			/* exceptions */,
 			/* modifiers */ 9,
 			/* annotations */ UDF,

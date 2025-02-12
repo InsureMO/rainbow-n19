@@ -21,26 +21,6 @@ JdkClassCreateHelper.class('java.lang.Short', [
 	],
 	/* type parameters */,
 	[/* declared constructors */
-		[/* public java.lang.Short(short) */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'value',
-					/* type */ 'short',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			[/* annotations */
-				[
-					'java.lang.Deprecated',
-					['p', 'since', '9'],
-					['p', 'forRemoval', true]
-				]
-			],
-			/* type parameters */ UDF
-		],
 		[/* public java.lang.Short(java.lang.String) throws java.lang.NumberFormatException */
 			[/* parameters */
 				[/* parameter */
@@ -56,6 +36,26 @@ JdkClassCreateHelper.class('java.lang.Short', [
 					/* annotations */ UDF
 				]
 			],
+			/* modifiers */ 1,
+			[/* annotations */
+				[
+					'java.lang.Deprecated',
+					['p', 'since', '9'],
+					['p', 'forRemoval', true]
+				]
+			],
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.Short(short) */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'value',
+					/* type */ 'short',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* exceptions */,
 			/* modifiers */ 1,
 			[/* annotations */
 				[
@@ -84,85 +84,28 @@ JdkClassCreateHelper.class('java.lang.Short', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.lang.Short.toString() */
-			/* name */ 'toString',
+		[/* public byte java.lang.Short.byteValue() */
+			/* name */ 'byteValue',
 			/* parameters */,
-			/* return */ 'java.lang.String',
+			/* return */ 'byte',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.lang.String java.lang.Short.toString(short) */
-			/* name */ 'toString',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'short',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.lang.Short.hashCode() */
-			/* name */ 'hashCode',
+		[/* public double java.lang.Short.doubleValue() */
+			/* name */ 'doubleValue',
 			/* parameters */,
-			/* return */ 'int',
+			/* return */ 'double',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static int java.lang.Short.hashCode(short) */
-			/* name */ 'hashCode',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'short',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static short java.lang.Short.reverseBytes(short) */
-			/* name */ 'reverseBytes',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'short',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'short',
-			/* exceptions */,
-			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public int java.lang.Short.compareTo(java.lang.Short) */
-			/* name */ 'compareTo',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'anotherShort',
-					/* type */ 'java.lang.Short',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
+		[/* public float java.lang.Short.floatValue() */
+			/* name */ 'floatValue',
+			/* parameters */,
+			/* return */ 'float',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -182,6 +125,90 @@ JdkClassCreateHelper.class('java.lang.Short', [
 			/* exceptions */,
 			/* modifiers */ 4161,
 			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.lang.Short.compareTo(java.lang.Short) */
+			/* name */ 'compareTo',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'anotherShort',
+					/* type */ 'java.lang.Short',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.lang.Short.hashCode() */
+			/* name */ 'hashCode',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.lang.Short.intValue() */
+			/* name */ 'intValue',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.lang.Short.toString() */
+			/* name */ 'toString',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.Optional<java.lang.constant.DynamicConstantDesc<java.lang.Short>> java.lang.Short.describeConstable() */
+			/* name */ 'describeConstable',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							'java.lang.Short'
+						],
+						/* raw type */ 'java.lang.constant.DynamicConstantDesc',
+						/* owner type */ UDF
+					]]
+				],
+				/* raw type */ 'java.util.Optional',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public long java.lang.Short.longValue() */
+			/* name */ 'longValue',
+			/* parameters */,
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public short java.lang.Short.shortValue() */
+			/* name */ 'shortValue',
+			/* parameters */,
+			/* return */ 'short',
+			/* exceptions */,
+			/* modifiers */ 1,
+			[/* annotations */
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
 			/* type parameters */ UDF
 		],
 		[/* public static int java.lang.Short.compare(short,short) */
@@ -206,59 +233,78 @@ JdkClassCreateHelper.class('java.lang.Short', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public byte java.lang.Short.byteValue() */
-			/* name */ 'byteValue',
-			/* parameters */,
-			/* return */ 'byte',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public short java.lang.Short.shortValue() */
-			/* name */ 'shortValue',
-			/* parameters */,
-			/* return */ 'short',
-			/* exceptions */,
-			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
+		[/* public static int java.lang.Short.compareUnsigned(short,short) */
+			/* name */ 'compareUnsigned',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'y',
+					/* type */ 'short',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'short',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
 			],
-			/* type parameters */ UDF
-		],
-		[/* public int java.lang.Short.intValue() */
-			/* name */ 'intValue',
-			/* parameters */,
 			/* return */ 'int',
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public long java.lang.Short.longValue() */
-			/* name */ 'longValue',
-			/* parameters */,
-			/* return */ 'long',
+		[/* public static int java.lang.Short.hashCode(short) */
+			/* name */ 'hashCode',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'short',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public float java.lang.Short.floatValue() */
-			/* name */ 'floatValue',
-			/* parameters */,
-			/* return */ 'float',
+		[/* public static int java.lang.Short.toUnsignedInt(short) */
+			/* name */ 'toUnsignedInt',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'short',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public double java.lang.Short.doubleValue() */
-			/* name */ 'doubleValue',
-			/* parameters */,
-			/* return */ 'double',
-			/* exceptions */,
-			/* modifiers */ 1,
+		[/* public static java.lang.Short java.lang.Short.decode(java.lang.String) throws java.lang.NumberFormatException */
+			/* name */ 'decode',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'i',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.Short',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.lang.NumberFormatException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -328,45 +374,19 @@ JdkClassCreateHelper.class('java.lang.Short', [
 			],
 			/* type parameters */ UDF
 		],
-		[/* public static java.lang.Short java.lang.Short.decode(java.lang.String) throws java.lang.NumberFormatException */
-			/* name */ 'decode',
+		[/* public static java.lang.String java.lang.Short.toString(short) */
+			/* name */ 'toString',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
-					/* type */ 'java.lang.String',
+					/* name */ 'arg0',
+					/* type */ 'short',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.lang.Short',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.lang.NumberFormatException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.Optional<java.lang.constant.DynamicConstantDesc<java.lang.Short>> java.lang.Short.describeConstable() */
-			/* name */ 'describeConstable',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							'java.lang.Short'
-						],
-						/* raw type */ 'java.lang.constant.DynamicConstantDesc',
-						/* owner type */ UDF
-					]]
-				],
-				/* raw type */ 'java.util.Optional',
-				/* owner type */ UDF
-			]],
+			/* return */ 'java.lang.String',
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -386,40 +406,23 @@ JdkClassCreateHelper.class('java.lang.Short', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static int java.lang.Short.toUnsignedInt(short) */
-			/* name */ 'toUnsignedInt',
+		[/* public static short java.lang.Short.parseShort(java.lang.String) throws java.lang.NumberFormatException */
+			/* name */ 'parseShort',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
-					/* type */ 'short',
+					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static int java.lang.Short.compareUnsigned(short,short) */
-			/* name */ 'compareUnsigned',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'y',
-					/* type */ 'short',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'short',
-					/* modifiers */ 0,
+			/* return */ 'short',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.lang.NumberFormatException',
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'int',
-			/* exceptions */,
 			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
@@ -451,25 +454,22 @@ JdkClassCreateHelper.class('java.lang.Short', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static short java.lang.Short.parseShort(java.lang.String) throws java.lang.NumberFormatException */
-			/* name */ 'parseShort',
+		[/* public static short java.lang.Short.reverseBytes(short) */
+			/* name */ 'reverseBytes',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
-					/* type */ 'java.lang.String',
+					/* type */ 'short',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
 			/* return */ 'short',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.lang.NumberFormatException',
-					/* annotations */ UDF
-				]
-			],
+			/* exceptions */,
 			/* modifiers */ 9,
-			/* annotations */ UDF,
+			[/* annotations */
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
 			/* type parameters */ UDF
 		]
 	],

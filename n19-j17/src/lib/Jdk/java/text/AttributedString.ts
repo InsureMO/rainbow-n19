@@ -10,78 +10,6 @@ JdkClassCreateHelper.class('java.text.AttributedString', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
-		[/* public java.text.AttributedString(java.text.AttributedCharacterIterator,int,int,java.text.AttributedCharacterIterator$Attribute[]) */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.text.AttributedCharacterIterator',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg2',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg3',
-					/* type */ '[Ljava.text.AttributedCharacterIterator$Attribute;',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.text.AttributedString(java.text.AttributedCharacterIterator,int,int) */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'text',
-					/* type */ 'java.text.AttributedCharacterIterator',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'beginIndex',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'endIndex',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.text.AttributedString(java.text.AttributedCharacterIterator) */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'text',
-					/* type */ 'java.text.AttributedCharacterIterator',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public java.text.AttributedString(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
@@ -132,15 +60,52 @@ JdkClassCreateHelper.class('java.text.AttributedString', [
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
-		]
-	],
-	[/* declared methods */
-		[/* public java.text.AttributedCharacterIterator java.text.AttributedString.getIterator(java.text.AttributedCharacterIterator$Attribute[],int,int) */
-			/* name */ 'getIterator',
+		],
+		[/* public java.text.AttributedString(java.text.AttributedCharacterIterator) */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'text',
+					/* type */ 'java.text.AttributedCharacterIterator',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.text.AttributedString(java.text.AttributedCharacterIterator,int,int) */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'text',
+					/* type */ 'java.text.AttributedCharacterIterator',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'beginIndex',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'endIndex',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.text.AttributedString(java.text.AttributedCharacterIterator,int,int,java.text.AttributedCharacterIterator$Attribute[]) */
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
-					/* type */ '[Ljava.text.AttributedCharacterIterator$Attribute;',
+					/* type */ 'java.text.AttributedCharacterIterator',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
@@ -155,14 +120,21 @@ JdkClassCreateHelper.class('java.text.AttributedString', [
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg3',
+					/* type */ '[Ljava.text.AttributedCharacterIterator$Attribute;',
+					/* modifiers */ 0,
+					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.text.AttributedCharacterIterator',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
-		],
+		]
+	],
+	[/* declared methods */
 		[/* public java.text.AttributedCharacterIterator java.text.AttributedString.getIterator() */
 			/* name */ 'getIterator',
 			/* parameters */,
@@ -188,46 +160,29 @@ JdkClassCreateHelper.class('java.text.AttributedString', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.text.AttributedString.addAttributes(java.util.Map<? extends java.text.AttributedCharacterIterator$Attribute, ?>,int,int) */
-			/* name */ 'addAttributes',
+		[/* public java.text.AttributedCharacterIterator java.text.AttributedString.getIterator(java.text.AttributedCharacterIterator$Attribute[],int,int) */
+			/* name */ 'getIterator',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'entry',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							[/* wildcard type */ 'wt', [
-								[/* upper bounds */
-									'java.text.AttributedCharacterIterator$Attribute'
-								],
-								/* lower bounds */ UDF
-							]],
-							[/* wildcard type */ 'wt', [
-								[/* upper bounds */
-									'java.lang.Object'
-								],
-								/* lower bounds */ UDF
-							]]
-						],
-						/* raw type */ 'java.util.Map',
-						/* owner type */ UDF
-					]],
+					/* name */ 'arg0',
+					/* type */ '[Ljava.text.AttributedCharacterIterator$Attribute;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'attributes',
+					/* name */ 'arg1',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'beginIndex',
+					/* name */ 'arg2',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'void',
+			/* return */ 'java.text.AttributedCharacterIterator',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -278,6 +233,51 @@ JdkClassCreateHelper.class('java.text.AttributedString', [
 				],
 				[/* parameter */
 					/* name */ 'endIndex',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.text.AttributedString.addAttributes(java.util.Map<? extends java.text.AttributedCharacterIterator$Attribute, ?>,int,int) */
+			/* name */ 'addAttributes',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'entry',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									'java.text.AttributedCharacterIterator$Attribute'
+								],
+								/* lower bounds */ UDF
+							]],
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									'java.lang.Object'
+								],
+								/* lower bounds */ UDF
+							]]
+						],
+						/* raw type */ 'java.util.Map',
+						/* owner type */ UDF
+					]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'attributes',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'beginIndex',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -24,145 +24,6 @@ JdkClassCreateHelper.class('java.time.ZoneOffset', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public int java.time.ZoneOffset.get(java.time.temporal.TemporalField) */
-			/* name */ 'get',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'field',
-					/* type */ 'java.time.temporal.TemporalField',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.time.ZoneOffset.equals(java.lang.Object) */
-			/* name */ 'equals',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'obj',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.time.ZoneOffset.toString() */
-			/* name */ 'toString',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.time.ZoneOffset.hashCode() */
-			/* name */ 'hashCode',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.time.ZoneOffset.compareTo(java.time.ZoneOffset) */
-			/* name */ 'compareTo',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'other',
-					/* type */ 'java.time.ZoneOffset',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.time.ZoneOffset.compareTo(java.lang.Object) */
-			/* name */ 'compareTo',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public long java.time.ZoneOffset.getLong(java.time.temporal.TemporalField) */
-			/* name */ 'getLong',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'field',
-					/* type */ 'java.time.temporal.TemporalField',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.time.ZoneOffset java.time.ZoneOffset.of(java.lang.String) */
-			/* name */ 'of',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'hours',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.ZoneOffset',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.time.ZoneOffset java.time.ZoneOffset.from(java.time.temporal.TemporalAccessor) */
-			/* name */ 'from',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'offset',
-					/* type */ 'java.time.temporal.TemporalAccessor',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.ZoneOffset',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.time.ZoneOffset.getId() */
-			/* name */ 'getId',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public <R> R java.time.ZoneOffset.query(java.time.temporal.TemporalQuery<R>) */
 			/* name */ 'query',
 			[/* parameters */
@@ -193,17 +54,17 @@ JdkClassCreateHelper.class('java.time.ZoneOffset', [
 				]
 			]
 		],
-		[/* public java.time.temporal.ValueRange java.time.ZoneOffset.range(java.time.temporal.TemporalField) */
-			/* name */ 'range',
+		[/* public boolean java.time.ZoneOffset.equals(java.lang.Object) */
+			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'field',
-					/* type */ 'java.time.temporal.TemporalField',
+					/* name */ 'obj',
+					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.time.temporal.ValueRange',
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -225,10 +86,49 @@ JdkClassCreateHelper.class('java.time.ZoneOffset', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.time.zone.ZoneRules java.time.ZoneOffset.getRules() */
-			/* name */ 'getRules',
-			/* parameters */,
-			/* return */ 'java.time.zone.ZoneRules',
+		[/* public int java.time.ZoneOffset.compareTo(java.lang.Object) */
+			/* name */ 'compareTo',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 4161,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.time.ZoneOffset.compareTo(java.time.ZoneOffset) */
+			/* name */ 'compareTo',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'other',
+					/* type */ 'java.time.ZoneOffset',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.time.ZoneOffset.get(java.time.temporal.TemporalField) */
+			/* name */ 'get',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'field',
+					/* type */ 'java.time.temporal.TemporalField',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -238,6 +138,33 @@ JdkClassCreateHelper.class('java.time.ZoneOffset', [
 			/* name */ 'getTotalSeconds',
 			/* parameters */,
 			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.time.ZoneOffset.hashCode() */
+			/* name */ 'hashCode',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.time.ZoneOffset.getId() */
+			/* name */ 'getId',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.time.ZoneOffset.toString() */
+			/* name */ 'toString',
+			/* parameters */,
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -259,6 +186,79 @@ JdkClassCreateHelper.class('java.time.ZoneOffset', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public java.time.temporal.ValueRange java.time.ZoneOffset.range(java.time.temporal.TemporalField) */
+			/* name */ 'range',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'field',
+					/* type */ 'java.time.temporal.TemporalField',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.temporal.ValueRange',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.zone.ZoneRules java.time.ZoneOffset.getRules() */
+			/* name */ 'getRules',
+			/* parameters */,
+			/* return */ 'java.time.zone.ZoneRules',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public long java.time.ZoneOffset.getLong(java.time.temporal.TemporalField) */
+			/* name */ 'getLong',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'field',
+					/* type */ 'java.time.temporal.TemporalField',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.time.ZoneOffset java.time.ZoneOffset.from(java.time.temporal.TemporalAccessor) */
+			/* name */ 'from',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'offset',
+					/* type */ 'java.time.temporal.TemporalAccessor',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.ZoneOffset',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.time.ZoneOffset java.time.ZoneOffset.of(java.lang.String) */
+			/* name */ 'of',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'hours',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.ZoneOffset',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public static java.time.ZoneOffset java.time.ZoneOffset.ofHours(int) */
 			/* name */ 'ofHours',
 			[/* parameters */
@@ -275,11 +275,17 @@ JdkClassCreateHelper.class('java.time.ZoneOffset', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.time.ZoneOffset java.time.ZoneOffset.ofTotalSeconds(int) */
-			/* name */ 'ofTotalSeconds',
+		[/* public static java.time.ZoneOffset java.time.ZoneOffset.ofHoursMinutes(int,int) */
+			/* name */ 'ofHoursMinutes',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'totalSecs',
+					/* name */ 'minutes',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -319,17 +325,11 @@ JdkClassCreateHelper.class('java.time.ZoneOffset', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.time.ZoneOffset java.time.ZoneOffset.ofHoursMinutes(int,int) */
-			/* name */ 'ofHoursMinutes',
+		[/* public static java.time.ZoneOffset java.time.ZoneOffset.ofTotalSeconds(int) */
+			/* name */ 'ofTotalSeconds',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'minutes',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'totalSecs',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

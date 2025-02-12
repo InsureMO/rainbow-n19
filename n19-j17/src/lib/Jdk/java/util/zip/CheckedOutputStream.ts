@@ -32,6 +32,15 @@ JdkClassCreateHelper.class('java.util.zip.CheckedOutputStream', [
 		]
 	],
 	[/* declared methods */
+		[/* public java.util.zip.Checksum java.util.zip.CheckedOutputStream.getChecksum() */
+			/* name */ 'getChecksum',
+			/* parameters */,
+			/* return */ 'java.util.zip.Checksum',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public void java.util.zip.CheckedOutputStream.write(byte[],int,int) throws java.io.IOException */
 			/* name */ 'write',
 			[/* parameters */
@@ -82,15 +91,6 @@ JdkClassCreateHelper.class('java.util.zip.CheckedOutputStream', [
 					/* annotations */ UDF
 				]
 			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.zip.Checksum java.util.zip.CheckedOutputStream.getChecksum() */
-			/* name */ 'getChecksum',
-			/* parameters */,
-			/* return */ 'java.util.zip.Checksum',
-			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF

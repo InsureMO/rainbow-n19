@@ -19,67 +19,6 @@ JdkClassCreateHelper.class('java.util.stream.LongStream', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public abstract java.util.OptionalLong java.util.stream.LongStream.min() */
-			/* name */ 'min',
-			/* parameters */,
-			/* return */ 'java.util.OptionalLong',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.util.OptionalLong java.util.stream.LongStream.max() */
-			/* name */ 'max',
-			/* parameters */,
-			/* return */ 'java.util.OptionalLong',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract long[] java.util.stream.LongStream.toArray() */
-			/* name */ 'toArray',
-			/* parameters */,
-			/* return */ '[J',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public default java.util.Iterator java.util.stream.LongStream.iterator() */
-			/* name */ 'iterator',
-			/* parameters */,
-			/* return */ 'java.util.Iterator',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.util.PrimitiveIterator$OfLong java.util.stream.LongStream.iterator() */
-			/* name */ 'iterator',
-			/* parameters */,
-			/* return */ 'java.util.PrimitiveIterator$OfLong',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.util.stream.LongStream java.util.stream.LongStream.map(java.util.function.LongUnaryOperator) */
-			/* name */ 'map',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.util.function.LongUnaryOperator',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.util.stream.LongStream',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public abstract <R> R java.util.stream.LongStream.collect(java.util.function.Supplier<R>,java.util.function.ObjLongConsumer<R>,java.util.function.BiConsumer<R, R>) */
 			/* name */ 'collect',
 			[/* parameters */
@@ -135,114 +74,49 @@ JdkClassCreateHelper.class('java.util.stream.LongStream', [
 				]
 			]
 		],
-		[/* public static java.util.stream.LongStream java.util.stream.LongStream.of(long) */
-			/* name */ 'of',
+		[/* public abstract <U> java.util.stream.Stream<U> java.util.stream.LongStream.mapToObj(java.util.function.LongFunction<? extends U>) */
+			/* name */ 'mapToObj',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
-					/* type */ 'long',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									[/* type variable ref */ 'tr', [/* name */ 'U']]
+								],
+								/* lower bounds */ UDF
+							]]
+						],
+						/* raw type */ 'java.util.function.LongFunction',
+						/* owner type */ UDF
+					]],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.util.stream.LongStream',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.util.stream.LongStream java.util.stream.LongStream.of(long...) */
-			/* name */ 'of',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ '[J',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.util.stream.LongStream',
-			/* exceptions */,
-			/* modifiers */ 137,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract long java.util.stream.LongStream.count() */
-			/* name */ 'count',
-			/* parameters */,
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.util.stream.LongStream$Builder java.util.stream.LongStream.builder() */
-			/* name */ 'builder',
-			/* parameters */,
-			/* return */ 'java.util.stream.LongStream$Builder',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.util.stream.LongStream java.util.stream.LongStream.concat(java.util.stream.LongStream,java.util.stream.LongStream) */
-			/* name */ 'concat',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'b',
-					/* type */ 'java.util.stream.LongStream',
-					/* modifiers */ 0,
-					/* annotations */ UDF
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'U']]
 				],
-				[/* parameter */
-					/* name */ 'split',
-					/* type */ 'java.util.stream.LongStream',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.util.stream.LongStream',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.util.stream.LongStream java.util.stream.LongStream.limit(long) */
-			/* name */ 'limit',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.util.stream.LongStream',
+				/* raw type */ 'java.util.stream.Stream',
+				/* owner type */ UDF
+			]],
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,
-			/* type parameters */ UDF
+			[/* type parameters */
+				[/* type variable */
+					/* name */ 'U',
+					[/* bounds */
+						'java.lang.Object'
+					],
+					/* annotations */ UDF
+				]
+			]
 		],
-		[/* public abstract java.util.Spliterator$OfLong java.util.stream.LongStream.spliterator() */
-			/* name */ 'spliterator',
-			/* parameters */,
-			/* return */ 'java.util.Spliterator$OfLong',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public default java.util.Spliterator java.util.stream.LongStream.spliterator() */
-			/* name */ 'spliterator',
-			/* parameters */,
-			/* return */ 'java.util.Spliterator',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.util.stream.LongStream java.util.stream.LongStream.filter(java.util.function.LongPredicate) */
-			/* name */ 'filter',
+		[/* public abstract boolean java.util.stream.LongStream.allMatch(java.util.function.LongPredicate) */
+			/* name */ 'allMatch',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
@@ -251,18 +125,9 @@ JdkClassCreateHelper.class('java.util.stream.LongStream', [
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.util.stream.LongStream',
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.util.stream.LongStream java.util.stream.LongStream.empty() */
-			/* name */ 'empty',
-			/* parameters */,
-			/* return */ 'java.util.stream.LongStream',
-			/* exceptions */,
-			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -277,6 +142,176 @@ JdkClassCreateHelper.class('java.util.stream.LongStream', [
 				]
 			],
 			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract boolean java.util.stream.LongStream.noneMatch(java.util.function.LongPredicate) */
+			/* name */ 'noneMatch',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.util.function.LongPredicate',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.util.LongSummaryStatistics java.util.stream.LongStream.summaryStatistics() */
+			/* name */ 'summaryStatistics',
+			/* parameters */,
+			/* return */ 'java.util.LongSummaryStatistics',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.util.OptionalDouble java.util.stream.LongStream.average() */
+			/* name */ 'average',
+			/* parameters */,
+			/* return */ 'java.util.OptionalDouble',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.util.OptionalLong java.util.stream.LongStream.findAny() */
+			/* name */ 'findAny',
+			/* parameters */,
+			/* return */ 'java.util.OptionalLong',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.util.OptionalLong java.util.stream.LongStream.findFirst() */
+			/* name */ 'findFirst',
+			/* parameters */,
+			/* return */ 'java.util.OptionalLong',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.util.OptionalLong java.util.stream.LongStream.max() */
+			/* name */ 'max',
+			/* parameters */,
+			/* return */ 'java.util.OptionalLong',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.util.OptionalLong java.util.stream.LongStream.min() */
+			/* name */ 'min',
+			/* parameters */,
+			/* return */ 'java.util.OptionalLong',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.util.OptionalLong java.util.stream.LongStream.reduce(java.util.function.LongBinaryOperator) */
+			/* name */ 'reduce',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.util.function.LongBinaryOperator',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.util.OptionalLong',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.util.PrimitiveIterator$OfLong java.util.stream.LongStream.iterator() */
+			/* name */ 'iterator',
+			/* parameters */,
+			/* return */ 'java.util.PrimitiveIterator$OfLong',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.util.Spliterator$OfLong java.util.stream.LongStream.spliterator() */
+			/* name */ 'spliterator',
+			/* parameters */,
+			/* return */ 'java.util.Spliterator$OfLong',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.util.stream.DoubleStream java.util.stream.LongStream.asDoubleStream() */
+			/* name */ 'asDoubleStream',
+			/* parameters */,
+			/* return */ 'java.util.stream.DoubleStream',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.util.stream.DoubleStream java.util.stream.LongStream.mapToDouble(java.util.function.LongToDoubleFunction) */
+			/* name */ 'mapToDouble',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.util.function.LongToDoubleFunction',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.util.stream.DoubleStream',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.util.stream.IntStream java.util.stream.LongStream.mapToInt(java.util.function.LongToIntFunction) */
+			/* name */ 'mapToInt',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.util.function.LongToIntFunction',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.util.stream.IntStream',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.util.stream.LongStream java.util.stream.LongStream.distinct() */
+			/* name */ 'distinct',
+			/* parameters */,
+			/* return */ 'java.util.stream.LongStream',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.util.stream.LongStream java.util.stream.LongStream.filter(java.util.function.LongPredicate) */
+			/* name */ 'filter',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.util.function.LongPredicate',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.util.stream.LongStream',
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,
@@ -309,33 +344,8 @@ JdkClassCreateHelper.class('java.util.stream.LongStream', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract void java.util.stream.LongStream.forEach(java.util.function.LongConsumer) */
-			/* name */ 'forEach',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.util.function.LongConsumer',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.util.OptionalLong java.util.stream.LongStream.findAny() */
-			/* name */ 'findAny',
-			/* parameters */,
-			/* return */ 'java.util.OptionalLong',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.util.stream.LongStream java.util.stream.LongStream.skip(long) */
-			/* name */ 'skip',
+		[/* public abstract java.util.stream.LongStream java.util.stream.LongStream.limit(long) */
+			/* name */ 'limit',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
@@ -344,6 +354,31 @@ JdkClassCreateHelper.class('java.util.stream.LongStream', [
 					/* annotations */ UDF
 				]
 			],
+			/* return */ 'java.util.stream.LongStream',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.util.stream.LongStream java.util.stream.LongStream.map(java.util.function.LongUnaryOperator) */
+			/* name */ 'map',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.util.function.LongUnaryOperator',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.util.stream.LongStream',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.util.stream.LongStream java.util.stream.LongStream.parallel() */
+			/* name */ 'parallel',
+			/* parameters */,
 			/* return */ 'java.util.stream.LongStream',
 			/* exceptions */,
 			/* modifiers */ 1025,
@@ -366,26 +401,59 @@ JdkClassCreateHelper.class('java.util.stream.LongStream', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract long java.util.stream.LongStream.sum() */
-			/* name */ 'sum',
+		[/* public abstract java.util.stream.LongStream java.util.stream.LongStream.sequential() */
+			/* name */ 'sequential',
 			/* parameters */,
-			/* return */ 'long',
+			/* return */ 'java.util.stream.LongStream',
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.util.OptionalLong java.util.stream.LongStream.reduce(java.util.function.LongBinaryOperator) */
-			/* name */ 'reduce',
+		[/* public abstract java.util.stream.LongStream java.util.stream.LongStream.skip(long) */
+			/* name */ 'skip',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
-					/* type */ 'java.util.function.LongBinaryOperator',
+					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.util.OptionalLong',
+			/* return */ 'java.util.stream.LongStream',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.util.stream.LongStream java.util.stream.LongStream.sorted() */
+			/* name */ 'sorted',
+			/* parameters */,
+			/* return */ 'java.util.stream.LongStream',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.util.stream.Stream<java.lang.Long> java.util.stream.LongStream.boxed() */
+			/* name */ 'boxed',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					'java.lang.Long'
+				],
+				/* raw type */ 'java.util.stream.Stream',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract long java.util.stream.LongStream.count() */
+			/* name */ 'count',
+			/* parameters */,
+			/* return */ 'long',
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,
@@ -413,59 +481,71 @@ JdkClassCreateHelper.class('java.util.stream.LongStream', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.util.stream.LongStream java.util.stream.LongStream.distinct() */
-			/* name */ 'distinct',
+		[/* public abstract long java.util.stream.LongStream.sum() */
+			/* name */ 'sum',
 			/* parameters */,
-			/* return */ 'java.util.stream.LongStream',
+			/* return */ 'long',
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.util.OptionalLong java.util.stream.LongStream.findFirst() */
-			/* name */ 'findFirst',
+		[/* public abstract long[] java.util.stream.LongStream.toArray() */
+			/* name */ 'toArray',
 			/* parameters */,
-			/* return */ 'java.util.OptionalLong',
+			/* return */ '[J',
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract boolean java.util.stream.LongStream.allMatch(java.util.function.LongPredicate) */
-			/* name */ 'allMatch',
+		[/* public abstract void java.util.stream.LongStream.forEach(java.util.function.LongConsumer) */
+			/* name */ 'forEach',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
-					/* type */ 'java.util.function.LongPredicate',
+					/* type */ 'java.util.function.LongConsumer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'boolean',
+			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.util.stream.LongStream java.util.stream.LongStream.range(long,long) */
-			/* name */ 'range',
+		[/* public abstract void java.util.stream.LongStream.forEachOrdered(java.util.function.LongConsumer) */
+			/* name */ 'forEachOrdered',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'm',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'endExclusive',
-					/* type */ 'long',
+					/* name */ 'arg0',
+					/* type */ 'java.util.function.LongConsumer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.util.stream.LongStream',
+			/* return */ 'void',
 			/* exceptions */,
-			/* modifiers */ 9,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public default java.util.Iterator java.util.stream.LongStream.iterator() */
+			/* name */ 'iterator',
+			/* parameters */,
+			/* return */ 'java.util.Iterator',
+			/* exceptions */,
+			/* modifiers */ 4161,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public default java.util.Spliterator java.util.stream.LongStream.spliterator() */
+			/* name */ 'spliterator',
+			/* parameters */,
+			/* return */ 'java.util.Spliterator',
+			/* exceptions */,
+			/* modifiers */ 4161,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -478,12 +558,107 @@ JdkClassCreateHelper.class('java.util.stream.LongStream', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.util.stream.LongStream java.util.stream.LongStream.parallel() */
-			/* name */ 'parallel',
+		[/* public default java.util.stream.BaseStream java.util.stream.LongStream.sequential() */
+			/* name */ 'sequential',
+			/* parameters */,
+			/* return */ 'java.util.stream.BaseStream',
+			/* exceptions */,
+			/* modifiers */ 4161,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public default java.util.stream.LongStream java.util.stream.LongStream.dropWhile(java.util.function.LongPredicate) */
+			/* name */ 'dropWhile',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'predicate',
+					/* type */ 'java.util.function.LongPredicate',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.util.stream.LongStream',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public default java.util.stream.LongStream java.util.stream.LongStream.mapMulti(java.util.stream.LongStream$LongMapMultiConsumer) */
+			/* name */ 'mapMulti',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'mapper',
+					/* type */ 'java.util.stream.LongStream$LongMapMultiConsumer',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.util.stream.LongStream',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public default java.util.stream.LongStream java.util.stream.LongStream.takeWhile(java.util.function.LongPredicate) */
+			/* name */ 'takeWhile',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'predicate',
+					/* type */ 'java.util.function.LongPredicate',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.util.stream.LongStream',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.util.stream.LongStream java.util.stream.LongStream.concat(java.util.stream.LongStream,java.util.stream.LongStream) */
+			/* name */ 'concat',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'b',
+					/* type */ 'java.util.stream.LongStream',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'split',
+					/* type */ 'java.util.stream.LongStream',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.util.stream.LongStream',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.util.stream.LongStream java.util.stream.LongStream.empty() */
+			/* name */ 'empty',
 			/* parameters */,
 			/* return */ 'java.util.stream.LongStream',
 			/* exceptions */,
-			/* modifiers */ 1025,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.util.stream.LongStream java.util.stream.LongStream.generate(java.util.function.LongSupplier) */
+			/* name */ 'generate',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.util.function.LongSupplier',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.util.stream.LongStream',
+			/* exceptions */,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -537,21 +712,12 @@ JdkClassCreateHelper.class('java.util.stream.LongStream', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.util.stream.LongStream java.util.stream.LongStream.sorted() */
-			/* name */ 'sorted',
-			/* parameters */,
-			/* return */ 'java.util.stream.LongStream',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.util.stream.LongStream java.util.stream.LongStream.generate(java.util.function.LongSupplier) */
-			/* name */ 'generate',
+		[/* public static java.util.stream.LongStream java.util.stream.LongStream.of(long) */
+			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
-					/* type */ 'java.util.function.LongSupplier',
+					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -562,176 +728,43 @@ JdkClassCreateHelper.class('java.util.stream.LongStream', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.util.stream.LongStream java.util.stream.LongStream.sequential() */
-			/* name */ 'sequential',
-			/* parameters */,
-			/* return */ 'java.util.stream.LongStream',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public default java.util.stream.BaseStream java.util.stream.LongStream.sequential() */
-			/* name */ 'sequential',
-			/* parameters */,
-			/* return */ 'java.util.stream.BaseStream',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.util.stream.IntStream java.util.stream.LongStream.mapToInt(java.util.function.LongToIntFunction) */
-			/* name */ 'mapToInt',
+		[/* public static java.util.stream.LongStream java.util.stream.LongStream.of(long...) */
+			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
-					/* type */ 'java.util.function.LongToIntFunction',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.util.stream.IntStream',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.util.stream.DoubleStream java.util.stream.LongStream.mapToDouble(java.util.function.LongToDoubleFunction) */
-			/* name */ 'mapToDouble',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.util.function.LongToDoubleFunction',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.util.stream.DoubleStream',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public default java.util.stream.LongStream java.util.stream.LongStream.mapMulti(java.util.stream.LongStream$LongMapMultiConsumer) */
-			/* name */ 'mapMulti',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'mapper',
-					/* type */ 'java.util.stream.LongStream$LongMapMultiConsumer',
+					/* type */ '[J',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
 			/* return */ 'java.util.stream.LongStream',
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 137,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public default java.util.stream.LongStream java.util.stream.LongStream.takeWhile(java.util.function.LongPredicate) */
-			/* name */ 'takeWhile',
+		[/* public static java.util.stream.LongStream java.util.stream.LongStream.range(long,long) */
+			/* name */ 'range',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
-					/* type */ 'java.util.function.LongPredicate',
+					/* name */ 'm',
+					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.util.stream.LongStream',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public default java.util.stream.LongStream java.util.stream.LongStream.dropWhile(java.util.function.LongPredicate) */
-			/* name */ 'dropWhile',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'predicate',
-					/* type */ 'java.util.function.LongPredicate',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.util.stream.LongStream',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract void java.util.stream.LongStream.forEachOrdered(java.util.function.LongConsumer) */
-			/* name */ 'forEachOrdered',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.util.function.LongConsumer',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract boolean java.util.stream.LongStream.noneMatch(java.util.function.LongPredicate) */
-			/* name */ 'noneMatch',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.util.function.LongPredicate',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract <U> java.util.stream.Stream<U> java.util.stream.LongStream.mapToObj(java.util.function.LongFunction<? extends U>) */
-			/* name */ 'mapToObj',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							[/* wildcard type */ 'wt', [
-								[/* upper bounds */
-									[/* type variable ref */ 'tr', [/* name */ 'U']]
-								],
-								/* lower bounds */ UDF
-							]]
-						],
-						/* raw type */ 'java.util.function.LongFunction',
-						/* owner type */ UDF
-					]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* type variable ref */ 'tr', [/* name */ 'U']]
 				],
-				/* raw type */ 'java.util.stream.Stream',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			[/* type parameters */
-				[/* type variable */
-					/* name */ 'U',
-					[/* bounds */
-						'java.lang.Object'
-					],
+				[/* parameter */
+					/* name */ 'endExclusive',
+					/* type */ 'long',
+					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
-			]
+			],
+			/* return */ 'java.util.stream.LongStream',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
 		],
 		[/* public static java.util.stream.LongStream java.util.stream.LongStream.rangeClosed(long,long) */
 			/* name */ 'rangeClosed',
@@ -755,45 +788,12 @@ JdkClassCreateHelper.class('java.util.stream.LongStream', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.util.OptionalDouble java.util.stream.LongStream.average() */
-			/* name */ 'average',
+		[/* public static java.util.stream.LongStream$Builder java.util.stream.LongStream.builder() */
+			/* name */ 'builder',
 			/* parameters */,
-			/* return */ 'java.util.OptionalDouble',
+			/* return */ 'java.util.stream.LongStream$Builder',
 			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.util.LongSummaryStatistics java.util.stream.LongStream.summaryStatistics() */
-			/* name */ 'summaryStatistics',
-			/* parameters */,
-			/* return */ 'java.util.LongSummaryStatistics',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.util.stream.DoubleStream java.util.stream.LongStream.asDoubleStream() */
-			/* name */ 'asDoubleStream',
-			/* parameters */,
-			/* return */ 'java.util.stream.DoubleStream',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.util.stream.Stream<java.lang.Long> java.util.stream.LongStream.boxed() */
-			/* name */ 'boxed',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					'java.lang.Long'
-				],
-				/* raw type */ 'java.util.stream.Stream',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1025,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

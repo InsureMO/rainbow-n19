@@ -10,11 +10,18 @@ JdkClassCreateHelper.class('java.lang.ReflectiveOperationException', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
-		[/* public java.lang.ReflectiveOperationException(java.lang.Throwable) */
+		[/* public java.lang.ReflectiveOperationException() */
+			/* parameters */,
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.ReflectiveOperationException(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'cause',
-					/* type */ 'java.lang.Throwable',
+					/* name */ 'message',
+					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -44,22 +51,15 @@ JdkClassCreateHelper.class('java.lang.ReflectiveOperationException', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.ReflectiveOperationException(java.lang.String) */
+		[/* public java.lang.ReflectiveOperationException(java.lang.Throwable) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'message',
-					/* type */ 'java.lang.String',
+					/* name */ 'cause',
+					/* type */ 'java.lang.Throwable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.ReflectiveOperationException() */
-			/* parameters */,
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

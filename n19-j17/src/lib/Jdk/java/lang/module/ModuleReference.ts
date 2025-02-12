@@ -32,6 +32,20 @@ JdkClassCreateHelper.class('java.lang.module.ModuleReference', [
 		]
 	],
 	[/* declared methods */
+		[/* public abstract java.lang.module.ModuleReader java.lang.module.ModuleReference.open() throws java.io.IOException */
+			/* name */ 'open',
+			/* parameters */,
+			/* return */ 'java.lang.module.ModuleReader',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public final java.lang.module.ModuleDescriptor java.lang.module.ModuleReference.descriptor() */
 			/* name */ 'descriptor',
 			/* parameters */,
@@ -53,20 +67,6 @@ JdkClassCreateHelper.class('java.lang.module.ModuleReference', [
 			]],
 			/* exceptions */,
 			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.lang.module.ModuleReader java.lang.module.ModuleReference.open() throws java.io.IOException */
-			/* name */ 'open',
-			/* parameters */,
-			/* return */ 'java.lang.module.ModuleReader',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

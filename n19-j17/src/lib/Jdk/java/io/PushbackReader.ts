@@ -10,6 +10,20 @@ JdkClassCreateHelper.class('java.io.PushbackReader', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
+		[/* public java.io.PushbackReader(java.io.Reader) */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'in',
+					/* type */ 'java.io.Reader',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.io.PushbackReader(java.io.Reader,int) */
 			[/* parameters */
 				[/* parameter */
@@ -29,23 +43,32 @@ JdkClassCreateHelper.class('java.io.PushbackReader', [
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
-		],
-		[/* public java.io.PushbackReader(java.io.Reader) */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'in',
-					/* type */ 'java.io.Reader',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
+		]
+	],
+	[/* declared methods */
+		[/* public boolean java.io.PushbackReader.markSupported() */
+			/* name */ 'markSupported',
+			/* parameters */,
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
-		]
-	],
-	[/* declared methods */
+		],
+		[/* public boolean java.io.PushbackReader.ready() throws java.io.IOException */
+			/* name */ 'ready',
+			/* parameters */,
+			/* return */ 'boolean',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public int java.io.PushbackReader.read() throws java.io.IOException */
 			/* name */ 'read',
 			/* parameters */,
@@ -93,6 +116,27 @@ JdkClassCreateHelper.class('java.io.PushbackReader', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public long java.io.PushbackReader.skip(long) throws java.io.IOException */
+			/* name */ 'skip',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'avail',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'long',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public void java.io.PushbackReader.close() throws java.io.IOException */
 			/* name */ 'close',
 			/* parameters */,
@@ -124,36 +168,6 @@ JdkClassCreateHelper.class('java.io.PushbackReader', [
 					/* annotations */ UDF
 				]
 			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public long java.io.PushbackReader.skip(long) throws java.io.IOException */
-			/* name */ 'skip',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'avail',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'long',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.io.PushbackReader.markSupported() */
-			/* name */ 'markSupported',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
@@ -237,20 +251,6 @@ JdkClassCreateHelper.class('java.io.PushbackReader', [
 				]
 			],
 			/* return */ 'void',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.io.PushbackReader.ready() throws java.io.IOException */
-			/* name */ 'ready',
-			/* parameters */,
-			/* return */ 'boolean',
 			[/* exceptions */
 				[/* exception */
 					/* type */ 'java.io.IOException',

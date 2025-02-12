@@ -10,6 +10,27 @@ JdkClassCreateHelper.class('java.lang.LayerInstantiationException', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
+		[/* public java.lang.LayerInstantiationException() */
+			/* parameters */,
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.LayerInstantiationException(java.lang.String) */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'msg',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.lang.LayerInstantiationException(java.lang.String,java.lang.Throwable) */
 			[/* parameters */
 				[/* parameter */
@@ -39,27 +60,6 @@ JdkClassCreateHelper.class('java.lang.LayerInstantiationException', [
 					/* annotations */ UDF
 				]
 			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.LayerInstantiationException(java.lang.String) */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'msg',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.LayerInstantiationException() */
-			/* parameters */,
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

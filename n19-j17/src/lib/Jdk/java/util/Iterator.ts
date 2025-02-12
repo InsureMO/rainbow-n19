@@ -18,12 +18,21 @@ JdkClassCreateHelper.class('java.util.Iterator', [
 	],
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public default void java.util.Iterator.remove() */
-			/* name */ 'remove',
+		[/* public abstract E java.util.Iterator.next() */
+			/* name */ 'next',
 			/* parameters */,
-			/* return */ 'void',
+			/* return */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract boolean java.util.Iterator.hasNext() */
+			/* name */ 'hasNext',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -56,21 +65,12 @@ JdkClassCreateHelper.class('java.util.Iterator', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract boolean java.util.Iterator.hasNext() */
-			/* name */ 'hasNext',
+		[/* public default void java.util.Iterator.remove() */
+			/* name */ 'remove',
 			/* parameters */,
-			/* return */ 'boolean',
+			/* return */ 'void',
 			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract E java.util.Iterator.next() */
-			/* name */ 'next',
-			/* parameters */,
-			/* return */ [/* type variable ref */ 'tr', [/* name */ 'E']],
-			/* exceptions */,
-			/* modifiers */ 1025,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

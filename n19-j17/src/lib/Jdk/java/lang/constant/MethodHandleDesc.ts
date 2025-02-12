@@ -28,6 +28,31 @@ JdkClassCreateHelper.class('java.lang.constant.MethodHandleDesc', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public abstract java.lang.constant.MethodTypeDesc java.lang.constant.MethodHandleDesc.invocationType() */
+			/* name */ 'invocationType',
+			/* parameters */,
+			/* return */ 'java.lang.constant.MethodTypeDesc',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public default java.lang.constant.MethodHandleDesc java.lang.constant.MethodHandleDesc.asType(java.lang.constant.MethodTypeDesc) */
+			/* name */ 'asType',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'type',
+					/* type */ 'java.lang.constant.MethodTypeDesc',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.constant.MethodHandleDesc',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public static java.lang.constant.DirectMethodHandleDesc java.lang.constant.MethodHandleDesc.of(java.lang.constant.DirectMethodHandleDesc$Kind,java.lang.constant.ClassDesc,java.lang.String,java.lang.String) */
 			/* name */ 'of',
 			[/* parameters */
@@ -62,19 +87,25 @@ JdkClassCreateHelper.class('java.lang.constant.MethodHandleDesc', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public default java.lang.constant.MethodHandleDesc java.lang.constant.MethodHandleDesc.asType(java.lang.constant.MethodTypeDesc) */
-			/* name */ 'asType',
+		[/* public static java.lang.constant.DirectMethodHandleDesc java.lang.constant.MethodHandleDesc.ofConstructor(java.lang.constant.ClassDesc,java.lang.constant.ClassDesc...) */
+			/* name */ 'ofConstructor',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'type',
-					/* type */ 'java.lang.constant.MethodTypeDesc',
+					/* name */ 'arg0',
+					/* type */ 'java.lang.constant.ClassDesc',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ '[Ljava.lang.constant.ClassDesc;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.lang.constant.MethodHandleDesc',
+			/* return */ 'java.lang.constant.DirectMethodHandleDesc',
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 137,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -143,37 +174,6 @@ JdkClassCreateHelper.class('java.lang.constant.MethodHandleDesc', [
 			/* return */ 'java.lang.constant.DirectMethodHandleDesc',
 			/* exceptions */,
 			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.lang.constant.MethodTypeDesc java.lang.constant.MethodHandleDesc.invocationType() */
-			/* name */ 'invocationType',
-			/* parameters */,
-			/* return */ 'java.lang.constant.MethodTypeDesc',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.lang.constant.DirectMethodHandleDesc java.lang.constant.MethodHandleDesc.ofConstructor(java.lang.constant.ClassDesc,java.lang.constant.ClassDesc...) */
-			/* name */ 'ofConstructor',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.constant.ClassDesc',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ '[Ljava.lang.constant.ClassDesc;',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.constant.DirectMethodHandleDesc',
-			/* exceptions */,
-			/* modifiers */ 137,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

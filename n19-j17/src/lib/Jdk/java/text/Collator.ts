@@ -28,25 +28,50 @@ JdkClassCreateHelper.class('java.text.Collator', [
 		]
 	],
 	[/* declared methods */
-		[/* public boolean java.text.Collator.equals(java.lang.String,java.lang.String) */
-			/* name */ 'equals',
+		[/* public abstract int java.text.Collator.compare(java.lang.String,java.lang.String) */
+			/* name */ 'compare',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'source',
+					/* name */ 'arg0',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'target',
+					/* name */ 'arg1',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'boolean',
+			/* return */ 'int',
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract int java.text.Collator.hashCode() */
+			/* name */ 'hashCode',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.text.CollationKey java.text.Collator.getCollationKey(java.lang.String) */
+			/* name */ 'getCollationKey',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.text.CollationKey',
+			/* exceptions */,
+			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -66,19 +91,23 @@ JdkClassCreateHelper.class('java.text.Collator', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract int java.text.Collator.hashCode() */
-			/* name */ 'hashCode',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.Object java.text.Collator.clone() */
-			/* name */ 'clone',
-			/* parameters */,
-			/* return */ 'java.lang.Object',
+		[/* public boolean java.text.Collator.equals(java.lang.String,java.lang.String) */
+			/* name */ 'equals',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'source',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'target',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -106,34 +135,12 @@ JdkClassCreateHelper.class('java.text.Collator', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract int java.text.Collator.compare(java.lang.String,java.lang.String) */
-			/* name */ 'compare',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static synchronized java.text.Collator java.text.Collator.getInstance() */
-			/* name */ 'getInstance',
+		[/* public java.lang.Object java.text.Collator.clone() */
+			/* name */ 'clone',
 			/* parameters */,
-			/* return */ 'java.text.Collator',
+			/* return */ 'java.lang.Object',
 			/* exceptions */,
-			/* modifiers */ 41,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -150,6 +157,15 @@ JdkClassCreateHelper.class('java.text.Collator', [
 			/* return */ 'java.text.Collator',
 			/* exceptions */,
 			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static synchronized java.text.Collator java.text.Collator.getInstance() */
+			/* name */ 'getInstance',
+			/* parameters */,
+			/* return */ 'java.text.Collator',
+			/* exceptions */,
+			/* modifiers */ 41,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -180,22 +196,6 @@ JdkClassCreateHelper.class('java.text.Collator', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public synchronized void java.text.Collator.setStrength(int) */
-			/* name */ 'setStrength',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'newStrength',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 33,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public synchronized void java.text.Collator.setDecomposition(int) */
 			/* name */ 'setDecomposition',
 			[/* parameters */
@@ -212,19 +212,19 @@ JdkClassCreateHelper.class('java.text.Collator', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.text.CollationKey java.text.Collator.getCollationKey(java.lang.String) */
-			/* name */ 'getCollationKey',
+		[/* public synchronized void java.text.Collator.setStrength(int) */
+			/* name */ 'setStrength',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.String',
+					/* name */ 'newStrength',
+					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.text.CollationKey',
+			/* return */ 'void',
 			/* exceptions */,
-			/* modifiers */ 1025,
+			/* modifiers */ 33,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

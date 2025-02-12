@@ -34,6 +34,20 @@ JdkClassCreateHelper.class('java.util.EnumSet', [
 	],
 	/* declared constructors */,
 	[/* declared methods */
+		[/* public java.lang.Object java.util.EnumSet.clone() throws java.lang.CloneNotSupportedException */
+			/* name */ 'clone',
+			/* parameters */,
+			/* return */ 'java.lang.Object',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.lang.CloneNotSupportedException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 4161,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.util.EnumSet<E> java.util.EnumSet.clone() */
 			/* name */ 'clone',
 			/* parameters */,
@@ -49,19 +63,89 @@ JdkClassCreateHelper.class('java.util.EnumSet', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.Object java.util.EnumSet.clone() throws java.lang.CloneNotSupportedException */
-			/* name */ 'clone',
-			/* parameters */,
-			/* return */ 'java.lang.Object',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.lang.CloneNotSupportedException',
+		[/* public static <E extends java.lang.Enum<E>> java.util.EnumSet<E> java.util.EnumSet.allOf(java.lang.Class<E>) */
+			/* name */ 'allOf',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'result',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* type variable ref */ 'tr', [/* name */ 'E']]
+						],
+						/* raw type */ 'java.lang.Class',
+						/* owner type */ UDF
+					]],
+					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* modifiers */ 4161,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'E']]
+				],
+				/* raw type */ 'java.util.EnumSet',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
-			/* type parameters */ UDF
+			[/* type parameters */
+				[/* type variable */
+					/* name */ 'E',
+					[/* bounds */
+						[/* parameterized type */ 'pt', [
+							[/* actual argument types */
+								[/* type variable ref */ 'tr', [/* name */ 'E']]
+							],
+							/* raw type */ 'java.lang.Enum',
+							/* owner type */ UDF
+						]]
+					],
+					/* annotations */ UDF
+				]
+			]
+		],
+		[/* public static <E extends java.lang.Enum<E>> java.util.EnumSet<E> java.util.EnumSet.complementOf(java.util.EnumSet<E>) */
+			/* name */ 'complementOf',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'result',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* type variable ref */ 'tr', [/* name */ 'E']]
+						],
+						/* raw type */ 'java.util.EnumSet',
+						/* owner type */ UDF
+					]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'E']]
+				],
+				/* raw type */ 'java.util.EnumSet',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			[/* type parameters */
+				[/* type variable */
+					/* name */ 'E',
+					[/* bounds */
+						[/* parameterized type */ 'pt', [
+							[/* actual argument types */
+								[/* type variable ref */ 'tr', [/* name */ 'E']]
+							],
+							/* raw type */ 'java.lang.Enum',
+							/* owner type */ UDF
+						]]
+					],
+					/* annotations */ UDF
+				]
+			]
 		],
 		[/* public static <E extends java.lang.Enum<E>> java.util.EnumSet<E> java.util.EnumSet.copyOf(java.util.Collection<E>) */
 			/* name */ 'copyOf',
@@ -147,21 +231,51 @@ JdkClassCreateHelper.class('java.util.EnumSet', [
 				]
 			]
 		],
-		[/* public static <E extends java.lang.Enum<E>> java.util.EnumSet<E> java.util.EnumSet.of(E,E,E) */
-			/* name */ 'of',
+		[/* public static <E extends java.lang.Enum<E>> java.util.EnumSet<E> java.util.EnumSet.noneOf(java.lang.Class<E>) */
+			/* name */ 'noneOf',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'e2',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* name */ 'universe',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* type variable ref */ 'tr', [/* name */ 'E']]
+						],
+						/* raw type */ 'java.lang.Class',
+						/* owner type */ UDF
+					]],
 					/* modifiers */ 0,
 					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'E']]
 				],
-				[/* parameter */
-					/* name */ 'e3',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
-					/* modifiers */ 0,
+				/* raw type */ 'java.util.EnumSet',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			[/* type parameters */
+				[/* type variable */
+					/* name */ 'E',
+					[/* bounds */
+						[/* parameterized type */ 'pt', [
+							[/* actual argument types */
+								[/* type variable ref */ 'tr', [/* name */ 'E']]
+							],
+							/* raw type */ 'java.lang.Enum',
+							/* owner type */ UDF
+						]]
+					],
 					/* annotations */ UDF
-				],
+				]
+			]
+		],
+		[/* public static <E extends java.lang.Enum<E>> java.util.EnumSet<E> java.util.EnumSet.of(E) */
+			/* name */ 'of',
+			[/* parameters */
 				[/* parameter */
 					/* name */ 'result',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
@@ -237,7 +351,7 @@ JdkClassCreateHelper.class('java.util.EnumSet', [
 				]
 			]
 		],
-		[/* public static <E extends java.lang.Enum<E>> java.util.EnumSet<E> java.util.EnumSet.of(E,E,E,E) */
+		[/* public static <E extends java.lang.Enum<E>> java.util.EnumSet<E> java.util.EnumSet.of(E,E,E) */
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
@@ -248,12 +362,6 @@ JdkClassCreateHelper.class('java.util.EnumSet', [
 				],
 				[/* parameter */
 					/* name */ 'e3',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'e4',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -291,53 +399,27 @@ JdkClassCreateHelper.class('java.util.EnumSet', [
 				]
 			]
 		],
-		[/* public static <E extends java.lang.Enum<E>> java.util.EnumSet<E> java.util.EnumSet.of(E,E...) */
+		[/* public static <E extends java.lang.Enum<E>> java.util.EnumSet<E> java.util.EnumSet.of(E,E,E,E) */
 			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'e2',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ [/* generic array type */ 'ga', [[/* type variable ref */ 'tr', [/* name */ 'E']]]],
+					/* name */ 'e3',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
-				]
-			],
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* type variable ref */ 'tr', [/* name */ 'E']]
 				],
-				/* raw type */ 'java.util.EnumSet',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 137,
-			[/* annotations */
-				['java.lang.SafeVarargs']
-			],
-			[/* type parameters */
-				[/* type variable */
-					/* name */ 'E',
-					[/* bounds */
-						[/* parameterized type */ 'pt', [
-							[/* actual argument types */
-								[/* type variable ref */ 'tr', [/* name */ 'E']]
-							],
-							/* raw type */ 'java.lang.Enum',
-							/* owner type */ UDF
-						]]
-					],
+				[/* parameter */
+					/* name */ 'e4',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
 					/* annotations */ UDF
-				]
-			]
-		],
-		[/* public static <E extends java.lang.Enum<E>> java.util.EnumSet<E> java.util.EnumSet.of(E) */
-			/* name */ 'of',
-			[/* parameters */
+				],
 				[/* parameter */
 					/* name */ 'result',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
@@ -431,18 +513,18 @@ JdkClassCreateHelper.class('java.util.EnumSet', [
 				]
 			]
 		],
-		[/* public static <E extends java.lang.Enum<E>> java.util.EnumSet<E> java.util.EnumSet.noneOf(java.lang.Class<E>) */
-			/* name */ 'noneOf',
+		[/* public static <E extends java.lang.Enum<E>> java.util.EnumSet<E> java.util.EnumSet.of(E,E...) */
+			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'universe',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							[/* type variable ref */ 'tr', [/* name */ 'E']]
-						],
-						/* raw type */ 'java.lang.Class',
-						/* owner type */ UDF
-					]],
+					/* name */ 'arg0',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ [/* generic array type */ 'ga', [[/* type variable ref */ 'tr', [/* name */ 'E']]]],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -455,8 +537,10 @@ JdkClassCreateHelper.class('java.util.EnumSet', [
 				/* owner type */ UDF
 			]],
 			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
+			/* modifiers */ 137,
+			[/* annotations */
+				['java.lang.SafeVarargs']
+			],
 			[/* type parameters */
 				[/* type variable */
 					/* name */ 'E',
@@ -485,90 +569,6 @@ JdkClassCreateHelper.class('java.util.EnumSet', [
 				[/* parameter */
 					/* name */ 'result',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* type variable ref */ 'tr', [/* name */ 'E']]
-				],
-				/* raw type */ 'java.util.EnumSet',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			[/* type parameters */
-				[/* type variable */
-					/* name */ 'E',
-					[/* bounds */
-						[/* parameterized type */ 'pt', [
-							[/* actual argument types */
-								[/* type variable ref */ 'tr', [/* name */ 'E']]
-							],
-							/* raw type */ 'java.lang.Enum',
-							/* owner type */ UDF
-						]]
-					],
-					/* annotations */ UDF
-				]
-			]
-		],
-		[/* public static <E extends java.lang.Enum<E>> java.util.EnumSet<E> java.util.EnumSet.allOf(java.lang.Class<E>) */
-			/* name */ 'allOf',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'result',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							[/* type variable ref */ 'tr', [/* name */ 'E']]
-						],
-						/* raw type */ 'java.lang.Class',
-						/* owner type */ UDF
-					]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* type variable ref */ 'tr', [/* name */ 'E']]
-				],
-				/* raw type */ 'java.util.EnumSet',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			[/* type parameters */
-				[/* type variable */
-					/* name */ 'E',
-					[/* bounds */
-						[/* parameterized type */ 'pt', [
-							[/* actual argument types */
-								[/* type variable ref */ 'tr', [/* name */ 'E']]
-							],
-							/* raw type */ 'java.lang.Enum',
-							/* owner type */ UDF
-						]]
-					],
-					/* annotations */ UDF
-				]
-			]
-		],
-		[/* public static <E extends java.lang.Enum<E>> java.util.EnumSet<E> java.util.EnumSet.complementOf(java.util.EnumSet<E>) */
-			/* name */ 'complementOf',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'result',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							[/* type variable ref */ 'tr', [/* name */ 'E']]
-						],
-						/* raw type */ 'java.util.EnumSet',
-						/* owner type */ UDF
-					]],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]

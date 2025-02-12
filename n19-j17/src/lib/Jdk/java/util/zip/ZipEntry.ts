@@ -43,19 +43,28 @@ JdkClassCreateHelper.class('java.util.zip.ZipEntry', [
 		]
 	],
 	[/* declared methods */
-		[/* public java.lang.String java.util.zip.ZipEntry.getName() */
-			/* name */ 'getName',
+		[/* public boolean java.util.zip.ZipEntry.isDirectory() */
+			/* name */ 'isDirectory',
 			/* parameters */,
-			/* return */ 'java.lang.String',
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.util.zip.ZipEntry.toString() */
-			/* name */ 'toString',
+		[/* public byte[] java.util.zip.ZipEntry.getExtra() */
+			/* name */ 'getExtra',
 			/* parameters */,
-			/* return */ 'java.lang.String',
+			/* return */ '[B',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.zip.ZipEntry.getMethod() */
+			/* name */ 'getMethod',
+			/* parameters */,
+			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -79,28 +88,46 @@ JdkClassCreateHelper.class('java.util.zip.ZipEntry', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.util.zip.ZipEntry.getMethod() */
-			/* name */ 'getMethod',
+		[/* public java.lang.String java.util.zip.ZipEntry.getComment() */
+			/* name */ 'getComment',
 			/* parameters */,
-			/* return */ 'int',
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public long java.util.zip.ZipEntry.getSize() */
-			/* name */ 'getSize',
+		[/* public java.lang.String java.util.zip.ZipEntry.getName() */
+			/* name */ 'getName',
 			/* parameters */,
-			/* return */ 'long',
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public boolean java.util.zip.ZipEntry.isDirectory() */
-			/* name */ 'isDirectory',
+		[/* public java.lang.String java.util.zip.ZipEntry.toString() */
+			/* name */ 'toString',
 			/* parameters */,
-			/* return */ 'boolean',
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.nio.file.attribute.FileTime java.util.zip.ZipEntry.getCreationTime() */
+			/* name */ 'getCreationTime',
+			/* parameters */,
+			/* return */ 'java.nio.file.attribute.FileTime',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.nio.file.attribute.FileTime java.util.zip.ZipEntry.getLastAccessTime() */
+			/* name */ 'getLastAccessTime',
+			/* parameters */,
+			/* return */ 'java.nio.file.attribute.FileTime',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -115,101 +142,10 @@ JdkClassCreateHelper.class('java.util.zip.ZipEntry', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.util.zip.ZipEntry java.util.zip.ZipEntry.setLastModifiedTime(java.nio.file.attribute.FileTime) */
-			/* name */ 'setLastModifiedTime',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'time',
-					/* type */ 'java.nio.file.attribute.FileTime',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.util.zip.ZipEntry',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.util.zip.ZipEntry.getComment() */
-			/* name */ 'getComment',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public long java.util.zip.ZipEntry.getTime() */
-			/* name */ 'getTime',
-			/* parameters */,
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.util.zip.ZipEntry.setTime(long) */
-			/* name */ 'setTime',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'localYear',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.util.zip.ZipEntry.setTimeLocal(java.time.LocalDateTime) */
-			/* name */ 'setTimeLocal',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'time',
-					/* type */ 'java.time.LocalDateTime',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public java.time.LocalDateTime java.util.zip.ZipEntry.getTimeLocal() */
 			/* name */ 'getTimeLocal',
 			/* parameters */,
 			/* return */ 'java.time.LocalDateTime',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.zip.ZipEntry java.util.zip.ZipEntry.setLastAccessTime(java.nio.file.attribute.FileTime) */
-			/* name */ 'setLastAccessTime',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'time',
-					/* type */ 'java.nio.file.attribute.FileTime',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.util.zip.ZipEntry',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.nio.file.attribute.FileTime java.util.zip.ZipEntry.getLastAccessTime() */
-			/* name */ 'getLastAccessTime',
-			/* parameters */,
-			/* return */ 'java.nio.file.attribute.FileTime',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -231,26 +167,33 @@ JdkClassCreateHelper.class('java.util.zip.ZipEntry', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.nio.file.attribute.FileTime java.util.zip.ZipEntry.getCreationTime() */
-			/* name */ 'getCreationTime',
-			/* parameters */,
-			/* return */ 'java.nio.file.attribute.FileTime',
+		[/* public java.util.zip.ZipEntry java.util.zip.ZipEntry.setLastAccessTime(java.nio.file.attribute.FileTime) */
+			/* name */ 'setLastAccessTime',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'time',
+					/* type */ 'java.nio.file.attribute.FileTime',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.util.zip.ZipEntry',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.util.zip.ZipEntry.setSize(long) */
-			/* name */ 'setSize',
+		[/* public java.util.zip.ZipEntry java.util.zip.ZipEntry.setLastModifiedTime(java.nio.file.attribute.FileTime) */
+			/* name */ 'setLastModifiedTime',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'size',
-					/* type */ 'long',
+					/* name */ 'time',
+					/* type */ 'java.nio.file.attribute.FileTime',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'void',
+			/* return */ 'java.util.zip.ZipEntry',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -260,6 +203,49 @@ JdkClassCreateHelper.class('java.util.zip.ZipEntry', [
 			/* name */ 'getCompressedSize',
 			/* parameters */,
 			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public long java.util.zip.ZipEntry.getCrc() */
+			/* name */ 'getCrc',
+			/* parameters */,
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public long java.util.zip.ZipEntry.getSize() */
+			/* name */ 'getSize',
+			/* parameters */,
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public long java.util.zip.ZipEntry.getTime() */
+			/* name */ 'getTime',
+			/* parameters */,
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.util.zip.ZipEntry.setComment(java.lang.String) */
+			/* name */ 'setComment',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'comment',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -297,10 +283,17 @@ JdkClassCreateHelper.class('java.util.zip.ZipEntry', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public long java.util.zip.ZipEntry.getCrc() */
-			/* name */ 'getCrc',
-			/* parameters */,
-			/* return */ 'long',
+		[/* public void java.util.zip.ZipEntry.setExtra(byte[]) */
+			/* name */ 'setExtra',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'extra',
+					/* type */ '[B',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -322,12 +315,12 @@ JdkClassCreateHelper.class('java.util.zip.ZipEntry', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.util.zip.ZipEntry.setExtra(byte[]) */
-			/* name */ 'setExtra',
+		[/* public void java.util.zip.ZipEntry.setSize(long) */
+			/* name */ 'setSize',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'extra',
-					/* type */ '[B',
+					/* name */ 'size',
+					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -338,21 +331,28 @@ JdkClassCreateHelper.class('java.util.zip.ZipEntry', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public byte[] java.util.zip.ZipEntry.getExtra() */
-			/* name */ 'getExtra',
-			/* parameters */,
-			/* return */ '[B',
+		[/* public void java.util.zip.ZipEntry.setTime(long) */
+			/* name */ 'setTime',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'localYear',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.util.zip.ZipEntry.setComment(java.lang.String) */
-			/* name */ 'setComment',
+		[/* public void java.util.zip.ZipEntry.setTimeLocal(java.time.LocalDateTime) */
+			/* name */ 'setTimeLocal',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'comment',
-					/* type */ 'java.lang.String',
+					/* name */ 'time',
+					/* type */ 'java.time.LocalDateTime',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]

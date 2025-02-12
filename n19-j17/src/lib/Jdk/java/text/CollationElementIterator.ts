@@ -11,27 +11,16 @@ JdkClassCreateHelper.class('java.text.CollationElementIterator', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public int java.text.CollationElementIterator.next() */
-			/* name */ 'next',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.text.CollationElementIterator.reset() */
-			/* name */ 'reset',
-			/* parameters */,
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.text.CollationElementIterator.previous() */
-			/* name */ 'previous',
-			/* parameters */,
+		[/* public int java.text.CollationElementIterator.getMaxExpansion(int) */
+			/* name */ 'getMaxExpansion',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'order',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
 			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 1,
@@ -47,64 +36,18 @@ JdkClassCreateHelper.class('java.text.CollationElementIterator', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.text.CollationElementIterator.setOffset(int) */
-			/* name */ 'setOffset',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'last',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
+		[/* public int java.text.CollationElementIterator.next() */
+			/* name */ 'next',
+			/* parameters */,
+			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.text.CollationElementIterator.setText(java.lang.String) */
-			/* name */ 'setText',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'source',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.text.CollationElementIterator.setText(java.text.CharacterIterator) */
-			/* name */ 'setText',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'source',
-					/* type */ 'java.text.CharacterIterator',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.text.CollationElementIterator.getMaxExpansion(int) */
-			/* name */ 'getMaxExpansion',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'order',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
+		[/* public int java.text.CollationElementIterator.previous() */
+			/* name */ 'previous',
+			/* parameters */,
 			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 1,
@@ -156,6 +99,63 @@ JdkClassCreateHelper.class('java.text.CollationElementIterator', [
 			/* return */ 'short',
 			/* exceptions */,
 			/* modifiers */ 25,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.text.CollationElementIterator.reset() */
+			/* name */ 'reset',
+			/* parameters */,
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.text.CollationElementIterator.setOffset(int) */
+			/* name */ 'setOffset',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'last',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.text.CollationElementIterator.setText(java.lang.String) */
+			/* name */ 'setText',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'source',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.text.CollationElementIterator.setText(java.text.CharacterIterator) */
+			/* name */ 'setText',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'source',
+					/* type */ 'java.text.CharacterIterator',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

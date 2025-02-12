@@ -85,44 +85,82 @@ JdkClassCreateHelper.class('java.lang.Double', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.lang.String java.lang.Double.toString(double) */
-			/* name */ 'toString',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.lang.Double.toString() */
-			/* name */ 'toString',
+		[/* public boolean java.lang.Double.isInfinite() */
+			/* name */ 'isInfinite',
 			/* parameters */,
-			/* return */ 'java.lang.String',
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static int java.lang.Double.hashCode(double) */
-			/* name */ 'hashCode',
+		[/* public boolean java.lang.Double.isNaN() */
+			/* name */ 'isNaN',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public byte java.lang.Double.byteValue() */
+			/* name */ 'byteValue',
+			/* parameters */,
+			/* return */ 'byte',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public double java.lang.Double.doubleValue() */
+			/* name */ 'doubleValue',
+			/* parameters */,
+			/* return */ 'double',
+			/* exceptions */,
+			/* modifiers */ 1,
+			[/* annotations */
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public float java.lang.Double.floatValue() */
+			/* name */ 'floatValue',
+			/* parameters */,
+			/* return */ 'float',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.lang.Double.compareTo(java.lang.Double) */
+			/* name */ 'compareTo',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'bits',
-					/* type */ 'double',
+					/* name */ 'anotherDouble',
+					/* type */ 'java.lang.Double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
 			/* return */ 'int',
 			/* exceptions */,
-			/* modifiers */ 9,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.lang.Double.compareTo(java.lang.Object) */
+			/* name */ 'compareTo',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 4161,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -135,23 +173,137 @@ JdkClassCreateHelper.class('java.lang.Double', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static double java.lang.Double.min(double,double) */
-			/* name */ 'min',
+		[/* public int java.lang.Double.intValue() */
+			/* name */ 'intValue',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.Double java.lang.Double.resolveConstantDesc(java.lang.invoke.MethodHandles$Lookup) */
+			/* name */ 'resolveConstantDesc',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'b',
-					/* type */ 'double',
+					/* name */ 'lookup',
+					/* type */ 'java.lang.invoke.MethodHandles$Lookup',
 					/* modifiers */ 0,
 					/* annotations */ UDF
-				],
+				]
+			],
+			/* return */ 'java.lang.Double',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.Object java.lang.Double.resolveConstantDesc(java.lang.invoke.MethodHandles$Lookup) throws java.lang.ReflectiveOperationException */
+			/* name */ 'resolveConstantDesc',
+			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'arg0',
+					/* type */ 'java.lang.invoke.MethodHandles$Lookup',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.Object',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.lang.ReflectiveOperationException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 4161,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.lang.Double.toString() */
+			/* name */ 'toString',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.Optional<java.lang.Double> java.lang.Double.describeConstable() */
+			/* name */ 'describeConstable',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					'java.lang.Double'
+				],
+				/* raw type */ 'java.util.Optional',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public long java.lang.Double.longValue() */
+			/* name */ 'longValue',
+			/* parameters */,
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public short java.lang.Double.shortValue() */
+			/* name */ 'shortValue',
+			/* parameters */,
+			/* return */ 'short',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static boolean java.lang.Double.isFinite(double) */
+			/* name */ 'isFinite',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'double',
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static boolean java.lang.Double.isInfinite(double) */
+			/* name */ 'isInfinite',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static boolean java.lang.Double.isNaN(double) */
+			/* name */ 'isNaN',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 9,
 			/* annotations */ UDF,
@@ -179,8 +331,111 @@ JdkClassCreateHelper.class('java.lang.Double', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static native long java.lang.Double.doubleToRawLongBits(double) */
-			/* name */ 'doubleToRawLongBits',
+		[/* public static double java.lang.Double.min(double,double) */
+			/* name */ 'min',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'b',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'double',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static double java.lang.Double.parseDouble(java.lang.String) throws java.lang.NumberFormatException */
+			/* name */ 'parseDouble',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'double',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.lang.NumberFormatException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static double java.lang.Double.sum(double,double) */
+			/* name */ 'sum',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'b',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'double',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static int java.lang.Double.compare(double,double) */
+			/* name */ 'compare',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'd2',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'thisBits',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static int java.lang.Double.hashCode(double) */
+			/* name */ 'hashCode',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'bits',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.lang.Double java.lang.Double.valueOf(double) */
+			/* name */ 'valueOf',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
@@ -189,12 +444,65 @@ JdkClassCreateHelper.class('java.lang.Double', [
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'long',
+			/* return */ 'java.lang.Double',
 			/* exceptions */,
-			/* modifiers */ 265,
+			/* modifiers */ 9,
 			[/* annotations */
 				['jdk.internal.vm.annotation.IntrinsicCandidate']
 			],
+			/* type parameters */ UDF
+		],
+		[/* public static java.lang.Double java.lang.Double.valueOf(java.lang.String) throws java.lang.NumberFormatException */
+			/* name */ 'valueOf',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.Double',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.lang.NumberFormatException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.lang.String java.lang.Double.toHexString(double) */
+			/* name */ 'toHexString',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'subnormal',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.lang.String java.lang.Double.toString(double) */
+			/* name */ 'toString',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static long java.lang.Double.doubleToLongBits(double) */
@@ -233,330 +541,22 @@ JdkClassCreateHelper.class('java.lang.Double', [
 			],
 			/* type parameters */ UDF
 		],
-		[/* public int java.lang.Double.compareTo(java.lang.Double) */
-			/* name */ 'compareTo',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'anotherDouble',
-					/* type */ 'java.lang.Double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.lang.Double.compareTo(java.lang.Object) */
-			/* name */ 'compareTo',
+		[/* public static native long java.lang.Double.doubleToRawLongBits(double) */
+			/* name */ 'doubleToRawLongBits',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static int java.lang.Double.compare(double,double) */
-			/* name */ 'compare',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'd2',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'thisBits',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public byte java.lang.Double.byteValue() */
-			/* name */ 'byteValue',
-			/* parameters */,
-			/* return */ 'byte',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public short java.lang.Double.shortValue() */
-			/* name */ 'shortValue',
-			/* parameters */,
-			/* return */ 'short',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.lang.Double.intValue() */
-			/* name */ 'intValue',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public long java.lang.Double.longValue() */
-			/* name */ 'longValue',
-			/* parameters */,
 			/* return */ 'long',
 			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public float java.lang.Double.floatValue() */
-			/* name */ 'floatValue',
-			/* parameters */,
-			/* return */ 'float',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public double java.lang.Double.doubleValue() */
-			/* name */ 'doubleValue',
-			/* parameters */,
-			/* return */ 'double',
-			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 265,
 			[/* annotations */
 				['jdk.internal.vm.annotation.IntrinsicCandidate']
 			],
-			/* type parameters */ UDF
-		],
-		[/* public static java.lang.Double java.lang.Double.valueOf(java.lang.String) throws java.lang.NumberFormatException */
-			/* name */ 'valueOf',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.Double',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.lang.NumberFormatException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.lang.Double java.lang.Double.valueOf(double) */
-			/* name */ 'valueOf',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.Double',
-			/* exceptions */,
-			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public static java.lang.String java.lang.Double.toHexString(double) */
-			/* name */ 'toHexString',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'subnormal',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.Object java.lang.Double.resolveConstantDesc(java.lang.invoke.MethodHandles$Lookup) throws java.lang.ReflectiveOperationException */
-			/* name */ 'resolveConstantDesc',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.invoke.MethodHandles$Lookup',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.Object',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.lang.ReflectiveOperationException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.Double java.lang.Double.resolveConstantDesc(java.lang.invoke.MethodHandles$Lookup) */
-			/* name */ 'resolveConstantDesc',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'lookup',
-					/* type */ 'java.lang.invoke.MethodHandles$Lookup',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.Double',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.Optional<java.lang.Double> java.lang.Double.describeConstable() */
-			/* name */ 'describeConstable',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					'java.lang.Double'
-				],
-				/* raw type */ 'java.util.Optional',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.lang.Double.isNaN() */
-			/* name */ 'isNaN',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static boolean java.lang.Double.isNaN(double) */
-			/* name */ 'isNaN',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static double java.lang.Double.sum(double,double) */
-			/* name */ 'sum',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'b',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'double',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.lang.Double.isInfinite() */
-			/* name */ 'isInfinite',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static boolean java.lang.Double.isInfinite(double) */
-			/* name */ 'isInfinite',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static boolean java.lang.Double.isFinite(double) */
-			/* name */ 'isFinite',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static double java.lang.Double.parseDouble(java.lang.String) throws java.lang.NumberFormatException */
-			/* name */ 'parseDouble',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'double',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.lang.NumberFormatException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 9,
-			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]
 	],

@@ -21,24 +21,6 @@ JdkClassCreateHelper.class('java.lang.reflect.TypeVariable', [
 	],
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public abstract java.lang.String java.lang.reflect.TypeVariable.getName() */
-			/* name */ 'getName',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.lang.reflect.Type[] java.lang.reflect.TypeVariable.getBounds() */
-			/* name */ 'getBounds',
-			/* parameters */,
-			/* return */ '[Ljava.lang.reflect.Type;',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public abstract D java.lang.reflect.TypeVariable.getGenericDeclaration() */
 			/* name */ 'getGenericDeclaration',
 			/* parameters */,
@@ -48,10 +30,28 @@ JdkClassCreateHelper.class('java.lang.reflect.TypeVariable', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public abstract java.lang.String java.lang.reflect.TypeVariable.getName() */
+			/* name */ 'getName',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public abstract java.lang.reflect.AnnotatedType[] java.lang.reflect.TypeVariable.getAnnotatedBounds() */
 			/* name */ 'getAnnotatedBounds',
 			/* parameters */,
 			/* return */ '[Ljava.lang.reflect.AnnotatedType;',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.lang.reflect.Type[] java.lang.reflect.TypeVariable.getBounds() */
+			/* name */ 'getBounds',
+			/* parameters */,
+			/* return */ '[Ljava.lang.reflect.Type;',
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,

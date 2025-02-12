@@ -26,8 +26,8 @@ JdkClassCreateHelper.class('java.util.MissingFormatArgumentException', [
 		]
 	],
 	[/* declared methods */
-		[/* public java.lang.String java.util.MissingFormatArgumentException.getMessage() */
-			/* name */ 'getMessage',
+		[/* public java.lang.String java.util.MissingFormatArgumentException.getFormatSpecifier() */
+			/* name */ 'getFormatSpecifier',
 			/* parameters */,
 			/* return */ 'java.lang.String',
 			/* exceptions */,
@@ -35,8 +35,8 @@ JdkClassCreateHelper.class('java.util.MissingFormatArgumentException', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.util.MissingFormatArgumentException.getFormatSpecifier() */
-			/* name */ 'getFormatSpecifier',
+		[/* public java.lang.String java.util.MissingFormatArgumentException.getMessage() */
+			/* name */ 'getMessage',
 			/* parameters */,
 			/* return */ 'java.lang.String',
 			/* exceptions */,

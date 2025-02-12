@@ -54,6 +54,27 @@ JdkClassCreateHelper.class('java.lang.constant.DynamicConstantDesc', [
 		]
 	],
 	[/* declared methods */
+		[/* public T java.lang.constant.DynamicConstantDesc.resolveConstantDesc(java.lang.invoke.MethodHandles$Lookup) throws java.lang.ReflectiveOperationException */
+			/* name */ 'resolveConstantDesc',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'i',
+					/* type */ 'java.lang.invoke.MethodHandles$Lookup',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* type variable ref */ 'tr', [/* name */ 'T']],
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.lang.ReflectiveOperationException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public final boolean java.lang.constant.DynamicConstantDesc.equals(java.lang.Object) */
 			/* name */ 'equals',
 			[/* parameters */
@@ -70,15 +91,6 @@ JdkClassCreateHelper.class('java.lang.constant.DynamicConstantDesc', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.lang.constant.DynamicConstantDesc.toString() */
-			/* name */ 'toString',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public final int java.lang.constant.DynamicConstantDesc.hashCode() */
 			/* name */ 'hashCode',
 			/* parameters */,
@@ -88,8 +100,68 @@ JdkClassCreateHelper.class('java.lang.constant.DynamicConstantDesc', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static <T> java.lang.constant.DynamicConstantDesc<T> java.lang.constant.DynamicConstantDesc.of(java.lang.constant.DirectMethodHandleDesc,java.lang.constant.ConstantDesc...) */
-			/* name */ 'of',
+		[/* public java.lang.String java.lang.constant.DynamicConstantDesc.constantName() */
+			/* name */ 'constantName',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.lang.constant.DynamicConstantDesc.toString() */
+			/* name */ 'toString',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.constant.ClassDesc java.lang.constant.DynamicConstantDesc.constantType() */
+			/* name */ 'constantType',
+			/* parameters */,
+			/* return */ 'java.lang.constant.ClassDesc',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.constant.ConstantDesc[] java.lang.constant.DynamicConstantDesc.bootstrapArgs() */
+			/* name */ 'bootstrapArgs',
+			/* parameters */,
+			/* return */ '[Ljava.lang.constant.ConstantDesc;',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.constant.DirectMethodHandleDesc java.lang.constant.DynamicConstantDesc.bootstrapMethod() */
+			/* name */ 'bootstrapMethod',
+			/* parameters */,
+			/* return */ 'java.lang.constant.DirectMethodHandleDesc',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.List<java.lang.constant.ConstantDesc> java.lang.constant.DynamicConstantDesc.bootstrapArgsList() */
+			/* name */ 'bootstrapArgsList',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					'java.lang.constant.ConstantDesc'
+				],
+				/* raw type */ 'java.util.List',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static <T> java.lang.constant.ConstantDesc java.lang.constant.DynamicConstantDesc.ofCanonical(java.lang.constant.DirectMethodHandleDesc,java.lang.String,java.lang.constant.ClassDesc,java.lang.constant.ConstantDesc[]) */
+			/* name */ 'ofCanonical',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
@@ -99,20 +171,26 @@ JdkClassCreateHelper.class('java.lang.constant.DynamicConstantDesc', [
 				],
 				[/* parameter */
 					/* name */ 'arg1',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg2',
+					/* type */ 'java.lang.constant.ClassDesc',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg3',
 					/* type */ '[Ljava.lang.constant.ConstantDesc;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* type variable ref */ 'tr', [/* name */ 'T']]
-				],
-				/* raw type */ 'java.lang.constant.DynamicConstantDesc',
-				/* owner type */ UDF
-			]],
+			/* return */ 'java.lang.constant.ConstantDesc',
 			/* exceptions */,
-			/* modifiers */ 137,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			[/* type parameters */
 				[/* type variable */
@@ -154,35 +232,41 @@ JdkClassCreateHelper.class('java.lang.constant.DynamicConstantDesc', [
 				]
 			]
 		],
-		[/* public T java.lang.constant.DynamicConstantDesc.resolveConstantDesc(java.lang.invoke.MethodHandles$Lookup) throws java.lang.ReflectiveOperationException */
-			/* name */ 'resolveConstantDesc',
+		[/* public static <T> java.lang.constant.DynamicConstantDesc<T> java.lang.constant.DynamicConstantDesc.of(java.lang.constant.DirectMethodHandleDesc,java.lang.constant.ConstantDesc...) */
+			/* name */ 'of',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
-					/* type */ 'java.lang.invoke.MethodHandles$Lookup',
+					/* name */ 'arg0',
+					/* type */ 'java.lang.constant.DirectMethodHandleDesc',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ '[Ljava.lang.constant.ConstantDesc;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ [/* type variable ref */ 'tr', [/* name */ 'T']],
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.lang.ReflectiveOperationException',
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'T']]
+				],
+				/* raw type */ 'java.lang.constant.DynamicConstantDesc',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 137,
+			/* annotations */ UDF,
+			[/* type parameters */
+				[/* type variable */
+					/* name */ 'T',
+					[/* bounds */
+						'java.lang.Object'
+					],
 					/* annotations */ UDF
 				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.constant.DirectMethodHandleDesc java.lang.constant.DynamicConstantDesc.bootstrapMethod() */
-			/* name */ 'bootstrapMethod',
-			/* parameters */,
-			/* return */ 'java.lang.constant.DirectMethodHandleDesc',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
+			]
 		],
 		[/* public static <T> java.lang.constant.DynamicConstantDesc<T> java.lang.constant.DynamicConstantDesc.ofNamed(java.lang.constant.DirectMethodHandleDesc,java.lang.String,java.lang.constant.ClassDesc,java.lang.constant.ConstantDesc...) */
 			/* name */ 'ofNamed',
@@ -231,90 +315,6 @@ JdkClassCreateHelper.class('java.lang.constant.DynamicConstantDesc', [
 					/* annotations */ UDF
 				]
 			]
-		],
-		[/* public java.lang.String java.lang.constant.DynamicConstantDesc.constantName() */
-			/* name */ 'constantName',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.constant.ClassDesc java.lang.constant.DynamicConstantDesc.constantType() */
-			/* name */ 'constantType',
-			/* parameters */,
-			/* return */ 'java.lang.constant.ClassDesc',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.constant.ConstantDesc[] java.lang.constant.DynamicConstantDesc.bootstrapArgs() */
-			/* name */ 'bootstrapArgs',
-			/* parameters */,
-			/* return */ '[Ljava.lang.constant.ConstantDesc;',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static <T> java.lang.constant.ConstantDesc java.lang.constant.DynamicConstantDesc.ofCanonical(java.lang.constant.DirectMethodHandleDesc,java.lang.String,java.lang.constant.ClassDesc,java.lang.constant.ConstantDesc[]) */
-			/* name */ 'ofCanonical',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.constant.DirectMethodHandleDesc',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg2',
-					/* type */ 'java.lang.constant.ClassDesc',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg3',
-					/* type */ '[Ljava.lang.constant.ConstantDesc;',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.constant.ConstantDesc',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			[/* type parameters */
-				[/* type variable */
-					/* name */ 'T',
-					[/* bounds */
-						'java.lang.Object'
-					],
-					/* annotations */ UDF
-				]
-			]
-		],
-		[/* public java.util.List<java.lang.constant.ConstantDesc> java.lang.constant.DynamicConstantDesc.bootstrapArgsList() */
-			/* name */ 'bootstrapArgsList',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					'java.lang.constant.ConstantDesc'
-				],
-				/* raw type */ 'java.util.List',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
 		]
 	],
 	/* declared fields */,

@@ -17,15 +17,6 @@ JdkClassCreateHelper.class('java.time.format.ResolverStyle', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public static java.time.format.ResolverStyle[] java.time.format.ResolverStyle.values() */
-			/* name */ 'values',
-			/* parameters */,
-			/* return */ '[Ljava.time.format.ResolverStyle;',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public static java.time.format.ResolverStyle java.time.format.ResolverStyle.valueOf(java.lang.String) */
 			/* name */ 'valueOf',
 			[/* parameters */
@@ -37,6 +28,15 @@ JdkClassCreateHelper.class('java.time.format.ResolverStyle', [
 				]
 			],
 			/* return */ 'java.time.format.ResolverStyle',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.time.format.ResolverStyle[] java.time.format.ResolverStyle.values() */
+			/* name */ 'values',
+			/* parameters */,
+			/* return */ '[Ljava.time.format.ResolverStyle;',
 			/* exceptions */,
 			/* modifiers */ 9,
 			/* annotations */ UDF,

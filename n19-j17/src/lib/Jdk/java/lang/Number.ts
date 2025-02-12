@@ -21,21 +21,21 @@ JdkClassCreateHelper.class('java.lang.Number', [
 		]
 	],
 	[/* declared methods */
-		[/* public byte java.lang.Number.byteValue() */
-			/* name */ 'byteValue',
+		[/* public abstract double java.lang.Number.doubleValue() */
+			/* name */ 'doubleValue',
 			/* parameters */,
-			/* return */ 'byte',
+			/* return */ 'double',
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public short java.lang.Number.shortValue() */
-			/* name */ 'shortValue',
+		[/* public abstract float java.lang.Number.floatValue() */
+			/* name */ 'floatValue',
 			/* parameters */,
-			/* return */ 'short',
+			/* return */ 'float',
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -57,21 +57,21 @@ JdkClassCreateHelper.class('java.lang.Number', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract float java.lang.Number.floatValue() */
-			/* name */ 'floatValue',
+		[/* public byte java.lang.Number.byteValue() */
+			/* name */ 'byteValue',
 			/* parameters */,
-			/* return */ 'float',
+			/* return */ 'byte',
 			/* exceptions */,
-			/* modifiers */ 1025,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract double java.lang.Number.doubleValue() */
-			/* name */ 'doubleValue',
+		[/* public short java.lang.Number.shortValue() */
+			/* name */ 'shortValue',
 			/* parameters */,
-			/* return */ 'double',
+			/* return */ 'short',
 			/* exceptions */,
-			/* modifiers */ 1025,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

@@ -50,18 +50,18 @@ JdkClassCreateHelper.class('java.util.PropertyResourceBundle', [
 		]
 	],
 	[/* declared methods */
-		[/* public java.util.Enumeration<java.lang.String> java.util.PropertyResourceBundle.getKeys() */
-			/* name */ 'getKeys',
+		[/* protected java.util.Set<java.lang.String> java.util.PropertyResourceBundle.handleKeySet() */
+			/* name */ 'handleKeySet',
 			/* parameters */,
 			/* return */ [/* parameterized type */ 'pt', [
 				[/* actual argument types */
 					'java.lang.String'
 				],
-				/* raw type */ 'java.util.Enumeration',
+				/* raw type */ 'java.util.Set',
 				/* owner type */ UDF
 			]],
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 4,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -81,18 +81,18 @@ JdkClassCreateHelper.class('java.util.PropertyResourceBundle', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* protected java.util.Set<java.lang.String> java.util.PropertyResourceBundle.handleKeySet() */
-			/* name */ 'handleKeySet',
+		[/* public java.util.Enumeration<java.lang.String> java.util.PropertyResourceBundle.getKeys() */
+			/* name */ 'getKeys',
 			/* parameters */,
 			/* return */ [/* parameterized type */ 'pt', [
 				[/* actual argument types */
 					'java.lang.String'
 				],
-				/* raw type */ 'java.util.Set',
+				/* raw type */ 'java.util.Enumeration',
 				/* owner type */ UDF
 			]],
 			/* exceptions */,
-			/* modifiers */ 4,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

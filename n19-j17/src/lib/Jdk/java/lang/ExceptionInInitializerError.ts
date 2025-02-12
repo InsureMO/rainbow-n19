@@ -10,6 +10,13 @@ JdkClassCreateHelper.class('java.lang.ExceptionInInitializerError', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
+		[/* public java.lang.ExceptionInInitializerError() */
+			/* parameters */,
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.lang.ExceptionInInitializerError(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
@@ -33,13 +40,6 @@ JdkClassCreateHelper.class('java.lang.ExceptionInInitializerError', [
 					/* annotations */ UDF
 				]
 			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.ExceptionInInitializerError() */
-			/* parameters */,
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

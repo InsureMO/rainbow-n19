@@ -20,94 +20,6 @@ JdkClassCreateHelper.class('java.util.Spliterator$OfLong', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public default void java.util.Spliterator$OfLong.forEachRemaining(java.lang.Object) */
-			/* name */ 'forEachRemaining',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public default void java.util.Spliterator$OfLong.forEachRemaining(java.util.function.LongConsumer) */
-			/* name */ 'forEachRemaining',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'action',
-					/* type */ 'java.util.function.LongConsumer',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public default void java.util.Spliterator$OfLong.forEachRemaining(java.util.function.Consumer<? super java.lang.Long>) */
-			/* name */ 'forEachRemaining',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'action',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							[/* wildcard type */ 'wt', [
-								[/* upper bounds */
-									'java.lang.Object'
-								],
-								[/* lower bounds */
-									'java.lang.Long'
-								]
-							]]
-						],
-						/* raw type */ 'java.util.function.Consumer',
-						/* owner type */ UDF
-					]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public default java.util.Spliterator$OfPrimitive java.util.Spliterator$OfLong.trySplit() */
-			/* name */ 'trySplit',
-			/* parameters */,
-			/* return */ 'java.util.Spliterator$OfPrimitive',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public default java.util.Spliterator java.util.Spliterator$OfLong.trySplit() */
-			/* name */ 'trySplit',
-			/* parameters */,
-			/* return */ 'java.util.Spliterator',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.util.Spliterator$OfLong java.util.Spliterator$OfLong.trySplit() */
-			/* name */ 'trySplit',
-			/* parameters */,
-			/* return */ 'java.util.Spliterator$OfLong',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public abstract boolean java.util.Spliterator$OfLong.tryAdvance(java.util.function.LongConsumer) */
 			/* name */ 'tryAdvance',
 			[/* parameters */
@@ -121,6 +33,31 @@ JdkClassCreateHelper.class('java.util.Spliterator$OfLong', [
 			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.util.Spliterator$OfLong java.util.Spliterator$OfLong.trySplit() */
+			/* name */ 'trySplit',
+			/* parameters */,
+			/* return */ 'java.util.Spliterator$OfLong',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public default boolean java.util.Spliterator$OfLong.tryAdvance(java.lang.Object) */
+			/* name */ 'tryAdvance',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 4161,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -153,8 +90,26 @@ JdkClassCreateHelper.class('java.util.Spliterator$OfLong', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public default boolean java.util.Spliterator$OfLong.tryAdvance(java.lang.Object) */
-			/* name */ 'tryAdvance',
+		[/* public default java.util.Spliterator java.util.Spliterator$OfLong.trySplit() */
+			/* name */ 'trySplit',
+			/* parameters */,
+			/* return */ 'java.util.Spliterator',
+			/* exceptions */,
+			/* modifiers */ 4161,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public default java.util.Spliterator$OfPrimitive java.util.Spliterator$OfLong.trySplit() */
+			/* name */ 'trySplit',
+			/* parameters */,
+			/* return */ 'java.util.Spliterator$OfPrimitive',
+			/* exceptions */,
+			/* modifiers */ 4161,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public default void java.util.Spliterator$OfLong.forEachRemaining(java.lang.Object) */
+			/* name */ 'forEachRemaining',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
@@ -163,9 +118,54 @@ JdkClassCreateHelper.class('java.util.Spliterator$OfLong', [
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'boolean',
+			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 4161,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public default void java.util.Spliterator$OfLong.forEachRemaining(java.util.function.Consumer<? super java.lang.Long>) */
+			/* name */ 'forEachRemaining',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'action',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									'java.lang.Object'
+								],
+								[/* lower bounds */
+									'java.lang.Long'
+								]
+							]]
+						],
+						/* raw type */ 'java.util.function.Consumer',
+						/* owner type */ UDF
+					]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public default void java.util.Spliterator$OfLong.forEachRemaining(java.util.function.LongConsumer) */
+			/* name */ 'forEachRemaining',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'action',
+					/* type */ 'java.util.function.LongConsumer',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

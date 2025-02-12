@@ -22,21 +22,28 @@ JdkClassCreateHelper.class('java.util.TimeZone', [
 		]
 	],
 	[/* declared methods */
-		[/* public java.lang.Object java.util.TimeZone.clone() */
-			/* name */ 'clone',
-			/* parameters */,
-			/* return */ 'java.lang.Object',
+		[/* public abstract boolean java.util.TimeZone.inDaylightTime(java.util.Date) */
+			/* name */ 'inDaylightTime',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.util.Date',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.util.TimeZone java.util.TimeZone.getDefault() */
-			/* name */ 'getDefault',
+		[/* public abstract boolean java.util.TimeZone.useDaylightTime() */
+			/* name */ 'useDaylightTime',
 			/* parameters */,
-			/* return */ 'java.util.TimeZone',
+			/* return */ 'boolean',
 			/* exceptions */,
-			/* modifiers */ 9,
+			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -86,6 +93,112 @@ JdkClassCreateHelper.class('java.util.TimeZone', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public abstract int java.util.TimeZone.getRawOffset() */
+			/* name */ 'getRawOffset',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract void java.util.TimeZone.setRawOffset(int) */
+			/* name */ 'setRawOffset',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.util.TimeZone.hasSameRules(java.util.TimeZone) */
+			/* name */ 'hasSameRules',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'other',
+					/* type */ 'java.util.TimeZone',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.util.TimeZone.observesDaylightTime() */
+			/* name */ 'observesDaylightTime',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public final java.lang.String java.util.TimeZone.getDisplayName() */
+			/* name */ 'getDisplayName',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 17,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public final java.lang.String java.util.TimeZone.getDisplayName(boolean,int) */
+			/* name */ 'getDisplayName',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'daylight',
+					/* type */ 'boolean',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'style',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 17,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public final java.lang.String java.util.TimeZone.getDisplayName(java.util.Locale) */
+			/* name */ 'getDisplayName',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'locale',
+					/* type */ 'java.util.Locale',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 17,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.TimeZone.getDSTSavings() */
+			/* name */ 'getDSTSavings',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public int java.util.TimeZone.getOffset(long) */
 			/* name */ 'getOffset',
 			[/* parameters */
@@ -102,12 +215,12 @@ JdkClassCreateHelper.class('java.util.TimeZone', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public final java.lang.String java.util.TimeZone.getDisplayName() */
-			/* name */ 'getDisplayName',
+		[/* public java.lang.Object java.util.TimeZone.clone() */
+			/* name */ 'clone',
 			/* parameters */,
-			/* return */ 'java.lang.String',
+			/* return */ 'java.lang.Object',
 			/* exceptions */,
-			/* modifiers */ 17,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -139,60 +252,6 @@ JdkClassCreateHelper.class('java.util.TimeZone', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public final java.lang.String java.util.TimeZone.getDisplayName(java.util.Locale) */
-			/* name */ 'getDisplayName',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'locale',
-					/* type */ 'java.util.Locale',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final java.lang.String java.util.TimeZone.getDisplayName(boolean,int) */
-			/* name */ 'getDisplayName',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'daylight',
-					/* type */ 'boolean',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'style',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static void java.util.TimeZone.setDefault(java.util.TimeZone) */
-			/* name */ 'setDefault',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'sm',
-					/* type */ 'java.util.TimeZone',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public java.lang.String java.util.TimeZone.getID() */
 			/* name */ 'getID',
 			/* parameters */,
@@ -208,6 +267,15 @@ JdkClassCreateHelper.class('java.util.TimeZone', [
 			/* return */ 'java.time.ZoneId',
 			/* exceptions */,
 			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.util.TimeZone java.util.TimeZone.getDefault() */
+			/* name */ 'getDefault',
+			/* parameters */,
+			/* return */ 'java.util.TimeZone',
+			/* exceptions */,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -227,78 +295,12 @@ JdkClassCreateHelper.class('java.util.TimeZone', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static synchronized java.util.TimeZone java.util.TimeZone.getTimeZone(java.lang.String) */
-			/* name */ 'getTimeZone',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.util.TimeZone',
+		[/* public static synchronized java.lang.String[] java.util.TimeZone.getAvailableIDs() */
+			/* name */ 'getAvailableIDs',
+			/* parameters */,
+			/* return */ '[Ljava.lang.String;',
 			/* exceptions */,
 			/* modifiers */ 41,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.util.TimeZone.getDSTSavings() */
-			/* name */ 'getDSTSavings',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.util.TimeZone.hasSameRules(java.util.TimeZone) */
-			/* name */ 'hasSameRules',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'other',
-					/* type */ 'java.util.TimeZone',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract int java.util.TimeZone.getRawOffset() */
-			/* name */ 'getRawOffset',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract boolean java.util.TimeZone.inDaylightTime(java.util.Date) */
-			/* name */ 'inDaylightTime',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.util.Date',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract boolean java.util.TimeZone.useDaylightTime() */
-			/* name */ 'useDaylightTime',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -318,12 +320,35 @@ JdkClassCreateHelper.class('java.util.TimeZone', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static synchronized java.lang.String[] java.util.TimeZone.getAvailableIDs() */
-			/* name */ 'getAvailableIDs',
-			/* parameters */,
-			/* return */ '[Ljava.lang.String;',
+		[/* public static synchronized java.util.TimeZone java.util.TimeZone.getTimeZone(java.lang.String) */
+			/* name */ 'getTimeZone',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.util.TimeZone',
 			/* exceptions */,
 			/* modifiers */ 41,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static void java.util.TimeZone.setDefault(java.util.TimeZone) */
+			/* name */ 'setDefault',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'sm',
+					/* type */ 'java.util.TimeZone',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -338,31 +363,6 @@ JdkClassCreateHelper.class('java.util.TimeZone', [
 				]
 			],
 			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract void java.util.TimeZone.setRawOffset(int) */
-			/* name */ 'setRawOffset',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.util.TimeZone.observesDaylightTime() */
-			/* name */ 'observesDaylightTime',
-			/* parameters */,
-			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

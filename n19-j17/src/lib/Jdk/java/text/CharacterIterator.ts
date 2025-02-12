@@ -12,26 +12,8 @@ JdkClassCreateHelper.class('java.text.CharacterIterator', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public abstract java.lang.Object java.text.CharacterIterator.clone() */
-			/* name */ 'clone',
-			/* parameters */,
-			/* return */ 'java.lang.Object',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract char java.text.CharacterIterator.next() */
-			/* name */ 'next',
-			/* parameters */,
-			/* return */ 'char',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract char java.text.CharacterIterator.last() */
-			/* name */ 'last',
+		[/* public abstract char java.text.CharacterIterator.current() */
+			/* name */ 'current',
 			/* parameters */,
 			/* return */ 'char',
 			/* exceptions */,
@@ -48,8 +30,17 @@ JdkClassCreateHelper.class('java.text.CharacterIterator', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract char java.text.CharacterIterator.current() */
-			/* name */ 'current',
+		[/* public abstract char java.text.CharacterIterator.last() */
+			/* name */ 'last',
+			/* parameters */,
+			/* return */ 'char',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract char java.text.CharacterIterator.next() */
+			/* name */ 'next',
 			/* parameters */,
 			/* return */ 'char',
 			/* exceptions */,
@@ -61,15 +52,6 @@ JdkClassCreateHelper.class('java.text.CharacterIterator', [
 			/* name */ 'previous',
 			/* parameters */,
 			/* return */ 'char',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract int java.text.CharacterIterator.getIndex() */
-			/* name */ 'getIndex',
-			/* parameters */,
-			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,
@@ -104,6 +86,24 @@ JdkClassCreateHelper.class('java.text.CharacterIterator', [
 			/* name */ 'getEndIndex',
 			/* parameters */,
 			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract int java.text.CharacterIterator.getIndex() */
+			/* name */ 'getIndex',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.lang.Object java.text.CharacterIterator.clone() */
+			/* name */ 'clone',
+			/* parameters */,
+			/* return */ 'java.lang.Object',
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,

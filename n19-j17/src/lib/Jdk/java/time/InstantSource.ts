@@ -10,62 +10,6 @@ JdkClassCreateHelper.class('java.time.InstantSource', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public static java.time.InstantSource java.time.InstantSource.offset(java.time.InstantSource,java.time.Duration) */
-			/* name */ 'offset',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'offsetDuration',
-					/* type */ 'java.time.InstantSource',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'java.time.Duration',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.InstantSource',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public default long java.time.InstantSource.millis() */
-			/* name */ 'millis',
-			/* parameters */,
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.time.InstantSource java.time.InstantSource.system() */
-			/* name */ 'system',
-			/* parameters */,
-			/* return */ 'java.time.InstantSource',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.time.InstantSource java.time.InstantSource.fixed(java.time.Instant) */
-			/* name */ 'fixed',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.time.Instant',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.InstantSource',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public abstract java.time.Instant java.time.InstantSource.instant() */
 			/* name */ 'instant',
 			/* parameters */,
@@ -88,6 +32,62 @@ JdkClassCreateHelper.class('java.time.InstantSource', [
 			/* return */ 'java.time.Clock',
 			/* exceptions */,
 			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public default long java.time.InstantSource.millis() */
+			/* name */ 'millis',
+			/* parameters */,
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.time.InstantSource java.time.InstantSource.fixed(java.time.Instant) */
+			/* name */ 'fixed',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.time.Instant',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.InstantSource',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.time.InstantSource java.time.InstantSource.offset(java.time.InstantSource,java.time.Duration) */
+			/* name */ 'offset',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'offsetDuration',
+					/* type */ 'java.time.InstantSource',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'java.time.Duration',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.InstantSource',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.time.InstantSource java.time.InstantSource.system() */
+			/* name */ 'system',
+			/* parameters */,
+			/* return */ 'java.time.InstantSource',
+			/* exceptions */,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],

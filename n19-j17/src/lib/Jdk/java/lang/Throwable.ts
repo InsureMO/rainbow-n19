@@ -44,11 +44,18 @@ JdkClassCreateHelper.class('java.lang.Throwable', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.Throwable(java.lang.Throwable) */
+		[/* public java.lang.Throwable() */
+			/* parameters */,
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.Throwable(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'cause',
-					/* type */ 'java.lang.Throwable',
+					/* name */ 'message',
+					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -78,11 +85,11 @@ JdkClassCreateHelper.class('java.lang.Throwable', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.Throwable(java.lang.String) */
+		[/* public java.lang.Throwable(java.lang.Throwable) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'message',
-					/* type */ 'java.lang.String',
+					/* name */ 'cause',
+					/* type */ 'java.lang.Throwable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -91,16 +98,104 @@ JdkClassCreateHelper.class('java.lang.Throwable', [
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
-		],
-		[/* public java.lang.Throwable() */
+		]
+	],
+	[/* declared methods */
+		[/* public final synchronized java.lang.Throwable[] java.lang.Throwable.getSuppressed() */
+			/* name */ 'getSuppressed',
 			/* parameters */,
+			/* return */ '[Ljava.lang.Throwable;',
+			/* exceptions */,
+			/* modifiers */ 49,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public final synchronized void java.lang.Throwable.addSuppressed(java.lang.Throwable) */
+			/* name */ 'addSuppressed',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'exception',
+					/* type */ 'java.lang.Throwable',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 49,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.StackTraceElement[] java.lang.Throwable.getStackTrace() */
+			/* name */ 'getStackTrace',
+			/* parameters */,
+			/* return */ '[Ljava.lang.StackTraceElement;',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
-		]
-	],
-	[/* declared methods */
+		],
+		[/* public java.lang.String java.lang.Throwable.getLocalizedMessage() */
+			/* name */ 'getLocalizedMessage',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.lang.Throwable.getMessage() */
+			/* name */ 'getMessage',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.lang.Throwable.toString() */
+			/* name */ 'toString',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public synchronized java.lang.Throwable java.lang.Throwable.fillInStackTrace() */
+			/* name */ 'fillInStackTrace',
+			/* parameters */,
+			/* return */ 'java.lang.Throwable',
+			/* exceptions */,
+			/* modifiers */ 33,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public synchronized java.lang.Throwable java.lang.Throwable.getCause() */
+			/* name */ 'getCause',
+			/* parameters */,
+			/* return */ 'java.lang.Throwable',
+			/* exceptions */,
+			/* modifiers */ 33,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public synchronized java.lang.Throwable java.lang.Throwable.initCause(java.lang.Throwable) */
+			/* name */ 'initCause',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'cause',
+					/* type */ 'java.lang.Throwable',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.Throwable',
+			/* exceptions */,
+			/* modifiers */ 33,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public void java.lang.Throwable.printStackTrace() */
 			/* name */ 'printStackTrace',
 			/* parameters */,
@@ -142,85 +237,6 @@ JdkClassCreateHelper.class('java.lang.Throwable', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public synchronized java.lang.Throwable java.lang.Throwable.fillInStackTrace() */
-			/* name */ 'fillInStackTrace',
-			/* parameters */,
-			/* return */ 'java.lang.Throwable',
-			/* exceptions */,
-			/* modifiers */ 33,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public synchronized java.lang.Throwable java.lang.Throwable.getCause() */
-			/* name */ 'getCause',
-			/* parameters */,
-			/* return */ 'java.lang.Throwable',
-			/* exceptions */,
-			/* modifiers */ 33,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public synchronized java.lang.Throwable java.lang.Throwable.initCause(java.lang.Throwable) */
-			/* name */ 'initCause',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'cause',
-					/* type */ 'java.lang.Throwable',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.Throwable',
-			/* exceptions */,
-			/* modifiers */ 33,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.lang.Throwable.toString() */
-			/* name */ 'toString',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.lang.Throwable.getMessage() */
-			/* name */ 'getMessage',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final synchronized java.lang.Throwable[] java.lang.Throwable.getSuppressed() */
-			/* name */ 'getSuppressed',
-			/* parameters */,
-			/* return */ '[Ljava.lang.Throwable;',
-			/* exceptions */,
-			/* modifiers */ 49,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.lang.Throwable.getLocalizedMessage() */
-			/* name */ 'getLocalizedMessage',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.StackTraceElement[] java.lang.Throwable.getStackTrace() */
-			/* name */ 'getStackTrace',
-			/* parameters */,
-			/* return */ '[Ljava.lang.StackTraceElement;',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public void java.lang.Throwable.setStackTrace(java.lang.StackTraceElement[]) */
 			/* name */ 'setStackTrace',
 			[/* parameters */
@@ -234,22 +250,6 @@ JdkClassCreateHelper.class('java.lang.Throwable', [
 			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final synchronized void java.lang.Throwable.addSuppressed(java.lang.Throwable) */
-			/* name */ 'addSuppressed',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'exception',
-					/* type */ 'java.lang.Throwable',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 49,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

@@ -13,26 +13,39 @@ JdkClassCreateHelper.class('java.time.chrono.ThaiBuddhistChronology', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public java.lang.String java.time.chrono.ThaiBuddhistChronology.getId() */
-			/* name */ 'getId',
-			/* parameters */,
-			/* return */ 'java.lang.String',
+		[/* public boolean java.time.chrono.ThaiBuddhistChronology.isLeapYear(long) */
+			/* name */ 'isLeapYear',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'prolepticYear',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.time.temporal.ValueRange java.time.chrono.ThaiBuddhistChronology.range(java.time.temporal.ChronoField) */
-			/* name */ 'range',
+		[/* public int java.time.chrono.ThaiBuddhistChronology.prolepticYear(java.time.chrono.Era,int) */
+			/* name */ 'prolepticYear',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'range',
-					/* type */ 'java.time.temporal.ChronoField',
+					/* name */ 'era',
+					/* type */ 'java.time.chrono.Era',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'yearOfEra',
+					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.time.temporal.ValueRange',
+			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -47,17 +60,10 @@ JdkClassCreateHelper.class('java.time.chrono.ThaiBuddhistChronology', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public boolean java.time.chrono.ThaiBuddhistChronology.isLeapYear(long) */
-			/* name */ 'isLeapYear',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'prolepticYear',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
+		[/* public java.lang.String java.time.chrono.ThaiBuddhistChronology.getId() */
+			/* name */ 'getId',
+			/* parameters */,
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -88,100 +94,6 @@ JdkClassCreateHelper.class('java.time.chrono.ThaiBuddhistChronology', [
 			/* return */ 'java.time.chrono.ChronoLocalDate',
 			/* exceptions */,
 			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.chrono.ThaiBuddhistDate java.time.chrono.ThaiBuddhistChronology.date(java.time.chrono.Era,int,int,int) */
-			/* name */ 'date',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'era',
-					/* type */ 'java.time.chrono.Era',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'yearOfEra',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'month',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'dayOfMonth',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.chrono.ThaiBuddhistDate',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.chrono.ThaiBuddhistDate java.time.chrono.ThaiBuddhistChronology.date(java.time.temporal.TemporalAccessor) */
-			/* name */ 'date',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'temporal',
-					/* type */ 'java.time.temporal.TemporalAccessor',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.chrono.ThaiBuddhistDate',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.chrono.ChronoLocalDate java.time.chrono.ThaiBuddhistChronology.date(java.time.temporal.TemporalAccessor) */
-			/* name */ 'date',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.time.temporal.TemporalAccessor',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.chrono.ChronoLocalDate',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.chrono.ThaiBuddhistDate java.time.chrono.ThaiBuddhistChronology.date(int,int,int) */
-			/* name */ 'date',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'prolepticYear',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'month',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'dayOfMonth',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.chrono.ThaiBuddhistDate',
-			/* exceptions */,
-			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -219,6 +131,22 @@ JdkClassCreateHelper.class('java.time.chrono.ThaiBuddhistChronology', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public java.time.chrono.ChronoLocalDate java.time.chrono.ThaiBuddhistChronology.date(java.time.temporal.TemporalAccessor) */
+			/* name */ 'date',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.time.temporal.TemporalAccessor',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.chrono.ChronoLocalDate',
+			/* exceptions */,
+			/* modifiers */ 4161,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.time.chrono.ChronoLocalDate java.time.chrono.ThaiBuddhistChronology.dateEpochDay(long) */
 			/* name */ 'dateEpochDay',
 			[/* parameters */
@@ -235,41 +163,66 @@ JdkClassCreateHelper.class('java.time.chrono.ThaiBuddhistChronology', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.time.chrono.ThaiBuddhistDate java.time.chrono.ThaiBuddhistChronology.dateEpochDay(long) */
-			/* name */ 'dateEpochDay',
+		[/* public java.time.chrono.ChronoLocalDate java.time.chrono.ThaiBuddhistChronology.dateNow() */
+			/* name */ 'dateNow',
+			/* parameters */,
+			/* return */ 'java.time.chrono.ChronoLocalDate',
+			/* exceptions */,
+			/* modifiers */ 4161,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.chrono.ChronoLocalDate java.time.chrono.ThaiBuddhistChronology.dateNow(java.time.Clock) */
+			/* name */ 'dateNow',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'epochDay',
-					/* type */ 'long',
+					/* name */ 'arg0',
+					/* type */ 'java.time.Clock',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.time.chrono.ThaiBuddhistDate',
+			/* return */ 'java.time.chrono.ChronoLocalDate',
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 4161,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.time.chrono.ThaiBuddhistChronology.prolepticYear(java.time.chrono.Era,int) */
-			/* name */ 'prolepticYear',
+		[/* public java.time.chrono.ChronoLocalDate java.time.chrono.ThaiBuddhistChronology.dateNow(java.time.ZoneId) */
+			/* name */ 'dateNow',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'era',
-					/* type */ 'java.time.chrono.Era',
+					/* name */ 'arg0',
+					/* type */ 'java.time.ZoneId',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.chrono.ChronoLocalDate',
+			/* exceptions */,
+			/* modifiers */ 4161,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.chrono.ChronoLocalDate java.time.chrono.ThaiBuddhistChronology.dateYearDay(int,int) */
+			/* name */ 'dateYearDay',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'yearOfEra',
+					/* name */ 'arg1',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'int',
+			/* return */ 'java.time.chrono.ChronoLocalDate',
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 4161,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -301,68 +254,18 @@ JdkClassCreateHelper.class('java.time.chrono.ThaiBuddhistChronology', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.time.chrono.ThaiBuddhistDate java.time.chrono.ThaiBuddhistChronology.dateYearDay(int,int) */
-			/* name */ 'dateYearDay',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'prolepticYear',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'dayOfYear',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.chrono.ThaiBuddhistDate',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.chrono.ThaiBuddhistDate java.time.chrono.ThaiBuddhistChronology.dateYearDay(java.time.chrono.Era,int,int) */
-			/* name */ 'dateYearDay',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'era',
-					/* type */ 'java.time.chrono.Era',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'yearOfEra',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'dayOfYear',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.chrono.ThaiBuddhistDate',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.chrono.ChronoLocalDate java.time.chrono.ThaiBuddhistChronology.dateYearDay(int,int) */
-			/* name */ 'dateYearDay',
+		[/* public java.time.chrono.ChronoLocalDate java.time.chrono.ThaiBuddhistChronology.resolveDate(java.util.Map,java.time.format.ResolverStyle) */
+			/* name */ 'resolveDate',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
-					/* type */ 'int',
+					/* type */ 'java.util.Map',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'arg1',
-					/* type */ 'int',
+					/* type */ 'java.time.format.ResolverStyle',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -373,83 +276,23 @@ JdkClassCreateHelper.class('java.time.chrono.ThaiBuddhistChronology', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.time.chrono.ChronoLocalDate java.time.chrono.ThaiBuddhistChronology.dateNow(java.time.Clock) */
-			/* name */ 'dateNow',
+		[/* public java.time.chrono.ChronoLocalDateTime<java.time.chrono.ThaiBuddhistDate> java.time.chrono.ThaiBuddhistChronology.localDateTime(java.time.temporal.TemporalAccessor) */
+			/* name */ 'localDateTime',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.time.Clock',
+					/* name */ 'temporal',
+					/* type */ 'java.time.temporal.TemporalAccessor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.time.chrono.ChronoLocalDate',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.chrono.ChronoLocalDate java.time.chrono.ThaiBuddhistChronology.dateNow() */
-			/* name */ 'dateNow',
-			/* parameters */,
-			/* return */ 'java.time.chrono.ChronoLocalDate',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.chrono.ChronoLocalDate java.time.chrono.ThaiBuddhistChronology.dateNow(java.time.ZoneId) */
-			/* name */ 'dateNow',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.time.ZoneId',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.chrono.ChronoLocalDate',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.chrono.ThaiBuddhistDate java.time.chrono.ThaiBuddhistChronology.dateNow() */
-			/* name */ 'dateNow',
-			/* parameters */,
-			/* return */ 'java.time.chrono.ThaiBuddhistDate',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.chrono.ThaiBuddhistDate java.time.chrono.ThaiBuddhistChronology.dateNow(java.time.ZoneId) */
-			/* name */ 'dateNow',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'zone',
-					/* type */ 'java.time.ZoneId',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.chrono.ThaiBuddhistDate',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.chrono.ThaiBuddhistDate java.time.chrono.ThaiBuddhistChronology.dateNow(java.time.Clock) */
-			/* name */ 'dateNow',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'clock',
-					/* type */ 'java.time.Clock',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.chrono.ThaiBuddhistDate',
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					'java.time.chrono.ThaiBuddhistDate'
+				],
+				/* raw type */ 'java.time.chrono.ChronoLocalDateTime',
+				/* owner type */ UDF
+			]],
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -505,28 +348,6 @@ JdkClassCreateHelper.class('java.time.chrono.ThaiBuddhistChronology', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.time.chrono.ChronoLocalDateTime<java.time.chrono.ThaiBuddhistDate> java.time.chrono.ThaiBuddhistChronology.localDateTime(java.time.temporal.TemporalAccessor) */
-			/* name */ 'localDateTime',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'temporal',
-					/* type */ 'java.time.temporal.TemporalAccessor',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					'java.time.chrono.ThaiBuddhistDate'
-				],
-				/* raw type */ 'java.time.chrono.ChronoLocalDateTime',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public java.time.chrono.Era java.time.chrono.ThaiBuddhistChronology.eraOf(int) */
 			/* name */ 'eraOf',
 			[/* parameters */
@@ -543,56 +364,188 @@ JdkClassCreateHelper.class('java.time.chrono.ThaiBuddhistChronology', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.time.chrono.ThaiBuddhistEra java.time.chrono.ThaiBuddhistChronology.eraOf(int) */
-			/* name */ 'eraOf',
+		[/* public java.time.chrono.ThaiBuddhistDate java.time.chrono.ThaiBuddhistChronology.date(int,int,int) */
+			/* name */ 'date',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'eraValue',
+					/* name */ 'prolepticYear',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'month',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'dayOfMonth',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.time.chrono.ThaiBuddhistEra',
+			/* return */ 'java.time.chrono.ThaiBuddhistDate',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.util.List<java.time.chrono.Era> java.time.chrono.ThaiBuddhistChronology.eras() */
-			/* name */ 'eras',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					'java.time.chrono.Era'
-				],
-				/* raw type */ 'java.util.List',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.chrono.ChronoLocalDate java.time.chrono.ThaiBuddhistChronology.resolveDate(java.util.Map,java.time.format.ResolverStyle) */
-			/* name */ 'resolveDate',
+		[/* public java.time.chrono.ThaiBuddhistDate java.time.chrono.ThaiBuddhistChronology.date(java.time.chrono.Era,int,int,int) */
+			/* name */ 'date',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.util.Map',
+					/* name */ 'era',
+					/* type */ 'java.time.chrono.Era',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'java.time.format.ResolverStyle',
+					/* name */ 'yearOfEra',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'month',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'dayOfMonth',
+					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.time.chrono.ChronoLocalDate',
+			/* return */ 'java.time.chrono.ThaiBuddhistDate',
 			/* exceptions */,
-			/* modifiers */ 4161,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.chrono.ThaiBuddhistDate java.time.chrono.ThaiBuddhistChronology.date(java.time.temporal.TemporalAccessor) */
+			/* name */ 'date',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'temporal',
+					/* type */ 'java.time.temporal.TemporalAccessor',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.chrono.ThaiBuddhistDate',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.chrono.ThaiBuddhistDate java.time.chrono.ThaiBuddhistChronology.dateEpochDay(long) */
+			/* name */ 'dateEpochDay',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'epochDay',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.chrono.ThaiBuddhistDate',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.chrono.ThaiBuddhistDate java.time.chrono.ThaiBuddhistChronology.dateNow() */
+			/* name */ 'dateNow',
+			/* parameters */,
+			/* return */ 'java.time.chrono.ThaiBuddhistDate',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.chrono.ThaiBuddhistDate java.time.chrono.ThaiBuddhistChronology.dateNow(java.time.Clock) */
+			/* name */ 'dateNow',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'clock',
+					/* type */ 'java.time.Clock',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.chrono.ThaiBuddhistDate',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.chrono.ThaiBuddhistDate java.time.chrono.ThaiBuddhistChronology.dateNow(java.time.ZoneId) */
+			/* name */ 'dateNow',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'zone',
+					/* type */ 'java.time.ZoneId',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.chrono.ThaiBuddhistDate',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.chrono.ThaiBuddhistDate java.time.chrono.ThaiBuddhistChronology.dateYearDay(int,int) */
+			/* name */ 'dateYearDay',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'prolepticYear',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'dayOfYear',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.chrono.ThaiBuddhistDate',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.chrono.ThaiBuddhistDate java.time.chrono.ThaiBuddhistChronology.dateYearDay(java.time.chrono.Era,int,int) */
+			/* name */ 'dateYearDay',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'era',
+					/* type */ 'java.time.chrono.Era',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'yearOfEra',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'dayOfYear',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.chrono.ThaiBuddhistDate',
+			/* exceptions */,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -620,6 +573,53 @@ JdkClassCreateHelper.class('java.time.chrono.ThaiBuddhistChronology', [
 				]
 			],
 			/* return */ 'java.time.chrono.ThaiBuddhistDate',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.chrono.ThaiBuddhistEra java.time.chrono.ThaiBuddhistChronology.eraOf(int) */
+			/* name */ 'eraOf',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'eraValue',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.chrono.ThaiBuddhistEra',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.temporal.ValueRange java.time.chrono.ThaiBuddhistChronology.range(java.time.temporal.ChronoField) */
+			/* name */ 'range',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'range',
+					/* type */ 'java.time.temporal.ChronoField',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.temporal.ValueRange',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.List<java.time.chrono.Era> java.time.chrono.ThaiBuddhistChronology.eras() */
+			/* name */ 'eras',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					'java.time.chrono.Era'
+				],
+				/* raw type */ 'java.util.List',
+				/* owner type */ UDF
+			]],
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

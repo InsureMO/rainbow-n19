@@ -34,31 +34,6 @@ JdkClassCreateHelper.class('java.util.LinkedHashSet', [
 		]
 	],
 	[/* declared constructors */
-		[/* public java.util.LinkedHashSet(java.util.Collection<? extends E>) */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'c',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							[/* wildcard type */ 'wt', [
-								[/* upper bounds */
-									[/* type variable ref */ 'tr', [/* name */ 'E']]
-								],
-								/* lower bounds */ UDF
-							]]
-						],
-						/* raw type */ 'java.util.Collection',
-						/* owner type */ UDF
-					]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public java.util.LinkedHashSet() */
 			/* parameters */,
 			/* exceptions */,
@@ -91,6 +66,31 @@ JdkClassCreateHelper.class('java.util.LinkedHashSet', [
 				[/* parameter */
 					/* name */ 'loadFactor',
 					/* type */ 'float',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.LinkedHashSet(java.util.Collection<? extends E>) */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'c',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									[/* type variable ref */ 'tr', [/* name */ 'E']]
+								],
+								/* lower bounds */ UDF
+							]]
+						],
+						/* raw type */ 'java.util.Collection',
+						/* owner type */ UDF
+					]],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]

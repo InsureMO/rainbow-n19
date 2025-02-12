@@ -12,19 +12,19 @@ JdkClassCreateHelper.class('java.lang.reflect.AnnotatedTypeVariable', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public abstract java.lang.reflect.AnnotatedType[] java.lang.reflect.AnnotatedTypeVariable.getAnnotatedBounds() */
-			/* name */ 'getAnnotatedBounds',
+		[/* public abstract java.lang.reflect.AnnotatedType java.lang.reflect.AnnotatedTypeVariable.getAnnotatedOwnerType() */
+			/* name */ 'getAnnotatedOwnerType',
 			/* parameters */,
-			/* return */ '[Ljava.lang.reflect.AnnotatedType;',
+			/* return */ 'java.lang.reflect.AnnotatedType',
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.lang.reflect.AnnotatedType java.lang.reflect.AnnotatedTypeVariable.getAnnotatedOwnerType() */
-			/* name */ 'getAnnotatedOwnerType',
+		[/* public abstract java.lang.reflect.AnnotatedType[] java.lang.reflect.AnnotatedTypeVariable.getAnnotatedBounds() */
+			/* name */ 'getAnnotatedBounds',
 			/* parameters */,
-			/* return */ 'java.lang.reflect.AnnotatedType',
+			/* return */ '[Ljava.lang.reflect.AnnotatedType;',
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,

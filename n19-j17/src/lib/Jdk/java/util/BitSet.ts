@@ -13,6 +13,13 @@ JdkClassCreateHelper.class('java.util.BitSet', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
+		[/* public java.util.BitSet() */
+			/* parameters */,
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.util.BitSet(int) */
 			[/* parameters */
 				[/* parameter */
@@ -26,16 +33,193 @@ JdkClassCreateHelper.class('java.util.BitSet', [
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
-		],
-		[/* public java.util.BitSet() */
-			/* parameters */,
+		]
+	],
+	[/* declared methods */
+		[/* public boolean java.util.BitSet.equals(java.lang.Object) */
+			/* name */ 'equals',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'set',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
-		]
-	],
-	[/* declared methods */
+		],
+		[/* public boolean java.util.BitSet.get(int) */
+			/* name */ 'get',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'bitIndex',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.util.BitSet.intersects(java.util.BitSet) */
+			/* name */ 'intersects',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'i',
+					/* type */ 'java.util.BitSet',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.util.BitSet.isEmpty() */
+			/* name */ 'isEmpty',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public byte[] java.util.BitSet.toByteArray() */
+			/* name */ 'toByteArray',
+			/* parameters */,
+			/* return */ '[B',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.BitSet.cardinality() */
+			/* name */ 'cardinality',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.BitSet.hashCode() */
+			/* name */ 'hashCode',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.BitSet.length() */
+			/* name */ 'length',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.BitSet.nextClearBit(int) */
+			/* name */ 'nextClearBit',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'fromIndex',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.BitSet.nextSetBit(int) */
+			/* name */ 'nextSetBit',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'fromIndex',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.BitSet.previousClearBit(int) */
+			/* name */ 'previousClearBit',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'fromIndex',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.BitSet.previousSetBit(int) */
+			/* name */ 'previousSetBit',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'fromIndex',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.BitSet.size() */
+			/* name */ 'size',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.Object java.util.BitSet.clone() */
+			/* name */ 'clone',
+			/* parameters */,
+			/* return */ 'java.lang.Object',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.util.BitSet.toString() */
+			/* name */ 'toString',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.util.BitSet java.util.BitSet.get(int,int) */
 			/* name */ 'get',
 			[/* parameters */
@@ -58,103 +242,21 @@ JdkClassCreateHelper.class('java.util.BitSet', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public boolean java.util.BitSet.get(int) */
-			/* name */ 'get',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'bitIndex',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.util.BitSet.equals(java.lang.Object) */
-			/* name */ 'equals',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'set',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.util.BitSet.length() */
-			/* name */ 'length',
+		[/* public java.util.stream.IntStream java.util.BitSet.stream() */
+			/* name */ 'stream',
 			/* parameters */,
-			/* return */ 'int',
+			/* return */ 'java.util.stream.IntStream',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.util.BitSet.toString() */
-			/* name */ 'toString',
+		[/* public long[] java.util.BitSet.toLongArray() */
+			/* name */ 'toLongArray',
 			/* parameters */,
-			/* return */ 'java.lang.String',
+			/* return */ '[J',
 			/* exceptions */,
 			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.util.BitSet.hashCode() */
-			/* name */ 'hashCode',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.Object java.util.BitSet.clone() */
-			/* name */ 'clone',
-			/* parameters */,
-			/* return */ 'java.lang.Object',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.util.BitSet java.util.BitSet.valueOf(long[]) */
-			/* name */ 'valueOf',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'n',
-					/* type */ '[J',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.util.BitSet',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.util.BitSet java.util.BitSet.valueOf(java.nio.LongBuffer) */
-			/* name */ 'valueOf',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'n',
-					/* type */ 'java.nio.LongBuffer',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.util.BitSet',
-			/* exceptions */,
-			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -190,22 +292,73 @@ JdkClassCreateHelper.class('java.util.BitSet', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.util.BitSet.clear(int,int) */
-			/* name */ 'clear',
+		[/* public static java.util.BitSet java.util.BitSet.valueOf(java.nio.LongBuffer) */
+			/* name */ 'valueOf',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'fromIndex',
-					/* type */ 'int',
+					/* name */ 'n',
+					/* type */ 'java.nio.LongBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
+			/* return */ 'java.util.BitSet',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.util.BitSet java.util.BitSet.valueOf(long[]) */
+			/* name */ 'valueOf',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'n',
+					/* type */ '[J',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.util.BitSet',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.util.BitSet.and(java.util.BitSet) */
+			/* name */ 'and',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'i',
+					/* type */ 'java.util.BitSet',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.util.BitSet.andNot(java.util.BitSet) */
+			/* name */ 'andNot',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'i',
+					/* type */ 'java.util.BitSet',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.util.BitSet.clear() */
+			/* name */ 'clear',
+			/* parameters */,
 			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
@@ -228,37 +381,77 @@ JdkClassCreateHelper.class('java.util.BitSet', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.util.BitSet.clear() */
+		[/* public void java.util.BitSet.clear(int,int) */
 			/* name */ 'clear',
-			/* parameters */,
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'i',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'fromIndex',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
 			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public boolean java.util.BitSet.isEmpty() */
-			/* name */ 'isEmpty',
-			/* parameters */,
-			/* return */ 'boolean',
+		[/* public void java.util.BitSet.flip(int) */
+			/* name */ 'flip',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'bitIndex',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.util.BitSet.size() */
-			/* name */ 'size',
-			/* parameters */,
-			/* return */ 'int',
+		[/* public void java.util.BitSet.flip(int,int) */
+			/* name */ 'flip',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'i',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'fromIndex',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.util.stream.IntStream java.util.BitSet.stream() */
-			/* name */ 'stream',
-			/* parameters */,
-			/* return */ 'java.util.stream.IntStream',
+		[/* public void java.util.BitSet.or(java.util.BitSet) */
+			/* name */ 'or',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'i',
+					/* type */ 'java.util.BitSet',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -352,101 +545,6 @@ JdkClassCreateHelper.class('java.util.BitSet', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public byte[] java.util.BitSet.toByteArray() */
-			/* name */ 'toByteArray',
-			/* parameters */,
-			/* return */ '[B',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.util.BitSet.flip(int) */
-			/* name */ 'flip',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'bitIndex',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.util.BitSet.flip(int,int) */
-			/* name */ 'flip',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'i',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'fromIndex',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.util.BitSet.nextClearBit(int) */
-			/* name */ 'nextClearBit',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'fromIndex',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.util.BitSet.or(java.util.BitSet) */
-			/* name */ 'or',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'i',
-					/* type */ 'java.util.BitSet',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.util.BitSet.and(java.util.BitSet) */
-			/* name */ 'and',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'i',
-					/* type */ 'java.util.BitSet',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public void java.util.BitSet.xor(java.util.BitSet) */
 			/* name */ 'xor',
 			[/* parameters */
@@ -458,104 +556,6 @@ JdkClassCreateHelper.class('java.util.BitSet', [
 				]
 			],
 			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.util.BitSet.andNot(java.util.BitSet) */
-			/* name */ 'andNot',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'i',
-					/* type */ 'java.util.BitSet',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public long[] java.util.BitSet.toLongArray() */
-			/* name */ 'toLongArray',
-			/* parameters */,
-			/* return */ '[J',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.util.BitSet.cardinality() */
-			/* name */ 'cardinality',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.util.BitSet.nextSetBit(int) */
-			/* name */ 'nextSetBit',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'fromIndex',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.util.BitSet.previousSetBit(int) */
-			/* name */ 'previousSetBit',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'fromIndex',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.util.BitSet.previousClearBit(int) */
-			/* name */ 'previousClearBit',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'fromIndex',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.util.BitSet.intersects(java.util.BitSet) */
-			/* name */ 'intersects',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'i',
-					/* type */ 'java.util.BitSet',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

@@ -62,6 +62,15 @@ JdkClassCreateHelper.class('java.text.ChoiceFormat', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public double[] java.text.ChoiceFormat.getLimits() */
+			/* name */ 'getLimits',
+			/* parameters */,
+			/* return */ '[D',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public int java.text.ChoiceFormat.hashCode() */
 			/* name */ 'hashCode',
 			/* parameters */,
@@ -71,10 +80,50 @@ JdkClassCreateHelper.class('java.text.ChoiceFormat', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public java.lang.Number java.text.ChoiceFormat.parse(java.lang.String,java.text.ParsePosition) */
+			/* name */ 'parse',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'tempString',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'i',
+					/* type */ 'java.text.ParsePosition',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.Number',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.lang.Object java.text.ChoiceFormat.clone() */
 			/* name */ 'clone',
 			/* parameters */,
 			/* return */ 'java.lang.Object',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.Object[] java.text.ChoiceFormat.getFormats() */
+			/* name */ 'getFormats',
+			/* parameters */,
+			/* return */ '[Ljava.lang.Object;',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.text.ChoiceFormat.toPattern() */
+			/* name */ 'toPattern',
+			/* parameters */,
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -136,22 +185,6 @@ JdkClassCreateHelper.class('java.text.ChoiceFormat', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static final double java.text.ChoiceFormat.nextDouble(double) */
-			/* name */ 'nextDouble',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'double',
-			/* exceptions */,
-			/* modifiers */ 25,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public static double java.text.ChoiceFormat.nextDouble(double,boolean) */
 			/* name */ 'nextDouble',
 			[/* parameters */
@@ -174,59 +207,19 @@ JdkClassCreateHelper.class('java.text.ChoiceFormat', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.Number java.text.ChoiceFormat.parse(java.lang.String,java.text.ParsePosition) */
-			/* name */ 'parse',
+		[/* public static final double java.text.ChoiceFormat.nextDouble(double) */
+			/* name */ 'nextDouble',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'tempString',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'i',
-					/* type */ 'java.text.ParsePosition',
+					/* name */ 'arg0',
+					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.lang.Number',
+			/* return */ 'double',
 			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.text.ChoiceFormat.applyPattern(java.lang.String) */
-			/* name */ 'applyPattern',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'i',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.text.ChoiceFormat.toPattern() */
-			/* name */ 'toPattern',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.Object[] java.text.ChoiceFormat.getFormats() */
-			/* name */ 'getFormats',
-			/* parameters */,
-			/* return */ '[Ljava.lang.Object;',
-			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 25,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -243,6 +236,22 @@ JdkClassCreateHelper.class('java.text.ChoiceFormat', [
 			/* return */ 'double',
 			/* exceptions */,
 			/* modifiers */ 25,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.text.ChoiceFormat.applyPattern(java.lang.String) */
+			/* name */ 'applyPattern',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'i',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -263,15 +272,6 @@ JdkClassCreateHelper.class('java.text.ChoiceFormat', [
 				]
 			],
 			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public double[] java.text.ChoiceFormat.getLimits() */
-			/* name */ 'getLimits',
-			/* parameters */,
-			/* return */ '[D',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

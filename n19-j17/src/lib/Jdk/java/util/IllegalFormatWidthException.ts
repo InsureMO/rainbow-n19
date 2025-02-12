@@ -26,19 +26,19 @@ JdkClassCreateHelper.class('java.util.IllegalFormatWidthException', [
 		]
 	],
 	[/* declared methods */
-		[/* public java.lang.String java.util.IllegalFormatWidthException.getMessage() */
-			/* name */ 'getMessage',
+		[/* public int java.util.IllegalFormatWidthException.getWidth() */
+			/* name */ 'getWidth',
 			/* parameters */,
-			/* return */ 'java.lang.String',
+			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.util.IllegalFormatWidthException.getWidth() */
-			/* name */ 'getWidth',
+		[/* public java.lang.String java.util.IllegalFormatWidthException.getMessage() */
+			/* name */ 'getMessage',
 			/* parameters */,
-			/* return */ 'int',
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

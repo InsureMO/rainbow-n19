@@ -32,6 +32,43 @@ JdkClassCreateHelper.class('java.io.LineNumberInputStream', [
 		]
 	],
 	[/* declared methods */
+		[/* public int java.io.LineNumberInputStream.available() throws java.io.IOException */
+			/* name */ 'available',
+			/* parameters */,
+			/* return */ 'int',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.io.LineNumberInputStream.getLineNumber() */
+			/* name */ 'getLineNumber',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.io.LineNumberInputStream.read() throws java.io.IOException */
+			/* name */ 'read',
+			/* parameters */,
+			/* return */ 'int',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public int java.io.LineNumberInputStream.read(byte[],int,int) throws java.io.IOException */
 			/* name */ 'read',
 			[/* parameters */
@@ -65,10 +102,17 @@ JdkClassCreateHelper.class('java.io.LineNumberInputStream', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.io.LineNumberInputStream.read() throws java.io.IOException */
-			/* name */ 'read',
-			/* parameters */,
-			/* return */ 'int',
+		[/* public long java.io.LineNumberInputStream.skip(long) throws java.io.IOException */
+			/* name */ 'skip',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'nr',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'long',
 			[/* exceptions */
 				[/* exception */
 					/* type */ 'java.io.IOException',
@@ -95,41 +139,6 @@ JdkClassCreateHelper.class('java.io.LineNumberInputStream', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public long java.io.LineNumberInputStream.skip(long) throws java.io.IOException */
-			/* name */ 'skip',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'nr',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'long',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.io.LineNumberInputStream.available() throws java.io.IOException */
-			/* name */ 'available',
-			/* parameters */,
-			/* return */ 'int',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public void java.io.LineNumberInputStream.reset() throws java.io.IOException */
 			/* name */ 'reset',
 			/* parameters */,
@@ -140,15 +149,6 @@ JdkClassCreateHelper.class('java.io.LineNumberInputStream', [
 					/* annotations */ UDF
 				]
 			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.io.LineNumberInputStream.getLineNumber() */
-			/* name */ 'getLineNumber',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF

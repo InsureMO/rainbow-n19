@@ -26,6 +26,43 @@ JdkClassCreateHelper.class('java.io.StringReader', [
 		]
 	],
 	[/* declared methods */
+		[/* public boolean java.io.StringReader.markSupported() */
+			/* name */ 'markSupported',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.io.StringReader.ready() throws java.io.IOException */
+			/* name */ 'ready',
+			/* parameters */,
+			/* return */ 'boolean',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.io.StringReader.read() throws java.io.IOException */
+			/* name */ 'read',
+			/* parameters */,
+			/* return */ 'int',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public int java.io.StringReader.read(char[],int,int) throws java.io.IOException */
 			/* name */ 'read',
 			[/* parameters */
@@ -59,10 +96,17 @@ JdkClassCreateHelper.class('java.io.StringReader', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.io.StringReader.read() throws java.io.IOException */
-			/* name */ 'read',
-			/* parameters */,
-			/* return */ 'int',
+		[/* public long java.io.StringReader.skip(long) throws java.io.IOException */
+			/* name */ 'skip',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'r',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'long',
 			[/* exceptions */
 				[/* exception */
 					/* type */ 'java.io.IOException',
@@ -103,54 +147,10 @@ JdkClassCreateHelper.class('java.io.StringReader', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public long java.io.StringReader.skip(long) throws java.io.IOException */
-			/* name */ 'skip',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'r',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'long',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.io.StringReader.markSupported() */
-			/* name */ 'markSupported',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public void java.io.StringReader.reset() throws java.io.IOException */
 			/* name */ 'reset',
 			/* parameters */,
 			/* return */ 'void',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.io.StringReader.ready() throws java.io.IOException */
-			/* name */ 'ready',
-			/* parameters */,
-			/* return */ 'boolean',
 			[/* exceptions */
 				[/* exception */
 					/* type */ 'java.io.IOException',

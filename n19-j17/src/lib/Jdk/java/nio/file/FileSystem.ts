@@ -30,25 +30,50 @@ JdkClassCreateHelper.class('java.nio.file.FileSystem', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.nio.file.spi.FileSystemProvider java.nio.file.FileSystem.provider() */
-			/* name */ 'provider',
+		[/* public abstract boolean java.nio.file.FileSystem.isReadOnly() */
+			/* name */ 'isReadOnly',
 			/* parameters */,
-			/* return */ 'java.nio.file.spi.FileSystemProvider',
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract void java.nio.file.FileSystem.close() throws java.io.IOException */
-			/* name */ 'close',
+		[/* public abstract java.lang.Iterable<java.nio.file.FileStore> java.nio.file.FileSystem.getFileStores() */
+			/* name */ 'getFileStores',
 			/* parameters */,
-			/* return */ 'void',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					'java.nio.file.FileStore'
+				],
+				/* raw type */ 'java.lang.Iterable',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.lang.Iterable<java.nio.file.Path> java.nio.file.FileSystem.getRootDirectories() */
+			/* name */ 'getRootDirectories',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					'java.nio.file.Path'
+				],
+				/* raw type */ 'java.lang.Iterable',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.lang.String java.nio.file.FileSystem.getSeparator() */
+			/* name */ 'getSeparator',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
@@ -75,49 +100,49 @@ JdkClassCreateHelper.class('java.nio.file.FileSystem', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract boolean java.nio.file.FileSystem.isReadOnly() */
-			/* name */ 'isReadOnly',
-			/* parameters */,
-			/* return */ 'boolean',
+		[/* public abstract java.nio.file.PathMatcher java.nio.file.FileSystem.getPathMatcher(java.lang.String) */
+			/* name */ 'getPathMatcher',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.nio.file.PathMatcher',
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.lang.String java.nio.file.FileSystem.getSeparator() */
-			/* name */ 'getSeparator',
+		[/* public abstract java.nio.file.WatchService java.nio.file.FileSystem.newWatchService() throws java.io.IOException */
+			/* name */ 'newWatchService',
 			/* parameters */,
-			/* return */ 'java.lang.String',
+			/* return */ 'java.nio.file.WatchService',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.nio.file.attribute.UserPrincipalLookupService java.nio.file.FileSystem.getUserPrincipalLookupService() */
+			/* name */ 'getUserPrincipalLookupService',
+			/* parameters */,
+			/* return */ 'java.nio.file.attribute.UserPrincipalLookupService',
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.lang.Iterable<java.nio.file.Path> java.nio.file.FileSystem.getRootDirectories() */
-			/* name */ 'getRootDirectories',
+		[/* public abstract java.nio.file.spi.FileSystemProvider java.nio.file.FileSystem.provider() */
+			/* name */ 'provider',
 			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					'java.nio.file.Path'
-				],
-				/* raw type */ 'java.lang.Iterable',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.lang.Iterable<java.nio.file.FileStore> java.nio.file.FileSystem.getFileStores() */
-			/* name */ 'getFileStores',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					'java.nio.file.FileStore'
-				],
-				/* raw type */ 'java.lang.Iterable',
-				/* owner type */ UDF
-			]],
+			/* return */ 'java.nio.file.spi.FileSystemProvider',
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,
@@ -138,35 +163,10 @@ JdkClassCreateHelper.class('java.nio.file.FileSystem', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.nio.file.PathMatcher java.nio.file.FileSystem.getPathMatcher(java.lang.String) */
-			/* name */ 'getPathMatcher',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.nio.file.PathMatcher',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.nio.file.attribute.UserPrincipalLookupService java.nio.file.FileSystem.getUserPrincipalLookupService() */
-			/* name */ 'getUserPrincipalLookupService',
+		[/* public abstract void java.nio.file.FileSystem.close() throws java.io.IOException */
+			/* name */ 'close',
 			/* parameters */,
-			/* return */ 'java.nio.file.attribute.UserPrincipalLookupService',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.nio.file.WatchService java.nio.file.FileSystem.newWatchService() throws java.io.IOException */
-			/* name */ 'newWatchService',
-			/* parameters */,
-			/* return */ 'java.nio.file.WatchService',
+			/* return */ 'void',
 			[/* exceptions */
 				[/* exception */
 					/* type */ 'java.io.IOException',

@@ -62,10 +62,10 @@ JdkClassCreateHelper.class('java.util.Locale$LanguageRange', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.util.Locale$LanguageRange.toString() */
-			/* name */ 'toString',
+		[/* public double java.util.Locale$LanguageRange.getWeight() */
+			/* name */ 'getWeight',
 			/* parameters */,
-			/* return */ 'java.lang.String',
+			/* return */ 'double',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -77,6 +77,71 @@ JdkClassCreateHelper.class('java.util.Locale$LanguageRange', [
 			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.util.Locale$LanguageRange.getRange() */
+			/* name */ 'getRange',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.util.Locale$LanguageRange.toString() */
+			/* name */ 'toString',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.util.List<java.util.Locale$LanguageRange> java.util.Locale$LanguageRange.mapEquivalents(java.util.List<java.util.Locale$LanguageRange>,java.util.Map<java.lang.String, java.util.List<java.lang.String>>) */
+			/* name */ 'mapEquivalents',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'map',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							'java.util.Locale$LanguageRange'
+						],
+						/* raw type */ 'java.util.List',
+						/* owner type */ UDF
+					]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							'java.lang.String',
+							[/* parameterized type */ 'pt', [
+								[/* actual argument types */
+									'java.lang.String'
+								],
+								/* raw type */ 'java.util.List',
+								/* owner type */ UDF
+							]]
+						],
+						/* raw type */ 'java.util.Map',
+						/* owner type */ UDF
+					]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					'java.util.Locale$LanguageRange'
+				],
+				/* raw type */ 'java.util.List',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -140,71 +205,6 @@ JdkClassCreateHelper.class('java.util.Locale$LanguageRange', [
 			]],
 			/* exceptions */,
 			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.util.Locale$LanguageRange.getRange() */
-			/* name */ 'getRange',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.util.List<java.util.Locale$LanguageRange> java.util.Locale$LanguageRange.mapEquivalents(java.util.List<java.util.Locale$LanguageRange>,java.util.Map<java.lang.String, java.util.List<java.lang.String>>) */
-			/* name */ 'mapEquivalents',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'map',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							'java.util.Locale$LanguageRange'
-						],
-						/* raw type */ 'java.util.List',
-						/* owner type */ UDF
-					]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							'java.lang.String',
-							[/* parameterized type */ 'pt', [
-								[/* actual argument types */
-									'java.lang.String'
-								],
-								/* raw type */ 'java.util.List',
-								/* owner type */ UDF
-							]]
-						],
-						/* raw type */ 'java.util.Map',
-						/* owner type */ UDF
-					]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					'java.util.Locale$LanguageRange'
-				],
-				/* raw type */ 'java.util.List',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public double java.util.Locale$LanguageRange.getWeight() */
-			/* name */ 'getWeight',
-			/* parameters */,
-			/* return */ 'double',
-			/* exceptions */,
-			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

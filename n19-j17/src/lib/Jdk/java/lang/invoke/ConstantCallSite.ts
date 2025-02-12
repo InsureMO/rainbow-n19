@@ -10,20 +10,6 @@ JdkClassCreateHelper.class('java.lang.invoke.ConstantCallSite', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
-		[/* public java.lang.invoke.ConstantCallSite(java.lang.invoke.MethodHandle) */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'target',
-					/* type */ 'java.lang.invoke.MethodHandle',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* protected java.lang.invoke.ConstantCallSite(java.lang.invoke.MethodType,java.lang.invoke.MethodHandle) throws java.lang.Throwable */
 			[/* parameters */
 				[/* parameter */
@@ -46,6 +32,20 @@ JdkClassCreateHelper.class('java.lang.invoke.ConstantCallSite', [
 				]
 			],
 			/* modifiers */ 4,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.invoke.ConstantCallSite(java.lang.invoke.MethodHandle) */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'target',
+					/* type */ 'java.lang.invoke.MethodHandle',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* exceptions */,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

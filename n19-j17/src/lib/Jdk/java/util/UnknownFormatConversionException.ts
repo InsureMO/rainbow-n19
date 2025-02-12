@@ -26,8 +26,8 @@ JdkClassCreateHelper.class('java.util.UnknownFormatConversionException', [
 		]
 	],
 	[/* declared methods */
-		[/* public java.lang.String java.util.UnknownFormatConversionException.getMessage() */
-			/* name */ 'getMessage',
+		[/* public java.lang.String java.util.UnknownFormatConversionException.getConversion() */
+			/* name */ 'getConversion',
 			/* parameters */,
 			/* return */ 'java.lang.String',
 			/* exceptions */,
@@ -35,8 +35,8 @@ JdkClassCreateHelper.class('java.util.UnknownFormatConversionException', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.util.UnknownFormatConversionException.getConversion() */
-			/* name */ 'getConversion',
+		[/* public java.lang.String java.util.UnknownFormatConversionException.getMessage() */
+			/* name */ 'getMessage',
 			/* parameters */,
 			/* return */ 'java.lang.String',
 			/* exceptions */,

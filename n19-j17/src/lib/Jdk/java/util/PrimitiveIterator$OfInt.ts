@@ -19,6 +19,33 @@ JdkClassCreateHelper.class('java.util.PrimitiveIterator$OfInt', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
+		[/* public abstract int java.util.PrimitiveIterator$OfInt.nextInt() */
+			/* name */ 'nextInt',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public default java.lang.Integer java.util.PrimitiveIterator$OfInt.next() */
+			/* name */ 'next',
+			/* parameters */,
+			/* return */ 'java.lang.Integer',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public default java.lang.Object java.util.PrimitiveIterator$OfInt.next() */
+			/* name */ 'next',
+			/* parameters */,
+			/* return */ 'java.lang.Object',
+			/* exceptions */,
+			/* modifiers */ 4161,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public default void java.util.PrimitiveIterator$OfInt.forEachRemaining(java.lang.Object) */
 			/* name */ 'forEachRemaining',
 			[/* parameters */
@@ -32,22 +59,6 @@ JdkClassCreateHelper.class('java.util.PrimitiveIterator$OfInt', [
 			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public default void java.util.PrimitiveIterator$OfInt.forEachRemaining(java.util.function.IntConsumer) */
-			/* name */ 'forEachRemaining',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'action',
-					/* type */ 'java.util.function.IntConsumer',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -80,30 +91,19 @@ JdkClassCreateHelper.class('java.util.PrimitiveIterator$OfInt', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public default java.lang.Object java.util.PrimitiveIterator$OfInt.next() */
-			/* name */ 'next',
-			/* parameters */,
-			/* return */ 'java.lang.Object',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public default java.lang.Integer java.util.PrimitiveIterator$OfInt.next() */
-			/* name */ 'next',
-			/* parameters */,
-			/* return */ 'java.lang.Integer',
+		[/* public default void java.util.PrimitiveIterator$OfInt.forEachRemaining(java.util.function.IntConsumer) */
+			/* name */ 'forEachRemaining',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'action',
+					/* type */ 'java.util.function.IntConsumer',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract int java.util.PrimitiveIterator$OfInt.nextInt() */
-			/* name */ 'nextInt',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

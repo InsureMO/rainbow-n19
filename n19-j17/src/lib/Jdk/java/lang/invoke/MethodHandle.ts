@@ -13,6 +13,15 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandle', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
+		[/* public boolean java.lang.invoke.MethodHandle.isVarargsCollector() */
+			/* name */ 'isVarargsCollector',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public final native java.lang.Object java.lang.invoke.MethodHandle.invoke(java.lang.Object...) throws java.lang.Throwable */
 			/* name */ 'invoke',
 			[/* parameters */
@@ -59,55 +68,6 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandle', [
 				['jdk.internal.vm.annotation.IntrinsicCandidate'],
 				['java.lang.invoke.MethodHandle$PolymorphicSignature']
 			],
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.invoke.MethodType java.lang.invoke.MethodHandle.type() */
-			/* name */ 'type',
-			/* parameters */,
-			/* return */ 'java.lang.invoke.MethodType',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.lang.invoke.MethodHandle.toString() */
-			/* name */ 'toString',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.Optional<java.lang.constant.MethodHandleDesc> java.lang.invoke.MethodHandle.describeConstable() */
-			/* name */ 'describeConstable',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					'java.lang.constant.MethodHandleDesc'
-				],
-				/* raw type */ 'java.util.Optional',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.invoke.MethodHandle java.lang.invoke.MethodHandle.asType(java.lang.invoke.MethodType) */
-			/* name */ 'asType',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'newType',
-					/* type */ 'java.lang.invoke.MethodType',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.invoke.MethodHandle',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.lang.Object java.lang.invoke.MethodHandle.invokeWithArguments(java.lang.Object...) throws java.lang.Throwable */
@@ -159,6 +119,96 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandle', [
 					/* annotations */ UDF
 				]
 			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.lang.invoke.MethodHandle.toString() */
+			/* name */ 'toString',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.invoke.MethodHandle java.lang.invoke.MethodHandle.asCollector(int,java.lang.Class<?>,int) */
+			/* name */ 'asCollector',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'collectArgPos',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arrayType',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									'java.lang.Object'
+								],
+								/* lower bounds */ UDF
+							]]
+						],
+						/* raw type */ 'java.lang.Class',
+						/* owner type */ UDF
+					]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arrayLength',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.invoke.MethodHandle',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.invoke.MethodHandle java.lang.invoke.MethodHandle.asCollector(java.lang.Class<?>,int) */
+			/* name */ 'asCollector',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arrayType',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									'java.lang.Object'
+								],
+								/* lower bounds */ UDF
+							]]
+						],
+						/* raw type */ 'java.lang.Class',
+						/* owner type */ UDF
+					]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arrayLength',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.invoke.MethodHandle',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.invoke.MethodHandle java.lang.invoke.MethodHandle.asFixedArity() */
+			/* name */ 'asFixedArity',
+			/* parameters */,
+			/* return */ 'java.lang.invoke.MethodHandle',
+			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
@@ -235,10 +285,17 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandle', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public boolean java.lang.invoke.MethodHandle.isVarargsCollector() */
-			/* name */ 'isVarargsCollector',
-			/* parameters */,
-			/* return */ 'boolean',
+		[/* public java.lang.invoke.MethodHandle java.lang.invoke.MethodHandle.asType(java.lang.invoke.MethodType) */
+			/* name */ 'asType',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'newType',
+					/* type */ 'java.lang.invoke.MethodType',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.invoke.MethodHandle',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -271,68 +328,12 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandle', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.invoke.MethodHandle java.lang.invoke.MethodHandle.asCollector(java.lang.Class<?>,int) */
-			/* name */ 'asCollector',
+		[/* public java.lang.invoke.MethodHandle java.lang.invoke.MethodHandle.bindTo(java.lang.Object) */
+			/* name */ 'bindTo',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arrayType',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							[/* wildcard type */ 'wt', [
-								[/* upper bounds */
-									'java.lang.Object'
-								],
-								/* lower bounds */ UDF
-							]]
-						],
-						/* raw type */ 'java.lang.Class',
-						/* owner type */ UDF
-					]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arrayLength',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.invoke.MethodHandle',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.invoke.MethodHandle java.lang.invoke.MethodHandle.asCollector(int,java.lang.Class<?>,int) */
-			/* name */ 'asCollector',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'collectArgPos',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arrayType',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							[/* wildcard type */ 'wt', [
-								[/* upper bounds */
-									'java.lang.Object'
-								],
-								/* lower bounds */ UDF
-							]]
-						],
-						/* raw type */ 'java.lang.Class',
-						/* owner type */ UDF
-					]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arrayLength',
-					/* type */ 'int',
+					/* name */ 'x',
+					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -359,26 +360,25 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandle', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.invoke.MethodHandle java.lang.invoke.MethodHandle.asFixedArity() */
-			/* name */ 'asFixedArity',
+		[/* public java.lang.invoke.MethodType java.lang.invoke.MethodHandle.type() */
+			/* name */ 'type',
 			/* parameters */,
-			/* return */ 'java.lang.invoke.MethodHandle',
+			/* return */ 'java.lang.invoke.MethodType',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.invoke.MethodHandle java.lang.invoke.MethodHandle.bindTo(java.lang.Object) */
-			/* name */ 'bindTo',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'x',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.invoke.MethodHandle',
+		[/* public java.util.Optional<java.lang.constant.MethodHandleDesc> java.lang.invoke.MethodHandle.describeConstable() */
+			/* name */ 'describeConstable',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					'java.lang.constant.MethodHandleDesc'
+				],
+				/* raw type */ 'java.util.Optional',
+				/* owner type */ UDF
+			]],
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

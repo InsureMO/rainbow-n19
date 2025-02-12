@@ -10,24 +10,18 @@ JdkClassCreateHelper.class('java.io.FileReader', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
-		[/* public java.io.FileReader(java.io.File,java.nio.charset.Charset) throws java.io.IOException */
+		[/* public java.io.FileReader(java.io.File) throws java.io.FileNotFoundException */
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'file',
 					/* type */ 'java.io.File',
 					/* modifiers */ 0,
 					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'charset',
-					/* type */ 'java.nio.charset.Charset',
-					/* modifiers */ 0,
-					/* annotations */ UDF
 				]
 			],
 			[/* exceptions */
 				[/* exception */
-					/* type */ 'java.io.IOException',
+					/* type */ 'java.io.FileNotFoundException',
 					/* annotations */ UDF
 				]
 			],
@@ -35,11 +29,11 @@ JdkClassCreateHelper.class('java.io.FileReader', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.io.FileReader(java.lang.String,java.nio.charset.Charset) throws java.io.IOException */
+		[/* public java.io.FileReader(java.io.File,java.nio.charset.Charset) throws java.io.IOException */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'fileName',
-					/* type */ 'java.lang.String',
+					/* name */ 'file',
+					/* type */ 'java.io.File',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
@@ -74,11 +68,11 @@ JdkClassCreateHelper.class('java.io.FileReader', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.io.FileReader(java.io.File) throws java.io.FileNotFoundException */
+		[/* public java.io.FileReader(java.lang.String) throws java.io.FileNotFoundException */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'file',
-					/* type */ 'java.io.File',
+					/* name */ 'fileName',
+					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -93,18 +87,24 @@ JdkClassCreateHelper.class('java.io.FileReader', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.io.FileReader(java.lang.String) throws java.io.FileNotFoundException */
+		[/* public java.io.FileReader(java.lang.String,java.nio.charset.Charset) throws java.io.IOException */
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'fileName',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'charset',
+					/* type */ 'java.nio.charset.Charset',
+					/* modifiers */ 0,
+					/* annotations */ UDF
 				]
 			],
 			[/* exceptions */
 				[/* exception */
-					/* type */ 'java.io.FileNotFoundException',
+					/* type */ 'java.io.IOException',
 					/* annotations */ UDF
 				]
 			],

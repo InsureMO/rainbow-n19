@@ -32,6 +32,83 @@ JdkClassCreateHelper.class('java.util.stream.Collector', [
 	],
 	/* declared constructors */,
 	[/* declared methods */
+		[/* public abstract java.util.Set<java.util.stream.Collector$Characteristics> java.util.stream.Collector.characteristics() */
+			/* name */ 'characteristics',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					'java.util.stream.Collector$Characteristics'
+				],
+				/* raw type */ 'java.util.Set',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.util.function.BiConsumer<A, T> java.util.stream.Collector.accumulator() */
+			/* name */ 'accumulator',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'A']],
+					[/* type variable ref */ 'tr', [/* name */ 'T']]
+				],
+				/* raw type */ 'java.util.function.BiConsumer',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.util.function.BinaryOperator<A> java.util.stream.Collector.combiner() */
+			/* name */ 'combiner',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'A']]
+				],
+				/* raw type */ 'java.util.function.BinaryOperator',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.util.function.Function<A, R> java.util.stream.Collector.finisher() */
+			/* name */ 'finisher',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'A']],
+					[/* type variable ref */ 'tr', [/* name */ 'R']]
+				],
+				/* raw type */ 'java.util.function.Function',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.util.function.Supplier<A> java.util.stream.Collector.supplier() */
+			/* name */ 'supplier',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'A']]
+				],
+				/* raw type */ 'java.util.function.Supplier',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public static <T,A,R> java.util.stream.Collector<T, A, R> java.util.stream.Collector.of(java.util.function.Supplier<A>,java.util.function.BiConsumer<A, T>,java.util.function.BinaryOperator<A>,java.util.function.Function<A, R>,java.util.stream.Collector$Characteristics...) */
 			/* name */ 'of',
 			[/* parameters */
@@ -203,83 +280,6 @@ JdkClassCreateHelper.class('java.util.stream.Collector', [
 					/* annotations */ UDF
 				]
 			]
-		],
-		[/* public abstract java.util.Set<java.util.stream.Collector$Characteristics> java.util.stream.Collector.characteristics() */
-			/* name */ 'characteristics',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					'java.util.stream.Collector$Characteristics'
-				],
-				/* raw type */ 'java.util.Set',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.util.function.BinaryOperator<A> java.util.stream.Collector.combiner() */
-			/* name */ 'combiner',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* type variable ref */ 'tr', [/* name */ 'A']]
-				],
-				/* raw type */ 'java.util.function.BinaryOperator',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.util.function.Supplier<A> java.util.stream.Collector.supplier() */
-			/* name */ 'supplier',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* type variable ref */ 'tr', [/* name */ 'A']]
-				],
-				/* raw type */ 'java.util.function.Supplier',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.util.function.BiConsumer<A, T> java.util.stream.Collector.accumulator() */
-			/* name */ 'accumulator',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* type variable ref */ 'tr', [/* name */ 'A']],
-					[/* type variable ref */ 'tr', [/* name */ 'T']]
-				],
-				/* raw type */ 'java.util.function.BiConsumer',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.util.function.Function<A, R> java.util.stream.Collector.finisher() */
-			/* name */ 'finisher',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* type variable ref */ 'tr', [/* name */ 'A']],
-					[/* type variable ref */ 'tr', [/* name */ 'R']]
-				],
-				/* raw type */ 'java.util.function.Function',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
 		]
 	],
 	/* declared fields */,

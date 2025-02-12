@@ -10,31 +10,6 @@ JdkClassCreateHelper.class('java.util.zip.GZIPOutputStream', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
-		[/* public java.util.zip.GZIPOutputStream(java.io.OutputStream,boolean) throws java.io.IOException */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'out',
-					/* type */ 'java.io.OutputStream',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'syncFlush',
-					/* type */ 'boolean',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public java.util.zip.GZIPOutputStream(java.io.OutputStream) throws java.io.IOException */
 			[/* parameters */
 				[/* parameter */
@@ -54,17 +29,11 @@ JdkClassCreateHelper.class('java.util.zip.GZIPOutputStream', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.util.zip.GZIPOutputStream(java.io.OutputStream,int,boolean) throws java.io.IOException */
+		[/* public java.util.zip.GZIPOutputStream(java.io.OutputStream,boolean) throws java.io.IOException */
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'out',
 					/* type */ 'java.io.OutputStream',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'size',
-					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
@@ -96,6 +65,37 @@ JdkClassCreateHelper.class('java.util.zip.GZIPOutputStream', [
 				[/* parameter */
 					/* name */ 'size',
 					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.zip.GZIPOutputStream(java.io.OutputStream,int,boolean) throws java.io.IOException */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'out',
+					/* type */ 'java.io.OutputStream',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'size',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'syncFlush',
+					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]

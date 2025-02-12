@@ -17,15 +17,6 @@ JdkClassCreateHelper.class('java.lang.ProcessBuilder$Redirect$Type', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public static java.lang.ProcessBuilder$Redirect$Type[] java.lang.ProcessBuilder$Redirect$Type.values() */
-			/* name */ 'values',
-			/* parameters */,
-			/* return */ '[Ljava.lang.ProcessBuilder$Redirect$Type;',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public static java.lang.ProcessBuilder$Redirect$Type java.lang.ProcessBuilder$Redirect$Type.valueOf(java.lang.String) */
 			/* name */ 'valueOf',
 			[/* parameters */
@@ -37,6 +28,15 @@ JdkClassCreateHelper.class('java.lang.ProcessBuilder$Redirect$Type', [
 				]
 			],
 			/* return */ 'java.lang.ProcessBuilder$Redirect$Type',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.lang.ProcessBuilder$Redirect$Type[] java.lang.ProcessBuilder$Redirect$Type.values() */
+			/* name */ 'values',
+			/* parameters */,
+			/* return */ '[Ljava.lang.ProcessBuilder$Redirect$Type;',
 			/* exceptions */,
 			/* modifiers */ 9,
 			/* annotations */ UDF,

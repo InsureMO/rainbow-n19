@@ -57,15 +57,6 @@ JdkClassCreateHelper.class('java.util.AbstractSet', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.util.AbstractSet.hashCode() */
-			/* name */ 'hashCode',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public boolean java.util.AbstractSet.removeAll(java.util.Collection<?>) */
 			/* name */ 'removeAll',
 			[/* parameters */
@@ -88,6 +79,15 @@ JdkClassCreateHelper.class('java.util.AbstractSet', [
 				]
 			],
 			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.AbstractSet.hashCode() */
+			/* name */ 'hashCode',
+			/* parameters */,
+			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

@@ -17,12 +17,30 @@ JdkClassCreateHelper.class('java.time.format.TextStyle', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public static java.time.format.TextStyle[] java.time.format.TextStyle.values() */
-			/* name */ 'values',
+		[/* public boolean java.time.format.TextStyle.isStandalone() */
+			/* name */ 'isStandalone',
 			/* parameters */,
-			/* return */ '[Ljava.time.format.TextStyle;',
+			/* return */ 'boolean',
 			/* exceptions */,
-			/* modifiers */ 9,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.format.TextStyle java.time.format.TextStyle.asNormal() */
+			/* name */ 'asNormal',
+			/* parameters */,
+			/* return */ 'java.time.format.TextStyle',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.format.TextStyle java.time.format.TextStyle.asStandalone() */
+			/* name */ 'asStandalone',
+			/* parameters */,
+			/* return */ 'java.time.format.TextStyle',
+			/* exceptions */,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -42,30 +60,12 @@ JdkClassCreateHelper.class('java.time.format.TextStyle', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public boolean java.time.format.TextStyle.isStandalone() */
-			/* name */ 'isStandalone',
+		[/* public static java.time.format.TextStyle[] java.time.format.TextStyle.values() */
+			/* name */ 'values',
 			/* parameters */,
-			/* return */ 'boolean',
+			/* return */ '[Ljava.time.format.TextStyle;',
 			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.format.TextStyle java.time.format.TextStyle.asStandalone() */
-			/* name */ 'asStandalone',
-			/* parameters */,
-			/* return */ 'java.time.format.TextStyle',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.format.TextStyle java.time.format.TextStyle.asNormal() */
-			/* name */ 'asNormal',
-			/* parameters */,
-			/* return */ 'java.time.format.TextStyle',
-			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

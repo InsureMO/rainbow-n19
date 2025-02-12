@@ -13,40 +13,194 @@ JdkClassCreateHelper.class('java.lang.Module', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public java.lang.String java.lang.Module.getName() */
-			/* name */ 'getName',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.lang.Module.toString() */
-			/* name */ 'toString',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.Module java.lang.Module.addReads(java.lang.Module) */
-			/* name */ 'addReads',
+		[/* public <T extends java.lang.annotation.Annotation> T java.lang.Module.getAnnotation(java.lang.Class<T>) */
+			/* name */ 'getAnnotation',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'caller',
+					/* name */ 'annotationClass',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* type variable ref */ 'tr', [/* name */ 'T']]
+						],
+						/* raw type */ 'java.lang.Class',
+						/* owner type */ UDF
+					]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* type variable ref */ 'tr', [/* name */ 'T']],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			[/* type parameters */
+				[/* type variable */
+					/* name */ 'T',
+					[/* bounds */
+						'java.lang.annotation.Annotation'
+					],
+					/* annotations */ UDF
+				]
+			]
+		],
+		[/* public boolean java.lang.Module.canRead(java.lang.Module) */
+			/* name */ 'canRead',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'reads',
 					/* type */ 'java.lang.Module',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.lang.Module',
+			/* return */ 'boolean',
 			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.lang.Module.canUse(java.lang.Class<?>) */
+			/* name */ 'canUse',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'service',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									'java.lang.Object'
+								],
+								/* lower bounds */ UDF
+							]]
+						],
+						/* raw type */ 'java.lang.Class',
+						/* owner type */ UDF
+					]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.lang.Module.isExported(java.lang.String) */
+			/* name */ 'isExported',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'pn',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.lang.Module.isExported(java.lang.String,java.lang.Module) */
+			/* name */ 'isExported',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'pn',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'other',
+					/* type */ 'java.lang.Module',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.lang.Module.isNamed() */
+			/* name */ 'isNamed',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.lang.Module.isOpen(java.lang.String) */
+			/* name */ 'isOpen',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'pn',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.lang.Module.isOpen(java.lang.String,java.lang.Module) */
+			/* name */ 'isOpen',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'pn',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'other',
+					/* type */ 'java.lang.Module',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.io.InputStream java.lang.Module.getResourceAsStream(java.lang.String) throws java.io.IOException */
+			/* name */ 'getResourceAsStream',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'pn',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.io.InputStream',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
 			/* modifiers */ 1,
 			[/* annotations */
 				['jdk.internal.reflect.CallerSensitive']
 			],
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.ClassLoader java.lang.Module.getClassLoader() */
+			/* name */ 'getClassLoader',
+			/* parameters */,
+			/* return */ 'java.lang.ClassLoader',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.lang.Module java.lang.Module.addExports(java.lang.String,java.lang.Module) */
@@ -97,6 +251,24 @@ JdkClassCreateHelper.class('java.lang.Module', [
 			],
 			/* type parameters */ UDF
 		],
+		[/* public java.lang.Module java.lang.Module.addReads(java.lang.Module) */
+			/* name */ 'addReads',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'caller',
+					/* type */ 'java.lang.Module',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.Module',
+			/* exceptions */,
+			/* modifiers */ 1,
+			[/* annotations */
+				['jdk.internal.reflect.CallerSensitive']
+			],
+			/* type parameters */ UDF
+		],
 		[/* public java.lang.Module java.lang.Module.addUses(java.lang.Class<?>) */
 			/* name */ 'addUses',
 			[/* parameters */
@@ -126,123 +298,32 @@ JdkClassCreateHelper.class('java.lang.Module', [
 			],
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.ClassLoader java.lang.Module.getClassLoader() */
-			/* name */ 'getClassLoader',
+		[/* public java.lang.ModuleLayer java.lang.Module.getLayer() */
+			/* name */ 'getLayer',
 			/* parameters */,
-			/* return */ 'java.lang.ClassLoader',
+			/* return */ 'java.lang.ModuleLayer',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.module.ModuleDescriptor java.lang.Module.getDescriptor() */
-			/* name */ 'getDescriptor',
+		[/* public java.lang.String java.lang.Module.getName() */
+			/* name */ 'getName',
 			/* parameters */,
-			/* return */ 'java.lang.module.ModuleDescriptor',
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public boolean java.lang.Module.isNamed() */
-			/* name */ 'isNamed',
+		[/* public java.lang.String java.lang.Module.toString() */
+			/* name */ 'toString',
 			/* parameters */,
-			/* return */ 'boolean',
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
-		],
-		[/* public java.io.InputStream java.lang.Module.getResourceAsStream(java.lang.String) throws java.io.IOException */
-			/* name */ 'getResourceAsStream',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'pn',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.io.InputStream',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.lang.Module.isOpen(java.lang.String) */
-			/* name */ 'isOpen',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'pn',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.lang.Module.isOpen(java.lang.String,java.lang.Module) */
-			/* name */ 'isOpen',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'pn',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'other',
-					/* type */ 'java.lang.Module',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public <T extends java.lang.annotation.Annotation> T java.lang.Module.getAnnotation(java.lang.Class<T>) */
-			/* name */ 'getAnnotation',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'annotationClass',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							[/* type variable ref */ 'tr', [/* name */ 'T']]
-						],
-						/* raw type */ 'java.lang.Class',
-						/* owner type */ UDF
-					]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ [/* type variable ref */ 'tr', [/* name */ 'T']],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			[/* type parameters */
-				[/* type variable */
-					/* name */ 'T',
-					[/* bounds */
-						'java.lang.annotation.Annotation'
-					],
-					/* annotations */ UDF
-				]
-			]
 		],
 		[/* public java.lang.annotation.Annotation[] java.lang.Module.getAnnotations() */
 			/* name */ 'getAnnotations',
@@ -262,6 +343,15 @@ JdkClassCreateHelper.class('java.lang.Module', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public java.lang.module.ModuleDescriptor java.lang.Module.getDescriptor() */
+			/* name */ 'getDescriptor',
+			/* parameters */,
+			/* return */ 'java.lang.module.ModuleDescriptor',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.util.Set<java.lang.String> java.lang.Module.getPackages() */
 			/* name */ 'getPackages',
 			/* parameters */,
@@ -272,96 +362,6 @@ JdkClassCreateHelper.class('java.lang.Module', [
 				/* raw type */ 'java.util.Set',
 				/* owner type */ UDF
 			]],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.lang.Module.canRead(java.lang.Module) */
-			/* name */ 'canRead',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'reads',
-					/* type */ 'java.lang.Module',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.lang.Module.canUse(java.lang.Class<?>) */
-			/* name */ 'canUse',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'service',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							[/* wildcard type */ 'wt', [
-								[/* upper bounds */
-									'java.lang.Object'
-								],
-								/* lower bounds */ UDF
-							]]
-						],
-						/* raw type */ 'java.lang.Class',
-						/* owner type */ UDF
-					]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.ModuleLayer java.lang.Module.getLayer() */
-			/* name */ 'getLayer',
-			/* parameters */,
-			/* return */ 'java.lang.ModuleLayer',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.lang.Module.isExported(java.lang.String,java.lang.Module) */
-			/* name */ 'isExported',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'pn',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'other',
-					/* type */ 'java.lang.Module',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.lang.Module.isExported(java.lang.String) */
-			/* name */ 'isExported',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'pn',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

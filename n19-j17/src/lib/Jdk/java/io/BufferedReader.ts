@@ -10,6 +10,20 @@ JdkClassCreateHelper.class('java.io.BufferedReader', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
+		[/* public java.io.BufferedReader(java.io.Reader) */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'in',
+					/* type */ 'java.io.Reader',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.io.BufferedReader(java.io.Reader,int) */
 			[/* parameters */
 				[/* parameter */
@@ -29,34 +43,28 @@ JdkClassCreateHelper.class('java.io.BufferedReader', [
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
-		],
-		[/* public java.io.BufferedReader(java.io.Reader) */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'in',
-					/* type */ 'java.io.Reader',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
+		]
+	],
+	[/* declared methods */
+		[/* public boolean java.io.BufferedReader.markSupported() */
+			/* name */ 'markSupported',
+			/* parameters */,
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
-		]
-	],
-	[/* declared methods */
-		[/* public java.util.stream.Stream<java.lang.String> java.io.BufferedReader.lines() */
-			/* name */ 'lines',
+		],
+		[/* public boolean java.io.BufferedReader.ready() throws java.io.IOException */
+			/* name */ 'ready',
 			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					'java.lang.String'
-				],
-				/* raw type */ 'java.util.stream.Stream',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
+			/* return */ 'boolean',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
@@ -122,6 +130,42 @@ JdkClassCreateHelper.class('java.io.BufferedReader', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public java.util.stream.Stream<java.lang.String> java.io.BufferedReader.lines() */
+			/* name */ 'lines',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					'java.lang.String'
+				],
+				/* raw type */ 'java.util.stream.Stream',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public long java.io.BufferedReader.skip(long) throws java.io.IOException */
+			/* name */ 'skip',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'd',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'long',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public void java.io.BufferedReader.close() throws java.io.IOException */
 			/* name */ 'close',
 			/* parameters */,
@@ -157,54 +201,10 @@ JdkClassCreateHelper.class('java.io.BufferedReader', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public long java.io.BufferedReader.skip(long) throws java.io.IOException */
-			/* name */ 'skip',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'd',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'long',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.io.BufferedReader.markSupported() */
-			/* name */ 'markSupported',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public void java.io.BufferedReader.reset() throws java.io.IOException */
 			/* name */ 'reset',
 			/* parameters */,
 			/* return */ 'void',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.io.BufferedReader.ready() throws java.io.IOException */
-			/* name */ 'ready',
-			/* parameters */,
-			/* return */ 'boolean',
 			[/* exceptions */
 				[/* exception */
 					/* type */ 'java.io.IOException',

@@ -35,24 +35,6 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Provides', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.lang.module.ModuleDescriptor$Provides.toString() */
-			/* name */ 'toString',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.lang.module.ModuleDescriptor$Provides.hashCode() */
-			/* name */ 'hashCode',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public int java.lang.module.ModuleDescriptor$Provides.compareTo(java.lang.Object) */
 			/* name */ 'compareTo',
 			[/* parameters */
@@ -85,8 +67,26 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Provides', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public int java.lang.module.ModuleDescriptor$Provides.hashCode() */
+			/* name */ 'hashCode',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.lang.String java.lang.module.ModuleDescriptor$Provides.service() */
 			/* name */ 'service',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.lang.module.ModuleDescriptor$Provides.toString() */
+			/* name */ 'toString',
 			/* parameters */,
 			/* return */ 'java.lang.String',
 			/* exceptions */,

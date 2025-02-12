@@ -12,26 +12,6 @@ JdkClassCreateHelper.class('java.security.CodeSource', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
-		[/* public java.security.CodeSource(java.net.URL,java.security.cert.Certificate[]) */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.net.URL',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ '[Ljava.security.cert.Certificate;',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public java.security.CodeSource(java.net.URL,java.security.CodeSigner[]) */
 			[/* parameters */
 				[/* parameter */
@@ -43,6 +23,26 @@ JdkClassCreateHelper.class('java.security.CodeSource', [
 				[/* parameter */
 					/* name */ 'arg1',
 					/* type */ '[Ljava.security.CodeSigner;',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.security.CodeSource(java.net.URL,java.security.cert.Certificate[]) */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.net.URL',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ '[Ljava.security.cert.Certificate;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -70,42 +70,6 @@ JdkClassCreateHelper.class('java.security.CodeSource', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.security.CodeSource.toString() */
-			/* name */ 'toString',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.security.CodeSource.hashCode() */
-			/* name */ 'hashCode',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final java.net.URL java.security.CodeSource.getLocation() */
-			/* name */ 'getLocation',
-			/* parameters */,
-			/* return */ 'java.net.URL',
-			/* exceptions */,
-			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final java.security.cert.Certificate[] java.security.CodeSource.getCertificates() */
-			/* name */ 'getCertificates',
-			/* parameters */,
-			/* return */ '[Ljava.security.cert.Certificate;',
-			/* exceptions */,
-			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public boolean java.security.CodeSource.implies(java.security.CodeSource) */
 			/* name */ 'implies',
 			[/* parameters */
@@ -122,12 +86,48 @@ JdkClassCreateHelper.class('java.security.CodeSource', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public final java.net.URL java.security.CodeSource.getLocation() */
+			/* name */ 'getLocation',
+			/* parameters */,
+			/* return */ 'java.net.URL',
+			/* exceptions */,
+			/* modifiers */ 17,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public final java.security.CodeSigner[] java.security.CodeSource.getCodeSigners() */
 			/* name */ 'getCodeSigners',
 			/* parameters */,
 			/* return */ '[Ljava.security.CodeSigner;',
 			/* exceptions */,
 			/* modifiers */ 17,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public final java.security.cert.Certificate[] java.security.CodeSource.getCertificates() */
+			/* name */ 'getCertificates',
+			/* parameters */,
+			/* return */ '[Ljava.security.cert.Certificate;',
+			/* exceptions */,
+			/* modifiers */ 17,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.security.CodeSource.hashCode() */
+			/* name */ 'hashCode',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.security.CodeSource.toString() */
+			/* name */ 'toString',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

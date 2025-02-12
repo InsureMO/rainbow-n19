@@ -34,6 +34,24 @@ JdkClassCreateHelper.class('java.util.SortedMap', [
 	],
 	/* declared constructors */,
 	[/* declared methods */
+		[/* public abstract K java.util.SortedMap.firstKey() */
+			/* name */ 'firstKey',
+			/* parameters */,
+			/* return */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract K java.util.SortedMap.lastKey() */
+			/* name */ 'lastKey',
+			/* parameters */,
+			/* return */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public abstract java.util.Collection<V> java.util.SortedMap.values() */
 			/* name */ 'values',
 			/* parameters */,
@@ -42,43 +60,6 @@ JdkClassCreateHelper.class('java.util.SortedMap', [
 					[/* type variable ref */ 'tr', [/* name */ 'V']]
 				],
 				/* raw type */ 'java.util.Collection',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.util.Set<java.util.Map$Entry<K, V>> java.util.SortedMap.entrySet() */
-			/* name */ 'entrySet',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							[/* type variable ref */ 'tr', [/* name */ 'K']],
-							[/* type variable ref */ 'tr', [/* name */ 'V']]
-						],
-						/* raw type */ 'java.util.Map$Entry',
-						/* owner type */ 'java.util.Map'
-					]]
-				],
-				/* raw type */ 'java.util.Set',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.util.Set<K> java.util.SortedMap.keySet() */
-			/* name */ 'keySet',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* type variable ref */ 'tr', [/* name */ 'K']]
-				],
-				/* raw type */ 'java.util.Set',
 				/* owner type */ UDF
 			]],
 			/* exceptions */,
@@ -108,35 +89,48 @@ JdkClassCreateHelper.class('java.util.SortedMap', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract K java.util.SortedMap.firstKey() */
-			/* name */ 'firstKey',
+		[/* public abstract java.util.Set<K> java.util.SortedMap.keySet() */
+			/* name */ 'keySet',
 			/* parameters */,
-			/* return */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'K']]
+				],
+				/* raw type */ 'java.util.Set',
+				/* owner type */ UDF
+			]],
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract K java.util.SortedMap.lastKey() */
-			/* name */ 'lastKey',
+		[/* public abstract java.util.Set<java.util.Map$Entry<K, V>> java.util.SortedMap.entrySet() */
+			/* name */ 'entrySet',
 			/* parameters */,
-			/* return */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* type variable ref */ 'tr', [/* name */ 'K']],
+							[/* type variable ref */ 'tr', [/* name */ 'V']]
+						],
+						/* raw type */ 'java.util.Map$Entry',
+						/* owner type */ 'java.util.Map'
+					]]
+				],
+				/* raw type */ 'java.util.Set',
+				/* owner type */ UDF
+			]],
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.util.SortedMap<K, V> java.util.SortedMap.subMap(K,K) */
-			/* name */ 'subMap',
+		[/* public abstract java.util.SortedMap<K, V> java.util.SortedMap.headMap(K) */
+			/* name */ 'headMap',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -155,11 +149,17 @@ JdkClassCreateHelper.class('java.util.SortedMap', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.util.SortedMap<K, V> java.util.SortedMap.headMap(K) */
-			/* name */ 'headMap',
+		[/* public abstract java.util.SortedMap<K, V> java.util.SortedMap.subMap(K,K) */
+			/* name */ 'subMap',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF

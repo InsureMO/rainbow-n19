@@ -21,16 +21,18 @@ JdkClassCreateHelper.class('java.util.zip.Adler32', [
 		]
 	],
 	[/* declared methods */
-		[/* public void java.util.zip.Adler32.update(int) */
-			/* name */ 'update',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'b',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
+		[/* public long java.util.zip.Adler32.getValue() */
+			/* name */ 'getValue',
+			/* parameters */,
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.util.zip.Adler32.reset() */
+			/* name */ 'reset',
+			/* parameters */,
 			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
@@ -65,12 +67,12 @@ JdkClassCreateHelper.class('java.util.zip.Adler32', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.util.zip.Adler32.update(java.nio.ByteBuffer) */
+		[/* public void java.util.zip.Adler32.update(int) */
 			/* name */ 'update',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'length',
-					/* type */ 'java.nio.ByteBuffer',
+					/* name */ 'b',
+					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -81,18 +83,16 @@ JdkClassCreateHelper.class('java.util.zip.Adler32', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public long java.util.zip.Adler32.getValue() */
-			/* name */ 'getValue',
-			/* parameters */,
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.util.zip.Adler32.reset() */
-			/* name */ 'reset',
-			/* parameters */,
+		[/* public void java.util.zip.Adler32.update(java.nio.ByteBuffer) */
+			/* name */ 'update',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'length',
+					/* type */ 'java.nio.ByteBuffer',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
 			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,

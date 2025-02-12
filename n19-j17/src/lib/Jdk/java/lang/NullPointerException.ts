@@ -33,21 +33,21 @@ JdkClassCreateHelper.class('java.lang.NullPointerException', [
 		]
 	],
 	[/* declared methods */
-		[/* public synchronized java.lang.Throwable java.lang.NullPointerException.fillInStackTrace() */
-			/* name */ 'fillInStackTrace',
-			/* parameters */,
-			/* return */ 'java.lang.Throwable',
-			/* exceptions */,
-			/* modifiers */ 33,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public java.lang.String java.lang.NullPointerException.getMessage() */
 			/* name */ 'getMessage',
 			/* parameters */,
 			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public synchronized java.lang.Throwable java.lang.NullPointerException.fillInStackTrace() */
+			/* name */ 'fillInStackTrace',
+			/* parameters */,
+			/* return */ 'java.lang.Throwable',
+			/* exceptions */,
+			/* modifiers */ 33,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

@@ -11,6 +11,45 @@ JdkClassCreateHelper.class('java.lang.invoke.LambdaMetafactory', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
+		[/* public static java.lang.invoke.CallSite java.lang.invoke.LambdaMetafactory.altMetafactory(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.Object...) throws java.lang.invoke.LambdaConversionException */
+			/* name */ 'altMetafactory',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.invoke.MethodHandles$Lookup',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg2',
+					/* type */ 'java.lang.invoke.MethodType',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg3',
+					/* type */ '[Ljava.lang.Object;',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.invoke.CallSite',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.lang.invoke.LambdaConversionException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 137,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public static java.lang.invoke.CallSite java.lang.invoke.LambdaMetafactory.metafactory(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.invoke.MethodType,java.lang.invoke.MethodHandle,java.lang.invoke.MethodType) throws java.lang.invoke.LambdaConversionException */
 			/* name */ 'metafactory',
 			[/* parameters */
@@ -59,45 +98,6 @@ JdkClassCreateHelper.class('java.lang.invoke.LambdaMetafactory', [
 				]
 			],
 			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.lang.invoke.CallSite java.lang.invoke.LambdaMetafactory.altMetafactory(java.lang.invoke.MethodHandles$Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.Object...) throws java.lang.invoke.LambdaConversionException */
-			/* name */ 'altMetafactory',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.invoke.MethodHandles$Lookup',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg2',
-					/* type */ 'java.lang.invoke.MethodType',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg3',
-					/* type */ '[Ljava.lang.Object;',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.invoke.CallSite',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.lang.invoke.LambdaConversionException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 137,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

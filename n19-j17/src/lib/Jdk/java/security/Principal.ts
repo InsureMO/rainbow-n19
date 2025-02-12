@@ -10,15 +10,6 @@ JdkClassCreateHelper.class('java.security.Principal', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public abstract java.lang.String java.security.Principal.getName() */
-			/* name */ 'getName',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public abstract boolean java.security.Principal.equals(java.lang.Object) */
 			/* name */ 'equals',
 			[/* parameters */
@@ -35,8 +26,17 @@ JdkClassCreateHelper.class('java.security.Principal', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.lang.String java.security.Principal.toString() */
-			/* name */ 'toString',
+		[/* public abstract int java.security.Principal.hashCode() */
+			/* name */ 'hashCode',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.lang.String java.security.Principal.getName() */
+			/* name */ 'getName',
 			/* parameters */,
 			/* return */ 'java.lang.String',
 			/* exceptions */,
@@ -44,10 +44,10 @@ JdkClassCreateHelper.class('java.security.Principal', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract int java.security.Principal.hashCode() */
-			/* name */ 'hashCode',
+		[/* public abstract java.lang.String java.security.Principal.toString() */
+			/* name */ 'toString',
 			/* parameters */,
-			/* return */ 'int',
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,

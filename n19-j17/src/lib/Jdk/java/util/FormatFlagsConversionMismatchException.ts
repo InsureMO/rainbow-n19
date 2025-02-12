@@ -32,10 +32,10 @@ JdkClassCreateHelper.class('java.util.FormatFlagsConversionMismatchException', [
 		]
 	],
 	[/* declared methods */
-		[/* public java.lang.String java.util.FormatFlagsConversionMismatchException.getMessage() */
-			/* name */ 'getMessage',
+		[/* public char java.util.FormatFlagsConversionMismatchException.getConversion() */
+			/* name */ 'getConversion',
 			/* parameters */,
-			/* return */ 'java.lang.String',
+			/* return */ 'char',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -50,10 +50,10 @@ JdkClassCreateHelper.class('java.util.FormatFlagsConversionMismatchException', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public char java.util.FormatFlagsConversionMismatchException.getConversion() */
-			/* name */ 'getConversion',
+		[/* public java.lang.String java.util.FormatFlagsConversionMismatchException.getMessage() */
+			/* name */ 'getMessage',
 			/* parameters */,
-			/* return */ 'char',
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

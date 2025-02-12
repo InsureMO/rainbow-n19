@@ -17,15 +17,6 @@ JdkClassCreateHelper.class('java.time.format.SignStyle', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public static java.time.format.SignStyle[] java.time.format.SignStyle.values() */
-			/* name */ 'values',
-			/* parameters */,
-			/* return */ '[Ljava.time.format.SignStyle;',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public static java.time.format.SignStyle java.time.format.SignStyle.valueOf(java.lang.String) */
 			/* name */ 'valueOf',
 			[/* parameters */
@@ -37,6 +28,15 @@ JdkClassCreateHelper.class('java.time.format.SignStyle', [
 				]
 			],
 			/* return */ 'java.time.format.SignStyle',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.time.format.SignStyle[] java.time.format.SignStyle.values() */
+			/* name */ 'values',
+			/* parameters */,
+			/* return */ '[Ljava.time.format.SignStyle;',
 			/* exceptions */,
 			/* modifiers */ 9,
 			/* annotations */ UDF,

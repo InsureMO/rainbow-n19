@@ -13,9 +13,44 @@ JdkClassCreateHelper.class('java.io.ObjectOutput', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
+		[/* public abstract void java.io.ObjectOutput.close() throws java.io.IOException */
+			/* name */ 'close',
+			/* parameters */,
+			/* return */ 'void',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public abstract void java.io.ObjectOutput.flush() throws java.io.IOException */
 			/* name */ 'flush',
 			/* parameters */,
+			/* return */ 'void',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract void java.io.ObjectOutput.write(byte[]) throws java.io.IOException */
+			/* name */ 'write',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ '[B',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
 			/* return */ 'void',
 			[/* exceptions */
 				[/* exception */
@@ -45,27 +80,6 @@ JdkClassCreateHelper.class('java.io.ObjectOutput', [
 				[/* parameter */
 					/* name */ 'arg2',
 					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract void java.io.ObjectOutput.write(byte[]) throws java.io.IOException */
-			/* name */ 'write',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -112,20 +126,6 @@ JdkClassCreateHelper.class('java.io.ObjectOutput', [
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'void',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract void java.io.ObjectOutput.close() throws java.io.IOException */
-			/* name */ 'close',
-			/* parameters */,
 			/* return */ 'void',
 			[/* exceptions */
 				[/* exception */

@@ -10,49 +10,8 @@ JdkClassCreateHelper.class('java.util.regex.MatchResult', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public abstract java.lang.String java.util.regex.MatchResult.group() */
-			/* name */ 'group',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.lang.String java.util.regex.MatchResult.group(int) */
-			/* name */ 'group',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract int java.util.regex.MatchResult.start(int) */
-			/* name */ 'start',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract int java.util.regex.MatchResult.start() */
-			/* name */ 'start',
+		[/* public abstract int java.util.regex.MatchResult.end() */
+			/* name */ 'end',
 			/* parameters */,
 			/* return */ 'int',
 			/* exceptions */,
@@ -76,8 +35,8 @@ JdkClassCreateHelper.class('java.util.regex.MatchResult', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract int java.util.regex.MatchResult.end() */
-			/* name */ 'end',
+		[/* public abstract int java.util.regex.MatchResult.groupCount() */
+			/* name */ 'groupCount',
 			/* parameters */,
 			/* return */ 'int',
 			/* exceptions */,
@@ -85,10 +44,51 @@ JdkClassCreateHelper.class('java.util.regex.MatchResult', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract int java.util.regex.MatchResult.groupCount() */
-			/* name */ 'groupCount',
+		[/* public abstract int java.util.regex.MatchResult.start() */
+			/* name */ 'start',
 			/* parameters */,
 			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract int java.util.regex.MatchResult.start(int) */
+			/* name */ 'start',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.lang.String java.util.regex.MatchResult.group() */
+			/* name */ 'group',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.lang.String java.util.regex.MatchResult.group(int) */
+			/* name */ 'group',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,

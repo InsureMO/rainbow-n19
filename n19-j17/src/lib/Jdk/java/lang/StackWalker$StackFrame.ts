@@ -10,12 +10,30 @@ JdkClassCreateHelper.class('java.lang.StackWalker$StackFrame', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public default java.lang.String java.lang.StackWalker$StackFrame.getDescriptor() */
-			/* name */ 'getDescriptor',
+		[/* public abstract boolean java.lang.StackWalker$StackFrame.isNativeMethod() */
+			/* name */ 'isNativeMethod',
 			/* parameters */,
-			/* return */ 'java.lang.String',
+			/* return */ 'boolean',
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract int java.lang.StackWalker$StackFrame.getByteCodeIndex() */
+			/* name */ 'getByteCodeIndex',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract int java.lang.StackWalker$StackFrame.getLineNumber() */
+			/* name */ 'getLineNumber',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -39,37 +57,10 @@ JdkClassCreateHelper.class('java.lang.StackWalker$StackFrame', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public default java.lang.invoke.MethodType java.lang.StackWalker$StackFrame.getMethodType() */
-			/* name */ 'getMethodType',
+		[/* public abstract java.lang.StackTraceElement java.lang.StackWalker$StackFrame.toStackTraceElement() */
+			/* name */ 'toStackTraceElement',
 			/* parameters */,
-			/* return */ 'java.lang.invoke.MethodType',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract boolean java.lang.StackWalker$StackFrame.isNativeMethod() */
-			/* name */ 'isNativeMethod',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.lang.String java.lang.StackWalker$StackFrame.getFileName() */
-			/* name */ 'getFileName',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract int java.lang.StackWalker$StackFrame.getLineNumber() */
-			/* name */ 'getLineNumber',
-			/* parameters */,
-			/* return */ 'int',
+			/* return */ 'java.lang.StackTraceElement',
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,
@@ -77,6 +68,15 @@ JdkClassCreateHelper.class('java.lang.StackWalker$StackFrame', [
 		],
 		[/* public abstract java.lang.String java.lang.StackWalker$StackFrame.getClassName() */
 			/* name */ 'getClassName',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.lang.String java.lang.StackWalker$StackFrame.getFileName() */
+			/* name */ 'getFileName',
 			/* parameters */,
 			/* return */ 'java.lang.String',
 			/* exceptions */,
@@ -93,21 +93,21 @@ JdkClassCreateHelper.class('java.lang.StackWalker$StackFrame', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.lang.StackTraceElement java.lang.StackWalker$StackFrame.toStackTraceElement() */
-			/* name */ 'toStackTraceElement',
+		[/* public default java.lang.String java.lang.StackWalker$StackFrame.getDescriptor() */
+			/* name */ 'getDescriptor',
 			/* parameters */,
-			/* return */ 'java.lang.StackTraceElement',
+			/* return */ 'java.lang.String',
 			/* exceptions */,
-			/* modifiers */ 1025,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract int java.lang.StackWalker$StackFrame.getByteCodeIndex() */
-			/* name */ 'getByteCodeIndex',
+		[/* public default java.lang.invoke.MethodType java.lang.StackWalker$StackFrame.getMethodType() */
+			/* name */ 'getMethodType',
 			/* parameters */,
-			/* return */ 'int',
+			/* return */ 'java.lang.invoke.MethodType',
 			/* exceptions */,
-			/* modifiers */ 1025,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

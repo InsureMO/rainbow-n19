@@ -18,19 +18,19 @@ JdkClassCreateHelper.class('java.nio.file.attribute.FileAttribute', [
 	],
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public abstract java.lang.String java.nio.file.attribute.FileAttribute.name() */
-			/* name */ 'name',
+		[/* public abstract T java.nio.file.attribute.FileAttribute.value() */
+			/* name */ 'value',
 			/* parameters */,
-			/* return */ 'java.lang.String',
+			/* return */ [/* type variable ref */ 'tr', [/* name */ 'T']],
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract T java.nio.file.attribute.FileAttribute.value() */
-			/* name */ 'value',
+		[/* public abstract java.lang.String java.nio.file.attribute.FileAttribute.name() */
+			/* name */ 'name',
 			/* parameters */,
-			/* return */ [/* type variable ref */ 'tr', [/* name */ 'T']],
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,

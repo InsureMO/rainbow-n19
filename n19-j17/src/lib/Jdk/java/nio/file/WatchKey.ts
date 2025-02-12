@@ -10,6 +10,15 @@ JdkClassCreateHelper.class('java.nio.file.WatchKey', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
+		[/* public abstract boolean java.nio.file.WatchKey.isValid() */
+			/* name */ 'isValid',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public abstract boolean java.nio.file.WatchKey.reset() */
 			/* name */ 'reset',
 			/* parameters */,
@@ -19,19 +28,10 @@ JdkClassCreateHelper.class('java.nio.file.WatchKey', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract void java.nio.file.WatchKey.cancel() */
-			/* name */ 'cancel',
+		[/* public abstract java.nio.file.Watchable java.nio.file.WatchKey.watchable() */
+			/* name */ 'watchable',
 			/* parameters */,
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract boolean java.nio.file.WatchKey.isValid() */
-			/* name */ 'isValid',
-			/* parameters */,
-			/* return */ 'boolean',
+			/* return */ 'java.nio.file.Watchable',
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,
@@ -63,10 +63,10 @@ JdkClassCreateHelper.class('java.nio.file.WatchKey', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.nio.file.Watchable java.nio.file.WatchKey.watchable() */
-			/* name */ 'watchable',
+		[/* public abstract void java.nio.file.WatchKey.cancel() */
+			/* name */ 'cancel',
 			/* parameters */,
-			/* return */ 'java.nio.file.Watchable',
+			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,

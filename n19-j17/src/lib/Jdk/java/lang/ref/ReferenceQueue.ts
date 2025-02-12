@@ -27,6 +27,51 @@ JdkClassCreateHelper.class('java.lang.ref.ReferenceQueue', [
 		]
 	],
 	[/* declared methods */
+		[/* public java.lang.ref.Reference<? extends T> java.lang.ref.ReferenceQueue.poll() */
+			/* name */ 'poll',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* wildcard type */ 'wt', [
+						[/* upper bounds */
+							[/* type variable ref */ 'tr', [/* name */ 'T']]
+						],
+						/* lower bounds */ UDF
+					]]
+				],
+				/* raw type */ 'java.lang.ref.Reference',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.ref.Reference<? extends T> java.lang.ref.ReferenceQueue.remove() throws java.lang.InterruptedException */
+			/* name */ 'remove',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* wildcard type */ 'wt', [
+						[/* upper bounds */
+							[/* type variable ref */ 'tr', [/* name */ 'T']]
+						],
+						/* lower bounds */ UDF
+					]]
+				],
+				/* raw type */ 'java.lang.ref.Reference',
+				/* owner type */ UDF
+			]],
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.lang.InterruptedException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.lang.ref.Reference<? extends T> java.lang.ref.ReferenceQueue.remove(long) throws java.lang.IllegalArgumentException,java.lang.InterruptedException */
 			/* name */ 'remove',
 			[/* parameters */
@@ -59,51 +104,6 @@ JdkClassCreateHelper.class('java.lang.ref.ReferenceQueue', [
 					/* annotations */ UDF
 				]
 			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.ref.Reference<? extends T> java.lang.ref.ReferenceQueue.remove() throws java.lang.InterruptedException */
-			/* name */ 'remove',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* wildcard type */ 'wt', [
-						[/* upper bounds */
-							[/* type variable ref */ 'tr', [/* name */ 'T']]
-						],
-						/* lower bounds */ UDF
-					]]
-				],
-				/* raw type */ 'java.lang.ref.Reference',
-				/* owner type */ UDF
-			]],
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.lang.InterruptedException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.ref.Reference<? extends T> java.lang.ref.ReferenceQueue.poll() */
-			/* name */ 'poll',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* wildcard type */ 'wt', [
-						[/* upper bounds */
-							[/* type variable ref */ 'tr', [/* name */ 'T']]
-						],
-						/* lower bounds */ UDF
-					]]
-				],
-				/* raw type */ 'java.lang.ref.Reference',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF

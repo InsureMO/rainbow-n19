@@ -21,8 +21,8 @@ JdkClassCreateHelper.class('java.security.PermissionCollection', [
 		]
 	],
 	[/* declared methods */
-		[/* public abstract void java.security.PermissionCollection.add(java.security.Permission) */
-			/* name */ 'add',
+		[/* public abstract boolean java.security.PermissionCollection.implies(java.security.Permission) */
+			/* name */ 'implies',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
@@ -31,18 +31,9 @@ JdkClassCreateHelper.class('java.security.PermissionCollection', [
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'void',
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.security.PermissionCollection.toString() */
-			/* name */ 'toString',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -61,17 +52,8 @@ JdkClassCreateHelper.class('java.security.PermissionCollection', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.security.PermissionCollection.setReadOnly() */
-			/* name */ 'setReadOnly',
-			/* parameters */,
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract boolean java.security.PermissionCollection.implies(java.security.Permission) */
-			/* name */ 'implies',
+		[/* public abstract void java.security.PermissionCollection.add(java.security.Permission) */
+			/* name */ 'add',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
@@ -80,7 +62,7 @@ JdkClassCreateHelper.class('java.security.PermissionCollection', [
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'boolean',
+			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,
@@ -90,6 +72,15 @@ JdkClassCreateHelper.class('java.security.PermissionCollection', [
 			/* name */ 'isReadOnly',
 			/* parameters */,
 			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.security.PermissionCollection.toString() */
+			/* name */ 'toString',
+			/* parameters */,
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -105,6 +96,15 @@ JdkClassCreateHelper.class('java.security.PermissionCollection', [
 				/* raw type */ 'java.util.stream.Stream',
 				/* owner type */ UDF
 			]],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.security.PermissionCollection.setReadOnly() */
+			/* name */ 'setReadOnly',
+			/* parameters */,
+			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

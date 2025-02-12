@@ -40,28 +40,46 @@ JdkClassCreateHelper.class('java.nio.charset.Charset', [
 		]
 	],
 	[/* declared methods */
-		[/* public final java.lang.String java.nio.charset.Charset.name() */
-			/* name */ 'name',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.nio.charset.Charset java.nio.charset.Charset.forName(java.lang.String) */
-			/* name */ 'forName',
+		[/* public abstract boolean java.nio.charset.Charset.contains(java.nio.charset.Charset) */
+			/* name */ 'contains',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'cs',
-					/* type */ 'java.lang.String',
+					/* name */ 'arg0',
+					/* type */ 'java.nio.charset.Charset',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.nio.charset.Charset',
+			/* return */ 'boolean',
 			/* exceptions */,
-			/* modifiers */ 9,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.nio.charset.CharsetDecoder java.nio.charset.Charset.newDecoder() */
+			/* name */ 'newDecoder',
+			/* parameters */,
+			/* return */ 'java.nio.charset.CharsetDecoder',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.nio.charset.CharsetEncoder java.nio.charset.Charset.newEncoder() */
+			/* name */ 'newEncoder',
+			/* parameters */,
+			/* return */ 'java.nio.charset.CharsetEncoder',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.nio.charset.Charset.canEncode() */
+			/* name */ 'canEncode',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -81,37 +99,12 @@ JdkClassCreateHelper.class('java.nio.charset.Charset', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public final java.lang.String java.nio.charset.Charset.toString() */
-			/* name */ 'toString',
+		[/* public final boolean java.nio.charset.Charset.isRegistered() */
+			/* name */ 'isRegistered',
 			/* parameters */,
-			/* return */ 'java.lang.String',
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final int java.nio.charset.Charset.hashCode() */
-			/* name */ 'hashCode',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.nio.charset.Charset.compareTo(java.lang.Object) */
-			/* name */ 'compareTo',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 4161,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -131,37 +124,30 @@ JdkClassCreateHelper.class('java.nio.charset.Charset', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.nio.charset.CharsetDecoder java.nio.charset.Charset.newDecoder() */
-			/* name */ 'newDecoder',
+		[/* public final int java.nio.charset.Charset.hashCode() */
+			/* name */ 'hashCode',
 			/* parameters */,
-			/* return */ 'java.nio.charset.CharsetDecoder',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final java.nio.CharBuffer java.nio.charset.Charset.decode(java.nio.ByteBuffer) */
-			/* name */ 'decode',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'x',
-					/* type */ 'java.nio.ByteBuffer',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.nio.CharBuffer',
+			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 17,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.nio.charset.CharsetEncoder java.nio.charset.Charset.newEncoder() */
-			/* name */ 'newEncoder',
+		[/* public final java.lang.String java.nio.charset.Charset.name() */
+			/* name */ 'name',
 			/* parameters */,
-			/* return */ 'java.nio.charset.CharsetEncoder',
+			/* return */ 'java.lang.String',
 			/* exceptions */,
-			/* modifiers */ 1025,
+			/* modifiers */ 17,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public final java.lang.String java.nio.charset.Charset.toString() */
+			/* name */ 'toString',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 17,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -197,44 +183,17 @@ JdkClassCreateHelper.class('java.nio.charset.Charset', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.nio.charset.Charset java.nio.charset.Charset.defaultCharset() */
-			/* name */ 'defaultCharset',
-			/* parameters */,
-			/* return */ 'java.nio.charset.Charset',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.nio.charset.Charset.canEncode() */
-			/* name */ 'canEncode',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract boolean java.nio.charset.Charset.contains(java.nio.charset.Charset) */
-			/* name */ 'contains',
+		[/* public final java.nio.CharBuffer java.nio.charset.Charset.decode(java.nio.ByteBuffer) */
+			/* name */ 'decode',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.nio.charset.Charset',
+					/* name */ 'x',
+					/* type */ 'java.nio.ByteBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final boolean java.nio.charset.Charset.isRegistered() */
-			/* name */ 'isRegistered',
-			/* parameters */,
-			/* return */ 'boolean',
+			/* return */ 'java.nio.CharBuffer',
 			/* exceptions */,
 			/* modifiers */ 17,
 			/* annotations */ UDF,
@@ -255,35 +214,19 @@ JdkClassCreateHelper.class('java.nio.charset.Charset', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static boolean java.nio.charset.Charset.isSupported(java.lang.String) */
-			/* name */ 'isSupported',
+		[/* public int java.nio.charset.Charset.compareTo(java.lang.Object) */
+			/* name */ 'compareTo',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
-					/* type */ 'java.lang.String',
+					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'boolean',
+			/* return */ 'int',
 			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.util.SortedMap<java.lang.String, java.nio.charset.Charset> java.nio.charset.Charset.availableCharsets() */
-			/* name */ 'availableCharsets',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					'java.lang.String',
-					'java.nio.charset.Charset'
-				],
-				/* raw type */ 'java.util.SortedMap',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 9,
+			/* modifiers */ 4161,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -309,6 +252,63 @@ JdkClassCreateHelper.class('java.nio.charset.Charset', [
 			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static boolean java.nio.charset.Charset.isSupported(java.lang.String) */
+			/* name */ 'isSupported',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.nio.charset.Charset java.nio.charset.Charset.defaultCharset() */
+			/* name */ 'defaultCharset',
+			/* parameters */,
+			/* return */ 'java.nio.charset.Charset',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.nio.charset.Charset java.nio.charset.Charset.forName(java.lang.String) */
+			/* name */ 'forName',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'cs',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.nio.charset.Charset',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.util.SortedMap<java.lang.String, java.nio.charset.Charset> java.nio.charset.Charset.availableCharsets() */
+			/* name */ 'availableCharsets',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					'java.lang.String',
+					'java.nio.charset.Charset'
+				],
+				/* raw type */ 'java.util.SortedMap',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

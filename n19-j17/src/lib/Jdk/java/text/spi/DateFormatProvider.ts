@@ -19,6 +19,28 @@ JdkClassCreateHelper.class('java.text.spi.DateFormatProvider', [
 		]
 	],
 	[/* declared methods */
+		[/* public abstract java.text.DateFormat java.text.spi.DateFormatProvider.getDateInstance(int,java.util.Locale) */
+			/* name */ 'getDateInstance',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'java.util.Locale',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.text.DateFormat',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public abstract java.text.DateFormat java.text.spi.DateFormatProvider.getDateTimeInstance(int,int,java.util.Locale) */
 			/* name */ 'getDateTimeInstance',
 			[/* parameters */
@@ -36,28 +58,6 @@ JdkClassCreateHelper.class('java.text.spi.DateFormatProvider', [
 				],
 				[/* parameter */
 					/* name */ 'arg2',
-					/* type */ 'java.util.Locale',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.text.DateFormat',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.text.DateFormat java.text.spi.DateFormatProvider.getDateInstance(int,java.util.Locale) */
-			/* name */ 'getDateInstance',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF

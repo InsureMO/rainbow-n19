@@ -10,6 +10,26 @@ JdkClassCreateHelper.class('java.net.URISyntaxException', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
+		[/* public java.net.URISyntaxException(java.lang.String,java.lang.String) */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'input',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'reason',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.net.URISyntaxException(java.lang.String,java.lang.String,int) */
 			[/* parameters */
 				[/* parameter */
@@ -35,38 +55,9 @@ JdkClassCreateHelper.class('java.net.URISyntaxException', [
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
-		],
-		[/* public java.net.URISyntaxException(java.lang.String,java.lang.String) */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'input',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'reason',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
 		]
 	],
 	[/* declared methods */
-		[/* public java.lang.String java.net.URISyntaxException.getMessage() */
-			/* name */ 'getMessage',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public int java.net.URISyntaxException.getIndex() */
 			/* name */ 'getIndex',
 			/* parameters */,
@@ -76,8 +67,8 @@ JdkClassCreateHelper.class('java.net.URISyntaxException', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.net.URISyntaxException.getReason() */
-			/* name */ 'getReason',
+		[/* public java.lang.String java.net.URISyntaxException.getInput() */
+			/* name */ 'getInput',
 			/* parameters */,
 			/* return */ 'java.lang.String',
 			/* exceptions */,
@@ -85,8 +76,17 @@ JdkClassCreateHelper.class('java.net.URISyntaxException', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.net.URISyntaxException.getInput() */
-			/* name */ 'getInput',
+		[/* public java.lang.String java.net.URISyntaxException.getMessage() */
+			/* name */ 'getMessage',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.net.URISyntaxException.getReason() */
+			/* name */ 'getReason',
 			/* parameters */,
 			/* return */ 'java.lang.String',
 			/* exceptions */,

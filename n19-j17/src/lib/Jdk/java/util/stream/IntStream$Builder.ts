@@ -12,19 +12,12 @@ JdkClassCreateHelper.class('java.util.stream.IntStream$Builder', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public default java.util.stream.IntStream$Builder java.util.stream.IntStream$Builder.add(int) */
-			/* name */ 'add',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 't',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.util.stream.IntStream$Builder',
+		[/* public abstract java.util.stream.IntStream java.util.stream.IntStream$Builder.build() */
+			/* name */ 'build',
+			/* parameters */,
+			/* return */ 'java.util.stream.IntStream',
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -44,12 +37,19 @@ JdkClassCreateHelper.class('java.util.stream.IntStream$Builder', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.util.stream.IntStream java.util.stream.IntStream$Builder.build() */
-			/* name */ 'build',
-			/* parameters */,
-			/* return */ 'java.util.stream.IntStream',
+		[/* public default java.util.stream.IntStream$Builder java.util.stream.IntStream$Builder.add(int) */
+			/* name */ 'add',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 't',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.util.stream.IntStream$Builder',
 			/* exceptions */,
-			/* modifiers */ 1025,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

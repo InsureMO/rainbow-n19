@@ -10,10 +10,10 @@ JdkClassCreateHelper.class('java.lang.reflect.Member', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public abstract java.lang.String java.lang.reflect.Member.getName() */
-			/* name */ 'getName',
+		[/* public abstract boolean java.lang.reflect.Member.isSynthetic() */
+			/* name */ 'isSynthetic',
 			/* parameters */,
-			/* return */ 'java.lang.String',
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,
@@ -23,15 +23,6 @@ JdkClassCreateHelper.class('java.lang.reflect.Member', [
 			/* name */ 'getModifiers',
 			/* parameters */,
 			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract boolean java.lang.reflect.Member.isSynthetic() */
-			/* name */ 'isSynthetic',
-			/* parameters */,
-			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,
@@ -52,6 +43,15 @@ JdkClassCreateHelper.class('java.lang.reflect.Member', [
 				/* raw type */ 'java.lang.Class',
 				/* owner type */ UDF
 			]],
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.lang.String java.lang.reflect.Member.getName() */
+			/* name */ 'getName',
+			/* parameters */,
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,

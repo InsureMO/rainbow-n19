@@ -11,15 +11,6 @@ JdkClassCreateHelper.class('java.lang.invoke.CallSite', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public java.lang.invoke.MethodType java.lang.invoke.CallSite.type() */
-			/* name */ 'type',
-			/* parameters */,
-			/* return */ 'java.lang.invoke.MethodType',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public abstract java.lang.invoke.MethodHandle java.lang.invoke.CallSite.dynamicInvoker() */
 			/* name */ 'dynamicInvoker',
 			/* parameters */,
@@ -51,6 +42,15 @@ JdkClassCreateHelper.class('java.lang.invoke.CallSite', [
 			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.invoke.MethodType java.lang.invoke.CallSite.type() */
+			/* name */ 'type',
+			/* parameters */,
+			/* return */ 'java.lang.invoke.MethodType',
+			/* exceptions */,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

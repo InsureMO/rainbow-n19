@@ -11,11 +11,20 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Builder', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public java.lang.module.ModuleDescriptor$Builder java.lang.module.ModuleDescriptor$Builder.version(java.lang.String) */
-			/* name */ 'version',
+		[/* public java.lang.module.ModuleDescriptor java.lang.module.ModuleDescriptor$Builder.build() */
+			/* name */ 'build',
+			/* parameters */,
+			/* return */ 'java.lang.module.ModuleDescriptor',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.module.ModuleDescriptor$Builder java.lang.module.ModuleDescriptor$Builder.exports(java.lang.String) */
+			/* name */ 'exports',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'e',
+					/* name */ 'pn',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -27,27 +36,17 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Builder', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.module.ModuleDescriptor$Builder java.lang.module.ModuleDescriptor$Builder.version(java.lang.module.ModuleDescriptor$Version) */
-			/* name */ 'version',
+		[/* public java.lang.module.ModuleDescriptor$Builder java.lang.module.ModuleDescriptor$Builder.exports(java.lang.String,java.util.Set<java.lang.String>) */
+			/* name */ 'exports',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'v',
-					/* type */ 'java.lang.module.ModuleDescriptor$Version',
+					/* name */ 'pn',
+					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.module.ModuleDescriptor$Builder',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.module.ModuleDescriptor$Builder java.lang.module.ModuleDescriptor$Builder.packages(java.util.Set<java.lang.String>) */
-			/* name */ 'packages',
-			[/* parameters */
+				],
 				[/* parameter */
-					/* name */ 'pns',
+					/* name */ 'targets',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.String'
@@ -65,9 +64,37 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Builder', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.module.ModuleDescriptor$Builder java.lang.module.ModuleDescriptor$Builder.exports(java.lang.String) */
+		[/* public java.lang.module.ModuleDescriptor$Builder java.lang.module.ModuleDescriptor$Builder.exports(java.lang.module.ModuleDescriptor$Exports) */
 			/* name */ 'exports',
 			[/* parameters */
+				[/* parameter */
+					/* name */ 'e',
+					/* type */ 'java.lang.module.ModuleDescriptor$Exports',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.module.ModuleDescriptor$Builder',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.module.ModuleDescriptor$Builder java.lang.module.ModuleDescriptor$Builder.exports(java.util.Set<java.lang.module.ModuleDescriptor$Exports$Modifier>,java.lang.String) */
+			/* name */ 'exports',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'ms',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							'java.lang.module.ModuleDescriptor$Exports$Modifier'
+						],
+						/* raw type */ 'java.util.Set',
+						/* owner type */ UDF
+					]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
 				[/* parameter */
 					/* name */ 'pn',
 					/* type */ 'java.lang.String',
@@ -121,68 +148,12 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Builder', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.module.ModuleDescriptor$Builder java.lang.module.ModuleDescriptor$Builder.exports(java.lang.String,java.util.Set<java.lang.String>) */
-			/* name */ 'exports',
+		[/* public java.lang.module.ModuleDescriptor$Builder java.lang.module.ModuleDescriptor$Builder.mainClass(java.lang.String) */
+			/* name */ 'mainClass',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'pn',
 					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'targets',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							'java.lang.String'
-						],
-						/* raw type */ 'java.util.Set',
-						/* owner type */ UDF
-					]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.module.ModuleDescriptor$Builder',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.module.ModuleDescriptor$Builder java.lang.module.ModuleDescriptor$Builder.exports(java.util.Set<java.lang.module.ModuleDescriptor$Exports$Modifier>,java.lang.String) */
-			/* name */ 'exports',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'ms',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							'java.lang.module.ModuleDescriptor$Exports$Modifier'
-						],
-						/* raw type */ 'java.util.Set',
-						/* owner type */ UDF
-					]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'pn',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.module.ModuleDescriptor$Builder',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.module.ModuleDescriptor$Builder java.lang.module.ModuleDescriptor$Builder.exports(java.lang.module.ModuleDescriptor$Exports) */
-			/* name */ 'exports',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'e',
-					/* type */ 'java.lang.module.ModuleDescriptor$Exports',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -199,46 +170,6 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Builder', [
 				[/* parameter */
 					/* name */ 'pn',
 					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.module.ModuleDescriptor$Builder',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.module.ModuleDescriptor$Builder java.lang.module.ModuleDescriptor$Builder.opens(java.util.Set<java.lang.module.ModuleDescriptor$Opens$Modifier>,java.lang.String,java.util.Set<java.lang.String>) */
-			/* name */ 'opens',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'ms',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							'java.lang.module.ModuleDescriptor$Opens$Modifier'
-						],
-						/* raw type */ 'java.util.Set',
-						/* owner type */ UDF
-					]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'pn',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'targets',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							'java.lang.String'
-						],
-						/* raw type */ 'java.util.Set',
-						/* owner type */ UDF
-					]],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -321,12 +252,36 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Builder', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.module.ModuleDescriptor$Builder java.lang.module.ModuleDescriptor$Builder.uses(java.lang.String) */
-			/* name */ 'uses',
+		[/* public java.lang.module.ModuleDescriptor$Builder java.lang.module.ModuleDescriptor$Builder.opens(java.util.Set<java.lang.module.ModuleDescriptor$Opens$Modifier>,java.lang.String,java.util.Set<java.lang.String>) */
+			/* name */ 'opens',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'service',
+					/* name */ 'ms',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							'java.lang.module.ModuleDescriptor$Opens$Modifier'
+						],
+						/* raw type */ 'java.util.Set',
+						/* owner type */ UDF
+					]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'pn',
 					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'targets',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							'java.lang.String'
+						],
+						/* raw type */ 'java.util.Set',
+						/* owner type */ UDF
+					]],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -337,12 +292,18 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Builder', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.module.ModuleDescriptor$Builder java.lang.module.ModuleDescriptor$Builder.provides(java.lang.module.ModuleDescriptor$Provides) */
-			/* name */ 'provides',
+		[/* public java.lang.module.ModuleDescriptor$Builder java.lang.module.ModuleDescriptor$Builder.packages(java.util.Set<java.lang.String>) */
+			/* name */ 'packages',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'p',
-					/* type */ 'java.lang.module.ModuleDescriptor$Provides',
+					/* name */ 'pns',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							'java.lang.String'
+						],
+						/* raw type */ 'java.util.Set',
+						/* owner type */ UDF
+					]],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -381,10 +342,33 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Builder', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.module.ModuleDescriptor java.lang.module.ModuleDescriptor$Builder.build() */
-			/* name */ 'build',
-			/* parameters */,
-			/* return */ 'java.lang.module.ModuleDescriptor',
+		[/* public java.lang.module.ModuleDescriptor$Builder java.lang.module.ModuleDescriptor$Builder.provides(java.lang.module.ModuleDescriptor$Provides) */
+			/* name */ 'provides',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'p',
+					/* type */ 'java.lang.module.ModuleDescriptor$Provides',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.module.ModuleDescriptor$Builder',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.module.ModuleDescriptor$Builder java.lang.module.ModuleDescriptor$Builder.requires(java.lang.String) */
+			/* name */ 'requires',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'mn',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.module.ModuleDescriptor$Builder',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -396,6 +380,34 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Builder', [
 				[/* parameter */
 					/* name */ 'req',
 					/* type */ 'java.lang.module.ModuleDescriptor$Requires',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.module.ModuleDescriptor$Builder',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.module.ModuleDescriptor$Builder java.lang.module.ModuleDescriptor$Builder.requires(java.util.Set<java.lang.module.ModuleDescriptor$Requires$Modifier>,java.lang.String) */
+			/* name */ 'requires',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'ms',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							'java.lang.module.ModuleDescriptor$Requires$Modifier'
+						],
+						/* raw type */ 'java.util.Set',
+						/* owner type */ UDF
+					]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'mn',
+					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -440,11 +452,11 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Builder', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.module.ModuleDescriptor$Builder java.lang.module.ModuleDescriptor$Builder.requires(java.lang.String) */
-			/* name */ 'requires',
+		[/* public java.lang.module.ModuleDescriptor$Builder java.lang.module.ModuleDescriptor$Builder.uses(java.lang.String) */
+			/* name */ 'uses',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'mn',
+					/* name */ 'service',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -456,23 +468,11 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Builder', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.module.ModuleDescriptor$Builder java.lang.module.ModuleDescriptor$Builder.requires(java.util.Set<java.lang.module.ModuleDescriptor$Requires$Modifier>,java.lang.String) */
-			/* name */ 'requires',
+		[/* public java.lang.module.ModuleDescriptor$Builder java.lang.module.ModuleDescriptor$Builder.version(java.lang.String) */
+			/* name */ 'version',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'ms',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							'java.lang.module.ModuleDescriptor$Requires$Modifier'
-						],
-						/* raw type */ 'java.util.Set',
-						/* owner type */ UDF
-					]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'mn',
+					/* name */ 'e',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -484,12 +484,12 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Builder', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.module.ModuleDescriptor$Builder java.lang.module.ModuleDescriptor$Builder.mainClass(java.lang.String) */
-			/* name */ 'mainClass',
+		[/* public java.lang.module.ModuleDescriptor$Builder java.lang.module.ModuleDescriptor$Builder.version(java.lang.module.ModuleDescriptor$Version) */
+			/* name */ 'version',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'pn',
-					/* type */ 'java.lang.String',
+					/* name */ 'v',
+					/* type */ 'java.lang.module.ModuleDescriptor$Version',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]

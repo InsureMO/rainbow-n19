@@ -22,6 +22,29 @@ JdkClassCreateHelper.class('java.nio.channels.spi.AbstractInterruptibleChannel',
 		]
 	],
 	[/* declared methods */
+		[/* protected abstract void java.nio.channels.spi.AbstractInterruptibleChannel.implCloseChannel() throws java.io.IOException */
+			/* name */ 'implCloseChannel',
+			/* parameters */,
+			/* return */ 'void',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1028,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* protected final void java.nio.channels.spi.AbstractInterruptibleChannel.begin() */
+			/* name */ 'begin',
+			/* parameters */,
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 20,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* protected final void java.nio.channels.spi.AbstractInterruptibleChannel.end(boolean) throws java.nio.channels.AsynchronousCloseException */
 			/* name */ 'end',
 			[/* parameters */
@@ -39,15 +62,6 @@ JdkClassCreateHelper.class('java.nio.channels.spi.AbstractInterruptibleChannel',
 					/* annotations */ UDF
 				]
 			],
-			/* modifiers */ 20,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* protected final void java.nio.channels.spi.AbstractInterruptibleChannel.begin() */
-			/* name */ 'begin',
-			/* parameters */,
-			/* return */ 'void',
-			/* exceptions */,
 			/* modifiers */ 20,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
@@ -72,20 +86,6 @@ JdkClassCreateHelper.class('java.nio.channels.spi.AbstractInterruptibleChannel',
 				]
 			],
 			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* protected abstract void java.nio.channels.spi.AbstractInterruptibleChannel.implCloseChannel() throws java.io.IOException */
-			/* name */ 'implCloseChannel',
-			/* parameters */,
-			/* return */ 'void',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1028,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

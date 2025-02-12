@@ -27,6 +27,26 @@ JdkClassCreateHelper.class('java.util.Locale', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public java.util.Locale(java.lang.String,java.lang.String) */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'language',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'country',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.util.Locale(java.lang.String,java.lang.String,java.lang.String) */
 			[/* parameters */
 				[/* parameter */
@@ -52,26 +72,6 @@ JdkClassCreateHelper.class('java.util.Locale', [
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
-		],
-		[/* public java.util.Locale(java.lang.String,java.lang.String) */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'language',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'country',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
 		]
 	],
 	[/* declared methods */
@@ -88,6 +88,51 @@ JdkClassCreateHelper.class('java.util.Locale', [
 			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.util.Locale.hasExtensions() */
+			/* name */ 'hasExtensions',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public final java.lang.String java.util.Locale.getDisplayCountry() */
+			/* name */ 'getDisplayCountry',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 17,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public final java.lang.String java.util.Locale.getDisplayLanguage() */
+			/* name */ 'getDisplayLanguage',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 17,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public final java.lang.String java.util.Locale.getDisplayName() */
+			/* name */ 'getDisplayName',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 17,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public final java.lang.String java.util.Locale.getDisplayVariant() */
+			/* name */ 'getDisplayVariant',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 17,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -118,36 +163,259 @@ JdkClassCreateHelper.class('java.util.Locale', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.util.Locale java.util.Locale.getDefault(java.util.Locale$Category) */
-			/* name */ 'getDefault',
+		[/* public java.lang.String java.util.Locale.getCountry() */
+			/* name */ 'getCountry',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.util.Locale.getDisplayCountry(java.util.Locale) */
+			/* name */ 'getDisplayCountry',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'loc',
-					/* type */ 'java.util.Locale$Category',
+					/* name */ 'inLocale',
+					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.util.Locale',
+			/* return */ 'java.lang.String',
 			/* exceptions */,
-			/* modifiers */ 9,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.util.Locale java.util.Locale.getDefault() */
-			/* name */ 'getDefault',
+		[/* public java.lang.String java.util.Locale.getDisplayLanguage(java.util.Locale) */
+			/* name */ 'getDisplayLanguage',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'inLocale',
+					/* type */ 'java.util.Locale',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.util.Locale.getDisplayName(java.util.Locale) */
+			/* name */ 'getDisplayName',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'result',
+					/* type */ 'java.util.Locale',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.util.Locale.getDisplayScript() */
+			/* name */ 'getDisplayScript',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.util.Locale.getDisplayScript(java.util.Locale) */
+			/* name */ 'getDisplayScript',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'inLocale',
+					/* type */ 'java.util.Locale',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.util.Locale.getDisplayVariant(java.util.Locale) */
+			/* name */ 'getDisplayVariant',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'inLocale',
+					/* type */ 'java.util.Locale',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.util.Locale.getExtension(char) */
+			/* name */ 'getExtension',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'key',
+					/* type */ 'char',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.util.Locale.getISO3Country() throws java.util.MissingResourceException */
+			/* name */ 'getISO3Country',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.util.MissingResourceException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.util.Locale.getISO3Language() throws java.util.MissingResourceException */
+			/* name */ 'getISO3Language',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.util.MissingResourceException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.util.Locale.getLanguage() */
+			/* name */ 'getLanguage',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.util.Locale.getScript() */
+			/* name */ 'getScript',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.util.Locale.getUnicodeLocaleType(java.lang.String) */
+			/* name */ 'getUnicodeLocaleType',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'key',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.util.Locale.getVariant() */
+			/* name */ 'getVariant',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.util.Locale.toLanguageTag() */
+			/* name */ 'toLanguageTag',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.Locale java.util.Locale.stripExtensions() */
+			/* name */ 'stripExtensions',
 			/* parameters */,
 			/* return */ 'java.util.Locale',
 			/* exceptions */,
-			/* modifiers */ 9,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.util.Locale java.util.Locale.lookup(java.util.List<java.util.Locale$LanguageRange>,java.util.Collection<java.util.Locale>) */
-			/* name */ 'lookup',
+		[/* public java.util.Set<java.lang.Character> java.util.Locale.getExtensionKeys() */
+			/* name */ 'getExtensionKeys',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					'java.lang.Character'
+				],
+				/* raw type */ 'java.util.Set',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.Set<java.lang.String> java.util.Locale.getUnicodeLocaleAttributes() */
+			/* name */ 'getUnicodeLocaleAttributes',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					'java.lang.String'
+				],
+				/* raw type */ 'java.util.Set',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.Set<java.lang.String> java.util.Locale.getUnicodeLocaleKeys() */
+			/* name */ 'getUnicodeLocaleKeys',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					'java.lang.String'
+				],
+				/* raw type */ 'java.util.Set',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.lang.String java.util.Locale.lookupTag(java.util.List<java.util.Locale$LanguageRange>,java.util.Collection<java.lang.String>) */
+			/* name */ 'lookupTag',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'locales',
+					/* name */ 'tags',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.util.Locale$LanguageRange'
@@ -162,7 +430,7 @@ JdkClassCreateHelper.class('java.util.Locale', [
 					/* name */ 'arg1',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
-							'java.util.Locale'
+							'java.lang.String'
 						],
 						/* raw type */ 'java.util.Collection',
 						/* owner type */ UDF
@@ -171,7 +439,111 @@ JdkClassCreateHelper.class('java.util.Locale', [
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.util.Locale',
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.lang.String[] java.util.Locale.getISOCountries() */
+			/* name */ 'getISOCountries',
+			/* parameters */,
+			/* return */ '[Ljava.lang.String;',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.lang.String[] java.util.Locale.getISOLanguages() */
+			/* name */ 'getISOLanguages',
+			/* parameters */,
+			/* return */ '[Ljava.lang.String;',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.util.List<java.lang.String> java.util.Locale.filterTags(java.util.List<java.util.Locale$LanguageRange>,java.util.Collection<java.lang.String>) */
+			/* name */ 'filterTags',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'tags',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							'java.util.Locale$LanguageRange'
+						],
+						/* raw type */ 'java.util.List',
+						/* owner type */ UDF
+					]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							'java.lang.String'
+						],
+						/* raw type */ 'java.util.Collection',
+						/* owner type */ UDF
+					]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					'java.lang.String'
+				],
+				/* raw type */ 'java.util.List',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.util.List<java.lang.String> java.util.Locale.filterTags(java.util.List<java.util.Locale$LanguageRange>,java.util.Collection<java.lang.String>,java.util.Locale$FilteringMode) */
+			/* name */ 'filterTags',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'tags',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							'java.util.Locale$LanguageRange'
+						],
+						/* raw type */ 'java.util.List',
+						/* owner type */ UDF
+					]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'mode',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							'java.lang.String'
+						],
+						/* raw type */ 'java.util.Collection',
+						/* owner type */ UDF
+					]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg2',
+					/* type */ 'java.util.Locale$FilteringMode',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					'java.lang.String'
+				],
+				/* raw type */ 'java.util.List',
+				/* owner type */ UDF
+			]],
 			/* exceptions */,
 			/* modifiers */ 9,
 			/* annotations */ UDF,
@@ -263,55 +635,78 @@ JdkClassCreateHelper.class('java.util.Locale', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.util.Locale.getLanguage() */
-			/* name */ 'getLanguage',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.util.Locale.getScript() */
-			/* name */ 'getScript',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.util.Locale.getVariant() */
-			/* name */ 'getVariant',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.util.Locale.getDisplayName(java.util.Locale) */
-			/* name */ 'getDisplayName',
+		[/* public static java.util.Locale java.util.Locale.forLanguageTag(java.lang.String) */
+			/* name */ 'forLanguageTag',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'result',
-					/* type */ 'java.util.Locale',
+					/* name */ 'tag',
+					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.lang.String',
+			/* return */ 'java.util.Locale',
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public final java.lang.String java.util.Locale.getDisplayName() */
-			/* name */ 'getDisplayName',
+		[/* public static java.util.Locale java.util.Locale.getDefault() */
+			/* name */ 'getDefault',
 			/* parameters */,
-			/* return */ 'java.lang.String',
+			/* return */ 'java.util.Locale',
 			/* exceptions */,
-			/* modifiers */ 17,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.util.Locale java.util.Locale.getDefault(java.util.Locale$Category) */
+			/* name */ 'getDefault',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'loc',
+					/* type */ 'java.util.Locale$Category',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.util.Locale',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.util.Locale java.util.Locale.lookup(java.util.List<java.util.Locale$LanguageRange>,java.util.Collection<java.util.Locale>) */
+			/* name */ 'lookup',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'locales',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							'java.util.Locale$LanguageRange'
+						],
+						/* raw type */ 'java.util.List',
+						/* owner type */ UDF
+					]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							'java.util.Locale'
+						],
+						/* raw type */ 'java.util.Collection',
+						/* owner type */ UDF
+					]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.util.Locale',
+			/* exceptions */,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -319,328 +714,6 @@ JdkClassCreateHelper.class('java.util.Locale', [
 			/* name */ 'getAvailableLocales',
 			/* parameters */,
 			/* return */ '[Ljava.util.Locale;',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.util.Locale.getCountry() */
-			/* name */ 'getCountry',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static synchronized void java.util.Locale.setDefault(java.util.Locale) */
-			/* name */ 'setDefault',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.util.Locale',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 41,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static synchronized void java.util.Locale.setDefault(java.util.Locale$Category,java.util.Locale) */
-			/* name */ 'setDefault',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'newLocale',
-					/* type */ 'java.util.Locale$Category',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'sm',
-					/* type */ 'java.util.Locale',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 41,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.util.Locale.hasExtensions() */
-			/* name */ 'hasExtensions',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.Set<java.lang.String> java.util.Locale.getUnicodeLocaleAttributes() */
-			/* name */ 'getUnicodeLocaleAttributes',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					'java.lang.String'
-				],
-				/* raw type */ 'java.util.Set',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.util.Locale.getUnicodeLocaleType(java.lang.String) */
-			/* name */ 'getUnicodeLocaleType',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'key',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.Set<java.lang.String> java.util.Locale.getUnicodeLocaleKeys() */
-			/* name */ 'getUnicodeLocaleKeys',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					'java.lang.String'
-				],
-				/* raw type */ 'java.util.Set',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.util.Locale.getDisplayLanguage(java.util.Locale) */
-			/* name */ 'getDisplayLanguage',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'inLocale',
-					/* type */ 'java.util.Locale',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final java.lang.String java.util.Locale.getDisplayLanguage() */
-			/* name */ 'getDisplayLanguage',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.util.Locale.getDisplayScript() */
-			/* name */ 'getDisplayScript',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.util.Locale.getDisplayScript(java.util.Locale) */
-			/* name */ 'getDisplayScript',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'inLocale',
-					/* type */ 'java.util.Locale',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final java.lang.String java.util.Locale.getDisplayCountry() */
-			/* name */ 'getDisplayCountry',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.util.Locale.getDisplayCountry(java.util.Locale) */
-			/* name */ 'getDisplayCountry',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'inLocale',
-					/* type */ 'java.util.Locale',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.util.Locale.getDisplayVariant(java.util.Locale) */
-			/* name */ 'getDisplayVariant',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'inLocale',
-					/* type */ 'java.util.Locale',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final java.lang.String java.util.Locale.getDisplayVariant() */
-			/* name */ 'getDisplayVariant',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.util.List<java.lang.String> java.util.Locale.filterTags(java.util.List<java.util.Locale$LanguageRange>,java.util.Collection<java.lang.String>,java.util.Locale$FilteringMode) */
-			/* name */ 'filterTags',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'tags',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							'java.util.Locale$LanguageRange'
-						],
-						/* raw type */ 'java.util.List',
-						/* owner type */ UDF
-					]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'mode',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							'java.lang.String'
-						],
-						/* raw type */ 'java.util.Collection',
-						/* owner type */ UDF
-					]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg2',
-					/* type */ 'java.util.Locale$FilteringMode',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					'java.lang.String'
-				],
-				/* raw type */ 'java.util.List',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.util.List<java.lang.String> java.util.Locale.filterTags(java.util.List<java.util.Locale$LanguageRange>,java.util.Collection<java.lang.String>) */
-			/* name */ 'filterTags',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'tags',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							'java.util.Locale$LanguageRange'
-						],
-						/* raw type */ 'java.util.List',
-						/* owner type */ UDF
-					]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							'java.lang.String'
-						],
-						/* raw type */ 'java.util.Collection',
-						/* owner type */ UDF
-					]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					'java.lang.String'
-				],
-				/* raw type */ 'java.util.List',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.lang.String java.util.Locale.lookupTag(java.util.List<java.util.Locale$LanguageRange>,java.util.Collection<java.lang.String>) */
-			/* name */ 'lookupTag',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'tags',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							'java.util.Locale$LanguageRange'
-						],
-						/* raw type */ 'java.util.List',
-						/* owner type */ UDF
-					]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							'java.lang.String'
-						],
-						/* raw type */ 'java.util.Collection',
-						/* owner type */ UDF
-					]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 9,
 			/* annotations */ UDF,
@@ -668,114 +741,41 @@ JdkClassCreateHelper.class('java.util.Locale', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.lang.String[] java.util.Locale.getISOCountries() */
-			/* name */ 'getISOCountries',
-			/* parameters */,
-			/* return */ '[Ljava.lang.String;',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.lang.String[] java.util.Locale.getISOLanguages() */
-			/* name */ 'getISOLanguages',
-			/* parameters */,
-			/* return */ '[Ljava.lang.String;',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.Locale java.util.Locale.stripExtensions() */
-			/* name */ 'stripExtensions',
-			/* parameters */,
-			/* return */ 'java.util.Locale',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.util.Locale.getExtension(char) */
-			/* name */ 'getExtension',
+		[/* public static synchronized void java.util.Locale.setDefault(java.util.Locale$Category,java.util.Locale) */
+			/* name */ 'setDefault',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'key',
-					/* type */ 'char',
+					/* name */ 'newLocale',
+					/* type */ 'java.util.Locale$Category',
 					/* modifiers */ 0,
 					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.Set<java.lang.Character> java.util.Locale.getExtensionKeys() */
-			/* name */ 'getExtensionKeys',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					'java.lang.Character'
 				],
-				/* raw type */ 'java.util.Set',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.util.Locale.toLanguageTag() */
-			/* name */ 'toLanguageTag',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.util.Locale java.util.Locale.forLanguageTag(java.lang.String) */
-			/* name */ 'forLanguageTag',
-			[/* parameters */
 				[/* parameter */
-					/* name */ 'tag',
-					/* type */ 'java.lang.String',
+					/* name */ 'sm',
+					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.util.Locale',
+			/* return */ 'void',
 			/* exceptions */,
-			/* modifiers */ 9,
+			/* modifiers */ 41,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.util.Locale.getISO3Language() throws java.util.MissingResourceException */
-			/* name */ 'getISO3Language',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.util.MissingResourceException',
+		[/* public static synchronized void java.util.Locale.setDefault(java.util.Locale) */
+			/* name */ 'setDefault',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.util.Locale',
+					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.util.Locale.getISO3Country() throws java.util.MissingResourceException */
-			/* name */ 'getISO3Country',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.util.MissingResourceException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 41,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

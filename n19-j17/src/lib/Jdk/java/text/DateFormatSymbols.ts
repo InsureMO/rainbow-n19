@@ -13,6 +13,13 @@ JdkClassCreateHelper.class('java.text.DateFormatSymbols', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
+		[/* public java.text.DateFormatSymbols() */
+			/* parameters */,
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.text.DateFormatSymbols(java.util.Locale) */
 			[/* parameters */
 				[/* parameter */
@@ -22,13 +29,6 @@ JdkClassCreateHelper.class('java.text.DateFormatSymbols', [
 					/* annotations */ UDF
 				]
 			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.text.DateFormatSymbols() */
-			/* parameters */,
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -70,6 +70,78 @@ JdkClassCreateHelper.class('java.text.DateFormatSymbols', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public java.lang.String java.text.DateFormatSymbols.getLocalPatternChars() */
+			/* name */ 'getLocalPatternChars',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String[] java.text.DateFormatSymbols.getAmPmStrings() */
+			/* name */ 'getAmPmStrings',
+			/* parameters */,
+			/* return */ '[Ljava.lang.String;',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String[] java.text.DateFormatSymbols.getEras() */
+			/* name */ 'getEras',
+			/* parameters */,
+			/* return */ '[Ljava.lang.String;',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String[] java.text.DateFormatSymbols.getMonths() */
+			/* name */ 'getMonths',
+			/* parameters */,
+			/* return */ '[Ljava.lang.String;',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String[] java.text.DateFormatSymbols.getShortMonths() */
+			/* name */ 'getShortMonths',
+			/* parameters */,
+			/* return */ '[Ljava.lang.String;',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String[] java.text.DateFormatSymbols.getShortWeekdays() */
+			/* name */ 'getShortWeekdays',
+			/* parameters */,
+			/* return */ '[Ljava.lang.String;',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String[] java.text.DateFormatSymbols.getWeekdays() */
+			/* name */ 'getWeekdays',
+			/* parameters */,
+			/* return */ '[Ljava.lang.String;',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String[][] java.text.DateFormatSymbols.getZoneStrings() */
+			/* name */ 'getZoneStrings',
+			/* parameters */,
+			/* return */ '[[Ljava.lang.String;',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public static final java.text.DateFormatSymbols java.text.DateFormatSymbols.getInstance() */
 			/* name */ 'getInstance',
 			/* parameters */,
@@ -104,64 +176,17 @@ JdkClassCreateHelper.class('java.text.DateFormatSymbols', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String[] java.text.DateFormatSymbols.getMonths() */
-			/* name */ 'getMonths',
-			/* parameters */,
-			/* return */ '[Ljava.lang.String;',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String[] java.text.DateFormatSymbols.getEras() */
-			/* name */ 'getEras',
-			/* parameters */,
-			/* return */ '[Ljava.lang.String;',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String[] java.text.DateFormatSymbols.getShortMonths() */
-			/* name */ 'getShortMonths',
-			/* parameters */,
-			/* return */ '[Ljava.lang.String;',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String[] java.text.DateFormatSymbols.getWeekdays() */
-			/* name */ 'getWeekdays',
-			/* parameters */,
-			/* return */ '[Ljava.lang.String;',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String[] java.text.DateFormatSymbols.getShortWeekdays() */
-			/* name */ 'getShortWeekdays',
-			/* parameters */,
-			/* return */ '[Ljava.lang.String;',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String[] java.text.DateFormatSymbols.getAmPmStrings() */
-			/* name */ 'getAmPmStrings',
-			/* parameters */,
-			/* return */ '[Ljava.lang.String;',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.text.DateFormatSymbols.getLocalPatternChars() */
-			/* name */ 'getLocalPatternChars',
-			/* parameters */,
-			/* return */ 'java.lang.String',
+		[/* public void java.text.DateFormatSymbols.setAmPmStrings(java.lang.String[]) */
+			/* name */ 'setAmPmStrings',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ '[Ljava.lang.String;',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -183,10 +208,17 @@ JdkClassCreateHelper.class('java.text.DateFormatSymbols', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String[][] java.text.DateFormatSymbols.getZoneStrings() */
-			/* name */ 'getZoneStrings',
-			/* parameters */,
-			/* return */ '[[Ljava.lang.String;',
+		[/* public void java.text.DateFormatSymbols.setLocalPatternChars(java.lang.String) */
+			/* name */ 'setLocalPatternChars',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'newLocalPatternChars',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -224,22 +256,6 @@ JdkClassCreateHelper.class('java.text.DateFormatSymbols', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.text.DateFormatSymbols.setWeekdays(java.lang.String[]) */
-			/* name */ 'setWeekdays',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ '[Ljava.lang.String;',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public void java.text.DateFormatSymbols.setShortWeekdays(java.lang.String[]) */
 			/* name */ 'setShortWeekdays',
 			[/* parameters */
@@ -256,8 +272,8 @@ JdkClassCreateHelper.class('java.text.DateFormatSymbols', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.text.DateFormatSymbols.setAmPmStrings(java.lang.String[]) */
-			/* name */ 'setAmPmStrings',
+		[/* public void java.text.DateFormatSymbols.setWeekdays(java.lang.String[]) */
+			/* name */ 'setWeekdays',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
@@ -278,22 +294,6 @@ JdkClassCreateHelper.class('java.text.DateFormatSymbols', [
 				[/* parameter */
 					/* name */ 'arg0',
 					/* type */ '[[Ljava.lang.String;',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.text.DateFormatSymbols.setLocalPatternChars(java.lang.String) */
-			/* name */ 'setLocalPatternChars',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'newLocalPatternChars',
-					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]

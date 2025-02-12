@@ -12,26 +12,6 @@ JdkClassCreateHelper.class('java.lang.module.ModuleReader', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public abstract java.util.stream.Stream<java.lang.String> java.lang.module.ModuleReader.list() throws java.io.IOException */
-			/* name */ 'list',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					'java.lang.String'
-				],
-				/* raw type */ 'java.util.stream.Stream',
-				/* owner type */ UDF
-			]],
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public abstract java.util.Optional<java.net.URI> java.lang.module.ModuleReader.find(java.lang.String) throws java.io.IOException */
 			/* name */ 'find',
 			[/* parameters */
@@ -59,21 +39,14 @@ JdkClassCreateHelper.class('java.lang.module.ModuleReader', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public default java.util.Optional<java.nio.ByteBuffer> java.lang.module.ModuleReader.read(java.lang.String) throws java.io.IOException */
-			/* name */ 'read',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'in',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
+		[/* public abstract java.util.stream.Stream<java.lang.String> java.lang.module.ModuleReader.list() throws java.io.IOException */
+			/* name */ 'list',
+			/* parameters */,
 			/* return */ [/* parameterized type */ 'pt', [
 				[/* actual argument types */
-					'java.nio.ByteBuffer'
+					'java.lang.String'
 				],
-				/* raw type */ 'java.util.Optional',
+				/* raw type */ 'java.util.stream.Stream',
 				/* owner type */ UDF
 			]],
 			[/* exceptions */
@@ -82,7 +55,7 @@ JdkClassCreateHelper.class('java.lang.module.ModuleReader', [
 					/* annotations */ UDF
 				]
 			],
-			/* modifiers */ 1,
+			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -113,6 +86,33 @@ JdkClassCreateHelper.class('java.lang.module.ModuleReader', [
 			/* return */ [/* parameterized type */ 'pt', [
 				[/* actual argument types */
 					'java.io.InputStream'
+				],
+				/* raw type */ 'java.util.Optional',
+				/* owner type */ UDF
+			]],
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public default java.util.Optional<java.nio.ByteBuffer> java.lang.module.ModuleReader.read(java.lang.String) throws java.io.IOException */
+			/* name */ 'read',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'in',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					'java.nio.ByteBuffer'
 				],
 				/* raw type */ 'java.util.Optional',
 				/* owner type */ UDF

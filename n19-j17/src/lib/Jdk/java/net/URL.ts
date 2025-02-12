@@ -12,62 +12,6 @@ JdkClassCreateHelper.class('java.net.URL', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
-		[/* public java.net.URL(java.net.URL,java.lang.String,java.net.URLStreamHandler) throws java.net.MalformedURLException */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'sm',
-					/* type */ 'java.net.URL',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 's',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'c',
-					/* type */ 'java.net.URLStreamHandler',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.net.MalformedURLException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.net.URL(java.net.URL,java.lang.String) throws java.net.MalformedURLException */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'context',
-					/* type */ 'java.net.URL',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'spec',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.net.MalformedURLException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public java.net.URL(java.lang.String) throws java.net.MalformedURLException */
 			[/* parameters */
 				[/* parameter */
@@ -104,37 +48,6 @@ JdkClassCreateHelper.class('java.net.URL', [
 				[/* parameter */
 					/* name */ 'port',
 					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'file',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.net.MalformedURLException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.net.URL(java.lang.String,java.lang.String,java.lang.String) throws java.net.MalformedURLException */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'protocol',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'host',
-					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
@@ -197,6 +110,93 @@ JdkClassCreateHelper.class('java.net.URL', [
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
+		],
+		[/* public java.net.URL(java.lang.String,java.lang.String,java.lang.String) throws java.net.MalformedURLException */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'protocol',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'host',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'file',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.net.MalformedURLException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.net.URL(java.net.URL,java.lang.String) throws java.net.MalformedURLException */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'context',
+					/* type */ 'java.net.URL',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'spec',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.net.MalformedURLException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.net.URL(java.net.URL,java.lang.String,java.net.URLStreamHandler) throws java.net.MalformedURLException */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'sm',
+					/* type */ 'java.net.URL',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 's',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'c',
+					/* type */ 'java.net.URLStreamHandler',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.net.MalformedURLException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
 		]
 	],
 	[/* declared methods */
@@ -211,65 +211,6 @@ JdkClassCreateHelper.class('java.net.URL', [
 				]
 			],
 			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.net.URL.toString() */
-			/* name */ 'toString',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public synchronized int java.net.URL.hashCode() */
-			/* name */ 'hashCode',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 33,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final java.io.InputStream java.net.URL.openStream() throws java.io.IOException */
-			/* name */ 'openStream',
-			/* parameters */,
-			/* return */ 'java.io.InputStream',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.net.URL.getHost() */
-			/* name */ 'getHost',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.net.URL.getPort() */
-			/* name */ 'getPort',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.net.URL.getDefaultPort() */
-			/* name */ 'getDefaultPort',
-			/* parameters */,
-			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -291,47 +232,17 @@ JdkClassCreateHelper.class('java.net.URL', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.net.URL.toExternalForm() */
-			/* name */ 'toExternalForm',
+		[/* public final java.io.InputStream java.net.URL.openStream() throws java.io.IOException */
+			/* name */ 'openStream',
 			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.net.URLConnection java.net.URL.openConnection() throws java.io.IOException */
-			/* name */ 'openConnection',
-			/* parameters */,
-			/* return */ 'java.net.URLConnection',
+			/* return */ 'java.io.InputStream',
 			[/* exceptions */
 				[/* exception */
 					/* type */ 'java.io.IOException',
 					/* annotations */ UDF
 				]
 			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.net.URLConnection java.net.URL.openConnection(java.net.Proxy) throws java.io.IOException */
-			/* name */ 'openConnection',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'epoint',
-					/* type */ 'java.net.Proxy',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.net.URLConnection',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
+			/* modifiers */ 17,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -381,10 +292,19 @@ JdkClassCreateHelper.class('java.net.URL', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.net.URL.getProtocol() */
-			/* name */ 'getProtocol',
+		[/* public int java.net.URL.getDefaultPort() */
+			/* name */ 'getDefaultPort',
 			/* parameters */,
-			/* return */ 'java.lang.String',
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.net.URL.getPort() */
+			/* name */ 'getPort',
+			/* parameters */,
+			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -408,17 +328,8 @@ JdkClassCreateHelper.class('java.net.URL', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.net.URL.getRef() */
-			/* name */ 'getRef',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.net.URL.getQuery() */
-			/* name */ 'getQuery',
+		[/* public java.lang.String java.net.URL.getHost() */
+			/* name */ 'getHost',
 			/* parameters */,
 			/* return */ 'java.lang.String',
 			/* exceptions */,
@@ -435,8 +346,53 @@ JdkClassCreateHelper.class('java.net.URL', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public java.lang.String java.net.URL.getProtocol() */
+			/* name */ 'getProtocol',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.net.URL.getQuery() */
+			/* name */ 'getQuery',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.net.URL.getRef() */
+			/* name */ 'getRef',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.lang.String java.net.URL.getUserInfo() */
 			/* name */ 'getUserInfo',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.net.URL.toExternalForm() */
+			/* name */ 'toExternalForm',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.net.URL.toString() */
+			/* name */ 'toString',
 			/* parameters */,
 			/* return */ 'java.lang.String',
 			/* exceptions */,
@@ -458,6 +414,41 @@ JdkClassCreateHelper.class('java.net.URL', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public java.net.URLConnection java.net.URL.openConnection() throws java.io.IOException */
+			/* name */ 'openConnection',
+			/* parameters */,
+			/* return */ 'java.net.URLConnection',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.net.URLConnection java.net.URL.openConnection(java.net.Proxy) throws java.io.IOException */
+			/* name */ 'openConnection',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'epoint',
+					/* type */ 'java.net.Proxy',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.net.URLConnection',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public static void java.net.URL.setURLStreamHandlerFactory(java.net.URLStreamHandlerFactory) */
 			/* name */ 'setURLStreamHandlerFactory',
 			[/* parameters */
@@ -471,6 +462,15 @@ JdkClassCreateHelper.class('java.net.URL', [
 			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public synchronized int java.net.URL.hashCode() */
+			/* name */ 'hashCode',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 33,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

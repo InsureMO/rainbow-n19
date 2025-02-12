@@ -36,8 +36,8 @@ JdkClassCreateHelper.class('java.util.function.Predicate', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public default java.util.function.Predicate<T> java.util.function.Predicate.or(java.util.function.Predicate<? super T>) */
-			/* name */ 'or',
+		[/* public default java.util.function.Predicate<T> java.util.function.Predicate.and(java.util.function.Predicate<? super T>) */
+			/* name */ 'and',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'other',
@@ -86,8 +86,8 @@ JdkClassCreateHelper.class('java.util.function.Predicate', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public default java.util.function.Predicate<T> java.util.function.Predicate.and(java.util.function.Predicate<? super T>) */
-			/* name */ 'and',
+		[/* public default java.util.function.Predicate<T> java.util.function.Predicate.or(java.util.function.Predicate<? super T>) */
+			/* name */ 'or',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'other',

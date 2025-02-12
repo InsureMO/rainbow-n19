@@ -29,10 +29,19 @@ JdkClassCreateHelper.class('java.time.zone.ZoneOffsetTransitionRule', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.time.zone.ZoneOffsetTransitionRule.toString() */
-			/* name */ 'toString',
+		[/* public boolean java.time.zone.ZoneOffsetTransitionRule.isMidnightEndOfDay() */
+			/* name */ 'isMidnightEndOfDay',
 			/* parameters */,
-			/* return */ 'java.lang.String',
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.time.zone.ZoneOffsetTransitionRule.getDayOfMonthIndicator() */
+			/* name */ 'getDayOfMonthIndicator',
+			/* parameters */,
+			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -42,6 +51,94 @@ JdkClassCreateHelper.class('java.time.zone.ZoneOffsetTransitionRule', [
 			/* name */ 'hashCode',
 			/* parameters */,
 			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.time.zone.ZoneOffsetTransitionRule.toString() */
+			/* name */ 'toString',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.DayOfWeek java.time.zone.ZoneOffsetTransitionRule.getDayOfWeek() */
+			/* name */ 'getDayOfWeek',
+			/* parameters */,
+			/* return */ 'java.time.DayOfWeek',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.LocalTime java.time.zone.ZoneOffsetTransitionRule.getLocalTime() */
+			/* name */ 'getLocalTime',
+			/* parameters */,
+			/* return */ 'java.time.LocalTime',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.Month java.time.zone.ZoneOffsetTransitionRule.getMonth() */
+			/* name */ 'getMonth',
+			/* parameters */,
+			/* return */ 'java.time.Month',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.ZoneOffset java.time.zone.ZoneOffsetTransitionRule.getOffsetAfter() */
+			/* name */ 'getOffsetAfter',
+			/* parameters */,
+			/* return */ 'java.time.ZoneOffset',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.ZoneOffset java.time.zone.ZoneOffsetTransitionRule.getOffsetBefore() */
+			/* name */ 'getOffsetBefore',
+			/* parameters */,
+			/* return */ 'java.time.ZoneOffset',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.ZoneOffset java.time.zone.ZoneOffsetTransitionRule.getStandardOffset() */
+			/* name */ 'getStandardOffset',
+			/* parameters */,
+			/* return */ 'java.time.ZoneOffset',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.zone.ZoneOffsetTransition java.time.zone.ZoneOffsetTransitionRule.createTransition(int) */
+			/* name */ 'createTransition',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'date',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.zone.ZoneOffsetTransition',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.zone.ZoneOffsetTransitionRule$TimeDefinition java.time.zone.ZoneOffsetTransitionRule.getTimeDefinition() */
+			/* name */ 'getTimeDefinition',
+			/* parameters */,
+			/* return */ 'java.time.zone.ZoneOffsetTransitionRule$TimeDefinition',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -108,103 +205,6 @@ JdkClassCreateHelper.class('java.time.zone.ZoneOffsetTransitionRule', [
 			/* return */ 'java.time.zone.ZoneOffsetTransitionRule',
 			/* exceptions */,
 			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.DayOfWeek java.time.zone.ZoneOffsetTransitionRule.getDayOfWeek() */
-			/* name */ 'getDayOfWeek',
-			/* parameters */,
-			/* return */ 'java.time.DayOfWeek',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.ZoneOffset java.time.zone.ZoneOffsetTransitionRule.getOffsetAfter() */
-			/* name */ 'getOffsetAfter',
-			/* parameters */,
-			/* return */ 'java.time.ZoneOffset',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.ZoneOffset java.time.zone.ZoneOffsetTransitionRule.getOffsetBefore() */
-			/* name */ 'getOffsetBefore',
-			/* parameters */,
-			/* return */ 'java.time.ZoneOffset',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.zone.ZoneOffsetTransition java.time.zone.ZoneOffsetTransitionRule.createTransition(int) */
-			/* name */ 'createTransition',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'date',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.zone.ZoneOffsetTransition',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.ZoneOffset java.time.zone.ZoneOffsetTransitionRule.getStandardOffset() */
-			/* name */ 'getStandardOffset',
-			/* parameters */,
-			/* return */ 'java.time.ZoneOffset',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.Month java.time.zone.ZoneOffsetTransitionRule.getMonth() */
-			/* name */ 'getMonth',
-			/* parameters */,
-			/* return */ 'java.time.Month',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.time.zone.ZoneOffsetTransitionRule.getDayOfMonthIndicator() */
-			/* name */ 'getDayOfMonthIndicator',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.LocalTime java.time.zone.ZoneOffsetTransitionRule.getLocalTime() */
-			/* name */ 'getLocalTime',
-			/* parameters */,
-			/* return */ 'java.time.LocalTime',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.time.zone.ZoneOffsetTransitionRule.isMidnightEndOfDay() */
-			/* name */ 'isMidnightEndOfDay',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.zone.ZoneOffsetTransitionRule$TimeDefinition java.time.zone.ZoneOffsetTransitionRule.getTimeDefinition() */
-			/* name */ 'getTimeDefinition',
-			/* parameters */,
-			/* return */ 'java.time.zone.ZoneOffsetTransitionRule$TimeDefinition',
-			/* exceptions */,
-			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

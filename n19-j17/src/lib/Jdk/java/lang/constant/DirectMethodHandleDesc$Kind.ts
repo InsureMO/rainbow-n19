@@ -17,10 +17,17 @@ JdkClassCreateHelper.class('java.lang.constant.DirectMethodHandleDesc$Kind', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public static java.lang.constant.DirectMethodHandleDesc$Kind[] java.lang.constant.DirectMethodHandleDesc$Kind.values() */
-			/* name */ 'values',
-			/* parameters */,
-			/* return */ '[Ljava.lang.constant.DirectMethodHandleDesc$Kind;',
+		[/* public static java.lang.constant.DirectMethodHandleDesc$Kind java.lang.constant.DirectMethodHandleDesc$Kind.valueOf(int) */
+			/* name */ 'valueOf',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.constant.DirectMethodHandleDesc$Kind',
 			/* exceptions */,
 			/* modifiers */ 9,
 			/* annotations */ UDF,
@@ -64,17 +71,10 @@ JdkClassCreateHelper.class('java.lang.constant.DirectMethodHandleDesc$Kind', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.lang.constant.DirectMethodHandleDesc$Kind java.lang.constant.DirectMethodHandleDesc$Kind.valueOf(int) */
-			/* name */ 'valueOf',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.constant.DirectMethodHandleDesc$Kind',
+		[/* public static java.lang.constant.DirectMethodHandleDesc$Kind[] java.lang.constant.DirectMethodHandleDesc$Kind.values() */
+			/* name */ 'values',
+			/* parameters */,
+			/* return */ '[Ljava.lang.constant.DirectMethodHandleDesc$Kind;',
 			/* exceptions */,
 			/* modifiers */ 9,
 			/* annotations */ UDF,

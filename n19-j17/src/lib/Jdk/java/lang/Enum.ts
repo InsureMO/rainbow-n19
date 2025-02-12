@@ -56,12 +56,17 @@ JdkClassCreateHelper.class('java.lang.Enum', [
 		]
 	],
 	[/* declared methods */
-		[/* public final java.lang.String java.lang.Enum.name() */
-			/* name */ 'name',
+		[/* protected final java.lang.Object java.lang.Enum.clone() throws java.lang.CloneNotSupportedException */
+			/* name */ 'clone',
 			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 17,
+			/* return */ 'java.lang.Object',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.lang.CloneNotSupportedException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 20,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -90,12 +95,19 @@ JdkClassCreateHelper.class('java.lang.Enum', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.lang.Enum.toString() */
-			/* name */ 'toString',
-			/* parameters */,
-			/* return */ 'java.lang.String',
+		[/* public final int java.lang.Enum.compareTo(E) */
+			/* name */ 'compareTo',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'o',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 17,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -108,17 +120,57 @@ JdkClassCreateHelper.class('java.lang.Enum', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* protected final java.lang.Object java.lang.Enum.clone() throws java.lang.CloneNotSupportedException */
-			/* name */ 'clone',
+		[/* public final int java.lang.Enum.ordinal() */
+			/* name */ 'ordinal',
 			/* parameters */,
-			/* return */ 'java.lang.Object',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.lang.CloneNotSupportedException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 20,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 17,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public final java.lang.Class<E> java.lang.Enum.getDeclaringClass() */
+			/* name */ 'getDeclaringClass',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'E']]
+				],
+				/* raw type */ 'java.lang.Class',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 17,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public final java.lang.String java.lang.Enum.name() */
+			/* name */ 'name',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 17,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public final java.util.Optional<java.lang.Enum$EnumDesc<E>> java.lang.Enum.describeConstable() */
+			/* name */ 'describeConstable',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* type variable ref */ 'tr', [/* name */ 'E']]
+						],
+						/* raw type */ 'java.lang.Enum$EnumDesc',
+						/* owner type */ 'java.lang.Enum'
+					]]
+				],
+				/* raw type */ 'java.util.Optional',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 17,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -138,19 +190,12 @@ JdkClassCreateHelper.class('java.lang.Enum', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public final int java.lang.Enum.compareTo(E) */
-			/* name */ 'compareTo',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'o',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
+		[/* public java.lang.String java.lang.Enum.toString() */
+			/* name */ 'toString',
+			/* parameters */,
+			/* return */ 'java.lang.String',
 			/* exceptions */,
-			/* modifiers */ 17,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -195,51 +240,6 @@ JdkClassCreateHelper.class('java.lang.Enum', [
 					/* annotations */ UDF
 				]
 			]
-		],
-		[/* public final java.util.Optional<java.lang.Enum$EnumDesc<E>> java.lang.Enum.describeConstable() */
-			/* name */ 'describeConstable',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							[/* type variable ref */ 'tr', [/* name */ 'E']]
-						],
-						/* raw type */ 'java.lang.Enum$EnumDesc',
-						/* owner type */ 'java.lang.Enum'
-					]]
-				],
-				/* raw type */ 'java.util.Optional',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final java.lang.Class<E> java.lang.Enum.getDeclaringClass() */
-			/* name */ 'getDeclaringClass',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* type variable ref */ 'tr', [/* name */ 'E']]
-				],
-				/* raw type */ 'java.lang.Class',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final int java.lang.Enum.ordinal() */
-			/* name */ 'ordinal',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
 		]
 	],
 	/* declared fields */,

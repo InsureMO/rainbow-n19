@@ -27,57 +27,8 @@ JdkClassCreateHelper.class('java.time.format.DecimalStyle', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.time.format.DecimalStyle.toString() */
-			/* name */ 'toString',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.time.format.DecimalStyle.hashCode() */
-			/* name */ 'hashCode',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.time.format.DecimalStyle java.time.format.DecimalStyle.of(java.util.Locale) */
-			/* name */ 'of',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'info',
-					/* type */ 'java.util.Locale',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.format.DecimalStyle',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.util.Set<java.util.Locale> java.time.format.DecimalStyle.getAvailableLocales() */
-			/* name */ 'getAvailableLocales',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					'java.util.Locale'
-				],
-				/* raw type */ 'java.util.Set',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public char java.time.format.DecimalStyle.getPositiveSign() */
-			/* name */ 'getPositiveSign',
+		[/* public char java.time.format.DecimalStyle.getDecimalSeparator() */
+			/* name */ 'getDecimalSeparator',
 			/* parameters */,
 			/* return */ 'char',
 			/* exceptions */,
@@ -94,6 +45,15 @@ JdkClassCreateHelper.class('java.time.format.DecimalStyle', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public char java.time.format.DecimalStyle.getPositiveSign() */
+			/* name */ 'getPositiveSign',
+			/* parameters */,
+			/* return */ 'char',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public char java.time.format.DecimalStyle.getZeroDigit() */
 			/* name */ 'getZeroDigit',
 			/* parameters */,
@@ -103,45 +63,29 @@ JdkClassCreateHelper.class('java.time.format.DecimalStyle', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public char java.time.format.DecimalStyle.getDecimalSeparator() */
-			/* name */ 'getDecimalSeparator',
+		[/* public int java.time.format.DecimalStyle.hashCode() */
+			/* name */ 'hashCode',
 			/* parameters */,
-			/* return */ 'char',
+			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.time.format.DecimalStyle java.time.format.DecimalStyle.ofDefaultLocale() */
-			/* name */ 'ofDefaultLocale',
+		[/* public java.lang.String java.time.format.DecimalStyle.toString() */
+			/* name */ 'toString',
 			/* parameters */,
-			/* return */ 'java.time.format.DecimalStyle',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.time.format.DecimalStyle java.time.format.DecimalStyle.withZeroDigit(char) */
-			/* name */ 'withZeroDigit',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'zeroDigit',
-					/* type */ 'char',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.format.DecimalStyle',
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.time.format.DecimalStyle java.time.format.DecimalStyle.withPositiveSign(char) */
-			/* name */ 'withPositiveSign',
+		[/* public java.time.format.DecimalStyle java.time.format.DecimalStyle.withDecimalSeparator(char) */
+			/* name */ 'withDecimalSeparator',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'positiveSign',
+					/* name */ 'decimalSeparator',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -169,11 +113,11 @@ JdkClassCreateHelper.class('java.time.format.DecimalStyle', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.time.format.DecimalStyle java.time.format.DecimalStyle.withDecimalSeparator(char) */
-			/* name */ 'withDecimalSeparator',
+		[/* public java.time.format.DecimalStyle java.time.format.DecimalStyle.withPositiveSign(char) */
+			/* name */ 'withPositiveSign',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'decimalSeparator',
+					/* name */ 'positiveSign',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -182,6 +126,62 @@ JdkClassCreateHelper.class('java.time.format.DecimalStyle', [
 			/* return */ 'java.time.format.DecimalStyle',
 			/* exceptions */,
 			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.time.format.DecimalStyle java.time.format.DecimalStyle.withZeroDigit(char) */
+			/* name */ 'withZeroDigit',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'zeroDigit',
+					/* type */ 'char',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.format.DecimalStyle',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.time.format.DecimalStyle java.time.format.DecimalStyle.of(java.util.Locale) */
+			/* name */ 'of',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'info',
+					/* type */ 'java.util.Locale',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.format.DecimalStyle',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.time.format.DecimalStyle java.time.format.DecimalStyle.ofDefaultLocale() */
+			/* name */ 'ofDefaultLocale',
+			/* parameters */,
+			/* return */ 'java.time.format.DecimalStyle',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.util.Set<java.util.Locale> java.time.format.DecimalStyle.getAvailableLocales() */
+			/* name */ 'getAvailableLocales',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					'java.util.Locale'
+				],
+				/* raw type */ 'java.util.Set',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

@@ -12,10 +12,10 @@ JdkClassCreateHelper.class('java.lang.constant.DirectMethodHandleDesc', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public abstract java.lang.String java.lang.constant.DirectMethodHandleDesc.methodName() */
-			/* name */ 'methodName',
+		[/* public abstract boolean java.lang.constant.DirectMethodHandleDesc.isOwnerInterface() */
+			/* name */ 'isOwnerInterface',
 			/* parameters */,
-			/* return */ 'java.lang.String',
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,
@@ -30,10 +30,19 @@ JdkClassCreateHelper.class('java.lang.constant.DirectMethodHandleDesc', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.lang.constant.DirectMethodHandleDesc$Kind java.lang.constant.DirectMethodHandleDesc.kind() */
-			/* name */ 'kind',
+		[/* public abstract java.lang.String java.lang.constant.DirectMethodHandleDesc.lookupDescriptor() */
+			/* name */ 'lookupDescriptor',
 			/* parameters */,
-			/* return */ 'java.lang.constant.DirectMethodHandleDesc$Kind',
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.lang.String java.lang.constant.DirectMethodHandleDesc.methodName() */
+			/* name */ 'methodName',
+			/* parameters */,
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,
@@ -48,19 +57,10 @@ JdkClassCreateHelper.class('java.lang.constant.DirectMethodHandleDesc', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.lang.String java.lang.constant.DirectMethodHandleDesc.lookupDescriptor() */
-			/* name */ 'lookupDescriptor',
+		[/* public abstract java.lang.constant.DirectMethodHandleDesc$Kind java.lang.constant.DirectMethodHandleDesc.kind() */
+			/* name */ 'kind',
 			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract boolean java.lang.constant.DirectMethodHandleDesc.isOwnerInterface() */
-			/* name */ 'isOwnerInterface',
-			/* parameters */,
-			/* return */ 'boolean',
+			/* return */ 'java.lang.constant.DirectMethodHandleDesc$Kind',
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,

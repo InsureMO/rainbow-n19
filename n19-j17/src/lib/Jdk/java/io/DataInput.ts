@@ -10,10 +10,10 @@ JdkClassCreateHelper.class('java.io.DataInput', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public abstract java.lang.String java.io.DataInput.readLine() throws java.io.IOException */
-			/* name */ 'readLine',
+		[/* public abstract boolean java.io.DataInput.readBoolean() throws java.io.IOException */
+			/* name */ 'readBoolean',
 			/* parameters */,
-			/* return */ 'java.lang.String',
+			/* return */ 'boolean',
 			[/* exceptions */
 				[/* exception */
 					/* type */ 'java.io.IOException',
@@ -24,24 +24,10 @@ JdkClassCreateHelper.class('java.io.DataInput', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract int java.io.DataInput.readInt() throws java.io.IOException */
-			/* name */ 'readInt',
+		[/* public abstract byte java.io.DataInput.readByte() throws java.io.IOException */
+			/* name */ 'readByte',
 			/* parameters */,
-			/* return */ 'int',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.lang.String java.io.DataInput.readUTF() throws java.io.IOException */
-			/* name */ 'readUTF',
-			/* parameters */,
-			/* return */ 'java.lang.String',
+			/* return */ 'byte',
 			[/* exceptions */
 				[/* exception */
 					/* type */ 'java.io.IOException',
@@ -66,10 +52,52 @@ JdkClassCreateHelper.class('java.io.DataInput', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public abstract double java.io.DataInput.readDouble() throws java.io.IOException */
+			/* name */ 'readDouble',
+			/* parameters */,
+			/* return */ 'double',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public abstract float java.io.DataInput.readFloat() throws java.io.IOException */
 			/* name */ 'readFloat',
 			/* parameters */,
 			/* return */ 'float',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract int java.io.DataInput.readInt() throws java.io.IOException */
+			/* name */ 'readInt',
+			/* parameters */,
+			/* return */ 'int',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract int java.io.DataInput.readUnsignedByte() throws java.io.IOException */
+			/* name */ 'readUnsignedByte',
+			/* parameters */,
+			/* return */ 'int',
 			[/* exceptions */
 				[/* exception */
 					/* type */ 'java.io.IOException',
@@ -94,10 +122,17 @@ JdkClassCreateHelper.class('java.io.DataInput', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract long java.io.DataInput.readLong() throws java.io.IOException */
-			/* name */ 'readLong',
-			/* parameters */,
-			/* return */ 'long',
+		[/* public abstract int java.io.DataInput.skipBytes(int) throws java.io.IOException */
+			/* name */ 'skipBytes',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
 			[/* exceptions */
 				[/* exception */
 					/* type */ 'java.io.IOException',
@@ -108,10 +143,38 @@ JdkClassCreateHelper.class('java.io.DataInput', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract byte java.io.DataInput.readByte() throws java.io.IOException */
-			/* name */ 'readByte',
+		[/* public abstract java.lang.String java.io.DataInput.readLine() throws java.io.IOException */
+			/* name */ 'readLine',
 			/* parameters */,
-			/* return */ 'byte',
+			/* return */ 'java.lang.String',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.lang.String java.io.DataInput.readUTF() throws java.io.IOException */
+			/* name */ 'readUTF',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract long java.io.DataInput.readLong() throws java.io.IOException */
+			/* name */ 'readLong',
+			/* parameters */,
+			/* return */ 'long',
 			[/* exceptions */
 				[/* exception */
 					/* type */ 'java.io.IOException',
@@ -180,69 +243,6 @@ JdkClassCreateHelper.class('java.io.DataInput', [
 				]
 			],
 			/* return */ 'void',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract int java.io.DataInput.skipBytes(int) throws java.io.IOException */
-			/* name */ 'skipBytes',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract boolean java.io.DataInput.readBoolean() throws java.io.IOException */
-			/* name */ 'readBoolean',
-			/* parameters */,
-			/* return */ 'boolean',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract int java.io.DataInput.readUnsignedByte() throws java.io.IOException */
-			/* name */ 'readUnsignedByte',
-			/* parameters */,
-			/* return */ 'int',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract double java.io.DataInput.readDouble() throws java.io.IOException */
-			/* name */ 'readDouble',
-			/* parameters */,
-			/* return */ 'double',
 			[/* exceptions */
 				[/* exception */
 					/* type */ 'java.io.IOException',

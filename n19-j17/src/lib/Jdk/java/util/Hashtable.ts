@@ -43,37 +43,6 @@ JdkClassCreateHelper.class('java.util.Hashtable', [
 		]
 	],
 	[/* declared constructors */
-		[/* public java.util.Hashtable(java.util.Map<? extends K, ? extends V>) */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 't',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							[/* wildcard type */ 'wt', [
-								[/* upper bounds */
-									[/* type variable ref */ 'tr', [/* name */ 'K']]
-								],
-								/* lower bounds */ UDF
-							]],
-							[/* wildcard type */ 'wt', [
-								[/* upper bounds */
-									[/* type variable ref */ 'tr', [/* name */ 'V']]
-								],
-								/* lower bounds */ UDF
-							]]
-						],
-						/* raw type */ 'java.util.Map',
-						/* owner type */ UDF
-					]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public java.util.Hashtable() */
 			/* parameters */,
 			/* exceptions */,
@@ -114,90 +83,54 @@ JdkClassCreateHelper.class('java.util.Hashtable', [
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
-		]
-	],
-	[/* declared methods */
-		[/* public synchronized V java.util.Hashtable.remove(java.lang.Object) */
-			/* name */ 'remove',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'oldValue',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ [/* type variable ref */ 'tr', [/* name */ 'V']],
-			/* exceptions */,
-			/* modifiers */ 33,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
 		],
-		[/* public synchronized boolean java.util.Hashtable.remove(java.lang.Object,java.lang.Object) */
-			/* name */ 'remove',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'prev',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'key',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 33,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public synchronized V java.util.Hashtable.get(java.lang.Object) */
-			/* name */ 'get',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'e',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ [/* type variable ref */ 'tr', [/* name */ 'V']],
-			/* exceptions */,
-			/* modifiers */ 33,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public synchronized V java.util.Hashtable.put(K,V) */
-			/* name */ 'put',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'old',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'key',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ [/* type variable ref */ 'tr', [/* name */ 'V']],
-			/* exceptions */,
-			/* modifiers */ 33,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public synchronized boolean java.util.Hashtable.equals(java.lang.Object) */
-			/* name */ 'equals',
+		[/* public java.util.Hashtable(java.util.Map<? extends K, ? extends V>) */
 			[/* parameters */
 				[/* parameter */
 					/* name */ 't',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									[/* type variable ref */ 'tr', [/* name */ 'K']]
+								],
+								/* lower bounds */ UDF
+							]],
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									[/* type variable ref */ 'tr', [/* name */ 'V']]
+								],
+								/* lower bounds */ UDF
+							]]
+						],
+						/* raw type */ 'java.util.Map',
+						/* owner type */ UDF
+					]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		]
+	],
+	[/* declared methods */
+		[/* protected void java.util.Hashtable.rehash() */
+			/* name */ 'rehash',
+			/* parameters */,
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 4,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.util.Hashtable.containsValue(java.lang.Object) */
+			/* name */ 'containsValue',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'value',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -205,16 +138,7 @@ JdkClassCreateHelper.class('java.util.Hashtable', [
 			],
 			/* return */ 'boolean',
 			/* exceptions */,
-			/* modifiers */ 33,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public synchronized java.lang.String java.util.Hashtable.toString() */
-			/* name */ 'toString',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 33,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -233,97 +157,54 @@ JdkClassCreateHelper.class('java.util.Hashtable', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public synchronized int java.util.Hashtable.hashCode() */
-			/* name */ 'hashCode',
+		[/* public java.util.Set<K> java.util.Hashtable.keySet() */
+			/* name */ 'keySet',
 			/* parameters */,
-			/* return */ 'int',
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'K']]
+				],
+				/* raw type */ 'java.util.Set',
+				/* owner type */ UDF
+			]],
 			/* exceptions */,
-			/* modifiers */ 33,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public synchronized java.lang.Object java.util.Hashtable.clone() */
-			/* name */ 'clone',
+		[/* public java.util.Set<java.util.Map$Entry<K, V>> java.util.Hashtable.entrySet() */
+			/* name */ 'entrySet',
 			/* parameters */,
-			/* return */ 'java.lang.Object',
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* type variable ref */ 'tr', [/* name */ 'K']],
+							[/* type variable ref */ 'tr', [/* name */ 'V']]
+						],
+						/* raw type */ 'java.util.Map$Entry',
+						/* owner type */ 'java.util.Map'
+					]]
+				],
+				/* raw type */ 'java.util.Set',
+				/* owner type */ UDF
+			]],
 			/* exceptions */,
-			/* modifiers */ 33,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public synchronized void java.util.Hashtable.clear() */
-			/* name */ 'clear',
-			/* parameters */,
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 33,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public synchronized boolean java.util.Hashtable.isEmpty() */
-			/* name */ 'isEmpty',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 33,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public synchronized V java.util.Hashtable.replace(K,V) */
-			/* name */ 'replace',
+		[/* public synchronized V java.util.Hashtable.compute(K,java.util.function.BiFunction<? super K, ? super V, ? extends V>) */
+			/* name */ 'compute',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'oldValue',
+					/* name */ 'mc',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'key',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ [/* type variable ref */ 'tr', [/* name */ 'V']],
-			/* exceptions */,
-			/* modifiers */ 33,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public synchronized boolean java.util.Hashtable.replace(K,V,V) */
-			/* name */ 'replace',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'key',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'oldValue',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'newValue',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 33,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public synchronized void java.util.Hashtable.replaceAll(java.util.function.BiFunction<? super K, ? super V, ? extends V>) */
-			/* name */ 'replaceAll',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'entry',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -356,23 +237,104 @@ JdkClassCreateHelper.class('java.util.Hashtable', [
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'void',
+			/* return */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 			/* exceptions */,
 			/* modifiers */ 33,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public synchronized int java.util.Hashtable.size() */
-			/* name */ 'size',
-			/* parameters */,
-			/* return */ 'int',
+		[/* public synchronized V java.util.Hashtable.computeIfAbsent(K,java.util.function.Function<? super K, ? extends V>) */
+			/* name */ 'computeIfAbsent',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'key',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'mappingFunction',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									'java.lang.Object'
+								],
+								[/* lower bounds */
+									[/* type variable ref */ 'tr', [/* name */ 'K']]
+								]
+							]],
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									[/* type variable ref */ 'tr', [/* name */ 'V']]
+								],
+								/* lower bounds */ UDF
+							]]
+						],
+						/* raw type */ 'java.util.function.Function',
+						/* owner type */ UDF
+					]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 			/* exceptions */,
 			/* modifiers */ 33,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public synchronized boolean java.util.Hashtable.contains(java.lang.Object) */
-			/* name */ 'contains',
+		[/* public synchronized V java.util.Hashtable.computeIfPresent(K,java.util.function.BiFunction<? super K, ? super V, ? extends V>) */
+			/* name */ 'computeIfPresent',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'mc',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'newValue',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									'java.lang.Object'
+								],
+								[/* lower bounds */
+									[/* type variable ref */ 'tr', [/* name */ 'K']]
+								]
+							]],
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									'java.lang.Object'
+								],
+								[/* lower bounds */
+									[/* type variable ref */ 'tr', [/* name */ 'V']]
+								]
+							]],
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									[/* type variable ref */ 'tr', [/* name */ 'V']]
+								],
+								/* lower bounds */ UDF
+							]]
+						],
+						/* raw type */ 'java.util.function.BiFunction',
+						/* owner type */ UDF
+					]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+			/* exceptions */,
+			/* modifiers */ 33,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public synchronized V java.util.Hashtable.get(java.lang.Object) */
+			/* name */ 'get',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'e',
@@ -381,22 +343,29 @@ JdkClassCreateHelper.class('java.util.Hashtable', [
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'boolean',
+			/* return */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 			/* exceptions */,
 			/* modifiers */ 33,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public synchronized java.util.Enumeration<V> java.util.Hashtable.elements() */
-			/* name */ 'elements',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* type variable ref */ 'tr', [/* name */ 'V']]
+		[/* public synchronized V java.util.Hashtable.getOrDefault(java.lang.Object,V) */
+			/* name */ 'getOrDefault',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'key',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
 				],
-				/* raw type */ 'java.util.Enumeration',
-				/* owner type */ UDF
-			]],
+				[/* parameter */
+					/* name */ 'defaultValue',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 			/* exceptions */,
 			/* modifiers */ 33,
 			/* annotations */ UDF,
@@ -457,56 +426,23 @@ JdkClassCreateHelper.class('java.util.Hashtable', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.util.Set<java.util.Map$Entry<K, V>> java.util.Hashtable.entrySet() */
-			/* name */ 'entrySet',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							[/* type variable ref */ 'tr', [/* name */ 'K']],
-							[/* type variable ref */ 'tr', [/* name */ 'V']]
-						],
-						/* raw type */ 'java.util.Map$Entry',
-						/* owner type */ 'java.util.Map'
-					]]
-				],
-				/* raw type */ 'java.util.Set',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public synchronized void java.util.Hashtable.putAll(java.util.Map<? extends K, ? extends V>) */
-			/* name */ 'putAll',
+		[/* public synchronized V java.util.Hashtable.put(K,V) */
+			/* name */ 'put',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'e',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							[/* wildcard type */ 'wt', [
-								[/* upper bounds */
-									[/* type variable ref */ 'tr', [/* name */ 'K']]
-								],
-								/* lower bounds */ UDF
-							]],
-							[/* wildcard type */ 'wt', [
-								[/* upper bounds */
-									[/* type variable ref */ 'tr', [/* name */ 'V']]
-								],
-								/* lower bounds */ UDF
-							]]
-						],
-						/* raw type */ 'java.util.Map',
-						/* owner type */ UDF
-					]],
+					/* name */ 'old',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'key',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'void',
+			/* return */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 			/* exceptions */,
 			/* modifiers */ 33,
 			/* annotations */ UDF,
@@ -534,50 +470,221 @@ JdkClassCreateHelper.class('java.util.Hashtable', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public synchronized V java.util.Hashtable.compute(K,java.util.function.BiFunction<? super K, ? super V, ? extends V>) */
-			/* name */ 'compute',
+		[/* public synchronized V java.util.Hashtable.remove(java.lang.Object) */
+			/* name */ 'remove',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'mc',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'newValue',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							[/* wildcard type */ 'wt', [
-								[/* upper bounds */
-									'java.lang.Object'
-								],
-								[/* lower bounds */
-									[/* type variable ref */ 'tr', [/* name */ 'K']]
-								]
-							]],
-							[/* wildcard type */ 'wt', [
-								[/* upper bounds */
-									'java.lang.Object'
-								],
-								[/* lower bounds */
-									[/* type variable ref */ 'tr', [/* name */ 'V']]
-								]
-							]],
-							[/* wildcard type */ 'wt', [
-								[/* upper bounds */
-									[/* type variable ref */ 'tr', [/* name */ 'V']]
-								],
-								/* lower bounds */ UDF
-							]]
-						],
-						/* raw type */ 'java.util.function.BiFunction',
-						/* owner type */ UDF
-					]],
+					/* name */ 'oldValue',
+					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
 			/* return */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+			/* exceptions */,
+			/* modifiers */ 33,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public synchronized V java.util.Hashtable.replace(K,V) */
+			/* name */ 'replace',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'oldValue',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'key',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+			/* exceptions */,
+			/* modifiers */ 33,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public synchronized boolean java.util.Hashtable.contains(java.lang.Object) */
+			/* name */ 'contains',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'e',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 33,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public synchronized boolean java.util.Hashtable.containsKey(java.lang.Object) */
+			/* name */ 'containsKey',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'e',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 33,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public synchronized boolean java.util.Hashtable.equals(java.lang.Object) */
+			/* name */ 'equals',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 't',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 33,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public synchronized boolean java.util.Hashtable.isEmpty() */
+			/* name */ 'isEmpty',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 33,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public synchronized boolean java.util.Hashtable.remove(java.lang.Object,java.lang.Object) */
+			/* name */ 'remove',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'prev',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'key',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 33,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public synchronized boolean java.util.Hashtable.replace(K,V,V) */
+			/* name */ 'replace',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'key',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'oldValue',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'newValue',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 33,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public synchronized int java.util.Hashtable.hashCode() */
+			/* name */ 'hashCode',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 33,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public synchronized int java.util.Hashtable.size() */
+			/* name */ 'size',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 33,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public synchronized java.lang.Object java.util.Hashtable.clone() */
+			/* name */ 'clone',
+			/* parameters */,
+			/* return */ 'java.lang.Object',
+			/* exceptions */,
+			/* modifiers */ 33,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public synchronized java.lang.String java.util.Hashtable.toString() */
+			/* name */ 'toString',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 33,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public synchronized java.util.Enumeration<K> java.util.Hashtable.keys() */
+			/* name */ 'keys',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'K']]
+				],
+				/* raw type */ 'java.util.Enumeration',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 33,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public synchronized java.util.Enumeration<V> java.util.Hashtable.elements() */
+			/* name */ 'elements',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'V']]
+				],
+				/* raw type */ 'java.util.Enumeration',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 33,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public synchronized void java.util.Hashtable.clear() */
+			/* name */ 'clear',
+			/* parameters */,
+			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 33,
 			/* annotations */ UDF,
@@ -620,42 +727,18 @@ JdkClassCreateHelper.class('java.util.Hashtable', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public synchronized boolean java.util.Hashtable.containsKey(java.lang.Object) */
-			/* name */ 'containsKey',
+		[/* public synchronized void java.util.Hashtable.putAll(java.util.Map<? extends K, ? extends V>) */
+			/* name */ 'putAll',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'e',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 33,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public synchronized V java.util.Hashtable.computeIfAbsent(K,java.util.function.Function<? super K, ? extends V>) */
-			/* name */ 'computeIfAbsent',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'key',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'mappingFunction',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
 								[/* upper bounds */
-									'java.lang.Object'
-								],
-								[/* lower bounds */
 									[/* type variable ref */ 'tr', [/* name */ 'K']]
-								]
+								],
+								/* lower bounds */ UDF
 							]],
 							[/* wildcard type */ 'wt', [
 								[/* upper bounds */
@@ -664,98 +747,24 @@ JdkClassCreateHelper.class('java.util.Hashtable', [
 								/* lower bounds */ UDF
 							]]
 						],
-						/* raw type */ 'java.util.function.Function',
+						/* raw type */ 'java.util.Map',
 						/* owner type */ UDF
 					]],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ [/* type variable ref */ 'tr', [/* name */ 'V']],
+			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 33,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public synchronized java.util.Enumeration<K> java.util.Hashtable.keys() */
-			/* name */ 'keys',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* type variable ref */ 'tr', [/* name */ 'K']]
-				],
-				/* raw type */ 'java.util.Enumeration',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 33,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.Set<K> java.util.Hashtable.keySet() */
-			/* name */ 'keySet',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* type variable ref */ 'tr', [/* name */ 'K']]
-				],
-				/* raw type */ 'java.util.Set',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.util.Hashtable.containsValue(java.lang.Object) */
-			/* name */ 'containsValue',
+		[/* public synchronized void java.util.Hashtable.replaceAll(java.util.function.BiFunction<? super K, ? super V, ? extends V>) */
+			/* name */ 'replaceAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'value',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public synchronized V java.util.Hashtable.getOrDefault(java.lang.Object,V) */
-			/* name */ 'getOrDefault',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'key',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'defaultValue',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ [/* type variable ref */ 'tr', [/* name */ 'V']],
-			/* exceptions */,
-			/* modifiers */ 33,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public synchronized V java.util.Hashtable.computeIfPresent(K,java.util.function.BiFunction<? super K, ? super V, ? extends V>) */
-			/* name */ 'computeIfPresent',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'mc',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'newValue',
+					/* name */ 'entry',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -788,18 +797,9 @@ JdkClassCreateHelper.class('java.util.Hashtable', [
 					/* annotations */ UDF
 				]
 			],
-			/* return */ [/* type variable ref */ 'tr', [/* name */ 'V']],
-			/* exceptions */,
-			/* modifiers */ 33,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* protected void java.util.Hashtable.rehash() */
-			/* name */ 'rehash',
-			/* parameters */,
 			/* return */ 'void',
 			/* exceptions */,
-			/* modifiers */ 4,
+			/* modifiers */ 33,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

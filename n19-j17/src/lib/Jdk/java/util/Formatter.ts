@@ -13,31 +13,9 @@ JdkClassCreateHelper.class('java.util.Formatter', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
-		[/* public java.util.Formatter(java.io.File,java.lang.String) throws java.io.FileNotFoundException,java.io.UnsupportedEncodingException */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'file',
-					/* type */ 'java.io.File',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'csn',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.FileNotFoundException',
-					/* annotations */ UDF
-				],
-				[/* exception */
-					/* type */ 'java.io.UnsupportedEncodingException',
-					/* annotations */ UDF
-				]
-			],
+		[/* public java.util.Formatter() */
+			/* parameters */,
+			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
@@ -61,172 +39,7 @@ JdkClassCreateHelper.class('java.util.Formatter', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.util.Formatter(java.lang.String,java.nio.charset.Charset,java.util.Locale) throws java.io.IOException */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'fileName',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'charset',
-					/* type */ 'java.nio.charset.Charset',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'l',
-					/* type */ 'java.util.Locale',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.Formatter(java.lang.String,java.lang.String,java.util.Locale) throws java.io.FileNotFoundException,java.io.UnsupportedEncodingException */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'fileName',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'csn',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'l',
-					/* type */ 'java.util.Locale',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.FileNotFoundException',
-					/* annotations */ UDF
-				],
-				[/* exception */
-					/* type */ 'java.io.UnsupportedEncodingException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.Formatter(java.lang.String,java.lang.String) throws java.io.FileNotFoundException,java.io.UnsupportedEncodingException */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'fileName',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'csn',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.FileNotFoundException',
-					/* annotations */ UDF
-				],
-				[/* exception */
-					/* type */ 'java.io.UnsupportedEncodingException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.Formatter(java.io.OutputStream,java.lang.String) throws java.io.UnsupportedEncodingException */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'os',
-					/* type */ 'java.io.OutputStream',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'csn',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.UnsupportedEncodingException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.Formatter(java.io.OutputStream) */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'os',
-					/* type */ 'java.io.OutputStream',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.Formatter(java.io.OutputStream,java.lang.String,java.util.Locale) throws java.io.UnsupportedEncodingException */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'os',
-					/* type */ 'java.io.OutputStream',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'csn',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'l',
-					/* type */ 'java.util.Locale',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.UnsupportedEncodingException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.Formatter(java.io.File,java.nio.charset.Charset,java.util.Locale) throws java.io.IOException */
+		[/* public java.util.Formatter(java.io.File,java.lang.String) throws java.io.FileNotFoundException,java.io.UnsupportedEncodingException */
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'file',
@@ -235,21 +48,19 @@ JdkClassCreateHelper.class('java.util.Formatter', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'charset',
-					/* type */ 'java.nio.charset.Charset',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'l',
-					/* type */ 'java.util.Locale',
+					/* name */ 'csn',
+					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
 			[/* exceptions */
 				[/* exception */
-					/* type */ 'java.io.IOException',
+					/* type */ 'java.io.FileNotFoundException',
+					/* annotations */ UDF
+				],
+				[/* exception */
+					/* type */ 'java.io.UnsupportedEncodingException',
 					/* annotations */ UDF
 				]
 			],
@@ -292,9 +103,103 @@ JdkClassCreateHelper.class('java.util.Formatter', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.util.Formatter() */
-			/* parameters */,
+		[/* public java.util.Formatter(java.io.File,java.nio.charset.Charset,java.util.Locale) throws java.io.IOException */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'file',
+					/* type */ 'java.io.File',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'charset',
+					/* type */ 'java.nio.charset.Charset',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'l',
+					/* type */ 'java.util.Locale',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.Formatter(java.io.OutputStream) */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'os',
+					/* type */ 'java.io.OutputStream',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
 			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.Formatter(java.io.OutputStream,java.lang.String) throws java.io.UnsupportedEncodingException */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'os',
+					/* type */ 'java.io.OutputStream',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'csn',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.UnsupportedEncodingException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.Formatter(java.io.OutputStream,java.lang.String,java.util.Locale) throws java.io.UnsupportedEncodingException */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'os',
+					/* type */ 'java.io.OutputStream',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'csn',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'l',
+					/* type */ 'java.util.Locale',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.UnsupportedEncodingException',
+					/* annotations */ UDF
+				]
+			],
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
@@ -339,21 +244,16 @@ JdkClassCreateHelper.class('java.util.Formatter', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.util.Formatter(java.lang.String) throws java.io.FileNotFoundException */
+		[/* public java.util.Formatter(java.lang.Appendable) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'fileName',
-					/* type */ 'java.lang.String',
+					/* name */ 'a',
+					/* type */ 'java.lang.Appendable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.FileNotFoundException',
-					/* annotations */ UDF
-				]
-			],
+			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
@@ -378,6 +278,120 @@ JdkClassCreateHelper.class('java.util.Formatter', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public java.util.Formatter(java.lang.String) throws java.io.FileNotFoundException */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'fileName',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.FileNotFoundException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.Formatter(java.lang.String,java.lang.String) throws java.io.FileNotFoundException,java.io.UnsupportedEncodingException */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'fileName',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'csn',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.FileNotFoundException',
+					/* annotations */ UDF
+				],
+				[/* exception */
+					/* type */ 'java.io.UnsupportedEncodingException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.Formatter(java.lang.String,java.lang.String,java.util.Locale) throws java.io.FileNotFoundException,java.io.UnsupportedEncodingException */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'fileName',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'csn',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'l',
+					/* type */ 'java.util.Locale',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.FileNotFoundException',
+					/* annotations */ UDF
+				],
+				[/* exception */
+					/* type */ 'java.io.UnsupportedEncodingException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.Formatter(java.lang.String,java.nio.charset.Charset,java.util.Locale) throws java.io.IOException */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'fileName',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'charset',
+					/* type */ 'java.nio.charset.Charset',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'l',
+					/* type */ 'java.util.Locale',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.util.Formatter(java.util.Locale) */
 			[/* parameters */
 				[/* parameter */
@@ -391,36 +405,31 @@ JdkClassCreateHelper.class('java.util.Formatter', [
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
-		],
-		[/* public java.util.Formatter(java.lang.Appendable) */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'a',
-					/* type */ 'java.lang.Appendable',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
+		]
+	],
+	[/* declared methods */
+		[/* public java.io.IOException java.util.Formatter.ioException() */
+			/* name */ 'ioException',
+			/* parameters */,
+			/* return */ 'java.io.IOException',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
-		]
-	],
-	[/* declared methods */
+		],
+		[/* public java.lang.Appendable java.util.Formatter.out() */
+			/* name */ 'out',
+			/* parameters */,
+			/* return */ 'java.lang.Appendable',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.lang.String java.util.Formatter.toString() */
 			/* name */ 'toString',
 			/* parameters */,
 			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.util.Formatter.flush() */
-			/* name */ 'flush',
-			/* parameters */,
-			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -485,15 +494,6 @@ JdkClassCreateHelper.class('java.util.Formatter', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.Appendable java.util.Formatter.out() */
-			/* name */ 'out',
-			/* parameters */,
-			/* return */ 'java.lang.Appendable',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public void java.util.Formatter.close() */
 			/* name */ 'close',
 			/* parameters */,
@@ -503,10 +503,10 @@ JdkClassCreateHelper.class('java.util.Formatter', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.io.IOException java.util.Formatter.ioException() */
-			/* name */ 'ioException',
+		[/* public void java.util.Formatter.flush() */
+			/* name */ 'flush',
 			/* parameters */,
-			/* return */ 'java.io.IOException',
+			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

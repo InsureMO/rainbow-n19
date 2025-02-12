@@ -11,12 +11,42 @@ JdkClassCreateHelper.class('java.time.temporal.TemporalQueries', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public static java.time.temporal.TemporalQuery<java.time.ZoneOffset> java.time.temporal.TemporalQueries.offset() */
-			/* name */ 'offset',
+		[/* public static java.time.temporal.TemporalQuery<java.time.LocalDate> java.time.temporal.TemporalQueries.localDate() */
+			/* name */ 'localDate',
 			/* parameters */,
 			/* return */ [/* parameterized type */ 'pt', [
 				[/* actual argument types */
-					'java.time.ZoneOffset'
+					'java.time.LocalDate'
+				],
+				/* raw type */ 'java.time.temporal.TemporalQuery',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.time.temporal.TemporalQuery<java.time.LocalTime> java.time.temporal.TemporalQueries.localTime() */
+			/* name */ 'localTime',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					'java.time.LocalTime'
+				],
+				/* raw type */ 'java.time.temporal.TemporalQuery',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.time.temporal.TemporalQuery<java.time.ZoneId> java.time.temporal.TemporalQueries.zone() */
+			/* name */ 'zone',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					'java.time.ZoneId'
 				],
 				/* raw type */ 'java.time.temporal.TemporalQuery',
 				/* owner type */ UDF
@@ -32,6 +62,21 @@ JdkClassCreateHelper.class('java.time.temporal.TemporalQueries', [
 			/* return */ [/* parameterized type */ 'pt', [
 				[/* actual argument types */
 					'java.time.ZoneId'
+				],
+				/* raw type */ 'java.time.temporal.TemporalQuery',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.time.temporal.TemporalQuery<java.time.ZoneOffset> java.time.temporal.TemporalQueries.offset() */
+			/* name */ 'offset',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					'java.time.ZoneOffset'
 				],
 				/* raw type */ 'java.time.temporal.TemporalQuery',
 				/* owner type */ UDF
@@ -62,51 +107,6 @@ JdkClassCreateHelper.class('java.time.temporal.TemporalQueries', [
 			/* return */ [/* parameterized type */ 'pt', [
 				[/* actual argument types */
 					'java.time.temporal.TemporalUnit'
-				],
-				/* raw type */ 'java.time.temporal.TemporalQuery',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.time.temporal.TemporalQuery<java.time.ZoneId> java.time.temporal.TemporalQueries.zone() */
-			/* name */ 'zone',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					'java.time.ZoneId'
-				],
-				/* raw type */ 'java.time.temporal.TemporalQuery',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.time.temporal.TemporalQuery<java.time.LocalTime> java.time.temporal.TemporalQueries.localTime() */
-			/* name */ 'localTime',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					'java.time.LocalTime'
-				],
-				/* raw type */ 'java.time.temporal.TemporalQuery',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.time.temporal.TemporalQuery<java.time.LocalDate> java.time.temporal.TemporalQueries.localDate() */
-			/* name */ 'localDate',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					'java.time.LocalDate'
 				],
 				/* raw type */ 'java.time.temporal.TemporalQuery',
 				/* owner type */ UDF

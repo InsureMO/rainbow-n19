@@ -17,12 +17,12 @@ JdkClassCreateHelper.class('java.util.concurrent.TimeUnit', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public static java.util.concurrent.TimeUnit[] java.util.concurrent.TimeUnit.values() */
-			/* name */ 'values',
+		[/* public java.time.temporal.ChronoUnit java.util.concurrent.TimeUnit.toChronoUnit() */
+			/* name */ 'toChronoUnit',
 			/* parameters */,
-			/* return */ '[Ljava.util.concurrent.TimeUnit;',
+			/* return */ 'java.time.temporal.ChronoUnit',
 			/* exceptions */,
-			/* modifiers */ 9,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -64,125 +64,8 @@ JdkClassCreateHelper.class('java.util.concurrent.TimeUnit', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.util.concurrent.TimeUnit java.util.concurrent.TimeUnit.valueOf(java.lang.String) */
-			/* name */ 'valueOf',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.util.concurrent.TimeUnit',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.util.concurrent.TimeUnit java.util.concurrent.TimeUnit.of(java.time.temporal.ChronoUnit) */
-			/* name */ 'of',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.time.temporal.ChronoUnit',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.util.concurrent.TimeUnit',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.util.concurrent.TimeUnit.sleep(long) throws java.lang.InterruptedException */
-			/* name */ 'sleep',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'ms',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.lang.InterruptedException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public long java.util.concurrent.TimeUnit.toMillis(long) */
-			/* name */ 'toMillis',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'duration',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public long java.util.concurrent.TimeUnit.toNanos(long) */
-			/* name */ 'toNanos',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'duration',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public long java.util.concurrent.TimeUnit.toMicros(long) */
-			/* name */ 'toMicros',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'duration',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public long java.util.concurrent.TimeUnit.toSeconds(long) */
-			/* name */ 'toSeconds',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'duration',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public long java.util.concurrent.TimeUnit.toMinutes(long) */
-			/* name */ 'toMinutes',
+		[/* public long java.util.concurrent.TimeUnit.toDays(long) */
+			/* name */ 'toDays',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'duration',
@@ -213,8 +96,8 @@ JdkClassCreateHelper.class('java.util.concurrent.TimeUnit', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public long java.util.concurrent.TimeUnit.toDays(long) */
-			/* name */ 'toDays',
+		[/* public long java.util.concurrent.TimeUnit.toMicros(long) */
+			/* name */ 'toMicros',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'duration',
@@ -229,17 +112,116 @@ JdkClassCreateHelper.class('java.util.concurrent.TimeUnit', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.util.concurrent.TimeUnit.timedWait(java.lang.Object,long) throws java.lang.InterruptedException */
-			/* name */ 'timedWait',
+		[/* public long java.util.concurrent.TimeUnit.toMillis(long) */
+			/* name */ 'toMillis',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'duration',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public long java.util.concurrent.TimeUnit.toMinutes(long) */
+			/* name */ 'toMinutes',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'duration',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public long java.util.concurrent.TimeUnit.toNanos(long) */
+			/* name */ 'toNanos',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'duration',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public long java.util.concurrent.TimeUnit.toSeconds(long) */
+			/* name */ 'toSeconds',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'duration',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.util.concurrent.TimeUnit java.util.concurrent.TimeUnit.of(java.time.temporal.ChronoUnit) */
+			/* name */ 'of',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.time.temporal.ChronoUnit',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.util.concurrent.TimeUnit',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.util.concurrent.TimeUnit java.util.concurrent.TimeUnit.valueOf(java.lang.String) */
+			/* name */ 'valueOf',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.util.concurrent.TimeUnit',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.util.concurrent.TimeUnit[] java.util.concurrent.TimeUnit.values() */
+			/* name */ 'values',
+			/* parameters */,
+			/* return */ '[Ljava.util.concurrent.TimeUnit;',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.util.concurrent.TimeUnit.sleep(long) throws java.lang.InterruptedException */
+			/* name */ 'sleep',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'ms',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'ns',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -283,11 +265,29 @@ JdkClassCreateHelper.class('java.util.concurrent.TimeUnit', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.time.temporal.ChronoUnit java.util.concurrent.TimeUnit.toChronoUnit() */
-			/* name */ 'toChronoUnit',
-			/* parameters */,
-			/* return */ 'java.time.temporal.ChronoUnit',
-			/* exceptions */,
+		[/* public void java.util.concurrent.TimeUnit.timedWait(java.lang.Object,long) throws java.lang.InterruptedException */
+			/* name */ 'timedWait',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'ms',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'ns',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.lang.InterruptedException',
+					/* annotations */ UDF
+				]
+			],
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF

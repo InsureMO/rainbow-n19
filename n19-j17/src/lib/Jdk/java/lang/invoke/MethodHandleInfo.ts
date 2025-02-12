@@ -10,12 +10,120 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandleInfo', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
+		[/* public abstract <T extends java.lang.reflect.Member> T java.lang.invoke.MethodHandleInfo.reflectAs(java.lang.Class<T>,java.lang.invoke.MethodHandles$Lookup) */
+			/* name */ 'reflectAs',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* type variable ref */ 'tr', [/* name */ 'T']]
+						],
+						/* raw type */ 'java.lang.Class',
+						/* owner type */ UDF
+					]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'java.lang.invoke.MethodHandles$Lookup',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* type variable ref */ 'tr', [/* name */ 'T']],
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			[/* type parameters */
+				[/* type variable */
+					/* name */ 'T',
+					[/* bounds */
+						'java.lang.reflect.Member'
+					],
+					/* annotations */ UDF
+				]
+			]
+		],
+		[/* public abstract int java.lang.invoke.MethodHandleInfo.getModifiers() */
+			/* name */ 'getModifiers',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract int java.lang.invoke.MethodHandleInfo.getReferenceKind() */
+			/* name */ 'getReferenceKind',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.lang.Class<?> java.lang.invoke.MethodHandleInfo.getDeclaringClass() */
+			/* name */ 'getDeclaringClass',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* wildcard type */ 'wt', [
+						[/* upper bounds */
+							'java.lang.Object'
+						],
+						/* lower bounds */ UDF
+					]]
+				],
+				/* raw type */ 'java.lang.Class',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public abstract java.lang.String java.lang.invoke.MethodHandleInfo.getName() */
 			/* name */ 'getName',
 			/* parameters */,
 			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.lang.invoke.MethodType java.lang.invoke.MethodHandleInfo.getMethodType() */
+			/* name */ 'getMethodType',
+			/* parameters */,
+			/* return */ 'java.lang.invoke.MethodType',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public default boolean java.lang.invoke.MethodHandleInfo.isVarArgs() */
+			/* name */ 'isVarArgs',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.lang.String java.lang.invoke.MethodHandleInfo.referenceKindToString(int) */
+			/* name */ 'referenceKindToString',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -54,114 +162,6 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandleInfo', [
 				[/* parameter */
 					/* name */ 'arg3',
 					/* type */ 'java.lang.invoke.MethodType',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract int java.lang.invoke.MethodHandleInfo.getModifiers() */
-			/* name */ 'getModifiers',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.lang.Class<?> java.lang.invoke.MethodHandleInfo.getDeclaringClass() */
-			/* name */ 'getDeclaringClass',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					[/* wildcard type */ 'wt', [
-						[/* upper bounds */
-							'java.lang.Object'
-						],
-						/* lower bounds */ UDF
-					]]
-				],
-				/* raw type */ 'java.lang.Class',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public default boolean java.lang.invoke.MethodHandleInfo.isVarArgs() */
-			/* name */ 'isVarArgs',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract int java.lang.invoke.MethodHandleInfo.getReferenceKind() */
-			/* name */ 'getReferenceKind',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.lang.invoke.MethodType java.lang.invoke.MethodHandleInfo.getMethodType() */
-			/* name */ 'getMethodType',
-			/* parameters */,
-			/* return */ 'java.lang.invoke.MethodType',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract <T extends java.lang.reflect.Member> T java.lang.invoke.MethodHandleInfo.reflectAs(java.lang.Class<T>,java.lang.invoke.MethodHandles$Lookup) */
-			/* name */ 'reflectAs',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ [/* parameterized type */ 'pt', [
-						[/* actual argument types */
-							[/* type variable ref */ 'tr', [/* name */ 'T']]
-						],
-						/* raw type */ 'java.lang.Class',
-						/* owner type */ UDF
-					]],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'java.lang.invoke.MethodHandles$Lookup',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ [/* type variable ref */ 'tr', [/* name */ 'T']],
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			[/* type parameters */
-				[/* type variable */
-					/* name */ 'T',
-					[/* bounds */
-						'java.lang.reflect.Member'
-					],
-					/* annotations */ UDF
-				]
-			]
-		],
-		[/* public static java.lang.String java.lang.invoke.MethodHandleInfo.referenceKindToString(int) */
-			/* name */ 'referenceKindToString',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]

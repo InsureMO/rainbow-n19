@@ -17,15 +17,6 @@ JdkClassCreateHelper.class('java.time.format.FormatStyle', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public static java.time.format.FormatStyle[] java.time.format.FormatStyle.values() */
-			/* name */ 'values',
-			/* parameters */,
-			/* return */ '[Ljava.time.format.FormatStyle;',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public static java.time.format.FormatStyle java.time.format.FormatStyle.valueOf(java.lang.String) */
 			/* name */ 'valueOf',
 			[/* parameters */
@@ -37,6 +28,15 @@ JdkClassCreateHelper.class('java.time.format.FormatStyle', [
 				]
 			],
 			/* return */ 'java.time.format.FormatStyle',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.time.format.FormatStyle[] java.time.format.FormatStyle.values() */
+			/* name */ 'values',
+			/* parameters */,
+			/* return */ '[Ljava.time.format.FormatStyle;',
 			/* exceptions */,
 			/* modifiers */ 9,
 			/* annotations */ UDF,

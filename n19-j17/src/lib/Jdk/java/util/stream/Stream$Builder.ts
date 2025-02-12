@@ -26,25 +26,18 @@ JdkClassCreateHelper.class('java.util.stream.Stream$Builder', [
 	],
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public default java.util.stream.Stream$Builder<T> java.util.stream.Stream$Builder.add(T) */
-			/* name */ 'add',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 't',
-					/* type */ [/* type variable ref */ 'tr', [/* name */ 'T']],
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
+		[/* public abstract java.util.stream.Stream<T> java.util.stream.Stream$Builder.build() */
+			/* name */ 'build',
+			/* parameters */,
 			/* return */ [/* parameterized type */ 'pt', [
 				[/* actual argument types */
 					[/* type variable ref */ 'tr', [/* name */ 'T']]
 				],
-				/* raw type */ 'java.util.stream.Stream$Builder',
-				/* owner type */ 'java.util.stream.Stream'
+				/* raw type */ 'java.util.stream.Stream',
+				/* owner type */ UDF
 			]],
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -64,18 +57,25 @@ JdkClassCreateHelper.class('java.util.stream.Stream$Builder', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.util.stream.Stream<T> java.util.stream.Stream$Builder.build() */
-			/* name */ 'build',
-			/* parameters */,
+		[/* public default java.util.stream.Stream$Builder<T> java.util.stream.Stream$Builder.add(T) */
+			/* name */ 'add',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 't',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'T']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
 			/* return */ [/* parameterized type */ 'pt', [
 				[/* actual argument types */
 					[/* type variable ref */ 'tr', [/* name */ 'T']]
 				],
-				/* raw type */ 'java.util.stream.Stream',
-				/* owner type */ UDF
+				/* raw type */ 'java.util.stream.Stream$Builder',
+				/* owner type */ 'java.util.stream.Stream'
 			]],
 			/* exceptions */,
-			/* modifiers */ 1025,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

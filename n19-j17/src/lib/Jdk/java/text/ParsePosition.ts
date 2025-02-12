@@ -42,17 +42,8 @@ JdkClassCreateHelper.class('java.text.ParsePosition', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.text.ParsePosition.toString() */
-			/* name */ 'toString',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.text.ParsePosition.hashCode() */
-			/* name */ 'hashCode',
+		[/* public int java.text.ParsePosition.getErrorIndex() */
+			/* name */ 'getErrorIndex',
 			/* parameters */,
 			/* return */ 'int',
 			/* exceptions */,
@@ -69,10 +60,19 @@ JdkClassCreateHelper.class('java.text.ParsePosition', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.text.ParsePosition.getErrorIndex() */
-			/* name */ 'getErrorIndex',
+		[/* public int java.text.ParsePosition.hashCode() */
+			/* name */ 'hashCode',
 			/* parameters */,
 			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.text.ParsePosition.toString() */
+			/* name */ 'toString',
+			/* parameters */,
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

@@ -10,6 +10,13 @@ JdkClassCreateHelper.class('java.io.PipedReader', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
+		[/* public java.io.PipedReader() */
+			/* parameters */,
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.io.PipedReader(int) */
 			[/* parameters */
 				[/* parameter */
@@ -24,9 +31,21 @@ JdkClassCreateHelper.class('java.io.PipedReader', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.io.PipedReader() */
-			/* parameters */,
-			/* exceptions */,
+		[/* public java.io.PipedReader(java.io.PipedWriter) throws java.io.IOException */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'src',
+					/* type */ 'java.io.PipedWriter',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
@@ -55,28 +74,23 @@ JdkClassCreateHelper.class('java.io.PipedReader', [
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
-		],
-		[/* public java.io.PipedReader(java.io.PipedWriter) throws java.io.IOException */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'src',
-					/* type */ 'java.io.PipedWriter',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
+		]
+	],
+	[/* declared methods */
+		[/* public synchronized boolean java.io.PipedReader.ready() throws java.io.IOException */
+			/* name */ 'ready',
+			/* parameters */,
+			/* return */ 'boolean',
 			[/* exceptions */
 				[/* exception */
 					/* type */ 'java.io.IOException',
 					/* annotations */ UDF
 				]
 			],
-			/* modifiers */ 1,
+			/* modifiers */ 33,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
-		]
-	],
-	[/* declared methods */
+		],
 		[/* public synchronized int java.io.PipedReader.read() throws java.io.IOException */
 			/* name */ 'read',
 			/* parameters */,
@@ -124,6 +138,20 @@ JdkClassCreateHelper.class('java.io.PipedReader', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public void java.io.PipedReader.close() throws java.io.IOException */
+			/* name */ 'close',
+			/* parameters */,
+			/* return */ 'void',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.io.IOException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public void java.io.PipedReader.connect(java.io.PipedWriter) throws java.io.IOException */
 			/* name */ 'connect',
 			[/* parameters */
@@ -142,34 +170,6 @@ JdkClassCreateHelper.class('java.io.PipedReader', [
 				]
 			],
 			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.io.PipedReader.close() throws java.io.IOException */
-			/* name */ 'close',
-			/* parameters */,
-			/* return */ 'void',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public synchronized boolean java.io.PipedReader.ready() throws java.io.IOException */
-			/* name */ 'ready',
-			/* parameters */,
-			/* return */ 'boolean',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 33,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

@@ -20,11 +20,74 @@ JdkClassCreateHelper.class('java.util.Date', [
 	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
-		[/* public java.util.Date(java.lang.String) */
+		[/* public java.util.Date() */
+			/* parameters */,
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.Date(int,int,int) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 's',
-					/* type */ 'java.lang.String',
+					/* name */ 'year',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'month',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'date',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* exceptions */,
+			/* modifiers */ 1,
+			[/* annotations */
+				[
+					'java.lang.Deprecated',
+					['p', 'since', ''],
+					['p', 'forRemoval', false]
+				]
+			],
+			/* type parameters */ UDF
+		],
+		[/* public java.util.Date(int,int,int,int,int) */
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'year',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'month',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'date',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'hrs',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'min',
+					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -90,35 +153,11 @@ JdkClassCreateHelper.class('java.util.Date', [
 			],
 			/* type parameters */ UDF
 		],
-		[/* public java.util.Date(int,int,int,int,int) */
+		[/* public java.util.Date(java.lang.String) */
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'year',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'month',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'date',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'hrs',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'min',
-					/* type */ 'int',
+					/* name */ 's',
+					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -132,13 +171,6 @@ JdkClassCreateHelper.class('java.util.Date', [
 					['p', 'forRemoval', false]
 				]
 			],
-			/* type parameters */ UDF
-		],
-		[/* public java.util.Date() */
-			/* parameters */,
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.util.Date(long) */
@@ -154,41 +186,41 @@ JdkClassCreateHelper.class('java.util.Date', [
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
-		],
-		[/* public java.util.Date(int,int,int) */
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'year',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'month',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'date',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* exceptions */,
-			/* modifiers */ 1,
-			[/* annotations */
-				[
-					'java.lang.Deprecated',
-					['p', 'since', ''],
-					['p', 'forRemoval', false]
-				]
-			],
-			/* type parameters */ UDF
 		]
 	],
 	[/* declared methods */
+		[/* public boolean java.util.Date.after(java.util.Date) */
+			/* name */ 'after',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'when',
+					/* type */ 'java.util.Date',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.util.Date.before(java.util.Date) */
+			/* name */ 'before',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'when',
+					/* type */ 'java.util.Date',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public boolean java.util.Date.equals(java.lang.Object) */
 			/* name */ 'equals',
 			[/* parameters */
@@ -200,33 +232,6 @@ JdkClassCreateHelper.class('java.util.Date', [
 				]
 			],
 			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.util.Date.toString() */
-			/* name */ 'toString',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.util.Date.hashCode() */
-			/* name */ 'hashCode',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.Object java.util.Date.clone() */
-			/* name */ 'clone',
-			/* parameters */,
-			/* return */ 'java.lang.Object',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -264,67 +269,12 @@ JdkClassCreateHelper.class('java.util.Date', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.util.Date java.util.Date.from(java.time.Instant) */
-			/* name */ 'from',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'ex',
-					/* type */ 'java.time.Instant',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.util.Date',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.util.Date.before(java.util.Date) */
-			/* name */ 'before',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'when',
-					/* type */ 'java.util.Date',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
+		[/* public int java.util.Date.getDate() */
+			/* name */ 'getDate',
+			/* parameters */,
+			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.util.Date.after(java.util.Date) */
-			/* name */ 'after',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'when',
-					/* type */ 'java.util.Date',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static long java.util.Date.parse(java.lang.String) */
-			/* name */ 'parse',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'depth',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 9,
 			[/* annotations */
 				[
 					'java.lang.Deprecated',
@@ -334,17 +284,53 @@ JdkClassCreateHelper.class('java.util.Date', [
 			],
 			/* type parameters */ UDF
 		],
-		[/* public long java.util.Date.getTime() */
-			/* name */ 'getTime',
+		[/* public int java.util.Date.getDay() */
+			/* name */ 'getDay',
 			/* parameters */,
-			/* return */ 'long',
+			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 1,
-			/* annotations */ UDF,
+			[/* annotations */
+				[
+					'java.lang.Deprecated',
+					['p', 'since', ''],
+					['p', 'forRemoval', false]
+				]
+			],
 			/* type parameters */ UDF
 		],
-		[/* public int java.util.Date.getYear() */
-			/* name */ 'getYear',
+		[/* public int java.util.Date.getHours() */
+			/* name */ 'getHours',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			[/* annotations */
+				[
+					'java.lang.Deprecated',
+					['p', 'since', ''],
+					['p', 'forRemoval', false]
+				]
+			],
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.Date.getMinutes() */
+			/* name */ 'getMinutes',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			[/* annotations */
+				[
+					'java.lang.Deprecated',
+					['p', 'since', ''],
+					['p', 'forRemoval', false]
+				]
+			],
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.Date.getMonth() */
+			/* name */ 'getMonth',
 			/* parameters */,
 			/* return */ 'int',
 			/* exceptions */,
@@ -373,12 +359,124 @@ JdkClassCreateHelper.class('java.util.Date', [
 			],
 			/* type parameters */ UDF
 		],
+		[/* public int java.util.Date.getTimezoneOffset() */
+			/* name */ 'getTimezoneOffset',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			[/* annotations */
+				[
+					'java.lang.Deprecated',
+					['p', 'since', ''],
+					['p', 'forRemoval', false]
+				]
+			],
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.Date.getYear() */
+			/* name */ 'getYear',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			[/* annotations */
+				[
+					'java.lang.Deprecated',
+					['p', 'since', ''],
+					['p', 'forRemoval', false]
+				]
+			],
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.Date.hashCode() */
+			/* name */ 'hashCode',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.Object java.util.Date.clone() */
+			/* name */ 'clone',
+			/* parameters */,
+			/* return */ 'java.lang.Object',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.util.Date.toGMTString() */
+			/* name */ 'toGMTString',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			[/* annotations */
+				[
+					'java.lang.Deprecated',
+					['p', 'since', ''],
+					['p', 'forRemoval', false]
+				]
+			],
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.util.Date.toLocaleString() */
+			/* name */ 'toLocaleString',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			[/* annotations */
+				[
+					'java.lang.Deprecated',
+					['p', 'since', ''],
+					['p', 'forRemoval', false]
+				]
+			],
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.util.Date.toString() */
+			/* name */ 'toString',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.time.Instant java.util.Date.toInstant() */
 			/* name */ 'toInstant',
 			/* parameters */,
 			/* return */ 'java.time.Instant',
 			/* exceptions */,
 			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public long java.util.Date.getTime() */
+			/* name */ 'getTime',
+			/* parameters */,
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.util.Date java.util.Date.from(java.time.Instant) */
+			/* name */ 'from',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'ex',
+					/* type */ 'java.time.Instant',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.util.Date',
+			/* exceptions */,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -434,28 +532,19 @@ JdkClassCreateHelper.class('java.util.Date', [
 			],
 			/* type parameters */ UDF
 		],
-		[/* public void java.util.Date.setTime(long) */
-			/* name */ 'setTime',
+		[/* public static long java.util.Date.parse(java.lang.String) */
+			/* name */ 'parse',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'time',
-					/* type */ 'long',
+					/* name */ 'depth',
+					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'void',
+			/* return */ 'long',
 			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.util.Date.getMonth() */
-			/* name */ 'getMonth',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 9,
 			[/* annotations */
 				[
 					'java.lang.Deprecated',
@@ -509,63 +598,11 @@ JdkClassCreateHelper.class('java.util.Date', [
 			],
 			/* type parameters */ UDF
 		],
-		[/* public int java.util.Date.getHours() */
-			/* name */ 'getHours',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			[/* annotations */
-				[
-					'java.lang.Deprecated',
-					['p', 'since', ''],
-					['p', 'forRemoval', false]
-				]
-			],
-			/* type parameters */ UDF
-		],
-		[/* public int java.util.Date.getMinutes() */
-			/* name */ 'getMinutes',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			[/* annotations */
-				[
-					'java.lang.Deprecated',
-					['p', 'since', ''],
-					['p', 'forRemoval', false]
-				]
-			],
-			/* type parameters */ UDF
-		],
 		[/* public void java.util.Date.setMinutes(int) */
 			/* name */ 'setMinutes',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'minutes',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			[/* annotations */
-				[
-					'java.lang.Deprecated',
-					['p', 'since', ''],
-					['p', 'forRemoval', false]
-				]
-			],
-			/* type parameters */ UDF
-		],
-		[/* public void java.util.Date.setSeconds(int) */
-			/* name */ 'setSeconds',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'seconds',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -605,11 +642,11 @@ JdkClassCreateHelper.class('java.util.Date', [
 			],
 			/* type parameters */ UDF
 		],
-		[/* public void java.util.Date.setYear(int) */
-			/* name */ 'setYear',
+		[/* public void java.util.Date.setSeconds(int) */
+			/* name */ 'setSeconds',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'year',
+					/* name */ 'seconds',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -627,70 +664,33 @@ JdkClassCreateHelper.class('java.util.Date', [
 			],
 			/* type parameters */ UDF
 		],
-		[/* public int java.util.Date.getDate() */
-			/* name */ 'getDate',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			[/* annotations */
-				[
-					'java.lang.Deprecated',
-					['p', 'since', ''],
-					['p', 'forRemoval', false]
+		[/* public void java.util.Date.setTime(long) */
+			/* name */ 'setTime',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'time',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
 				]
 			],
-			/* type parameters */ UDF
-		],
-		[/* public int java.util.Date.getDay() */
-			/* name */ 'getDay',
-			/* parameters */,
-			/* return */ 'int',
+			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				[
-					'java.lang.Deprecated',
-					['p', 'since', ''],
-					['p', 'forRemoval', false]
-				]
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.util.Date.toLocaleString() */
-			/* name */ 'toLocaleString',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			[/* annotations */
-				[
-					'java.lang.Deprecated',
-					['p', 'since', ''],
-					['p', 'forRemoval', false]
+		[/* public void java.util.Date.setYear(int) */
+			/* name */ 'setYear',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'year',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
 				]
 			],
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.util.Date.toGMTString() */
-			/* name */ 'toGMTString',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			[/* annotations */
-				[
-					'java.lang.Deprecated',
-					['p', 'since', ''],
-					['p', 'forRemoval', false]
-				]
-			],
-			/* type parameters */ UDF
-		],
-		[/* public int java.util.Date.getTimezoneOffset() */
-			/* name */ 'getTimezoneOffset',
-			/* parameters */,
-			/* return */ 'int',
+			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
 			[/* annotations */

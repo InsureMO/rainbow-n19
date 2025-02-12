@@ -12,19 +12,12 @@ JdkClassCreateHelper.class('java.util.stream.DoubleStream$Builder', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public default java.util.stream.DoubleStream$Builder java.util.stream.DoubleStream$Builder.add(double) */
-			/* name */ 'add',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 't',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.util.stream.DoubleStream$Builder',
+		[/* public abstract java.util.stream.DoubleStream java.util.stream.DoubleStream$Builder.build() */
+			/* name */ 'build',
+			/* parameters */,
+			/* return */ 'java.util.stream.DoubleStream',
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -44,12 +37,19 @@ JdkClassCreateHelper.class('java.util.stream.DoubleStream$Builder', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.util.stream.DoubleStream java.util.stream.DoubleStream$Builder.build() */
-			/* name */ 'build',
-			/* parameters */,
-			/* return */ 'java.util.stream.DoubleStream',
+		[/* public default java.util.stream.DoubleStream$Builder java.util.stream.DoubleStream$Builder.add(double) */
+			/* name */ 'add',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 't',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.util.stream.DoubleStream$Builder',
 			/* exceptions */,
-			/* modifiers */ 1025,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

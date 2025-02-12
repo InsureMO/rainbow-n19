@@ -11,308 +11,6 @@ JdkClassCreateHelper.class('java.lang.reflect.Array', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public static native java.lang.Object java.lang.reflect.Array.get(java.lang.Object,int) throws java.lang.IllegalArgumentException,java.lang.ArrayIndexOutOfBoundsException */
-			/* name */ 'get',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.Object',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.lang.IllegalArgumentException',
-					/* annotations */ UDF
-				],
-				[/* exception */
-					/* type */ 'java.lang.ArrayIndexOutOfBoundsException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 265,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static native int java.lang.reflect.Array.getLength(java.lang.Object) throws java.lang.IllegalArgumentException */
-			/* name */ 'getLength',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.lang.IllegalArgumentException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 265,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public static native boolean java.lang.reflect.Array.getBoolean(java.lang.Object,int) throws java.lang.IllegalArgumentException,java.lang.ArrayIndexOutOfBoundsException */
-			/* name */ 'getBoolean',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.lang.IllegalArgumentException',
-					/* annotations */ UDF
-				],
-				[/* exception */
-					/* type */ 'java.lang.ArrayIndexOutOfBoundsException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 265,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static native byte java.lang.reflect.Array.getByte(java.lang.Object,int) throws java.lang.IllegalArgumentException,java.lang.ArrayIndexOutOfBoundsException */
-			/* name */ 'getByte',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'byte',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.lang.IllegalArgumentException',
-					/* annotations */ UDF
-				],
-				[/* exception */
-					/* type */ 'java.lang.ArrayIndexOutOfBoundsException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 265,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static native short java.lang.reflect.Array.getShort(java.lang.Object,int) throws java.lang.IllegalArgumentException,java.lang.ArrayIndexOutOfBoundsException */
-			/* name */ 'getShort',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'short',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.lang.IllegalArgumentException',
-					/* annotations */ UDF
-				],
-				[/* exception */
-					/* type */ 'java.lang.ArrayIndexOutOfBoundsException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 265,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static native char java.lang.reflect.Array.getChar(java.lang.Object,int) throws java.lang.IllegalArgumentException,java.lang.ArrayIndexOutOfBoundsException */
-			/* name */ 'getChar',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'char',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.lang.IllegalArgumentException',
-					/* annotations */ UDF
-				],
-				[/* exception */
-					/* type */ 'java.lang.ArrayIndexOutOfBoundsException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 265,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static native int java.lang.reflect.Array.getInt(java.lang.Object,int) throws java.lang.IllegalArgumentException,java.lang.ArrayIndexOutOfBoundsException */
-			/* name */ 'getInt',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.lang.IllegalArgumentException',
-					/* annotations */ UDF
-				],
-				[/* exception */
-					/* type */ 'java.lang.ArrayIndexOutOfBoundsException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 265,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static native long java.lang.reflect.Array.getLong(java.lang.Object,int) throws java.lang.IllegalArgumentException,java.lang.ArrayIndexOutOfBoundsException */
-			/* name */ 'getLong',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'long',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.lang.IllegalArgumentException',
-					/* annotations */ UDF
-				],
-				[/* exception */
-					/* type */ 'java.lang.ArrayIndexOutOfBoundsException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 265,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static native float java.lang.reflect.Array.getFloat(java.lang.Object,int) throws java.lang.IllegalArgumentException,java.lang.ArrayIndexOutOfBoundsException */
-			/* name */ 'getFloat',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'float',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.lang.IllegalArgumentException',
-					/* annotations */ UDF
-				],
-				[/* exception */
-					/* type */ 'java.lang.ArrayIndexOutOfBoundsException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 265,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static native double java.lang.reflect.Array.getDouble(java.lang.Object,int) throws java.lang.IllegalArgumentException,java.lang.ArrayIndexOutOfBoundsException */
-			/* name */ 'getDouble',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'double',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.lang.IllegalArgumentException',
-					/* annotations */ UDF
-				],
-				[/* exception */
-					/* type */ 'java.lang.ArrayIndexOutOfBoundsException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 265,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public static java.lang.Object java.lang.reflect.Array.newInstance(java.lang.Class<?>,int) throws java.lang.NegativeArraySizeException */
 			/* name */ 'newInstance',
 			[/* parameters */
@@ -390,6 +88,308 @@ JdkClassCreateHelper.class('java.lang.reflect.Array', [
 				]
 			],
 			/* modifiers */ 137,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static native boolean java.lang.reflect.Array.getBoolean(java.lang.Object,int) throws java.lang.IllegalArgumentException,java.lang.ArrayIndexOutOfBoundsException */
+			/* name */ 'getBoolean',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.lang.IllegalArgumentException',
+					/* annotations */ UDF
+				],
+				[/* exception */
+					/* type */ 'java.lang.ArrayIndexOutOfBoundsException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 265,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static native byte java.lang.reflect.Array.getByte(java.lang.Object,int) throws java.lang.IllegalArgumentException,java.lang.ArrayIndexOutOfBoundsException */
+			/* name */ 'getByte',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'byte',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.lang.IllegalArgumentException',
+					/* annotations */ UDF
+				],
+				[/* exception */
+					/* type */ 'java.lang.ArrayIndexOutOfBoundsException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 265,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static native char java.lang.reflect.Array.getChar(java.lang.Object,int) throws java.lang.IllegalArgumentException,java.lang.ArrayIndexOutOfBoundsException */
+			/* name */ 'getChar',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'char',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.lang.IllegalArgumentException',
+					/* annotations */ UDF
+				],
+				[/* exception */
+					/* type */ 'java.lang.ArrayIndexOutOfBoundsException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 265,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static native double java.lang.reflect.Array.getDouble(java.lang.Object,int) throws java.lang.IllegalArgumentException,java.lang.ArrayIndexOutOfBoundsException */
+			/* name */ 'getDouble',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'double',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.lang.IllegalArgumentException',
+					/* annotations */ UDF
+				],
+				[/* exception */
+					/* type */ 'java.lang.ArrayIndexOutOfBoundsException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 265,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static native float java.lang.reflect.Array.getFloat(java.lang.Object,int) throws java.lang.IllegalArgumentException,java.lang.ArrayIndexOutOfBoundsException */
+			/* name */ 'getFloat',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'float',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.lang.IllegalArgumentException',
+					/* annotations */ UDF
+				],
+				[/* exception */
+					/* type */ 'java.lang.ArrayIndexOutOfBoundsException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 265,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static native int java.lang.reflect.Array.getInt(java.lang.Object,int) throws java.lang.IllegalArgumentException,java.lang.ArrayIndexOutOfBoundsException */
+			/* name */ 'getInt',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.lang.IllegalArgumentException',
+					/* annotations */ UDF
+				],
+				[/* exception */
+					/* type */ 'java.lang.ArrayIndexOutOfBoundsException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 265,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static native int java.lang.reflect.Array.getLength(java.lang.Object) throws java.lang.IllegalArgumentException */
+			/* name */ 'getLength',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.lang.IllegalArgumentException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 265,
+			[/* annotations */
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public static native java.lang.Object java.lang.reflect.Array.get(java.lang.Object,int) throws java.lang.IllegalArgumentException,java.lang.ArrayIndexOutOfBoundsException */
+			/* name */ 'get',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.Object',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.lang.IllegalArgumentException',
+					/* annotations */ UDF
+				],
+				[/* exception */
+					/* type */ 'java.lang.ArrayIndexOutOfBoundsException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 265,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static native long java.lang.reflect.Array.getLong(java.lang.Object,int) throws java.lang.IllegalArgumentException,java.lang.ArrayIndexOutOfBoundsException */
+			/* name */ 'getLong',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'long',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.lang.IllegalArgumentException',
+					/* annotations */ UDF
+				],
+				[/* exception */
+					/* type */ 'java.lang.ArrayIndexOutOfBoundsException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 265,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static native short java.lang.reflect.Array.getShort(java.lang.Object,int) throws java.lang.IllegalArgumentException,java.lang.ArrayIndexOutOfBoundsException */
+			/* name */ 'getShort',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'short',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.lang.IllegalArgumentException',
+					/* annotations */ UDF
+				],
+				[/* exception */
+					/* type */ 'java.lang.ArrayIndexOutOfBoundsException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 265,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -541,8 +541,8 @@ JdkClassCreateHelper.class('java.lang.reflect.Array', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static native void java.lang.reflect.Array.setShort(java.lang.Object,int,short) throws java.lang.IllegalArgumentException,java.lang.ArrayIndexOutOfBoundsException */
-			/* name */ 'setShort',
+		[/* public static native void java.lang.reflect.Array.setDouble(java.lang.Object,int,double) throws java.lang.IllegalArgumentException,java.lang.ArrayIndexOutOfBoundsException */
+			/* name */ 'setDouble',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
@@ -558,7 +558,44 @@ JdkClassCreateHelper.class('java.lang.reflect.Array', [
 				],
 				[/* parameter */
 					/* name */ 'arg2',
-					/* type */ 'short',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.lang.IllegalArgumentException',
+					/* annotations */ UDF
+				],
+				[/* exception */
+					/* type */ 'java.lang.ArrayIndexOutOfBoundsException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 265,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static native void java.lang.reflect.Array.setFloat(java.lang.Object,int,float) throws java.lang.IllegalArgumentException,java.lang.ArrayIndexOutOfBoundsException */
+			/* name */ 'setFloat',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg2',
+					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -652,8 +689,8 @@ JdkClassCreateHelper.class('java.lang.reflect.Array', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static native void java.lang.reflect.Array.setFloat(java.lang.Object,int,float) throws java.lang.IllegalArgumentException,java.lang.ArrayIndexOutOfBoundsException */
-			/* name */ 'setFloat',
+		[/* public static native void java.lang.reflect.Array.setShort(java.lang.Object,int,short) throws java.lang.IllegalArgumentException,java.lang.ArrayIndexOutOfBoundsException */
+			/* name */ 'setShort',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
@@ -669,44 +706,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Array', [
 				],
 				[/* parameter */
 					/* name */ 'arg2',
-					/* type */ 'float',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.lang.IllegalArgumentException',
-					/* annotations */ UDF
-				],
-				[/* exception */
-					/* type */ 'java.lang.ArrayIndexOutOfBoundsException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 265,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static native void java.lang.reflect.Array.setDouble(java.lang.Object,int,double) throws java.lang.IllegalArgumentException,java.lang.ArrayIndexOutOfBoundsException */
-			/* name */ 'setDouble',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg2',
-					/* type */ 'double',
+					/* type */ 'short',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]

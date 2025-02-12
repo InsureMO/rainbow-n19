@@ -17,15 +17,6 @@ JdkClassCreateHelper.class('java.lang.annotation.ElementType', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public static java.lang.annotation.ElementType[] java.lang.annotation.ElementType.values() */
-			/* name */ 'values',
-			/* parameters */,
-			/* return */ '[Ljava.lang.annotation.ElementType;',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public static java.lang.annotation.ElementType java.lang.annotation.ElementType.valueOf(java.lang.String) */
 			/* name */ 'valueOf',
 			[/* parameters */
@@ -37,6 +28,15 @@ JdkClassCreateHelper.class('java.lang.annotation.ElementType', [
 				]
 			],
 			/* return */ 'java.lang.annotation.ElementType',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.lang.annotation.ElementType[] java.lang.annotation.ElementType.values() */
+			/* name */ 'values',
+			/* parameters */,
+			/* return */ '[Ljava.lang.annotation.ElementType;',
 			/* exceptions */,
 			/* modifiers */ 9,
 			/* annotations */ UDF,

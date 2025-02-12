@@ -10,22 +10,6 @@ JdkClassCreateHelper.class('java.lang.module.ModuleFinder', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public static java.lang.module.ModuleFinder java.lang.module.ModuleFinder.of(java.nio.file.Path...) */
-			/* name */ 'of',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ '[Ljava.nio.file.Path;',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.module.ModuleFinder',
-			/* exceptions */,
-			/* modifiers */ 137,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public abstract java.util.Optional<java.lang.module.ModuleReference> java.lang.module.ModuleFinder.find(java.lang.String) */
 			/* name */ 'find',
 			[/* parameters */
@@ -48,12 +32,18 @@ JdkClassCreateHelper.class('java.lang.module.ModuleFinder', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.lang.module.ModuleFinder java.lang.module.ModuleFinder.ofSystem() */
-			/* name */ 'ofSystem',
+		[/* public abstract java.util.Set<java.lang.module.ModuleReference> java.lang.module.ModuleFinder.findAll() */
+			/* name */ 'findAll',
 			/* parameters */,
-			/* return */ 'java.lang.module.ModuleFinder',
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					'java.lang.module.ModuleReference'
+				],
+				/* raw type */ 'java.util.Set',
+				/* owner type */ UDF
+			]],
 			/* exceptions */,
-			/* modifiers */ 9,
+			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -73,18 +63,28 @@ JdkClassCreateHelper.class('java.lang.module.ModuleFinder', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.util.Set<java.lang.module.ModuleReference> java.lang.module.ModuleFinder.findAll() */
-			/* name */ 'findAll',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					'java.lang.module.ModuleReference'
-				],
-				/* raw type */ 'java.util.Set',
-				/* owner type */ UDF
-			]],
+		[/* public static java.lang.module.ModuleFinder java.lang.module.ModuleFinder.of(java.nio.file.Path...) */
+			/* name */ 'of',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ '[Ljava.nio.file.Path;',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.module.ModuleFinder',
 			/* exceptions */,
-			/* modifiers */ 1025,
+			/* modifiers */ 137,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.lang.module.ModuleFinder java.lang.module.ModuleFinder.ofSystem() */
+			/* name */ 'ofSystem',
+			/* parameters */,
+			/* return */ 'java.lang.module.ModuleFinder',
+			/* exceptions */,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

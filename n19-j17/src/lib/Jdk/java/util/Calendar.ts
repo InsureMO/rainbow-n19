@@ -49,6 +49,113 @@ JdkClassCreateHelper.class('java.util.Calendar', [
 		]
 	],
 	[/* declared methods */
+		[/* protected abstract void java.util.Calendar.computeFields() */
+			/* name */ 'computeFields',
+			/* parameters */,
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1028,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* protected abstract void java.util.Calendar.computeTime() */
+			/* name */ 'computeTime',
+			/* parameters */,
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1028,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* protected final int java.util.Calendar.internalGet(int) */
+			/* name */ 'internalGet',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'field',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 20,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* protected void java.util.Calendar.complete() */
+			/* name */ 'complete',
+			/* parameters */,
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 4,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract int java.util.Calendar.getGreatestMinimum(int) */
+			/* name */ 'getGreatestMinimum',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract int java.util.Calendar.getLeastMaximum(int) */
+			/* name */ 'getLeastMaximum',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract int java.util.Calendar.getMaximum(int) */
+			/* name */ 'getMaximum',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract int java.util.Calendar.getMinimum(int) */
+			/* name */ 'getMinimum',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public abstract void java.util.Calendar.add(int,int) */
 			/* name */ 'add',
 			[/* parameters */
@@ -71,17 +178,55 @@ JdkClassCreateHelper.class('java.util.Calendar', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.util.Calendar.get(int) */
-			/* name */ 'get',
+		[/* public abstract void java.util.Calendar.roll(int,boolean) */
+			/* name */ 'roll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'field',
+					/* name */ 'arg0',
 					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'int',
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.util.Calendar.after(java.lang.Object) */
+			/* name */ 'after',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'when',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public boolean java.util.Calendar.before(java.lang.Object) */
+			/* name */ 'before',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'when',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -103,62 +248,55 @@ JdkClassCreateHelper.class('java.util.Calendar', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.util.Calendar.toString() */
-			/* name */ 'toString',
+		[/* public boolean java.util.Calendar.isLenient() */
+			/* name */ 'isLenient',
 			/* parameters */,
-			/* return */ 'java.lang.String',
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.util.Calendar.hashCode() */
-			/* name */ 'hashCode',
+		[/* public boolean java.util.Calendar.isWeekDateSupported() */
+			/* name */ 'isWeekDateSupported',
 			/* parameters */,
-			/* return */ 'int',
+			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.Object java.util.Calendar.clone() */
-			/* name */ 'clone',
-			/* parameters */,
-			/* return */ 'java.lang.Object',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.util.Calendar.compareTo(java.util.Calendar) */
-			/* name */ 'compareTo',
+		[/* public final boolean java.util.Calendar.isSet(int) */
+			/* name */ 'isSet',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'anotherCalendar',
-					/* type */ 'java.util.Calendar',
+					/* name */ 'field',
+					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'int',
+			/* return */ 'boolean',
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 17,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.util.Calendar.compareTo(java.lang.Object) */
-			/* name */ 'compareTo',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
+		[/* public final java.time.Instant java.util.Calendar.toInstant() */
+			/* name */ 'toInstant',
+			/* parameters */,
+			/* return */ 'java.time.Instant',
 			/* exceptions */,
-			/* modifiers */ 4161,
+			/* modifiers */ 17,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public final java.util.Date java.util.Calendar.getTime() */
+			/* name */ 'getTime',
+			/* parameters */,
+			/* return */ 'java.util.Date',
+			/* exceptions */,
+			/* modifiers */ 17,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -187,66 +325,31 @@ JdkClassCreateHelper.class('java.util.Calendar', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.util.Calendar java.util.Calendar.getInstance() */
-			/* name */ 'getInstance',
-			/* parameters */,
-			/* return */ 'java.util.Calendar',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.util.Calendar java.util.Calendar.getInstance(java.util.Locale) */
-			/* name */ 'getInstance',
+		[/* public final void java.util.Calendar.set(int,int,int) */
+			/* name */ 'set',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.util.Locale',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.util.Calendar',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.util.Calendar java.util.Calendar.getInstance(java.util.TimeZone,java.util.Locale) */
-			/* name */ 'getInstance',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'aLocale',
-					/* type */ 'java.util.TimeZone',
+					/* name */ 'year',
+					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'java.util.Locale',
+					/* name */ 'month',
+					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.util.Calendar',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.util.Calendar java.util.Calendar.getInstance(java.util.TimeZone) */
-			/* name */ 'getInstance',
-			[/* parameters */
+				],
 				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.util.TimeZone',
+					/* name */ 'date',
+					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.util.Calendar',
+			/* return */ 'void',
 			/* exceptions */,
-			/* modifiers */ 9,
+			/* modifiers */ 17,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -336,131 +439,6 @@ JdkClassCreateHelper.class('java.util.Calendar', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public final void java.util.Calendar.set(int,int,int) */
-			/* name */ 'set',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'year',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'month',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'date',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.util.Calendar.set(int,int) */
-			/* name */ 'set',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'field',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'value',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final boolean java.util.Calendar.isSet(int) */
-			/* name */ 'isSet',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'field',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.util.Calendar.before(java.lang.Object) */
-			/* name */ 'before',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'when',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.util.Calendar.after(java.lang.Object) */
-			/* name */ 'after',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'when',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* protected void java.util.Calendar.complete() */
-			/* name */ 'complete',
-			/* parameters */,
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 4,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final java.util.Date java.util.Calendar.getTime() */
-			/* name */ 'getTime',
-			/* parameters */,
-			/* return */ 'java.util.Date',
-			/* exceptions */,
-			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final java.time.Instant java.util.Calendar.toInstant() */
-			/* name */ 'toInstant',
-			/* parameters */,
-			/* return */ 'java.time.Instant',
-			/* exceptions */,
-			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public final void java.util.Calendar.setTime(java.util.Date) */
 			/* name */ 'setTime',
 			[/* parameters */
@@ -474,6 +452,149 @@ JdkClassCreateHelper.class('java.util.Calendar', [
 			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 17,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.Calendar.compareTo(java.lang.Object) */
+			/* name */ 'compareTo',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 4161,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.Calendar.compareTo(java.util.Calendar) */
+			/* name */ 'compareTo',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'anotherCalendar',
+					/* type */ 'java.util.Calendar',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.Calendar.get(int) */
+			/* name */ 'get',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'field',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.Calendar.getActualMaximum(int) */
+			/* name */ 'getActualMaximum',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'field',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.Calendar.getActualMinimum(int) */
+			/* name */ 'getActualMinimum',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'field',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.Calendar.getFirstDayOfWeek() */
+			/* name */ 'getFirstDayOfWeek',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.Calendar.getMinimalDaysInFirstWeek() */
+			/* name */ 'getMinimalDaysInFirstWeek',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.Calendar.getWeekYear() */
+			/* name */ 'getWeekYear',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.Calendar.getWeeksInWeekYear() */
+			/* name */ 'getWeeksInWeekYear',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.util.Calendar.hashCode() */
+			/* name */ 'hashCode',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.Object java.util.Calendar.clone() */
+			/* name */ 'clone',
+			/* parameters */,
+			/* return */ 'java.lang.Object',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.util.Calendar.getCalendarType() */
+			/* name */ 'getCalendarType',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -505,119 +626,10 @@ JdkClassCreateHelper.class('java.util.Calendar', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static synchronized java.util.Locale[] java.util.Calendar.getAvailableLocales() */
-			/* name */ 'getAvailableLocales',
-			/* parameters */,
-			/* return */ '[Ljava.util.Locale;',
-			/* exceptions */,
-			/* modifiers */ 41,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.util.Calendar.getCalendarType() */
-			/* name */ 'getCalendarType',
+		[/* public java.lang.String java.util.Calendar.toString() */
+			/* name */ 'toString',
 			/* parameters */,
 			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract int java.util.Calendar.getMinimum(int) */
-			/* name */ 'getMinimum',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract int java.util.Calendar.getMaximum(int) */
-			/* name */ 'getMaximum',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.util.Calendar.setTimeZone(java.util.TimeZone) */
-			/* name */ 'setTimeZone',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'value',
-					/* type */ 'java.util.TimeZone',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.TimeZone java.util.Calendar.getTimeZone() */
-			/* name */ 'getTimeZone',
-			/* parameters */,
-			/* return */ 'java.util.TimeZone',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void java.util.Calendar.setLenient(boolean) */
-			/* name */ 'setLenient',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'lenient',
-					/* type */ 'boolean',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.util.Calendar.isLenient() */
-			/* name */ 'isLenient',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.util.Calendar.getFirstDayOfWeek() */
-			/* name */ 'getFirstDayOfWeek',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.util.Calendar.getMinimalDaysInFirstWeek() */
-			/* name */ 'getMinimalDaysInFirstWeek',
-			/* parameters */,
-			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,
@@ -658,53 +670,12 @@ JdkClassCreateHelper.class('java.util.Calendar', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public void java.util.Calendar.setTimeInMillis(long) */
-			/* name */ 'setTimeInMillis',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'millis',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.util.Calendar.isWeekDateSupported() */
-			/* name */ 'isWeekDateSupported',
+		[/* public java.util.TimeZone java.util.Calendar.getTimeZone() */
+			/* name */ 'getTimeZone',
 			/* parameters */,
-			/* return */ 'boolean',
+			/* return */ 'java.util.TimeZone',
 			/* exceptions */,
 			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.util.Calendar.getWeekYear() */
-			/* name */ 'getWeekYear',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract int java.util.Calendar.getLeastMaximum(int) */
-			/* name */ 'getLeastMaximum',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -717,50 +688,90 @@ JdkClassCreateHelper.class('java.util.Calendar', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* protected abstract void java.util.Calendar.computeFields() */
-			/* name */ 'computeFields',
+		[/* public static java.util.Calendar java.util.Calendar.getInstance() */
+			/* name */ 'getInstance',
 			/* parameters */,
-			/* return */ 'void',
+			/* return */ 'java.util.Calendar',
 			/* exceptions */,
-			/* modifiers */ 1028,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* protected final int java.util.Calendar.internalGet(int) */
-			/* name */ 'internalGet',
+		[/* public static java.util.Calendar java.util.Calendar.getInstance(java.util.Locale) */
+			/* name */ 'getInstance',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'field',
-					/* type */ 'int',
+					/* name */ 'arg0',
+					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'int',
+			/* return */ 'java.util.Calendar',
 			/* exceptions */,
-			/* modifiers */ 20,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract void java.util.Calendar.roll(int,boolean) */
-			/* name */ 'roll',
+		[/* public static java.util.Calendar java.util.Calendar.getInstance(java.util.TimeZone) */
+			/* name */ 'getInstance',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
-					/* type */ 'int',
+					/* type */ 'java.util.TimeZone',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.util.Calendar',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.util.Calendar java.util.Calendar.getInstance(java.util.TimeZone,java.util.Locale) */
+			/* name */ 'getInstance',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'aLocale',
+					/* type */ 'java.util.TimeZone',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'arg1',
-					/* type */ 'boolean',
+					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'void',
+			/* return */ 'java.util.Calendar',
 			/* exceptions */,
-			/* modifiers */ 1025,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static java.util.Set<java.lang.String> java.util.Calendar.getAvailableCalendarTypes() */
+			/* name */ 'getAvailableCalendarTypes',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					'java.lang.String'
+				],
+				/* raw type */ 'java.util.Set',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static synchronized java.util.Locale[] java.util.Calendar.getAvailableLocales() */
+			/* name */ 'getAvailableLocales',
+			/* parameters */,
+			/* return */ '[Ljava.util.Locale;',
+			/* exceptions */,
+			/* modifiers */ 41,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -786,43 +797,25 @@ JdkClassCreateHelper.class('java.util.Calendar', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract int java.util.Calendar.getGreatestMinimum(int) */
-			/* name */ 'getGreatestMinimum',
+		[/* public void java.util.Calendar.set(int,int) */
+			/* name */ 'set',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'field',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'value',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* protected abstract void java.util.Calendar.computeTime() */
-			/* name */ 'computeTime',
-			/* parameters */,
 			/* return */ 'void',
 			/* exceptions */,
-			/* modifiers */ 1028,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.util.Set<java.lang.String> java.util.Calendar.getAvailableCalendarTypes() */
-			/* name */ 'getAvailableCalendarTypes',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					'java.lang.String'
-				],
-				/* raw type */ 'java.util.Set',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 9,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -842,12 +835,60 @@ JdkClassCreateHelper.class('java.util.Calendar', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public void java.util.Calendar.setLenient(boolean) */
+			/* name */ 'setLenient',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'lenient',
+					/* type */ 'boolean',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public void java.util.Calendar.setMinimalDaysInFirstWeek(int) */
 			/* name */ 'setMinimalDaysInFirstWeek',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'value',
 					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.util.Calendar.setTimeInMillis(long) */
+			/* name */ 'setTimeInMillis',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'millis',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public void java.util.Calendar.setTimeZone(java.util.TimeZone) */
+			/* name */ 'setTimeZone',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'value',
+					/* type */ 'java.util.TimeZone',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -881,47 +922,6 @@ JdkClassCreateHelper.class('java.util.Calendar', [
 				]
 			],
 			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.util.Calendar.getWeeksInWeekYear() */
-			/* name */ 'getWeeksInWeekYear',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.util.Calendar.getActualMinimum(int) */
-			/* name */ 'getActualMinimum',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'field',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.util.Calendar.getActualMaximum(int) */
-			/* name */ 'getActualMaximum',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'field',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 1,
 			/* annotations */ UDF,

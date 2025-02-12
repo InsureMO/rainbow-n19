@@ -26,6 +26,60 @@ JdkClassCreateHelper.class('java.util.ListIterator', [
 	],
 	/* declared constructors */,
 	[/* declared methods */
+		[/* public abstract E java.util.ListIterator.next() */
+			/* name */ 'next',
+			/* parameters */,
+			/* return */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract E java.util.ListIterator.previous() */
+			/* name */ 'previous',
+			/* parameters */,
+			/* return */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract boolean java.util.ListIterator.hasNext() */
+			/* name */ 'hasNext',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract boolean java.util.ListIterator.hasPrevious() */
+			/* name */ 'hasPrevious',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract int java.util.ListIterator.nextIndex() */
+			/* name */ 'nextIndex',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract int java.util.ListIterator.previousIndex() */
+			/* name */ 'previousIndex',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public abstract void java.util.ListIterator.add(E) */
 			/* name */ 'add',
 			[/* parameters */
@@ -51,24 +105,6 @@ JdkClassCreateHelper.class('java.util.ListIterator', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract boolean java.util.ListIterator.hasNext() */
-			/* name */ 'hasNext',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract E java.util.ListIterator.next() */
-			/* name */ 'next',
-			/* parameters */,
-			/* return */ [/* type variable ref */ 'tr', [/* name */ 'E']],
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public abstract void java.util.ListIterator.set(E) */
 			/* name */ 'set',
 			[/* parameters */
@@ -80,42 +116,6 @@ JdkClassCreateHelper.class('java.util.ListIterator', [
 				]
 			],
 			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract int java.util.ListIterator.nextIndex() */
-			/* name */ 'nextIndex',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract int java.util.ListIterator.previousIndex() */
-			/* name */ 'previousIndex',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract boolean java.util.ListIterator.hasPrevious() */
-			/* name */ 'hasPrevious',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract E java.util.ListIterator.previous() */
-			/* name */ 'previous',
-			/* parameters */,
-			/* return */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,

@@ -12,22 +12,6 @@ JdkClassCreateHelper.class('java.time.chrono.ChronoPeriod', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public abstract long java.time.chrono.ChronoPeriod.get(java.time.temporal.TemporalUnit) */
-			/* name */ 'get',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.time.temporal.TemporalUnit',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public abstract boolean java.time.chrono.ChronoPeriod.equals(java.lang.Object) */
 			/* name */ 'equals',
 			[/* parameters */
@@ -44,15 +28,6 @@ JdkClassCreateHelper.class('java.time.chrono.ChronoPeriod', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.lang.String java.time.chrono.ChronoPeriod.toString() */
-			/* name */ 'toString',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public abstract int java.time.chrono.ChronoPeriod.hashCode() */
 			/* name */ 'hashCode',
 			/* parameters */,
@@ -62,59 +37,51 @@ JdkClassCreateHelper.class('java.time.chrono.ChronoPeriod', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.time.chrono.ChronoPeriod java.time.chrono.ChronoPeriod.normalized() */
-			/* name */ 'normalized',
+		[/* public abstract java.lang.String java.time.chrono.ChronoPeriod.toString() */
+			/* name */ 'toString',
 			/* parameters */,
-			/* return */ 'java.time.chrono.ChronoPeriod',
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.time.chrono.ChronoPeriod java.time.chrono.ChronoPeriod.between(java.time.chrono.ChronoLocalDate,java.time.chrono.ChronoLocalDate) */
-			/* name */ 'between',
+		[/* public abstract java.time.chrono.ChronoPeriod java.time.chrono.ChronoPeriod.minus(java.time.temporal.TemporalAmount) */
+			/* name */ 'minus',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'endDateExclusive',
-					/* type */ 'java.time.chrono.ChronoLocalDate',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'java.time.chrono.ChronoLocalDate',
+					/* name */ 'arg0',
+					/* type */ 'java.time.temporal.TemporalAmount',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
 			/* return */ 'java.time.chrono.ChronoPeriod',
 			/* exceptions */,
-			/* modifiers */ 9,
+			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public default boolean java.time.chrono.ChronoPeriod.isNegative() */
-			/* name */ 'isNegative',
-			/* parameters */,
-			/* return */ 'boolean',
+		[/* public abstract java.time.chrono.ChronoPeriod java.time.chrono.ChronoPeriod.multipliedBy(int) */
+			/* name */ 'multipliedBy',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.chrono.ChronoPeriod',
 			/* exceptions */,
-			/* modifiers */ 1,
+			/* modifiers */ 1025,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public default boolean java.time.chrono.ChronoPeriod.isZero() */
-			/* name */ 'isZero',
+		[/* public abstract java.time.chrono.ChronoPeriod java.time.chrono.ChronoPeriod.normalized() */
+			/* name */ 'normalized',
 			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.time.chrono.Chronology java.time.chrono.ChronoPeriod.getChronology() */
-			/* name */ 'getChronology',
-			/* parameters */,
-			/* return */ 'java.time.chrono.Chronology',
+			/* return */ 'java.time.chrono.ChronoPeriod',
 			/* exceptions */,
 			/* modifiers */ 1025,
 			/* annotations */ UDF,
@@ -136,8 +103,33 @@ JdkClassCreateHelper.class('java.time.chrono.ChronoPeriod', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
+		[/* public abstract java.time.chrono.Chronology java.time.chrono.ChronoPeriod.getChronology() */
+			/* name */ 'getChronology',
+			/* parameters */,
+			/* return */ 'java.time.chrono.Chronology',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public abstract java.time.temporal.Temporal java.time.chrono.ChronoPeriod.addTo(java.time.temporal.Temporal) */
 			/* name */ 'addTo',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.time.temporal.Temporal',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.time.temporal.Temporal',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.time.temporal.Temporal java.time.chrono.ChronoPeriod.subtractFrom(java.time.temporal.Temporal) */
+			/* name */ 'subtractFrom',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
@@ -167,19 +159,37 @@ JdkClassCreateHelper.class('java.time.chrono.ChronoPeriod', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.time.temporal.Temporal java.time.chrono.ChronoPeriod.subtractFrom(java.time.temporal.Temporal) */
-			/* name */ 'subtractFrom',
+		[/* public abstract long java.time.chrono.ChronoPeriod.get(java.time.temporal.TemporalUnit) */
+			/* name */ 'get',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
-					/* type */ 'java.time.temporal.Temporal',
+					/* type */ 'java.time.temporal.TemporalUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.time.temporal.Temporal',
+			/* return */ 'long',
 			/* exceptions */,
 			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public default boolean java.time.chrono.ChronoPeriod.isNegative() */
+			/* name */ 'isNegative',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public default boolean java.time.chrono.ChronoPeriod.isZero() */
+			/* name */ 'isZero',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -192,35 +202,25 @@ JdkClassCreateHelper.class('java.time.chrono.ChronoPeriod', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public abstract java.time.chrono.ChronoPeriod java.time.chrono.ChronoPeriod.multipliedBy(int) */
-			/* name */ 'multipliedBy',
+		[/* public static java.time.chrono.ChronoPeriod java.time.chrono.ChronoPeriod.between(java.time.chrono.ChronoLocalDate,java.time.chrono.ChronoLocalDate) */
+			/* name */ 'between',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'int',
+					/* name */ 'endDateExclusive',
+					/* type */ 'java.time.chrono.ChronoLocalDate',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'java.time.chrono.ChronoLocalDate',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
 			/* return */ 'java.time.chrono.ChronoPeriod',
 			/* exceptions */,
-			/* modifiers */ 1025,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public abstract java.time.chrono.ChronoPeriod java.time.chrono.ChronoPeriod.minus(java.time.temporal.TemporalAmount) */
-			/* name */ 'minus',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.time.temporal.TemporalAmount',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.time.chrono.ChronoPeriod',
-			/* exceptions */,
-			/* modifiers */ 1025,
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]

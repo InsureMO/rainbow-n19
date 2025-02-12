@@ -69,6 +69,258 @@ JdkClassCreateHelper.class('java.lang.Long', [
 		]
 	],
 	[/* declared methods */
+		[/* public boolean java.lang.Long.equals(java.lang.Object) */
+			/* name */ 'equals',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'obj',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public byte java.lang.Long.byteValue() */
+			/* name */ 'byteValue',
+			/* parameters */,
+			/* return */ 'byte',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public double java.lang.Long.doubleValue() */
+			/* name */ 'doubleValue',
+			/* parameters */,
+			/* return */ 'double',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public float java.lang.Long.floatValue() */
+			/* name */ 'floatValue',
+			/* parameters */,
+			/* return */ 'float',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.lang.Long.compareTo(java.lang.Long) */
+			/* name */ 'compareTo',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'anotherLong',
+					/* type */ 'java.lang.Long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.lang.Long.compareTo(java.lang.Object) */
+			/* name */ 'compareTo',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 4161,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.lang.Long.hashCode() */
+			/* name */ 'hashCode',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public int java.lang.Long.intValue() */
+			/* name */ 'intValue',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.Long java.lang.Long.resolveConstantDesc(java.lang.invoke.MethodHandles$Lookup) */
+			/* name */ 'resolveConstantDesc',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'lookup',
+					/* type */ 'java.lang.invoke.MethodHandles$Lookup',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.Long',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.Object java.lang.Long.resolveConstantDesc(java.lang.invoke.MethodHandles$Lookup) throws java.lang.ReflectiveOperationException */
+			/* name */ 'resolveConstantDesc',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.invoke.MethodHandles$Lookup',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'java.lang.Object',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.lang.ReflectiveOperationException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 4161,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.lang.String java.lang.Long.toString() */
+			/* name */ 'toString',
+			/* parameters */,
+			/* return */ 'java.lang.String',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public java.util.Optional<java.lang.Long> java.lang.Long.describeConstable() */
+			/* name */ 'describeConstable',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					'java.lang.Long'
+				],
+				/* raw type */ 'java.util.Optional',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public long java.lang.Long.longValue() */
+			/* name */ 'longValue',
+			/* parameters */,
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 1,
+			[/* annotations */
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public short java.lang.Long.shortValue() */
+			/* name */ 'shortValue',
+			/* parameters */,
+			/* return */ 'short',
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static int java.lang.Long.bitCount(long) */
+			/* name */ 'bitCount',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 9,
+			[/* annotations */
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public static int java.lang.Long.compare(long,long) */
+			/* name */ 'compare',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'y',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static int java.lang.Long.compareUnsigned(long,long) */
+			/* name */ 'compareUnsigned',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'y',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static int java.lang.Long.hashCode(long) */
+			/* name */ 'hashCode',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public static int java.lang.Long.numberOfLeadingZeros(long) */
 			/* name */ 'numberOfLeadingZeros',
 			[/* parameters */
@@ -105,156 +357,6 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			],
 			/* type parameters */ UDF
 		],
-		[/* public static int java.lang.Long.bitCount(long) */
-			/* name */ 'bitCount',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public boolean java.lang.Long.equals(java.lang.Object) */
-			/* name */ 'equals',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'obj',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.lang.String java.lang.Long.toString(long) */
-			/* name */ 'toString',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'buf',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.lang.String java.lang.Long.toString(long,int) */
-			/* name */ 'toString',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'buf',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'charPos',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.String java.lang.Long.toString() */
-			/* name */ 'toString',
-			/* parameters */,
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.lang.Long.hashCode() */
-			/* name */ 'hashCode',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static int java.lang.Long.hashCode(long) */
-			/* name */ 'hashCode',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static long java.lang.Long.min(long,long) */
-			/* name */ 'min',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'b',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static long java.lang.Long.max(long,long) */
-			/* name */ 'max',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'b',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public static int java.lang.Long.signum(long) */
 			/* name */ 'signum',
 			[/* parameters */
@@ -271,74 +373,23 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static long java.lang.Long.reverseBytes(long) */
-			/* name */ 'reverseBytes',
+		[/* public static java.lang.Long java.lang.Long.decode(java.lang.String) throws java.lang.NumberFormatException */
+			/* name */ 'decode',
 			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public int java.lang.Long.compareTo(java.lang.Object) */
-			/* name */ 'compareTo',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.lang.Long.compareTo(java.lang.Long) */
-			/* name */ 'compareTo',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'anotherLong',
-					/* type */ 'java.lang.Long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.lang.Long java.lang.Long.getLong(java.lang.String,long) */
-			/* name */ 'getLong',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'val',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
 				[/* parameter */
 					/* name */ 'result',
-					/* type */ 'long',
+					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
 			/* return */ 'java.lang.Long',
-			/* exceptions */,
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.lang.NumberFormatException',
+					/* annotations */ UDF
+				]
+			],
 			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
@@ -381,81 +432,46 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static int java.lang.Long.compare(long,long) */
-			/* name */ 'compare',
+		[/* public static java.lang.Long java.lang.Long.getLong(java.lang.String,long) */
+			/* name */ 'getLong',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'y',
-					/* type */ 'long',
+					/* name */ 'val',
+					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'result',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'int',
+			/* return */ 'java.lang.Long',
 			/* exceptions */,
 			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public byte java.lang.Long.byteValue() */
-			/* name */ 'byteValue',
-			/* parameters */,
-			/* return */ 'byte',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public short java.lang.Long.shortValue() */
-			/* name */ 'shortValue',
-			/* parameters */,
-			/* return */ 'short',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public int java.lang.Long.intValue() */
-			/* name */ 'intValue',
-			/* parameters */,
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public long java.lang.Long.longValue() */
-			/* name */ 'longValue',
-			/* parameters */,
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
+		[/* public static java.lang.Long java.lang.Long.valueOf(java.lang.String) throws java.lang.NumberFormatException */
+			/* name */ 'valueOf',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
 			],
-			/* type parameters */ UDF
-		],
-		[/* public float java.lang.Long.floatValue() */
-			/* name */ 'floatValue',
-			/* parameters */,
-			/* return */ 'float',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public double java.lang.Long.doubleValue() */
-			/* name */ 'doubleValue',
-			/* parameters */,
-			/* return */ 'double',
-			/* exceptions */,
-			/* modifiers */ 1,
+			/* return */ 'java.lang.Long',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.lang.NumberFormatException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
@@ -504,23 +520,18 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			],
 			/* type parameters */ UDF
 		],
-		[/* public static java.lang.Long java.lang.Long.valueOf(java.lang.String) throws java.lang.NumberFormatException */
-			/* name */ 'valueOf',
+		[/* public static java.lang.String java.lang.Long.toBinaryString(long) */
+			/* name */ 'toBinaryString',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
-					/* type */ 'java.lang.String',
+					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'java.lang.Long',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.lang.NumberFormatException',
-					/* annotations */ UDF
-				]
-			],
+			/* return */ 'java.lang.String',
+			/* exceptions */,
 			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
@@ -541,81 +552,8 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static java.lang.Long java.lang.Long.decode(java.lang.String) throws java.lang.NumberFormatException */
-			/* name */ 'decode',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'result',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.Long',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.lang.NumberFormatException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.Object java.lang.Long.resolveConstantDesc(java.lang.invoke.MethodHandles$Lookup) throws java.lang.ReflectiveOperationException */
-			/* name */ 'resolveConstantDesc',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.invoke.MethodHandles$Lookup',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.Object',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.lang.ReflectiveOperationException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.Long java.lang.Long.resolveConstantDesc(java.lang.invoke.MethodHandles$Lookup) */
-			/* name */ 'resolveConstantDesc',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'lookup',
-					/* type */ 'java.lang.invoke.MethodHandles$Lookup',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.Long',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.Optional<java.lang.Long> java.lang.Long.describeConstable() */
-			/* name */ 'describeConstable',
-			/* parameters */,
-			/* return */ [/* parameterized type */ 'pt', [
-				[/* actual argument types */
-					'java.lang.Long'
-				],
-				/* raw type */ 'java.util.Optional',
-				/* owner type */ UDF
-			]],
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static long java.lang.Long.reverse(long) */
-			/* name */ 'reverse',
+		[/* public static java.lang.String java.lang.Long.toOctalString(long) */
+			/* name */ 'toOctalString',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'arg0',
@@ -624,67 +562,39 @@ JdkClassCreateHelper.class('java.lang.Long', [
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'long',
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static long java.lang.Long.sum(long,long) */
-			/* name */ 'sum',
+		[/* public static java.lang.String java.lang.Long.toString(long) */
+			/* name */ 'toString',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'b',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'buf',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
 			],
-			/* return */ 'long',
+			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static int java.lang.Long.compareUnsigned(long,long) */
-			/* name */ 'compareUnsigned',
+		[/* public static java.lang.String java.lang.Long.toString(long,int) */
+			/* name */ 'toString',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'y',
+					/* name */ 'buf',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.lang.String java.lang.Long.toUnsignedString(long,int) */
-			/* name */ 'toUnsignedString',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'quot',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'rem',
+					/* name */ 'charPos',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -712,115 +622,18 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static long java.lang.Long.parseLong(java.lang.CharSequence,int,int,int) throws java.lang.NumberFormatException */
-			/* name */ 'parseLong',
+		[/* public static java.lang.String java.lang.Long.toUnsignedString(long,int) */
+			/* name */ 'toUnsignedString',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'digit',
-					/* type */ 'java.lang.CharSequence',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'firstChar',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'multmin',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'result',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'long',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.lang.NumberFormatException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static long java.lang.Long.parseLong(java.lang.String,int) throws java.lang.NumberFormatException */
-			/* name */ 'parseLong',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'digit',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'firstChar',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'long',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.lang.NumberFormatException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static long java.lang.Long.parseLong(java.lang.String) throws java.lang.NumberFormatException */
-			/* name */ 'parseLong',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'long',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.lang.NumberFormatException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.lang.String java.lang.Long.toOctalString(long) */
-			/* name */ 'toOctalString',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'quot',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.String',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static java.lang.String java.lang.Long.toBinaryString(long) */
-			/* name */ 'toBinaryString',
-			[/* parameters */
+				],
 				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'long',
+					/* name */ 'rem',
+					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -833,28 +646,6 @@ JdkClassCreateHelper.class('java.lang.Long', [
 		],
 		[/* public static long java.lang.Long.divideUnsigned(long,long) */
 			/* name */ 'divideUnsigned',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'q',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'r',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 9,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public static long java.lang.Long.remainderUnsigned(long,long) */
-			/* name */ 'remainderUnsigned',
 			[/* parameters */
 				[/* parameter */
 					/* name */ 'q',
@@ -907,18 +698,18 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static long java.lang.Long.rotateLeft(long,int) */
-			/* name */ 'rotateLeft',
+		[/* public static long java.lang.Long.max(long,long) */
+			/* name */ 'max',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'distance',
+					/* name */ 'b',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'arg1',
-					/* type */ 'int',
+					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -929,18 +720,18 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static long java.lang.Long.rotateRight(long,int) */
-			/* name */ 'rotateRight',
+		[/* public static long java.lang.Long.min(long,long) */
+			/* name */ 'min',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'distance',
+					/* name */ 'b',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'arg1',
-					/* type */ 'int',
+					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]
@@ -951,17 +742,77 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public static long java.lang.Long.parseUnsignedLong(java.lang.String,int) throws java.lang.NumberFormatException */
-			/* name */ 'parseUnsignedLong',
+		[/* public static long java.lang.Long.parseLong(java.lang.CharSequence,int,int,int) throws java.lang.NumberFormatException */
+			/* name */ 'parseLong',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'first',
+					/* name */ 'digit',
+					/* type */ 'java.lang.CharSequence',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'firstChar',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'multmin',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'result',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'long',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.lang.NumberFormatException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static long java.lang.Long.parseLong(java.lang.String) throws java.lang.NumberFormatException */
+			/* name */ 'parseLong',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'long',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.lang.NumberFormatException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static long java.lang.Long.parseLong(java.lang.String,int) throws java.lang.NumberFormatException */
+			/* name */ 'parseLong',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'digit',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'second',
+					/* name */ 'firstChar',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1034,6 +885,155 @@ JdkClassCreateHelper.class('java.lang.Long', [
 					/* annotations */ UDF
 				]
 			],
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static long java.lang.Long.parseUnsignedLong(java.lang.String,int) throws java.lang.NumberFormatException */
+			/* name */ 'parseUnsignedLong',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'first',
+					/* type */ 'java.lang.String',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'second',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'long',
+			[/* exceptions */
+				[/* exception */
+					/* type */ 'java.lang.NumberFormatException',
+					/* annotations */ UDF
+				]
+			],
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static long java.lang.Long.remainderUnsigned(long,long) */
+			/* name */ 'remainderUnsigned',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'q',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'r',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static long java.lang.Long.reverse(long) */
+			/* name */ 'reverse',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static long java.lang.Long.reverseBytes(long) */
+			/* name */ 'reverseBytes',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 9,
+			[/* annotations */
+				['jdk.internal.vm.annotation.IntrinsicCandidate']
+			],
+			/* type parameters */ UDF
+		],
+		[/* public static long java.lang.Long.rotateLeft(long,int) */
+			/* name */ 'rotateLeft',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'distance',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static long java.lang.Long.rotateRight(long,int) */
+			/* name */ 'rotateRight',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'distance',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static long java.lang.Long.sum(long,long) */
+			/* name */ 'sum',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'b',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'long',
+			/* exceptions */,
 			/* modifiers */ 9,
 			/* annotations */ UDF,
 			/* type parameters */ UDF

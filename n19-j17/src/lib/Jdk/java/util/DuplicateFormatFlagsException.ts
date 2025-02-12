@@ -26,8 +26,8 @@ JdkClassCreateHelper.class('java.util.DuplicateFormatFlagsException', [
 		]
 	],
 	[/* declared methods */
-		[/* public java.lang.String java.util.DuplicateFormatFlagsException.getMessage() */
-			/* name */ 'getMessage',
+		[/* public java.lang.String java.util.DuplicateFormatFlagsException.getFlags() */
+			/* name */ 'getFlags',
 			/* parameters */,
 			/* return */ 'java.lang.String',
 			/* exceptions */,
@@ -35,8 +35,8 @@ JdkClassCreateHelper.class('java.util.DuplicateFormatFlagsException', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.String java.util.DuplicateFormatFlagsException.getFlags() */
-			/* name */ 'getFlags',
+		[/* public java.lang.String java.util.DuplicateFormatFlagsException.getMessage() */
+			/* name */ 'getMessage',
 			/* parameters */,
 			/* return */ 'java.lang.String',
 			/* exceptions */,

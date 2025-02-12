@@ -58,6 +58,51 @@ JdkClassCreateHelper.class('java.util.DoubleSummaryStatistics', [
 		]
 	],
 	[/* declared methods */
+		[/* public final double java.util.DoubleSummaryStatistics.getAverage() */
+			/* name */ 'getAverage',
+			/* parameters */,
+			/* return */ 'double',
+			/* exceptions */,
+			/* modifiers */ 17,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public final double java.util.DoubleSummaryStatistics.getMax() */
+			/* name */ 'getMax',
+			/* parameters */,
+			/* return */ 'double',
+			/* exceptions */,
+			/* modifiers */ 17,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public final double java.util.DoubleSummaryStatistics.getMin() */
+			/* name */ 'getMin',
+			/* parameters */,
+			/* return */ 'double',
+			/* exceptions */,
+			/* modifiers */ 17,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public final double java.util.DoubleSummaryStatistics.getSum() */
+			/* name */ 'getSum',
+			/* parameters */,
+			/* return */ 'double',
+			/* exceptions */,
+			/* modifiers */ 17,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public final long java.util.DoubleSummaryStatistics.getCount() */
+			/* name */ 'getCount',
+			/* parameters */,
+			/* return */ 'long',
+			/* exceptions */,
+			/* modifiers */ 17,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
 		[/* public java.lang.String java.util.DoubleSummaryStatistics.toString() */
 			/* name */ 'toString',
 			/* parameters */,
@@ -96,51 +141,6 @@ JdkClassCreateHelper.class('java.util.DoubleSummaryStatistics', [
 			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final long java.util.DoubleSummaryStatistics.getCount() */
-			/* name */ 'getCount',
-			/* parameters */,
-			/* return */ 'long',
-			/* exceptions */,
-			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final double java.util.DoubleSummaryStatistics.getSum() */
-			/* name */ 'getSum',
-			/* parameters */,
-			/* return */ 'double',
-			/* exceptions */,
-			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final double java.util.DoubleSummaryStatistics.getMin() */
-			/* name */ 'getMin',
-			/* parameters */,
-			/* return */ 'double',
-			/* exceptions */,
-			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final double java.util.DoubleSummaryStatistics.getAverage() */
-			/* name */ 'getAverage',
-			/* parameters */,
-			/* return */ 'double',
-			/* exceptions */,
-			/* modifiers */ 17,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public final double java.util.DoubleSummaryStatistics.getMax() */
-			/* name */ 'getMax',
-			/* parameters */,
-			/* return */ 'double',
-			/* exceptions */,
-			/* modifiers */ 17,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]
