@@ -329,6 +329,11 @@ private fun generateParameter(parameter: Parameter, name: String, indent: String
 
 private class MethodVisitorForParameterNames(val parameterNames: MutableList<String>) :
 	MethodVisitor(Opcodes.ASM9) {
+	override fun visitParameter(name: String?, access: Int) {
+//		name?.let { parameterNames += name }
+		println(name)
+	}
+
 	override fun visitLocalVariable(
 		name: String, descriptor: String, signature: String?, start: Label, end: Label, index: Int
 	) {
