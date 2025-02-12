@@ -1,0 +1,969 @@
+import {UDF} from '../../../utils';
+import {JdkClassCreateHelper} from '../../JdkClassLoader';
+
+// noinspection JSConsecutiveCommasInArrayLiteral
+JdkClassCreateHelper.class('java.util.Set', [
+	/* super class */,
+	[/* interfaces, implements java.util.Collection<E> */
+		[/* parameterized type */ 'pt', [
+			[/* actual argument types */
+				[/* type variable ref */ 'tr', [/* name */ 'E']]
+			],
+			/* raw type */ 'java.util.Collection',
+			/* owner type */ UDF
+		]]
+	],
+	/* modifiers */ 1537,
+	/* declared annotations */,
+	[/* type parameters */
+		[/* type variable */
+			/* name */ 'E',
+			[/* bounds */
+				'java.lang.Object'
+			],
+			/* annotations */ UDF
+		]
+	],
+	/* declared constructors */,
+	[/* declared methods */
+		[/* public abstract boolean java.util.Set.add(E) */
+			/* name */ 'add',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract boolean java.util.Set.remove(java.lang.Object) */
+			/* name */ 'remove',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract boolean java.util.Set.equals(java.lang.Object) */
+			/* name */ 'equals',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract int java.util.Set.hashCode() */
+			/* name */ 'hashCode',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static <E> java.util.Set<E> java.util.Set.copyOf(java.util.Collection<? extends E>) */
+			/* name */ 'copyOf',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									[/* type variable ref */ 'tr', [/* name */ 'E']]
+								],
+								/* lower bounds */ UDF
+							]]
+						],
+						/* raw type */ 'java.util.Collection',
+						/* owner type */ UDF
+					]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'E']]
+				],
+				/* raw type */ 'java.util.Set',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			[/* type parameters */
+				[/* type variable */
+					/* name */ 'E',
+					[/* bounds */
+						'java.lang.Object'
+					],
+					/* annotations */ UDF
+				]
+			]
+		],
+		[/* public abstract void java.util.Set.clear() */
+			/* name */ 'clear',
+			/* parameters */,
+			/* return */ 'void',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract boolean java.util.Set.isEmpty() */
+			/* name */ 'isEmpty',
+			/* parameters */,
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract int java.util.Set.size() */
+			/* name */ 'size',
+			/* parameters */,
+			/* return */ 'int',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract <T> T[] java.util.Set.toArray(T[]) */
+			/* name */ 'toArray',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ [/* generic array type */ 'ga', [[/* type variable ref */ 'tr', [/* name */ 'T']]]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* generic array type */ 'ga', [[/* type variable ref */ 'tr', [/* name */ 'T']]]],
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			[/* type parameters */
+				[/* type variable */
+					/* name */ 'T',
+					[/* bounds */
+						'java.lang.Object'
+					],
+					/* annotations */ UDF
+				]
+			]
+		],
+		[/* public abstract java.lang.Object[] java.util.Set.toArray() */
+			/* name */ 'toArray',
+			/* parameters */,
+			/* return */ '[Ljava.lang.Object;',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract java.util.Iterator<E> java.util.Set.iterator() */
+			/* name */ 'iterator',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'E']]
+				],
+				/* raw type */ 'java.util.Iterator',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public static <E> java.util.Set<E> java.util.Set.of(E,E,E,E,E,E) */
+			/* name */ 'of',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg2',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg3',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg4',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg5',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'E']]
+				],
+				/* raw type */ 'java.util.Set',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			[/* type parameters */
+				[/* type variable */
+					/* name */ 'E',
+					[/* bounds */
+						'java.lang.Object'
+					],
+					/* annotations */ UDF
+				]
+			]
+		],
+		[/* public static <E> java.util.Set<E> java.util.Set.of(E,E,E,E,E) */
+			/* name */ 'of',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg2',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg3',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg4',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'E']]
+				],
+				/* raw type */ 'java.util.Set',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			[/* type parameters */
+				[/* type variable */
+					/* name */ 'E',
+					[/* bounds */
+						'java.lang.Object'
+					],
+					/* annotations */ UDF
+				]
+			]
+		],
+		[/* public static <E> java.util.Set<E> java.util.Set.of(E) */
+			/* name */ 'of',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'E']]
+				],
+				/* raw type */ 'java.util.Set',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			[/* type parameters */
+				[/* type variable */
+					/* name */ 'E',
+					[/* bounds */
+						'java.lang.Object'
+					],
+					/* annotations */ UDF
+				]
+			]
+		],
+		[/* public static <E> java.util.Set<E> java.util.Set.of(E,E,E,E) */
+			/* name */ 'of',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg2',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg3',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'E']]
+				],
+				/* raw type */ 'java.util.Set',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			[/* type parameters */
+				[/* type variable */
+					/* name */ 'E',
+					[/* bounds */
+						'java.lang.Object'
+					],
+					/* annotations */ UDF
+				]
+			]
+		],
+		[/* public static <E> java.util.Set<E> java.util.Set.of(E,E,E,E,E,E,E,E,E,E) */
+			/* name */ 'of',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg2',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg3',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg4',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg5',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg6',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg7',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg8',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg9',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'E']]
+				],
+				/* raw type */ 'java.util.Set',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			[/* type parameters */
+				[/* type variable */
+					/* name */ 'E',
+					[/* bounds */
+						'java.lang.Object'
+					],
+					/* annotations */ UDF
+				]
+			]
+		],
+		[/* public static <E> java.util.Set<E> java.util.Set.of(E,E,E,E,E,E,E,E,E) */
+			/* name */ 'of',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg2',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg3',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg4',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg5',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg6',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg7',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg8',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'E']]
+				],
+				/* raw type */ 'java.util.Set',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			[/* type parameters */
+				[/* type variable */
+					/* name */ 'E',
+					[/* bounds */
+						'java.lang.Object'
+					],
+					/* annotations */ UDF
+				]
+			]
+		],
+		[/* public static <E> java.util.Set<E> java.util.Set.of(E,E,E,E,E,E,E,E) */
+			/* name */ 'of',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg2',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg3',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg4',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg5',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg6',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg7',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'E']]
+				],
+				/* raw type */ 'java.util.Set',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			[/* type parameters */
+				[/* type variable */
+					/* name */ 'E',
+					[/* bounds */
+						'java.lang.Object'
+					],
+					/* annotations */ UDF
+				]
+			]
+		],
+		[/* public static <E> java.util.Set<E> java.util.Set.of(E,E,E,E,E,E,E) */
+			/* name */ 'of',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg2',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg3',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg4',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg5',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg6',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'E']]
+				],
+				/* raw type */ 'java.util.Set',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			[/* type parameters */
+				[/* type variable */
+					/* name */ 'E',
+					[/* bounds */
+						'java.lang.Object'
+					],
+					/* annotations */ UDF
+				]
+			]
+		],
+		[/* public static <E> java.util.Set<E> java.util.Set.of(E...) */
+			/* name */ 'of',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ [/* generic array type */ 'ga', [[/* type variable ref */ 'tr', [/* name */ 'E']]]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'E']]
+				],
+				/* raw type */ 'java.util.Set',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 137,
+			[/* annotations */
+				['java.lang.SafeVarargs']
+			],
+			[/* type parameters */
+				[/* type variable */
+					/* name */ 'E',
+					[/* bounds */
+						'java.lang.Object'
+					],
+					/* annotations */ UDF
+				]
+			]
+		],
+		[/* public static <E> java.util.Set<E> java.util.Set.of(E,E,E) */
+			/* name */ 'of',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg2',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'E']]
+				],
+				/* raw type */ 'java.util.Set',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			[/* type parameters */
+				[/* type variable */
+					/* name */ 'E',
+					[/* bounds */
+						'java.lang.Object'
+					],
+					/* annotations */ UDF
+				]
+			]
+		],
+		[/* public static <E> java.util.Set<E> java.util.Set.of() */
+			/* name */ 'of',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'E']]
+				],
+				/* raw type */ 'java.util.Set',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			[/* type parameters */
+				[/* type variable */
+					/* name */ 'E',
+					[/* bounds */
+						'java.lang.Object'
+					],
+					/* annotations */ UDF
+				]
+			]
+		],
+		[/* public static <E> java.util.Set<E> java.util.Set.of(E,E) */
+			/* name */ 'of',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'arg1',
+					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'E']]
+				],
+				/* raw type */ 'java.util.Set',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 9,
+			/* annotations */ UDF,
+			[/* type parameters */
+				[/* type variable */
+					/* name */ 'E',
+					[/* bounds */
+						'java.lang.Object'
+					],
+					/* annotations */ UDF
+				]
+			]
+		],
+		[/* public abstract boolean java.util.Set.contains(java.lang.Object) */
+			/* name */ 'contains',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ 'java.lang.Object',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public default java.util.Spliterator<E> java.util.Set.spliterator() */
+			/* name */ 'spliterator',
+			/* parameters */,
+			/* return */ [/* parameterized type */ 'pt', [
+				[/* actual argument types */
+					[/* type variable ref */ 'tr', [/* name */ 'E']]
+				],
+				/* raw type */ 'java.util.Spliterator',
+				/* owner type */ UDF
+			]],
+			/* exceptions */,
+			/* modifiers */ 1,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract boolean java.util.Set.addAll(java.util.Collection<? extends E>) */
+			/* name */ 'addAll',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									[/* type variable ref */ 'tr', [/* name */ 'E']]
+								],
+								/* lower bounds */ UDF
+							]]
+						],
+						/* raw type */ 'java.util.Collection',
+						/* owner type */ UDF
+					]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract boolean java.util.Set.removeAll(java.util.Collection<?>) */
+			/* name */ 'removeAll',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									'java.lang.Object'
+								],
+								/* lower bounds */ UDF
+							]]
+						],
+						/* raw type */ 'java.util.Collection',
+						/* owner type */ UDF
+					]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract boolean java.util.Set.retainAll(java.util.Collection<?>) */
+			/* name */ 'retainAll',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									'java.lang.Object'
+								],
+								/* lower bounds */ UDF
+							]]
+						],
+						/* raw type */ 'java.util.Collection',
+						/* owner type */ UDF
+					]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		],
+		[/* public abstract boolean java.util.Set.containsAll(java.util.Collection<?>) */
+			/* name */ 'containsAll',
+			[/* parameters */
+				[/* parameter */
+					/* name */ 'arg0',
+					/* type */ [/* parameterized type */ 'pt', [
+						[/* actual argument types */
+							[/* wildcard type */ 'wt', [
+								[/* upper bounds */
+									'java.lang.Object'
+								],
+								/* lower bounds */ UDF
+							]]
+						],
+						/* raw type */ 'java.util.Collection',
+						/* owner type */ UDF
+					]],
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				]
+			],
+			/* return */ 'boolean',
+			/* exceptions */,
+			/* modifiers */ 1025,
+			/* annotations */ UDF,
+			/* type parameters */ UDF
+		]
+	],
+	/* declared fields */,
+	/* enum values */ UDF
+]);

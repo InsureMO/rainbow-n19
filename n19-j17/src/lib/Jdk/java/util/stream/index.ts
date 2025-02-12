@@ -1,0 +1,16 @@
+import './BaseStream';
+import './Collector';
+import './Collector$Characteristics';
+import './Collectors';
+import './DoubleStream';
+import './DoubleStream$Builder';
+import './DoubleStream$DoubleMapMultiConsumer';
+import './IntStream';
+import './IntStream$Builder';
+import './IntStream$IntMapMultiConsumer';
+import './LongStream';
+import './LongStream$Builder';
+import './LongStream$LongMapMultiConsumer';
+import './Stream';
+import './Stream$Builder';
+import './StreamSupport';
