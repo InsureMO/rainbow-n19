@@ -474,7 +474,7 @@ private fun generateConstructors(clazz: Class<*>): String {
 	}
 	return listOf(
 		"\t[/* declared constructors */",
-		constructors.joinToString(",\n") { generateConstructor(it) },
+		constructors.sortedBy { it.toGenericString() }.joinToString(",\n") { generateConstructor(it) },
 		"\t]"
 	).joinToString("\n")
 }
@@ -505,7 +505,7 @@ private fun generateMethods(clazz: Class<*>): String {
 	}
 	return listOf(
 		"\t[/* declared methods */",
-		methods.joinToString(",\n") { generateMethod(it) },
+		methods.sortedBy { it.toGenericString() }.joinToString(",\n") { generateMethod(it) },
 		"\t]"
 	).joinToString("\n")
 }
