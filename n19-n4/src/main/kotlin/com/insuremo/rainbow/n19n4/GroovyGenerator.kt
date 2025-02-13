@@ -43,8 +43,9 @@ fun generateGroovy(): JarGeneratingTargetInfo? {
 			val classPath = clazz.name.replace('.', '/').replace('$', '.')
 			"https://docs.groovy-lang.org/${version}/html/gapi/${classPath}.html"
 		},
-		methodIdOfDocHtml = { method ->
-			"${method.name}(${method.parameters.joinToString(",") { transformClassNameForDocHtmlId(it) }})"
+		parameterNamesOfMethodFromDocHtml = { method, docHtml ->
+//			"${method.name}(${method.parameters.joinToString(",") { transformClassNameForDocHtmlId(it) }})"
+			listOf()
 		},
 		rootDir = Envs.groovyDir
 	)

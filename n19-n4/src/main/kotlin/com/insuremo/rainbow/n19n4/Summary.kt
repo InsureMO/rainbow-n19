@@ -8,6 +8,7 @@ object Summary {
 	private val temporarilyIgnoredClasses = mutableMapOf<String, Boolean>()
 	private val necessaryClasses = mutableMapOf<String, Boolean>()
 	private val takenBackClasses = mutableMapOf<String, Boolean>()
+	private val externalClasses = mutableMapOf<String, Boolean>()
 	private val parameterNames = mutableMapOf<String, Boolean>()
 
 	fun addTreatedClass(className: String) {
@@ -23,7 +24,6 @@ object Summary {
 	}
 
 	fun takeBack(className: String) {
-		@Suppress("ControlFlowWithEmptyBody")
 		if (this.temporarilyIgnoredClasses.containsKey(className)) {
 			this.temporarilyIgnoredClasses.remove(className)
 			this.necessaryClasses.put(className, true)
@@ -34,6 +34,7 @@ object Summary {
 			// do nothing, already marked as necessary
 		} else {
 			// class is not in jar, do nothing
+			externalClasses.put(className, true)
 		}
 	}
 
@@ -61,6 +62,9 @@ object Summary {
 			"",
 			"Classes Ignored On Declaration: ${ignoredClasses.size}",
 			this.ignoredClasses.keys.sortedBy { it.lowercase() }.joinToString("\n"),
+			"",
+			"Classes Relevant From External: ${externalClasses.size}",
+			this.externalClasses.keys.sortedBy { it.lowercase() }.joinToString("\n"),
 			"",
 			"Parameter names:",
 			this.parameterNames.keys.sortedBy { it.lowercase() }.joinToString("\n"),

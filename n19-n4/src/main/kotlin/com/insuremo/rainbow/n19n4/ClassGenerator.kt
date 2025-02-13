@@ -138,8 +138,7 @@ private class ClassGenerator(
 							this.append(line)
 							this.append("\n")
 						}
-						this.toString()
-					}
+					}.toString()
 				}
 			}
 	}
@@ -452,44 +451,6 @@ private class ClassGenerator(
 		).joinToString("\n")
 	}
 
-	private fun tryToGetParameterNamesFromDoc(method: Method): List<String?> {
-		var id = "id=\"${targetInfo.methodIdOfDocHtml(method)}\""
-		var start = docHtml.indexOf(id)
-		if (start == -1) {
-			// regarding java.lang.invoke.TypeDescriptor.OfMethod.insertParameterTypes,
-			// the id of this method should be "insertParameterTypes(int,java.lang.invoke.TypeDescriptor.OfField...)"
-			// but in javadoc, id is "insertParameterTypes(int,java.lang.invoke.TypeDescriptor.OfField[])"
-			// the varargs is presented as "[]", not "...", which leads id match missed
-			// so add the following logic to fix it.
-			if (id.contains("...")) {
-				id = id.replace("...", "[]")
-				start = docHtml.indexOf(id)
-			}
-			if (start == -1) {
-				return listOf()
-			}
-		}
-		start = docHtml.indexOf("class=\"member-signature\"", start)
-		start = docHtml.indexOf("class=\"parameters\"", start)
-		start = docHtml.indexOf(">", start) + 1
-		val end = docHtml.indexOf("</span>", start)
-		return docHtml.substring(start, end)
-			.drop(1) // drop "("
-			.dropLast(1) // drop ")"
-			.replace("&nbsp;", " ")
-			.split("\n")
-			.map { it.trim() }
-			.map {
-				if (it.startsWith("<")) {
-					"any ${it.substring(it.lastIndexOf(' ') + 1).trim()}"
-				} else {
-					it
-				}
-			}
-			.map { it.split(" ") }
-			.map { if (it[1].endsWith(",")) it[1].dropLast(1).trim() else it[1].trim() }
-	}
-
 	private fun tryToGetParameterNames(executable: Executable): List<String?> {
 		if (executable.parameters.size == 0) {
 			return listOf()
@@ -499,7 +460,7 @@ private class ClassGenerator(
 			// typically only abstract method cannot get parameter names from class
 			// try to get document and find them
 			return when (executable) {
-				is Method -> tryToGetParameterNamesFromDoc(executable)
+				is Method -> targetInfo.parameterNamesOfMethodFromDocHtml(executable, docHtml)
 				is Constructor<*> -> {
 					println("Found constructor[${executable}], should get parameter names but now is ignored")
 					return names

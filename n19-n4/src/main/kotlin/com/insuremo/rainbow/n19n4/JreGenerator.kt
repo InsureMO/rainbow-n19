@@ -1,6 +1,5 @@
 package com.insuremo.rainbow.n19n4
 
-import groovy.lang.GroovySystem
 import java.io.File
 import java.io.FileOutputStream
 import java.util.Spliterator
@@ -92,9 +91,9 @@ fun generateJre(): JarGeneratingTargetInfo? {
 			val classPath = clazz.name.replace('.', '/').replace('$', '.')
 			"https://docs.oracle.com/en/java/javase/${version}/docs/api/${module}/${classPath}.html"
 		},
-		methodIdOfDocHtml = { method ->
+		parameterNamesOfMethodFromDocHtml = { method, docHtml ->
 			val clazz = method.declaringClass
-			when {
+			var id = when {
 				// the "tryAdvance" method is overridden in these three interfaces, and which is unnecessary.
 				// and javadoc has no section for these overridden methods,
 				// therefore here using another method which has same parameter names instead
@@ -106,6 +105,41 @@ fun generateJre(): JarGeneratingTargetInfo? {
 
 				else -> "${method.name}(${method.parameters.joinToString(",") { transformClassNameForDocHtmlId(it) }})"
 			}
+			var htmlId = "id=\"${id}\""
+			var start = docHtml.indexOf(htmlId)
+			if (start == -1) {
+				// regarding java.lang.invoke.TypeDescriptor.OfMethod.insertParameterTypes,
+				// the id of this method should be "insertParameterTypes(int,java.lang.invoke.TypeDescriptor.OfField...)"
+				// but in javadoc, id is "insertParameterTypes(int,java.lang.invoke.TypeDescriptor.OfField[])"
+				// the varargs is presented as "[]", not "...", which leads id match missed
+				// so add the following logic to fix it.
+				if (htmlId.contains("...")) {
+					htmlId = htmlId.replace("...", "[]")
+					start = docHtml.indexOf(htmlId)
+				}
+				if (start == -1) {
+					return@JarGeneratingTargetInfo listOf()
+				}
+			}
+			start = docHtml.indexOf("class=\"member-signature\"", start)
+			start = docHtml.indexOf("class=\"parameters\"", start)
+			start = docHtml.indexOf(">", start) + 1
+			val end = docHtml.indexOf("</span>", start)
+			return@JarGeneratingTargetInfo docHtml.substring(start, end)
+				.drop(1) // drop "("
+				.dropLast(1) // drop ")"
+				.replace("&nbsp;", " ")
+				.split("\n")
+				.map { it.trim() }
+				.map {
+					if (it.startsWith("<")) {
+						"any ${it.substring(it.lastIndexOf(' ') + 1).trim()}"
+					} else {
+						it
+					}
+				}
+				.map { it.split(" ") }
+				.map { if (it[1].endsWith(",")) it[1].dropLast(1).trim() else it[1].trim() }
 		},
 		rootDir = Envs.jreDir
 	)
