@@ -143,13 +143,13 @@ JdkClassCreateHelper.class('java.lang.constant.MethodTypeDesc', [
 			/* name */ 'insertParameterTypes',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'descriptor',
+					/* name */ 'pos',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'paramTypes',
 					/* type */ '[Ljava.lang.constant.ClassDesc;',
 					/* modifiers */ 0,
 					/* annotations */ UDF

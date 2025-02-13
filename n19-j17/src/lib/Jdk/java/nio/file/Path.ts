@@ -263,7 +263,7 @@ JdkClassCreateHelper.class('java.nio.file.Path', [
 			/* name */ 'toRealPath',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'first',
+					/* name */ 'options',
 					/* type */ '[Ljava.nio.file.LinkOption;',
 					/* modifiers */ 0,
 					/* annotations */ UDF

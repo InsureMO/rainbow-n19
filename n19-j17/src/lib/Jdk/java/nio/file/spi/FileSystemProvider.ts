@@ -23,13 +23,13 @@ JdkClassCreateHelper.class('java.nio.file.spi.FileSystemProvider', [
 			/* name */ 'readAttributes',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'uri',
+					/* name */ 'path',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'env',
+					/* name */ 'type',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'A']]
@@ -41,7 +41,7 @@ JdkClassCreateHelper.class('java.nio.file.spi.FileSystemProvider', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'options',
 					/* type */ '[Ljava.nio.file.LinkOption;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -70,13 +70,13 @@ JdkClassCreateHelper.class('java.nio.file.spi.FileSystemProvider', [
 			/* name */ 'getFileAttributeView',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'uri',
+					/* name */ 'path',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'env',
+					/* name */ 'type',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'V']]
@@ -88,7 +88,7 @@ JdkClassCreateHelper.class('java.nio.file.spi.FileSystemProvider', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'options',
 					/* type */ '[Ljava.nio.file.LinkOption;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -169,13 +169,13 @@ JdkClassCreateHelper.class('java.nio.file.spi.FileSystemProvider', [
 			/* name */ 'newByteChannel',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'uri',
+					/* name */ 'path',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'env',
+					/* name */ 'options',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -192,7 +192,7 @@ JdkClassCreateHelper.class('java.nio.file.spi.FileSystemProvider', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'attrs',
 					/* type */ [/* generic array type */ 'ga', [[/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -362,19 +362,19 @@ JdkClassCreateHelper.class('java.nio.file.spi.FileSystemProvider', [
 			/* name */ 'readAttributes',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'uri',
+					/* name */ 'path',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'env',
+					/* name */ 'attributes',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'options',
 					/* type */ '[Ljava.nio.file.LinkOption;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -402,13 +402,13 @@ JdkClassCreateHelper.class('java.nio.file.spi.FileSystemProvider', [
 			/* name */ 'checkAccess',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'uri',
+					/* name */ 'path',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'env',
+					/* name */ 'modes',
 					/* type */ '[Ljava.nio.file.AccessMode;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -429,19 +429,19 @@ JdkClassCreateHelper.class('java.nio.file.spi.FileSystemProvider', [
 			/* name */ 'copy',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'uri',
+					/* name */ 'source',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'env',
+					/* name */ 'target',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'options',
 					/* type */ '[Ljava.nio.file.CopyOption;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -462,13 +462,13 @@ JdkClassCreateHelper.class('java.nio.file.spi.FileSystemProvider', [
 			/* name */ 'createDirectory',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'uri',
+					/* name */ 'dir',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'env',
+					/* name */ 'attrs',
 					/* type */ [/* generic array type */ 'ga', [[/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -521,19 +521,19 @@ JdkClassCreateHelper.class('java.nio.file.spi.FileSystemProvider', [
 			/* name */ 'move',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'uri',
+					/* name */ 'source',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'env',
+					/* name */ 'target',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'options',
 					/* type */ '[Ljava.nio.file.CopyOption;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -554,25 +554,25 @@ JdkClassCreateHelper.class('java.nio.file.spi.FileSystemProvider', [
 			/* name */ 'setAttribute',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'uri',
+					/* name */ 'path',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'env',
+					/* name */ 'attribute',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'value',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg3',
+					/* name */ 'options',
 					/* type */ '[Ljava.nio.file.LinkOption;',
 					/* modifiers */ 0,
 					/* annotations */ UDF

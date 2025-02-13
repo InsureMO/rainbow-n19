@@ -453,18 +453,26 @@ private class ClassGenerator(
 	}
 
 	private fun transformClassNameForDocHtmlId(clazz: Class<*>): String {
-		if (clazz.isPrimitive) {
-			return clazz.simpleName
+		return if (clazz.isPrimitive) {
+			clazz.simpleName
 		} else if (clazz.isArray) {
-			return transformClassNameForDocHtmlId(clazz.componentType) + "[]"
+			transformClassNameForDocHtmlId(clazz.componentType) + "[]"
 		} else {
-			return clazz.name
+			clazz.name
+		}
+	}
+
+	private fun transformClassNameForDocHtmlId(parameter: Parameter): String {
+		return if (parameter.isVarArgs) {
+			transformClassNameForDocHtmlId(parameter.type.componentType) + "..."
+		} else {
+			transformClassNameForDocHtmlId(parameter.type)
 		}
 	}
 
 	private fun tryToGetParameterNamesFromDoc(method: Method): List<String?> {
 		val id =
-			"id=\"${method.name}(${method.parameters.joinToString(",") { p -> transformClassNameForDocHtmlId(p.type) }})\""
+			"id=\"${method.name}(${method.parameters.joinToString(",") { transformClassNameForDocHtmlId(it) }})\""
 		var start = docHtml.indexOf(id)
 		start = docHtml.indexOf("class=\"member-signature\"", start)
 		start = docHtml.indexOf("class=\"parameters\"", start)
