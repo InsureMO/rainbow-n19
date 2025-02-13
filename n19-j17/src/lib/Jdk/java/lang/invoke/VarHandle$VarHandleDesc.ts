@@ -17,27 +17,6 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle$VarHandleDesc', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public java.lang.Object java.lang.invoke.VarHandle$VarHandleDesc.resolveConstantDesc(java.lang.invoke.MethodHandles$Lookup) throws java.lang.ReflectiveOperationException */
-			/* name */ 'resolveConstantDesc',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.invoke.MethodHandles$Lookup',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.Object',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.lang.ReflectiveOperationException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public java.lang.String java.lang.invoke.VarHandle$VarHandleDesc.toString() */
 			/* name */ 'toString',
 			/* parameters */,

@@ -57,22 +57,6 @@ JdkClassCreateHelper.class('java.time.Duration', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.time.Duration.compareTo(java.lang.Object) */
-			/* name */ 'compareTo',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public int java.time.Duration.compareTo(java.time.Duration) */
 			/* name */ 'compareTo',
 			[/* parameters */

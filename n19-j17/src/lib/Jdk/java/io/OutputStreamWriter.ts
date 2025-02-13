@@ -145,60 +145,6 @@ JdkClassCreateHelper.class('java.io.OutputStreamWriter', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.Appendable java.io.OutputStreamWriter.append(java.lang.CharSequence) throws java.io.IOException */
-			/* name */ 'append',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.CharSequence',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.Appendable',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.Appendable java.io.OutputStreamWriter.append(java.lang.CharSequence,int,int) throws java.io.IOException */
-			/* name */ 'append',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.CharSequence',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg2',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.Appendable',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public java.lang.String java.io.OutputStreamWriter.getEncoding() */
 			/* name */ 'getEncoding',
 			/* parameters */,

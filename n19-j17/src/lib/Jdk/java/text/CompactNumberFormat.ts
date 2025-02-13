@@ -181,15 +181,6 @@ JdkClassCreateHelper.class('java.text.CompactNumberFormat', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.Object java.text.CompactNumberFormat.clone() */
-			/* name */ 'clone',
-			/* parameters */,
-			/* return */ 'java.lang.Object',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public java.lang.StringBuffer java.text.CompactNumberFormat.format(double,java.lang.StringBuffer,java.text.FieldPosition) */
 			/* name */ 'format',
 			[/* parameters */

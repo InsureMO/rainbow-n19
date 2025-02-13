@@ -778,24 +778,6 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.invoke.TypeDescriptor$OfField java.lang.Class.arrayType() */
-			/* name */ 'arrayType',
-			/* parameters */,
-			/* return */ 'java.lang.invoke.TypeDescriptor$OfField',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.invoke.TypeDescriptor$OfField java.lang.Class.componentType() */
-			/* name */ 'componentType',
-			/* parameters */,
-			/* return */ 'java.lang.invoke.TypeDescriptor$OfField',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public java.lang.reflect.AnnotatedType java.lang.Class.getAnnotatedSuperclass() */
 			/* name */ 'getAnnotatedSuperclass',
 			/* parameters */,

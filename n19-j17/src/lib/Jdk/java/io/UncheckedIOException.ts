@@ -54,15 +54,6 @@ JdkClassCreateHelper.class('java.io.UncheckedIOException', [
 			/* modifiers */ 1,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
-		],
-		[/* public java.lang.Throwable java.io.UncheckedIOException.getCause() */
-			/* name */ 'getCause',
-			/* parameters */,
-			/* return */ 'java.lang.Throwable',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
 		]
 	],
 	/* declared fields */,

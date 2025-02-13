@@ -87,22 +87,6 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.lang.Character.compareTo(java.lang.Object) */
-			/* name */ 'compareTo',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public int java.lang.Character.hashCode() */
 			/* name */ 'hashCode',
 			/* parameters */,

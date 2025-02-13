@@ -282,22 +282,6 @@ JdkClassCreateHelper.class('java.time.chrono.Chronology', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public default int java.time.chrono.Chronology.compareTo(java.lang.Object) */
-			/* name */ 'compareTo',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public default java.lang.String java.time.chrono.Chronology.getDisplayName(java.time.format.TextStyle,java.util.Locale) */
 			/* name */ 'getDisplayName',
 			[/* parameters */

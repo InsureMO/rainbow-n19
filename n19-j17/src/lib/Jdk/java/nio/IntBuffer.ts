@@ -294,22 +294,6 @@ JdkClassCreateHelper.class('java.nio.IntBuffer', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.nio.IntBuffer.compareTo(java.lang.Object) */
-			/* name */ 'compareTo',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public int java.nio.IntBuffer.compareTo(java.nio.IntBuffer) */
 			/* name */ 'compareTo',
 			[/* parameters */
@@ -351,138 +335,12 @@ JdkClassCreateHelper.class('java.nio.IntBuffer', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.Object java.nio.IntBuffer.array() */
-			/* name */ 'array',
-			/* parameters */,
-			/* return */ 'java.lang.Object',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public java.lang.String java.nio.IntBuffer.toString() */
 			/* name */ 'toString',
 			/* parameters */,
 			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.nio.Buffer java.nio.IntBuffer.clear() */
-			/* name */ 'clear',
-			/* parameters */,
-			/* return */ 'java.nio.Buffer',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.nio.Buffer java.nio.IntBuffer.duplicate() */
-			/* name */ 'duplicate',
-			/* parameters */,
-			/* return */ 'java.nio.Buffer',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.nio.Buffer java.nio.IntBuffer.flip() */
-			/* name */ 'flip',
-			/* parameters */,
-			/* return */ 'java.nio.Buffer',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.nio.Buffer java.nio.IntBuffer.limit(int) */
-			/* name */ 'limit',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.nio.Buffer',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.nio.Buffer java.nio.IntBuffer.mark() */
-			/* name */ 'mark',
-			/* parameters */,
-			/* return */ 'java.nio.Buffer',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.nio.Buffer java.nio.IntBuffer.position(int) */
-			/* name */ 'position',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.nio.Buffer',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.nio.Buffer java.nio.IntBuffer.reset() */
-			/* name */ 'reset',
-			/* parameters */,
-			/* return */ 'java.nio.Buffer',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.nio.Buffer java.nio.IntBuffer.rewind() */
-			/* name */ 'rewind',
-			/* parameters */,
-			/* return */ 'java.nio.Buffer',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.nio.Buffer java.nio.IntBuffer.slice() */
-			/* name */ 'slice',
-			/* parameters */,
-			/* return */ 'java.nio.Buffer',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.nio.Buffer java.nio.IntBuffer.slice(int,int) */
-			/* name */ 'slice',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.nio.Buffer',
-			/* exceptions */,
-			/* modifiers */ 4161,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],

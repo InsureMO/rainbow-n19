@@ -356,22 +356,6 @@ JdkClassCreateHelper.class('java.nio.file.Path', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public default int java.nio.file.Path.compareTo(java.lang.Object) */
-			/* name */ 'compareTo',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public default java.io.File java.nio.file.Path.toFile() */
 			/* name */ 'toFile',
 			/* parameters */,

@@ -37,31 +37,6 @@ JdkClassCreateHelper.class('java.util.PrimitiveIterator$OfLong', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public default java.lang.Object java.util.PrimitiveIterator$OfLong.next() */
-			/* name */ 'next',
-			/* parameters */,
-			/* return */ 'java.lang.Object',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public default void java.util.PrimitiveIterator$OfLong.forEachRemaining(java.lang.Object) */
-			/* name */ 'forEachRemaining',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public default void java.util.PrimitiveIterator$OfLong.forEachRemaining(java.util.function.Consumer<? super java.lang.Long>) */
 			/* name */ 'forEachRemaining',
 			[/* parameters */

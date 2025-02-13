@@ -601,15 +601,6 @@ JdkClassCreateHelper.class('java.util.Scanner', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.Object java.util.Scanner.next() */
-			/* name */ 'next',
-			/* parameters */,
-			/* return */ 'java.lang.Object',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public java.lang.String java.util.Scanner.findInLine(java.lang.String) */
 			/* name */ 'findInLine',
 			[/* parameters */

@@ -237,22 +237,6 @@ JdkClassCreateHelper.class('java.util.Date', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.util.Date.compareTo(java.lang.Object) */
-			/* name */ 'compareTo',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public int java.util.Date.compareTo(java.util.Date) */
 			/* name */ 'compareTo',
 			[/* parameters */

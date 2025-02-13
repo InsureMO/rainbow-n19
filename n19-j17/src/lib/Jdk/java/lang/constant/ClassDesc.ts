@@ -161,24 +161,6 @@ JdkClassCreateHelper.class('java.lang.constant.ClassDesc', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public default java.lang.invoke.TypeDescriptor$OfField java.lang.constant.ClassDesc.arrayType() */
-			/* name */ 'arrayType',
-			/* parameters */,
-			/* return */ 'java.lang.invoke.TypeDescriptor$OfField',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public default java.lang.invoke.TypeDescriptor$OfField java.lang.constant.ClassDesc.componentType() */
-			/* name */ 'componentType',
-			/* parameters */,
-			/* return */ 'java.lang.invoke.TypeDescriptor$OfField',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public static java.lang.constant.ClassDesc java.lang.constant.ClassDesc.of(java.lang.String) */
 			/* name */ 'of',
 			[/* parameters */

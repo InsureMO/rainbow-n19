@@ -34,20 +34,6 @@ JdkClassCreateHelper.class('java.util.EnumSet', [
 	],
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public java.lang.Object java.util.EnumSet.clone() throws java.lang.CloneNotSupportedException */
-			/* name */ 'clone',
-			/* parameters */,
-			/* return */ 'java.lang.Object',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.lang.CloneNotSupportedException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public java.util.EnumSet<E> java.util.EnumSet.clone() */
 			/* name */ 'clone',
 			/* parameters */,

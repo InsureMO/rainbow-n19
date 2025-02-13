@@ -45,22 +45,6 @@ JdkClassCreateHelper.class('java.util.Spliterator$OfDouble', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public default boolean java.util.Spliterator$OfDouble.tryAdvance(java.lang.Object) */
-			/* name */ 'tryAdvance',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public default boolean java.util.Spliterator$OfDouble.tryAdvance(java.util.function.Consumer<? super java.lang.Double>) */
 			/* name */ 'tryAdvance',
 			[/* parameters */
@@ -87,40 +71,6 @@ JdkClassCreateHelper.class('java.util.Spliterator$OfDouble', [
 			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public default java.util.Spliterator java.util.Spliterator$OfDouble.trySplit() */
-			/* name */ 'trySplit',
-			/* parameters */,
-			/* return */ 'java.util.Spliterator',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public default java.util.Spliterator$OfPrimitive java.util.Spliterator$OfDouble.trySplit() */
-			/* name */ 'trySplit',
-			/* parameters */,
-			/* return */ 'java.util.Spliterator$OfPrimitive',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public default void java.util.Spliterator$OfDouble.forEachRemaining(java.lang.Object) */
-			/* name */ 'forEachRemaining',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 4161,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],

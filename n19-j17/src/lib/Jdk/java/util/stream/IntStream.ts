@@ -540,42 +540,6 @@ JdkClassCreateHelper.class('java.util.stream.IntStream', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public default java.util.Iterator java.util.stream.IntStream.iterator() */
-			/* name */ 'iterator',
-			/* parameters */,
-			/* return */ 'java.util.Iterator',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public default java.util.Spliterator java.util.stream.IntStream.spliterator() */
-			/* name */ 'spliterator',
-			/* parameters */,
-			/* return */ 'java.util.Spliterator',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public default java.util.stream.BaseStream java.util.stream.IntStream.parallel() */
-			/* name */ 'parallel',
-			/* parameters */,
-			/* return */ 'java.util.stream.BaseStream',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public default java.util.stream.BaseStream java.util.stream.IntStream.sequential() */
-			/* name */ 'sequential',
-			/* parameters */,
-			/* return */ 'java.util.stream.BaseStream',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public default java.util.stream.IntStream java.util.stream.IntStream.dropWhile(java.util.function.IntPredicate) */
 			/* name */ 'dropWhile',
 			[/* parameters */

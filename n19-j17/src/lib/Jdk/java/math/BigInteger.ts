@@ -294,22 +294,6 @@ JdkClassCreateHelper.class('java.math.BigInteger', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.math.BigInteger.compareTo(java.lang.Object) */
-			/* name */ 'compareTo',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public int java.math.BigInteger.compareTo(java.math.BigInteger) */
 			/* name */ 'compareTo',
 			[/* parameters */

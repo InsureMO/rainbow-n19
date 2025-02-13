@@ -479,20 +479,6 @@ JdkClassCreateHelper.class('java.util.ArrayDeque', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.Object java.util.ArrayDeque.clone() throws java.lang.CloneNotSupportedException */
-			/* name */ 'clone',
-			/* parameters */,
-			/* return */ 'java.lang.Object',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.lang.CloneNotSupportedException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public java.lang.Object[] java.util.ArrayDeque.toArray() */
 			/* name */ 'toArray',
 			/* parameters */,

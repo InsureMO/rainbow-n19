@@ -522,42 +522,6 @@ JdkClassCreateHelper.class('java.util.stream.DoubleStream', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public default java.util.Iterator java.util.stream.DoubleStream.iterator() */
-			/* name */ 'iterator',
-			/* parameters */,
-			/* return */ 'java.util.Iterator',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public default java.util.Spliterator java.util.stream.DoubleStream.spliterator() */
-			/* name */ 'spliterator',
-			/* parameters */,
-			/* return */ 'java.util.Spliterator',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public default java.util.stream.BaseStream java.util.stream.DoubleStream.parallel() */
-			/* name */ 'parallel',
-			/* parameters */,
-			/* return */ 'java.util.stream.BaseStream',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public default java.util.stream.BaseStream java.util.stream.DoubleStream.sequential() */
-			/* name */ 'sequential',
-			/* parameters */,
-			/* return */ 'java.util.stream.BaseStream',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public default java.util.stream.DoubleStream java.util.stream.DoubleStream.dropWhile(java.util.function.DoublePredicate) */
 			/* name */ 'dropWhile',
 			[/* parameters */

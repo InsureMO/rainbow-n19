@@ -148,22 +148,6 @@ JdkClassCreateHelper.class('java.lang.Double', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.lang.Double.compareTo(java.lang.Object) */
-			/* name */ 'compareTo',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public int java.lang.Double.hashCode() */
 			/* name */ 'hashCode',
 			/* parameters */,
@@ -195,27 +179,6 @@ JdkClassCreateHelper.class('java.lang.Double', [
 			/* return */ 'java.lang.Double',
 			/* exceptions */,
 			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.Object java.lang.Double.resolveConstantDesc(java.lang.invoke.MethodHandles$Lookup) throws java.lang.ReflectiveOperationException */
-			/* name */ 'resolveConstantDesc',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.invoke.MethodHandles$Lookup',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.Object',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.lang.ReflectiveOperationException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 4161,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],

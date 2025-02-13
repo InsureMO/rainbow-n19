@@ -329,10 +329,9 @@ private fun generateParameter(parameter: Parameter, name: String, indent: String
 
 private class MethodVisitorForParameterNames(val executable: Executable, val parameterNames: MutableList<String?>) :
 	MethodVisitor(Opcodes.ASM9) {
-	override fun visitParameter(name: String?, access: Int) {
-//		name?.let { parameterNames += name }
-		println(name)
-	}
+//	override fun visitParameter(name: String?, access: Int) {
+//		println(name)
+//	}
 
 	override fun visitLocalVariable(
 		name: String, descriptor: String, signature: String?, start: Label, end: Label, index: Int
@@ -439,11 +438,11 @@ private fun generateParameters(executable: Executable, indent: String): String {
 				Pair(names[i] ?: p.name, p)
 			}
 		}.joinToString(",\n") {
-//			if (it.first.startsWith("arg0")) {
-//				if (names.isNotEmpty()) {
-//					println("${executable}, $names")
-//				}
-//			}
+			if (it.first.startsWith("arg0")) {
+				if (!Modifier.isAbstract(executable.modifiers)) {
+					println("${executable}, $names")
+				}
+			}
 			generateParameter(it.second, it.first, indent + "\t")
 		},
 		"${indent}]"
@@ -520,6 +519,7 @@ private fun generateMethod(method: Method): String {
 private fun generateMethods(clazz: Class<*>): String {
 	val methods = clazz.declaredMethods.filter { method ->
 		(Modifier.isPublic(method.modifiers) || Modifier.isProtected(method.modifiers))
+				&& (method.modifiers and Opcodes.ACC_SYNTHETIC == 0)
 				&& !Envs.excludeMethods(method)
 	}
 	if (methods.isEmpty()) {

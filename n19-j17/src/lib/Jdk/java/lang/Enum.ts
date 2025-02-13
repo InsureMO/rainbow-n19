@@ -174,22 +174,6 @@ JdkClassCreateHelper.class('java.lang.Enum', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.lang.Enum.compareTo(java.lang.Object) */
-			/* name */ 'compareTo',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public java.lang.String java.lang.Enum.toString() */
 			/* name */ 'toString',
 			/* parameters */,

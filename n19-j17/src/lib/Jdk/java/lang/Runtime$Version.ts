@@ -53,22 +53,6 @@ JdkClassCreateHelper.class('java.lang.Runtime$Version', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.lang.Runtime$Version.compareTo(java.lang.Object) */
-			/* name */ 'compareTo',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public int java.lang.Runtime$Version.compareTo(java.lang.Runtime$Version) */
 			/* name */ 'compareTo',
 			[/* parameters */

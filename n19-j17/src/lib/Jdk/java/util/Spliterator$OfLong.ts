@@ -45,22 +45,6 @@ JdkClassCreateHelper.class('java.util.Spliterator$OfLong', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public default boolean java.util.Spliterator$OfLong.tryAdvance(java.lang.Object) */
-			/* name */ 'tryAdvance',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public default boolean java.util.Spliterator$OfLong.tryAdvance(java.util.function.Consumer<? super java.lang.Long>) */
 			/* name */ 'tryAdvance',
 			[/* parameters */
@@ -87,40 +71,6 @@ JdkClassCreateHelper.class('java.util.Spliterator$OfLong', [
 			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public default java.util.Spliterator java.util.Spliterator$OfLong.trySplit() */
-			/* name */ 'trySplit',
-			/* parameters */,
-			/* return */ 'java.util.Spliterator',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public default java.util.Spliterator$OfPrimitive java.util.Spliterator$OfLong.trySplit() */
-			/* name */ 'trySplit',
-			/* parameters */,
-			/* return */ 'java.util.Spliterator$OfPrimitive',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public default void java.util.Spliterator$OfLong.forEachRemaining(java.lang.Object) */
-			/* name */ 'forEachRemaining',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 4161,
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],

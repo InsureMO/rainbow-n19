@@ -531,42 +531,6 @@ JdkClassCreateHelper.class('java.util.stream.LongStream', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public default java.util.Iterator java.util.stream.LongStream.iterator() */
-			/* name */ 'iterator',
-			/* parameters */,
-			/* return */ 'java.util.Iterator',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public default java.util.Spliterator java.util.stream.LongStream.spliterator() */
-			/* name */ 'spliterator',
-			/* parameters */,
-			/* return */ 'java.util.Spliterator',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public default java.util.stream.BaseStream java.util.stream.LongStream.parallel() */
-			/* name */ 'parallel',
-			/* parameters */,
-			/* return */ 'java.util.stream.BaseStream',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public default java.util.stream.BaseStream java.util.stream.LongStream.sequential() */
-			/* name */ 'sequential',
-			/* parameters */,
-			/* return */ 'java.util.stream.BaseStream',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public default java.util.stream.LongStream java.util.stream.LongStream.dropWhile(java.util.function.LongPredicate) */
 			/* name */ 'dropWhile',
 			[/* parameters */

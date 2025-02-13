@@ -175,22 +175,6 @@ JdkClassCreateHelper.class('java.lang.ProcessHandle', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public default int java.lang.ProcessHandle.compareTo(java.lang.Object) */
-			/* name */ 'compareTo',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public static java.lang.ProcessHandle java.lang.ProcessHandle.current() */
 			/* name */ 'current',
 			/* parameters */,

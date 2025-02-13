@@ -70,31 +70,6 @@ JdkClassCreateHelper.class('java.util.SplittableRandom', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.util.random.RandomGenerator$SplittableGenerator java.util.SplittableRandom.split() */
-			/* name */ 'split',
-			/* parameters */,
-			/* return */ 'java.util.random.RandomGenerator$SplittableGenerator',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.util.random.RandomGenerator$SplittableGenerator java.util.SplittableRandom.split(java.util.random.RandomGenerator$SplittableGenerator) */
-			/* name */ 'split',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.util.random.RandomGenerator$SplittableGenerator',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.util.random.RandomGenerator$SplittableGenerator',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public java.util.stream.DoubleStream java.util.SplittableRandom.doubles() */
 			/* name */ 'doubles',
 			/* parameters */,

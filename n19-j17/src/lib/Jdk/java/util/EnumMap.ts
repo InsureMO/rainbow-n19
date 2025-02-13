@@ -235,42 +235,6 @@ JdkClassCreateHelper.class('java.util.EnumMap', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.Object java.util.EnumMap.clone() throws java.lang.CloneNotSupportedException */
-			/* name */ 'clone',
-			/* parameters */,
-			/* return */ 'java.lang.Object',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.lang.CloneNotSupportedException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.Object java.util.EnumMap.put(java.lang.Object,java.lang.Object) */
-			/* name */ 'put',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.Object',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public java.util.Collection<V> java.util.EnumMap.values() */
 			/* name */ 'values',
 			/* parameters */,

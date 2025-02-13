@@ -511,48 +511,6 @@ JdkClassCreateHelper.class('java.nio.channels.FileChannel', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.nio.channels.SeekableByteChannel java.nio.channels.FileChannel.position(long) throws java.io.IOException */
-			/* name */ 'position',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.nio.channels.SeekableByteChannel',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.nio.channels.SeekableByteChannel java.nio.channels.FileChannel.truncate(long) throws java.io.IOException */
-			/* name */ 'truncate',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.nio.channels.SeekableByteChannel',
-			[/* exceptions */
-				[/* exception */
-					/* type */ 'java.io.IOException',
-					/* annotations */ UDF
-				]
-			],
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public static java.nio.channels.FileChannel java.nio.channels.FileChannel.open(java.nio.file.Path,java.nio.file.OpenOption...) throws java.io.IOException */
 			/* name */ 'open',
 			[/* parameters */

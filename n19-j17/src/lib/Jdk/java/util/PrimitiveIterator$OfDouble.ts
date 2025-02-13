@@ -37,31 +37,6 @@ JdkClassCreateHelper.class('java.util.PrimitiveIterator$OfDouble', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public default java.lang.Object java.util.PrimitiveIterator$OfDouble.next() */
-			/* name */ 'next',
-			/* parameters */,
-			/* return */ 'java.lang.Object',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public default void java.util.PrimitiveIterator$OfDouble.forEachRemaining(java.lang.Object) */
-			/* name */ 'forEachRemaining',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public default void java.util.PrimitiveIterator$OfDouble.forEachRemaining(java.util.function.Consumer<? super java.lang.Double>) */
 			/* name */ 'forEachRemaining',
 			[/* parameters */

@@ -455,22 +455,6 @@ JdkClassCreateHelper.class('java.util.Calendar', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.util.Calendar.compareTo(java.lang.Object) */
-			/* name */ 'compareTo',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public int java.util.Calendar.compareTo(java.util.Calendar) */
 			/* name */ 'compareTo',
 			[/* parameters */

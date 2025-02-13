@@ -44,22 +44,6 @@ JdkClassCreateHelper.class('java.lang.module.ModuleDescriptor$Exports', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.lang.module.ModuleDescriptor$Exports.compareTo(java.lang.Object) */
-			/* name */ 'compareTo',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public int java.lang.module.ModuleDescriptor$Exports.compareTo(java.lang.module.ModuleDescriptor$Exports) */
 			/* name */ 'compareTo',
 			[/* parameters */

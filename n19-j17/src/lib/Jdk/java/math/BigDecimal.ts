@@ -371,22 +371,6 @@ JdkClassCreateHelper.class('java.math.BigDecimal', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public int java.math.BigDecimal.compareTo(java.lang.Object) */
-			/* name */ 'compareTo',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'arg0',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'int',
-			/* exceptions */,
-			/* modifiers */ 4161,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public int java.math.BigDecimal.compareTo(java.math.BigDecimal) */
 			/* name */ 'compareTo',
 			[/* parameters */
