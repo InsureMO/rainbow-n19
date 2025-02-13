@@ -215,4 +215,8 @@ export abstract class AbstractClassLoader implements IClassLoader {
 		const className = typeof classOrName === 'string' ? classOrName : classOrName.name;
 		return this._classes.has(className);
 	}
+
+	allClasses(): Array<IClass> {
+		return [...this._classes.values()];
+	}
 }

@@ -21,4 +21,5 @@ export interface IClassLoader {
 	allPackages(): Array<IPackage>;
 	addClass(clazz: IClass): void;
 	removeClass(className: ClassName): void;
+	allClasses(): Array<IClass>;
 }
