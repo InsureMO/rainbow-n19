@@ -2,6 +2,10 @@ package com.insuremo.rainbow.n19n4
 
 import java.io.File
 import java.io.FileOutputStream
+import java.util.Spliterator
+import java.util.function.DoubleConsumer
+import java.util.function.IntConsumer
+import java.util.function.LongConsumer
 import java.util.zip.ZipEntry
 import java.util.zip.ZipFile
 import java.util.zip.ZipOutputStream
@@ -86,6 +90,21 @@ fun generateJre(): JarGeneratingTargetInfo? {
 			val module = clazz.module.name
 			val classPath = clazz.name.replace('.', '/').replace('$', '.')
 			"https://docs.oracle.com/en/java/javase/${version}/docs/api/${module}/${classPath}.html"
+		},
+		methodIdOfDocHtml = { method ->
+			val clazz = method.declaringClass
+			when {
+				// the "tryAdvance" method is overridden in these three interfaces, and which is unnecessary.
+				// and javadoc has no section for these overridden methods,
+				// therefore here using another method which has same parameter names instead
+				(clazz == Spliterator.OfDouble::class.java && method.name == "tryAdvance" && method.parameters?.first()?.type == DoubleConsumer::class.java)
+						|| (clazz == Spliterator.OfInt::class.java && method.name == "tryAdvance" && method.parameters?.first()?.type == IntConsumer::class.java)
+						|| (clazz == Spliterator.OfLong::class.java && method.name == "tryAdvance" && method.parameters?.first()?.type == LongConsumer::class.java) -> {
+					"tryAdvance(java.util.function.Consumer)"
+				}
+
+				else -> "${method.name}(${method.parameters.joinToString(",") { transformClassNameForDocHtmlId(it) }})"
+			}
 		},
 		rootDir = Envs.jreDir
 	)

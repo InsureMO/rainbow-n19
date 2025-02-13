@@ -1,5 +1,6 @@
 package com.insuremo.rainbow.n19n4
 
+import java.lang.reflect.Method
 import java.util.zip.ZipFile
 
 data class JarGeneratingTargetInfo(
@@ -7,6 +8,7 @@ data class JarGeneratingTargetInfo(
 	val classLoaderName: String,
 	val classLoaderFileName: String,
 	val classDocHtmlUrl: (clazz: Class<*>) -> String,
+	val methodIdOfDocHtml: (method: Method) -> String,
 	val rootDir: String
 )
 

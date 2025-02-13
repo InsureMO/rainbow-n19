@@ -138,13 +138,13 @@ JdkClassCreateHelper.class('java.lang.invoke.TypeDescriptor$OfMethod', [
 			/* name */ 'insertParameterTypes',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'pos',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'paramTypes',
 					/* type */ [/* generic array type */ 'ga', [[/* type variable ref */ 'tr', [/* name */ 'F']]]],
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -1,6 +1,7 @@
 package com.insuremo.rainbow.n19n4
 
 import java.io.File
+import java.lang.reflect.Parameter
 import java.nio.charset.StandardCharsets
 
 fun createDir(dir: String): Boolean {
@@ -67,4 +68,22 @@ fun appendToFile(path: String, content: String) {
 
 fun appendToIndexFile(dir: String, content: String) {
 	appendToFile(dir + File.separator + "index.ts", content)
+}
+
+private fun transformClassNameForDocHtmlId(clazz: Class<*>): String {
+	return if (clazz.isPrimitive) {
+		clazz.simpleName
+	} else if (clazz.isArray) {
+		transformClassNameForDocHtmlId(clazz.componentType) + "[]"
+	} else {
+		clazz.name.replace('$', '.')
+	}
+}
+
+fun transformClassNameForDocHtmlId(parameter: Parameter): String {
+	return if (parameter.isVarArgs) {
+		transformClassNameForDocHtmlId(parameter.type.componentType) + "..."
+	} else {
+		transformClassNameForDocHtmlId(parameter.type)
+	}
 }

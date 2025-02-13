@@ -452,28 +452,23 @@ private class ClassGenerator(
 		).joinToString("\n")
 	}
 
-	private fun transformClassNameForDocHtmlId(clazz: Class<*>): String {
-		return if (clazz.isPrimitive) {
-			clazz.simpleName
-		} else if (clazz.isArray) {
-			transformClassNameForDocHtmlId(clazz.componentType) + "[]"
-		} else {
-			clazz.name.replace('$', '.')
-		}
-	}
-
-	private fun transformClassNameForDocHtmlId(parameter: Parameter): String {
-		return if (parameter.isVarArgs) {
-			transformClassNameForDocHtmlId(parameter.type.componentType) + "..."
-		} else {
-			transformClassNameForDocHtmlId(parameter.type)
-		}
-	}
-
 	private fun tryToGetParameterNamesFromDoc(method: Method): List<String?> {
-		val id =
-			"id=\"${method.name}(${method.parameters.joinToString(",") { transformClassNameForDocHtmlId(it) }})\""
+		var id = "id=\"${targetInfo.methodIdOfDocHtml(method)}\""
 		var start = docHtml.indexOf(id)
+		if (start == -1) {
+			// regarding java.lang.invoke.TypeDescriptor.OfMethod.insertParameterTypes,
+			// the id of this method should be "insertParameterTypes(int,java.lang.invoke.TypeDescriptor.OfField...)"
+			// but in javadoc, id is "insertParameterTypes(int,java.lang.invoke.TypeDescriptor.OfField[])"
+			// the varargs is presented as "[]", not "...", which leads id match missed
+			// so add the following logic to fix it.
+			if (id.contains("...")) {
+				id = id.replace("...", "[]")
+				start = docHtml.indexOf(id)
+			}
+			if (start == -1) {
+				return listOf()
+			}
+		}
 		start = docHtml.indexOf("class=\"member-signature\"", start)
 		start = docHtml.indexOf("class=\"parameters\"", start)
 		start = docHtml.indexOf(">", start) + 1
