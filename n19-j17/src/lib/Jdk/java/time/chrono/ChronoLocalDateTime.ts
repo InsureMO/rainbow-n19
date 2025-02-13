@@ -52,7 +52,7 @@ JdkClassCreateHelper.class('java.time.chrono.ChronoLocalDateTime', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'temporal',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -68,7 +68,7 @@ JdkClassCreateHelper.class('java.time.chrono.ChronoLocalDateTime', [
 			/* name */ 'isSupported',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'temporal',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -111,13 +111,13 @@ JdkClassCreateHelper.class('java.time.chrono.ChronoLocalDateTime', [
 			/* name */ 'plus',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'temporal',
+					/* name */ 'amountToAdd',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'unit',
 					/* type */ 'java.time.temporal.TemporalUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -139,13 +139,13 @@ JdkClassCreateHelper.class('java.time.chrono.ChronoLocalDateTime', [
 			/* name */ 'with',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'temporal',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'newValue',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -167,7 +167,7 @@ JdkClassCreateHelper.class('java.time.chrono.ChronoLocalDateTime', [
 			/* name */ 'atZone',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'temporal',
+					/* name */ 'zone',
 					/* type */ 'java.time.ZoneId',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -131,7 +131,7 @@ JdkClassCreateHelper.class('java.io.DataOutput', [
 			/* name */ 'writeBytes',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'b',
+					/* name */ 's',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -173,7 +173,7 @@ JdkClassCreateHelper.class('java.io.DataOutput', [
 			/* name */ 'writeChars',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'b',
+					/* name */ 's',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -299,7 +299,7 @@ JdkClassCreateHelper.class('java.io.DataOutput', [
 			/* name */ 'writeUTF',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'b',
+					/* name */ 's',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

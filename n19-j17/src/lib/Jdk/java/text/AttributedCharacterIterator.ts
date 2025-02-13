@@ -41,7 +41,7 @@ JdkClassCreateHelper.class('java.text.AttributedCharacterIterator', [
 			/* name */ 'getRunLimit',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'attribute',
+					/* name */ 'attributes',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -93,7 +93,7 @@ JdkClassCreateHelper.class('java.text.AttributedCharacterIterator', [
 			/* name */ 'getRunStart',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'attribute',
+					/* name */ 'attributes',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

@@ -12,11 +12,11 @@ JdkClassCreateHelper.class('java.io.Externalizable', [
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */
-		[/* public abstract void java.io.Externalizable.readExternal(java.io.ObjectInput) throws java.io.IOException,java.lang.ClassNotFoundException */
+			[/* public abstract void java.io.Externalizable.readExternal(java.io.ObjectInput) throws java.io.IOException,java.lang.ClassNotFoundException */
 			/* name */ 'readExternal',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'out',
+					/* name */ 'in',
 					/* type */ 'java.io.ObjectInput',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -14,13 +14,13 @@ JdkClassCreateHelper.class('java.time.temporal.TemporalField', [
 			/* name */ 'adjustInto',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'locale',
+					/* name */ 'temporal',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'R']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'newValue',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -53,7 +53,7 @@ JdkClassCreateHelper.class('java.time.temporal.TemporalField', [
 			/* name */ 'isSupportedBy',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'locale',
+					/* name */ 'temporal',
 					/* type */ 'java.time.temporal.TemporalAccessor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -114,7 +114,7 @@ JdkClassCreateHelper.class('java.time.temporal.TemporalField', [
 			/* name */ 'rangeRefinedBy',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'locale',
+					/* name */ 'temporal',
 					/* type */ 'java.time.temporal.TemporalAccessor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -130,7 +130,7 @@ JdkClassCreateHelper.class('java.time.temporal.TemporalField', [
 			/* name */ 'getFrom',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'locale',
+					/* name */ 'temporal',
 					/* type */ 'java.time.temporal.TemporalAccessor',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -577,7 +577,7 @@ JdkClassCreateHelper.class('java.lang.Thread', [
 			/* name */ 'holdsLock',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'target',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF

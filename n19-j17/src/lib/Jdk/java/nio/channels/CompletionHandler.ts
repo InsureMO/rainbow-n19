@@ -51,7 +51,7 @@ JdkClassCreateHelper.class('java.nio.channels.CompletionHandler', [
 			/* name */ 'failed',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'result',
+					/* name */ 'exc',
 					/* type */ 'java.lang.Throwable',
 					/* modifiers */ 0,
 					/* annotations */ UDF

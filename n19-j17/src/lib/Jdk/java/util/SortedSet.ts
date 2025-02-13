@@ -70,7 +70,7 @@ JdkClassCreateHelper.class('java.util.SortedSet', [
 			/* name */ 'headSet',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'fromElement',
+					/* name */ 'toElement',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF

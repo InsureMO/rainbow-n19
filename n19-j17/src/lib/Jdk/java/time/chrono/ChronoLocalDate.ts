@@ -24,7 +24,7 @@ JdkClassCreateHelper.class('java.time.chrono.ChronoLocalDate', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'temporal',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -67,7 +67,7 @@ JdkClassCreateHelper.class('java.time.chrono.ChronoLocalDate', [
 			/* name */ 'until',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'temporal',
+					/* name */ 'endDateExclusive',
 					/* type */ 'java.time.chrono.ChronoLocalDate',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -92,13 +92,13 @@ JdkClassCreateHelper.class('java.time.chrono.ChronoLocalDate', [
 			/* name */ 'until',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'temporal',
+					/* name */ 'endExclusive',
 					/* type */ 'java.time.temporal.Temporal',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'unit',
 					/* type */ 'java.time.temporal.TemporalUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF

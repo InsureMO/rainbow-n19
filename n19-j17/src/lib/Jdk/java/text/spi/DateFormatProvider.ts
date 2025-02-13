@@ -45,19 +45,19 @@ JdkClassCreateHelper.class('java.text.spi.DateFormatProvider', [
 			/* name */ 'getDateTimeInstance',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'style',
+					/* name */ 'dateStyle',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'timeStyle',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'locale',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'arg2',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -30,7 +30,7 @@ JdkClassCreateHelper.class('java.util.List', [
 			/* name */ 'toArray',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'o',
+					/* name */ 'a',
 					/* type */ [/* generic array type */ 'ga', [[/* type variable ref */ 'tr', [/* name */ 'T']]]],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -86,13 +86,13 @@ JdkClassCreateHelper.class('java.util.List', [
 			/* name */ 'set',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'o',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'element',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -108,7 +108,7 @@ JdkClassCreateHelper.class('java.util.List', [
 			/* name */ 'add',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'o',
+					/* name */ 'e',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -124,13 +124,13 @@ JdkClassCreateHelper.class('java.util.List', [
 			/* name */ 'addAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'o',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'c',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -157,7 +157,7 @@ JdkClassCreateHelper.class('java.util.List', [
 			/* name */ 'addAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'o',
+					/* name */ 'c',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -200,7 +200,7 @@ JdkClassCreateHelper.class('java.util.List', [
 			/* name */ 'containsAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'o',
+					/* name */ 'c',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -268,7 +268,7 @@ JdkClassCreateHelper.class('java.util.List', [
 			/* name */ 'removeAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'o',
+					/* name */ 'c',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -295,7 +295,7 @@ JdkClassCreateHelper.class('java.util.List', [
 			/* name */ 'retainAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'o',
+					/* name */ 'c',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -461,13 +461,13 @@ JdkClassCreateHelper.class('java.util.List', [
 			/* name */ 'add',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'o',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'element',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF

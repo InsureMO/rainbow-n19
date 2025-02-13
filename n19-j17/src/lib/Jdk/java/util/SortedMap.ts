@@ -130,7 +130,7 @@ JdkClassCreateHelper.class('java.util.SortedMap', [
 			/* name */ 'headMap',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'fromKey',
+					/* name */ 'toKey',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF

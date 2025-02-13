@@ -221,7 +221,7 @@ JdkClassCreateHelper.class('java.io.ObjectOutputStream$PutField', [
 			/* name */ 'write',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'name',
+					/* name */ 'out',
 					/* type */ 'java.io.ObjectOutput',
 					/* modifiers */ 0,
 					/* annotations */ UDF

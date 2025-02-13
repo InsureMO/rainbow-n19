@@ -40,13 +40,13 @@ JdkClassCreateHelper.class('java.util.concurrent.Future', [
 			/* name */ 'get',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'mayInterruptIfRunning',
+					/* name */ 'timeout',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'unit',
 					/* type */ 'java.util.concurrent.TimeUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF

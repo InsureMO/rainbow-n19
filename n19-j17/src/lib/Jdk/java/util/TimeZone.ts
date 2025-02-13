@@ -26,7 +26,7 @@ JdkClassCreateHelper.class('java.util.TimeZone', [
 			/* name */ 'inDaylightTime',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'era',
+					/* name */ 'date',
 					/* type */ 'java.util.Date',
 					/* modifiers */ 0,
 					/* annotations */ UDF

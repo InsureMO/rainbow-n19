@@ -89,7 +89,7 @@ JdkClassCreateHelper.class('java.nio.file.FileStore', [
 			/* name */ 'supportsFileAttributeView',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'type',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -105,7 +105,7 @@ JdkClassCreateHelper.class('java.nio.file.FileStore', [
 			/* name */ 'getAttribute',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'type',
+					/* name */ 'attribute',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

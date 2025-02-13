@@ -111,7 +111,7 @@ JdkClassCreateHelper.class('java.text.BreakIterator', [
 			/* name */ 'setText',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'n',
+					/* name */ 'newText',
 					/* type */ 'java.text.CharacterIterator',
 					/* modifiers */ 0,
 					/* annotations */ UDF

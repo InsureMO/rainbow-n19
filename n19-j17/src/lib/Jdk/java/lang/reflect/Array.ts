@@ -95,13 +95,13 @@ JdkClassCreateHelper.class('java.lang.reflect.Array', [
 			/* name */ 'getBoolean',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'componentType',
+					/* name */ 'array',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'length',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -126,13 +126,13 @@ JdkClassCreateHelper.class('java.lang.reflect.Array', [
 			/* name */ 'getByte',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'componentType',
+					/* name */ 'array',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'length',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -157,13 +157,13 @@ JdkClassCreateHelper.class('java.lang.reflect.Array', [
 			/* name */ 'getChar',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'componentType',
+					/* name */ 'array',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'length',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -188,13 +188,13 @@ JdkClassCreateHelper.class('java.lang.reflect.Array', [
 			/* name */ 'getDouble',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'componentType',
+					/* name */ 'array',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'length',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -219,13 +219,13 @@ JdkClassCreateHelper.class('java.lang.reflect.Array', [
 			/* name */ 'getFloat',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'componentType',
+					/* name */ 'array',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'length',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -250,13 +250,13 @@ JdkClassCreateHelper.class('java.lang.reflect.Array', [
 			/* name */ 'getInt',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'componentType',
+					/* name */ 'array',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'length',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -281,7 +281,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Array', [
 			/* name */ 'getLength',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'componentType',
+					/* name */ 'array',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -304,13 +304,13 @@ JdkClassCreateHelper.class('java.lang.reflect.Array', [
 			/* name */ 'get',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'componentType',
+					/* name */ 'array',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'length',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -335,13 +335,13 @@ JdkClassCreateHelper.class('java.lang.reflect.Array', [
 			/* name */ 'getLong',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'componentType',
+					/* name */ 'array',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'length',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -366,13 +366,13 @@ JdkClassCreateHelper.class('java.lang.reflect.Array', [
 			/* name */ 'getShort',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'componentType',
+					/* name */ 'array',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'length',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -397,19 +397,19 @@ JdkClassCreateHelper.class('java.lang.reflect.Array', [
 			/* name */ 'set',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'componentType',
+					/* name */ 'array',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'length',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'value',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -434,19 +434,19 @@ JdkClassCreateHelper.class('java.lang.reflect.Array', [
 			/* name */ 'setBoolean',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'componentType',
+					/* name */ 'array',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'length',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'z',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -471,19 +471,19 @@ JdkClassCreateHelper.class('java.lang.reflect.Array', [
 			/* name */ 'setByte',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'componentType',
+					/* name */ 'array',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'length',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'b',
 					/* type */ 'byte',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -508,19 +508,19 @@ JdkClassCreateHelper.class('java.lang.reflect.Array', [
 			/* name */ 'setChar',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'componentType',
+					/* name */ 'array',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'length',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'c',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -545,19 +545,19 @@ JdkClassCreateHelper.class('java.lang.reflect.Array', [
 			/* name */ 'setDouble',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'componentType',
+					/* name */ 'array',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'length',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'd',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -582,19 +582,19 @@ JdkClassCreateHelper.class('java.lang.reflect.Array', [
 			/* name */ 'setFloat',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'componentType',
+					/* name */ 'array',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'length',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'f',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -619,19 +619,19 @@ JdkClassCreateHelper.class('java.lang.reflect.Array', [
 			/* name */ 'setInt',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'componentType',
+					/* name */ 'array',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'length',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'i',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -656,19 +656,19 @@ JdkClassCreateHelper.class('java.lang.reflect.Array', [
 			/* name */ 'setLong',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'componentType',
+					/* name */ 'array',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'length',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'l',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -693,19 +693,19 @@ JdkClassCreateHelper.class('java.lang.reflect.Array', [
 			/* name */ 'setShort',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'componentType',
+					/* name */ 'array',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'length',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 's',
 					/* type */ 'short',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -50,7 +50,7 @@ JdkClassCreateHelper.class('java.io.ObjectInputStream$GetField', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'val',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -77,7 +77,7 @@ JdkClassCreateHelper.class('java.io.ObjectInputStream$GetField', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'val',
 					/* type */ 'byte',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -104,7 +104,7 @@ JdkClassCreateHelper.class('java.io.ObjectInputStream$GetField', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'val',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -131,7 +131,7 @@ JdkClassCreateHelper.class('java.io.ObjectInputStream$GetField', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'val',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -158,7 +158,7 @@ JdkClassCreateHelper.class('java.io.ObjectInputStream$GetField', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'val',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -185,7 +185,7 @@ JdkClassCreateHelper.class('java.io.ObjectInputStream$GetField', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'val',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -221,7 +221,7 @@ JdkClassCreateHelper.class('java.io.ObjectInputStream$GetField', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'val',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -248,7 +248,7 @@ JdkClassCreateHelper.class('java.io.ObjectInputStream$GetField', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'val',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -275,7 +275,7 @@ JdkClassCreateHelper.class('java.io.ObjectInputStream$GetField', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'val',
 					/* type */ 'short',
 					/* modifiers */ 0,
 					/* annotations */ UDF

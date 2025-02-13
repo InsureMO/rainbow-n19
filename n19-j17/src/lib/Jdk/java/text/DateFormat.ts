@@ -23,7 +23,7 @@ JdkClassCreateHelper.class('java.text.DateFormat', [
 			/* name */ 'format',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'obj',
+					/* name */ 'date',
 					/* type */ 'java.util.Date',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -51,13 +51,13 @@ JdkClassCreateHelper.class('java.text.DateFormat', [
 			/* name */ 'parse',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'obj',
+					/* name */ 'source',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'toAppendTo',
+					/* name */ 'pos',
 					/* type */ 'java.text.ParsePosition',
 					/* modifiers */ 0,
 					/* annotations */ UDF

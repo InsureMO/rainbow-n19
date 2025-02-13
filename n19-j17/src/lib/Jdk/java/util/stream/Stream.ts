@@ -37,7 +37,7 @@ JdkClassCreateHelper.class('java.util.stream.Stream', [
 			/* name */ 'toArray',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'generator',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* generic array type */ 'ga', [[/* type variable ref */ 'tr', [/* name */ 'A']]]]
@@ -67,7 +67,7 @@ JdkClassCreateHelper.class('java.util.stream.Stream', [
 			/* name */ 'collect',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'collector',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -113,7 +113,7 @@ JdkClassCreateHelper.class('java.util.stream.Stream', [
 			/* name */ 'collect',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'supplier',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'R']]
@@ -125,7 +125,7 @@ JdkClassCreateHelper.class('java.util.stream.Stream', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'accumulator',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'R']],
@@ -145,7 +145,7 @@ JdkClassCreateHelper.class('java.util.stream.Stream', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'combiner',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'R']],
@@ -176,7 +176,7 @@ JdkClassCreateHelper.class('java.util.stream.Stream', [
 			/* name */ 'flatMap',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'mapper',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -236,7 +236,7 @@ JdkClassCreateHelper.class('java.util.stream.Stream', [
 			/* name */ 'map',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'mapper',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -285,13 +285,13 @@ JdkClassCreateHelper.class('java.util.stream.Stream', [
 			/* name */ 'reduce',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'identity',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'U']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'accumulator',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'U']],
@@ -312,7 +312,7 @@ JdkClassCreateHelper.class('java.util.stream.Stream', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'combiner',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'U']]
@@ -342,13 +342,13 @@ JdkClassCreateHelper.class('java.util.stream.Stream', [
 			/* name */ 'reduce',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'identity',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'T']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'accumulator',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'T']]
@@ -496,7 +496,7 @@ JdkClassCreateHelper.class('java.util.stream.Stream', [
 			/* name */ 'max',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'comparator',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -531,7 +531,7 @@ JdkClassCreateHelper.class('java.util.stream.Stream', [
 			/* name */ 'min',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'comparator',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -566,7 +566,7 @@ JdkClassCreateHelper.class('java.util.stream.Stream', [
 			/* name */ 'reduce',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'accumulator',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'T']]
@@ -594,7 +594,7 @@ JdkClassCreateHelper.class('java.util.stream.Stream', [
 			/* name */ 'flatMapToDouble',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'mapper',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -629,7 +629,7 @@ JdkClassCreateHelper.class('java.util.stream.Stream', [
 			/* name */ 'mapToDouble',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'mapper',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -658,7 +658,7 @@ JdkClassCreateHelper.class('java.util.stream.Stream', [
 			/* name */ 'flatMapToInt',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'mapper',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -693,7 +693,7 @@ JdkClassCreateHelper.class('java.util.stream.Stream', [
 			/* name */ 'mapToInt',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'mapper',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -722,7 +722,7 @@ JdkClassCreateHelper.class('java.util.stream.Stream', [
 			/* name */ 'flatMapToLong',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'mapper',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -757,7 +757,7 @@ JdkClassCreateHelper.class('java.util.stream.Stream', [
 			/* name */ 'mapToLong',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'mapper',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -858,7 +858,7 @@ JdkClassCreateHelper.class('java.util.stream.Stream', [
 			/* name */ 'peek',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'action',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -930,7 +930,7 @@ JdkClassCreateHelper.class('java.util.stream.Stream', [
 			/* name */ 'sorted',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'comparator',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -974,7 +974,7 @@ JdkClassCreateHelper.class('java.util.stream.Stream', [
 			/* name */ 'forEach',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'action',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1003,7 +1003,7 @@ JdkClassCreateHelper.class('java.util.stream.Stream', [
 			/* name */ 'forEachOrdered',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'action',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

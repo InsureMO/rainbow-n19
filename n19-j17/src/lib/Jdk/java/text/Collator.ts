@@ -32,13 +32,13 @@ JdkClassCreateHelper.class('java.text.Collator', [
 			/* name */ 'compare',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'desiredLocale',
+					/* name */ 'source',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'target',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -63,7 +63,7 @@ JdkClassCreateHelper.class('java.text.Collator', [
 			/* name */ 'getCollationKey',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'desiredLocale',
+					/* name */ 'source',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

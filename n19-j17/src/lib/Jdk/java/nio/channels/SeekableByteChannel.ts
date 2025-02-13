@@ -37,7 +37,7 @@ JdkClassCreateHelper.class('java.nio.channels.SeekableByteChannel', [
 			/* name */ 'write',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'dst',
+					/* name */ 'src',
 					/* type */ 'java.nio.ByteBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF

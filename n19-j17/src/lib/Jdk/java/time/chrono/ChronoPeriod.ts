@@ -16,7 +16,7 @@ JdkClassCreateHelper.class('java.time.chrono.ChronoPeriod', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'startDateInclusive',
+					/* name */ 'obj',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -50,7 +50,7 @@ JdkClassCreateHelper.class('java.time.chrono.ChronoPeriod', [
 			/* name */ 'minus',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'startDateInclusive',
+					/* name */ 'amountToSubtract',
 					/* type */ 'java.time.temporal.TemporalAmount',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -91,7 +91,7 @@ JdkClassCreateHelper.class('java.time.chrono.ChronoPeriod', [
 			/* name */ 'plus',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'startDateInclusive',
+					/* name */ 'amountToAdd',
 					/* type */ 'java.time.temporal.TemporalAmount',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -116,7 +116,7 @@ JdkClassCreateHelper.class('java.time.chrono.ChronoPeriod', [
 			/* name */ 'addTo',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'startDateInclusive',
+					/* name */ 'temporal',
 					/* type */ 'java.time.temporal.Temporal',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -132,7 +132,7 @@ JdkClassCreateHelper.class('java.time.chrono.ChronoPeriod', [
 			/* name */ 'subtractFrom',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'startDateInclusive',
+					/* name */ 'temporal',
 					/* type */ 'java.time.temporal.Temporal',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -163,7 +163,7 @@ JdkClassCreateHelper.class('java.time.chrono.ChronoPeriod', [
 			/* name */ 'get',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'startDateInclusive',
+					/* name */ 'unit',
 					/* type */ 'java.time.temporal.TemporalUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF

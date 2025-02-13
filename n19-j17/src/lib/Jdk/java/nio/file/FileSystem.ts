@@ -104,7 +104,7 @@ JdkClassCreateHelper.class('java.nio.file.FileSystem', [
 			/* name */ 'getPathMatcher',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'first',
+					/* name */ 'syntaxAndPattern',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

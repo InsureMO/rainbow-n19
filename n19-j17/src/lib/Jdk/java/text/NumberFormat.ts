@@ -23,13 +23,13 @@ JdkClassCreateHelper.class('java.text.NumberFormat', [
 			/* name */ 'parse',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'number',
+					/* name */ 'source',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'toAppendTo',
+					/* name */ 'parsePosition',
 					/* type */ 'java.text.ParsePosition',
 					/* modifiers */ 0,
 					/* annotations */ UDF

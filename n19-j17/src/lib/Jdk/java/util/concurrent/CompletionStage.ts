@@ -22,7 +22,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 			/* name */ 'thenCombine',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'fn',
+					/* name */ 'other',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -39,7 +39,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'fn',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -103,7 +103,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 			/* name */ 'thenCombineAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'fn',
+					/* name */ 'other',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -120,7 +120,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'fn',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -184,7 +184,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 			/* name */ 'thenCombineAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'fn',
+					/* name */ 'other',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -201,7 +201,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'fn',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -234,7 +234,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'executor',
 					/* type */ 'java.util.concurrent.Executor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -271,7 +271,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 			/* name */ 'applyToEither',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'fn',
+					/* name */ 'other',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -288,7 +288,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'fn',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -332,7 +332,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 			/* name */ 'applyToEitherAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'fn',
+					/* name */ 'other',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -349,7 +349,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'fn',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -393,7 +393,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 			/* name */ 'applyToEitherAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'fn',
+					/* name */ 'other',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -410,7 +410,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'fn',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -430,7 +430,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'executor',
 					/* type */ 'java.util.concurrent.Executor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -586,7 +586,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'executor',
 					/* type */ 'java.util.concurrent.Executor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -739,7 +739,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'executor',
 					/* type */ 'java.util.concurrent.Executor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -910,7 +910,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'executor',
 					/* type */ 'java.util.concurrent.Executor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -940,7 +940,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 			/* name */ 'thenAcceptBoth',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'fn',
+					/* name */ 'other',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -957,7 +957,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'action',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1008,7 +1008,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 			/* name */ 'thenAcceptBothAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'fn',
+					/* name */ 'other',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1025,7 +1025,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'action',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1076,7 +1076,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 			/* name */ 'thenAcceptBothAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'fn',
+					/* name */ 'other',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1093,7 +1093,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'action',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1120,7 +1120,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'executor',
 					/* type */ 'java.util.concurrent.Executor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1199,7 +1199,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 			/* name */ 'whenComplete',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'fn',
+					/* name */ 'action',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1242,7 +1242,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 			/* name */ 'whenCompleteAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'fn',
+					/* name */ 'action',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1285,7 +1285,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 			/* name */ 'whenCompleteAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'fn',
+					/* name */ 'action',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1312,7 +1312,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'executor',
 					/* type */ 'java.util.concurrent.Executor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1334,7 +1334,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 			/* name */ 'acceptEither',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'fn',
+					/* name */ 'other',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1351,7 +1351,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'action',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1386,7 +1386,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 			/* name */ 'acceptEitherAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'fn',
+					/* name */ 'other',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1403,7 +1403,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'action',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1438,7 +1438,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 			/* name */ 'acceptEitherAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'fn',
+					/* name */ 'other',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1455,7 +1455,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'action',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1474,7 +1474,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'executor',
 					/* type */ 'java.util.concurrent.Executor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1496,7 +1496,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 			/* name */ 'runAfterBoth',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'fn',
+					/* name */ 'other',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1513,7 +1513,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'action',
 					/* type */ 'java.lang.Runnable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1535,7 +1535,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 			/* name */ 'runAfterBothAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'fn',
+					/* name */ 'other',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1552,7 +1552,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'action',
 					/* type */ 'java.lang.Runnable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1574,7 +1574,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 			/* name */ 'runAfterBothAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'fn',
+					/* name */ 'other',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1591,13 +1591,13 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'action',
 					/* type */ 'java.lang.Runnable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'executor',
 					/* type */ 'java.util.concurrent.Executor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1619,7 +1619,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 			/* name */ 'runAfterEither',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'fn',
+					/* name */ 'other',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1636,7 +1636,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'action',
 					/* type */ 'java.lang.Runnable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1658,7 +1658,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 			/* name */ 'runAfterEitherAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'fn',
+					/* name */ 'other',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1675,7 +1675,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'action',
 					/* type */ 'java.lang.Runnable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1697,7 +1697,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 			/* name */ 'runAfterEitherAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'fn',
+					/* name */ 'other',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1714,13 +1714,13 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'action',
 					/* type */ 'java.lang.Runnable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'executor',
 					/* type */ 'java.util.concurrent.Executor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1742,7 +1742,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 			/* name */ 'thenAccept',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'fn',
+					/* name */ 'action',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1777,7 +1777,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 			/* name */ 'thenAcceptAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'fn',
+					/* name */ 'action',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1812,7 +1812,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 			/* name */ 'thenAcceptAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'fn',
+					/* name */ 'action',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1831,7 +1831,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'executor',
 					/* type */ 'java.util.concurrent.Executor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1853,7 +1853,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 			/* name */ 'thenRun',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'fn',
+					/* name */ 'action',
 					/* type */ 'java.lang.Runnable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1875,7 +1875,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 			/* name */ 'thenRunAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'fn',
+					/* name */ 'action',
 					/* type */ 'java.lang.Runnable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1897,13 +1897,13 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletionStage', [
 			/* name */ 'thenRunAsync',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'fn',
+					/* name */ 'action',
 					/* type */ 'java.lang.Runnable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'executor',
 					/* type */ 'java.util.concurrent.Executor',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -23,7 +23,7 @@ JdkClassCreateHelper.class('java.util.stream.DoubleStream', [
 			/* name */ 'collect',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'supplier',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'R']]
@@ -35,7 +35,7 @@ JdkClassCreateHelper.class('java.util.stream.DoubleStream', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'accumulator',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'R']]
@@ -47,7 +47,7 @@ JdkClassCreateHelper.class('java.util.stream.DoubleStream', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'combiner',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'R']],
@@ -78,7 +78,7 @@ JdkClassCreateHelper.class('java.util.stream.DoubleStream', [
 			/* name */ 'mapToObj',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'mapper',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -167,13 +167,13 @@ JdkClassCreateHelper.class('java.util.stream.DoubleStream', [
 			/* name */ 'reduce',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'identity',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'op',
 					/* type */ 'java.util.function.DoubleBinaryOperator',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -261,7 +261,7 @@ JdkClassCreateHelper.class('java.util.stream.DoubleStream', [
 			/* name */ 'reduce',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'op',
 					/* type */ 'java.util.function.DoubleBinaryOperator',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -320,7 +320,7 @@ JdkClassCreateHelper.class('java.util.stream.DoubleStream', [
 			/* name */ 'flatMap',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'mapper',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -363,7 +363,7 @@ JdkClassCreateHelper.class('java.util.stream.DoubleStream', [
 			/* name */ 'map',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'mapper',
 					/* type */ 'java.util.function.DoubleUnaryOperator',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -388,7 +388,7 @@ JdkClassCreateHelper.class('java.util.stream.DoubleStream', [
 			/* name */ 'peek',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'action',
 					/* type */ 'java.util.function.DoubleConsumer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -438,7 +438,7 @@ JdkClassCreateHelper.class('java.util.stream.DoubleStream', [
 			/* name */ 'mapToInt',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'mapper',
 					/* type */ 'java.util.function.DoubleToIntFunction',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -454,7 +454,7 @@ JdkClassCreateHelper.class('java.util.stream.DoubleStream', [
 			/* name */ 'mapToLong',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'mapper',
 					/* type */ 'java.util.function.DoubleToLongFunction',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -494,7 +494,7 @@ JdkClassCreateHelper.class('java.util.stream.DoubleStream', [
 			/* name */ 'forEach',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'action',
 					/* type */ 'java.util.function.DoubleConsumer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -510,7 +510,7 @@ JdkClassCreateHelper.class('java.util.stream.DoubleStream', [
 			/* name */ 'forEachOrdered',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'action',
 					/* type */ 'java.util.function.DoubleConsumer',
 					/* modifiers */ 0,
 					/* annotations */ UDF

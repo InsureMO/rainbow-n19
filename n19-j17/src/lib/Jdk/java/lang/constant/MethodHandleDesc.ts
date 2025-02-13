@@ -16,7 +16,7 @@ JdkClassCreateHelper.class('java.lang.constant.MethodHandleDesc', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'kind',
+					/* name */ 'o',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF

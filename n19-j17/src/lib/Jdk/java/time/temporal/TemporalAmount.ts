@@ -14,7 +14,7 @@ JdkClassCreateHelper.class('java.time.temporal.TemporalAmount', [
 			/* name */ 'addTo',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'unit',
+					/* name */ 'temporal',
 					/* type */ 'java.time.temporal.Temporal',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -30,7 +30,7 @@ JdkClassCreateHelper.class('java.time.temporal.TemporalAmount', [
 			/* name */ 'subtractFrom',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'unit',
+					/* name */ 'temporal',
 					/* type */ 'java.time.temporal.Temporal',
 					/* modifiers */ 0,
 					/* annotations */ UDF

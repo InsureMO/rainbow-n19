@@ -221,7 +221,7 @@ JdkClassCreateHelper.class('java.lang.System', [
 			/* name */ 'identityHashCode',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'in',
+					/* name */ 'x',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -239,7 +239,7 @@ JdkClassCreateHelper.class('java.lang.System', [
 			/* name */ 'mapLibraryName',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'in',
+					/* name */ 'libname',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -277,31 +277,31 @@ JdkClassCreateHelper.class('java.lang.System', [
 			/* name */ 'arraycopy',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'in',
+					/* name */ 'src',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'srcPos',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'dest',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg3',
+					/* name */ 'destPos',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg4',
+					/* name */ 'length',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

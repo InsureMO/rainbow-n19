@@ -112,7 +112,7 @@ JdkClassCreateHelper.class('java.nio.file.spi.FileSystemProvider', [
 			/* name */ 'isHidden',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'uri',
+					/* name */ 'path',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -133,13 +133,13 @@ JdkClassCreateHelper.class('java.nio.file.spi.FileSystemProvider', [
 			/* name */ 'isSameFile',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'uri',
+					/* name */ 'path',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'env',
+					/* name */ 'path2',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -270,7 +270,7 @@ JdkClassCreateHelper.class('java.nio.file.spi.FileSystemProvider', [
 			/* name */ 'getFileStore',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'uri',
+					/* name */ 'path',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -500,7 +500,7 @@ JdkClassCreateHelper.class('java.nio.file.spi.FileSystemProvider', [
 			/* name */ 'delete',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'uri',
+					/* name */ 'path',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF

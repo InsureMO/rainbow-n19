@@ -23,7 +23,7 @@ JdkClassCreateHelper.class('java.util.stream.LongStream', [
 			/* name */ 'collect',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'supplier',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'R']]
@@ -35,7 +35,7 @@ JdkClassCreateHelper.class('java.util.stream.LongStream', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'accumulator',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'R']]
@@ -47,7 +47,7 @@ JdkClassCreateHelper.class('java.util.stream.LongStream', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'combiner',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'R']],
@@ -78,7 +78,7 @@ JdkClassCreateHelper.class('java.util.stream.LongStream', [
 			/* name */ 'mapToObj',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'mapper',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -221,7 +221,7 @@ JdkClassCreateHelper.class('java.util.stream.LongStream', [
 			/* name */ 'reduce',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'op',
 					/* type */ 'java.util.function.LongBinaryOperator',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -264,7 +264,7 @@ JdkClassCreateHelper.class('java.util.stream.LongStream', [
 			/* name */ 'mapToDouble',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'mapper',
 					/* type */ 'java.util.function.LongToDoubleFunction',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -280,7 +280,7 @@ JdkClassCreateHelper.class('java.util.stream.LongStream', [
 			/* name */ 'mapToInt',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'mapper',
 					/* type */ 'java.util.function.LongToIntFunction',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -321,7 +321,7 @@ JdkClassCreateHelper.class('java.util.stream.LongStream', [
 			/* name */ 'flatMap',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'mapper',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -364,7 +364,7 @@ JdkClassCreateHelper.class('java.util.stream.LongStream', [
 			/* name */ 'map',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'mapper',
 					/* type */ 'java.util.function.LongUnaryOperator',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -389,7 +389,7 @@ JdkClassCreateHelper.class('java.util.stream.LongStream', [
 			/* name */ 'peek',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'action',
 					/* type */ 'java.util.function.LongConsumer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -463,13 +463,13 @@ JdkClassCreateHelper.class('java.util.stream.LongStream', [
 			/* name */ 'reduce',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'identity',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'op',
 					/* type */ 'java.util.function.LongBinaryOperator',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -503,7 +503,7 @@ JdkClassCreateHelper.class('java.util.stream.LongStream', [
 			/* name */ 'forEach',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'action',
 					/* type */ 'java.util.function.LongConsumer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -519,7 +519,7 @@ JdkClassCreateHelper.class('java.util.stream.LongStream', [
 			/* name */ 'forEachOrdered',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'action',
 					/* type */ 'java.util.function.LongConsumer',
 					/* modifiers */ 0,
 					/* annotations */ UDF

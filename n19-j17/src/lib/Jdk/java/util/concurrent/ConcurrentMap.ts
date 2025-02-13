@@ -44,7 +44,7 @@ JdkClassCreateHelper.class('java.util.concurrent.ConcurrentMap', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'defaultValue',
+					/* name */ 'value',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -66,7 +66,7 @@ JdkClassCreateHelper.class('java.util.concurrent.ConcurrentMap', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'defaultValue',
+					/* name */ 'value',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -88,7 +88,7 @@ JdkClassCreateHelper.class('java.util.concurrent.ConcurrentMap', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'defaultValue',
+					/* name */ 'value',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -110,13 +110,13 @@ JdkClassCreateHelper.class('java.util.concurrent.ConcurrentMap', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'defaultValue',
+					/* name */ 'oldValue',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'newValue',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF

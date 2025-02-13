@@ -23,7 +23,7 @@ JdkClassCreateHelper.class('java.util.stream.IntStream', [
 			/* name */ 'collect',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'supplier',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'R']]
@@ -35,7 +35,7 @@ JdkClassCreateHelper.class('java.util.stream.IntStream', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'accumulator',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'R']]
@@ -47,7 +47,7 @@ JdkClassCreateHelper.class('java.util.stream.IntStream', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'combiner',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'R']],
@@ -78,7 +78,7 @@ JdkClassCreateHelper.class('java.util.stream.IntStream', [
 			/* name */ 'mapToObj',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'mapper',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -167,13 +167,13 @@ JdkClassCreateHelper.class('java.util.stream.IntStream', [
 			/* name */ 'reduce',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'identity',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'op',
 					/* type */ 'java.util.function.IntBinaryOperator',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -261,7 +261,7 @@ JdkClassCreateHelper.class('java.util.stream.IntStream', [
 			/* name */ 'reduce',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'op',
 					/* type */ 'java.util.function.IntBinaryOperator',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -304,7 +304,7 @@ JdkClassCreateHelper.class('java.util.stream.IntStream', [
 			/* name */ 'mapToDouble',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'mapper',
 					/* type */ 'java.util.function.IntToDoubleFunction',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -345,7 +345,7 @@ JdkClassCreateHelper.class('java.util.stream.IntStream', [
 			/* name */ 'flatMap',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'mapper',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -388,7 +388,7 @@ JdkClassCreateHelper.class('java.util.stream.IntStream', [
 			/* name */ 'map',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'mapper',
 					/* type */ 'java.util.function.IntUnaryOperator',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -413,7 +413,7 @@ JdkClassCreateHelper.class('java.util.stream.IntStream', [
 			/* name */ 'peek',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'action',
 					/* type */ 'java.util.function.IntConsumer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -472,7 +472,7 @@ JdkClassCreateHelper.class('java.util.stream.IntStream', [
 			/* name */ 'mapToLong',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'mapper',
 					/* type */ 'java.util.function.IntToLongFunction',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -512,7 +512,7 @@ JdkClassCreateHelper.class('java.util.stream.IntStream', [
 			/* name */ 'forEach',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'action',
 					/* type */ 'java.util.function.IntConsumer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -528,7 +528,7 @@ JdkClassCreateHelper.class('java.util.stream.IntStream', [
 			/* name */ 'forEachOrdered',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'predicate',
+					/* name */ 'action',
 					/* type */ 'java.util.function.IntConsumer',
 					/* modifiers */ 0,
 					/* annotations */ UDF

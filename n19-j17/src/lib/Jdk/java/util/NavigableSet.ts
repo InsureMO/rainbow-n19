@@ -157,13 +157,13 @@ JdkClassCreateHelper.class('java.util.NavigableSet', [
 			/* name */ 'headSet',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'e',
+					/* name */ 'toElement',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'inclusive',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -185,25 +185,25 @@ JdkClassCreateHelper.class('java.util.NavigableSet', [
 			/* name */ 'subSet',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'e',
+					/* name */ 'fromElement',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'fromInclusive',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'toElement',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg3',
+					/* name */ 'toInclusive',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -225,13 +225,13 @@ JdkClassCreateHelper.class('java.util.NavigableSet', [
 			/* name */ 'tailSet',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'e',
+					/* name */ 'fromElement',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'inclusive',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -253,7 +253,7 @@ JdkClassCreateHelper.class('java.util.NavigableSet', [
 			/* name */ 'headSet',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'e',
+					/* name */ 'toElement',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -275,13 +275,13 @@ JdkClassCreateHelper.class('java.util.NavigableSet', [
 			/* name */ 'subSet',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'e',
+					/* name */ 'fromElement',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'toElement',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -303,7 +303,7 @@ JdkClassCreateHelper.class('java.util.NavigableSet', [
 			/* name */ 'tailSet',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'e',
+					/* name */ 'fromElement',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
