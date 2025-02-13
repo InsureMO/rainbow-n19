@@ -458,7 +458,7 @@ private class ClassGenerator(
 		} else if (clazz.isArray) {
 			transformClassNameForDocHtmlId(clazz.componentType) + "[]"
 		} else {
-			clazz.name
+			clazz.name.replace('$', '.')
 		}
 	}
 

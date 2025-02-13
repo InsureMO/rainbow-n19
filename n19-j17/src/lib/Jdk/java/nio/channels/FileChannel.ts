@@ -123,19 +123,19 @@ JdkClassCreateHelper.class('java.nio.channels.FileChannel', [
 			/* name */ 'map',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'path',
+					/* name */ 'mode',
 					/* type */ 'java.nio.channels.FileChannel$MapMode',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'options',
+					/* name */ 'position',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'attrs',
+					/* name */ 'size',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF

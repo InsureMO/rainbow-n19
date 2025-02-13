@@ -78,13 +78,13 @@ JdkClassCreateHelper.class('java.lang.invoke.TypeDescriptor$OfMethod', [
 			/* name */ 'changeParameterType',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'paramType',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'F']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -100,7 +100,7 @@ JdkClassCreateHelper.class('java.lang.invoke.TypeDescriptor$OfMethod', [
 			/* name */ 'changeReturnType',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'i',
+					/* name */ 'newReturn',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'F']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
