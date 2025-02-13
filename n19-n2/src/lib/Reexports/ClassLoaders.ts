@@ -5,7 +5,7 @@ import {GroovyClassLoader} from '../OrgCodehausGroovy';
  * third-party libs
  */
 export class DependenciesClassLoader extends NonJREClassLoader {
-	constructor(parent: JREClassLoader | GroovyClassLoader) {
+	constructor(parent: JREClassLoader | GroovyClassLoader | DependenciesClassLoader) {
 		super(parent);
 	}
 }
