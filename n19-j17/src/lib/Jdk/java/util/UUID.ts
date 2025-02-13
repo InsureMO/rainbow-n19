@@ -28,7 +28,7 @@ JdkClassCreateHelper.class('java.util.UUID', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'leastSigBits',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF

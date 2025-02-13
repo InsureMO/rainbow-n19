@@ -172,7 +172,7 @@ JdkClassCreateHelper.class('java.lang.Thread', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg4',
+					/* name */ 'inheritThreadLocals',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -304,7 +304,7 @@ JdkClassCreateHelper.class('java.lang.Thread', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'nanos',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -676,7 +676,7 @@ JdkClassCreateHelper.class('java.lang.Thread', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'nanos',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

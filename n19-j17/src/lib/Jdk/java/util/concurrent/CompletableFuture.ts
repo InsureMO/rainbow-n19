@@ -1221,7 +1221,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'unit',
 					/* type */ 'java.util.concurrent.TimeUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1452,7 +1452,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'unit',
 					/* type */ 'java.util.concurrent.TimeUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1729,7 +1729,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'unit',
 					/* type */ 'java.util.concurrent.TimeUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -2836,7 +2836,7 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'unit',
 					/* type */ 'java.util.concurrent.TimeUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -2858,13 +2858,13 @@ JdkClassCreateHelper.class('java.util.concurrent.CompletableFuture', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'unit',
 					/* type */ 'java.util.concurrent.TimeUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'unit',
+					/* name */ 'executor',
 					/* type */ 'java.util.concurrent.Executor',
 					/* modifiers */ 0,
 					/* annotations */ UDF

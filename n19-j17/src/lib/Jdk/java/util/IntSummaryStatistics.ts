@@ -28,12 +28,6 @@ JdkClassCreateHelper.class('java.util.IntSummaryStatistics', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
 					/* name */ 'min',
 					/* type */ 'int',
 					/* modifiers */ 0,
@@ -41,6 +35,12 @@ JdkClassCreateHelper.class('java.util.IntSummaryStatistics', [
 				],
 				[/* parameter */
 					/* name */ 'max',
+					/* type */ 'int',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'sum',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF

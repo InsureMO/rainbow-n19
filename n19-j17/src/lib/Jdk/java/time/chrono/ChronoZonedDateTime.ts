@@ -496,7 +496,7 @@ JdkClassCreateHelper.class('java.time.chrono.ChronoZonedDateTime', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'unit',
 					/* type */ 'java.time.temporal.TemporalUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF

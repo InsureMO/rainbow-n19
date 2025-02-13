@@ -28,19 +28,19 @@ JdkClassCreateHelper.class('java.util.DoubleSummaryStatistics', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'double',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
 					/* name */ 'min',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg3',
+					/* name */ 'max',
+					/* type */ 'double',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'sum',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF

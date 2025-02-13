@@ -133,7 +133,7 @@ JdkClassCreateHelper.class('java.math.BigDecimal', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'mc',
 					/* type */ 'java.math.MathContext',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -315,7 +315,7 @@ JdkClassCreateHelper.class('java.math.BigDecimal', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'mc',
 					/* type */ 'java.math.MathContext',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -1251,7 +1251,7 @@ JdkClassCreateHelper.class('java.math.BigDecimal', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'scale',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -8,6 +8,7 @@ object Summary {
 	private val temporarilyIgnoredClasses = mutableMapOf<String, Boolean>()
 	private val necessaryClasses = mutableMapOf<String, Boolean>()
 	private val takenBackClasses = mutableMapOf<String, Boolean>()
+	private val parameterNames = mutableMapOf<String, Boolean>()
 
 	fun addTreatedClass(className: String) {
 		this.treatedClasses.put(className, true)
@@ -43,6 +44,10 @@ object Summary {
 		return cloned
 	}
 
+	fun addParameterName(name: String) {
+		this.parameterNames.put(name, true)
+	}
+
 	fun printSummary() {
 		val content = listOf<String>(
 			"Classes Treated: ${this.treatedClasses.size}",
@@ -56,6 +61,9 @@ object Summary {
 			"",
 			"Classes Ignored On Declaration: ${ignoredClasses.size}",
 			this.ignoredClasses.keys.sortedBy { it.lowercase() }.joinToString("\n"),
+			"",
+			"Parameter names:",
+			this.parameterNames.keys.sortedBy { it.lowercase() }.joinToString("\n"),
 			""
 		).joinToString("\n")
 

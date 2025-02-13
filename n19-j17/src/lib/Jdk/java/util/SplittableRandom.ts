@@ -89,7 +89,7 @@ JdkClassCreateHelper.class('java.util.SplittableRandom', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'randomNumberBound',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -127,13 +127,13 @@ JdkClassCreateHelper.class('java.util.SplittableRandom', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'randomNumberOrigin',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'randomNumberOrigin',
+					/* name */ 'randomNumberBound',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -202,13 +202,13 @@ JdkClassCreateHelper.class('java.util.SplittableRandom', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'randomNumberOrigin',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'randomNumberOrigin',
+					/* name */ 'randomNumberBound',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -255,7 +255,7 @@ JdkClassCreateHelper.class('java.util.SplittableRandom', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'randomNumberBound',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -277,13 +277,13 @@ JdkClassCreateHelper.class('java.util.SplittableRandom', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'randomNumberOrigin',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'randomNumberOrigin',
+					/* name */ 'randomNumberBound',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -364,7 +364,7 @@ JdkClassCreateHelper.class('java.util.SplittableRandom', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'source',
 					/* type */ 'java.util.random.RandomGenerator$SplittableGenerator',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -173,7 +173,7 @@ JdkClassCreateHelper.class('java.util.Timer', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'period',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -229,7 +229,7 @@ JdkClassCreateHelper.class('java.util.Timer', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'period',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF

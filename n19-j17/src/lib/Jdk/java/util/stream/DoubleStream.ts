@@ -627,13 +627,13 @@ JdkClassCreateHelper.class('java.util.stream.DoubleStream', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'hasNext',
 					/* type */ 'java.util.function.DoublePredicate',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'hasNext',
+					/* name */ 'next',
 					/* type */ 'java.util.function.DoubleUnaryOperator',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -655,7 +655,7 @@ JdkClassCreateHelper.class('java.util.stream.DoubleStream', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'f',
 					/* type */ 'java.util.function.DoubleUnaryOperator',
 					/* modifiers */ 0,
 					/* annotations */ UDF

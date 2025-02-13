@@ -161,7 +161,7 @@ JdkClassCreateHelper.class('java.lang.Object', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'nanos',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

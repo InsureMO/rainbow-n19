@@ -52,7 +52,7 @@ JdkClassCreateHelper.class('java.util.concurrent.TimeUnit', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'sourceUnit',
 					/* type */ 'java.util.concurrent.TimeUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF

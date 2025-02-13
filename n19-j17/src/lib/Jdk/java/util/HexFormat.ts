@@ -396,7 +396,7 @@ JdkClassCreateHelper.class('java.util.HexFormat', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'digits',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

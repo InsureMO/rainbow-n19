@@ -29,19 +29,19 @@ JdkClassCreateHelper.class('java.util.LongSummaryStatistics', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
-					/* type */ 'long',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
 					/* name */ 'min',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg3',
+					/* name */ 'max',
+					/* type */ 'long',
+					/* modifiers */ 0,
+					/* annotations */ UDF
+				],
+				[/* parameter */
+					/* name */ 'sum',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
