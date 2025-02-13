@@ -9,7 +9,9 @@ fun main(args: Array<String>) {
 		try {
 			cleanOutputDir()
 			prepareOutputDir()
-			var targetInfo: JarGeneratingTargetInfo? = generateJre()
+			var targetInfo: JarGeneratingTargetInfo? = null
+			targetInfo = generateJre()
+			targetInfo = targetInfo ?: generateGroovy()
 			if (targetInfo != null) {
 				generateTakenBackClasses(targetInfo)
 				buildClassIndexFiles(targetInfo)

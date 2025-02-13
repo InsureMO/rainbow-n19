@@ -12,11 +12,18 @@ object Envs {
 	private const val KEY_PREFIX = "n19n4."
 	private const val HELP = "help"
 	private const val VERBOSE = "verbose"
+
+	// jdk
 	private const val GENERATE_JDK = "generateJdk"
 	private const val MOD2JAR_TEMP_DIR = "mod2jarTempdir"
 	private const val CLEAN_MOD2JAR_TEMP_DIR = "cleanMod2jarTempDir"
 	private val DEFAULT_MOD2JAR_TEMP_DIR = ".temp${File.separator}.mod2jar"
 	private const val TEMP_DIR_MOD2JAR_POST_DEL = "mod2jarTempDirPostDel"
+
+	// groovy
+	private const val GENERATE_GROOVY = "generateGroovy"
+
+	// common
 	private const val OUTPUT_DIR = "outputDir"
 	private val DEFAULT_OUTPUT_DIR = ".output${File.separator}src"
 	private const val CLEAN_OUTPUT_DIR = "cleanOutputDir"
@@ -70,6 +77,7 @@ object Envs {
 	val shouldGenerateJre by lazy { this.isEnabled(GENERATE_JDK, false) }
 	val shouldCleanMod2jarTempdir by lazy { this.isEnabled(CLEAN_MOD2JAR_TEMP_DIR, true) }
 	val shouldDeleteMod2jarTempdirOnFinalization by lazy { this.isEnabled(TEMP_DIR_MOD2JAR_POST_DEL, true) }
+	val shouldGenerateGroovy by lazy { this.isEnabled(GENERATE_GROOVY, false) }
 	val includeClasses by lazy {
 		this.get(INCLUDED_CLASSES, "").split(",").toList().associate { Pair(it, true) }
 	}
@@ -165,6 +173,7 @@ object Envs {
 					+ "Default \"${cdv("true")}\"",
 			"${KEY_PREFIX}${TEMP_DIR_MOD2JAR_POST_DEL}"
 					to "Delete temporary JAR files after generation is completed. Default \"${cdv("true")}\"",
+			"${KEY_PREFIX}${GENERATE_GROOVY}" to "Generate groovy files. Default \"${cdv("false")}\"",
 			"${KEY_PREFIX}${OUTPUT_DIR}"
 					to "Destination directory for output files. Default \"${cdv(DEFAULT_OUTPUT_DIR)}\"",
 			"${KEY_PREFIX}${CLEAN_OUTPUT_DIR}"

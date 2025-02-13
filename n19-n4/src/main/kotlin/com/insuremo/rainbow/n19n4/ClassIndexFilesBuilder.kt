@@ -12,7 +12,7 @@ fun buildClassIndexFiles(targetInfo: JarGeneratingTargetInfo) {
 		?: ""
 
 	appendToIndexFile(
-		Envs.jreDir,
+		targetInfo.rootDir,
 		"${if (imports.isEmpty()) imports else (imports + "\n\n")}export {${targetInfo.classLoaderName}} from './${targetInfo.classLoaderFileName}';\n"
 	)
 }
