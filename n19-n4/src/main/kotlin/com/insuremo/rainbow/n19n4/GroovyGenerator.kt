@@ -49,6 +49,10 @@ fun generateGroovy(): JarGeneratingTargetInfo? {
 		},
 		rootDir = Envs.groovyDir
 	)
+	val location = GroovySystem::class.java.protectionDomain.codeSource.location
+	if (location != null) {
+		println(location.path)
+	}
 //	generateJars(jarsDir, targetInfo)
 
 	return targetInfo
