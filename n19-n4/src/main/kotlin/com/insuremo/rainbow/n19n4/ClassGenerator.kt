@@ -127,10 +127,7 @@ private class ClassGenerator(
 	}
 
 	private val docHtml by lazy {
-		val version = Runtime.version().feature()
-		val module = clazz.module.name
-		val classPath = clazz.name.replace('.', '/').replace('$', '.')
-		val url = "https://docs.oracle.com/en/java/javase/${version}/docs/api/${module}/${classPath}.html"
+		val url = targetInfo.classDocHtmlUrl(clazz)
 		val connection = URL(url).openConnection()
 		return@lazy connection.getInputStream()
 			.use {

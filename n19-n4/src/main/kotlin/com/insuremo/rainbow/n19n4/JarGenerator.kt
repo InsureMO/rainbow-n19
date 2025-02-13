@@ -6,6 +6,7 @@ data class JarGeneratingTargetInfo(
 	val classCreateHelperName: String,
 	val classLoaderName: String,
 	val classLoaderFileName: String,
+	val classDocHtmlUrl: (clazz: Class<*>) -> String,
 	val rootDir: String
 )
 

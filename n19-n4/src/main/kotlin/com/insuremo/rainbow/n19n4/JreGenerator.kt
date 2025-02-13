@@ -81,6 +81,12 @@ fun generateJre(): JarGeneratingTargetInfo? {
 		classCreateHelperName = "JdkClassCreateHelper",
 		classLoaderName = "JdkClassLoader",
 		classLoaderFileName = "JdkClassLoader",
+		classDocHtmlUrl = { clazz ->
+			val version = Runtime.version().feature()
+			val module = clazz.module.name
+			val classPath = clazz.name.replace('.', '/').replace('$', '.')
+			"https://docs.oracle.com/en/java/javase/${version}/docs/api/${module}/${classPath}.html"
+		},
 		rootDir = Envs.jreDir
 	)
 	generateJars(jarsDir, targetInfo)
