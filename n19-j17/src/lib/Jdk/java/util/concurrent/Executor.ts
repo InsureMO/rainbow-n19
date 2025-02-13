@@ -14,7 +14,7 @@ JdkClassCreateHelper.class('java.util.concurrent.Executor', [
 			/* name */ 'execute',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'command',
 					/* type */ 'java.lang.Runnable',
 					/* modifiers */ 0,
 					/* annotations */ UDF

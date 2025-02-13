@@ -44,7 +44,7 @@ JdkClassCreateHelper.class('java.nio.CharBuffer', [
 			/* name */ 'get',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -96,7 +96,7 @@ JdkClassCreateHelper.class('java.nio.CharBuffer', [
 			/* name */ 'put',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'c',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -112,13 +112,13 @@ JdkClassCreateHelper.class('java.nio.CharBuffer', [
 			/* name */ 'put',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'c',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -143,13 +143,13 @@ JdkClassCreateHelper.class('java.nio.CharBuffer', [
 			/* name */ 'slice',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'length',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -165,13 +165,13 @@ JdkClassCreateHelper.class('java.nio.CharBuffer', [
 			/* name */ 'subSequence',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'start',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'end',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

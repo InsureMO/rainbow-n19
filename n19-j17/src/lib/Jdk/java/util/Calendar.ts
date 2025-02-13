@@ -96,7 +96,7 @@ JdkClassCreateHelper.class('java.util.Calendar', [
 			/* name */ 'getGreatestMinimum',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'field',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -112,7 +112,7 @@ JdkClassCreateHelper.class('java.util.Calendar', [
 			/* name */ 'getLeastMaximum',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'field',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -128,7 +128,7 @@ JdkClassCreateHelper.class('java.util.Calendar', [
 			/* name */ 'getMaximum',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'field',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -144,7 +144,7 @@ JdkClassCreateHelper.class('java.util.Calendar', [
 			/* name */ 'getMinimum',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'field',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -160,13 +160,13 @@ JdkClassCreateHelper.class('java.util.Calendar', [
 			/* name */ 'add',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'field',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'amount',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -182,13 +182,13 @@ JdkClassCreateHelper.class('java.util.Calendar', [
 			/* name */ 'roll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'field',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'up',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF

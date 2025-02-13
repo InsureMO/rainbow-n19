@@ -38,13 +38,13 @@ JdkClassCreateHelper.class('java.util.function.BiFunction', [
 			/* name */ 'apply',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 't',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'T']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'u',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'U']],
 					/* modifiers */ 0,
 					/* annotations */ UDF

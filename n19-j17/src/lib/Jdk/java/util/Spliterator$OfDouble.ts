@@ -24,7 +24,7 @@ JdkClassCreateHelper.class('java.util.Spliterator$OfDouble', [
 			/* name */ 'tryAdvance',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'action',
 					/* type */ 'java.util.function.DoubleConsumer',
 					/* modifiers */ 0,
 					/* annotations */ UDF

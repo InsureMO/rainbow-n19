@@ -14,7 +14,7 @@ JdkClassCreateHelper.class('java.lang.Appendable', [
 			/* name */ 'append',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'c',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -35,7 +35,7 @@ JdkClassCreateHelper.class('java.lang.Appendable', [
 			/* name */ 'append',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'csq',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -56,7 +56,7 @@ JdkClassCreateHelper.class('java.lang.Appendable', [
 			/* name */ 'append',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'csq',
 					/* type */ 'java.lang.CharSequence',
 					/* modifiers */ 0,
 					/* annotations */ UDF

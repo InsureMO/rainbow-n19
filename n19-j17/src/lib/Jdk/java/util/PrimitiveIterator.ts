@@ -37,7 +37,7 @@ JdkClassCreateHelper.class('java.util.PrimitiveIterator', [
 			/* name */ 'forEachRemaining',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'action',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'T_CONS']],
 					/* modifiers */ 0,
 					/* annotations */ UDF

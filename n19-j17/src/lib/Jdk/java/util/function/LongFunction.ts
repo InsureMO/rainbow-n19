@@ -24,7 +24,7 @@ JdkClassCreateHelper.class('java.util.function.LongFunction', [
 			/* name */ 'apply',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'value',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF

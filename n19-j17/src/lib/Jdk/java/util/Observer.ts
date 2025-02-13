@@ -20,13 +20,13 @@ JdkClassCreateHelper.class('java.util.Observer', [
 			/* name */ 'update',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'o',
 					/* type */ 'java.util.Observable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'arg',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF

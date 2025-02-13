@@ -16,7 +16,7 @@ JdkClassCreateHelper.class('java.io.FileFilter', [
 			/* name */ 'accept',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'pathname',
 					/* type */ 'java.io.File',
 					/* modifiers */ 0,
 					/* annotations */ UDF

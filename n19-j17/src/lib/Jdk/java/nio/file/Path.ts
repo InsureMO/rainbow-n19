@@ -30,7 +30,7 @@ JdkClassCreateHelper.class('java.nio.file.Path', [
 			/* name */ 'endsWith',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'first',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -46,7 +46,7 @@ JdkClassCreateHelper.class('java.nio.file.Path', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'first',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -71,7 +71,7 @@ JdkClassCreateHelper.class('java.nio.file.Path', [
 			/* name */ 'startsWith',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'first',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -87,7 +87,7 @@ JdkClassCreateHelper.class('java.nio.file.Path', [
 			/* name */ 'compareTo',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'first',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -157,7 +157,7 @@ JdkClassCreateHelper.class('java.nio.file.Path', [
 			/* name */ 'getName',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -200,7 +200,7 @@ JdkClassCreateHelper.class('java.nio.file.Path', [
 			/* name */ 'relativize',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'first',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -216,7 +216,7 @@ JdkClassCreateHelper.class('java.nio.file.Path', [
 			/* name */ 'resolve',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'first',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -232,13 +232,13 @@ JdkClassCreateHelper.class('java.nio.file.Path', [
 			/* name */ 'subpath',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'beginIndex',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'endIndex',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -263,7 +263,7 @@ JdkClassCreateHelper.class('java.nio.file.Path', [
 			/* name */ 'toRealPath',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'first',
 					/* type */ '[Ljava.nio.file.LinkOption;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -284,13 +284,13 @@ JdkClassCreateHelper.class('java.nio.file.Path', [
 			/* name */ 'register',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'first',
 					/* type */ 'java.nio.file.WatchService',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'more',
 					/* type */ [/* generic array type */ 'ga', [[/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

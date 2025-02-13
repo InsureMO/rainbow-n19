@@ -16,7 +16,7 @@ JdkClassCreateHelper.class('java.time.temporal.Temporal', [
 			/* name */ 'isSupported',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'unit',
 					/* type */ 'java.time.temporal.TemporalUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -32,7 +32,7 @@ JdkClassCreateHelper.class('java.time.temporal.Temporal', [
 			/* name */ 'plus',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'unit',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -54,7 +54,7 @@ JdkClassCreateHelper.class('java.time.temporal.Temporal', [
 			/* name */ 'with',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'unit',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -76,7 +76,7 @@ JdkClassCreateHelper.class('java.time.temporal.Temporal', [
 			/* name */ 'until',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'unit',
 					/* type */ 'java.time.temporal.Temporal',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -16,7 +16,7 @@ JdkClassCreateHelper.class('java.time.temporal.TemporalAdjuster', [
 			/* name */ 'adjustInto',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'temporal',
 					/* type */ 'java.time.temporal.Temporal',
 					/* modifiers */ 0,
 					/* annotations */ UDF

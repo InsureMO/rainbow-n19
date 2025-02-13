@@ -26,7 +26,7 @@ JdkClassCreateHelper.class('java.util.TimeZone', [
 			/* name */ 'inDaylightTime',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'era',
 					/* type */ 'java.util.Date',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -51,37 +51,37 @@ JdkClassCreateHelper.class('java.util.TimeZone', [
 			/* name */ 'getOffset',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'era',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'year',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'month',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg3',
+					/* name */ 'day',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg4',
+					/* name */ 'dayOfWeek',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg5',
+					/* name */ 'milliseconds',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -106,7 +106,7 @@ JdkClassCreateHelper.class('java.util.TimeZone', [
 			/* name */ 'setRawOffset',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'offsetMillis',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

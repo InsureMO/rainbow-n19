@@ -42,7 +42,7 @@ JdkClassCreateHelper.class('java.time.chrono.ChronoZonedDateTime', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'temporal',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -58,7 +58,7 @@ JdkClassCreateHelper.class('java.time.chrono.ChronoZonedDateTime', [
 			/* name */ 'isSupported',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'temporal',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -125,7 +125,7 @@ JdkClassCreateHelper.class('java.time.chrono.ChronoZonedDateTime', [
 			/* name */ 'plus',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'temporal',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -153,7 +153,7 @@ JdkClassCreateHelper.class('java.time.chrono.ChronoZonedDateTime', [
 			/* name */ 'with',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'temporal',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -211,7 +211,7 @@ JdkClassCreateHelper.class('java.time.chrono.ChronoZonedDateTime', [
 			/* name */ 'withZoneSameInstant',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'temporal',
 					/* type */ 'java.time.ZoneId',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -233,7 +233,7 @@ JdkClassCreateHelper.class('java.time.chrono.ChronoZonedDateTime', [
 			/* name */ 'withZoneSameLocal',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'temporal',
 					/* type */ 'java.time.ZoneId',
 					/* modifiers */ 0,
 					/* annotations */ UDF

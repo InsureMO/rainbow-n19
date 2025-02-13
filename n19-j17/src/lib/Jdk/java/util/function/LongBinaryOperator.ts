@@ -16,13 +16,13 @@ JdkClassCreateHelper.class('java.util.function.LongBinaryOperator', [
 			/* name */ 'applyAsLong',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'left',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'right',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF

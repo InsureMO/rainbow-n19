@@ -30,7 +30,7 @@ JdkClassCreateHelper.class('java.util.NavigableSet', [
 			/* name */ 'ceiling',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'e',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -46,7 +46,7 @@ JdkClassCreateHelper.class('java.util.NavigableSet', [
 			/* name */ 'floor',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'e',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -62,7 +62,7 @@ JdkClassCreateHelper.class('java.util.NavigableSet', [
 			/* name */ 'higher',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'e',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -78,7 +78,7 @@ JdkClassCreateHelper.class('java.util.NavigableSet', [
 			/* name */ 'lower',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'e',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -157,7 +157,7 @@ JdkClassCreateHelper.class('java.util.NavigableSet', [
 			/* name */ 'headSet',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'e',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -185,7 +185,7 @@ JdkClassCreateHelper.class('java.util.NavigableSet', [
 			/* name */ 'subSet',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'e',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -225,7 +225,7 @@ JdkClassCreateHelper.class('java.util.NavigableSet', [
 			/* name */ 'tailSet',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'e',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -253,7 +253,7 @@ JdkClassCreateHelper.class('java.util.NavigableSet', [
 			/* name */ 'headSet',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'e',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -275,7 +275,7 @@ JdkClassCreateHelper.class('java.util.NavigableSet', [
 			/* name */ 'subSet',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'e',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -303,7 +303,7 @@ JdkClassCreateHelper.class('java.util.NavigableSet', [
 			/* name */ 'tailSet',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'e',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF

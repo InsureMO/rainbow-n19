@@ -1294,7 +1294,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			/* name */ 'isAssignableFrom',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'className',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -1334,7 +1334,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			/* name */ 'isInstance',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'className',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF

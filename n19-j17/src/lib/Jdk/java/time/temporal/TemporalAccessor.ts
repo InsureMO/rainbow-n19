@@ -14,7 +14,7 @@ JdkClassCreateHelper.class('java.time.temporal.TemporalAccessor', [
 			/* name */ 'isSupported',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -30,7 +30,7 @@ JdkClassCreateHelper.class('java.time.temporal.TemporalAccessor', [
 			/* name */ 'getLong',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'field',
 					/* type */ 'java.time.temporal.TemporalField',
 					/* modifiers */ 0,
 					/* annotations */ UDF

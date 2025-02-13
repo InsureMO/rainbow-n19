@@ -84,7 +84,7 @@ JdkClassCreateHelper.class('java.util.ListIterator', [
 			/* name */ 'add',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'e',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -109,7 +109,7 @@ JdkClassCreateHelper.class('java.util.ListIterator', [
 			/* name */ 'set',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'e',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF

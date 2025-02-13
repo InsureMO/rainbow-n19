@@ -14,7 +14,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandleInfo', [
 			/* name */ 'reflectAs',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'expected',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'T']]
@@ -26,7 +26,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandleInfo', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'lookup',
 					/* type */ 'java.lang.invoke.MethodHandles$Lookup',
 					/* modifiers */ 0,
 					/* annotations */ UDF

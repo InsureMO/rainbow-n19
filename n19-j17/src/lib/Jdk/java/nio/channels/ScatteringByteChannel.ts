@@ -16,7 +16,7 @@ JdkClassCreateHelper.class('java.nio.channels.ScatteringByteChannel', [
 			/* name */ 'read',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'dsts',
 					/* type */ '[Ljava.nio.ByteBuffer;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -37,19 +37,19 @@ JdkClassCreateHelper.class('java.nio.channels.ScatteringByteChannel', [
 			/* name */ 'read',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'dsts',
 					/* type */ '[Ljava.nio.ByteBuffer;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'offset',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'length',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

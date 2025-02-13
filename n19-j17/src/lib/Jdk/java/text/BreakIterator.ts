@@ -43,7 +43,7 @@ JdkClassCreateHelper.class('java.text.BreakIterator', [
 			/* name */ 'following',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'offset',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -77,7 +77,7 @@ JdkClassCreateHelper.class('java.text.BreakIterator', [
 			/* name */ 'next',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'n',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -111,7 +111,7 @@ JdkClassCreateHelper.class('java.text.BreakIterator', [
 			/* name */ 'setText',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'n',
 					/* type */ 'java.text.CharacterIterator',
 					/* modifiers */ 0,
 					/* annotations */ UDF

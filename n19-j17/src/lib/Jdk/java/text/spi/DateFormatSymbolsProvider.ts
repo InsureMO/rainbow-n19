@@ -23,7 +23,7 @@ JdkClassCreateHelper.class('java.text.spi.DateFormatSymbolsProvider', [
 			/* name */ 'getInstance',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'locale',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF

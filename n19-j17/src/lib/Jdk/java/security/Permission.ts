@@ -33,7 +33,7 @@ JdkClassCreateHelper.class('java.security.Permission', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'name',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -49,7 +49,7 @@ JdkClassCreateHelper.class('java.security.Permission', [
 			/* name */ 'implies',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'name',
 					/* type */ 'java.security.Permission',
 					/* modifiers */ 0,
 					/* annotations */ UDF

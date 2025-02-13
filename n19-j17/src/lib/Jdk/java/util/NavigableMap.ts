@@ -38,7 +38,7 @@ JdkClassCreateHelper.class('java.util.NavigableMap', [
 			/* name */ 'ceilingKey',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'key',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -54,7 +54,7 @@ JdkClassCreateHelper.class('java.util.NavigableMap', [
 			/* name */ 'floorKey',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'key',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -70,7 +70,7 @@ JdkClassCreateHelper.class('java.util.NavigableMap', [
 			/* name */ 'higherKey',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'key',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -86,7 +86,7 @@ JdkClassCreateHelper.class('java.util.NavigableMap', [
 			/* name */ 'lowerKey',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'key',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -102,7 +102,7 @@ JdkClassCreateHelper.class('java.util.NavigableMap', [
 			/* name */ 'ceilingEntry',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'key',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -141,7 +141,7 @@ JdkClassCreateHelper.class('java.util.NavigableMap', [
 			/* name */ 'floorEntry',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'key',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -164,7 +164,7 @@ JdkClassCreateHelper.class('java.util.NavigableMap', [
 			/* name */ 'higherEntry',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'key',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -203,7 +203,7 @@ JdkClassCreateHelper.class('java.util.NavigableMap', [
 			/* name */ 'lowerEntry',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'key',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -274,7 +274,7 @@ JdkClassCreateHelper.class('java.util.NavigableMap', [
 			/* name */ 'headMap',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'key',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -303,7 +303,7 @@ JdkClassCreateHelper.class('java.util.NavigableMap', [
 			/* name */ 'subMap',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'key',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -344,7 +344,7 @@ JdkClassCreateHelper.class('java.util.NavigableMap', [
 			/* name */ 'tailMap',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'key',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -403,7 +403,7 @@ JdkClassCreateHelper.class('java.util.NavigableMap', [
 			/* name */ 'headMap',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'key',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -426,7 +426,7 @@ JdkClassCreateHelper.class('java.util.NavigableMap', [
 			/* name */ 'subMap',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'key',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -455,7 +455,7 @@ JdkClassCreateHelper.class('java.util.NavigableMap', [
 			/* name */ 'tailMap',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'key',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF

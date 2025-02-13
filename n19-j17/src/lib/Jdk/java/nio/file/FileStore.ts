@@ -23,7 +23,7 @@ JdkClassCreateHelper.class('java.nio.file.FileStore', [
 			/* name */ 'getFileStoreAttributeView',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'type',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'V']]
@@ -62,7 +62,7 @@ JdkClassCreateHelper.class('java.nio.file.FileStore', [
 			/* name */ 'supportsFileAttributeView',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'type',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -89,7 +89,7 @@ JdkClassCreateHelper.class('java.nio.file.FileStore', [
 			/* name */ 'supportsFileAttributeView',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'type',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -105,7 +105,7 @@ JdkClassCreateHelper.class('java.nio.file.FileStore', [
 			/* name */ 'getAttribute',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'type',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

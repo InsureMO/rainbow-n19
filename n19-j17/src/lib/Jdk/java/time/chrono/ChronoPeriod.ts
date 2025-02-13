@@ -16,7 +16,7 @@ JdkClassCreateHelper.class('java.time.chrono.ChronoPeriod', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'startDateInclusive',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -50,7 +50,7 @@ JdkClassCreateHelper.class('java.time.chrono.ChronoPeriod', [
 			/* name */ 'minus',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'startDateInclusive',
 					/* type */ 'java.time.temporal.TemporalAmount',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -66,7 +66,7 @@ JdkClassCreateHelper.class('java.time.chrono.ChronoPeriod', [
 			/* name */ 'multipliedBy',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'scalar',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -91,7 +91,7 @@ JdkClassCreateHelper.class('java.time.chrono.ChronoPeriod', [
 			/* name */ 'plus',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'startDateInclusive',
 					/* type */ 'java.time.temporal.TemporalAmount',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -116,7 +116,7 @@ JdkClassCreateHelper.class('java.time.chrono.ChronoPeriod', [
 			/* name */ 'addTo',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'startDateInclusive',
 					/* type */ 'java.time.temporal.Temporal',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -132,7 +132,7 @@ JdkClassCreateHelper.class('java.time.chrono.ChronoPeriod', [
 			/* name */ 'subtractFrom',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'startDateInclusive',
 					/* type */ 'java.time.temporal.Temporal',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -163,7 +163,7 @@ JdkClassCreateHelper.class('java.time.chrono.ChronoPeriod', [
 			/* name */ 'get',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'startDateInclusive',
 					/* type */ 'java.time.temporal.TemporalUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF

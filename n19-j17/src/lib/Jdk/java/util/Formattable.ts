@@ -14,25 +14,25 @@ JdkClassCreateHelper.class('java.util.Formattable', [
 			/* name */ 'formatTo',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'formatter',
 					/* type */ 'java.util.Formatter',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'flags',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'width',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg3',
+					/* name */ 'precision',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

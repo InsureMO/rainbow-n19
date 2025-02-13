@@ -61,7 +61,7 @@ JdkClassCreateHelper.class('java.text.CharacterIterator', [
 			/* name */ 'setIndex',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'position',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

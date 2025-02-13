@@ -24,7 +24,7 @@ JdkClassCreateHelper.class('java.util.function.IntFunction', [
 			/* name */ 'apply',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'value',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

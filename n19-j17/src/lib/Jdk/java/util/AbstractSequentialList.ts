@@ -91,7 +91,7 @@ JdkClassCreateHelper.class('java.util.AbstractSequentialList', [
 			/* name */ 'listIterator',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

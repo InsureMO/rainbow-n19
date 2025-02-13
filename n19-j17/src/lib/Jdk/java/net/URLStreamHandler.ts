@@ -23,7 +23,7 @@ JdkClassCreateHelper.class('java.net.URLStreamHandler', [
 			/* name */ 'openConnection',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'u',
 					/* type */ 'java.net.URL',
 					/* modifiers */ 0,
 					/* annotations */ UDF

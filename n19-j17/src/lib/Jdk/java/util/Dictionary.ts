@@ -38,7 +38,7 @@ JdkClassCreateHelper.class('java.util.Dictionary', [
 			/* name */ 'get',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'key',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -54,7 +54,7 @@ JdkClassCreateHelper.class('java.util.Dictionary', [
 			/* name */ 'put',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'key',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -76,7 +76,7 @@ JdkClassCreateHelper.class('java.util.Dictionary', [
 			/* name */ 'remove',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'key',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -16,13 +16,13 @@ JdkClassCreateHelper.class('java.util.stream.DoubleStream$DoubleMapMultiConsumer
 			/* name */ 'accept',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'value',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'dc',
 					/* type */ 'java.util.function.DoubleConsumer',
 					/* modifiers */ 0,
 					/* annotations */ UDF

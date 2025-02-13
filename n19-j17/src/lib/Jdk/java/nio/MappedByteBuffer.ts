@@ -42,13 +42,13 @@ JdkClassCreateHelper.class('java.nio.MappedByteBuffer', [
 			/* name */ 'slice',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'length',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

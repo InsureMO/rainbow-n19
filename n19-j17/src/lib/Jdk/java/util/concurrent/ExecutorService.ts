@@ -16,7 +16,7 @@ JdkClassCreateHelper.class('java.util.concurrent.ExecutorService', [
 			/* name */ 'invokeAny',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'timeout',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -66,7 +66,7 @@ JdkClassCreateHelper.class('java.util.concurrent.ExecutorService', [
 			/* name */ 'invokeAny',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'timeout',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -89,7 +89,7 @@ JdkClassCreateHelper.class('java.util.concurrent.ExecutorService', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'unit',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -132,7 +132,7 @@ JdkClassCreateHelper.class('java.util.concurrent.ExecutorService', [
 			/* name */ 'invokeAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'timeout',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -190,7 +190,7 @@ JdkClassCreateHelper.class('java.util.concurrent.ExecutorService', [
 			/* name */ 'invokeAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'timeout',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -213,7 +213,7 @@ JdkClassCreateHelper.class('java.util.concurrent.ExecutorService', [
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'unit',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -260,13 +260,13 @@ JdkClassCreateHelper.class('java.util.concurrent.ExecutorService', [
 			/* name */ 'submit',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'timeout',
 					/* type */ 'java.lang.Runnable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'unit',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'T']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -296,7 +296,7 @@ JdkClassCreateHelper.class('java.util.concurrent.ExecutorService', [
 			/* name */ 'submit',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'timeout',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'T']]
@@ -332,13 +332,13 @@ JdkClassCreateHelper.class('java.util.concurrent.ExecutorService', [
 			/* name */ 'awaitTermination',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'timeout',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'unit',
 					/* type */ 'java.util.concurrent.TimeUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -392,7 +392,7 @@ JdkClassCreateHelper.class('java.util.concurrent.ExecutorService', [
 			/* name */ 'submit',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'timeout',
 					/* type */ 'java.lang.Runnable',
 					/* modifiers */ 0,
 					/* annotations */ UDF

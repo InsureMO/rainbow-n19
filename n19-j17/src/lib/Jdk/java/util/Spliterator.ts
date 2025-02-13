@@ -22,7 +22,7 @@ JdkClassCreateHelper.class('java.util.Spliterator', [
 			/* name */ 'tryAdvance',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'action',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

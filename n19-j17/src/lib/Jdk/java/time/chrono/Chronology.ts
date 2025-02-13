@@ -22,7 +22,7 @@ JdkClassCreateHelper.class('java.time.chrono.Chronology', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'temporal',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -38,7 +38,7 @@ JdkClassCreateHelper.class('java.time.chrono.Chronology', [
 			/* name */ 'isLeapYear',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'prolepticYear',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -54,7 +54,7 @@ JdkClassCreateHelper.class('java.time.chrono.Chronology', [
 			/* name */ 'compareTo',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'temporal',
 					/* type */ 'java.time.chrono.Chronology',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -79,7 +79,7 @@ JdkClassCreateHelper.class('java.time.chrono.Chronology', [
 			/* name */ 'prolepticYear',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'temporal',
 					/* type */ 'java.time.chrono.Era',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -128,19 +128,19 @@ JdkClassCreateHelper.class('java.time.chrono.Chronology', [
 			/* name */ 'date',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'prolepticYear',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'month',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'dayOfMonth',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -156,7 +156,7 @@ JdkClassCreateHelper.class('java.time.chrono.Chronology', [
 			/* name */ 'date',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'temporal',
 					/* type */ 'java.time.temporal.TemporalAccessor',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -172,7 +172,7 @@ JdkClassCreateHelper.class('java.time.chrono.Chronology', [
 			/* name */ 'dateEpochDay',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'epochDay',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -188,13 +188,13 @@ JdkClassCreateHelper.class('java.time.chrono.Chronology', [
 			/* name */ 'dateYearDay',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'prolepticYear',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'dayOfYear',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -210,7 +210,7 @@ JdkClassCreateHelper.class('java.time.chrono.Chronology', [
 			/* name */ 'resolveDate',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'temporal',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.time.temporal.TemporalField',
@@ -239,7 +239,7 @@ JdkClassCreateHelper.class('java.time.chrono.Chronology', [
 			/* name */ 'eraOf',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'eraValue',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -255,7 +255,7 @@ JdkClassCreateHelper.class('java.time.chrono.Chronology', [
 			/* name */ 'range',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'temporal',
 					/* type */ 'java.time.temporal.ChronoField',
 					/* modifiers */ 0,
 					/* annotations */ UDF

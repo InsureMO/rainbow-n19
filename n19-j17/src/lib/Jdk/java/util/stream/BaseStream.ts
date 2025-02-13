@@ -38,7 +38,7 @@ JdkClassCreateHelper.class('java.util.stream.BaseStream', [
 			/* name */ 'onClose',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'closeHandler',
 					/* type */ 'java.lang.Runnable',
 					/* modifiers */ 0,
 					/* annotations */ UDF

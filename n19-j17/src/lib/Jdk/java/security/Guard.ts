@@ -14,7 +14,7 @@ JdkClassCreateHelper.class('java.security.Guard', [
 			/* name */ 'checkGuard',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'object',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF

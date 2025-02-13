@@ -70,7 +70,7 @@ JdkClassCreateHelper.class('java.util.SortedSet', [
 			/* name */ 'headSet',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'fromElement',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -92,13 +92,13 @@ JdkClassCreateHelper.class('java.util.SortedSet', [
 			/* name */ 'subSet',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'fromElement',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'toElement',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -120,7 +120,7 @@ JdkClassCreateHelper.class('java.util.SortedSet', [
 			/* name */ 'tailSet',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'fromElement',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF

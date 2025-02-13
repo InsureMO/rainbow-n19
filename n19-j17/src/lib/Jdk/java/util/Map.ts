@@ -29,7 +29,7 @@ JdkClassCreateHelper.class('java.util.Map', [
 			/* name */ 'get',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'key',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -45,7 +45,7 @@ JdkClassCreateHelper.class('java.util.Map', [
 			/* name */ 'put',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'key',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -67,7 +67,7 @@ JdkClassCreateHelper.class('java.util.Map', [
 			/* name */ 'remove',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'key',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -83,7 +83,7 @@ JdkClassCreateHelper.class('java.util.Map', [
 			/* name */ 'containsKey',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'key',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -99,7 +99,7 @@ JdkClassCreateHelper.class('java.util.Map', [
 			/* name */ 'containsValue',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'key',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -115,7 +115,7 @@ JdkClassCreateHelper.class('java.util.Map', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'key',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -219,7 +219,7 @@ JdkClassCreateHelper.class('java.util.Map', [
 			/* name */ 'putAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'key',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

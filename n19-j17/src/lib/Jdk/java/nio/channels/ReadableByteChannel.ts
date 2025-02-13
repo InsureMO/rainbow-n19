@@ -16,7 +16,7 @@ JdkClassCreateHelper.class('java.nio.channels.ReadableByteChannel', [
 			/* name */ 'read',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'dst',
 					/* type */ 'java.nio.ByteBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF

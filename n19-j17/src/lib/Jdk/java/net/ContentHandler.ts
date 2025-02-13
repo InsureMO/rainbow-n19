@@ -23,7 +23,7 @@ JdkClassCreateHelper.class('java.net.ContentHandler', [
 			/* name */ 'getContent',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'urlc',
 					/* type */ 'java.net.URLConnection',
 					/* modifiers */ 0,
 					/* annotations */ UDF

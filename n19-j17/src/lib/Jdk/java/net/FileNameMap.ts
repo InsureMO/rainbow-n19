@@ -14,7 +14,7 @@ JdkClassCreateHelper.class('java.net.FileNameMap', [
 			/* name */ 'getContentTypeFor',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'fileName',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

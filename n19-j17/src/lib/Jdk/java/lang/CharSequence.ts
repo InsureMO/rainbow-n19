@@ -14,7 +14,7 @@ JdkClassCreateHelper.class('java.lang.CharSequence', [
 			/* name */ 'charAt',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -39,13 +39,13 @@ JdkClassCreateHelper.class('java.lang.CharSequence', [
 			/* name */ 'subSequence',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'start',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'end',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

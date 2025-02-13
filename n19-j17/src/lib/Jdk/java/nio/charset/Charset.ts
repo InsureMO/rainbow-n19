@@ -44,7 +44,7 @@ JdkClassCreateHelper.class('java.nio.charset.Charset', [
 			/* name */ 'contains',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'canonicalName',
 					/* type */ 'java.nio.charset.Charset',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -14,7 +14,7 @@ JdkClassCreateHelper.class('java.lang.System$Logger', [
 			/* name */ 'isLoggable',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'level',
 					/* type */ 'java.lang.System$Logger$Level',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -39,7 +39,7 @@ JdkClassCreateHelper.class('java.lang.System$Logger', [
 			/* name */ 'log',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'level',
 					/* type */ 'java.lang.System$Logger$Level',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -73,7 +73,7 @@ JdkClassCreateHelper.class('java.lang.System$Logger', [
 			/* name */ 'log',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'level',
 					/* type */ 'java.lang.System$Logger$Level',
 					/* modifiers */ 0,
 					/* annotations */ UDF

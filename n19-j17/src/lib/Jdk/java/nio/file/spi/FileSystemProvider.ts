@@ -23,13 +23,13 @@ JdkClassCreateHelper.class('java.nio.file.spi.FileSystemProvider', [
 			/* name */ 'readAttributes',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'uri',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'env',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'A']]
@@ -70,13 +70,13 @@ JdkClassCreateHelper.class('java.nio.file.spi.FileSystemProvider', [
 			/* name */ 'getFileAttributeView',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'uri',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'env',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* type variable ref */ 'tr', [/* name */ 'V']]
@@ -112,7 +112,7 @@ JdkClassCreateHelper.class('java.nio.file.spi.FileSystemProvider', [
 			/* name */ 'isHidden',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'uri',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -133,13 +133,13 @@ JdkClassCreateHelper.class('java.nio.file.spi.FileSystemProvider', [
 			/* name */ 'isSameFile',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'uri',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'env',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -169,13 +169,13 @@ JdkClassCreateHelper.class('java.nio.file.spi.FileSystemProvider', [
 			/* name */ 'newByteChannel',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'uri',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'env',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -224,13 +224,13 @@ JdkClassCreateHelper.class('java.nio.file.spi.FileSystemProvider', [
 			/* name */ 'newDirectoryStream',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'uri',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'env',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -270,7 +270,7 @@ JdkClassCreateHelper.class('java.nio.file.spi.FileSystemProvider', [
 			/* name */ 'getFileStore',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'uri',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -291,7 +291,7 @@ JdkClassCreateHelper.class('java.nio.file.spi.FileSystemProvider', [
 			/* name */ 'getFileSystem',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'uri',
 					/* type */ 'java.net.URI',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -307,13 +307,13 @@ JdkClassCreateHelper.class('java.nio.file.spi.FileSystemProvider', [
 			/* name */ 'newFileSystem',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'uri',
 					/* type */ 'java.net.URI',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'env',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.String',
@@ -346,7 +346,7 @@ JdkClassCreateHelper.class('java.nio.file.spi.FileSystemProvider', [
 			/* name */ 'getPath',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'uri',
 					/* type */ 'java.net.URI',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -362,13 +362,13 @@ JdkClassCreateHelper.class('java.nio.file.spi.FileSystemProvider', [
 			/* name */ 'readAttributes',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'uri',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'env',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -402,13 +402,13 @@ JdkClassCreateHelper.class('java.nio.file.spi.FileSystemProvider', [
 			/* name */ 'checkAccess',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'uri',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'env',
 					/* type */ '[Ljava.nio.file.AccessMode;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -429,13 +429,13 @@ JdkClassCreateHelper.class('java.nio.file.spi.FileSystemProvider', [
 			/* name */ 'copy',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'uri',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'env',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -462,13 +462,13 @@ JdkClassCreateHelper.class('java.nio.file.spi.FileSystemProvider', [
 			/* name */ 'createDirectory',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'uri',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'env',
 					/* type */ [/* generic array type */ 'ga', [[/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -500,7 +500,7 @@ JdkClassCreateHelper.class('java.nio.file.spi.FileSystemProvider', [
 			/* name */ 'delete',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'uri',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -521,13 +521,13 @@ JdkClassCreateHelper.class('java.nio.file.spi.FileSystemProvider', [
 			/* name */ 'move',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'uri',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'env',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -554,13 +554,13 @@ JdkClassCreateHelper.class('java.nio.file.spi.FileSystemProvider', [
 			/* name */ 'setAttribute',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'uri',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'env',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -47,7 +47,7 @@ JdkClassCreateHelper.class('java.util.Map$Entry', [
 			/* name */ 'setValue',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'value',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -63,7 +63,7 @@ JdkClassCreateHelper.class('java.util.Map$Entry', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'value',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF

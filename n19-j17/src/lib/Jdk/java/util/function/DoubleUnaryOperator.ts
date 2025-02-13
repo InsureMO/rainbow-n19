@@ -16,7 +16,7 @@ JdkClassCreateHelper.class('java.util.function.DoubleUnaryOperator', [
 			/* name */ 'applyAsDouble',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'operand',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF

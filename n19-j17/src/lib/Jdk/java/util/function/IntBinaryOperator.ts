@@ -16,13 +16,13 @@ JdkClassCreateHelper.class('java.util.function.IntBinaryOperator', [
 			/* name */ 'applyAsInt',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'left',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'right',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

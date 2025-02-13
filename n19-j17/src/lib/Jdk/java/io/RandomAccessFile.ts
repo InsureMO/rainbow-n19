@@ -663,7 +663,7 @@ JdkClassCreateHelper.class('java.io.RandomAccessFile', [
 			/* name */ 'setLength',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newLength',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF

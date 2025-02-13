@@ -14,7 +14,7 @@ JdkClassCreateHelper.class('java.lang.constant.ConstantDesc', [
 			/* name */ 'resolveConstantDesc',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'lookup',
 					/* type */ 'java.lang.invoke.MethodHandles$Lookup',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -14,7 +14,7 @@ JdkClassCreateHelper.class('java.io.DataOutput', [
 			/* name */ 'write',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'b',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -35,19 +35,19 @@ JdkClassCreateHelper.class('java.io.DataOutput', [
 			/* name */ 'write',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'b',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'off',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'len',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -68,7 +68,7 @@ JdkClassCreateHelper.class('java.io.DataOutput', [
 			/* name */ 'write',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'b',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -89,7 +89,7 @@ JdkClassCreateHelper.class('java.io.DataOutput', [
 			/* name */ 'writeBoolean',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'v',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -110,7 +110,7 @@ JdkClassCreateHelper.class('java.io.DataOutput', [
 			/* name */ 'writeByte',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'v',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -131,7 +131,7 @@ JdkClassCreateHelper.class('java.io.DataOutput', [
 			/* name */ 'writeBytes',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'b',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -152,7 +152,7 @@ JdkClassCreateHelper.class('java.io.DataOutput', [
 			/* name */ 'writeChar',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'v',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -173,7 +173,7 @@ JdkClassCreateHelper.class('java.io.DataOutput', [
 			/* name */ 'writeChars',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'b',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -194,7 +194,7 @@ JdkClassCreateHelper.class('java.io.DataOutput', [
 			/* name */ 'writeDouble',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'v',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -215,7 +215,7 @@ JdkClassCreateHelper.class('java.io.DataOutput', [
 			/* name */ 'writeFloat',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'v',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -236,7 +236,7 @@ JdkClassCreateHelper.class('java.io.DataOutput', [
 			/* name */ 'writeInt',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'v',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -257,7 +257,7 @@ JdkClassCreateHelper.class('java.io.DataOutput', [
 			/* name */ 'writeLong',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'v',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -278,7 +278,7 @@ JdkClassCreateHelper.class('java.io.DataOutput', [
 			/* name */ 'writeShort',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'v',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -299,7 +299,7 @@ JdkClassCreateHelper.class('java.io.DataOutput', [
 			/* name */ 'writeUTF',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'b',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

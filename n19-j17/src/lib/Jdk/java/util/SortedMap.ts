@@ -130,7 +130,7 @@ JdkClassCreateHelper.class('java.util.SortedMap', [
 			/* name */ 'headMap',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'fromKey',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -153,13 +153,13 @@ JdkClassCreateHelper.class('java.util.SortedMap', [
 			/* name */ 'subMap',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'fromKey',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'toKey',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -182,7 +182,7 @@ JdkClassCreateHelper.class('java.util.SortedMap', [
 			/* name */ 'tailMap',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'fromKey',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF

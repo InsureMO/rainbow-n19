@@ -44,7 +44,7 @@ JdkClassCreateHelper.class('java.lang.invoke.TypeDescriptor$OfMethod', [
 			/* name */ 'parameterType',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'i',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -78,7 +78,7 @@ JdkClassCreateHelper.class('java.lang.invoke.TypeDescriptor$OfMethod', [
 			/* name */ 'changeParameterType',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'i',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -100,7 +100,7 @@ JdkClassCreateHelper.class('java.lang.invoke.TypeDescriptor$OfMethod', [
 			/* name */ 'changeReturnType',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'i',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'F']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -116,13 +116,13 @@ JdkClassCreateHelper.class('java.lang.invoke.TypeDescriptor$OfMethod', [
 			/* name */ 'dropParameterTypes',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'start',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'end',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -138,7 +138,7 @@ JdkClassCreateHelper.class('java.lang.invoke.TypeDescriptor$OfMethod', [
 			/* name */ 'insertParameterTypes',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'i',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

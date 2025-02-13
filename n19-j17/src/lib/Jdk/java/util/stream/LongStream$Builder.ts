@@ -25,7 +25,7 @@ JdkClassCreateHelper.class('java.util.stream.LongStream$Builder', [
 			/* name */ 'accept',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 't',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF

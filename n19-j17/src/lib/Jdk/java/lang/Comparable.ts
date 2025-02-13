@@ -22,7 +22,7 @@ JdkClassCreateHelper.class('java.lang.Comparable', [
 			/* name */ 'compareTo',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'o',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'T']],
 					/* modifiers */ 0,
 					/* annotations */ UDF

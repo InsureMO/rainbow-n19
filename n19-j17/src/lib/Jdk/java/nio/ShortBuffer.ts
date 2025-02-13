@@ -68,13 +68,13 @@ JdkClassCreateHelper.class('java.nio.ShortBuffer', [
 			/* name */ 'put',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 's',
 					/* type */ 'short',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -90,7 +90,7 @@ JdkClassCreateHelper.class('java.nio.ShortBuffer', [
 			/* name */ 'put',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 's',
 					/* type */ 'short',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -115,13 +115,13 @@ JdkClassCreateHelper.class('java.nio.ShortBuffer', [
 			/* name */ 'slice',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'length',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -146,7 +146,7 @@ JdkClassCreateHelper.class('java.nio.ShortBuffer', [
 			/* name */ 'get',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

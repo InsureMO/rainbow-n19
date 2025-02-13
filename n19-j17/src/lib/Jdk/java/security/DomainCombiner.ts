@@ -20,13 +20,13 @@ JdkClassCreateHelper.class('java.security.DomainCombiner', [
 			/* name */ 'combine',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'currentDomains',
 					/* type */ '[Ljava.security.ProtectionDomain;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'assignedDomains',
 					/* type */ '[Ljava.security.ProtectionDomain;',
 					/* modifiers */ 0,
 					/* annotations */ UDF

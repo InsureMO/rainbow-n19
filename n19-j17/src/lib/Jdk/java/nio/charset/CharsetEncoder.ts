@@ -74,13 +74,13 @@ JdkClassCreateHelper.class('java.nio.charset.CharsetEncoder', [
 			/* name */ 'encodeLoop',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'cs',
 					/* type */ 'java.nio.CharBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'averageBytesPerChar',
 					/* type */ 'java.nio.ByteBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF

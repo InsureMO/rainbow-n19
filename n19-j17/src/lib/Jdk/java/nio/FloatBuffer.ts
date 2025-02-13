@@ -41,7 +41,7 @@ JdkClassCreateHelper.class('java.nio.FloatBuffer', [
 			/* name */ 'get',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -93,7 +93,7 @@ JdkClassCreateHelper.class('java.nio.FloatBuffer', [
 			/* name */ 'put',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'f',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -109,13 +109,13 @@ JdkClassCreateHelper.class('java.nio.FloatBuffer', [
 			/* name */ 'put',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'f',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -140,13 +140,13 @@ JdkClassCreateHelper.class('java.nio.FloatBuffer', [
 			/* name */ 'slice',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'length',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

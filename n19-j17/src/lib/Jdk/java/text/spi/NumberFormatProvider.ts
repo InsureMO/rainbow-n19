@@ -23,7 +23,7 @@ JdkClassCreateHelper.class('java.text.spi.NumberFormatProvider', [
 			/* name */ 'getCurrencyInstance',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'locale',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -39,7 +39,7 @@ JdkClassCreateHelper.class('java.text.spi.NumberFormatProvider', [
 			/* name */ 'getIntegerInstance',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'locale',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -55,7 +55,7 @@ JdkClassCreateHelper.class('java.text.spi.NumberFormatProvider', [
 			/* name */ 'getNumberInstance',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'locale',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -71,7 +71,7 @@ JdkClassCreateHelper.class('java.text.spi.NumberFormatProvider', [
 			/* name */ 'getPercentInstance',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'locale',
 					/* type */ 'java.util.Locale',
 					/* modifiers */ 0,
 					/* annotations */ UDF

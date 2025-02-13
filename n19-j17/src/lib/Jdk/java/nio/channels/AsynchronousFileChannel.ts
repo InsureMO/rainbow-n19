@@ -25,25 +25,25 @@ JdkClassCreateHelper.class('java.nio.channels.AsynchronousFileChannel', [
 			/* name */ 'lock',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'file',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'options',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'executor',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg3',
+					/* name */ 'attrs',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'A']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -87,25 +87,25 @@ JdkClassCreateHelper.class('java.nio.channels.AsynchronousFileChannel', [
 			/* name */ 'read',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'file',
 					/* type */ 'java.nio.ByteBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'options',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'executor',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'A']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg3',
+					/* name */ 'attrs',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.Integer',
@@ -143,25 +143,25 @@ JdkClassCreateHelper.class('java.nio.channels.AsynchronousFileChannel', [
 			/* name */ 'write',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'file',
 					/* type */ 'java.nio.ByteBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'options',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'executor',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'A']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg3',
+					/* name */ 'attrs',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							'java.lang.Integer',
@@ -199,7 +199,7 @@ JdkClassCreateHelper.class('java.nio.channels.AsynchronousFileChannel', [
 			/* name */ 'truncate',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'size',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -220,19 +220,19 @@ JdkClassCreateHelper.class('java.nio.channels.AsynchronousFileChannel', [
 			/* name */ 'tryLock',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'position',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'size',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'shared',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -253,13 +253,13 @@ JdkClassCreateHelper.class('java.nio.channels.AsynchronousFileChannel', [
 			/* name */ 'read',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'file',
 					/* type */ 'java.nio.ByteBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'options',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -281,13 +281,13 @@ JdkClassCreateHelper.class('java.nio.channels.AsynchronousFileChannel', [
 			/* name */ 'write',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'file',
 					/* type */ 'java.nio.ByteBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'options',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -309,19 +309,19 @@ JdkClassCreateHelper.class('java.nio.channels.AsynchronousFileChannel', [
 			/* name */ 'lock',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'position',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'size',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'shared',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -357,7 +357,7 @@ JdkClassCreateHelper.class('java.nio.channels.AsynchronousFileChannel', [
 			/* name */ 'force',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'metaData',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF

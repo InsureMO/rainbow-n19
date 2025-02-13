@@ -120,7 +120,7 @@ JdkClassCreateHelper.class('java.lang.Object', [
 			/* name */ 'wait',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'timeoutMillis',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF

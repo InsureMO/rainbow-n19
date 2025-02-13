@@ -40,7 +40,7 @@ JdkClassCreateHelper.class('java.util.concurrent.Future', [
 			/* name */ 'get',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'mayInterruptIfRunning',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -75,7 +75,7 @@ JdkClassCreateHelper.class('java.util.concurrent.Future', [
 			/* name */ 'cancel',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'mayInterruptIfRunning',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF

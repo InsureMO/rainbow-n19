@@ -24,13 +24,13 @@ JdkClassCreateHelper.class('java.util.function.ObjIntConsumer', [
 			/* name */ 'accept',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 't',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'T']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'value',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

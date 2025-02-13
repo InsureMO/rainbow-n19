@@ -24,7 +24,7 @@ JdkClassCreateHelper.class('java.time.temporal.TemporalQuery', [
 			/* name */ 'queryFrom',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'temporal',
 					/* type */ 'java.time.temporal.TemporalAccessor',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -490,7 +490,7 @@ JdkClassCreateHelper.class('java.lang.Double', [
 			/* name */ 'longBitsToDouble',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'bits',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -508,7 +508,7 @@ JdkClassCreateHelper.class('java.lang.Double', [
 			/* name */ 'doubleToRawLongBits',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'value',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF

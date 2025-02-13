@@ -31,7 +31,7 @@ JdkClassCreateHelper.class('java.lang.ClassValue', [
 			/* name */ 'computeValue',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'type',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

@@ -25,7 +25,7 @@ JdkClassCreateHelper.class('java.time.Clock', [
 			/* name */ 'withZone',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'zone',
 					/* type */ 'java.time.ZoneId',
 					/* modifiers */ 0,
 					/* annotations */ UDF

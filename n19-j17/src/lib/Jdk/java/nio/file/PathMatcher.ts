@@ -16,7 +16,7 @@ JdkClassCreateHelper.class('java.nio.file.PathMatcher', [
 			/* name */ 'matches',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'path',
 					/* type */ 'java.nio.file.Path',
 					/* modifiers */ 0,
 					/* annotations */ UDF

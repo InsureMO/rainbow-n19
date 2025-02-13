@@ -29,13 +29,13 @@ JdkClassCreateHelper.class('java.nio.channels.CompletionHandler', [
 			/* name */ 'completed',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'result',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'attachment',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'A']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -51,13 +51,13 @@ JdkClassCreateHelper.class('java.nio.channels.CompletionHandler', [
 			/* name */ 'failed',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'result',
 					/* type */ 'java.lang.Throwable',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'attachment',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'A']],
 					/* modifiers */ 0,
 					/* annotations */ UDF

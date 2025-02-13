@@ -45,7 +45,7 @@ JdkClassCreateHelper.class('java.util.stream.Stream$Builder', [
 			/* name */ 'accept',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 't',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'T']],
 					/* modifiers */ 0,
 					/* annotations */ UDF

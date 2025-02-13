@@ -147,7 +147,7 @@ JdkClassCreateHelper.class('java.util.Deque', [
 			/* name */ 'add',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'e',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -163,7 +163,7 @@ JdkClassCreateHelper.class('java.util.Deque', [
 			/* name */ 'addAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'e',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -190,7 +190,7 @@ JdkClassCreateHelper.class('java.util.Deque', [
 			/* name */ 'contains',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'e',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -206,7 +206,7 @@ JdkClassCreateHelper.class('java.util.Deque', [
 			/* name */ 'offer',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'e',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -222,7 +222,7 @@ JdkClassCreateHelper.class('java.util.Deque', [
 			/* name */ 'offerFirst',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'e',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -238,7 +238,7 @@ JdkClassCreateHelper.class('java.util.Deque', [
 			/* name */ 'offerLast',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'e',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -254,7 +254,7 @@ JdkClassCreateHelper.class('java.util.Deque', [
 			/* name */ 'remove',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'e',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -270,7 +270,7 @@ JdkClassCreateHelper.class('java.util.Deque', [
 			/* name */ 'removeFirstOccurrence',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'e',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -286,7 +286,7 @@ JdkClassCreateHelper.class('java.util.Deque', [
 			/* name */ 'removeLastOccurrence',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'e',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -341,7 +341,7 @@ JdkClassCreateHelper.class('java.util.Deque', [
 			/* name */ 'addFirst',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'e',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -357,7 +357,7 @@ JdkClassCreateHelper.class('java.util.Deque', [
 			/* name */ 'addLast',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'e',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -373,7 +373,7 @@ JdkClassCreateHelper.class('java.util.Deque', [
 			/* name */ 'push',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'e',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -16,13 +16,13 @@ JdkClassCreateHelper.class('java.util.stream.IntStream$IntMapMultiConsumer', [
 			/* name */ 'accept',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'value',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'ic',
 					/* type */ 'java.util.function.IntConsumer',
 					/* modifiers */ 0,
 					/* annotations */ UDF

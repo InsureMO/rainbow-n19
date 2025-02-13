@@ -42,7 +42,7 @@ JdkClassCreateHelper.class('java.lang.ProcessHandle', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'pid',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -76,7 +76,7 @@ JdkClassCreateHelper.class('java.lang.ProcessHandle', [
 			/* name */ 'compareTo',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'pid',
 					/* type */ 'java.lang.ProcessHandle',
 					/* modifiers */ 0,
 					/* annotations */ UDF

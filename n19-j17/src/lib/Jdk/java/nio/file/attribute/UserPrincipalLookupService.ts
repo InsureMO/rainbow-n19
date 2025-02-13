@@ -23,7 +23,7 @@ JdkClassCreateHelper.class('java.nio.file.attribute.UserPrincipalLookupService',
 			/* name */ 'lookupPrincipalByGroupName',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -44,7 +44,7 @@ JdkClassCreateHelper.class('java.nio.file.attribute.UserPrincipalLookupService',
 			/* name */ 'lookupPrincipalByName',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

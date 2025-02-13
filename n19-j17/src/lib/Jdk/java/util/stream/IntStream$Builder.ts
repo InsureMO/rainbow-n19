@@ -25,7 +25,7 @@ JdkClassCreateHelper.class('java.util.stream.IntStream$Builder', [
 			/* name */ 'accept',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 't',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

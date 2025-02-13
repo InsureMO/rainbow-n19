@@ -16,7 +16,7 @@ JdkClassCreateHelper.class('java.util.function.IntUnaryOperator', [
 			/* name */ 'applyAsInt',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'operand',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

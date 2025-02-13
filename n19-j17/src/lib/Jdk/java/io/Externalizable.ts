@@ -16,7 +16,7 @@ JdkClassCreateHelper.class('java.io.Externalizable', [
 			/* name */ 'readExternal',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'out',
 					/* type */ 'java.io.ObjectInput',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -41,7 +41,7 @@ JdkClassCreateHelper.class('java.io.Externalizable', [
 			/* name */ 'writeExternal',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'out',
 					/* type */ 'java.io.ObjectOutput',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -14,7 +14,7 @@ JdkClassCreateHelper.class('java.net.ContentHandlerFactory', [
 			/* name */ 'createContentHandler',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'mimetype',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

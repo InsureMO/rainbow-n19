@@ -41,7 +41,7 @@ JdkClassCreateHelper.class('java.nio.ByteBuffer', [
 			/* name */ 'get',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -66,7 +66,7 @@ JdkClassCreateHelper.class('java.nio.ByteBuffer', [
 			/* name */ 'getChar',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -91,7 +91,7 @@ JdkClassCreateHelper.class('java.nio.ByteBuffer', [
 			/* name */ 'getDouble',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -116,7 +116,7 @@ JdkClassCreateHelper.class('java.nio.ByteBuffer', [
 			/* name */ 'getFloat',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -141,7 +141,7 @@ JdkClassCreateHelper.class('java.nio.ByteBuffer', [
 			/* name */ 'getInt',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -184,7 +184,7 @@ JdkClassCreateHelper.class('java.nio.ByteBuffer', [
 			/* name */ 'put',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'b',
 					/* type */ 'byte',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -200,13 +200,13 @@ JdkClassCreateHelper.class('java.nio.ByteBuffer', [
 			/* name */ 'put',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'b',
 					/* type */ 'byte',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -222,7 +222,7 @@ JdkClassCreateHelper.class('java.nio.ByteBuffer', [
 			/* name */ 'putChar',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'value',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -238,13 +238,13 @@ JdkClassCreateHelper.class('java.nio.ByteBuffer', [
 			/* name */ 'putChar',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'value',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -260,7 +260,7 @@ JdkClassCreateHelper.class('java.nio.ByteBuffer', [
 			/* name */ 'putDouble',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'value',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -276,13 +276,13 @@ JdkClassCreateHelper.class('java.nio.ByteBuffer', [
 			/* name */ 'putDouble',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'value',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -298,7 +298,7 @@ JdkClassCreateHelper.class('java.nio.ByteBuffer', [
 			/* name */ 'putFloat',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'value',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -314,13 +314,13 @@ JdkClassCreateHelper.class('java.nio.ByteBuffer', [
 			/* name */ 'putFloat',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'value',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -336,7 +336,7 @@ JdkClassCreateHelper.class('java.nio.ByteBuffer', [
 			/* name */ 'putInt',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'value',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -352,13 +352,13 @@ JdkClassCreateHelper.class('java.nio.ByteBuffer', [
 			/* name */ 'putInt',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'value',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -374,13 +374,13 @@ JdkClassCreateHelper.class('java.nio.ByteBuffer', [
 			/* name */ 'putLong',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'value',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -396,7 +396,7 @@ JdkClassCreateHelper.class('java.nio.ByteBuffer', [
 			/* name */ 'putLong',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'value',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -412,13 +412,13 @@ JdkClassCreateHelper.class('java.nio.ByteBuffer', [
 			/* name */ 'putShort',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'value',
 					/* type */ 'short',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -434,7 +434,7 @@ JdkClassCreateHelper.class('java.nio.ByteBuffer', [
 			/* name */ 'putShort',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'value',
 					/* type */ 'short',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -459,13 +459,13 @@ JdkClassCreateHelper.class('java.nio.ByteBuffer', [
 			/* name */ 'slice',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'length',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -544,7 +544,7 @@ JdkClassCreateHelper.class('java.nio.ByteBuffer', [
 			/* name */ 'getLong',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -569,7 +569,7 @@ JdkClassCreateHelper.class('java.nio.ByteBuffer', [
 			/* name */ 'getShort',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

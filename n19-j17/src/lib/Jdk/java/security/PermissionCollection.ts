@@ -25,7 +25,7 @@ JdkClassCreateHelper.class('java.security.PermissionCollection', [
 			/* name */ 'implies',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'permission',
 					/* type */ 'java.security.Permission',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -56,7 +56,7 @@ JdkClassCreateHelper.class('java.security.PermissionCollection', [
 			/* name */ 'add',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'permission',
 					/* type */ 'java.security.Permission',
 					/* modifiers */ 0,
 					/* annotations */ UDF

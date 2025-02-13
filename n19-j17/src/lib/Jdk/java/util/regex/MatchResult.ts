@@ -23,7 +23,7 @@ JdkClassCreateHelper.class('java.util.regex.MatchResult', [
 			/* name */ 'end',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'group',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -57,7 +57,7 @@ JdkClassCreateHelper.class('java.util.regex.MatchResult', [
 			/* name */ 'start',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'group',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -82,7 +82,7 @@ JdkClassCreateHelper.class('java.util.regex.MatchResult', [
 			/* name */ 'group',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'group',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

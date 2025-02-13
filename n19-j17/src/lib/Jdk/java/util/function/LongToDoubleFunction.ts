@@ -16,7 +16,7 @@ JdkClassCreateHelper.class('java.util.function.LongToDoubleFunction', [
 			/* name */ 'applyAsDouble',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'value',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF

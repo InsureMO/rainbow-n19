@@ -23,13 +23,13 @@ JdkClassCreateHelper.class('java.io.ObjectOutputStream$PutField', [
 			/* name */ 'put',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'val',
 					/* type */ 'boolean',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -45,13 +45,13 @@ JdkClassCreateHelper.class('java.io.ObjectOutputStream$PutField', [
 			/* name */ 'put',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'val',
 					/* type */ 'byte',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -67,13 +67,13 @@ JdkClassCreateHelper.class('java.io.ObjectOutputStream$PutField', [
 			/* name */ 'put',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'val',
 					/* type */ 'char',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -89,13 +89,13 @@ JdkClassCreateHelper.class('java.io.ObjectOutputStream$PutField', [
 			/* name */ 'put',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'val',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -111,13 +111,13 @@ JdkClassCreateHelper.class('java.io.ObjectOutputStream$PutField', [
 			/* name */ 'put',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'val',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -133,13 +133,13 @@ JdkClassCreateHelper.class('java.io.ObjectOutputStream$PutField', [
 			/* name */ 'put',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'val',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -155,13 +155,13 @@ JdkClassCreateHelper.class('java.io.ObjectOutputStream$PutField', [
 			/* name */ 'put',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'val',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -177,13 +177,13 @@ JdkClassCreateHelper.class('java.io.ObjectOutputStream$PutField', [
 			/* name */ 'put',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'val',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -199,13 +199,13 @@ JdkClassCreateHelper.class('java.io.ObjectOutputStream$PutField', [
 			/* name */ 'put',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'name',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'val',
 					/* type */ 'short',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -221,7 +221,7 @@ JdkClassCreateHelper.class('java.io.ObjectOutputStream$PutField', [
 			/* name */ 'write',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'name',
 					/* type */ 'java.io.ObjectOutput',
 					/* modifiers */ 0,
 					/* annotations */ UDF

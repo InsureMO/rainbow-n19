@@ -26,7 +26,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandle', [
 			/* name */ 'invoke',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'args',
 					/* type */ '[Ljava.lang.Object;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -50,7 +50,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandle', [
 			/* name */ 'invokeExact',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'args',
 					/* type */ '[Ljava.lang.Object;',
 					/* modifiers */ 0,
 					/* annotations */ UDF

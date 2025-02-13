@@ -33,7 +33,7 @@ JdkClassCreateHelper.class('java.lang.invoke.CallSite', [
 			/* name */ 'setTarget',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newTarget',
 					/* type */ 'java.lang.invoke.MethodHandle',
 					/* modifiers */ 0,
 					/* annotations */ UDF

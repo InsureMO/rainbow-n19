@@ -30,7 +30,7 @@ JdkClassCreateHelper.class('java.util.Set', [
 			/* name */ 'toArray',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'o',
 					/* type */ [/* generic array type */ 'ga', [[/* type variable ref */ 'tr', [/* name */ 'T']]]],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -54,7 +54,7 @@ JdkClassCreateHelper.class('java.util.Set', [
 			/* name */ 'add',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'o',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'E']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -70,7 +70,7 @@ JdkClassCreateHelper.class('java.util.Set', [
 			/* name */ 'addAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'o',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -97,7 +97,7 @@ JdkClassCreateHelper.class('java.util.Set', [
 			/* name */ 'contains',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'o',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -113,7 +113,7 @@ JdkClassCreateHelper.class('java.util.Set', [
 			/* name */ 'containsAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'o',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -140,7 +140,7 @@ JdkClassCreateHelper.class('java.util.Set', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'o',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -165,7 +165,7 @@ JdkClassCreateHelper.class('java.util.Set', [
 			/* name */ 'remove',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'o',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -181,7 +181,7 @@ JdkClassCreateHelper.class('java.util.Set', [
 			/* name */ 'removeAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'o',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [
@@ -208,7 +208,7 @@ JdkClassCreateHelper.class('java.util.Set', [
 			/* name */ 'retainAll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'o',
 					/* type */ [/* parameterized type */ 'pt', [
 						[/* actual argument types */
 							[/* wildcard type */ 'wt', [

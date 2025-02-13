@@ -510,7 +510,7 @@ JdkClassCreateHelper.class('java.lang.Float', [
 			/* name */ 'intBitsToFloat',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'bits',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -528,7 +528,7 @@ JdkClassCreateHelper.class('java.lang.Float', [
 			/* name */ 'floatToRawIntBits',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'value',
 					/* type */ 'float',
 					/* modifiers */ 0,
 					/* annotations */ UDF

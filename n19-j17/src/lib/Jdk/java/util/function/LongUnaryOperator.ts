@@ -16,7 +16,7 @@ JdkClassCreateHelper.class('java.util.function.LongUnaryOperator', [
 			/* name */ 'applyAsLong',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'operand',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF

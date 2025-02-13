@@ -16,7 +16,7 @@ JdkClassCreateHelper.class('java.io.ObjectInputFilter', [
 			/* name */ 'checkInput',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'filterInfo',
 					/* type */ 'java.io.ObjectInputFilter$FilterInfo',
 					/* modifiers */ 0,
 					/* annotations */ UDF

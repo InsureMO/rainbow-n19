@@ -82,13 +82,13 @@ JdkClassCreateHelper.class('java.nio.file.FileSystem', [
 			/* name */ 'getPath',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'first',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'more',
 					/* type */ '[Ljava.lang.String;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -104,7 +104,7 @@ JdkClassCreateHelper.class('java.nio.file.FileSystem', [
 			/* name */ 'getPathMatcher',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'first',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF

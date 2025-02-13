@@ -24,7 +24,7 @@ JdkClassCreateHelper.class('java.lang.constant.MethodTypeDesc', [
 			/* name */ 'equals',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'descriptor',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -49,7 +49,7 @@ JdkClassCreateHelper.class('java.lang.constant.MethodTypeDesc', [
 			/* name */ 'parameterType',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'index',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -83,7 +83,7 @@ JdkClassCreateHelper.class('java.lang.constant.MethodTypeDesc', [
 			/* name */ 'changeParameterType',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'descriptor',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -105,7 +105,7 @@ JdkClassCreateHelper.class('java.lang.constant.MethodTypeDesc', [
 			/* name */ 'changeReturnType',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'descriptor',
 					/* type */ 'java.lang.constant.ClassDesc',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -121,13 +121,13 @@ JdkClassCreateHelper.class('java.lang.constant.MethodTypeDesc', [
 			/* name */ 'dropParameterTypes',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'start',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'end',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -143,7 +143,7 @@ JdkClassCreateHelper.class('java.lang.constant.MethodTypeDesc', [
 			/* name */ 'insertParameterTypes',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'descriptor',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

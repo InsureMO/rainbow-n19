@@ -25,13 +25,13 @@ JdkClassCreateHelper.class('java.nio.file.WatchService', [
 			/* name */ 'poll',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'timeout',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'unit',
 					/* type */ 'java.util.concurrent.TimeUnit',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -85,7 +85,7 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle', [
 			/* name */ 'compareAndSet',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'args',
 					/* type */ '[Ljava.lang.Object;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -104,7 +104,7 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle', [
 			/* name */ 'weakCompareAndSet',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'args',
 					/* type */ '[Ljava.lang.Object;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -123,7 +123,7 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle', [
 			/* name */ 'weakCompareAndSetAcquire',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'args',
 					/* type */ '[Ljava.lang.Object;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -142,7 +142,7 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle', [
 			/* name */ 'weakCompareAndSetPlain',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'args',
 					/* type */ '[Ljava.lang.Object;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -161,7 +161,7 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle', [
 			/* name */ 'weakCompareAndSetRelease',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'args',
 					/* type */ '[Ljava.lang.Object;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -180,7 +180,7 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle', [
 			/* name */ 'compareAndExchange',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'args',
 					/* type */ '[Ljava.lang.Object;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -199,7 +199,7 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle', [
 			/* name */ 'compareAndExchangeAcquire',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'args',
 					/* type */ '[Ljava.lang.Object;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -218,7 +218,7 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle', [
 			/* name */ 'compareAndExchangeRelease',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'args',
 					/* type */ '[Ljava.lang.Object;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -237,7 +237,7 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle', [
 			/* name */ 'get',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'args',
 					/* type */ '[Ljava.lang.Object;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -256,7 +256,7 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle', [
 			/* name */ 'getAcquire',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'args',
 					/* type */ '[Ljava.lang.Object;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -275,7 +275,7 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle', [
 			/* name */ 'getAndAdd',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'args',
 					/* type */ '[Ljava.lang.Object;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -294,7 +294,7 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle', [
 			/* name */ 'getAndAddAcquire',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'args',
 					/* type */ '[Ljava.lang.Object;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -313,7 +313,7 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle', [
 			/* name */ 'getAndAddRelease',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'args',
 					/* type */ '[Ljava.lang.Object;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -332,7 +332,7 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle', [
 			/* name */ 'getAndBitwiseAnd',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'args',
 					/* type */ '[Ljava.lang.Object;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -351,7 +351,7 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle', [
 			/* name */ 'getAndBitwiseAndAcquire',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'args',
 					/* type */ '[Ljava.lang.Object;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -370,7 +370,7 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle', [
 			/* name */ 'getAndBitwiseAndRelease',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'args',
 					/* type */ '[Ljava.lang.Object;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -389,7 +389,7 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle', [
 			/* name */ 'getAndBitwiseOr',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'args',
 					/* type */ '[Ljava.lang.Object;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -408,7 +408,7 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle', [
 			/* name */ 'getAndBitwiseOrAcquire',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'args',
 					/* type */ '[Ljava.lang.Object;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -427,7 +427,7 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle', [
 			/* name */ 'getAndBitwiseOrRelease',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'args',
 					/* type */ '[Ljava.lang.Object;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -446,7 +446,7 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle', [
 			/* name */ 'getAndBitwiseXor',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'args',
 					/* type */ '[Ljava.lang.Object;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -465,7 +465,7 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle', [
 			/* name */ 'getAndBitwiseXorAcquire',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'args',
 					/* type */ '[Ljava.lang.Object;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -484,7 +484,7 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle', [
 			/* name */ 'getAndBitwiseXorRelease',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'args',
 					/* type */ '[Ljava.lang.Object;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -503,7 +503,7 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle', [
 			/* name */ 'getAndSet',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'args',
 					/* type */ '[Ljava.lang.Object;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -522,7 +522,7 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle', [
 			/* name */ 'getAndSetAcquire',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'args',
 					/* type */ '[Ljava.lang.Object;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -541,7 +541,7 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle', [
 			/* name */ 'getAndSetRelease',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'args',
 					/* type */ '[Ljava.lang.Object;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -560,7 +560,7 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle', [
 			/* name */ 'getOpaque',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'args',
 					/* type */ '[Ljava.lang.Object;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -579,7 +579,7 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle', [
 			/* name */ 'getVolatile',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'args',
 					/* type */ '[Ljava.lang.Object;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -598,7 +598,7 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle', [
 			/* name */ 'set',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'args',
 					/* type */ '[Ljava.lang.Object;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -617,7 +617,7 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle', [
 			/* name */ 'setOpaque',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'args',
 					/* type */ '[Ljava.lang.Object;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -636,7 +636,7 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle', [
 			/* name */ 'setRelease',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'args',
 					/* type */ '[Ljava.lang.Object;',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -655,7 +655,7 @@ JdkClassCreateHelper.class('java.lang.invoke.VarHandle', [
 			/* name */ 'setVolatile',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'args',
 					/* type */ '[Ljava.lang.Object;',
 					/* modifiers */ 0,
 					/* annotations */ UDF

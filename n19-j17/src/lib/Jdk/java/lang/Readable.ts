@@ -14,7 +14,7 @@ JdkClassCreateHelper.class('java.lang.Readable', [
 			/* name */ 'read',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'cb',
 					/* type */ 'java.nio.CharBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF

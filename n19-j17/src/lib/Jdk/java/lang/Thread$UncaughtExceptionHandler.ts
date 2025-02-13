@@ -16,13 +16,13 @@ JdkClassCreateHelper.class('java.lang.Thread$UncaughtExceptionHandler', [
 			/* name */ 'uncaughtException',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 't',
 					/* type */ 'java.lang.Thread',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'e',
 					/* type */ 'java.lang.Throwable',
 					/* modifiers */ 0,
 					/* annotations */ UDF

@@ -14,7 +14,7 @@ JdkClassCreateHelper.class('java.util.concurrent.ThreadFactory', [
 			/* name */ 'newThread',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'r',
 					/* type */ 'java.lang.Runnable',
 					/* modifiers */ 0,
 					/* annotations */ UDF

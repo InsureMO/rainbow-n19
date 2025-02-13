@@ -38,13 +38,13 @@ JdkClassCreateHelper.class('java.util.concurrent.ConcurrentMap', [
 			/* name */ 'putIfAbsent',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'key',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'defaultValue',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -60,13 +60,13 @@ JdkClassCreateHelper.class('java.util.concurrent.ConcurrentMap', [
 			/* name */ 'replace',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'key',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'defaultValue',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -82,13 +82,13 @@ JdkClassCreateHelper.class('java.util.concurrent.ConcurrentMap', [
 			/* name */ 'remove',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'key',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'defaultValue',
 					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -104,13 +104,13 @@ JdkClassCreateHelper.class('java.util.concurrent.ConcurrentMap', [
 			/* name */ 'replace',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'key',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'K']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'defaultValue',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'V']],
 					/* modifiers */ 0,
 					/* annotations */ UDF

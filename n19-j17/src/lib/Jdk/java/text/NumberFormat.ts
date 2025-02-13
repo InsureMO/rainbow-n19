@@ -23,13 +23,13 @@ JdkClassCreateHelper.class('java.text.NumberFormat', [
 			/* name */ 'parse',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'number',
 					/* type */ 'java.lang.String',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'toAppendTo',
 					/* type */ 'java.text.ParsePosition',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -45,19 +45,19 @@ JdkClassCreateHelper.class('java.text.NumberFormat', [
 			/* name */ 'format',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'number',
 					/* type */ 'double',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'toAppendTo',
 					/* type */ 'java.lang.StringBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'pos',
 					/* type */ 'java.text.FieldPosition',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -73,19 +73,19 @@ JdkClassCreateHelper.class('java.text.NumberFormat', [
 			/* name */ 'format',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'number',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'toAppendTo',
 					/* type */ 'java.lang.StringBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'pos',
 					/* type */ 'java.text.FieldPosition',
 					/* modifiers */ 0,
 					/* annotations */ UDF

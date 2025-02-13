@@ -126,7 +126,7 @@ JdkClassCreateHelper.class('java.io.DataInput', [
 			/* name */ 'skipBytes',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'n',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -203,7 +203,7 @@ JdkClassCreateHelper.class('java.io.DataInput', [
 			/* name */ 'readFully',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'b',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -224,19 +224,19 @@ JdkClassCreateHelper.class('java.io.DataInput', [
 			/* name */ 'readFully',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'b',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'off',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'len',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

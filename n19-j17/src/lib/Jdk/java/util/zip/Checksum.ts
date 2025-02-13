@@ -32,19 +32,19 @@ JdkClassCreateHelper.class('java.util.zip.Checksum', [
 			/* name */ 'update',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'b',
 					/* type */ '[B',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg1',
+					/* name */ 'off',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				],
 				[/* parameter */
-					/* name */ 'arg2',
+					/* name */ 'len',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -60,7 +60,7 @@ JdkClassCreateHelper.class('java.util.zip.Checksum', [
 			/* name */ 'update',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'b',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

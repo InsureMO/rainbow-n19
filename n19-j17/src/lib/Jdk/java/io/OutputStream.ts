@@ -26,7 +26,7 @@ JdkClassCreateHelper.class('java.io.OutputStream', [
 			/* name */ 'write',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'b',
 					/* type */ 'int',
 					/* modifiers */ 0,
 					/* annotations */ UDF

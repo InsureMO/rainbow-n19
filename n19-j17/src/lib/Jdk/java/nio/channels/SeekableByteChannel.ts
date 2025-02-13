@@ -16,7 +16,7 @@ JdkClassCreateHelper.class('java.nio.channels.SeekableByteChannel', [
 			/* name */ 'read',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'dst',
 					/* type */ 'java.nio.ByteBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -37,7 +37,7 @@ JdkClassCreateHelper.class('java.nio.channels.SeekableByteChannel', [
 			/* name */ 'write',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'dst',
 					/* type */ 'java.nio.ByteBuffer',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -58,7 +58,7 @@ JdkClassCreateHelper.class('java.nio.channels.SeekableByteChannel', [
 			/* name */ 'position',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'newPosition',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -79,7 +79,7 @@ JdkClassCreateHelper.class('java.nio.channels.SeekableByteChannel', [
 			/* name */ 'truncate',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'size',
 					/* type */ 'long',
 					/* modifiers */ 0,
 					/* annotations */ UDF

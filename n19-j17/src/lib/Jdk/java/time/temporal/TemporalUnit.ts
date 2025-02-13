@@ -14,7 +14,7 @@ JdkClassCreateHelper.class('java.time.temporal.TemporalUnit', [
 			/* name */ 'addTo',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'temporal',
 					/* type */ [/* type variable ref */ 'tr', [/* name */ 'R']],
 					/* modifiers */ 0,
 					/* annotations */ UDF
@@ -89,7 +89,7 @@ JdkClassCreateHelper.class('java.time.temporal.TemporalUnit', [
 			/* name */ 'between',
 			[/* parameters */
 				[/* parameter */
-					/* name */ 'arg0',
+					/* name */ 'temporal',
 					/* type */ 'java.time.temporal.Temporal',
 					/* modifiers */ 0,
 					/* annotations */ UDF
