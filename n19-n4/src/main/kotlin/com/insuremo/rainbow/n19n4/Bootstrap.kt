@@ -10,8 +10,7 @@ fun main(args: Array<String>) {
 			cleanOutputDir()
 			prepareOutputDir()
 			var targetInfo: JarGeneratingTargetInfo? = null
-			targetInfo = generateJre()
-			targetInfo = targetInfo ?: generateGroovy()
+			targetInfo = generateJre() ?: generateGroovy() ?: generateOther()
 			if (targetInfo != null) {
 				generateTakenBackClasses(targetInfo)
 				buildClassIndexFiles(targetInfo)

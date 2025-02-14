@@ -32,6 +32,7 @@ object Envs {
 		).joinToString(",")
 	}
 	private const val THIRD_PARTY_LIB_NAME = "thirdPartyLibName"
+	private const val THIRD_PARTY_LIBS = "thirdPartyLibs"
 
 	// common
 	private const val OUTPUT_DIR = "outputDir"
@@ -94,7 +95,6 @@ object Envs {
 			"org.w3c.dom",
 			"org.xml.sax",
 			// groovy
-//			"groovy.beans",
 			"groovy.cli",
 			"groovy.grape",
 			"groovy.inspect",
@@ -255,7 +255,23 @@ object Envs {
 	val libDir by lazy { outputDir + File.separator + "lib" }
 	val jreDir by lazy { libDir + File.separator + "Jdk" }
 	val groovyDir by lazy { libDir + File.separator + "Groovy" }
-	val thirdDir by lazy { libDir + File.separator + this.get(THIRD_PARTY_LIB_NAME, "ThirdParty") }
+	val otherName by lazy { this.get(THIRD_PARTY_LIB_NAME, "ThirdParty") }
+	val otherLibs by lazy {
+		this.get(THIRD_PARTY_LIBS, "unspecified,unspecified")
+			.split(",")
+			.chunked(2)
+			.map { if (it.size == 1) listOf(it[0], "") else it }
+			.map {
+				listOf(
+					if (it[0].trim().isEmpty()) "unspecified" else it[0].trim(),
+					if (it[1].trim().isEmpty()) "unspecified" else it[1].trim()
+				)
+			}
+			.map {
+				"['${it[0]}', '${it[1]}']"
+			}
+	}
+	val otherDir by lazy { libDir + File.separator + this.otherName }
 
 	fun initialize(args: Array<String>) {
 		envsMap.putAll(this.argsToMap(args))
@@ -343,6 +359,12 @@ object Envs {
 					"it is sub folder of \"${cpv(OUTPUT_DIR) + cdv("/lib")}\". " +
 					"\nThis setting will only take effect " +
 					"when the [${cpv(GENERATE_TARGET)}] is set to \"${cdv(GENERATE_TARGET_OTHER)}\".",
+			"${KEY_PREFIX}${THIRD_PARTY_LIBS}"
+					to "Specify the vendors and versions of libs, separated by commas." +
+					"\nFormat: ${cpv("[vendor, version [, vendor, version [, vendor, version...]]]")}." +
+					"\nThis setting will only take effect " +
+					"when the [${cpv(GENERATE_TARGET)}] is set to \"${cdv(GENERATE_TARGET_OTHER)}\"." +
+					"\n Default \"${cdv("unspecified, unspecified")}\"",
 			"${KEY_PREFIX}${INCLUDED_CLASSES}"
 					to "Classes that must be included, separated by commas, " +
 					"taking priority over [${cpv(EXCLUDED_PACKAGES)}] " +
