@@ -666,17 +666,6 @@ JdkClassCreateHelper.class('java.lang.ClassLoader', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* protected static boolean java.lang.ClassLoader.registerAsParallelCapable() */
-			/* name */ 'registerAsParallelCapable',
-			/* parameters */,
-			/* return */ 'boolean',
-			/* exceptions */,
-			/* modifiers */ 12,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
-			/* type parameters */ UDF
-		],
 		[/* public final boolean java.lang.ClassLoader.isRegisteredAsParallelCapable() */
 			/* name */ 'isRegisteredAsParallelCapable',
 			/* parameters */,

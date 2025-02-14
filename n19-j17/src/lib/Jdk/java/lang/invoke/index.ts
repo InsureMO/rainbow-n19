@@ -8,6 +8,7 @@ import './MethodHandleInfo';
 import './MethodHandleProxies';
 import './MethodHandles';
 import './MethodHandles$Lookup';
+import './MethodHandles$Lookup$ClassOption';
 import './MethodType';
 import './MutableCallSite';
 import './SerializedLambda';
