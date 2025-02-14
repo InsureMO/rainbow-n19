@@ -16,9 +16,7 @@ GroovyClassCreateHelper.class('groovy.util.FileTreeBuilder', [
 			/* parameters */,
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['groovy.transform.Generated']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public groovy.util.FileTreeBuilder(java.io.File) */
@@ -48,7 +46,7 @@ GroovyClassCreateHelper.class('groovy.util.FileTreeBuilder', [
 						[
 							'groovy.lang.DelegatesTo',
 							['p', 'type', ''],
-							['p', 'value', 'groovy.util.FileTreeBuilder'],
+							['c', 'value', 'groovy.util.FileTreeBuilder'],
 							['p', 'target', ''],
 							['p', 'strategy', 1],
 							['p', 'genericTypeIndex', -1]
@@ -95,7 +93,7 @@ GroovyClassCreateHelper.class('groovy.util.FileTreeBuilder', [
 						[
 							'groovy.lang.DelegatesTo',
 							['p', 'type', ''],
-							['p', 'value', 'groovy.util.FileTreeBuilder'],
+							['c', 'value', 'groovy.util.FileTreeBuilder'],
 							['p', 'target', ''],
 							['p', 'strategy', 1],
 							['p', 'genericTypeIndex', -1]
@@ -146,15 +144,9 @@ GroovyClassCreateHelper.class('groovy.util.FileTreeBuilder', [
 					/* modifiers */ 0,
 					[/* annotations */
 						[
-							'groovy.transform.stc.ClosureParams',
-							['p', 'value', 'groovy.transform.stc.FromString'],
-							['p', 'options', ['File']],
-							['p', 'conflictResolutionStrategy', 'groovy.transform.stc.ClosureSignatureConflictResolver']
-						],
-						[
 							'groovy.lang.DelegatesTo',
 							['p', 'type', ''],
-							['p', 'value', 'java.io.File'],
+							['c', 'value', 'java.io.File'],
 							['p', 'target', ''],
 							['p', 'strategy', 1],
 							['p', 'genericTypeIndex', -1]
@@ -218,9 +210,7 @@ GroovyClassCreateHelper.class('groovy.util.FileTreeBuilder', [
 			/* return */ 'java.io.File',
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['groovy.transform.Generated']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.lang.Object groovy.util.FileTreeBuilder.methodMissing(java.lang.String,java.lang.Object) */
@@ -258,9 +248,7 @@ GroovyClassCreateHelper.class('groovy.util.FileTreeBuilder', [
 			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['groovy.transform.Generated']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]
 	],

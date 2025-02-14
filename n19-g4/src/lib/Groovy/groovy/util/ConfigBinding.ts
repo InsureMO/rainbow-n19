@@ -32,9 +32,7 @@ GroovyClassCreateHelper.class('groovy.util.ConfigBinding', [
 			/* return */ 'java.lang.Object',
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['groovy.transform.Generated']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public void groovy.util.ConfigBinding.setCallable(java.lang.Object) */
@@ -50,9 +48,7 @@ GroovyClassCreateHelper.class('groovy.util.ConfigBinding', [
 			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['groovy.transform.Generated']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public void groovy.util.ConfigBinding.setVariable(java.lang.String,java.lang.Object) */

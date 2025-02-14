@@ -134,14 +134,7 @@ GroovyClassCreateHelper.class('groovy.util.GroovyCollections', [
 					/* name */ 'condition',
 					/* type */ 'groovy.lang.Closure',
 					/* modifiers */ 0,
-					[/* annotations */
-						[
-							'groovy.transform.stc.ClosureParams',
-							['p', 'value', 'groovy.transform.stc.FromString'],
-							['p', 'options', ['T', 'T,T']],
-							['p', 'conflictResolutionStrategy', 'groovy.transform.stc.ClosureSignatureConflictResolver']
-						]
-					]
+					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'iterables',
@@ -327,14 +320,7 @@ GroovyClassCreateHelper.class('groovy.util.GroovyCollections', [
 					/* name */ 'condition',
 					/* type */ 'groovy.lang.Closure',
 					/* modifiers */ 0,
-					[/* annotations */
-						[
-							'groovy.transform.stc.ClosureParams',
-							['p', 'value', 'groovy.transform.stc.FromString'],
-							['p', 'options', ['T', 'T,T']],
-							['p', 'conflictResolutionStrategy', 'groovy.transform.stc.ClosureSignatureConflictResolver']
-						]
-					]
+					/* annotations */ UDF
 				]
 			],
 			/* return */ [/* parameterized type */ 'pt', [

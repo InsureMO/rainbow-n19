@@ -23,14 +23,7 @@ GroovyClassCreateHelper.class('groovy.util.BuilderSupport', [
 					/* name */ 'nameMappingClosure',
 					/* type */ 'groovy.lang.Closure',
 					/* modifiers */ 0,
-					[/* annotations */
-						[
-							'groovy.transform.stc.ClosureParams',
-							['p', 'value', 'groovy.transform.stc.SimpleType'],
-							['p', 'options', ['java.lang.String']],
-							['p', 'conflictResolutionStrategy', 'groovy.transform.stc.ClosureSignatureConflictResolver']
-						]
-					]
+					/* annotations */ UDF
 				],
 				[/* parameter */
 					/* name */ 'proxyBuilder',

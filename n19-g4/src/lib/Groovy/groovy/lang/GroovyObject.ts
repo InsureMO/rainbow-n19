@@ -9,74 +9,7 @@ GroovyClassCreateHelper.class('groovy.lang.GroovyObject', [
 	/* declared annotations */,
 	/* type parameters */,
 	/* declared constructors */,
-	[/* declared methods */
-		[/* public default java.lang.Object groovy.lang.GroovyObject.getProperty(java.lang.String) */
-			/* name */ 'getProperty',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'propertyName',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.Object',
-			/* exceptions */,
-			/* modifiers */ 1,
-			[/* annotations */
-				['groovy.transform.Internal']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public default java.lang.Object groovy.lang.GroovyObject.invokeMethod(java.lang.String,java.lang.Object) */
-			/* name */ 'invokeMethod',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'name',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'args',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.Object',
-			/* exceptions */,
-			/* modifiers */ 1,
-			[/* annotations */
-				['groovy.transform.Internal']
-			],
-			/* type parameters */ UDF
-		],
-		[/* public default void groovy.lang.GroovyObject.setProperty(java.lang.String,java.lang.Object) */
-			/* name */ 'setProperty',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'propertyName',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'newValue',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			[/* annotations */
-				['groovy.transform.Internal']
-			],
-			/* type parameters */ UDF
-		]
-	],
+	/* declared methods */,
 	/* declared fields */,
 	/* enum values */ UDF
 ]);

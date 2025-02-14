@@ -17,9 +17,7 @@ GroovyClassCreateHelper.class('groovy.util.FileNameByRegexFinder', [
 			/* parameters */,
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['groovy.transform.Generated']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]
 	],

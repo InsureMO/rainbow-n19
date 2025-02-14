@@ -32,7 +32,6 @@ import './MetaArrayLengthProperty';
 import './MetaExpandoProperty';
 import './MetaProperty';
 import './Mixin';
-import './NamedValue';
 import './Newify';
 import './NonEmptySequence';
 import './NumberRange';
