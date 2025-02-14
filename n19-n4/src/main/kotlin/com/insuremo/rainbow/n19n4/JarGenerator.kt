@@ -7,7 +7,7 @@ data class JarGeneratingTargetInfo(
 	val classCreateHelperName: String,
 	val classLoaderName: String,
 	val classLoaderFileName: String,
-	val classDocHtmlUrl: (clazz: Class<*>) -> String,
+	val classDocHtmlUrl: (clazz: Class<*>) -> String?,
 	val parameterNamesOfMethodFromDocHtml: (method: Method, docHtml: String) -> List<String?>,
 	val rootDir: String
 )
@@ -36,7 +36,11 @@ fun generateJar(jarFilePath: String, targetInfo: JarGeneratingTargetInfo) {
 	}
 
 	filtered.forEach {
-		generateClass(it, targetInfo)
-		Summary.addTreatedClass(it)
+		try {
+			generateClass(it, targetInfo)
+			Summary.addTreatedClass(it)
+		} catch (t: Throwable) {
+			println(t)
+		}
 	}
 }

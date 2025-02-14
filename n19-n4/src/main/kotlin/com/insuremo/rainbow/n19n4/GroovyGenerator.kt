@@ -2,6 +2,10 @@ package com.insuremo.rainbow.n19n4
 
 import groovy.lang.GroovySystem
 import java.io.File
+import java.util.Spliterator
+import java.util.function.DoubleConsumer
+import java.util.function.IntConsumer
+import java.util.function.LongConsumer
 
 private fun createClassLoaderFile(targetDir: String) {
 	val content = "import {Groovy, Java} from '@rainbow-n19/n2';\n\n" +
@@ -41,19 +45,22 @@ fun generateGroovy(): JarGeneratingTargetInfo? {
 		classDocHtmlUrl = { clazz ->
 			val version = GroovySystem.getVersion()
 			val classPath = clazz.name.replace('.', '/').replace('$', '.')
-			"https://docs.groovy-lang.org/${version}/html/gapi/${classPath}.html"
+			"https://docs.groovy-lang.org/${version}/html/api/${classPath}.html"
 		},
 		parameterNamesOfMethodFromDocHtml = { method, docHtml ->
-//			"${method.name}(${method.parameters.joinToString(",") { transformClassNameForDocHtmlId(it) }})"
-			listOf()
+			standardParameterNamesOfMethodFromDocHtml(method, docHtml, {
+				"${method.name}(${method.parameters.joinToString(",") { transformClassNameForDocHtmlId(it) }})"
+			})
 		},
 		rootDir = Envs.groovyDir
 	)
-	val location = GroovySystem::class.java.protectionDomain.codeSource.location
-	if (location != null) {
-		println(location.path)
+
+	Envs.classesToFindJars.forEach {
+		val location = Class.forName(it).protectionDomain.codeSource.location
+		if (location != null) {
+			generateJars(jarsDir = File(location.path).parentFile.absolutePath, targetInfo)
+		}
 	}
-//	generateJars(jarsDir, targetInfo)
 
 	return targetInfo
 }

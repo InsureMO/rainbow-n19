@@ -112,8 +112,6 @@ private class ClassGenerator(
 	private val targetInfo: JarGeneratingTargetInfo
 ) {
 	private companion object {
-		val IGNORE_ANNOTATION_TYPE_NAMES =
-			listOf("jdk.internal.util.random.RandomSupport\$RandomGeneratorProperties", "")
 		val IGNORE_ANNOTATION_METHOD_NAMES = listOf("annotationType", "equals", "hashCode", "toString")
 	}
 
@@ -128,19 +126,28 @@ private class ClassGenerator(
 
 	private val docHtml by lazy {
 		val url = targetInfo.classDocHtmlUrl(clazz)
-		val connection = URL(url).openConnection()
-		return@lazy connection.getInputStream()
-			.use {
-				BufferedReader(InputStreamReader(it)).use { reader ->
-					StringBuilder().apply {
-						var line: String?
-						while (reader.readLine().also { line = it } != null) {
-							this.append(line)
-							this.append("\n")
-						}
-					}.toString()
+		if (url == null || url.isEmpty()) {
+			return@lazy ""
+		}
+
+		try {
+			val connection = URL(url).openConnection()
+			return@lazy connection.getInputStream()
+				.use {
+					BufferedReader(InputStreamReader(it)).use { reader ->
+						StringBuilder().apply {
+							var line: String?
+							while (reader.readLine().also { line = it } != null) {
+								this.append(line)
+								this.append("\n")
+							}
+						}.toString()
+					}
 				}
-			}
+		} catch (_: Throwable) {
+			Logs.warn("Failed to retrieve javadoc html file[${url}]", -1)
+			return@lazy ""
+		}
 	}
 
 	fun createPackageDir(targetDir: String, packageName: String): Pair<String, Int> {
@@ -173,9 +180,17 @@ private class ClassGenerator(
 		return indent + (comment ?: "")
 	}
 
-	private fun generateClassName(className: String, indent: String): String {
-		Summary.takeBack(className)
-		return "${indent}'${className}'"
+	private fun generateClassName(clazz: Class<*>, indent: String): String {
+		if (clazz.isArray) {
+			var c = clazz.componentType
+			while (c.isArray) {
+				c = c.componentType
+			}
+			Summary.takeBack(c.name)
+		} else {
+			Summary.takeBack(clazz.name)
+		}
+		return "${indent}'${clazz.name}'"
 	}
 
 	private fun generateBoundsOfTypeVariable(tv: TypeVariable<*>, indent: String): String {
@@ -222,8 +237,8 @@ private class ClassGenerator(
 							is Annotation -> "${indent1}['a', '$name', ${generateAnnotation(value, indent1)}]"
 							is Enum<*> -> "${indent1}['p', '$name', '${value.javaClass.name}.${value.name}']"
 							is Class<*> -> "${indent1}['p', '$name', '${value.name}']"
-							is String, Char -> "${indent1}['p', '$name', '$value']"
-							is Int, Long, Short, Float, Double, Byte, Boolean -> "${indent1}['p', '$name', $value]"
+							is String, is Char -> "${indent1}['p', '$name', '$value']"
+							is Int, is Long, is Short, is Float, is Double, is Byte, is Boolean -> "${indent1}['p', '$name', $value]"
 							is Array<*> -> {
 								val indent2 = indent1 + "\n"
 								val type = method.returnType.componentType
@@ -249,9 +264,14 @@ private class ClassGenerator(
 										"${indent1}['p', '$name', [${(value as Array<Class<*>>).joinToString(", ") { "'${it.name}'" }}]]"
 									}
 
-									type == String.javaClass || type == Char.javaClass -> {
+									type == String::class.java || type == Char::class.java -> {
 										@Suppress("UNCHECKED_CAST")
 										"${indent1}['p', '$name', [${(value as Array<String>).joinToString(", ") { "'${it}'" }}]]"
+									}
+
+									type == Boolean::class.java -> {
+										@Suppress("UNCHECKED_CAST")
+										"${indent1}['p', '$name', [${(value as Array<String>).joinToString(", ") { it }}]]"
 									}
 
 									type.isPrimitive -> "['p', '$name', [${value.map { it }.joinToString(", ")}]]"
@@ -261,7 +281,8 @@ private class ClassGenerator(
 
 							else -> throw RuntimeException("Cannot recognize annotation value[class=${value.javaClass}, value=${value}].")
 						}
-					} catch (_: Throwable) {
+					} catch (t: Throwable) {
+						Logs.error(t)
 						return@joinToString "${indent1}['p', '$name', '\$Unreadable Value']"
 					}
 				},
@@ -277,7 +298,7 @@ private class ClassGenerator(
 		indent: String
 	): String {
 		val filtered = annotations.filter { annotation ->
-			!IGNORE_ANNOTATION_TYPE_NAMES.contains(annotation.annotationClass.java.name)
+			!Envs.excludedAnnotationClasses.contains(annotation.annotationClass.java.name)
 		}
 		if (filtered.isEmpty()) {
 			return generateComment(if (udf) "$comment UDF" else comment, indent)
@@ -324,8 +345,10 @@ private class ClassGenerator(
 		val rawType = pt.rawType
 		return if (rawType == null) {
 			"${indent}/* raw type */"
+		} else if (rawType is Class<*>) {
+			"${indent}/* raw type */ " + generateClassName(rawType, "")
 		} else {
-			"${indent}/* raw type */ " + generateClassName(rawType.typeName, "")
+			listOf("${indent}/* raw type */", generateType(rawType, indent)).joinToString("\n")
 		}
 	}
 
@@ -334,7 +357,7 @@ private class ClassGenerator(
 		return if (ownerType == null) {
 			"${indent}/* owner type */ UDF"
 		} else if (ownerType is Class<*>) {
-			"${indent}/* owner type */ " + generateClassName(ownerType.name, "")
+			"${indent}/* owner type */ " + generateClassName(ownerType, "")
 		} else {
 			listOf("${indent}/* owner type */", generateType(ownerType, indent)).joinToString("\n")
 		}
@@ -393,7 +416,7 @@ private class ClassGenerator(
 
 	private fun generateType(type: Type, indent: String): String {
 		return when (type) {
-			is Class<*> -> generateClassName(type.name, indent)
+			is Class<*> -> generateClassName(type, indent)
 			is TypeVariable<*> -> generateTypeVariableRef(type, indent)
 			is GenericArrayType -> generateGenericArrayType(type, indent)
 			is ParameterizedType -> generateParameterizedType(type, indent)
@@ -460,7 +483,14 @@ private class ClassGenerator(
 			// typically only abstract method cannot get parameter names from class
 			// try to get document and find them
 			return when (executable) {
-				is Method -> targetInfo.parameterNamesOfMethodFromDocHtml(executable, docHtml)
+				is Method -> {
+					return if (docHtml.isEmpty()) {
+						names
+					} else {
+						targetInfo.parameterNamesOfMethodFromDocHtml(executable, docHtml)
+					}
+				}
+
 				is Constructor<*> -> {
 					println("Found constructor[${executable}], should get parameter names but now is ignored")
 					return names
@@ -490,7 +520,10 @@ private class ClassGenerator(
 			}.joinToString(",\n") {
 				if (it.first.startsWith("arg0")) {
 					if (!Modifier.isAbstract(executable.modifiers)) {
-						println("${executable}, $names")
+						Logs.warn(
+							"Non-abstract executable[${executable}] with no explicit parameter name detected.",
+							-1
+						)
 					}
 				}
 				generateParameter(it.second, it.first, indent + "\t")
@@ -570,7 +603,7 @@ private class ClassGenerator(
 		val methods = clazz.declaredMethods.filter { method ->
 			(Modifier.isPublic(method.modifiers) || Modifier.isProtected(method.modifiers))
 					&& (method.modifiers and Opcodes.ACC_SYNTHETIC == 0)
-					&& !Envs.excludeMethods(method)
+					&& !Envs.excludedMethods(method)
 		}
 		if (methods.isEmpty()) {
 			return generateComment("/* declared methods */", "\t")

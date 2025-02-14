@@ -1,6 +1,7 @@
 package com.insuremo.rainbow.n19n4
 
 import java.io.File
+import java.lang.reflect.Method
 import java.lang.reflect.Parameter
 import java.nio.charset.StandardCharsets
 
@@ -86,4 +87,45 @@ fun transformClassNameForDocHtmlId(parameter: Parameter): String {
 	} else {
 		transformClassNameForDocHtmlId(parameter.type)
 	}
+}
+
+fun standardParameterNamesOfMethodFromDocHtml(
+	method: Method, docHtml: String, computeId: (method: Method) -> String
+): List<String?> {
+	var id = computeId(method)
+	var htmlId = "id=\"${id}\""
+	var start = docHtml.indexOf(htmlId)
+	if (start == -1) {
+		// regarding java.lang.invoke.TypeDescriptor.OfMethod.insertParameterTypes,
+		// the id of this method should be "insertParameterTypes(int,java.lang.invoke.TypeDescriptor.OfField...)"
+		// but in javadoc, id is "insertParameterTypes(int,java.lang.invoke.TypeDescriptor.OfField[])"
+		// the varargs is presented as "[]", not "...", which leads id match missed
+		// so add the following logic to fix it.
+		if (htmlId.contains("...")) {
+			htmlId = htmlId.replace("...", "[]")
+			start = docHtml.indexOf(htmlId)
+		}
+		if (start == -1) {
+			return listOf()
+		}
+	}
+	start = docHtml.indexOf("class=\"member-signature\"", start)
+	start = docHtml.indexOf("class=\"parameters\"", start)
+	start = docHtml.indexOf(">", start) + 1
+	val end = docHtml.indexOf("</span>", start)
+	return docHtml.substring(start, end)
+		.drop(1) // drop "("
+		.dropLast(1) // drop ")"
+		.replace("&nbsp;", " ")
+		.split("\n")
+		.map { it.trim() }
+		.map {
+			if (it.startsWith("<")) {
+				"any ${it.substring(it.lastIndexOf(' ') + 1).trim()}"
+			} else {
+				it
+			}
+		}
+		.map { it.split(" ") }
+		.map { if (it[1].endsWith(",")) it[1].dropLast(1).trim() else it[1].trim() }
 }

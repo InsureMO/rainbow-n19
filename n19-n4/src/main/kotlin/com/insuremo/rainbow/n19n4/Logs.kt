@@ -30,4 +30,12 @@ object Logs {
 	fun log(msg: String, indent: Int) {
 		println("${linePrefix(indent)}${msg}")
 	}
+
+	fun warn(msg: String, indent: Int) {
+		println("${linePrefix(indent)}\u001B[33m\u001B[3m${msg}\u001B[0m")
+	}
+
+	fun error(t: Throwable) {
+		t.printStackTrace()
+	}
 }

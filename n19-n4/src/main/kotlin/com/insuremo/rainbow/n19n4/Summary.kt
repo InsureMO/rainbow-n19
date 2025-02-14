@@ -64,7 +64,12 @@ object Summary {
 			this.ignoredClasses.keys.sortedBy { it.lowercase() }.joinToString("\n"),
 			"",
 			"Classes Relevant From External: ${externalClasses.size}",
-			this.externalClasses.keys.sortedBy { it.lowercase() }.joinToString("\n"),
+			this.externalClasses.keys.filter { className ->
+				!this.treatedClasses.containsKey(className)
+						&& !this.takenBackClasses.containsKey(className)
+						&& !this.temporarilyIgnoredClasses.containsKey(className)
+						&& !this.ignoredClasses.containsKey(className)
+			}.sortedBy { it.lowercase() }.joinToString("\n"),
 			"",
 			"Parameter names:",
 			this.parameterNames.keys.sortedBy { it.lowercase() }.joinToString("\n"),
