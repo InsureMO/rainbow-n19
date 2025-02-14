@@ -2,10 +2,6 @@ package com.insuremo.rainbow.n19n4
 
 import groovy.lang.GroovySystem
 import java.io.File
-import java.util.Spliterator
-import java.util.function.DoubleConsumer
-import java.util.function.IntConsumer
-import java.util.function.LongConsumer
 
 private fun createClassLoaderFile(targetDir: String) {
 	val content = "import {Groovy, Java} from '@rainbow-n19/n2';\n\n" +
