@@ -191,9 +191,7 @@ JdkClassCreateHelper.class('java.util.ResourceBundle', [
 			/* return */ 'java.util.ResourceBundle',
 			/* exceptions */,
 			/* modifiers */ 25,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static final java.util.ResourceBundle java.util.ResourceBundle.getBundle(java.lang.String,java.util.Locale) */
@@ -215,9 +213,7 @@ JdkClassCreateHelper.class('java.util.ResourceBundle', [
 			/* return */ 'java.util.ResourceBundle',
 			/* exceptions */,
 			/* modifiers */ 25,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static final java.util.ResourceBundle java.util.ResourceBundle.getBundle(java.lang.String,java.util.Locale,java.util.ResourceBundle$Control) */
@@ -245,9 +241,7 @@ JdkClassCreateHelper.class('java.util.ResourceBundle', [
 			/* return */ 'java.util.ResourceBundle',
 			/* exceptions */,
 			/* modifiers */ 25,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static final java.util.ResourceBundle java.util.ResourceBundle.getBundle(java.lang.String,java.util.ResourceBundle$Control) */
@@ -269,9 +263,7 @@ JdkClassCreateHelper.class('java.util.ResourceBundle', [
 			/* return */ 'java.util.ResourceBundle',
 			/* exceptions */,
 			/* modifiers */ 25,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static final void java.util.ResourceBundle.clearCache() */
@@ -280,9 +272,7 @@ JdkClassCreateHelper.class('java.util.ResourceBundle', [
 			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 25,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static final void java.util.ResourceBundle.clearCache(java.lang.ClassLoader) */
@@ -320,9 +310,7 @@ JdkClassCreateHelper.class('java.util.ResourceBundle', [
 			/* return */ 'java.util.ResourceBundle',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static java.util.ResourceBundle java.util.ResourceBundle.getBundle(java.lang.String,java.util.Locale,java.lang.ClassLoader) */
@@ -350,9 +338,7 @@ JdkClassCreateHelper.class('java.util.ResourceBundle', [
 			/* return */ 'java.util.ResourceBundle',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static java.util.ResourceBundle java.util.ResourceBundle.getBundle(java.lang.String,java.util.Locale,java.lang.ClassLoader,java.util.ResourceBundle$Control) */
@@ -386,9 +372,7 @@ JdkClassCreateHelper.class('java.util.ResourceBundle', [
 			/* return */ 'java.util.ResourceBundle',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static java.util.ResourceBundle java.util.ResourceBundle.getBundle(java.lang.String,java.util.Locale,java.lang.Module) */
@@ -416,9 +400,7 @@ JdkClassCreateHelper.class('java.util.ResourceBundle', [
 			/* return */ 'java.util.ResourceBundle',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]
 	],

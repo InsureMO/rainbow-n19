@@ -9,9 +9,7 @@ JdkClassCreateHelper.class('java.time.ZoneId', [
 		'java.io.Serializable'
 	],
 	/* modifiers */ 1025,
-	[/* declared annotations */
-		['jdk.internal.ValueBased']
-	],
+	/* declared annotations */,
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */

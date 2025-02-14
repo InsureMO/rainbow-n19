@@ -17,9 +17,7 @@ JdkClassCreateHelper.class('java.lang.Float', [
 		'java.lang.constant.ConstantDesc'
 	],
 	/* modifiers */ 17,
-	[/* declared annotations */
-		['jdk.internal.ValueBased']
-	],
+	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
 		[/* public java.lang.Float(double) */
@@ -147,9 +145,7 @@ JdkClassCreateHelper.class('java.lang.Float', [
 			/* return */ 'float',
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public int java.lang.Float.compareTo(java.lang.Float) */
@@ -414,9 +410,7 @@ JdkClassCreateHelper.class('java.lang.Float', [
 			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static int java.lang.Float.hashCode(float) */
@@ -448,9 +442,7 @@ JdkClassCreateHelper.class('java.lang.Float', [
 			/* return */ 'java.lang.Float',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static java.lang.Float java.lang.Float.valueOf(java.lang.String) throws java.lang.NumberFormatException */
@@ -519,9 +511,7 @@ JdkClassCreateHelper.class('java.lang.Float', [
 			/* return */ 'float',
 			/* exceptions */,
 			/* modifiers */ 265,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static native int java.lang.Float.floatToRawIntBits(float) */
@@ -537,9 +527,7 @@ JdkClassCreateHelper.class('java.lang.Float', [
 			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 265,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]
 	],

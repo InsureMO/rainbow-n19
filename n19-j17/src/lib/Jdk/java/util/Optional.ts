@@ -7,9 +7,7 @@ JdkClassCreateHelper.class('java.util.Optional', [
 	'java.lang.Object',
 	/* interfaces */,
 	/* modifiers */ 17,
-	[/* declared annotations */
-		['jdk.internal.ValueBased']
-	],
+	/* declared annotations */,
 	[/* type parameters */
 		[/* type variable */
 			/* name */ 'T',

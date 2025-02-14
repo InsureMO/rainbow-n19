@@ -24,9 +24,7 @@ JdkClassCreateHelper.class('java.lang.StringBuffer', [
 			/* parameters */,
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.lang.StringBuffer(int) */
@@ -40,9 +38,7 @@ JdkClassCreateHelper.class('java.lang.StringBuffer', [
 			],
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.lang.StringBuffer(java.lang.CharSequence) */
@@ -70,9 +66,7 @@ JdkClassCreateHelper.class('java.lang.StringBuffer', [
 			],
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]
 	],
@@ -477,9 +471,7 @@ JdkClassCreateHelper.class('java.lang.StringBuffer', [
 			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 33,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public synchronized java.lang.StringBuffer java.lang.StringBuffer.append(boolean) */
@@ -511,9 +503,7 @@ JdkClassCreateHelper.class('java.lang.StringBuffer', [
 			/* return */ 'java.lang.StringBuffer',
 			/* exceptions */,
 			/* modifiers */ 33,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public synchronized java.lang.StringBuffer java.lang.StringBuffer.append(char[]) */
@@ -605,9 +595,7 @@ JdkClassCreateHelper.class('java.lang.StringBuffer', [
 			/* return */ 'java.lang.StringBuffer',
 			/* exceptions */,
 			/* modifiers */ 33,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public synchronized java.lang.StringBuffer java.lang.StringBuffer.append(java.lang.CharSequence) */
@@ -683,9 +671,7 @@ JdkClassCreateHelper.class('java.lang.StringBuffer', [
 			/* return */ 'java.lang.StringBuffer',
 			/* exceptions */,
 			/* modifiers */ 33,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public synchronized java.lang.StringBuffer java.lang.StringBuffer.append(java.lang.StringBuffer) */

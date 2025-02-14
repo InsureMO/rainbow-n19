@@ -681,9 +681,7 @@ JdkClassCreateHelper.class('java.lang.ClassLoader', [
 			/* return */ 'java.lang.ClassLoader',
 			/* exceptions */,
 			/* modifiers */ 17,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public final java.lang.Module java.lang.ClassLoader.getUnnamedModule() */
@@ -864,9 +862,7 @@ JdkClassCreateHelper.class('java.lang.ClassLoader', [
 			/* return */ 'java.lang.ClassLoader',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static java.lang.ClassLoader java.lang.ClassLoader.getSystemClassLoader() */
@@ -875,9 +871,7 @@ JdkClassCreateHelper.class('java.lang.ClassLoader', [
 			/* return */ 'java.lang.ClassLoader',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static java.net.URL java.lang.ClassLoader.getSystemResource(java.lang.String) */

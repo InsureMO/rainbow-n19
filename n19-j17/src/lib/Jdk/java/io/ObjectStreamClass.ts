@@ -55,9 +55,7 @@ JdkClassCreateHelper.class('java.io.ObjectStreamClass', [
 			]],
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.lang.String java.io.ObjectStreamClass.getName() */

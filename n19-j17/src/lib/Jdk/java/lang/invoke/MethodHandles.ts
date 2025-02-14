@@ -1156,10 +1156,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandles', [
 			/* return */ 'java.lang.invoke.MethodHandles$Lookup',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive'],
-				['jdk.internal.vm.annotation.ForceInline']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static java.lang.invoke.MethodHandles$Lookup java.lang.invoke.MethodHandles.privateLookupIn(java.lang.Class<?>,java.lang.invoke.MethodHandles$Lookup) throws java.lang.IllegalAccessException */

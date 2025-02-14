@@ -40,10 +40,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandle', [
 				]
 			],
 			/* modifiers */ 401,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate'],
-				['java.lang.invoke.MethodHandle$PolymorphicSignature']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public final native java.lang.Object java.lang.invoke.MethodHandle.invokeExact(java.lang.Object...) throws java.lang.Throwable */
@@ -64,10 +61,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandle', [
 				]
 			],
 			/* modifiers */ 401,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate'],
-				['java.lang.invoke.MethodHandle$PolymorphicSignature']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.lang.Object java.lang.invoke.MethodHandle.invokeWithArguments(java.lang.Object...) throws java.lang.Throwable */

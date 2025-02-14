@@ -17,9 +17,7 @@ JdkClassCreateHelper.class('java.lang.Double', [
 		'java.lang.constant.ConstantDesc'
 	],
 	/* modifiers */ 17,
-	[/* declared annotations */
-		['jdk.internal.ValueBased']
-	],
+	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
 		[/* public java.lang.Double(double) */
@@ -118,9 +116,7 @@ JdkClassCreateHelper.class('java.lang.Double', [
 			/* return */ 'double',
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public float java.lang.Double.floatValue() */
@@ -410,9 +406,7 @@ JdkClassCreateHelper.class('java.lang.Double', [
 			/* return */ 'java.lang.Double',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static java.lang.Double java.lang.Double.valueOf(java.lang.String) throws java.lang.NumberFormatException */
@@ -481,9 +475,7 @@ JdkClassCreateHelper.class('java.lang.Double', [
 			/* return */ 'long',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static native double java.lang.Double.longBitsToDouble(long) */
@@ -499,9 +491,7 @@ JdkClassCreateHelper.class('java.lang.Double', [
 			/* return */ 'double',
 			/* exceptions */,
 			/* modifiers */ 265,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static native long java.lang.Double.doubleToRawLongBits(double) */
@@ -517,9 +507,7 @@ JdkClassCreateHelper.class('java.lang.Double', [
 			/* return */ 'long',
 			/* exceptions */,
 			/* modifiers */ 265,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]
 	],

@@ -10,9 +10,7 @@ JdkClassCreateHelper.class('java.time.Period', [
 		'java.io.Serializable'
 	],
 	/* modifiers */ 17,
-	[/* declared annotations */
-		['jdk.internal.ValueBased']
-	],
+	/* declared annotations */,
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */

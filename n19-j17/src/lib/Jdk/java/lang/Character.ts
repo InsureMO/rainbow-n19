@@ -17,9 +17,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 		'java.lang.constant.Constable'
 	],
 	/* modifiers */ 17,
-	[/* declared annotations */
-		['jdk.internal.ValueBased']
-	],
+	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
 		[/* public java.lang.Character(char) */
@@ -66,9 +64,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* return */ 'char',
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public int java.lang.Character.compareTo(java.lang.Character) */
@@ -953,9 +949,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* return */ 'char',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static char java.lang.Character.toLowerCase(char) */
@@ -1579,9 +1573,7 @@ JdkClassCreateHelper.class('java.lang.Character', [
 			/* return */ 'java.lang.Character',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static java.lang.String java.lang.Character.getName(int) */

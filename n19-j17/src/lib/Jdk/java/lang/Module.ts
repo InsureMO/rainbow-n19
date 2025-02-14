@@ -189,9 +189,7 @@ JdkClassCreateHelper.class('java.lang.Module', [
 				]
 			],
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.lang.ClassLoader java.lang.Module.getClassLoader() */
@@ -222,9 +220,7 @@ JdkClassCreateHelper.class('java.lang.Module', [
 			/* return */ 'java.lang.Module',
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.lang.Module java.lang.Module.addOpens(java.lang.String,java.lang.Module) */
@@ -246,9 +242,7 @@ JdkClassCreateHelper.class('java.lang.Module', [
 			/* return */ 'java.lang.Module',
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.lang.Module java.lang.Module.addReads(java.lang.Module) */
@@ -264,9 +258,7 @@ JdkClassCreateHelper.class('java.lang.Module', [
 			/* return */ 'java.lang.Module',
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.lang.Module java.lang.Module.addUses(java.lang.Class<?>) */
@@ -293,9 +285,7 @@ JdkClassCreateHelper.class('java.lang.Module', [
 			/* return */ 'java.lang.Module',
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.lang.ModuleLayer java.lang.Module.getLayer() */

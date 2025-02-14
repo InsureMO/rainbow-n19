@@ -182,9 +182,7 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* return */ 'double',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static double java.lang.StrictMath.min(double,double) */
@@ -206,9 +204,7 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* return */ 'double',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static double java.lang.StrictMath.nextAfter(double,double) */
@@ -483,9 +479,7 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* return */ 'float',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static float java.lang.StrictMath.min(float,float) */
@@ -507,9 +501,7 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* return */ 'float',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static float java.lang.StrictMath.nextAfter(float,double) */
@@ -823,9 +815,7 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static int java.lang.StrictMath.min(int,int) */
@@ -847,9 +837,7 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static int java.lang.StrictMath.multiplyExact(int,int) */
@@ -1515,9 +1503,7 @@ JdkClassCreateHelper.class('java.lang.StrictMath', [
 			/* return */ 'double',
 			/* exceptions */,
 			/* modifiers */ 265,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static native double java.lang.StrictMath.tan(double) */

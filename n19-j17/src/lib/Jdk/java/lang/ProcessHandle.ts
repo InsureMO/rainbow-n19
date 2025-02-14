@@ -14,9 +14,7 @@ JdkClassCreateHelper.class('java.lang.ProcessHandle', [
 		]]
 	],
 	/* modifiers */ 1537,
-	[/* declared annotations */
-		['jdk.internal.ValueBased']
-	],
+	/* declared annotations */,
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */

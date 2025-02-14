@@ -313,9 +313,7 @@ JdkClassCreateHelper.class('java.lang.Runtime', [
 			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public void java.lang.Runtime.loadLibrary(java.lang.String) */
@@ -331,9 +329,7 @@ JdkClassCreateHelper.class('java.lang.Runtime', [
 			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public void java.lang.Runtime.runFinalization() */

@@ -372,9 +372,7 @@ JdkClassCreateHelper.class('java.util.Objects', [
 			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.ForceInline']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static int java.util.Objects.hash(java.lang.Object...) */
@@ -522,9 +520,7 @@ JdkClassCreateHelper.class('java.util.Objects', [
 			/* return */ 'long',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.ForceInline']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]
 	],

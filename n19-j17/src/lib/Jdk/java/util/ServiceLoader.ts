@@ -112,9 +112,7 @@ JdkClassCreateHelper.class('java.util.ServiceLoader', [
 			]],
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			[/* type parameters */
 				[/* type variable */
 					/* name */ 'S',
@@ -156,9 +154,7 @@ JdkClassCreateHelper.class('java.util.ServiceLoader', [
 			]],
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			[/* type parameters */
 				[/* type variable */
 					/* name */ 'S',
@@ -200,9 +196,7 @@ JdkClassCreateHelper.class('java.util.ServiceLoader', [
 			]],
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			[/* type parameters */
 				[/* type variable */
 					/* name */ 'S',
@@ -238,9 +232,7 @@ JdkClassCreateHelper.class('java.util.ServiceLoader', [
 			]],
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			[/* type parameters */
 				[/* type variable */
 					/* name */ 'S',

@@ -202,9 +202,7 @@ JdkClassCreateHelper.class('java.lang.reflect.AccessibleObject', [
 			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 17,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public final boolean java.lang.reflect.AccessibleObject.trySetAccessible() */
@@ -213,9 +211,7 @@ JdkClassCreateHelper.class('java.lang.reflect.AccessibleObject', [
 			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 17,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.lang.annotation.Annotation[] java.lang.reflect.AccessibleObject.getAnnotations() */
@@ -255,9 +251,7 @@ JdkClassCreateHelper.class('java.lang.reflect.AccessibleObject', [
 			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public void java.lang.reflect.AccessibleObject.setAccessible(boolean) */
@@ -273,9 +267,7 @@ JdkClassCreateHelper.class('java.lang.reflect.AccessibleObject', [
 			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]
 	],

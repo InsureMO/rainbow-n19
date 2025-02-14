@@ -16,9 +16,7 @@ JdkClassCreateHelper.class('java.lang.Byte', [
 		'java.lang.constant.Constable'
 	],
 	/* modifiers */ 17,
-	[/* declared annotations */
-		['jdk.internal.ValueBased']
-	],
+	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
 		[/* public java.lang.Byte(byte) */
@@ -90,9 +88,7 @@ JdkClassCreateHelper.class('java.lang.Byte', [
 			/* return */ 'byte',
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public double java.lang.Byte.doubleValue() */
@@ -353,9 +349,7 @@ JdkClassCreateHelper.class('java.lang.Byte', [
 			/* return */ 'java.lang.Byte',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static java.lang.Byte java.lang.Byte.valueOf(java.lang.String) throws java.lang.NumberFormatException */

@@ -106,8 +106,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Proxy', [
 					'java.lang.Deprecated',
 					['p', 'since', ''],
 					['p', 'forRemoval', false]
-				],
-				['jdk.internal.reflect.CallerSensitive']
+				]
 			],
 			/* type parameters */ UDF
 		],
@@ -147,9 +146,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Proxy', [
 			/* return */ 'java.lang.Object',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static java.lang.reflect.InvocationHandler java.lang.reflect.Proxy.getInvocationHandler(java.lang.Object) throws java.lang.IllegalArgumentException */
@@ -170,9 +167,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Proxy', [
 				]
 			],
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]
 	],

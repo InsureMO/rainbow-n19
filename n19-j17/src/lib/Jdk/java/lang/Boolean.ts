@@ -17,9 +17,7 @@ JdkClassCreateHelper.class('java.lang.Boolean', [
 		'java.lang.constant.Constable'
 	],
 	/* modifiers */ 17,
-	[/* declared annotations */
-		['jdk.internal.ValueBased']
-	],
+	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
 		[/* public java.lang.Boolean(boolean) */
@@ -70,9 +68,7 @@ JdkClassCreateHelper.class('java.lang.Boolean', [
 			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public boolean java.lang.Boolean.equals(java.lang.Object) */
@@ -295,9 +291,7 @@ JdkClassCreateHelper.class('java.lang.Boolean', [
 			/* return */ 'java.lang.Boolean',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static java.lang.Boolean java.lang.Boolean.valueOf(java.lang.String) */

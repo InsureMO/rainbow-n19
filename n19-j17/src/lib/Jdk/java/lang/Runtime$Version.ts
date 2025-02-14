@@ -15,9 +15,7 @@ JdkClassCreateHelper.class('java.lang.Runtime$Version', [
 		]]
 	],
 	/* modifiers */ 25,
-	[/* declared annotations */
-		['jdk.internal.ValueBased']
-	],
+	/* declared annotations */,
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */

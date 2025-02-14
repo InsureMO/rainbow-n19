@@ -13,9 +13,7 @@ JdkClassCreateHelper.class('java.lang.Object', [
 			/* parameters */,
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]
 	],
@@ -31,9 +29,7 @@ JdkClassCreateHelper.class('java.lang.Object', [
 				]
 			],
 			/* modifiers */ 260,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* protected void java.lang.Object.finalize() throws java.lang.Throwable */
@@ -89,9 +85,7 @@ JdkClassCreateHelper.class('java.lang.Object', [
 			]],
 			/* exceptions */,
 			/* modifiers */ 273,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public final native void java.lang.Object.notify() */
@@ -100,9 +94,7 @@ JdkClassCreateHelper.class('java.lang.Object', [
 			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 273,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public final native void java.lang.Object.notifyAll() */
@@ -111,9 +103,7 @@ JdkClassCreateHelper.class('java.lang.Object', [
 			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 273,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public final native void java.lang.Object.wait(long) throws java.lang.InterruptedException */
@@ -193,9 +183,7 @@ JdkClassCreateHelper.class('java.lang.Object', [
 			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 257,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]
 	],

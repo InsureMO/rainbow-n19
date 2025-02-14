@@ -111,10 +111,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Field', [
 				]
 			],
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive'],
-				['jdk.internal.vm.annotation.ForceInline']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public boolean java.lang.reflect.Field.isEnumConstant() */
@@ -157,10 +154,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Field', [
 				]
 			],
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive'],
-				['jdk.internal.vm.annotation.ForceInline']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public char java.lang.reflect.Field.getChar(java.lang.Object) throws java.lang.IllegalArgumentException,java.lang.IllegalAccessException */
@@ -185,10 +179,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Field', [
 				]
 			],
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive'],
-				['jdk.internal.vm.annotation.ForceInline']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public double java.lang.reflect.Field.getDouble(java.lang.Object) throws java.lang.IllegalArgumentException,java.lang.IllegalAccessException */
@@ -213,10 +204,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Field', [
 				]
 			],
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive'],
-				['jdk.internal.vm.annotation.ForceInline']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public float java.lang.reflect.Field.getFloat(java.lang.Object) throws java.lang.IllegalArgumentException,java.lang.IllegalAccessException */
@@ -241,10 +229,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Field', [
 				]
 			],
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive'],
-				['jdk.internal.vm.annotation.ForceInline']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public int java.lang.reflect.Field.getInt(java.lang.Object) throws java.lang.IllegalArgumentException,java.lang.IllegalAccessException */
@@ -269,10 +254,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Field', [
 				]
 			],
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive'],
-				['jdk.internal.vm.annotation.ForceInline']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public int java.lang.reflect.Field.getModifiers() */
@@ -355,10 +337,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Field', [
 				]
 			],
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive'],
-				['jdk.internal.vm.annotation.ForceInline']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.lang.String java.lang.reflect.Field.getName() */
@@ -437,10 +416,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Field', [
 				]
 			],
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive'],
-				['jdk.internal.vm.annotation.ForceInline']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public short java.lang.reflect.Field.getShort(java.lang.Object) throws java.lang.IllegalArgumentException,java.lang.IllegalAccessException */
@@ -465,10 +441,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Field', [
 				]
 			],
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive'],
-				['jdk.internal.vm.annotation.ForceInline']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public void java.lang.reflect.Field.set(java.lang.Object,java.lang.Object) throws java.lang.IllegalArgumentException,java.lang.IllegalAccessException */
@@ -499,10 +472,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Field', [
 				]
 			],
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive'],
-				['jdk.internal.vm.annotation.ForceInline']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public void java.lang.reflect.Field.setAccessible(boolean) */
@@ -518,9 +488,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Field', [
 			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public void java.lang.reflect.Field.setBoolean(java.lang.Object,boolean) throws java.lang.IllegalArgumentException,java.lang.IllegalAccessException */
@@ -551,10 +519,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Field', [
 				]
 			],
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive'],
-				['jdk.internal.vm.annotation.ForceInline']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public void java.lang.reflect.Field.setByte(java.lang.Object,byte) throws java.lang.IllegalArgumentException,java.lang.IllegalAccessException */
@@ -585,10 +550,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Field', [
 				]
 			],
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive'],
-				['jdk.internal.vm.annotation.ForceInline']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public void java.lang.reflect.Field.setChar(java.lang.Object,char) throws java.lang.IllegalArgumentException,java.lang.IllegalAccessException */
@@ -619,10 +581,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Field', [
 				]
 			],
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive'],
-				['jdk.internal.vm.annotation.ForceInline']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public void java.lang.reflect.Field.setDouble(java.lang.Object,double) throws java.lang.IllegalArgumentException,java.lang.IllegalAccessException */
@@ -653,10 +612,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Field', [
 				]
 			],
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive'],
-				['jdk.internal.vm.annotation.ForceInline']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public void java.lang.reflect.Field.setFloat(java.lang.Object,float) throws java.lang.IllegalArgumentException,java.lang.IllegalAccessException */
@@ -687,10 +643,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Field', [
 				]
 			],
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive'],
-				['jdk.internal.vm.annotation.ForceInline']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public void java.lang.reflect.Field.setInt(java.lang.Object,int) throws java.lang.IllegalArgumentException,java.lang.IllegalAccessException */
@@ -721,10 +674,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Field', [
 				]
 			],
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive'],
-				['jdk.internal.vm.annotation.ForceInline']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public void java.lang.reflect.Field.setLong(java.lang.Object,long) throws java.lang.IllegalArgumentException,java.lang.IllegalAccessException */
@@ -755,10 +705,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Field', [
 				]
 			],
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive'],
-				['jdk.internal.vm.annotation.ForceInline']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public void java.lang.reflect.Field.setShort(java.lang.Object,short) throws java.lang.IllegalArgumentException,java.lang.IllegalAccessException */
@@ -789,10 +736,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Field', [
 				]
 			],
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive'],
-				['jdk.internal.vm.annotation.ForceInline']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]
 	],

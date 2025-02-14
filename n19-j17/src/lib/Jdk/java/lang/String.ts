@@ -324,9 +324,7 @@ JdkClassCreateHelper.class('java.lang.String', [
 			],
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.lang.String(java.lang.StringBuffer) */

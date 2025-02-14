@@ -79,10 +79,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Constructor', [
 				]
 			],
 			/* modifiers */ 129,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive'],
-				['jdk.internal.vm.annotation.ForceInline']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public boolean java.lang.reflect.Constructor.equals(java.lang.Object) */
@@ -316,9 +313,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Constructor', [
 			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]
 	],

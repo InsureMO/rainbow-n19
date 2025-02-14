@@ -319,7 +319,6 @@ JdkClassCreateHelper.class('java.lang.Package', [
 			/* exceptions */,
 			/* modifiers */ 9,
 			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive'],
 				[
 					'java.lang.Deprecated',
 					['p', 'since', '9'],
@@ -334,9 +333,7 @@ JdkClassCreateHelper.class('java.lang.Package', [
 			/* return */ '[Ljava.lang.Package;',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]
 	],

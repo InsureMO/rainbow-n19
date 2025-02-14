@@ -46,9 +46,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* return */ 'double',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static double java.lang.Math.acos(double) */
@@ -118,9 +116,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* return */ 'double',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static double java.lang.Math.cbrt(double) */
@@ -152,9 +148,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* return */ 'double',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static double java.lang.Math.copySign(double,double) */
@@ -176,9 +170,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* return */ 'double',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static double java.lang.Math.cos(double) */
@@ -194,9 +186,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* return */ 'double',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static double java.lang.Math.cosh(double) */
@@ -228,9 +218,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* return */ 'double',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static double java.lang.Math.expm1(double) */
@@ -262,9 +250,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* return */ 'double',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static double java.lang.Math.fma(double,double,double) */
@@ -292,9 +278,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* return */ 'double',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static double java.lang.Math.hypot(double,double) */
@@ -332,9 +316,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* return */ 'double',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static double java.lang.Math.log10(double) */
@@ -350,9 +332,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* return */ 'double',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static double java.lang.Math.log1p(double) */
@@ -390,9 +370,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* return */ 'double',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static double java.lang.Math.min(double,double) */
@@ -414,9 +392,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* return */ 'double',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static double java.lang.Math.nextAfter(double,double) */
@@ -492,9 +468,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* return */ 'double',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static double java.lang.Math.random() */
@@ -519,9 +493,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* return */ 'double',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static double java.lang.Math.scalb(double,int) */
@@ -559,9 +531,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* return */ 'double',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static double java.lang.Math.sin(double) */
@@ -577,9 +547,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* return */ 'double',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static double java.lang.Math.sinh(double) */
@@ -611,9 +579,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* return */ 'double',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static double java.lang.Math.tan(double) */
@@ -629,9 +595,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* return */ 'double',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static double java.lang.Math.tanh(double) */
@@ -711,9 +675,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* return */ 'float',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static float java.lang.Math.copySign(float,float) */
@@ -735,9 +697,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* return */ 'float',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static float java.lang.Math.fma(float,float,float) */
@@ -765,9 +725,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* return */ 'float',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static float java.lang.Math.max(float,float) */
@@ -789,9 +747,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* return */ 'float',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static float java.lang.Math.min(float,float) */
@@ -813,9 +769,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* return */ 'float',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static float java.lang.Math.nextAfter(float,double) */
@@ -907,9 +861,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* return */ 'float',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static float java.lang.Math.ulp(float) */
@@ -941,9 +893,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static int java.lang.Math.absExact(int) */
@@ -981,9 +931,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static int java.lang.Math.decrementExact(int) */
@@ -999,9 +947,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static int java.lang.Math.floorDiv(int,int) */
@@ -1115,9 +1061,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static int java.lang.Math.max(int,int) */
@@ -1139,9 +1083,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static int java.lang.Math.min(int,int) */
@@ -1163,9 +1105,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static int java.lang.Math.multiplyExact(int,int) */
@@ -1187,9 +1127,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static int java.lang.Math.negateExact(int) */
@@ -1205,9 +1143,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static int java.lang.Math.round(float) */
@@ -1245,9 +1181,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static int java.lang.Math.toIntExact(long) */
@@ -1279,9 +1213,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* return */ 'long',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static long java.lang.Math.absExact(long) */
@@ -1319,9 +1251,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* return */ 'long',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static long java.lang.Math.decrementExact(long) */
@@ -1337,9 +1267,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* return */ 'long',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static long java.lang.Math.floorDiv(long,int) */
@@ -1421,9 +1349,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* return */ 'long',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static long java.lang.Math.max(long,long) */
@@ -1511,9 +1437,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* return */ 'long',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static long java.lang.Math.multiplyFull(int,int) */
@@ -1557,9 +1481,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* return */ 'long',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static long java.lang.Math.negateExact(long) */
@@ -1575,9 +1497,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* return */ 'long',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static long java.lang.Math.round(double) */
@@ -1615,9 +1535,7 @@ JdkClassCreateHelper.class('java.lang.Math', [
 			/* return */ 'long',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]
 	],

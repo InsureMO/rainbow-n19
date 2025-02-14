@@ -217,9 +217,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			/* return */ [/* type variable ref */ 'tr', [/* name */ 'T']],
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public T java.lang.Class.newInstance() throws java.lang.InstantiationException,java.lang.IllegalAccessException */
@@ -238,7 +236,6 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			],
 			/* modifiers */ 1,
 			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive'],
 				[
 					'java.lang.Deprecated',
 					['p', 'since', '9'],
@@ -404,9 +401,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			/* return */ 'java.io.InputStream',
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.lang.Class<?> java.lang.Class.arrayType() */
@@ -491,9 +486,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 				]
 			],
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.lang.Class<?> java.lang.Class.getEnclosingClass() throws java.lang.SecurityException */
@@ -518,9 +511,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 				]
 			],
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.lang.Class<?> java.lang.Class.getNestHost() */
@@ -540,9 +531,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			]],
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.lang.Class<?>[] java.lang.Class.getClasses() */
@@ -562,9 +551,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			]]]],
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.lang.Class<?>[] java.lang.Class.getDeclaredClasses() throws java.lang.SecurityException */
@@ -589,9 +576,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 				]
 			],
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.lang.Class<?>[] java.lang.Class.getInterfaces() */
@@ -631,9 +616,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			]]]],
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.lang.Class<?>[] java.lang.Class.getPermittedSubclasses() */
@@ -653,9 +636,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			]]]],
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.lang.ClassLoader java.lang.Class.getClassLoader() */
@@ -664,10 +645,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			/* return */ 'java.lang.ClassLoader',
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive'],
-				['jdk.internal.vm.annotation.ForceInline']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.lang.Module java.lang.Class.getModule() */
@@ -818,9 +796,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 				]
 			],
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.lang.reflect.Constructor<?>[] java.lang.Class.getConstructors() throws java.lang.SecurityException */
@@ -845,9 +821,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 				]
 			],
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.lang.reflect.Constructor<?>[] java.lang.Class.getDeclaredConstructors() throws java.lang.SecurityException */
@@ -872,9 +846,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 				]
 			],
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.lang.reflect.Constructor<T> java.lang.Class.getConstructor(java.lang.Class<?>...) throws java.lang.NoSuchMethodException,java.lang.SecurityException */
@@ -916,9 +888,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 				]
 			],
 			/* modifiers */ 129,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.lang.reflect.Constructor<T> java.lang.Class.getDeclaredConstructor(java.lang.Class<?>...) throws java.lang.NoSuchMethodException,java.lang.SecurityException */
@@ -960,9 +930,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 				]
 			],
 			/* modifiers */ 129,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.lang.reflect.Field java.lang.Class.getDeclaredField(java.lang.String) throws java.lang.NoSuchFieldException,java.lang.SecurityException */
@@ -987,9 +955,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 				]
 			],
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.lang.reflect.Field java.lang.Class.getField(java.lang.String) throws java.lang.NoSuchFieldException,java.lang.SecurityException */
@@ -1014,9 +980,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 				]
 			],
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.lang.reflect.Field[] java.lang.Class.getDeclaredFields() throws java.lang.SecurityException */
@@ -1030,9 +994,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 				]
 			],
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.lang.reflect.Field[] java.lang.Class.getFields() throws java.lang.SecurityException */
@@ -1046,9 +1008,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 				]
 			],
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.lang.reflect.Method java.lang.Class.getDeclaredMethod(java.lang.String,java.lang.Class<?>...) throws java.lang.NoSuchMethodException,java.lang.SecurityException */
@@ -1090,9 +1050,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 				]
 			],
 			/* modifiers */ 129,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.lang.reflect.Method java.lang.Class.getEnclosingMethod() throws java.lang.SecurityException */
@@ -1106,9 +1064,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 				]
 			],
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.lang.reflect.Method java.lang.Class.getMethod(java.lang.String,java.lang.Class<?>...) throws java.lang.NoSuchMethodException,java.lang.SecurityException */
@@ -1150,9 +1106,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 				]
 			],
 			/* modifiers */ 129,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.lang.reflect.Method[] java.lang.Class.getDeclaredMethods() throws java.lang.SecurityException */
@@ -1166,9 +1120,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 				]
 			],
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.lang.reflect.Method[] java.lang.Class.getMethods() throws java.lang.SecurityException */
@@ -1182,9 +1134,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 				]
 			],
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.lang.reflect.RecordComponent[] java.lang.Class.getRecordComponents() */
@@ -1193,9 +1143,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			/* return */ '[Ljava.lang.reflect.RecordComponent;',
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.lang.reflect.Type java.lang.Class.getGenericSuperclass() */
@@ -1250,9 +1198,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			/* return */ 'java.net.URL',
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.security.ProtectionDomain java.lang.Class.getProtectionDomain() */
@@ -1285,9 +1231,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 257,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public native boolean java.lang.Class.isAssignableFrom(java.lang.Class<?>) */
@@ -1314,9 +1258,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 257,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public native boolean java.lang.Class.isHidden() */
@@ -1325,9 +1267,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 257,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public native boolean java.lang.Class.isInstance(java.lang.Object) */
@@ -1343,9 +1283,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 257,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public native boolean java.lang.Class.isInterface() */
@@ -1354,9 +1292,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 257,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public native boolean java.lang.Class.isPrimitive() */
@@ -1365,9 +1301,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 257,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public native int java.lang.Class.getModifiers() */
@@ -1376,9 +1310,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 257,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public native java.lang.Class<? super T> java.lang.Class.getSuperclass() */
@@ -1400,9 +1332,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			]],
 			/* exceptions */,
 			/* modifiers */ 257,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public native java.lang.Object[] java.lang.Class.getSigners() */
@@ -1444,9 +1374,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 			]],
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static java.lang.Class<?> java.lang.Class.forName(java.lang.String) throws java.lang.ClassNotFoundException */
@@ -1478,9 +1406,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 				]
 			],
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static java.lang.Class<?> java.lang.Class.forName(java.lang.String,boolean,java.lang.ClassLoader) throws java.lang.ClassNotFoundException */
@@ -1524,9 +1450,7 @@ JdkClassCreateHelper.class('java.lang.Class', [
 				]
 			],
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]
 	],

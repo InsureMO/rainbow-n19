@@ -18,9 +18,7 @@ JdkClassCreateHelper.class('java.time.YearMonth', [
 		'java.io.Serializable'
 	],
 	/* modifiers */ 17,
-	[/* declared annotations */
-		['jdk.internal.ValueBased']
-	],
+	/* declared annotations */,
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */

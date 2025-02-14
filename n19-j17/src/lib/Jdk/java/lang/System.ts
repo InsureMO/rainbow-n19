@@ -149,9 +149,7 @@ JdkClassCreateHelper.class('java.lang.System', [
 			/* return */ 'java.lang.System$Logger',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static java.lang.System$Logger java.lang.System.getLogger(java.lang.String,java.util.ResourceBundle) */
@@ -173,9 +171,7 @@ JdkClassCreateHelper.class('java.lang.System', [
 			/* return */ 'java.lang.System$Logger',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static java.nio.channels.Channel java.lang.System.inheritedChannel() throws java.io.IOException */
@@ -230,9 +226,7 @@ JdkClassCreateHelper.class('java.lang.System', [
 			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 265,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static native java.lang.String java.lang.System.mapLibraryName(java.lang.String) */
@@ -257,9 +251,7 @@ JdkClassCreateHelper.class('java.lang.System', [
 			/* return */ 'long',
 			/* exceptions */,
 			/* modifiers */ 265,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static native long java.lang.System.nanoTime() */
@@ -268,9 +260,7 @@ JdkClassCreateHelper.class('java.lang.System', [
 			/* return */ 'long',
 			/* exceptions */,
 			/* modifiers */ 265,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static native void java.lang.System.arraycopy(java.lang.Object,int,java.lang.Object,int,int) */
@@ -310,9 +300,7 @@ JdkClassCreateHelper.class('java.lang.System', [
 			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 265,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static void java.lang.System.exit(int) */
@@ -353,9 +341,7 @@ JdkClassCreateHelper.class('java.lang.System', [
 			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static void java.lang.System.loadLibrary(java.lang.String) */
@@ -371,9 +357,7 @@ JdkClassCreateHelper.class('java.lang.System', [
 			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static void java.lang.System.runFinalization() */
@@ -467,8 +451,7 @@ JdkClassCreateHelper.class('java.lang.System', [
 					'java.lang.Deprecated',
 					['p', 'since', '17'],
 					['p', 'forRemoval', true]
-				],
-				['jdk.internal.reflect.CallerSensitive']
+				]
 			],
 			/* type parameters */ UDF
 		]

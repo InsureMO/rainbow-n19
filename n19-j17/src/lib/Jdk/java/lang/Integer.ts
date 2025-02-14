@@ -17,9 +17,7 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 		'java.lang.constant.ConstantDesc'
 	],
 	/* modifiers */ 17,
-	[/* declared annotations */
-		['jdk.internal.ValueBased']
-	],
+	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
 		[/* public java.lang.Integer(int) */
@@ -143,9 +141,7 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.lang.Integer java.lang.Integer.resolveConstantDesc(java.lang.invoke.MethodHandles$Lookup) */
@@ -219,9 +215,7 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static int java.lang.Integer.compare(int,int) */
@@ -395,9 +389,7 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static int java.lang.Integer.numberOfTrailingZeros(int) */
@@ -413,9 +405,7 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static int java.lang.Integer.parseInt(java.lang.CharSequence,int,int,int) throws java.lang.NumberFormatException */
@@ -643,9 +633,7 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static int java.lang.Integer.rotateLeft(int,int) */
@@ -824,9 +812,7 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			/* return */ 'java.lang.Integer',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static java.lang.Integer java.lang.Integer.valueOf(java.lang.String) throws java.lang.NumberFormatException */
@@ -938,9 +924,7 @@ JdkClassCreateHelper.class('java.lang.Integer', [
 			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static java.lang.String java.lang.Integer.toString(int,int) */

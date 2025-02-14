@@ -24,9 +24,7 @@ JdkClassCreateHelper.class('java.lang.StringBuilder', [
 			/* parameters */,
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.lang.StringBuilder(int) */
@@ -40,9 +38,7 @@ JdkClassCreateHelper.class('java.lang.StringBuilder', [
 			],
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.lang.StringBuilder(java.lang.CharSequence) */
@@ -70,9 +66,7 @@ JdkClassCreateHelper.class('java.lang.StringBuilder', [
 			],
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]
 	],
@@ -175,9 +169,7 @@ JdkClassCreateHelper.class('java.lang.StringBuilder', [
 			/* return */ 'java.lang.String',
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.lang.StringBuilder java.lang.StringBuilder.append(boolean) */
@@ -209,9 +201,7 @@ JdkClassCreateHelper.class('java.lang.StringBuilder', [
 			/* return */ 'java.lang.StringBuilder',
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.lang.StringBuilder java.lang.StringBuilder.append(char[]) */
@@ -303,9 +293,7 @@ JdkClassCreateHelper.class('java.lang.StringBuilder', [
 			/* return */ 'java.lang.StringBuilder',
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.lang.StringBuilder java.lang.StringBuilder.append(java.lang.CharSequence) */
@@ -381,9 +369,7 @@ JdkClassCreateHelper.class('java.lang.StringBuilder', [
 			/* return */ 'java.lang.StringBuilder',
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.lang.StringBuilder java.lang.StringBuilder.append(java.lang.StringBuffer) */

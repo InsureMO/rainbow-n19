@@ -295,9 +295,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Array', [
 				]
 			],
 			/* modifiers */ 265,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static native java.lang.Object java.lang.reflect.Array.get(java.lang.Object,int) throws java.lang.IllegalArgumentException,java.lang.ArrayIndexOutOfBoundsException */

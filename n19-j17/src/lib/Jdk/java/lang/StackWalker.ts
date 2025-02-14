@@ -49,9 +49,7 @@ JdkClassCreateHelper.class('java.lang.StackWalker', [
 			/* return */ [/* type variable ref */ 'tr', [/* name */ 'T']],
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			[/* type parameters */
 				[/* type variable */
 					/* name */ 'T',
@@ -79,9 +77,7 @@ JdkClassCreateHelper.class('java.lang.StackWalker', [
 			]],
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static java.lang.StackWalker java.lang.StackWalker.getInstance() */
@@ -185,9 +181,7 @@ JdkClassCreateHelper.class('java.lang.StackWalker', [
 			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]
 	],

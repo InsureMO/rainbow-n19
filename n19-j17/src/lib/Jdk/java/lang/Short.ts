@@ -16,9 +16,7 @@ JdkClassCreateHelper.class('java.lang.Short', [
 		'java.lang.constant.Constable'
 	],
 	/* modifiers */ 17,
-	[/* declared annotations */
-		['jdk.internal.ValueBased']
-	],
+	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
 		[/* public java.lang.Short(java.lang.String) throws java.lang.NumberFormatException */
@@ -190,9 +188,7 @@ JdkClassCreateHelper.class('java.lang.Short', [
 			/* return */ 'short',
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static int java.lang.Short.compare(short,short) */
@@ -353,9 +349,7 @@ JdkClassCreateHelper.class('java.lang.Short', [
 			/* return */ 'java.lang.Short',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static java.lang.String java.lang.Short.toString(short) */
@@ -451,9 +445,7 @@ JdkClassCreateHelper.class('java.lang.Short', [
 			/* return */ 'short',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]
 	],

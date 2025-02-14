@@ -464,9 +464,7 @@ JdkClassCreateHelper.class('java.lang.Thread', [
 			/* return */ 'java.lang.ClassLoader',
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.lang.StackTraceElement[] java.lang.Thread.getStackTrace() */
@@ -595,9 +593,7 @@ JdkClassCreateHelper.class('java.lang.Thread', [
 			/* return */ 'java.lang.Thread',
 			/* exceptions */,
 			/* modifiers */ 265,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static native void java.lang.Thread.sleep(long) throws java.lang.InterruptedException */
@@ -645,9 +641,7 @@ JdkClassCreateHelper.class('java.lang.Thread', [
 			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static void java.lang.Thread.setDefaultUncaughtExceptionHandler(java.lang.Thread$UncaughtExceptionHandler) */

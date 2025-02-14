@@ -243,9 +243,7 @@ JdkClassCreateHelper.class('java.util.Arrays', [
 			/* return */ [/* generic array type */ 'ga', [[/* type variable ref */ 'tr', [/* name */ 'T']]]],
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			[/* type parameters */
 				[/* type variable */
 					/* name */ 'T',
@@ -305,9 +303,7 @@ JdkClassCreateHelper.class('java.util.Arrays', [
 			/* return */ [/* generic array type */ 'ga', [[/* type variable ref */ 'tr', [/* name */ 'T']]]],
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			[/* type parameters */
 				[/* type variable */
 					/* name */ 'T',
@@ -1514,9 +1510,7 @@ JdkClassCreateHelper.class('java.util.Arrays', [
 			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static boolean java.util.Arrays.equals(byte[],int,int,byte[],int,int) */
@@ -1584,9 +1578,7 @@ JdkClassCreateHelper.class('java.util.Arrays', [
 			/* return */ 'boolean',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static boolean java.util.Arrays.equals(char[],int,int,char[],int,int) */

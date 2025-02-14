@@ -36,9 +36,7 @@ JdkClassCreateHelper.class('java.lang.invoke.MethodHandleProxies', [
 			/* return */ [/* type variable ref */ 'tr', [/* name */ 'T']],
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			[/* type parameters */
 				[/* type variable */
 					/* name */ 'T',

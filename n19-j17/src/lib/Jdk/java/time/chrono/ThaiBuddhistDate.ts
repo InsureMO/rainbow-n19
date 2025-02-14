@@ -16,9 +16,7 @@ JdkClassCreateHelper.class('java.time.chrono.ThaiBuddhistDate', [
 		'java.io.Serializable'
 	],
 	/* modifiers */ 17,
-	[/* declared annotations */
-		['jdk.internal.ValueBased']
-	],
+	/* declared annotations */,
 	/* type parameters */,
 	/* declared constructors */,
 	[/* declared methods */

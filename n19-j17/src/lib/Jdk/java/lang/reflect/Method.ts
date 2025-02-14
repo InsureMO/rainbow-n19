@@ -241,11 +241,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Method', [
 				]
 			],
 			/* modifiers */ 129,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive'],
-				['jdk.internal.vm.annotation.ForceInline'],
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public java.lang.String java.lang.reflect.Method.getName() */
@@ -357,9 +353,7 @@ JdkClassCreateHelper.class('java.lang.reflect.Method', [
 			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]
 	],

@@ -73,9 +73,7 @@ JdkClassCreateHelper.class('java.lang.reflect.InvocationHandler', [
 				]
 			],
 			/* modifiers */ 137,
-			[/* annotations */
-				['jdk.internal.reflect.CallerSensitive']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		]
 	],

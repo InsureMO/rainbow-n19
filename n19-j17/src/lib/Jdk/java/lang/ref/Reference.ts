@@ -39,9 +39,7 @@ JdkClassCreateHelper.class('java.lang.ref.Reference', [
 			/* return */ [/* type variable ref */ 'tr', [/* name */ 'T']],
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public boolean java.lang.ref.Reference.enqueue() */
@@ -97,9 +95,7 @@ JdkClassCreateHelper.class('java.lang.ref.Reference', [
 			/* return */ 'void',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.ForceInline']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public void java.lang.ref.Reference.clear() */

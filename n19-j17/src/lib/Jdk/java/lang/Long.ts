@@ -17,9 +17,7 @@ JdkClassCreateHelper.class('java.lang.Long', [
 		'java.lang.constant.ConstantDesc'
 	],
 	/* modifiers */ 17,
-	[/* declared annotations */
-		['jdk.internal.ValueBased']
-	],
+	/* declared annotations */,
 	/* type parameters */,
 	[/* declared constructors */
 		[/* public java.lang.Long(java.lang.String) throws java.lang.NumberFormatException */
@@ -192,9 +190,7 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* return */ 'long',
 			/* exceptions */,
 			/* modifiers */ 1,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public short java.lang.Long.shortValue() */
@@ -219,9 +215,7 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static int java.lang.Long.compare(long,long) */
@@ -297,9 +291,7 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static int java.lang.Long.numberOfTrailingZeros(long) */
@@ -315,9 +307,7 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* return */ 'int',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static int java.lang.Long.signum(long) */
@@ -478,9 +468,7 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* return */ 'java.lang.Long',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static java.lang.String java.lang.Long.toBinaryString(long) */
@@ -930,9 +918,7 @@ JdkClassCreateHelper.class('java.lang.Long', [
 			/* return */ 'long',
 			/* exceptions */,
 			/* modifiers */ 9,
-			[/* annotations */
-				['jdk.internal.vm.annotation.IntrinsicCandidate']
-			],
+			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
 		[/* public static long java.lang.Long.rotateLeft(long,int) */
