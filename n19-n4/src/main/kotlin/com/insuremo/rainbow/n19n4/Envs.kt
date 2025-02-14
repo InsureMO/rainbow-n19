@@ -243,7 +243,16 @@ object Envs {
 	}
 	val excludedAnnotationClasses by lazy {
 		listOf(
+			"jdk.internal.reflect.CallerSensitive",
+			"jdk.internal.ValueBased",
+			"jdk.internal.vm.annotation.ForceInline",
+			"jdk.internal.vm.annotation.IntrinsicCandidate",
 			"jdk.internal.util.random.RandomSupport\$RandomGeneratorProperties",
+			"java.lang.invoke.MethodHandle\$PolymorphicSignature",
+			"groovy.transform.Internal",
+			"groovy.transform.Generated",
+			"groovy.transform.stc.ClosureParams",
+			"org.apache.groovy.lang.annotation.Incubating",
 			"org.codehaus.groovy.transform.GroovyASTTransformationClass"
 		)
 	}

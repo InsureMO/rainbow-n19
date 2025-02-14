@@ -1,5 +1,7 @@
 package com.insuremo.rainbow.n19n4
 
+import groovy.transform.Internal
+import org.apache.groovy.lang.annotation.Incubating
 import java.io.File
 import java.lang.reflect.AnnotatedType
 import java.lang.reflect.Constructor
@@ -207,19 +209,19 @@ private class ClassGenerator(
 	}
 
 	private fun generateAnnotation(annotation: Annotation, indent: String): String {
-		val methods = annotation.javaClass.declaredMethods.filter { method ->
+		val annotationValueMethods = annotation.javaClass.declaredMethods.filter { method ->
 			Modifier.isPublic(method.modifiers)
 					&& method.parameters.isEmpty()
 					&& !IGNORE_ANNOTATION_METHOD_NAMES.contains(method.name)
 		}
-		if (methods.isEmpty()) {
-			return "${indent}['${annotation.annotationClass.java.name}']"
+		if (annotationValueMethods.isEmpty()) {
+			return "${indent}[${generateClassName(annotation.annotationClass.java, "")}]"
 		}
 		val indent1 = indent + "\t"
 		if (annotation is java.lang.Deprecated) {
 			return listOf(
 				"${indent}[",
-				"${indent1}'${annotation.annotationClass.java.name}',",
+				"${indent1}'java.lang.Deprecated',",
 				"${indent1}['p', 'since', '${annotation.since}'],",
 				"${indent1}['p', 'forRemoval', ${annotation.forRemoval}]",
 				"${indent}]",
@@ -227,8 +229,8 @@ private class ClassGenerator(
 		} else {
 			return listOf(
 				"${indent}[",
-				"${indent1}'${annotation.annotationClass.java.name}',",
-				methods.joinToString(",\n") { method ->
+				"${generateClassName(annotation.annotationClass.java, indent1)},",
+				annotationValueMethods.joinToString(",\n") { method ->
 					val name = method.name
 					try {
 						method.isAccessible = true
@@ -236,7 +238,7 @@ private class ClassGenerator(
 						return@joinToString when (value) {
 							is Annotation -> "${indent1}['a', '$name', ${generateAnnotation(value, indent1)}]"
 							is Enum<*> -> "${indent1}['p', '$name', '${value.javaClass.name}.${value.name}']"
-							is Class<*> -> "${indent1}['p', '$name', '${value.name}']"
+							is Class<*> -> "${indent1}['c', '$name', '${value.name}']"
 							is String, is Char -> "${indent1}['p', '$name', '$value']"
 							is Int, is Long, is Short, is Float, is Double, is Byte, is Boolean -> "${indent1}['p', '$name', $value]"
 							is Array<*> -> {
@@ -261,7 +263,7 @@ private class ClassGenerator(
 
 									Class::class.java.isAssignableFrom(type) -> {
 										@Suppress("UNCHECKED_CAST")
-										"${indent1}['p', '$name', [${(value as Array<Class<*>>).joinToString(", ") { "'${it.name}'" }}]]"
+										"${indent1}['c', '$name', [${(value as Array<Class<*>>).joinToString(", ") { "'${it.name}'" }}]]"
 									}
 
 									type == String::class.java || type == Char::class.java -> {
@@ -571,7 +573,14 @@ private class ClassGenerator(
 
 	private fun generateConstructors(): String {
 		val constructors = clazz.declaredConstructors.filter { constructor ->
-			Modifier.isPublic(constructor.modifiers) || Modifier.isProtected(constructor.modifiers)
+			when {
+				constructor.isAnnotationPresent(Internal::class.java)
+						|| constructor.isAnnotationPresent(Incubating::class.java) -> false
+
+				Modifier.isPublic(constructor.modifiers) -> true
+				Modifier.isProtected(constructor.modifiers) -> true
+				else -> false
+			}
 		}
 		if (constructors.isEmpty()) {
 			return generateComment("/* declared constructors */", "\t")
@@ -602,6 +611,9 @@ private class ClassGenerator(
 	private fun generateMethods(): String {
 		val methods = clazz.declaredMethods.filter { method ->
 			when {
+				method.isAnnotationPresent(Internal::class.java)
+						|| method.isAnnotationPresent(Incubating::class.java) -> false
+
 				(method.modifiers and Opcodes.ACC_SYNTHETIC) != 0 -> false
 				Envs.excludedMethods(method) -> false
 				Modifier.isPublic(method.modifiers) -> true
@@ -634,7 +646,14 @@ private class ClassGenerator(
 
 	private fun generateFields(): String {
 		val fields = clazz.declaredFields.filter { field ->
-			Modifier.isPublic(field.modifiers) || Modifier.isProtected(field.modifiers)
+			when {
+				field.isAnnotationPresent(Internal::class.java)
+						|| field.isAnnotationPresent(Incubating::class.java) -> false
+
+				Modifier.isPublic(field.modifiers) -> true
+				Modifier.isProtected(field.modifiers) -> true
+				else -> false
+			}
 		}.filter { field ->
 			!(field.type === clazz && clazz.isEnum)
 		}
@@ -690,15 +709,22 @@ private class ClassGenerator(
 	}
 }
 
-fun generateClass(className: String, targetInfo: JarGeneratingTargetInfo, checkVisibility: Boolean? = true) {
-	Logs.verbose("Generating class[${className}]", -1)
+fun generateClass(className: String, targetInfo: JarGeneratingTargetInfo, checkVisibility: Boolean? = true): Boolean {
 	val clazz = Class.forName(className)
+	if (clazz.isAnnotationPresent(Internal::class.java)
+		|| clazz.isAnnotationPresent(Incubating::class.java)
+	) {
+		Summary.addIgnoredClass(className)
+		return false
+	}
+
+	Logs.verbose("Generating class[${className}]", -1)
 	if (checkVisibility == true) {
 		val modifiers = clazz.modifiers
 		if (Modifier.isPrivate(modifiers) || (!Modifier.isPublic(modifiers) && !Modifier.isProtected(modifiers))) {
 			// ignore private, friendly class
 			Summary.markClassAsIgnoredTemporarily(className)
-			return
+			return false
 		}
 	}
 
@@ -711,4 +737,5 @@ fun generateClass(className: String, targetInfo: JarGeneratingTargetInfo, checkV
 		packageDir + File.separator + simpleName + ".ts",
 		generator.generate(packageLevel)
 	)
+	return true
 }

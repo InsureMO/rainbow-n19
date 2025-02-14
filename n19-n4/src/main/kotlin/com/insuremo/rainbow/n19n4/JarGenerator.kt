@@ -37,8 +37,9 @@ fun generateJar(jarFilePath: String, targetInfo: JarGeneratingTargetInfo) {
 
 	filtered.forEach {
 		try {
-			generateClass(it, targetInfo)
-			Summary.addTreatedClass(it)
+			if (generateClass(it, targetInfo)) {
+				Summary.addTreatedClass(it)
+			}
 		} catch (t: Throwable) {
 			println(t)
 		}
