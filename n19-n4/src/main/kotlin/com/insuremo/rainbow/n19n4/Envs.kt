@@ -95,53 +95,73 @@ object Envs {
 			"org.xml.sax",
 			// groovy
 //			"groovy.beans",
-//			"groovy.cli",
-//			"groovy.grape",
-//			"groovy.inspect",
-//			"groovy.io",
-//			"groovy.lang.groovydoc",
-//			"groovy.namespace",
-//			"groovy.security",
-//			"groovy.transform",
-//			"groovy.ui",
-//			"groovy.util.logging",
+			"groovy.cli",
+			"groovy.grape",
+			"groovy.inspect",
+			"groovy.io",
+			"groovy.lang.groovydoc",
+			"groovy.namespace",
+			"groovy.security",
+			"groovy.transform",
+			"groovy.ui",
+			"groovy.util.logging",
 			"groovyjarjarantlr4",
 			"groovyjarjarasm",
 			"groovyjarjarpicocli",
-//			"org.apache.groovy",
-//			"org.codehaus.groovy"
+			"org.apache.groovy",
+			"org.codehaus.groovy"
 		).joinToString(",")
 	}
 	private const val EXCLUDED_CLASSES = "excludedClasses"
 	private val DEFAULT_EXCLUDED_CLASSES by lazy {
 		listOf(
 			"java.beans.AppletInitializer",
-//			"groovy.beans.BindableASTTransformation",
-//			"groovy.lang.DelegatingMetaClass",
-//			"groovy.lang.ExpandoMetaClass",
-//			"groovy.lang.GroovyClassLoader",
-//			"groovy.lang.GroovyClassLoader\$ClassCollector",
-//			"groovy.lang.GroovyClassLoader\$InnerLoader",
-//			"groovy.lang.GroovyRuntimeException",
-//			"groovy.lang.IntRange",
-//			"groovy.lang.MetaBeanProperty",
-//			"groovy.lang.MetaClass",
-//			"groovy.lang.MetaClassImpl",
-//			"groovy.lang.MetaMethod",
-//			"groovy.lang.MissingClassException",
-//			"groovy.lang.NumberRange",
-//			"groovy.lang.Script",
-//			"groovy.lang.GroovyShell",
-//			"groovy.beans.ListenerListASTTransformation",
-//			"groovy.beans.VetoableASTTransformation",
-//			"groovy.util.AbstractFactory",
-//			"groovy.util.ConfigSlurper",
-//			"groovy.util.Eval",
-//			"groovy.util.Factory",
-//			"groovy.util.FactoryBuilderSupport",
-//			"groovy.util.GroovyScriptEngine",
-//			"groovy.util.ObjectGraphBuilder",
-			"org.codehaus.groovy.control.XStreamUtils",
+			"groovy.beans.BindableASTTransformation",
+			"groovy.lang.AdaptingMetaClass",
+			"groovy.lang.DelegatingMetaClass",
+			"groovy.lang.ExpandoMetaClass",
+			"groovy.lang.ExpandoMetaClassCreationHandle",
+			"groovy.lang.GroovyClassLoader",
+			"groovy.lang.GroovyClassLoader\$ClassCollector",
+			"groovy.lang.GroovyClassLoader\$InnerLoader",
+			"groovy.lang.GroovyRuntimeException",
+			"groovy.lang.GroovyShell",
+			"groovy.lang.GroovySystem",
+			"groovy.lang.IllegalPropertyAccessException",
+			"groovy.lang.IncorrectClosureArgumentsException",
+			"groovy.lang.MetaBeanProperty",
+			"groovy.lang.MetaClass",
+			"groovy.lang.MetaClassImpl",
+			"groovy.lang.MetaClassRegistry",
+			"groovy.lang.MetaClassRegistryChangeEvent",
+			"groovy.lang.MetaClassRegistryChangeEventListener",
+			"groovy.lang.MetaMethod",
+			"groovy.lang.MetaObjectProtocol",
+			"groovy.lang.MissingClassException",
+			"groovy.lang.MissingFieldException",
+			"groovy.lang.MissingMethodException",
+			"groovy.lang.MissingPropertyException",
+			"groovy.lang.MutableMetaClass",
+			"groovy.lang.ProxyMetaClass",
+			"groovy.lang.ReadOnlyPropertyException",
+			"groovy.lang.SpreadListEvaluatingException",
+			"groovy.lang.SpreadMapEvaluatingException",
+			"groovy.lang.Script",
+			"groovy.beans.ListenerListASTTransformation",
+			"groovy.beans.VetoableASTTransformation",
+			"groovy.util.AbstractFactory",
+			"groovy.util.ConfigSlurper",
+			"groovy.util.DelegatingScript",
+			"groovy.util.Eval",
+			"groovy.util.Factory",
+			"groovy.util.FactoryBuilderSupport",
+			"groovy.util.GroovyScriptEngine",
+			"groovy.util.Node",
+			"groovy.util.NodeBuilder",
+			"groovy.util.NodeList",
+			"groovy.util.NodePrinter",
+			"groovy.util.ObjectGraphBuilder",
+			"org.codehaus.groovy.control.XStreamUtils"
 		).joinToString(",")
 	}
 
@@ -194,6 +214,7 @@ object Envs {
 	val excludedMethods by lazy {
 		{ method: Method ->
 			listOf(
+				// jdk
 				"public abstract java.awt.Component java.beans.beancontext.BeanContextChildComponentProxy.getComponent()",
 				"public abstract java.awt.Container java.beans.beancontext.BeanContextContainerProxy.getContainer()",
 				"public abstract java.awt.Image java.beans.BeanInfo.getIcon(int)",
@@ -203,7 +224,20 @@ object Envs {
 				"public void java.beans.PropertyEditorSupport.paintValue(java.awt.Graphics,java.awt.Rectangle)",
 				"public java.awt.Component java.beans.PropertyEditorSupport.getCustomEditor()",
 				"public java.awt.Image java.beans.SimpleBeanInfo.loadImage(java.lang.String)",
-				"public java.awt.Image java.beans.SimpleBeanInfo.getIcon(int)"
+				"public java.awt.Image java.beans.SimpleBeanInfo.getIcon(int)",
+				// groovy
+				"public abstract groovy.lang.MetaClass groovy.lang.GroovyObject.getMetaClass()",
+				"public abstract void groovy.lang.GroovyObject.setMetaClass(groovy.lang.MetaClass)",
+				"public groovy.lang.MetaClass groovy.lang.GroovyObjectSupport.getMetaClass()",
+				"public void groovy.lang.GroovyObjectSupport.setMetaClass(groovy.lang.MetaClass)",
+				"public groovy.lang.MetaClass groovy.lang.Sequence.getMetaClass()",
+				"public void groovy.lang.Sequence.setMetaClass(groovy.lang.MetaClass)",
+				"public groovy.lang.MetaClass groovy.util.FileNameByRegexFinder.getMetaClass()",
+				"public void groovy.util.FileNameByRegexFinder.setMetaClass(groovy.lang.MetaClass)",
+				"public groovy.lang.MetaClass groovy.util.FileTreeBuilder.getMetaClass()",
+				"public void groovy.util.FileTreeBuilder.setMetaClass(groovy.lang.MetaClass)",
+				"public org.codehaus.groovy.runtime.RangeInfo groovy.lang.IntRange.subListBorders(int)",
+				"public org.codehaus.groovy.runtime.RangeInfo groovy.lang.NumberRange.subListBorders(int)"
 			).contains(method.toGenericString())
 		}
 	}
@@ -361,10 +395,12 @@ object Envs {
 		return envsMap[envKey] ?: defaultValue
 	}
 
+	@Suppress("unused")
 	fun getInt(envKey: String): Int? {
 		return this.get(envKey)?.toInt()
 	}
 
+	@Suppress("unused")
 	fun getInt(envKey: String, defaultValue: Int): Int {
 		val v = this.get(envKey)
 		return v?.toInt() ?: defaultValue

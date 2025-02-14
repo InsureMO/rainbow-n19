@@ -186,9 +186,9 @@ private class ClassGenerator(
 			while (c.isArray) {
 				c = c.componentType
 			}
-			Summary.takeBack(c.name)
+			Summary.takeBack(c.name, this.clazz.name)
 		} else {
-			Summary.takeBack(clazz.name)
+			Summary.takeBack(clazz.name, this.clazz.name)
 		}
 		return "${indent}'${clazz.name}'"
 	}
@@ -240,7 +240,7 @@ private class ClassGenerator(
 							is String, is Char -> "${indent1}['p', '$name', '$value']"
 							is Int, is Long, is Short, is Float, is Double, is Byte, is Boolean -> "${indent1}['p', '$name', $value]"
 							is Array<*> -> {
-								val indent2 = indent1 + "\n"
+								val indent2 = indent1 + "\t"
 								val type = method.returnType.componentType
 								when {
 									Annotation::class.java.isAssignableFrom(type) -> {
@@ -248,7 +248,7 @@ private class ClassGenerator(
 											"${indent1}['m', '$name', [",
 											@Suppress("UNCHECKED_CAST")
 											(value as Array<Annotation>).joinToString(",\n") {
-												"'${generateAnnotation(it, indent2)}'"
+												generateAnnotation(it, indent2)
 											},
 											"${indent1}]]"
 										).joinToString("\n")
@@ -601,9 +601,13 @@ private class ClassGenerator(
 
 	private fun generateMethods(): String {
 		val methods = clazz.declaredMethods.filter { method ->
-			(Modifier.isPublic(method.modifiers) || Modifier.isProtected(method.modifiers))
-					&& (method.modifiers and Opcodes.ACC_SYNTHETIC == 0)
-					&& !Envs.excludedMethods(method)
+			when {
+				(method.modifiers and Opcodes.ACC_SYNTHETIC) != 0 -> false
+				Envs.excludedMethods(method) -> false
+				Modifier.isPublic(method.modifiers) -> true
+				Modifier.isProtected(method.modifiers) && !Modifier.isStatic(method.modifiers) -> true
+				else -> false
+			}
 		}
 		if (methods.isEmpty()) {
 			return generateComment("/* declared methods */", "\t")

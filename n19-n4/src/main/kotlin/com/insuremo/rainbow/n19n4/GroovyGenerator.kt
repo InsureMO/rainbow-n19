@@ -41,7 +41,13 @@ fun generateGroovy(): JarGeneratingTargetInfo? {
 		classDocHtmlUrl = { clazz ->
 			val version = GroovySystem.getVersion()
 			val classPath = clazz.name.replace('.', '/').replace('$', '.')
-			"https://docs.groovy-lang.org/${version}/html/api/${classPath}.html"
+			when {
+				classPath.startsWith("groovyjarjarantlr4")
+						|| classPath.startsWith("groovyjarjarpicocli")
+						|| classPath.startsWith("groovyjarjarasm") -> null
+
+				else -> "https://docs.groovy-lang.org/${version}/html/api/${classPath}.html"
+			}
 		},
 		parameterNamesOfMethodFromDocHtml = { method, docHtml ->
 			standardParameterNamesOfMethodFromDocHtml(method, docHtml, {

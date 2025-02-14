@@ -6,8 +6,8 @@ object Summary {
 	private val treatedClasses = mutableMapOf<String, Boolean>()
 	private val ignoredClasses = mutableMapOf<String, Boolean>()
 	private val temporarilyIgnoredClasses = mutableMapOf<String, Boolean>()
-	private val necessaryClasses = mutableMapOf<String, Boolean>()
-	private val takenBackClasses = mutableMapOf<String, Boolean>()
+	private val necessaryClasses = mutableMapOf<String, MutableList<String>>()
+	private val takenBackClasses = mutableMapOf<String, List<String>>()
 	private val externalClasses = mutableMapOf<String, Boolean>()
 	private val parameterNames = mutableMapOf<String, Boolean>()
 
@@ -23,13 +23,22 @@ object Summary {
 		this.temporarilyIgnoredClasses.put(className, true)
 	}
 
-	fun takeBack(className: String) {
+	private fun putIntoNecessaryClasses(className: String, causeClassName: String) {
+		val causes = this.necessaryClasses[className]
+		if (causes == null) {
+			this.necessaryClasses.put(className, mutableListOf(causeClassName))
+		} else if (!causes.contains(causeClassName)) {
+			causes.add(causeClassName)
+		}
+	}
+
+	fun takeBack(className: String, causeClassName: String) {
 		if (this.temporarilyIgnoredClasses.containsKey(className)) {
 			this.temporarilyIgnoredClasses.remove(className)
-			this.necessaryClasses.put(className, true)
+			this.putIntoNecessaryClasses(className, causeClassName)
 		} else if (this.ignoredClasses.contains(className)) {
 			this.ignoredClasses.remove(className)
-			this.necessaryClasses.put(className, true)
+			this.putIntoNecessaryClasses(className, causeClassName)
 		} else if (this.necessaryClasses.containsKey(className)) {
 			// do nothing, already marked as necessary
 		} else {
@@ -55,7 +64,11 @@ object Summary {
 			this.treatedClasses.keys.sortedBy { it.lowercase() }.joinToString("\n"),
 			"",
 			"Classes Taken Back: ${takenBackClasses.size}",
-			this.takenBackClasses.keys.sortedBy { it.lowercase() }.joinToString("\n"),
+			this.takenBackClasses.keys.sortedBy {
+				it.lowercase()
+			}.joinToString("\n") {
+				"$it leads by [${this.takenBackClasses[it]?.sortedBy { it.lowercase() }?.joinToString(",") ?: "?"} ]"
+			},
 			"",
 			"Classes Ignored On Processing: ${this.temporarilyIgnoredClasses.size}",
 			this.temporarilyIgnoredClasses.keys.sortedBy { it.lowercase() }.joinToString("\n"),
