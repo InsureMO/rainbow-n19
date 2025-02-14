@@ -48,13 +48,14 @@ import {BuiltInConstants} from './BuiltInConstants';
 // noinspection DuplicatedCode
 /** value is plain, or plain array */
 export type ClassCreateAnnotationValue1Args = ['p', string, Exclude<AnnotationValue, IAnnotation | Array<IAnnotation>>];
+export type ClassCreateAnnotationValue2Args = ['c', string, ClassName | Array<ClassName>];
 /** value is annotation */
-export type ClassCreateAnnotationValue2Args = ['a', string, ClassCreateAnnotationArgs];
+export type ClassCreateAnnotationValue3Args = ['a', string, ClassCreateAnnotationArgs];
 /** value is annotation array */
-export type ClassCreateAnnotationValue3Args = ['m', string, Array<ClassCreateAnnotationArgs>];
+export type ClassCreateAnnotationValue4Args = ['m', string, Array<ClassCreateAnnotationArgs>];
 export type ClassCreateAnnotationArgs = [
 	IAnnotationConstructorArgs['className'],
-	...(ClassCreateAnnotationValue1Args | ClassCreateAnnotationValue2Args | ClassCreateAnnotationValue3Args)[]
+	...(ClassCreateAnnotationValue1Args | ClassCreateAnnotationValue2Args | ClassCreateAnnotationValue3Args | ClassCreateAnnotationValue4Args)[]
 ];
 export type ClassCreateTypeVariableArgs = [
 	Optional<ITypeVariableConstructorArgs['name']>,
@@ -224,6 +225,8 @@ export class ClassCreateHelper {
 				switch (type) {
 					case 'p':
 						return [name, value as ClassCreateAnnotationValue1Args[2]];
+					case 'c':
+						return [name, ['c', value]];
 					case 'a':
 						return [name, this._annotation(annotatedElement, value)];
 					case 'm':
