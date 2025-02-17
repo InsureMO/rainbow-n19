@@ -20,7 +20,7 @@ export interface IClass extends IModifiers, IGenericDeclaration, IAnnotatedEleme
 	// superclass
 	readonly superclassName: Optional<ClassName>;
 	readonly superclass: Optional<IClass>;
-	setSuperclass(superclassTypeOrName: TypeOrName): this;
+	setSuperclass(superclassTypeOrName?: TypeOrName): this;
 	readonly allSuperclasses: Array<IClass>;
 	readonly genericSuperclassName: Optional<TypeName>;
 	readonly genericSuperclass: Optional<IType>;

@@ -25,7 +25,7 @@ import {
 	ITypeVariable
 } from './Interfaces';
 import {Method} from './Method';
-import {AnnotatedElementClassSupport, ClassSupport, ModifiersSupport, TypeSupport} from './Supports';
+import {AnnotatedElementClassSupport, ClassSupport, ModifiersSupport, SuperclassSupport, TypeSupport} from './Supports';
 import {
 	ClassName,
 	ClassOrName,
@@ -84,7 +84,7 @@ export class Class implements IClass {
 	private _name: ClassName;
 	private _simpleName: SimpleClassName;
 	private readonly _modifiersSupport: ModifiersSupport<Class> = new ModifiersSupport(this);
-	private readonly _superclassSupport: TypeSupport<IClass> = new TypeSupport<IClass>(this);
+	private readonly _superclassSupport: SuperclassSupport<IClass> = new SuperclassSupport<IClass>(this);
 	private readonly _interfacesSupport: Array<TypeSupport<IClass>> = [];
 	private _packageName: PackageName;
 	private readonly _annotatedElementSupport: AnnotatedElementClassSupport = new AnnotatedElementClassSupport(this);
@@ -491,7 +491,7 @@ export class Class implements IClass {
 		return this._superclassSupport.type;
 	}
 
-	setSuperclass(superclassTypeOrName: TypeOrName): this {
+	setSuperclass(superclassTypeOrName?: TypeOrName): this {
 		this._superclassSupport.setTypeOrName(superclassTypeOrName);
 		return this;
 	}

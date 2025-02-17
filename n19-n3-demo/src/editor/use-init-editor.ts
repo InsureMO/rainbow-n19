@@ -24,8 +24,11 @@ import {
 	lineNumbers,
 	rectangularSelection
 } from '@codemirror/view';
+import {createGroovyClassLoader} from '@rainbow-n19/g4';
+import {JdkClassLoader} from '@rainbow-n19/j17';
+import {DependenciesClassLoader, EditingClassLoader, FloatingClassLoader, ProjectClassLoader} from '@rainbow-n19/n2';
 import {createGroovyExtensions} from '@rainbow-n19/n3';
-import {Dispatch, SetStateAction, useEffect, useRef} from 'react';
+import {Dispatch, SetStateAction, useEffect, useRef, useState} from 'react';
 import TestGroovy1 from './test-groovy-1.groovy';
 
 export interface CodeEditorState {
@@ -44,6 +47,13 @@ export const useInitEditor = <S extends CodeEditorState>(options: UseInitEditorO
 	const {setState} = options;
 
 	const ref = useRef<HTMLDivElement>(null);
+	const [classLoader] = useState<EditingClassLoader>(() => {
+		const GroovyClassLoader = createGroovyClassLoader(JdkClassLoader);
+		const dependenciesClassLoader = new DependenciesClassLoader(GroovyClassLoader);
+		const projectClassLoader = new ProjectClassLoader(dependenciesClassLoader);
+		const floatingClassLoader = new FloatingClassLoader(projectClassLoader);
+		return new EditingClassLoader(floatingClassLoader);
+	});
 
 	useEffect(() => {
 		if (ref.current == null) {
@@ -92,7 +102,8 @@ export const useInitEditor = <S extends CodeEditorState>(options: UseInitEditorO
 							// atomicNodesLogEnabled: true,
 							// ruleProcessingLogsEnabled: true,
 							// timeSpentLogEnabled: true,
-						}
+						},
+						classLoader
 					}),
 					changeListener.of(EditorView.updateListener.of(() => {
 						// view.state.update({});

@@ -60,7 +60,7 @@ export class GroovyParser extends Parser {
 		return buffer;
 	}
 
-	private buildTree(document: string) {
+	private buildTree(document: string): Tree {
 		const [atomicNodes, positionedNodes] = this.languageServer.parse(document);
 		// cache, copy to facet data
 		this._parsedCache.install({atomicNodes, positionedNodes});

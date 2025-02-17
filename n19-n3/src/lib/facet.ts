@@ -1,5 +1,5 @@
 import {combineConfig, Facet} from '@codemirror/state';
-import {Optional, Parsed} from '@rainbow-n19/n2';
+import {EditingClassLoader, Optional, Parsed} from '@rainbow-n19/n2';
 
 export interface GroovyFacetParsedCacheData {
 	atomicNodes: Array<Parsed.DecoratedNode>;
@@ -15,6 +15,7 @@ export interface GroovyFacetParsedCache {
 
 export interface GroovyFacetData {
 	parsedCache: GroovyFacetParsedCache;
+	classLoader: EditingClassLoader;
 }
 
 /**

@@ -14,7 +14,7 @@ import {ClassName, NotClassType, TypeName, TypeOrNameOrTypeVariableRef, TypeVari
 import {AbstractClassLoaderDelegate} from './AbstractClassLoaderDelegate';
 
 export class TypeSupport<T extends IClassLoaderHolder> extends AbstractClassLoaderDelegate<T> {
-	private _typeOrName: TypeOrNameOrTypeVariableRef;
+	protected _typeOrName: TypeOrNameOrTypeVariableRef;
 
 	constructor(target: T) {
 		super(target);
@@ -162,6 +162,44 @@ export class TypeSupport<T extends IClassLoaderHolder> extends AbstractClassLoad
 			return this.type;
 		} else {
 			return this.getTypeDeclaration(this._typeOrName);
+		}
+	}
+}
+
+export class SuperclassSupport<T extends IClassLoaderHolder> extends TypeSupport<T> {
+	get name(): Optional<ClassName> {
+		if (this._typeOrName == null) {
+			return null;
+		} else {
+			return super.name;
+		}
+	}
+
+	setTypeOrName(typeOrName?: TypeOrNameOrTypeVariableRef): this {
+		return super.setTypeOrName(typeOrName);
+	}
+
+	get type(): IClass {
+		if (this._typeOrName == null) {
+			return null;
+		} else {
+			return super.type;
+		}
+	}
+
+	get genericName(): TypeName {
+		if (this._typeOrName == null) {
+			return null;
+		} else {
+			return super.genericName;
+		}
+	}
+
+	get genericType(): IType {
+		if (this._typeOrName == null) {
+			return null;
+		} else {
+			return super.genericType;
 		}
 	}
 }
