@@ -153,7 +153,7 @@ export class Class implements IClass {
 	}
 
 	private findComponentType(name: ClassName): ClassName {
-		const extractComponentTypeOnMultipleDimensional = (): string => name.substring(name.length - 1);
+		const extractComponentTypeOnMultipleDimensional = (): string => name.substring(1);
 
 		const rule = [
 			{
@@ -182,7 +182,7 @@ export class Class implements IClass {
 		].find(({match}) => match());
 
 		if (rule == null) {
-			// given class name is not an array, not component type
+			// given class name is not an array, no component type
 			return (void 0);
 		} else {
 			if (rule.oneDimensional()) {
@@ -243,8 +243,15 @@ export class Class implements IClass {
 				this.setSuperclass(BuiltInConstants.LANG_OBJECT);
 				// interfaces are java.lang.Cloneable and java.lang.Serializable
 				this.setInterfaces([BuiltInConstants.LANG_CLONEABLE, BuiltInConstants.LANG_SERIALIZABLE]);
-				// package is java.lang
-				this._packageName = BuiltInConstants.LANG_PACKAGE;
+				// package following component type's
+				const baseComponentName = this.name.replace(/^\[+/, '').replace(/;$/, '');
+				if (BuiltInConstants.CHAR_OF_PRIMITIVE_TYPES.includes(baseComponentName)) {
+					// primitive type array
+					this._packageName = BuiltInConstants.LANG_PACKAGE;
+				} else {
+					// follow base component type
+					this._packageName = baseComponentName.substring(0, baseComponentName.lastIndexOf('.'));
+				}
 				// no enclosing info
 				this._enclosingConstructor = (void 0);
 				this._enclosingMethod = (void 0);
@@ -285,6 +292,7 @@ export class Class implements IClass {
 						this._enclosingMethod = (void 0);
 					} else {
 						// is one of member, anonymous and local class
+						// TODO for groovy class, even it is starts with a number, still can be inner class
 						let isLocalOrAnonymousClass = false;
 						let countIn = false;
 						this._simpleName = this.name.substring(lastIndex + 1).split('').filter((char) => {
@@ -358,7 +366,12 @@ export class Class implements IClass {
 	 * replace the modifiers of this field
 	 */
 	setModifiers(modifiers: ModifiersValue): this {
-		this._modifiersSupport.setModifiers(modifiers);
+		if (this.isPrimitive || this.isArray) {
+			// 1041 for primitive and array type
+			this._modifiersSupport.setModifiers(Modifier.PUBLIC & Modifier.BRIDGE & Modifier.SYNTHETIC);
+		} else {
+			this._modifiersSupport.setModifiers(modifiers);
+		}
 		this.initByModifiers();
 		return this;
 	}

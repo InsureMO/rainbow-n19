@@ -30,6 +30,7 @@ export class BuiltInConstants {
 	static readonly ARR_INT = '[I';
 	static readonly ARR_SHORT = '[S';
 	static readonly ARR_LONG = '[J';
+	static readonly CHAR_OF_PRIMITIVE_TYPES = 'ZBDCFISJ';
 	/** map of primitive types to its one-dimension array */
 	static readonly ARR_OF_PRIMITIVE_TYPES = {
 		[BuiltInConstants.P_BOOLEAN]: BuiltInConstants.ARR_BOOLEAN,
