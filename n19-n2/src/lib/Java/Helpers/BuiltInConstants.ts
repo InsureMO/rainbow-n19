@@ -60,6 +60,7 @@ export class BuiltInConstants {
 	static readonly EMPTY_PACKAGE_NAME = '';
 	static readonly EMPTY_CLASS_SIMPLE_NAME = '';
 
+	// noinspection JSUnusedLocalSymbols
 	private constructor() {
 		// avoid extend
 	}
