@@ -39,7 +39,10 @@ export class ParsedNodeVisitor {
 	}
 
 	protected collectNode(node: DecoratedNode, parent: Optional<PositionedNode>): void {
-		this._atomicNodes.push(node);
+		if (node.startOffset >= 0) {
+			// for some reason, the start offset might be -1, ignore it to push into atomic node
+			this._atomicNodes.push(node);
+		}
 		// has no effect on position hierarchy
 		new PositionedNode(node, parent).positioning();
 	}
@@ -81,6 +84,9 @@ export class ParsedNodeVisitor {
 		return this._atomicNodes;
 	}
 
+	/**
+	 * return the found node and its index in atomic nodes. or [undefined, -1] when not found.
+	 */
 	static findAtomicNodeByOffset(atomicNodes: Array<DecoratedNode>, start: number, end: number): [Optional<DecoratedNode>, number] {
 		let startIndex = 0;
 		let endIndex = atomicNodes.length - 1;

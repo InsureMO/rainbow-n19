@@ -31,6 +31,7 @@ export const buildConfig = (lint) => {
 			return [
 				'@lezer/common',
 				'@codemirror/language', '@codemirror/state', '@codemirror/view',
+				'@codemirror/autocomplete',
 				'@rainbow-n19/n2'
 			].includes(id);
 		}

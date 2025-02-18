@@ -1,6 +1,8 @@
 // hello world
 package highlighting
 
+import java
+
 // sl
 /**
 * This is Groovydoc comment

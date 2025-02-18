@@ -1,6 +1,7 @@
 import {Language, LanguageSupport} from '@codemirror/language';
 import {Extension, Facet} from '@codemirror/state';
 import {EditingClassLoader} from '@rainbow-n19/n2';
+import {AutoCompletionPlugin} from './auto-completion';
 import {GroovyDecorationOptions, GroovyDecorationPlugin} from './decorations';
 import {DefaultGroovyFacetParsedCache, GroovyFacet, GroovyFacetData, GroovyFacetParsedCache} from './facet';
 import {FoldServicePlugin} from './fold-service';
@@ -30,7 +31,8 @@ export const createGroovyExtensions = (options: GroovyExtensionOptions): Extensi
 			facet,
 			GroovyDecorationPlugin(options?.decorations),
 			FoldServicePlugin,
-			KeymapServicePlugin
+			KeymapServicePlugin,
+			AutoCompletionPlugin,
 		])
 	];
 };

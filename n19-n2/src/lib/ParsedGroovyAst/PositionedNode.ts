@@ -5,6 +5,8 @@ import {HierarchicalNode} from './HierarchicalNode';
 export class PositionedNode extends HierarchicalNode {
 	constructor(node: DecoratedNode, parent?: PositionedNode) {
 		super(node, parent);
+		// build bi-direction link
+		node.setPositionedNodeRef(this);
 	}
 
 	get startLine(): number {
@@ -15,12 +17,20 @@ export class PositionedNode extends HierarchicalNode {
 		return this.decorated.startColumn;
 	}
 
+	get startOffset(): number {
+		return this.decorated.startOffset;
+	}
+
 	get endLine(): number {
 		return this.decorated.endLine;
 	}
 
 	get endColumn(): number {
 		return this.decorated.endColumn;
+	}
+
+	get endOffset(): number {
+		return this.decorated.endOffset;
 	}
 
 	get parent(): Optional<PositionedNode> {

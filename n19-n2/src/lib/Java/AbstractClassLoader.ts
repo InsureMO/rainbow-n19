@@ -46,12 +46,8 @@ export abstract class AbstractClassLoader implements IClassLoader {
 	}
 
 	findPackage(packageName: PackageName): IPackage {
-		let pkg = this._packages.get(packageName) ?? this._parent?.findPackage(packageName);
-		if (pkg == null) {
-			pkg = new Package().setName(packageName);
-			this._packages.set(packageName, pkg);
-		}
-		return pkg;
+		const pkg = this._packages.get(packageName) ?? this._parent?.findPackage(packageName);
+		return pkg ?? new Package().setName(packageName);
 	}
 
 	findClassesOfPackage(packageName: PackageName): Array<IClass> {
@@ -76,20 +72,11 @@ export abstract class AbstractClassLoader implements IClassLoader {
 	}
 
 	allPackages(): Array<IPackage> {
-		const myPackages = [...this._packages.values()];
+		// only packages including classes are collected
+		const myPackages = [...this._packages.values()].filter(pkg => this._classesOfPackages.has(pkg.name));
 		const packagesFromAncestors = this._parent?.allPackages() ?? [];
 		return [...[...packagesFromAncestors, ...myPackages].reduce((map, pkg) => {
-			const packageName = pkg.name;
-			if (!this._classesOfPackages.has(packageName)) {
-				// no class in this package,
-				// then check the package exists in ancestors or not, replace it when exists,
-				// or ignore it
-				if (map.has(packageName)) {
-					map.set(packageName, pkg);
-				}
-			} else {
-				map.set(pkg.name, pkg);
-			}
+			map.set(pkg.name, pkg);
 			return map;
 		}, new Map<PackageName, IPackage>()).values()];
 	}
@@ -99,7 +86,9 @@ export abstract class AbstractClassLoader implements IClassLoader {
 		const originalClass = this._classes.get(className);
 		this._classes.set(className, clazz);
 		const packageName = clazz.packageName;
-		this.findPackage(packageName);
+		if (!this._packages.has(packageName)) {
+			this._packages.set(packageName, new Package().setName(packageName));
+		}
 		const classesOfPackages = this._classesOfPackages.get(packageName);
 		if (classesOfPackages == null) {
 			this._classesOfPackages.set(packageName, [clazz]);

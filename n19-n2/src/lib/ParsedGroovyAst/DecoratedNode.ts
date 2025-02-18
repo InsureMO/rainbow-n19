@@ -3,6 +3,7 @@ import {GroovyParser} from '../OrgApacheGroovyParserAntlr4';
 import {Optional} from '../TsAddon';
 import {ParsedNode} from './ParsedNode';
 import {ParsedNodeUtils} from './ParsedNodeUtils';
+import {PositionedNode} from './PositionedNode';
 import {SymbolIndex} from './Types';
 
 /**
@@ -62,6 +63,7 @@ export class DecoratedNode {
 	private _startOffset: Optional<number> = (void 0);
 	private _endOffset: Optional<number> = (void 0);
 	private _text: Optional<string> = (void 0);
+	private _positionedNodeRef: Optional<PositionedNode>;
 
 	constructor(node: ParsedNode) {
 		this._parsed = node;
@@ -110,15 +112,47 @@ export class DecoratedNode {
 	}
 
 	get startOffset(): number {
-		return this._startOffset ?? -1;
+		let offset = this._startOffset;
+		if (offset == null || offset === -1) {
+			const children = this.positionedNodeRef?.children;
+			if (children != null && children.length > 0) {
+				for (const child of children) {
+					offset = child.startOffset;
+					if (offset !== -1) {
+						break;
+					}
+				}
+			}
+		}
+		return offset ?? -1;
 	}
 
 	get endOffset(): number {
-		return this._endOffset ?? -1;
+		let offset = this._endOffset;
+		if (offset == null || offset === -1) {
+			const children = [...(this.positionedNodeRef?.children ?? [])].reverse();
+			if (children != null && children.length > 0) {
+				for (const child of children) {
+					offset = child.endOffset;
+					if (offset !== -1) {
+						break;
+					}
+				}
+			}
+		}
+		return offset ?? -1;
 	}
 
 	get text(): string {
 		return this._text ?? this._parsed.text ?? '';
+	}
+
+	get positionedNodeRef(): Optional<PositionedNode> {
+		return this._positionedNodeRef;
+	}
+
+	setPositionedNodeRef(node: PositionedNode) {
+		this._positionedNodeRef = node;
 	}
 
 	toString(): string {

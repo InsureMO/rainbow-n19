@@ -1,3 +1,4 @@
+export * from './auto-completion';
 export * from './decorations';
 export * from './facet';
 export * from './fold-service';
