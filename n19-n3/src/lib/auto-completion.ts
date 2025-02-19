@@ -24,7 +24,7 @@ const findNearestTypedNode = (node: PositionedNode): Optional<PositionedNode> =>
 	}
 };
 
-const determineMinTypedNode = (snr: SyntaxNodeRef, parsedCache: GroovyFacetParsedCache): Optional<PositionedNode> => {
+const determineTypedNode = (snr: SyntaxNodeRef, parsedCache: GroovyFacetParsedCache): Optional<PositionedNode> => {
 	switch (snr.name) {
 		case 'Identifier':
 		case 'CapitalizedIdentifier': {
@@ -40,13 +40,27 @@ const findAutoCompletionForImport = (text: string, classLoader: IClassLoader, fr
 	const packageName = text.replace(/^\s*import\s+/, '');
 	const offset = text.length - packageName.length;
 
+	let options: CompletionResult['options'];
+	const packageNames = classLoader.allPackages().map(pkg => pkg.name);
+	if (packageNames.includes(packageName)) {
+		// package is done
+		// append classes in this package
+		const classes = classLoader.findClassesOfPackage(packageName)
+			.filter(clazz => !clazz.isArray && !clazz.isPrimitive);
+		options = [
+			...packageNames.map(name => ({label: name, type: 'namespace'})),
+			...classes.map(clazz => ({label: clazz.name, type: 'class'}))
+		];
+	} else {
+		options = packageNames.map(name => ({label: name, type: 'namespace'}));
+	}
+
 	return {
-		from: from + offset, to,
-		options: classLoader.allPackages().map(pkg => pkg.name).map(name => ({label: name, type: 'keyword'})),
-		validFor: (text) => {
-			console.log(text);
-			return true;
-		}
+		from: from + offset, to, options
+		// validFor: (text) => {
+		// 	console.log(text);
+		// 	return true;
+		// }
 	};
 };
 
@@ -67,21 +81,30 @@ export const getAutoCompletion: CompletionSource = (context: CompletionContext):
 	const pos = context.pos;
 	// node before cursor position
 	let sn = syntaxTree(state).resolveInner(pos, -1);
-	const name = sn.name;
-
+	let endOffset = pos;
 	let typedNode: Optional<PositionedNode>;
-	if (name === 'DOT') {
-		sn = sn.prevSibling;
-		if (sn != null) {
-			typedNode = determineMinTypedNode(sn, parsedCache);
+	switch (sn.name) {
+		case 'DOT':
+			sn = sn.prevSibling;
+			endOffset = endOffset - 1;
+			break;
+		case 'Identifier':
+		case 'CapitalizedIdentifier': {
+			// do nothing
+			break;
+		}
+		default:
+			// clear node
+			sn = null;
+	}
+	if (sn != null) {
+		typedNode = determineTypedNode(sn, parsedCache);
+		if (typedNode != null) {
+			const text = state.sliceDoc(typedNode.decorated.startOffset, endOffset);
+			return findAutoCompletion(typedNode, text, classLoader, typedNode.decorated.startOffset, pos);
 		}
 	}
-	if (typedNode != null) {
-		const text = state.sliceDoc(typedNode.decorated.startOffset, pos - 1);
-		return findAutoCompletion(typedNode, text, classLoader, typedNode.decorated.startOffset, pos);
-	} else {
-		return (void 0);
-	}
+	return (void 0);
 };
 
 export const createAutoCompletion = (): CompletionSource => {

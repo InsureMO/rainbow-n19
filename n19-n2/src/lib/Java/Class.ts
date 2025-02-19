@@ -1027,4 +1027,10 @@ export class Class implements IClass {
 			return sb.toString();
 		}
 	}
+
+	getPublicStaticMethodsAndFields(): Array<IMethod | IField> {
+		return [
+			...this.fields, ...this.methods
+		].filter(x => Modifier.isStatic(x.modifiers) && Modifier.isPublic(x.modifiers));
+	}
 }
