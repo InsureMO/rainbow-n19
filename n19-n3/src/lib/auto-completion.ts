@@ -37,15 +37,15 @@ const determineTypedNode = (snr: SyntaxNodeRef, parsedCache: GroovyFacetParsedCa
 };
 
 const findAutoCompletionForImport = (text: string, classLoader: IClassLoader, from: number, to?: number): CompletionResult | null => {
-	const packageName = text.replace(/^\s*import\s+/, '');
-	const offset = text.length - packageName.length;
+	const importName = text.replace(/^\s*import\s+/, '');
+	const offset = text.length - importName.length;
 
 	let options: CompletionResult['options'];
 	const packageNames = classLoader.allPackages().map(pkg => pkg.name);
-	if (packageNames.includes(packageName)) {
+	if (packageNames.includes(importName)) {
 		// package is done
 		// append classes in this package
-		const classes = classLoader.findClassesOfPackage(packageName)
+		const classes = classLoader.findClassesOfPackage(importName)
 			.filter(clazz => !clazz.isArray && !clazz.isPrimitive);
 		options = [
 			...packageNames.map(name => ({label: name, type: 'namespace'})),

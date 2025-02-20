@@ -7,6 +7,7 @@ import {DefaultGroovyFacetParsedCache, GroovyFacet, GroovyFacetData, GroovyFacet
 import {FoldServicePlugin} from './fold-service';
 import {KeymapServicePlugin} from './keymap-service';
 import {GroovyLanguageServerOptions} from './language-server';
+import {LinterPlugin} from './lint';
 import {GroovyParser, GroovyParserOptions} from './parser';
 
 export interface GroovyExtensionOptions {
@@ -32,7 +33,8 @@ export const createGroovyExtensions = (options: GroovyExtensionOptions): Extensi
 			GroovyDecorationPlugin(options?.decorations),
 			FoldServicePlugin,
 			KeymapServicePlugin,
-			AutoCompletionPlugin
+			AutoCompletionPlugin,
+			LinterPlugin
 		])
 	];
 };

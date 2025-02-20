@@ -9,7 +9,7 @@ import {
 	indentUnit,
 	syntaxHighlighting
 } from '@codemirror/language';
-import {lintKeymap} from '@codemirror/lint';
+import {lintGutter, lintKeymap} from '@codemirror/lint';
 import {highlightSelectionMatches, searchKeymap} from '@codemirror/search';
 import {Compartment, EditorState, EditorState as CodeMirrorState} from '@codemirror/state';
 import {
@@ -94,6 +94,7 @@ export const useInitEditor = (options: UseInitEditorOptions) => {
 						highlightSpecialChars(),
 						history(),
 						foldGutter(),
+						lintGutter(),
 						drawSelection(),
 						dropCursor(),
 						EditorState.allowMultipleSelections.of(true),
