@@ -17,7 +17,7 @@ export const Editor = () => {
 	const [state, setState] = useState({content: TestGroovy1, classLoader: createDefaultClassLoader()});
 
 	const onContentChanged = (content: string) => {
-		console.log(content);
+		// console.log(content);
 		setState(state => ({...state, content}));
 	};
 
