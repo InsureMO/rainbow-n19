@@ -14,7 +14,7 @@ export interface GroovyExtensionOptions {
 	facetData?: Omit<GroovyFacetData, 'parsedCache' | 'classLoader'>;
 	decorations?: GroovyDecorationOptions;
 	parsedCache?: GroovyFacetParsedCache;
-	classLoader: EditingClassLoader;
+	classLoader: EditingClassLoader | (() => EditingClassLoader);
 }
 
 export const createGroovyLanguage = (options: GroovyParserOptions) => {
@@ -32,7 +32,7 @@ export const createGroovyExtensions = (options: GroovyExtensionOptions): Extensi
 			GroovyDecorationPlugin(options?.decorations),
 			FoldServicePlugin,
 			KeymapServicePlugin,
-			AutoCompletionPlugin,
+			AutoCompletionPlugin
 		])
 	];
 };

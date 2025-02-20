@@ -29,7 +29,7 @@ export default ({mode}) => {
 		},
 		plugins: [groovyPlugin(), react()],
 		server: {host: true, port: 3000, strictPort: true, open: '/'},
-		base: '/rainbow-n19-n3/',
+		base: '/rainbow-n19-n5/',
 		build: {
 			minify: false,
 			// sourcemap: true,
@@ -55,16 +55,22 @@ export default ({mode}) => {
 								{name: 'micromark', includes: ['micromark']},
 								{name: 'remark', includes: ['remark-']},
 								{name: 'hastscript', includes: ['hastscript']},
+								{name: 'rainbow-n19-g4', includes: ['@rainbow-n19/g4']},
+								{name: 'rainbow-n19-j17', includes: ['@rainbow-n19/j17']},
 								{name: 'rainbow-n19-n1', includes: ['@rainbow-n19/n1']},
 								{name: 'rainbow-n19-n2', includes: ['@rainbow-n19/n2']},
-								{name: 'rainbow-n19-n3', includes: ['@rainbow-n19/n3']}
+								{name: 'rainbow-n19-n3', includes: ['@rainbow-n19/n3']},
+								{name: 'rainbow-n19-n5', includes: ['@rainbow-n19/n5']}
 							].find(({includes}) => {
 								return id.includes('node_modules') && includes.some((include) => id.includes(include));
 							}),
 							[
+								{name: 'rainbow-n19-g4', includes: ['d9-g4']},
+								{name: 'rainbow-n19-j17', includes: ['d9-j17']},
 								{name: 'rainbow-n19-n1', includes: ['d9-n1']},
 								{name: 'rainbow-n19-n2', includes: ['d9-n2']},
-								{name: 'rainbow-n19-n3', includes: ['d9-n3']}
+								{name: 'rainbow-n19-n3', includes: ['d9-n3']},
+								{name: 'rainbow-n19-n5', includes: ['d9-n5']}
 							].find(({includes}) => {
 								return includes.some((include) => id.includes(`/${include}/`));
 							}),

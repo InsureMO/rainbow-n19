@@ -24,36 +24,46 @@ import {
 	lineNumbers,
 	rectangularSelection
 } from '@codemirror/view';
-import {createGroovyClassLoader} from '@rainbow-n19/g4';
-import {JdkClassLoader} from '@rainbow-n19/j17';
-import {DependenciesClassLoader, EditingClassLoader, FloatingClassLoader, ProjectClassLoader} from '@rainbow-n19/n2';
 import {createGroovyExtensions} from '@rainbow-n19/n3';
-import {Dispatch, SetStateAction, useEffect, useRef, useState} from 'react';
-import TestGroovy1 from './test-groovy-1.groovy';
+import {useEffect, useRef, useState} from 'react';
+import {CodeEditorState, GroovyEditorProps} from './types';
 
-export interface CodeEditorState {
-	editor?: EditorView;
-	changeListener?: Compartment;
+export interface UseInitEditorOptions {
+	contentChanged: GroovyEditorProps['contentChanged'];
+	classLoader?: GroovyEditorProps['classLoader'];
 }
 
-export interface UseInitEditorOptions<S extends CodeEditorState> {
-	state: S;
-	setState: Dispatch<SetStateAction<S>>;
+class EditorContext {
+	private _contentChanged: GroovyEditorProps['contentChanged'];
+	private _classLoader: GroovyEditorProps['classLoader'];
+
+	constructor(options: UseInitEditorOptions) {
+		this._contentChanged = options.contentChanged;
+		this._classLoader = options.classLoader;
+	}
+
+	get contentChanged(): GroovyEditorProps['contentChanged'] {
+		return this._contentChanged;
+	}
+
+	set contentChanged(contentChanged: GroovyEditorProps['contentChanged']) {
+		this._contentChanged = contentChanged;
+	}
+
+	get classLoader(): GroovyEditorProps['classLoader'] {
+		return this._classLoader;
+	}
+
+	set classLoader(value: GroovyEditorProps['classLoader']) {
+		this._classLoader = value;
+	}
 }
 
-let testCode = TestGroovy1;
-
-export const useInitEditor = <S extends CodeEditorState>(options: UseInitEditorOptions<S>) => {
-	const {setState} = options;
+export const useInitEditor = (options: UseInitEditorOptions) => {
+	const [state, setState] = useState<CodeEditorState>({});
+	const context = useRef(new EditorContext(options));
 
 	const ref = useRef<HTMLDivElement>(null);
-	const [classLoader] = useState<EditingClassLoader>(() => {
-		const GroovyClassLoader = createGroovyClassLoader(JdkClassLoader);
-		const dependenciesClassLoader = new DependenciesClassLoader(GroovyClassLoader);
-		const projectClassLoader = new ProjectClassLoader(dependenciesClassLoader);
-		const floatingClassLoader = new FloatingClassLoader(projectClassLoader);
-		return new EditingClassLoader(floatingClassLoader);
-	});
 
 	useEffect(() => {
 		if (ref.current == null) {
@@ -63,7 +73,7 @@ export const useInitEditor = <S extends CodeEditorState>(options: UseInitEditorO
 		const changeListener = new Compartment();
 		const editor = new EditorView({
 			state: CodeMirrorState.create({
-				doc: testCode,
+				doc: '',
 				extensions: [
 					// copied from basic step
 					[
@@ -103,10 +113,10 @@ export const useInitEditor = <S extends CodeEditorState>(options: UseInitEditorO
 							// ruleProcessingLogsEnabled: true,
 							// timeSpentLogEnabled: true,
 						},
-						classLoader
+						classLoader: () => context.current.classLoader
 					}),
-					changeListener.of(EditorView.updateListener.of(() => {
-						// view.state.update({});
+					changeListener.of(EditorView.updateListener.of((update) => {
+						context.current.contentChanged(update.state.doc.toString());
 					}))
 				]
 			}),
@@ -116,8 +126,13 @@ export const useInitEditor = <S extends CodeEditorState>(options: UseInitEditorO
 		return () => {
 			editor.destroy();
 		};
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [setState]);
+	}, []);
+	useEffect(() => {
+		context.current.contentChanged = options.contentChanged;
+	}, [options.contentChanged]);
+	useEffect(() => {
+		context.current.classLoader = options.classLoader;
+	}, [options.classLoader]);
 
-	return {ref};
+	return {ref, state};
 };

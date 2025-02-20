@@ -1,10 +1,11 @@
-import {useState} from 'react';
 import styled from 'styled-components';
-import {DecorationStyles, DecorationStyleVariables} from './styles.ts';
-import {CodeEditorState, useInitEditor} from './use-init-editor.ts';
+import {DecorationStyles, DecorationStyleVariables} from './styles';
 
-// noinspection CssUnresolvedCustomProperty
-const EditorContainer = styled.div`
+// noinspection CssUnresolvedCustomProperty,CssUnusedSymbol,SpellCheckingInspection
+export const EditorContainer = styled.div.attrs({
+	// @ts-expect-error for avoid attribute name rule
+	'data-w': 'groovy-editor'
+})`
     display: block;
     position: relative;
     grid-column: 1;
@@ -39,9 +40,3 @@ const EditorContainer = styled.div`
         }
     }
 `;
-
-export const Editor = () => {
-	const [state, setState] = useState<CodeEditorState>({});
-	const {ref: divRef} = useInitEditor({state, setState});
-	return <EditorContainer ref={divRef}/>;
-};

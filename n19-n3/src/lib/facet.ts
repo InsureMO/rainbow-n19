@@ -13,6 +13,11 @@ export interface GroovyFacetParsedCache {
 	findPositionedNode(decorated: Parsed.DecoratedNode): Optional<Parsed.PositionedNode>;
 }
 
+export interface GroovyFacetInputData {
+	parsedCache: GroovyFacetParsedCache;
+	classLoader: EditingClassLoader | (() => EditingClassLoader);
+}
+
 export interface GroovyFacetData {
 	parsedCache: GroovyFacetParsedCache;
 	classLoader: EditingClassLoader;
@@ -25,9 +30,23 @@ export interface GroovyFacetData {
  * the extensions, like tsLint and tsAutocomplete,
  * pull those settings automatically from editor state.
  */
-export const GroovyFacet = Facet.define<GroovyFacetData, GroovyFacetData>({
-	combine(configs: readonly GroovyFacetData[]): GroovyFacetData {
-		return combineConfig(configs, {});
+export const GroovyFacet = Facet.define<GroovyFacetInputData, GroovyFacetData>({
+	combine(configs: readonly GroovyFacetInputData[]): GroovyFacetData {
+		const config = combineConfig(configs, {});
+		return new Proxy(config, {
+			get(target, key) {
+				if (key === 'classLoader') {
+					const classLoader = target[key];
+					if (classLoader instanceof EditingClassLoader) {
+						return classLoader;
+					} else {
+						return classLoader();
+					}
+				} else {
+					return target[key];
+				}
+			}
+		}) as GroovyFacetData;
 	}
 });
 
