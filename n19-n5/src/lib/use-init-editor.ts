@@ -31,15 +31,18 @@ import {CodeEditorState, GroovyEditorProps} from './types';
 export interface UseInitEditorOptions {
 	contentChanged: GroovyEditorProps['contentChanged'];
 	classLoader?: GroovyEditorProps['classLoader'];
+	theme?: GroovyEditorProps['theme'];
 }
 
 class EditorContext {
 	private _contentChanged: GroovyEditorProps['contentChanged'];
 	private _classLoader: GroovyEditorProps['classLoader'];
+	private _theme: GroovyEditorProps['theme'];
 
 	constructor(options: UseInitEditorOptions) {
 		this._contentChanged = options.contentChanged;
 		this._classLoader = options.classLoader;
+		this._theme = options.theme;
 	}
 
 	get contentChanged(): GroovyEditorProps['contentChanged'] {
@@ -57,6 +60,14 @@ class EditorContext {
 	set classLoader(value: GroovyEditorProps['classLoader']) {
 		this._classLoader = value;
 	}
+
+	get theme(): GroovyEditorProps['theme'] {
+		return this._theme;
+	}
+
+	set theme(value: GroovyEditorProps['theme']) {
+		this._theme = value;
+	}
 }
 
 export const useInitEditor = (options: UseInitEditorOptions) => {
@@ -71,6 +82,7 @@ export const useInitEditor = (options: UseInitEditorOptions) => {
 		}
 
 		const changeListener = new Compartment();
+		const themeListener = new Compartment();
 		const editor = new EditorView({
 			state: CodeMirrorState.create({
 				doc: '',
@@ -116,13 +128,16 @@ export const useInitEditor = (options: UseInitEditorOptions) => {
 						classLoader: () => context.current.classLoader
 					}),
 					changeListener.of(EditorView.updateListener.of((update) => {
-						context.current.contentChanged(update.state.doc.toString());
-					}))
-				]
+						if (update.docChanged) {
+							context.current.contentChanged(update.state.doc.toString());
+						}
+					})),
+					context.current.theme == null ? null : themeListener.of(context.current.theme())
+				].filter(x => x != null)
 			}),
 			parent: ref.current
 		});
-		setState(state => ({...state, editor, changeListener}));
+		setState(state => ({...state, editor, changeListener, themeListener}));
 		return () => {
 			editor.destroy();
 		};
@@ -133,6 +148,11 @@ export const useInitEditor = (options: UseInitEditorOptions) => {
 	useEffect(() => {
 		context.current.classLoader = options.classLoader;
 	}, [options.classLoader]);
+	useEffect(() => {
+		if (options.theme != null) {
+			state.editor.dispatch({effects: state.themeListener.reconfigure(options.theme())});
+		}
+	}, [options.theme]);
 
 	return {ref, state};
 };

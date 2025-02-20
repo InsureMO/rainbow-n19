@@ -1,2 +1,2 @@
 export * from './editor';
-export {GroovyEditorProps} from './types';
+export {GroovyEditorProps, GroovyEditorThemeCreate} from './types';
