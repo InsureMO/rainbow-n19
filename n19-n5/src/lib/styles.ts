@@ -61,6 +61,11 @@ export const DecorationStyleVariables = css`
 `;
 // noinspection CssUnresolvedCustomProperty,CssUnusedSymbol
 export const DecorationStyles = css`
+    span.ref-class-clickable {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
     span.rkw {
         ${styledBy('reserved-keyword')}
     }

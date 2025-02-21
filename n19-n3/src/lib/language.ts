@@ -9,6 +9,7 @@ import {KeymapServicePlugin} from './keymap-service';
 import {GroovyLanguageServerOptions} from './language-server';
 import {LinterPlugin} from './lint';
 import {GroovyParser, GroovyParserOptions} from './parser';
+import {RefClickablePlugin} from './ref-clickable';
 
 export interface GroovyExtensionOptions {
 	languageServer?: GroovyLanguageServerOptions;
@@ -34,7 +35,8 @@ export const createGroovyExtensions = (options: GroovyExtensionOptions): Extensi
 			FoldServicePlugin,
 			KeymapServicePlugin,
 			AutoCompletionPlugin,
-			LinterPlugin
+			LinterPlugin,
+			RefClickablePlugin
 		])
 	];
 };
