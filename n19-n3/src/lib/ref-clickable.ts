@@ -3,7 +3,7 @@ import {StateEffect} from '@codemirror/state';
 import {EditorView, ViewPlugin} from '@codemirror/view';
 import {SyntaxNodeRef} from '@lezer/common';
 import {Optional} from '@rainbow-n19/n2';
-import {RefClickableEffects, RefClickableRange} from './state';
+import {RefClickableEffect, RefClickableEffects, RefClickableRange} from './state';
 import {isCtrlOrCmdKeyPressed} from './utils';
 
 class RefClickableViewPlugin {
@@ -55,6 +55,21 @@ class RefClickableViewPlugin {
 		return then(pos, sn);
 	}
 
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	private addEffect(node: SyntaxNodeRef, use: RefClickableEffect, effects: Array<StateEffect<any>>) {
+		const range: RefClickableRange = {from: node.from, to: node.to};
+		if (this._oppositeEffect != null) {
+			effects.push(this._oppositeEffect);
+		}
+		effects.push(use.add.of(range));
+		// override opposite effect, waiting for next
+		this._oppositeEffect = use.remove.of(range);
+		if (!this.view.state.field(use.field, false)) {
+			// eslint-disable-next-line @typescript-eslint/no-explicit-any
+			effects.push(StateEffect.appendConfig.of([use.field]) as any);
+		}
+	}
+
 	private onMouseMoved(event: MouseEvent) {
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		const effects: Array<StateEffect<any>> = [];
@@ -64,17 +79,7 @@ class RefClickableViewPlugin {
 		this.findPositionAnd(event, isCtrlOrCmdKeyPressed, (_pos, sn) => {
 			const token = this.view.state.sliceDoc(sn.from, sn.to);
 			if (token != null && token.trim().length !== 0) {
-				const range: RefClickableRange = {from: sn.from, to: sn.to};
-				if (this._oppositeEffect != null) {
-					effects.push(this._oppositeEffect);
-				}
-				effects.push(RefClickableEffects.RefClassClickable.add.of(range));
-				// override opposite effect, waiting for next
-				this._oppositeEffect = RefClickableEffects.RefClassClickable.remove.of(range);
-				if (!this.view.state.field(RefClickableEffects.RefClassClickable.field, false)) {
-					// eslint-disable-next-line @typescript-eslint/no-explicit-any
-					effects.push(StateEffect.appendConfig.of([RefClickableEffects.RefClassClickable.field]) as any);
-				}
+				this.addEffect(sn, RefClickableEffects.RefClassClickable, effects);
 			}
 		});
 
@@ -98,6 +103,7 @@ class RefClickableViewPlugin {
 		});
 	}
 
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	private onMouseLeft(_event: MouseEvent) {
 		if (this._oppositeEffect != null) {
 			const effects = [this._oppositeEffect];
