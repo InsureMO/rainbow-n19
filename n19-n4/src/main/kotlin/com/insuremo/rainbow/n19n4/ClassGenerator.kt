@@ -126,31 +126,7 @@ private class ClassGenerator(
 		}
 	}
 
-	private val docHtml by lazy {
-		val url = targetInfo.classDocHtmlUrl(clazz)
-		if (url == null || url.isEmpty()) {
-			return@lazy ""
-		}
-
-		try {
-			val connection = URL(url).openConnection()
-			return@lazy connection.getInputStream()
-				.use {
-					BufferedReader(InputStreamReader(it)).use { reader ->
-						StringBuilder().apply {
-							var line: String?
-							while (reader.readLine().also { line = it } != null) {
-								this.append(line)
-								this.append("\n")
-							}
-						}.toString()
-					}
-				}
-		} catch (_: Throwable) {
-			Logs.warn("Failed to retrieve javadoc html file[${url}]", -1)
-			return@lazy ""
-		}
-	}
+	private val docHtml by lazy { targetInfo.classDocHtml(clazz) }
 
 	fun createPackageDir(targetDir: String, packageName: String): Pair<String, Int> {
 		var dir: String

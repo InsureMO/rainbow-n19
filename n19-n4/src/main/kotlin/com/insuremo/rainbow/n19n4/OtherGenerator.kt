@@ -49,10 +49,9 @@ fun generateOther(): JarGeneratingTargetInfo? {
 		classCreateHelperName = "${name}ClassCreateHelper",
 		classLoaderName = "create${name}ClassLoader",
 		classLoaderFileName = "${name}ClassLoader",
-		classDocHtmlUrl = { clazz ->
-//			val classPath = clazz.name.replace('.', '/').replace('$', '.')
+		classDocHtml = { clazz ->
 			// TODO
-			null
+			""
 		},
 		parameterNamesOfMethodFromDocHtml = { method, docHtml ->
 			standardParameterNamesOfMethodFromDocHtml(method, docHtml, {

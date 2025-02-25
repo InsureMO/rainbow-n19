@@ -1,16 +1,44 @@
 package com.insuremo.rainbow.n19n4
 
+import java.io.BufferedReader
+import java.io.InputStreamReader
 import java.lang.reflect.Method
+import java.net.URL
 import java.util.zip.ZipFile
 
 data class JarGeneratingTargetInfo(
 	val classCreateHelperName: String,
 	val classLoaderName: String,
 	val classLoaderFileName: String,
-	val classDocHtmlUrl: (clazz: Class<*>) -> String?,
+	val classDocHtml: (clazz: Class<*>) -> String,
 	val parameterNamesOfMethodFromDocHtml: (method: Method, docHtml: String) -> List<String?>,
 	val rootDir: String
 )
+
+fun classDocHtmlByUrl(url: String): String {
+	if (url.isEmpty()) {
+		return ""
+	}
+
+	try {
+		val connection = URL(url).openConnection()
+		return connection.getInputStream()
+			.use {
+				BufferedReader(InputStreamReader(it)).use { reader ->
+					StringBuilder().apply {
+						var line: String?
+						while (reader.readLine().also { line = it } != null) {
+							this.append(line)
+							this.append("\n")
+						}
+					}.toString()
+				}
+			}
+	} catch (_: Throwable) {
+		Logs.warn("Failed to retrieve javadoc html file[${url}]", -1)
+		return ""
+	}
+}
 
 fun generateJar(jarFilePath: String, targetInfo: JarGeneratingTargetInfo) {
 	val classes = ZipFile(jarFilePath).entries().toList().filter { entry -> entry.name.endsWith(".class") }

@@ -38,15 +38,15 @@ fun generateGroovy(): JarGeneratingTargetInfo? {
 		classCreateHelperName = "GroovyClassCreateHelper",
 		classLoaderName = "createGroovyClassLoader",
 		classLoaderFileName = "GroovyClassLoader",
-		classDocHtmlUrl = { clazz ->
+		classDocHtml = { clazz ->
 			val version = GroovySystem.getVersion()
 			val classPath = clazz.name.replace('.', '/').replace('$', '.')
 			when {
 				classPath.startsWith("groovyjarjarantlr4")
 						|| classPath.startsWith("groovyjarjarpicocli")
-						|| classPath.startsWith("groovyjarjarasm") -> null
+						|| classPath.startsWith("groovyjarjarasm") -> ""
 
-				else -> "https://docs.groovy-lang.org/${version}/html/api/${classPath}.html"
+				else -> classDocHtmlByUrl("https://docs.groovy-lang.org/${version}/html/api/${classPath}.html")
 			}
 		},
 		parameterNamesOfMethodFromDocHtml = { method, docHtml ->
