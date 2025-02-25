@@ -5,3 +5,4 @@ import * as Objectweb from './Objectweb';
 
 export {Java, Groovy, Objectweb, Parsed};
 export * from './ClassLoaders';
+export * from './ClassDocs';
