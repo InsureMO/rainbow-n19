@@ -723,6 +723,8 @@ private class ClassGenerator(
 		return when (node.nodeName()) {
 			"#text" -> "['${typeOfText}', `${node.outerHtml().trim()}`]"
 			"p" -> "['b', ${generateDocSegmentOfChildren(node, "t")}]"
+			"li" -> "['b', ${generateDocSegmentOfChildren(node, "t")}]"
+			"ul" -> "['l', ${generateDocSegmentOfChildren(node, "t")}]"
 			"pre" -> "['c', ${generateDocSegmentOfChildren(node, "t")}]"
 			"a" -> {
 				if ((node as Element).attribute("title") == null) {
@@ -749,6 +751,7 @@ private class ClassGenerator(
 	private fun generateClassDoc(classDescriptionNode: Element): String {
 		return classDescriptionNode.getElementsByClass("type-signature").first()
 			?.nextElementSibling()
+			?.takeIf { element -> element.className() == "block" }
 			?.childNodes()
 			?.filter { node -> node.nodeName() != "#text" || node.outerHtml().trim().isNotEmpty() }
 			?.joinToString("\n", "\t[ /* class description */\n", "\n\t],") { node ->

@@ -1,15 +1,3 @@
-import './BufferedIterator';
-import './BuilderSupport';
-import './CharsetToolkit';
-import './ClosureComparator';
-import './Expando';
 import './GroovyCollections';
-import './IFileNameFinder';
-import './IndentPrinter';
 import './MapEntry';
 import './OrderBy';
-import './PermutationGenerator';
-import './Proxy';
-import './ProxyGenerator';
-import './ResourceConnector';
-import './ResourceException';

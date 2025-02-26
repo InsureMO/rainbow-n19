@@ -43,6 +43,47 @@ object Envs {
 	private const val OUTPUT_MODE_HIERARCHICAL = "package"
 	private const val INCLUDED_CLASSES = "includedClasses"
 	private const val EXCLUDED_PACKAGES = "excludedPackages"
+	private val DEFAULT_INCLUDED_CLASSES by lazy {
+		listOf(
+			// groovy
+			"groovy.lang.EmptyRange",
+			"groovy.lang.IntRange",
+			"groovy.lang.ListWithDefault",
+			"groovy.lang.MapWithDefault",
+			"groovy.lang.NonEmptySequence",
+			"groovy.lang.NumberRange",
+			"groovy.lang.ObjectRange",
+			"groovy.lang.Range",
+			"groovy.lang.Sequence",
+			"groovy.lang.SpreadMap",
+			"groovy.lang.Tuple",
+			"groovy.lang.Tuple0",
+			"groovy.lang.Tuple1",
+			"groovy.lang.Tuple2",
+			"groovy.lang.Tuple3",
+			"groovy.lang.Tuple4",
+			"groovy.lang.Tuple5",
+			"groovy.lang.Tuple6",
+			"groovy.lang.Tuple7",
+			"groovy.lang.Tuple8",
+			"groovy.lang.Tuple9",
+			"groovy.lang.Tuple10",
+			"groovy.lang.Tuple11",
+			"groovy.lang.Tuple12",
+			"groovy.lang.Tuple13",
+			"groovy.lang.Tuple14",
+			"groovy.lang.Tuple15",
+			"groovy.lang.Tuple16",
+			"groovy.time.BaseDuration",
+			"groovy.time.DatumDependentDuration",
+			"groovy.time.Duration",
+			"groovy.time.TimeDatumDependentDuration",
+			"groovy.time.TimeDuration",
+			"groovy.util.GroovyCollections",
+			"groovy.util.MapEntry",
+			"groovy.util.OrderBy",
+		).joinToString(",")
+	}
 	private val DEFAULT_EXCLUDED_PACKAGES by lazy {
 		listOf(
 			// jdk
@@ -95,16 +136,10 @@ object Envs {
 			"org.w3c.dom",
 			"org.xml.sax",
 			// groovy
-			"groovy.cli",
-			"groovy.grape",
-			"groovy.inspect",
-			"groovy.io",
-			"groovy.lang.groovydoc",
-			"groovy.namespace",
-			"groovy.security",
-			"groovy.transform",
-			"groovy.ui",
-			"groovy.util.logging",
+			// generally, there are relatively few commonly used classes in Groovy.
+			// therefore, by default, all classes are excluded.
+			// however, some utility classes are introduced by default in the included classes.
+			"groovy",
 			"groovyjarjarantlr4",
 			"groovyjarjarasm",
 			"groovyjarjarpicocli",
@@ -116,68 +151,6 @@ object Envs {
 	private val DEFAULT_EXCLUDED_CLASSES by lazy {
 		listOf(
 			"java.beans.AppletInitializer",
-			"groovy.beans.BindableASTTransformation",
-			"groovy.beans.ListenerList",
-			"groovy.beans.ListenerListASTTransformation",
-			"groovy.beans.VetoableASTTransformation",
-			"groovy.lang.AdaptingMetaClass",
-			"groovy.lang.DelegatingMetaClass",
-			"groovy.lang.ExpandoMetaClass",
-			"groovy.lang.ExpandoMetaClassCreationHandle",
-			"groovy.lang.Grab",
-			"groovy.lang.GrabConfig",
-			"groovy.lang.GrabExclude",
-			"groovy.lang.GrabResolver",
-			"groovy.lang.Grapes",
-			"groovy.lang.GroovyClassLoader",
-			"groovy.lang.GroovyClassLoader\$ClassCollector",
-			"groovy.lang.GroovyClassLoader\$InnerLoader",
-			"groovy.lang.GroovyRuntimeException",
-			"groovy.lang.GroovyShell",
-			"groovy.lang.GroovySystem",
-			"groovy.lang.IllegalPropertyAccessException",
-			"groovy.lang.IncorrectClosureArgumentsException",
-			"groovy.lang.MetaBeanProperty",
-			"groovy.lang.MetaClass",
-			"groovy.lang.MetaClassImpl",
-			"groovy.lang.MetaClassRegistry",
-			"groovy.lang.MetaClassRegistryChangeEvent",
-			"groovy.lang.MetaClassRegistryChangeEventListener",
-			"groovy.lang.MetaMethod",
-			"groovy.lang.MetaObjectProtocol",
-			"groovy.lang.MissingClassException",
-			"groovy.lang.MissingFieldException",
-			"groovy.lang.MissingMethodException",
-			"groovy.lang.MissingPropertyException",
-			"groovy.lang.MutableMetaClass",
-			"groovy.lang.ProxyMetaClass",
-			"groovy.lang.ReadOnlyPropertyException",
-			"groovy.lang.SpreadListEvaluatingException",
-			"groovy.lang.SpreadMapEvaluatingException",
-			"groovy.lang.Script",
-			"groovy.util.AbstractFactory",
-			"groovy.util.ConfigBinding",
-			"groovy.util.ConfigObject",
-			"groovy.util.ConfigSlurper",
-			"groovy.util.DelegatingScript",
-			"groovy.util.Eval",
-			"groovy.util.Factory",
-			"groovy.util.FactoryBuilderSupport",
-			"groovy.util.FactoryInterceptorMetaClass",
-			"groovy.util.FileNameByRegexFinder",
-			"groovy.util.FileTreeBuilder",
-			"groovy.util.GroovyScriptEngine",
-			"groovy.util.Node",
-			"groovy.util.NodeBuilder",
-			"groovy.util.NodeList",
-			"groovy.util.NodePrinter",
-			"groovy.util.ObjectGraphBuilder",
-			"groovy.util.ObservableList",
-			"groovy.util.ObservableMap",
-			"groovy.util.ObservableSet",
-			"groovy.util.ResourceException",
-			"groovy.util.ScriptException",
-			"org.codehaus.groovy.control.XStreamUtils"
 		).joinToString(",")
 	}
 	private const val GENERATE_DOCS = "generateDocs"
@@ -218,7 +191,8 @@ object Envs {
 		}
 	}
 	val includeClasses by lazy {
-		this.get(INCLUDED_CLASSES, "").split(",").toList().map { it.trim() }.associate { Pair(it, true) }
+		this.get(INCLUDED_CLASSES, DEFAULT_INCLUDED_CLASSES).split(",").toList().map { it.trim() }
+			.associate { Pair(it, true) }
 	}
 	val excludedPackages by lazy {
 		this.get(EXCLUDED_PACKAGES, DEFAULT_EXCLUDED_PACKAGES).split(",").map { name -> "${name.trim()}." }
@@ -400,7 +374,7 @@ object Envs {
 					to "Classes that must be included, separated by commas, " +
 					"taking priority over [${cpv(EXCLUDED_PACKAGES)}] " +
 					"and [${cpv(EXCLUDED_CLASSES)}] declarations." +
-					"\nNo default value.",
+					"\nDefault \"${DEFAULT_INCLUDED_CLASSES}\".",
 			"${KEY_PREFIX}${EXCLUDED_PACKAGES}"
 					to "Packages that be excluded, separated by commas." +
 					"\nDefault \"${cdv(DEFAULT_EXCLUDED_PACKAGES)}\".",
