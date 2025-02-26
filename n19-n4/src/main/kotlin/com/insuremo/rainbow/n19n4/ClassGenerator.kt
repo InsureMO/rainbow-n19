@@ -17,6 +17,8 @@ import java.lang.reflect.WildcardType
 import java.util.Locale
 import org.apache.groovy.lang.annotation.Incubating
 import org.jsoup.Jsoup
+import org.jsoup.nodes.Element
+import org.jsoup.nodes.Node
 import org.objectweb.asm.ClassReader
 import org.objectweb.asm.ClassVisitor
 import org.objectweb.asm.Label
@@ -694,13 +696,101 @@ private class ClassGenerator(
 		).joinToString("\n")
 	}
 
+	private fun generateDocSegmentOfChildren(node: Node, @Suppress("SameParameterValue") typeOfText: String): String {
+		val childNodes = node.childNodes().filter { node ->
+			node.nodeName() != "#text" || node.outerHtml().trim().isNotEmpty()
+		}
+		return when (childNodes.size) {
+			0 -> "''"
+			// must be a #text node
+			1 -> "`${childNodes.first().outerHtml()}`"
+			else -> childNodes.joinToString(", ", "[", "]") { child -> generateDocSegment(child, typeOfText) }
+		}
+	}
+
+	private fun getPackageNameFromLinkNode(a: Element): String {
+		val title = a.attr("title")
+		return when {
+			title.startsWith("class in ") -> title.substring("class in ".length)
+			title.startsWith("interface in ") -> title.substring("interface in ".length)
+			title.startsWith("annotation in ") -> title.substring("annotation in ".length)
+			title.startsWith("class or interface in ") -> title.substring("class or interface in ".length)
+			else -> title
+		}
+	}
+
+	private fun generateDocSegment(node: Node, typeOfText: String): String {
+		return when (node.nodeName()) {
+			"#text" -> "['${typeOfText}', `${node.outerHtml().trim()}`]"
+			"p" -> "['b', ${generateDocSegmentOfChildren(node, "t")}]"
+			"pre" -> "['c', ${generateDocSegmentOfChildren(node, "t")}]"
+			"a" -> {
+				if ((node as Element).attribute("title") == null) {
+					if (node.attr("href").startsWith("#")) {
+						// internal reference
+						"['r', `${node.child(0).text()}`]"
+					} else {
+						"['a', '${node.attr("href")}', '${node.text()}']"
+					}
+				} else {
+					"['r', '${getPackageNameFromLinkNode(node)}.${node.child(0).text()}']"
+				}
+			}
+
+			"code" -> "['i', '${(node as Element).text()}']"
+			else -> "['b', `${node.outerHtml()}`]"
+		}
+			.replace("<b>", "").replace("</b>", "")
+			.replace("<em>", "").replace("</em>", "")
+			.replace("<strong>", "").replace("</strong>", "")
+			.replace("\${", "\\\${}")
+	}
+
+	private fun generateClassDoc(classDescriptionNode: Element): String {
+		return classDescriptionNode.getElementsByClass("type-signature").first()
+			?.nextElementSibling()
+			?.childNodes()
+			?.filter { node -> node.nodeName() != "#text" || node.outerHtml().trim().isNotEmpty() }
+			?.joinToString("\n", "\t[ /* class description */\n", "\n\t],") { node ->
+				"\t\t${generateDocSegment(node, "b")},"
+			} ?: "\t/* class description */ UDF,"
+	}
+
+	private fun generateClassSees(classDescriptionNode: Element): String {
+		val nodes = classDescriptionNode.getElementsByClass("see-list").first()
+			?.children()
+			?.map { child -> child.child(0) }
+			?.filter { a -> a.attribute("title") != null }
+		return when (nodes?.size ?: 0) {
+			0 -> "\t/* class sees */ UDF,"
+			else -> {
+				nodes!!.joinToString(", ", "\t[ /* class sees */ ", "],") { a ->
+					"'${getPackageNameFromLinkNode(a)}.${a.child(0).text()}'"
+				}
+			}
+		}
+	}
+
 	fun generateDoc(packageLevel: Int): String {
-		return listOf(
+		return htmlDocument?.let { doc ->
+			val classDescriptionNode = doc.getElementById("class-description")
+			listOf(
+				"import {UDF} from '${"../".repeat(packageLevel + 1)}utils';",
+				"import {DocsCollector} from '${"../".repeat(packageLevel)}DocsCollector';",
+				"",
+				"DocsCollector.collect('${clazz.name}', [",
+				generateClassDoc(classDescriptionNode!!),
+				"\tUDF,",
+				generateClassSees(classDescriptionNode),
+				"\tUDF, UDF, UDF",
+				"]);",
+				""
+			).joinToString("\n")
+		} ?: listOf(
 			"import {UDF} from '${"../".repeat(packageLevel + 1)}utils';",
 			"import {DocsCollector} from '${"../".repeat(packageLevel)}DocsCollector';",
 			"",
-			"DocsCollector.collect('${clazz.name}', [",
-			"]);",
+			"DocsCollector.collect('${clazz.name}', UDF);",
 			""
 		).joinToString("\n")
 	}

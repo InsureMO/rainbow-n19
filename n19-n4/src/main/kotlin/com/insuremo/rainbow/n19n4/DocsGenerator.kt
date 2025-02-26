@@ -10,8 +10,12 @@ fun createDocsCollectorFile(targetDir: String) {
 			"const TEMPORARY_CACHE = new Map<Java.ClassName, Java.ClassDocContents>();\n" +
 			"\n" +
 			"class TemporaryDocsCollector {\n" +
-			"\tcollect(className: Java.ClassName, contents: Java.ClassDocContents): void {\n" +
-			"\t\tTEMPORARY_CACHE.set(className, contents);\n" +
+			"\tcollect(className: Java.ClassName, contents?: Java.ClassDocContents): void {\n" +
+			"\t\tif (contents == null) {\n" +
+			"\t\t\t// console.debug(`No document provided for class[\${className}].`);\n" +
+			"\t\t} else {\n" +
+			"\t\t\tTEMPORARY_CACHE.set(className, contents);\n" +
+			"\t\t}\n" +
 			"\t}\n" +
 			"\n" +
 			"\tconsume(docs: Java.IClassDocs): void {\n" +

@@ -1,15 +1,20 @@
 import {Optional} from '../../TsAddon';
 import {ClassName} from '../TypeAlias';
 
-export enum DocSegmentType {
-	PLAIN = 'P',
-	INLINE_CODE_BLOCK = 'I',
-	INLINE_REF = 'R',
-	CODE_BLOCK = 'C',
-}
-
 export type DocSegmentContent = string;
-export type DocSegment = [DocSegmentType, DocSegmentContent];
+export type DocSegmentText = ['t', DocSegmentContent];
+export type DocSegmentInlineCodeBlock = ['i', DocSegmentContent];
+export type DocSegmentReference = ['r', DocSegmentContent];
+export type DocSegmentCodeBlock = ['c', DocSegmentContent | Array<DocSegmentInlineCodeBlock | DocSegmentText>];
+export type DocSegmentExternalLink = ['a', DocSegmentContent, DocSegmentContent];
+export type DocSegmentBlock = ['b', DocSegmentContent | Array<DocSegmentText | DocSegmentInlineCodeBlock | DocSegmentReference | DocSegmentCodeBlock | DocSegmentExternalLink | DocSegmentBlock>]
+export type DocSegment =
+	| DocSegmentText
+	| DocSegmentInlineCodeBlock
+	| DocSegmentReference
+	| DocSegmentCodeBlock
+	| DocSegmentExternalLink
+	| DocSegmentBlock;
 export type DocDescription = Optional<Array<DocSegment>>;
 
 export type DocSince = string;
