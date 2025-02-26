@@ -4,7 +4,8 @@ import {ClassName} from '../TypeAlias';
 export enum DocSegmentType {
 	PLAIN = 'P',
 	INLINE_CODE_BLOCK = 'I',
-	INLINE_REF = 'R'
+	INLINE_REF = 'R',
+	CODE_BLOCK = 'C',
 }
 
 export type DocSegmentContent = string;
