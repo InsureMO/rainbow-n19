@@ -1,5 +1,7 @@
 package com.insuremo.rainbow.n19n4
 
+import buildDocsIndexFiles
+
 fun main(args: Array<String>) {
 	initializeEnv(args)
 	if (!Envs.printHelp()) {
@@ -11,6 +13,9 @@ fun main(args: Array<String>) {
 			if (targetInfo != null) {
 				generateTakenBackClasses(targetInfo)
 				buildClassIndexFiles(targetInfo)
+				if (Envs.shouldGenerateDocs) {
+					buildDocsIndexFiles(targetInfo);
+				}
 			}
 		} finally {
 			finalizeEnv()

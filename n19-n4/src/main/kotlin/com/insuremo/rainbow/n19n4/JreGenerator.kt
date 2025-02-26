@@ -108,7 +108,8 @@ fun generateJre(): JarGeneratingTargetInfo? {
 				}
 			})
 		},
-		rootDir = Envs.jreDir
+		rootDir = Envs.jreDir,
+		docRootDir = Envs.jreDocsDir
 	)
 	generateJars(jarsDir, targetInfo)
 

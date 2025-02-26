@@ -164,6 +164,8 @@ object Envs {
 			"org.codehaus.groovy.control.XStreamUtils"
 		).joinToString(",")
 	}
+	private const val GENERATE_DOCS = "generateDocs"
+	private const val DOC_DIR_SUFFIX = "-Docs"
 
 	// dev constants
 	private const val TRANSFORM_MOD_2_JAR = "dev.transformMod2Jar"
@@ -263,7 +265,9 @@ object Envs {
 	// values
 	val libDir by lazy { outputDir + File.separator + "lib" }
 	val jreDir by lazy { libDir + File.separator + "Jdk" }
+	val jreDocsDir by lazy { jreDir + DOC_DIR_SUFFIX }
 	val groovyDir by lazy { libDir + File.separator + "Groovy" }
+	val groovyDocsDir by lazy { groovyDir + DOC_DIR_SUFFIX }
 	val otherName by lazy { this.get(THIRD_PARTY_LIB_NAME, "ThirdParty") }
 	val otherLibs by lazy {
 		this.get(THIRD_PARTY_LIBS, "unspecified,unspecified")
@@ -281,6 +285,8 @@ object Envs {
 			}
 	}
 	val otherDir by lazy { libDir + File.separator + this.otherName }
+	val otherDocsDir by lazy { otherDir + DOC_DIR_SUFFIX }
+	val shouldGenerateDocs by lazy { this.isEnabled(GENERATE_DOCS, true) }
 
 	fun initialize(args: Array<String>) {
 		envsMap.putAll(this.argsToMap(args))
@@ -384,6 +390,9 @@ object Envs {
 					"\nDefault \"${cdv(DEFAULT_EXCLUDED_PACKAGES)}\".",
 			"${KEY_PREFIX}${EXCLUDED_CLASSES}" to "Classes that be excluded, separated by commas." +
 					"\nDefault \"${cdv(DEFAULT_EXCLUDED_CLASSES)}\".",
+			"${KEY_PREFIX}${GENERATE_DOCS}"
+					to "Whether to generate documentation-related content simultaneously." +
+					"\nDefault \"${cdv("true")}\"",
 		)
 
 		val maxCommandLength = args.keys.maxOf { it.length } + 5

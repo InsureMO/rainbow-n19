@@ -680,6 +680,17 @@ private class ClassGenerator(
 			""
 		).joinToString("\n")
 	}
+
+	fun generateDoc(packageLevel: Int): String {
+		return listOf(
+			"import {UDF} from '${"../".repeat(packageLevel + 1)}utils';",
+			"import {DocsCollector} from '${"../".repeat(packageLevel)}DocsCollector';",
+			"",
+			"DocsCollector.collect('${clazz.name}', [",
+			"]);",
+			""
+		).joinToString("\n")
+	}
 }
 
 fun generateClass(className: String, targetInfo: JarGeneratingTargetInfo, checkVisibility: Boolean? = true): Boolean {
@@ -710,5 +721,14 @@ fun generateClass(className: String, targetInfo: JarGeneratingTargetInfo, checkV
 		packageDir + File.separator + simpleName + ".ts",
 		generator.generate(packageLevel)
 	)
+
+	if (Envs.shouldGenerateDocs) {
+		val (packageDir, packageLevel) = generator.createPackageDir(targetInfo.docRootDir, packageName)
+		writeFile(
+			packageDir + File.separator + simpleName + ".ts",
+			generator.generateDoc(packageLevel)
+		)
+	}
+
 	return true
 }

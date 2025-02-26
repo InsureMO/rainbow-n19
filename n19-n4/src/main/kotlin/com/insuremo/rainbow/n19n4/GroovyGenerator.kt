@@ -1,5 +1,6 @@
 package com.insuremo.rainbow.n19n4
 
+import createDocsCollectorFile
 import groovy.lang.GroovySystem
 import java.io.File
 
@@ -33,6 +34,13 @@ fun generateGroovy(): JarGeneratingTargetInfo? {
 	appendToIndexFile(Envs.libDir, "export {createGroovyClassLoader} from './Groovy';\n")
 	createClassLoaderFile(Envs.groovyDir)
 
+	// for docs
+	if (Envs.shouldGenerateDocs) {
+		createIndexFile(Envs.groovyDocsDir)
+		appendToIndexFile(Envs.libDir, "export {DocsCollector} from './Groovy-Docs';\n")
+		createDocsCollectorFile(Envs.groovyDocsDir)
+	}
+
 	Logs.log("Generating from JAR files", 1)
 	val targetInfo = JarGeneratingTargetInfo(
 		classCreateHelperName = "GroovyClassCreateHelper",
@@ -54,7 +62,8 @@ fun generateGroovy(): JarGeneratingTargetInfo? {
 				"${method.name}(${method.parameters.joinToString(",") { transformClassNameForDocHtmlId(it) }})"
 			})
 		},
-		rootDir = Envs.groovyDir
+		rootDir = Envs.groovyDir,
+		docRootDir = Envs.groovyDocsDir
 	)
 
 	Envs.classesToFindJars.forEach {

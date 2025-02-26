@@ -12,7 +12,8 @@ data class JarGeneratingTargetInfo(
 	val classLoaderFileName: String,
 	val classDocHtml: (clazz: Class<*>) -> String,
 	val parameterNamesOfMethodFromDocHtml: (method: Method, docHtml: String) -> List<String?>,
-	val rootDir: String
+	val rootDir: String,
+	val docRootDir: String
 )
 
 fun classDocHtmlByUrl(url: String): String {

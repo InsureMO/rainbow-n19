@@ -58,7 +58,8 @@ fun generateOther(): JarGeneratingTargetInfo? {
 				"${method.name}(${method.parameters.joinToString(",") { transformClassNameForDocHtmlId(it) }})"
 			})
 		},
-		rootDir = Envs.otherDir
+		rootDir = Envs.otherDir,
+		docRootDir = Envs.otherDocsDir
 	)
 
 	Envs.classesToFindJars.forEach {
