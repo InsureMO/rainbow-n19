@@ -5,13 +5,14 @@ import java.io.InputStreamReader
 import java.lang.reflect.Method
 import java.net.URL
 import java.util.zip.ZipFile
+import org.jsoup.nodes.Document
 
 data class JarGeneratingTargetInfo(
 	val classCreateHelperName: String,
 	val classLoaderName: String,
 	val classLoaderFileName: String,
 	val classDocHtml: (clazz: Class<*>) -> String,
-	val parameterNamesOfMethodFromDocHtml: (method: Method, docHtml: String) -> List<String?>,
+	val parameterNamesOfMethodFromHtmlDoc: (method: Method, doc: Document) -> List<String?>,
 	val rootDir: String,
 	val docRootDir: String
 )

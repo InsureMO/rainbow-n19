@@ -53,10 +53,13 @@ fun generateOther(): JarGeneratingTargetInfo? {
 			// TODO
 			""
 		},
-		parameterNamesOfMethodFromDocHtml = { method, docHtml ->
-			standardParameterNamesOfMethodFromDocHtml(method, docHtml, {
-				"${method.name}(${method.parameters.joinToString(",") { transformClassNameForDocHtmlId(it) }})"
-			})
+		parameterNamesOfMethodFromHtmlDoc = { method, doc ->
+			standardParameterNamesOfMethodFromDocHtml(method, doc) { method ->
+				val parameters = method.parameters.joinToString(",") { parameter ->
+					transformClassNameForDocHtmlId(parameter)
+				}
+				"${method.name}(${parameters})"
+			}
 		},
 		rootDir = Envs.otherDir,
 		docRootDir = Envs.otherDocsDir

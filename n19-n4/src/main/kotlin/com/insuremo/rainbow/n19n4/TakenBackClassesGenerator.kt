@@ -8,7 +8,7 @@ fun generateTakenBackClasses(targetInfo: JarGeneratingTargetInfo) {
 	} else {
 		var count = classNames.size
 		while (classNames.isNotEmpty()) {
-			classNames.forEach { generateClass(it, targetInfo) }
+			classNames.forEach { generateClass(it, targetInfo, false) }
 			classNames = Summary.retrieveTakenBackClasses()
 			count += classNames.size
 		}

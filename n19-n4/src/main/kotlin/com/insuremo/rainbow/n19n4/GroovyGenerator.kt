@@ -57,10 +57,13 @@ fun generateGroovy(): JarGeneratingTargetInfo? {
 				else -> classDocHtmlByUrl("https://docs.groovy-lang.org/${version}/html/api/${classPath}.html")
 			}
 		},
-		parameterNamesOfMethodFromDocHtml = { method, docHtml ->
-			standardParameterNamesOfMethodFromDocHtml(method, docHtml, {
-				"${method.name}(${method.parameters.joinToString(",") { transformClassNameForDocHtmlId(it) }})"
-			})
+		parameterNamesOfMethodFromHtmlDoc = { method, doc ->
+			standardParameterNamesOfMethodFromDocHtml(method, doc) { method ->
+				val parameters = method.parameters.joinToString(",") { parameter ->
+					transformClassNameForDocHtmlId(parameter)
+				}
+				"${method.name}(${parameters})"
+			}
 		},
 		rootDir = Envs.groovyDir,
 		docRootDir = Envs.groovyDocsDir

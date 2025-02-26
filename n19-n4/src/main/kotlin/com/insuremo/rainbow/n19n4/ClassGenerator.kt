@@ -1,7 +1,6 @@
 package com.insuremo.rainbow.n19n4
 
 import groovy.transform.Internal
-import org.apache.groovy.lang.annotation.Incubating
 import java.io.File
 import java.lang.reflect.AnnotatedType
 import java.lang.reflect.Constructor
@@ -16,13 +15,15 @@ import java.lang.reflect.TypeVariable
 import java.lang.reflect.Type
 import java.lang.reflect.WildcardType
 import java.util.Locale
-import kotlin.jvm.javaClass
+import org.apache.groovy.lang.annotation.Incubating
+import org.jsoup.Jsoup
 import org.objectweb.asm.ClassReader
 import org.objectweb.asm.ClassVisitor
 import org.objectweb.asm.Label
 import org.objectweb.asm.MethodVisitor
 import org.objectweb.asm.Opcodes
 import kotlin.jvm.java
+import kotlin.jvm.javaClass
 
 private class MethodVisitorForParameterNames(val executable: Executable, val parameterNames: MutableList<String?>) :
 	MethodVisitor(Opcodes.ASM9) {
@@ -123,7 +124,21 @@ private class ClassGenerator(
 		}
 	}
 
-	private val docHtml by lazy { targetInfo.classDocHtml(clazz) }
+	private val htmlDocument by lazy {
+		val html = targetInfo.classDocHtml(clazz)
+		if (html.trim().isEmpty()) {
+			null
+		} else {
+			try {
+				val doc = Jsoup.parse(html)
+				doc.outputSettings().prettyPrint(false)
+				doc
+			} catch (t: Throwable) {
+				Logs.error(t)
+				null
+			}
+		}
+	}
 
 	fun createPackageDir(targetDir: String, packageName: String): Pair<String, Int> {
 		var dir: String
@@ -459,11 +474,9 @@ private class ClassGenerator(
 			// try to get document and find them
 			return when (executable) {
 				is Method -> {
-					return if (docHtml.isEmpty()) {
-						names
-					} else {
-						targetInfo.parameterNamesOfMethodFromDocHtml(executable, docHtml)
-					}
+					return htmlDocument?.let { doc ->
+						targetInfo.parameterNamesOfMethodFromHtmlDoc(executable, doc)
+					} ?: names
 				}
 
 				is Constructor<*> -> {

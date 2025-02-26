@@ -28,7 +28,7 @@ fun createDocsCollectorFile(targetDir: String) {
 
 fun buildDocsIndexFiles(targetInfo: JarGeneratingTargetInfo) {
 	// import all class files
-	val imports = File(targetInfo.rootDir)
+	val imports = File(targetInfo.docRootDir)
 		.listFiles { file -> file.isDirectory }
 		?.apply { this.forEach { generatePackageIndexFile(it.absolutePath) } }
 		?.sortedBy { it.name.lowercase() }

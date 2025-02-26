@@ -14,7 +14,7 @@ fun main(args: Array<String>) {
 				generateTakenBackClasses(targetInfo)
 				buildClassIndexFiles(targetInfo)
 				if (Envs.shouldGenerateDocs) {
-					buildDocsIndexFiles(targetInfo);
+					buildDocsIndexFiles(targetInfo)
 				}
 			}
 		} finally {

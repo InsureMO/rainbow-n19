@@ -91,8 +91,8 @@ fun generateJre(): JarGeneratingTargetInfo? {
 			val classPath = clazz.name.replace('.', '/').replace('$', '.')
 			classDocHtmlByUrl("https://docs.oracle.com/en/java/javase/${version}/docs/api/${module}/${classPath}.html")
 		},
-		parameterNamesOfMethodFromDocHtml = { method, docHtml ->
-			standardParameterNamesOfMethodFromDocHtml(method, docHtml, {
+		parameterNamesOfMethodFromHtmlDoc = { method, doc ->
+			standardParameterNamesOfMethodFromDocHtml(method, doc) { method ->
 				val clazz = method.declaringClass
 				when {
 					// the "tryAdvance" method is overridden in these three interfaces, and which is unnecessary.
@@ -104,9 +104,14 @@ fun generateJre(): JarGeneratingTargetInfo? {
 						"tryAdvance(java.util.function.Consumer)"
 					}
 
-					else -> "${method.name}(${method.parameters.joinToString(",") { transformClassNameForDocHtmlId(it) }})"
+					else -> {
+						val parameters = method.parameters.joinToString(",") { parameter ->
+							transformClassNameForDocHtmlId(parameter)
+						}
+						"${method.name}(${parameters})"
+					}
 				}
-			})
+			}
 		},
 		rootDir = Envs.jreDir,
 		docRootDir = Envs.jreDocsDir
