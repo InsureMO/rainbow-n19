@@ -728,22 +728,6 @@ GroovyClassCreateHelper.class('groovy.lang.Closure', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.Object groovy.lang.Closure.getProperty(java.lang.String) */
-			/* name */ 'getProperty',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'property',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.Object',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public java.lang.Object groovy.lang.Closure.getThisObject() */
 			/* name */ 'getThisObject',
 			/* parameters */,
@@ -784,28 +768,6 @@ GroovyClassCreateHelper.class('groovy.lang.Closure', [
 				[/* parameter */
 					/* name */ 'directive',
 					/* type */ 'int',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void groovy.lang.Closure.setProperty(java.lang.String,java.lang.Object) */
-			/* name */ 'setProperty',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'property',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'newValue',
-					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]

@@ -7,5 +7,13 @@ DocsCollector.collect('groovy.lang.GroovyObjectSupport', [
 	],
 	/* class sees */ UDF,
 	/* fields */ UDF,
-	UDF, UDF
+	[/* constructors */
+		[/* constructor */ '<init>()', [
+			/* constructor description */ UDF,
+			/* constructor sees */ UDF,
+			/* constructor parameters */ UDF,
+			/* constructor throwns */ UDF
+		]]
+	],
+	/* methods */ UDF,
 ]);

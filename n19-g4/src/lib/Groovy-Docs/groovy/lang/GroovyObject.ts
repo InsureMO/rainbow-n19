@@ -10,5 +10,6 @@ DocsCollector.collect('groovy.lang.GroovyObject', [
 	],
 	/* class sees */ UDF,
 	/* fields */ UDF,
-	UDF, UDF
+	/* constructors */ UDF,
+	/* methods */ UDF,
 ]);

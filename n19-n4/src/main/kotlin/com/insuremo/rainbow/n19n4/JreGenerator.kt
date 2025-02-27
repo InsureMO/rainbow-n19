@@ -98,9 +98,9 @@ fun generateJre(): JarGeneratingTargetInfo? {
 					// the "tryAdvance" method is overridden in these three interfaces, and which is unnecessary.
 					// and javadoc has no section for these overridden methods,
 					// therefore here using another method which has same parameter names instead
-					(clazz == Spliterator.OfDouble::class.java && method.name == "tryAdvance" && method.parameters?.first()?.type == DoubleConsumer::class.java)
-							|| (clazz == Spliterator.OfInt::class.java && method.name == "tryAdvance" && method.parameters?.first()?.type == IntConsumer::class.java)
-							|| (clazz == Spliterator.OfLong::class.java && method.name == "tryAdvance" && method.parameters?.first()?.type == LongConsumer::class.java) -> {
+					(clazz == Spliterator.OfDouble::class.java && method.name == "tryAdvance" && method.parameters?.firstOrNull()?.type == DoubleConsumer::class.java)
+							|| (clazz == Spliterator.OfInt::class.java && method.name == "tryAdvance" && method.parameters?.firstOrNull()?.type == IntConsumer::class.java)
+							|| (clazz == Spliterator.OfLong::class.java && method.name == "tryAdvance" && method.parameters?.firstOrNull()?.type == LongConsumer::class.java) -> {
 						"tryAdvance(java.util.function.Consumer)"
 					}
 

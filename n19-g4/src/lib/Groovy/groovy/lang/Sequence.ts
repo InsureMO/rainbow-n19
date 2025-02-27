@@ -222,44 +222,6 @@ GroovyClassCreateHelper.class('groovy.lang.Sequence', [
 			/* annotations */ UDF,
 			/* type parameters */ UDF
 		],
-		[/* public java.lang.Object groovy.lang.Sequence.getProperty(java.lang.String) */
-			/* name */ 'getProperty',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'property',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.Object',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public java.lang.Object groovy.lang.Sequence.invokeMethod(java.lang.String,java.lang.Object) */
-			/* name */ 'invokeMethod',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'name',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'args',
-					/* type */ 'java.lang.Object',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'java.lang.Object',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
 		[/* public java.lang.Object groovy.lang.Sequence.remove(int) */
 			/* name */ 'remove',
 			[/* parameters */
@@ -335,28 +297,6 @@ GroovyClassCreateHelper.class('groovy.lang.Sequence', [
 				[/* parameter */
 					/* name */ 'collection',
 					/* type */ 'java.util.Collection',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				]
-			],
-			/* return */ 'void',
-			/* exceptions */,
-			/* modifiers */ 1,
-			/* annotations */ UDF,
-			/* type parameters */ UDF
-		],
-		[/* public void groovy.lang.Sequence.setProperty(java.lang.String,java.lang.Object) */
-			/* name */ 'setProperty',
-			[/* parameters */
-				[/* parameter */
-					/* name */ 'property',
-					/* type */ 'java.lang.String',
-					/* modifiers */ 0,
-					/* annotations */ UDF
-				],
-				[/* parameter */
-					/* name */ 'newValue',
-					/* type */ 'java.lang.Object',
 					/* modifiers */ 0,
 					/* annotations */ UDF
 				]

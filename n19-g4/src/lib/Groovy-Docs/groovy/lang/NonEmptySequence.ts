@@ -8,5 +8,33 @@ DocsCollector.collect('groovy.lang.NonEmptySequence', [
 	],
 	/* class sees */ UDF,
 	/* fields */ UDF,
-	UDF, UDF
+	[/* constructors */
+		[/* constructor */ '<init>(java.lang.Class,java.util.List)', [
+			/* constructor description */ UDF,
+			/* constructor sees */ UDF,
+			/* constructor parameters */ UDF,
+			/* constructor throwns */ UDF
+		]],
+		[/* constructor */ '<init>(java.lang.Class)', [
+			/* constructor description */ UDF,
+			/* constructor sees */ UDF,
+			/* constructor parameters */ UDF,
+			/* constructor throwns */ UDF
+		]],
+		[/* constructor */ '<init>()', [
+			/* constructor description */ UDF,
+			/* constructor sees */ UDF,
+			/* constructor parameters */ UDF,
+			/* constructor throwns */ UDF
+		]]
+	],
+	[/* methods */
+		[/* method */ 'minimumSize()', [
+			/* method description */ UDF,
+			/* method sees */ UDF,
+			/* method parameters */ UDF,
+			/* method throwns */ UDF,
+			/* method return */ UDF
+		]]
+	],
 ]);

@@ -218,17 +218,30 @@ object Envs {
 				"public java.awt.Image java.beans.SimpleBeanInfo.loadImage(java.lang.String)",
 				"public java.awt.Image java.beans.SimpleBeanInfo.getIcon(int)",
 				// groovy
+				// groovy.lang.GroovyObject
 				"public abstract groovy.lang.MetaClass groovy.lang.GroovyObject.getMetaClass()",
 				"public abstract void groovy.lang.GroovyObject.setMetaClass(groovy.lang.MetaClass)",
+				// groovy.lang.GroovyObjectSupport
 				"public groovy.lang.MetaClass groovy.lang.GroovyObjectSupport.getMetaClass()",
 				"public void groovy.lang.GroovyObjectSupport.setMetaClass(groovy.lang.MetaClass)",
+				// groovy.lang.Sequence
+				"public java.lang.Object groovy.lang.Sequence.getProperty(java.lang.String)",
+				"public void groovy.lang.Sequence.setProperty(java.lang.String,java.lang.Object)",
 				"public groovy.lang.MetaClass groovy.lang.Sequence.getMetaClass()",
 				"public void groovy.lang.Sequence.setMetaClass(groovy.lang.MetaClass)",
-				"public groovy.lang.MetaClass groovy.util.FileNameByRegexFinder.getMetaClass()",
-				"public void groovy.util.FileNameByRegexFinder.setMetaClass(groovy.lang.MetaClass)",
-				"public groovy.lang.MetaClass groovy.util.FileTreeBuilder.getMetaClass()",
-				"public void groovy.util.FileTreeBuilder.setMetaClass(groovy.lang.MetaClass)",
+				"public java.lang.Object groovy.lang.Sequence.invokeMethod(java.lang.String,java.lang.Object)",
+				// groovy.lang.Closure
+				"public java.lang.Object groovy.lang.Closure.getProperty(java.lang.String)",
+				"public void groovy.lang.Closure.setProperty(java.lang.String,java.lang.Object)",
+				// groovy.util.FileNameByRegexFinder
+				// "public groovy.lang.MetaClass groovy.util.FileNameByRegexFinder.getMetaClass()",
+				// "public void groovy.util.FileNameByRegexFinder.setMetaClass(groovy.lang.MetaClass)",
+				// groovy.util.FileTreeBuilder
+				// "public groovy.lang.MetaClass groovy.util.FileTreeBuilder.getMetaClass()",
+				// "public void groovy.util.FileTreeBuilder.setMetaClass(groovy.lang.MetaClass)",
+				// groovy.lang.IntRange
 				"public org.codehaus.groovy.runtime.RangeInfo groovy.lang.IntRange.subListBorders(int)",
+				// groovy.lang.NumberRange
 				"public org.codehaus.groovy.runtime.RangeInfo groovy.lang.NumberRange.subListBorders(int)"
 			).contains(method.toGenericString())
 		}

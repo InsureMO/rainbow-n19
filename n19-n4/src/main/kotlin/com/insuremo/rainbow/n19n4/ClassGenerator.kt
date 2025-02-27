@@ -47,27 +47,26 @@ private class MethodVisitorForParameterNames(val executable: Executable, val par
 	}
 }
 
+private fun executableToName(executable: Executable): String {
+	return if (executable is Method) {
+		executable.name
+	} else if (executable is Constructor<*>) {
+		"<init>"
+	} else {
+		throw RuntimeException("Cannot recognize executable[${executable.javaClass.name}]")
+	}
+}
+
 private class ClassVisitorForMethodParameterNames(
 	val executable: Executable,
 	val parameterNames: MutableList<String?>
 ) :
 	ClassVisitor(Opcodes.ASM9) {
-	val name: String
+	val name: String = executableToName(executable)
 	val descriptor: String
 
 	init {
-		this.name = executableToName()
 		this.descriptor = executableToDescriptor()
-	}
-
-	private fun executableToName(): String {
-		return if (executable is Method) {
-			executable.name
-		} else if (executable is Constructor<*>) {
-			"<init>"
-		} else {
-			throw RuntimeException("Cannot recognize executable[${executable.javaClass.name}]")
-		}
 	}
 
 	private fun classToName(clazz: Class<*>): String {
@@ -559,8 +558,8 @@ private class ClassGenerator(
 		).joinToString("\n")
 	}
 
-	private fun generateConstructors(): String {
-		val constructors = clazz.declaredConstructors.filter { constructor ->
+	private fun findClassConstructors(): List<Constructor<*>> {
+		return clazz.declaredConstructors.filter { constructor ->
 			when {
 				constructor.isAnnotationPresent(Internal::class.java)
 						|| constructor.isAnnotationPresent(Incubating::class.java) -> false
@@ -570,6 +569,10 @@ private class ClassGenerator(
 				else -> false
 			}
 		}
+	}
+
+	private fun generateConstructors(): String {
+		val constructors = findClassConstructors()
 		if (constructors.isEmpty()) {
 			return generateComment("/* declared constructors */", "\t")
 		}
@@ -596,8 +599,8 @@ private class ClassGenerator(
 		).joinToString("\n")
 	}
 
-	private fun generateMethods(): String {
-		val methods = clazz.declaredMethods.filter { method ->
+	private fun findClassMethods(): List<Method> {
+		return clazz.declaredMethods.filter { method ->
 			when {
 				method.isAnnotationPresent(Internal::class.java)
 						|| method.isAnnotationPresent(Incubating::class.java) -> false
@@ -609,6 +612,10 @@ private class ClassGenerator(
 				else -> false
 			}
 		}
+	}
+
+	private fun generateMethods(): String {
+		val methods = findClassMethods()
 		if (methods.isEmpty()) {
 			return generateComment("/* declared methods */", "\t")
 		}
@@ -716,8 +723,10 @@ private class ClassGenerator(
 				}
 			}
 
-			else -> childNodes.joinToString(",\n", "[\n", "\n${indent}]") { child ->
-				generateDocSegment(child, level + 1)
+			else -> {
+				childNodes.joinToString(",\n", "[\n", "\n${indent}]") { child ->
+					generateDocSegment(child, level + 1)
+				}
 			}
 		}
 	}
@@ -742,22 +751,43 @@ private class ClassGenerator(
 			"li" -> "${indent}[/* block */ 'b', ${generateDocSegmentOfChildren(node, level)}]"
 			"ul" -> "${indent}[/* list */ 'l', ${generateDocSegmentOfChildren(node, level)}]"
 			"pre" -> "${indent}[/* code block */ 'c', ${generateDocSegmentOfChildren(node, level)}]"
+			"span" -> {
+				val element = node as Element
+				if (element.attr("class") == "descfrm-type-label") {
+					if (element.parent()?.attr("class") == "block"
+						&& element.parent()?.nextElementSibling()?.attr("class") == "block"
+					) {
+						"${indent}[/* block */ 'b', " +
+								"${generateDocSegmentOfChildren(element.parent()?.nextElementSibling()!!, level)}]"
+					} else {
+						val from = element.children()
+							.firstOrNull { child -> child.nodeName() == "code" }
+							?.children()
+							?.firstOrNull { child -> child.nodeName() == "a" }
+							?.attr("href") ?: "Undetected"
+						"${indent}[/* text, ignored since it is the description reference from [${from}] */ 't', '']"
+					}
+				} else {
+					"${indent}[/* text */ 't', `${element.html()}`]"
+				}
+			}
+
 			"a" -> {
 				if ((node as Element).attribute("title") == null) {
 					if (node.attr("href").startsWith("#")) {
 						// internal reference
 						"${indent}[/* reference */ 'r', `${node.child(0).text()}`]"
 					} else {
-						"${indent}[/* external link */ 'a', '${node.attr("href")}', '${node.text()}']"
+						"${indent}[/* external link */ 'a', `${node.attr("href")}`, `${node.text()}`]"
 					}
 				} else {
-					"${indent}[/* reference */ 'r', '${getPackageNameFromLinkNode(node)}.${node.child(0).text()}']"
+					"${indent}[/* reference */ 'r', `${getPackageNameFromLinkNode(node)}.${node.child(0).text()}`]"
 				}
 			}
 
-			"code" -> "${indent}[/* inline code block */ 'i', '${(node as Element).text()}']"
+			"code" -> "${indent}[/* inline code block */ 'i', `${(node as Element).text()}`]"
 			else -> "${indent}[/* block */ 'b', `${node.outerHtml()}`]"
-		}.replace("\${", "\\\${}")
+		}
 	}
 
 	private fun generateDescDoc(node: Element?, level: Int, comments: String): String {
@@ -766,7 +796,9 @@ private class ClassGenerator(
 			?.filter { node -> node.nodeName() != "#text" || node.outerHtml().trim().isNotEmpty() }
 			?.joinToString(",\n", "${indent}[${comments}\n", "\n${indent}],") { node ->
 				generateDocSegment(node, level + 1)
-			} ?: "${indent}${comments} UDF,"
+			}
+			?.replace("\${", """\""" + "$" + "{")
+			?: "${indent}${comments} UDF,"
 	}
 
 	private fun generateClassDoc(classDescriptionNode: Element): String {
@@ -804,7 +836,8 @@ private class ClassGenerator(
 		return listOf(
 			"\t\t[/* field */ '${name}', [",
 			generateDescDoc(descNode, 3, "/* field description */"),
-			"\t\t/* sees */ UDF",
+			// TODO
+			"\t\t/* field sees */ UDF",
 			"\t\t]]"
 		).joinToString("\n")
 	}
@@ -826,6 +859,101 @@ private class ClassGenerator(
 		).joinToString("\n")
 	}
 
+	private fun generateConstructorDoc(constructor: Constructor<*>, constructorDetailNode: Element): String {
+		val id = constructor.let {
+			val parameters = it.parameters.joinToString(",") { parameter ->
+				transformClassNameForDocHtmlId(parameter)
+			}
+			"${executableToName(constructor)}(${parameters})"
+		}
+		var constructorNode = constructorDetailNode.getElementById(id)
+		if (constructorNode == null) {
+			return "\t\t[/* constructor */ '${id}', UDF]"
+		}
+		// if the parameters include generic type, id is declared in first H3 child, so move to its parent node
+		if (constructorNode.nodeName() != "section") {
+			constructorNode = constructorNode.parent()
+		}
+
+		val childNodes = constructorNode.children()
+		val descNode = childNodes.firstOrNull { child -> child.attr("class") == "block" }
+
+		return listOf(
+			"\t\t[/* constructor */ '${id}', [",
+			generateDescDoc(descNode, 3, "/* constructor description */"),
+			// TODO
+			"\t\t\t/* constructor sees */ UDF,",
+			"\t\t\t/* constructor parameters */ UDF,",
+			"\t\t\t/* constructor throwns */ UDF",
+			"\t\t]]"
+		).joinToString("\n")
+	}
+
+	private fun generateClassConstructorDocs(constructorDetailNode: Element?): String {
+		if (constructorDetailNode == null) {
+			return "\t/* constructors */ UDF,"
+		}
+
+		val constructors = findClassConstructors()
+		if (constructors.isEmpty()) {
+			return "\t/* constructors */ UDF,"
+		}
+
+		return listOf(
+			"\t[/* constructors */",
+			constructors.joinToString(",\n") { generateConstructorDoc(it, constructorDetailNode) },
+			"\t],"
+		).joinToString("\n")
+	}
+
+	private fun generateMethodDoc(method: Method, methodDetailNode: Element): String {
+		val id = method.let {
+			val parameters = it.parameters.joinToString(",") { parameter ->
+				transformClassNameForDocHtmlId(parameter)
+			}
+			"${executableToName(method)}(${parameters})"
+		}
+		var methodNode = methodDetailNode.getElementById(id)
+		if (methodNode == null) {
+			return "\t\t[/* method */ '${id}', UDF]"
+		}
+		// if the parameters include generic type, id is declared in first H3 child, so move to its parent node
+		if (methodNode.nodeName() != "section") {
+			methodNode = methodNode.parent()
+		}
+
+		val childNodes = methodNode.children()
+		val descNode = childNodes.firstOrNull { child -> child.attr("class") == "block" }
+
+		return listOf(
+			"\t\t[/* method */ '${id}', [",
+			generateDescDoc(descNode, 3, "/* method description */"),
+			// TODO
+			"\t\t\t/* method sees */ UDF,",
+			"\t\t\t/* method parameters */ UDF,",
+			"\t\t\t/* method throwns */ UDF,",
+			"\t\t\t/* method return */ UDF",
+			"\t\t]]"
+		).joinToString("\n")
+	}
+
+	private fun generateClassMethodDocs(methodDetailNode: Element?): String {
+		if (methodDetailNode == null) {
+			return "\t/* methods */ UDF,"
+		}
+
+		val methods = findClassMethods()
+		if (methods.isEmpty()) {
+			return "\t/* methods */ UDF,"
+		}
+
+		return listOf(
+			"\t[/* methods */",
+			methods.joinToString(",\n") { generateMethodDoc(it, methodDetailNode) },
+			"\t],"
+		).joinToString("\n")
+	}
+
 	fun generateDoc(packageLevel: Int): String {
 		return htmlDocument?.let { doc ->
 			val classDescriptionNode = doc.getElementById("class-description")
@@ -837,7 +965,8 @@ private class ClassGenerator(
 				generateClassDoc(classDescriptionNode!!),
 				generateClassSees(classDescriptionNode),
 				generateClassFieldDocs(doc.getElementById("field-detail")),
-				"\tUDF, UDF",
+				generateClassConstructorDocs(doc.getElementById("constructor-detail")),
+				generateClassMethodDocs(doc.getElementById("method-detail")),
 				"]);",
 				""
 			).joinToString("\n")

@@ -20,5 +20,62 @@ DocsCollector.collect('groovy.time.TimeDuration', [
 	],
 	/* class sees */ UDF,
 	/* fields */ UDF,
-	UDF, UDF
+	[/* constructors */
+		[/* constructor */ '<init>(int,int,int,int)', [
+			/* constructor description */ UDF,
+			/* constructor sees */ UDF,
+			/* constructor parameters */ UDF,
+			/* constructor throwns */ UDF
+		]],
+		[/* constructor */ '<init>(int,int,int,int,int)', [
+			/* constructor description */ UDF,
+			/* constructor sees */ UDF,
+			/* constructor parameters */ UDF,
+			/* constructor throwns */ UDF
+		]]
+	],
+	[/* methods */
+		[/* method */ 'getFrom()', [
+			/* method description */ UDF,
+			/* method sees */ UDF,
+			/* method parameters */ UDF,
+			/* method throwns */ UDF,
+			/* method return */ UDF
+		]],
+		[/* method */ 'plus(groovy.time.DatumDependentDuration)', [
+			/* method description */ UDF,
+			/* method sees */ UDF,
+			/* method parameters */ UDF,
+			/* method throwns */ UDF,
+			/* method return */ UDF
+		]],
+		[/* method */ 'plus(groovy.time.Duration)', [
+			/* method description */ UDF,
+			/* method sees */ UDF,
+			/* method parameters */ UDF,
+			/* method throwns */ UDF,
+			/* method return */ UDF
+		]],
+		[/* method */ 'minus(groovy.time.Duration)', [
+			/* method description */ UDF,
+			/* method sees */ UDF,
+			/* method parameters */ UDF,
+			/* method throwns */ UDF,
+			/* method return */ UDF
+		]],
+		[/* method */ 'minus(groovy.time.DatumDependentDuration)', [
+			/* method description */ UDF,
+			/* method sees */ UDF,
+			/* method parameters */ UDF,
+			/* method throwns */ UDF,
+			/* method return */ UDF
+		]],
+		[/* method */ 'getAgo()', [
+			/* method description */ UDF,
+			/* method sees */ UDF,
+			/* method parameters */ UDF,
+			/* method throwns */ UDF,
+			/* method return */ UDF
+		]]
+	],
 ]);

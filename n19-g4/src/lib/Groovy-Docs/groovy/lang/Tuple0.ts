@@ -9,8 +9,17 @@ DocsCollector.collect('groovy.lang.Tuple0', [
 	[/* fields */
 		[/* field */ 'INSTANCE', [
 			/* field description */ UDF,
-		/* sees */ UDF
+		/* field sees */ UDF
 		]]
 	],
-	UDF, UDF
+	/* constructors */ UDF,
+	[/* methods */
+		[/* method */ 'clone()', [
+			/* method description */ UDF,
+			/* method sees */ UDF,
+			/* method parameters */ UDF,
+			/* method throwns */ UDF,
+			/* method return */ UDF
+		]]
+	],
 ]);

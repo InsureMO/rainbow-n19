@@ -55,7 +55,7 @@ fun createIndexFile(dir: String): File {
 
 fun writeFile(path: String, content: String) {
 	val file = createFile(path)
-	return file.writeText(content, StandardCharsets.UTF_8)
+	return file.writeText(content)
 }
 
 fun writeIndexFile(dir: String, content: String) {
@@ -65,7 +65,7 @@ fun writeIndexFile(dir: String, content: String) {
 
 fun appendToFile(path: String, content: String) {
 	val file = createFile(path)
-	file.appendText(content, StandardCharsets.UTF_8)
+	file.appendText(content)
 }
 
 fun appendToIndexFile(dir: String, content: String) {

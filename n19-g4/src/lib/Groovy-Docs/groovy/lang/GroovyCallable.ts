@@ -10,5 +10,6 @@ DocsCollector.collect('groovy.lang.GroovyCallable', [
 	],
 	[/* class sees */ 'java.util.concurrent.Callable'],
 	/* fields */ UDF,
-	UDF, UDF
+	/* constructors */ UDF,
+	/* methods */ UDF,
 ]);
