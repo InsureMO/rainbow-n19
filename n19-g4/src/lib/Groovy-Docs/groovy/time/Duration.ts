@@ -15,86 +15,74 @@ DocsCollector.collect('groovy.time.Duration', [
  If you ask Duration to convert itself to milliseconds then it will work on the basis of 24 hours
  in a day. If you add or subtract it from a date it will take daylight saving into account.`]
 	],
-	/* class sees */ UDF,
 	/* fields */ UDF,
 	[/* constructors */
 		[/* constructor */ '<init>(int,int,int,int,int)', [
 			/* constructor description */ UDF,
-			/* constructor sees */ UDF,
-			/* constructor parameters */ UDF,
-			/* constructor throwns */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF
 		]]
 	],
 	[/* methods */
 		[/* method */ 'getFrom()', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'plus(groovy.time.Duration)', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'plus(groovy.time.DatumDependentDuration)', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'plus(groovy.time.TimeDuration)', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'minus(groovy.time.TimeDatumDependentDuration)', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'minus(groovy.time.TimeDuration)', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'minus(groovy.time.Duration)', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'minus(groovy.time.DatumDependentDuration)', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
-		]],
-		[/* method */ 'toMilliseconds()', [
-			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'getAgo()', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'toMilliseconds()', [
+			/* method description */ UDF,
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]]
 	],
 ]);

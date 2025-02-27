@@ -8,7 +8,6 @@ DocsCollector.collect('groovy.lang.GroovyCallable', [
  for APIs having both Runnable and Callable methods. You should generally NOT use this
  method in your own code.`]
 	],
-	[/* class sees */ 'java.util.concurrent.Callable'],
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	/* methods */ UDF,

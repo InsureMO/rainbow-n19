@@ -5,233 +5,205 @@ DocsCollector.collect('groovy.lang.Tuple', [
 	[/* class description */
 		[/* text */ 't', `Represents a list of Objects.`]
 	],
-	/* class sees */ UDF,
 	/* fields */ UDF,
 	[/* constructors */
 		[/* constructor */ '<init>(java.lang.Object...)', UDF],
 		[/* constructor */ '<init>(groovy.lang.Tuple)', [
 			/* constructor description */ UDF,
-			/* constructor sees */ UDF,
-			/* constructor parameters */ UDF,
-			/* constructor throwns */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF
 		]]
 	],
 	[/* methods */
 		[/* method */ 'get(int)', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'equals(java.lang.Object)', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'hashCode()', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'clone()', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'compareTo(groovy.lang.Tuple)', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'size()', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'subList(int,int)', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'toArray()', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
-		[/* method */ 'tuple(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Construct a tuple of degree 12.`]
-			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
-		]],
-		[/* method */ 'tuple(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Construct a tuple of degree 11.`]
-			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
-		]],
-		[/* method */ 'tuple(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Construct a tuple of degree 10.`]
-			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
-		]],
-		[/* method */ 'tuple(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Construct a tuple of degree 4.`]
-			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
-		]],
-		[/* method */ 'tuple(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Construct a tuple of degree 16.`]
-			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
-		]],
-		[/* method */ 'tuple(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Construct a tuple of degree 15.`]
-			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
-		]],
-		[/* method */ 'tuple(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Construct a tuple of degree 14.`]
-			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+		[/* method */ 'subTuple(int,int)', [
+			/* method description */ UDF,
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'tuple(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)', [
 			[/* method description */
 				[/* text */ 't', `Construct a tuple of degree 13.`]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
-		[/* method */ 'tuple(java.lang.Object,java.lang.Object,java.lang.Object)', [
+		[/* method */ 'tuple(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)', [
 			[/* method description */
-				[/* text */ 't', `Construct a tuple of degree 3.`]
+				[/* text */ 't', `Construct a tuple of degree 12.`]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
-		[/* method */ 'tuple(java.lang.Object,java.lang.Object)', [
+		[/* method */ 'tuple(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)', [
 			[/* method description */
-				[/* text */ 't', `Construct a tuple of degree 2.`]
+				[/* text */ 't', `Construct a tuple of degree 11.`]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
-		[/* method */ 'tuple(java.lang.Object)', [
+		[/* method */ 'tuple(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)', [
 			[/* method description */
-				[/* text */ 't', `Construct a tuple of degree 1.`]
+				[/* text */ 't', `Construct a tuple of degree 10.`]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
-		[/* method */ 'tuple()', [
+		[/* method */ 'tuple(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)', [
 			[/* method description */
-				[/* text */ 't', `Construct a tuple of degree 0.`]
+				[/* text */ 't', `Construct a tuple of degree 16.`]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
-		[/* method */ 'tuple(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)', [
+		[/* method */ 'tuple(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)', [
 			[/* method description */
-				[/* text */ 't', `Construct a tuple of degree 9.`]
+				[/* text */ 't', `Construct a tuple of degree 4.`]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
-		[/* method */ 'tuple(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)', [
+		[/* method */ 'tuple(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)', [
 			[/* method description */
-				[/* text */ 't', `Construct a tuple of degree 8.`]
+				[/* text */ 't', `Construct a tuple of degree 15.`]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
-		[/* method */ 'tuple(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)', [
+		[/* method */ 'tuple(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)', [
 			[/* method description */
-				[/* text */ 't', `Construct a tuple of degree 7.`]
+				[/* text */ 't', `Construct a tuple of degree 14.`]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
-		]],
-		[/* method */ 'tuple(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Construct a tuple of degree 6.`]
-			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'tuple(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)', [
 			[/* method description */
 				[/* text */ 't', `Construct a tuple of degree 5.`]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
-		[/* method */ 'subTuple(int,int)', [
-			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+		[/* method */ 'tuple(java.lang.Object,java.lang.Object,java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Construct a tuple of degree 3.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'tuple(java.lang.Object,java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Construct a tuple of degree 2.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'tuple(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Construct a tuple of degree 1.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'tuple()', [
+			[/* method description */
+				[/* text */ 't', `Construct a tuple of degree 0.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'tuple(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Construct a tuple of degree 9.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'tuple(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Construct a tuple of degree 8.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'tuple(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Construct a tuple of degree 7.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'tuple(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Construct a tuple of degree 6.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]]
 	],
 ]);

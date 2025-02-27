@@ -808,21 +808,6 @@ private class ClassGenerator(
 			.let { element -> generateDescDoc(element, 1, "/* class description */") }
 	}
 
-	private fun generateClassSees(classDescriptionNode: Element): String {
-		val nodes = classDescriptionNode.getElementsByClass("see-list").first()
-			?.children()
-			?.map { child -> child.child(0) }
-			?.filter { a -> a.attribute("title") != null }
-		return when (nodes?.size ?: 0) {
-			0 -> "\t/* class sees */ UDF,"
-			else -> {
-				nodes!!.joinToString(", ", "\t[/* class sees */ ", "],") { a ->
-					"'${getPackageNameFromLinkNode(a)}.${a.child(0).text()}'"
-				}
-			}
-		}
-	}
-
 	private fun generateFieldDoc(field: Field, fieldDetailNode: Element): String {
 		val name = field.name
 		val fieldNode = fieldDetailNode.getElementById(name)
@@ -836,8 +821,6 @@ private class ClassGenerator(
 		return listOf(
 			"\t\t[/* field */ '${name}', [",
 			generateDescDoc(descNode, 3, "/* field description */"),
-			// TODO
-			"\t\t/* field sees */ UDF",
 			"\t\t]]"
 		).joinToString("\n")
 	}
@@ -859,6 +842,89 @@ private class ClassGenerator(
 		).joinToString("\n")
 	}
 
+	@Suppress("SameParameterValue")
+	private fun generateParameterDocs(node: Element?, level: Int): String {
+		val indent = "\t".repeat(level)
+		if (node == null) {
+			return "${indent}/* parameters */ UDF,"
+		}
+		val leadNode =
+			node.children().firstOrNull { child -> child.nodeName() == "dt" && child.text() == "Parameters:" }
+		if (leadNode == null) {
+			return "${indent}/* parameters */ UDF,"
+		}
+		val parameterNodes = leadNode.nextElementSiblings().takeWhile { sibling -> sibling.nodeName() == "dd" }
+		if (parameterNodes.isEmpty()) {
+			return "${indent}/* parameters */ UDF,"
+		}
+
+		val indent1 = "\t".repeat(level + 1)
+		return listOf(
+			"${indent}[/* parameters */",
+			parameterNodes.joinToString(",\n") { node ->
+				val name = node.child(0).text()
+				val descriptionNodes = node.childNodes()
+					.drop(if (node.child(0) === node.childNode(0)) 1 else 2)
+					.filter { node ->
+						node.nodeName() != "#text" || node.outerHtml().trim().isNotEmpty()
+					}
+				if (descriptionNodes.isEmpty()) {
+					"${indent1}[/* parameter */ '${name}', UDF]"
+				} else {
+					val description = descriptionNodes
+						.joinToString(",\n", "[/* parameter description */\n", "\n${indent1}]") { node ->
+							generateDocSegment(node, level + 2).replace("[/* text */ 't', ` - ", "[/* text */ 't', `")
+						}.replace("\${", """\""" + "$" + "{")
+
+					"${indent1}[/* parameter */ '${name}', ${description}]"
+				}
+			},
+			"${indent}],",
+		).joinToString("\n")
+	}
+
+	@Suppress("SameParameterValue")
+	private fun generateThrownDocs(node: Element?, level: Int, lastElement: Boolean): String {
+		val lastComma = if (lastElement) "" else ","
+		val indent = "\t".repeat(level)
+		if (node == null) {
+			return "${indent}/* throws */ UDF${lastComma}"
+		}
+		val leadNode =
+			node.children().firstOrNull { child -> child.nodeName() == "dt" && child.text() == "Throws:" }
+		if (leadNode == null) {
+			return "${indent}/* throws */ UDF${lastComma}"
+		}
+		val parameterNodes = leadNode.nextElementSiblings().takeWhile { sibling -> sibling.nodeName() == "dd" }
+		if (parameterNodes.isEmpty()) {
+			return "${indent}/* throws */ UDF${lastComma}"
+		}
+
+		val indent1 = "\t".repeat(level + 1)
+		return listOf(
+			"${indent}[/* throws */",
+			parameterNodes.joinToString(",\n") { node ->
+				val name = node.child(0).child(0).let { "${getPackageNameFromLinkNode(it)}.${it.text()}" }
+				val descriptionNodes = node.childNodes()
+					.drop(if (node.child(0) === node.childNode(0)) 1 else 2)
+					.filter { node ->
+						node.nodeName() != "#text" || node.outerHtml().trim().isNotEmpty()
+					}
+				if (descriptionNodes.isEmpty()) {
+					"${indent1}[/* throw */ '${name}', UDF]"
+				} else {
+					val description = descriptionNodes
+						.joinToString(",\n", "[/* throw description */\n", "\n${indent1}]") { node ->
+							generateDocSegment(node, level + 2).replace("[/* text */ 't', ` - ", "[/* text */ 't', `")
+						}.replace("\${", """\""" + "$" + "{")
+
+					"${indent1}[/* throw */ '${name}', ${description}]"
+				}
+			},
+			"${indent}]${lastComma}",
+		).joinToString("\n")
+	}
+
 	private fun generateConstructorDoc(constructor: Constructor<*>, constructorDetailNode: Element): String {
 		val id = constructor.let {
 			val parameters = it.parameters.joinToString(",") { parameter ->
@@ -877,14 +943,13 @@ private class ClassGenerator(
 
 		val childNodes = constructorNode.children()
 		val descNode = childNodes.firstOrNull { child -> child.attr("class") == "block" }
+		val notesNode = childNodes.firstOrNull { child -> child.attr("class") == "notes" }
 
 		return listOf(
 			"\t\t[/* constructor */ '${id}', [",
 			generateDescDoc(descNode, 3, "/* constructor description */"),
-			// TODO
-			"\t\t\t/* constructor sees */ UDF,",
-			"\t\t\t/* constructor parameters */ UDF,",
-			"\t\t\t/* constructor throwns */ UDF",
+			generateParameterDocs(notesNode, 3),
+			generateThrownDocs(notesNode, 3, true),
 			"\t\t]]"
 		).joinToString("\n")
 	}
@@ -906,6 +971,35 @@ private class ClassGenerator(
 		).joinToString("\n")
 	}
 
+	@Suppress("SameParameterValue")
+	private fun generateReturnDoc(node: Element?, level: Int): String {
+		val indent = "\t".repeat(level)
+		if (node == null) {
+			return "${indent}/* return */ UDF"
+		}
+		val leadNode =
+			node.children().firstOrNull { child -> child.nodeName() == "dt" && child.text() == "Returns:" }
+		if (leadNode == null) {
+			return "${indent}/* return */ UDF"
+		}
+		val parameterNodes = leadNode.nextElementSiblings().takeWhile { sibling -> sibling.nodeName() == "dd" }
+		if (parameterNodes.isEmpty()) {
+			return "${indent}/* return */ UDF"
+		}
+
+		val nodes = parameterNodes.map { node ->
+			node.childNodes().filter { node ->
+				node.nodeName() != "#text" || node.outerHtml().trim().isNotEmpty()
+			}
+		}.flatten()
+		if (nodes.isEmpty()) {
+			return "${indent}/* return */ UDF"
+		}
+		return nodes.joinToString(",\n", "${indent}[/* return description */\n", "\n${indent}]") { node ->
+			generateDocSegment(node, level + 1)
+		}.replace("\${", """\""" + "$" + "{")
+	}
+
 	private fun generateMethodDoc(method: Method, methodDetailNode: Element): String {
 		val id = method.let {
 			val parameters = it.parameters.joinToString(",") { parameter ->
@@ -924,15 +1018,14 @@ private class ClassGenerator(
 
 		val childNodes = methodNode.children()
 		val descNode = childNodes.firstOrNull { child -> child.attr("class") == "block" }
+		val notesNode = childNodes.firstOrNull { child -> child.attr("class") == "notes" }
 
 		return listOf(
 			"\t\t[/* method */ '${id}', [",
 			generateDescDoc(descNode, 3, "/* method description */"),
-			// TODO
-			"\t\t\t/* method sees */ UDF,",
-			"\t\t\t/* method parameters */ UDF,",
-			"\t\t\t/* method throwns */ UDF,",
-			"\t\t\t/* method return */ UDF",
+			generateParameterDocs(notesNode, 3),
+			generateThrownDocs(notesNode, 3, false),
+			generateReturnDoc(notesNode, 3),
 			"\t\t]]"
 		).joinToString("\n")
 	}
@@ -963,7 +1056,6 @@ private class ClassGenerator(
 				"",
 				"DocsCollector.collect('${clazz.name}', [",
 				generateClassDoc(classDescriptionNode!!),
-				generateClassSees(classDescriptionNode),
 				generateClassFieldDocs(doc.getElementById("field-detail")),
 				generateClassConstructorDocs(doc.getElementById("constructor-detail")),
 				generateClassMethodDocs(doc.getElementById("method-detail")),

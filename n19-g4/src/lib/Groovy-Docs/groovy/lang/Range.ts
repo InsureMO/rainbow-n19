@@ -74,7 +74,6 @@ DocsCollector.collect('groovy.lang.Range', [
 		[/* text */ 't', ` which, for numerical ranges, allows checking within the continuous
  interval between the Range's boundary values.`]
 	],
-	/* class sees */ UDF,
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
@@ -82,28 +81,78 @@ DocsCollector.collect('groovy.lang.Range', [
 			[/* method description */
 				[/* text */ 't', `Steps through the range, calling a closure for each item.`]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			[/* parameters */
+				[/* parameter */ 'step', [/* parameter description */
+					[/* text */ 't', `the amount by which to step. If negative, steps through the range backwards.`]
+				]],
+				[/* parameter */ 'closure', [/* parameter description */
+					[/* text */ 't', `the `],
+					[/* reference */ 'r', `groovy.lang.Closure`],
+					[/* text */ 't', ` to call`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'step(int)', [
 			[/* method description */
 				[/* text */ 't', `Forms a list by stepping through the range by the indicated interval.`]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			[/* parameters */
+				[/* parameter */ 'step', [/* parameter description */
+					[/* text */ 't', `the amount by which to step. If negative, steps through the range backwards.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the list formed by stepping through the range by the indicated interval.`]
+			]
 		]],
 		[/* method */ 'getFrom()', [
 			[/* method description */
 				[/* text */ 't', `The lower value in the range.`]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the lower value in the range.`]
+			]
+		]],
+		[/* method */ 'getTo()', [
+			[/* method description */
+				[/* text */ 't', `The upper value in the range.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the upper value in the range`]
+			]
+		]],
+		[/* method */ 'isReverse()', [
+			[/* method description */
+				[/* text */ 't', `Indicates whether this is a reverse range which iterates backwards
+ starting from the to value and ending on the from value`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this is a reverse range`]
+			]
+		]],
+		[/* method */ 'inspect()', [
+			/* method description */ UDF,
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the verbose `],
+				[/* reference */ 'r', `java.lang.String`],
+				[/* text */ 't', ` representation of this `],
+				[/* reference */ 'r', `groovy.lang.Range`],
+				[/* text */ 't', ` as would be typed into a console to create the `],
+				[/* reference */ 'r', `groovy.lang.Range`],
+				[/* text */ 't', ` instance`]
+			]
 		]],
 		[/* method */ 'containsWithinBounds(java.lang.Object)', [
 			[/* method description */
@@ -121,36 +170,16 @@ DocsCollector.collect('groovy.lang.Range', [
  containsWithinBounds(2) == true
  contains(2) == false`]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
-		]],
-		[/* method */ 'getTo()', [
-			[/* method description */
-				[/* text */ 't', `The upper value in the range.`]
+			[/* parameters */
+				[/* parameter */ 'o', [/* parameter description */
+					[/* text */ 't', `the object to check against the boundaries of the range`]
+				]]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
-		]],
-		[/* method */ 'isReverse()', [
-			[/* method description */
-				[/* text */ 't', `Indicates whether this is a reverse range which iterates backwards
- starting from the to value and ending on the from value`]
-			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
-		]],
-		[/* method */ 'inspect()', [
-			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the object is between the from and to values`]
+			]
 		]]
 	],
 ]);

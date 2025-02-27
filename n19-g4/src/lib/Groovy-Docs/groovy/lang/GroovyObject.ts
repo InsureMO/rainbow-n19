@@ -8,7 +8,6 @@ DocsCollector.collect('groovy.lang.GroovyObject', [
 		[/* block */ 'b', `
  Especially handy for using Groovy objects when in the Java world.`]
 	],
-	/* class sees */ UDF,
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	/* methods */ UDF,

@@ -18,64 +18,55 @@ DocsCollector.collect('groovy.time.TimeDuration', [
  If you ask Duration to convert itself to milliseconds then it will work on the basis of 60 seconds in a minute.
  If you add or subtract it from a date it will take leap seconds into account.`]
 	],
-	/* class sees */ UDF,
 	/* fields */ UDF,
 	[/* constructors */
 		[/* constructor */ '<init>(int,int,int,int)', [
 			/* constructor description */ UDF,
-			/* constructor sees */ UDF,
-			/* constructor parameters */ UDF,
-			/* constructor throwns */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF
 		]],
 		[/* constructor */ '<init>(int,int,int,int,int)', [
 			/* constructor description */ UDF,
-			/* constructor sees */ UDF,
-			/* constructor parameters */ UDF,
-			/* constructor throwns */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF
 		]]
 	],
 	[/* methods */
 		[/* method */ 'getFrom()', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'plus(groovy.time.DatumDependentDuration)', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'plus(groovy.time.Duration)', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'minus(groovy.time.Duration)', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'minus(groovy.time.DatumDependentDuration)', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'getAgo()', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]]
 	],
 ]);

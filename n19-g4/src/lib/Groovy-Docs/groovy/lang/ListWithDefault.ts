@@ -14,37 +14,32 @@ DocsCollector.collect('groovy.lang.ListWithDefault', [
 		[/* inline code block */ 'i', `size()`],
 		[/* text */ 't', `.`]
 	],
-	/* class sees */ UDF,
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
 		[/* method */ 'add(int,java.lang.Object)', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'add(java.lang.Object)', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'remove(int)', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'remove(java.lang.Object)', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'get(int)', [
 			[/* method description */
@@ -97,181 +92,157 @@ DocsCollector.collect('groovy.lang.ListWithDefault', [
 					[/* text */ 't', `.`]
 				]]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			[/* parameters */
+				[/* parameter */ 'index', [/* parameter description */
+					[/* text */ 't', `an index (might be greater or equal to `],
+					[/* inline code block */ 'i', `size()`],
+					[/* text */ 't', `, or smaller than 0)`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the value at the given `],
+				[/* inline code block */ 'i', `index`],
+				[/* text */ 't', ` or the default value`]
+			]
 		]],
 		[/* method */ 'equals(java.lang.Object)', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'hashCode()', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'indexOf(java.lang.Object)', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'clear()', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'lastIndexOf(java.lang.Object)', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'isEmpty()', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'size()', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'subList(int,int)', [
 			[/* method description */
 				[/* text */ 't', `Returns a view of a portion of this list. This method returns a list with the same
  lazy list settings as the original list.`]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			[/* parameters */
+				[/* parameter */ 'fromIndex', [/* parameter description */
+					[/* text */ 't', `low endpoint of the subList (inclusive)`]
+				]],
+				[/* parameter */ 'toIndex', [/* parameter description */
+					[/* text */ 't', `upper endpoint of the subList (exclusive)`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a view of a specified range within this list, keeping all lazy list settings`]
+			]
 		]],
 		[/* method */ 'toArray(java.lang.Object[])', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'toArray()', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'iterator()', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'contains(java.lang.Object)', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'newInstance(java.util.List,boolean,groovy.lang.Closure)', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'addAll(int,java.util.Collection)', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'addAll(java.util.Collection)', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'set(int,java.lang.Object)', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'removeAll(java.util.Collection)', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'retainAll(java.util.Collection)', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'listIterator(int)', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'listIterator()', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'containsAll(java.util.Collection)', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
-		]],
-		[/* method */ 'isLazyDefaultValues()', [
-			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
-		]],
-		[/* method */ 'getInitClosure()', [
-			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
-		]],
-		[/* method */ 'getDelegate()', [
-			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'getAt(int)', [
 			[/* method description */
@@ -279,10 +250,37 @@ DocsCollector.collect('groovy.lang.ListWithDefault', [
 				[/* reference */ 'r', `get(int)`],
 				[/* text */ 't', `.`]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			[/* parameters */
+				[/* parameter */ 'index', [/* parameter description */
+					[/* text */ 't', `an index (might be greater or equal to `],
+					[/* inline code block */ 'i', `size()`],
+					[/* text */ 't', `, or smaller than 0)`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the value at the given `],
+				[/* inline code block */ 'i', `index`],
+				[/* text */ 't', ` or the default value`]
+			]
+		]],
+		[/* method */ 'getDelegate()', [
+			/* method description */ UDF,
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'isLazyDefaultValues()', [
+			/* method description */ UDF,
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'getInitClosure()', [
+			/* method description */ UDF,
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]]
 	],
 ]);

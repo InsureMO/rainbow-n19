@@ -5,14 +5,12 @@ DocsCollector.collect('groovy.util.GroovyCollections', [
 	[/* class description */
 		[/* text */ 't', `A Collections utility class`]
 	],
-	/* class sees */ UDF,
 	/* fields */ UDF,
 	[/* constructors */
 		[/* constructor */ '<init>()', [
 			/* constructor description */ UDF,
-			/* constructor sees */ UDF,
-			/* constructor parameters */ UDF,
-			/* constructor throwns */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF
 		]]
 	],
 	[/* methods */
@@ -20,64 +18,93 @@ DocsCollector.collect('groovy.util.GroovyCollections', [
 			[/* method description */
 				[/* text */ 't', `Selects the minimum value found in an Iterable of items.`]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			[/* parameters */
+				[/* parameter */ 'items', [/* parameter description */
+					[/* text */ 't', `an Iterable`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the minimum value`]
+			]
 		]],
 		[/* method */ 'min(java.lang.Object[])', [
 			[/* method description */
 				[/* text */ 't', `Selects the minimum value found in an array of items, so
  min([2, 4, 6] as Object[]) == 2.`]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			[/* parameters */
+				[/* parameter */ 'items', [/* parameter description */
+					[/* text */ 't', `an array of items`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the minimum value`]
+			]
 		]],
 		[/* method */ 'max(java.lang.Iterable)', [
 			[/* method description */
 				[/* text */ 't', `Selects the maximum value found in an Iterable.`]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			[/* parameters */
+				[/* parameter */ 'items', [/* parameter description */
+					[/* text */ 't', `a Collection`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the maximum value`]
+			]
 		]],
 		[/* method */ 'max(java.lang.Object[])', [
 			[/* method description */
 				[/* text */ 't', `Selects the maximum value found in an array of items, so
  max([2, 4, 6] as Object[]) == 6.`]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			[/* parameters */
+				[/* parameter */ 'items', [/* parameter description */
+					[/* text */ 't', `an array of items`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the maximum value`]
+			]
 		]],
 		[/* method */ 'sum(java.lang.Iterable)', [
 			[/* method description */
 				[/* text */ 't', `Sums all the given items.`]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			[/* parameters */
+				[/* parameter */ 'items', [/* parameter description */
+					[/* text */ 't', `an Iterable of items`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the sum of the item`]
+			]
 		]],
 		[/* method */ 'sum(java.lang.Object[])', [
 			[/* method description */
 				[/* text */ 't', `Sums all the items from an array of items.`]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			[/* parameters */
+				[/* parameter */ 'items', [/* parameter description */
+					[/* text */ 't', `an array of items`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the sum of the items`]
+			]
 		]],
 		[/* method */ 'inits(java.lang.Iterable)', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'union(java.util.Comparator,java.lang.Iterable...)', [
 			[/* method description */
@@ -89,10 +116,18 @@ DocsCollector.collect('groovy.util.GroovyCollections', [
  assert GroovyCollections.union(w -&gt; w.toUpperCase(), ['a', 'A'], ['B', 'a', 'c', 'b']) == ['a', 'B', 'c']
  `]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			[/* parameters */
+				[/* parameter */ 'comparator', [/* parameter description */
+					[/* text */ 't', `a Comparator`]
+				]],
+				[/* parameter */ 'iterables', [/* parameter description */
+					[/* text */ 't', `the sources of items`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the ordered list of unique values found`]
+			]
 		]],
 		[/* method */ 'union(java.lang.Iterable...)', [
 			[/* method description */
@@ -101,10 +136,15 @@ DocsCollector.collect('groovy.util.GroovyCollections', [
 				[/* code block */ 'c', ` assert GroovyCollections.union([1, 2], [2, 3], [1, 4]) == [1, 2, 3, 4]
  `]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			[/* parameters */
+				[/* parameter */ 'iterables', [/* parameter description */
+					[/* text */ 't', `the sources of items`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the ordered list of unique values found`]
+			]
 		]],
 		[/* method */ 'union(java.util.List)', [
 			[/* method description */
@@ -113,10 +153,15 @@ DocsCollector.collect('groovy.util.GroovyCollections', [
 				[/* code block */ 'c', ` assert GroovyCollections.union([[1, 2], [2, 3], [1, 4]]) == [1, 2, 3, 4]
  `]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			[/* parameters */
+				[/* parameter */ 'iterables', [/* parameter description */
+					[/* text */ 't', `the list of source items`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the ordered list of unique values found`]
+			]
 		]],
 		[/* method */ 'union(groovy.lang.Closure,java.lang.Iterable...)', [
 			[/* method description */
@@ -127,10 +172,18 @@ DocsCollector.collect('groovy.util.GroovyCollections', [
  assert GroovyCollections.union(abs, [1, 2, 5], [-3, -4, -5], [4, 6]) == [1, 2, 5, -3, -4, 6]
  `]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			[/* parameters */
+				[/* parameter */ 'condition', [/* parameter description */
+					[/* text */ 't', `a Closure used to determine unique items`]
+				]],
+				[/* parameter */ 'iterables', [/* parameter description */
+					[/* text */ 't', `the sources of items`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the ordered list of unique values found`]
+			]
 		]],
 		[/* method */ 'union(java.util.List,java.util.Comparator)', [
 			[/* method description */
@@ -142,10 +195,18 @@ DocsCollector.collect('groovy.util.GroovyCollections', [
  assert GroovyCollections.union([['a', 'A'], ['B', 'a', 'c', 'b']], w -&gt; w.toUpperCase()) == ['a', 'B', 'c']
  `]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			[/* parameters */
+				[/* parameter */ 'iterables', [/* parameter description */
+					[/* text */ 't', `the list of source items`]
+				]],
+				[/* parameter */ 'comparator', [/* parameter description */
+					[/* text */ 't', `a Comparator`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the ordered list of unique values found`]
+			]
 		]],
 		[/* method */ 'union(java.util.List,groovy.lang.Closure)', [
 			[/* method description */
@@ -155,10 +216,78 @@ DocsCollector.collect('groovy.util.GroovyCollections', [
 				[/* code block */ 'c', ` assert GroovyCollections.union([[1, 2, 5], [-3, -4, -5], [4, 6]]){ n -&gt; n.abs() } == [1, 2, 5, -3, -4, 6]
  `]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			[/* parameters */
+				[/* parameter */ 'iterables', [/* parameter description */
+					[/* text */ 't', `the list of source items`]
+				]],
+				[/* parameter */ 'condition', [/* parameter description */
+					[/* text */ 't', `a Closure used to determine unique items`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the ordered list of unique values found`]
+			]
+		]],
+		[/* method */ 'transpose(java.util.List)', [
+			[/* method description */
+				[/* text */ 't', `Transposes the given lists.
+ So, `],
+				[/* inline code block */ 'i', `transpose([['a', 'b'], [1, 2]])`],
+				[/* text */ 't', `
+ is `],
+				[/* inline code block */ 'i', `[['a', 1], ['b', 2]]`],
+				[/* text */ 't', ` and
+ `],
+				[/* inline code block */ 'i', `transpose([['a', 'b', 'c']])`],
+				[/* text */ 't', `
+ is `],
+				[/* inline code block */ 'i', `[['a'], ['b'], ['c']]`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'lists', [/* parameter description */
+					[/* text */ 't', `the given lists`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a List of the transposed lists`]
+			]
+		]],
+		[/* method */ 'transpose(java.lang.Object[])', [
+			[/* method description */
+				[/* text */ 't', `Transposes an array of lists.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'lists', [/* parameter description */
+					[/* text */ 't', `the given lists`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a List of the transposed lists`]
+			]
+		]],
+		[/* method */ 'tails(java.lang.Iterable)', [
+			/* method description */ UDF,
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'combinations(java.lang.Object[])', [
+			[/* method description */
+				[/* text */ 't', `Finds all combinations of items from the given collections.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'collections', [/* parameter description */
+					[/* text */ 't', `the given collections`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a List of the combinations found`]
+			]
 		]],
 		[/* method */ 'combinations(java.lang.Iterable)', [
 			[/* method description */
@@ -183,19 +312,15 @@ DocsCollector.collect('groovy.util.GroovyCollections', [
 				[/* text */ 't', `.
  If an empty collection is found within the given collections, the result will be an empty list.`]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
-		]],
-		[/* method */ 'combinations(java.lang.Object[])', [
-			[/* method description */
-				[/* text */ 't', `Finds all combinations of items from the given collections.`]
+			[/* parameters */
+				[/* parameter */ 'collections', [/* parameter description */
+					[/* text */ 't', `the Iterable of given collections`]
+				]]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a List of the combinations found`]
+			]
 		]],
 		[/* method */ 'subsequences(java.util.List)', [
 			[/* method description */
@@ -205,47 +330,15 @@ DocsCollector.collect('groovy.util.GroovyCollections', [
 				[/* text */ 't', ` would be:
  [[1, 2, 3], [1, 3], [2, 3], [1, 2], [1], [2], [3]]`]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
-		]],
-		[/* method */ 'transpose(java.lang.Object[])', [
-			[/* method description */
-				[/* text */ 't', `Transposes an array of lists.`]
+			[/* parameters */
+				[/* parameter */ 'items', [/* parameter description */
+					[/* text */ 't', `the List of items`]
+				]]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
-		]],
-		[/* method */ 'transpose(java.util.List)', [
-			[/* method description */
-				[/* text */ 't', `Transposes the given lists.
- So, `],
-				[/* inline code block */ 'i', `transpose([['a', 'b'], [1, 2]])`],
-				[/* text */ 't', `
- is `],
-				[/* inline code block */ 'i', `[['a', 1], ['b', 2]]`],
-				[/* text */ 't', ` and
- `],
-				[/* inline code block */ 'i', `transpose([['a', 'b', 'c']])`],
-				[/* text */ 't', `
- is `],
-				[/* inline code block */ 'i', `[['a'], ['b'], ['c']]`],
-				[/* text */ 't', `.`]
-			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
-		]],
-		[/* method */ 'tails(java.lang.Iterable)', [
-			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the subsequences from items`]
+			]
 		]]
 	],
 ]);

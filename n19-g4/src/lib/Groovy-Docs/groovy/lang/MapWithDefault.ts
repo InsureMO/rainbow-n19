@@ -8,16 +8,14 @@ DocsCollector.collect('groovy.lang.MapWithDefault', [
 		[/* inline code block */ 'i', `withDefault`],
 		[/* text */ 't', ` method.`]
 	],
-	/* class sees */ UDF,
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
 		[/* method */ 'remove(java.lang.Object)', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'get(java.lang.Object)', [
 			[/* method description */
@@ -32,10 +30,9 @@ DocsCollector.collect('groovy.lang.MapWithDefault', [
  value is effectively cached if needed again.
  Otherwise, the map will be unchanged.`]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'put(java.lang.Object,java.lang.Object)', [
 			[/* method description */
@@ -49,61 +46,70 @@ DocsCollector.collect('groovy.lang.MapWithDefault', [
  to keep the memory requirements small for large key sets where only a spare
  number of entries differ from the default.`]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the previous value associated with `],
+				[/* inline code block */ 'i', `key`],
+				[/* text */ 't', ` if any, otherwise `],
+				[/* inline code block */ 'i', `null`],
+				[/* text */ 't', `.`]
+			]
 		]],
 		[/* method */ 'equals(java.lang.Object)', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'values()', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'hashCode()', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'clear()', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'isEmpty()', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'size()', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'newInstance(java.util.Map,groovy.lang.Closure)', [
 			[/* method description */
 				[/* text */ 't', `Decorates the given Map allowing a default value to be specified.`]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			[/* parameters */
+				[/* parameter */ 'm', [/* parameter description */
+					[/* text */ 't', `a Map to wrap`]
+				]],
+				[/* parameter */ 'initClosure', [/* parameter description */
+					[/* text */ 't', `the closure which when passed the `],
+					[/* inline code block */ 'i', `key`],
+					[/* text */ 't', ` returns the default value`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the wrapped Map`]
+			]
 		]],
 		[/* method */ 'newInstance(java.util.Map,boolean,boolean,groovy.lang.Closure)', [
 			[/* method description */
@@ -120,45 +126,56 @@ DocsCollector.collect('groovy.lang.MapWithDefault', [
 				[/* inline code block */ 'i', `putAll`],
 				[/* text */ 't', ` if you really need the minimal backing map value.`]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			[/* parameters */
+				[/* parameter */ 'm', [/* parameter description */
+					[/* text */ 't', `a Map to wrap`]
+				]],
+				[/* parameter */ 'autoGrow', [/* parameter description */
+					[/* text */ 't', `when true, also mutate the map adding in this value; otherwise, don't mutate the map, just return to calculated value`]
+				]],
+				[/* parameter */ 'autoShrink', [/* parameter description */
+					[/* text */ 't', `when true, ensure the key will be removed if attempting to store the default value using put or putAll`]
+				]],
+				[/* parameter */ 'initClosure', [/* parameter description */
+					[/* text */ 't', `the closure which when passed the `],
+					[/* inline code block */ 'i', `key`],
+					[/* text */ 't', ` returns the default value`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the wrapped Map`]
+			]
 		]],
 		[/* method */ 'entrySet()', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'putAll(java.util.Map)', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'containsKey(java.lang.Object)', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'keySet()', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'containsValue(java.lang.Object)', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]]
 	],
 ]);

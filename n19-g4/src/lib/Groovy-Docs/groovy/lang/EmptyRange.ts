@@ -5,7 +5,6 @@ DocsCollector.collect('groovy.lang.EmptyRange', [
 	[/* class description */
 		[/* text */ 't', `Constructing Ranges like 0..&lt;0`]
 	],
-	/* class sees */ UDF,
 	[/* fields */
 		[/* field */ 'at', [
 			[/* field description */
@@ -13,7 +12,6 @@ DocsCollector.collect('groovy.lang.EmptyRange', [
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', `).`]
 			],
-		/* field sees */ UDF
 		]]
 	],
 	[/* constructors */
@@ -23,9 +21,14 @@ DocsCollector.collect('groovy.lang.EmptyRange', [
 				[/* reference */ 'r', `groovy.lang.EmptyRange`],
 				[/* text */ 't', `.`]
 			],
-			/* constructor sees */ UDF,
-			/* constructor parameters */ UDF,
-			/* constructor throwns */ UDF
+			[/* parameters */
+				[/* parameter */ 'at', [/* parameter description */
+					[/* text */ 't', `the value at which the range starts (may be `],
+					[/* inline code block */ 'i', `null`],
+					[/* text */ 't', `).`]
+				]]
+			],
+			/* throws */ UDF
 		]]
 	],
 	[/* methods */
@@ -35,10 +38,13 @@ DocsCollector.collect('groovy.lang.EmptyRange', [
 				[/* inline code block */ 'i', `UnsupportedOperationException`],
 				[/* text */ 't', ` for an empty range.`]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
+					[/* text */ 't', `always`]
+				]]
+			],
+			/* return */ UDF
 		]],
 		[/* method */ 'remove(java.lang.Object)', [
 			[/* method description */
@@ -46,10 +52,11 @@ DocsCollector.collect('groovy.lang.EmptyRange', [
 				[/* inline code block */ 'i', `UnsupportedOperationException`],
 				[/* text */ 't', ` for an empty range.`]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.UnsupportedOperationException', UDF]
+			],
+			/* return */ UDF
 		]],
 		[/* method */ 'remove(int)', [
 			[/* method description */
@@ -57,10 +64,11 @@ DocsCollector.collect('groovy.lang.EmptyRange', [
 				[/* inline code block */ 'i', `UnsupportedOperationException`],
 				[/* text */ 't', ` for an empty range.`]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.UnsupportedOperationException', UDF]
+			],
+			/* return */ UDF
 		]],
 		[/* method */ 'get(int)', [
 			[/* method description */
@@ -68,26 +76,29 @@ DocsCollector.collect('groovy.lang.EmptyRange', [
 				[/* inline code block */ 'i', `IndexOutOfBoundsException`],
 				[/* text */ 't', ` for an empty range.`]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.IndexOutOfBoundsException', [/* throw description */
+					[/* text */ 't', `always`]
+				]]
+			],
+			/* return */ UDF
 		]],
 		[/* method */ 'toString()', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'size()', [
 			[/* method description */
 				[/* text */ 't', `Always 0 for an empty range.`]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `0`]
+			]
 		]],
 		[/* method */ 'addAll(java.util.Collection)', [
 			[/* method description */
@@ -95,10 +106,11 @@ DocsCollector.collect('groovy.lang.EmptyRange', [
 				[/* inline code block */ 'i', `UnsupportedOperationException`],
 				[/* text */ 't', ` for an empty range.`]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.UnsupportedOperationException', UDF]
+			],
+			/* return */ UDF
 		]],
 		[/* method */ 'addAll(int,java.util.Collection)', [
 			[/* method description */
@@ -106,10 +118,11 @@ DocsCollector.collect('groovy.lang.EmptyRange', [
 				[/* inline code block */ 'i', `UnsupportedOperationException`],
 				[/* text */ 't', ` for an empty range.`]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.UnsupportedOperationException', UDF]
+			],
+			/* return */ UDF
 		]],
 		[/* method */ 'set(int,java.lang.Comparable)', [
 			[/* method description */
@@ -117,10 +130,11 @@ DocsCollector.collect('groovy.lang.EmptyRange', [
 				[/* inline code block */ 'i', `UnsupportedOperationException`],
 				[/* text */ 't', ` for an empty range.`]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.UnsupportedOperationException', UDF]
+			],
+			/* return */ UDF
 		]],
 		[/* method */ 'removeAll(java.util.Collection)', [
 			[/* method description */
@@ -128,10 +142,11 @@ DocsCollector.collect('groovy.lang.EmptyRange', [
 				[/* inline code block */ 'i', `UnsupportedOperationException`],
 				[/* text */ 't', ` for an empty range.`]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.UnsupportedOperationException', UDF]
+			],
+			/* return */ UDF
 		]],
 		[/* method */ 'retainAll(java.util.Collection)', [
 			[/* method description */
@@ -139,71 +154,100 @@ DocsCollector.collect('groovy.lang.EmptyRange', [
 				[/* inline code block */ 'i', `UnsupportedOperationException`],
 				[/* text */ 't', ` for an empty range.`]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.UnsupportedOperationException', UDF]
+			],
+			/* return */ UDF
 		]],
 		[/* method */ 'step(int)', [
 			[/* method description */
 				[/* text */ 't', `Always returns an empty list for an empty range.`]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			[/* parameters */
+				[/* parameter */ 'step', [/* parameter description */
+					[/* text */ 't', `the amount by which to step. If negative, steps through the range backwards.`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the list formed by stepping through the range by the indicated interval.`]
+			]
 		]],
 		[/* method */ 'step(int,groovy.lang.Closure)', [
 			[/* method description */
 				[/* text */ 't', `Always does nothing for an empty range.`]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			[/* parameters */
+				[/* parameter */ 'step', [/* parameter description */
+					[/* text */ 't', `the amount by which to step. If negative, steps through the range backwards.`]
+				]],
+				[/* parameter */ 'closure', [/* parameter description */
+					[/* text */ 't', `the `],
+					[/* reference */ 'r', `groovy.lang.Closure`],
+					[/* text */ 't', ` to call`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
 		]],
 		[/* method */ 'getFrom()', [
 			[/* method description */
 				[/* text */ 't', `The lower value in the range.`]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
-		]],
-		[/* method */ 'containsWithinBounds(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Never true for an empty range.`]
-			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the lower value in the range.`]
+			]
 		]],
 		[/* method */ 'getTo()', [
 			[/* method description */
 				[/* text */ 't', `The upper value in the range.`]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the upper value in the range`]
+			]
 		]],
 		[/* method */ 'isReverse()', [
 			[/* method description */
 				[/* text */ 't', `Never true for an empty range.`]
 			],
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `false`]
+			]
 		]],
 		[/* method */ 'inspect()', [
 			/* method description */ UDF,
-			/* method sees */ UDF,
-			/* method parameters */ UDF,
-			/* method throwns */ UDF,
-			/* method return */ UDF
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the verbose `],
+				[/* reference */ 'r', `java.lang.String`],
+				[/* text */ 't', ` representation of this `],
+				[/* reference */ 'r', `groovy.lang.Range`],
+				[/* text */ 't', ` as would be typed into a console to create the `],
+				[/* reference */ 'r', `groovy.lang.Range`],
+				[/* text */ 't', ` instance`]
+			]
+		]],
+		[/* method */ 'containsWithinBounds(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Never true for an empty range.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'o', [/* parameter description */
+					[/* text */ 't', `the object to check against the boundaries of the range`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `false`]
+			]
 		]]
 	],
 ]);
