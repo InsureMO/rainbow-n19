@@ -25,33 +25,25 @@ export type DocSegment =
 	| DocSegmentBlock;
 export type DocDescription = Optional<Array<DocSegment>>;
 
-export type DocSince = string;
 // class/method/constructor/field ref
 export type DocSee = string;
 
 export type ClassElementDocContents = [
 	Optional<DocDescription>,
-	Optional<DocSince>,
 	Optional<Array<DocSee>>
 ]
 
 export abstract class AbstractClassElementDoc {
 	private readonly _description: DocDescription;
-	private readonly _since: Optional<DocSee>;
 	private readonly _sees: Optional<Array<DocSee>>;
 
 	protected constructor(readonly contents?: ClassElementDocContents) {
 		this._description = contents?.[0];
-		this._since = contents?.[1];
-		this._sees = contents?.[2];
+		this._sees = contents?.[1];
 	}
 
 	get description(): DocDescription {
 		return this._description;
-	}
-
-	get since(): Optional<DocSee> {
-		return this._since;
 	}
 
 	get sees(): Optional<Array<DocSee>> {
@@ -134,10 +126,10 @@ export abstract class ClassExecutableDoc extends AbstractClassElementDoc {
 	protected constructor(key: ClassExecutableDocKey, contents?: ClassExecutableDocContents) {
 		super(contents as unknown as ClassElementDocContents);
 		this._key = key;
-		this._parameters = contents?.[3]?.map(([key, contents]) => {
+		this._parameters = contents?.[2]?.map(([key, contents]) => {
 			return new ClassExecutableParameterDoc(key, contents);
 		});
-		this._throwns = contents?.[4]?.map(([key, contents]) => {
+		this._throwns = contents?.[3]?.map(([key, contents]) => {
 			return new ClassExecutableThrownDoc(key, contents);
 		});
 	}
@@ -176,7 +168,7 @@ export class ClassMethodDoc extends ClassExecutableDoc {
 
 	constructor(key: ClassMethodDocKey, contents?: ClassMethodDocContents) {
 		super(key, contents as unknown as ClassExecutableDocContents);
-		this._return = contents?.[5];
+		this._return = contents?.[4];
 	}
 
 	get return(): DocDescription {
@@ -204,13 +196,13 @@ export class ClassDoc extends AbstractClassElementDoc {
 	constructor(name: ClassName, contents?: ClassDocContents) {
 		super(contents as unknown as ClassElementDocContents);
 		this._name = name;
-		this._fields = contents?.[3]?.map(([key, contents]) => {
+		this._fields = contents?.[2]?.map(([key, contents]) => {
 			return new ClassFieldDoc(key, contents);
 		});
-		this._constructors = contents?.[4]?.map(([key, contents]) => {
+		this._constructors = contents?.[3]?.map(([key, contents]) => {
 			return new ClassConstructorDoc(key, contents);
 		});
-		this._methods = contents?.[5]?.map(([key, contents]) => {
+		this._methods = contents?.[4]?.map(([key, contents]) => {
 			return new ClassMethodDoc(key, contents);
 		});
 	}

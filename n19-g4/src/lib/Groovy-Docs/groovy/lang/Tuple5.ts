@@ -2,10 +2,10 @@ import {UDF} from '../../../utils';
 import {DocsCollector} from '../../DocsCollector';
 
 DocsCollector.collect('groovy.lang.Tuple5', [
-	[ /* class description */
-		['b', `Represents a list of 5 typed Objects.`],
+	[/* class description */
+		[/* text */ 't', `Represents a list of 5 typed Objects.`]
 	],
-	UDF,
 	/* class sees */ UDF,
-	UDF, UDF, UDF
+	/* fields */ UDF,
+	UDF, UDF
 ]);

@@ -632,8 +632,8 @@ private class ClassGenerator(
 		).joinToString("\n")
 	}
 
-	private fun generateFields(): String {
-		val fields = clazz.declaredFields.filter { field ->
+	private fun findClassFields(): List<Field> {
+		return clazz.declaredFields.filter { field ->
 			when {
 				field.isAnnotationPresent(Internal::class.java)
 						|| field.isAnnotationPresent(Incubating::class.java) -> false
@@ -645,6 +645,10 @@ private class ClassGenerator(
 		}.filter { field ->
 			!(field.type === clazz && clazz.isEnum)
 		}
+	}
+
+	private fun generateFields(): String {
+		val fields = findClassFields()
 		if (fields.isEmpty()) {
 			return generateComment("/* declared fields */", "\t")
 		}
@@ -696,15 +700,25 @@ private class ClassGenerator(
 		).joinToString("\n")
 	}
 
-	private fun generateDocSegmentOfChildren(node: Node, @Suppress("SameParameterValue") typeOfText: String): String {
+	private fun generateDocSegmentOfChildren(node: Node, level: Int): String {
+		val indent = "\t".repeat(level)
 		val childNodes = node.childNodes().filter { node ->
 			node.nodeName() != "#text" || node.outerHtml().trim().isNotEmpty()
 		}
 		return when (childNodes.size) {
 			0 -> "''"
-			// must be a #text node
-			1 -> "`${childNodes.first().outerHtml()}`"
-			else -> childNodes.joinToString(", ", "[", "]") { child -> generateDocSegment(child, typeOfText) }
+			1 -> {
+				val node = childNodes.first()
+				if (node.nodeName() == "#text") {
+					"`${node.outerHtml()}`"
+				} else {
+					"[\n${generateDocSegment(node, level + 1)}\n${indent}]"
+				}
+			}
+
+			else -> childNodes.joinToString(",\n", "[\n", "\n${indent}]") { child ->
+				generateDocSegment(child, level + 1)
+			}
 		}
 	}
 
@@ -719,44 +733,47 @@ private class ClassGenerator(
 		}
 	}
 
-	private fun generateDocSegment(node: Node, typeOfText: String): String {
+	private fun generateDocSegment(node: Node, level: Int): String {
+		val indent = "\t".repeat(level)
 		return when (node.nodeName()) {
-			"#text" -> "['${typeOfText}', `${node.outerHtml().trim()}`]"
-			"p" -> "['b', ${generateDocSegmentOfChildren(node, "t")}]"
-			"li" -> "['b', ${generateDocSegmentOfChildren(node, "t")}]"
-			"ul" -> "['l', ${generateDocSegmentOfChildren(node, "t")}]"
-			"pre" -> "['c', ${generateDocSegmentOfChildren(node, "t")}]"
+			"#text" -> "${indent}[/* text */ 't', `${node.outerHtml()}`]"
+			"em", "strong", "b", "i" -> "${indent}[/* text */ 't', `${(node as Element).html()}`]"
+			"p" -> "${indent}[/* block */ 'b', ${generateDocSegmentOfChildren(node, level)}]"
+			"li" -> "${indent}[/* block */ 'b', ${generateDocSegmentOfChildren(node, level)}]"
+			"ul" -> "${indent}[/* list */ 'l', ${generateDocSegmentOfChildren(node, level)}]"
+			"pre" -> "${indent}[/* code block */ 'c', ${generateDocSegmentOfChildren(node, level)}]"
 			"a" -> {
 				if ((node as Element).attribute("title") == null) {
 					if (node.attr("href").startsWith("#")) {
 						// internal reference
-						"['r', `${node.child(0).text()}`]"
+						"${indent}[/* reference */ 'r', `${node.child(0).text()}`]"
 					} else {
-						"['a', '${node.attr("href")}', '${node.text()}']"
+						"${indent}[/* external link */ 'a', '${node.attr("href")}', '${node.text()}']"
 					}
 				} else {
-					"['r', '${getPackageNameFromLinkNode(node)}.${node.child(0).text()}']"
+					"${indent}[/* reference */ 'r', '${getPackageNameFromLinkNode(node)}.${node.child(0).text()}']"
 				}
 			}
 
-			"code" -> "['i', '${(node as Element).text()}']"
-			else -> "['b', `${node.outerHtml()}`]"
-		}
-			.replace("<b>", "").replace("</b>", "")
-			.replace("<em>", "").replace("</em>", "")
-			.replace("<strong>", "").replace("</strong>", "")
-			.replace("\${", "\\\${}")
+			"code" -> "${indent}[/* inline code block */ 'i', '${(node as Element).text()}']"
+			else -> "${indent}[/* block */ 'b', `${node.outerHtml()}`]"
+		}.replace("\${", "\\\${}")
+	}
+
+	private fun generateDescDoc(node: Element?, level: Int, comments: String): String {
+		val indent = "\t".repeat(level)
+		return node?.childNodes()
+			?.filter { node -> node.nodeName() != "#text" || node.outerHtml().trim().isNotEmpty() }
+			?.joinToString(",\n", "${indent}[${comments}\n", "\n${indent}],") { node ->
+				generateDocSegment(node, level + 1)
+			} ?: "${indent}${comments} UDF,"
 	}
 
 	private fun generateClassDoc(classDescriptionNode: Element): String {
 		return classDescriptionNode.getElementsByClass("type-signature").first()
 			?.nextElementSibling()
 			?.takeIf { element -> element.className() == "block" }
-			?.childNodes()
-			?.filter { node -> node.nodeName() != "#text" || node.outerHtml().trim().isNotEmpty() }
-			?.joinToString("\n", "\t[ /* class description */\n", "\n\t],") { node ->
-				"\t\t${generateDocSegment(node, "b")},"
-			} ?: "\t/* class description */ UDF,"
+			.let { element -> generateDescDoc(element, 1, "/* class description */") }
 	}
 
 	private fun generateClassSees(classDescriptionNode: Element): String {
@@ -767,11 +784,46 @@ private class ClassGenerator(
 		return when (nodes?.size ?: 0) {
 			0 -> "\t/* class sees */ UDF,"
 			else -> {
-				nodes!!.joinToString(", ", "\t[ /* class sees */ ", "],") { a ->
+				nodes!!.joinToString(", ", "\t[/* class sees */ ", "],") { a ->
 					"'${getPackageNameFromLinkNode(a)}.${a.child(0).text()}'"
 				}
 			}
 		}
+	}
+
+	private fun generateFieldDoc(field: Field, fieldDetailNode: Element): String {
+		val name = field.name
+		val fieldNode = fieldDetailNode.getElementById(name)
+		if (fieldNode == null) {
+			return "\t\t[/* field */ '${name}', UDF]"
+		}
+
+		val childNodes = fieldNode.children()
+		val descNode = childNodes.firstOrNull { child -> child.attr("class") == "block" }
+
+		return listOf(
+			"\t\t[/* field */ '${name}', [",
+			generateDescDoc(descNode, 3, "/* field description */"),
+			"\t\t/* sees */ UDF",
+			"\t\t]]"
+		).joinToString("\n")
+	}
+
+	private fun generateClassFieldDocs(fieldDetailNode: Element?): String {
+		if (fieldDetailNode == null) {
+			return "\t/* fields */ UDF,"
+		}
+
+		val fields = findClassFields()
+		if (fields.isEmpty()) {
+			return "\t/* fields */ UDF,"
+		}
+
+		return listOf(
+			"\t[/* fields */",
+			fields.joinToString(",\n") { generateFieldDoc(it, fieldDetailNode) },
+			"\t],"
+		).joinToString("\n")
 	}
 
 	fun generateDoc(packageLevel: Int): String {
@@ -783,9 +835,9 @@ private class ClassGenerator(
 				"",
 				"DocsCollector.collect('${clazz.name}', [",
 				generateClassDoc(classDescriptionNode!!),
-				"\tUDF,",
 				generateClassSees(classDescriptionNode),
-				"\tUDF, UDF, UDF",
+				generateClassFieldDocs(doc.getElementById("field-detail")),
+				"\tUDF, UDF",
 				"]);",
 				""
 			).joinToString("\n")

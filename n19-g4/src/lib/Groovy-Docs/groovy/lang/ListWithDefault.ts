@@ -2,18 +2,19 @@ import {UDF} from '../../../utils';
 import {DocsCollector} from '../../DocsCollector';
 
 DocsCollector.collect('groovy.lang.ListWithDefault', [
-	[ /* class description */
-		['b', `A wrapper for`],
-		['r', 'java.util.List'],
-		['b', `which automatically grows the list when either`],
-		['r', `get(int)`],
-		['b', `or`],
-		['r', `getAt(int)`],
-		['b', `is called with an index greater than or equal to`],
-		['i', 'size()'],
-		['b', `.`],
+	[/* class description */
+		[/* text */ 't', `A wrapper for `],
+		[/* reference */ 'r', 'java.util.List'],
+		[/* text */ 't', ` which automatically grows the list when either `],
+		[/* reference */ 'r', `get(int)`],
+		[/* text */ 't', ` or
+ `],
+		[/* reference */ 'r', `getAt(int)`],
+		[/* text */ 't', ` is called with an index greater than or equal to `],
+		[/* inline code block */ 'i', 'size()'],
+		[/* text */ 't', `.`]
 	],
-	UDF,
 	/* class sees */ UDF,
-	UDF, UDF, UDF
+	/* fields */ UDF,
+	UDF, UDF
 ]);
