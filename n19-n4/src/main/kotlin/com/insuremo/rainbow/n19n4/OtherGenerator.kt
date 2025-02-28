@@ -1,5 +1,6 @@
 package com.insuremo.rainbow.n19n4
 
+import createDocsCollectorFile
 import java.io.File
 import java.util.Locale
 
@@ -43,6 +44,13 @@ fun generateOther(): JarGeneratingTargetInfo? {
 	createIndexFile(Envs.otherDir)
 	appendToIndexFile(Envs.libDir, "export {create${name}ClassLoader} from './${name}';\n")
 	createClassLoaderFile(Envs.otherDir, name)
+
+	// for docs
+	if (Envs.shouldGenerateDocs) {
+		createIndexFile(Envs.otherDocsDir)
+		appendToIndexFile(Envs.libDir, "export {DocsCollector} from './${name}-Docs';\n")
+		createDocsCollectorFile(Envs.otherDocsDir)
+	}
 
 	Logs.log("Generating from JAR files", 1)
 	val targetInfo = JarGeneratingTargetInfo(

@@ -71,7 +71,7 @@ fun generateJar(jarFilePath: String, targetInfo: JarGeneratingTargetInfo) {
 				Summary.addTreatedClass(it)
 			}
 		} catch (t: Throwable) {
-			println(t)
+			t.printStackTrace()
 		}
 	}
 }

@@ -3,7 +3,7 @@ import {ClassName} from '../TypeAlias';
 
 export type DocSegmentContent = string;
 /** plain text */
-export type DocSegmentText = ['t', DocSegmentContent];
+export type DocSegmentText = ['t', DocSegmentContent] | ['t', DocSegmentContent, 'sup' | 'sub' | 'small'];
 /** inline code block */
 export type DocSegmentInlineCodeBlock = ['i', DocSegmentContent];
 /** reference, could be class/field/method/constructor */
@@ -12,9 +12,12 @@ export type DocSegmentReference = ['r', DocSegmentContent];
 export type DocSegmentCodeBlock = ['c', DocSegmentContent | Array<DocSegmentInlineCodeBlock | DocSegmentText>];
 /** external link */
 export type DocSegmentExternalLink = ['a', DocSegmentContent, DocSegmentContent];
+/** list */
 export type DocSegmentList = ['l', Array<DocSegmentBlock>]
+/** new line, aka <br> */
+export type DocSegmentNewLine = ['n']
 /** block */
-export type DocSegmentBlock = ['b', DocSegmentContent | Array<DocSegmentText | DocSegmentInlineCodeBlock | DocSegmentReference | DocSegmentCodeBlock | DocSegmentExternalLink | DocSegmentList | DocSegmentBlock>]
+export type DocSegmentBlock = ['b', DocSegmentContent | Array<DocSegmentText | DocSegmentInlineCodeBlock | DocSegmentReference | DocSegmentCodeBlock | DocSegmentExternalLink | DocSegmentList | DocSegmentNewLine | DocSegmentBlock>]
 export type DocSegment =
 	| DocSegmentText
 	| DocSegmentInlineCodeBlock
@@ -22,6 +25,7 @@ export type DocSegment =
 	| DocSegmentCodeBlock
 	| DocSegmentExternalLink
 	| DocSegmentList
+	| DocSegmentNewLine
 	| DocSegmentBlock;
 export type DocDescription = Optional<Array<DocSegment>>;
 

@@ -1,5 +1,6 @@
 package com.insuremo.rainbow.n19n4
 
+import createDocsCollectorFile
 import java.io.File
 import java.io.FileOutputStream
 import java.util.Spliterator
@@ -79,6 +80,13 @@ fun generateJre(): JarGeneratingTargetInfo? {
 	createIndexFile(Envs.jreDir)
 	appendToIndexFile(Envs.libDir, "export {JdkClassLoader} from './Jdk';\n")
 	createClassLoaderFile(Envs.jreDir)
+
+	// for docs
+	if (Envs.shouldGenerateDocs) {
+		createIndexFile(Envs.jreDocsDir)
+		appendToIndexFile(Envs.libDir, "export {DocsCollector} from './Jdk-Docs';\n")
+		createDocsCollectorFile(Envs.jreDocsDir)
+	}
 
 	Logs.log("Generating from temporary JAR files", 1)
 	val targetInfo = JarGeneratingTargetInfo(
