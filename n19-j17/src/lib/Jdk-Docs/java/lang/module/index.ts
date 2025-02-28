@@ -1,0 +1,16 @@
+import './Configuration';
+import './ModuleDescriptor';
+import './ModuleDescriptor$Builder';
+import './ModuleDescriptor$Exports';
+import './ModuleDescriptor$Exports$Modifier';
+import './ModuleDescriptor$Modifier';
+import './ModuleDescriptor$Opens';
+import './ModuleDescriptor$Opens$Modifier';
+import './ModuleDescriptor$Provides';
+import './ModuleDescriptor$Requires';
+import './ModuleDescriptor$Requires$Modifier';
+import './ModuleDescriptor$Version';
+import './ModuleFinder';
+import './ModuleReader';
+import './ModuleReference';
+import './ResolvedModule';
