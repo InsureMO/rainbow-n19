@@ -18,7 +18,7 @@ DocsCollector.collect('java.util.Enumeration', [
 			[/* text */ 't', `:
  `]
 		]],
-		[/* code block */ 'c', `   for (Enumeration&lt;E&gt; e = v.elements(); e.hasMoreElements();)
+		[/* code block */ 'c', `   for (Enumeration<E> e = v.elements(); e.hasMoreElements();)
        System.out.println(e.nextElement());`],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [

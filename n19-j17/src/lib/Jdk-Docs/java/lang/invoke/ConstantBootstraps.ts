@@ -31,7 +31,7 @@ DocsCollector.collect('java.lang.invoke.ConstantBootstraps', [
 					[/* text */ 't', `
  This method behaves as if the method handle to be invoked is the result
  of adapting the given method handle, via `],
-					[/* external link */ 'a', `MethodHandle.html#asType(java.lang.invoke.MethodType)`, `MethodHandle.asType(java.lang.invoke.MethodType)`],
+					[/* reference */ 'r', `.MethodHandle#asType(java.lang.invoke.MethodType)`],
 					[/* text */ 't', `, to
  adjust the return type to the desired type.`]
 				]]
@@ -53,7 +53,7 @@ DocsCollector.collect('java.lang.invoke.ConstantBootstraps', [
 				[/* parameter */ 'args', [/* parameter description */
 					[/* text */ 't', `the arguments to pass to the method handle, as if with
  `],
-					[/* external link */ 'a', `MethodHandle.html#invokeWithArguments(java.lang.Object...)`, `MethodHandle.invokeWithArguments(java.lang.Object...)`],
+					[/* reference */ 'r', `.MethodHandle#invokeWithArguments(java.lang.Object...)`],
 					[/* text */ 't', `.  Each argument may be
  `],
 					[/* inline code block */ 'i', `null`],
@@ -162,7 +162,7 @@ DocsCollector.collect('java.lang.invoke.ConstantBootstraps', [
  is the same as the field's type (or, for primitive-valued fields,
  declared in the wrapper class.)  This is a simplified form of
  `],
-				[/* reference */ 'r', `getStaticFinal(MethodHandles.Lookup, String, Class, Class)`],
+				[/* reference */ 'r', `#getStaticFinal(java.lang.invoke.MethodHandles.Lookup,java.lang.String,java.lang.Class,java.lang.Class)`, `getStaticFinal(MethodHandles.Lookup, String, Class, Class)`],
 				[/* text */ 't', `
  for the case where a class declares distinguished constant instances of
  itself.`]

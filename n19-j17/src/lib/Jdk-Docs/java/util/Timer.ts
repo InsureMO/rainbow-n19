@@ -117,7 +117,7 @@ DocsCollector.collect('java.util.Timer', [
 				[/* text */ 't', `Creates a new timer whose associated thread has the specified name.
  The associated thread does `],
 				[/* text */ 't', `not`],
-				[/* external link */ 'a', `../lang/Thread.html#setDaemon(boolean)`, `run as a daemon`],
+				[/* reference */ 'r', `java.Thread#setDaemon(boolean)`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -137,7 +137,7 @@ DocsCollector.collect('java.util.Timer', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a new timer whose associated thread may be specified to
  `],
-				[/* external link */ 'a', `../lang/Thread.html#setDaemon(boolean)`, `run as a daemon`],
+				[/* reference */ 'r', `java.Thread#setDaemon(boolean)`],
 				[/* text */ 't', `.
  A daemon thread is called for if the timer will be used to
  schedule repeating "maintenance activities", which must be
@@ -155,7 +155,7 @@ DocsCollector.collect('java.util.Timer', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a new timer.  The associated thread does `],
 				[/* text */ 't', `not`],
-				[/* external link */ 'a', `../lang/Thread.html#setDaemon(boolean)`, `run as a daemon`],
+				[/* reference */ 'r', `java.Thread#setDaemon(boolean)`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -166,7 +166,7 @@ DocsCollector.collect('java.util.Timer', [
 				[/* text */ 't', `Creates a new timer whose associated thread has the specified name,
  and may be specified to
  `],
-				[/* external link */ 'a', `../lang/Thread.html#setDaemon(boolean)`, `run as a daemon`],
+				[/* reference */ 'r', `java.Thread#setDaemon(boolean)`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -236,24 +236,57 @@ DocsCollector.collect('java.util.Timer', [
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
-		[/* method */ 'schedule(java.util.TimerTask,java.util.Date)', [
+		[/* method */ 'schedule(java.util.TimerTask,java.util.Date,long)', [
 			[/* method description */
-				[/* text */ 't', `Schedules the specified task for execution at the specified time.  If
- the time is in the past, the task is scheduled for immediate execution.`]
+				[/* text */ 't', `Schedules the specified task for repeated `],
+				[/* text */ 't', `fixed-delay execution`],
+				[/* text */ 't', `,
+ beginning at the specified time. Subsequent executions take place at
+ approximately regular intervals, separated by the specified period.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `In fixed-delay execution, each execution is scheduled relative to
+ the actual execution time of the previous execution.  If an execution
+ is delayed for any reason (such as garbage collection or other
+ background activity), subsequent executions will be delayed as well.
+ In the long run, the frequency of execution will generally be slightly
+ lower than the reciprocal of the specified period (assuming the system
+ clock underlying `],
+					[/* inline code block */ 'i', `Object.wait(long)`],
+					[/* text */ 't', ` is accurate).  As a
+ consequence of the above, if the scheduled first time is in the past,
+ it is scheduled for immediate execution.
+
+ `]
+				]],
+				[/* block */ 'b', `Fixed-delay execution is appropriate for recurring activities
+ that require "smoothness."  In other words, it is appropriate for
+ activities where it is more important to keep the frequency accurate
+ in the short run than in the long run.  This includes most animation
+ tasks, such as blinking a cursor at regular intervals.  It also includes
+ tasks wherein regular activity is performed in response to human
+ input, such as automatically repeating a character as long as a key
+ is held down.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'task', [/* parameter description */
 					[/* text */ 't', `task to be scheduled.`]
 				]],
-				[/* parameter */ 'time', [/* parameter description */
-					[/* text */ 't', `time at which task is to be executed.`]
+				[/* parameter */ 'firstTime', [/* parameter description */
+					[/* text */ 't', `First time at which task is to be executed.`]
+				]],
+				[/* parameter */ 'period', [/* parameter description */
+					[/* text */ 't', `time in milliseconds between successive task executions.`]
 				]]
 			],
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
 					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `time.getTime()`],
-					[/* text */ 't', ` is negative.`]
+					[/* inline code block */ 'i', `firstTime.getTime() < 0`],
+					[/* text */ 't', `, or
+         `],
+					[/* inline code block */ 'i', `period <= 0`]
 				]],
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
 					[/* text */ 't', `if task was already scheduled or
@@ -263,40 +296,7 @@ DocsCollector.collect('java.util.Timer', [
 					[/* text */ 't', `if `],
 					[/* inline code block */ 'i', `task`],
 					[/* text */ 't', ` or `],
-					[/* inline code block */ 'i', `time`],
-					[/* text */ 't', ` is null`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'schedule(java.util.TimerTask,long)', [
-			[/* method description */
-				[/* text */ 't', `Schedules the specified task for execution after the specified delay.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'task', [/* parameter description */
-					[/* text */ 't', `task to be scheduled.`]
-				]],
-				[/* parameter */ 'delay', [/* parameter description */
-					[/* text */ 't', `delay in milliseconds before task is to be executed.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `delay`],
-					[/* text */ 't', ` is negative, or
-         `],
-					[/* inline code block */ 'i', `delay + System.currentTimeMillis()`],
-					[/* text */ 't', ` is negative.`]
-				]],
-				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
-					[/* text */ 't', `if task was already scheduled or
-         cancelled, timer was cancelled, or timer thread terminated.`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `task`],
+					[/* inline code block */ 'i', `firstTime`],
 					[/* text */ 't', ` is null`]
 				]]
 			],
@@ -367,45 +367,114 @@ DocsCollector.collect('java.util.Timer', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'schedule(java.util.TimerTask,java.util.Date,long)', [
+		[/* method */ 'schedule(java.util.TimerTask,long)', [
 			[/* method description */
-				[/* text */ 't', `Schedules the specified task for repeated `],
-				[/* text */ 't', `fixed-delay execution`],
-				[/* text */ 't', `,
- beginning at the specified time. Subsequent executions take place at
- approximately regular intervals, separated by the specified period.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `In fixed-delay execution, each execution is scheduled relative to
- the actual execution time of the previous execution.  If an execution
- is delayed for any reason (such as garbage collection or other
- background activity), subsequent executions will be delayed as well.
- In the long run, the frequency of execution will generally be slightly
- lower than the reciprocal of the specified period (assuming the system
- clock underlying `],
-					[/* inline code block */ 'i', `Object.wait(long)`],
-					[/* text */ 't', ` is accurate).  As a
- consequence of the above, if the scheduled first time is in the past,
- it is scheduled for immediate execution.
-
- `]
-				]],
-				[/* block */ 'b', `Fixed-delay execution is appropriate for recurring activities
- that require "smoothness."  In other words, it is appropriate for
- activities where it is more important to keep the frequency accurate
- in the short run than in the long run.  This includes most animation
- tasks, such as blinking a cursor at regular intervals.  It also includes
- tasks wherein regular activity is performed in response to human
- input, such as automatically repeating a character as long as a key
- is held down.`]
+				[/* text */ 't', `Schedules the specified task for execution after the specified delay.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'task', [/* parameter description */
 					[/* text */ 't', `task to be scheduled.`]
 				]],
-				[/* parameter */ 'firstTime', [/* parameter description */
-					[/* text */ 't', `First time at which task is to be executed.`]
+				[/* parameter */ 'delay', [/* parameter description */
+					[/* text */ 't', `delay in milliseconds before task is to be executed.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `delay`],
+					[/* text */ 't', ` is negative, or
+         `],
+					[/* inline code block */ 'i', `delay + System.currentTimeMillis()`],
+					[/* text */ 't', ` is negative.`]
+				]],
+				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
+					[/* text */ 't', `if task was already scheduled or
+         cancelled, timer was cancelled, or timer thread terminated.`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `task`],
+					[/* text */ 't', ` is null`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'schedule(java.util.TimerTask,java.util.Date)', [
+			[/* method description */
+				[/* text */ 't', `Schedules the specified task for execution at the specified time.  If
+ the time is in the past, the task is scheduled for immediate execution.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'task', [/* parameter description */
+					[/* text */ 't', `task to be scheduled.`]
+				]],
+				[/* parameter */ 'time', [/* parameter description */
+					[/* text */ 't', `time at which task is to be executed.`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `time.getTime()`],
+					[/* text */ 't', ` is negative.`]
+				]],
+				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
+					[/* text */ 't', `if task was already scheduled or
+         cancelled, timer was cancelled, or timer thread terminated.`]
+				]],
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `task`],
+					[/* text */ 't', ` or `],
+					[/* inline code block */ 'i', `time`],
+					[/* text */ 't', ` is null`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'scheduleAtFixedRate(java.util.TimerTask,long,long)', [
+			[/* method description */
+				[/* text */ 't', `Schedules the specified task for repeated `],
+				[/* text */ 't', `fixed-rate execution`],
+				[/* text */ 't', `,
+ beginning after the specified delay.  Subsequent executions take place
+ at approximately regular intervals, separated by the specified period.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `In fixed-rate execution, each execution is scheduled relative to the
+ scheduled execution time of the initial execution.  If an execution is
+ delayed for any reason (such as garbage collection or other background
+ activity), two or more executions will occur in rapid succession to
+ "catch up."  In the long run, the frequency of execution will be
+ exactly the reciprocal of the specified period (assuming the system
+ clock underlying `],
+					[/* inline code block */ 'i', `Object.wait(long)`],
+					[/* text */ 't', ` is accurate).
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `Fixed-rate execution is appropriate for recurring activities that
+ are sensitive to `],
+					[/* text */ 't', `absolute`],
+					[/* text */ 't', ` time, such as ringing a chime every
+ hour on the hour, or running scheduled maintenance every day at a
+ particular time.  It is also appropriate for recurring activities
+ where the total time to perform a fixed number of executions is
+ important, such as a countdown timer that ticks once every second for
+ ten seconds.  Finally, fixed-rate execution is appropriate for
+ scheduling multiple repeating timer tasks that must remain synchronized
+ with respect to one another.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'task', [/* parameter description */
+					[/* text */ 't', `task to be scheduled.`]
+				]],
+				[/* parameter */ 'delay', [/* parameter description */
+					[/* text */ 't', `delay in milliseconds before task is to be executed.`]
 				]],
 				[/* parameter */ 'period', [/* parameter description */
 					[/* text */ 't', `time in milliseconds between successive task executions.`]
@@ -414,7 +483,10 @@ DocsCollector.collect('java.util.Timer', [
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
 					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `firstTime.getTime() < 0`],
+					[/* inline code block */ 'i', `delay < 0`],
+					[/* text */ 't', `, or
+         `],
+					[/* inline code block */ 'i', `delay + System.currentTimeMillis() < 0`],
 					[/* text */ 't', `, or
          `],
 					[/* inline code block */ 'i', `period <= 0`]
@@ -426,8 +498,6 @@ DocsCollector.collect('java.util.Timer', [
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if `],
 					[/* inline code block */ 'i', `task`],
-					[/* text */ 't', ` or `],
-					[/* inline code block */ 'i', `firstTime`],
 					[/* text */ 't', ` is null`]
 				]]
 			],
@@ -500,76 +570,6 @@ DocsCollector.collect('java.util.Timer', [
 					[/* inline code block */ 'i', `task`],
 					[/* text */ 't', ` or `],
 					[/* inline code block */ 'i', `firstTime`],
-					[/* text */ 't', ` is null`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'scheduleAtFixedRate(java.util.TimerTask,long,long)', [
-			[/* method description */
-				[/* text */ 't', `Schedules the specified task for repeated `],
-				[/* text */ 't', `fixed-rate execution`],
-				[/* text */ 't', `,
- beginning after the specified delay.  Subsequent executions take place
- at approximately regular intervals, separated by the specified period.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `In fixed-rate execution, each execution is scheduled relative to the
- scheduled execution time of the initial execution.  If an execution is
- delayed for any reason (such as garbage collection or other background
- activity), two or more executions will occur in rapid succession to
- "catch up."  In the long run, the frequency of execution will be
- exactly the reciprocal of the specified period (assuming the system
- clock underlying `],
-					[/* inline code block */ 'i', `Object.wait(long)`],
-					[/* text */ 't', ` is accurate).
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `Fixed-rate execution is appropriate for recurring activities that
- are sensitive to `],
-					[/* text */ 't', `absolute`],
-					[/* text */ 't', ` time, such as ringing a chime every
- hour on the hour, or running scheduled maintenance every day at a
- particular time.  It is also appropriate for recurring activities
- where the total time to perform a fixed number of executions is
- important, such as a countdown timer that ticks once every second for
- ten seconds.  Finally, fixed-rate execution is appropriate for
- scheduling multiple repeating timer tasks that must remain synchronized
- with respect to one another.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'task', [/* parameter description */
-					[/* text */ 't', `task to be scheduled.`]
-				]],
-				[/* parameter */ 'delay', [/* parameter description */
-					[/* text */ 't', `delay in milliseconds before task is to be executed.`]
-				]],
-				[/* parameter */ 'period', [/* parameter description */
-					[/* text */ 't', `time in milliseconds between successive task executions.`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `delay < 0`],
-					[/* text */ 't', `, or
-         `],
-					[/* inline code block */ 'i', `delay + System.currentTimeMillis() < 0`],
-					[/* text */ 't', `, or
-         `],
-					[/* inline code block */ 'i', `period <= 0`]
-				]],
-				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
-					[/* text */ 't', `if task was already scheduled or
-         cancelled, timer was cancelled, or timer thread terminated.`]
-				]],
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `task`],
 					[/* text */ 't', ` is null`]
 				]]
 			],

@@ -23,7 +23,7 @@ DocsCollector.collect('java.util.zip.ZipInputStream', [
 					[/* text */ 't', ` to be
         used to decode the ZIP entry name (ignored if the
         `],
-					[/* external link */ 'a', `package-summary.html#lang_encoding`, `language encoding bit`],
+					[/* reference */ 'r', `.package-summary#lang_encoding`],
 					[/* text */ 't', ` of the ZIP entry's general purpose bit
         flag is set).`]
 				]]

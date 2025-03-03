@@ -40,7 +40,7 @@ DocsCollector.collect('java.util.Arrays', [
 		[/* block */ 'b', [
 			[/* text */ 't', `This class is a member of the
  `],
-			[/* external link */ 'a', `../../../java.base/java/util/package-summary.html#CollectionsFramework`, `Java Collections Framework`],
+			[/* text */ 't', `Java Collections Framework`],
 			[/* text */ 't', `.`]
 		]]
 	],
@@ -1127,7 +1127,7 @@ DocsCollector.collect('java.util.Arrays', [
 				[/* text */ 't', `Returns a string representation of the contents of the specified array.
  If the array contains other arrays as elements, they are converted to
  strings by the `],
-				[/* external link */ 'a', `../lang/Object.html#toString()`, `Object.toString()`],
+				[/* reference */ 'r', `java.Object#toString()`],
 				[/* text */ 't', ` method inherited from
  `],
 				[/* inline code block */ 'i', `Object`],
@@ -1447,7 +1447,7 @@ DocsCollector.collect('java.util.Arrays', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The value returned by this method is the same value that would be
  obtained by invoking the `],
-					[/* external link */ 'a', `List.html#hashCode()`, `hashCode`],
+					[/* reference */ 'r', `.List#hashCode()`],
 					[/* text */ 't', `
  method on a `],
 					[/* reference */ 'r', `java.util.List`],
@@ -1496,7 +1496,7 @@ DocsCollector.collect('java.util.Arrays', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The value returned by this method is the same value that would be
  obtained by invoking the `],
-					[/* external link */ 'a', `List.html#hashCode()`, `hashCode`],
+					[/* reference */ 'r', `.List#hashCode()`],
 					[/* text */ 't', `
  method on a `],
 					[/* reference */ 'r', `java.util.List`],
@@ -1545,7 +1545,7 @@ DocsCollector.collect('java.util.Arrays', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The value returned by this method is the same value that would be
  obtained by invoking the `],
-					[/* external link */ 'a', `List.html#hashCode()`, `hashCode`],
+					[/* reference */ 'r', `.List#hashCode()`],
 					[/* text */ 't', `
  method on a `],
 					[/* reference */ 'r', `java.util.List`],
@@ -1644,7 +1644,7 @@ DocsCollector.collect('java.util.Arrays', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The value returned by this method is the same value that would be
  obtained by invoking the `],
-					[/* external link */ 'a', `List.html#hashCode()`, `hashCode`],
+					[/* reference */ 'r', `.List#hashCode()`],
 					[/* text */ 't', `
  method on a `],
 					[/* reference */ 'r', `java.util.List`],
@@ -1693,7 +1693,7 @@ DocsCollector.collect('java.util.Arrays', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The value returned by this method is the same value that would be
  obtained by invoking the `],
-					[/* external link */ 'a', `List.html#hashCode()`, `hashCode`],
+					[/* reference */ 'r', `.List#hashCode()`],
 					[/* text */ 't', `
  method on a `],
 					[/* reference */ 'r', `java.util.List`],
@@ -1742,7 +1742,7 @@ DocsCollector.collect('java.util.Arrays', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The value returned by this method is the same value that would be
  obtained by invoking the `],
-					[/* external link */ 'a', `List.html#hashCode()`, `hashCode`],
+					[/* reference */ 'r', `.List#hashCode()`],
 					[/* text */ 't', `
  method on a `],
 					[/* reference */ 'r', `java.util.List`],
@@ -1791,7 +1791,7 @@ DocsCollector.collect('java.util.Arrays', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The value returned by this method is the same value that would be
  obtained by invoking the `],
-					[/* external link */ 'a', `List.html#hashCode()`, `hashCode`],
+					[/* reference */ 'r', `.List#hashCode()`],
 					[/* text */ 't', `
  method on a `],
 					[/* reference */ 'r', `java.util.List`],
@@ -1840,7 +1840,7 @@ DocsCollector.collect('java.util.Arrays', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The value returned by this method is the same value that would be
  obtained by invoking the `],
-					[/* external link */ 'a', `List.html#hashCode()`, `hashCode`],
+					[/* reference */ 'r', `.List#hashCode()`],
 					[/* text */ 't', `
  method on a `],
 					[/* reference */ 'r', `java.util.List`],
@@ -3005,14 +3005,14 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `If the two arrays, over the specified ranges, share a common prefix
  then the lexicographic comparison is the result of comparing two
  elements, as if by `],
-					[/* external link */ 'a', `../lang/Boolean.html#compare(boolean,boolean)`, `Boolean.compare(boolean, boolean)`],
+					[/* reference */ 'r', `java.Boolean#compare(boolean,boolean)`],
 					[/* text */ 't', `, at a
  relative index within the respective arrays that is the length of the
  prefix.
  Otherwise, one array is a proper prefix of the other and, lexicographic
  comparison is the result of comparing the two range lengths.
  (See `],
-					[/* reference */ 'r', `mismatch(boolean[], int, int, boolean[], int, int)`],
+					[/* reference */ 'r', `#mismatch(boolean%5B%5D,int,int,boolean%5B%5D,int,int)`, `mismatch(boolean[], int, int, boolean[], int, int)`],
 					[/* text */ 't', ` for the
  definition of a common and proper prefix.)
 
@@ -3021,7 +3021,7 @@ DocsCollector.collect('java.util.Arrays', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The comparison is consistent with
  `],
-					[/* reference */ 'r', `equals`],
+					[/* reference */ 'r', `#equals(boolean%5B%5D,int,int,boolean%5B%5D,int,int)`, `equals`],
 					[/* text */ 't', `, more
  specifically the following holds for arrays `],
 					[/* inline code block */ 'i', `a`],
@@ -3117,13 +3117,13 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `If the two arrays share a common prefix then the lexicographic
  comparison is the result of comparing two elements, as if by
  `],
-					[/* external link */ 'a', `../lang/Byte.html#compare(byte,byte)`, `Byte.compare(byte, byte)`],
+					[/* reference */ 'r', `java.Byte#compare(byte,byte)`],
 					[/* text */ 't', `, at an index within the respective
  arrays that is the prefix length.
  Otherwise, one array is a proper prefix of the other and, lexicographic
  comparison is the result of comparing the two array lengths.
  (See `],
-					[/* reference */ 'r', `mismatch(byte[], byte[])`],
+					[/* reference */ 'r', `#mismatch(byte%5B%5D,byte%5B%5D)`, `mismatch(byte[], byte[])`],
 					[/* text */ 't', ` for the definition of a common and
  proper prefix.)
 
@@ -3144,7 +3144,7 @@ DocsCollector.collect('java.util.Arrays', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `The comparison is consistent with `],
-					[/* reference */ 'r', `equals`],
+					[/* reference */ 'r', `#equals(byte%5B%5D,byte%5B%5D)`, `equals`],
 					[/* text */ 't', `,
  more specifically the following holds for arrays `],
 					[/* inline code block */ 'i', `a`],
@@ -3194,13 +3194,13 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `If the two arrays, over the specified ranges, share a common prefix
  then the lexicographic comparison is the result of comparing two
  elements, as if by `],
-					[/* external link */ 'a', `../lang/Byte.html#compare(byte,byte)`, `Byte.compare(byte, byte)`],
+					[/* reference */ 'r', `java.Byte#compare(byte,byte)`],
 					[/* text */ 't', `, at a relative index
  within the respective arrays that is the length of the prefix.
  Otherwise, one array is a proper prefix of the other and, lexicographic
  comparison is the result of comparing the two range lengths.
  (See `],
-					[/* reference */ 'r', `mismatch(byte[], int, int, byte[], int, int)`],
+					[/* reference */ 'r', `#mismatch(byte%5B%5D,int,int,byte%5B%5D,int,int)`, `mismatch(byte[], int, int, byte[], int, int)`],
 					[/* text */ 't', ` for the
  definition of a common and proper prefix.)
 
@@ -3209,7 +3209,7 @@ DocsCollector.collect('java.util.Arrays', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The comparison is consistent with
  `],
-					[/* reference */ 'r', `equals`],
+					[/* reference */ 'r', `#equals(byte%5B%5D,int,int,byte%5B%5D,int,int)`, `equals`],
 					[/* text */ 't', `, more
  specifically the following holds for arrays `],
 					[/* inline code block */ 'i', `a`],
@@ -3305,13 +3305,13 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `If the two arrays share a common prefix then the lexicographic
  comparison is the result of comparing two elements, as if by
  `],
-					[/* external link */ 'a', `../lang/Boolean.html#compare(boolean,boolean)`, `Boolean.compare(boolean, boolean)`],
+					[/* reference */ 'r', `java.Boolean#compare(boolean,boolean)`],
 					[/* text */ 't', `, at an index within the
  respective arrays that is the prefix length.
  Otherwise, one array is a proper prefix of the other and, lexicographic
  comparison is the result of comparing the two array lengths.
  (See `],
-					[/* reference */ 'r', `mismatch(boolean[], boolean[])`],
+					[/* reference */ 'r', `#mismatch(boolean%5B%5D,boolean%5B%5D)`, `mismatch(boolean[], boolean[])`],
 					[/* text */ 't', ` for the definition of a
  common and proper prefix.)
 
@@ -3332,7 +3332,7 @@ DocsCollector.collect('java.util.Arrays', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `The comparison is consistent with `],
-					[/* reference */ 'r', `equals`],
+					[/* reference */ 'r', `#equals(boolean%5B%5D,boolean%5B%5D)`, `equals`],
 					[/* text */ 't', `,
  more specifically the following holds for arrays `],
 					[/* inline code block */ 'i', `a`],
@@ -3386,7 +3386,7 @@ DocsCollector.collect('java.util.Arrays', [
  Otherwise, one array is a proper prefix of the other and, lexicographic
  comparison is the result of comparing the two range lengths.
  (See `],
-					[/* reference */ 'r', `mismatch(Object[], int, int, Object[], int, int)`],
+					[/* reference */ 'r', `#mismatch(java.lang.Object%5B%5D,int,int,java.lang.Object%5B%5D,int,int)`, `mismatch(Object[], int, int, Object[], int, int)`],
 					[/* text */ 't', ` for the
  definition of a common and proper prefix.)`]
 				]]
@@ -3466,13 +3466,13 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `If the two arrays, over the specified ranges, share a common prefix
  then the lexicographic comparison is the result of comparing two
  elements, as if by `],
-					[/* external link */ 'a', `../lang/Double.html#compare(double,double)`, `Double.compare(double, double)`],
+					[/* reference */ 'r', `java.Double#compare(double,double)`],
 					[/* text */ 't', `, at a relative
  index within the respective arrays that is the length of the prefix.
  Otherwise, one array is a proper prefix of the other and, lexicographic
  comparison is the result of comparing the two range lengths.
  (See `],
-					[/* reference */ 'r', `mismatch(double[], int, int, double[], int, int)`],
+					[/* reference */ 'r', `#mismatch(double%5B%5D,int,int,double%5B%5D,int,int)`, `mismatch(double[], int, int, double[], int, int)`],
 					[/* text */ 't', ` for the
  definition of a common and proper prefix.)
 
@@ -3481,7 +3481,7 @@ DocsCollector.collect('java.util.Arrays', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The comparison is consistent with
  `],
-					[/* reference */ 'r', `equals`],
+					[/* reference */ 'r', `#equals(double%5B%5D,int,int,double%5B%5D,int,int)`, `equals`],
 					[/* text */ 't', `, more
  specifically the following holds for arrays `],
 					[/* inline code block */ 'i', `a`],
@@ -3593,7 +3593,7 @@ DocsCollector.collect('java.util.Arrays', [
  Otherwise, one array is a proper prefix of the other and, lexicographic
  comparison is the result of comparing the two array lengths.
  (See `],
-				[/* reference */ 'r', `mismatch(Object[], Object[])`],
+				[/* reference */ 'r', `#mismatch(java.lang.Object%5B%5D,java.lang.Object%5B%5D)`, `mismatch(Object[], Object[])`],
 				[/* text */ 't', ` for the definition of a common
  and proper prefix.)
 
@@ -3623,7 +3623,7 @@ DocsCollector.collect('java.util.Arrays', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `The comparison is consistent with `],
-					[/* reference */ 'r', `equals`],
+					[/* reference */ 'r', `#equals(java.lang.Object%5B%5D,java.lang.Object%5B%5D)`, `equals`],
 					[/* text */ 't', `,
  more specifically the following holds for arrays `],
 					[/* inline code block */ 'i', `a`],
@@ -3688,7 +3688,7 @@ DocsCollector.collect('java.util.Arrays', [
  Otherwise, one array is a proper prefix of the other and, lexicographic
  comparison is the result of comparing the two range lengths.
  (See `],
-				[/* reference */ 'r', `mismatch(Object[], int, int, Object[], int, int)`],
+				[/* reference */ 'r', `#mismatch(java.lang.Object%5B%5D,int,int,java.lang.Object%5B%5D,int,int)`, `mismatch(Object[], int, int, Object[], int, int)`],
 				[/* text */ 't', ` for the
  definition of a common and proper prefix.)
 
@@ -3697,7 +3697,7 @@ DocsCollector.collect('java.util.Arrays', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The comparison is consistent with
  `],
-					[/* reference */ 'r', `equals`],
+					[/* reference */ 'r', `#equals(java.lang.Object%5B%5D,int,int,java.lang.Object%5B%5D,int,int)`, `equals`],
 					[/* text */ 't', `, more
  specifically the following holds for arrays `],
 					[/* inline code block */ 'i', `a`],
@@ -3794,13 +3794,13 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `If the two arrays, over the specified ranges, share a common prefix
  then the lexicographic comparison is the result of comparing two
  elements, as if by `],
-					[/* external link */ 'a', `../lang/Integer.html#compare(int,int)`, `Integer.compare(int, int)`],
+					[/* reference */ 'r', `java.Integer#compare(int,int)`],
 					[/* text */ 't', `, at a relative index
  within the respective arrays that is the length of the prefix.
  Otherwise, one array is a proper prefix of the other and, lexicographic
  comparison is the result of comparing the two range lengths.
  (See `],
-					[/* reference */ 'r', `mismatch(int[], int, int, int[], int, int)`],
+					[/* reference */ 'r', `#mismatch(int%5B%5D,int,int,int%5B%5D,int,int)`, `mismatch(int[], int, int, int[], int, int)`],
 					[/* text */ 't', ` for the
  definition of a common and proper prefix.)
 
@@ -3809,7 +3809,7 @@ DocsCollector.collect('java.util.Arrays', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The comparison is consistent with
  `],
-					[/* reference */ 'r', `equals`],
+					[/* reference */ 'r', `#equals(int%5B%5D,int,int,int%5B%5D,int,int)`, `equals`],
 					[/* text */ 't', `, more
  specifically the following holds for arrays `],
 					[/* inline code block */ 'i', `a`],
@@ -3910,7 +3910,7 @@ DocsCollector.collect('java.util.Arrays', [
  Otherwise, one array is a proper prefix of the other and, lexicographic
  comparison is the result of comparing the two array lengths.
  (See `],
-					[/* reference */ 'r', `mismatch(Object[], Object[])`],
+					[/* reference */ 'r', `#mismatch(java.lang.Object%5B%5D,java.lang.Object%5B%5D)`, `mismatch(Object[], Object[])`],
 					[/* text */ 't', ` for the definition of a common
  and proper prefix.)
 
@@ -3971,13 +3971,13 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `If the two arrays share a common prefix then the lexicographic
  comparison is the result of comparing two elements, as if by
  `],
-					[/* external link */ 'a', `../lang/Integer.html#compare(int,int)`, `Integer.compare(int, int)`],
+					[/* reference */ 'r', `java.Integer#compare(int,int)`],
 					[/* text */ 't', `, at an index within the respective
  arrays that is the prefix length.
  Otherwise, one array is a proper prefix of the other and, lexicographic
  comparison is the result of comparing the two array lengths.
  (See `],
-					[/* reference */ 'r', `mismatch(int[], int[])`],
+					[/* reference */ 'r', `#mismatch(int%5B%5D,int%5B%5D)`, `mismatch(int[], int[])`],
 					[/* text */ 't', ` for the definition of a common and
  proper prefix.)
 
@@ -3998,7 +3998,7 @@ DocsCollector.collect('java.util.Arrays', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `The comparison is consistent with `],
-					[/* reference */ 'r', `equals`],
+					[/* reference */ 'r', `#equals(int%5B%5D,int%5B%5D)`, `equals`],
 					[/* text */ 't', `,
  more specifically the following holds for arrays `],
 					[/* inline code block */ 'i', `a`],
@@ -4047,13 +4047,13 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `If the two arrays share a common prefix then the lexicographic
  comparison is the result of comparing two elements, as if by
  `],
-					[/* external link */ 'a', `../lang/Long.html#compare(long,long)`, `Long.compare(long, long)`],
+					[/* reference */ 'r', `java.Long#compare(long,long)`],
 					[/* text */ 't', `, at an index within the respective
  arrays that is the prefix length.
  Otherwise, one array is a proper prefix of the other and, lexicographic
  comparison is the result of comparing the two array lengths.
  (See `],
-					[/* reference */ 'r', `mismatch(long[], long[])`],
+					[/* reference */ 'r', `#mismatch(long%5B%5D,long%5B%5D)`, `mismatch(long[], long[])`],
 					[/* text */ 't', ` for the definition of a common and
  proper prefix.)
 
@@ -4074,7 +4074,7 @@ DocsCollector.collect('java.util.Arrays', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `The comparison is consistent with `],
-					[/* reference */ 'r', `equals`],
+					[/* reference */ 'r', `#equals(long%5B%5D,long%5B%5D)`, `equals`],
 					[/* text */ 't', `,
  more specifically the following holds for arrays `],
 					[/* inline code block */ 'i', `a`],
@@ -4124,13 +4124,13 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `If the two arrays, over the specified ranges, share a common prefix
  then the lexicographic comparison is the result of comparing two
  elements, as if by `],
-					[/* external link */ 'a', `../lang/Long.html#compare(long,long)`, `Long.compare(long, long)`],
+					[/* reference */ 'r', `java.Long#compare(long,long)`],
 					[/* text */ 't', `, at a relative index
  within the respective arrays that is the length of the prefix.
  Otherwise, one array is a proper prefix of the other and, lexicographic
  comparison is the result of comparing the two range lengths.
  (See `],
-					[/* reference */ 'r', `mismatch(long[], int, int, long[], int, int)`],
+					[/* reference */ 'r', `#mismatch(long%5B%5D,int,int,long%5B%5D,int,int)`, `mismatch(long[], int, int, long[], int, int)`],
 					[/* text */ 't', ` for the
  definition of a common and proper prefix.)
 
@@ -4139,7 +4139,7 @@ DocsCollector.collect('java.util.Arrays', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The comparison is consistent with
  `],
-					[/* reference */ 'r', `equals`],
+					[/* reference */ 'r', `#equals(long%5B%5D,int,int,long%5B%5D,int,int)`, `equals`],
 					[/* text */ 't', `, more
  specifically the following holds for arrays `],
 					[/* inline code block */ 'i', `a`],
@@ -4235,13 +4235,13 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `If the two arrays share a common prefix then the lexicographic
  comparison is the result of comparing two elements, as if by
  `],
-					[/* external link */ 'a', `../lang/Float.html#compare(float,float)`, `Float.compare(float, float)`],
+					[/* reference */ 'r', `java.Float#compare(float,float)`],
 					[/* text */ 't', `, at an index within the respective
  arrays that is the prefix length.
  Otherwise, one array is a proper prefix of the other and, lexicographic
  comparison is the result of comparing the two array lengths.
  (See `],
-					[/* reference */ 'r', `mismatch(float[], float[])`],
+					[/* reference */ 'r', `#mismatch(float%5B%5D,float%5B%5D)`, `mismatch(float[], float[])`],
 					[/* text */ 't', ` for the definition of a common
  and proper prefix.)
 
@@ -4262,7 +4262,7 @@ DocsCollector.collect('java.util.Arrays', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `The comparison is consistent with `],
-					[/* reference */ 'r', `equals`],
+					[/* reference */ 'r', `#equals(float%5B%5D,float%5B%5D)`, `equals`],
 					[/* text */ 't', `,
  more specifically the following holds for arrays `],
 					[/* inline code block */ 'i', `a`],
@@ -4312,13 +4312,13 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `If the two arrays, over the specified ranges, share a common prefix
  then the lexicographic comparison is the result of comparing two
  elements, as if by `],
-					[/* external link */ 'a', `../lang/Float.html#compare(float,float)`, `Float.compare(float, float)`],
+					[/* reference */ 'r', `java.Float#compare(float,float)`],
 					[/* text */ 't', `, at a relative
  index within the respective arrays that is the length of the prefix.
  Otherwise, one array is a proper prefix of the other and, lexicographic
  comparison is the result of comparing the two range lengths.
  (See `],
-					[/* reference */ 'r', `mismatch(float[], int, int, float[], int, int)`],
+					[/* reference */ 'r', `#mismatch(float%5B%5D,int,int,float%5B%5D,int,int)`, `mismatch(float[], int, int, float[], int, int)`],
 					[/* text */ 't', ` for the
  definition of a common and proper prefix.)
 
@@ -4327,7 +4327,7 @@ DocsCollector.collect('java.util.Arrays', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The comparison is consistent with
  `],
-					[/* reference */ 'r', `equals`],
+					[/* reference */ 'r', `#equals(float%5B%5D,int,int,float%5B%5D,int,int)`, `equals`],
 					[/* text */ 't', `, more
  specifically the following holds for arrays `],
 					[/* inline code block */ 'i', `a`],
@@ -4423,13 +4423,13 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `If the two arrays share a common prefix then the lexicographic
  comparison is the result of comparing two elements, as if by
  `],
-					[/* external link */ 'a', `../lang/Double.html#compare(double,double)`, `Double.compare(double, double)`],
+					[/* reference */ 'r', `java.Double#compare(double,double)`],
 					[/* text */ 't', `, at an index within the respective
  arrays that is the prefix length.
  Otherwise, one array is a proper prefix of the other and, lexicographic
  comparison is the result of comparing the two array lengths.
  (See `],
-					[/* reference */ 'r', `mismatch(double[], double[])`],
+					[/* reference */ 'r', `#mismatch(double%5B%5D,double%5B%5D)`, `mismatch(double[], double[])`],
 					[/* text */ 't', ` for the definition of a common
  and proper prefix.)
 
@@ -4450,7 +4450,7 @@ DocsCollector.collect('java.util.Arrays', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `The comparison is consistent with `],
-					[/* reference */ 'r', `equals`],
+					[/* reference */ 'r', `#equals(double%5B%5D,double%5B%5D)`, `equals`],
 					[/* text */ 't', `,
  more specifically the following holds for arrays `],
 					[/* inline code block */ 'i', `a`],
@@ -4500,13 +4500,13 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `If the two arrays, over the specified ranges, share a common prefix
  then the lexicographic comparison is the result of comparing two
  elements, as if by `],
-					[/* external link */ 'a', `../lang/Character.html#compare(char,char)`, `Character.compare(char, char)`],
+					[/* reference */ 'r', `java.Character#compare(char,char)`],
 					[/* text */ 't', `, at a relative
  index within the respective arrays that is the length of the prefix.
  Otherwise, one array is a proper prefix of the other and, lexicographic
  comparison is the result of comparing the two range lengths.
  (See `],
-					[/* reference */ 'r', `mismatch(char[], int, int, char[], int, int)`],
+					[/* reference */ 'r', `#mismatch(char%5B%5D,int,int,char%5B%5D,int,int)`, `mismatch(char[], int, int, char[], int, int)`],
 					[/* text */ 't', ` for the
  definition of a common and proper prefix.)
 
@@ -4515,7 +4515,7 @@ DocsCollector.collect('java.util.Arrays', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The comparison is consistent with
  `],
-					[/* reference */ 'r', `equals`],
+					[/* reference */ 'r', `#equals(char%5B%5D,int,int,char%5B%5D,int,int)`, `equals`],
 					[/* text */ 't', `, more
  specifically the following holds for arrays `],
 					[/* inline code block */ 'i', `a`],
@@ -4611,13 +4611,13 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `If the two arrays share a common prefix then the lexicographic
  comparison is the result of comparing two elements, as if by
  `],
-					[/* external link */ 'a', `../lang/Character.html#compare(char,char)`, `Character.compare(char, char)`],
+					[/* reference */ 'r', `java.Character#compare(char,char)`],
 					[/* text */ 't', `, at an index within the respective
  arrays that is the prefix length.
  Otherwise, one array is a proper prefix of the other and, lexicographic
  comparison is the result of comparing the two array lengths.
  (See `],
-					[/* reference */ 'r', `mismatch(char[], char[])`],
+					[/* reference */ 'r', `#mismatch(char%5B%5D,char%5B%5D)`, `mismatch(char[], char[])`],
 					[/* text */ 't', ` for the definition of a common and
  proper prefix.)
 
@@ -4638,7 +4638,7 @@ DocsCollector.collect('java.util.Arrays', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `The comparison is consistent with `],
-					[/* reference */ 'r', `equals`],
+					[/* reference */ 'r', `#equals(char%5B%5D,char%5B%5D)`, `equals`],
 					[/* text */ 't', `,
  more specifically the following holds for arrays `],
 					[/* inline code block */ 'i', `a`],
@@ -4688,13 +4688,13 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `If the two arrays, over the specified ranges, share a common prefix
  then the lexicographic comparison is the result of comparing two
  elements, as if by `],
-					[/* external link */ 'a', `../lang/Short.html#compare(short,short)`, `Short.compare(short, short)`],
+					[/* reference */ 'r', `java.Short#compare(short,short)`],
 					[/* text */ 't', `, at a relative
  index within the respective arrays that is the length of the prefix.
  Otherwise, one array is a proper prefix of the other and, lexicographic
  comparison is the result of comparing the two range lengths.
  (See `],
-					[/* reference */ 'r', `mismatch(short[], int, int, short[], int, int)`],
+					[/* reference */ 'r', `#mismatch(short%5B%5D,int,int,short%5B%5D,int,int)`, `mismatch(short[], int, int, short[], int, int)`],
 					[/* text */ 't', ` for the
  definition of a common and proper prefix.)
 
@@ -4703,7 +4703,7 @@ DocsCollector.collect('java.util.Arrays', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The comparison is consistent with
  `],
-					[/* reference */ 'r', `equals`],
+					[/* reference */ 'r', `#equals(short%5B%5D,int,int,short%5B%5D,int,int)`, `equals`],
 					[/* text */ 't', `, more
  specifically the following holds for arrays `],
 					[/* inline code block */ 'i', `a`],
@@ -4799,13 +4799,13 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `If the two arrays share a common prefix then the lexicographic
  comparison is the result of comparing two elements, as if by
  `],
-					[/* external link */ 'a', `../lang/Short.html#compare(short,short)`, `Short.compare(short, short)`],
+					[/* reference */ 'r', `java.Short#compare(short,short)`],
 					[/* text */ 't', `, at an index within the respective
  arrays that is the prefix length.
  Otherwise, one array is a proper prefix of the other and, lexicographic
  comparison is the result of comparing the two array lengths.
  (See `],
-					[/* reference */ 'r', `mismatch(short[], short[])`],
+					[/* reference */ 'r', `#mismatch(short%5B%5D,short%5B%5D)`, `mismatch(short[], short[])`],
 					[/* text */ 't', ` for the definition of a common
  and proper prefix.)
 
@@ -4826,7 +4826,7 @@ DocsCollector.collect('java.util.Arrays', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `The comparison is consistent with `],
-					[/* reference */ 'r', `equals`],
+					[/* reference */ 'r', `#equals(short%5B%5D,short%5B%5D)`, `equals`],
 					[/* text */ 't', `,
  more specifically the following holds for arrays `],
 					[/* inline code block */ 'i', `a`],
@@ -5668,15 +5668,15 @@ DocsCollector.collect('java.util.Arrays', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `The spliterator reports `],
-					[/* external link */ 'a', `Spliterator.html#SIZED`, `Spliterator.SIZED`],
+					[/* reference */ 'r', `.Spliterator#SIZED`],
 					[/* text */ 't', `,
  `],
-					[/* external link */ 'a', `Spliterator.html#SUBSIZED`, `Spliterator.SUBSIZED`],
+					[/* reference */ 'r', `.Spliterator#SUBSIZED`],
 					[/* text */ 't', `, `],
-					[/* external link */ 'a', `Spliterator.html#ORDERED`, `Spliterator.ORDERED`],
+					[/* reference */ 'r', `.Spliterator#ORDERED`],
 					[/* text */ 't', `, and
  `],
-					[/* external link */ 'a', `Spliterator.html#IMMUTABLE`, `Spliterator.IMMUTABLE`],
+					[/* reference */ 'r', `.Spliterator#IMMUTABLE`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -5720,15 +5720,15 @@ DocsCollector.collect('java.util.Arrays', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `The spliterator reports `],
-					[/* external link */ 'a', `Spliterator.html#SIZED`, `Spliterator.SIZED`],
+					[/* reference */ 'r', `.Spliterator#SIZED`],
 					[/* text */ 't', `,
  `],
-					[/* external link */ 'a', `Spliterator.html#SUBSIZED`, `Spliterator.SUBSIZED`],
+					[/* reference */ 'r', `.Spliterator#SUBSIZED`],
 					[/* text */ 't', `, `],
-					[/* external link */ 'a', `Spliterator.html#ORDERED`, `Spliterator.ORDERED`],
+					[/* reference */ 'r', `.Spliterator#ORDERED`],
 					[/* text */ 't', `, and
  `],
-					[/* external link */ 'a', `Spliterator.html#IMMUTABLE`, `Spliterator.IMMUTABLE`],
+					[/* reference */ 'r', `.Spliterator#IMMUTABLE`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -5752,15 +5752,15 @@ DocsCollector.collect('java.util.Arrays', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `The spliterator reports `],
-					[/* external link */ 'a', `Spliterator.html#SIZED`, `Spliterator.SIZED`],
+					[/* reference */ 'r', `.Spliterator#SIZED`],
 					[/* text */ 't', `,
  `],
-					[/* external link */ 'a', `Spliterator.html#SUBSIZED`, `Spliterator.SUBSIZED`],
+					[/* reference */ 'r', `.Spliterator#SUBSIZED`],
 					[/* text */ 't', `, `],
-					[/* external link */ 'a', `Spliterator.html#ORDERED`, `Spliterator.ORDERED`],
+					[/* reference */ 'r', `.Spliterator#ORDERED`],
 					[/* text */ 't', `, and
  `],
-					[/* external link */ 'a', `Spliterator.html#IMMUTABLE`, `Spliterator.IMMUTABLE`],
+					[/* reference */ 'r', `.Spliterator#IMMUTABLE`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -5804,15 +5804,15 @@ DocsCollector.collect('java.util.Arrays', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `The spliterator reports `],
-					[/* external link */ 'a', `Spliterator.html#SIZED`, `Spliterator.SIZED`],
+					[/* reference */ 'r', `.Spliterator#SIZED`],
 					[/* text */ 't', `,
  `],
-					[/* external link */ 'a', `Spliterator.html#SUBSIZED`, `Spliterator.SUBSIZED`],
+					[/* reference */ 'r', `.Spliterator#SUBSIZED`],
 					[/* text */ 't', `, `],
-					[/* external link */ 'a', `Spliterator.html#ORDERED`, `Spliterator.ORDERED`],
+					[/* reference */ 'r', `.Spliterator#ORDERED`],
 					[/* text */ 't', `, and
  `],
-					[/* external link */ 'a', `Spliterator.html#IMMUTABLE`, `Spliterator.IMMUTABLE`],
+					[/* reference */ 'r', `.Spliterator#IMMUTABLE`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -5836,15 +5836,15 @@ DocsCollector.collect('java.util.Arrays', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `The spliterator reports `],
-					[/* external link */ 'a', `Spliterator.html#SIZED`, `Spliterator.SIZED`],
+					[/* reference */ 'r', `.Spliterator#SIZED`],
 					[/* text */ 't', `,
  `],
-					[/* external link */ 'a', `Spliterator.html#SUBSIZED`, `Spliterator.SUBSIZED`],
+					[/* reference */ 'r', `.Spliterator#SUBSIZED`],
 					[/* text */ 't', `, `],
-					[/* external link */ 'a', `Spliterator.html#ORDERED`, `Spliterator.ORDERED`],
+					[/* reference */ 'r', `.Spliterator#ORDERED`],
 					[/* text */ 't', `, and
  `],
-					[/* external link */ 'a', `Spliterator.html#IMMUTABLE`, `Spliterator.IMMUTABLE`],
+					[/* reference */ 'r', `.Spliterator#IMMUTABLE`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -5889,15 +5889,15 @@ DocsCollector.collect('java.util.Arrays', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `The spliterator reports `],
-					[/* external link */ 'a', `Spliterator.html#SIZED`, `Spliterator.SIZED`],
+					[/* reference */ 'r', `.Spliterator#SIZED`],
 					[/* text */ 't', `,
  `],
-					[/* external link */ 'a', `Spliterator.html#SUBSIZED`, `Spliterator.SUBSIZED`],
+					[/* reference */ 'r', `.Spliterator#SUBSIZED`],
 					[/* text */ 't', `, `],
-					[/* external link */ 'a', `Spliterator.html#ORDERED`, `Spliterator.ORDERED`],
+					[/* reference */ 'r', `.Spliterator#ORDERED`],
 					[/* text */ 't', `, and
  `],
-					[/* external link */ 'a', `Spliterator.html#IMMUTABLE`, `Spliterator.IMMUTABLE`],
+					[/* reference */ 'r', `.Spliterator#IMMUTABLE`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -5921,15 +5921,15 @@ DocsCollector.collect('java.util.Arrays', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `The spliterator reports `],
-					[/* external link */ 'a', `Spliterator.html#SIZED`, `Spliterator.SIZED`],
+					[/* reference */ 'r', `.Spliterator#SIZED`],
 					[/* text */ 't', `,
  `],
-					[/* external link */ 'a', `Spliterator.html#SUBSIZED`, `Spliterator.SUBSIZED`],
+					[/* reference */ 'r', `.Spliterator#SUBSIZED`],
 					[/* text */ 't', `, `],
-					[/* external link */ 'a', `Spliterator.html#ORDERED`, `Spliterator.ORDERED`],
+					[/* reference */ 'r', `.Spliterator#ORDERED`],
 					[/* text */ 't', `, and
  `],
-					[/* external link */ 'a', `Spliterator.html#IMMUTABLE`, `Spliterator.IMMUTABLE`],
+					[/* reference */ 'r', `.Spliterator#IMMUTABLE`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -5973,15 +5973,15 @@ DocsCollector.collect('java.util.Arrays', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `The spliterator reports `],
-					[/* external link */ 'a', `Spliterator.html#SIZED`, `Spliterator.SIZED`],
+					[/* reference */ 'r', `.Spliterator#SIZED`],
 					[/* text */ 't', `,
  `],
-					[/* external link */ 'a', `Spliterator.html#SUBSIZED`, `Spliterator.SUBSIZED`],
+					[/* reference */ 'r', `.Spliterator#SUBSIZED`],
 					[/* text */ 't', `, `],
-					[/* external link */ 'a', `Spliterator.html#ORDERED`, `Spliterator.ORDERED`],
+					[/* reference */ 'r', `.Spliterator#ORDERED`],
 					[/* text */ 't', `, and
  `],
-					[/* external link */ 'a', `Spliterator.html#IMMUTABLE`, `Spliterator.IMMUTABLE`],
+					[/* reference */ 'r', `.Spliterator#IMMUTABLE`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -6215,7 +6215,7 @@ DocsCollector.collect('java.util.Arrays', [
  value compares neither less than, greater than, nor equal to any value,
  even itself. This method uses the total order imposed by the method
  `],
-					[/* external link */ 'a', `../lang/Double.html#compareTo(java.lang.Double)`, `Double.compareTo(java.lang.Double)`],
+					[/* reference */ 'r', `java.Double#compareTo(java.lang.Double)`],
 					[/* text */ 't', `: `],
 					[/* inline code block */ 'i', `-0.0d`],
 					[/* text */ 't', ` is treated as less than value
@@ -6265,7 +6265,7 @@ DocsCollector.collect('java.util.Arrays', [
  value compares neither less than, greater than, nor equal to any value,
  even itself. This method uses the total order imposed by the method
  `],
-					[/* external link */ 'a', `../lang/Float.html#compareTo(java.lang.Float)`, `Float.compareTo(java.lang.Float)`],
+					[/* reference */ 'r', `java.Float#compareTo(java.lang.Float)`],
 					[/* text */ 't', `: `],
 					[/* inline code block */ 'i', `-0.0f`],
 					[/* text */ 't', ` is treated as less than value
@@ -6323,7 +6323,7 @@ DocsCollector.collect('java.util.Arrays', [
  value compares neither less than, greater than, nor equal to any value,
  even itself. This method uses the total order imposed by the method
  `],
-					[/* external link */ 'a', `../lang/Float.html#compareTo(java.lang.Float)`, `Float.compareTo(java.lang.Float)`],
+					[/* reference */ 'r', `java.Float#compareTo(java.lang.Float)`],
 					[/* text */ 't', `: `],
 					[/* inline code block */ 'i', `-0.0f`],
 					[/* text */ 't', ` is treated as less than value
@@ -6411,7 +6411,7 @@ DocsCollector.collect('java.util.Arrays', [
  value compares neither less than, greater than, nor equal to any value,
  even itself. This method uses the total order imposed by the method
  `],
-					[/* external link */ 'a', `../lang/Double.html#compareTo(java.lang.Double)`, `Double.compareTo(java.lang.Double)`],
+					[/* reference */ 'r', `java.Double#compareTo(java.lang.Double)`],
 					[/* text */ 't', `: `],
 					[/* inline code block */ 'i', `-0.0d`],
 					[/* text */ 't', ` is treated as less than value
@@ -6863,13 +6863,13 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `If the two arrays share a common prefix then the lexicographic
  comparison is the result of comparing two elements, as if by
  `],
-					[/* external link */ 'a', `../lang/Short.html#compareUnsigned(short,short)`, `Short.compareUnsigned(short, short)`],
+					[/* reference */ 'r', `java.Short#compareUnsigned(short,short)`],
 					[/* text */ 't', `, at an index within the
  respective arrays that is the prefix length.
  Otherwise, one array is a proper prefix of the other and, lexicographic
  comparison is the result of comparing the two array lengths.
  (See `],
-					[/* reference */ 'r', `mismatch(short[], short[])`],
+					[/* reference */ 'r', `#mismatch(short%5B%5D,short%5B%5D)`, `mismatch(short[], short[])`],
 					[/* text */ 't', ` for the definition of a common
  and proper prefix.)
 
@@ -6923,14 +6923,14 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `If the two arrays, over the specified ranges, share a common prefix
  then the lexicographic comparison is the result of comparing two
  elements, as if by `],
-					[/* external link */ 'a', `../lang/Byte.html#compareUnsigned(byte,byte)`, `Byte.compareUnsigned(byte, byte)`],
+					[/* reference */ 'r', `java.Byte#compareUnsigned(byte,byte)`],
 					[/* text */ 't', `, at a
  relative index within the respective arrays that is the length of the
  prefix.
  Otherwise, one array is a proper prefix of the other and, lexicographic
  comparison is the result of comparing the two range lengths.
  (See `],
-					[/* reference */ 'r', `mismatch(byte[], int, int, byte[], int, int)`],
+					[/* reference */ 'r', `#mismatch(byte%5B%5D,int,int,byte%5B%5D,int,int)`, `mismatch(byte[], int, int, byte[], int, int)`],
 					[/* text */ 't', ` for the
  definition of a common and proper prefix.)`]
 				]]
@@ -7006,13 +7006,13 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `If the two arrays share a common prefix then the lexicographic
  comparison is the result of comparing two elements, as if by
  `],
-					[/* external link */ 'a', `../lang/Byte.html#compareUnsigned(byte,byte)`, `Byte.compareUnsigned(byte, byte)`],
+					[/* reference */ 'r', `java.Byte#compareUnsigned(byte,byte)`],
 					[/* text */ 't', `, at an index within the
  respective arrays that is the prefix length.
  Otherwise, one array is a proper prefix of the other and, lexicographic
  comparison is the result of comparing the two array lengths.
  (See `],
-					[/* reference */ 'r', `mismatch(byte[], byte[])`],
+					[/* reference */ 'r', `#mismatch(byte%5B%5D,byte%5B%5D)`, `mismatch(byte[], byte[])`],
 					[/* text */ 't', ` for the definition of a common
  and proper prefix.)
 
@@ -7066,13 +7066,13 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `If the two arrays share a common prefix then the lexicographic
  comparison is the result of comparing two elements, as if by
  `],
-					[/* external link */ 'a', `../lang/Long.html#compareUnsigned(long,long)`, `Long.compareUnsigned(long, long)`],
+					[/* reference */ 'r', `java.Long#compareUnsigned(long,long)`],
 					[/* text */ 't', `, at an index within the
  respective arrays that is the prefix length.
  Otherwise, one array is a proper prefix of the other and, lexicographic
  comparison is the result of comparing the two array lengths.
  (See `],
-					[/* reference */ 'r', `mismatch(long[], long[])`],
+					[/* reference */ 'r', `#mismatch(long%5B%5D,long%5B%5D)`, `mismatch(long[], long[])`],
 					[/* text */ 't', ` for the definition of a common
  and proper prefix.)
 
@@ -7126,14 +7126,14 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `If the two arrays, over the specified ranges, share a common prefix
  then the lexicographic comparison is the result of comparing two
  elements, as if by `],
-					[/* external link */ 'a', `../lang/Integer.html#compareUnsigned(int,int)`, `Integer.compareUnsigned(int, int)`],
+					[/* reference */ 'r', `java.Integer#compareUnsigned(int,int)`],
 					[/* text */ 't', `, at a
  relative index within the respective arrays that is the length of the
  prefix.
  Otherwise, one array is a proper prefix of the other and, lexicographic
  comparison is the result of comparing the two range lengths.
  (See `],
-					[/* reference */ 'r', `mismatch(int[], int, int, int[], int, int)`],
+					[/* reference */ 'r', `#mismatch(int%5B%5D,int,int,int%5B%5D,int,int)`, `mismatch(int[], int, int, int[], int, int)`],
 					[/* text */ 't', ` for the
  definition of a common and proper prefix.)`]
 				]]
@@ -7209,14 +7209,14 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `If the two arrays, over the specified ranges, share a common prefix
  then the lexicographic comparison is the result of comparing two
  elements, as if by `],
-					[/* external link */ 'a', `../lang/Long.html#compareUnsigned(long,long)`, `Long.compareUnsigned(long, long)`],
+					[/* reference */ 'r', `java.Long#compareUnsigned(long,long)`],
 					[/* text */ 't', `, at a
  relative index within the respective arrays that is the length of the
  prefix.
  Otherwise, one array is a proper prefix of the other and, lexicographic
  comparison is the result of comparing the two range lengths.
  (See `],
-					[/* reference */ 'r', `mismatch(long[], int, int, long[], int, int)`],
+					[/* reference */ 'r', `#mismatch(long%5B%5D,int,int,long%5B%5D,int,int)`, `mismatch(long[], int, int, long[], int, int)`],
 					[/* text */ 't', ` for the
  definition of a common and proper prefix.)`]
 				]]
@@ -7292,14 +7292,14 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `If the two arrays, over the specified ranges, share a common prefix
  then the lexicographic comparison is the result of comparing two
  elements, as if by `],
-					[/* external link */ 'a', `../lang/Short.html#compareUnsigned(short,short)`, `Short.compareUnsigned(short, short)`],
+					[/* reference */ 'r', `java.Short#compareUnsigned(short,short)`],
 					[/* text */ 't', `, at a
  relative index within the respective arrays that is the length of the
  prefix.
  Otherwise, one array is a proper prefix of the other and, lexicographic
  comparison is the result of comparing the two range lengths.
  (See `],
-					[/* reference */ 'r', `mismatch(short[], int, int, short[], int, int)`],
+					[/* reference */ 'r', `#mismatch(short%5B%5D,int,int,short%5B%5D,int,int)`, `mismatch(short[], int, int, short[], int, int)`],
 					[/* text */ 't', ` for the
  definition of a common and proper prefix.)`]
 				]]
@@ -7375,13 +7375,13 @@ DocsCollector.collect('java.util.Arrays', [
 					[/* text */ 't', `If the two arrays share a common prefix then the lexicographic
  comparison is the result of comparing two elements, as if by
  `],
-					[/* external link */ 'a', `../lang/Integer.html#compareUnsigned(int,int)`, `Integer.compareUnsigned(int, int)`],
+					[/* reference */ 'r', `java.Integer#compareUnsigned(int,int)`],
 					[/* text */ 't', `, at an index within the
  respective arrays that is the prefix length.
  Otherwise, one array is a proper prefix of the other and, lexicographic
  comparison is the result of comparing the two array lengths.
  (See `],
-					[/* reference */ 'r', `mismatch(int[], int[])`],
+					[/* reference */ 'r', `#mismatch(int%5B%5D,int%5B%5D)`, `mismatch(int[], int[])`],
 					[/* text */ 't', ` for the definition of a common
  and proper prefix.)
 
@@ -7431,7 +7431,7 @@ DocsCollector.collect('java.util.Arrays', [
 				[/* text */ 't', `deeply
  equal`],
 				[/* text */ 't', ` to one another.  Unlike the `],
-				[/* reference */ 'r', `equals(Object[],Object[])`],
+				[/* reference */ 'r', `#equals(java.lang.Object%5B%5D,java.lang.Object%5B%5D)`, `equals(Object[],Object[])`],
 				[/* text */ 't', `
  method, this method is appropriate for use with nested arrays of
  arbitrary depth.
@@ -9773,7 +9773,7 @@ DocsCollector.collect('java.util.Arrays', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The computation of the value returned by this method is similar to
  that of the value returned by `],
-					[/* external link */ 'a', `List.html#hashCode()`, `List.hashCode()`],
+					[/* reference */ 'r', `.List#hashCode()`],
 					[/* text */ 't', ` on a list
  containing the same elements as `],
 					[/* inline code block */ 'i', `a`],
@@ -9907,7 +9907,7 @@ DocsCollector.collect('java.util.Arrays', [
  value compares neither less than, greater than, nor equal to any value,
  even itself. This method uses the total order imposed by the method
  `],
-					[/* external link */ 'a', `../lang/Double.html#compareTo(java.lang.Double)`, `Double.compareTo(java.lang.Double)`],
+					[/* reference */ 'r', `java.Double#compareTo(java.lang.Double)`],
 					[/* text */ 't', `: `],
 					[/* inline code block */ 'i', `-0.0d`],
 					[/* text */ 't', ` is treated as less than value
@@ -9957,7 +9957,7 @@ DocsCollector.collect('java.util.Arrays', [
  value compares neither less than, greater than, nor equal to any value,
  even itself. This method uses the total order imposed by the method
  `],
-					[/* external link */ 'a', `../lang/Float.html#compareTo(java.lang.Float)`, `Float.compareTo(java.lang.Float)`],
+					[/* reference */ 'r', `java.Float#compareTo(java.lang.Float)`],
 					[/* text */ 't', `: `],
 					[/* inline code block */ 'i', `-0.0f`],
 					[/* text */ 't', ` is treated as less than value
@@ -10015,7 +10015,7 @@ DocsCollector.collect('java.util.Arrays', [
  value compares neither less than, greater than, nor equal to any value,
  even itself. This method uses the total order imposed by the method
  `],
-					[/* external link */ 'a', `../lang/Float.html#compareTo(java.lang.Float)`, `Float.compareTo(java.lang.Float)`],
+					[/* reference */ 'r', `java.Float#compareTo(java.lang.Float)`],
 					[/* text */ 't', `: `],
 					[/* inline code block */ 'i', `-0.0f`],
 					[/* text */ 't', ` is treated as less than value
@@ -10065,7 +10065,7 @@ DocsCollector.collect('java.util.Arrays', [
  value compares neither less than, greater than, nor equal to any value,
  even itself. This method uses the total order imposed by the method
  `],
-					[/* external link */ 'a', `../lang/Double.html#compareTo(java.lang.Double)`, `Double.compareTo(java.lang.Double)`],
+					[/* reference */ 'r', `java.Double#compareTo(java.lang.Double)`],
 					[/* text */ 't', `: `],
 					[/* inline code block */ 'i', `-0.0d`],
 					[/* text */ 't', ` is treated as less than value
@@ -10660,7 +10660,7 @@ DocsCollector.collect('java.util.Arrays', [
 		[/* method */ 'parallelPrefix(double[],int,int,java.util.function.DoubleBinaryOperator)', [
 			[/* method description */
 				[/* text */ 't', `Performs `],
-				[/* reference */ 'r', `parallelPrefix(double[], DoubleBinaryOperator)`],
+				[/* reference */ 'r', `#parallelPrefix(double%5B%5D,java.util.function.DoubleBinaryOperator)`, `parallelPrefix(double[], DoubleBinaryOperator)`],
 				[/* text */ 't', `
  for the given subrange of the array.`]
 			],
@@ -10699,7 +10699,7 @@ DocsCollector.collect('java.util.Arrays', [
 		[/* method */ 'parallelPrefix(int[],int,int,java.util.function.IntBinaryOperator)', [
 			[/* method description */
 				[/* text */ 't', `Performs `],
-				[/* reference */ 'r', `parallelPrefix(int[], IntBinaryOperator)`],
+				[/* reference */ 'r', `#parallelPrefix(int%5B%5D,java.util.function.IntBinaryOperator)`, `parallelPrefix(int[], IntBinaryOperator)`],
 				[/* text */ 't', `
  for the given subrange of the array.`]
 			],
@@ -10800,7 +10800,7 @@ DocsCollector.collect('java.util.Arrays', [
 		[/* method */ 'parallelPrefix(java.lang.Object[],int,int,java.util.function.BinaryOperator)', [
 			[/* method description */
 				[/* text */ 't', `Performs `],
-				[/* reference */ 'r', `parallelPrefix(Object[], BinaryOperator)`],
+				[/* reference */ 'r', `#parallelPrefix(T%5B%5D,java.util.function.BinaryOperator)`, `parallelPrefix(Object[], BinaryOperator)`],
 				[/* text */ 't', `
  for the given subrange of the array.`]
 			],
@@ -10839,7 +10839,7 @@ DocsCollector.collect('java.util.Arrays', [
 		[/* method */ 'parallelPrefix(long[],int,int,java.util.function.LongBinaryOperator)', [
 			[/* method description */
 				[/* text */ 't', `Performs `],
-				[/* reference */ 'r', `parallelPrefix(long[], LongBinaryOperator)`],
+				[/* reference */ 'r', `#parallelPrefix(long%5B%5D,java.util.function.LongBinaryOperator)`, `parallelPrefix(long[], LongBinaryOperator)`],
 				[/* text */ 't', `
  for the given subrange of the array.`]
 			],
@@ -10914,7 +10914,7 @@ DocsCollector.collect('java.util.Arrays', [
 				[/* text */ 't', `
  of its elements (as by the
  `],
-				[/* reference */ 'r', `sort(Object[])`],
+				[/* reference */ 'r', `#sort(java.lang.Object%5B%5D)`, `sort(Object[])`],
 				[/* text */ 't', ` method) prior to making this call.
  If it is not sorted, the results are undefined.
  (If the array contains elements that are not mutually comparable (for
@@ -10953,7 +10953,7 @@ DocsCollector.collect('java.util.Arrays', [
 				[/* inline code block */ 'i', `a.length`],
 				[/* text */ 't', ` if all
          elements in the array are less than the specified key.  Note
-         that this guarantees that the return value will be &gt;= 0 if
+         that this guarantees that the return value will be >= 0 if
          and only if the key is found.`]
 			]
 		]],
@@ -10964,7 +10964,7 @@ DocsCollector.collect('java.util.Arrays', [
  the binary search algorithm.
  The range must be sorted
  (as by the `],
-				[/* reference */ 'r', `sort(float[], int, int)`],
+				[/* reference */ 'r', `#sort(float%5B%5D,int,int)`, `sort(float[], int, int)`],
 				[/* text */ 't', ` method)
  prior to making this call. If
  it is not sorted, the results are undefined. If the range contains
@@ -11012,7 +11012,7 @@ DocsCollector.collect('java.util.Arrays', [
 				[/* inline code block */ 'i', `toIndex`],
 				[/* text */ 't', ` if all
          elements in the range are less than the specified key. Note
-         that this guarantees that the return value will be &gt;= 0 if
+         that this guarantees that the return value will be >= 0 if
          and only if the key is found.`]
 			]
 		]],
@@ -11023,7 +11023,7 @@ DocsCollector.collect('java.util.Arrays', [
  the binary search algorithm.
  The range must be sorted
  (as by the `],
-				[/* reference */ 'r', `sort(double[], int, int)`],
+				[/* reference */ 'r', `#sort(double%5B%5D,int,int)`, `sort(double[], int, int)`],
 				[/* text */ 't', ` method)
  prior to making this call.
  If it is not sorted, the results are undefined.  If the range contains
@@ -11071,7 +11071,7 @@ DocsCollector.collect('java.util.Arrays', [
 				[/* inline code block */ 'i', `toIndex`],
 				[/* text */ 't', ` if all
          elements in the range are less than the specified key.  Note
-         that this guarantees that the return value will be &gt;= 0 if
+         that this guarantees that the return value will be >= 0 if
          and only if the key is found.`]
 			]
 		]],
@@ -11080,7 +11080,7 @@ DocsCollector.collect('java.util.Arrays', [
 				[/* text */ 't', `Searches the specified array of floats for the specified value using
  the binary search algorithm. The array must be sorted
  (as by the `],
-				[/* reference */ 'r', `sort(float[])`],
+				[/* reference */ 'r', `#sort(float%5B%5D)`, `sort(float[])`],
 				[/* text */ 't', ` method) prior to making this call. If
  it is not sorted, the results are undefined. If the array contains
  multiple elements with the specified value, there is no guarantee which
@@ -11109,7 +11109,7 @@ DocsCollector.collect('java.util.Arrays', [
 				[/* inline code block */ 'i', `a.length`],
 				[/* text */ 't', ` if all
          elements in the array are less than the specified key. Note
-         that this guarantees that the return value will be &gt;= 0 if
+         that this guarantees that the return value will be >= 0 if
          and only if the key is found.`]
 			]
 		]],
@@ -11121,7 +11121,7 @@ DocsCollector.collect('java.util.Arrays', [
  The range must be sorted into ascending order
  according to the specified comparator (as by the
  `],
-				[/* reference */ 'r', `sort(T[], int, int, Comparator)`],
+				[/* reference */ 'r', `#sort(T%5B%5D,int,int,java.util.Comparator)`, `sort(T[], int, int, Comparator)`],
 				[/* text */ 't', `
  method) prior to making this call.
  If it is not sorted, the results are undefined.
@@ -11185,7 +11185,7 @@ DocsCollector.collect('java.util.Arrays', [
 				[/* inline code block */ 'i', `toIndex`],
 				[/* text */ 't', ` if all
          elements in the range are less than the specified key.  Note
-         that this guarantees that the return value will be &gt;= 0 if
+         that this guarantees that the return value will be >= 0 if
          and only if the key is found.`]
 			]
 		]],
@@ -11195,7 +11195,7 @@ DocsCollector.collect('java.util.Arrays', [
  search algorithm.  The array must be sorted into ascending order
  according to the specified comparator (as by the
  `],
-				[/* reference */ 'r', `sort(T[], Comparator)`],
+				[/* reference */ 'r', `#sort(T%5B%5D,java.util.Comparator)`, `sort(T[], Comparator)`],
 				[/* text */ 't', `
  method) prior to making this call.  If it is
  not sorted, the results are undefined.
@@ -11243,7 +11243,7 @@ DocsCollector.collect('java.util.Arrays', [
 				[/* inline code block */ 'i', `a.length`],
 				[/* text */ 't', ` if all
          elements in the array are less than the specified key.  Note
-         that this guarantees that the return value will be &gt;= 0 if
+         that this guarantees that the return value will be >= 0 if
          and only if the key is found.`]
 			]
 		]],
@@ -11259,7 +11259,7 @@ DocsCollector.collect('java.util.Arrays', [
 				[/* text */ 't', `
  of its elements (as by the
  `],
-				[/* reference */ 'r', `sort(Object[], int, int)`],
+				[/* reference */ 'r', `#sort(java.lang.Object%5B%5D,int,int)`, `sort(Object[], int, int)`],
 				[/* text */ 't', ` method) prior to making this
  call.  If it is not sorted, the results are undefined.
  (If the range contains elements that are not mutually comparable (for
@@ -11315,7 +11315,7 @@ DocsCollector.collect('java.util.Arrays', [
 				[/* inline code block */ 'i', `toIndex`],
 				[/* text */ 't', ` if all
          elements in the range are less than the specified key.  Note
-         that this guarantees that the return value will be &gt;= 0 if
+         that this guarantees that the return value will be >= 0 if
          and only if the key is found.`]
 			]
 		]],
@@ -11324,7 +11324,7 @@ DocsCollector.collect('java.util.Arrays', [
 				[/* text */ 't', `Searches the specified array of longs for the specified value using the
  binary search algorithm.  The array must be sorted (as
  by the `],
-				[/* reference */ 'r', `sort(long[])`],
+				[/* reference */ 'r', `#sort(long%5B%5D)`, `sort(long[])`],
 				[/* text */ 't', ` method) prior to making this call.  If it
  is not sorted, the results are undefined.  If the array contains
  multiple elements with the specified value, there is no guarantee which
@@ -11352,7 +11352,7 @@ DocsCollector.collect('java.util.Arrays', [
 				[/* inline code block */ 'i', `a.length`],
 				[/* text */ 't', ` if all
          elements in the array are less than the specified key.  Note
-         that this guarantees that the return value will be &gt;= 0 if
+         that this guarantees that the return value will be >= 0 if
          and only if the key is found.`]
 			]
 		]],
@@ -11363,7 +11363,7 @@ DocsCollector.collect('java.util.Arrays', [
  binary search algorithm.
  The range must be sorted (as
  by the `],
-				[/* reference */ 'r', `sort(long[], int, int)`],
+				[/* reference */ 'r', `#sort(long%5B%5D,int,int)`, `sort(long[], int, int)`],
 				[/* text */ 't', ` method)
  prior to making this call.  If it
  is not sorted, the results are undefined.  If the range contains
@@ -11410,7 +11410,7 @@ DocsCollector.collect('java.util.Arrays', [
 				[/* inline code block */ 'i', `toIndex`],
 				[/* text */ 't', ` if all
          elements in the range are less than the specified key.  Note
-         that this guarantees that the return value will be &gt;= 0 if
+         that this guarantees that the return value will be >= 0 if
          and only if the key is found.`]
 			]
 		]],
@@ -11421,7 +11421,7 @@ DocsCollector.collect('java.util.Arrays', [
  the binary search algorithm.
  The range must be sorted
  (as by the `],
-				[/* reference */ 'r', `sort(short[], int, int)`],
+				[/* reference */ 'r', `#sort(short%5B%5D,int,int)`, `sort(short[], int, int)`],
 				[/* text */ 't', ` method)
  prior to making this call.  If
  it is not sorted, the results are undefined.  If the range contains
@@ -11468,7 +11468,7 @@ DocsCollector.collect('java.util.Arrays', [
 				[/* inline code block */ 'i', `toIndex`],
 				[/* text */ 't', ` if all
          elements in the range are less than the specified key.  Note
-         that this guarantees that the return value will be &gt;= 0 if
+         that this guarantees that the return value will be >= 0 if
          and only if the key is found.`]
 			]
 		]],
@@ -11477,7 +11477,7 @@ DocsCollector.collect('java.util.Arrays', [
 				[/* text */ 't', `Searches the specified array of ints for the specified value using the
  binary search algorithm.  The array must be sorted (as
  by the `],
-				[/* reference */ 'r', `sort(int[])`],
+				[/* reference */ 'r', `#sort(int%5B%5D)`, `sort(int[])`],
 				[/* text */ 't', ` method) prior to making this call.  If it
  is not sorted, the results are undefined.  If the array contains
  multiple elements with the specified value, there is no guarantee which
@@ -11505,7 +11505,7 @@ DocsCollector.collect('java.util.Arrays', [
 				[/* inline code block */ 'i', `a.length`],
 				[/* text */ 't', ` if all
          elements in the array are less than the specified key.  Note
-         that this guarantees that the return value will be &gt;= 0 if
+         that this guarantees that the return value will be >= 0 if
          and only if the key is found.`]
 			]
 		]],
@@ -11514,7 +11514,7 @@ DocsCollector.collect('java.util.Arrays', [
 				[/* text */ 't', `Searches the specified array of shorts for the specified value using
  the binary search algorithm.  The array must be sorted
  (as by the `],
-				[/* reference */ 'r', `sort(short[])`],
+				[/* reference */ 'r', `#sort(short%5B%5D)`, `sort(short[])`],
 				[/* text */ 't', ` method) prior to making this call.  If
  it is not sorted, the results are undefined.  If the array contains
  multiple elements with the specified value, there is no guarantee which
@@ -11542,7 +11542,7 @@ DocsCollector.collect('java.util.Arrays', [
 				[/* inline code block */ 'i', `a.length`],
 				[/* text */ 't', ` if all
          elements in the array are less than the specified key.  Note
-         that this guarantees that the return value will be &gt;= 0 if
+         that this guarantees that the return value will be >= 0 if
          and only if the key is found.`]
 			]
 		]],
@@ -11553,7 +11553,7 @@ DocsCollector.collect('java.util.Arrays', [
  binary search algorithm.
  The range must be sorted (as
  by the `],
-				[/* reference */ 'r', `sort(int[], int, int)`],
+				[/* reference */ 'r', `#sort(int%5B%5D,int,int)`, `sort(int[], int, int)`],
 				[/* text */ 't', ` method)
  prior to making this call.  If it
  is not sorted, the results are undefined.  If the range contains
@@ -11600,7 +11600,7 @@ DocsCollector.collect('java.util.Arrays', [
 				[/* inline code block */ 'i', `toIndex`],
 				[/* text */ 't', ` if all
          elements in the range are less than the specified key.  Note
-         that this guarantees that the return value will be &gt;= 0 if
+         that this guarantees that the return value will be >= 0 if
          and only if the key is found.`]
 			]
 		]],
@@ -11609,7 +11609,7 @@ DocsCollector.collect('java.util.Arrays', [
 				[/* text */ 't', `Searches the specified array of doubles for the specified value using
  the binary search algorithm.  The array must be sorted
  (as by the `],
-				[/* reference */ 'r', `sort(double[])`],
+				[/* reference */ 'r', `#sort(double%5B%5D)`, `sort(double[])`],
 				[/* text */ 't', ` method) prior to making this call.
  If it is not sorted, the results are undefined.  If the array contains
  multiple elements with the specified value, there is no guarantee which
@@ -11638,7 +11638,7 @@ DocsCollector.collect('java.util.Arrays', [
 				[/* inline code block */ 'i', `a.length`],
 				[/* text */ 't', ` if all
          elements in the array are less than the specified key.  Note
-         that this guarantees that the return value will be &gt;= 0 if
+         that this guarantees that the return value will be >= 0 if
          and only if the key is found.`]
 			]
 		]],
@@ -11649,7 +11649,7 @@ DocsCollector.collect('java.util.Arrays', [
  binary search algorithm.
  The range must be sorted (as
  by the `],
-				[/* reference */ 'r', `sort(byte[], int, int)`],
+				[/* reference */ 'r', `#sort(byte%5B%5D,int,int)`, `sort(byte[], int, int)`],
 				[/* text */ 't', ` method)
  prior to making this call.  If it
  is not sorted, the results are undefined.  If the range contains
@@ -11696,7 +11696,7 @@ DocsCollector.collect('java.util.Arrays', [
 				[/* inline code block */ 'i', `toIndex`],
 				[/* text */ 't', ` if all
          elements in the range are less than the specified key.  Note
-         that this guarantees that the return value will be &gt;= 0 if
+         that this guarantees that the return value will be >= 0 if
          and only if the key is found.`]
 			]
 		]],
@@ -11705,7 +11705,7 @@ DocsCollector.collect('java.util.Arrays', [
 				[/* text */ 't', `Searches the specified array of bytes for the specified value using the
  binary search algorithm.  The array must be sorted (as
  by the `],
-				[/* reference */ 'r', `sort(byte[])`],
+				[/* reference */ 'r', `#sort(byte%5B%5D)`, `sort(byte[])`],
 				[/* text */ 't', ` method) prior to making this call.  If it
  is not sorted, the results are undefined.  If the array contains
  multiple elements with the specified value, there is no guarantee which
@@ -11733,7 +11733,7 @@ DocsCollector.collect('java.util.Arrays', [
 				[/* inline code block */ 'i', `a.length`],
 				[/* text */ 't', ` if all
          elements in the array are less than the specified key.  Note
-         that this guarantees that the return value will be &gt;= 0 if
+         that this guarantees that the return value will be >= 0 if
          and only if the key is found.`]
 			]
 		]],
@@ -11742,7 +11742,7 @@ DocsCollector.collect('java.util.Arrays', [
 				[/* text */ 't', `Searches the specified array of chars for the specified value using the
  binary search algorithm.  The array must be sorted (as
  by the `],
-				[/* reference */ 'r', `sort(char[])`],
+				[/* reference */ 'r', `#sort(char%5B%5D)`, `sort(char[])`],
 				[/* text */ 't', ` method) prior to making this call.  If it
  is not sorted, the results are undefined.  If the array contains
  multiple elements with the specified value, there is no guarantee which
@@ -11770,7 +11770,7 @@ DocsCollector.collect('java.util.Arrays', [
 				[/* inline code block */ 'i', `a.length`],
 				[/* text */ 't', ` if all
          elements in the array are less than the specified key.  Note
-         that this guarantees that the return value will be &gt;= 0 if
+         that this guarantees that the return value will be >= 0 if
          and only if the key is found.`]
 			]
 		]],
@@ -11781,7 +11781,7 @@ DocsCollector.collect('java.util.Arrays', [
  binary search algorithm.
  The range must be sorted (as
  by the `],
-				[/* reference */ 'r', `sort(char[], int, int)`],
+				[/* reference */ 'r', `#sort(char%5B%5D,int,int)`, `sort(char[], int, int)`],
 				[/* text */ 't', ` method)
  prior to making this call.  If it
  is not sorted, the results are undefined.  If the range contains
@@ -11828,7 +11828,7 @@ DocsCollector.collect('java.util.Arrays', [
 				[/* inline code block */ 'i', `toIndex`],
 				[/* text */ 't', ` if all
          elements in the range are less than the specified key.  Note
-         that this guarantees that the return value will be &gt;= 0 if
+         that this guarantees that the return value will be >= 0 if
          and only if the key is found.`]
 			]
 		]],

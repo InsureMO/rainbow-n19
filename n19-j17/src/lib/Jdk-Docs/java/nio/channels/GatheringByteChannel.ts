@@ -58,13 +58,13 @@ DocsCollector.collect('java.nio.channels.GatheringByteChannel', [
 					[/* text */ 't', ` is written, where
  `],
 					[/* inline code block */ 'i', `0`],
-					[/* text */ 't', `&nbsp;`],
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `<=`],
-					[/* text */ 't', `&nbsp;`],
+					[/* text */ 't', ` `],
 					[/* text */ 't', `n`],
-					[/* text */ 't', `&nbsp;`],
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `<=`],
-					[/* text */ 't', `&nbsp;`],
+					[/* text */ 't', ` `],
 					[/* text */ 't', `r`],
 					[/* text */ 't', `.
  Up to the first `],
@@ -116,7 +116,7 @@ DocsCollector.collect('java.nio.channels.GatheringByteChannel', [
          non-negative and no larger than
          `],
 					[/* inline code block */ 'i', `srcs.length`],
-					[/* text */ 't', `&nbsp;-&nbsp;`],
+					[/* text */ 't', ``],
 					[/* inline code block */ 'i', `offset`]
 				]]
 			],

@@ -11,7 +11,7 @@ DocsCollector.collect('java.lang.FunctionalInterface', [
 
  Conceptually, a functional interface has exactly one abstract
  method.  Since `],
-		[/* external link */ 'a', `reflect/Method.html#isDefault()`, `default methods`],
+		[/* reference */ 'r', `.Method#isDefault()`],
 		[/* text */ 't', ` have an implementation, they are not abstract.  If
  an interface declares an abstract method overriding one of the
  public methods of `],

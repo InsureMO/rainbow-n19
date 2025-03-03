@@ -164,7 +164,7 @@ DocsCollector.collect('java.util.Calendar', [
 		[/* inline code block */ 'i', `Calendar`],
 		[/* text */ 't', ` is constructed. If the designated
  locale contains "fw" and/or "rg" `],
-		[/* external link */ 'a', `./Locale.html#def_locale_extension`, `Unicode extensions`],
+		[/* reference */ 'r', `.Locale#def_locale_extension`],
 		[/* text */ 't', `, the first day of the week will be obtained according to
  those extensions. If both "fw" and "rg" are specified, the value from the "fw"
  extension supersedes the implicit one from the "rg" extension.
@@ -266,22 +266,16 @@ DocsCollector.collect('java.util.Calendar', [
 
  `]
 		]],
-		[/* block */ 'b', [
-			[/* text */ 't', `Note:`],
-			[/* text */ 't', ` There are certain possible ambiguities in
- interpretation of certain singular times, which are resolved in the
- following ways:
- `]
-		]],
+		[/* block */ 'b', `Note:`],
 		[/* list */ 'l', [
 			[/* block */ 'b', ` 23:59 is the last minute of the day and 00:00 is the first
-          minute of the next day. Thus, 23:59 on Dec 31, 1999 &lt; 00:00 on
-          Jan 1, 2000 &lt; 00:01 on Jan 1, 2000.
+          minute of the next day. Thus, 23:59 on Dec 31, 1999 < 00:00 on
+          Jan 1, 2000 < 00:01 on Jan 1, 2000.
 
      `],
 			[/* block */ 'b', ` Although historically not precise, midnight also belongs to "am",
           and noon belongs to "pm", so on the same day,
-          12:00 am (midnight) &lt; 12:01 am, and 12:00 pm (noon) &lt; 12:01 pm
+          12:00 am (midnight) < 12:01 am, and 12:00 pm (noon) < 12:01 pm
  `]
 		]],
 		[/* block */ 'b', ''],
@@ -497,7 +491,7 @@ DocsCollector.collect('java.util.Calendar', [
 		[/* block */ 'b', [
 			[/* text */ 't', `Example`],
 			[/* text */ 't', `: See `],
-			[/* external link */ 'a', `GregorianCalendar.html#roll(int,int)`, `GregorianCalendar.roll(int, int)`],
+			[/* reference */ 'r', `.GregorianCalendar#roll(int,int)`],
 			[/* text */ 't', `.
 
  `]
@@ -1056,7 +1050,7 @@ DocsCollector.collect('java.util.Calendar', [
 		[/* field */ 'ALL_STYLES', [
 			[/* field description */
 				[/* text */ 't', `A style specifier for `],
-				[/* reference */ 'r', `getDisplayNames`],
+				[/* reference */ 'r', `#getDisplayNames(int,int,java.util.Locale)`, `getDisplayNames`],
 				[/* text */ 't', ` indicating names in all styles, such as
  "January" and "Jan".`]
 			],
@@ -1064,9 +1058,9 @@ DocsCollector.collect('java.util.Calendar', [
 		[/* field */ 'SHORT', [
 			[/* field description */
 				[/* text */ 't', `A style specifier for `],
-				[/* reference */ 'r', `getDisplayName`],
+				[/* reference */ 'r', `#getDisplayName(int,int,java.util.Locale)`, `getDisplayName`],
 				[/* text */ 't', ` and `],
-				[/* reference */ 'r', `getDisplayNames`],
+				[/* reference */ 'r', `#getDisplayNames(int,int,java.util.Locale)`, `getDisplayNames`],
 				[/* text */ 't', ` equivalent to `],
 				[/* text */ 't', `SHORT_FORMAT`],
 				[/* text */ 't', `.`]
@@ -1075,9 +1069,9 @@ DocsCollector.collect('java.util.Calendar', [
 		[/* field */ 'LONG', [
 			[/* field description */
 				[/* text */ 't', `A style specifier for `],
-				[/* reference */ 'r', `getDisplayName`],
+				[/* reference */ 'r', `#getDisplayName(int,int,java.util.Locale)`, `getDisplayName`],
 				[/* text */ 't', ` and `],
-				[/* reference */ 'r', `getDisplayNames`],
+				[/* reference */ 'r', `#getDisplayNames(int,int,java.util.Locale)`, `getDisplayNames`],
 				[/* text */ 't', ` equivalent to `],
 				[/* text */ 't', `LONG_FORMAT`],
 				[/* text */ 't', `.`]
@@ -1086,9 +1080,9 @@ DocsCollector.collect('java.util.Calendar', [
 		[/* field */ 'NARROW_FORMAT', [
 			[/* field description */
 				[/* text */ 't', `A style specifier for `],
-				[/* reference */ 'r', `getDisplayName`],
+				[/* reference */ 'r', `#getDisplayName(int,int,java.util.Locale)`, `getDisplayName`],
 				[/* text */ 't', ` and `],
-				[/* reference */ 'r', `getDisplayNames`],
+				[/* reference */ 'r', `#getDisplayNames(int,int,java.util.Locale)`, `getDisplayNames`],
 				[/* text */ 't', ` indicating a narrow name used for format. Narrow names
  are typically single character strings, such as "M" for Monday.`]
 			],
@@ -1096,9 +1090,9 @@ DocsCollector.collect('java.util.Calendar', [
 		[/* field */ 'NARROW_STANDALONE', [
 			[/* field description */
 				[/* text */ 't', `A style specifier for `],
-				[/* reference */ 'r', `getDisplayName`],
+				[/* reference */ 'r', `#getDisplayName(int,int,java.util.Locale)`, `getDisplayName`],
 				[/* text */ 't', ` and `],
-				[/* reference */ 'r', `getDisplayNames`],
+				[/* reference */ 'r', `#getDisplayNames(int,int,java.util.Locale)`, `getDisplayNames`],
 				[/* text */ 't', ` indicating a narrow name independently. Narrow names
  are typically single character strings, such as "M" for Monday.`]
 			],
@@ -1106,27 +1100,27 @@ DocsCollector.collect('java.util.Calendar', [
 		[/* field */ 'SHORT_FORMAT', [
 			[/* field description */
 				[/* text */ 't', `A style specifier for `],
-				[/* reference */ 'r', `getDisplayName`],
+				[/* reference */ 'r', `#getDisplayName(int,int,java.util.Locale)`, `getDisplayName`],
 				[/* text */ 't', ` and `],
-				[/* reference */ 'r', `getDisplayNames`],
+				[/* reference */ 'r', `#getDisplayNames(int,int,java.util.Locale)`, `getDisplayNames`],
 				[/* text */ 't', ` indicating a short name used for format.`]
 			],
 		]],
 		[/* field */ 'LONG_FORMAT', [
 			[/* field description */
 				[/* text */ 't', `A style specifier for `],
-				[/* reference */ 'r', `getDisplayName`],
+				[/* reference */ 'r', `#getDisplayName(int,int,java.util.Locale)`, `getDisplayName`],
 				[/* text */ 't', ` and `],
-				[/* reference */ 'r', `getDisplayNames`],
+				[/* reference */ 'r', `#getDisplayNames(int,int,java.util.Locale)`, `getDisplayNames`],
 				[/* text */ 't', ` indicating a long name used for format.`]
 			],
 		]],
 		[/* field */ 'SHORT_STANDALONE', [
 			[/* field description */
 				[/* text */ 't', `A style specifier for `],
-				[/* reference */ 'r', `getDisplayName`],
+				[/* reference */ 'r', `#getDisplayName(int,int,java.util.Locale)`, `getDisplayName`],
 				[/* text */ 't', ` and `],
-				[/* reference */ 'r', `getDisplayNames`],
+				[/* reference */ 'r', `#getDisplayNames(int,int,java.util.Locale)`, `getDisplayNames`],
 				[/* text */ 't', ` indicating a short name used independently,
  such as a month abbreviation as calendar headers.`]
 			],
@@ -1134,9 +1128,9 @@ DocsCollector.collect('java.util.Calendar', [
 		[/* field */ 'LONG_STANDALONE', [
 			[/* field description */
 				[/* text */ 't', `A style specifier for `],
-				[/* reference */ 'r', `getDisplayName`],
+				[/* reference */ 'r', `#getDisplayName(int,int,java.util.Locale)`, `getDisplayName`],
 				[/* text */ 't', ` and `],
-				[/* reference */ 'r', `getDisplayNames`],
+				[/* reference */ 'r', `#getDisplayNames(int,int,java.util.Locale)`, `getDisplayNames`],
 				[/* text */ 't', ` indicating a long name used independently,
  such as a month name as calendar headers.`]
 			],
@@ -1203,7 +1197,7 @@ DocsCollector.collect('java.util.Calendar', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs a Calendar with the default time zone
  and the default `],
-				[/* external link */ 'a', `Locale.Category.html#FORMAT`, `FORMAT`],
+				[/* reference */ 'r', `.Locale.Category#FORMAT`],
 				[/* text */ 't', `
  locale.`]
 			],
@@ -1256,7 +1250,7 @@ DocsCollector.collect('java.util.Calendar', [
  exception if any calendar fields have out-of-range values. The
  normalization and validation are handled by the
  `],
-				[/* reference */ 'r', `complete()`],
+				[/* reference */ 'r', `#complete()`, `complete()`],
 				[/* text */ 't', ` method, which process is calendar
  system dependent.`]
 			],
@@ -1325,7 +1319,7 @@ DocsCollector.collect('java.util.Calendar', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `Use the `],
-					[/* reference */ 'r', `compareTo`],
+					[/* reference */ 'r', `#compareTo(java.util.Calendar)`, `compareTo`],
 					[/* text */ 't', ` method to
  compare only the time values.`]
 				]]
@@ -1444,7 +1438,7 @@ DocsCollector.collect('java.util.Calendar', [
  this `],
 				[/* inline code block */ 'i', `Calendar`],
 				[/* text */ 't', ` undefined. This means that `],
-				[/* reference */ 'r', `isSet()`],
+				[/* reference */ 'r', `#isSet(int)`, `isSet()`],
 				[/* text */ 't', ` will return `],
 				[/* inline code block */ 'i', `false`],
 				[/* text */ 't', ` for all the
@@ -1474,7 +1468,7 @@ DocsCollector.collect('java.util.Calendar', [
  this `],
 				[/* inline code block */ 'i', `Calendar`],
 				[/* text */ 't', ` undefined. This means that `],
-				[/* reference */ 'r', `isSet(field)`],
+				[/* reference */ 'r', `#isSet(int)`, `isSet(field)`],
 				[/* text */ 't', ` will return `],
 				[/* inline code block */ 'i', `false`],
 				[/* text */ 't', `, and
@@ -1500,7 +1494,7 @@ DocsCollector.collect('java.util.Calendar', [
  the hour of day value of this `],
 					[/* inline code block */ 'i', `Calendar`],
 					[/* text */ 't', `. Use `],
-					[/* reference */ 'r', `set(Calendar.HOUR_OF_DAY, 0)`],
+					[/* reference */ 'r', `#set(int,int)`, `set(Calendar.HOUR_OF_DAY, 0)`],
 					[/* text */ 't', ` to reset the hour
  value.`]
 				]]
@@ -1521,14 +1515,14 @@ DocsCollector.collect('java.util.Calendar', [
 				[/* text */ 't', ` returned is based on the current time
  in the default time zone with the default
  `],
-				[/* external link */ 'a', `Locale.Category.html#FORMAT`, `FORMAT`],
+				[/* reference */ 'r', `.Locale.Category#FORMAT`],
 				[/* text */ 't', ` locale.
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the locale contains the time zone with "tz"
  `],
-					[/* external link */ 'a', `Locale.html#def_locale_extension`, `Unicode extension`],
+					[/* reference */ 'r', `.Locale#def_locale_extension`],
 					[/* text */ 't', `,
  that time zone is used instead.`]
 				]]
@@ -1551,7 +1545,7 @@ DocsCollector.collect('java.util.Calendar', [
 					[/* text */ 't', `
  If the locale contains the time zone with "tz"
  `],
-					[/* external link */ 'a', `Locale.html#def_locale_extension`, `Unicode extension`],
+					[/* reference */ 'r', `.Locale#def_locale_extension`],
 					[/* text */ 't', `,
  that time zone is used instead.`]
 				]]
@@ -1595,7 +1589,7 @@ DocsCollector.collect('java.util.Calendar', [
 				[/* text */ 't', ` returned is based on the current time
  in the given time zone with the default
  `],
-				[/* external link */ 'a', `Locale.Category.html#FORMAT`, `FORMAT`],
+				[/* reference */ 'r', `.Locale.Category#FORMAT`],
 				[/* text */ 't', ` locale.`]
 			],
 			[/* parameters */
@@ -1625,7 +1619,7 @@ DocsCollector.collect('java.util.Calendar', [
 				[/* text */ 't', `.
  Previous values of other fields are retained.  If this is not desired,
  call `],
-				[/* reference */ 'r', `clear()`],
+				[/* reference */ 'r', `#clear()`, `clear()`],
 				[/* text */ 't', ` first.`]
 			],
 			[/* parameters */
@@ -1678,7 +1672,7 @@ DocsCollector.collect('java.util.Calendar', [
 				[/* text */ 't', `.
  Previous values of other fields are retained.  If this is not desired,
  call `],
-				[/* reference */ 'r', `clear()`],
+				[/* reference */ 'r', `#clear()`, `clear()`],
 				[/* text */ 't', ` first.`]
 			],
 			[/* parameters */
@@ -1729,7 +1723,7 @@ DocsCollector.collect('java.util.Calendar', [
 				[/* text */ 't', `.
  Previous values of other calendar fields are retained.  If this is not desired,
  call `],
-				[/* reference */ 'r', `clear()`],
+				[/* reference */ 'r', `#clear()`, `clear()`],
 				[/* text */ 't', ` first.`]
 			],
 			[/* parameters */
@@ -1890,13 +1884,13 @@ DocsCollector.collect('java.util.Calendar', [
 		[/* method */ 'complete()', [
 			[/* method description */
 				[/* text */ 't', `Fills in any unset fields in the calendar fields. First, the `],
-				[/* reference */ 'r', `computeTime()`],
+				[/* reference */ 'r', `#computeTime()`, `computeTime()`],
 				[/* text */ 't', ` method is called if the time value (millisecond offset
  from the `],
 				[/* text */ 't', `Epoch`],
 				[/* text */ 't', `) has not been calculated from
  calendar field values. Then, the `],
-				[/* reference */ 'r', `computeFields()`],
+				[/* reference */ 'r', `#computeFields()`, `computeFields()`],
 				[/* text */ 't', ` method is
  called to calculate all calendar field values.`]
 			],
@@ -1996,7 +1990,7 @@ DocsCollector.collect('java.util.Calendar', [
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', ` is returned. This method calls
  `],
-				[/* reference */ 'r', `get(field)`],
+				[/* reference */ 'r', `#get(int)`, `get(field)`],
 				[/* text */ 't', ` to get the calendar
  `],
 				[/* inline code block */ 'i', `field`],
@@ -2111,7 +2105,7 @@ DocsCollector.collect('java.util.Calendar', [
 				[/* inline code block */ 'i', `Locale`],
 				[/* text */ 't', `
  instance equal to `],
-				[/* external link */ 'a', `Locale.html#US`, `Locale.US`],
+				[/* reference */ 'r', `.Locale#US`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -2159,7 +2153,7 @@ DocsCollector.collect('java.util.Calendar', [
 				[/* inline code block */ 'i', `Calendar`],
 				[/* text */ 't', ` instance. The minimum value is defined as
  the smallest value returned by the `],
-				[/* reference */ 'r', `get`],
+				[/* reference */ 'r', `#get(int)`, `get`],
 				[/* text */ 't', ` method
  for any possible time value.  The minimum value depends on
  calendar system specific parameters of the instance.`]
@@ -2181,7 +2175,7 @@ DocsCollector.collect('java.util.Calendar', [
 				[/* inline code block */ 'i', `Calendar`],
 				[/* text */ 't', ` instance. The maximum value is defined as
  the largest value returned by the `],
-				[/* reference */ 'r', `get`],
+				[/* reference */ 'r', `#get(int)`, `get`],
 				[/* text */ 't', ` method
  for any possible time value. The maximum value depends on
  calendar system specific parameters of the instance.`]
@@ -2351,10 +2345,10 @@ DocsCollector.collect('java.util.Calendar', [
 					[/* inline code block */ 'i', `Map`],
 					[/* text */ 't', ` containing
  all strings returned by `],
-					[/* external link */ 'a', `../text/DateFormatSymbols.html#getShortMonths()`, `DateFormatSymbols.getShortMonths()`],
+					[/* reference */ 'r', `java.DateFormatSymbols#getShortMonths()`],
 					[/* text */ 't', `
  and `],
-					[/* external link */ 'a', `../text/DateFormatSymbols.html#getMonths()`, `DateFormatSymbols.getMonths()`],
+					[/* reference */ 'r', `java.DateFormatSymbols#getMonths()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -2463,7 +2457,7 @@ DocsCollector.collect('java.util.Calendar', [
 				[/* inline code block */ 'i', `Calendar`],
 				[/* text */ 't', `. The
  week year is in sync with the week cycle. The `],
-				[/* reference */ 'r', `first day of the first week`],
+				[/* reference */ 'r', `#getFirstDayOfWeek()`, `first day of the first week`],
 				[/* text */ 't', ` is the first
  day of the week year.
 
@@ -2496,7 +2490,7 @@ DocsCollector.collect('java.util.Calendar', [
 				[/* inline code block */ 'i', `Calendar`],
 				[/* text */ 't', ` instance. The lowest maximum
  value is defined as the smallest value returned by `],
-				[/* reference */ 'r', `getActualMaximum(int)`],
+				[/* reference */ 'r', `#getActualMaximum(int)`, `getActualMaximum(int)`],
 				[/* text */ 't', ` for any possible time value. The least
  maximum value depends on calendar system specific parameters of
  the instance. For example, a `],
@@ -2543,7 +2537,7 @@ DocsCollector.collect('java.util.Calendar', [
 				[/* text */ 't', `
  recomputed first; to recompute the time, then the fields, call the
  `],
-				[/* reference */ 'r', `complete()`],
+				[/* reference */ 'r', `#complete()`, `complete()`],
 				[/* text */ 't', ` method.`]
 			],
 			/* parameters */ UDF,
@@ -2609,7 +2603,7 @@ DocsCollector.collect('java.util.Calendar', [
 					[/* inline code block */ 'i', `Calendar`],
 					[/* text */ 't', ` just repeatedly calls the
  version of `],
-					[/* reference */ 'r', `roll()`],
+					[/* reference */ 'r', `#roll(int,boolean)`, `roll()`],
 					[/* text */ 't', ` that rolls by one unit.  This may not
  always do the right thing.  For example, if the `],
 					[/* inline code block */ 'i', `DAY_OF_MONTH`],
@@ -2641,7 +2635,7 @@ DocsCollector.collect('java.util.Calendar', [
 				[/* inline code block */ 'i', `Calendar`],
 				[/* text */ 't', ` instance. The highest minimum
  value is defined as the largest value returned by `],
-				[/* reference */ 'r', `getActualMinimum(int)`],
+				[/* reference */ 'r', `#getActualMinimum(int)`, `getActualMinimum(int)`],
 				[/* text */ 't', ` for any possible time value. The
  greatest minimum value depends on calendar system specific
  parameters of the instance.`]
@@ -2679,7 +2673,7 @@ DocsCollector.collect('java.util.Calendar', [
 				[/* inline code block */ 'i', `Calendar`],
 				[/* text */ 't', ` in the runtime environment. The available
  calendar types can be used for the `],
-				[/* external link */ 'a', `Locale.html#def_locale_extension`, `Unicode locale extensions`],
+				[/* reference */ 'r', `.Locale#def_locale_extension`],
 				[/* text */ 't', `.
  The `],
 				[/* inline code block */ 'i', `Set`],

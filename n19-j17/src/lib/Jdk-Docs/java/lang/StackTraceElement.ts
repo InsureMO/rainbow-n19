@@ -4,7 +4,7 @@ import {DocsCollector} from '../../DocsCollector';
 DocsCollector.collect('java.lang.StackTraceElement', [
 	[/* class description */
 		[/* text */ 't', `An element in a stack trace, as returned by `],
-		[/* external link */ 'a', `Throwable.html#getStackTrace()`, `Throwable.getStackTrace()`],
+		[/* reference */ 'r', `.Throwable#getStackTrace()`],
 		[/* text */ 't', `.  Each element represents a single stack frame.
  All stack frames except for the one at the top of the stack represent
  a method invocation.  The frame at the top of the stack represents the
@@ -79,9 +79,9 @@ DocsCollector.collect('java.lang.StackTraceElement', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a stack trace element representing the specified execution
  point. The `],
-				[/* reference */ 'r', `module name`],
+				[/* reference */ 'r', `#getModuleName()`, `module name`],
 				[/* text */ 't', ` and `],
-				[/* reference */ 'r', `module version`],
+				[/* reference */ 'r', `#getModuleVersion()`, `module version`],
 				[/* text */ 't', ` of the stack trace element will
  be `],
 				[/* inline code block */ 'i', `null`],
@@ -150,7 +150,7 @@ DocsCollector.collect('java.lang.StackTraceElement', [
  where `],
 				[/* inline code block */ 'i', `equals`],
 				[/* text */ 't', ` has the semantics of `],
-				[/* external link */ 'a', `../util/Objects.html#equals(java.lang.Object,java.lang.Object)`, `Objects.equals`],
+				[/* reference */ 'r', `java.Objects#equals(java.lang.Object,java.lang.Object)`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */

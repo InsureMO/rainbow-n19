@@ -8,17 +8,17 @@ DocsCollector.collect('java.util.stream.IntStream$IntMapMultiConsumer', [
 		[/* text */ 't', `-valued argument
  and an IntConsumer, and returns no result. This functional interface is
  used by `],
-		[/* external link */ 'a', `IntStream.html#mapMulti(java.util.stream.IntStream.IntMapMultiConsumer)`, `IntStream.mapMulti`],
+		[/* reference */ 'r', `.IntStream#mapMulti(java.util.stream.IntStream.IntMapMultiConsumer)`],
 		[/* text */ 't', `
  to replace an int value with zero or more int values.
 
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
-			[/* external link */ 'a', `../function/package-summary.html`, `functional interface`],
+			[/* text */ 't', `functional interface`],
 			[/* text */ 't', `
  whose functional method is `],
-			[/* reference */ 'r', `accept(int, IntConsumer)`],
+			[/* reference */ 'r', `#accept(int,java.util.function.IntConsumer)`, `accept(int, IntConsumer)`],
 			[/* text */ 't', `.`]
 		]]
 	],

@@ -147,7 +147,7 @@ DocsCollector.collect('java.io.PushbackInputStream', [
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if this input stream has been closed by
              invoking its `],
-					[/* reference */ 'r', `close()`],
+					[/* reference */ 'r', `#close()`, `close()`],
 					[/* text */ 't', ` method,
              or an I/O error occurs.`]
 				]]
@@ -192,7 +192,7 @@ DocsCollector.collect('java.io.PushbackInputStream', [
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if this input stream has been closed by
              invoking its `],
-					[/* reference */ 'r', `close()`],
+					[/* reference */ 'r', `#close()`, `close()`],
 					[/* text */ 't', ` method,
              or an I/O error occurs.`]
 				]]
@@ -280,7 +280,7 @@ DocsCollector.collect('java.io.PushbackInputStream', [
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if the stream has been closed by
              invoking its `],
-					[/* reference */ 'r', `close()`],
+					[/* reference */ 'r', `#close()`, `close()`],
 					[/* text */ 't', ` method,
              `],
 					[/* inline code block */ 'i', `in.skip(n)`],
@@ -304,7 +304,7 @@ DocsCollector.collect('java.io.PushbackInputStream', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The method returns the sum of the number of bytes that have been
  pushed back and the value returned by `],
-					[/* external link */ 'a', `FilterInputStream.html#available()`, `available`],
+					[/* reference */ 'r', `.FilterInputStream#available()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -313,7 +313,7 @@ DocsCollector.collect('java.io.PushbackInputStream', [
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if this input stream has been closed by
              invoking its `],
-					[/* reference */ 'r', `close()`],
+					[/* reference */ 'r', `#close()`, `close()`],
 					[/* text */ 't', ` method,
              or an I/O error occurs.`]
 				]]
@@ -401,7 +401,7 @@ DocsCollector.collect('java.io.PushbackInputStream', [
             buffer for the specified number of bytes,
             or this input stream has been closed by
             invoking its `],
-					[/* reference */ 'r', `close()`],
+					[/* reference */ 'r', `#close()`, `close()`],
 					[/* text */ 't', ` method.`]
 				]]
 			],
@@ -428,7 +428,7 @@ DocsCollector.collect('java.io.PushbackInputStream', [
 					[/* text */ 't', `If there is not enough room in the pushback
             buffer for the byte, or this input stream has been closed by
             invoking its `],
-					[/* reference */ 'r', `close()`],
+					[/* reference */ 'r', `#close()`, `close()`],
 					[/* text */ 't', ` method.`]
 				]]
 			],
@@ -469,7 +469,7 @@ DocsCollector.collect('java.io.PushbackInputStream', [
             buffer for the specified number of bytes,
             or this input stream has been closed by
             invoking its `],
-					[/* reference */ 'r', `close()`],
+					[/* reference */ 'r', `#close()`, `close()`],
 					[/* text */ 't', ` method.`]
 				]]
 			],

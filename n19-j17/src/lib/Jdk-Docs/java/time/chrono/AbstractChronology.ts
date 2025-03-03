@@ -283,12 +283,12 @@ DocsCollector.collect('java.time.chrono.AbstractChronology', [
 					[/* text */ 't', `
  The default implementation is suitable for most calendar systems.
  If `],
-					[/* external link */ 'a', `../temporal/ChronoField.html#YEAR_OF_ERA`, `ChronoField.YEAR_OF_ERA`],
+					[/* reference */ 'r', `java.ChronoField#YEAR_OF_ERA`],
 					[/* text */ 't', ` is found without an `],
-					[/* external link */ 'a', `../temporal/ChronoField.html#ERA`, `ChronoField.ERA`],
+					[/* reference */ 'r', `java.ChronoField#ERA`],
 					[/* text */ 't', `
  then the last era in `],
-					[/* external link */ 'a', `Chronology.html#eras()`, `Chronology.eras()`],
+					[/* reference */ 'r', `.Chronology#eras()`],
 					[/* text */ 't', ` is used.
  The implementation assumes a 7 day week, that the first day-of-month
  has the value 1, that first day-of-year has the value 1, and that the

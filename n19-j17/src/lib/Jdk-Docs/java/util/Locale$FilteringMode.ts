@@ -26,7 +26,181 @@ DocsCollector.collect('java.util.Locale$FilteringMode', [
  The filtering method will behave as follows:
 
  `],
-		[/* table */ 't', ''],
+		[/* table */ 'tbl',
+			[/* caption */ 'tc', [
+				[/* text */ 't', `Filtering method behavior`]
+			]],
+			[/* table header */ 'th', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Filtering Mode`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Language Priority List: `],
+						[/* inline code block */ 'i', `"de-DE"`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Language Priority List: `],
+						[/* inline code block */ 'i', `"de-*-DE"`]
+					]]
+				]]
+			]],
+			[/* table body */ 'tb', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `
+ `],
+						[/* text */ 't', `AUTOSELECT_FILTERING`],
+						[/* text */ 't', `
+ `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `
+ Performs `],
+						[/* text */ 't', `basic`],
+						[/* text */ 't', ` filtering and returns `],
+						[/* inline code block */ 'i', `"de-DE"`],
+						[/* text */ 't', ` and
+ `],
+						[/* inline code block */ 'i', `"de-DE-1996"`],
+						[/* text */ 't', `.
+ `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `
+ Performs `],
+						[/* text */ 't', `extended`],
+						[/* text */ 't', ` filtering and returns `],
+						[/* inline code block */ 'i', `"de-DE"`],
+						[/* text */ 't', `,
+ `],
+						[/* inline code block */ 'i', `"de-Deva-DE"`],
+						[/* text */ 't', `, `],
+						[/* inline code block */ 'i', `"de-DE-1996"`],
+						[/* text */ 't', `, `],
+						[/* inline code block */ 'i', `"de-Latn-DE"`],
+						[/* text */ 't', `, and
+ `],
+						[/* inline code block */ 'i', `"de-Latn-DE-1996"`],
+						[/* text */ 't', `.
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `
+ `],
+						[/* text */ 't', `EXTENDED_FILTERING`],
+						[/* text */ 't', `
+ `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `
+ Performs `],
+						[/* text */ 't', `extended`],
+						[/* text */ 't', ` filtering and returns `],
+						[/* inline code block */ 'i', `"de-DE"`],
+						[/* text */ 't', `,
+ `],
+						[/* inline code block */ 'i', `"de-Deva-DE"`],
+						[/* text */ 't', `, `],
+						[/* inline code block */ 'i', `"de-DE-1996"`],
+						[/* text */ 't', `, `],
+						[/* inline code block */ 'i', `"de-Latn-DE"`],
+						[/* text */ 't', `, and
+ `],
+						[/* inline code block */ 'i', `"de-Latn-DE-1996"`],
+						[/* text */ 't', `.
+ `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Same as above.`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `
+ `],
+						[/* text */ 't', `IGNORE_EXTENDED_RANGES`],
+						[/* text */ 't', `
+ `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `
+ Performs `],
+						[/* text */ 't', `basic`],
+						[/* text */ 't', ` filtering and returns `],
+						[/* inline code block */ 'i', `"de-DE"`],
+						[/* text */ 't', ` and
+ `],
+						[/* inline code block */ 'i', `"de-DE-1996"`],
+						[/* text */ 't', `.
+ `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `
+ Performs `],
+						[/* text */ 't', `basic`],
+						[/* text */ 't', ` filtering and returns `],
+						[/* inline code block */ 'i', `null`],
+						[/* text */ 't', ` because
+ nothing matches.
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `
+ `],
+						[/* text */ 't', `MAP_EXTENDED_RANGES`],
+						[/* text */ 't', `
+ `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Same as above.`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `
+ Performs `],
+						[/* text */ 't', `basic`],
+						[/* text */ 't', ` filtering and returns `],
+						[/* inline code block */ 'i', `"de-DE"`],
+						[/* text */ 't', ` and
+ `],
+						[/* inline code block */ 'i', `"de-DE-1996"`],
+						[/* text */ 't', ` because `],
+						[/* inline code block */ 'i', `"de-*-DE"`],
+						[/* text */ 't', ` is mapped to
+ `],
+						[/* inline code block */ 'i', `"de-DE"`],
+						[/* text */ 't', `.
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `
+ `],
+						[/* text */ 't', `REJECT_EXTENDED_RANGES`],
+						[/* text */ 't', `
+ `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Same as above.`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `
+ Throws `],
+						[/* reference */ 'r', `java.lang.IllegalArgumentException`],
+						[/* text */ 't', ` because `],
+						[/* inline code block */ 'i', `"de-*-DE"`],
+						[/* text */ 't', ` is
+ not a valid basic language range.
+ `]
+					]]
+				]]
+			]],
+		],
 		[/* block */ 'b', '']
 	],
 	/* fields */ UDF,

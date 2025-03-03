@@ -8,7 +8,7 @@ DocsCollector.collect('java.nio.MappedByteBuffer', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Mapped byte buffers are created via the `],
-			[/* external link */ 'a', `channels/FileChannel.html#map(java.nio.channels.FileChannel.MapMode,long,long)`, `FileChannel.map`],
+			[/* reference */ 'r', `.FileChannel#map(java.nio.channels.FileChannel.MapMode,long,long)`],
 			[/* text */ 't', ` method.  This class
  extends the `],
 			[/* reference */ 'r', `java.nio.ByteBuffer`],
@@ -175,7 +175,7 @@ DocsCollector.collect('java.nio.MappedByteBuffer', [
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method is often used in conjunction with the `],
-					[/* external link */ 'a', `ByteBuffer.html#compact()`, `compact`],
+					[/* reference */ 'r', `.ByteBuffer#compact()`],
 					[/* text */ 't', ` method when transferring data from
  one place to another.  `]
 				]]
@@ -232,7 +232,7 @@ DocsCollector.collect('java.nio.MappedByteBuffer', [
  undefined, and its byte order will be
 
  `],
-					[/* external link */ 'a', `ByteOrder.html#BIG_ENDIAN`, `BIG_ENDIAN`],
+					[/* reference */ 'r', `.ByteOrder#BIG_ENDIAN`],
 					[/* text */ 't', `.
 
 
@@ -286,7 +286,7 @@ DocsCollector.collect('java.nio.MappedByteBuffer', [
  will be
 
  `],
-					[/* external link */ 'a', `ByteOrder.html#BIG_ENDIAN`, `BIG_ENDIAN`],
+					[/* reference */ 'r', `.ByteOrder#BIG_ENDIAN`],
 					[/* text */ 't', `.
 
 
@@ -318,7 +318,7 @@ DocsCollector.collect('java.nio.MappedByteBuffer', [
 					[/* text */ 't', `The position in this buffer at which the content of the new
           buffer will start; must be non-negative and no larger than
           `],
-					[/* external link */ 'a', `Buffer.html#limit()`, `limit()`]
+					[/* reference */ 'r', `.Buffer#limit()`]
 				]],
 				[/* parameter */ 'length', [/* parameter description */
 					[/* text */ 't', `The number of elements the new buffer will contain; must be
@@ -347,7 +347,7 @@ DocsCollector.collect('java.nio.MappedByteBuffer', [
 
  and mark values will be identical to those of this buffer, and its byte
  order will be `],
-					[/* external link */ 'a', `ByteOrder.html#BIG_ENDIAN`, `BIG_ENDIAN`],
+					[/* reference */ 'r', `.ByteOrder#BIG_ENDIAN`],
 					[/* text */ 't', `.
 
 
@@ -364,7 +364,7 @@ DocsCollector.collect('java.nio.MappedByteBuffer', [
 		]],
 		[/* method */ 'compact()', [
 			[/* method description */
-				[/* text */ 't', `Compacts this buffer&nbsp;&nbsp;`],
+				[/* text */ 't', `Compacts this buffer  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -374,23 +374,23 @@ DocsCollector.collect('java.nio.MappedByteBuffer', [
  if any, are copied to the beginning of the buffer.  That is, the
  byte at index `],
 					[/* text */ 't', `p`],
-					[/* text */ 't', `&nbsp;=&nbsp;`],
+					[/* text */ 't', ` = `],
 					[/* inline code block */ 'i', `position()`],
 					[/* text */ 't', ` is copied
  to index zero, the byte at index `],
 					[/* text */ 't', `p`],
-					[/* text */ 't', `&nbsp;+&nbsp;1 is copied
+					[/* text */ 't', ` + 1 is copied
  to index one, and so forth until the byte at index
  `],
 					[/* inline code block */ 'i', `limit()`],
-					[/* text */ 't', `&nbsp;-&nbsp;1 is copied to index
+					[/* text */ 't', ` - 1 is copied to index
  `],
 					[/* text */ 't', `n`],
-					[/* text */ 't', `&nbsp;=&nbsp;`],
+					[/* text */ 't', ` = `],
 					[/* inline code block */ 'i', `limit()`],
-					[/* text */ 't', `&nbsp;-&nbsp;`],
+					[/* text */ 't', ` - `],
 					[/* inline code block */ 'i', `1`],
-					[/* text */ 't', `&nbsp;-&nbsp;`],
+					[/* text */ 't', ` - `],
 					[/* text */ 't', `p`],
 					[/* text */ 't', `.
  The buffer's position is then set to `],
@@ -476,7 +476,7 @@ DocsCollector.collect('java.nio.MappedByteBuffer', [
 				[/* text */ 't', ` bytes.  An invocation of
  this method behaves in exactly the same way as the invocation
  `],
-				[/* reference */ 'r', `force(0,capacity())`],
+				[/* reference */ 'r', `#force(int,int)`, `force(0,capacity())`],
 				[/* text */ 't', `.
 
  `],
@@ -492,7 +492,7 @@ DocsCollector.collect('java.nio.MappedByteBuffer', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` If this buffer was not mapped in read/write mode (`],
-					[/* external link */ 'a', `channels/FileChannel.MapMode.html#READ_WRITE`, `FileChannel.MapMode.READ_WRITE`],
+					[/* reference */ 'r', `.FileChannel.MapMode#READ_WRITE`],
 					[/* text */ 't', `) then
  invoking this method may have no effect. In particular, the
  method has no effect for buffers mapped in read-only or private
@@ -539,7 +539,7 @@ DocsCollector.collect('java.nio.MappedByteBuffer', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` If this buffer was not mapped in read/write mode (`],
-					[/* external link */ 'a', `channels/FileChannel.MapMode.html#READ_WRITE`, `FileChannel.MapMode.READ_WRITE`],
+					[/* reference */ 'r', `.FileChannel.MapMode#READ_WRITE`],
 					[/* text */ 't', `) then
  invoking this method may have no effect. In particular, the
  method has no effect for buffers mapped in read-only or private

@@ -327,7 +327,7 @@ DocsCollector.collect('java.util.TimeZone', [
 						[/* text */ 't', `LONG`],
 						[/* text */ 't', `,
                 Locale.getDefault(`],
-						[/* external link */ 'a', `Locale.Category.html#DISPLAY`, `Locale.Category.DISPLAY`],
+						[/* text */ 't', `Locale.Category.DISPLAY`],
 						[/* text */ 't', `))
  `]
 					]]
@@ -363,17 +363,17 @@ DocsCollector.collect('java.util.TimeZone', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `When looking up a time zone name, the `],
-					[/* external link */ 'a', `ResourceBundle.Control.html#getCandidateLocales(java.lang.String,java.util.Locale)`, `default Locale search path of ResourceBundle`],
+					[/* reference */ 'r', `.ResourceBundle.Control#getCandidateLocales(java.lang.String,java.util.Locale)`],
 					[/* text */ 't', ` derived
  from the specified `],
 					[/* inline code block */ 'i', `locale`],
 					[/* text */ 't', ` is used. (No `],
-					[/* external link */ 'a', `ResourceBundle.Control.html#getFallbackLocale(java.lang.String,java.util.Locale)`, `fallback Locale`],
+					[/* reference */ 'r', `.ResourceBundle.Control#getFallbackLocale(java.lang.String,java.util.Locale)`],
 					[/* text */ 't', ` search is performed.) If a time zone name in any
  `],
 					[/* inline code block */ 'i', `Locale`],
 					[/* text */ 't', ` of the search path, including `],
-					[/* external link */ 'a', `Locale.html#ROOT`, `Locale.ROOT`],
+					[/* reference */ 'r', `.Locale#ROOT`],
 					[/* text */ 't', `, is
  found, the name is returned. Otherwise, a string in the
  `],
@@ -483,7 +483,7 @@ DocsCollector.collect('java.util.TimeZone', [
 					[/* code block */ 'c', [
 						[/* text */ 't', ` getDisplayName(daylight, style,
                 Locale.getDefault(`],
-						[/* external link */ 'a', `Locale.Category.html#DISPLAY`, `Locale.Category.DISPLAY`],
+						[/* text */ 't', `Locale.Category.DISPLAY`],
 						[/* text */ 't', `))
  `]
 					]]
@@ -645,7 +645,7 @@ DocsCollector.collect('java.util.TimeZone', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The default implementation returns 3600000 milliseconds
  (i.e., one hour) if a call to `],
-					[/* reference */ 'r', `useDaylightTime()`],
+					[/* reference */ 'r', `#useDaylightTime()`, `useDaylightTime()`],
 					[/* text */ 't', `
  returns `],
 					[/* inline code block */ 'i', `true`],
@@ -671,9 +671,9 @@ DocsCollector.collect('java.util.TimeZone', [
 					[/* text */ 't', ` with this `],
 					[/* inline code block */ 'i', `TimeZone`],
 					[/* text */ 't', ` and the time stamp, and call `],
-					[/* external link */ 'a', `Calendar.html#get(int)`, `Calendar.get`],
+					[/* reference */ 'r', `.Calendar#get(int)`],
 					[/* inline code block */ 'i', `(`],
-					[/* external link */ 'a', `Calendar.html#DST_OFFSET`, `Calendar.DST_OFFSET`],
+					[/* reference */ 'r', `.Calendar#DST_OFFSET`],
 					[/* inline code block */ 'i', `)`],
 					[/* text */ 't', `.`]
 				]]
@@ -766,7 +766,7 @@ DocsCollector.collect('java.util.TimeZone', [
  changes, this method refers to the last known Daylight Saving Time
  rule that can be a future prediction and may not be the same as
  the current rule. Consider calling `],
-					[/* reference */ 'r', `observesDaylightTime()`],
+					[/* reference */ 'r', `#observesDaylightTime()`, `observesDaylightTime()`],
 					[/* text */ 't', `
  if the current rule should also be taken into account.`]
 				]]

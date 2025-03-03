@@ -31,7 +31,7 @@ DocsCollector.collect('java.security.cert.Certificate', [
 				[/* parameter */ 'type', [/* parameter description */
 					[/* text */ 't', `the standard name of the certificate type.
  See the CertificateFactory section in the `],
-					[/* external link */ 'a', `../../../../../specs/security/standard-names.html#certificatefactory-types`, `Java Security Standard Algorithm Names Specification`],
+					[/* text */ 't', `Java Security Standard Algorithm Names Specification`],
 					[/* text */ 't', `
  for information about standard certificate types.`]
 				]]

@@ -75,9 +75,9 @@ DocsCollector.collect('java.time.ZonedDateTime', [
  previous offset, or the previous offset is invalid, then the earlier offset is
  used, typically "summer" time.. Two additional methods,
  `],
-			[/* reference */ 'r', `withEarlierOffsetAtOverlap()`],
+			[/* reference */ 'r', `#withEarlierOffsetAtOverlap()`, `withEarlierOffsetAtOverlap()`],
 			[/* text */ 't', ` and `],
-			[/* reference */ 'r', `withLaterOffsetAtOverlap()`],
+			[/* reference */ 'r', `#withLaterOffsetAtOverlap()`, `withLaterOffsetAtOverlap()`],
 			[/* text */ 't', `,
  help manage the case of an overlap.
  `]
@@ -99,11 +99,11 @@ DocsCollector.collect('java.time.ZonedDateTime', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  This is a `],
-			[/* external link */ 'a', `../../../java.base/java/lang/doc-files/ValueBased.html`, `value-based`],
+			[/* text */ 't', `value-based`],
 			[/* text */ 't', `
  class; programmers should treat instances that are
  `],
-			[/* reference */ 'r', `equal`],
+			[/* reference */ 'r', `#equals(java.lang.Object)`, `equal`],
 			[/* text */ 't', ` as interchangeable and should not
  use instances for synchronization, or unpredictable behavior may
  occur. For example, in a future release, synchronization may fail.
@@ -133,7 +133,7 @@ DocsCollector.collect('java.time.ZonedDateTime', [
 					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
 					[/* text */ 't', ` then the query is implemented here.
  The `],
-					[/* reference */ 'r', `supported fields`],
+					[/* reference */ 'r', `#isSupported(java.time.temporal.TemporalField)`, `supported fields`],
 					[/* text */ 't', ` will return valid
  values based on this date-time, except `],
 					[/* inline code block */ 'i', `NANO_OF_DAY`],
@@ -273,7 +273,7 @@ DocsCollector.collect('java.time.ZonedDateTime', [
 					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
 					[/* text */ 't', ` then the query is implemented here.
  The `],
-					[/* reference */ 'r', `supported fields`],
+					[/* reference */ 'r', `#isSupported(java.time.temporal.TemporalField)`, `supported fields`],
 					[/* text */ 't', ` will return valid
  values based on this date-time.
  All other `],
@@ -597,7 +597,7 @@ DocsCollector.collect('java.time.ZonedDateTime', [
 					[/* text */ 't', `
  The result of this method is obtained by invoking the
  `],
-					[/* external link */ 'a', `temporal/TemporalQuery.html#queryFrom(java.time.temporal.TemporalAccessor)`, `TemporalQuery.queryFrom(TemporalAccessor)`],
+					[/* reference */ 'r', `.TemporalQuery#queryFrom(java.time.temporal.TemporalAccessor)`],
 					[/* text */ 't', ` method on the
  specified query passing `],
 					[/* inline code block */ 'i', `this`],
@@ -650,7 +650,7 @@ DocsCollector.collect('java.time.ZonedDateTime', [
 					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
 					[/* text */ 't', ` then the query is implemented here.
  The `],
-					[/* reference */ 'r', `supported fields`],
+					[/* reference */ 'r', `#isSupported(java.time.temporal.TemporalField)`, `supported fields`],
 					[/* text */ 't', ` will return
  appropriate range instances.
  All other `],
@@ -699,12 +699,12 @@ DocsCollector.collect('java.time.ZonedDateTime', [
 					[/* text */ 't', `
  This checks if this date-time can be queried for the specified field.
  If false, then calling the `],
-					[/* reference */ 'r', `range`],
+					[/* reference */ 'r', `#range(java.time.temporal.TemporalField)`, `range`],
 					[/* text */ 't', `,
  `],
-					[/* reference */ 'r', `get`],
+					[/* reference */ 'r', `#get(java.time.temporal.TemporalField)`, `get`],
 					[/* text */ 't', ` and `],
-					[/* reference */ 'r', `with(TemporalField, long)`],
+					[/* reference */ 'r', `#with(java.time.temporal.TemporalField,long)`, `with(TemporalField, long)`],
 					[/* text */ 't', `
  methods will throw an exception.
  `]
@@ -847,10 +847,10 @@ DocsCollector.collect('java.time.ZonedDateTime', [
 					[/* text */ 't', `
  This checks if the specified unit can be added to, or subtracted from, this date-time.
  If false, then calling the `],
-					[/* reference */ 'r', `plus(long, TemporalUnit)`],
+					[/* reference */ 'r', `#plus(long,java.time.temporal.TemporalUnit)`, `plus(long, TemporalUnit)`],
 					[/* text */ 't', ` and
  `],
-					[/* reference */ 'r', `minus`],
+					[/* reference */ 'r', `#minus(long,java.time.temporal.TemporalUnit)`, `minus`],
 					[/* text */ 't', ` methods will throw an exception.
  `]
 				]],
@@ -978,7 +978,7 @@ DocsCollector.collect('java.time.ZonedDateTime', [
 					[/* text */ 't', `
  The string must represent a valid date-time and is parsed using
  `],
-					[/* external link */ 'a', `format/DateTimeFormatter.html#ISO_ZONED_DATE_TIME`, `DateTimeFormatter.ISO_ZONED_DATE_TIME`],
+					[/* reference */ 'r', `.DateTimeFormatter#ISO_ZONED_DATE_TIME`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -1036,7 +1036,7 @@ DocsCollector.collect('java.time.ZonedDateTime', [
 					[/* reference */ 'r', `enum class in java.time.Month`],
 					[/* text */ 't', `
  is used by calling `],
-					[/* reference */ 'r', `getMonth()`],
+					[/* reference */ 'r', `#getMonth()`, `getMonth()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -1103,7 +1103,7 @@ DocsCollector.collect('java.time.ZonedDateTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This creates a zoned date-time by `],
-					[/* external link */ 'a', `chrono/ChronoLocalDateTime.html#toInstant(java.time.ZoneOffset)`, `combining`],
+					[/* reference */ 'r', `.ChronoLocalDateTime#toInstant(java.time.ZoneOffset)`],
 					[/* text */ 't', `
  the `],
 					[/* inline code block */ 'i', `LocalDateTime`],
@@ -1126,7 +1126,7 @@ DocsCollector.collect('java.time.ZonedDateTime', [
 					[/* inline code block */ 'i', `ZoneOffset`],
 					[/* text */ 't', `, this method is equivalent
  to `],
-					[/* reference */ 'r', `of(LocalDateTime, ZoneId)`],
+					[/* reference */ 'r', `#of(java.time.LocalDateTime,java.time.ZoneId)`, `of(LocalDateTime, ZoneId)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -1158,7 +1158,7 @@ DocsCollector.collect('java.time.ZonedDateTime', [
 					[/* text */ 't', `
  This creates a zoned date-time with the same instant as that specified.
  Calling `],
-					[/* external link */ 'a', `chrono/ChronoZonedDateTime.html#toInstant()`, `ChronoZonedDateTime.toInstant()`],
+					[/* reference */ 'r', `.ChronoZonedDateTime#toInstant()`],
 					[/* text */ 't', ` will return an instant equal to the one used here.
  `]
 				]],
@@ -1226,7 +1226,7 @@ DocsCollector.collect('java.time.ZonedDateTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This will query the `],
-					[/* external link */ 'a', `Clock.html#system(java.time.ZoneId)`, `system clock`],
+					[/* reference */ 'r', `.Clock#system(java.time.ZoneId)`],
 					[/* text */ 't', ` to obtain the current date-time.
  Specifying the time-zone avoids dependence on the default time-zone.
  The offset will be calculated from the specified time-zone.
@@ -1253,7 +1253,7 @@ DocsCollector.collect('java.time.ZonedDateTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This will query the `],
-					[/* external link */ 'a', `Clock.html#systemDefaultZone()`, `system clock`],
+					[/* reference */ 'r', `.Clock#systemDefaultZone()`],
 					[/* text */ 't', ` in the default
  time-zone to obtain the current date-time.
  The zone and offset will be set based on the time-zone in the clock.
@@ -1284,12 +1284,12 @@ DocsCollector.collect('java.time.ZonedDateTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The zone ID may be same as the `],
-					[/* reference */ 'r', `offset`],
+					[/* reference */ 'r', `#getOffset()`, `offset`],
 					[/* text */ 't', `.
  If this is true, then any future calculations, such as addition or subtraction,
  have no complex edge cases due to time-zone rules.
  See also `],
-					[/* reference */ 'r', `withFixedOffsetZone()`],
+					[/* reference */ 'r', `#withFixedOffsetZone()`, `withFixedOffsetZone()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -1359,10 +1359,10 @@ DocsCollector.collect('java.time.ZonedDateTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The other `],
-					[/* reference */ 'r', `supported fields`],
+					[/* reference */ 'r', `#isSupported(java.time.temporal.TemporalField)`, `supported fields`],
 					[/* text */ 't', ` will behave as per
  the matching method on `],
-					[/* external link */ 'a', `LocalDateTime.html#with(java.time.temporal.TemporalField,long)`, `LocalDateTime`],
+					[/* reference */ 'r', `.LocalDateTime#with(java.time.temporal.TemporalField,long)`],
 					[/* text */ 't', `.
  The zone is not part of the calculation and will be unchanged.
  When converting back to `],
@@ -1502,7 +1502,7 @@ DocsCollector.collect('java.time.ZonedDateTime', [
 					[/* text */ 't', `
  The result of this method is obtained by invoking the
  `],
-					[/* external link */ 'a', `temporal/TemporalAdjuster.html#adjustInto(java.time.temporal.Temporal)`, `TemporalAdjuster.adjustInto(Temporal)`],
+					[/* reference */ 'r', `.TemporalAdjuster#adjustInto(java.time.temporal.Temporal)`],
 					[/* text */ 't', ` method on the
  specified adjuster passing `],
 					[/* inline code block */ 'i', `this`],
@@ -1556,11 +1556,11 @@ DocsCollector.collect('java.time.ZonedDateTime', [
 					[/* text */ 't', `
  The calculation is delegated to the amount object by calling
  `],
-					[/* external link */ 'a', `temporal/TemporalAmount.html#addTo(java.time.temporal.Temporal)`, `TemporalAmount.addTo(Temporal)`],
+					[/* reference */ 'r', `.TemporalAmount#addTo(java.time.temporal.Temporal)`],
 					[/* text */ 't', `. The amount implementation is free
  to implement the addition in any way it wishes, however it typically
  calls back to `],
-					[/* reference */ 'r', `plus(long, TemporalUnit)`],
+					[/* reference */ 'r', `#plus(long,java.time.temporal.TemporalUnit)`, `plus(long, TemporalUnit)`],
 					[/* text */ 't', `. Consult the documentation
  of the amount implementation to determine if it can be successfully added.
  `]
@@ -1615,7 +1615,7 @@ DocsCollector.collect('java.time.ZonedDateTime', [
  The period is first added to the local date-time, then converted back
  to a zoned date-time using the zone ID.
  The conversion uses `],
-					[/* reference */ 'r', `ofLocal(LocalDateTime, ZoneId, ZoneOffset)`],
+					[/* reference */ 'r', `#ofLocal(java.time.LocalDateTime,java.time.ZoneId,java.time.ZoneOffset)`, `ofLocal(LocalDateTime, ZoneId, ZoneOffset)`],
 					[/* text */ 't', `
  with the offset before the addition.
  `]
@@ -1626,7 +1626,7 @@ DocsCollector.collect('java.time.ZonedDateTime', [
  The period is first added to the local date-time, then converted back to
  a zoned date-time using the zone ID.
  The conversion uses `],
-					[/* reference */ 'r', `ofInstant(LocalDateTime, ZoneOffset, ZoneId)`],
+					[/* reference */ 'r', `#ofInstant(java.time.LocalDateTime,java.time.ZoneOffset,java.time.ZoneId)`, `ofInstant(LocalDateTime, ZoneOffset, ZoneId)`],
 					[/* text */ 't', `
  with the offset before the addition.
  `]
@@ -1703,7 +1703,7 @@ DocsCollector.collect('java.time.ZonedDateTime', [
  `],
 					[/* inline code block */ 'i', `ZonedDateTime`],
 					[/* text */ 't', ` using `],
-					[/* reference */ 'r', `from(TemporalAccessor)`],
+					[/* reference */ 'r', `#from(java.time.temporal.TemporalAccessor)`, `from(TemporalAccessor)`],
 					[/* text */ 't', `.
  If the time-zone differs between the two zoned date-times, the specified
  end date-time is normalized to have the same zone as this date-time.
@@ -1720,7 +1720,7 @@ DocsCollector.collect('java.time.ZonedDateTime', [
  There are two equivalent ways of using this method.
  The first is to invoke this method.
  The second is to use `],
-					[/* external link */ 'a', `temporal/TemporalUnit.html#between(java.time.temporal.Temporal,java.time.temporal.Temporal)`, `TemporalUnit.between(Temporal, Temporal)`],
+					[/* reference */ 'r', `.TemporalUnit#between(java.time.temporal.Temporal,java.time.temporal.Temporal)`],
 					[/* text */ 't', `:
  `]
 				]],
@@ -1909,7 +1909,7 @@ DocsCollector.collect('java.time.ZonedDateTime', [
 					[/* text */ 't', `
  This operates on the local time-line,
  `],
-					[/* external link */ 'a', `LocalDateTime.html#plusDays(long)`, `adding days`],
+					[/* reference */ 'r', `.LocalDateTime#plusDays(long)`],
 					[/* text */ 't', ` to the local date-time.
  This is then converted back to a `],
 					[/* inline code block */ 'i', `ZonedDateTime`],
@@ -2050,7 +2050,7 @@ DocsCollector.collect('java.time.ZonedDateTime', [
  The period is first subtracted from the local date-time, then converted back
  to a zoned date-time using the zone ID.
  The conversion uses `],
-					[/* reference */ 'r', `ofLocal(LocalDateTime, ZoneId, ZoneOffset)`],
+					[/* reference */ 'r', `#ofLocal(java.time.LocalDateTime,java.time.ZoneId,java.time.ZoneOffset)`, `ofLocal(LocalDateTime, ZoneId, ZoneOffset)`],
 					[/* text */ 't', `
  with the offset before the subtraction.
  `]
@@ -2061,7 +2061,7 @@ DocsCollector.collect('java.time.ZonedDateTime', [
  The period is first subtracted from the local date-time, then converted back to
  a zoned date-time using the zone ID.
  The conversion uses `],
-					[/* reference */ 'r', `ofInstant(LocalDateTime, ZoneOffset, ZoneId)`],
+					[/* reference */ 'r', `#ofInstant(java.time.LocalDateTime,java.time.ZoneOffset,java.time.ZoneId)`, `ofInstant(LocalDateTime, ZoneOffset, ZoneId)`],
 					[/* text */ 't', `
  with the offset before the subtraction.
  `]
@@ -2069,7 +2069,7 @@ DocsCollector.collect('java.time.ZonedDateTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This method is equivalent to `],
-					[/* reference */ 'r', `plus(long, TemporalUnit)`],
+					[/* reference */ 'r', `#plus(long,java.time.temporal.TemporalUnit)`, `plus(long, TemporalUnit)`],
 					[/* text */ 't', ` with the amount negated.
  See that method for a full description of how addition, and thus subtraction, works.
  `]
@@ -2125,11 +2125,11 @@ DocsCollector.collect('java.time.ZonedDateTime', [
 					[/* text */ 't', `
  The calculation is delegated to the amount object by calling
  `],
-					[/* external link */ 'a', `temporal/TemporalAmount.html#subtractFrom(java.time.temporal.Temporal)`, `TemporalAmount.subtractFrom(Temporal)`],
+					[/* reference */ 'r', `.TemporalAmount#subtractFrom(java.time.temporal.Temporal)`],
 					[/* text */ 't', `. The amount implementation is free
  to implement the subtraction in any way it wishes, however it typically
  calls back to `],
-					[/* reference */ 'r', `minus(long, TemporalUnit)`],
+					[/* reference */ 'r', `#minus(long,java.time.temporal.TemporalUnit)`, `minus(long, TemporalUnit)`],
 					[/* text */ 't', `. Consult the documentation
  of the amount implementation to determine if it can be successfully subtracted.
  `]
@@ -2166,7 +2166,7 @@ DocsCollector.collect('java.time.ZonedDateTime', [
 					[/* text */ 't', `
  This operates on the local time-line,
  `],
-					[/* external link */ 'a', `LocalDateTime.html#minusDays(long)`, `subtracting days`],
+					[/* reference */ 'r', `.LocalDateTime#minusDays(long)`],
 					[/* text */ 't', ` to the local date-time.
  This is then converted back to a `],
 					[/* inline code block */ 'i', `ZonedDateTime`],
@@ -2358,7 +2358,7 @@ DocsCollector.collect('java.time.ZonedDateTime', [
  Truncation returns a copy of the original date-time with fields
  smaller than the specified unit set to zero.
  For example, truncating with the `],
-					[/* external link */ 'a', `temporal/ChronoUnit.html#MINUTES`, `minutes`],
+					[/* reference */ 'r', `.ChronoUnit#MINUTES`],
 					[/* text */ 't', ` unit
  will set the second-of-minute and nano-of-second field to zero.
  `]
@@ -2366,14 +2366,14 @@ DocsCollector.collect('java.time.ZonedDateTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The unit must have a `],
-					[/* external link */ 'a', `temporal/TemporalUnit.html#getDuration()`, `duration`],
+					[/* reference */ 'r', `.TemporalUnit#getDuration()`],
 					[/* text */ 't', `
  that divides into the length of a standard day without remainder.
  This includes all supplied time units on `],
 					[/* reference */ 'r', `enum class in java.time.temporal.ChronoUnit`],
 					[/* text */ 't', ` and
  `],
-					[/* external link */ 'a', `temporal/ChronoUnit.html#DAYS`, `DAYS`],
+					[/* reference */ 'r', `.ChronoUnit#DAYS`],
 					[/* text */ 't', `. Other units throw an exception.
  `]
 				]],
@@ -2381,7 +2381,7 @@ DocsCollector.collect('java.time.ZonedDateTime', [
 					[/* text */ 't', `
  This operates on the local time-line,
  `],
-					[/* external link */ 'a', `LocalDateTime.html#truncatedTo(java.time.temporal.TemporalUnit)`, `truncating`],
+					[/* reference */ 'r', `.LocalDateTime#truncatedTo(java.time.temporal.TemporalUnit)`],
 					[/* text */ 't', `
  the underlying local date-time. This is then converted back to a
  `],
@@ -2438,7 +2438,7 @@ DocsCollector.collect('java.time.ZonedDateTime', [
 					[/* inline code block */ 'i', `int`],
 					[/* text */ 't', ` value then the enum
  provides the `],
-					[/* external link */ 'a', `DayOfWeek.html#getValue()`, `int value`],
+					[/* reference */ 'r', `.DayOfWeek#getValue()`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -2483,7 +2483,7 @@ DocsCollector.collect('java.time.ZonedDateTime', [
 					[/* text */ 't', `
  This operates on the local time-line,
  `],
-					[/* external link */ 'a', `LocalDateTime.html#withDayOfYear(int)`, `changing the day-of-year`],
+					[/* reference */ 'r', `.LocalDateTime#withDayOfYear(int)`],
 					[/* text */ 't', ` of the local date-time.
  This is then converted back to a `],
 					[/* inline code block */ 'i', `ZonedDateTime`],
@@ -2530,7 +2530,7 @@ DocsCollector.collect('java.time.ZonedDateTime', [
 					[/* text */ 't', `
  This operates on the local time-line,
  `],
-					[/* external link */ 'a', `LocalDateTime.html#minusYears(long)`, `subtracting years`],
+					[/* reference */ 'r', `.LocalDateTime#minusYears(long)`],
 					[/* text */ 't', ` to the local date-time.
  This is then converted back to a `],
 					[/* inline code block */ 'i', `ZonedDateTime`],
@@ -2576,7 +2576,7 @@ DocsCollector.collect('java.time.ZonedDateTime', [
 					[/* text */ 't', `
  This operates on the local time-line,
  `],
-					[/* external link */ 'a', `LocalDateTime.html#plusMonths(long)`, `adding months`],
+					[/* reference */ 'r', `.LocalDateTime#plusMonths(long)`],
 					[/* text */ 't', ` to the local date-time.
  This is then converted back to a `],
 					[/* inline code block */ 'i', `ZonedDateTime`],
@@ -2622,7 +2622,7 @@ DocsCollector.collect('java.time.ZonedDateTime', [
 					[/* text */ 't', `
  This operates on the local time-line,
  `],
-					[/* external link */ 'a', `LocalDateTime.html#plusWeeks(long)`, `adding weeks`],
+					[/* reference */ 'r', `.LocalDateTime#plusWeeks(long)`],
 					[/* text */ 't', ` to the local date-time.
  This is then converted back to a `],
 					[/* inline code block */ 'i', `ZonedDateTime`],
@@ -2668,7 +2668,7 @@ DocsCollector.collect('java.time.ZonedDateTime', [
 					[/* text */ 't', `
  This operates on the local time-line,
  `],
-					[/* external link */ 'a', `LocalDateTime.html#plusYears(long)`, `adding years`],
+					[/* reference */ 'r', `.LocalDateTime#plusYears(long)`],
 					[/* text */ 't', ` to the local date-time.
  This is then converted back to a `],
 					[/* inline code block */ 'i', `ZonedDateTime`],
@@ -2714,7 +2714,7 @@ DocsCollector.collect('java.time.ZonedDateTime', [
 					[/* text */ 't', `
  This operates on the local time-line,
  `],
-					[/* external link */ 'a', `LocalDateTime.html#minusMonths(long)`, `subtracting months`],
+					[/* reference */ 'r', `.LocalDateTime#minusMonths(long)`],
 					[/* text */ 't', ` to the local date-time.
  This is then converted back to a `],
 					[/* inline code block */ 'i', `ZonedDateTime`],
@@ -2768,7 +2768,7 @@ DocsCollector.collect('java.time.ZonedDateTime', [
 					[/* inline code block */ 'i', `int`],
 					[/* text */ 't', ` value then the enum
  provides the `],
-					[/* external link */ 'a', `Month.html#getValue()`, `int value`],
+					[/* reference */ 'r', `.Month#getValue()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -2848,7 +2848,7 @@ DocsCollector.collect('java.time.ZonedDateTime', [
 					[/* text */ 't', `
  This operates on the local time-line,
  `],
-					[/* external link */ 'a', `LocalDateTime.html#withYear(int)`, `changing the year`],
+					[/* reference */ 'r', `.LocalDateTime#withYear(int)`],
 					[/* text */ 't', ` of the local date-time.
  This is then converted back to a `],
 					[/* inline code block */ 'i', `ZonedDateTime`],
@@ -2894,7 +2894,7 @@ DocsCollector.collect('java.time.ZonedDateTime', [
 					[/* text */ 't', `
  This operates on the local time-line,
  `],
-					[/* external link */ 'a', `LocalDateTime.html#withMonth(int)`, `changing the month`],
+					[/* reference */ 'r', `.LocalDateTime#withMonth(int)`],
 					[/* text */ 't', ` of the local date-time.
  This is then converted back to a `],
 					[/* inline code block */ 'i', `ZonedDateTime`],
@@ -2940,7 +2940,7 @@ DocsCollector.collect('java.time.ZonedDateTime', [
 					[/* text */ 't', `
  This operates on the local time-line,
  `],
-					[/* external link */ 'a', `LocalDateTime.html#withDayOfMonth(int)`, `changing the day-of-month`],
+					[/* reference */ 'r', `.LocalDateTime#withDayOfMonth(int)`],
 					[/* text */ 't', ` of the local date-time.
  This is then converted back to a `],
 					[/* inline code block */ 'i', `ZonedDateTime`],
@@ -2987,7 +2987,7 @@ DocsCollector.collect('java.time.ZonedDateTime', [
 					[/* text */ 't', `
  This operates on the local time-line,
  `],
-					[/* external link */ 'a', `LocalDateTime.html#withHour(int)`, `changing the time`],
+					[/* reference */ 'r', `.LocalDateTime#withHour(int)`],
 					[/* text */ 't', ` of the local date-time.
  This is then converted back to a `],
 					[/* inline code block */ 'i', `ZonedDateTime`],
@@ -3033,7 +3033,7 @@ DocsCollector.collect('java.time.ZonedDateTime', [
 					[/* text */ 't', `
  This operates on the local time-line,
  `],
-					[/* external link */ 'a', `LocalDateTime.html#withMinute(int)`, `changing the time`],
+					[/* reference */ 'r', `.LocalDateTime#withMinute(int)`],
 					[/* text */ 't', ` of the local date-time.
  This is then converted back to a `],
 					[/* inline code block */ 'i', `ZonedDateTime`],
@@ -3079,7 +3079,7 @@ DocsCollector.collect('java.time.ZonedDateTime', [
 					[/* text */ 't', `
  This operates on the local time-line,
  `],
-					[/* external link */ 'a', `LocalDateTime.html#withSecond(int)`, `changing the time`],
+					[/* reference */ 'r', `.LocalDateTime#withSecond(int)`],
 					[/* text */ 't', ` of the local date-time.
  This is then converted back to a `],
 					[/* inline code block */ 'i', `ZonedDateTime`],
@@ -3125,7 +3125,7 @@ DocsCollector.collect('java.time.ZonedDateTime', [
 					[/* text */ 't', `
  This operates on the local time-line,
  `],
-					[/* external link */ 'a', `LocalDateTime.html#withNano(int)`, `changing the time`],
+					[/* reference */ 'r', `.LocalDateTime#withNano(int)`],
 					[/* text */ 't', ` of the local date-time.
  This is then converted back to a `],
 					[/* inline code block */ 'i', `ZonedDateTime`],
@@ -3171,7 +3171,7 @@ DocsCollector.collect('java.time.ZonedDateTime', [
 					[/* text */ 't', `
  This operates on the local time-line,
  `],
-					[/* external link */ 'a', `LocalDateTime.html#minusWeeks(long)`, `subtracting weeks`],
+					[/* reference */ 'r', `.LocalDateTime#minusWeeks(long)`],
 					[/* text */ 't', ` to the local date-time.
  This is then converted back to a `],
 					[/* inline code block */ 'i', `ZonedDateTime`],
@@ -3268,7 +3268,7 @@ DocsCollector.collect('java.time.ZonedDateTime', [
 					[/* text */ 't', `
  To change the offset while keeping the local time,
  use `],
-					[/* reference */ 'r', `withZoneSameLocal(ZoneId)`],
+					[/* reference */ 'r', `#withZoneSameLocal(java.time.ZoneId)`, `withZoneSameLocal(ZoneId)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -3315,7 +3315,7 @@ DocsCollector.collect('java.time.ZonedDateTime', [
  The local date-time is only changed if it is invalid for the new zone,
  determined using the same approach as
  `],
-					[/* reference */ 'r', `ofLocal(LocalDateTime, ZoneId, ZoneOffset)`],
+					[/* reference */ 'r', `#ofLocal(java.time.LocalDateTime,java.time.ZoneId,java.time.ZoneOffset)`, `ofLocal(LocalDateTime, ZoneId, ZoneOffset)`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -3323,7 +3323,7 @@ DocsCollector.collect('java.time.ZonedDateTime', [
 					[/* text */ 't', `
  To change the zone and adjust the local date-time,
  use `],
-					[/* reference */ 'r', `withZoneSameInstant(ZoneId)`],
+					[/* reference */ 'r', `#withZoneSameInstant(java.time.ZoneId)`, `withZoneSameInstant(ZoneId)`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -3441,7 +3441,7 @@ DocsCollector.collect('java.time.ZonedDateTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This returns a zoned date-time where the zone ID is the same as `],
-					[/* reference */ 'r', `getOffset()`],
+					[/* reference */ 'r', `#getOffset()`, `getOffset()`],
 					[/* text */ 't', `.
  The local date-time, offset and instant of the result will be the same as in this date-time.
  `]

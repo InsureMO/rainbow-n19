@@ -8,13 +8,13 @@ DocsCollector.collect('java.nio.file.OpenOption', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Objects of this type are used by methods such as `],
-			[/* external link */ 'a', `Files.html#newOutputStream(java.nio.file.Path,java.nio.file.OpenOption...)`, `newOutputStream`],
+			[/* reference */ 'r', `.Files#newOutputStream(java.nio.file.Path,java.nio.file.OpenOption...)`],
 			[/* text */ 't', `, `],
-			[/* external link */ 'a', `Files.html#newByteChannel(java.nio.file.Path,java.util.Set,java.nio.file.attribute.FileAttribute...)`, `newByteChannel`],
+			[/* reference */ 'r', `.Files#newByteChannel(java.nio.file.Path,java.util.Set,java.nio.file.attribute.FileAttribute...)`],
 			[/* text */ 't', `, `],
-			[/* external link */ 'a', `../channels/FileChannel.html#open(java.nio.file.Path,java.util.Set,java.nio.file.attribute.FileAttribute...)`, `FileChannel.open`],
+			[/* reference */ 'r', `java.FileChannel#open(java.nio.file.Path,java.util.Set,java.nio.file.attribute.FileAttribute...)`],
 			[/* text */ 't', `, and `],
-			[/* external link */ 'a', `../channels/AsynchronousFileChannel.html#open(java.nio.file.Path,java.util.Set,java.util.concurrent.ExecutorService,java.nio.file.attribute.FileAttribute...)`, `AsynchronousFileChannel.open`],
+			[/* reference */ 'r', `java.AsynchronousFileChannel#open(java.nio.file.Path,java.util.Set,java.util.concurrent.ExecutorService,java.nio.file.attribute.FileAttribute...)`],
 			[/* text */ 't', `
  when opening or creating a file.
 

@@ -10,7 +10,7 @@ DocsCollector.collect('java.util.LongSummaryStatistics', [
 		[/* block */ 'b', [
 			[/* text */ 't', `This class is designed to work with (though does not require)
  `],
-			[/* external link */ 'a', `stream/package-summary.html`, `streams`],
+			[/* text */ 't', `streams`],
 			[/* text */ 't', `. For example, you can compute
  summary statistics on a stream of longs with:
  `]
@@ -25,7 +25,7 @@ DocsCollector.collect('java.util.LongSummaryStatistics', [
 			[/* inline code block */ 'i', `LongSummaryStatistics`],
 			[/* text */ 't', ` can be used as a
  `],
-			[/* external link */ 'a', `stream/Stream.html#collect(java.util.stream.Collector)`, `reduction`],
+			[/* reference */ 'r', `.Stream#collect(java.util.stream.Collector)`],
 			[/* text */ 't', `
  target for a `],
 			[/* reference */ 'r', `java.util.stream.Stream`],

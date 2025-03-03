@@ -136,10 +136,10 @@ DocsCollector.collect('java.util.List', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `The `],
-			[/* reference */ 'r', `List.of`],
+			[/* reference */ 'r', `#of(E...)`, `List.of`],
 			[/* text */ 't', ` and
  `],
-			[/* reference */ 'r', `List.copyOf`],
+			[/* reference */ 'r', `#copyOf(java.util.Collection)`, `List.copyOf`],
 			[/* text */ 't', ` static factory methods
  provide a convenient way to create unmodifiable lists. The `],
 			[/* inline code block */ 'i', `List`],
@@ -151,7 +151,7 @@ DocsCollector.collect('java.util.List', [
 		[/* list */ 'l', [
 			[/* block */ 'b', [
 				[/* text */ 't', `They are `],
-				[/* external link */ 'a', `Collection.html#unmodifiable`, `unmodifiable`],
+				[/* reference */ 'r', `.Collection#unmodifiable`],
 				[/* text */ 't', `. Elements cannot
  be added, removed, or replaced. Calling any mutator method on the List
  will always cause `],
@@ -179,7 +179,7 @@ DocsCollector.collect('java.util.List', [
  `],
 			[/* block */ 'b', [
 				[/* text */ 't', `The lists and their `],
-				[/* reference */ 'r', `subList`],
+				[/* reference */ 'r', `#subList(int,int)`, `subList`],
 				[/* text */ 't', ` views implement the
  `],
 				[/* reference */ 'r', `java.util.RandomAccess`],
@@ -188,10 +188,10 @@ DocsCollector.collect('java.util.List', [
 			]],
 			[/* block */ 'b', [
 				[/* text */ 't', `They are `],
-				[/* external link */ 'a', `../lang/doc-files/ValueBased.html`, `value-based`],
+				[/* text */ 't', `value-based`],
 				[/* text */ 't', `.
  Programmers should treat instances that are `],
-				[/* reference */ 'r', `equal`],
+				[/* reference */ 'r', `#equals(java.lang.Object)`, `equal`],
 				[/* text */ 't', `
  as interchangeable and should not use them for synchronization, or
  unpredictable behavior may occur. For example, in a future release,
@@ -203,7 +203,7 @@ DocsCollector.collect('java.util.List', [
 			[/* block */ 'b', [
 				[/* text */ 't', `They are serialized as specified on the
  `],
-				[/* external link */ 'a', `../../../serialized-form.html#java.util.CollSer`, `Serialized Form`],
+				[/* text */ 't', `Serialized Form`],
 				[/* text */ 't', `
  page.
  `]
@@ -213,7 +213,7 @@ DocsCollector.collect('java.util.List', [
 		[/* block */ 'b', [
 			[/* text */ 't', `This interface is a member of the
  `],
-			[/* external link */ 'a', `../../../java.base/java/util/package-summary.html#CollectionsFramework`, `Java Collections Framework`],
+			[/* text */ 't', `Java Collections Framework`],
 			[/* text */ 't', `.`]
 		]]
 	],
@@ -304,7 +304,7 @@ DocsCollector.collect('java.util.List', [
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` (as specified by `],
-				[/* external link */ 'a', `Collection.html#add(E)`, `Collection.add(E)`],
+				[/* reference */ 'r', `.Collection#add(E)`],
 				[/* text */ 't', `)`]
 			]
 		]],
@@ -335,14 +335,14 @@ DocsCollector.collect('java.util.List', [
 					[/* text */ 't', `if the type of the specified element
          is incompatible with this list
  (`],
-					[/* external link */ 'a', `Collection.html#optional-restrictions`, `optional`],
+					[/* reference */ 'r', `.Collection#optional-restrictions`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if the specified element is null and this
          list does not permit null elements
  (`],
-					[/* external link */ 'a', `Collection.html#optional-restrictions`, `optional`],
+					[/* reference */ 'r', `.Collection#optional-restrictions`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
@@ -468,7 +468,7 @@ DocsCollector.collect('java.util.List', [
 				[/* inline code block */ 'i', `list2`],
 				[/* text */ 't', `, as required by the general
  contract of `],
-				[/* external link */ 'a', `../lang/Object.html#hashCode()`, `Object.hashCode()`],
+				[/* reference */ 'r', `java.Object#hashCode()`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -527,14 +527,14 @@ DocsCollector.collect('java.util.List', [
 					[/* text */ 't', `if the type of the specified element
          is incompatible with this list
          (`],
-					[/* external link */ 'a', `Collection.html#optional-restrictions`, `optional`],
+					[/* reference */ 'r', `.Collection#optional-restrictions`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if the specified element is null and this
          list does not permit null elements
          (`],
-					[/* external link */ 'a', `Collection.html#optional-restrictions`, `optional`],
+					[/* reference */ 'r', `.Collection#optional-restrictions`],
 					[/* text */ 't', `)`]
 				]]
 			],
@@ -581,14 +581,14 @@ DocsCollector.collect('java.util.List', [
 					[/* text */ 't', `if the type of the specified element
          is incompatible with this list
          (`],
-					[/* external link */ 'a', `Collection.html#optional-restrictions`, `optional`],
+					[/* reference */ 'r', `.Collection#optional-restrictions`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if the specified element is null and this
          list does not permit null elements
          (`],
-					[/* external link */ 'a', `Collection.html#optional-restrictions`, `optional`],
+					[/* reference */ 'r', `.Collection#optional-restrictions`],
 					[/* text */ 't', `)`]
 				]]
 			],
@@ -633,7 +633,7 @@ DocsCollector.collect('java.util.List', [
          if the operator result is a null value and this list does
          not permit null elements
          (`],
-					[/* external link */ 'a', `Collection.html#optional-restrictions`, `optional`],
+					[/* reference */ 'r', `.Collection#optional-restrictions`],
 					[/* text */ 't', `)`]
 				]]
 			],
@@ -773,7 +773,7 @@ DocsCollector.collect('java.util.List', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `Like the `],
-					[/* reference */ 'r', `toArray()`],
+					[/* reference */ 'r', `#toArray()`, `toArray()`],
 					[/* text */ 't', ` method, this method acts as bridge between
  array-based and collection-based APIs.  Further, this method allows
  precise control over the runtime type of the output array, and may,
@@ -1262,14 +1262,14 @@ DocsCollector.collect('java.util.List', [
 					[/* text */ 't', `if the type of the specified element
          is incompatible with this list
  (`],
-					[/* external link */ 'a', `Collection.html#optional-restrictions`, `optional`],
+					[/* reference */ 'r', `.Collection#optional-restrictions`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if the specified element is null and this
          list does not permit null elements
  (`],
-					[/* external link */ 'a', `Collection.html#optional-restrictions`, `optional`],
+					[/* reference */ 'r', `.Collection#optional-restrictions`],
 					[/* text */ 't', `)`]
 				]]
 			],
@@ -1289,10 +1289,10 @@ DocsCollector.collect('java.util.List', [
 					[/* text */ 't', `The `],
 					[/* inline code block */ 'i', `Spliterator`],
 					[/* text */ 't', ` reports `],
-					[/* external link */ 'a', `Spliterator.html#SIZED`, `Spliterator.SIZED`],
+					[/* reference */ 'r', `.Spliterator#SIZED`],
 					[/* text */ 't', ` and
  `],
-					[/* external link */ 'a', `Spliterator.html#ORDERED`, `Spliterator.ORDERED`],
+					[/* reference */ 'r', `.Spliterator#ORDERED`],
 					[/* text */ 't', `.  Implementations should document the
  reporting of additional characteristic values.`]
 				]]
@@ -1513,7 +1513,7 @@ DocsCollector.collect('java.util.List', [
 				]],
 				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
 					[/* text */ 't', `(`],
-					[/* external link */ 'a', `Collection.html#optional-restrictions`, `optional`],
+					[/* reference */ 'r', `.Collection#optional-restrictions`],
 					[/* text */ 't', `)
          if the comparator is found to violate the `],
 					[/* reference */ 'r', `java.util.Comparator`],
@@ -1544,14 +1544,14 @@ DocsCollector.collect('java.util.List', [
 					[/* text */ 't', `if the class of an element of this list
          is incompatible with the specified collection
  (`],
-					[/* external link */ 'a', `Collection.html#optional-restrictions`, `optional`],
+					[/* reference */ 'r', `.Collection#optional-restrictions`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if this list contains a null element and the
          specified collection does not permit null elements
          (`],
-					[/* external link */ 'a', `Collection.html#optional-restrictions`, `optional`],
+					[/* reference */ 'r', `.Collection#optional-restrictions`],
 					[/* text */ 't', `),
          or if the specified collection is null`]
 				]]
@@ -1584,14 +1584,14 @@ DocsCollector.collect('java.util.List', [
 					[/* text */ 't', `if the class of an element of this list
          is incompatible with the specified collection
  (`],
-					[/* external link */ 'a', `Collection.html#optional-restrictions`, `optional`],
+					[/* reference */ 'r', `.Collection#optional-restrictions`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if this list contains a null element and the
          specified collection does not permit null elements
          (`],
-					[/* external link */ 'a', `Collection.html#optional-restrictions`, `optional`],
+					[/* reference */ 'r', `.Collection#optional-restrictions`],
 					[/* text */ 't', `),
          or if the specified collection is null`]
 				]]
@@ -1607,10 +1607,10 @@ DocsCollector.collect('java.util.List', [
  sequence), starting at the specified position in the list.
  The specified index indicates the first element that would be
  returned by an initial call to `],
-				[/* external link */ 'a', `ListIterator.html#next()`, `next`],
+				[/* reference */ 'r', `.ListIterator#next()`],
 				[/* text */ 't', `.
  An initial call to `],
-				[/* external link */ 'a', `ListIterator.html#previous()`, `previous`],
+				[/* reference */ 'r', `.ListIterator#previous()`],
 				[/* text */ 't', ` would
  return the element with the specified index minus one.`]
 			],
@@ -1618,7 +1618,7 @@ DocsCollector.collect('java.util.List', [
 				[/* parameter */ 'index', [/* parameter description */
 					[/* text */ 't', `index of the first element to be returned from the
         list iterator (by a call to `],
-					[/* external link */ 'a', `ListIterator.html#next()`, `next`],
+					[/* reference */ 'r', `.ListIterator#next()`],
 					[/* text */ 't', `)`]
 				]]
 			],
@@ -1665,7 +1665,7 @@ DocsCollector.collect('java.util.List', [
          in the specified collection are incompatible with this
          list
  (`],
-					[/* external link */ 'a', `Collection.html#optional-restrictions`, `optional`],
+					[/* reference */ 'r', `.Collection#optional-restrictions`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
@@ -1673,7 +1673,7 @@ DocsCollector.collect('java.util.List', [
          or more null elements and this list does not permit null
          elements
          (`],
-					[/* external link */ 'a', `Collection.html#optional-restrictions`, `optional`],
+					[/* reference */ 'r', `.Collection#optional-restrictions`],
 					[/* text */ 't', `),
          or if the specified collection is null`]
 				]]

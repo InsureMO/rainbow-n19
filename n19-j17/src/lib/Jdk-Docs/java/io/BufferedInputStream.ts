@@ -249,7 +249,7 @@ DocsCollector.collect('java.io.BufferedInputStream', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method implements the general contract of the corresponding
  `],
-					[/* external link */ 'a', `InputStream.html#read(byte%5B%5D,int,int)`, `read`],
+					[/* reference */ 'r', `.InputStream#read(byte[],int,int)`],
 					[/* text */ 't', ` method of
  the `],
 					[/* reference */ 'r', `java.io.InputStream`],
@@ -317,7 +317,7 @@ DocsCollector.collect('java.io.BufferedInputStream', [
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if this input stream has been closed by
                           invoking its `],
-					[/* reference */ 'r', `close()`],
+					[/* reference */ 'r', `#close()`, `close()`],
 					[/* text */ 't', ` method,
                           or an I/O error occurs.`]
 				]]
@@ -344,7 +344,7 @@ DocsCollector.collect('java.io.BufferedInputStream', [
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if this input stream has been closed by
                           invoking its `],
-					[/* reference */ 'r', `close()`],
+					[/* reference */ 'r', `#close()`, `close()`],
 					[/* text */ 't', ` method,
                           or an I/O error occurs.`]
 				]]
@@ -408,7 +408,7 @@ DocsCollector.collect('java.io.BufferedInputStream', [
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if this input stream has been closed by
                       invoking its `],
-					[/* reference */ 'r', `close()`],
+					[/* reference */ 'r', `#close()`, `close()`],
 					[/* text */ 't', ` method,
                       `],
 					[/* inline code block */ 'i', `in.skip(n)`],
@@ -435,7 +435,7 @@ DocsCollector.collect('java.io.BufferedInputStream', [
 					[/* inline code block */ 'i', `count - pos`],
 					[/* text */ 't', `) and the result of calling the
  `],
-					[/* external link */ 'a', `FilterInputStream.html#in`, `in`],
+					[/* reference */ 'r', `.FilterInputStream#in`],
 					[/* inline code block */ 'i', `.available()`],
 					[/* text */ 't', `.`]
 				]]
@@ -445,7 +445,7 @@ DocsCollector.collect('java.io.BufferedInputStream', [
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if this input stream has been closed by
                           invoking its `],
-					[/* reference */ 'r', `close()`],
+					[/* reference */ 'r', `#close()`, `close()`],
 					[/* text */ 't', ` method,
                           or an I/O error occurs.`]
 				]]
@@ -519,7 +519,7 @@ DocsCollector.collect('java.io.BufferedInputStream', [
 					[/* text */ 't', `if this stream has not been marked or,
                   if the mark has been invalidated, or the stream
                   has been closed by invoking its `],
-					[/* reference */ 'r', `close()`],
+					[/* reference */ 'r', `#close()`, `close()`],
 					[/* text */ 't', `
                   method, or an I/O error occurs.`]
 				]]

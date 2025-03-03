@@ -10,18 +10,18 @@ DocsCollector.collect('java.nio.channels.spi.AbstractInterruptibleChannel', [
 			[/* text */ 't', ` This class encapsulates the low-level machinery required to implement
  the asynchronous closing and interruption of channels.  A concrete channel
  class must invoke the `],
-			[/* reference */ 'r', `begin`],
+			[/* reference */ 'r', `#begin()`, `begin`],
 			[/* text */ 't', ` and `],
-			[/* reference */ 'r', `end`],
+			[/* reference */ 'r', `#end(boolean)`, `end`],
 			[/* text */ 't', ` methods
  before and after, respectively, invoking an I/O operation that might block
  indefinitely.  In order to ensure that the `],
-			[/* reference */ 'r', `end`],
+			[/* reference */ 'r', `#end(boolean)`, `end`],
 			[/* text */ 't', ` method is always
  invoked, these methods should be used within a
  `],
 			[/* inline code block */ 'i', `try`],
-			[/* text */ 't', `&nbsp;...&nbsp;`],
+			[/* text */ 't', ` ... `],
 			[/* inline code block */ 'i', `finally`],
 			[/* text */ 't', ` block:
 
@@ -42,7 +42,7 @@ DocsCollector.collect('java.nio.channels.spi.AbstractInterruptibleChannel', [
 			[/* text */ 't', ` The `],
 			[/* inline code block */ 'i', `completed`],
 			[/* text */ 't', ` argument to the `],
-			[/* reference */ 'r', `end`],
+			[/* reference */ 'r', `#end(boolean)`, `end`],
 			[/* text */ 't', ` method tells
  whether or not the I/O operation actually completed, that is, whether it had
  any effect that would be visible to the invoker.  In the case of an
@@ -56,14 +56,14 @@ DocsCollector.collect('java.nio.channels.spi.AbstractInterruptibleChannel', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` A concrete channel class must also implement the `],
-			[/* reference */ 'r', `implCloseChannel`],
+			[/* reference */ 'r', `#implCloseChannel()`, `implCloseChannel`],
 			[/* text */ 't', ` method in such a way that if it is
  invoked while another thread is blocked in a native I/O operation upon the
  channel then that operation will immediately return, either by throwing an
  exception or by returning normally.  If a thread is interrupted or the
  channel upon which it is blocked is asynchronously closed then the channel's
  `],
-			[/* reference */ 'r', `end`],
+			[/* reference */ 'r', `#end(boolean)`, `end`],
 			[/* text */ 't', ` method will throw the appropriate exception.
 
  `]
@@ -72,7 +72,7 @@ DocsCollector.collect('java.nio.channels.spi.AbstractInterruptibleChannel', [
 			[/* text */ 't', ` This class performs the synchronization required to implement the `],
 			[/* reference */ 'r', `java.nio.channels.Channel`],
 			[/* text */ 't', ` specification.  Implementations of the `],
-			[/* reference */ 'r', `implCloseChannel`],
+			[/* reference */ 'r', `#implCloseChannel()`, `implCloseChannel`],
 			[/* text */ 't', ` method need not synchronize against
  other threads that might be attempting to close the channel.  `]
 		]]
@@ -95,10 +95,10 @@ DocsCollector.collect('java.nio.channels.spi.AbstractInterruptibleChannel', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method should be invoked in tandem with the `],
-					[/* reference */ 'r', `begin`],
+					[/* reference */ 'r', `#begin()`, `begin`],
 					[/* text */ 't', ` method, using a `],
 					[/* inline code block */ 'i', `try`],
-					[/* text */ 't', `&nbsp;...&nbsp;`],
+					[/* text */ 't', ` ... `],
 					[/* inline code block */ 'i', `finally`],
 					[/* text */ 't', ` block
  as shown `],
@@ -133,11 +133,11 @@ DocsCollector.collect('java.nio.channels.spi.AbstractInterruptibleChannel', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method should be invoked in tandem with the `],
-					[/* reference */ 'r', `end`],
+					[/* reference */ 'r', `#end(boolean)`, `end`],
 					[/* text */ 't', `
  method, using a `],
 					[/* inline code block */ 'i', `try`],
-					[/* text */ 't', `&nbsp;...&nbsp;`],
+					[/* text */ 't', ` ... `],
 					[/* inline code block */ 'i', `finally`],
 					[/* text */ 't', ` block as
  shown `],
@@ -170,7 +170,7 @@ DocsCollector.collect('java.nio.channels.spi.AbstractInterruptibleChannel', [
 					[/* text */ 't', ` If the channel has already been closed then this method returns
  immediately.  Otherwise it marks the channel as closed and then invokes
  the `],
-					[/* reference */ 'r', `implCloseChannel`],
+					[/* reference */ 'r', `#implCloseChannel()`, `implCloseChannel`],
 					[/* text */ 't', ` method in order to
  complete the close operation.  `]
 				]]
@@ -190,7 +190,7 @@ DocsCollector.collect('java.nio.channels.spi.AbstractInterruptibleChannel', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method is invoked by the `],
-					[/* reference */ 'r', `close`],
+					[/* reference */ 'r', `#close()`, `close`],
 					[/* text */ 't', ` method in order
  to perform the actual work of closing the channel.  This method is only
  invoked if the channel has not yet been closed, and it is never invoked

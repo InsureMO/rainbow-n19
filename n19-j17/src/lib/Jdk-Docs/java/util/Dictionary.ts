@@ -28,10 +28,8 @@ DocsCollector.collect('java.util.Dictionary', [
  implementations of this class to decide if two keys are the same.
  `]
 		]],
-		[/* block */ 'b', [
-			[/* text */ 't', `NOTE: This class is obsolete.  New implementations should
+		[/* block */ 'b', `NOTE: This class is obsolete.  New implementations should
  implement the Map interface, rather than extending this class.`]
-		]]
 	],
 	/* fields */ UDF,
 	[/* constructors */

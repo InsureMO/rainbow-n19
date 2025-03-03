@@ -60,7 +60,7 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 		[/* block */ 'b', [
 			[/* text */ 't', `If the locale contains "rg" (region override)
  `],
-			[/* external link */ 'a', `../util/Locale.html#def_locale_extension`, `Unicode extension`],
+			[/* reference */ 'r', `java.Locale#def_locale_extension`],
 			[/* text */ 't', `,
  the symbols are overridden for the designated region.
 
@@ -102,7 +102,7 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 				[/* text */ 't', `
  implementations. For full locale coverage, use the
  `],
-				[/* reference */ 'r', `getInstance`],
+				[/* reference */ 'r', `#getInstance(java.util.Locale)`, `getInstance`],
 				[/* text */ 't', ` method.`]
 			],
 			[/* parameters */
@@ -121,7 +121,7 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 			[/* constructor description */
 				[/* text */ 't', `Construct a DateFormatSymbols object by loading format data from
  resources for the default `],
-				[/* external link */ 'a', `../util/Locale.Category.html#FORMAT`, `FORMAT`],
+				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
 				[/* text */ 't', `
  locale. This constructor can only
  construct instances for the locales supported by the Java
@@ -131,13 +131,13 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 				[/* text */ 't', `
  implementations. For full locale coverage, use the
  `],
-				[/* reference */ 'r', `getInstance`],
+				[/* reference */ 'r', `#getInstance(java.util.Locale)`, `getInstance`],
 				[/* text */ 't', ` method.
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is equivalent to calling
  `],
-					[/* reference */ 'r', `DateFormatSymbols(Locale.getDefault(Locale.Category.FORMAT))`],
+					[/* reference */ 'r', `#%3Cinit%3E(java.util.Locale)`, `DateFormatSymbols(Locale.getDefault(Locale.Category.FORMAT))`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -207,7 +207,7 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is equivalent to calling `],
-					[/* reference */ 'r', `getInstance(Locale.getDefault(Locale.Category.FORMAT))`],
+					[/* reference */ 'r', `#getInstance(java.util.Locale)`, `getInstance(Locale.getDefault(Locale.Category.FORMAT))`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -268,7 +268,7 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 				[/* inline code block */ 'i', `Locale`],
 				[/* text */ 't', `
  instance equal to `],
-				[/* external link */ 'a', `../util/Locale.html#US`, `Locale.US`],
+				[/* reference */ 'r', `java.Locale#US`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -285,14 +285,14 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 				[/* text */ 't', `Gets month strings. For example: "January", "February", etc.
  An array with either 12 or 13 elements will be returned depending
  on whether or not `],
-				[/* external link */ 'a', `../util/Calendar.html#UNDECIMBER`, `Calendar.UNDECIMBER`],
+				[/* reference */ 'r', `java.Calendar#UNDECIMBER`],
 				[/* text */ 't', `
  is supported. Use
  `],
-				[/* external link */ 'a', `../util/Calendar.html#JANUARY`, `Calendar.JANUARY`],
+				[/* reference */ 'r', `java.Calendar#JANUARY`],
 				[/* text */ 't', `,
  `],
-				[/* external link */ 'a', `../util/Calendar.html#FEBRUARY`, `Calendar.FEBRUARY`],
+				[/* reference */ 'r', `java.Calendar#FEBRUARY`],
 				[/* text */ 't', `,
  etc. to index the result array.
 
@@ -336,14 +336,14 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 				[/* text */ 't', `Gets short month strings. For example: "Jan", "Feb", etc.
  An array with either 12 or 13 elements will be returned depending
  on whether or not `],
-				[/* external link */ 'a', `../util/Calendar.html#UNDECIMBER`, `Calendar.UNDECIMBER`],
+				[/* reference */ 'r', `java.Calendar#UNDECIMBER`],
 				[/* text */ 't', `
  is supported. Use
  `],
-				[/* external link */ 'a', `../util/Calendar.html#JANUARY`, `Calendar.JANUARY`],
+				[/* reference */ 'r', `java.Calendar#JANUARY`],
 				[/* text */ 't', `,
  `],
-				[/* external link */ 'a', `../util/Calendar.html#FEBRUARY`, `Calendar.FEBRUARY`],
+				[/* reference */ 'r', `java.Calendar#FEBRUARY`],
 				[/* text */ 't', `,
  etc. to index the result array.
 
@@ -381,10 +381,10 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 			[/* return description */
 				[/* text */ 't', `the weekday strings. Use
  `],
-				[/* external link */ 'a', `../util/Calendar.html#SUNDAY`, `Calendar.SUNDAY`],
+				[/* reference */ 'r', `java.Calendar#SUNDAY`],
 				[/* text */ 't', `,
  `],
-				[/* external link */ 'a', `../util/Calendar.html#MONDAY`, `Calendar.MONDAY`],
+				[/* reference */ 'r', `java.Calendar#MONDAY`],
 				[/* text */ 't', `, etc. to index
  the result array.`]
 			]
@@ -398,10 +398,10 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 			[/* return description */
 				[/* text */ 't', `the short weekday strings. Use
  `],
-				[/* external link */ 'a', `../util/Calendar.html#SUNDAY`, `Calendar.SUNDAY`],
+				[/* reference */ 'r', `java.Calendar#SUNDAY`],
 				[/* text */ 't', `,
  `],
-				[/* external link */ 'a', `../util/Calendar.html#MONDAY`, `Calendar.MONDAY`],
+				[/* reference */ 'r', `java.Calendar#MONDAY`],
 				[/* text */ 't', `, etc. to index
  the result array.`]
 			]
@@ -442,7 +442,7 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 			[/* method description */
 				[/* text */ 't', `Gets time zone strings.  Use of this method is discouraged; use
  `],
-				[/* external link */ 'a', `../util/TimeZone.html#getDisplayName()`, `TimeZone.getDisplayName()`],
+				[/* reference */ 'r', `java.TimeZone#getDisplayName()`],
 				[/* text */ 't', `
  instead.
  `],
@@ -504,7 +504,7 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 				[/* reference */ 'r', `java.util.TimeZone`],
 				[/* text */ 't', ` class that are not
  `],
-				[/* external link */ 'a', `../util/TimeZone.html#CustomID`, `custom IDs`],
+				[/* reference */ 'r', `java.TimeZone#CustomID`],
 				[/* text */ 't', `.
  All other entries are localized names.  If a zone does not implement
  daylight saving time, the daylight saving time names should not be used.
@@ -513,7 +513,7 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If `],
-					[/* reference */ 'r', `setZoneStrings`],
+					[/* reference */ 'r', `#setZoneStrings(java.lang.String%5B%5D%5B%5D)`, `setZoneStrings`],
 					[/* text */ 't', ` has been called
  on this `],
 					[/* inline code block */ 'i', `DateFormatSymbols`],
@@ -540,10 +540,10 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 				[/* parameter */ 'newMonths', [/* parameter description */
 					[/* text */ 't', `the new month strings. The array should
  be indexed by `],
-					[/* external link */ 'a', `../util/Calendar.html#JANUARY`, `Calendar.JANUARY`],
+					[/* reference */ 'r', `java.Calendar#JANUARY`],
 					[/* text */ 't', `,
  `],
-					[/* external link */ 'a', `../util/Calendar.html#FEBRUARY`, `Calendar.FEBRUARY`],
+					[/* reference */ 'r', `java.Calendar#FEBRUARY`],
 					[/* text */ 't', `, etc.`]
 				]]
 			],
@@ -558,10 +558,10 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 				[/* parameter */ 'newShortMonths', [/* parameter description */
 					[/* text */ 't', `the new short month strings. The array should
  be indexed by `],
-					[/* external link */ 'a', `../util/Calendar.html#JANUARY`, `Calendar.JANUARY`],
+					[/* reference */ 'r', `java.Calendar#JANUARY`],
 					[/* text */ 't', `,
  `],
-					[/* external link */ 'a', `../util/Calendar.html#FEBRUARY`, `Calendar.FEBRUARY`],
+					[/* reference */ 'r', `java.Calendar#FEBRUARY`],
 					[/* text */ 't', `, etc.`]
 				]]
 			],
@@ -576,10 +576,10 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 				[/* parameter */ 'newWeekdays', [/* parameter description */
 					[/* text */ 't', `the new weekday strings. The array should
  be indexed by `],
-					[/* external link */ 'a', `../util/Calendar.html#SUNDAY`, `Calendar.SUNDAY`],
+					[/* reference */ 'r', `java.Calendar#SUNDAY`],
 					[/* text */ 't', `,
  `],
-					[/* external link */ 'a', `../util/Calendar.html#MONDAY`, `Calendar.MONDAY`],
+					[/* reference */ 'r', `java.Calendar#MONDAY`],
 					[/* text */ 't', `, etc.`]
 				]]
 			],
@@ -594,10 +594,10 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 				[/* parameter */ 'newShortWeekdays', [/* parameter description */
 					[/* text */ 't', `the new short weekday strings. The array should
  be indexed by `],
-					[/* external link */ 'a', `../util/Calendar.html#SUNDAY`, `Calendar.SUNDAY`],
+					[/* reference */ 'r', `java.Calendar#SUNDAY`],
 					[/* text */ 't', `,
  `],
-					[/* external link */ 'a', `../util/Calendar.html#MONDAY`, `Calendar.MONDAY`],
+					[/* reference */ 'r', `java.Calendar#MONDAY`],
 					[/* text */ 't', `, etc.`]
 				]]
 			],
@@ -673,7 +673,7 @@ DocsCollector.collect('java.text.DateFormatSymbols', [
 				[/* reference */ 'r', `java.util.TimeZone`],
 				[/* text */ 't', ` class that are not
  `],
-				[/* external link */ 'a', `../util/TimeZone.html#CustomID`, `custom IDs`],
+				[/* reference */ 'r', `java.TimeZone#CustomID`],
 				[/* text */ 't', `.
  All other entries are localized names.`]
 			],

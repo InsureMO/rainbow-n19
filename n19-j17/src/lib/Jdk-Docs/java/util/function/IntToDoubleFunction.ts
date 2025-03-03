@@ -16,10 +16,10 @@ DocsCollector.collect('java.util.function.IntToDoubleFunction', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
-			[/* external link */ 'a', `package-summary.html`, `functional interface`],
+			[/* reference */ 'r', `.package-summary`],
 			[/* text */ 't', `
  whose functional method is `],
-			[/* reference */ 'r', `applyAsDouble(int)`],
+			[/* reference */ 'r', `#applyAsDouble(int)`, `applyAsDouble(int)`],
 			[/* text */ 't', `.`]
 		]]
 	],

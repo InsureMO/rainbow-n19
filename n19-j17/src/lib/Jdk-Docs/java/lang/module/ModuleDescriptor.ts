@@ -12,7 +12,7 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
  in the Java virtual machine is obtained by invoking the `],
 			[/* reference */ 'r', `java.lang.Module`],
 			[/* text */ 't', `'s `],
-			[/* external link */ 'a', `../Module.html#getDescriptor()`, `getDescriptor`],
+			[/* reference */ 'r', `java.Module#getDescriptor()`],
 			[/* text */ 't', ` method. Module descriptors can also be created using the
  `],
 			[/* reference */ 'r', `java.lang.module.ModuleDescriptor.Builder`],
@@ -20,7 +20,7 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
  module declaration (`],
 			[/* inline code block */ 'i', `module-info.class`],
 			[/* text */ 't', `) using the `],
-			[/* reference */ 'r', `read`],
+			[/* reference */ 'r', `#read(java.io.InputStream,java.util.function.Supplier)`, `read`],
 			[/* text */ 't', ` methods defined here. `]
 		]],
 		[/* block */ 'b', [
@@ -30,19 +30,19 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
  module. `],
 			[/* text */ 't', `Normal`],
 			[/* text */ 't', ` modules and open modules describe their `],
-			[/* reference */ 'r', `dependences`],
+			[/* reference */ 'r', `#requires()`, `dependences`],
 			[/* text */ 't', `, `],
-			[/* reference */ 'r', `exported-packages`],
+			[/* reference */ 'r', `#exports()`, `exported-packages`],
 			[/* text */ 't', `, the services
  that they `],
-			[/* reference */ 'r', `use`],
+			[/* reference */ 'r', `#uses()`, `use`],
 			[/* text */ 't', ` or `],
-			[/* reference */ 'r', `provide`],
+			[/* reference */ 'r', `#provides()`, `provide`],
 			[/* text */ 't', `, and other
  components. `],
 			[/* text */ 't', `Normal`],
 			[/* text */ 't', ` modules may `],
-			[/* reference */ 'r', `open`],
+			[/* reference */ 'r', `#opens()`, `open`],
 			[/* text */ 't', ` specific
  packages. The module descriptor for an open module does not declare any
  open packages (its `],
@@ -103,7 +103,7 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method satisfies the general contract of the `],
-					[/* external link */ 'a', `../Object.html#equals(java.lang.Object)`, `Object.equals`],
+					[/* reference */ 'r', `java.Object#equals(java.lang.Object)`],
 					[/* text */ 't', ` method. `]
 				]]
 			],
@@ -141,7 +141,7 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
 				[/* text */ 't', ` if the
          module does not have a version or the version is
          `],
-				[/* external link */ 'a', `ModuleDescriptor.Version.html#parse(java.lang.String)`, `unparseable`]
+				[/* reference */ 'r', `.ModuleDescriptor.Version#parse(java.lang.String)`]
 			]
 		]],
 		[/* method */ 'hashCode()', [
@@ -152,7 +152,7 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The hash code is based upon the components of the module descriptor,
  and satisfies the general contract of the `],
-					[/* external link */ 'a', `../Object.html#hashCode()`, `Object.hashCode`],
+					[/* reference */ 'r', `java.Object#hashCode()`],
 					[/* text */ 't', ` method. `]
 				]]
 			],
@@ -175,9 +175,9 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
  module versions are compared. When comparing the module versions then a
  module descriptor with a version is considered to succeed a module
  descriptor that does not have a version. If both versions are `],
-					[/* external link */ 'a', `ModuleDescriptor.Version.html#parse(java.lang.String)`, `unparseable`],
+					[/* reference */ 'r', `.ModuleDescriptor.Version#parse(java.lang.String)`],
 					[/* text */ 't', ` then the `],
-					[/* reference */ 'r', `raw version strings`],
+					[/* reference */ 'r', `#rawVersion()`, `raw version strings`],
 					[/* text */ 't', ` are compared lexicographically. Where the module names
  are equal and the versions are equal (or not present in both), then the
  set of modifiers are compared. Sets of modifiers are compared by comparing
@@ -232,9 +232,9 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method is equivalent to testing if the set of `],
-					[/* reference */ 'r', `modifiers`],
+					[/* reference */ 'r', `#modifiers()`, `modifiers`],
 					[/* text */ 't', ` contains the `],
-					[/* external link */ 'a', `ModuleDescriptor.Modifier.html#OPEN`, `OPEN`],
+					[/* reference */ 'r', `.ModuleDescriptor.Modifier#OPEN`],
 					[/* text */ 't', ` modifier. `]
 				]]
 			],
@@ -250,7 +250,7 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
 				[/* text */ 't', `Reads the binary form of a module declaration from an input stream as a
  module descriptor. This method works exactly as specified by the 2-arg
  `],
-				[/* reference */ 'r', `read`],
+				[/* reference */ 'r', `#read(java.io.InputStream,java.util.function.Supplier)`, `read`],
 				[/* text */ 't', ` method with the exception that
  a packager finder is not used to find additional packages when the
  module descriptor read from the stream does not indicate the set of
@@ -345,7 +345,7 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
 				[/* text */ 't', `Reads the binary form of a module declaration from a byte buffer as a
  module descriptor. This method works exactly as specified by the 2-arg
  `],
-				[/* reference */ 'r', `read`],
+				[/* reference */ 'r', `#read(java.nio.ByteBuffer,java.util.function.Supplier)`, `read`],
 				[/* text */ 't', ` method with the exception that a
  packager finder is not used to find additional packages when the module
  descriptor encoded in the buffer does not indicate the set of packages.`]
@@ -397,7 +397,7 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
 					[/* text */ 't', `, where `],
 					[/* inline code block */ 'i', `p`],
 					[/* text */ 't', ` is the buffer's `],
-					[/* external link */ 'a', `../../nio/Buffer.html#position()`, `position`],
+					[/* reference */ 'r', `java.lang.Buffer#position()`],
 					[/* text */ 't', ` when this method is invoked. Upon return the buffer's position
  will be equal to `],
 					[/* inline code block */ 'i', `p + n`],
@@ -482,9 +482,9 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method is equivalent to testing if the set of `],
-					[/* reference */ 'r', `modifiers`],
+					[/* reference */ 'r', `#modifiers()`, `modifiers`],
 					[/* text */ 't', ` contains the `],
-					[/* external link */ 'a', `ModuleDescriptor.Modifier.html#AUTOMATIC`, `AUTOMATIC`],
+					[/* reference */ 'r', `.ModuleDescriptor.Modifier#AUTOMATIC`],
 					[/* text */ 't', ` modifier. `]
 				]]
 			],
@@ -607,7 +607,7 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` or is not a legal module
          name, or the set of modifiers contains `],
-					[/* external link */ 'a', `ModuleDescriptor.Modifier.html#AUTOMATIC`, `AUTOMATIC`],
+					[/* reference */ 'r', `.ModuleDescriptor.Modifier#AUTOMATIC`],
 					[/* text */ 't', ` with other modifiers`]
 				]]
 			],
@@ -621,7 +621,7 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
 				[/* text */ 't', `normal`],
 				[/* text */ 't', `
  module. This method is equivalent to invoking `],
-				[/* reference */ 'r', `newModule`],
+				[/* reference */ 'r', `#newModule(java.lang.String,java.util.Set)`, `newModule`],
 				[/* text */ 't', ` with an empty set of `],
 				[/* reference */ 'r', `enum class in java.lang.module.ModuleDescriptor.Modifier`],
 				[/* text */ 't', `.`]
@@ -647,9 +647,9 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
 			[/* method description */
 				[/* text */ 't', `Instantiates a builder to build a module descriptor for an open module.
  This method is equivalent to invoking `],
-				[/* reference */ 'r', `newModule`],
+				[/* reference */ 'r', `#newModule(java.lang.String,java.util.Set)`, `newModule`],
 				[/* text */ 't', ` with the `],
-				[/* external link */ 'a', `ModuleDescriptor.Modifier.html#OPEN`, `OPEN`],
+				[/* reference */ 'r', `.ModuleDescriptor.Modifier#OPEN`],
 				[/* text */ 't', ` modifier.
 
  `],
@@ -677,9 +677,9 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor', [
 			[/* method description */
 				[/* text */ 't', `Instantiates a builder to build a module descriptor for an automatic
  module. This method is equivalent to invoking `],
-				[/* reference */ 'r', `newModule`],
+				[/* reference */ 'r', `#newModule(java.lang.String,java.util.Set)`, `newModule`],
 				[/* text */ 't', ` with the `],
-				[/* external link */ 'a', `ModuleDescriptor.Modifier.html#AUTOMATIC`, `AUTOMATIC`],
+				[/* reference */ 'r', `.ModuleDescriptor.Modifier#AUTOMATIC`],
 				[/* text */ 't', `
  modifier.
 

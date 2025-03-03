@@ -9,17 +9,17 @@ DocsCollector.collect('java.nio.channels.FileLock', [
 		[/* block */ 'b', [
 			[/* text */ 't', ` A file-lock object is created each time a lock is acquired on a file via
  one of the `],
-			[/* external link */ 'a', `FileChannel.html#lock(long,long,boolean)`, `lock`],
+			[/* reference */ 'r', `.FileChannel#lock(long,long,boolean)`],
 			[/* text */ 't', ` or `],
-			[/* external link */ 'a', `FileChannel.html#tryLock(long,long,boolean)`, `tryLock`],
+			[/* reference */ 'r', `.FileChannel#tryLock(long,long,boolean)`],
 			[/* text */ 't', ` methods of the
  `],
 			[/* reference */ 'r', `java.nio.channels.FileChannel`],
 			[/* text */ 't', ` class, or the `],
-			[/* external link */ 'a', `AsynchronousFileChannel.html#lock(long,long,boolean,A,java.nio.channels.CompletionHandler)`, `lock`],
+			[/* reference */ 'r', `.AsynchronousFileChannel#lock(long,long,boolean,A,java.nio.channels.CompletionHandler)`],
 			[/* text */ 't', `
  or `],
-			[/* external link */ 'a', `AsynchronousFileChannel.html#tryLock(long,long,boolean)`, `tryLock`],
+			[/* reference */ 'r', `.AsynchronousFileChannel#tryLock(long,long,boolean)`],
 			[/* text */ 't', `
  methods of the `],
 			[/* reference */ 'r', `java.nio.channels.AsynchronousFileChannel`],
@@ -30,12 +30,12 @@ DocsCollector.collect('java.nio.channels.FileLock', [
 		[/* block */ 'b', [
 			[/* text */ 't', ` A file-lock object is initially valid.  It remains valid until the lock
  is released by invoking the `],
-			[/* reference */ 'r', `release`],
+			[/* reference */ 'r', `#release()`, `release`],
 			[/* text */ 't', ` method, by closing the
  channel that was used to acquire it, or by the termination of the Java
  virtual machine, whichever comes first.  The validity of a lock may be
  tested by invoking its `],
-			[/* reference */ 'r', `isValid`],
+			[/* reference */ 'r', `#isValid()`, `isValid`],
 			[/* text */ 't', ` method.
 
  `]
@@ -57,7 +57,7 @@ DocsCollector.collect('java.nio.channels.FileLock', [
 		[/* block */ 'b', [
 			[/* text */ 't', ` Whether a lock is exclusive or shared may be determined by invoking its
  `],
-			[/* reference */ 'r', `isShared`],
+			[/* reference */ 'r', `#isShared()`, `isShared`],
 			[/* text */ 't', ` method.  Some platforms do not support shared
  locks, in which case a request for a shared lock is automatically converted
  into a request for an exclusive lock.
@@ -67,7 +67,7 @@ DocsCollector.collect('java.nio.channels.FileLock', [
 		[/* block */ 'b', [
 			[/* text */ 't', ` The locks held on a particular file by a single Java virtual machine do
  not overlap.  The `],
-			[/* reference */ 'r', `overlaps`],
+			[/* reference */ 'r', `#overlaps(long,long)`, `overlaps`],
 			[/* text */ 't', ` method may be used to test
  whether a candidate lock range overlaps an existing lock.
 
@@ -121,7 +121,7 @@ DocsCollector.collect('java.nio.channels.FileLock', [
 		[/* block */ 'b', [
 			[/* text */ 't', ` On some systems, acquiring a mandatory lock on a region of a file
  prevents that region from being `],
-			[/* external link */ 'a', `FileChannel.html#map(java.nio.channels.FileChannel.MapMode,long,long)`, `mapped into memory`],
+			[/* reference */ 'r', `.FileChannel#map(java.nio.channels.FileChannel.MapMode,long,long)`],
 			[/* text */ 't', `, and vice versa.  Programs that combine
  locking and mapping should be prepared for this combination to fail.
 
@@ -165,7 +165,7 @@ DocsCollector.collect('java.nio.channels.FileLock', [
 					[/* text */ 't', `The size of the locked region; must be non-negative, and the sum
          `],
 					[/* inline code block */ 'i', `position`],
-					[/* text */ 't', `&nbsp;+&nbsp;`],
+					[/* text */ 't', ` + `],
 					[/* inline code block */ 'i', `size`],
 					[/* text */ 't', ` must be non-negative`]
 				]],
@@ -200,7 +200,7 @@ DocsCollector.collect('java.nio.channels.FileLock', [
 					[/* text */ 't', `The size of the locked region; must be non-negative, and the sum
          `],
 					[/* inline code block */ 'i', `position`],
-					[/* text */ 't', `&nbsp;+&nbsp;`],
+					[/* text */ 't', ` + `],
 					[/* inline code block */ 'i', `size`],
 					[/* text */ 't', ` must be non-negative`]
 				]],
@@ -265,7 +265,7 @@ DocsCollector.collect('java.nio.channels.FileLock', [
 		[/* method */ 'close()', [
 			[/* method description */
 				[/* text */ 't', `This method invokes the `],
-				[/* reference */ 'r', `release()`],
+				[/* reference */ 'r', `#release()`, `release()`],
 				[/* text */ 't', ` method. It was added
  to the class so that it could be used in conjunction with the
  automatic resource management block construct.`]
@@ -304,7 +304,7 @@ DocsCollector.collect('java.nio.channels.FileLock', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method has been superseded by the `],
-					[/* reference */ 'r', `acquiredBy`],
+					[/* reference */ 'r', `#acquiredBy()`, `acquiredBy`],
 					[/* text */ 't', `
  method.`]
 				]]

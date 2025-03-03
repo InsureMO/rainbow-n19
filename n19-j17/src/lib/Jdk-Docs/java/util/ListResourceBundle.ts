@@ -40,7 +40,7 @@ DocsCollector.collect('java.util.ListResourceBundle', [
 			[/* inline code block */ 'i', `ListResourceBundle`],
 			[/* text */ 't', `
  (a related `],
-			[/* external link */ 'a', `PropertyResourceBundle.html#sample`, `example`],
+			[/* reference */ 'r', `.PropertyResourceBundle#sample`],
 			[/* text */ 't', ` shows
  how you can add a bundle to this family that's based on a properties file).
  The keys in this example are of the form "s1" etc. The actual

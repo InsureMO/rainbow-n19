@@ -83,7 +83,7 @@ DocsCollector.collect('java.lang.constant.Constable', [
 		[/* block */ 'b', [
 			[/* text */ 't', `The nominal form of an instance of a constable type is obtained via
  `],
-			[/* reference */ 'r', `describeConstable()`],
+			[/* reference */ 'r', `#describeConstable()`, `describeConstable()`],
 			[/* text */ 't', `. A `],
 			[/* reference */ 'r', `java.lang.constant.Constable`],
 			[/* text */ 't', ` need

@@ -12,10 +12,10 @@ DocsCollector.collect('java.util.Spliterator', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `A Spliterator may traverse elements individually (`],
-			[/* reference */ 'r', `tryAdvance()`],
+			[/* reference */ 'r', `#tryAdvance(java.util.function.Consumer)`, `tryAdvance()`],
 			[/* text */ 't', `) or sequentially in bulk
  (`],
-			[/* reference */ 'r', `forEachRemaining()`],
+			[/* reference */ 'r', `#forEachRemaining(java.util.function.Consumer)`, `forEachRemaining()`],
 			[/* text */ 't', `).
 
  `]
@@ -23,7 +23,7 @@ DocsCollector.collect('java.util.Spliterator', [
 		[/* block */ 'b', [
 			[/* text */ 't', `A Spliterator may also partition off some of its elements (using
  `],
-			[/* reference */ 'r', `trySplit()`],
+			[/* reference */ 'r', `#trySplit()`, `trySplit()`],
 			[/* text */ 't', `) as another Spliterator, to be used in
  possibly-parallel operations.  Operations using a Spliterator that
  cannot split, or does so in a highly imbalanced or inefficient
@@ -35,7 +35,7 @@ DocsCollector.collect('java.util.Spliterator', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `A Spliterator also reports a set of `],
-			[/* reference */ 'r', `characteristics()`],
+			[/* reference */ 'r', `#characteristics()`, `characteristics()`],
 			[/* text */ 't', ` of its
  structure, source, and elements from among `],
 			[/* text */ 't', `ORDERED`],
@@ -105,7 +105,7 @@ DocsCollector.collect('java.util.Spliterator', [
 			[/* text */ 't', `fail-fast`],
 			[/* text */ 't', `.  The
  bulk traversal method (`],
-			[/* reference */ 'r', `forEachRemaining()`],
+			[/* reference */ 'r', `#forEachRemaining(java.util.function.Consumer)`, `forEachRemaining()`],
 			[/* text */ 't', `) of a
  Spliterator may optimize traversal and check for structural interference
  after all elements have been traversed, rather than checking per-element and
@@ -116,7 +116,7 @@ DocsCollector.collect('java.util.Spliterator', [
 		[/* block */ 'b', [
 			[/* text */ 't', `Spliterators can provide an estimate of the number of remaining elements
  via the `],
-			[/* reference */ 'r', `estimateSize()`],
+			[/* reference */ 'r', `#estimateSize()`, `estimateSize()`],
 			[/* text */ 't', ` method.  Ideally, as reflected in characteristic
  `],
 			[/* text */ 't', `SIZED`],
@@ -138,17 +138,17 @@ DocsCollector.collect('java.util.Spliterator', [
 			[/* text */ 't', `, which often is a natural consequence of typical
  parallel algorithms that work by recursive decomposition.  A thread calling
  `],
-			[/* reference */ 'r', `trySplit()`],
+			[/* reference */ 'r', `#trySplit()`, `trySplit()`],
 			[/* text */ 't', ` may hand over the returned Spliterator to another thread,
  which in turn may traverse or further split that Spliterator.  The behaviour
  of splitting and traversal is undefined if two or more threads operate
  concurrently on the same spliterator.  If the original thread hands a
  spliterator off to another thread for processing, it is best if that handoff
  occurs before any elements are consumed with `],
-			[/* reference */ 'r', `tryAdvance()`],
+			[/* reference */ 'r', `#tryAdvance(java.util.function.Consumer)`, `tryAdvance()`],
 			[/* text */ 't', `, as certain guarantees (such as the accuracy of
  `],
-			[/* reference */ 'r', `estimateSize()`],
+			[/* reference */ 'r', `#estimateSize()`, `estimateSize()`],
 			[/* text */ 't', ` for `],
 			[/* inline code block */ 'i', `SIZED`],
 			[/* text */ 't', ` spliterators) are only valid before
@@ -169,34 +169,34 @@ DocsCollector.collect('java.util.Spliterator', [
 			[/* text */ 't', ` values.
  The subtype default implementations of
  `],
-			[/* reference */ 'r', `tryAdvance(java.util.function.Consumer)`],
+			[/* reference */ 'r', `#tryAdvance(java.util.function.Consumer)`, `tryAdvance(java.util.function.Consumer)`],
 			[/* text */ 't', `
  and `],
-			[/* reference */ 'r', `forEachRemaining(java.util.function.Consumer)`],
+			[/* reference */ 'r', `#forEachRemaining(java.util.function.Consumer)`, `forEachRemaining(java.util.function.Consumer)`],
 			[/* text */ 't', ` box
  primitive values to instances of their corresponding wrapper class.  Such
  boxing may undermine any performance advantages gained by using the primitive
  specializations.  To avoid boxing, the corresponding primitive-based methods
  should be used.  For example,
  `],
-			[/* external link */ 'a', `Spliterator.OfPrimitive.html#tryAdvance(T_CONS)`, `Spliterator.OfPrimitive.tryAdvance(java.util.function.IntConsumer)`],
+			[/* reference */ 'r', `.Spliterator.OfPrimitive#tryAdvance(T_CONS)`],
 			[/* text */ 't', `
  and `],
-			[/* external link */ 'a', `Spliterator.OfPrimitive.html#forEachRemaining(T_CONS)`, `Spliterator.OfPrimitive.forEachRemaining(java.util.function.IntConsumer)`],
+			[/* reference */ 'r', `.Spliterator.OfPrimitive#forEachRemaining(T_CONS)`],
 			[/* text */ 't', `
  should be used in preference to
  `],
-			[/* external link */ 'a', `Spliterator.OfInt.html#tryAdvance(java.util.function.Consumer)`, `Spliterator.OfInt.tryAdvance(java.util.function.Consumer)`],
+			[/* reference */ 'r', `.Spliterator.OfInt#tryAdvance(java.util.function.Consumer)`],
 			[/* text */ 't', ` and
  `],
-			[/* external link */ 'a', `Spliterator.OfInt.html#forEachRemaining(java.util.function.Consumer)`, `Spliterator.OfInt.forEachRemaining(java.util.function.Consumer)`],
+			[/* reference */ 'r', `.Spliterator.OfInt#forEachRemaining(java.util.function.Consumer)`],
 			[/* text */ 't', `.
  Traversal of primitive values using boxing-based methods
  `],
-			[/* reference */ 'r', `tryAdvance()`],
+			[/* reference */ 'r', `#tryAdvance(java.util.function.Consumer)`, `tryAdvance()`],
 			[/* text */ 't', ` and
  `],
-			[/* reference */ 'r', `forEachRemaining()`],
+			[/* reference */ 'r', `#forEachRemaining(java.util.function.Consumer)`, `forEachRemaining()`],
 			[/* text */ 't', `
  does not affect the order in which the values, transformed to boxed values,
  are encountered.`]
@@ -208,13 +208,13 @@ DocsCollector.collect('java.util.Spliterator', [
 				[/* text */ 't', `Characteristic value signifying that an encounter order is defined for
  elements. If so, this Spliterator guarantees that method
  `],
-				[/* reference */ 'r', `trySplit()`],
+				[/* reference */ 'r', `#trySplit()`, `trySplit()`],
 				[/* text */ 't', ` splits a strict prefix of elements, that method
  `],
-				[/* reference */ 'r', `tryAdvance(java.util.function.Consumer<? super T>)`],
+				[/* reference */ 'r', `#tryAdvance(java.util.function.Consumer)`, `tryAdvance(java.util.function.Consumer<? super T>)`],
 				[/* text */ 't', ` steps by one element in prefix order, and that
  `],
-				[/* reference */ 'r', `forEachRemaining(java.util.function.Consumer<? super T>)`],
+				[/* reference */ 'r', `#forEachRemaining(java.util.function.Consumer)`, `forEachRemaining(java.util.function.Consumer<? super T>)`],
 				[/* text */ 't', ` performs actions in encounter order.
 
  `],
@@ -223,7 +223,7 @@ DocsCollector.collect('java.util.Spliterator', [
 					[/* reference */ 'r', `java.util.Collection`],
 					[/* text */ 't', ` has an encounter order if the corresponding
  `],
-					[/* external link */ 'a', `Collection.html#iterator()`, `Collection.iterator()`],
+					[/* reference */ 'r', `.Collection#iterator()`],
 					[/* text */ 't', ` documents an order. If so, the encounter
  order is the same as the documented order. Otherwise, a collection does
  not have an encounter order.`]
@@ -247,7 +247,7 @@ DocsCollector.collect('java.util.Spliterator', [
 			[/* field description */
 				[/* text */ 't', `Characteristic value signifying that encounter order follows a defined
  sort order. If so, method `],
-				[/* reference */ 'r', `getComparator()`],
+				[/* reference */ 'r', `#getComparator()`, `getComparator()`],
 				[/* text */ 't', ` returns the associated
  Comparator, or `],
 				[/* inline code block */ 'i', `null`],
@@ -551,9 +551,9 @@ DocsCollector.collect('java.util.Spliterator', [
 			[/* method description */
 				[/* text */ 't', `Returns an estimate of the number of elements that would be
  encountered by a `],
-				[/* reference */ 'r', `forEachRemaining(java.util.function.Consumer<? super T>)`],
+				[/* reference */ 'r', `#forEachRemaining(java.util.function.Consumer)`, `forEachRemaining(java.util.function.Consumer<? super T>)`],
 				[/* text */ 't', ` traversal, or returns `],
-				[/* external link */ 'a', `../lang/Long.html#MAX_VALUE`, `Long.MAX_VALUE`],
+				[/* reference */ 'r', `java.Long#MAX_VALUE`],
 				[/* text */ 't', ` if infinite, unknown, or too expensive to compute.
 
  `],
@@ -568,7 +568,7 @@ DocsCollector.collect('java.util.Spliterator', [
  count of elements that would be encountered by a complete traversal.
  Otherwise, this estimate may be arbitrarily inaccurate, but must decrease
  as specified across invocations of `],
-					[/* reference */ 'r', `trySplit()`],
+					[/* reference */ 'r', `#trySplit()`, `trySplit()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -584,7 +584,7 @@ DocsCollector.collect('java.util.Spliterator', [
 		[/* method */ 'getExactSizeIfKnown()', [
 			[/* method description */
 				[/* text */ 't', `Convenience method that returns `],
-				[/* reference */ 'r', `estimateSize()`],
+				[/* reference */ 'r', `#estimateSize()`, `estimateSize()`],
 				[/* text */ 't', ` if this
  Spliterator is `],
 				[/* text */ 't', `SIZED`],
@@ -605,7 +605,7 @@ DocsCollector.collect('java.util.Spliterator', [
 				[/* text */ 't', `Returns `],
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this Spliterator's `],
-				[/* reference */ 'r', `characteristics()`],
+				[/* reference */ 'r', `#characteristics()`, `characteristics()`],
 				[/* text */ 't', ` contain all of the given characteristics.`]
 			],
 			[/* parameters */

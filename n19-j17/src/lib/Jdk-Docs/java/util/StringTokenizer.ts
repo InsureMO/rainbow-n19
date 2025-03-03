@@ -114,7 +114,7 @@ DocsCollector.collect('java.util.StringTokenizer', [
 		]],
 		[/* block */ 'b', [
 			[/* code block */ 'c', `     String[] result = "this is a test".split("\\\\s");
-     for (int x=0; x&lt;result.length; x++)
+     for (int x=0; x<result.length; x++)
          System.out.println(result[x]);
  `]
 		]],

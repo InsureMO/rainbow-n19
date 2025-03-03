@@ -59,7 +59,7 @@ DocsCollector.collect('java.text.NumberFormat', [
 		[/* block */ 'b', [
 			[/* text */ 't', `If the locale contains "nu" (numbers) and/or "rg" (region override)
  `],
-			[/* external link */ 'a', `../util/Locale.html#def_locale_extension`, `Unicode extensions`],
+			[/* reference */ 'r', `java.Locale#def_locale_extension`],
 			[/* text */ 't', `,
  the decimal digits, and/or the country used for formatting are overridden.
  If both "nu" and "rg" are specified, the decimal digits from the "nu"
@@ -100,7 +100,7 @@ DocsCollector.collect('java.text.NumberFormat', [
 		[/* inline code block */ 'i', `"2K"`],
 		[/* text */ 't', ` in
  `],
-		[/* external link */ 'a', `../util/Locale.html#US`, `US locale`],
+		[/* reference */ 'r', `java.Locale#US`],
 		[/* text */ 't', `. Use `],
 		[/* inline code block */ 'i', `getPercentInstance`],
 		[/* text */ 't', `
@@ -388,7 +388,7 @@ DocsCollector.collect('java.text.NumberFormat', [
 					[/* text */ 't', `
  This implementation extracts the number's value using
  `],
-					[/* external link */ 'a', `../lang/Number.html#longValue()`, `Number.longValue()`],
+					[/* reference */ 'r', `java.Number#longValue()`],
 					[/* text */ 't', ` for all integral type values that
  can be converted to `],
 					[/* inline code block */ 'i', `long`],
@@ -397,17 +397,17 @@ DocsCollector.collect('java.text.NumberFormat', [
 					[/* inline code block */ 'i', `BigInteger`],
 					[/* text */ 't', ` values with a
  `],
-					[/* external link */ 'a', `../math/BigInteger.html#bitLength()`, `bit length`],
+					[/* reference */ 'r', `java.BigInteger#bitLength()`],
 					[/* text */ 't', ` of less than 64,
  and `],
-					[/* external link */ 'a', `../lang/Number.html#doubleValue()`, `Number.doubleValue()`],
+					[/* reference */ 'r', `java.Number#doubleValue()`],
 					[/* text */ 't', ` for all other types. It
  then calls
  `],
-					[/* reference */ 'r', `format(long,java.lang.StringBuffer,java.text.FieldPosition)`],
+					[/* reference */ 'r', `#format(long,java.lang.StringBuffer,java.text.FieldPosition)`, `format(long,java.lang.StringBuffer,java.text.FieldPosition)`],
 					[/* text */ 't', `
  or `],
-					[/* reference */ 'r', `format(double,java.lang.StringBuffer,java.text.FieldPosition)`],
+					[/* reference */ 'r', `#format(double,java.lang.StringBuffer,java.text.FieldPosition)`, `format(double,java.lang.StringBuffer,java.text.FieldPosition)`],
 					[/* text */ 't', `.
  This may result in loss of magnitude information and precision for
  `],
@@ -519,11 +519,11 @@ DocsCollector.collect('java.text.NumberFormat', [
 			[/* method description */
 				[/* text */ 't', `Returns a general-purpose number format for the current default
  `],
-				[/* external link */ 'a', `../util/Locale.Category.html#FORMAT`, `FORMAT`],
+				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
 				[/* text */ 't', ` locale.
  This is the same as calling
  `],
-				[/* reference */ 'r', `getNumberInstance()`],
+				[/* reference */ 'r', `#getNumberInstance()`, `getNumberInstance()`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -540,7 +540,7 @@ DocsCollector.collect('java.text.NumberFormat', [
 				[/* text */ 't', `Returns a general-purpose number format for the specified locale.
  This is the same as calling
  `],
-				[/* reference */ 'r', `getNumberInstance(inLocale)`],
+				[/* reference */ 'r', `#getNumberInstance(java.util.Locale)`, `getNumberInstance(inLocale)`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -564,7 +564,7 @@ DocsCollector.collect('java.text.NumberFormat', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  See the `],
-					[/* reference */ 'r', `parse(String, ParsePosition)`],
+					[/* reference */ 'r', `#parse(java.lang.String,java.text.ParsePosition)`, `parse(String, ParsePosition)`],
 					[/* text */ 't', ` method for more information
  on number parsing.`]
 				]]
@@ -627,7 +627,7 @@ DocsCollector.collect('java.text.NumberFormat', [
 				[/* inline code block */ 'i', `Locale`],
 				[/* text */ 't', ` instance equal to
  `],
-				[/* external link */ 'a', `../util/Locale.html#US`, `Locale.US`],
+				[/* reference */ 'r', `java.Locale#US`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -697,7 +697,7 @@ DocsCollector.collect('java.text.NumberFormat', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  See the `],
-					[/* reference */ 'r', `parse(String, ParsePosition)`],
+					[/* reference */ 'r', `#parse(java.lang.String,java.text.ParsePosition)`, `parse(String, ParsePosition)`],
 					[/* text */ 't', ` method for more information
  on number parsing.`]
 				]]
@@ -744,7 +744,7 @@ DocsCollector.collect('java.text.NumberFormat', [
 					[/* external link */ 'a', `https://www.unicode.org/reports/tr35/tr35.html#UnicodeCurrencyFormatIdentifier`, `currency format style`],
 					[/* text */ 't', `)
  `],
-					[/* external link */ 'a', `../util/Locale.html#def_locale_extension`, `Unicode extension`],
+					[/* reference */ 'r', `java.Locale#def_locale_extension`],
 					[/* text */ 't', `,
  the returned currency format uses the style if it is available.
  Otherwise, the style uses the default "`],
@@ -772,13 +772,13 @@ DocsCollector.collect('java.text.NumberFormat', [
 			[/* method description */
 				[/* text */ 't', `Returns a currency format for the current default
  `],
-				[/* external link */ 'a', `../util/Locale.Category.html#FORMAT`, `FORMAT`],
+				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
 				[/* text */ 't', ` locale.
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is equivalent to calling
  `],
-					[/* reference */ 'r', `getCurrencyInstance(Locale.getDefault(Locale.Category.FORMAT))`],
+					[/* reference */ 'r', `#getCurrencyInstance(java.util.Locale)`, `getCurrencyInstance(Locale.getDefault(Locale.Category.FORMAT))`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -794,20 +794,20 @@ DocsCollector.collect('java.text.NumberFormat', [
 			[/* method description */
 				[/* text */ 't', `Returns an integer number format for the current default
  `],
-				[/* external link */ 'a', `../util/Locale.Category.html#FORMAT`, `FORMAT`],
+				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
 				[/* text */ 't', ` locale. The
  returned number format is configured to round floating point numbers
  to the nearest integer using half-even rounding (see `],
-				[/* external link */ 'a', `../math/RoundingMode.html#HALF_EVEN`, `RoundingMode.HALF_EVEN`],
+				[/* reference */ 'r', `java.RoundingMode#HALF_EVEN`],
 				[/* text */ 't', `) for formatting,
  and to parse only the integer part of an input string (see `],
-				[/* reference */ 'r', `isParseIntegerOnly`],
+				[/* reference */ 'r', `#isParseIntegerOnly()`, `isParseIntegerOnly`],
 				[/* text */ 't', `).
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is equivalent to calling
  `],
-					[/* reference */ 'r', `getIntegerInstance(Locale.getDefault(Locale.Category.FORMAT))`],
+					[/* reference */ 'r', `#getIntegerInstance(java.util.Locale)`, `getIntegerInstance(Locale.getDefault(Locale.Category.FORMAT))`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -822,10 +822,10 @@ DocsCollector.collect('java.text.NumberFormat', [
 				[/* text */ 't', `Returns an integer number format for the specified locale. The
  returned number format is configured to round floating point numbers
  to the nearest integer using half-even rounding (see `],
-				[/* external link */ 'a', `../math/RoundingMode.html#HALF_EVEN`, `RoundingMode.HALF_EVEN`],
+				[/* reference */ 'r', `java.RoundingMode#HALF_EVEN`],
 				[/* text */ 't', `) for formatting,
  and to parse only the integer part of an input string (see `],
-				[/* reference */ 'r', `isParseIntegerOnly`],
+				[/* reference */ 'r', `#isParseIntegerOnly()`, `isParseIntegerOnly`],
 				[/* text */ 't', `).`]
 			],
 			[/* parameters */
@@ -859,13 +859,13 @@ DocsCollector.collect('java.text.NumberFormat', [
 			[/* method description */
 				[/* text */ 't', `Returns a general-purpose number format for the current default
  `],
-				[/* external link */ 'a', `../util/Locale.Category.html#FORMAT`, `FORMAT`],
+				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
 				[/* text */ 't', ` locale.
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is equivalent to calling
  `],
-					[/* reference */ 'r', `getNumberInstance(Locale.getDefault(Locale.Category.FORMAT))`],
+					[/* reference */ 'r', `#getNumberInstance(java.util.Locale)`, `getNumberInstance(Locale.getDefault(Locale.Category.FORMAT))`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -882,13 +882,13 @@ DocsCollector.collect('java.text.NumberFormat', [
 			[/* method description */
 				[/* text */ 't', `Returns a percentage format for the current default
  `],
-				[/* external link */ 'a', `../util/Locale.Category.html#FORMAT`, `FORMAT`],
+				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
 				[/* text */ 't', ` locale.
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is equivalent to calling
  `],
-					[/* reference */ 'r', `getPercentInstance(Locale.getDefault(Locale.Category.FORMAT))`],
+					[/* reference */ 'r', `#getPercentInstance(java.util.Locale)`, `getPercentInstance(Locale.getDefault(Locale.Category.FORMAT))`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -920,10 +920,10 @@ DocsCollector.collect('java.text.NumberFormat', [
 			[/* method description */
 				[/* text */ 't', `Returns a compact number format for the default
  `],
-				[/* external link */ 'a', `../util/Locale.Category.html#FORMAT`, `FORMAT`],
+				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
 				[/* text */ 't', ` locale with
  `],
-				[/* external link */ 'a', `NumberFormat.Style.html#SHORT`, `"SHORT"`],
+				[/* reference */ 'r', `.NumberFormat.Style#SHORT`],
 				[/* text */ 't', ` format style.`]
 			],
 			/* parameters */ UDF,
@@ -1163,7 +1163,7 @@ DocsCollector.collect('java.text.NumberFormat', [
  way. The returned value may be null if no valid
  currency could be determined and no currency has been set using
  `],
-				[/* reference */ 'r', `setCurrency`],
+				[/* reference */ 'r', `#setCurrency(java.util.Currency)`, `setCurrency`],
 				[/* text */ 't', `.
  `],
 				[/* block */ 'b', [

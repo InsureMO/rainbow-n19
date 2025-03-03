@@ -35,11 +35,11 @@ DocsCollector.collect('java.lang.Short', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
-			[/* external link */ 'a', `../../../java.base/java/lang/doc-files/ValueBased.html`, `value-based`],
+			[/* text */ 't', `value-based`],
 			[/* text */ 't', `
  class; programmers should treat instances that are
  `],
-			[/* reference */ 'r', `equal`],
+			[/* reference */ 'r', `#equals(java.lang.Object)`, `equal`],
 			[/* text */ 't', ` as interchangeable and should not
  use instances for synchronization, or unpredictable behavior may
  occur. For example, in a future release, synchronization may fail.`]
@@ -195,14 +195,14 @@ DocsCollector.collect('java.lang.Short', [
 				[/* inline code block */ 'i', `short`],
 				[/* text */ 't', ` value were given as an argument to the
  `],
-				[/* reference */ 'r', `toString(short)`],
+				[/* reference */ 'r', `#toString(short)`, `toString(short)`],
 				[/* text */ 't', ` method.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `a string representation of the value of this object in
-          base&nbsp;10.`]
+          base 10.`]
 			]
 		]],
 		[/* method */ 'toString(short)', [
@@ -487,7 +487,7 @@ DocsCollector.collect('java.lang.Short', [
 				[/* inline code block */ 'i', `short`],
 				[/* text */ 't', `, exactly as if the argument were given to
  the `],
-				[/* reference */ 'r', `parseShort(java.lang.String)`],
+				[/* reference */ 'r', `#parseShort(java.lang.String)`, `parseShort(java.lang.String)`],
 				[/* text */ 't', ` method. The result is
  a `],
 				[/* inline code block */ 'i', `Short`],
@@ -546,7 +546,7 @@ DocsCollector.collect('java.lang.Short', [
 				[/* text */ 't', ` in
  the radix specified by the second argument, exactly as if the
  argument were given to the `],
-				[/* reference */ 'r', `parseShort(java.lang.String, int)`],
+				[/* reference */ 'r', `#parseShort(java.lang.String,int)`, `parseShort(java.lang.String, int)`],
 				[/* text */ 't', ` method. The result is a `],
 				[/* inline code block */ 'i', `Short`],
 				[/* text */ 't', ` object that
@@ -608,7 +608,7 @@ DocsCollector.collect('java.lang.Short', [
 				[/* text */ 't', ` instance is not required, this method
  should generally be used in preference to the constructor
  `],
-				[/* reference */ 'r', `Short(short)`],
+				[/* reference */ 'r', `#%3Cinit%3E(short)`, `Short(short)`],
 				[/* text */ 't', `, as this method is likely to yield
  significantly better space and time performance by caching
  frequently requested values.
@@ -642,7 +642,70 @@ DocsCollector.collect('java.lang.Short', [
 
  `],
 				[/* block */ 'b', [
-					[/* dl */ 't', '']
+					[/* dl */ 'dl', [
+						[/* dt */ 'dt', [
+							[/* text */ 't', `DecodableString:`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `opt`, 'sub'],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `opt`, 'sub'],
+							[/* text */ 't', ` `],
+							[/* inline code block */ 'i', `0x`],
+							[/* text */ 't', ` `],
+							[/* text */ 't', `HexDigits`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `opt`, 'sub'],
+							[/* text */ 't', ` `],
+							[/* inline code block */ 'i', `0X`],
+							[/* text */ 't', ` `],
+							[/* text */ 't', `HexDigits`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `opt`, 'sub'],
+							[/* text */ 't', ` `],
+							[/* inline code block */ 'i', `#`],
+							[/* text */ 't', ` `],
+							[/* text */ 't', `HexDigits`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `opt`, 'sub'],
+							[/* text */ 't', ` `],
+							[/* inline code block */ 'i', `0`],
+							[/* text */ 't', ` `],
+							[/* text */ 't', `OctalDigits`],
+							[/* text */ 't', `
+
+ `]
+						]],
+						[/* dt */ 'dt', [
+							[/* text */ 't', `Sign:`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* inline code block */ 'i', `-`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* inline code block */ 'i', `+`],
+							[/* text */ 't', `
+ `]
+						]]
+					]]
 				]],
 				[/* text */ 't', `DecimalNumeral`],
 				[/* text */ 't', `, `],
@@ -860,7 +923,7 @@ DocsCollector.collect('java.lang.Short', [
  radix specified by the second argument. The characters in the
  string must all be digits, of the specified radix (as
  determined by whether `],
-				[/* external link */ 'a', `Character.html#digit(int,int)`, `Character.digit(char, int)`],
+				[/* reference */ 'r', `.Character#digit(int,int)`],
 				[/* text */ 't', ` returns a nonnegative value) except that the first
  character may be an ASCII minus sign `],
 				[/* inline code block */ 'i', `'-'`],
@@ -897,9 +960,9 @@ DocsCollector.collect('java.lang.Short', [
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', ` The radix is either smaller than `],
-						[/* external link */ 'a', `Character.html#MIN_RADIX`, `Character.MIN_RADIX`],
+						[/* reference */ 'r', `.Character#MIN_RADIX`],
 						[/* text */ 't', ` or larger than `],
-						[/* external link */ 'a', `Character.html#MAX_RADIX`, `Character.MAX_RADIX`],
+						[/* reference */ 'r', `.Character#MAX_RADIX`],
 						[/* text */ 't', `.
 
  `]
@@ -983,7 +1046,7 @@ DocsCollector.collect('java.lang.Short', [
 				[/* inline code block */ 'i', `short`],
 				[/* text */ 't', ` value is returned, exactly as if the
  argument and the radix 10 were given as arguments to the `],
-				[/* reference */ 'r', `parseShort(java.lang.String, int)`],
+				[/* reference */ 'r', `#parseShort(java.lang.String,int)`, `parseShort(java.lang.String, int)`],
 				[/* text */ 't', ` method.`]
 			],
 			[/* parameters */

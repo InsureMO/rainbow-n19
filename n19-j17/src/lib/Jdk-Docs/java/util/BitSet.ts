@@ -226,7 +226,7 @@ DocsCollector.collect('java.util.BitSet', [
 				[/* text */ 't', ` contains a bit in the set
  state, the decimal representation of that index is included in
  the result. Such indices are listed in order from lowest to
- highest, separated by ",&nbsp;" (a comma and a space) and
+ highest, separated by ", " (a comma and a space) and
  surrounded by braces, resulting in the usual mathematical
  notation for a set of integers.
 
@@ -565,7 +565,7 @@ DocsCollector.collect('java.util.BitSet', [
  in order, from lowest to highest. The size of the stream
  is the number of bits in the set state, equal to the value
  returned by the `],
-				[/* reference */ 'r', `cardinality()`],
+				[/* reference */ 'r', `#cardinality()`, `cardinality()`],
 				[/* text */ 't', ` method.
 
  `],
@@ -573,7 +573,7 @@ DocsCollector.collect('java.util.BitSet', [
 					[/* text */ 't', `The stream binds to this bit set when the terminal stream operation
  commences (specifically, the spliterator for the stream is
  `],
-					[/* external link */ 'a', `Spliterator.html#binding`, `late-binding`],
+					[/* reference */ 'r', `.Spliterator#binding`],
 					[/* text */ 't', `).  If the
  bit set is modified during that operation then the result is undefined.`]
 				]]

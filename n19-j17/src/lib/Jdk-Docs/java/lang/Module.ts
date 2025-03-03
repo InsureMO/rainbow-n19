@@ -4,13 +4,13 @@ import {DocsCollector} from '../../DocsCollector';
 DocsCollector.collect('java.lang.Module', [
 	[/* class description */
 		[/* text */ 't', `Represents a run-time module, either `],
-		[/* reference */ 'r', `named`],
+		[/* reference */ 'r', `#isNamed()`, `named`],
 		[/* text */ 't', ` or unnamed.
 
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Named modules have a `],
-			[/* reference */ 'r', `name`],
+			[/* reference */ 'r', `#getName()`, `name`],
 			[/* text */ 't', ` and are constructed by the
  Java Virtual Machine when a graph of modules is defined to the Java virtual
  machine to create a `],
@@ -22,7 +22,7 @@ DocsCollector.collect('java.lang.Module', [
  each `],
 			[/* reference */ 'r', `java.lang.ClassLoader`],
 			[/* text */ 't', `, obtained by invoking its `],
-			[/* external link */ 'a', `ClassLoader.html#getUnnamedModule()`, `getUnnamedModule`],
+			[/* reference */ 'r', `.ClassLoader#getUnnamedModule()`],
 			[/* text */ 't', ` method. All types that are
  not in a named module are members of their defining class loader's unnamed
  module. `]
@@ -117,12 +117,7 @@ DocsCollector.collect('java.lang.Module', [
  the given package to the given module.
 
  `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` This method has no effect if the package is already exported (or
- `],
-					[/* text */ 't', `open`],
-					[/* text */ 't', `) to the given module. `]
-				]]
+				[/* block */ 'b', `open`]
 			],
 			[/* parameters */
 				[/* parameter */ 'pn', [/* parameter description */
@@ -165,12 +160,7 @@ DocsCollector.collect('java.lang.Module', [
  access control checks.
 
  `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` This method has no effect if the package is already `],
-					[/* text */ 't', `open`],
-					[/* text */ 't', `
- to the given module. `]
-				]]
+				[/* block */ 'b', `open`]
 			],
 			[/* parameters */
 				[/* parameter */ 'pn', [/* parameter description */
@@ -213,7 +203,7 @@ DocsCollector.collect('java.lang.Module', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method does not cause `],
-					[/* external link */ 'a', `module/Configuration.html#resolveAndBind(java.lang.module.ModuleFinder,java.lang.module.ModuleFinder,java.util.Collection)`, `resolveAndBind`],
+					[/* reference */ 'r', `.Configuration#resolveAndBind(java.lang.module.ModuleFinder,java.lang.module.ModuleFinder,java.util.Collection)`],
 					[/* text */ 't', ` to be re-run. `]
 				]]
 			],
@@ -295,10 +285,10 @@ DocsCollector.collect('java.lang.Module', [
 				[/* inline code block */ 'i', `'/'`],
 				[/* text */ 't', `-separated path name that
  identifies the resource. As with `],
-				[/* external link */ 'a', `Class.html#getResourceAsStream(java.lang.String)`, `Class.getResourceAsStream`],
+				[/* reference */ 'r', `.Class#getResourceAsStream(java.lang.String)`],
 				[/* text */ 't', `, this method delegates to the module's class
  loader `],
-				[/* external link */ 'a', `ClassLoader.html#findResource(java.lang.String,java.lang.String)`, `findResource(String,String)`],
+				[/* reference */ 'r', `.ClassLoader#findResource(java.lang.String,java.lang.String)`],
 				[/* text */ 't', ` method, invoking it with the module name
  (or `],
 				[/* inline code block */ 'i', `null`],
@@ -307,13 +297,7 @@ DocsCollector.collect('java.lang.Module', [
  before delegation.
 
  `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` A resource in a named module may be `],
-					[/* text */ 't', `encapsulated`],
-					[/* text */ 't', ` so that
- it cannot be located by code in other modules. Whether a resource can be
- located or not is determined as follows: `]
-				]],
+				[/* block */ 'b', `encapsulated`],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* text */ 't', ` If the resource name ends with  "`],
@@ -326,11 +310,11 @@ DocsCollector.collect('java.lang.Module', [
 						[/* text */ 't', `package name`],
 						[/* text */ 't', ` is derived from the resource name. If
      the package name is a `],
-						[/* reference */ 'r', `package`],
+						[/* reference */ 'r', `#getPackages()`, `package`],
 						[/* text */ 't', ` in the
      module then the resource can only be located by the caller of this
      method when the package is `],
-						[/* reference */ 'r', `open`],
+						[/* reference */ 'r', `#isOpen(java.lang.String,java.lang.Module)`, `open`],
 						[/* text */ 't', `
      to at least the caller's module. If the resource is not in a
      package in the module then the resource is not encapsulated. `]
@@ -403,7 +387,7 @@ DocsCollector.collect('java.lang.Module', [
 					[/* inline code block */ 'i', `true`],
 					[/* text */ 't', ` when invoked on an
  `],
-					[/* external link */ 'a', `module/ModuleDescriptor.html#isOpen()`, `open`],
+					[/* reference */ 'r', `.ModuleDescriptor#isOpen()`],
 					[/* text */ 't', ` module with a package in the
  module. `]
 				]],
@@ -441,7 +425,7 @@ DocsCollector.collect('java.lang.Module', [
 					[/* inline code block */ 'i', `true`],
 					[/* text */ 't', ` when invoked on an
  `],
-					[/* external link */ 'a', `module/ModuleDescriptor.html#isOpen()`, `open`],
+					[/* reference */ 'r', `.ModuleDescriptor#isOpen()`],
 					[/* text */ 't', ` module with a package in the module.
  It always returns `],
 					[/* inline code block */ 'i', `true`],
@@ -553,7 +537,7 @@ DocsCollector.collect('java.lang.Module', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` For unnamed modules, the returned set contains an element for
  each package that `],
-					[/* external link */ 'a', `ClassLoader.html#getDefinedPackages()`, `has been defined`],
+					[/* reference */ 'r', `.ClassLoader#getDefinedPackages()`],
 					[/* text */ 't', `
  in the unnamed module.`]
 				]]
@@ -621,7 +605,7 @@ DocsCollector.collect('java.lang.Module', [
 
  `],
 				[/* block */ 'b', [
-					[/* external link */ 'a', `reflect/Proxy.html#dynamicmodule`, `Dynamic modules`],
+					[/* reference */ 'r', `.Proxy#dynamicmodule`],
 					[/* text */ 't', ` are
  named modules that are generated at runtime. A dynamic module may or may
  not be in a module layer. `]
@@ -649,7 +633,7 @@ DocsCollector.collect('java.lang.Module', [
 					[/* inline code block */ 'i', `true`],
 					[/* text */ 't', ` when
  invoked on an unnamed module. A package that is `],
-					[/* reference */ 'r', `open`],
+					[/* reference */ 'r', `#isOpen(java.lang.String,java.lang.Module)`, `open`],
 					[/* text */ 't', ` to
  the given module is considered exported to that module at run-time and
  so this method returns `],
@@ -687,7 +671,7 @@ DocsCollector.collect('java.lang.Module', [
 					[/* inline code block */ 'i', `true`],
 					[/* text */ 't', ` when invoked on an unnamed
  module. A package that is `],
-					[/* reference */ 'r', `opened`],
+					[/* reference */ 'r', `#isOpen(java.lang.String)`, `opened`],
 					[/* text */ 't', ` unconditionally
  is considered exported unconditionally at run-time and so this method
  returns `],

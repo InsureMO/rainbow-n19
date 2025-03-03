@@ -11,12 +11,12 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 			[/* inline code block */ 'i', `ProcessBuilder`],
 			[/* text */ 't', ` instance manages a collection
  of process attributes.  The `],
-			[/* reference */ 'r', `start()`],
+			[/* reference */ 'r', `#start()`, `start()`],
 			[/* text */ 't', ` method creates a new
  `],
 			[/* reference */ 'r', `java.lang.Process`],
 			[/* text */ 't', ` instance with those attributes.  The `],
-			[/* reference */ 'r', `start()`],
+			[/* reference */ 'r', `#start()`, `start()`],
 			[/* text */ 't', ` method can be invoked repeatedly from the same instance
  to create new subprocesses with identical or related attributes.
  `]
@@ -24,7 +24,7 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  The `],
-			[/* reference */ 'r', `startPipeline`],
+			[/* reference */ 'r', `#startPipeline(java.util.List)`, `startPipeline`],
 			[/* text */ 't', ` method can be invoked to create
  a pipeline of new processes that send the output of each process
  directly to the next process.  Each process has the attributes of
@@ -60,7 +60,7 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 				[/* text */ 't', `values`],
 				[/* text */ 't', `.  The initial value is a copy of
  the environment of the current process (see `],
-				[/* external link */ 'a', `System.html#getenv()`, `System.getenv()`],
+				[/* reference */ 'r', `.System#getenv()`],
 				[/* text */ 't', `).
 
  `]
@@ -82,14 +82,14 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
  By default, the subprocess reads input from a pipe.  Java code
  can access this pipe via the output stream returned by
  `],
-				[/* external link */ 'a', `Process.html#getOutputStream()`, `Process.getOutputStream()`],
+				[/* reference */ 'r', `.Process#getOutputStream()`],
 				[/* text */ 't', `.  However, standard input may
  be redirected to another source using
  `],
-				[/* reference */ 'r', `redirectInput`],
+				[/* reference */ 'r', `#redirectInput(java.lang.ProcessBuilder.Redirect)`, `redirectInput`],
 				[/* text */ 't', `.
  In this case, `],
-				[/* external link */ 'a', `Process.html#getOutputStream()`, `Process.getOutputStream()`],
+				[/* reference */ 'r', `.Process#getOutputStream()`],
 				[/* text */ 't', ` will return a
  `],
 				[/* text */ 't', `null output stream`],
@@ -99,14 +99,14 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* text */ 't', `the `],
-						[/* external link */ 'a', `../io/OutputStream.html#write(int)`, `write`],
+						[/* reference */ 'r', `java.OutputStream#write(int)`],
 						[/* text */ 't', ` methods always
  throw `],
 						[/* inline code block */ 'i', `IOException`]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `the `],
-						[/* external link */ 'a', `../io/OutputStream.html#close()`, `close`],
+						[/* reference */ 'r', `java.OutputStream#close()`],
 						[/* text */ 't', ` method does nothing
  `]
 					]]
@@ -117,23 +117,23 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 				[/* text */ 't', `.  By default, the subprocess writes standard
  output and standard error to pipes.  Java code can access these pipes
  via the input streams returned by `],
-				[/* external link */ 'a', `Process.html#getInputStream()`, `Process.getInputStream()`],
+				[/* reference */ 'r', `.Process#getInputStream()`],
 				[/* text */ 't', ` and
  `],
-				[/* external link */ 'a', `Process.html#getErrorStream()`, `Process.getErrorStream()`],
+				[/* reference */ 'r', `.Process#getErrorStream()`],
 				[/* text */ 't', `.  However, standard output and
  standard error may be redirected to other destinations using
  `],
-				[/* reference */ 'r', `redirectOutput`],
+				[/* reference */ 'r', `#redirectOutput(java.lang.ProcessBuilder.Redirect)`, `redirectOutput`],
 				[/* text */ 't', ` and
  `],
-				[/* reference */ 'r', `redirectError`],
+				[/* reference */ 'r', `#redirectError(java.lang.ProcessBuilder.Redirect)`, `redirectError`],
 				[/* text */ 't', `.
  In this case, `],
-				[/* external link */ 'a', `Process.html#getInputStream()`, `Process.getInputStream()`],
+				[/* reference */ 'r', `.Process#getInputStream()`],
 				[/* text */ 't', ` and/or
  `],
-				[/* external link */ 'a', `Process.html#getErrorStream()`, `Process.getErrorStream()`],
+				[/* reference */ 'r', `.Process#getErrorStream()`],
 				[/* text */ 't', ` will return a `],
 				[/* text */ 't', `null input
  stream`],
@@ -143,21 +143,21 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* text */ 't', `the `],
-						[/* external link */ 'a', `../io/InputStream.html#read()`, `read`],
+						[/* reference */ 'r', `java.InputStream#read()`],
 						[/* text */ 't', ` methods always return
  `],
 						[/* inline code block */ 'i', `-1`]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `the `],
-						[/* external link */ 'a', `../io/InputStream.html#available()`, `available`],
+						[/* reference */ 'r', `java.InputStream#available()`],
 						[/* text */ 't', ` method always returns
  `],
 						[/* inline code block */ 'i', `0`]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `the `],
-						[/* external link */ 'a', `../io/InputStream.html#close()`, `close`],
+						[/* reference */ 'r', `java.InputStream#close()`],
 						[/* text */ 't', ` method does nothing
  `]
 					]]
@@ -172,9 +172,9 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 				[/* text */ 't', `, meaning that the standard output and error
  output of a subprocess are sent to two separate streams, which can
  be accessed using the `],
-				[/* external link */ 'a', `Process.html#getInputStream()`, `Process.getInputStream()`],
+				[/* reference */ 'r', `.Process#getInputStream()`],
 				[/* text */ 't', ` and `],
-				[/* external link */ 'a', `Process.html#getErrorStream()`, `Process.getErrorStream()`],
+				[/* reference */ 'r', `.Process#getErrorStream()`],
 				[/* text */ 't', ` methods.
 
  `],
@@ -194,19 +194,19 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 						[/* text */ 't', `the common destination of standard error and standard output can be
  redirected using
  `],
-						[/* reference */ 'r', `redirectOutput`]
+						[/* reference */ 'r', `#redirectOutput(java.lang.ProcessBuilder.Redirect)`, `redirectOutput`]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `any redirection set by the
  `],
-						[/* reference */ 'r', `redirectError`],
+						[/* reference */ 'r', `#redirectError(java.lang.ProcessBuilder.Redirect)`, `redirectError`],
 						[/* text */ 't', `
  method is ignored when creating a subprocess
  `]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `the stream returned from `],
-						[/* external link */ 'a', `Process.html#getErrorStream()`, `Process.getErrorStream()`],
+						[/* reference */ 'r', `.Process#getErrorStream()`],
 						[/* text */ 't', ` will
  always be a `],
 						[/* text */ 't', `null input stream`]
@@ -219,7 +219,7 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 		[/* block */ 'b', [
 			[/* text */ 't', `Modifying a process builder's attributes will affect processes
  subsequently started by that object's `],
-			[/* reference */ 'r', `start()`],
+			[/* reference */ 'r', `#start()`, `start()`],
 			[/* text */ 't', ` method, but
  will never affect previously started processes or the Java process
  itself.
@@ -228,13 +228,13 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `Most error checking is performed by the `],
-			[/* reference */ 'r', `start()`],
+			[/* reference */ 'r', `#start()`, `start()`],
 			[/* text */ 't', ` method.
  It is possible to modify the state of an object so that `],
-			[/* reference */ 'r', `start()`],
+			[/* reference */ 'r', `#start()`, `start()`],
 			[/* text */ 't', ` will fail.  For example, setting the command attribute to
  an empty list will not throw an exception unless `],
-			[/* reference */ 'r', `start()`],
+			[/* reference */ 'r', `#start()`, `start()`],
 			[/* text */ 't', `
  is invoked.
 
@@ -286,7 +286,7 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 		[/* block */ 'b', [
 			[/* text */ 't', `To start a process with an explicit set of environment
  variables, first call `],
-			[/* external link */ 'a', `../util/Map.html#clear()`, `Map.clear()`],
+			[/* reference */ 'r', `java.Map#clear()`],
 			[/* text */ 't', `
  before adding environment variables.
 
@@ -359,13 +359,13 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The new process will
  invoke the command and arguments given by `],
-					[/* reference */ 'r', `command()`],
+					[/* reference */ 'r', `#command()`, `command()`],
 					[/* text */ 't', `,
  in a working directory as given by `],
-					[/* reference */ 'r', `directory()`],
+					[/* reference */ 'r', `#directory()`, `directory()`],
 					[/* text */ 't', `,
  with a process environment as given by `],
-					[/* reference */ 'r', `environment()`],
+					[/* reference */ 'r', `#environment()`, `environment()`],
 					[/* text */ 't', `.
 
  `]
@@ -381,7 +381,7 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
  be required to start a process on some operating systems.
  As a result, the subprocess may inherit additional environment variable
  settings beyond those in the process builder's `],
-					[/* reference */ 'r', `environment()`],
+					[/* reference */ 'r', `#environment()`, `environment()`],
 					[/* text */ 't', `.
 
  `]
@@ -389,7 +389,7 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 				[/* block */ 'b', [
 					[/* text */ 't', `If there is a security manager, its
  `],
-					[/* external link */ 'a', `SecurityManager.html#checkExec(java.lang.String)`, `checkExec`],
+					[/* reference */ 'r', `.SecurityManager#checkExec(java.lang.String)`],
 					[/* text */ 't', `
  method is called with the first component of this object's
  `],
@@ -456,7 +456,7 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 						[/* block */ 'b', [
 							[/* text */ 't', `its
          `],
-							[/* external link */ 'a', `SecurityManager.html#checkExec(java.lang.String)`, `checkExec`],
+							[/* reference */ 'r', `.SecurityManager#checkExec(java.lang.String)`],
 							[/* text */ 't', `
          method doesn't allow creation of the subprocess, or
 
@@ -465,11 +465,11 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 						[/* block */ 'b', [
 							[/* text */ 't', `the standard input to the subprocess was
          `],
-							[/* reference */ 'r', `redirected from a file`],
+							[/* reference */ 'r', `#redirectInput(java.lang.ProcessBuilder.Redirect)`, `redirected from a file`],
 							[/* text */ 't', `
          and the security manager's
          `],
-							[/* external link */ 'a', `SecurityManager.html#checkRead(java.lang.String)`, `checkRead`],
+							[/* reference */ 'r', `.SecurityManager#checkRead(java.lang.String)`],
 							[/* text */ 't', ` method
          denies read access to the file, or
 
@@ -479,11 +479,11 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 							[/* text */ 't', `the standard output or standard error of the
          subprocess was
          `],
-							[/* reference */ 'r', `redirected to a file`],
+							[/* reference */ 'r', `#redirectOutput(java.lang.ProcessBuilder.Redirect)`, `redirected to a file`],
 							[/* text */ 't', `
          and the security manager's
          `],
-							[/* external link */ 'a', `SecurityManager.html#checkWrite(java.lang.String)`, `checkWrite`],
+							[/* reference */ 'r', `.SecurityManager#checkWrite(java.lang.String)`],
 							[/* text */ 't', ` method
          denies write access to the file
 
@@ -509,7 +509,7 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 				[/* text */ 't', `Sets this process builder's working directory.
 
  Subprocesses subsequently started by this object's `],
-				[/* reference */ 'r', `start()`],
+				[/* reference */ 'r', `#start()`, `start()`],
 				[/* text */ 't', ` method will use this as their working directory.
  The argument may be `],
 				[/* inline code block */ 'i', `null`],
@@ -535,7 +535,7 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 				[/* text */ 't', `Returns this process builder's working directory.
 
  Subprocesses subsequently started by this object's `],
-				[/* reference */ 'r', `start()`],
+				[/* reference */ 'r', `#start()`, `start()`],
 				[/* text */ 't', ` method will use this as their working directory.
  The returned value may be `],
 				[/* inline code block */ 'i', `null`],
@@ -559,10 +559,10 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
  Whenever a process builder is created, the environment is
  initialized to a copy of the current process environment (see
  `],
-				[/* external link */ 'a', `System.html#getenv()`, `System.getenv()`],
+				[/* reference */ 'r', `.System#getenv()`],
 				[/* text */ 't', `).  Subprocesses subsequently started by
  this object's `],
-				[/* reference */ 'r', `start()`],
+				[/* reference */ 'r', `#start()`, `start()`],
 				[/* text */ 't', ` method will use this map as
  their environment.
 
@@ -572,7 +572,7 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 					[/* reference */ 'r', `java.util.Map`],
 					[/* text */ 't', ` operations.  These modifications will be
  visible to subprocesses started via the `],
-					[/* reference */ 'r', `start()`],
+					[/* reference */ 'r', `#start()`, `start()`],
 					[/* text */ 't', `
  method.  Two `],
 					[/* inline code block */ 'i', `ProcessBuilder`],
@@ -583,7 +583,7 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 					[/* inline code block */ 'i', `ProcessBuilder`],
 					[/* text */ 't', ` instance or the values returned by
  `],
-					[/* external link */ 'a', `System.html#getenv(java.lang.String)`, `System.getenv`],
+					[/* reference */ 'r', `.System#getenv(java.lang.String)`],
 					[/* text */ 't', `.
 
  `]
@@ -633,10 +633,10 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The returned map and its collection views may not obey the
  general contract of the `],
-					[/* external link */ 'a', `Object.html#equals(java.lang.Object)`, `Object.equals(java.lang.Object)`],
+					[/* reference */ 'r', `.Object#equals(java.lang.Object)`],
 					[/* text */ 't', ` and
  `],
-					[/* external link */ 'a', `Object.html#hashCode()`, `Object.hashCode()`],
+					[/* reference */ 'r', `.Object#hashCode()`],
 					[/* text */ 't', ` methods.
 
  `]
@@ -647,7 +647,7 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 				[/* block */ 'b', [
 					[/* text */ 't', `If a security manager exists, its
  `],
-					[/* external link */ 'a', `SecurityManager.html#checkPermission(java.security.Permission)`, `checkPermission`],
+					[/* reference */ 'r', `.SecurityManager#checkPermission(java.security.Permission)`],
 					[/* text */ 't', ` method
  is called with a
  `],
@@ -663,7 +663,7 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 				[/* block */ 'b', [
 					[/* text */ 't', `When passing information to a Java subprocess,
  `],
-					[/* external link */ 'a', `System.html#EnvironmentVSSystemProperties`, `system properties`],
+					[/* reference */ 'r', `.System#EnvironmentVSSystemProperties`],
 					[/* text */ 't', `
  are generally preferred over environment variables.`]
 				]]
@@ -673,7 +673,7 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if a security manager exists and its
          `],
-					[/* external link */ 'a', `SecurityManager.html#checkPermission(java.security.Permission)`, `checkPermission`],
+					[/* reference */ 'r', `.SecurityManager#checkPermission(java.security.Permission)`],
 					[/* text */ 't', `
          method doesn't allow access to the process environment`]
 				]]
@@ -750,11 +750,11 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 				[/* text */ 't', `Returns this process builder's standard input source.
 
  Subprocesses subsequently started by this object's `],
-				[/* reference */ 'r', `start()`],
+				[/* reference */ 'r', `#start()`, `start()`],
 				[/* text */ 't', `
  method obtain their standard input from this source.
  The initial value is `],
-				[/* external link */ 'a', `ProcessBuilder.Redirect.html#PIPE`, `Redirect.PIPE`],
+				[/* reference */ 'r', `.ProcessBuilder.Redirect#PIPE`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -775,7 +775,7 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 					[/* text */ 't', `
  behaves in exactly the same way as the invocation
  `],
-					[/* reference */ 'r', `redirectInput`],
+					[/* reference */ 'r', `#redirectInput(java.lang.ProcessBuilder.Redirect)`, `redirectInput`],
 					[/* inline code block */ 'i', `(Redirect.from(file))`],
 					[/* text */ 't', `.`]
 				]]
@@ -795,23 +795,23 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 				[/* text */ 't', `Sets this process builder's standard input source.
 
  Subprocesses subsequently started by this object's `],
-				[/* reference */ 'r', `start()`],
+				[/* reference */ 'r', `#start()`, `start()`],
 				[/* text */ 't', `
  method obtain their standard input from this source.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `If the source is `],
-					[/* external link */ 'a', `ProcessBuilder.Redirect.html#PIPE`, `Redirect.PIPE`],
+					[/* reference */ 'r', `.ProcessBuilder.Redirect#PIPE`],
 					[/* text */ 't', `
  (the initial value), then the standard input of a
  subprocess can be written to using the output stream
  returned by `],
-					[/* external link */ 'a', `Process.html#getOutputStream()`, `Process.getOutputStream()`],
+					[/* reference */ 'r', `.Process#getOutputStream()`],
 					[/* text */ 't', `.
  If the source is set to any other value, then
  `],
-					[/* external link */ 'a', `Process.html#getOutputStream()`, `Process.getOutputStream()`],
+					[/* reference */ 'r', `.Process#getOutputStream()`],
 					[/* text */ 't', ` will return a
  `],
 					[/* text */ 't', `null output stream`],
@@ -828,10 +828,10 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 					[/* text */ 't', `if the redirect does not correspond to a valid source
          of data, that is, has type
          `],
-					[/* external link */ 'a', `ProcessBuilder.Redirect.Type.html#WRITE`, `WRITE`],
+					[/* reference */ 'r', `.ProcessBuilder.Redirect.Type#WRITE`],
 					[/* text */ 't', ` or
          `],
-					[/* external link */ 'a', `ProcessBuilder.Redirect.Type.html#APPEND`, `APPEND`]
+					[/* reference */ 'r', `.ProcessBuilder.Redirect.Type#APPEND`]
 				]]
 			],
 			[/* return description */
@@ -843,11 +843,11 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 				[/* text */ 't', `Returns this process builder's standard output destination.
 
  Subprocesses subsequently started by this object's `],
-				[/* reference */ 'r', `start()`],
+				[/* reference */ 'r', `#start()`, `start()`],
 				[/* text */ 't', `
  method redirect their standard output to this destination.
  The initial value is `],
-				[/* external link */ 'a', `ProcessBuilder.Redirect.html#PIPE`, `Redirect.PIPE`],
+				[/* reference */ 'r', `.ProcessBuilder.Redirect#PIPE`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -861,22 +861,22 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 				[/* text */ 't', `Sets this process builder's standard output destination.
 
  Subprocesses subsequently started by this object's `],
-				[/* reference */ 'r', `start()`],
+				[/* reference */ 'r', `#start()`, `start()`],
 				[/* text */ 't', `
  method send their standard output to this destination.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `If the destination is `],
-					[/* external link */ 'a', `ProcessBuilder.Redirect.html#PIPE`, `Redirect.PIPE`],
+					[/* reference */ 'r', `.ProcessBuilder.Redirect#PIPE`],
 					[/* text */ 't', `
  (the initial value), then the standard output of a subprocess
  can be read using the input stream returned by `],
-					[/* external link */ 'a', `Process.html#getInputStream()`, `Process.getInputStream()`],
+					[/* reference */ 'r', `.Process#getInputStream()`],
 					[/* text */ 't', `.
  If the destination is set to any other value, then
  `],
-					[/* external link */ 'a', `Process.html#getInputStream()`, `Process.getInputStream()`],
+					[/* reference */ 'r', `.Process#getInputStream()`],
 					[/* text */ 't', ` will return a
  `],
 					[/* text */ 't', `null input stream`],
@@ -893,7 +893,7 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 					[/* text */ 't', `if the redirect does not correspond to a valid
          destination of data, that is, has type
          `],
-					[/* external link */ 'a', `ProcessBuilder.Redirect.Type.html#READ`, `READ`]
+					[/* reference */ 'r', `.ProcessBuilder.Redirect.Type#READ`]
 				]]
 			],
 			[/* return description */
@@ -912,7 +912,7 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 					[/* text */ 't', `
  behaves in exactly the same way as the invocation
  `],
-					[/* reference */ 'r', `redirectOutput`],
+					[/* reference */ 'r', `#redirectOutput(java.lang.ProcessBuilder.Redirect)`, `redirectOutput`],
 					[/* inline code block */ 'i', `(Redirect.to(file))`],
 					[/* text */ 't', `.`]
 				]]
@@ -939,7 +939,7 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 					[/* text */ 't', `
  behaves in exactly the same way as the invocation
  `],
-					[/* reference */ 'r', `redirectError`],
+					[/* reference */ 'r', `#redirectError(java.lang.ProcessBuilder.Redirect)`, `redirectError`],
 					[/* inline code block */ 'i', `(Redirect.to(file))`],
 					[/* text */ 't', `.`]
 				]]
@@ -959,22 +959,22 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 				[/* text */ 't', `Sets this process builder's standard error destination.
 
  Subprocesses subsequently started by this object's `],
-				[/* reference */ 'r', `start()`],
+				[/* reference */ 'r', `#start()`, `start()`],
 				[/* text */ 't', `
  method send their standard error to this destination.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `If the destination is `],
-					[/* external link */ 'a', `ProcessBuilder.Redirect.html#PIPE`, `Redirect.PIPE`],
+					[/* reference */ 'r', `.ProcessBuilder.Redirect#PIPE`],
 					[/* text */ 't', `
  (the initial value), then the error output of a subprocess
  can be read using the input stream returned by `],
-					[/* external link */ 'a', `Process.html#getErrorStream()`, `Process.getErrorStream()`],
+					[/* reference */ 'r', `.Process#getErrorStream()`],
 					[/* text */ 't', `.
  If the destination is set to any other value, then
  `],
-					[/* external link */ 'a', `Process.html#getErrorStream()`, `Process.getErrorStream()`],
+					[/* reference */ 'r', `.Process#getErrorStream()`],
 					[/* text */ 't', ` will return a
  `],
 					[/* text */ 't', `null input stream`],
@@ -984,7 +984,7 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `If the `],
-					[/* reference */ 'r', `redirectErrorStream`],
+					[/* reference */ 'r', `#redirectErrorStream()`, `redirectErrorStream`],
 					[/* text */ 't', `
  attribute has been set `],
 					[/* inline code block */ 'i', `true`],
@@ -1002,7 +1002,7 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 					[/* text */ 't', `if the redirect does not correspond to a valid
          destination of data, that is, has type
          `],
-					[/* external link */ 'a', `ProcessBuilder.Redirect.Type.html#READ`, `READ`]
+					[/* reference */ 'r', `.ProcessBuilder.Redirect.Type#READ`]
 				]]
 			],
 			[/* return description */
@@ -1014,11 +1014,11 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 				[/* text */ 't', `Returns this process builder's standard error destination.
 
  Subprocesses subsequently started by this object's `],
-				[/* reference */ 'r', `start()`],
+				[/* reference */ 'r', `#start()`, `start()`],
 				[/* text */ 't', `
  method redirect their standard error to this destination.
  The initial value is `],
-				[/* external link */ 'a', `ProcessBuilder.Redirect.html#PIPE`, `Redirect.PIPE`],
+				[/* reference */ 'r', `.ProcessBuilder.Redirect#PIPE`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -1040,11 +1040,11 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 					[/* text */ 't', `, then any error output
  generated by subprocesses subsequently started by this object's
  `],
-					[/* reference */ 'r', `start()`],
+					[/* reference */ 'r', `#start()`, `start()`],
 					[/* text */ 't', ` method will be merged with the standard
  output, so that both can be read using the
  `],
-					[/* external link */ 'a', `Process.html#getInputStream()`, `Process.getInputStream()`],
+					[/* reference */ 'r', `.Process#getInputStream()`],
 					[/* text */ 't', ` method.  This makes it easier
  to correlate error messages with the corresponding output.
  The initial value is `],
@@ -1074,11 +1074,11 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 					[/* text */ 't', `, then any error output
  generated by subprocesses subsequently started by this object's
  `],
-					[/* reference */ 'r', `start()`],
+					[/* reference */ 'r', `#start()`, `start()`],
 					[/* text */ 't', ` method will be merged with the standard
  output, so that both can be read using the
  `],
-					[/* external link */ 'a', `Process.html#getInputStream()`, `Process.getInputStream()`],
+					[/* reference */ 'r', `.Process#getInputStream()`],
 					[/* text */ 't', ` method.  This makes it easier
  to correlate error messages with the corresponding output.
  The initial value is `],
@@ -1141,7 +1141,7 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 				[/* inline code block */ 'i', `ProcessBuilder`],
 				[/* text */ 't', ` redirects should be
  `],
-				[/* external link */ 'a', `ProcessBuilder.Redirect.html#PIPE`, `Redirect.PIPE`],
+				[/* reference */ 'r', `.ProcessBuilder.Redirect#PIPE`],
 				[/* text */ 't', `.
  `],
 				[/* block */ 'b', [
@@ -1149,13 +1149,13 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
  All input and output streams between the intermediate processes are
  not accessible.
  The `],
-					[/* external link */ 'a', `Process.html#getOutputStream()`, `standard input`],
+					[/* reference */ 'r', `.Process#getOutputStream()`],
 					[/* text */ 't', ` of all processes
  except the first process are `],
 					[/* text */ 't', `null output streams`],
 					[/* text */ 't', `
  The `],
-					[/* external link */ 'a', `Process.html#getInputStream()`, `standard output`],
+					[/* reference */ 'r', `.Process#getInputStream()`],
 					[/* text */ 't', ` of all processes
  except the last process are `],
 					[/* text */ 't', `null input streams`],
@@ -1165,7 +1165,7 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The `],
-					[/* reference */ 'r', `redirectErrorStream()`],
+					[/* reference */ 'r', `#redirectErrorStream()`, `redirectErrorStream()`],
 					[/* text */ 't', ` of each ProcessBuilder applies to the
  respective process.  If set to `],
 					[/* inline code block */ 'i', `true`],
@@ -1183,16 +1183,16 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 					[/* inline code block */ 'i', `startPipeline`],
 					[/* text */ 't', ` method performs the same checks on
  each ProcessBuilder as does the `],
-					[/* reference */ 'r', `start()`],
+					[/* reference */ 'r', `#start()`, `start()`],
 					[/* text */ 't', ` method. Each new process
  invokes the command and arguments given by the respective process builder's
  `],
-					[/* reference */ 'r', `command()`],
+					[/* reference */ 'r', `#command()`, `command()`],
 					[/* text */ 't', `, in a working directory as given by its `],
-					[/* reference */ 'r', `directory()`],
+					[/* reference */ 'r', `#directory()`, `directory()`],
 					[/* text */ 't', `,
  with a process environment as given by its `],
-					[/* reference */ 'r', `environment()`],
+					[/* reference */ 'r', `#environment()`, `environment()`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -1208,7 +1208,7 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
  be required to start a process on some operating systems.
  As a result, the subprocess may inherit additional environment variable
  settings beyond those in the process builder's `],
-					[/* reference */ 'r', `environment()`],
+					[/* reference */ 'r', `#environment()`, `environment()`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -1216,7 +1216,7 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 					[/* text */ 't', `
  If there is a security manager, its
  `],
-					[/* external link */ 'a', `SecurityManager.html#checkExec(java.lang.String)`, `checkExec`],
+					[/* reference */ 'r', `.SecurityManager#checkExec(java.lang.String)`],
 					[/* text */ 't', `
  method is called with the first component of each process builder's
  `],
@@ -1277,7 +1277,7 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 					[/* text */ 't', `any of the redirects except the
           standard input of the first builder and the standard output of
           the last builder are not `],
-					[/* external link */ 'a', `ProcessBuilder.Redirect.html#PIPE`, `ProcessBuilder.Redirect.PIPE`],
+					[/* reference */ 'r', `.ProcessBuilder.Redirect#PIPE`],
 					[/* text */ 't', `.`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
@@ -1297,7 +1297,7 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 						[/* block */ 'b', [
 							[/* text */ 't', `its
          `],
-							[/* external link */ 'a', `SecurityManager.html#checkExec(java.lang.String)`, `checkExec`],
+							[/* reference */ 'r', `.SecurityManager#checkExec(java.lang.String)`],
 							[/* text */ 't', `
          method doesn't allow creation of the subprocess, or
          `]
@@ -1305,11 +1305,11 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 						[/* block */ 'b', [
 							[/* text */ 't', `the standard input to the subprocess was
          `],
-							[/* reference */ 'r', `redirected from a file`],
+							[/* reference */ 'r', `#redirectInput(java.lang.ProcessBuilder.Redirect)`, `redirected from a file`],
 							[/* text */ 't', `
          and the security manager's
          `],
-							[/* external link */ 'a', `SecurityManager.html#checkRead(java.lang.String)`, `checkRead`],
+							[/* reference */ 'r', `.SecurityManager#checkRead(java.lang.String)`],
 							[/* text */ 't', ` method
          denies read access to the file, or
          `]
@@ -1318,11 +1318,11 @@ DocsCollector.collect('java.lang.ProcessBuilder', [
 							[/* text */ 't', `the standard output or standard error of the
          subprocess was
          `],
-							[/* reference */ 'r', `redirected to a file`],
+							[/* reference */ 'r', `#redirectOutput(java.lang.ProcessBuilder.Redirect)`, `redirected to a file`],
 							[/* text */ 't', `
          and the security manager's
          `],
-							[/* external link */ 'a', `SecurityManager.html#checkWrite(java.lang.String)`, `checkWrite`],
+							[/* reference */ 'r', `.SecurityManager#checkWrite(java.lang.String)`],
 							[/* text */ 't', ` method
          denies write access to the file
          `]

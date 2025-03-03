@@ -33,10 +33,20 @@ DocsCollector.collect('java.util.IdentityHashMap', [
 
  `],
 		[/* block */ 'b', [
-			[/* text */ 't', `This class is <i>not</i> a general-purpose <code>Map</code>
- implementation!  While this class implements the <code>Map</code> interface, it
- intentionally violates <code>Map's</code> general contract, which mandates the
- use of the <code>equals</code> method when comparing objects.  This class is
+			[/* text */ 't', `This class is `],
+			[/* text */ 't', `not`],
+			[/* text */ 't', ` a general-purpose `],
+			[/* inline code block */ 'i', `Map`],
+			[/* text */ 't', `
+ implementation!  While this class implements the `],
+			[/* inline code block */ 'i', `Map`],
+			[/* text */ 't', ` interface, it
+ intentionally violates `],
+			[/* inline code block */ 'i', `Map's`],
+			[/* text */ 't', ` general contract, which mandates the
+ use of the `],
+			[/* inline code block */ 'i', `equals`],
+			[/* text */ 't', ` method when comparing objects.  This class is
  designed for use only in the rare cases wherein reference-equality
  semantics are required.`]
 		]],
@@ -76,7 +86,7 @@ DocsCollector.collect('java.util.IdentityHashMap', [
 			[/* inline code block */ 'i', `put`],
 			[/* text */ 't', `), assuming the system
  identity hash function (`],
-			[/* external link */ 'a', `../lang/System.html#identityHashCode(java.lang.Object)`, `System.identityHashCode(Object)`],
+			[/* reference */ 'r', `java.System#identityHashCode(java.lang.Object)`],
 			[/* text */ 't', `)
  disperses elements properly among the buckets.
 
@@ -119,7 +129,7 @@ DocsCollector.collect('java.util.IdentityHashMap', [
 
  If no such object exists, the map should be "wrapped" using the
  `],
-			[/* external link */ 'a', `Collections.html#synchronizedMap(java.util.Map)`, `Collections.synchronizedMap`],
+			[/* reference */ 'r', `.Collections#synchronizedMap(java.util.Map)`],
 			[/* text */ 't', `
  method.  This is best done at creation time, to prevent accidental
  unsynchronized access to the map:`]
@@ -162,7 +172,7 @@ DocsCollector.collect('java.util.IdentityHashMap', [
 		[/* block */ 'b', [
 			[/* text */ 't', `This class is a member of the
  `],
-			[/* external link */ 'a', `../../../java.base/java/util/package-summary.html#CollectionsFramework`, `Java Collections Framework`],
+			[/* text */ 't', `Java Collections Framework`],
 			[/* text */ 't', `.`]
 		]]
 	],
@@ -280,7 +290,7 @@ DocsCollector.collect('java.util.IdentityHashMap', [
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', `.
  The `],
-					[/* reference */ 'r', `containsKey`],
+					[/* reference */ 'r', `#containsKey(java.lang.Object)`, `containsKey`],
 					[/* text */ 't', ` operation may be used to
  distinguish these two cases.`]
 				]]
@@ -350,9 +360,15 @@ DocsCollector.collect('java.util.IdentityHashMap', [
 				[/* block */ 'b', [
 					[/* text */ 't', `Owing to the reference-equality-based semantics of this map it is
  possible that the symmetry and transitivity requirements of the
- <code>Object.equals</code> contract may be violated if this map is compared
- to a normal map.  However, the <code>Object.equals</code> contract is
- guaranteed to hold among <code>IdentityHashMap</code> instances.`]
+ `],
+					[/* inline code block */ 'i', `Object.equals`],
+					[/* text */ 't', ` contract may be violated if this map is compared
+ to a normal map.  However, the `],
+					[/* inline code block */ 'i', `Object.equals`],
+					[/* text */ 't', ` contract is
+ guaranteed to hold among `],
+					[/* inline code block */ 'i', `IdentityHashMap`],
+					[/* text */ 't', ` instances.`]
 				]]
 			],
 			[/* parameters */
@@ -398,12 +414,24 @@ DocsCollector.collect('java.util.IdentityHashMap', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `While the object returned by this method implements the
- <code>Collection</code> interface, it does <i>not</i> obey
- <code>Collection's</code> general contract.  Like its backing map,
+ `],
+					[/* inline code block */ 'i', `Collection`],
+					[/* text */ 't', ` interface, it does `],
+					[/* text */ 't', `not`],
+					[/* text */ 't', ` obey
+ `],
+					[/* inline code block */ 'i', `Collection's`],
+					[/* text */ 't', ` general contract.  Like its backing map,
  the collection returned by this method defines element equality as
  reference-equality rather than object-equality.  This affects the
- behavior of its <code>contains</code>, <code>remove</code> and
- <code>containsAll</code> methods.`]
+ behavior of its `],
+					[/* inline code block */ 'i', `contains`],
+					[/* text */ 't', `, `],
+					[/* inline code block */ 'i', `remove`],
+					[/* text */ 't', ` and
+ `],
+					[/* inline code block */ 'i', `containsAll`],
+					[/* text */ 't', ` methods.`]
 				]]
 			],
 			/* parameters */ UDF,
@@ -432,17 +460,25 @@ DocsCollector.collect('java.util.IdentityHashMap', [
 				[/* inline code block */ 'i', `m2`],
 				[/* text */ 't', `, as
  required by the general contract of `],
-				[/* external link */ 'a', `../lang/Object.html#hashCode()`, `Object.hashCode()`],
+				[/* reference */ 'r', `java.Object#hashCode()`],
 				[/* text */ 't', `.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `Owing to the reference-equality-based semantics of the
- <code>Map.Entry</code> instances in the set returned by this map's
- <code>entrySet</code> method, it is possible that the contractual
- requirement of <code>Object.hashCode</code> mentioned in the previous
+ `],
+					[/* inline code block */ 'i', `Map.Entry`],
+					[/* text */ 't', ` instances in the set returned by this map's
+ `],
+					[/* inline code block */ 'i', `entrySet`],
+					[/* text */ 't', ` method, it is possible that the contractual
+ requirement of `],
+					[/* inline code block */ 'i', `Object.hashCode`],
+					[/* text */ 't', ` mentioned in the previous
  paragraph will be violated if one of the two objects being compared is
- an <code>IdentityHashMap</code> instance and the other is a normal map.`]
+ an `],
+					[/* inline code block */ 'i', `IdentityHashMap`],
+					[/* text */ 't', ` instance and the other is a normal map.`]
 				]]
 			],
 			/* parameters */ UDF,
@@ -566,13 +602,19 @@ DocsCollector.collect('java.util.IdentityHashMap', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `Owing to the reference-equality-based semantics of the
- <code>Map.Entry</code> instances in the set returned by this method,
+ `],
+					[/* inline code block */ 'i', `Map.Entry`],
+					[/* text */ 't', ` instances in the set returned by this method,
  it is possible that the symmetry and transitivity requirements of
- the <a href="../lang/Object.html#equals(java.lang.Object)"><code>Object.equals(Object)</code></a> contract may be violated if any of
+ the `],
+					[/* reference */ 'r', `java.Object#equals(java.lang.Object)`],
+					[/* text */ 't', ` contract may be violated if any of
  the entries in the set is compared to a normal map entry, or if
  the set returned by this method is compared to a set of normal map
  entries (such as would be returned by a call to this method on a normal
- map).  However, the <code>Object.equals</code> contract is guaranteed to
+ map).  However, the `],
+					[/* inline code block */ 'i', `Object.equals`],
+					[/* text */ 't', ` contract is guaranteed to
  hold among identity-based map entries, and among sets of such entries.
  `]
 				]]
@@ -648,20 +690,44 @@ DocsCollector.collect('java.util.IdentityHashMap', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `While the object returned by this method implements the
- <code>Set</code> interface, it does <i>not</i> obey <code>Set's</code> general
+ `],
+					[/* inline code block */ 'i', `Set`],
+					[/* text */ 't', ` interface, it does `],
+					[/* text */ 't', `not`],
+					[/* text */ 't', ` obey `],
+					[/* inline code block */ 'i', `Set's`],
+					[/* text */ 't', ` general
  contract.  Like its backing map, the set returned by this method
  defines element equality as reference-equality rather than
- object-equality.  This affects the behavior of its <code>contains</code>,
- <code>remove</code>, <code>containsAll</code>, <code>equals</code>, and
- <code>hashCode</code> methods.`]
+ object-equality.  This affects the behavior of its `],
+					[/* inline code block */ 'i', `contains`],
+					[/* text */ 't', `,
+ `],
+					[/* inline code block */ 'i', `remove`],
+					[/* text */ 't', `, `],
+					[/* inline code block */ 'i', `containsAll`],
+					[/* text */ 't', `, `],
+					[/* inline code block */ 'i', `equals`],
+					[/* text */ 't', `, and
+ `],
+					[/* inline code block */ 'i', `hashCode`],
+					[/* text */ 't', ` methods.`]
 				]],
 				[/* block */ 'b', [
-					[/* text */ 't', `The <code>equals</code> method of the returned set returns <code>true</code>
+					[/* text */ 't', `The `],
+					[/* inline code block */ 'i', `equals`],
+					[/* text */ 't', ` method of the returned set returns `],
+					[/* inline code block */ 'i', `true`],
+					[/* text */ 't', `
  only if the specified object is a set containing exactly the same
  object references as the returned set.  The symmetry and transitivity
- requirements of the <code>Object.equals</code> contract may be violated if
+ requirements of the `],
+					[/* inline code block */ 'i', `Object.equals`],
+					[/* text */ 't', ` contract may be violated if
  the set returned by this method is compared to a normal set.  However,
- the <code>Object.equals</code> contract is guaranteed to hold among sets
+ the `],
+					[/* inline code block */ 'i', `Object.equals`],
+					[/* text */ 't', ` contract is guaranteed to hold among sets
  returned by this method.`]
 				]],
 				[/* block */ 'b', [

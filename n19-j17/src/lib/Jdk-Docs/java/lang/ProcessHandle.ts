@@ -30,20 +30,20 @@ DocsCollector.collect('java.lang.ProcessHandle', [
 			[/* text */ 't', `
  Each ProcessHandle identifies and allows control of a process in the native
  system. ProcessHandles are returned from the factory methods `],
-			[/* reference */ 'r', `current()`],
+			[/* reference */ 'r', `#current()`, `current()`],
 			[/* text */ 't', `,
  `],
-			[/* reference */ 'r', `of(long)`],
+			[/* reference */ 'r', `#of(long)`, `of(long)`],
 			[/* text */ 't', `,
  `],
-			[/* reference */ 'r', `children()`],
+			[/* reference */ 'r', `#children()`, `children()`],
 			[/* text */ 't', `, `],
-			[/* reference */ 'r', `descendants()`],
+			[/* reference */ 'r', `#descendants()`, `descendants()`],
 			[/* text */ 't', `, `],
-			[/* reference */ 'r', `parent()`],
+			[/* reference */ 'r', `#parent()`, `parent()`],
 			[/* text */ 't', ` and
  `],
-			[/* reference */ 'r', `allProcesses()`],
+			[/* reference */ 'r', `#allProcesses()`, `allProcesses()`],
 			[/* text */ 't', `.
  `]
 		]],
@@ -64,7 +64,7 @@ DocsCollector.collect('java.lang.ProcessHandle', [
  A `],
 			[/* reference */ 'r', `java.util.concurrent.CompletableFuture`],
 			[/* text */ 't', ` available from `],
-			[/* reference */ 'r', `onExit()`],
+			[/* reference */ 'r', `#onExit()`, `onExit()`],
 			[/* text */ 't', `
  can be used to wait for process termination, and possibly trigger dependent
  actions.
@@ -140,14 +140,14 @@ DocsCollector.collect('java.lang.ProcessHandle', [
 			[/* method description */
 				[/* text */ 't', `Returns a hash code value for this ProcessHandle.
  The hashcode value follows the general contract for `],
-				[/* external link */ 'a', `Object.html#hashCode()`, `Object.hashCode()`],
+				[/* reference */ 'r', `.Object#hashCode()`],
 				[/* text */ 't', `.
  The value is a function of the `],
-				[/* reference */ 'r', `pid()`],
+				[/* reference */ 'r', `#pid()`, `pid()`],
 				[/* text */ 't', ` value and
  may be a function of additional information to uniquely identify the process.
  If two ProcessHandles are equal according to the `],
-				[/* reference */ 'r', `equals`],
+				[/* reference */ 'r', `#equals(java.lang.Object)`, `equals`],
 				[/* text */ 't', `
  method, then calling the hashCode method on each of the two objects
  must produce the same integer result.`]
@@ -162,7 +162,7 @@ DocsCollector.collect('java.lang.ProcessHandle', [
 			[/* method description */
 				[/* text */ 't', `Compares this ProcessHandle with the specified ProcessHandle for order.
  The order is not specified, but is consistent with `],
-				[/* external link */ 'a', `Object.html#equals(java.lang.Object)`, `Object.equals(java.lang.Object)`],
+				[/* reference */ 'r', `.Object#equals(java.lang.Object)`],
 				[/* text */ 't', `,
  which returns `],
 				[/* inline code block */ 'i', `true`],
@@ -247,7 +247,7 @@ DocsCollector.collect('java.lang.ProcessHandle', [
 			[/* method description */
 				[/* text */ 't', `Returns a ProcessHandle for the current process. The ProcessHandle cannot be
  used to destroy the current process, use `],
-				[/* external link */ 'a', `System.html#exit(int)`, `System.exit`],
+				[/* reference */ 'r', `.System#exit(int)`],
 				[/* text */ 't', ` instead.`]
 			],
 			/* parameters */ UDF,
@@ -290,7 +290,7 @@ DocsCollector.collect('java.lang.ProcessHandle', [
 				[/* inline code block */ 'i', `ProcessHandle`],
 				[/* text */ 't', ` object is
  `],
-				[/* reference */ 'r', `normally terminated`],
+				[/* reference */ 'r', `#supportsNormalTermination()`, `normally terminated`],
 				[/* text */ 't', ` or not is
  implementation dependent.
  Forcible process destruction is defined as the immediate termination of the
@@ -304,10 +304,10 @@ DocsCollector.collect('java.lang.ProcessHandle', [
  The `],
 					[/* reference */ 'r', `java.util.concurrent.CompletableFuture`],
 					[/* text */ 't', ` from `],
-					[/* reference */ 'r', `onExit()`],
+					[/* reference */ 'r', `#onExit()`, `onExit()`],
 					[/* text */ 't', ` is
  `],
-					[/* external link */ 'a', `../util/concurrent/CompletableFuture.html#complete(T)`, `completed`],
+					[/* reference */ 'r', `java.CompletableFuture#complete(T)`],
 					[/* text */ 't', `
  when the process has terminated.
  `]
@@ -342,10 +342,10 @@ DocsCollector.collect('java.lang.ProcessHandle', [
  identification number that the operating system assigns to the process.
  The operating system may reuse the process ID after a process terminates.
  Use `],
-				[/* reference */ 'r', `equals`],
+				[/* reference */ 'r', `#equals(java.lang.Object)`, `equals`],
 				[/* text */ 't', ` or
  `],
-				[/* reference */ 'r', `compareTo`],
+				[/* reference */ 'r', `#compareTo(java.lang.ProcessHandle)`, `compareTo`],
 				[/* text */ 't', ` to compare ProcessHandles.`]
 			],
 			/* parameters */ UDF,
@@ -363,14 +363,18 @@ DocsCollector.collect('java.lang.ProcessHandle', [
 			[/* method description */
 				[/* text */ 't', `Returns a snapshot of the current direct children of the process.
  The `],
-				[/* reference */ 'r', `parent()`],
+				[/* reference */ 'r', `#parent()`, `parent()`],
 				[/* text */ 't', ` of a direct child process is the process.
  Typically, a process that is `],
-				[/* reference */ 'r', `not alive`],
+				[/* reference */ 'r', `#isAlive()`, `not alive`],
 				[/* text */ 't', ` has no children.
  `],
 				[/* block */ 'b', [
-					[/* reference */ 'r', `alive`]
+					[/* text */ 't', `Note that processes are created and terminate asynchronously.
+ There is no guarantee that a process is `],
+					[/* reference */ 'r', `#isAlive()`, `alive`],
+					[/* text */ 't', `.
+ `]
 				]]
 			],
 			/* parameters */ UDF,
@@ -391,11 +395,15 @@ DocsCollector.collect('java.lang.ProcessHandle', [
  The descendants of a process are the children of the process
  plus the descendants of those children, recursively.
  Typically, a process that is `],
-				[/* reference */ 'r', `not alive`],
+				[/* reference */ 'r', `#isAlive()`, `not alive`],
 				[/* text */ 't', ` has no children.
  `],
 				[/* block */ 'b', [
-					[/* reference */ 'r', `alive`]
+					[/* text */ 't', `Note that processes are created and terminate asynchronously.
+ There is no guarantee that a process is `],
+					[/* reference */ 'r', `#isAlive()`, `alive`],
+					[/* text */ 't', `.
+ `]
 				]]
 			],
 			/* parameters */ UDF,
@@ -428,10 +436,10 @@ DocsCollector.collect('java.lang.ProcessHandle', [
  The `],
 					[/* reference */ 'r', `java.util.concurrent.CompletableFuture`],
 					[/* text */ 't', ` from `],
-					[/* reference */ 'r', `onExit()`],
+					[/* reference */ 'r', `#onExit()`, `onExit()`],
 					[/* text */ 't', ` is
  `],
-					[/* external link */ 'a', `../util/concurrent/CompletableFuture.html#complete(T)`, `completed`],
+					[/* reference */ 'r', `java.CompletableFuture#complete(T)`],
 					[/* text */ 't', `
  when the process has terminated.
  `]
@@ -465,7 +473,7 @@ DocsCollector.collect('java.lang.ProcessHandle', [
 				[/* text */ 't', `Returns `],
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the implementation of `],
-				[/* reference */ 'r', `destroy()`],
+				[/* reference */ 'r', `#destroy()`, `destroy()`],
 				[/* text */ 't', `
  normally terminates the process.
  Returns `],
@@ -480,11 +488,11 @@ DocsCollector.collect('java.lang.ProcessHandle', [
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the implementation of `],
-				[/* reference */ 'r', `destroy()`],
+				[/* reference */ 'r', `#destroy()`, `destroy()`],
 				[/* text */ 't', `
          normally terminates the process;
          otherwise, `],
-				[/* reference */ 'r', `destroy()`],
+				[/* reference */ 'r', `#destroy()`, `destroy()`],
 				[/* text */ 't', ` forcibly terminates the process`]
 			]
 		]],
@@ -501,7 +509,7 @@ DocsCollector.collect('java.lang.ProcessHandle', [
  or asynchronously upon process termination.
  When the process has terminated the CompletableFuture is
  `],
-				[/* external link */ 'a', `../util/concurrent/CompletableFuture.html#complete(T)`, `completed`],
+				[/* reference */ 'r', `java.CompletableFuture#complete(T)`],
 				[/* text */ 't', ` regardless
  of the exit status of the process.
  The `],
@@ -516,13 +524,13 @@ DocsCollector.collect('java.lang.ProcessHandle', [
 					[/* text */ 't', ` waits for the process to terminate and returns
  the ProcessHandle. The future can be used to check if the process is
  `],
-					[/* external link */ 'a', `../util/concurrent/CompletableFuture.html#isDone()`, `done`],
+					[/* reference */ 'r', `java.CompletableFuture#isDone()`],
 					[/* text */ 't', ` or to
  `],
-					[/* external link */ 'a', `../util/concurrent/Future.html#get()`, `wait`],
+					[/* reference */ 'r', `java.Future#get()`],
 					[/* text */ 't', ` for it to terminate.
  `],
-					[/* external link */ 'a', `../util/concurrent/Future.html#cancel(boolean)`, `Cancelling`],
+					[/* reference */ 'r', `java.Future#cancel(boolean)`],
 					[/* text */ 't', `
  the CompleteableFuture does not affect the Process.`]
 				]]
@@ -543,12 +551,10 @@ DocsCollector.collect('java.lang.ProcessHandle', [
 			[/* method description */
 				[/* text */ 't', `Returns a snapshot of all processes visible to the current process.
  `],
-				[/* block */ 'b', [
-					[/* text */ 't', `Note that processes are created and terminate asynchronously. There
+				[/* block */ 'b', `Note that processes are created and terminate asynchronously. There
  is no guarantee that a process in the stream is alive or that no other
  processes may have been created since the inception of the snapshot.
  `]
-				]]
 			],
 			/* parameters */ UDF,
 			[/* throws */

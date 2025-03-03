@@ -54,7 +54,7 @@ DocsCollector.collect('java.lang.module.ModuleReference', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This URI, when present, can be used as the `],
-					[/* external link */ 'a', `../../security/CodeSource.html#getLocation()`, `location`],
+					[/* reference */ 'r', `java.lang.CodeSource#getLocation()`],
 					[/* text */ 't', ` value of a `],
 					[/* reference */ 'r', `java.security.CodeSource`],
 					[/* text */ 't', ` so that a module's classes can be

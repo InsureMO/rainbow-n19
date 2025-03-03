@@ -11,12 +11,12 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Builder', [
 		[/* block */ 'b', [
 			[/* inline code block */ 'i', `ModuleDescriptor`],
 			[/* text */ 't', ` defines the `],
-			[/* external link */ 'a', `ModuleDescriptor.html#newModule(java.lang.String,java.util.Set)`, `newModule`],
+			[/* reference */ 'r', `.ModuleDescriptor#newModule(java.lang.String,java.util.Set)`],
 			[/* text */ 't', `,
  `],
-			[/* external link */ 'a', `ModuleDescriptor.html#newOpenModule(java.lang.String)`, `newOpenModule`],
+			[/* reference */ 'r', `.ModuleDescriptor#newOpenModule(java.lang.String)`],
 			[/* text */ 't', `, and `],
-			[/* external link */ 'a', `ModuleDescriptor.html#newAutomaticModule(java.lang.String)`, `newAutomaticModule`],
+			[/* reference */ 'r', `.ModuleDescriptor#newAutomaticModule(java.lang.String)`],
 			[/* text */ 't', ` methods to create builders for building
  `],
 			[/* text */ 't', `normal`],
@@ -26,19 +26,19 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Builder', [
 			[/* text */ 't', ` The set of packages in the module are accumulated by the `],
 			[/* inline code block */ 'i', `Builder`],
 			[/* text */ 't', ` as the `],
-			[/* reference */ 'r', `exports`],
+			[/* reference */ 'r', `#exports(java.lang.String)`, `exports`],
 			[/* text */ 't', `,
  `],
-			[/* reference */ 'r', `opens`],
+			[/* reference */ 'r', `#opens(java.lang.String)`, `opens`],
 			[/* text */ 't', `,
  `],
-			[/* reference */ 'r', `packages`],
+			[/* reference */ 'r', `#packages(java.util.Set)`, `packages`],
 			[/* text */ 't', `,
  `],
-			[/* reference */ 'r', `provides`],
+			[/* reference */ 'r', `#provides(java.lang.String,java.util.List)`, `provides`],
 			[/* text */ 't', `, and
  `],
-			[/* reference */ 'r', `mainClass`],
+			[/* reference */ 'r', `#mainClass(java.lang.String)`, `mainClass`],
 			[/* text */ 't', ` methods are
  invoked. `]
 		]],
@@ -253,7 +253,7 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Builder', [
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
 					[/* text */ 't', `If the `],
-					[/* external link */ 'a', `ModuleDescriptor.Exports.html#source()`, `package`],
+					[/* reference */ 'r', `.ModuleDescriptor.Exports#source()`],
 					[/* text */ 't', ` is already declared as
          exported or this builder is for an automatic module`]
 				]]
@@ -497,7 +497,7 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Builder', [
  "`],
 					[/* inline code block */ 'i', `java.base`],
 					[/* text */ 't', `" will have the `],
-					[/* external link */ 'a', `ModuleDescriptor.Requires.Modifier.html#MANDATED`, `MANDATED`],
+					[/* reference */ 'r', `.ModuleDescriptor.Requires.Modifier#MANDATED`],
 					[/* text */ 't', `
  modifier if the dependence was not declared. `]
 				]]
@@ -626,7 +626,7 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Builder', [
 				[/* text */ 't', `Sets the module main class. The package for the main class is added
  to the module if not already added. In other words, this method is
  equivalent to first invoking this builder's `],
-				[/* reference */ 'r', `packages`],
+				[/* reference */ 'r', `#packages(java.util.Set)`, `packages`],
 				[/* text */ 't', ` method to add the package name of the main class.`]
 			],
 			[/* parameters */

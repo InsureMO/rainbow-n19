@@ -52,7 +52,7 @@ DocsCollector.collect('java.util.HashSet', [
 
  If no such object exists, the set should be "wrapped" using the
  `],
-			[/* external link */ 'a', `Collections.html#synchronizedSet(java.util.Set)`, `Collections.synchronizedSet`],
+			[/* reference */ 'r', `.Collections#synchronizedSet(java.util.Set)`],
 			[/* text */ 't', `
  method.  This is best done at creation time, to prevent accidental
  unsynchronized access to the set:`]
@@ -93,7 +93,7 @@ DocsCollector.collect('java.util.HashSet', [
 		[/* block */ 'b', [
 			[/* text */ 't', `This class is a member of the
  `],
-			[/* external link */ 'a', `../../../java.base/java/util/package-summary.html#CollectionsFramework`, `Java Collections Framework`],
+			[/* text */ 't', `Java Collections Framework`],
 			[/* text */ 't', `.`]
 		]]
 	],
@@ -323,7 +323,7 @@ DocsCollector.collect('java.util.HashSet', [
  If this collection makes any guarantees as to what order its elements
  are returned by its iterator, this method must return the elements in
  the same order. The returned array's `],
-					[/* external link */ 'a', `../lang/Class.html#getComponentType()`, `runtime component type`],
+					[/* reference */ 'r', `java.Class#getComponentType()`],
 					[/* text */ 't', ` is `],
 					[/* inline code block */ 'i', `Object`],
 					[/* text */ 't', `.
@@ -339,7 +339,7 @@ DocsCollector.collect('java.util.HashSet', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `an array, whose `],
-				[/* external link */ 'a', `../lang/Class.html#getComponentType()`, `runtime component type`],
+				[/* reference */ 'r', `java.Class#getComponentType()`],
 				[/* text */ 't', ` is `],
 				[/* inline code block */ 'i', `Object`],
 				[/* text */ 't', `, containing all of the elements in this collection`]
@@ -385,7 +385,7 @@ DocsCollector.collect('java.util.HashSet', [
 		[/* method */ 'spliterator()', [
 			[/* method description */
 				[/* text */ 't', `Creates a `],
-				[/* external link */ 'a', `Spliterator.html#binding`, `late-binding`],
+				[/* reference */ 'r', `.Spliterator#binding`],
 				[/* text */ 't', `
  and `],
 				[/* text */ 't', `fail-fast`],
@@ -398,10 +398,10 @@ DocsCollector.collect('java.util.HashSet', [
 					[/* text */ 't', `The `],
 					[/* inline code block */ 'i', `Spliterator`],
 					[/* text */ 't', ` reports `],
-					[/* external link */ 'a', `Spliterator.html#SIZED`, `Spliterator.SIZED`],
+					[/* reference */ 'r', `.Spliterator#SIZED`],
 					[/* text */ 't', ` and
  `],
-					[/* external link */ 'a', `Spliterator.html#DISTINCT`, `Spliterator.DISTINCT`],
+					[/* reference */ 'r', `.Spliterator#DISTINCT`],
 					[/* text */ 't', `.  Overriding implementations should document
  the reporting of additional characteristic values.`]
 				]]

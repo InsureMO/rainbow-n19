@@ -132,7 +132,7 @@ DocsCollector.collect('java.io.ObjectOutputStream', [
 		[/* block */ 'b', [
 			[/* text */ 't', `Records are serialized differently than ordinary serializable or externalizable
  objects, see `],
-			[/* external link */ 'a', `ObjectInputStream.html#record-serialization`, `record serialization`],
+			[/* reference */ 'r', `.ObjectInputStream#record-serialization`],
 			[/* text */ 't', `.`]
 		]]
 	],
@@ -416,7 +416,7 @@ DocsCollector.collect('java.io.ObjectOutputStream', [
 			[/* method description */
 				[/* text */ 't', `Primitive data write of this String in
  `],
-				[/* external link */ 'a', `DataInput.html#modified-utf-8`, `modified UTF-8`],
+				[/* reference */ 'r', `.DataInput#modified-utf-8`],
 				[/* text */ 't', `
  format.  Note that there is a
  significant difference between writing a String into the stream as
@@ -582,20 +582,6 @@ DocsCollector.collect('java.io.ObjectOutputStream', [
 					[/* text */ 't', `the String of chars to be written`]
 				]]
 			],
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if I/O errors occur while writing to the underlying
-          stream`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'drain()', [
-			[/* method description */
-				[/* text */ 't', `Drain any buffered data in ObjectOutputStream.  Similar to flush but
- does not propagate the flush to the underlying stream.`]
-			],
-			/* parameters */ UDF,
 			[/* throws */
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if I/O errors occur while writing to the underlying
@@ -903,7 +889,7 @@ DocsCollector.collect('java.io.ObjectOutputStream', [
 			[/* method description */
 				[/* text */ 't', `Enables the stream to do replacement of objects written to the stream.  When
  enabled, the `],
-				[/* reference */ 'r', `replaceObject(java.lang.Object)`],
+				[/* reference */ 'r', `#replaceObject(java.lang.Object)`, `replaceObject(java.lang.Object)`],
 				[/* text */ 't', ` method is called for every object being
  serialized.
 
@@ -944,6 +930,20 @@ DocsCollector.collect('java.io.ObjectOutputStream', [
 			[/* return description */
 				[/* text */ 't', `the previous setting before this method was invoked`]
 			]
+		]],
+		[/* method */ 'drain()', [
+			[/* method description */
+				[/* text */ 't', `Drain any buffered data in ObjectOutputStream.  Similar to flush but
+ does not propagate the flush to the underlying stream.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if I/O errors occur while writing to the underlying
+          stream`]
+				]]
+			],
+			/* return */ UDF
 		]]
 	],
 ]);

@@ -41,7 +41,7 @@ DocsCollector.collect('java.util.SplittableRandom', [
 			]],
 			[/* block */ 'b', [
 				[/* text */ 't', ` Method `],
-				[/* reference */ 'r', `split()`],
+				[/* reference */ 'r', `#split()`, `split()`],
 				[/* text */ 't', ` constructs and returns a new
  SplittableRandom instance that shares no mutable state with the
  current instance. However, with very high probability, the
@@ -82,7 +82,7 @@ DocsCollector.collect('java.util.SplittableRandom', [
  in security-sensitive applications. Additionally,
  default-constructed instances do not use a cryptographically random
  seed unless the `],
-			[/* external link */ 'a', `../lang/System.html#getProperty(java.lang.String)`, `system property`],
+			[/* reference */ 'r', `java.System#getProperty(java.lang.String)`],
 			[/* inline code block */ 'i', `java.util.secureRandomSeed`],
 			[/* text */ 't', ` is set to `],
 			[/* inline code block */ 'i', `true`],
@@ -552,39 +552,6 @@ DocsCollector.collect('java.util.SplittableRandom', [
 			],
 			/* return */ UDF
 		]],
-		[/* method */ 'splits(long)', [
-			[/* method description */
-				[/* text */ 't', `Returns a stream producing the given `],
-				[/* inline code block */ 'i', `streamSize`],
-				[/* text */ 't', ` number of new
- pseudorandom number generators, each of which implements the
- `],
-				[/* reference */ 'r', `java.util.random.RandomGenerator.SplittableGenerator`],
-				[/* text */ 't', ` interface.
-
- `],
-				[/* block */ 'b', ` This pseudorandom number generator may be used as a source of
- pseudorandom bits used to initialize the state the new ones.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'streamSize', [/* parameter description */
-					[/* text */ 't', `the number of values to generate`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if `],
-					[/* inline code block */ 'i', `streamSize`],
-					[/* text */ 't', ` is
-         less than zero`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a stream of `],
-				[/* reference */ 'r', `java.util.random.RandomGenerator.SplittableGenerator`],
-				[/* text */ 't', ` objects`]
-			]
-		]],
 		[/* method */ 'splits()', [
 			[/* method description */
 				[/* text */ 't', `Returns an effectively unlimited stream of new pseudorandom number
@@ -631,6 +598,39 @@ DocsCollector.collect('java.util.SplittableRandom', [
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if source is null`]
 				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if `],
+					[/* inline code block */ 'i', `streamSize`],
+					[/* text */ 't', ` is
+         less than zero`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a stream of `],
+				[/* reference */ 'r', `java.util.random.RandomGenerator.SplittableGenerator`],
+				[/* text */ 't', ` objects`]
+			]
+		]],
+		[/* method */ 'splits(long)', [
+			[/* method description */
+				[/* text */ 't', `Returns a stream producing the given `],
+				[/* inline code block */ 'i', `streamSize`],
+				[/* text */ 't', ` number of new
+ pseudorandom number generators, each of which implements the
+ `],
+				[/* reference */ 'r', `java.util.random.RandomGenerator.SplittableGenerator`],
+				[/* text */ 't', ` interface.
+
+ `],
+				[/* block */ 'b', ` This pseudorandom number generator may be used as a source of
+ pseudorandom bits used to initialize the state the new ones.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'streamSize', [/* parameter description */
+					[/* text */ 't', `the number of values to generate`]
+				]]
+			],
+			[/* throws */
 				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
 					[/* text */ 't', `if `],
 					[/* inline code block */ 'i', `streamSize`],

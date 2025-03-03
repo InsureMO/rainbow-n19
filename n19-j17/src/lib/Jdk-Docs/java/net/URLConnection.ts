@@ -18,7 +18,7 @@ DocsCollector.collect('java.net.URLConnection', [
 			[/* block */ 'b', [
 				[/* text */ 't', `The connection object is created by invoking the
      `],
-				[/* external link */ 'a', `URL.html#openConnection()`, `openConnection`],
+				[/* reference */ 'r', `.URL#openConnection()`],
 				[/* text */ 't', ` method on a URL.
  `]
 			]],
@@ -27,7 +27,7 @@ DocsCollector.collect('java.net.URLConnection', [
 			[/* block */ 'b', [
 				[/* text */ 't', `The actual connection to the remote object is made, using the
     `],
-				[/* reference */ 'r', `connect`],
+				[/* reference */ 'r', `#connect()`, `connect`],
 				[/* text */ 't', ` method.
  `]
 			]],
@@ -178,7 +178,7 @@ DocsCollector.collect('java.net.URLConnection', [
 		]],
 		[/* block */ 'b', [
 			[/* code block */ 'c', [
-				[/* external link */ 'a', `http://www.ietf.org/rfc/rfc2616.txt`, `http://www.ietf.org/rfc/rfc2616.txt`]
+				[/* text */ 't', `http://www.ietf.org/rfc/rfc2616.txt`]
 			]]
 		]],
 		[/* text */ 't', `
@@ -338,7 +338,7 @@ DocsCollector.collect('java.net.URLConnection', [
 					[/* text */ 't', `
  The default setting may be overridden per protocol with
  `],
-					[/* reference */ 'r', `setDefaultUseCaches(String,boolean)`],
+					[/* reference */ 'r', `#setDefaultUseCaches(java.lang.String,boolean)`, `setDefaultUseCaches(String,boolean)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -687,7 +687,7 @@ DocsCollector.collect('java.net.URLConnection', [
   The default value comes from defaultUseCaches, which defaults to
  true. A default value can also be set per-protocol using
  `],
-					[/* reference */ 'r', `setDefaultUseCaches(String,boolean)`],
+					[/* reference */ 'r', `#setDefaultUseCaches(java.lang.String,boolean)`, `setDefaultUseCaches(String,boolean)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -768,7 +768,7 @@ DocsCollector.collect('java.net.URLConnection', [
 				[/* block */ 'b', [
 					[/* text */ 't', `Note`],
 					[/* text */ 't', `: `],
-					[/* reference */ 'r', `getContentLengthLong()`],
+					[/* reference */ 'r', `#getContentLengthLong()`, `getContentLengthLong()`],
 					[/* text */ 't', `
  should be preferred over this method, since it returns a `],
 					[/* inline code block */ 'i', `long`],
@@ -868,7 +868,7 @@ DocsCollector.collect('java.net.URLConnection', [
 					[/* text */ 't', `
  This method can be used in conjunction with the
  `],
-					[/* reference */ 'r', `getHeaderFieldKey`],
+					[/* reference */ 'r', `#getHeaderFieldKey(int)`, `getHeaderFieldKey`],
 					[/* text */ 't', ` method to iterate through all
  the headers in the message.`]
 				]]
@@ -924,7 +924,7 @@ DocsCollector.collect('java.net.URLConnection', [
 				[/* text */ 't', `th`, 'sup'],
 				[/* text */ 't', `
  header field as special, in which case, `],
-				[/* reference */ 'r', `getHeaderField(0)`],
+				[/* reference */ 'r', `#getHeaderField(int)`, `getHeaderField(0)`],
 				[/* text */ 't', `
  may return some value, but `],
 				[/* inline code block */ 'i', `getHeaderFieldKey(0)`],
@@ -1379,10 +1379,10 @@ DocsCollector.collect('java.net.URLConnection', [
 				[/* inline code block */ 'i', `useCaches`],
 				[/* text */ 't', ` flag for the given protocol. If
  `],
-				[/* reference */ 'r', `setDefaultUseCaches(String,boolean)`],
+				[/* reference */ 'r', `#setDefaultUseCaches(java.lang.String,boolean)`, `setDefaultUseCaches(String,boolean)`],
 				[/* text */ 't', ` was called for the given protocol,
  then that value is returned. Otherwise, if `],
-				[/* reference */ 'r', `setDefaultUseCaches(boolean)`],
+				[/* reference */ 'r', `#setDefaultUseCaches(boolean)`, `setDefaultUseCaches(boolean)`],
 				[/* text */ 't', `
  was called, then that value is returned. If neither method was called,
  the return value is `],
@@ -1416,7 +1416,7 @@ DocsCollector.collect('java.net.URLConnection', [
  URLConnections.  This flag applies to the next, and all following
  URLConnections that are created. This default value can be over-ridden
  per protocol using `],
-					[/* reference */ 'r', `setDefaultUseCaches(String,boolean)`]
+					[/* reference */ 'r', `#setDefaultUseCaches(java.lang.String,boolean)`, `setDefaultUseCaches(String,boolean)`]
 				]]
 			],
 			/* parameters */ UDF,
@@ -1437,7 +1437,7 @@ DocsCollector.collect('java.net.URLConnection', [
 				[/* text */ 't', ` field to the
  specified value. This default value can be over-ridden
  per protocol using `],
-				[/* reference */ 'r', `setDefaultUseCaches(String,boolean)`]
+				[/* reference */ 'r', `#setDefaultUseCaches(java.lang.String,boolean)`, `setDefaultUseCaches(String,boolean)`]
 			],
 			[/* parameters */
 				[/* parameter */ 'defaultusecaches', [/* parameter description */
@@ -1454,7 +1454,7 @@ DocsCollector.collect('java.net.URLConnection', [
 				[/* text */ 't', ` field for the named
  protocol to the given value. This value overrides any default setting
  set by `],
-				[/* reference */ 'r', `setDefaultUseCaches(boolean)`],
+				[/* reference */ 'r', `#setDefaultUseCaches(boolean)`, `setDefaultUseCaches(boolean)`],
 				[/* text */ 't', ` for the given protocol.
  Successive calls to this method change the setting and affect the
  default value for all future connections of that protocol. The protocol

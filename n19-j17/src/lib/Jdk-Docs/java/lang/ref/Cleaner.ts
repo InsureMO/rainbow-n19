@@ -9,7 +9,7 @@ DocsCollector.collect('java.lang.ref.Cleaner', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  Cleaning actions are `],
-			[/* reference */ 'r', `registered`],
+			[/* reference */ 'r', `#register(java.lang.Object,java.lang.Runnable)`, `registered`],
 			[/* text */ 't', `
  to run after the cleaner is notified that the object has become
  phantom reachable.
@@ -19,7 +19,7 @@ DocsCollector.collect('java.lang.ref.Cleaner', [
 			[/* reference */ 'r', `java.lang.ref.ReferenceQueue`],
 			[/* text */ 't', ` to be
  notified when the `],
-			[/* external link */ 'a', `package-summary.html#reachability`, `reachability`],
+			[/* reference */ 'r', `.package-summary#reachability`],
 			[/* text */ 't', `
  changes.
  `]
@@ -33,7 +33,7 @@ DocsCollector.collect('java.lang.ref.Cleaner', [
 			[/* reference */ 'r', `java.lang.ref.Cleaner.Cleanable`],
 			[/* text */ 't', `. The most efficient use is to explicitly invoke
  the `],
-			[/* external link */ 'a', `Cleaner.Cleanable.html#clean()`, `clean`],
+			[/* reference */ 'r', `.Cleaner.Cleanable#clean()`],
 			[/* text */ 't', ` method when the object is closed or
  no longer needed.
  The cleaning action is a `],
@@ -57,7 +57,7 @@ DocsCollector.collect('java.lang.ref.Cleaner', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  The behavior of cleaners during `],
-			[/* external link */ 'a', `../System.html#exit(int)`, `System.exit`],
+			[/* reference */ 'r', `java.System#exit(int)`],
 			[/* text */ 't', `
  is implementation specific. No guarantees are made relating
  to whether cleaning actions are invoked or not.
@@ -112,19 +112,19 @@ DocsCollector.collect('java.lang.ref.Cleaner', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The cleaner creates a `],
-					[/* external link */ 'a', `../Thread.html#setDaemon(boolean)`, `daemon thread`],
+					[/* reference */ 'r', `java.Thread#setDaemon(boolean)`],
 					[/* text */ 't', `
  to process the phantom reachable objects and to invoke cleaning actions.
  The `],
-					[/* external link */ 'a', `../Thread.html#getContextClassLoader()`, `context class loader`],
+					[/* reference */ 'r', `java.Thread#getContextClassLoader()`],
 					[/* text */ 't', `
  of the thread is set to the
  `],
-					[/* external link */ 'a', `../ClassLoader.html#getSystemClassLoader()`, `system class loader`],
+					[/* reference */ 'r', `java.ClassLoader#getSystemClassLoader()`],
 					[/* text */ 't', `.
  The thread has no permissions, enforced only if a
  `],
-					[/* external link */ 'a', `../System.html#setSecurityManager(java.lang.SecurityManager)`, `SecurityManager is set`],
+					[/* reference */ 'r', `java.System#setSecurityManager(java.lang.SecurityManager)`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -157,14 +157,14 @@ DocsCollector.collect('java.lang.ref.Cleaner', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  A thread from the thread factory's `],
-					[/* external link */ 'a', `../../util/concurrent/ThreadFactory.html#newThread(java.lang.Runnable)`, `newThread`],
+					[/* reference */ 'r', `java.lang.ThreadFactory#newThread(java.lang.Runnable)`],
 					[/* text */ 't', `
  method is set to be a `],
-					[/* external link */ 'a', `../Thread.html#setDaemon(boolean)`, `daemon thread`],
+					[/* reference */ 'r', `java.Thread#setDaemon(boolean)`],
 					[/* text */ 't', `
  and started to process phantom reachable objects and invoke cleaning actions.
  On each call the `],
-					[/* external link */ 'a', `../../util/concurrent/ThreadFactory.html#newThread(java.lang.Runnable)`, `thread factory`],
+					[/* reference */ 'r', `java.lang.ThreadFactory#newThread(java.lang.Runnable)`],
 					[/* text */ 't', `
  must provide a Thread that is suitable for performing the cleaning actions.
  `]
@@ -187,7 +187,7 @@ DocsCollector.collect('java.lang.ref.Cleaner', [
 				[/* throw */ 'java.lang.IllegalThreadStateException', [/* throw description */
 					[/* text */ 't', `if the thread from the thread
                factory was `],
-					[/* external link */ 'a', `../Thread.State.html#NEW`, `not a new thread`],
+					[/* reference */ 'r', `java.Thread.State#NEW`],
 					[/* text */ 't', `.`]
 				]],
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */

@@ -39,20 +39,20 @@ DocsCollector.collect('java.util.Vector', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  The iterators returned by this class's `],
-			[/* reference */ 'r', `iterator`],
+			[/* reference */ 'r', `#iterator()`, `iterator`],
 			[/* text */ 't', ` and
  `],
-			[/* reference */ 'r', `listIterator`],
+			[/* reference */ 'r', `#listIterator(int)`, `listIterator`],
 			[/* text */ 't', ` methods are `],
 			[/* text */ 't', `fail-fast`],
 			[/* text */ 't', `:
  if the vector is structurally modified at any time after the iterator is
  created, in any way except through the iterator's own
  `],
-			[/* external link */ 'a', `ListIterator.html#remove()`, `remove`],
+			[/* reference */ 'r', `.ListIterator#remove()`],
 			[/* text */ 't', ` or
  `],
-			[/* external link */ 'a', `ListIterator.html#add(E)`, `add`],
+			[/* reference */ 'r', `.ListIterator#add(E)`],
 			[/* text */ 't', ` methods, the iterator will throw a
  `],
 			[/* reference */ 'r', `java.util.ConcurrentModificationException`],
@@ -63,7 +63,7 @@ DocsCollector.collect('java.util.Vector', [
 			[/* reference */ 'r', `java.util.Enumeration`],
 			[/* text */ 't', ` returned by
  the `],
-			[/* reference */ 'r', `elements`],
+			[/* reference */ 'r', `#elements()`, `elements`],
 			[/* text */ 't', ` method are `],
 			[/* text */ 't', `not`],
 			[/* text */ 't', ` fail-fast; if the
@@ -90,7 +90,7 @@ DocsCollector.collect('java.util.Vector', [
 			[/* reference */ 'r', `java.util.List`],
 			[/* text */ 't', ` interface, making it a member of the
  `],
-			[/* external link */ 'a', `../../../java.base/java/util/package-summary.html#CollectionsFramework`, `Java Collections Framework`],
+			[/* text */ 't', `Java Collections Framework`],
 			[/* text */ 't', `.  Unlike the new collection
  implementations, `],
 			[/* inline code block */ 'i', `Vector`],
@@ -218,7 +218,7 @@ DocsCollector.collect('java.util.Vector', [
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` (as specified by `],
-				[/* external link */ 'a', `Collection.html#add(E)`, `Collection.add(E)`],
+				[/* reference */ 'r', `.Collection#add(E)`],
 				[/* text */ 't', `)`]
 			]
 		]],
@@ -537,7 +537,7 @@ DocsCollector.collect('java.util.Vector', [
          if the operator result is a null value and this list does
          not permit null elements
          (`],
-					[/* external link */ 'a', `Collection.html#optional-restrictions`, `optional`],
+					[/* reference */ 'r', `.Collection#optional-restrictions`],
 					[/* text */ 't', `)`]
 				]]
 			],
@@ -621,16 +621,7 @@ DocsCollector.collect('java.util.Vector', [
  type of the specified array and the size of this Vector.
 
  `],
-				[/* block */ 'b', [
-					[/* text */ 't', `If the Vector fits in the specified array with room to spare
- (i.e., the array has more elements than the Vector),
- the element in the array immediately following the end of the
- Vector is set to null.  (This is useful in determining the length
- of the Vector `],
-					[/* text */ 't', `only`],
-					[/* text */ 't', ` if the caller knows that the Vector
- does not contain any null elements.)`]
-				]]
+				[/* block */ 'b', `only`]
 			],
 			[/* parameters */
 				[/* parameter */ 'a', [/* parameter description */
@@ -666,7 +657,7 @@ DocsCollector.collect('java.util.Vector', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `an array, whose `],
-				[/* external link */ 'a', `../lang/Class.html#getComponentType()`, `runtime component type`],
+				[/* reference */ 'r', `java.Class#getComponentType()`],
 				[/* text */ 't', ` is `],
 				[/* inline code block */ 'i', `Object`],
 				[/* text */ 't', `, containing all of the elements in this collection`]
@@ -739,7 +730,7 @@ DocsCollector.collect('java.util.Vector', [
 		[/* method */ 'spliterator()', [
 			[/* method description */
 				[/* text */ 't', `Creates a `],
-				[/* external link */ 'a', `Spliterator.html#binding`, `late-binding`],
+				[/* reference */ 'r', `.Spliterator#binding`],
 				[/* text */ 't', `
  and `],
 				[/* text */ 't', `fail-fast`],
@@ -752,12 +743,12 @@ DocsCollector.collect('java.util.Vector', [
 					[/* text */ 't', `The `],
 					[/* inline code block */ 'i', `Spliterator`],
 					[/* text */ 't', ` reports `],
-					[/* external link */ 'a', `Spliterator.html#SIZED`, `Spliterator.SIZED`],
+					[/* reference */ 'r', `.Spliterator#SIZED`],
 					[/* text */ 't', `,
  `],
-					[/* external link */ 'a', `Spliterator.html#SUBSIZED`, `Spliterator.SUBSIZED`],
+					[/* reference */ 'r', `.Spliterator#SUBSIZED`],
 					[/* text */ 't', `, and `],
-					[/* external link */ 'a', `Spliterator.html#ORDERED`, `Spliterator.ORDERED`],
+					[/* reference */ 'r', `.Spliterator#ORDERED`],
 					[/* text */ 't', `.
  Overriding implementations should document the reporting of additional
  characteristic values.`]
@@ -958,7 +949,7 @@ DocsCollector.collect('java.util.Vector', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This method is identical in functionality to the `],
-					[/* reference */ 'r', `get(int)`],
+					[/* reference */ 'r', `#get(int)`, `get(int)`],
 					[/* text */ 't', `
  method (which is part of the `],
 					[/* reference */ 'r', `java.util.List`],
@@ -1050,7 +1041,7 @@ DocsCollector.collect('java.util.Vector', [
          in this vector are incompatible with the specified
          collection
  (`],
-					[/* external link */ 'a', `Collection.html#optional-restrictions`, `optional`],
+					[/* reference */ 'r', `.Collection#optional-restrictions`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
@@ -1058,7 +1049,7 @@ DocsCollector.collect('java.util.Vector', [
          elements and the specified collection does not support null
          elements
  (`],
-					[/* external link */ 'a', `Collection.html#optional-restrictions`, `optional`],
+					[/* reference */ 'r', `.Collection#optional-restrictions`],
 					[/* text */ 't', `),
          or if the specified collection is null`]
 				]]
@@ -1085,7 +1076,7 @@ DocsCollector.collect('java.util.Vector', [
          in this vector are incompatible with the specified
          collection
  (`],
-					[/* external link */ 'a', `Collection.html#optional-restrictions`, `optional`],
+					[/* reference */ 'r', `.Collection#optional-restrictions`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
@@ -1093,7 +1084,7 @@ DocsCollector.collect('java.util.Vector', [
          elements and the specified collection does not support null
          elements
          (`],
-					[/* external link */ 'a', `Collection.html#optional-restrictions`, `optional`],
+					[/* reference */ 'r', `.Collection#optional-restrictions`],
 					[/* text */ 't', `),
          or if the specified collection is null`]
 				]]
@@ -1127,10 +1118,10 @@ DocsCollector.collect('java.util.Vector', [
  sequence), starting at the specified position in the list.
  The specified index indicates the first element that would be
  returned by an initial call to `],
-				[/* external link */ 'a', `ListIterator.html#next()`, `next`],
+				[/* reference */ 'r', `.ListIterator#next()`],
 				[/* text */ 't', `.
  An initial call to `],
-				[/* external link */ 'a', `ListIterator.html#previous()`, `previous`],
+				[/* reference */ 'r', `.ListIterator#previous()`],
 				[/* text */ 't', ` would
  return the element with the specified index minus one.
 
@@ -1145,7 +1136,7 @@ DocsCollector.collect('java.util.Vector', [
 				[/* parameter */ 'index', [/* parameter description */
 					[/* text */ 't', `index of the first element to be returned from the
         list iterator (by a call to `],
-					[/* external link */ 'a', `ListIterator.html#next()`, `next`],
+					[/* reference */ 'r', `.ListIterator#next()`],
 					[/* text */ 't', `)`]
 				]]
 			],
@@ -1261,7 +1252,7 @@ DocsCollector.collect('java.util.Vector', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `This method is identical in functionality to the `],
-					[/* reference */ 'r', `remove(int)`],
+					[/* reference */ 'r', `#remove(int)`, `remove(int)`],
 					[/* text */ 't', `
  method (which is part of the `],
 					[/* reference */ 'r', `java.util.List`],
@@ -1299,7 +1290,7 @@ DocsCollector.collect('java.util.Vector', [
 				[/* block */ 'b', [
 					[/* text */ 't', `This method is identical in functionality to the
  `],
-					[/* reference */ 'r', `remove(Object)`],
+					[/* reference */ 'r', `#remove(java.lang.Object)`, `remove(Object)`],
 					[/* text */ 't', ` method (which is part of the
  `],
 					[/* reference */ 'r', `java.util.List`],
@@ -1346,7 +1337,7 @@ DocsCollector.collect('java.util.Vector', [
 				[/* block */ 'b', [
 					[/* text */ 't', `This method is identical in functionality to the
  `],
-					[/* reference */ 'r', `add(int, E)`],
+					[/* reference */ 'r', `#add(int,E)`, `add(int, E)`],
 					[/* text */ 't', `
  method (which is part of the `],
 					[/* reference */ 'r', `java.util.List`],
@@ -1382,7 +1373,7 @@ DocsCollector.collect('java.util.Vector', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This method is identical in functionality to the `],
-					[/* reference */ 'r', `clear()`],
+					[/* reference */ 'r', `#clear()`, `clear()`],
 					[/* text */ 't', `
  method (which is part of the `],
 					[/* reference */ 'r', `java.util.List`],
@@ -1446,7 +1437,7 @@ DocsCollector.collect('java.util.Vector', [
 				[/* block */ 'b', [
 					[/* text */ 't', `This method is identical in functionality to the
  `],
-					[/* reference */ 'r', `set(int, E)`],
+					[/* reference */ 'r', `#set(int,E)`, `set(int, E)`],
 					[/* text */ 't', `
  method (which is part of the `],
 					[/* reference */ 'r', `java.util.List`],
@@ -1488,7 +1479,7 @@ DocsCollector.collect('java.util.Vector', [
 				[/* block */ 'b', [
 					[/* text */ 't', `This method is identical in functionality to the
  `],
-					[/* reference */ 'r', `add(E)`],
+					[/* reference */ 'r', `#add(E)`, `add(E)`],
 					[/* text */ 't', `
  method (which is part of the `],
 					[/* reference */ 'r', `java.util.List`],

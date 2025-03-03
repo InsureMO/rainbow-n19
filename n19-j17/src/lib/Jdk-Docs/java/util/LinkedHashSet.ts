@@ -127,7 +127,7 @@ DocsCollector.collect('java.util.LinkedHashSet', [
 
  If no such object exists, the set should be "wrapped" using the
  `],
-			[/* external link */ 'a', `Collections.html#synchronizedSet(java.util.Set)`, `Collections.synchronizedSet`],
+			[/* reference */ 'r', `.Collections#synchronizedSet(java.util.Set)`],
 			[/* text */ 't', `
  method.  This is best done at creation time, to prevent accidental
  unsynchronized access to the set: `]
@@ -168,7 +168,7 @@ DocsCollector.collect('java.util.LinkedHashSet', [
 		[/* block */ 'b', [
 			[/* text */ 't', `This class is a member of the
  `],
-			[/* external link */ 'a', `../../../java.base/java/util/package-summary.html#CollectionsFramework`, `Java Collections Framework`],
+			[/* text */ 't', `Java Collections Framework`],
 			[/* text */ 't', `.`]
 		]]
 	],
@@ -243,7 +243,7 @@ DocsCollector.collect('java.util.LinkedHashSet', [
 		[/* method */ 'spliterator()', [
 			[/* method description */
 				[/* text */ 't', `Creates a `],
-				[/* external link */ 'a', `Spliterator.html#binding`, `late-binding`],
+				[/* reference */ 'r', `.Spliterator#binding`],
 				[/* text */ 't', `
  and `],
 				[/* text */ 't', `fail-fast`],
@@ -255,10 +255,10 @@ DocsCollector.collect('java.util.LinkedHashSet', [
 					[/* text */ 't', `The `],
 					[/* inline code block */ 'i', `Spliterator`],
 					[/* text */ 't', ` reports `],
-					[/* external link */ 'a', `Spliterator.html#SIZED`, `Spliterator.SIZED`],
+					[/* reference */ 'r', `.Spliterator#SIZED`],
 					[/* text */ 't', `,
  `],
-					[/* external link */ 'a', `Spliterator.html#DISTINCT`, `Spliterator.DISTINCT`],
+					[/* reference */ 'r', `.Spliterator#DISTINCT`],
 					[/* text */ 't', `, and `],
 					[/* inline code block */ 'i', `ORDERED`],
 					[/* text */ 't', `.  Implementations

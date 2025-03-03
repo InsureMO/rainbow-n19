@@ -16,13 +16,13 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 		[/* block */ 'b', [
 			[/* text */ 't', `When two or more threads attempt to
  `],
-			[/* reference */ 'r', `complete`],
+			[/* reference */ 'r', `#complete(T)`, `complete`],
 			[/* text */ 't', `,
  `],
-			[/* reference */ 'r', `completeExceptionally`],
+			[/* reference */ 'r', `#completeExceptionally(java.lang.Throwable)`, `completeExceptionally`],
 			[/* text */ 't', `, or
  `],
-			[/* reference */ 'r', `cancel`],
+			[/* reference */ 'r', `#cancel(boolean)`, `cancel`],
 			[/* text */ 't', `
  a CompletableFuture, only one of them succeeds.
 
@@ -51,13 +51,13 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 				[/* text */ 't', `async`],
 				[/* text */ 't', ` methods without an explicit Executor
  argument are performed using the `],
-				[/* external link */ 'a', `ForkJoinPool.html#commonPool()`, `ForkJoinPool.commonPool()`],
+				[/* reference */ 'r', `.ForkJoinPool#commonPool()`],
 				[/* text */ 't', `
  (unless it does not support a parallelism level of at least two, in
  which case, a new Thread is created to run each task).  This may be
  overridden for non-static methods in subclasses by defining method
  `],
-				[/* reference */ 'r', `defaultExecutor()`],
+				[/* reference */ 'r', `#defaultExecutor()`, `defaultExecutor()`],
 				[/* text */ 't', `. To simplify monitoring, debugging,
  and tracking, all generated asynchronous tasks are instances of the
  marker interface `],
@@ -81,11 +81,11 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 				[/* text */ 't', `All CompletionStage methods return CompletableFutures.  To
  restrict usages to only those methods defined in interface
  CompletionStage, use method `],
-				[/* reference */ 'r', `minimalCompletionStage()`],
+				[/* reference */ 'r', `#minimalCompletionStage()`, `minimalCompletionStage()`],
 				[/* text */ 't', `. Or to
  ensure only that clients do not themselves modify a future, use
  method `],
-				[/* reference */ 'r', `copy()`],
+				[/* reference */ 'r', `#copy()`, `copy()`],
 				[/* text */ 't', `.
  `]
 			]]
@@ -105,13 +105,13 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
  control over the computation that causes it to be completed,
  cancellation is treated as just another form of exceptional
  completion.  Method `],
-				[/* reference */ 'r', `cancel`],
+				[/* reference */ 'r', `#cancel(boolean)`, `cancel`],
 				[/* text */ 't', ` has the same effect as
  `],
 				[/* inline code block */ 'i', `completeExceptionally(new CancellationException())`],
 				[/* text */ 't', `. Method
  `],
-				[/* reference */ 'r', `isCompletedExceptionally()`],
+				[/* reference */ 'r', `#isCompletedExceptionally()`, `isCompletedExceptionally()`],
 				[/* text */ 't', ` can be used to determine if a
  CompletableFuture completed in any exceptional fashion.
 
@@ -120,19 +120,19 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 			[/* block */ 'b', [
 				[/* text */ 't', `In case of exceptional completion with a CompletionException,
  methods `],
-				[/* reference */ 'r', `get()`],
+				[/* reference */ 'r', `#get()`, `get()`],
 				[/* text */ 't', ` and `],
-				[/* reference */ 'r', `get(long, TimeUnit)`],
+				[/* reference */ 'r', `#get(long,java.util.concurrent.TimeUnit)`, `get(long, TimeUnit)`],
 				[/* text */ 't', ` throw an
  `],
 				[/* reference */ 'r', `java.util.concurrent.ExecutionException`],
 				[/* text */ 't', ` with the same cause as held in the
  corresponding CompletionException.  To simplify usage in most
  contexts, this class also defines methods `],
-				[/* reference */ 'r', `join()`],
+				[/* reference */ 'r', `#join()`, `join()`],
 				[/* text */ 't', ` and
  `],
-				[/* reference */ 'r', `getNow(T)`],
+				[/* reference */ 'r', `#getNow(T)`, `getNow(T)`],
 				[/* text */ 't', ` that instead throw the CompletionException directly
  in these cases.
  `]
@@ -154,7 +154,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 		[/* block */ 'b', [
 			[/* text */ 't', `Subclasses of this class should normally override the "virtual
  constructor" method `],
-			[/* reference */ 'r', `newIncompleteFuture()`],
+			[/* reference */ 'r', `#newIncompleteFuture()`, `newIncompleteFuture()`],
 			[/* text */ 't', `, which establishes
  the concrete type returned by CompletionStage methods. For example,
  here is a class that substitutes a different default Executor and
@@ -191,6 +191,28 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 		]]
 	],
 	[/* methods */
+		[/* method */ 'get()', [
+			[/* method description */
+				[/* text */ 't', `Waits if necessary for this future to complete, and then
+ returns its result.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.util.concurrent.CancellationException', [/* throw description */
+					[/* text */ 't', `if this future was cancelled`]
+				]],
+				[/* throw */ 'java.util.concurrent.ExecutionException', [/* throw description */
+					[/* text */ 't', `if this future completed exceptionally`]
+				]],
+				[/* throw */ 'java.lang.InterruptedException', [/* throw description */
+					[/* text */ 't', `if the current thread was interrupted
+ while waiting`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the result value`]
+			]
+		]],
 		[/* method */ 'get(long,java.util.concurrent.TimeUnit)', [
 			[/* method description */
 				[/* text */ 't', `Waits if necessary for at most the given time for this future
@@ -217,28 +239,6 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 				]],
 				[/* throw */ 'java.util.concurrent.TimeoutException', [/* throw description */
 					[/* text */ 't', `if the wait timed out`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the result value`]
-			]
-		]],
-		[/* method */ 'get()', [
-			[/* method description */
-				[/* text */ 't', `Waits if necessary for this future to complete, and then
- returns its result.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.util.concurrent.CancellationException', [/* throw description */
-					[/* text */ 't', `if this future was cancelled`]
-				]],
-				[/* throw */ 'java.util.concurrent.ExecutionException', [/* throw description */
-					[/* text */ 't', `if this future completed exceptionally`]
-				]],
-				[/* throw */ 'java.lang.InterruptedException', [/* throw description */
-					[/* text */ 't', `if the current thread was interrupted
- while waiting`]
 				]]
 			],
 			[/* return description */
@@ -344,7 +344,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 		[/* method */ 'complete(java.lang.Object)', [
 			[/* method description */
 				[/* text */ 't', `If not already completed, sets the value returned by `],
-				[/* reference */ 'r', `get()`],
+				[/* reference */ 'r', `#get()`, `get()`],
 				[/* text */ 't', ` and related methods to the given value.`]
 			],
 			[/* parameters */
@@ -460,7 +460,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 		[/* method */ 'completeExceptionally(java.lang.Throwable)', [
 			[/* method description */
 				[/* text */ 't', `If not already completed, causes invocations of `],
-				[/* reference */ 'r', `get()`],
+				[/* reference */ 'r', `#get()`, `get()`],
 				[/* text */ 't', `
  and related methods to throw the given exception.`]
 			],
@@ -477,6 +477,360 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 				[/* inline code block */ 'i', `false`]
 			]
 		]],
+		[/* method */ 'anyOf(java.util.concurrent.CompletableFuture...)', [
+			[/* method description */
+				[/* text */ 't', `Returns a new CompletableFuture that is completed when any of
+ the given CompletableFutures complete, with the same result.
+ Otherwise, if it completed exceptionally, the returned
+ CompletableFuture also does so, with a CompletionException
+ holding this exception as its cause.  If no CompletableFutures
+ are provided, returns an incomplete CompletableFuture.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'cfs', [/* parameter description */
+					[/* text */ 't', `the CompletableFutures`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the array or any of its elements are
+ `],
+					[/* inline code block */ 'i', `null`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a new CompletableFuture that is completed with the
+ result or exception of any of the given CompletableFutures when
+ one completes`]
+			]
+		]],
+		[/* method */ 'isCompletedExceptionally()', [
+			[/* method description */
+				[/* text */ 't', `Returns `],
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this CompletableFuture completed
+ exceptionally, in any way. Possible causes include
+ cancellation, explicit invocation of `],
+				[/* inline code block */ 'i', `completeExceptionally`],
+				[/* text */ 't', `, and abrupt termination of a
+ CompletionStage action.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this CompletableFuture completed
+ exceptionally`]
+			]
+		]],
+		[/* method */ 'obtrudeValue(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Forcibly sets or resets the value subsequently returned by
+ method `],
+				[/* reference */ 'r', `#get()`, `get()`],
+				[/* text */ 't', ` and related methods, whether or not
+ already completed. This method is designed for use only in
+ error recovery actions, and even in such situations may result
+ in ongoing dependent completions using established versus
+ overwritten outcomes.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'value', [/* parameter description */
+					[/* text */ 't', `the completion value`]
+				]]
+			],
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'obtrudeException(java.lang.Throwable)', [
+			[/* method description */
+				[/* text */ 't', `Forcibly causes subsequent invocations of method `],
+				[/* reference */ 'r', `#get()`, `get()`],
+				[/* text */ 't', `
+ and related methods to throw the given exception, whether or
+ not already completed. This method is designed for use only in
+ error recovery actions, and even in such situations may result
+ in ongoing dependent completions using established versus
+ overwritten outcomes.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'ex', [/* parameter description */
+					[/* text */ 't', `the exception`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if the exception is null`]
+				]]
+			],
+			/* return */ UDF
+		]],
+		[/* method */ 'getNumberOfDependents()', [
+			[/* method description */
+				[/* text */ 't', `Returns the estimated number of CompletableFutures whose
+ completions are awaiting completion of this CompletableFuture.
+ This method is designed for use in monitoring system state, not
+ for synchronization control.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the number of dependent CompletableFutures`]
+			]
+		]],
+		[/* method */ 'minimalCompletionStage()', [
+			[/* method description */
+				[/* text */ 't', `Returns a new CompletionStage that is completed normally with
+ the same value as this CompletableFuture when it completes
+ normally, and cannot be independently completed or otherwise
+ used in ways not defined by the methods of interface `],
+				[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+				[/* text */ 't', `.  If this CompletableFuture completes
+ exceptionally, then the returned CompletionStage completes
+ exceptionally with a CompletionException with this exception as
+ cause.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `Unless overridden by a subclass, a new non-minimal
+ CompletableFuture with all methods available can be obtained from
+ a minimal CompletionStage via `],
+					[/* reference */ 'r', `#toCompletableFuture()`, `toCompletableFuture()`],
+					[/* text */ 't', `.
+ For example, completion of a minimal stage can be awaited by
+
+ `]
+				]],
+				[/* code block */ 'c', [
+					[/* inline code block */ 'i', `minimalStage.toCompletableFuture().join();`]
+				]],
+				[/* block */ 'b', '']
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the new CompletionStage`]
+			]
+		]],
+		[/* method */ 'orTimeout(long,java.util.concurrent.TimeUnit)', [
+			[/* method description */
+				[/* text */ 't', `Exceptionally completes this CompletableFuture with
+ a `],
+				[/* reference */ 'r', `java.util.concurrent.TimeoutException`],
+				[/* text */ 't', ` if not otherwise completed
+ before the given timeout.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'timeout', [/* parameter description */
+					[/* text */ 't', `how long to wait before completing exceptionally
+        with a TimeoutException, in units of `],
+					[/* inline code block */ 'i', `unit`]
+				]],
+				[/* parameter */ 'unit', [/* parameter description */
+					[/* text */ 't', `a `],
+					[/* inline code block */ 'i', `TimeUnit`],
+					[/* text */ 't', ` determining how to interpret the
+        `],
+					[/* inline code block */ 'i', `timeout`],
+					[/* text */ 't', ` parameter`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `this CompletableFuture`]
+			]
+		]],
+		[/* method */ 'completeOnTimeout(java.lang.Object,long,java.util.concurrent.TimeUnit)', [
+			[/* method description */
+				[/* text */ 't', `Completes this CompletableFuture with the given value if not
+ otherwise completed before the given timeout.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'value', [/* parameter description */
+					[/* text */ 't', `the value to use upon timeout`]
+				]],
+				[/* parameter */ 'timeout', [/* parameter description */
+					[/* text */ 't', `how long to wait before completing normally
+        with the given value, in units of `],
+					[/* inline code block */ 'i', `unit`]
+				]],
+				[/* parameter */ 'unit', [/* parameter description */
+					[/* text */ 't', `a `],
+					[/* inline code block */ 'i', `TimeUnit`],
+					[/* text */ 't', ` determining how to interpret the
+        `],
+					[/* inline code block */ 'i', `timeout`],
+					[/* text */ 't', ` parameter`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `this CompletableFuture`]
+			]
+		]],
+		[/* method */ 'delayedExecutor(long,java.util.concurrent.TimeUnit)', [
+			[/* method description */
+				[/* text */ 't', `Returns a new Executor that submits a task to the default
+ executor after the given delay (or no delay if non-positive).
+ Each delay commences upon invocation of the returned executor's
+ `],
+				[/* inline code block */ 'i', `execute`],
+				[/* text */ 't', ` method.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'delay', [/* parameter description */
+					[/* text */ 't', `how long to delay, in units of `],
+					[/* inline code block */ 'i', `unit`]
+				]],
+				[/* parameter */ 'unit', [/* parameter description */
+					[/* text */ 't', `a `],
+					[/* inline code block */ 'i', `TimeUnit`],
+					[/* text */ 't', ` determining how to interpret the
+        `],
+					[/* inline code block */ 'i', `delay`],
+					[/* text */ 't', ` parameter`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the new delayed executor`]
+			]
+		]],
+		[/* method */ 'delayedExecutor(long,java.util.concurrent.TimeUnit,java.util.concurrent.Executor)', [
+			[/* method description */
+				[/* text */ 't', `Returns a new Executor that submits a task to the given base
+ executor after the given delay (or no delay if non-positive).
+ Each delay commences upon invocation of the returned executor's
+ `],
+				[/* inline code block */ 'i', `execute`],
+				[/* text */ 't', ` method.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'delay', [/* parameter description */
+					[/* text */ 't', `how long to delay, in units of `],
+					[/* inline code block */ 'i', `unit`]
+				]],
+				[/* parameter */ 'unit', [/* parameter description */
+					[/* text */ 't', `a `],
+					[/* inline code block */ 'i', `TimeUnit`],
+					[/* text */ 't', ` determining how to interpret the
+        `],
+					[/* inline code block */ 'i', `delay`],
+					[/* text */ 't', ` parameter`]
+				]],
+				[/* parameter */ 'executor', [/* parameter description */
+					[/* text */ 't', `the base executor`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the new delayed executor`]
+			]
+		]],
+		[/* method */ 'completedStage(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Returns a new CompletionStage that is already completed with
+ the given value and supports only those methods in
+ interface `],
+				[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'value', [/* parameter description */
+					[/* text */ 't', `the value`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the completed CompletionStage`]
+			]
+		]],
+		[/* method */ 'failedFuture(java.lang.Throwable)', [
+			[/* method description */
+				[/* text */ 't', `Returns a new CompletableFuture that is already completed
+ exceptionally with the given exception.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'ex', [/* parameter description */
+					[/* text */ 't', `the exception`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the exceptionally completed CompletableFuture`]
+			]
+		]],
+		[/* method */ 'failedStage(java.lang.Throwable)', [
+			[/* method description */
+				[/* text */ 't', `Returns a new CompletionStage that is already completed
+ exceptionally with the given exception and supports only those
+ methods in interface `],
+				[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+				[/* text */ 't', `.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'ex', [/* parameter description */
+					[/* text */ 't', `the exception`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the exceptionally completed CompletionStage`]
+			]
+		]],
+		[/* method */ 'supplyAsync(java.util.function.Supplier,java.util.concurrent.Executor)', [
+			[/* method description */
+				[/* text */ 't', `Returns a new CompletableFuture that is asynchronously completed
+ by a task running in the given executor with the value obtained
+ by calling the given Supplier.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'supplier', [/* parameter description */
+					[/* text */ 't', `a function returning the value to be used
+ to complete the returned CompletableFuture`]
+				]],
+				[/* parameter */ 'executor', [/* parameter description */
+					[/* text */ 't', `the executor to use for asynchronous execution`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the new CompletableFuture`]
+			]
+		]],
+		[/* method */ 'supplyAsync(java.util.function.Supplier)', [
+			[/* method description */
+				[/* text */ 't', `Returns a new CompletableFuture that is asynchronously completed
+ by a task running in the `],
+				[/* reference */ 'r', `.ForkJoinPool#commonPool()`],
+				[/* text */ 't', ` with
+ the value obtained by calling the given Supplier.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'supplier', [/* parameter description */
+					[/* text */ 't', `a function returning the value to be used
+ to complete the returned CompletableFuture`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the new CompletableFuture`]
+			]
+		]],
+		[/* method */ 'newIncompleteFuture()', [
+			[/* method description */
+				[/* text */ 't', `Returns a new incomplete CompletableFuture of the type to be
+ returned by a CompletionStage method. Subclasses should
+ normally override this method to return an instance of the same
+ class as this CompletableFuture. The default implementation
+ returns an instance of class CompletableFuture.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a new CompletableFuture`]
+			]
+		]],
 		[/* method */ 'toCompletableFuture()', [
 			[/* method description */
 				[/* text */ 't', `Returns this CompletableFuture.`]
@@ -491,7 +845,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 			[/* method description */
 				[/* text */ 't', `Returns the default Executor used for async methods that do not
  specify an Executor. This class uses the `],
-				[/* external link */ 'a', `ForkJoinPool.html#commonPool()`, `ForkJoinPool.commonPool()`],
+				[/* reference */ 'r', `.ForkJoinPool#commonPool()`],
 				[/* text */ 't', ` if it supports more than one
  parallel thread, or else an Executor using one thread per async
  task.  This method may be overridden in subclasses to return
@@ -561,7 +915,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `Unlike method `],
-						[/* external link */ 'a', `CompletionStage.html#handle(java.util.function.BiFunction)`, `handle`],
+						[/* reference */ 'r', `.CompletionStage#handle(java.util.function.BiFunction)`],
 						[/* text */ 't', `,
  this method is not designed to translate completion outcomes,
  so the supplied action should not throw an exception. However,
@@ -587,8 +941,8 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 		[/* method */ 'exceptionallyComposeAsync(java.util.function.Function)', UDF],
 		[/* method */ 'exceptionallyComposeAsync(java.util.function.Function,java.util.concurrent.Executor)', UDF],
 		[/* method */ 'exceptionallyCompose(java.util.function.Function)', UDF],
-		[/* method */ 'exceptionallyAsync(java.util.function.Function)', UDF],
 		[/* method */ 'exceptionallyAsync(java.util.function.Function,java.util.concurrent.Executor)', UDF],
+		[/* method */ 'exceptionallyAsync(java.util.function.Function)', UDF],
 		[/* method */ 'exceptionally(java.util.function.Function)', [
 			[/* method description */
 				[/* block */ 'b', `Returns a new CompletionStage that, when this stage completes
@@ -602,54 +956,6 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 					[/* text */ 't', `the function to use to compute the value of the
  returned CompletionStage if this CompletionStage completed
  exceptionally`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the new CompletionStage`]
-			]
-		]],
-		[/* method */ 'whenCompleteAsync(java.util.function.BiConsumer,java.util.concurrent.Executor)', [
-			[/* method description */
-				[/* block */ 'b', [
-					[/* text */ 't', `Returns a new CompletionStage with the same result or exception as
- this stage, that executes the given action using the supplied
- Executor when this stage completes.
-
- `],
-					[/* block */ 'b', [
-						[/* text */ 't', `When this stage is complete, the given action is invoked with the
- result (or `],
-						[/* inline code block */ 'i', `null`],
-						[/* text */ 't', ` if none) and the exception (or `],
-						[/* inline code block */ 'i', `null`],
-						[/* text */ 't', `
- if none) of this stage as arguments.  The returned stage is completed
- when the action returns.
-
- `]
-					]],
-					[/* block */ 'b', [
-						[/* text */ 't', `Unlike method `],
-						[/* external link */ 'a', `CompletionStage.html#handleAsync(java.util.function.BiFunction,java.util.concurrent.Executor)`, `handleAsync`],
-						[/* text */ 't', `,
- this method is not designed to translate completion outcomes,
- so the supplied action should not throw an exception. However,
- if it does, the following rules apply: If this stage completed
- normally but the supplied action throws an exception, then the
- returned stage completes exceptionally with the supplied
- action's exception. Or, if this stage completed exceptionally
- and the supplied action throws an exception, then the returned
- stage completes exceptionally with this stage's exception.`]
-					]]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'action', [/* parameter description */
-					[/* text */ 't', `the action to perform`]
-				]],
-				[/* parameter */ 'executor', [/* parameter description */
-					[/* text */ 't', `the executor to use for asynchronous execution`]
 				]]
 			],
 			/* throws */ UDF,
@@ -679,7 +985,7 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `Unlike method `],
-						[/* external link */ 'a', `CompletionStage.html#handleAsync(java.util.function.BiFunction)`, `handleAsync`],
+						[/* reference */ 'r', `.CompletionStage#handleAsync(java.util.function.BiFunction)`],
 						[/* text */ 't', `,
  this method is not designed to translate completion outcomes,
  so the supplied action should not throw an exception. However,
@@ -695,6 +1001,54 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 			[/* parameters */
 				[/* parameter */ 'action', [/* parameter description */
 					[/* text */ 't', `the action to perform`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the new CompletionStage`]
+			]
+		]],
+		[/* method */ 'whenCompleteAsync(java.util.function.BiConsumer,java.util.concurrent.Executor)', [
+			[/* method description */
+				[/* block */ 'b', [
+					[/* text */ 't', `Returns a new CompletionStage with the same result or exception as
+ this stage, that executes the given action using the supplied
+ Executor when this stage completes.
+
+ `],
+					[/* block */ 'b', [
+						[/* text */ 't', `When this stage is complete, the given action is invoked with the
+ result (or `],
+						[/* inline code block */ 'i', `null`],
+						[/* text */ 't', ` if none) and the exception (or `],
+						[/* inline code block */ 'i', `null`],
+						[/* text */ 't', `
+ if none) of this stage as arguments.  The returned stage is completed
+ when the action returns.
+
+ `]
+					]],
+					[/* block */ 'b', [
+						[/* text */ 't', `Unlike method `],
+						[/* reference */ 'r', `.CompletionStage#handleAsync(java.util.function.BiFunction,java.util.concurrent.Executor)`],
+						[/* text */ 't', `,
+ this method is not designed to translate completion outcomes,
+ so the supplied action should not throw an exception. However,
+ if it does, the following rules apply: If this stage completed
+ normally but the supplied action throws an exception, then the
+ returned stage completes exceptionally with the supplied
+ action's exception. Or, if this stage completed exceptionally
+ and the supplied action throws an exception, then the returned
+ stage completes exceptionally with this stage's exception.`]
+					]]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'action', [/* parameter description */
+					[/* text */ 't', `the action to perform`]
+				]],
+				[/* parameter */ 'executor', [/* parameter description */
+					[/* text */ 't', `the executor to use for asynchronous execution`]
 				]]
 			],
 			/* throws */ UDF,
@@ -868,10 +1222,10 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 					[/* block */ 'b', [
 						[/* text */ 't', `This method is analogous to
  `],
-						[/* external link */ 'a', `../Optional.html#flatMap(java.util.function.Function)`, `Optional.flatMap`],
+						[/* reference */ 'r', `java.Optional#flatMap(java.util.function.Function)`],
 						[/* text */ 't', ` and
  `],
-						[/* external link */ 'a', `../stream/Stream.html#flatMap(java.util.function.Function)`, `Stream.flatMap`],
+						[/* reference */ 'r', `java.Stream#flatMap(java.util.function.Function)`],
 						[/* text */ 't', `.
 
  `]
@@ -887,33 +1241,6 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 			[/* parameters */
 				[/* parameter */ 'fn', [/* parameter description */
 					[/* text */ 't', `the function to use to compute another CompletionStage`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the new CompletionStage`]
-			]
-		]],
-		[/* method */ 'runAfterEitherAsync(java.util.concurrent.CompletionStage,java.lang.Runnable)', [
-			[/* method description */
-				[/* block */ 'b', [
-					[/* text */ 't', `Returns a new CompletionStage that, when either this or the
- other given stage complete normally, executes the given action
- using this stage's default asynchronous execution facility.
-
- See the `],
-					[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
-					[/* text */ 't', ` documentation for rules
- covering exceptional completion.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'other', [/* parameter description */
-					[/* text */ 't', `the other CompletionStage`]
-				]],
-				[/* parameter */ 'action', [/* parameter description */
-					[/* text */ 't', `the action to perform before completing the
- returned CompletionStage`]
 				]]
 			],
 			/* throws */ UDF,
@@ -951,11 +1278,66 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 				[/* text */ 't', `the new CompletionStage`]
 			]
 		]],
+		[/* method */ 'runAfterEitherAsync(java.util.concurrent.CompletionStage,java.lang.Runnable)', [
+			[/* method description */
+				[/* block */ 'b', [
+					[/* text */ 't', `Returns a new CompletionStage that, when either this or the
+ other given stage complete normally, executes the given action
+ using this stage's default asynchronous execution facility.
+
+ See the `],
+					[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+					[/* text */ 't', ` documentation for rules
+ covering exceptional completion.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'other', [/* parameter description */
+					[/* text */ 't', `the other CompletionStage`]
+				]],
+				[/* parameter */ 'action', [/* parameter description */
+					[/* text */ 't', `the action to perform before completing the
+ returned CompletionStage`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the new CompletionStage`]
+			]
+		]],
 		[/* method */ 'runAfterEither(java.util.concurrent.CompletionStage,java.lang.Runnable)', [
 			[/* method description */
 				[/* block */ 'b', [
 					[/* text */ 't', `Returns a new CompletionStage that, when either this or the
  other given stage complete normally, executes the given action.
+
+ See the `],
+					[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+					[/* text */ 't', ` documentation for rules
+ covering exceptional completion.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'other', [/* parameter description */
+					[/* text */ 't', `the other CompletionStage`]
+				]],
+				[/* parameter */ 'action', [/* parameter description */
+					[/* text */ 't', `the action to perform before completing the
+ returned CompletionStage`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the new CompletionStage`]
+			]
+		]],
+		[/* method */ 'acceptEitherAsync(java.util.concurrent.CompletionStage,java.util.function.Consumer)', [
+			[/* method description */
+				[/* block */ 'b', [
+					[/* text */ 't', `Returns a new CompletionStage that, when either this or the
+ other given stage complete normally, is executed using this
+ stage's default asynchronous execution facility, with the
+ corresponding result as argument to the supplied action.
 
  See the `],
 					[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
@@ -1001,34 +1383,6 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 				]],
 				[/* parameter */ 'executor', [/* parameter description */
 					[/* text */ 't', `the executor to use for asynchronous execution`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the new CompletionStage`]
-			]
-		]],
-		[/* method */ 'acceptEitherAsync(java.util.concurrent.CompletionStage,java.util.function.Consumer)', [
-			[/* method description */
-				[/* block */ 'b', [
-					[/* text */ 't', `Returns a new CompletionStage that, when either this or the
- other given stage complete normally, is executed using this
- stage's default asynchronous execution facility, with the
- corresponding result as argument to the supplied action.
-
- See the `],
-					[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
-					[/* text */ 't', ` documentation for rules
- covering exceptional completion.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'other', [/* parameter description */
-					[/* text */ 't', `the other CompletionStage`]
-				]],
-				[/* parameter */ 'action', [/* parameter description */
-					[/* text */ 't', `the action to perform before completing the
- returned CompletionStage`]
 				]]
 			],
 			/* throws */ UDF,
@@ -1318,34 +1672,6 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 				[/* text */ 't', `the new CompletionStage`]
 			]
 		]],
-		[/* method */ 'thenCombineAsync(java.util.concurrent.CompletionStage,java.util.function.BiFunction)', [
-			[/* method description */
-				[/* block */ 'b', [
-					[/* text */ 't', `Returns a new CompletionStage that, when this and the other
- given stage both complete normally, is executed using this
- stage's default asynchronous execution facility, with the two
- results as arguments to the supplied function.
-
- See the `],
-					[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
-					[/* text */ 't', ` documentation for rules
- covering exceptional completion.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'other', [/* parameter description */
-					[/* text */ 't', `the other CompletionStage`]
-				]],
-				[/* parameter */ 'fn', [/* parameter description */
-					[/* text */ 't', `the function to use to compute the value of the
- returned CompletionStage`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the new CompletionStage`]
-			]
-		]],
 		[/* method */ 'thenCombineAsync(java.util.concurrent.CompletionStage,java.util.function.BiFunction,java.util.concurrent.Executor)', [
 			[/* method description */
 				[/* block */ 'b', [
@@ -1370,6 +1696,34 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 				]],
 				[/* parameter */ 'executor', [/* parameter description */
 					[/* text */ 't', `the executor to use for asynchronous execution`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the new CompletionStage`]
+			]
+		]],
+		[/* method */ 'thenCombineAsync(java.util.concurrent.CompletionStage,java.util.function.BiFunction)', [
+			[/* method description */
+				[/* block */ 'b', [
+					[/* text */ 't', `Returns a new CompletionStage that, when this and the other
+ given stage both complete normally, is executed using this
+ stage's default asynchronous execution facility, with the two
+ results as arguments to the supplied function.
+
+ See the `],
+					[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+					[/* text */ 't', ` documentation for rules
+ covering exceptional completion.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'other', [/* parameter description */
+					[/* text */ 't', `the other CompletionStage`]
+				]],
+				[/* parameter */ 'fn', [/* parameter description */
+					[/* text */ 't', `the function to use to compute the value of the
+ returned CompletionStage`]
 				]]
 			],
 			/* throws */ UDF,
@@ -1477,6 +1831,31 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 				[/* text */ 't', `the new CompletionStage`]
 			]
 		]],
+		[/* method */ 'thenAcceptAsync(java.util.function.Consumer)', [
+			[/* method description */
+				[/* block */ 'b', [
+					[/* text */ 't', `Returns a new CompletionStage that, when this stage completes
+ normally, is executed using this stage's default asynchronous
+ execution facility, with this stage's result as the argument to
+ the supplied action.
+
+ See the `],
+					[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+					[/* text */ 't', ` documentation for rules
+ covering exceptional completion.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'action', [/* parameter description */
+					[/* text */ 't', `the action to perform before completing the
+ returned CompletionStage`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the new CompletionStage`]
+			]
+		]],
 		[/* method */ 'thenAcceptAsync(java.util.function.Consumer,java.util.concurrent.Executor)', [
 			[/* method description */
 				[/* block */ 'b', [
@@ -1504,13 +1883,12 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 				[/* text */ 't', `the new CompletionStage`]
 			]
 		]],
-		[/* method */ 'thenAcceptAsync(java.util.function.Consumer)', [
+		[/* method */ 'thenAccept(java.util.function.Consumer)', [
 			[/* method description */
 				[/* block */ 'b', [
 					[/* text */ 't', `Returns a new CompletionStage that, when this stage completes
- normally, is executed using this stage's default asynchronous
- execution facility, with this stage's result as the argument to
- the supplied action.
+ normally, is executed with this stage's result as the argument
+ to the supplied action.
 
  See the `],
 					[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
@@ -1529,12 +1907,13 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 				[/* text */ 't', `the new CompletionStage`]
 			]
 		]],
-		[/* method */ 'thenAccept(java.util.function.Consumer)', [
+		[/* method */ 'thenApplyAsync(java.util.function.Function)', [
 			[/* method description */
 				[/* block */ 'b', [
 					[/* text */ 't', `Returns a new CompletionStage that, when this stage completes
- normally, is executed with this stage's result as the argument
- to the supplied action.
+ normally, is executed using this stage's default asynchronous
+ execution facility, with this stage's result as the argument to
+ the supplied function.
 
  See the `],
 					[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
@@ -1543,8 +1922,8 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 				]]
 			],
 			[/* parameters */
-				[/* parameter */ 'action', [/* parameter description */
-					[/* text */ 't', `the action to perform before completing the
+				[/* parameter */ 'fn', [/* parameter description */
+					[/* text */ 't', `the function to use to compute the value of the
  returned CompletionStage`]
 				]]
 			],
@@ -1580,31 +1959,6 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 				[/* text */ 't', `the new CompletionStage`]
 			]
 		]],
-		[/* method */ 'thenApplyAsync(java.util.function.Function)', [
-			[/* method description */
-				[/* block */ 'b', [
-					[/* text */ 't', `Returns a new CompletionStage that, when this stage completes
- normally, is executed using this stage's default asynchronous
- execution facility, with this stage's result as the argument to
- the supplied function.
-
- See the `],
-					[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
-					[/* text */ 't', ` documentation for rules
- covering exceptional completion.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'fn', [/* parameter description */
-					[/* text */ 't', `the function to use to compute the value of the
- returned CompletionStage`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the new CompletionStage`]
-			]
-		]],
 		[/* method */ 'thenApply(java.util.function.Function)', [
 			[/* method description */
 				[/* block */ 'b', [
@@ -1616,10 +1970,10 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 					[/* block */ 'b', [
 						[/* text */ 't', `This method is analogous to
  `],
-						[/* external link */ 'a', `../Optional.html#map(java.util.function.Function)`, `Optional.map`],
+						[/* reference */ 'r', `java.Optional#map(java.util.function.Function)`],
 						[/* text */ 't', ` and
  `],
-						[/* external link */ 'a', `../stream/Stream.html#map(java.util.function.Function)`, `Stream.map`],
+						[/* reference */ 'r', `java.Stream#map(java.util.function.Function)`],
 						[/* text */ 't', `.
 
  `]
@@ -1643,25 +1997,6 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 				[/* text */ 't', `the new CompletionStage`]
 			]
 		]],
-		[/* method */ 'runAsync(java.lang.Runnable)', [
-			[/* method description */
-				[/* text */ 't', `Returns a new CompletableFuture that is asynchronously completed
- by a task running in the `],
-				[/* external link */ 'a', `ForkJoinPool.html#commonPool()`, `ForkJoinPool.commonPool()`],
-				[/* text */ 't', ` after
- it runs the given action.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'runnable', [/* parameter description */
-					[/* text */ 't', `the action to run before completing the
- returned CompletableFuture`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the new CompletableFuture`]
-			]
-		]],
 		[/* method */ 'runAsync(java.lang.Runnable,java.util.concurrent.Executor)', [
 			[/* method description */
 				[/* text */ 't', `Returns a new CompletableFuture that is asynchronously completed
@@ -1675,6 +2010,25 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 				]],
 				[/* parameter */ 'executor', [/* parameter description */
 					[/* text */ 't', `the executor to use for asynchronous execution`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the new CompletableFuture`]
+			]
+		]],
+		[/* method */ 'runAsync(java.lang.Runnable)', [
+			[/* method description */
+				[/* text */ 't', `Returns a new CompletableFuture that is asynchronously completed
+ by a task running in the `],
+				[/* reference */ 'r', `.ForkJoinPool#commonPool()`],
+				[/* text */ 't', ` after
+ it runs the given action.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'runnable', [/* parameter description */
+					[/* text */ 't', `the action to run before completing the
+ returned CompletableFuture`]
 				]]
 			],
 			/* throws */ UDF,
@@ -1718,360 +2072,6 @@ DocsCollector.collect('java.util.concurrent.CompletableFuture', [
 			],
 			[/* return description */
 				[/* text */ 't', `the result value, if completed, else the given valueIfAbsent`]
-			]
-		]],
-		[/* method */ 'anyOf(java.util.concurrent.CompletableFuture...)', [
-			[/* method description */
-				[/* text */ 't', `Returns a new CompletableFuture that is completed when any of
- the given CompletableFutures complete, with the same result.
- Otherwise, if it completed exceptionally, the returned
- CompletableFuture also does so, with a CompletionException
- holding this exception as its cause.  If no CompletableFutures
- are provided, returns an incomplete CompletableFuture.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'cfs', [/* parameter description */
-					[/* text */ 't', `the CompletableFutures`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the array or any of its elements are
- `],
-					[/* inline code block */ 'i', `null`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a new CompletableFuture that is completed with the
- result or exception of any of the given CompletableFutures when
- one completes`]
-			]
-		]],
-		[/* method */ 'isCompletedExceptionally()', [
-			[/* method description */
-				[/* text */ 't', `Returns `],
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this CompletableFuture completed
- exceptionally, in any way. Possible causes include
- cancellation, explicit invocation of `],
-				[/* inline code block */ 'i', `completeExceptionally`],
-				[/* text */ 't', `, and abrupt termination of a
- CompletionStage action.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this CompletableFuture completed
- exceptionally`]
-			]
-		]],
-		[/* method */ 'obtrudeValue(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Forcibly sets or resets the value subsequently returned by
- method `],
-				[/* reference */ 'r', `get()`],
-				[/* text */ 't', ` and related methods, whether or not
- already completed. This method is designed for use only in
- error recovery actions, and even in such situations may result
- in ongoing dependent completions using established versus
- overwritten outcomes.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'value', [/* parameter description */
-					[/* text */ 't', `the completion value`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'obtrudeException(java.lang.Throwable)', [
-			[/* method description */
-				[/* text */ 't', `Forcibly causes subsequent invocations of method `],
-				[/* reference */ 'r', `get()`],
-				[/* text */ 't', `
- and related methods to throw the given exception, whether or
- not already completed. This method is designed for use only in
- error recovery actions, and even in such situations may result
- in ongoing dependent completions using established versus
- overwritten outcomes.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'ex', [/* parameter description */
-					[/* text */ 't', `the exception`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if the exception is null`]
-				]]
-			],
-			/* return */ UDF
-		]],
-		[/* method */ 'getNumberOfDependents()', [
-			[/* method description */
-				[/* text */ 't', `Returns the estimated number of CompletableFutures whose
- completions are awaiting completion of this CompletableFuture.
- This method is designed for use in monitoring system state, not
- for synchronization control.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the number of dependent CompletableFutures`]
-			]
-		]],
-		[/* method */ 'minimalCompletionStage()', [
-			[/* method description */
-				[/* text */ 't', `Returns a new CompletionStage that is completed normally with
- the same value as this CompletableFuture when it completes
- normally, and cannot be independently completed or otherwise
- used in ways not defined by the methods of interface `],
-				[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
-				[/* text */ 't', `.  If this CompletableFuture completes
- exceptionally, then the returned CompletionStage completes
- exceptionally with a CompletionException with this exception as
- cause.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `Unless overridden by a subclass, a new non-minimal
- CompletableFuture with all methods available can be obtained from
- a minimal CompletionStage via `],
-					[/* reference */ 'r', `toCompletableFuture()`],
-					[/* text */ 't', `.
- For example, completion of a minimal stage can be awaited by
-
- `]
-				]],
-				[/* code block */ 'c', [
-					[/* inline code block */ 'i', `minimalStage.toCompletableFuture().join();`]
-				]],
-				[/* block */ 'b', '']
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the new CompletionStage`]
-			]
-		]],
-		[/* method */ 'orTimeout(long,java.util.concurrent.TimeUnit)', [
-			[/* method description */
-				[/* text */ 't', `Exceptionally completes this CompletableFuture with
- a `],
-				[/* reference */ 'r', `java.util.concurrent.TimeoutException`],
-				[/* text */ 't', ` if not otherwise completed
- before the given timeout.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'timeout', [/* parameter description */
-					[/* text */ 't', `how long to wait before completing exceptionally
-        with a TimeoutException, in units of `],
-					[/* inline code block */ 'i', `unit`]
-				]],
-				[/* parameter */ 'unit', [/* parameter description */
-					[/* text */ 't', `a `],
-					[/* inline code block */ 'i', `TimeUnit`],
-					[/* text */ 't', ` determining how to interpret the
-        `],
-					[/* inline code block */ 'i', `timeout`],
-					[/* text */ 't', ` parameter`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `this CompletableFuture`]
-			]
-		]],
-		[/* method */ 'completeOnTimeout(java.lang.Object,long,java.util.concurrent.TimeUnit)', [
-			[/* method description */
-				[/* text */ 't', `Completes this CompletableFuture with the given value if not
- otherwise completed before the given timeout.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'value', [/* parameter description */
-					[/* text */ 't', `the value to use upon timeout`]
-				]],
-				[/* parameter */ 'timeout', [/* parameter description */
-					[/* text */ 't', `how long to wait before completing normally
-        with the given value, in units of `],
-					[/* inline code block */ 'i', `unit`]
-				]],
-				[/* parameter */ 'unit', [/* parameter description */
-					[/* text */ 't', `a `],
-					[/* inline code block */ 'i', `TimeUnit`],
-					[/* text */ 't', ` determining how to interpret the
-        `],
-					[/* inline code block */ 'i', `timeout`],
-					[/* text */ 't', ` parameter`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `this CompletableFuture`]
-			]
-		]],
-		[/* method */ 'delayedExecutor(long,java.util.concurrent.TimeUnit,java.util.concurrent.Executor)', [
-			[/* method description */
-				[/* text */ 't', `Returns a new Executor that submits a task to the given base
- executor after the given delay (or no delay if non-positive).
- Each delay commences upon invocation of the returned executor's
- `],
-				[/* inline code block */ 'i', `execute`],
-				[/* text */ 't', ` method.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'delay', [/* parameter description */
-					[/* text */ 't', `how long to delay, in units of `],
-					[/* inline code block */ 'i', `unit`]
-				]],
-				[/* parameter */ 'unit', [/* parameter description */
-					[/* text */ 't', `a `],
-					[/* inline code block */ 'i', `TimeUnit`],
-					[/* text */ 't', ` determining how to interpret the
-        `],
-					[/* inline code block */ 'i', `delay`],
-					[/* text */ 't', ` parameter`]
-				]],
-				[/* parameter */ 'executor', [/* parameter description */
-					[/* text */ 't', `the base executor`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the new delayed executor`]
-			]
-		]],
-		[/* method */ 'delayedExecutor(long,java.util.concurrent.TimeUnit)', [
-			[/* method description */
-				[/* text */ 't', `Returns a new Executor that submits a task to the default
- executor after the given delay (or no delay if non-positive).
- Each delay commences upon invocation of the returned executor's
- `],
-				[/* inline code block */ 'i', `execute`],
-				[/* text */ 't', ` method.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'delay', [/* parameter description */
-					[/* text */ 't', `how long to delay, in units of `],
-					[/* inline code block */ 'i', `unit`]
-				]],
-				[/* parameter */ 'unit', [/* parameter description */
-					[/* text */ 't', `a `],
-					[/* inline code block */ 'i', `TimeUnit`],
-					[/* text */ 't', ` determining how to interpret the
-        `],
-					[/* inline code block */ 'i', `delay`],
-					[/* text */ 't', ` parameter`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the new delayed executor`]
-			]
-		]],
-		[/* method */ 'completedStage(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Returns a new CompletionStage that is already completed with
- the given value and supports only those methods in
- interface `],
-				[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'value', [/* parameter description */
-					[/* text */ 't', `the value`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the completed CompletionStage`]
-			]
-		]],
-		[/* method */ 'failedFuture(java.lang.Throwable)', [
-			[/* method description */
-				[/* text */ 't', `Returns a new CompletableFuture that is already completed
- exceptionally with the given exception.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'ex', [/* parameter description */
-					[/* text */ 't', `the exception`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the exceptionally completed CompletableFuture`]
-			]
-		]],
-		[/* method */ 'failedStage(java.lang.Throwable)', [
-			[/* method description */
-				[/* text */ 't', `Returns a new CompletionStage that is already completed
- exceptionally with the given exception and supports only those
- methods in interface `],
-				[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
-				[/* text */ 't', `.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'ex', [/* parameter description */
-					[/* text */ 't', `the exception`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the exceptionally completed CompletionStage`]
-			]
-		]],
-		[/* method */ 'supplyAsync(java.util.function.Supplier,java.util.concurrent.Executor)', [
-			[/* method description */
-				[/* text */ 't', `Returns a new CompletableFuture that is asynchronously completed
- by a task running in the given executor with the value obtained
- by calling the given Supplier.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'supplier', [/* parameter description */
-					[/* text */ 't', `a function returning the value to be used
- to complete the returned CompletableFuture`]
-				]],
-				[/* parameter */ 'executor', [/* parameter description */
-					[/* text */ 't', `the executor to use for asynchronous execution`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the new CompletableFuture`]
-			]
-		]],
-		[/* method */ 'supplyAsync(java.util.function.Supplier)', [
-			[/* method description */
-				[/* text */ 't', `Returns a new CompletableFuture that is asynchronously completed
- by a task running in the `],
-				[/* external link */ 'a', `ForkJoinPool.html#commonPool()`, `ForkJoinPool.commonPool()`],
-				[/* text */ 't', ` with
- the value obtained by calling the given Supplier.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'supplier', [/* parameter description */
-					[/* text */ 't', `a function returning the value to be used
- to complete the returned CompletableFuture`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the new CompletableFuture`]
-			]
-		]],
-		[/* method */ 'newIncompleteFuture()', [
-			[/* method description */
-				[/* text */ 't', `Returns a new incomplete CompletableFuture of the type to be
- returned by a CompletionStage method. Subclasses should
- normally override this method to return an instance of the same
- class as this CompletableFuture. The default implementation
- returns an instance of class CompletableFuture.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a new CompletableFuture`]
 			]
 		]]
 	],

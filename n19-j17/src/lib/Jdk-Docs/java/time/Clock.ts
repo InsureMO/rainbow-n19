@@ -13,10 +13,10 @@ DocsCollector.collect('java.time.Clock', [
  For example, `],
 			[/* inline code block */ 'i', `Clock`],
 			[/* text */ 't', ` can be used instead of `],
-			[/* external link */ 'a', `../lang/System.html#currentTimeMillis()`, `System.currentTimeMillis()`],
+			[/* reference */ 'r', `java.System#currentTimeMillis()`],
 			[/* text */ 't', `
  and `],
-			[/* external link */ 'a', `../util/TimeZone.html#getDefault()`, `TimeZone.getDefault()`],
+			[/* reference */ 'r', `java.TimeZone#getDefault()`],
 			[/* text */ 't', `.
  `]
 		]],
@@ -59,10 +59,10 @@ DocsCollector.collect('java.time.Clock', [
  `],
 		[/* text */ 't', `
  This approach allows an alternative clock, such as `],
-		[/* reference */ 'r', `fixed`],
+		[/* reference */ 'r', `#fixed(java.time.Instant,java.time.ZoneId)`, `fixed`],
 		[/* text */ 't', `
  or `],
-		[/* reference */ 'r', `offset`],
+		[/* reference */ 'r', `#offset(java.time.Clock,java.time.Duration)`, `offset`],
 		[/* text */ 't', ` to be used during testing.
  `],
 		[/* block */ 'b', ''],
@@ -72,7 +72,7 @@ DocsCollector.collect('java.time.Clock', [
 			[/* inline code block */ 'i', `system`],
 			[/* text */ 't', ` factory methods provide clocks based on the best available
  system clock. This may use `],
-			[/* external link */ 'a', `../lang/System.html#currentTimeMillis()`, `System.currentTimeMillis()`],
+			[/* reference */ 'r', `java.System#currentTimeMillis()`],
 			[/* text */ 't', `, or a higher
  resolution clock if one is available.`]
 		]]
@@ -96,10 +96,10 @@ DocsCollector.collect('java.time.Clock', [
 					[/* text */ 't', `
  Clocks should override this method to compare equals based on
  their state and to meet the contract of `],
-					[/* external link */ 'a', `../lang/Object.html#equals(java.lang.Object)`, `Object.equals(java.lang.Object)`],
+					[/* reference */ 'r', `java.Object#equals(java.lang.Object)`],
 					[/* text */ 't', `.
  If not overridden, the behavior is defined by `],
-					[/* external link */ 'a', `../lang/Object.html#equals(java.lang.Object)`, `Object.equals(java.lang.Object)`]
+					[/* reference */ 'r', `java.Object#equals(java.lang.Object)`]
 				]]
 			],
 			[/* parameters */
@@ -120,10 +120,10 @@ DocsCollector.collect('java.time.Clock', [
 					[/* text */ 't', `
  Clocks should override this method based on
  their state and to meet the contract of `],
-					[/* external link */ 'a', `../lang/Object.html#hashCode()`, `Object.hashCode()`],
+					[/* reference */ 'r', `java.Object#hashCode()`],
 					[/* text */ 't', `.
  If not overridden, the behavior is defined by `],
-					[/* external link */ 'a', `../lang/Object.html#hashCode()`, `Object.hashCode()`]
+					[/* reference */ 'r', `java.Object#hashCode()`]
 				]]
 			],
 			/* parameters */ UDF,
@@ -176,7 +176,7 @@ DocsCollector.collect('java.time.Clock', [
 					[/* text */ 't', `
  This returns the millisecond-based instant, measured from 1970-01-01T00:00Z (UTC).
  This is equivalent to the definition of `],
-					[/* external link */ 'a', `../lang/System.html#currentTimeMillis()`, `System.currentTimeMillis()`],
+					[/* reference */ 'r', `java.System#currentTimeMillis()`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -193,7 +193,7 @@ DocsCollector.collect('java.time.Clock', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The default implementation currently calls `],
-					[/* reference */ 'r', `instant()`],
+					[/* reference */ 'r', `#instant()`, `instant()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -217,7 +217,7 @@ DocsCollector.collect('java.time.Clock', [
 					[/* text */ 't', `
  This clock is based on the best available system clock.
  This may use `],
-					[/* external link */ 'a', `../lang/System.html#currentTimeMillis()`, `System.currentTimeMillis()`],
+					[/* reference */ 'r', `java.System#currentTimeMillis()`],
 					[/* text */ 't', `, or a higher resolution
  clock if one is available.
  `]
@@ -331,7 +331,7 @@ DocsCollector.collect('java.time.Clock', [
 					[/* text */ 't', `
  This clock is based on the best available system clock.
  This may use `],
-					[/* external link */ 'a', `../lang/System.html#currentTimeMillis()`, `System.currentTimeMillis()`],
+					[/* reference */ 'r', `java.System#currentTimeMillis()`],
 					[/* text */ 't', `, or a higher resolution
  clock if one is available.
  `]
@@ -341,7 +341,7 @@ DocsCollector.collect('java.time.Clock', [
  Using this method hard codes a dependency to the default time-zone into your application.
  It is recommended to avoid this and use a specific time-zone whenever possible.
  The `],
-					[/* reference */ 'r', `UTC clock`],
+					[/* reference */ 'r', `#systemUTC()`, `UTC clock`],
 					[/* text */ 't', ` should be used when you need the current instant
  without the date or time.
  `]
@@ -425,7 +425,7 @@ DocsCollector.collect('java.time.Clock', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This clock, rather than `],
-					[/* reference */ 'r', `systemDefaultZone()`],
+					[/* reference */ 'r', `#systemDefaultZone()`, `systemDefaultZone()`],
 					[/* text */ 't', `, should be used when
  you need the current instant without the date or time.
  `]
@@ -434,7 +434,7 @@ DocsCollector.collect('java.time.Clock', [
 					[/* text */ 't', `
  This clock is based on the best available system clock.
  This may use `],
-					[/* external link */ 'a', `../lang/System.html#currentTimeMillis()`, `System.currentTimeMillis()`],
+					[/* reference */ 'r', `java.System#currentTimeMillis()`],
 					[/* text */ 't', `, or a higher resolution
  clock if one is available.
  `]
@@ -442,7 +442,7 @@ DocsCollector.collect('java.time.Clock', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  Conversion from instant to date or time uses the `],
-					[/* external link */ 'a', `ZoneOffset.html#UTC`, `UTC time-zone`],
+					[/* reference */ 'r', `.ZoneOffset#UTC`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -473,7 +473,7 @@ DocsCollector.collect('java.time.Clock', [
  This ensures that the visible time ticks in whole milliseconds.
  The underlying clock is the best available system clock, equivalent to
  using `],
-					[/* reference */ 'r', `system(ZoneId)`],
+					[/* reference */ 'r', `#system(java.time.ZoneId)`, `system(ZoneId)`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -513,7 +513,7 @@ DocsCollector.collect('java.time.Clock', [
  This ensures that the visible time ticks in whole seconds.
  The underlying clock is the best available system clock, equivalent to
  using `],
-					[/* reference */ 'r', `system(ZoneId)`],
+					[/* reference */ 'r', `#system(java.time.ZoneId)`, `system(ZoneId)`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -553,7 +553,7 @@ DocsCollector.collect('java.time.Clock', [
  This ensures that the visible time ticks in whole minutes.
  The underlying clock is the best available system clock, equivalent to
  using `],
-					[/* reference */ 'r', `system(ZoneId)`],
+					[/* reference */ 'r', `#system(java.time.ZoneId)`, `system(ZoneId)`],
 					[/* text */ 't', `.
  `]
 				]],

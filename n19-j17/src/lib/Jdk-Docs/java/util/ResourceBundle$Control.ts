@@ -6,7 +6,7 @@ DocsCollector.collect('java.util.ResourceBundle$Control', [
 		[/* inline code block */ 'i', `ResourceBundle.Control`],
 		[/* text */ 't', ` defines a set of callback methods
  that are invoked by the `],
-		[/* external link */ 'a', `ResourceBundle.html#getBundle(java.lang.String,java.util.Locale,java.lang.ClassLoader,java.util.ResourceBundle.Control)`, `ResourceBundle.getBundle`],
+		[/* reference */ 'r', `.ResourceBundle#getBundle(java.lang.String,java.util.Locale,java.lang.ClassLoader,java.util.ResourceBundle.Control)`],
 		[/* text */ 't', ` factory
  methods during the bundle loading process. In other words, a
  `],
@@ -15,7 +15,7 @@ DocsCollector.collect('java.util.ResourceBundle$Control', [
  methods for loading resource bundles. The default implementation of
  the callback methods provides the information necessary for the
  factory methods to perform the `],
-		[/* external link */ 'a', `./ResourceBundle.html#default_behavior`, `default behavior`],
+		[/* reference */ 'r', `.ResourceBundle#default_behavior`],
 		[/* text */ 't', `.
 
  `],
@@ -41,9 +41,9 @@ DocsCollector.collect('java.util.ResourceBundle$Control', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `In addition to the callback methods, the `],
-			[/* reference */ 'r', `toBundleName`],
+			[/* reference */ 'r', `#toBundleName(java.lang.String,java.util.Locale)`, `toBundleName`],
 			[/* text */ 't', ` and `],
-			[/* reference */ 'r', `toResourceName`],
+			[/* reference */ 'r', `#toResourceName(java.lang.String,java.lang.String)`, `toResourceName`],
 			[/* text */ 't', ` methods are defined
  primarily for convenience in implementing the callback
  methods. However, the `],
@@ -62,9 +62,9 @@ DocsCollector.collect('java.util.ResourceBundle$Control', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `Two factory methods, `],
-			[/* reference */ 'r', `getControl(List)`],
+			[/* reference */ 'r', `#getControl(java.util.List)`, `getControl(List)`],
 			[/* text */ 't', ` and `],
-			[/* reference */ 'r', `getNoFallbackControl(List)`],
+			[/* reference */ 'r', `#getNoFallbackControl(java.util.List)`, `getNoFallbackControl(List)`],
 			[/* text */ 't', `, provide
  `],
 			[/* inline code block */ 'i', `ResourceBundle.Control`],
@@ -75,9 +75,9 @@ DocsCollector.collect('java.util.ResourceBundle$Control', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `The formats returned by the `],
-			[/* reference */ 'r', `getFormats`],
+			[/* reference */ 'r', `#getFormats(java.lang.String)`, `getFormats`],
 			[/* text */ 't', ` method and candidate locales returned by the `],
-			[/* reference */ 'r', `getCandidateLocales`],
+			[/* reference */ 'r', `#getCandidateLocales(java.lang.String,java.util.Locale)`, `getCandidateLocales`],
 			[/* text */ 't', ` method must be consistent in all
  `],
 			[/* inline code block */ 'i', `ResourceBundle.getBundle`],
@@ -132,9 +132,7 @@ DocsCollector.collect('java.util.ResourceBundle$Control', [
 
  `]
 		]],
-		[/* block */ 'b', [
-			[/* text */ 't', `Example 1`]
-		]],
+		[/* block */ 'b', `Example 1`],
 		[/* block */ 'b', [
 			[/* text */ 't', `The following code lets `],
 			[/* inline code block */ 'i', `ResourceBundle.getBundle`],
@@ -153,7 +151,7 @@ DocsCollector.collect('java.util.ResourceBundle$Control', [
 		[/* text */ 't', `
 
  Given the resource bundles in the `],
-		[/* external link */ 'a', `./ResourceBundle.html#default_behavior_example`, `example`],
+		[/* reference */ 'r', `.ResourceBundle#default_behavior_example`],
 		[/* text */ 't', ` in
  the `],
 		[/* inline code block */ 'i', `ResourceBundle.getBundle`],
@@ -178,20 +176,18 @@ DocsCollector.collect('java.util.ResourceBundle$Control', [
 
  `],
 		[/* block */ 'b', ''],
-		[/* block */ 'b', [
-			[/* text */ 't', `Example 2`]
-		]],
+		[/* block */ 'b', `Example 2`],
 		[/* block */ 'b', [
 			[/* text */ 't', `The following is an example of loading XML-based bundles
  using `],
-			[/* external link */ 'a', `Properties.html#loadFromXML(java.io.InputStream)`, `Properties.loadFromXML`],
+			[/* reference */ 'r', `.Properties#loadFromXML(java.io.InputStream)`],
 			[/* text */ 't', `.
 
  `]
 		]],
 		[/* code block */ 'c', ` ResourceBundle rb = ResourceBundle.getBundle("Messages",
      new ResourceBundle.Control() {
-         public List&lt;String&gt; getFormats(String baseName) {
+         public List<String> getFormats(String baseName) {
              if (baseName == null)
                  throw new NullPointerException();
              return Arrays.asList("xml");
@@ -247,7 +243,7 @@ DocsCollector.collect('java.util.ResourceBundle$Control', [
      protected Object handleGetObject(String key) {
          return props.getProperty(key);
      }
-     public Enumeration&lt;String&gt; getKeys() {
+     public Enumeration<String> getKeys() {
          ...
      }
  }
@@ -324,7 +320,7 @@ DocsCollector.collect('java.util.ResourceBundle$Control', [
 				[/* inline code block */ 'i', `bundleName`],
 				[/* text */ 't', ` to the form required
  by the `],
-				[/* external link */ 'a', `../lang/ClassLoader.html#getResource(java.lang.String)`, `ClassLoader.getResource`],
+				[/* reference */ 'r', `java.ClassLoader#getResource(java.lang.String)`],
 				[/* text */ 't', `
  method by replacing all occurrences of `],
 				[/* inline code block */ 'i', `'.'`],
@@ -382,7 +378,7 @@ DocsCollector.collect('java.util.ResourceBundle$Control', [
 				[/* text */ 't', `Returns a `],
 				[/* inline code block */ 'i', `ResourceBundle.Control`],
 				[/* text */ 't', ` in which the `],
-				[/* reference */ 'r', `getFormats`],
+				[/* reference */ 'r', `#getFormats(java.lang.String)`, `getFormats`],
 				[/* text */ 't', ` method returns the specified
  `],
 				[/* inline code block */ 'i', `formats`],
@@ -470,7 +466,7 @@ DocsCollector.collect('java.util.ResourceBundle$Control', [
  candidate locales exist and their parents are not defined by
  loaded resource bundles themselves.  The last element of the list
  must be a `],
-					[/* external link */ 'a', `Locale.html#ROOT`, `root locale`],
+					[/* reference */ 'r', `.Locale#ROOT`],
 					[/* text */ 't', ` if it is desired to
  have the base bundle as the terminal of the parent chain.
 
@@ -1034,12 +1030,12 @@ DocsCollector.collect('java.util.ResourceBundle$Control', [
 				[/* text */ 't', `Returns a `],
 				[/* inline code block */ 'i', `ResourceBundle.Control`],
 				[/* text */ 't', ` in which the `],
-				[/* reference */ 'r', `getFormats`],
+				[/* reference */ 'r', `#getFormats(java.lang.String)`, `getFormats`],
 				[/* text */ 't', ` method returns the specified
  `],
 				[/* inline code block */ 'i', `formats`],
 				[/* text */ 't', ` and the `],
-				[/* reference */ 'r', `getFallbackLocale`],
+				[/* reference */ 'r', `#getFallbackLocale(java.lang.String,java.util.Locale)`, `getFallbackLocale`],
 				[/* text */ 't', `
  method returns `],
 				[/* inline code block */ 'i', `null`],
@@ -1100,9 +1096,9 @@ DocsCollector.collect('java.util.ResourceBundle$Control', [
 				[/* text */ 't', `
  to the bundle name. This method is called from the default
  implementation of the `],
-				[/* reference */ 'r', `newBundle`],
+				[/* reference */ 'r', `#newBundle(java.lang.String,java.util.Locale,java.lang.String,java.lang.ClassLoader,boolean)`, `newBundle`],
 				[/* text */ 't', ` and `],
-				[/* reference */ 'r', `needsReload`],
+				[/* reference */ 'r', `#needsReload(java.lang.String,java.util.Locale,java.lang.String,java.lang.ClassLoader,java.util.ResourceBundle,long)`, `needsReload`],
 				[/* text */ 't', `
  methods.
 
@@ -1147,7 +1143,7 @@ DocsCollector.collect('java.util.ResourceBundle$Control', [
 					[/* inline code block */ 'i', `Locale("ja", "", "XX")`],
 					[/* text */ 't', `, then
  `],
-					[/* inline code block */ 'i', `"baseName_ja_ _XX"`],
+					[/* inline code block */ 'i', `"baseName_ja_ _XX"`],
 					[/* text */ 't', ` is returned. If the given
  locale is `],
 					[/* inline code block */ 'i', `Locale("en")`],
@@ -1298,7 +1294,7 @@ DocsCollector.collect('java.util.ResourceBundle$Control', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `The default implementation returns the `],
-					[/* external link */ 'a', `Locale.html#getDefault()`, `default Locale`],
+					[/* reference */ 'r', `.Locale#getDefault()`],
 					[/* text */ 't', ` if the given
  `],
 					[/* inline code block */ 'i', `locale`],
@@ -1425,7 +1421,7 @@ DocsCollector.collect('java.util.ResourceBundle$Control', [
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` is returned by
         `],
-					[/* reference */ 'r', `toBundleName`]
+					[/* reference */ 'r', `#toBundleName(java.lang.String,java.util.Locale)`, `toBundleName`]
 				]],
 				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
 					[/* text */ 't', `if `],
@@ -1451,7 +1447,7 @@ DocsCollector.collect('java.util.ResourceBundle$Control', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager is present and creation of new
         instances is denied. See `],
-					[/* external link */ 'a', `../lang/Class.html#newInstance()`, `Class.newInstance()`],
+					[/* reference */ 'r', `java.Class#newInstance()`],
 					[/* text */ 't', `
         for details.`]
 				]],
@@ -1494,7 +1490,7 @@ DocsCollector.collect('java.util.ResourceBundle$Control', [
 					[/* text */ 't', ` factory method.  That is,
  if the factory method finds a resource bundle in the cache that
  has expired, the factory method calls the `],
-					[/* reference */ 'r', `needsReload`],
+					[/* reference */ 'r', `#needsReload(java.lang.String,java.util.Locale,java.lang.String,java.lang.ClassLoader,java.util.ResourceBundle,long)`, `needsReload`],
 					[/* text */ 't', ` method to determine whether the resource
  bundle needs to be reloaded. If `],
 					[/* inline code block */ 'i', `needsReload`],
@@ -1570,7 +1566,7 @@ DocsCollector.collect('java.util.ResourceBundle$Control', [
 				[/* inline code block */ 'i', `loadTime`],
 				[/* text */ 't', ` is a millisecond offset since
  the `],
-				[/* external link */ 'a', `Calendar.html#Epoch`, `Calendar Epoch`],
+				[/* reference */ 'r', `.Calendar#Epoch`],
 				[/* text */ 't', `.
 
  `],

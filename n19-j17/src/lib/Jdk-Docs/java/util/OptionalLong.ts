@@ -24,11 +24,11 @@ DocsCollector.collect('java.util.OptionalLong', [
 		[/* block */ 'b', [
 			[/* text */ 't', `Additional methods that depend on the presence or absence of a contained
  value are provided, such as `],
-			[/* reference */ 'r', `orElse()`],
+			[/* reference */ 'r', `#orElse(long)`, `orElse()`],
 			[/* text */ 't', `
  (returns a default value if no value is present) and
  `],
-			[/* reference */ 'r', `ifPresent()`],
+			[/* reference */ 'r', `#ifPresent(java.util.function.LongConsumer)`, `ifPresent()`],
 			[/* text */ 't', ` (performs an
  action if a value is present).
 
@@ -36,11 +36,11 @@ DocsCollector.collect('java.util.OptionalLong', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
-			[/* external link */ 'a', `../../../java.base/java/lang/doc-files/ValueBased.html`, `value-based`],
+			[/* text */ 't', `value-based`],
 			[/* text */ 't', `
  class; programmers should treat instances that are
  `],
-			[/* reference */ 'r', `equal`],
+			[/* reference */ 'r', `#equals(java.lang.Object)`, `equal`],
 			[/* text */ 't', ` as interchangeable and should not
  use instances for synchronization, or unpredictable behavior may
  occur. For example, in a future release, synchronization may fail.`]

@@ -245,7 +245,7 @@ DocsCollector.collect('java.io.OutputStreamWriter', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` If this instance was created with the `],
-					[/* reference */ 'r', `OutputStreamWriter(OutputStream, String)`],
+					[/* reference */ 'r', `#%3Cinit%3E(java.io.OutputStream,java.lang.String)`, `OutputStreamWriter(OutputStream, String)`],
 					[/* text */ 't', ` constructor then the returned
  name, being unique for the encoding, may differ from the name passed to
  the constructor.  This method may return `],

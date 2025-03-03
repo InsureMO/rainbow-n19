@@ -11,10 +11,10 @@ DocsCollector.collect('java.util.function.BiFunction', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
-			[/* external link */ 'a', `package-summary.html`, `functional interface`],
+			[/* reference */ 'r', `.package-summary`],
 			[/* text */ 't', `
  whose functional method is `],
-			[/* reference */ 'r', `apply(Object, Object)`],
+			[/* reference */ 'r', `#apply(T,U)`, `apply(Object, Object)`],
 			[/* text */ 't', `.`]
 		]]
 	],

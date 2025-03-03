@@ -8,7 +8,7 @@ DocsCollector.collect('java.lang.invoke.TypeDescriptor$OfField', [
 		[/* external link */ 'a', `https://docs.oracle.com/javase/specs/jvms/se17/html/jvms-4.html#jvms-4.3.2`, `4.3.2`],
 		[/* text */ 't', ` can be described
  nominally via `],
-		[/* external link */ 'a', `../Class.html#describeConstable()`, `Class::describeConstable`],
+		[/* reference */ 'r', `java.Class#describeConstable()`],
 		[/* text */ 't', `;
  otherwise they cannot be described nominally.`]
 	],

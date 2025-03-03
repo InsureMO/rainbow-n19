@@ -14,10 +14,10 @@ DocsCollector.collect('java.nio.CharBuffer', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` Absolute and relative `],
-					[/* reference */ 'r', `get`],
+					[/* reference */ 'r', `#get()`, `get`],
 					[/* text */ 't', ` and
    `],
-					[/* reference */ 'r', `put`],
+					[/* reference */ 'r', `#put(char)`, `put`],
 					[/* text */ 't', ` methods that read and write
    single chars; `]
 				]]
@@ -25,7 +25,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` Absolute and relative `],
-					[/* reference */ 'r', `bulk get`],
+					[/* reference */ 'r', `#get(char%5B%5D)`, `bulk get`],
 					[/* text */ 't', `
    methods that transfer contiguous sequences of chars from this buffer
    into an array; and`]
@@ -34,7 +34,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` Absolute and relative `],
-					[/* reference */ 'r', `bulk put`],
+					[/* reference */ 'r', `#put(char%5B%5D)`, `bulk put`],
 					[/* text */ 't', `
    methods that transfer contiguous sequences of chars from a
    char array{#if[char]?, a string,} or some other char
@@ -44,7 +44,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` A method for `],
-					[/* reference */ 'r', `compacting`],
+					[/* reference */ 'r', `#compact()`, `compacting`],
 					[/* text */ 't', `
    a char buffer.  `]
 				]]
@@ -53,7 +53,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Char buffers can be created either by `],
-			[/* reference */ 'r', `allocation`],
+			[/* reference */ 'r', `#allocate(int)`, `allocation`],
 			[/* text */ 't', `, which allocates space for the buffer's
 
 
@@ -64,11 +64,11 @@ DocsCollector.collect('java.nio.CharBuffer', [
 
 
  content, by `],
-			[/* reference */ 'r', `wrapping`],
+			[/* reference */ 'r', `#wrap(char%5B%5D)`, `wrapping`],
 			[/* text */ 't', ` an existing
  char array {#if[char]?or string} into a buffer, or by creating a
  `],
-			[/* external link */ 'a', `ByteBuffer.html#views`, `view`],
+			[/* reference */ 'r', `.ByteBuffer#views`],
 			[/* text */ 't', ` of an existing byte buffer.
 
 
@@ -178,7 +178,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Like a byte buffer, a char buffer is either `],
-			[/* external link */ 'a', `ByteBuffer.html#direct`, `direct or non-direct`],
+			[/* reference */ 'r', `.ByteBuffer#direct`],
 			[/* text */ 't', `.  A
  char buffer created via the `],
 			[/* inline code block */ 'i', `wrap`],
@@ -186,7 +186,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
  be non-direct.  A char buffer created as a view of a byte buffer will
  be direct if, and only if, the byte buffer itself is direct.  Whether or not
  a char buffer is direct may be determined by invoking the `],
-			[/* reference */ 'r', `isDirect`],
+			[/* reference */ 'r', `#isDirect()`, `isDirect`],
 			[/* text */ 't', ` method.  `]
 		]],
 		[/* block */ 'b', [
@@ -195,7 +195,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 			[/* text */ 't', ` interface so that
  character buffers may be used wherever character sequences are accepted, for
  example in the regular-expression package `],
-			[/* external link */ 'a', `../util/regex/package-summary.html`, `java.util.regex`],
+			[/* text */ 't', `java.util.regex`],
 			[/* text */ 't', `.
  The methods defined by `],
 			[/* inline code block */ 'i', `CharSequence`],
@@ -300,9 +300,9 @@ DocsCollector.collect('java.nio.CharBuffer', [
  buffer than are required to satisfy the request, that is, if
  `],
 					[/* inline code block */ 'i', `length`],
-					[/* text */ 't', `&nbsp;`],
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `>`],
-					[/* text */ 't', `&nbsp;`],
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `remaining()`],
 					[/* text */ 't', `, then no
  chars are transferred and a `],
@@ -540,7 +540,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 			[/* method description */
 				[/* text */ 't', `Relative bulk `],
 				[/* text */ 't', `put`],
-				[/* text */ 't', ` method&nbsp;&nbsp;`],
+				[/* text */ 't', ` method  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -551,9 +551,9 @@ DocsCollector.collect('java.nio.CharBuffer', [
  source buffer than in this buffer, that is, if
  `],
 					[/* inline code block */ 'i', `src.remaining()`],
-					[/* text */ 't', `&nbsp;`],
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `>`],
-					[/* text */ 't', `&nbsp;`],
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `remaining()`],
 					[/* text */ 't', `,
  then no chars are transferred and a `],
@@ -566,7 +566,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 					[/* text */ 't', ` Otherwise, this method copies
  `],
 					[/* text */ 't', `n`],
-					[/* text */ 't', `&nbsp;=&nbsp;`],
+					[/* text */ 't', ` = `],
 					[/* inline code block */ 'i', `src.remaining()`],
 					[/* text */ 't', ` chars from the given
  buffer into this buffer, starting at each buffer's current position.
@@ -621,7 +621,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 			[/* method description */
 				[/* text */ 't', `Relative bulk `],
 				[/* text */ 't', `put`],
-				[/* text */ 't', ` method&nbsp;&nbsp;`],
+				[/* text */ 't', ` method  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -632,9 +632,9 @@ DocsCollector.collect('java.nio.CharBuffer', [
  remain in this buffer, that is, if
  `],
 					[/* inline code block */ 'i', `end - start`],
-					[/* text */ 't', `&nbsp;`],
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `>`],
-					[/* text */ 't', `&nbsp;`],
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `remaining()`],
 					[/* text */ 't', `,
  then no chars are transferred and a `],
@@ -647,9 +647,9 @@ DocsCollector.collect('java.nio.CharBuffer', [
 					[/* text */ 't', ` Otherwise, this method copies
  `],
 					[/* text */ 't', `n`],
-					[/* text */ 't', `&nbsp;=&nbsp;`],
+					[/* text */ 't', ` = `],
 					[/* inline code block */ 'i', `end`],
-					[/* text */ 't', `&nbsp;-&nbsp;`],
+					[/* text */ 't', ` - `],
 					[/* inline code block */ 'i', `start`],
 					[/* text */ 't', ` chars
  from the given string into this buffer, starting at the given
@@ -722,7 +722,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 			[/* method description */
 				[/* text */ 't', `Absolute bulk `],
 				[/* text */ 't', `put`],
-				[/* text */ 't', ` method&nbsp;&nbsp;`],
+				[/* text */ 't', ` method  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -772,7 +772,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 			[/* method description */
 				[/* text */ 't', `Absolute `],
 				[/* text */ 't', `put`],
-				[/* text */ 't', ` method&nbsp;&nbsp;`],
+				[/* text */ 't', ` method  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -807,7 +807,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 			[/* method description */
 				[/* text */ 't', `Absolute bulk `],
 				[/* text */ 't', `put`],
-				[/* text */ 't', ` method&nbsp;&nbsp;`],
+				[/* text */ 't', ` method  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -884,7 +884,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 			[/* method description */
 				[/* text */ 't', `Relative bulk `],
 				[/* text */ 't', `put`],
-				[/* text */ 't', ` method&nbsp;&nbsp;`],
+				[/* text */ 't', ` method  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -923,7 +923,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 			[/* method description */
 				[/* text */ 't', `Relative bulk `],
 				[/* text */ 't', `put`],
-				[/* text */ 't', ` method&nbsp;&nbsp;`],
+				[/* text */ 't', ` method  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -934,9 +934,9 @@ DocsCollector.collect('java.nio.CharBuffer', [
  than remain in this buffer, that is, if
  `],
 					[/* inline code block */ 'i', `length`],
-					[/* text */ 't', `&nbsp;`],
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `>`],
-					[/* text */ 't', `&nbsp;`],
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `remaining()`],
 					[/* text */ 't', `, then no
  chars are transferred and a `],
@@ -1017,7 +1017,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 			[/* method description */
 				[/* text */ 't', `Absolute bulk `],
 				[/* text */ 't', `put`],
-				[/* text */ 't', ` method&nbsp;&nbsp;`],
+				[/* text */ 't', ` method  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -1104,7 +1104,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 			[/* method description */
 				[/* text */ 't', `Relative `],
 				[/* text */ 't', `put`],
-				[/* text */ 't', ` method&nbsp;&nbsp;`],
+				[/* text */ 't', ` method  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -1133,7 +1133,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 			[/* method description */
 				[/* text */ 't', `Relative bulk `],
 				[/* text */ 't', `put`],
-				[/* text */ 't', ` method&nbsp;&nbsp;`],
+				[/* text */ 't', ` method  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -1241,7 +1241,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
  this buffer's position, while the last character will be the character
  at index `],
 					[/* inline code block */ 'i', `limit()`],
-					[/* text */ 't', `&nbsp;-&nbsp;1.  Invoking this method does not
+					[/* text */ 't', ` - 1.  Invoking this method does not
  change the buffer's position. `]
 				]]
 			],
@@ -1254,7 +1254,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 		[/* method */ 'append(java.lang.CharSequence,int,int)', [
 			[/* method description */
 				[/* text */ 't', `Appends a subsequence of the  specified character sequence  to this
- buffer&nbsp;&nbsp;`],
+ buffer  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -1328,7 +1328,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 		[/* method */ 'append(char)', [
 			[/* method description */
 				[/* text */ 't', `Appends the specified char  to this
- buffer&nbsp;&nbsp;`],
+ buffer  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -1364,7 +1364,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 		[/* method */ 'append(java.lang.CharSequence)', [
 			[/* method description */
 				[/* text */ 't', `Appends the specified character sequence  to this
- buffer&nbsp;&nbsp;`],
+ buffer  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -1387,7 +1387,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 					[/* inline code block */ 'i', `csq`],
 					[/* text */ 't', `, the entire sequence may not be
  appended.  For instance, invoking the `],
-					[/* reference */ 'r', `toString`],
+					[/* reference */ 'r', `#toString()`, `toString`],
 					[/* text */ 't', ` method of a character buffer will return a subsequence whose
  content depends upon the buffer's position and limit.`]
 				]]
@@ -1429,7 +1429,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 					[/* text */ 't', ` up to, and
  including, the element at `],
 					[/* inline code block */ 'i', `limit()`],
-					[/* text */ 't', `&nbsp;-&nbsp;`],
+					[/* text */ 't', ` - `],
 					[/* inline code block */ 'i', `1`],
 					[/* text */ 't', `.
 
@@ -1466,7 +1466,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 					[/* inline code block */ 'i', `char`],
 					[/* text */ 't', ` elements are compared as if by invoking
  `],
-					[/* external link */ 'a', `../lang/Character.html#compare(char,char)`, `Character.compare(char,char)`],
+					[/* reference */ 'r', `java.Character#compare(char,char)`],
 					[/* text */ 't', `.
 
 
@@ -1536,15 +1536,15 @@ DocsCollector.collect('java.nio.CharBuffer', [
 
 
  the `],
-					[/* external link */ 'a', `ByteOrder.html#nativeOrder()`, `native order`],
+					[/* reference */ 'r', `.ByteOrder#nativeOrder()`],
 					[/* text */ 't', ` of the underlying
  hardware.
 
  Its `],
-					[/* reference */ 'r', `backing array`],
+					[/* reference */ 'r', `#array()`, `backing array`],
 					[/* text */ 't', ` will be the given array, and
  its `],
-					[/* reference */ 'r', `array offset`],
+					[/* reference */ 'r', `#arrayOffset()`, `array offset`],
 					[/* text */ 't', ` will be zero.  `]
 				]]
 			],
@@ -1601,15 +1601,15 @@ DocsCollector.collect('java.nio.CharBuffer', [
 
 
  the `],
-					[/* external link */ 'a', `ByteOrder.html#nativeOrder()`, `native order`],
+					[/* reference */ 'r', `.ByteOrder#nativeOrder()`],
 					[/* text */ 't', ` of the underlying
  hardware.
 
  Its `],
-					[/* reference */ 'r', `backing array`],
+					[/* reference */ 'r', `#array()`, `backing array`],
 					[/* text */ 't', ` will be the given array, and its
  `],
-					[/* reference */ 'r', `array offset`],
+					[/* reference */ 'r', `#arrayOffset()`, `array offset`],
 					[/* text */ 't', ` will be zero.  `]
 				]]
 			],
@@ -1774,12 +1774,12 @@ DocsCollector.collect('java.nio.CharBuffer', [
  of this buffer, its position will be
  `],
 					[/* inline code block */ 'i', `position()`],
-					[/* text */ 't', `&nbsp;+&nbsp;`],
+					[/* text */ 't', ` + `],
 					[/* inline code block */ 'i', `start`],
 					[/* text */ 't', `, its limit will be
  `],
 					[/* inline code block */ 'i', `position()`],
-					[/* text */ 't', `&nbsp;+&nbsp;`],
+					[/* text */ 't', ` + `],
 					[/* inline code block */ 'i', `end`],
 					[/* text */ 't', `, and its byte order
  will be identical to that of this buffer. The new buffer will be direct
@@ -1857,10 +1857,10 @@ DocsCollector.collect('java.nio.CharBuffer', [
 					[/* text */ 't', ` If this method returns `],
 					[/* inline code block */ 'i', `true`],
 					[/* text */ 't', ` then the `],
-					[/* reference */ 'r', `array`],
+					[/* reference */ 'r', `#array()`, `array`],
 					[/* text */ 't', `
  and `],
-					[/* reference */ 'r', `arrayOffset`],
+					[/* reference */ 'r', `#arrayOffset()`, `arrayOffset`],
 					[/* text */ 't', ` methods may safely be invoked.
  `]
 				]]
@@ -1876,7 +1876,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 		[/* method */ 'array()', [
 			[/* method description */
 				[/* text */ 't', `Returns the char array that backs this
- buffer&nbsp;&nbsp;`],
+ buffer  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -1887,7 +1887,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Invoke the `],
-					[/* reference */ 'r', `hasArray`],
+					[/* reference */ 'r', `#hasArray()`, `hasArray`],
 					[/* text */ 't', ` method before invoking this
  method in order to ensure that this buffer has an accessible backing
  array.  `]
@@ -1909,7 +1909,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 		[/* method */ 'arrayOffset()', [
 			[/* method description */
 				[/* text */ 't', `Returns the offset within this buffer's backing array of the first
- element of the buffer&nbsp;&nbsp;`],
+ element of the buffer  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -1920,7 +1920,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 					[/* text */ 't', `
  corresponds to array index `],
 					[/* text */ 't', `p`],
-					[/* text */ 't', `&nbsp;+&nbsp;`],
+					[/* text */ 't', ` + `],
 					[/* inline code block */ 'i', `arrayOffset()`],
 					[/* text */ 't', `.
 
@@ -1928,7 +1928,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Invoke the `],
-					[/* reference */ 'r', `hasArray`],
+					[/* reference */ 'r', `#hasArray()`, `hasArray`],
 					[/* text */ 't', ` method before invoking this
  method in order to ensure that this buffer has an accessible backing
  array.  `]
@@ -2024,7 +2024,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method is often used in conjunction with the `],
-					[/* external link */ 'a', `ByteBuffer.html#compact()`, `compact`],
+					[/* reference */ 'r', `.ByteBuffer#compact()`],
 					[/* text */ 't', ` method when transferring data from
  one place to another.  `]
 				]]
@@ -2130,7 +2130,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 					[/* text */ 't', `The position in this buffer at which the content of the new
           buffer will start; must be non-negative and no larger than
           `],
-					[/* external link */ 'a', `Buffer.html#limit()`, `limit()`]
+					[/* reference */ 'r', `.Buffer#limit()`]
 				]],
 				[/* parameter */ 'length', [/* parameter description */
 					[/* text */ 't', `The number of elements the new buffer will contain; must be
@@ -2192,10 +2192,10 @@ DocsCollector.collect('java.nio.CharBuffer', [
  wrapping an existing `],
 					[/* inline code block */ 'i', `char`],
 					[/* text */ 't', ` array is the `],
-					[/* external link */ 'a', `ByteOrder.html#nativeOrder()`, `native order`],
+					[/* reference */ 'r', `.ByteOrder#nativeOrder()`],
 					[/* text */ 't', ` of the underlying
  hardware.  The byte order of a char buffer created as a `],
-					[/* external link */ 'a', `ByteBuffer.html#views`, `view`],
+					[/* reference */ 'r', `.ByteBuffer#views`],
 					[/* text */ 't', ` of a byte buffer is that of the
  byte buffer at the moment that the view is created.  `]
 				]]
@@ -2211,10 +2211,10 @@ DocsCollector.collect('java.nio.CharBuffer', [
 				[/* text */ 't', `Finds and returns the relative index of the first mismatch between this
  buffer and a given buffer.  The index is relative to the
  `],
-				[/* external link */ 'a', `Buffer.html#position()`, `position`],
+				[/* reference */ 'r', `.Buffer#position()`],
 				[/* text */ 't', ` of each buffer and will be in the range of
  0 (inclusive) up to the smaller of the `],
-				[/* external link */ 'a', `Buffer.html#remaining()`, `remaining`],
+				[/* reference */ 'r', `.Buffer#remaining()`],
 				[/* text */ 't', `
  elements in each buffer (exclusive).
 
@@ -2252,15 +2252,15 @@ DocsCollector.collect('java.nio.CharBuffer', [
 
 
  the `],
-					[/* external link */ 'a', `ByteOrder.html#nativeOrder()`, `native order`],
+					[/* reference */ 'r', `.ByteOrder#nativeOrder()`],
 					[/* text */ 't', ` of the underlying
  hardware.
 
  It will have a `],
-					[/* reference */ 'r', `backing array`],
+					[/* reference */ 'r', `#array()`, `backing array`],
 					[/* text */ 't', `, and its
  `],
-					[/* reference */ 'r', `array offset`],
+					[/* reference */ 'r', `#arrayOffset()`, `array offset`],
 					[/* text */ 't', ` will be zero.`]
 				]]
 			],
@@ -2305,7 +2305,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` If this buffer is itself read-only then this method behaves in
  exactly the same way as the `],
-					[/* reference */ 'r', `duplicate`],
+					[/* reference */ 'r', `#duplicate()`, `duplicate`],
 					[/* text */ 't', ` method.  `]
 				]]
 			],
@@ -2317,7 +2317,7 @@ DocsCollector.collect('java.nio.CharBuffer', [
 		]],
 		[/* method */ 'compact()', [
 			[/* method description */
-				[/* text */ 't', `Compacts this buffer&nbsp;&nbsp;`],
+				[/* text */ 't', `Compacts this buffer  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -2327,23 +2327,23 @@ DocsCollector.collect('java.nio.CharBuffer', [
  if any, are copied to the beginning of the buffer.  That is, the
  char at index `],
 					[/* text */ 't', `p`],
-					[/* text */ 't', `&nbsp;=&nbsp;`],
+					[/* text */ 't', ` = `],
 					[/* inline code block */ 'i', `position()`],
 					[/* text */ 't', ` is copied
  to index zero, the char at index `],
 					[/* text */ 't', `p`],
-					[/* text */ 't', `&nbsp;+&nbsp;1 is copied
+					[/* text */ 't', ` + 1 is copied
  to index one, and so forth until the char at index
  `],
 					[/* inline code block */ 'i', `limit()`],
-					[/* text */ 't', `&nbsp;-&nbsp;1 is copied to index
+					[/* text */ 't', ` - 1 is copied to index
  `],
 					[/* text */ 't', `n`],
-					[/* text */ 't', `&nbsp;=&nbsp;`],
+					[/* text */ 't', ` = `],
 					[/* inline code block */ 'i', `limit()`],
-					[/* text */ 't', `&nbsp;-&nbsp;`],
+					[/* text */ 't', ` - `],
 					[/* inline code block */ 'i', `1`],
-					[/* text */ 't', `&nbsp;-&nbsp;`],
+					[/* text */ 't', ` - `],
 					[/* text */ 't', `p`],
 					[/* text */ 't', `.
  The buffer's position is then set to `],

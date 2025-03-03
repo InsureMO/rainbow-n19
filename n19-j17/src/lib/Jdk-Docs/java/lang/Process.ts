@@ -11,10 +11,10 @@ DocsCollector.collect('java.lang.Process', [
  checking the exit status of the process, and destroying (killing)
  the process.
  The `],
-		[/* external link */ 'a', `ProcessBuilder.html#start()`, `ProcessBuilder.start()`],
+		[/* reference */ 'r', `.ProcessBuilder#start()`],
 		[/* text */ 't', ` and
  `],
-		[/* external link */ 'a', `Runtime.html#exec(java.lang.String%5B%5D,java.lang.String%5B%5D,java.io.File)`, `Runtime.exec`],
+		[/* reference */ 'r', `.Runtime#exec(java.lang.String[],java.lang.String[],java.io.File)`],
 		[/* text */ 't', `
  methods create a native process and return an instance of a
  subclass of `],
@@ -35,29 +35,29 @@ DocsCollector.collect('java.lang.Process', [
  operations will be redirected to the parent process, where they can
  be accessed via the streams obtained using the methods
  `],
-			[/* reference */ 'r', `getOutputStream()`],
+			[/* reference */ 'r', `#getOutputStream()`, `getOutputStream()`],
 			[/* text */ 't', `,
  `],
-			[/* reference */ 'r', `getInputStream()`],
+			[/* reference */ 'r', `#getInputStream()`, `getInputStream()`],
 			[/* text */ 't', `, and
  `],
-			[/* reference */ 'r', `getErrorStream()`],
+			[/* reference */ 'r', `#getErrorStream()`, `getErrorStream()`],
 			[/* text */ 't', `.
  The I/O streams of characters and lines can be written and read using the methods
  `],
-			[/* reference */ 'r', `outputWriter()`],
+			[/* reference */ 'r', `#outputWriter()`, `outputWriter()`],
 			[/* text */ 't', `, `],
-			[/* reference */ 'r', `outputWriter(Charset)`],
+			[/* reference */ 'r', `#outputWriter(java.nio.charset.Charset)`, `outputWriter(Charset)`],
 			[/* text */ 't', `},
  `],
-			[/* reference */ 'r', `inputReader()`],
+			[/* reference */ 'r', `#inputReader()`, `inputReader()`],
 			[/* text */ 't', `, `],
-			[/* reference */ 'r', `inputReader(Charset)`],
+			[/* reference */ 'r', `#inputReader(java.nio.charset.Charset)`, `inputReader(Charset)`],
 			[/* text */ 't', `,
  `],
-			[/* reference */ 'r', `errorReader()`],
+			[/* reference */ 'r', `#errorReader()`, `errorReader()`],
 			[/* text */ 't', `, and `],
-			[/* reference */ 'r', `errorReader(Charset)`],
+			[/* reference */ 'r', `#errorReader(java.nio.charset.Charset)`, `errorReader(Charset)`],
 			[/* text */ 't', `.
  The parent process uses these streams to feed input to and get output
  from the process.  Because some native platforms only provide
@@ -69,7 +69,7 @@ DocsCollector.collect('java.lang.Process', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `Where desired, `],
-			[/* external link */ 'a', `ProcessBuilder.html#redirect-input`, `process I/O can also be redirected`],
+			[/* reference */ 'r', `.ProcessBuilder#redirect-input`],
 			[/* text */ 't', `
  using methods of the `],
 			[/* reference */ 'r', `java.lang.ProcessBuilder`],
@@ -98,7 +98,7 @@ DocsCollector.collect('java.lang.Process', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `As of 1.5, `],
-			[/* external link */ 'a', `ProcessBuilder.html#start()`, `ProcessBuilder.start()`],
+			[/* reference */ 'r', `.ProcessBuilder#start()`],
 			[/* text */ 't', ` is the preferred way
  to create a `],
 			[/* inline code block */ 'i', `Process`],
@@ -108,22 +108,22 @@ DocsCollector.collect('java.lang.Process', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `Subclasses of Process should override the `],
-			[/* reference */ 'r', `onExit()`],
+			[/* reference */ 'r', `#onExit()`, `onExit()`],
 			[/* text */ 't', ` and
  `],
-			[/* reference */ 'r', `toHandle()`],
+			[/* reference */ 'r', `#toHandle()`, `toHandle()`],
 			[/* text */ 't', ` methods to provide a fully functional Process including the
  `],
-			[/* reference */ 'r', `process id`],
+			[/* reference */ 'r', `#pid()`, `process id`],
 			[/* text */ 't', `,
  `],
-			[/* reference */ 'r', `information about the process`],
+			[/* reference */ 'r', `#info()`, `information about the process`],
 			[/* text */ 't', `,
  `],
-			[/* reference */ 'r', `direct children`],
+			[/* reference */ 'r', `#children()`, `direct children`],
 			[/* text */ 't', `, and
  `],
-			[/* reference */ 'r', `direct children plus descendants of those children`],
+			[/* reference */ 'r', `#descendants()`, `direct children plus descendants of those children`],
 			[/* text */ 't', ` of the process.
  Delegating to the underlying Process or ProcessHandle is typically
  easiest and most efficient.`]
@@ -187,7 +187,7 @@ DocsCollector.collect('java.lang.Process', [
 				[/* inline code block */ 'i', `Process`],
 				[/* text */ 't', ` object is
  `],
-				[/* reference */ 'r', `normally terminated`],
+				[/* reference */ 'r', `#supportsNormalTermination()`, `normally terminated`],
 				[/* text */ 't', ` or not is
  implementation dependent.
  Forcible process destruction is defined as the immediate termination of a
@@ -199,10 +199,10 @@ DocsCollector.collect('java.lang.Process', [
  The `],
 					[/* reference */ 'r', `java.util.concurrent.CompletableFuture`],
 					[/* text */ 't', ` from `],
-					[/* reference */ 'r', `onExit()`],
+					[/* reference */ 'r', `#onExit()`, `onExit()`],
 					[/* text */ 't', ` is
  `],
-					[/* external link */ 'a', `../util/concurrent/CompletableFuture.html#complete(T)`, `completed`],
+					[/* reference */ 'r', `java.CompletableFuture#complete(T)`],
 					[/* text */ 't', `
  when the process has terminated.`]
 				]]
@@ -223,11 +223,11 @@ DocsCollector.collect('java.lang.Process', [
 				[/* block */ 'b', [
 					[/* text */ 't', `If the standard output of the process has been redirected using
  `],
-					[/* external link */ 'a', `ProcessBuilder.html#redirectOutput(java.lang.ProcessBuilder.Redirect)`, `ProcessBuilder.redirectOutput`],
+					[/* reference */ 'r', `.ProcessBuilder#redirectOutput(java.lang.ProcessBuilder.Redirect)`],
 					[/* text */ 't', `
  then this method will return a
  `],
-					[/* external link */ 'a', `ProcessBuilder.html#redirect-output`, `null input stream`],
+					[/* reference */ 'r', `.ProcessBuilder#redirect-output`],
 					[/* text */ 't', `.
 
  `]
@@ -236,7 +236,7 @@ DocsCollector.collect('java.lang.Process', [
 					[/* text */ 't', `Otherwise, if the standard error of the process has been
  redirected using
  `],
-					[/* external link */ 'a', `ProcessBuilder.html#redirectErrorStream(boolean)`, `ProcessBuilder.redirectErrorStream`],
+					[/* reference */ 'r', `.ProcessBuilder#redirectErrorStream(boolean)`],
 					[/* text */ 't', `
  then the input stream returned by this method will receive the
  merged standard output and the standard error of the process.`]
@@ -278,14 +278,14 @@ DocsCollector.collect('java.lang.Process', [
 				[/* block */ 'b', [
 					[/* text */ 't', `If the standard error of the process has been redirected using
  `],
-					[/* external link */ 'a', `ProcessBuilder.html#redirectError(java.lang.ProcessBuilder.Redirect)`, `ProcessBuilder.redirectError`],
+					[/* reference */ 'r', `.ProcessBuilder#redirectError(java.lang.ProcessBuilder.Redirect)`],
 					[/* text */ 't', ` or
  `],
-					[/* external link */ 'a', `ProcessBuilder.html#redirectErrorStream(boolean)`, `ProcessBuilder.redirectErrorStream`],
+					[/* reference */ 'r', `.ProcessBuilder#redirectErrorStream(boolean)`],
 					[/* text */ 't', `
  then this method will return a
  `],
-					[/* external link */ 'a', `ProcessBuilder.html#redirect-output`, `null input stream`],
+					[/* reference */ 'r', `.ProcessBuilder#redirect-output`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -294,6 +294,40 @@ DocsCollector.collect('java.lang.Process', [
 			[/* return description */
 				[/* text */ 't', `the input stream connected to the error output of
          the process`]
+			]
+		]],
+		[/* method */ 'waitFor()', [
+			[/* method description */
+				[/* text */ 't', `Causes the current thread to wait, if necessary, until the
+ process represented by this `],
+				[/* inline code block */ 'i', `Process`],
+				[/* text */ 't', ` object has
+ terminated.  This method returns immediately if the process
+ has already terminated.  If the process has not yet
+ terminated, the calling thread will be blocked until the
+ process exits.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.InterruptedException', [/* throw description */
+					[/* text */ 't', `if the current thread is
+         `],
+					[/* reference */ 'r', `.Thread#interrupt()`],
+					[/* text */ 't', ` by another
+         thread while it is waiting, then the wait is ended and
+         an `],
+					[/* reference */ 'r', `java.lang.InterruptedException`],
+					[/* text */ 't', ` is thrown.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the exit value of the process represented by this
+         `],
+				[/* inline code block */ 'i', `Process`],
+				[/* text */ 't', ` object.  By convention, the value
+         `],
+				[/* inline code block */ 'i', `0`],
+				[/* text */ 't', ` indicates normal termination.`]
 			]
 		]],
 		[/* method */ 'waitFor(long,java.util.concurrent.TimeUnit)', [
@@ -353,50 +387,20 @@ DocsCollector.collect('java.lang.Process', [
          the waiting time elapsed before the process has exited.`]
 			]
 		]],
-		[/* method */ 'waitFor()', [
-			[/* method description */
-				[/* text */ 't', `Causes the current thread to wait, if necessary, until the
- process represented by this `],
-				[/* inline code block */ 'i', `Process`],
-				[/* text */ 't', ` object has
- terminated.  This method returns immediately if the process
- has already terminated.  If the process has not yet
- terminated, the calling thread will be blocked until the
- process exits.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.InterruptedException', [/* throw description */
-					[/* text */ 't', `if the current thread is
-         `],
-					[/* external link */ 'a', `Thread.html#interrupt()`, `interrupted`],
-					[/* text */ 't', ` by another
-         thread while it is waiting, then the wait is ended and
-         an `],
-					[/* reference */ 'r', `java.lang.InterruptedException`],
-					[/* text */ 't', ` is thrown.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the exit value of the process represented by this
-         `],
-				[/* inline code block */ 'i', `Process`],
-				[/* text */ 't', ` object.  By convention, the value
-         `],
-				[/* inline code block */ 'i', `0`],
-				[/* text */ 't', ` indicates normal termination.`]
-			]
-		]],
 		[/* method */ 'children()', [
 			[/* method description */
 				[/* text */ 't', `Returns a snapshot of the direct children of the process.
  The parent of a direct child process is the process.
  Typically, a process that is `],
-				[/* reference */ 'r', `not alive`],
+				[/* reference */ 'r', `#isAlive()`, `not alive`],
 				[/* text */ 't', ` has no children.
  `],
 				[/* block */ 'b', [
-					[/* reference */ 'r', `alive`]
+					[/* text */ 't', `Note that processes are created and terminate asynchronously.
+ There is no guarantee that a process is `],
+					[/* reference */ 'r', `#isAlive()`, `alive`],
+					[/* text */ 't', `.
+ `]
 				]]
 			],
 			/* parameters */ UDF,
@@ -415,31 +419,45 @@ DocsCollector.collect('java.lang.Process', [
          direct children of the process`]
 			]
 		]],
-		[/* method */ 'getOutputStream()', [
+		[/* method */ 'inputReader()', [
 			[/* method description */
-				[/* text */ 't', `Returns the output stream connected to the normal input of the
- process.  Output to the stream is piped into the standard
- input of the process represented by this `],
-				[/* inline code block */ 'i', `Process`],
-				[/* text */ 't', ` object.
+				[/* text */ 't', `Returns a `],
+				[/* reference */ 'r', `java.io.BufferedReader`],
+				[/* text */ 't', ` connected to the standard
+ output of the process. The `],
+				[/* reference */ 'r', `java.nio.charset.Charset`],
+				[/* text */ 't', ` for the native encoding is used
+ to read characters, lines, or stream lines from standard output.
 
  `],
 				[/* block */ 'b', [
-					[/* text */ 't', `If the standard input of the process has been redirected using
+					[/* text */ 't', `This method delegates to `],
+					[/* reference */ 'r', `#inputReader(java.nio.charset.Charset)`, `inputReader(Charset)`],
+					[/* text */ 't', ` using the
  `],
-					[/* external link */ 'a', `ProcessBuilder.html#redirectInput(java.lang.ProcessBuilder.Redirect)`, `ProcessBuilder.redirectInput`],
-					[/* text */ 't', `
- then this method will return a
- `],
-					[/* external link */ 'a', `ProcessBuilder.html#redirect-input`, `null output stream`],
-					[/* text */ 't', `.`]
+					[/* reference */ 'r', `java.nio.charset.Charset`],
+					[/* text */ 't', ` named by the `],
+					[/* inline code block */ 'i', `native.encoding`],
+					[/* text */ 't', ` system property.
+ If the `],
+					[/* inline code block */ 'i', `native.encoding`],
+					[/* text */ 't', ` is not a valid charset name or not supported
+ the `],
+					[/* reference */ 'r', `java.Charset#defaultCharset()`],
+					[/* text */ 't', ` is used.`]
 				]]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the output stream connected to the normal input of the
-         process`]
+				[/* text */ 't', `a `],
+				[/* reference */ 'r', `java.io.BufferedReader`],
+				[/* text */ 't', ` using the
+          `],
+				[/* inline code block */ 'i', `native.encoding`],
+				[/* text */ 't', ` if supported, otherwise, the
+          `],
+				[/* reference */ 'r', `java.Charset#defaultCharset()`]
 			]
 		]],
 		[/* method */ 'inputReader(java.nio.charset.Charset)', [
@@ -457,7 +475,7 @@ DocsCollector.collect('java.lang.Process', [
 				[/* block */ 'b', [
 					[/* text */ 't', `Characters are read by an InputStreamReader that reads and decodes bytes
  from this process `],
-					[/* reference */ 'r', `getInputStream()`],
+					[/* reference */ 'r', `#getInputStream()`, `getInputStream()`],
 					[/* text */ 't', `. Bytes are decoded to characters
  using the `],
 					[/* inline code block */ 'i', `charset`],
@@ -487,13 +505,13 @@ DocsCollector.collect('java.lang.Process', [
 				[/* block */ 'b', [
 					[/* text */ 't', `If the standard output of the process has been redirected using
  `],
-					[/* external link */ 'a', `ProcessBuilder.html#redirectOutput(java.lang.ProcessBuilder.Redirect)`, `ProcessBuilder.redirectOutput`],
+					[/* reference */ 'r', `.ProcessBuilder#redirectOutput(java.lang.ProcessBuilder.Redirect)`],
 					[/* text */ 't', `
  then the `],
 					[/* inline code block */ 'i', `InputStreamReader`],
 					[/* text */ 't', ` will be reading from a
  `],
-					[/* external link */ 'a', `ProcessBuilder.html#redirect-output`, `null input stream`],
+					[/* reference */ 'r', `.ProcessBuilder#redirect-output`],
 					[/* text */ 't', `.
 
  `]
@@ -501,7 +519,7 @@ DocsCollector.collect('java.lang.Process', [
 				[/* block */ 'b', [
 					[/* text */ 't', `Otherwise, if the standard error of the process has been redirected using
  `],
-					[/* external link */ 'a', `ProcessBuilder.html#redirectErrorStream(boolean)`, `ProcessBuilder.redirectErrorStream`],
+					[/* reference */ 'r', `.ProcessBuilder#redirectErrorStream(boolean)`],
 					[/* text */ 't', ` then the input reader returned by
  this method will receive the merged standard output and the standard error
  of the process.`]
@@ -532,20 +550,20 @@ DocsCollector.collect('java.lang.Process', [
 				[/* inline code block */ 'i', `charset`]
 			]
 		]],
-		[/* method */ 'inputReader()', [
+		[/* method */ 'errorReader()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
 				[/* reference */ 'r', `java.io.BufferedReader`],
 				[/* text */ 't', ` connected to the standard
- output of the process. The `],
+ error of the process. The `],
 				[/* reference */ 'r', `java.nio.charset.Charset`],
 				[/* text */ 't', ` for the native encoding is used
- to read characters, lines, or stream lines from standard output.
+ to read characters, lines, or stream lines from standard error.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This method delegates to `],
-					[/* reference */ 'r', `inputReader(Charset)`],
+					[/* reference */ 'r', `#errorReader(java.nio.charset.Charset)`, `errorReader(Charset)`],
 					[/* text */ 't', ` using the
  `],
 					[/* reference */ 'r', `java.nio.charset.Charset`],
@@ -556,7 +574,7 @@ DocsCollector.collect('java.lang.Process', [
 					[/* inline code block */ 'i', `native.encoding`],
 					[/* text */ 't', ` is not a valid charset name or not supported
  the `],
-					[/* external link */ 'a', `../nio/charset/Charset.html#defaultCharset()`, `Charset.defaultCharset()`],
+					[/* reference */ 'r', `java.Charset#defaultCharset()`],
 					[/* text */ 't', ` is used.`]
 				]]
 			],
@@ -570,7 +588,7 @@ DocsCollector.collect('java.lang.Process', [
 				[/* inline code block */ 'i', `native.encoding`],
 				[/* text */ 't', ` if supported, otherwise, the
           `],
-				[/* external link */ 'a', `../nio/charset/Charset.html#defaultCharset()`, `Charset.defaultCharset()`]
+				[/* reference */ 'r', `java.Charset#defaultCharset()`]
 			]
 		]],
 		[/* method */ 'errorReader(java.nio.charset.Charset)', [
@@ -588,7 +606,7 @@ DocsCollector.collect('java.lang.Process', [
 				[/* block */ 'b', [
 					[/* text */ 't', `Characters are read by an InputStreamReader that reads and decodes bytes
  from this process `],
-					[/* reference */ 'r', `getErrorStream()`],
+					[/* reference */ 'r', `#getErrorStream()`, `getErrorStream()`],
 					[/* text */ 't', `. Bytes are decoded to characters
  using the `],
 					[/* inline code block */ 'i', `charset`],
@@ -618,16 +636,16 @@ DocsCollector.collect('java.lang.Process', [
 				[/* block */ 'b', [
 					[/* text */ 't', `If the standard error of the process has been redirected using
  `],
-					[/* external link */ 'a', `ProcessBuilder.html#redirectError(java.lang.ProcessBuilder.Redirect)`, `ProcessBuilder.redirectError`],
+					[/* reference */ 'r', `.ProcessBuilder#redirectError(java.lang.ProcessBuilder.Redirect)`],
 					[/* text */ 't', ` or
  `],
-					[/* external link */ 'a', `ProcessBuilder.html#redirectErrorStream(boolean)`, `ProcessBuilder.redirectErrorStream`],
+					[/* reference */ 'r', `.ProcessBuilder#redirectErrorStream(boolean)`],
 					[/* text */ 't', `
  then the `],
 					[/* inline code block */ 'i', `InputStreamReader`],
 					[/* text */ 't', ` will be reading from a
  `],
-					[/* external link */ 'a', `ProcessBuilder.html#redirect-output`, `null input stream`],
+					[/* reference */ 'r', `.ProcessBuilder#redirect-output`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -656,20 +674,19 @@ DocsCollector.collect('java.lang.Process', [
 				[/* inline code block */ 'i', `charset`]
 			]
 		]],
-		[/* method */ 'errorReader()', [
+		[/* method */ 'outputWriter()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.io.BufferedReader`],
-				[/* text */ 't', ` connected to the standard
- error of the process. The `],
-				[/* reference */ 'r', `java.nio.charset.Charset`],
-				[/* text */ 't', ` for the native encoding is used
- to read characters, lines, or stream lines from standard error.
+				[/* inline code block */ 'i', `BufferedWriter`],
+				[/* text */ 't', ` connected to the normal input of the process
+ using the native encoding.
+ Writes text to a character-output stream, buffering characters so as to provide
+ for the efficient writing of single characters, arrays, and strings.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This method delegates to `],
-					[/* reference */ 'r', `errorReader(Charset)`],
+					[/* reference */ 'r', `#outputWriter(java.nio.charset.Charset)`, `outputWriter(Charset)`],
 					[/* text */ 't', ` using the
  `],
 					[/* reference */ 'r', `java.nio.charset.Charset`],
@@ -680,7 +697,7 @@ DocsCollector.collect('java.lang.Process', [
 					[/* inline code block */ 'i', `native.encoding`],
 					[/* text */ 't', ` is not a valid charset name or not supported
  the `],
-					[/* external link */ 'a', `../nio/charset/Charset.html#defaultCharset()`, `Charset.defaultCharset()`],
+					[/* reference */ 'r', `java.Charset#defaultCharset()`],
 					[/* text */ 't', ` is used.`]
 				]]
 			],
@@ -688,13 +705,11 @@ DocsCollector.collect('java.lang.Process', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `a `],
-				[/* reference */ 'r', `java.io.BufferedReader`],
-				[/* text */ 't', ` using the
-          `],
+				[/* inline code block */ 'i', `BufferedWriter`],
+				[/* text */ 't', ` to the standard input of the process using the charset
+          for the `],
 				[/* inline code block */ 'i', `native.encoding`],
-				[/* text */ 't', ` if supported, otherwise, the
-          `],
-				[/* external link */ 'a', `../nio/charset/Charset.html#defaultCharset()`, `Charset.defaultCharset()`]
+				[/* text */ 't', ` system property`]
 			]
 		]],
 		[/* method */ 'outputWriter(java.nio.charset.Charset)', [
@@ -740,12 +755,12 @@ DocsCollector.collect('java.lang.Process', [
 				[/* block */ 'b', [
 					[/* text */ 't', `If the standard input of the process has been redirected using
  `],
-					[/* external link */ 'a', `ProcessBuilder.html#redirectInput(java.lang.ProcessBuilder.Redirect)`, `ProcessBuilder.redirectInput`],
+					[/* reference */ 'r', `.ProcessBuilder#redirectInput(java.lang.ProcessBuilder.Redirect)`],
 					[/* text */ 't', ` then the `],
 					[/* inline code block */ 'i', `OutputStreamWriter`],
 					[/* text */ 't', ` writes to a
  `],
-					[/* external link */ 'a', `ProcessBuilder.html#redirect-input`, `null output stream`],
+					[/* reference */ 'r', `.ProcessBuilder#redirect-input`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -772,44 +787,6 @@ DocsCollector.collect('java.lang.Process', [
 				[/* inline code block */ 'i', `BufferedWriter`],
 				[/* text */ 't', ` to the standard input of the process using the `],
 				[/* inline code block */ 'i', `charset`]
-			]
-		]],
-		[/* method */ 'outputWriter()', [
-			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* inline code block */ 'i', `BufferedWriter`],
-				[/* text */ 't', ` connected to the normal input of the process
- using the native encoding.
- Writes text to a character-output stream, buffering characters so as to provide
- for the efficient writing of single characters, arrays, and strings.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `This method delegates to `],
-					[/* reference */ 'r', `outputWriter(Charset)`],
-					[/* text */ 't', ` using the
- `],
-					[/* reference */ 'r', `java.nio.charset.Charset`],
-					[/* text */ 't', ` named by the `],
-					[/* inline code block */ 'i', `native.encoding`],
-					[/* text */ 't', ` system property.
- If the `],
-					[/* inline code block */ 'i', `native.encoding`],
-					[/* text */ 't', ` is not a valid charset name or not supported
- the `],
-					[/* external link */ 'a', `../nio/charset/Charset.html#defaultCharset()`, `Charset.defaultCharset()`],
-					[/* text */ 't', ` is used.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `BufferedWriter`],
-				[/* text */ 't', ` to the standard input of the process using the charset
-          for the `],
-				[/* inline code block */ 'i', `native.encoding`],
-				[/* text */ 't', ` system property`]
 			]
 		]],
 		[/* method */ 'exitValue()', [
@@ -842,15 +819,15 @@ DocsCollector.collect('java.lang.Process', [
  `],
 				[/* inline code block */ 'i', `Process`],
 				[/* text */ 't', ` objects returned by `],
-				[/* external link */ 'a', `ProcessBuilder.html#start()`, `ProcessBuilder.start()`],
+				[/* reference */ 'r', `.ProcessBuilder#start()`],
 				[/* text */ 't', ` and
  `],
-				[/* external link */ 'a', `Runtime.html#exec(java.lang.String)`, `Runtime.exec(java.lang.String)`],
+				[/* reference */ 'r', `.Runtime#exec(java.lang.String)`],
 				[/* text */ 't', ` implement `],
 				[/* inline code block */ 'i', `toHandle`],
 				[/* text */ 't', ` as the equivalent of
  `],
-				[/* external link */ 'a', `ProcessHandle.html#of(long)`, `ProcessHandle.of(pid)`],
+				[/* reference */ 'r', `.ProcessHandle#of(long)`],
 				[/* text */ 't', ` including the
  check for a SecurityManager and `],
 				[/* inline code block */ 'i', `RuntimePermission("manageProcess")`],
@@ -877,11 +854,15 @@ DocsCollector.collect('java.lang.Process', [
  The descendants of a process are the children of the process
  plus the descendants of those children, recursively.
  Typically, a process that is `],
-				[/* reference */ 'r', `not alive`],
+				[/* reference */ 'r', `#isAlive()`, `not alive`],
 				[/* text */ 't', ` has no children.
  `],
 				[/* block */ 'b', [
-					[/* reference */ 'r', `alive`]
+					[/* text */ 't', `Note that processes are created and terminate asynchronously.
+ There is no guarantee that a process is `],
+					[/* reference */ 'r', `#isAlive()`, `alive`],
+					[/* text */ 't', `.
+ `]
 				]]
 			],
 			/* parameters */ UDF,
@@ -915,10 +896,10 @@ DocsCollector.collect('java.lang.Process', [
  The `],
 					[/* reference */ 'r', `java.util.concurrent.CompletableFuture`],
 					[/* text */ 't', ` from `],
-					[/* reference */ 'r', `onExit()`],
+					[/* reference */ 'r', `#onExit()`, `onExit()`],
 					[/* text */ 't', ` is
  `],
-					[/* external link */ 'a', `../util/concurrent/CompletableFuture.html#complete(T)`, `completed`],
+					[/* reference */ 'r', `java.CompletableFuture#complete(T)`],
 					[/* text */ 't', `
  when the process has terminated.
  `]
@@ -929,9 +910,9 @@ DocsCollector.collect('java.lang.Process', [
 					[/* inline code block */ 'i', `Process`],
 					[/* text */ 't', ` objects returned by
  `],
-					[/* external link */ 'a', `ProcessBuilder.html#start()`, `ProcessBuilder.start()`],
+					[/* reference */ 'r', `.ProcessBuilder#start()`],
 					[/* text */ 't', ` and `],
-					[/* external link */ 'a', `Runtime.html#exec(java.lang.String)`, `Runtime.exec(java.lang.String)`],
+					[/* reference */ 'r', `.Runtime#exec(java.lang.String)`],
 					[/* text */ 't', ` forcibly terminate
  the process.`]
 				]]
@@ -950,7 +931,7 @@ DocsCollector.collect('java.lang.Process', [
 				[/* text */ 't', `Returns `],
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the implementation of `],
-				[/* reference */ 'r', `destroy()`],
+				[/* reference */ 'r', `#destroy()`, `destroy()`],
 				[/* text */ 't', ` is to
  normally terminate the process,
  Returns `],
@@ -966,9 +947,9 @@ DocsCollector.collect('java.lang.Process', [
 					[/* inline code block */ 'i', `Process`],
 					[/* text */ 't', ` objects returned by
  `],
-					[/* external link */ 'a', `ProcessBuilder.html#start()`, `ProcessBuilder.start()`],
+					[/* reference */ 'r', `.ProcessBuilder#start()`],
 					[/* text */ 't', ` and `],
-					[/* external link */ 'a', `Runtime.html#exec(java.lang.String)`, `Runtime.exec(java.lang.String)`],
+					[/* reference */ 'r', `.Runtime#exec(java.lang.String)`],
 					[/* text */ 't', ` return
  `],
 					[/* inline code block */ 'i', `true`],
@@ -987,11 +968,11 @@ DocsCollector.collect('java.lang.Process', [
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the implementation of `],
-				[/* reference */ 'r', `destroy()`],
+				[/* reference */ 'r', `#destroy()`, `destroy()`],
 				[/* text */ 't', ` is to
          normally terminate the process;
          otherwise, `],
-				[/* reference */ 'r', `destroy()`],
+				[/* reference */ 'r', `#destroy()`, `destroy()`],
 				[/* text */ 't', ` forcibly terminates the process`]
 			]
 		]],
@@ -1007,7 +988,7 @@ DocsCollector.collect('java.lang.Process', [
  or asynchronously upon process termination.
  When the process has terminated the CompletableFuture is
  `],
-				[/* external link */ 'a', `../util/concurrent/CompletableFuture.html#complete(T)`, `completed`],
+				[/* reference */ 'r', `java.CompletableFuture#complete(T)`],
 				[/* text */ 't', ` regardless
  of the exit status of the process.
  `],
@@ -1018,13 +999,13 @@ DocsCollector.collect('java.lang.Process', [
 					[/* text */ 't', ` waits for the process to terminate and returns
  the Process. The future can be used to check if the process is
  `],
-					[/* external link */ 'a', `../util/concurrent/CompletableFuture.html#isDone()`, `done`],
+					[/* reference */ 'r', `java.CompletableFuture#isDone()`],
 					[/* text */ 't', ` or to
  `],
-					[/* external link */ 'a', `../util/concurrent/CompletableFuture.html#get()`, `wait`],
+					[/* reference */ 'r', `java.CompletableFuture#get()`],
 					[/* text */ 't', ` for it to terminate.
  `],
-					[/* external link */ 'a', `../util/concurrent/CompletableFuture.html#cancel(boolean)`, `Cancelling`],
+					[/* reference */ 'r', `java.CompletableFuture#cancel(boolean)`],
 					[/* text */ 't', `
  the CompletableFuture does not affect the Process.
  `]
@@ -1032,7 +1013,7 @@ DocsCollector.collect('java.lang.Process', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  Processes returned from `],
-					[/* external link */ 'a', `ProcessBuilder.html#start()`, `ProcessBuilder.start()`],
+					[/* reference */ 'r', `.ProcessBuilder#start()`],
 					[/* text */ 't', ` override the
  default implementation to provide an efficient mechanism to wait
  for process exit.`]
@@ -1044,6 +1025,33 @@ DocsCollector.collect('java.lang.Process', [
 				[/* text */ 't', `a new `],
 				[/* inline code block */ 'i', `CompletableFuture<Process>`],
 				[/* text */ 't', ` for the Process`]
+			]
+		]],
+		[/* method */ 'getOutputStream()', [
+			[/* method description */
+				[/* text */ 't', `Returns the output stream connected to the normal input of the
+ process.  Output to the stream is piped into the standard
+ input of the process represented by this `],
+				[/* inline code block */ 'i', `Process`],
+				[/* text */ 't', ` object.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `If the standard input of the process has been redirected using
+ `],
+					[/* reference */ 'r', `.ProcessBuilder#redirectInput(java.lang.ProcessBuilder.Redirect)`],
+					[/* text */ 't', `
+ then this method will return a
+ `],
+					[/* reference */ 'r', `.ProcessBuilder#redirect-input`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the output stream connected to the normal input of the
+         process`]
 			]
 		]]
 	],

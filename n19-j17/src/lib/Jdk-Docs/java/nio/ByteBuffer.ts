@@ -14,10 +14,10 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` Absolute and relative `],
-					[/* reference */ 'r', `get`],
+					[/* reference */ 'r', `#get()`, `get`],
 					[/* text */ 't', ` and
    `],
-					[/* reference */ 'r', `put`],
+					[/* reference */ 'r', `#put(byte)`, `put`],
 					[/* text */ 't', ` methods that read and write
    single bytes; `]
 				]]
@@ -25,7 +25,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` Absolute and relative `],
-					[/* reference */ 'r', `bulk get`],
+					[/* reference */ 'r', `#get(byte%5B%5D)`, `bulk get`],
 					[/* text */ 't', `
    methods that transfer contiguous sequences of bytes from this buffer
    into an array; `]
@@ -34,7 +34,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` Absolute and relative `],
-					[/* reference */ 'r', `bulk put`],
+					[/* reference */ 'r', `#put(byte%5B%5D)`, `bulk put`],
 					[/* text */ 't', `
    methods that transfer contiguous sequences of bytes from a
    byte array{#if[char]?, a string,} or some other byte
@@ -44,10 +44,10 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` Absolute and relative `],
-					[/* reference */ 'r', `get`],
+					[/* reference */ 'r', `#getChar()`, `get`],
 					[/* text */ 't', `
    and `],
-					[/* reference */ 'r', `put`],
+					[/* reference */ 'r', `#putChar(char)`, `put`],
 					[/* text */ 't', ` methods that read and
    write values of other primitive types, translating them to and from
    sequences of bytes in a particular byte order; `]
@@ -65,7 +65,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` A method for `],
-					[/* reference */ 'r', `compacting`],
+					[/* reference */ 'r', `#compact()`, `compacting`],
 					[/* text */ 't', `
    a byte buffer.  `]
 				]]
@@ -74,13 +74,13 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Byte buffers can be created either by `],
-			[/* reference */ 'r', `allocation`],
+			[/* reference */ 'r', `#allocate(int)`, `allocation`],
 			[/* text */ 't', `, which allocates space for the buffer's
 
 
 
  content, or by `],
-			[/* reference */ 'r', `wrapping`],
+			[/* reference */ 'r', `#wrap(byte%5B%5D)`, `wrapping`],
 			[/* text */ 't', ` an
  existing byte array {#if[char]?or string} into a buffer.
 
@@ -118,7 +118,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` A direct byte buffer may be created by invoking the `],
-			[/* reference */ 'r', `allocateDirect`],
+			[/* reference */ 'r', `#allocateDirect(int)`, `allocateDirect`],
 			[/* text */ 't', ` factory method of this class.  The
  buffers returned by this method typically have somewhat higher allocation
  and deallocation costs than non-direct buffers.  The contents of direct
@@ -133,7 +133,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` A direct byte buffer may also be created by `],
-			[/* external link */ 'a', `channels/FileChannel.html#map(java.nio.channels.FileChannel.MapMode,long,long)`, `mapping`],
+			[/* reference */ 'r', `.FileChannel#map(java.nio.channels.FileChannel.MapMode,long,long)`],
 			[/* text */ 't', ` a region of a file
  directly into memory.  An implementation of the Java platform may optionally
  support the creation of direct byte buffers from native code via JNI.  If an
@@ -147,7 +147,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 		[/* block */ 'b', [
 			[/* text */ 't', ` Whether a byte buffer is direct or non-direct may be determined by
  invoking its `],
-			[/* reference */ 'r', `isDirect`],
+			[/* reference */ 'r', `#isDirect()`, `isDirect`],
 			[/* text */ 't', ` method.  This method is provided so
  that explicit buffer management can be done in performance-critical code.
 
@@ -163,12 +163,12 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 			[/* text */ 't', `.  Primitive values are translated
  to (or from) sequences of bytes according to the buffer's current byte
  order, which may be retrieved and modified via the `],
-			[/* reference */ 'r', `order`],
+			[/* reference */ 'r', `#order()`, `order`],
 			[/* text */ 't', `
  methods.  Specific byte orders are represented by instances of the `],
 			[/* reference */ 'r', `java.nio.ByteOrder`],
 			[/* text */ 't', ` class.  The initial order of a byte buffer is always `],
-			[/* external link */ 'a', `ByteOrder.html#BIG_ENDIAN`, `BIG_ENDIAN`],
+			[/* reference */ 'r', `.ByteOrder#BIG_ENDIAN`],
 			[/* text */ 't', `.
 
  `]
@@ -188,16 +188,16 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 		[/* block */ 'b', [
 			[/* code block */ 'c', [
 				[/* text */ 't', ` float  `],
-				[/* reference */ 'r', `getFloat()`],
+				[/* text */ 't', `getFloat()`],
 				[/* text */ 't', `
  float  `],
-				[/* reference */ 'r', `getFloat(int index)`],
+				[/* text */ 't', `getFloat(int index)`],
 				[/* text */ 't', `
   void  `],
-				[/* reference */ 'r', `putFloat(float f)`],
+				[/* text */ 't', `putFloat(float f)`],
 				[/* text */ 't', `
   void  `],
-				[/* reference */ 'r', `putFloat(int index, float f)`]
+				[/* text */ 't', `putFloat(int index, float f)`]
 			]]
 		]],
 		[/* block */ 'b', ''],
@@ -228,7 +228,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
  content is backed by the byte buffer.  Changes to the byte buffer's content
  will be visible in the view buffer, and vice versa; the two buffers'
  position, limit, and mark values are independent.  The `],
-			[/* reference */ 'r', `asFloatBuffer`],
+			[/* reference */ 'r', `#asFloatBuffer()`, `asFloatBuffer`],
 			[/* text */ 't', ` method, for example, creates an instance of
  the `],
 			[/* reference */ 'r', `java.nio.FloatBuffer`],
@@ -415,9 +415,9 @@ DocsCollector.collect('java.nio.ByteBuffer', [
  buffer than are required to satisfy the request, that is, if
  `],
 					[/* inline code block */ 'i', `length`],
-					[/* text */ 't', `&nbsp;`],
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `>`],
-					[/* text */ 't', `&nbsp;`],
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `remaining()`],
 					[/* text */ 't', `, then no
  bytes are transferred and a `],
@@ -598,7 +598,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 			[/* method description */
 				[/* text */ 't', `Relative bulk `],
 				[/* text */ 't', `put`],
-				[/* text */ 't', ` method&nbsp;&nbsp;`],
+				[/* text */ 't', ` method  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -609,9 +609,9 @@ DocsCollector.collect('java.nio.ByteBuffer', [
  source buffer than in this buffer, that is, if
  `],
 					[/* inline code block */ 'i', `src.remaining()`],
-					[/* text */ 't', `&nbsp;`],
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `>`],
-					[/* text */ 't', `&nbsp;`],
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `remaining()`],
 					[/* text */ 't', `,
  then no bytes are transferred and a `],
@@ -624,7 +624,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 					[/* text */ 't', ` Otherwise, this method copies
  `],
 					[/* text */ 't', `n`],
-					[/* text */ 't', `&nbsp;=&nbsp;`],
+					[/* text */ 't', ` = `],
 					[/* inline code block */ 'i', `src.remaining()`],
 					[/* text */ 't', ` bytes from the given
  buffer into this buffer, starting at each buffer's current position.
@@ -679,7 +679,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 			[/* method description */
 				[/* text */ 't', `Absolute `],
 				[/* text */ 't', `put`],
-				[/* text */ 't', ` method&nbsp;&nbsp;`],
+				[/* text */ 't', ` method  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -714,7 +714,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 			[/* method description */
 				[/* text */ 't', `Absolute bulk `],
 				[/* text */ 't', `put`],
-				[/* text */ 't', ` method&nbsp;&nbsp;`],
+				[/* text */ 't', ` method  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -801,7 +801,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 			[/* method description */
 				[/* text */ 't', `Relative bulk `],
 				[/* text */ 't', `put`],
-				[/* text */ 't', ` method&nbsp;&nbsp;`],
+				[/* text */ 't', ` method  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -840,7 +840,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 			[/* method description */
 				[/* text */ 't', `Absolute bulk `],
 				[/* text */ 't', `put`],
-				[/* text */ 't', ` method&nbsp;&nbsp;`],
+				[/* text */ 't', ` method  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -890,7 +890,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 			[/* method description */
 				[/* text */ 't', `Absolute bulk `],
 				[/* text */ 't', `put`],
-				[/* text */ 't', ` method&nbsp;&nbsp;`],
+				[/* text */ 't', ` method  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -967,7 +967,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 			[/* method description */
 				[/* text */ 't', `Relative `],
 				[/* text */ 't', `put`],
-				[/* text */ 't', ` method&nbsp;&nbsp;`],
+				[/* text */ 't', ` method  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -996,7 +996,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 			[/* method description */
 				[/* text */ 't', `Relative bulk `],
 				[/* text */ 't', `put`],
-				[/* text */ 't', ` method&nbsp;&nbsp;`],
+				[/* text */ 't', ` method  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -1007,9 +1007,9 @@ DocsCollector.collect('java.nio.ByteBuffer', [
  than remain in this buffer, that is, if
  `],
 					[/* inline code block */ 'i', `length`],
-					[/* text */ 't', `&nbsp;`],
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `>`],
-					[/* text */ 't', `&nbsp;`],
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `remaining()`],
 					[/* text */ 't', `, then no
  bytes are transferred and a `],
@@ -1152,7 +1152,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 					[/* text */ 't', ` up to, and
  including, the element at `],
 					[/* inline code block */ 'i', `limit()`],
-					[/* text */ 't', `&nbsp;-&nbsp;`],
+					[/* text */ 't', ` - `],
 					[/* inline code block */ 'i', `1`],
 					[/* text */ 't', `.
 
@@ -1189,7 +1189,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 					[/* inline code block */ 'i', `byte`],
 					[/* text */ 't', ` elements are compared as if by invoking
  `],
-					[/* external link */ 'a', `../lang/Byte.html#compare(byte,byte)`, `Byte.compare(byte,byte)`],
+					[/* reference */ 'r', `java.Byte#compare(byte,byte)`],
 					[/* text */ 't', `.
 
 
@@ -1263,7 +1263,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 				[/* text */ 't', `Relative `],
 				[/* text */ 't', `put`],
 				[/* text */ 't', ` method for writing a short
- value&nbsp;&nbsp;`],
+ value  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -1295,7 +1295,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 				[/* text */ 't', `Absolute `],
 				[/* text */ 't', `put`],
 				[/* text */ 't', ` method for writing a short
- value&nbsp;&nbsp;`],
+ value  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -1382,7 +1382,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 				[/* text */ 't', `Absolute `],
 				[/* text */ 't', `put`],
 				[/* text */ 't', ` method for writing a char
- value&nbsp;&nbsp;`],
+ value  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -1419,7 +1419,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 				[/* text */ 't', `Relative `],
 				[/* text */ 't', `put`],
 				[/* text */ 't', ` method for writing a char
- value&nbsp;&nbsp;`],
+ value  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -1501,7 +1501,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 				[/* text */ 't', `Absolute `],
 				[/* text */ 't', `put`],
 				[/* text */ 't', ` method for writing an int
- value&nbsp;&nbsp;`],
+ value  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -1538,7 +1538,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 				[/* text */ 't', `Relative `],
 				[/* text */ 't', `put`],
 				[/* text */ 't', ` method for writing an int
- value&nbsp;&nbsp;`],
+ value  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -1620,7 +1620,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 				[/* text */ 't', `Absolute `],
 				[/* text */ 't', `put`],
 				[/* text */ 't', ` method for writing a long
- value&nbsp;&nbsp;`],
+ value  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -1657,7 +1657,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 				[/* text */ 't', `Relative `],
 				[/* text */ 't', `put`],
 				[/* text */ 't', ` method for writing a long
- value&nbsp;&nbsp;`],
+ value  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -1739,7 +1739,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 				[/* text */ 't', `Relative `],
 				[/* text */ 't', `put`],
 				[/* text */ 't', ` method for writing a float
- value&nbsp;&nbsp;`],
+ value  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -1771,7 +1771,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 				[/* text */ 't', `Absolute `],
 				[/* text */ 't', `put`],
 				[/* text */ 't', ` method for writing a float
- value&nbsp;&nbsp;`],
+ value  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -1858,7 +1858,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 				[/* text */ 't', `Absolute `],
 				[/* text */ 't', `put`],
 				[/* text */ 't', ` method for writing a double
- value&nbsp;&nbsp;`],
+ value  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -1895,7 +1895,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 				[/* text */ 't', `Relative `],
 				[/* text */ 't', `put`],
 				[/* text */ 't', ` method for writing a double
- value&nbsp;&nbsp;`],
+ value  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -1966,17 +1966,17 @@ DocsCollector.collect('java.nio.ByteBuffer', [
  undefined, and its byte order will be
 
  `],
-					[/* external link */ 'a', `ByteOrder.html#BIG_ENDIAN`, `BIG_ENDIAN`],
+					[/* reference */ 'r', `.ByteOrder#BIG_ENDIAN`],
 					[/* text */ 't', `.
 
 
 
 
  Its `],
-					[/* reference */ 'r', `backing array`],
+					[/* reference */ 'r', `#array()`, `backing array`],
 					[/* text */ 't', ` will be the given array, and its
  `],
-					[/* reference */ 'r', `array offset`],
+					[/* reference */ 'r', `#arrayOffset()`, `array offset`],
 					[/* text */ 't', ` will be zero.  `]
 				]]
 			],
@@ -2010,17 +2010,17 @@ DocsCollector.collect('java.nio.ByteBuffer', [
  byte order will be
 
  `],
-					[/* external link */ 'a', `ByteOrder.html#BIG_ENDIAN`, `BIG_ENDIAN`],
+					[/* reference */ 'r', `.ByteOrder#BIG_ENDIAN`],
 					[/* text */ 't', `.
 
 
 
 
  Its `],
-					[/* reference */ 'r', `backing array`],
+					[/* reference */ 'r', `#array()`, `backing array`],
 					[/* text */ 't', ` will be the given array, and
  its `],
-					[/* reference */ 'r', `array offset`],
+					[/* reference */ 'r', `#arrayOffset()`, `array offset`],
 					[/* text */ 't', ` will be zero.  `]
 				]]
 			],
@@ -2114,10 +2114,10 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 					[/* text */ 't', ` If this method returns `],
 					[/* inline code block */ 'i', `true`],
 					[/* text */ 't', ` then the `],
-					[/* reference */ 'r', `array`],
+					[/* reference */ 'r', `#array()`, `array`],
 					[/* text */ 't', `
  and `],
-					[/* reference */ 'r', `arrayOffset`],
+					[/* reference */ 'r', `#arrayOffset()`, `arrayOffset`],
 					[/* text */ 't', ` methods may safely be invoked.
  `]
 				]]
@@ -2133,7 +2133,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 		[/* method */ 'array()', [
 			[/* method description */
 				[/* text */ 't', `Returns the byte array that backs this
- buffer&nbsp;&nbsp;`],
+ buffer  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -2144,7 +2144,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Invoke the `],
-					[/* reference */ 'r', `hasArray`],
+					[/* reference */ 'r', `#hasArray()`, `hasArray`],
 					[/* text */ 't', ` method before invoking this
  method in order to ensure that this buffer has an accessible backing
  array.  `]
@@ -2166,7 +2166,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 		[/* method */ 'arrayOffset()', [
 			[/* method description */
 				[/* text */ 't', `Returns the offset within this buffer's backing array of the first
- element of the buffer&nbsp;&nbsp;`],
+ element of the buffer  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -2177,7 +2177,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 					[/* text */ 't', `
  corresponds to array index `],
 					[/* text */ 't', `p`],
-					[/* text */ 't', `&nbsp;+&nbsp;`],
+					[/* text */ 't', ` + `],
 					[/* inline code block */ 'i', `arrayOffset()`],
 					[/* text */ 't', `.
 
@@ -2185,7 +2185,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Invoke the `],
-					[/* reference */ 'r', `hasArray`],
+					[/* reference */ 'r', `#hasArray()`, `hasArray`],
 					[/* text */ 't', ` method before invoking this
  method in order to ensure that this buffer has an accessible backing
  array.  `]
@@ -2256,7 +2256,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method is often used in conjunction with the `],
-					[/* reference */ 'r', `compact`],
+					[/* reference */ 'r', `#compact()`, `compact`],
 					[/* text */ 't', ` method when transferring data from
  one place to another.  `]
 				]]
@@ -2313,7 +2313,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
  undefined, and its byte order will be
 
  `],
-					[/* external link */ 'a', `ByteOrder.html#BIG_ENDIAN`, `BIG_ENDIAN`],
+					[/* reference */ 'r', `.ByteOrder#BIG_ENDIAN`],
 					[/* text */ 't', `.
 
 
@@ -2354,7 +2354,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
  will be
 
  `],
-					[/* external link */ 'a', `ByteOrder.html#BIG_ENDIAN`, `BIG_ENDIAN`],
+					[/* reference */ 'r', `.ByteOrder#BIG_ENDIAN`],
 					[/* text */ 't', `.
 
 
@@ -2368,7 +2368,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 					[/* text */ 't', `The position in this buffer at which the content of the new
           buffer will start; must be non-negative and no larger than
           `],
-					[/* external link */ 'a', `Buffer.html#limit()`, `limit()`]
+					[/* reference */ 'r', `.Buffer#limit()`]
 				]],
 				[/* parameter */ 'length', [/* parameter description */
 					[/* text */ 't', `The number of elements the new buffer will contain; must be
@@ -2409,7 +2409,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 
  and mark values will be identical to those of this buffer, and its byte
  order will be `],
-					[/* external link */ 'a', `ByteOrder.html#BIG_ENDIAN`, `BIG_ENDIAN`],
+					[/* reference */ 'r', `.ByteOrder#BIG_ENDIAN`],
 					[/* text */ 't', `.
 
 
@@ -2433,7 +2433,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 					[/* text */ 't', ` The byte order is used when reading or writing multibyte values, and
  when creating buffers that are views of this byte buffer.  The order of
  a newly-created byte buffer is always `],
-					[/* external link */ 'a', `ByteOrder.html#BIG_ENDIAN`, `BIG_ENDIAN`],
+					[/* reference */ 'r', `.ByteOrder#BIG_ENDIAN`],
 					[/* text */ 't', `.  `]
 				]]
 			],
@@ -2451,10 +2451,10 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 				[/* parameter */ 'bo', [/* parameter description */
 					[/* text */ 't', `The new byte order,
          either `],
-					[/* external link */ 'a', `ByteOrder.html#BIG_ENDIAN`, `BIG_ENDIAN`],
+					[/* reference */ 'r', `.ByteOrder#BIG_ENDIAN`],
 					[/* text */ 't', `
          or `],
-					[/* external link */ 'a', `ByteOrder.html#LITTLE_ENDIAN`, `LITTLE_ENDIAN`]
+					[/* reference */ 'r', `.ByteOrder#LITTLE_ENDIAN`]
 				]]
 			],
 			/* throws */ UDF,
@@ -2467,10 +2467,10 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 				[/* text */ 't', `Finds and returns the relative index of the first mismatch between this
  buffer and a given buffer.  The index is relative to the
  `],
-				[/* external link */ 'a', `Buffer.html#position()`, `position`],
+				[/* reference */ 'r', `.Buffer#position()`],
 				[/* text */ 't', ` of each buffer and will be in the range of
  0 (inclusive) up to the smaller of the `],
-				[/* external link */ 'a', `Buffer.html#remaining()`, `remaining`],
+				[/* reference */ 'r', `.Buffer#remaining()`],
 				[/* text */ 't', `
  elements in each buffer (exclusive).
 
@@ -2506,17 +2506,17 @@ DocsCollector.collect('java.nio.ByteBuffer', [
  initialized to zero, and its byte order will be
 
  `],
-					[/* external link */ 'a', `ByteOrder.html#BIG_ENDIAN`, `BIG_ENDIAN`],
+					[/* reference */ 'r', `.ByteOrder#BIG_ENDIAN`],
 					[/* text */ 't', `.
 
 
 
 
  It will have a `],
-					[/* reference */ 'r', `backing array`],
+					[/* reference */ 'r', `#array()`, `backing array`],
 					[/* text */ 't', `, and its
  `],
-					[/* reference */ 'r', `array offset`],
+					[/* reference */ 'r', `#arrayOffset()`, `array offset`],
 					[/* text */ 't', ` will be zero.`]
 				]]
 			],
@@ -2619,10 +2619,10 @@ DocsCollector.collect('java.nio.ByteBuffer', [
  capacity, its mark will be undefined, each of its elements will be
  initialized to zero, and its byte order will be
  `],
-					[/* external link */ 'a', `ByteOrder.html#BIG_ENDIAN`, `BIG_ENDIAN`],
+					[/* reference */ 'r', `.ByteOrder#BIG_ENDIAN`],
 					[/* text */ 't', `.  Whether or not it has a
  `],
-					[/* reference */ 'r', `backing array`],
+					[/* reference */ 'r', `#hasArray()`, `backing array`],
 					[/* text */ 't', ` is unspecified.`]
 				]]
 			],
@@ -2660,7 +2660,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 
  and mark values will be identical to those of this buffer, and its byte
  order will be `],
-					[/* external link */ 'a', `ByteOrder.html#BIG_ENDIAN`, `BIG_ENDIAN`],
+					[/* reference */ 'r', `.ByteOrder#BIG_ENDIAN`],
 					[/* text */ 't', `.
 
 
@@ -2671,7 +2671,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` If this buffer is itself read-only then this method behaves in
  exactly the same way as the `],
-					[/* reference */ 'r', `duplicate`],
+					[/* reference */ 'r', `#duplicate()`, `duplicate`],
 					[/* text */ 't', ` method.  `]
 				]]
 			],
@@ -2683,7 +2683,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
 		]],
 		[/* method */ 'compact()', [
 			[/* method description */
-				[/* text */ 't', `Compacts this buffer&nbsp;&nbsp;`],
+				[/* text */ 't', `Compacts this buffer  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -2693,23 +2693,23 @@ DocsCollector.collect('java.nio.ByteBuffer', [
  if any, are copied to the beginning of the buffer.  That is, the
  byte at index `],
 					[/* text */ 't', `p`],
-					[/* text */ 't', `&nbsp;=&nbsp;`],
+					[/* text */ 't', ` = `],
 					[/* inline code block */ 'i', `position()`],
 					[/* text */ 't', ` is copied
  to index zero, the byte at index `],
 					[/* text */ 't', `p`],
-					[/* text */ 't', `&nbsp;+&nbsp;1 is copied
+					[/* text */ 't', ` + 1 is copied
  to index one, and so forth until the byte at index
  `],
 					[/* inline code block */ 'i', `limit()`],
-					[/* text */ 't', `&nbsp;-&nbsp;1 is copied to index
+					[/* text */ 't', ` - 1 is copied to index
  `],
 					[/* text */ 't', `n`],
-					[/* text */ 't', `&nbsp;=&nbsp;`],
+					[/* text */ 't', ` = `],
 					[/* inline code block */ 'i', `limit()`],
-					[/* text */ 't', `&nbsp;-&nbsp;`],
+					[/* text */ 't', ` - `],
 					[/* inline code block */ 'i', `1`],
-					[/* text */ 't', `&nbsp;-&nbsp;`],
+					[/* text */ 't', ` - `],
 					[/* text */ 't', `p`],
 					[/* text */ 't', `.
  The buffer's position is then set to `],
@@ -2794,7 +2794,7 @@ DocsCollector.collect('java.nio.ByteBuffer', [
  will be the number of bytes remaining in this buffer or fewer subject to
  alignment, its mark will be undefined, and its byte order will be
  `],
-					[/* external link */ 'a', `ByteOrder.html#BIG_ENDIAN`, `BIG_ENDIAN`],
+					[/* reference */ 'r', `.ByteOrder#BIG_ENDIAN`],
 					[/* text */ 't', `.
 
  The new buffer will be direct if, and only if, this buffer is direct, and

@@ -4,7 +4,7 @@ import {DocsCollector} from '../../../DocsCollector';
 DocsCollector.collect('java.lang.invoke.VarHandle$VarHandleDesc', [
 	[/* class description */
 		[/* text */ 't', `A `],
-		[/* external link */ 'a', `../../../../java.base/java/lang/constant/package-summary.html#nominal`, `nominal descriptor`],
+		[/* text */ 't', `nominal descriptor`],
 		[/* text */ 't', ` for a
  `],
 		[/* reference */ 'r', `java.lang.invoke.VarHandle`],

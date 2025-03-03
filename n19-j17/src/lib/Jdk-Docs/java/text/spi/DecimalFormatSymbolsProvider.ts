@@ -14,7 +14,7 @@ DocsCollector.collect('java.text.spi.DecimalFormatSymbolsProvider', [
 			[/* text */ 't', `The requested `],
 			[/* inline code block */ 'i', `Locale`],
 			[/* text */ 't', ` may contain an `],
-			[/* external link */ 'a', `../../util/Locale.html#def_locale_extension`, `extension`],
+			[/* reference */ 'r', `java.text.Locale#def_locale_extension`],
 			[/* text */ 't', ` for
  specifying the desired numbering system. For example, `],
 			[/* inline code block */ 'i', `"ar-u-nu-arab"`],
@@ -65,7 +65,7 @@ DocsCollector.collect('java.text.spi.DecimalFormatSymbolsProvider', [
 					[/* text */ 't', ` isn't
      one of the locales returned from
      `],
-					[/* external link */ 'a', `../../util/spi/LocaleServiceProvider.html#getAvailableLocales()`, `getAvailableLocales()`],
+					[/* reference */ 'r', `java.text.LocaleServiceProvider#getAvailableLocales()`],
 					[/* text */ 't', `.`]
 				]]
 			],

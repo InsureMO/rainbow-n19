@@ -97,8 +97,6 @@ import './ResourceBundle';
 import './ResourceBundle$Control';
 import './Scanner';
 import './ServiceConfigurationError';
-import './ServiceLoader';
-import './ServiceLoader$Provider';
 import './Set';
 import './SimpleTimeZone';
 import './SortedMap';

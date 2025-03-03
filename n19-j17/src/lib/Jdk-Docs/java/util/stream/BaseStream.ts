@@ -25,7 +25,7 @@ DocsCollector.collect('java.util.stream.BaseStream', [
 		[/* reference */ 'r', `java.util.stream.Stream`],
 		[/* text */ 't', ` and the package documentation
  for `],
-		[/* external link */ 'a', `package-summary.html`, `java.util.stream`],
+		[/* reference */ 'r', `.package-summary`],
 		[/* text */ 't', ` for additional
  specification of streams, stream operations, stream pipelines, and
  parallelism, which governs the behavior of all stream types.`]
@@ -40,7 +40,7 @@ DocsCollector.collect('java.util.stream.BaseStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* external link */ 'a', `package-summary.html#StreamOps`, `terminal operation`],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -57,7 +57,7 @@ DocsCollector.collect('java.util.stream.BaseStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* external link */ 'a', `package-summary.html#StreamOps`, `terminal operation`],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
 					[/* text */ 't', `.
 
  `]
@@ -94,7 +94,7 @@ DocsCollector.collect('java.util.stream.BaseStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is an `],
-					[/* external link */ 'a', `package-summary.html#StreamOps`, `intermediate operation`],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -126,7 +126,7 @@ DocsCollector.collect('java.util.stream.BaseStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is an `],
-					[/* external link */ 'a', `package-summary.html#StreamOps`, `intermediate operation`],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -140,7 +140,7 @@ DocsCollector.collect('java.util.stream.BaseStream', [
 			[/* method description */
 				[/* text */ 't', `Returns an equivalent stream that is
  `],
-				[/* external link */ 'a', `package-summary.html#Ordering`, `unordered`],
+				[/* reference */ 'r', `.package-summary#Ordering`],
 				[/* text */ 't', `.  May return
  itself, either because the stream was already unordered, or because
  the underlying stream state was modified to be unordered.
@@ -148,7 +148,7 @@ DocsCollector.collect('java.util.stream.BaseStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is an `],
-					[/* external link */ 'a', `package-summary.html#StreamOps`, `intermediate operation`],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -162,7 +162,7 @@ DocsCollector.collect('java.util.stream.BaseStream', [
 			[/* method description */
 				[/* text */ 't', `Returns an equivalent stream with an additional close handler.  Close
  handlers are run when the `],
-				[/* reference */ 'r', `close()`],
+				[/* reference */ 'r', `#close()`, `close()`],
 				[/* text */ 't', ` method
  is called on the stream, and are executed in the order they were
  added.  All close handlers are run, even if earlier close handlers throw
@@ -178,7 +178,7 @@ DocsCollector.collect('java.util.stream.BaseStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is an `],
-					[/* external link */ 'a', `package-summary.html#StreamOps`, `intermediate operation`],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
 					[/* text */ 't', `.`]
 				]]
 			],

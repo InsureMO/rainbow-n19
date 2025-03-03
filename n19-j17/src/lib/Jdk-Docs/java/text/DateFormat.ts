@@ -68,7 +68,7 @@ DocsCollector.collect('java.text.DateFormat', [
 		[/* block */ 'b', [
 			[/* text */ 't', `To format a date for a different Locale, specify it in the
  call to `],
-			[/* reference */ 'r', `getDateInstance()`],
+			[/* reference */ 'r', `#getDateInstance(int,java.util.Locale)`, `getDateInstance()`],
 			[/* text */ 't', `.
  `]
 		]],
@@ -81,7 +81,7 @@ DocsCollector.collect('java.text.DateFormat', [
 		[/* block */ 'b', [
 			[/* text */ 't', `If the specified locale contains "ca" (calendar), "rg" (region override),
  and/or "tz" (timezone) `],
-			[/* external link */ 'a', `../util/Locale.html#def_locale_extension`, `Unicode extensions`],
+			[/* reference */ 'r', `java.Locale#def_locale_extension`],
 			[/* text */ 't', `, the calendar, the country and/or the time zone for formatting
  are overridden. If both "ca" and "rg" are specified, the calendar from the "ca"
  extension supersedes the implicit one from the "rg" extension.
@@ -435,7 +435,7 @@ DocsCollector.collect('java.text.DateFormat', [
 					[/* inline code block */ 'i', `Number`],
 					[/* text */ 't', ` representing a
  millisecond offset from the `],
-					[/* external link */ 'a', `../util/Calendar.html#Epoch`, `Epoch`],
+					[/* reference */ 'r', `java.Calendar#Epoch`],
 					[/* text */ 't', `.`]
 				]],
 				[/* parameter */ 'toAppendTo', [/* parameter description */
@@ -603,7 +603,7 @@ DocsCollector.collect('java.text.DateFormat', [
  by this object's format method but can still be parsed as a date, then
  the parse succeeds.  Clients may insist on strict adherence to the
  format by calling `],
-					[/* reference */ 'r', `setLenient(false)`],
+					[/* reference */ 'r', `#setLenient(boolean)`, `setLenient(false)`],
 					[/* text */ 't', `.
 
  `]
@@ -624,7 +624,7 @@ DocsCollector.collect('java.text.DateFormat', [
 					[/* inline code block */ 'i', `TimeZone`],
 					[/* text */ 't', ` value that has previously been set by a call to
  `],
-					[/* reference */ 'r', `setTimeZone`],
+					[/* reference */ 'r', `#setTimeZone(java.util.TimeZone)`, `setTimeZone`],
 					[/* text */ 't', ` may need
  to be restored for further operations.`]
 				]]
@@ -656,7 +656,7 @@ DocsCollector.collect('java.text.DateFormat', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  See the `],
-					[/* reference */ 'r', `parse(String, ParsePosition)`],
+					[/* reference */ 'r', `#parse(java.lang.String,java.text.ParsePosition)`, `parse(String, ParsePosition)`],
 					[/* text */ 't', ` method for more information
  on date parsing.`]
 				]]
@@ -696,7 +696,7 @@ DocsCollector.collect('java.text.DateFormat', [
 				[/* inline code block */ 'i', `Locale`],
 				[/* text */ 't', ` instance equal to
  `],
-				[/* external link */ 'a', `../util/Locale.html#US`, `Locale.US`],
+				[/* reference */ 'r', `java.Locale#US`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -741,7 +741,7 @@ DocsCollector.collect('java.text.DateFormat', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  See the `],
-					[/* reference */ 'r', `parse(String, ParsePosition)`],
+					[/* reference */ 'r', `#parse(java.lang.String,java.text.ParsePosition)`, `parse(String, ParsePosition)`],
 					[/* text */ 't', ` method for more information
  on date parsing.`]
 				]]
@@ -800,13 +800,13 @@ DocsCollector.collect('java.text.DateFormat', [
 			[/* method description */
 				[/* text */ 't', `Gets the date/time formatter with the given date and time
  formatting styles for the default `],
-				[/* external link */ 'a', `../util/Locale.Category.html#FORMAT`, `FORMAT`],
+				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
 				[/* text */ 't', ` locale.
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is equivalent to calling
  `],
-					[/* reference */ 'r', `getDateTimeInstance(dateStyle, timeStyle, Locale.getDefault(Locale.Category.FORMAT))`],
+					[/* reference */ 'r', `#getDateTimeInstance(int,int,java.util.Locale)`, `getDateTimeInstance(dateStyle, timeStyle, Locale.getDefault(Locale.Category.FORMAT))`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -829,13 +829,13 @@ DocsCollector.collect('java.text.DateFormat', [
 			[/* method description */
 				[/* text */ 't', `Gets the date/time formatter with the default formatting style
  for the default `],
-				[/* external link */ 'a', `../util/Locale.Category.html#FORMAT`, `FORMAT`],
+				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
 				[/* text */ 't', ` locale.
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is equivalent to calling
  `],
-					[/* reference */ 'r', `getDateTimeInstance(DEFAULT, DEFAULT, Locale.getDefault(Locale.Category.FORMAT))`],
+					[/* reference */ 'r', `#getDateTimeInstance(int,int,java.util.Locale)`, `getDateTimeInstance(DEFAULT, DEFAULT, Locale.getDefault(Locale.Category.FORMAT))`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -862,7 +862,7 @@ DocsCollector.collect('java.text.DateFormat', [
 					[/* inline code block */ 'i', `TimeZone`],
 					[/* text */ 't', ` set by this method is overwritten by a
  `],
-					[/* reference */ 'r', `setCalendar`],
+					[/* reference */ 'r', `#setCalendar(java.util.Calendar)`, `setCalendar`],
 					[/* text */ 't', ` call.
 
  `]
@@ -917,7 +917,7 @@ DocsCollector.collect('java.text.DateFormat', [
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `This leniency value is overwritten by a call to `],
-					[/* reference */ 'r', `setCalendar()`],
+					[/* reference */ 'r', `#setCalendar(java.util.Calendar)`, `setCalendar()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -977,13 +977,13 @@ DocsCollector.collect('java.text.DateFormat', [
 			[/* method description */
 				[/* text */ 't', `Gets the date formatter with the given formatting style
  for the default `],
-				[/* external link */ 'a', `../util/Locale.Category.html#FORMAT`, `FORMAT`],
+				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
 				[/* text */ 't', ` locale.
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is equivalent to calling
  `],
-					[/* reference */ 'r', `getDateInstance(style, Locale.getDefault(Locale.Category.FORMAT))`],
+					[/* reference */ 'r', `#getDateInstance(int,java.util.Locale)`, `getDateInstance(style, Locale.getDefault(Locale.Category.FORMAT))`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -1002,13 +1002,13 @@ DocsCollector.collect('java.text.DateFormat', [
 			[/* method description */
 				[/* text */ 't', `Gets the date formatter with the default formatting style
  for the default `],
-				[/* external link */ 'a', `../util/Locale.Category.html#FORMAT`, `FORMAT`],
+				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
 				[/* text */ 't', ` locale.
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is equivalent to calling
  `],
-					[/* reference */ 'r', `getDateInstance(DEFAULT, Locale.getDefault(Locale.Category.FORMAT))`],
+					[/* reference */ 'r', `#getDateInstance(int,java.util.Locale)`, `getDateInstance(DEFAULT, Locale.getDefault(Locale.Category.FORMAT))`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -1022,13 +1022,13 @@ DocsCollector.collect('java.text.DateFormat', [
 			[/* method description */
 				[/* text */ 't', `Gets the time formatter with the default formatting style
  for the default `],
-				[/* external link */ 'a', `../util/Locale.Category.html#FORMAT`, `FORMAT`],
+				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
 				[/* text */ 't', ` locale.
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is equivalent to calling
  `],
-					[/* reference */ 'r', `getTimeInstance(DEFAULT, Locale.getDefault(Locale.Category.FORMAT))`],
+					[/* reference */ 'r', `#getTimeInstance(int,java.util.Locale)`, `getTimeInstance(DEFAULT, Locale.getDefault(Locale.Category.FORMAT))`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -1042,13 +1042,13 @@ DocsCollector.collect('java.text.DateFormat', [
 			[/* method description */
 				[/* text */ 't', `Gets the time formatter with the given formatting style
  for the default `],
-				[/* external link */ 'a', `../util/Locale.Category.html#FORMAT`, `FORMAT`],
+				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
 				[/* text */ 't', ` locale.
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is equivalent to calling
  `],
-					[/* reference */ 'r', `getTimeInstance(style, Locale.getDefault(Locale.Category.FORMAT))`],
+					[/* reference */ 'r', `#getTimeInstance(int,java.util.Locale)`, `getTimeInstance(style, Locale.getDefault(Locale.Category.FORMAT))`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -1092,7 +1092,7 @@ DocsCollector.collect('java.text.DateFormat', [
 					[/* text */ 't', `Any `],
 					[/* reference */ 'r', `java.util.TimeZone`],
 					[/* text */ 't', ` and `],
-					[/* reference */ 'r', `leniency`],
+					[/* reference */ 'r', `#isLenient()`, `leniency`],
 					[/* text */ 't', ` values that have previously been set are
  overwritten by `],
 					[/* inline code block */ 'i', `newCalendar`],

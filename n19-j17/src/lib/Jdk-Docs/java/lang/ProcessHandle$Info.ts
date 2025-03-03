@@ -59,9 +59,9 @@ DocsCollector.collect('java.lang.ProcessHandle$Info', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If `],
-					[/* reference */ 'r', `command()`],
+					[/* reference */ 'r', `#command()`, `command()`],
 					[/* text */ 't', ` and  `],
-					[/* reference */ 'r', `arguments()`],
+					[/* reference */ 'r', `#arguments()`, `arguments()`],
 					[/* text */ 't', ` return
  non-empty optionals, this is simply a convenience method which concatenates
  the values of the two functions separated by spaces. Otherwise it will return a

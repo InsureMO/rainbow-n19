@@ -78,7 +78,7 @@ DocsCollector.collect('java.util.TreeSet', [
  object that naturally encapsulates the set.
  If no such object exists, the set should be "wrapped" using the
  `],
-			[/* external link */ 'a', `Collections.html#synchronizedSortedSet(java.util.SortedSet)`, `Collections.synchronizedSortedSet`],
+			[/* reference */ 'r', `.Collections#synchronizedSortedSet(java.util.SortedSet)`],
 			[/* text */ 't', `
  method.  This is best done at creation time, to prevent accidental
  unsynchronized access to the set: `]
@@ -119,7 +119,7 @@ DocsCollector.collect('java.util.TreeSet', [
 		[/* block */ 'b', [
 			[/* text */ 't', `This class is a member of the
  `],
-			[/* external link */ 'a', `../../../java.base/java/util/package-summary.html#CollectionsFramework`, `Java Collections Framework`],
+			[/* text */ 't', `Java Collections Framework`],
 			[/* text */ 't', `.`]
 		]]
 	],
@@ -472,7 +472,7 @@ DocsCollector.collect('java.util.TreeSet', [
 		[/* method */ 'spliterator()', [
 			[/* method description */
 				[/* text */ 't', `Creates a `],
-				[/* external link */ 'a', `Spliterator.html#binding`, `late-binding`],
+				[/* reference */ 'r', `.Spliterator#binding`],
 				[/* text */ 't', `
  and `],
 				[/* text */ 't', `fail-fast`],
@@ -485,15 +485,15 @@ DocsCollector.collect('java.util.TreeSet', [
 					[/* text */ 't', `The `],
 					[/* inline code block */ 'i', `Spliterator`],
 					[/* text */ 't', ` reports `],
-					[/* external link */ 'a', `Spliterator.html#SIZED`, `Spliterator.SIZED`],
+					[/* reference */ 'r', `.Spliterator#SIZED`],
 					[/* text */ 't', `,
  `],
-					[/* external link */ 'a', `Spliterator.html#DISTINCT`, `Spliterator.DISTINCT`],
+					[/* reference */ 'r', `.Spliterator#DISTINCT`],
 					[/* text */ 't', `, `],
-					[/* external link */ 'a', `Spliterator.html#SORTED`, `Spliterator.SORTED`],
+					[/* reference */ 'r', `.Spliterator#SORTED`],
 					[/* text */ 't', `, and
  `],
-					[/* external link */ 'a', `Spliterator.html#ORDERED`, `Spliterator.ORDERED`],
+					[/* reference */ 'r', `.Spliterator#ORDERED`],
 					[/* text */ 't', `.  Overriding implementations should document
  the reporting of additional characteristic values.
 
@@ -502,12 +502,12 @@ DocsCollector.collect('java.util.TreeSet', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The spliterator's comparator (see
  `],
-					[/* external link */ 'a', `Spliterator.html#getComparator()`, `Spliterator.getComparator()`],
+					[/* reference */ 'r', `.Spliterator#getComparator()`],
 					[/* text */ 't', `) is `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` if
  the tree set's comparator (see `],
-					[/* reference */ 'r', `comparator()`],
+					[/* reference */ 'r', `#comparator()`, `comparator()`],
 					[/* text */ 't', `) is `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', `.
@@ -1225,7 +1225,7 @@ DocsCollector.collect('java.util.TreeSet', [
 					[/* block */ 'b', [
 						[/* text */ 't', `The returned set has an ordering equivalent to
  `],
-						[/* external link */ 'a', `Collections.html#reverseOrder(java.util.Comparator)`, `Collections.reverseOrder`],
+						[/* reference */ 'r', `.Collections#reverseOrder(java.util.Comparator)`],
 						[/* inline code block */ 'i', `(comparator())`],
 						[/* text */ 't', `.
  The expression `],

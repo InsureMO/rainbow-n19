@@ -4,7 +4,7 @@ import {DocsCollector} from '../../../DocsCollector';
 DocsCollector.collect('java.lang.constant.DirectMethodHandleDesc', [
 	[/* class description */
 		[/* text */ 't', `A `],
-		[/* external link */ 'a', `package-summary.html#nominal`, `nominal descriptor`],
+		[/* reference */ 'r', `.package-summary#nominal`],
 		[/* text */ 't', ` for a direct
  `],
 		[/* reference */ 'r', `java.lang.invoke.MethodHandle`],
@@ -80,7 +80,7 @@ DocsCollector.collect('java.lang.constant.DirectMethodHandleDesc', [
  a method type descriptor string (for methods and constructors), or a field
  descriptor string (for field access method handles).  The lookup descriptor
  string is in the same format as accepted by `],
-				[/* external link */ 'a', `MethodHandleDesc.html#of(java.lang.constant.DirectMethodHandleDesc.Kind,java.lang.constant.ClassDesc,java.lang.String,java.lang.String)`, `MethodHandleDesc.of(Kind, ClassDesc, String, String)`],
+				[/* reference */ 'r', `.MethodHandleDesc#of(java.lang.constant.DirectMethodHandleDesc.Kind,java.lang.constant.ClassDesc,java.lang.String,java.lang.String)`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,

@@ -42,7 +42,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandleProxies', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The interface must be public and not `],
-					[/* external link */ 'a', `../Class.html#isSealed()`, `sealed`],
+					[/* reference */ 'r', `java.Class#isSealed()`],
 					[/* text */ 't', `.
  No additional access checks are performed.
  `]
@@ -116,7 +116,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandleProxies', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  Like `],
-					[/* external link */ 'a', `../Integer.html#valueOf(java.lang.String,int)`, `Integer.valueOf`],
+					[/* reference */ 'r', `java.Integer#valueOf(java.lang.String,int)`],
 					[/* text */ 't', `,
  `],
 					[/* inline code block */ 'i', `asInterfaceInstance`],
@@ -128,7 +128,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandleProxies', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  Because of the possibility of `],
-					[/* external link */ 'a', `../reflect/Method.html#isBridge()`, `bridge methods`],
+					[/* reference */ 'r', `java.Method#isBridge()`],
 					[/* text */ 't', `
  and other corner cases, the interface may also have several abstract methods
  with the same name but having distinct descriptors (types of returns and parameters).
@@ -184,7 +184,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandleProxies', [
 		[/* method */ 'isWrapperInstance(java.lang.Object)', [
 			[/* method description */
 				[/* text */ 't', `Determines if the given object was produced by a call to `],
-				[/* reference */ 'r', `asInterfaceInstance`],
+				[/* reference */ 'r', `#asInterfaceInstance(java.lang.Class,java.lang.invoke.MethodHandle)`, `asInterfaceInstance`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -205,10 +205,10 @@ DocsCollector.collect('java.lang.invoke.MethodHandleProxies', [
  The object `],
 				[/* inline code block */ 'i', `x`],
 				[/* text */ 't', ` must have been produced by a call to `],
-				[/* reference */ 'r', `asInterfaceInstance`],
+				[/* reference */ 'r', `#asInterfaceInstance(java.lang.Class,java.lang.invoke.MethodHandle)`, `asInterfaceInstance`],
 				[/* text */ 't', `.
  This requirement may be tested via `],
-				[/* reference */ 'r', `isWrapperInstance`],
+				[/* reference */ 'r', `#isWrapperInstance(java.lang.Object)`, `isWrapperInstance`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -231,10 +231,10 @@ DocsCollector.collect('java.lang.invoke.MethodHandleProxies', [
  The object `],
 				[/* inline code block */ 'i', `x`],
 				[/* text */ 't', ` must have been produced by a call to `],
-				[/* reference */ 'r', `asInterfaceInstance`],
+				[/* reference */ 'r', `#asInterfaceInstance(java.lang.Class,java.lang.invoke.MethodHandle)`, `asInterfaceInstance`],
 				[/* text */ 't', `.
  This requirement may be tested via `],
-				[/* reference */ 'r', `isWrapperInstance`],
+				[/* reference */ 'r', `#isWrapperInstance(java.lang.Object)`, `isWrapperInstance`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */

@@ -111,10 +111,7 @@ DocsCollector.collect('java.text.BreakIterator', [
 
  `]
 		]],
-		[/* block */ 'b', [
-			[/* text */ 't', `Examples`],
-			[/* text */ 't', `:`]
-		]],
+		[/* block */ 'b', `Examples`],
 		[/* block */ 'b', `
  Creating and using text boundaries:
  `],
@@ -398,7 +395,7 @@ DocsCollector.collect('java.text.BreakIterator', [
 				[/* inline code block */ 'i', `Locale`],
 				[/* text */ 't', `
  instance equal to `],
-				[/* external link */ 'a', `../util/Locale.html#US`, `Locale.US`],
+				[/* reference */ 'r', `java.Locale#US`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -452,7 +449,7 @@ DocsCollector.collect('java.text.BreakIterator', [
 				[/* inline code block */ 'i', `BreakIterator`],
 				[/* text */ 't', ` instance
  for `],
-				[/* external link */ 'a', `BreakIterator.html#word`, `word breaks`],
+				[/* reference */ 'r', `.BreakIterator#word`],
 				[/* text */ 't', `
  for the given locale.`]
 			],
@@ -478,10 +475,10 @@ DocsCollector.collect('java.text.BreakIterator', [
 				[/* inline code block */ 'i', `BreakIterator`],
 				[/* text */ 't', ` instance
  for `],
-				[/* external link */ 'a', `BreakIterator.html#word`, `word breaks`],
+				[/* reference */ 'r', `.BreakIterator#word`],
 				[/* text */ 't', `
  for the `],
-				[/* external link */ 'a', `../util/Locale.html#getDefault()`, `default locale`],
+				[/* reference */ 'r', `java.Locale#getDefault()`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -496,7 +493,7 @@ DocsCollector.collect('java.text.BreakIterator', [
 				[/* inline code block */ 'i', `BreakIterator`],
 				[/* text */ 't', ` instance
  for `],
-				[/* external link */ 'a', `BreakIterator.html#line`, `line breaks`],
+				[/* reference */ 'r', `.BreakIterator#line`],
 				[/* text */ 't', `
  for the given locale.`]
 			],
@@ -522,10 +519,10 @@ DocsCollector.collect('java.text.BreakIterator', [
 				[/* inline code block */ 'i', `BreakIterator`],
 				[/* text */ 't', ` instance
  for `],
-				[/* external link */ 'a', `BreakIterator.html#line`, `line breaks`],
+				[/* reference */ 'r', `.BreakIterator#line`],
 				[/* text */ 't', `
  for the `],
-				[/* external link */ 'a', `../util/Locale.html#getDefault()`, `default locale`],
+				[/* reference */ 'r', `java.Locale#getDefault()`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -540,7 +537,7 @@ DocsCollector.collect('java.text.BreakIterator', [
 				[/* inline code block */ 'i', `BreakIterator`],
 				[/* text */ 't', ` instance
  for `],
-				[/* external link */ 'a', `BreakIterator.html#character`, `character breaks`],
+				[/* reference */ 'r', `.BreakIterator#character`],
 				[/* text */ 't', `
  for the given locale.`]
 			],
@@ -566,10 +563,10 @@ DocsCollector.collect('java.text.BreakIterator', [
 				[/* inline code block */ 'i', `BreakIterator`],
 				[/* text */ 't', ` instance
  for `],
-				[/* external link */ 'a', `BreakIterator.html#character`, `character breaks`],
+				[/* reference */ 'r', `.BreakIterator#character`],
 				[/* text */ 't', `
  for the `],
-				[/* external link */ 'a', `../util/Locale.html#getDefault()`, `default locale`],
+				[/* reference */ 'r', `java.Locale#getDefault()`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -584,10 +581,10 @@ DocsCollector.collect('java.text.BreakIterator', [
 				[/* inline code block */ 'i', `BreakIterator`],
 				[/* text */ 't', ` instance
  for `],
-				[/* external link */ 'a', `BreakIterator.html#sentence`, `sentence breaks`],
+				[/* reference */ 'r', `.BreakIterator#sentence`],
 				[/* text */ 't', `
  for the `],
-				[/* external link */ 'a', `../util/Locale.html#getDefault()`, `default locale`],
+				[/* reference */ 'r', `java.Locale#getDefault()`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -602,7 +599,7 @@ DocsCollector.collect('java.text.BreakIterator', [
 				[/* inline code block */ 'i', `BreakIterator`],
 				[/* text */ 't', ` instance
  for `],
-				[/* external link */ 'a', `BreakIterator.html#sentence`, `sentence breaks`],
+				[/* reference */ 'r', `.BreakIterator#sentence`],
 				[/* text */ 't', `
  for the given locale.`]
 			],

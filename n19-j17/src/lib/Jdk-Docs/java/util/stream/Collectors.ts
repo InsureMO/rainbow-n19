@@ -135,7 +135,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
  control over the returned `],
 				[/* inline code block */ 'i', `List`],
 				[/* text */ 't', ` is required, use `],
-				[/* reference */ 'r', `toCollection(Supplier)`],
+				[/* reference */ 'r', `#toCollection(java.util.function.Supplier)`, `toCollection(Supplier)`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -163,13 +163,13 @@ DocsCollector.collect('java.util.stream.Collectors', [
 				[/* block */ 'b', [
 					[/* text */ 't', `If the mapped keys contain duplicates (according to
  `],
-					[/* external link */ 'a', `../../lang/Object.html#equals(java.lang.Object)`, `Object.equals(Object)`],
+					[/* reference */ 'r', `java.util.Object#equals(java.lang.Object)`],
 					[/* text */ 't', `), an `],
 					[/* inline code block */ 'i', `IllegalStateException`],
 					[/* text */ 't', ` is
  thrown when the collection operation is performed.  If the mapped keys
  might have duplicates, use `],
-					[/* reference */ 'r', `toMap(Function, Function, BinaryOperator)`],
+					[/* reference */ 'r', `#toMap(java.util.function.Function,java.util.function.Function,java.util.function.BinaryOperator)`, `toMap(Function, Function, BinaryOperator)`],
 					[/* text */ 't', `
  instead.
 
@@ -215,7 +215,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
 				[/* block */ 'b', [
 					[/* text */ 't', `If the mapped
  keys contain duplicates (according to `],
-					[/* external link */ 'a', `../../lang/Object.html#equals(java.lang.Object)`, `Object.equals(Object)`],
+					[/* reference */ 'r', `java.util.Object#equals(java.lang.Object)`],
 					[/* text */ 't', `),
  the value mapping function is applied to each equal element, and the
  results are merged using the provided merging function.  The `],
@@ -235,7 +235,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
 					[/* text */ 't', `a merge function, used to resolve collisions between
                       values associated with the same key, as supplied
                       to `],
-					[/* external link */ 'a', `../Map.html#merge(K,V,java.util.function.BiFunction)`, `Map.merge(Object, Object, BiFunction)`]
+					[/* reference */ 'r', `java.Map#merge(K,V,java.util.function.BiFunction)`]
 				]],
 				[/* parameter */ 'mapFactory', [/* parameter description */
 					[/* text */ 't', `a supplier providing a new empty `],
@@ -271,7 +271,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
 				[/* block */ 'b', [
 					[/* text */ 't', `If the mapped
  keys contain duplicates (according to `],
-					[/* external link */ 'a', `../../lang/Object.html#equals(java.lang.Object)`, `Object.equals(Object)`],
+					[/* reference */ 'r', `java.util.Object#equals(java.lang.Object)`],
 					[/* text */ 't', `),
  the value mapping function is applied to each equal element, and the
  results are merged using the provided merging function.
@@ -296,7 +296,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
 					[/* text */ 't', `a merge function, used to resolve collisions between
                       values associated with the same key, as supplied
                       to `],
-					[/* external link */ 'a', `../Map.html#merge(K,V,java.util.function.BiFunction)`, `Map.merge(Object, Object, BiFunction)`]
+					[/* reference */ 'r', `java.Map#merge(K,V,java.util.function.BiFunction)`]
 				]]
 			],
 			/* throws */ UDF,
@@ -327,13 +327,13 @@ DocsCollector.collect('java.util.stream.Collectors', [
 				[/* inline code block */ 'i', `Set`],
 				[/* text */ 't', ` is required, use
  `],
-				[/* reference */ 'r', `toCollection(Supplier)`],
+				[/* reference */ 'r', `#toCollection(java.util.function.Supplier)`, `toCollection(Supplier)`],
 				[/* text */ 't', `.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is an `],
-					[/* external link */ 'a', `Collector.Characteristics.html#UNORDERED`, `unordered`],
+					[/* reference */ 'r', `.Collector.Characteristics#UNORDERED`],
 					[/* text */ 't', `
  Collector.`]
 				]]
@@ -574,7 +574,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
 				[/* inline code block */ 'i', `BinaryOperator`],
 				[/* text */ 't', `. This is a generalization of
  `],
-				[/* reference */ 'r', `reducing(Object, BinaryOperator)`],
+				[/* reference */ 'r', `#reducing(T,java.util.function.BinaryOperator)`, `reducing(Object, BinaryOperator)`],
 				[/* text */ 't', ` which allows a transformation
  of the elements before reduction.`]
 			],
@@ -806,10 +806,10 @@ DocsCollector.collect('java.util.stream.Collectors', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* external link */ 'a', `Collector.Characteristics.html#CONCURRENT`, `concurrent`],
+					[/* reference */ 'r', `.Collector.Characteristics#CONCURRENT`],
 					[/* text */ 't', ` and
  `],
-					[/* external link */ 'a', `Collector.Characteristics.html#UNORDERED`, `unordered`],
+					[/* reference */ 'r', `.Collector.Characteristics#UNORDERED`],
 					[/* text */ 't', ` Collector.
 
  `]
@@ -883,10 +883,10 @@ DocsCollector.collect('java.util.stream.Collectors', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* external link */ 'a', `Collector.Characteristics.html#CONCURRENT`, `concurrent`],
+					[/* reference */ 'r', `.Collector.Characteristics#CONCURRENT`],
 					[/* text */ 't', ` and
  `],
-					[/* external link */ 'a', `Collector.Characteristics.html#UNORDERED`, `unordered`],
+					[/* reference */ 'r', `.Collector.Characteristics#UNORDERED`],
 					[/* text */ 't', ` Collector.
 
  `]
@@ -957,10 +957,10 @@ DocsCollector.collect('java.util.stream.Collectors', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* external link */ 'a', `Collector.Characteristics.html#CONCURRENT`, `concurrent`],
+					[/* reference */ 'r', `.Collector.Characteristics#CONCURRENT`],
 					[/* text */ 't', ` and
  `],
-					[/* external link */ 'a', `Collector.Characteristics.html#UNORDERED`, `unordered`],
+					[/* reference */ 'r', `.Collector.Characteristics#UNORDERED`],
 					[/* text */ 't', ` Collector.
 
  `]
@@ -1011,7 +1011,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
 				[/* inline code block */ 'i', `Collector`],
 				[/* text */ 't', ` to perform an additional finishing
  transformation.  For example, one could adapt the `],
-				[/* reference */ 'r', `toList()`],
+				[/* reference */ 'r', `#toList()`, `toList()`],
 				[/* text */ 't', `
  collector to always produce an immutable list with:
  `],
@@ -1049,14 +1049,14 @@ DocsCollector.collect('java.util.stream.Collectors', [
 				[/* block */ 'b', [
 					[/* text */ 't', `If the mapped keys contain duplicates (according to
  `],
-					[/* external link */ 'a', `../../lang/Object.html#equals(java.lang.Object)`, `Object.equals(Object)`],
+					[/* reference */ 'r', `java.util.Object#equals(java.lang.Object)`],
 					[/* text */ 't', `), an `],
 					[/* inline code block */ 'i', `IllegalStateException`],
 					[/* text */ 't', ` is
  thrown when the collection operation is performed.  If the mapped keys
  may have duplicates, use
  `],
-					[/* reference */ 'r', `toConcurrentMap(Function, Function, BinaryOperator)`],
+					[/* reference */ 'r', `#toConcurrentMap(java.util.function.Function,java.util.function.Function,java.util.function.BinaryOperator)`, `toConcurrentMap(Function, Function, BinaryOperator)`],
 					[/* text */ 't', ` instead.
 
  `]
@@ -1101,7 +1101,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `If the mapped keys contain duplicates (according to `],
-					[/* external link */ 'a', `../../lang/Object.html#equals(java.lang.Object)`, `Object.equals(Object)`],
+					[/* reference */ 'r', `java.util.Object#equals(java.lang.Object)`],
 					[/* text */ 't', `),
  the value mapping function is applied to each equal element, and the
  results are merged using the provided merging function.
@@ -1126,7 +1126,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
 					[/* text */ 't', `a merge function, used to resolve collisions between
                       values associated with the same key, as supplied
                       to `],
-					[/* external link */ 'a', `../Map.html#merge(K,V,java.util.function.BiFunction)`, `Map.merge(Object, Object, BiFunction)`]
+					[/* reference */ 'r', `java.Map#merge(K,V,java.util.function.BiFunction)`]
 				]]
 			],
 			/* throws */ UDF,
@@ -1155,7 +1155,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `If the mapped keys contain duplicates (according to `],
-					[/* external link */ 'a', `../../lang/Object.html#equals(java.lang.Object)`, `Object.equals(Object)`],
+					[/* reference */ 'r', `java.util.Object#equals(java.lang.Object)`],
 					[/* text */ 't', `),
  the value mapping function is applied to each equal element, and the
  results are merged using the provided merging function.  The
@@ -1167,10 +1167,10 @@ DocsCollector.collect('java.util.stream.Collectors', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* external link */ 'a', `Collector.Characteristics.html#CONCURRENT`, `concurrent`],
+					[/* reference */ 'r', `.Collector.Characteristics#CONCURRENT`],
 					[/* text */ 't', ` and
  `],
-					[/* external link */ 'a', `Collector.Characteristics.html#UNORDERED`, `unordered`],
+					[/* reference */ 'r', `.Collector.Characteristics#UNORDERED`],
 					[/* text */ 't', ` Collector.`]
 				]]
 			],
@@ -1185,7 +1185,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
 					[/* text */ 't', `a merge function, used to resolve collisions between
                       values associated with the same key, as supplied
                       to `],
-					[/* external link */ 'a', `../Map.html#merge(K,V,java.util.function.BiFunction)`, `Map.merge(Object, Object, BiFunction)`]
+					[/* reference */ 'r', `java.Map#merge(K,V,java.util.function.BiFunction)`]
 				]],
 				[/* parameter */ 'mapFactory', [/* parameter description */
 					[/* text */ 't', `a supplier providing a new empty `],
@@ -1243,7 +1243,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
 				[/* inline code block */ 'i', `Collector`],
 				[/* text */ 't', ` that accumulates the input elements into an
  `],
-				[/* external link */ 'a', `../List.html#unmodifiable`, `unmodifiable List`],
+				[/* reference */ 'r', `java.List#unmodifiable`],
 				[/* text */ 't', ` in encounter
  order. The returned Collector disallows null values and will throw
  `],
@@ -1257,7 +1257,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
 				[/* inline code block */ 'i', `Collector`],
 				[/* text */ 't', ` that accumulates the input elements into an
  `],
-				[/* external link */ 'a', `../List.html#unmodifiable`, `unmodifiable List`],
+				[/* reference */ 'r', `java.List#unmodifiable`],
 				[/* text */ 't', ` in encounter order`]
 			]
 		]],
@@ -1267,7 +1267,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
 				[/* inline code block */ 'i', `Collector`],
 				[/* text */ 't', ` that accumulates the input elements into an
  `],
-				[/* external link */ 'a', `../Set.html#unmodifiable`, `unmodifiable Set`],
+				[/* reference */ 'r', `java.Set#unmodifiable`],
 				[/* text */ 't', `. The returned
  Collector disallows null values and will throw `],
 				[/* inline code block */ 'i', `NullPointerException`],
@@ -1278,7 +1278,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is an `],
-					[/* external link */ 'a', `Collector.Characteristics.html#UNORDERED`, `unordered`],
+					[/* reference */ 'r', `.Collector.Characteristics#UNORDERED`],
 					[/* text */ 't', `
  Collector.`]
 				]]
@@ -1290,7 +1290,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
 				[/* inline code block */ 'i', `Collector`],
 				[/* text */ 't', ` that accumulates the input elements into an
  `],
-				[/* external link */ 'a', `../Set.html#unmodifiable`, `unmodifiable Set`]
+				[/* reference */ 'r', `java.Set#unmodifiable`]
 			]
 		]],
 		[/* method */ 'mapping(java.util.function.Function,java.util.stream.Collector)', [
@@ -1335,7 +1335,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
 				[/* text */ 't', ` covering zero or more
  output elements that are then accumulated downstream.  Each mapped stream
  is `],
-				[/* external link */ 'a', `BaseStream.html#close()`, `closed`],
+				[/* reference */ 'r', `.BaseStream#close()`],
 				[/* text */ 't', ` after its contents
  have been placed downstream.  (If a mapped stream is `],
 				[/* inline code block */ 'i', `null`],
@@ -1544,7 +1544,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
 				[/* inline code block */ 'i', `Collector`],
 				[/* text */ 't', ` that accumulates the input elements into an
  `],
-				[/* external link */ 'a', `../Map.html#unmodifiable`, `unmodifiable Map`],
+				[/* reference */ 'r', `java.Map#unmodifiable`],
 				[/* text */ 't', `,
  whose keys and values are the result of applying the provided
  mapping functions to the input elements.
@@ -1553,13 +1553,13 @@ DocsCollector.collect('java.util.stream.Collectors', [
 				[/* block */ 'b', [
 					[/* text */ 't', `If the mapped keys contain duplicates (according to
  `],
-					[/* external link */ 'a', `../../lang/Object.html#equals(java.lang.Object)`, `Object.equals(Object)`],
+					[/* reference */ 'r', `java.util.Object#equals(java.lang.Object)`],
 					[/* text */ 't', `), an `],
 					[/* inline code block */ 'i', `IllegalStateException`],
 					[/* text */ 't', ` is
  thrown when the collection operation is performed.  If the mapped keys
  might have duplicates, use `],
-					[/* reference */ 'r', `toUnmodifiableMap(Function, Function, BinaryOperator)`],
+					[/* reference */ 'r', `#toUnmodifiableMap(java.util.function.Function,java.util.function.Function,java.util.function.BinaryOperator)`, `toUnmodifiableMap(Function, Function, BinaryOperator)`],
 					[/* text */ 't', `
  to handle merging of the values.
 
@@ -1590,7 +1590,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
 				[/* inline code block */ 'i', `Collector`],
 				[/* text */ 't', ` that accumulates the input elements into an
  `],
-				[/* external link */ 'a', `../Map.html#unmodifiable`, `unmodifiable Map`],
+				[/* reference */ 'r', `java.Map#unmodifiable`],
 				[/* text */ 't', `, whose keys and values
  are the result of applying the provided mapping functions to the input elements`]
 			]
@@ -1601,7 +1601,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
 				[/* inline code block */ 'i', `Collector`],
 				[/* text */ 't', ` that accumulates the input elements into an
  `],
-				[/* external link */ 'a', `../Map.html#unmodifiable`, `unmodifiable Map`],
+				[/* reference */ 'r', `java.Map#unmodifiable`],
 				[/* text */ 't', `,
  whose keys and values are the result of applying the provided
  mapping functions to the input elements.
@@ -1610,7 +1610,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
 				[/* block */ 'b', [
 					[/* text */ 't', `If the mapped
  keys contain duplicates (according to `],
-					[/* external link */ 'a', `../../lang/Object.html#equals(java.lang.Object)`, `Object.equals(Object)`],
+					[/* reference */ 'r', `java.util.Object#equals(java.lang.Object)`],
 					[/* text */ 't', `),
  the value mapping function is applied to each equal element, and the
  results are merged using the provided merging function.
@@ -1635,7 +1635,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
 					[/* text */ 't', `a merge function, used to resolve collisions between
                       values associated with the same key, as supplied
                       to `],
-					[/* external link */ 'a', `../Map.html#merge(K,V,java.util.function.BiFunction)`, `Map.merge(Object, Object, BiFunction)`],
+					[/* reference */ 'r', `java.Map#merge(K,V,java.util.function.BiFunction)`],
 					[/* text */ 't', `,
                       must be non-null`]
 				]]
@@ -1650,7 +1650,7 @@ DocsCollector.collect('java.util.stream.Collectors', [
 				[/* inline code block */ 'i', `Collector`],
 				[/* text */ 't', ` that accumulates the input elements into an
  `],
-				[/* external link */ 'a', `../Map.html#unmodifiable`, `unmodifiable Map`],
+				[/* reference */ 'r', `java.Map#unmodifiable`],
 				[/* text */ 't', `, whose keys and values
  are the result of applying the provided mapping functions to the input elements`]
 			]
@@ -1750,10 +1750,10 @@ DocsCollector.collect('java.util.stream.Collectors', [
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `The resulting collector is `],
-					[/* external link */ 'a', `Collector.Characteristics.html#UNORDERED`, `Collector.Characteristics.UNORDERED`],
+					[/* reference */ 'r', `.Collector.Characteristics#UNORDERED`],
 					[/* text */ 't', ` if both downstream
  collectors are unordered and `],
-					[/* external link */ 'a', `Collector.Characteristics.html#CONCURRENT`, `Collector.Characteristics.CONCURRENT`],
+					[/* reference */ 'r', `.Collector.Characteristics#CONCURRENT`],
 					[/* text */ 't', ` if both downstream
  collectors are concurrent.`]
 				]]

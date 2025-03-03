@@ -38,7 +38,7 @@ DocsCollector.collect('java.util.AbstractSet', [
 
  This class is a member of the
  `],
-			[/* external link */ 'a', `../../../java.base/java/util/package-summary.html#CollectionsFramework`, `Java Collections Framework`],
+			[/* text */ 't', `Java Collections Framework`],
 			[/* text */ 't', `.`]
 		]]
 	],
@@ -112,7 +112,7 @@ DocsCollector.collect('java.util.AbstractSet', [
 				[/* inline code block */ 'i', `s2`],
 				[/* text */ 't', `, as required by the general contract of
  `],
-				[/* external link */ 'a', `../lang/Object.html#hashCode()`, `Object.hashCode()`],
+				[/* reference */ 'r', `java.Object#hashCode()`],
 				[/* text */ 't', `.
 
  `],
@@ -190,14 +190,14 @@ DocsCollector.collect('java.util.AbstractSet', [
 					[/* text */ 't', `if the class of an element of this set
          is incompatible with the specified collection
  (`],
-					[/* external link */ 'a', `Collection.html#optional-restrictions`, `optional`],
+					[/* reference */ 'r', `.Collection#optional-restrictions`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if this set contains a null element and the
          specified collection does not permit null elements
  (`],
-					[/* external link */ 'a', `Collection.html#optional-restrictions`, `optional`],
+					[/* reference */ 'r', `.Collection#optional-restrictions`],
 					[/* text */ 't', `),
          or if the specified collection is null`]
 				]]

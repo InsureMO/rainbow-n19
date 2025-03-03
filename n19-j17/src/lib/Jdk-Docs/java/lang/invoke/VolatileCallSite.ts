@@ -22,7 +22,7 @@ DocsCollector.collect('java.lang.invoke.VolatileCallSite', [
 			[/* inline code block */ 'i', `MutableCallSite`],
 			[/* text */ 't', `, there is no
  `],
-			[/* external link */ 'a', `MutableCallSite.html#syncAll(java.lang.invoke.MutableCallSite%5B%5D)`, `syncAll operation`],
+			[/* reference */ 'r', `.MutableCallSite#syncAll(java.lang.invoke.MutableCallSite[])`],
 			[/* text */ 't', ` on volatile
  call sites, since every write to a volatile variable is implicitly
  synchronized with reader threads.

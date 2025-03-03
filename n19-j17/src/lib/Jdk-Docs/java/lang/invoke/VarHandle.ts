@@ -22,14 +22,14 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 		[/* list */ 'l', [
 			[/* block */ 'b', [
 				[/* text */ 't', `a `],
-				[/* reference */ 'r', `variable type`],
+				[/* reference */ 'r', `#varType()`, `variable type`],
 				[/* text */ 't', ` T, the type of every variable referenced
  by this VarHandle; and
  `]
 			]],
 			[/* block */ 'b', [
 				[/* text */ 't', `a list of `],
-				[/* reference */ 'r', `coordinate types`],
+				[/* reference */ 'r', `#coordinateTypes()`, `coordinate types`],
 				[/* inline code block */ 'i', `CT1, CT2, ..., CTn`],
 				[/* text */ 't', `, the types of `],
 				[/* text */ 't', `coordinate expressions`],
@@ -60,7 +60,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 			[/* text */ 't', `access mode method`],
 			[/* text */ 't', `, a
  `],
-			[/* external link */ 'a', `MethodHandle.html#sigpoly`, `signature polymorphic`],
+			[/* reference */ 'r', `.MethodHandle#sigpoly`],
 			[/* text */ 't', ` method named
  for the access mode.  When an access mode method is invoked on a VarHandle
  instance, the initial arguments to the invocation are coordinate expressions
@@ -76,7 +76,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 			[/* text */ 't', `The arity and types of arguments to the invocation of an access mode
  method are not checked statically.  Instead, each access mode method
  specifies an `],
-			[/* reference */ 'r', `access mode type`],
+			[/* reference */ 'r', `#accessModeType(java.lang.invoke.VarHandle.AccessMode)`, `access mode type`],
 			[/* text */ 't', `,
  represented as an instance of `],
 			[/* reference */ 'r', `java.lang.invoke.MethodType`],
@@ -95,7 +95,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
  match fails.
 
  For example, the access mode method `],
-			[/* reference */ 'r', `compareAndSet(java.lang.Object...)`],
+			[/* reference */ 'r', `#compareAndSet(java.lang.Object...)`, `compareAndSet(java.lang.Object...)`],
 			[/* text */ 't', ` specifies that if
  its receiver is a VarHandle instance with coordinate types
  `],
@@ -123,7 +123,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 			[/* text */ 't', `.
  Such a VarHandle instance may be produced by the
  `],
-			[/* external link */ 'a', `MethodHandles.html#arrayElementVarHandle(java.lang.Class)`, `array factory method`],
+			[/* reference */ 'r', `.MethodHandles#arrayElementVarHandle(java.lang.Class)`],
 			[/* text */ 't', ` and
  access array elements as follows:
  `]
@@ -174,16 +174,16 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
  The set of corresponding access mode methods belonging to this group
  consists of the methods
  `],
-				[/* reference */ 'r', `get`],
+				[/* reference */ 'r', `#get(java.lang.Object...)`, `get`],
 				[/* text */ 't', `,
  `],
-				[/* reference */ 'r', `getVolatile`],
+				[/* reference */ 'r', `#getVolatile(java.lang.Object...)`, `getVolatile`],
 				[/* text */ 't', `,
  `],
-				[/* reference */ 'r', `getAcquire`],
+				[/* reference */ 'r', `#getAcquire(java.lang.Object...)`, `getAcquire`],
 				[/* text */ 't', `,
  `],
-				[/* reference */ 'r', `getOpaque`],
+				[/* reference */ 'r', `#getOpaque(java.lang.Object...)`, `getOpaque`],
 				[/* text */ 't', `.
  `]
 			]],
@@ -193,16 +193,16 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
  The set of corresponding access mode methods belonging to this group
  consists of the methods
  `],
-				[/* reference */ 'r', `set`],
+				[/* reference */ 'r', `#set(java.lang.Object...)`, `set`],
 				[/* text */ 't', `,
  `],
-				[/* reference */ 'r', `setVolatile`],
+				[/* reference */ 'r', `#setVolatile(java.lang.Object...)`, `setVolatile`],
 				[/* text */ 't', `,
  `],
-				[/* reference */ 'r', `setRelease`],
+				[/* reference */ 'r', `#setRelease(java.lang.Object...)`, `setRelease`],
 				[/* text */ 't', `,
  `],
-				[/* reference */ 'r', `setOpaque`],
+				[/* reference */ 'r', `#setOpaque(java.lang.Object...)`, `setOpaque`],
 				[/* text */ 't', `.
  `]
 			]],
@@ -212,37 +212,37 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
  The set of corresponding access mode methods belonging to this group
  consists of the methods
  `],
-				[/* reference */ 'r', `compareAndSet`],
+				[/* reference */ 'r', `#compareAndSet(java.lang.Object...)`, `compareAndSet`],
 				[/* text */ 't', `,
  `],
-				[/* reference */ 'r', `weakCompareAndSetPlain`],
+				[/* reference */ 'r', `#weakCompareAndSetPlain(java.lang.Object...)`, `weakCompareAndSetPlain`],
 				[/* text */ 't', `,
  `],
-				[/* reference */ 'r', `weakCompareAndSet`],
+				[/* reference */ 'r', `#weakCompareAndSet(java.lang.Object...)`, `weakCompareAndSet`],
 				[/* text */ 't', `,
  `],
-				[/* reference */ 'r', `weakCompareAndSetAcquire`],
+				[/* reference */ 'r', `#weakCompareAndSetAcquire(java.lang.Object...)`, `weakCompareAndSetAcquire`],
 				[/* text */ 't', `,
  `],
-				[/* reference */ 'r', `weakCompareAndSetRelease`],
+				[/* reference */ 'r', `#weakCompareAndSetRelease(java.lang.Object...)`, `weakCompareAndSetRelease`],
 				[/* text */ 't', `,
  `],
-				[/* reference */ 'r', `compareAndExchangeAcquire`],
+				[/* reference */ 'r', `#compareAndExchangeAcquire(java.lang.Object...)`, `compareAndExchangeAcquire`],
 				[/* text */ 't', `,
  `],
-				[/* reference */ 'r', `compareAndExchange`],
+				[/* reference */ 'r', `#compareAndExchange(java.lang.Object...)`, `compareAndExchange`],
 				[/* text */ 't', `,
  `],
-				[/* reference */ 'r', `compareAndExchangeRelease`],
+				[/* reference */ 'r', `#compareAndExchangeRelease(java.lang.Object...)`, `compareAndExchangeRelease`],
 				[/* text */ 't', `,
  `],
-				[/* reference */ 'r', `getAndSet`],
+				[/* reference */ 'r', `#getAndSet(java.lang.Object...)`, `getAndSet`],
 				[/* text */ 't', `,
  `],
-				[/* reference */ 'r', `getAndSetAcquire`],
+				[/* reference */ 'r', `#getAndSetAcquire(java.lang.Object...)`, `getAndSetAcquire`],
 				[/* text */ 't', `,
  `],
-				[/* reference */ 'r', `getAndSetRelease`],
+				[/* reference */ 'r', `#getAndSetRelease(java.lang.Object...)`, `getAndSetRelease`],
 				[/* text */ 't', `.
  `]
 			]],
@@ -253,13 +253,13 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
  The set of corresponding access mode methods belonging to this group
  consists of the methods
  `],
-				[/* reference */ 'r', `getAndAdd`],
+				[/* reference */ 'r', `#getAndAdd(java.lang.Object...)`, `getAndAdd`],
 				[/* text */ 't', `,
  `],
-				[/* reference */ 'r', `getAndAddAcquire`],
+				[/* reference */ 'r', `#getAndAddAcquire(java.lang.Object...)`, `getAndAddAcquire`],
 				[/* text */ 't', `,
  `],
-				[/* reference */ 'r', `getAndAddRelease`],
+				[/* reference */ 'r', `#getAndAddRelease(java.lang.Object...)`, `getAndAddRelease`],
 				[/* text */ 't', `,
  `]
 			]],
@@ -270,31 +270,31 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
  The set of corresponding access mode methods belonging to this group
  consists of the methods
  `],
-				[/* reference */ 'r', `getAndBitwiseOr`],
+				[/* reference */ 'r', `#getAndBitwiseOr(java.lang.Object...)`, `getAndBitwiseOr`],
 				[/* text */ 't', `,
  `],
-				[/* reference */ 'r', `getAndBitwiseOrAcquire`],
+				[/* reference */ 'r', `#getAndBitwiseOrAcquire(java.lang.Object...)`, `getAndBitwiseOrAcquire`],
 				[/* text */ 't', `,
  `],
-				[/* reference */ 'r', `getAndBitwiseOrRelease`],
+				[/* reference */ 'r', `#getAndBitwiseOrRelease(java.lang.Object...)`, `getAndBitwiseOrRelease`],
 				[/* text */ 't', `,
  `],
-				[/* reference */ 'r', `getAndBitwiseAnd`],
+				[/* reference */ 'r', `#getAndBitwiseAnd(java.lang.Object...)`, `getAndBitwiseAnd`],
 				[/* text */ 't', `,
  `],
-				[/* reference */ 'r', `getAndBitwiseAndAcquire`],
+				[/* reference */ 'r', `#getAndBitwiseAndAcquire(java.lang.Object...)`, `getAndBitwiseAndAcquire`],
 				[/* text */ 't', `,
  `],
-				[/* reference */ 'r', `getAndBitwiseAndRelease`],
+				[/* reference */ 'r', `#getAndBitwiseAndRelease(java.lang.Object...)`, `getAndBitwiseAndRelease`],
 				[/* text */ 't', `,
  `],
-				[/* reference */ 'r', `getAndBitwiseXor`],
+				[/* reference */ 'r', `#getAndBitwiseXor(java.lang.Object...)`, `getAndBitwiseXor`],
 				[/* text */ 't', `,
  `],
-				[/* reference */ 'r', `getAndBitwiseXorAcquire`],
+				[/* reference */ 'r', `#getAndBitwiseXorAcquire(java.lang.Object...)`, `getAndBitwiseXorAcquire`],
 				[/* text */ 't', `,
  `],
-				[/* reference */ 'r', `getAndBitwiseXorRelease`],
+				[/* reference */ 'r', `#getAndBitwiseXorRelease(java.lang.Object...)`, `getAndBitwiseXorRelease`],
 				[/* text */ 't', `.
  `]
 			]]
@@ -313,7 +313,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
  any additional undeclared exceptions that may be thrown by access mode
  methods.
  The `],
-			[/* reference */ 'r', `get`],
+			[/* reference */ 'r', `#get(java.lang.Object...)`, `get`],
 			[/* text */ 't', ` access mode is supported for all
  VarHandle instances and the corresponding method never throws
  `],
@@ -377,17 +377,17 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 			[/* inline code block */ 'i', `volatile`],
 			[/* text */ 't', ` fields or VarHandles.  The static methods,
  `],
-			[/* reference */ 'r', `fullFence`],
+			[/* reference */ 'r', `#fullFence()`, `fullFence`],
 			[/* text */ 't', `, `],
-			[/* reference */ 'r', `acquireFence`],
+			[/* reference */ 'r', `#acquireFence()`, `acquireFence`],
 			[/* text */ 't', `,
  `],
-			[/* reference */ 'r', `releaseFence`],
+			[/* reference */ 'r', `#releaseFence()`, `releaseFence`],
 			[/* text */ 't', `, `],
-			[/* reference */ 'r', `loadLoadFence`],
+			[/* reference */ 'r', `#loadLoadFence()`, `loadLoadFence`],
 			[/* text */ 't', ` and
  `],
-			[/* reference */ 'r', `storeStoreFence`],
+			[/* reference */ 'r', `#storeStoreFence()`, `storeStoreFence`],
 			[/* text */ 't', `, can also be used to impose
  constraints.  Their specifications, as is the case for certain access modes,
  are phrased in terms of the lack of "reorderings" -- observable ordering
@@ -497,7 +497,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 			[/* text */ 't', `
  Invocation of an access mode method behaves, by default, as if an invocation of
  `],
-			[/* external link */ 'a', `MethodHandle.html#invoke(java.lang.Object...)`, `MethodHandle.invoke(java.lang.Object...)`],
+			[/* reference */ 'r', `.MethodHandle#invoke(java.lang.Object...)`],
 			[/* text */ 't', `, where the receiving method handle accepts the
  VarHandle instance as the leading argument.  More specifically, the
  following, where `],
@@ -539,14 +539,14 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 		[/* text */ 't', `
  where the desired method type is the symbolic type descriptor and a
  `],
-		[/* external link */ 'a', `MethodHandle.html#invokeExact(java.lang.Object...)`, `MethodHandle.invokeExact(java.lang.Object...)`],
+		[/* reference */ 'r', `.MethodHandle#invokeExact(java.lang.Object...)`],
 		[/* text */ 't', ` is performed, since before invocation of the
  target, the handle will apply reference casts as necessary and box, unbox, or
  widen primitive values, as if by `],
-		[/* external link */ 'a', `MethodHandle.html#asType(java.lang.invoke.MethodType)`, `asType`],
+		[/* reference */ 'r', `.MethodHandle#asType(java.lang.invoke.MethodType)`],
 		[/* text */ 't', ` (see also
  `],
-		[/* external link */ 'a', `MethodHandles.html#varHandleInvoker(java.lang.invoke.VarHandle.AccessMode,java.lang.invoke.MethodType)`, `MethodHandles.varHandleInvoker(java.lang.invoke.VarHandle.AccessMode, java.lang.invoke.MethodType)`],
+		[/* reference */ 'r', `.MethodHandles#varHandleInvoker(java.lang.invoke.VarHandle.AccessMode,java.lang.invoke.MethodType)`],
 		[/* text */ 't', `).
 
  More concisely, such behavior is equivalent to:
@@ -566,10 +566,10 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  A VarHandle's invocation behavior can be adjusted (see `],
-			[/* reference */ 'r', `withInvokeExactBehavior()`],
+			[/* reference */ 'r', `#withInvokeExactBehavior()`, `withInvokeExactBehavior()`],
 			[/* text */ 't', `) such that invocation of
  an access mode method behaves as if invocation of `],
-			[/* external link */ 'a', `MethodHandle.html#invokeExact(java.lang.Object...)`, `MethodHandle.invokeExact(java.lang.Object...)`],
+			[/* reference */ 'r', `.MethodHandle#invokeExact(java.lang.Object...)`],
 			[/* text */ 't', `,
  where the receiving method handle accepts the VarHandle instance as the leading argument.
  More specifically, the following, where `],
@@ -676,7 +676,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
  Unlike with the Core Reflection API, where access is checked every time a
  reflective method is invoked, VarHandle access checking is performed
  `],
-			[/* external link */ 'a', `MethodHandles.Lookup.html#access`, `when the VarHandle is created`],
+			[/* reference */ 'r', `.MethodHandles.Lookup#access`],
 			[/* text */ 't', `.
  Thus, VarHandles to non-public variables, or to variables in non-public
  classes, should generally be kept secret.  They should not be passed to
@@ -694,11 +694,11 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 		[/* text */ 't', `.
  For example, a VarHandle for a non-static field can be obtained
  from `],
-		[/* external link */ 'a', `MethodHandles.Lookup.html#findVarHandle(java.lang.Class,java.lang.String,java.lang.Class)`, `Lookup.findVarHandle`],
+		[/* reference */ 'r', `.MethodHandles.Lookup#findVarHandle(java.lang.Class,java.lang.String,java.lang.Class)`],
 		[/* text */ 't', `.
  There is also a conversion method from Core Reflection API objects,
  `],
-		[/* external link */ 'a', `MethodHandles.Lookup.html#unreflectVarHandle(java.lang.reflect.Field)`, `Lookup.unreflectVarHandle`],
+		[/* reference */ 'r', `.MethodHandles.Lookup#unreflectVarHandle(java.lang.reflect.Field)`],
 		[/* text */ 't', `.
  `],
 		[/* block */ 'b', `
@@ -721,7 +721,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 		[/* text */ 't', ` can
  be converted to a VarHandle using
  `],
-		[/* external link */ 'a', `MethodHandles.Lookup.html#unreflectVarHandle(java.lang.reflect.Field)`, `Lookup.unreflectVarHandle`],
+		[/* reference */ 'r', `.MethodHandles.Lookup#unreflectVarHandle(java.lang.reflect.Field)`],
 		[/* text */ 't', `.
  The resulting VarHandles generally provide more direct and efficient
  access to the underlying fields.
@@ -732,11 +732,11 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
  signature polymorphic access mode methods in this class, they appear as
  ordinary non-polymorphic methods.  Their reflective appearance, as viewed by
  `],
-			[/* external link */ 'a', `../Class.html#getDeclaredMethod(java.lang.String,java.lang.Class...)`, `Class.getDeclaredMethod`],
+			[/* reference */ 'r', `java.Class#getDeclaredMethod(java.lang.String,java.lang.Class...)`],
 			[/* text */ 't', `,
  is unaffected by their special status in this API.
  For example, `],
-			[/* external link */ 'a', `../reflect/Method.html#getModifiers()`, `Method.getModifiers`],
+			[/* reference */ 'r', `java.Method#getModifiers()`],
 			[/* text */ 't', `
  will report exactly those modifier bits required for any similarly
  declared method, including in this case `],
@@ -751,11 +751,11 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 			[/* text */ 't', `
  As with any reflected method, these methods (when reflected) may be invoked
  directly via `],
-			[/* external link */ 'a', `../reflect/Method.html#invoke(java.lang.Object,java.lang.Object...)`, `java.lang.reflect.Method.invoke`],
+			[/* reference */ 'r', `java.Method#invoke(java.lang.Object,java.lang.Object...)`],
 			[/* text */ 't', `,
  via JNI, or indirectly via
  `],
-			[/* external link */ 'a', `MethodHandles.Lookup.html#unreflect(java.lang.reflect.Method)`, `Lookup.unreflect`],
+			[/* reference */ 'r', `.MethodHandles.Lookup#unreflect(java.lang.reflect.Method)`],
 			[/* text */ 't', `.
  However, such reflective calls do not result in access mode method
  invocations.  Such a call, if passed the required argument (a single one, of
@@ -784,18 +784,18 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 			[/* text */ 't', `
  In order to obtain an invoker method for a particular access mode type,
  use `],
-			[/* external link */ 'a', `MethodHandles.html#varHandleExactInvoker(java.lang.invoke.VarHandle.AccessMode,java.lang.invoke.MethodType)`, `MethodHandles.varHandleExactInvoker(java.lang.invoke.VarHandle.AccessMode, java.lang.invoke.MethodType)`],
+			[/* reference */ 'r', `.MethodHandles#varHandleExactInvoker(java.lang.invoke.VarHandle.AccessMode,java.lang.invoke.MethodType)`],
 			[/* text */ 't', ` or
  `],
-			[/* external link */ 'a', `MethodHandles.html#varHandleInvoker(java.lang.invoke.VarHandle.AccessMode,java.lang.invoke.MethodType)`, `MethodHandles.varHandleInvoker(java.lang.invoke.VarHandle.AccessMode, java.lang.invoke.MethodType)`],
+			[/* reference */ 'r', `.MethodHandles#varHandleInvoker(java.lang.invoke.VarHandle.AccessMode,java.lang.invoke.MethodType)`],
 			[/* text */ 't', `.  The
  `],
-			[/* external link */ 'a', `MethodHandles.Lookup.html#findVirtual(java.lang.Class,java.lang.String,java.lang.invoke.MethodType)`, `Lookup.findVirtual`],
+			[/* reference */ 'r', `.MethodHandles.Lookup#findVirtual(java.lang.Class,java.lang.String,java.lang.invoke.MethodType)`],
 			[/* text */ 't', `
  API is also able to return a method handle to call an access mode method for
  any specified access mode type and is equivalent in behavior to
  `],
-			[/* external link */ 'a', `MethodHandles.html#varHandleInvoker(java.lang.invoke.VarHandle.AccessMode,java.lang.invoke.MethodType)`, `MethodHandles.varHandleInvoker(java.lang.invoke.VarHandle.AccessMode, java.lang.invoke.MethodType)`],
+			[/* reference */ 'r', `.MethodHandles#varHandleInvoker(java.lang.invoke.VarHandle.AccessMode,java.lang.invoke.MethodType)`],
 			[/* text */ 't', `.
 
  `]
@@ -1414,7 +1414,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 				[/* inline code block */ 'i', `newValue`],
 				[/* text */ 't', ` with the
  memory semantics of `],
-				[/* reference */ 'r', `setVolatile(java.lang.Object...)`],
+				[/* reference */ 'r', `#setVolatile(java.lang.Object...)`, `setVolatile(java.lang.Object...)`],
 				[/* text */ 't', ` if the variable's current value,
  referred to as the `],
 				[/* text */ 't', `witness value`],
@@ -1425,7 +1425,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 				[/* inline code block */ 'i', `expectedValue`],
 				[/* text */ 't', `, as accessed with the memory semantics of
  `],
-				[/* reference */ 'r', `getVolatile(java.lang.Object...)`],
+				[/* reference */ 'r', `#getVolatile(java.lang.Object...)`, `getVolatile(java.lang.Object...)`],
 				[/* text */ 't', `.
 
  `],
@@ -1485,7 +1485,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 				[/* inline code block */ 'i', `newValue`],
 				[/* text */ 't', ` with the
  memory semantics of `],
-				[/* reference */ 'r', `setVolatile(java.lang.Object...)`],
+				[/* reference */ 'r', `#setVolatile(java.lang.Object...)`, `setVolatile(java.lang.Object...)`],
 				[/* text */ 't', ` if the variable's current value,
  referred to as the `],
 				[/* text */ 't', `witness value`],
@@ -1496,7 +1496,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 				[/* inline code block */ 'i', `expectedValue`],
 				[/* text */ 't', `, as accessed with the memory semantics of
  `],
-				[/* reference */ 'r', `getVolatile(java.lang.Object...)`],
+				[/* reference */ 'r', `#getVolatile(java.lang.Object...)`, `getVolatile(java.lang.Object...)`],
 				[/* text */ 't', `.
 
  `],
@@ -1557,7 +1557,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 				[/* inline code block */ 'i', `newValue`],
 				[/* text */ 't', ` with the
  memory semantics of `],
-				[/* reference */ 'r', `set(java.lang.Object...)`],
+				[/* reference */ 'r', `#set(java.lang.Object...)`, `set(java.lang.Object...)`],
 				[/* text */ 't', ` if the variable's current value,
  referred to as the `],
 				[/* text */ 't', `witness value`],
@@ -1568,7 +1568,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 				[/* inline code block */ 'i', `expectedValue`],
 				[/* text */ 't', `, as accessed with the memory semantics of
  `],
-				[/* reference */ 'r', `getAcquire(java.lang.Object...)`],
+				[/* reference */ 'r', `#getAcquire(java.lang.Object...)`, `getAcquire(java.lang.Object...)`],
 				[/* text */ 't', `.
 
  `],
@@ -1629,7 +1629,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 				[/* inline code block */ 'i', `newValue`],
 				[/* text */ 't', ` with the
  memory semantics of `],
-				[/* reference */ 'r', `setRelease(java.lang.Object...)`],
+				[/* reference */ 'r', `#setRelease(java.lang.Object...)`, `setRelease(java.lang.Object...)`],
 				[/* text */ 't', ` if the variable's current value,
  referred to as the `],
 				[/* text */ 't', `witness value`],
@@ -1640,7 +1640,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 				[/* inline code block */ 'i', `expectedValue`],
 				[/* text */ 't', `, as accessed with the memory semantics of
  `],
-				[/* reference */ 'r', `get(java.lang.Object...)`],
+				[/* reference */ 'r', `#get(java.lang.Object...)`, `get(java.lang.Object...)`],
 				[/* text */ 't', `.
 
  `],
@@ -1701,7 +1701,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 				[/* inline code block */ 'i', `newValue`],
 				[/* text */ 't', `
  with the semantics of `],
-				[/* reference */ 'r', `set(java.lang.Object...)`],
+				[/* reference */ 'r', `#set(java.lang.Object...)`, `set(java.lang.Object...)`],
 				[/* text */ 't', ` if the variable's current value,
  referred to as the `],
 				[/* text */ 't', `witness value`],
@@ -1712,7 +1712,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 				[/* inline code block */ 'i', `expectedValue`],
 				[/* text */ 't', `, as accessed with the memory semantics of
  `],
-				[/* reference */ 'r', `get(java.lang.Object...)`],
+				[/* reference */ 'r', `#get(java.lang.Object...)`, `get(java.lang.Object...)`],
 				[/* text */ 't', `.
 
  `],
@@ -1777,7 +1777,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 				[/* inline code block */ 'i', `newValue`],
 				[/* text */ 't', `
  with the memory semantics of `],
-				[/* reference */ 'r', `setVolatile(java.lang.Object...)`],
+				[/* reference */ 'r', `#setVolatile(java.lang.Object...)`, `setVolatile(java.lang.Object...)`],
 				[/* text */ 't', ` if the variable's
  current value, referred to as the `],
 				[/* text */ 't', `witness value`],
@@ -1788,7 +1788,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 				[/* inline code block */ 'i', `expectedValue`],
 				[/* text */ 't', `, as accessed with the memory semantics of
  `],
-				[/* reference */ 'r', `getVolatile(java.lang.Object...)`],
+				[/* reference */ 'r', `#getVolatile(java.lang.Object...)`, `getVolatile(java.lang.Object...)`],
 				[/* text */ 't', `.
 
  `],
@@ -1853,7 +1853,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 				[/* inline code block */ 'i', `newValue`],
 				[/* text */ 't', `
  with the semantics of `],
-				[/* reference */ 'r', `set(java.lang.Object...)`],
+				[/* reference */ 'r', `#set(java.lang.Object...)`, `set(java.lang.Object...)`],
 				[/* text */ 't', ` if the variable's current value,
  referred to as the `],
 				[/* text */ 't', `witness value`],
@@ -1864,7 +1864,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 				[/* inline code block */ 'i', `expectedValue`],
 				[/* text */ 't', `, as accessed with the memory semantics of
  `],
-				[/* reference */ 'r', `getAcquire(java.lang.Object...)`],
+				[/* reference */ 'r', `#getAcquire(java.lang.Object...)`, `getAcquire(java.lang.Object...)`],
 				[/* text */ 't', `.
 
  `],
@@ -1930,7 +1930,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 				[/* inline code block */ 'i', `newValue`],
 				[/* text */ 't', `
  with the semantics of `],
-				[/* reference */ 'r', `setRelease(java.lang.Object...)`],
+				[/* reference */ 'r', `#setRelease(java.lang.Object...)`, `setRelease(java.lang.Object...)`],
 				[/* text */ 't', ` if the variable's current
  value, referred to as the `],
 				[/* text */ 't', `witness value`],
@@ -1941,7 +1941,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 				[/* inline code block */ 'i', `expectedValue`],
 				[/* text */ 't', `, as accessed with the memory semantics of
  `],
-				[/* reference */ 'r', `get(java.lang.Object...)`],
+				[/* reference */ 'r', `#get(java.lang.Object...)`, `get(java.lang.Object...)`],
 				[/* text */ 't', `.
 
  `],
@@ -2007,11 +2007,11 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 				[/* inline code block */ 'i', `newValue`],
 				[/* text */ 't', ` with the
  memory semantics of `],
-				[/* reference */ 'r', `setVolatile(java.lang.Object...)`],
+				[/* reference */ 'r', `#setVolatile(java.lang.Object...)`, `setVolatile(java.lang.Object...)`],
 				[/* text */ 't', ` and returns the variable's
  previous value, as accessed with the memory semantics of
  `],
-				[/* reference */ 'r', `getVolatile(java.lang.Object...)`],
+				[/* reference */ 'r', `#getVolatile(java.lang.Object...)`, `getVolatile(java.lang.Object...)`],
 				[/* text */ 't', `.
 
  `],
@@ -2070,11 +2070,11 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 				[/* inline code block */ 'i', `newValue`],
 				[/* text */ 't', ` with the
  memory semantics of `],
-				[/* reference */ 'r', `set(java.lang.Object...)`],
+				[/* reference */ 'r', `#set(java.lang.Object...)`, `set(java.lang.Object...)`],
 				[/* text */ 't', ` and returns the variable's
  previous value, as accessed with the memory semantics of
  `],
-				[/* reference */ 'r', `getAcquire(java.lang.Object...)`],
+				[/* reference */ 'r', `#getAcquire(java.lang.Object...)`, `getAcquire(java.lang.Object...)`],
 				[/* text */ 't', `.
 
  `],
@@ -2133,11 +2133,11 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 				[/* inline code block */ 'i', `newValue`],
 				[/* text */ 't', ` with the
  memory semantics of `],
-				[/* reference */ 'r', `setRelease(java.lang.Object...)`],
+				[/* reference */ 'r', `#setRelease(java.lang.Object...)`, `setRelease(java.lang.Object...)`],
 				[/* text */ 't', ` and returns the variable's
  previous value, as accessed with the memory semantics of
  `],
-				[/* reference */ 'r', `get(java.lang.Object...)`],
+				[/* reference */ 'r', `#get(java.lang.Object...)`, `get(java.lang.Object...)`],
 				[/* text */ 't', `.
 
  `],
@@ -2196,11 +2196,11 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 				[/* inline code block */ 'i', `value`],
 				[/* text */ 't', ` to the current value of a variable with
  the memory semantics of `],
-				[/* reference */ 'r', `setVolatile(java.lang.Object...)`],
+				[/* reference */ 'r', `#setVolatile(java.lang.Object...)`, `setVolatile(java.lang.Object...)`],
 				[/* text */ 't', `, and returns the variable's
  previous value, as accessed with the memory semantics of
  `],
-				[/* reference */ 'r', `getVolatile(java.lang.Object...)`],
+				[/* reference */ 'r', `#getVolatile(java.lang.Object...)`, `getVolatile(java.lang.Object...)`],
 				[/* text */ 't', `.
 
  `],
@@ -2259,11 +2259,11 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 				[/* inline code block */ 'i', `value`],
 				[/* text */ 't', ` to the current value of a variable with
  the memory semantics of `],
-				[/* reference */ 'r', `set(java.lang.Object...)`],
+				[/* reference */ 'r', `#set(java.lang.Object...)`, `set(java.lang.Object...)`],
 				[/* text */ 't', `, and returns the variable's
  previous value, as accessed with the memory semantics of
  `],
-				[/* reference */ 'r', `getAcquire(java.lang.Object...)`],
+				[/* reference */ 'r', `#getAcquire(java.lang.Object...)`, `getAcquire(java.lang.Object...)`],
 				[/* text */ 't', `.
 
  `],
@@ -2322,11 +2322,11 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 				[/* inline code block */ 'i', `value`],
 				[/* text */ 't', ` to the current value of a variable with
  the memory semantics of `],
-				[/* reference */ 'r', `setRelease(java.lang.Object...)`],
+				[/* reference */ 'r', `#setRelease(java.lang.Object...)`, `setRelease(java.lang.Object...)`],
 				[/* text */ 't', `, and returns the variable's
  previous value, as accessed with the memory semantics of
  `],
-				[/* reference */ 'r', `get(java.lang.Object...)`],
+				[/* reference */ 'r', `#get(java.lang.Object...)`, `get(java.lang.Object...)`],
 				[/* text */ 't', `.
 
  `],
@@ -2386,11 +2386,11 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 				[/* inline code block */ 'i', `mask`],
 				[/* text */ 't', `
  with the memory semantics of `],
-				[/* reference */ 'r', `setVolatile(java.lang.Object...)`],
+				[/* reference */ 'r', `#setVolatile(java.lang.Object...)`, `setVolatile(java.lang.Object...)`],
 				[/* text */ 't', ` and returns the
  variable's previous value, as accessed with the memory semantics of
  `],
-				[/* reference */ 'r', `getVolatile(java.lang.Object...)`],
+				[/* reference */ 'r', `#getVolatile(java.lang.Object...)`, `getVolatile(java.lang.Object...)`],
 				[/* text */ 't', `.
 
  `],
@@ -2458,11 +2458,11 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 				[/* inline code block */ 'i', `mask`],
 				[/* text */ 't', `
  with the memory semantics of `],
-				[/* reference */ 'r', `set(java.lang.Object...)`],
+				[/* reference */ 'r', `#set(java.lang.Object...)`, `set(java.lang.Object...)`],
 				[/* text */ 't', ` and returns the
  variable's previous value, as accessed with the memory semantics of
  `],
-				[/* reference */ 'r', `getAcquire(java.lang.Object...)`],
+				[/* reference */ 'r', `#getAcquire(java.lang.Object...)`, `getAcquire(java.lang.Object...)`],
 				[/* text */ 't', `.
 
  `],
@@ -2530,11 +2530,11 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 				[/* inline code block */ 'i', `mask`],
 				[/* text */ 't', `
  with the memory semantics of `],
-				[/* reference */ 'r', `setRelease(java.lang.Object...)`],
+				[/* reference */ 'r', `#setRelease(java.lang.Object...)`, `setRelease(java.lang.Object...)`],
 				[/* text */ 't', ` and returns the
  variable's previous value, as accessed with the memory semantics of
  `],
-				[/* reference */ 'r', `get(java.lang.Object...)`],
+				[/* reference */ 'r', `#get(java.lang.Object...)`, `get(java.lang.Object...)`],
 				[/* text */ 't', `.
 
  `],
@@ -2602,11 +2602,11 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 				[/* inline code block */ 'i', `mask`],
 				[/* text */ 't', `
  with the memory semantics of `],
-				[/* reference */ 'r', `setVolatile(java.lang.Object...)`],
+				[/* reference */ 'r', `#setVolatile(java.lang.Object...)`, `setVolatile(java.lang.Object...)`],
 				[/* text */ 't', ` and returns the
  variable's previous value, as accessed with the memory semantics of
  `],
-				[/* reference */ 'r', `getVolatile(java.lang.Object...)`],
+				[/* reference */ 'r', `#getVolatile(java.lang.Object...)`, `getVolatile(java.lang.Object...)`],
 				[/* text */ 't', `.
 
  `],
@@ -2674,11 +2674,11 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 				[/* inline code block */ 'i', `mask`],
 				[/* text */ 't', `
  with the memory semantics of `],
-				[/* reference */ 'r', `set(java.lang.Object...)`],
+				[/* reference */ 'r', `#set(java.lang.Object...)`, `set(java.lang.Object...)`],
 				[/* text */ 't', ` and returns the
  variable's previous value, as accessed with the memory semantics of
  `],
-				[/* reference */ 'r', `getAcquire(java.lang.Object...)`],
+				[/* reference */ 'r', `#getAcquire(java.lang.Object...)`, `getAcquire(java.lang.Object...)`],
 				[/* text */ 't', `.
 
  `],
@@ -2746,11 +2746,11 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 				[/* inline code block */ 'i', `mask`],
 				[/* text */ 't', `
  with the memory semantics of `],
-				[/* reference */ 'r', `setRelease(java.lang.Object...)`],
+				[/* reference */ 'r', `#setRelease(java.lang.Object...)`, `setRelease(java.lang.Object...)`],
 				[/* text */ 't', ` and returns the
  variable's previous value, as accessed with the memory semantics of
  `],
-				[/* reference */ 'r', `get(java.lang.Object...)`],
+				[/* reference */ 'r', `#get(java.lang.Object...)`, `get(java.lang.Object...)`],
 				[/* text */ 't', `.
 
  `],
@@ -2818,11 +2818,11 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 				[/* inline code block */ 'i', `mask`],
 				[/* text */ 't', `
  with the memory semantics of `],
-				[/* reference */ 'r', `setVolatile(java.lang.Object...)`],
+				[/* reference */ 'r', `#setVolatile(java.lang.Object...)`, `setVolatile(java.lang.Object...)`],
 				[/* text */ 't', ` and returns the
  variable's previous value, as accessed with the memory semantics of
  `],
-				[/* reference */ 'r', `getVolatile(java.lang.Object...)`],
+				[/* reference */ 'r', `#getVolatile(java.lang.Object...)`, `getVolatile(java.lang.Object...)`],
 				[/* text */ 't', `.
 
  `],
@@ -2890,11 +2890,11 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 				[/* inline code block */ 'i', `mask`],
 				[/* text */ 't', `
  with the memory semantics of `],
-				[/* reference */ 'r', `set(java.lang.Object...)`],
+				[/* reference */ 'r', `#set(java.lang.Object...)`, `set(java.lang.Object...)`],
 				[/* text */ 't', ` and returns the
  variable's previous value, as accessed with the memory semantics of
  `],
-				[/* reference */ 'r', `getAcquire(java.lang.Object...)`],
+				[/* reference */ 'r', `#getAcquire(java.lang.Object...)`, `getAcquire(java.lang.Object...)`],
 				[/* text */ 't', `.
 
  `],
@@ -2962,11 +2962,11 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 				[/* inline code block */ 'i', `mask`],
 				[/* text */ 't', `
  with the memory semantics of `],
-				[/* reference */ 'r', `setRelease(java.lang.Object...)`],
+				[/* reference */ 'r', `#setRelease(java.lang.Object...)`, `setRelease(java.lang.Object...)`],
 				[/* text */ 't', ` and returns the
  variable's previous value, as accessed with the memory semantics of
  `],
-				[/* reference */ 'r', `get(java.lang.Object...)`],
+				[/* reference */ 'r', `#get(java.lang.Object...)`, `get(java.lang.Object...)`],
 				[/* text */ 't', `.
 
  `],
@@ -3041,7 +3041,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  Invoking `],
-					[/* reference */ 'r', `hasInvokeExactBehavior()`],
+					[/* reference */ 'r', `#hasInvokeExactBehavior()`, `hasInvokeExactBehavior()`],
 					[/* text */ 't', ` on the returned var handle
  is guaranteed to return `],
 					[/* inline code block */ 'i', `true`],
@@ -3068,7 +3068,7 @@ DocsCollector.collect('java.lang.invoke.VarHandle', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  Invoking `],
-					[/* reference */ 'r', `hasInvokeExactBehavior()`],
+					[/* reference */ 'r', `#hasInvokeExactBehavior()`, `hasInvokeExactBehavior()`],
 					[/* text */ 't', ` on the returned var handle
  is guaranteed to return `],
 					[/* inline code block */ 'i', `false`],

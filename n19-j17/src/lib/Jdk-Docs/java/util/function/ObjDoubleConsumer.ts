@@ -20,10 +20,10 @@ DocsCollector.collect('java.util.function.ObjDoubleConsumer', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
-			[/* external link */ 'a', `package-summary.html`, `functional interface`],
+			[/* reference */ 'r', `.package-summary`],
 			[/* text */ 't', `
  whose functional method is `],
-			[/* reference */ 'r', `accept(Object, double)`],
+			[/* reference */ 'r', `#accept(T,double)`, `accept(Object, double)`],
 			[/* text */ 't', `.`]
 		]]
 	],

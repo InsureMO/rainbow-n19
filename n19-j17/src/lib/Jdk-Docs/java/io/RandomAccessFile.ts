@@ -65,7 +65,68 @@ DocsCollector.collect('java.io.RandomAccessFile', [
 
  `]
 				]],
-				[/* table */ 't', ''],
+				[/* table */ 'tbl',
+					[/* caption */ 'tc'],
+					[/* table header */ 'th', [
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `Value`]
+							]],
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `Meaning`]
+							]]
+						]]
+					]],
+					[/* table body */ 'tb', [
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `"r"`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', ` Open for reading only. Invoking any of the `],
+								[/* inline code block */ 'i', `write`],
+								[/* text */ 't', `
+     methods of the resulting object will cause an
+     `],
+								[/* reference */ 'r', `java.io.IOException`],
+								[/* text */ 't', ` to be thrown.`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `"rw"`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', ` Open for reading and writing.  If the file does not already
+     exist then an attempt will be made to create it.`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `"rws"`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', ` Open for reading and writing, as with `],
+								[/* inline code block */ 'i', `"rw"`],
+								[/* text */ 't', `, and also
+     require that every update to the file's content or metadata be
+     written synchronously to the underlying storage device.`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `"rwd"`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', ` Open for reading and writing, as with `],
+								[/* inline code block */ 'i', `"rw"`],
+								[/* text */ 't', `, and also
+     require that every update to the file's content be written
+     synchronously to the underlying storage device.`]
+							]]
+						]]
+					]],
+				],
 				[/* text */ 't', `
 
  The `],
@@ -73,7 +134,7 @@ DocsCollector.collect('java.io.RandomAccessFile', [
 				[/* text */ 't', ` and `],
 				[/* inline code block */ 'i', `"rwd"`],
 				[/* text */ 't', ` modes work much like the `],
-				[/* external link */ 'a', `../nio/channels/FileChannel.html#force(boolean)`, `force(boolean)`],
+				[/* reference */ 'r', `java.FileChannel#force(boolean)`],
 				[/* text */ 't', ` method of
  the `],
 				[/* reference */ 'r', `java.nio.channels.FileChannel`],
@@ -358,7 +419,7 @@ DocsCollector.collect('java.io.RandomAccessFile', [
 					[/* inline code block */ 'i', `InputStream`],
 					[/* text */ 't', `, this method behaves in exactly the
  same way as the `],
-					[/* external link */ 'a', `InputStream.html#read(byte%5B%5D,int,int)`, `InputStream.read(byte[], int, int)`],
+					[/* reference */ 'r', `.InputStream#read(byte[],int,int)`],
 					[/* text */ 't', ` method of
  `],
 					[/* inline code block */ 'i', `InputStream`],
@@ -430,7 +491,7 @@ DocsCollector.collect('java.io.RandomAccessFile', [
 					[/* inline code block */ 'i', `InputStream`],
 					[/* text */ 't', `, this method behaves in exactly the
  same way as the `],
-					[/* external link */ 'a', `InputStream.html#read(byte%5B%5D)`, `InputStream.read(byte[])`],
+					[/* reference */ 'r', `.InputStream#read(byte[])`],
 					[/* text */ 't', ` method of
  `],
 					[/* inline code block */ 'i', `InputStream`],
@@ -481,7 +542,7 @@ DocsCollector.collect('java.io.RandomAccessFile', [
 					[/* inline code block */ 'i', `InputStream`],
 					[/* text */ 't', `, this method behaves in exactly the same
  way as the `],
-					[/* external link */ 'a', `InputStream.html#read()`, `InputStream.read()`],
+					[/* reference */ 'r', `.InputStream#read()`],
 					[/* text */ 't', ` method of
  `],
 					[/* inline code block */ 'i', `InputStream`],
@@ -649,7 +710,7 @@ DocsCollector.collect('java.io.RandomAccessFile', [
  then the result is equal to:
  `],
 				[/* block */ 'b', [
-					[/* code block */ 'c', `     (b1 &lt;&lt; 24) | (b2 &lt;&lt; 16) + (b3 &lt;&lt; 8) + b4
+					[/* code block */ 'c', `     (b1 << 24) | (b2 << 16) + (b3 << 8) + b4
  `]
 				]],
 				[/* block */ 'b', `
@@ -677,7 +738,7 @@ DocsCollector.collect('java.io.RandomAccessFile', [
 			[/* method description */
 				[/* text */ 't', `Writes a string to the file using
  `],
-				[/* external link */ 'a', `DataInput.html#modified-utf-8`, `modified UTF-8`],
+				[/* reference */ 'r', `.DataInput#modified-utf-8`],
 				[/* text */ 't', `
  encoding in a machine-independent manner.
  `],
@@ -711,7 +772,7 @@ DocsCollector.collect('java.io.RandomAccessFile', [
 				[/* text */ 't', `Reads in a string from this file. The string has been encoded
  using a
  `],
-				[/* external link */ 'a', `DataInput.html#modified-utf-8`, `modified UTF-8`],
+				[/* reference */ 'r', `.DataInput#modified-utf-8`],
 				[/* text */ 't', `
  format.
  `],
@@ -775,10 +836,10 @@ DocsCollector.collect('java.io.RandomAccessFile', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The `],
-					[/* external link */ 'a', `../nio/channels/FileChannel.html#position()`, `position`],
+					[/* reference */ 'r', `java.FileChannel#position()`],
 					[/* text */ 't', ` of the returned channel will always be equal to
  this object's file-pointer offset as returned by the `],
-					[/* reference */ 'r', `getFilePointer`],
+					[/* reference */ 'r', `#getFilePointer()`, `getFilePointer`],
 					[/* text */ 't', ` method.  Changing this object's
  file-pointer offset, whether explicitly or by reading or writing bytes,
  will change the position of the channel, and vice versa.  Changing the
@@ -849,7 +910,7 @@ DocsCollector.collect('java.io.RandomAccessFile', [
  then the result is equal to:
  `],
 				[/* block */ 'b', [
-					[/* code block */ 'c', `     (char)((b1 &lt;&lt; 8) | b2)
+					[/* code block */ 'c', `     (char)((b1 << 8) | b2)
  `]
 				]],
 				[/* block */ 'b', `
@@ -963,7 +1024,7 @@ DocsCollector.collect('java.io.RandomAccessFile', [
  then the result is equal to:
  `],
 				[/* block */ 'b', [
-					[/* code block */ 'c', `     (b1 &lt;&lt; 8) | b2
+					[/* code block */ 'c', `     (b1 << 8) | b2
  `]
 				]],
 				[/* block */ 'b', `
@@ -1011,17 +1072,17 @@ DocsCollector.collect('java.io.RandomAccessFile', [
 				[/* text */ 't', ` where:
  `],
 				[/* block */ 'b', [
-					[/* code block */ 'c', `     0 &lt;= b1, b2, b3, b4, b5, b6, b7, b8 &lt;=255,
+					[/* code block */ 'c', `     0 <= b1, b2, b3, b4, b5, b6, b7, b8 <=255,
  `]
 				]],
 				[/* block */ 'b', `
  then the result is equal to:
  `],
 				[/* block */ 'b', [
-					[/* code block */ 'c', `     ((long)b1 &lt;&lt; 56) + ((long)b2 &lt;&lt; 48)
-     + ((long)b3 &lt;&lt; 40) + ((long)b4 &lt;&lt; 32)
-     + ((long)b5 &lt;&lt; 24) + ((long)b6 &lt;&lt; 16)
-     + ((long)b7 &lt;&lt; 8) + b8
+					[/* code block */ 'c', `     ((long)b1 << 56) + ((long)b2 << 48)
+     + ((long)b3 << 40) + ((long)b4 << 32)
+     + ((long)b5 << 24) + ((long)b6 << 16)
+     + ((long)b7 << 8) + b8
  `]
 				]],
 				[/* block */ 'b', ''],
@@ -1100,7 +1161,7 @@ DocsCollector.collect('java.io.RandomAccessFile', [
  result is equal to:
  `],
 				[/* block */ 'b', [
-					[/* code block */ 'c', `     (short)((b1 &lt;&lt; 8) | b2)
+					[/* code block */ 'c', `     (short)((b1 << 8) | b2)
  `]
 				]],
 				[/* block */ 'b', `

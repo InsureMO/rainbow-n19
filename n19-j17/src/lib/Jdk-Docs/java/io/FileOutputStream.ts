@@ -62,7 +62,7 @@ DocsCollector.collect('java.io.FileOutputStream', [
 					[/* inline code block */ 'i', `fdObj`],
 					[/* text */ 't', `
  is `],
-					[/* external link */ 'a', `FileDescriptor.html#valid()`, `invalid`],
+					[/* reference */ 'r', `.FileDescriptor#valid()`],
 					[/* text */ 't', `.
  However, if the methods are invoked on the resulting stream to attempt
  I/O on the stream, an `],
@@ -417,7 +417,7 @@ DocsCollector.collect('java.io.FileOutputStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The initial `],
-					[/* external link */ 'a', `../nio/channels/FileChannel.html#position()`, `position`],
+					[/* reference */ 'r', `java.FileChannel#position()`],
 					[/* text */ 't', ` of the returned channel will be equal to the
  number of bytes written to the file so far unless this stream is in
  append mode, in which case it will be equal to the size of the file.

@@ -13,7 +13,7 @@ DocsCollector.collect('java.util.stream.IntStream$Builder', [
  phase, during which elements can be added, and then transitions to a built
  phase, after which elements may not be added.  The built phase
  begins when the `],
-			[/* reference */ 'r', `build()`],
+			[/* reference */ 'r', `#build()`, `build()`],
 			[/* text */ 't', ` method is called, which creates an
  ordered stream whose elements are the elements that were added to the
  stream builder, in the order they were added.`]

@@ -42,7 +42,7 @@ DocsCollector.collect('java.util.WeakHashMap', [
 			[/* inline code block */ 'i', `WeakHashMap`],
 			[/* text */ 't', ` may be constructed using the
  `],
-			[/* external link */ 'a', `Collections.html#synchronizedMap(java.util.Map)`, `Collections.synchronizedMap`],
+			[/* reference */ 'r', `.Collections#synchronizedMap(java.util.Map)`],
 			[/* text */ 't', `
  method.
 
@@ -201,7 +201,7 @@ DocsCollector.collect('java.util.WeakHashMap', [
 		[/* block */ 'b', [
 			[/* text */ 't', `This class is a member of the
  `],
-			[/* external link */ 'a', `../../../java.base/java/util/package-summary.html#CollectionsFramework`, `Java Collections Framework`],
+			[/* text */ 't', `Java Collections Framework`],
 			[/* text */ 't', `.`]
 		]]
 	],
@@ -372,7 +372,7 @@ DocsCollector.collect('java.util.WeakHashMap', [
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', `.
  The `],
-					[/* reference */ 'r', `containsKey`],
+					[/* reference */ 'r', `#containsKey(java.lang.Object)`, `containsKey`],
 					[/* text */ 't', ` operation may be used to
  distinguish these two cases.`]
 				]]

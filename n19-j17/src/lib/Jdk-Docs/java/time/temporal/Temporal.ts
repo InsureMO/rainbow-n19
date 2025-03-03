@@ -46,7 +46,7 @@ DocsCollector.collect('java.time.temporal.Temporal', [
 			[/* reference */ 'r', `java.time.ZoneId`],
 			[/* text */ 't', `.
  These can be accessed via `],
-			[/* external link */ 'a', `TemporalAccessor.html#query(java.time.temporal.TemporalQuery)`, `queries`],
+			[/* reference */ 'r', `.TemporalAccessor#query(java.time.temporal.TemporalQuery)`],
 			[/* text */ 't', ` using
  the static methods defined on `],
 			[/* reference */ 'r', `java.time.temporal.TemporalQuery`],
@@ -128,10 +128,10 @@ DocsCollector.collect('java.time.temporal.Temporal', [
 					[/* text */ 't', `
  This checks if the specified unit can be added to, or subtracted from, this date-time.
  If false, then calling the `],
-					[/* reference */ 'r', `plus(long, TemporalUnit)`],
+					[/* reference */ 'r', `#plus(long,java.time.temporal.TemporalUnit)`, `plus(long, TemporalUnit)`],
 					[/* text */ 't', ` and
  `],
-					[/* reference */ 'r', `minus`],
+					[/* reference */ 'r', `#minus(long,java.time.temporal.TemporalUnit)`, `minus`],
 					[/* text */ 't', ` methods will throw an exception.`]
 				]]
 			],
@@ -357,7 +357,7 @@ DocsCollector.collect('java.time.temporal.Temporal', [
  There are two equivalent ways of using this method.
  The first is to invoke this method directly.
  The second is to use `],
-					[/* external link */ 'a', `TemporalUnit.html#between(java.time.temporal.Temporal,java.time.temporal.Temporal)`, `TemporalUnit.between(Temporal, Temporal)`],
+					[/* reference */ 'r', `.TemporalUnit#between(java.time.temporal.Temporal,java.time.temporal.Temporal)`],
 					[/* text */ 't', `:
  `]
 				]],

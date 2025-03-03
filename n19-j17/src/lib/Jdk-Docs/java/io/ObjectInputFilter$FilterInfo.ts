@@ -46,7 +46,7 @@ DocsCollector.collect('java.io.ObjectInputFilter$FilterInfo', [
 				[/* text */ 't', `".
  To check the array's element type, iteratively use
  `],
-				[/* external link */ 'a', `../lang/Class.html#getComponentType()`, `Class.getComponentType`],
+				[/* reference */ 'r', `java.Class#getComponentType()`],
 				[/* text */ 't', ` while the result
  is an array and then check the class.
  The `],

@@ -4,7 +4,7 @@ import {DocsCollector} from '../../DocsCollector';
 DocsCollector.collect('java.lang.Runtime$Version', [
 	[/* class description */
 		[/* text */ 't', `A representation of a version string for an implementation of the
- Java&nbsp;SE Platform.  A version string consists of a version number
+ Java SE Platform.  A version string consists of a version number
  optionally followed by pre-release and build information.
 
  `],
@@ -184,14 +184,14 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 			[/* text */ 't', `, if
  present, may or may not be significant depending on the chosen
  comparison method.  The comparison methods `],
-			[/* reference */ 'r', `compareTo()`],
+			[/* reference */ 'r', `#compareTo(java.lang.Runtime.Version)`, `compareTo()`],
 			[/* text */ 't', ` and `],
-			[/* reference */ 'r', `compareToIgnoreOptional()`],
+			[/* reference */ 'r', `#compareToIgnoreOptional(java.lang.Runtime.Version)`, `compareToIgnoreOptional()`],
 			[/* text */ 't', ` should be used consistently with the
  corresponding methods `],
-			[/* reference */ 'r', `equals()`],
+			[/* reference */ 'r', `#equals(java.lang.Object)`, `equals()`],
 			[/* text */ 't', ` and `],
-			[/* reference */ 'r', `equalsIgnoreOptional()`],
+			[/* reference */ 'r', `#equalsIgnoreOptional(java.lang.Object)`, `equalsIgnoreOptional()`],
 			[/* text */ 't', `.  `]
 		]],
 		[/* block */ 'b', [
@@ -209,11 +209,11 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
-			[/* external link */ 'a', `../../../java.base/java/lang/doc-files/ValueBased.html`, `value-based`],
+			[/* text */ 't', `value-based`],
 			[/* text */ 't', `
  class; programmers should treat instances that are
  `],
-			[/* reference */ 'r', `equal`],
+			[/* reference */ 'r', `#equals(java.lang.Object)`, `equal`],
 			[/* text */ 't', ` as interchangeable and should not
  use instances for synchronization, or unpredictable behavior may
  occur. For example, in a future release, synchronization may fail.`]
@@ -540,7 +540,7 @@ DocsCollector.collect('java.lang.Runtime$Version', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` Two versions are compared by examining the version string as
  described in `],
-					[/* reference */ 'r', `compareTo(Version)`],
+					[/* reference */ 'r', `#compareTo(java.lang.Runtime.Version)`, `compareTo(Version)`],
 					[/* text */ 't', ` with the exception that the
  optional build information is always ignored. `]
 				]],

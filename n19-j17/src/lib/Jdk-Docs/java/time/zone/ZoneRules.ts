@@ -159,9 +159,9 @@ DocsCollector.collect('java.time.zone.ZoneRules', [
  than the "correct" value, it should be treated with care. Applications that care
  about the correct offset should use a combination of this method,
  `],
-					[/* reference */ 'r', `getValidOffsets(LocalDateTime)`],
+					[/* reference */ 'r', `#getValidOffsets(java.time.LocalDateTime)`, `getValidOffsets(LocalDateTime)`],
 					[/* text */ 't', ` and `],
-					[/* reference */ 'r', `getTransition(LocalDateTime)`],
+					[/* reference */ 'r', `#getTransition(java.time.LocalDateTime)`, `getTransition(LocalDateTime)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -239,7 +239,7 @@ DocsCollector.collect('java.time.zone.ZoneRules', [
  One technique, using this method, would be:
  `]
 				]],
-				[/* code block */ 'c', `  List&lt;ZoneOffset&gt; validOffsets = rules.getValidOffsets(localDT);
+				[/* code block */ 'c', `  List<ZoneOffset> validOffsets = rules.getValidOffsets(localDT);
   if (validOffsets.size() == 1) {
     // Normal case: only one valid offset
     zoneOffset = validOffsets.get(0);
@@ -354,10 +354,10 @@ DocsCollector.collect('java.time.zone.ZoneRules', [
 					[/* text */ 't', `
  This default implementation calculates the duration from the
  `],
-					[/* reference */ 'r', `actual`],
+					[/* reference */ 'r', `#getOffset(java.time.Instant)`, `actual`],
 					[/* text */ 't', ` and
  `],
-					[/* reference */ 'r', `standard`],
+					[/* reference */ 'r', `#getStandardOffset(java.time.Instant)`, `standard`],
 					[/* text */ 't', ` offsets.`]
 				]]
 			],
@@ -384,10 +384,10 @@ DocsCollector.collect('java.time.zone.ZoneRules', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This default implementation compares the `],
-					[/* reference */ 'r', `actual`],
+					[/* reference */ 'r', `#getOffset(java.time.Instant)`, `actual`],
 					[/* text */ 't', `
  and `],
-					[/* reference */ 'r', `standard`],
+					[/* reference */ 'r', `#getStandardOffset(java.time.Instant)`, `standard`],
 					[/* text */ 't', ` offsets.`]
 				]]
 			],
@@ -413,7 +413,7 @@ DocsCollector.collect('java.time.zone.ZoneRules', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This default implementation checks if `],
-					[/* reference */ 'r', `getValidOffsets(java.time.LocalDateTime)`],
+					[/* reference */ 'r', `#getValidOffsets(java.time.LocalDateTime)`, `getValidOffsets(java.time.LocalDateTime)`],
 					[/* text */ 't', `
  contains the specified offset.`]
 				]]
@@ -480,7 +480,7 @@ DocsCollector.collect('java.time.zone.ZoneRules', [
 					[/* text */ 't', `
  The complete set of transitions for this rules instance is defined by this method
  and `],
-					[/* reference */ 'r', `getTransitionRules()`],
+					[/* reference */ 'r', `#getTransitionRules()`, `getTransitionRules()`],
 					[/* text */ 't', `. This method returns those transitions that have
  been fully defined. These are typically historical, but may be in the future.
  `]
@@ -503,7 +503,7 @@ DocsCollector.collect('java.time.zone.ZoneRules', [
 					[/* text */ 't', `
  The complete set of transitions for this rules instance is defined by this method
  and `],
-					[/* reference */ 'r', `getTransitions()`],
+					[/* reference */ 'r', `#getTransitions()`, `getTransitions()`],
 					[/* text */ 't', `. This method returns instances of `],
 					[/* reference */ 'r', `java.time.zone.ZoneOffsetTransitionRule`],
 					[/* text */ 't', `

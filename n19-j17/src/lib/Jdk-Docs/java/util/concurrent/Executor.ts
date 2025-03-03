@@ -117,7 +117,7 @@ DocsCollector.collect('java.util.concurrent.Executor', [
 			[/* inline code block */ 'i', `Runnable`],
 			[/* text */ 't', ` object to an `],
 			[/* inline code block */ 'i', `Executor`],
-			[/* external link */ 'a', `package-summary.html#MemoryVisibility`, `happen-before`],
+			[/* reference */ 'r', `.package-summary#MemoryVisibility`],
 			[/* text */ 't', `
  its execution begins, perhaps in another thread.`]
 		]]

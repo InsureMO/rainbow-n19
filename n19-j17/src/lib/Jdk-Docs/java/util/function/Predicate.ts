@@ -8,10 +8,10 @@ DocsCollector.collect('java.util.function.Predicate', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
-			[/* external link */ 'a', `package-summary.html`, `functional interface`],
+			[/* reference */ 'r', `.package-summary`],
 			[/* text */ 't', `
  whose functional method is `],
-			[/* reference */ 'r', `test(Object)`],
+			[/* reference */ 'r', `#test(T)`, `test(Object)`],
 			[/* text */ 't', `.`]
 		]]
 	],
@@ -127,7 +127,7 @@ DocsCollector.collect('java.util.function.Predicate', [
 			[/* method description */
 				[/* text */ 't', `Returns a predicate that tests if two arguments are equal according
  to `],
-				[/* external link */ 'a', `../Objects.html#equals(java.lang.Object,java.lang.Object)`, `Objects.equals(Object, Object)`],
+				[/* reference */ 'r', `java.Objects#equals(java.lang.Object,java.lang.Object)`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -141,7 +141,7 @@ DocsCollector.collect('java.util.function.Predicate', [
 			[/* return description */
 				[/* text */ 't', `a predicate that tests if two arguments are equal according
  to `],
-				[/* external link */ 'a', `../Objects.html#equals(java.lang.Object,java.lang.Object)`, `Objects.equals(Object, Object)`]
+				[/* reference */ 'r', `java.Objects#equals(java.lang.Object,java.lang.Object)`]
 			]
 		]],
 		[/* method */ 'not(java.util.function.Predicate)', [

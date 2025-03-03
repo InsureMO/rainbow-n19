@@ -61,7 +61,7 @@ DocsCollector.collect('java.io.FileInputStream', [
 					[/* inline code block */ 'i', `fdObj`],
 					[/* text */ 't', `
  is `],
-					[/* external link */ 'a', `FileDescriptor.html#valid()`, `invalid`],
+					[/* reference */ 'r', `.FileDescriptor#valid()`],
 					[/* text */ 't', `.
  However, if the methods are invoked on the resulting stream to attempt
  I/O on the stream, an `],
@@ -429,7 +429,7 @@ DocsCollector.collect('java.io.FileInputStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The initial `],
-					[/* external link */ 'a', `../nio/channels/FileChannel.html#position()`, `position`],
+					[/* reference */ 'r', `java.FileChannel#position()`],
 					[/* text */ 't', ` of the returned channel will be equal to the
  number of bytes read from the file so far.  Reading bytes from this
  stream will increment the channel's position.  Changing the channel's

@@ -60,11 +60,11 @@ DocsCollector.collect('java.time.MonthDay', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  This is a `],
-			[/* external link */ 'a', `../../../java.base/java/lang/doc-files/ValueBased.html`, `value-based`],
+			[/* text */ 't', `value-based`],
 			[/* text */ 't', `
  class; programmers should treat instances that are
  `],
-			[/* reference */ 'r', `equal`],
+			[/* reference */ 'r', `#equals(java.lang.Object)`, `equal`],
 			[/* text */ 't', ` as interchangeable and should not
  use instances for synchronization, or unpredictable behavior may
  occur. For example, in a future release, synchronization may fail.
@@ -94,7 +94,7 @@ DocsCollector.collect('java.time.MonthDay', [
 					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
 					[/* text */ 't', ` then the query is implemented here.
  The `],
-					[/* reference */ 'r', `supported fields`],
+					[/* reference */ 'r', `#isSupported(java.time.temporal.TemporalField)`, `supported fields`],
 					[/* text */ 't', ` will return valid
  values based on this month-day.
  All other `],
@@ -228,7 +228,7 @@ DocsCollector.collect('java.time.MonthDay', [
 					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
 					[/* text */ 't', ` then the query is implemented here.
  The `],
-					[/* reference */ 'r', `supported fields`],
+					[/* reference */ 'r', `#isSupported(java.time.temporal.TemporalField)`, `supported fields`],
 					[/* text */ 't', ` will return valid
  values based on this month-day.
  All other `],
@@ -379,10 +379,10 @@ DocsCollector.collect('java.time.MonthDay', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The conversion extracts the `],
-					[/* external link */ 'a', `temporal/ChronoField.html#MONTH_OF_YEAR`, `MONTH_OF_YEAR`],
+					[/* reference */ 'r', `.ChronoField#MONTH_OF_YEAR`],
 					[/* text */ 't', ` and
  `],
-					[/* external link */ 'a', `temporal/ChronoField.html#DAY_OF_MONTH`, `DAY_OF_MONTH`],
+					[/* reference */ 'r', `.ChronoField#DAY_OF_MONTH`],
 					[/* text */ 't', ` fields.
  The extraction is only permitted if the temporal object has an ISO
  chronology, or can be converted to a `],
@@ -433,7 +433,7 @@ DocsCollector.collect('java.time.MonthDay', [
 					[/* text */ 't', `
  The result of this method is obtained by invoking the
  `],
-					[/* external link */ 'a', `temporal/TemporalQuery.html#queryFrom(java.time.temporal.TemporalAccessor)`, `TemporalQuery.queryFrom(TemporalAccessor)`],
+					[/* reference */ 'r', `.TemporalQuery#queryFrom(java.time.temporal.TemporalAccessor)`],
 					[/* text */ 't', ` method on the
  specified query passing `],
 					[/* inline code block */ 'i', `this`],
@@ -473,7 +473,7 @@ DocsCollector.collect('java.time.MonthDay', [
 					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
 					[/* text */ 't', ` then the query is implemented here.
  The `],
-					[/* reference */ 'r', `supported fields`],
+					[/* reference */ 'r', `#isSupported(java.time.temporal.TemporalField)`, `supported fields`],
 					[/* text */ 't', ` will return
  appropriate range instances.
  All other `],
@@ -522,10 +522,10 @@ DocsCollector.collect('java.time.MonthDay', [
 					[/* text */ 't', `
  This checks if this month-day can be queried for the specified field.
  If false, then calling the `],
-					[/* reference */ 'r', `range`],
+					[/* reference */ 'r', `#range(java.time.temporal.TemporalField)`, `range`],
 					[/* text */ 't', ` and
  `],
-					[/* reference */ 'r', `get`],
+					[/* reference */ 'r', `#get(java.time.temporal.TemporalField)`, `get`],
 					[/* text */ 't', ` methods will throw an exception.
  `]
 				]],
@@ -644,7 +644,7 @@ DocsCollector.collect('java.time.MonthDay', [
 					[/* reference */ 'r', `enum class in java.time.Month`],
 					[/* text */ 't', `
  is used by calling `],
-					[/* reference */ 'r', `getMonth()`],
+					[/* reference */ 'r', `#getMonth()`, `getMonth()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -678,7 +678,7 @@ DocsCollector.collect('java.time.MonthDay', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This will query the `],
-					[/* external link */ 'a', `Clock.html#systemDefaultZone()`, `system clock`],
+					[/* reference */ 'r', `.Clock#systemDefaultZone()`],
 					[/* text */ 't', ` in the default
  time-zone to obtain the current month-day.
  `]
@@ -700,7 +700,7 @@ DocsCollector.collect('java.time.MonthDay', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This will query the `],
-					[/* external link */ 'a', `Clock.html#system(java.time.ZoneId)`, `system clock`],
+					[/* reference */ 'r', `.Clock#system(java.time.ZoneId)`],
 					[/* text */ 't', ` to obtain the current month-day.
  Specifying the time-zone avoids dependence on the default time-zone.
  `]
@@ -753,13 +753,13 @@ DocsCollector.collect('java.time.MonthDay', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The adjustment is equivalent to using `],
-					[/* external link */ 'a', `temporal/Temporal.html#with(java.time.temporal.TemporalField,long)`, `Temporal.with(TemporalField, long)`],
+					[/* reference */ 'r', `.Temporal#with(java.time.temporal.TemporalField,long)`],
 					[/* text */ 't', `
  twice, passing `],
-					[/* external link */ 'a', `temporal/ChronoField.html#MONTH_OF_YEAR`, `ChronoField.MONTH_OF_YEAR`],
+					[/* reference */ 'r', `.ChronoField#MONTH_OF_YEAR`],
 					[/* text */ 't', ` and
  `],
-					[/* external link */ 'a', `temporal/ChronoField.html#DAY_OF_MONTH`, `ChronoField.DAY_OF_MONTH`],
+					[/* reference */ 'r', `.ChronoField#DAY_OF_MONTH`],
 					[/* text */ 't', ` as the fields.
  If the specified temporal object does not use the ISO calendar system then
  a `],
@@ -771,7 +771,7 @@ DocsCollector.collect('java.time.MonthDay', [
 					[/* text */ 't', `
  In most cases, it is clearer to reverse the calling pattern by using
  `],
-					[/* external link */ 'a', `temporal/Temporal.html#with(java.time.temporal.TemporalAdjuster)`, `Temporal.with(TemporalAdjuster)`],
+					[/* reference */ 'r', `.Temporal#with(java.time.temporal.TemporalAdjuster)`],
 					[/* text */ 't', `:
  `]
 				]],
@@ -872,7 +872,7 @@ DocsCollector.collect('java.time.MonthDay', [
 					[/* inline code block */ 'i', `int`],
 					[/* text */ 't', ` value then the enum
  provides the `],
-					[/* external link */ 'a', `Month.html#getValue()`, `int value`],
+					[/* reference */ 'r', `.Month#getValue()`],
 					[/* text */ 't', `.`]
 				]]
 			],

@@ -20,7 +20,7 @@ DocsCollector.collect('java.nio.channels.Channel', [
 			[/* text */ 't', `
  to be thrown.  Whether or not a channel is open may be tested by invoking
  its `],
-			[/* reference */ 'r', `isOpen`],
+			[/* reference */ 'r', `#isOpen()`, `isOpen`],
 			[/* text */ 't', ` method.
 
  `]

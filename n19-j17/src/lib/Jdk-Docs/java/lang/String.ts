@@ -59,7 +59,7 @@ DocsCollector.collect('java.lang.String', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  The Java language provides special support for the string
- concatenation operator (&nbsp;+&nbsp;), and for conversion of
+ concatenation operator ( + ), and for conversion of
  other objects to strings. For additional information on string
  concatenation and conversion, see `],
 			[/* text */ 't', `The Java Language Specification`],
@@ -88,7 +88,7 @@ DocsCollector.collect('java.lang.String', [
 			[/* text */ 't', `surrogate
  pairs`],
 			[/* text */ 't', ` (see the section `],
-			[/* external link */ 'a', `Character.html#unicode`, `Unicode Character Representations`],
+			[/* reference */ 'r', `.Character#unicode`],
 			[/* text */ 't', ` in the `],
 			[/* inline code block */ 'i', `Character`],
 			[/* text */ 't', ` class for
@@ -127,7 +127,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* inline code block */ 'i', `String`],
 				[/* text */ 't', ` objects as by
  `],
-				[/* reference */ 'r', `compareToIgnoreCase`],
+				[/* reference */ 'r', `#compareToIgnoreCase(java.lang.String)`, `compareToIgnoreCase`],
 				[/* text */ 't', `.
  This comparator is serializable.
  `],
@@ -538,10 +538,10 @@ DocsCollector.collect('java.lang.String', [
 				[/* block */ 'b', [
 					[/* code block */ 'c', [
 						[/* text */ 't', `c`],
-						[/* text */ 't', ` == (char)(((hibyte &amp; 0xff) &lt;&lt; 8)
+						[/* text */ 't', ` == (char)(((hibyte & 0xff) << 8)
                          | (`],
 						[/* text */ 't', `b`],
-						[/* text */ 't', ` &amp; 0xff))
+						[/* text */ 't', ` & 0xff))
  `]
 					]]
 				]]
@@ -582,7 +582,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* inline code block */ 'i', `char`],
 					[/* text */ 't', ` as
  specified in the `],
-					[/* reference */ 'r', `String(byte[],int)`],
+					[/* reference */ 'r', `#%3Cinit%3E(byte%5B%5D,int)`, `String(byte[],int)`],
 					[/* text */ 't', ` constructor.`]
 				]]
 			],
@@ -620,7 +620,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* inline code block */ 'i', `String`],
 				[/* text */ 't', ` that contains characters from a subarray
  of the `],
-				[/* external link */ 'a', `Character.html#unicode`, `Unicode code point`],
+				[/* reference */ 'r', `.Character#unicode`],
 				[/* text */ 't', ` array
  argument.  The `],
 				[/* inline code block */ 'i', `offset`],
@@ -708,7 +708,7 @@ DocsCollector.collect('java.lang.String', [
 			[/* method description */
 				[/* text */ 't', `Returns the length of this string.
  The length is equal to the number of `],
-				[/* external link */ 'a', `Character.html#unicode`, `Unicode code units`],
+				[/* reference */ 'r', `.Character#unicode`],
 				[/* text */ 't', ` in the string.`]
 			],
 			/* parameters */ UDF,
@@ -869,7 +869,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* inline code block */ 'i', `0`],
 				[/* text */ 't', ` exactly when
  the `],
-				[/* reference */ 'r', `equals(Object)`],
+				[/* reference */ 'r', `#equals(java.lang.Object)`, `equals(Object)`],
 				[/* text */ 't', ` method would return `],
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', `.
@@ -1116,7 +1116,7 @@ DocsCollector.collect('java.lang.String', [
 						[/* inline code block */ 'i', `&&`],
 						[/* text */ 't', ` (`],
 						[/* text */ 't', `k`],
-						[/* text */ 't', ` &gt;= fromIndex)
+						[/* text */ 't', ` >= fromIndex)
  `]
 					]]
 				]],
@@ -1136,7 +1136,7 @@ DocsCollector.collect('java.lang.String', [
 						[/* inline code block */ 'i', `&&`],
 						[/* text */ 't', ` (`],
 						[/* text */ 't', `k`],
-						[/* text */ 't', ` &gt;= fromIndex)
+						[/* text */ 't', ` >= fromIndex)
  `]
 					]]
 				]],
@@ -1482,7 +1482,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* inline code block */ 'i', `char`],
 					[/* text */ 't', ` value specified by the index is a
  `],
-					[/* external link */ 'a', `Character.html#unicode`, `surrogate`],
+					[/* reference */ 'r', `.Character#unicode`],
 					[/* text */ 't', `, the surrogate
  value is returned.`]
 				]]
@@ -1524,7 +1524,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* inline code block */ 'i', `0`],
 				[/* text */ 't', ` to
  `],
-				[/* reference */ 'r', `length()`],
+				[/* reference */ 'r', `#length()`, `length()`],
 				[/* inline code block */ 'i', `- 1`],
 				[/* text */ 't', `.
 
@@ -1578,7 +1578,7 @@ DocsCollector.collect('java.lang.String', [
  (Unicode code units) and ranges from `],
 				[/* inline code block */ 'i', `1`],
 				[/* text */ 't', ` to `],
-				[/* external link */ 'a', `CharSequence.html#length()`, `length`],
+				[/* reference */ 'r', `.CharSequence#length()`],
 				[/* text */ 't', `.
 
  `],
@@ -2079,8 +2079,8 @@ DocsCollector.collect('java.lang.String', [
 						[/* inline code block */ 'i', `true`],
 						[/* text */ 't', `,
  `],
-						[/* external link */ 'a', `Character.html#toLowerCase(int)`, `Character.toLowerCase(`],
-						[/* external link */ 'a', `Character.html#toUpperCase(int)`, `Character.toUpperCase(int)`],
+						[/* reference */ 'r', `.Character#toLowerCase(int)`],
+						[/* reference */ 'r', `.Character#toUpperCase(int)`],
 						[/* inline code block */ 'i', `)`],
 						[/* text */ 't', ` on all pairs of Unicode code points
  results in equal integer values.
@@ -2310,7 +2310,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* inline code block */ 'i', `String`],
 				[/* text */ 't', ` object as determined by the
           `],
-				[/* reference */ 'r', `equals(Object)`],
+				[/* reference */ 'r', `#equals(java.lang.Object)`, `equals(Object)`],
 				[/* text */ 't', ` method.`]
 			]
 		]],
@@ -2414,7 +2414,7 @@ DocsCollector.collect('java.lang.String', [
 						[/* inline code block */ 'i', `&&`],
 						[/* text */ 't', ` (`],
 						[/* text */ 't', `k`],
-						[/* text */ 't', ` &lt;= fromIndex)
+						[/* text */ 't', ` <= fromIndex)
  `]
 					]]
 				]],
@@ -2434,7 +2434,7 @@ DocsCollector.collect('java.lang.String', [
 						[/* inline code block */ 'i', `&&`],
 						[/* text */ 't', ` (`],
 						[/* text */ 't', `k`],
-						[/* text */ 't', ` &lt;= fromIndex)
+						[/* text */ 't', ` <= fromIndex)
  `]
 					]]
 				]],
@@ -2638,7 +2638,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* text */ 't', `Returns `],
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if, and only if, `],
-				[/* reference */ 'r', `length()`],
+				[/* reference */ 'r', `#length()`, `length()`],
 				[/* text */ 't', ` is `],
 				[/* inline code block */ 'i', `0`],
 				[/* text */ 't', `.`]
@@ -2648,7 +2648,7 @@ DocsCollector.collect('java.lang.String', [
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if `],
-				[/* reference */ 'r', `length()`],
+				[/* reference */ 'r', `#length()`, `length()`],
 				[/* text */ 't', ` is `],
 				[/* inline code block */ 'i', `0`],
 				[/* text */ 't', `, otherwise
@@ -2748,7 +2748,7 @@ DocsCollector.collect('java.lang.String', [
 		[/* method */ 'matches(java.lang.String)', [
 			[/* method description */
 				[/* text */ 't', `Tells whether or not this string matches the given `],
-				[/* external link */ 'a', `../util/regex/Pattern.html#sum`, `regular expression`],
+				[/* reference */ 'r', `java.Pattern#sum`],
 				[/* text */ 't', `.
 
  `],
@@ -2767,7 +2767,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* block */ 'b', [
 					[/* reference */ 'r', `java.util.regex.Pattern`],
 					[/* text */ 't', `.`],
-					[/* external link */ 'a', `../util/regex/Pattern.html#matches(java.lang.String,java.lang.CharSequence)`, `matches(regex, str)`]
+					[/* reference */ 'r', `java.Pattern#matches(java.lang.String,java.lang.CharSequence)`]
 				]],
 				[/* block */ 'b', '']
 			],
@@ -2790,7 +2790,7 @@ DocsCollector.collect('java.lang.String', [
 		[/* method */ 'replaceFirst(java.lang.String,java.lang.String)', [
 			[/* method description */
 				[/* text */ 't', `Replaces the first substring of this string that matches the given `],
-				[/* external link */ 'a', `../util/regex/Pattern.html#sum`, `regular expression`],
+				[/* reference */ 'r', `java.Pattern#sum`],
 				[/* text */ 't', ` with the
  given replacement.
 
@@ -2823,10 +2823,10 @@ DocsCollector.collect('java.lang.String', [
  replacement string may cause the results to be different than if it were
  being treated as a literal replacement string; see
  `],
-					[/* external link */ 'a', `../util/regex/Matcher.html#replaceFirst(java.lang.String)`, `Matcher.replaceFirst(java.lang.String)`],
+					[/* reference */ 'r', `java.Matcher#replaceFirst(java.lang.String)`],
 					[/* text */ 't', `.
  Use `],
-					[/* external link */ 'a', `../util/regex/Matcher.html#quoteReplacement(java.lang.String)`, `Matcher.quoteReplacement(java.lang.String)`],
+					[/* reference */ 'r', `java.Matcher#quoteReplacement(java.lang.String)`],
 					[/* text */ 't', ` to suppress the special
  meaning of these characters, if desired.`]
 				]]
@@ -2852,7 +2852,7 @@ DocsCollector.collect('java.lang.String', [
 		[/* method */ 'replaceAll(java.lang.String,java.lang.String)', [
 			[/* method description */
 				[/* text */ 't', `Replaces each substring of this string that matches the given `],
-				[/* external link */ 'a', `../util/regex/Pattern.html#sum`, `regular expression`],
+				[/* reference */ 'r', `java.Pattern#sum`],
 				[/* text */ 't', ` with the
  given replacement.
 
@@ -2885,10 +2885,10 @@ DocsCollector.collect('java.lang.String', [
  replacement string may cause the results to be different than if it were
  being treated as a literal replacement string; see
  `],
-					[/* external link */ 'a', `../util/regex/Matcher.html#replaceAll(java.lang.String)`, `Matcher.replaceAll`],
+					[/* reference */ 'r', `java.Matcher#replaceAll(java.lang.String)`],
 					[/* text */ 't', `.
  Use `],
-					[/* external link */ 'a', `../util/regex/Matcher.html#quoteReplacement(java.lang.String)`, `Matcher.quoteReplacement(java.lang.String)`],
+					[/* reference */ 'r', `java.Matcher#quoteReplacement(java.lang.String)`],
 					[/* text */ 't', ` to suppress the special
  meaning of these characters, if desired.`]
 				]]
@@ -2914,13 +2914,13 @@ DocsCollector.collect('java.lang.String', [
 		[/* method */ 'split(java.lang.String)', [
 			[/* method description */
 				[/* text */ 't', `Splits this string around matches of the given `],
-				[/* external link */ 'a', `../util/regex/Pattern.html#sum`, `regular expression`],
+				[/* reference */ 'r', `java.Pattern#sum`],
 				[/* text */ 't', `.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method works as if by invoking the two-argument `],
-					[/* reference */ 'r', `split`],
+					[/* reference */ 'r', `#split(java.lang.String,int)`, `split`],
 					[/* text */ 't', ` method with the given expression and a limit
  argument of zero.  Trailing empty strings are therefore not included in
  the resulting array.
@@ -2936,7 +2936,37 @@ DocsCollector.collect('java.lang.String', [
  `]
 				]],
 				[/* block */ 'b', [
-					[/* table */ 't', '']
+					[/* table */ 'tbl',
+						[/* caption */ 'tc'],
+						[/* table header */ 'th', [
+							[/* table row */ 'tr', [
+								[/* table header cell */ 'thc', [
+									[/* text */ 't', `Regex`]
+								]],
+								[/* table header cell */ 'thc', [
+									[/* text */ 't', `Result`]
+								]]
+							]]
+						]],
+						[/* table body */ 'tb', [
+							[/* table row */ 'tr', [
+								[/* table header cell */ 'thc', [
+									[/* text */ 't', `:`]
+								]],
+								[/* table cell */ 'tbc', [
+									[/* inline code block */ 'i', `{ "boo", "and", "foo" }`]
+								]]
+							]],
+							[/* table row */ 'tr', [
+								[/* table header cell */ 'thc', [
+									[/* text */ 't', `o`]
+								]],
+								[/* table cell */ 'tbc', [
+									[/* inline code block */ 'i', `{ "b", "", ":and:f" }`]
+								]]
+							]]
+						]],
+					]
 				]],
 				[/* block */ 'b', '']
 			],
@@ -2959,7 +2989,7 @@ DocsCollector.collect('java.lang.String', [
 			[/* method description */
 				[/* text */ 't', `Splits this string around matches of the given
  `],
-				[/* external link */ 'a', `../util/regex/Pattern.html#sum`, `regular expression`],
+				[/* reference */ 'r', `java.Pattern#sum`],
 				[/* text */ 't', `.
 
  `],
@@ -2994,7 +3024,7 @@ DocsCollector.collect('java.lang.String', [
 							[/* text */ 't', ` is positive then the pattern will be applied
     at most `],
 							[/* text */ 't', `limit`],
-							[/* text */ 't', `&nbsp;-&nbsp;1 times, the array's length will be
+							[/* text */ 't', ` - 1 times, the array's length will be
     no greater than `],
 							[/* text */ 't', `limit`],
 							[/* text */ 't', `, and the array's last entry will contain
@@ -3031,7 +3061,78 @@ DocsCollector.collect('java.lang.String', [
  `]
 				]],
 				[/* block */ 'b', [
-					[/* table */ 't', '']
+					[/* table */ 'tbl',
+						[/* caption */ 'tc'],
+						[/* table header */ 'th', [
+							[/* table row */ 'tr', [
+								[/* table header cell */ 'thc', [
+									[/* text */ 't', `Regex`]
+								]],
+								[/* table header cell */ 'thc', [
+									[/* text */ 't', `Limit`]
+								]],
+								[/* table header cell */ 'thc', [
+									[/* text */ 't', `Result`]
+								]]
+							]]
+						]],
+						[/* table body */ 'tb', [
+							[/* table row */ 'tr', [
+								[/* table header cell */ 'thc', 1, 3, [
+									[/* text */ 't', `:`]
+								]],
+								[/* table header cell */ 'thc', [
+									[/* text */ 't', `2`]
+								]],
+								[/* table cell */ 'tbc', [
+									[/* inline code block */ 'i', `{ "boo", "and:foo" }`]
+								]]
+							]],
+							[/* table row */ 'tr', [
+								[/* table header cell */ 'thc', [
+									[/* text */ 't', `5`]
+								]],
+								[/* table cell */ 'tbc', [
+									[/* inline code block */ 'i', `{ "boo", "and", "foo" }`]
+								]]
+							]],
+							[/* table row */ 'tr', [
+								[/* table header cell */ 'thc', [
+									[/* text */ 't', `-2`]
+								]],
+								[/* table cell */ 'tbc', [
+									[/* inline code block */ 'i', `{ "boo", "and", "foo" }`]
+								]]
+							]],
+							[/* table row */ 'tr', [
+								[/* table header cell */ 'thc', 1, 3, [
+									[/* text */ 't', `o`]
+								]],
+								[/* table header cell */ 'thc', [
+									[/* text */ 't', `5`]
+								]],
+								[/* table cell */ 'tbc', [
+									[/* inline code block */ 'i', `{ "b", "", ":and:f", "", "" }`]
+								]]
+							]],
+							[/* table row */ 'tr', [
+								[/* table header cell */ 'thc', [
+									[/* text */ 't', `-2`]
+								]],
+								[/* table cell */ 'tbc', [
+									[/* inline code block */ 'i', `{ "b", "", ":and:f", "", "" }`]
+								]]
+							]],
+							[/* table row */ 'tr', [
+								[/* table header cell */ 'thc', [
+									[/* text */ 't', `0`]
+								]],
+								[/* table cell */ 'tbc', [
+									[/* inline code block */ 'i', `{ "b", "", ":and:f" }`]
+								]]
+							]]
+						]],
+					]
 				]],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
@@ -3041,7 +3142,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* inline code block */ 'i', `split(`],
 					[/* text */ 't', `regex`],
 					[/* inline code block */ 'i', `,`],
-					[/* text */ 't', `&nbsp;`],
+					[/* text */ 't', ` `],
 					[/* text */ 't', `n`],
 					[/* inline code block */ 'i', `)`],
 					[/* text */ 't', `
@@ -3257,7 +3358,84 @@ DocsCollector.collect('java.lang.String', [
 				[/* block */ 'b', `
  Examples of lowercase  mappings are in the following table:
  `],
-				[/* table */ 't', ''],
+				[/* table */ 'tbl',
+					[/* caption */ 'tc'],
+					[/* table header */ 'th', [
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `Language Code of Locale`]
+							]],
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `Upper Case`]
+							]],
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `Lower Case`]
+							]],
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `Description`]
+							]]
+						]]
+					]],
+					[/* table body */ 'tb', [
+						[/* table row */ 'tr', [
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `tr (Turkish)`]
+							]],
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `\\u0130`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `\\u0069`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `capital letter I with dot above -> small letter i`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `tr (Turkish)`]
+							]],
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `\\u0049`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `\\u0131`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `capital letter I -> small letter dotless i `]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `(all)`]
+							]],
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `French Fries`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `french fries`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `lowercased all chars in String`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `(all)`]
+							]],
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `
+       ΙΧΘΥΣ`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `ιχθυσ`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `lowercased all chars in String`]
+							]]
+						]]
+					]],
+				],
 				[/* block */ 'b', '']
 			],
 			[/* parameters */
@@ -3332,7 +3510,81 @@ DocsCollector.collect('java.lang.String', [
  Examples of locale-sensitive and 1:M case mappings are in the following table.
 
  `],
-				[/* table */ 't', ''],
+				[/* table */ 'tbl',
+					[/* caption */ 'tc'],
+					[/* table header */ 'th', [
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `Language Code of Locale`]
+							]],
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `Lower Case`]
+							]],
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `Upper Case`]
+							]],
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `Description`]
+							]]
+						]]
+					]],
+					[/* table body */ 'tb', [
+						[/* table row */ 'tr', [
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `tr (Turkish)`]
+							]],
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `\\u0069`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `\\u0130`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `small letter i -> capital letter I with dot above`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `tr (Turkish)`]
+							]],
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `\\u0131`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `\\u0049`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `small letter dotless i -> capital letter I`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `(all)`]
+							]],
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `\\u00df`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `\\u0053 \\u0053`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `small letter sharp s -> two letters: SS`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `(all)`]
+							]],
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `Fahrvergnügen`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `FAHRVERGNÜGEN`]
+							]],
+							[/* table cell */ 'tbc']
+						]]
+					]],
+				],
 				[/* block */ 'b', '']
 			],
 			[/* parameters */
@@ -3420,7 +3672,7 @@ DocsCollector.collect('java.lang.String', [
 			[/* method description */
 				[/* text */ 't', `Returns a string whose value is this string, with all leading
  and trailing `],
-				[/* external link */ 'a', `Character.html#isWhitespace(int)`, `white space`],
+				[/* reference */ 'r', `.Character#isWhitespace(int)`],
 				[/* text */ 't', `
  removed.
  `],
@@ -3431,7 +3683,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', ` object represents an empty string,
  or if all code points in this string are
  `],
-					[/* external link */ 'a', `Character.html#isWhitespace(int)`, `white space`],
+					[/* reference */ 'r', `.Character#isWhitespace(int)`],
 					[/* text */ 't', `, then an empty string
  is returned.
  `]
@@ -3440,11 +3692,11 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', `
  Otherwise, returns a substring of this string beginning with the first
  code point that is not a `],
-					[/* external link */ 'a', `Character.html#isWhitespace(int)`, `white space`],
+					[/* reference */ 'r', `.Character#isWhitespace(int)`],
 					[/* text */ 't', `
  up to and including the last code point that is not a
  `],
-					[/* external link */ 'a', `Character.html#isWhitespace(int)`, `white space`],
+					[/* reference */ 'r', `.Character#isWhitespace(int)`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -3452,7 +3704,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', `
  This method may be used to strip
  `],
-					[/* external link */ 'a', `Character.html#isWhitespace(int)`, `white space`],
+					[/* reference */ 'r', `.Character#isWhitespace(int)`],
 					[/* text */ 't', ` from
  the beginning and end of a string.`]
 				]]
@@ -3468,7 +3720,7 @@ DocsCollector.collect('java.lang.String', [
 			[/* method description */
 				[/* text */ 't', `Returns a string whose value is this string, with all leading
  `],
-				[/* external link */ 'a', `Character.html#isWhitespace(int)`, `white space`],
+				[/* reference */ 'r', `.Character#isWhitespace(int)`],
 				[/* text */ 't', ` removed.
  `],
 				[/* block */ 'b', [
@@ -3478,7 +3730,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', ` object represents an empty string,
  or if all code points in this string are
  `],
-					[/* external link */ 'a', `Character.html#isWhitespace(int)`, `white space`],
+					[/* reference */ 'r', `.Character#isWhitespace(int)`],
 					[/* text */ 't', `, then an empty string
  is returned.
  `]
@@ -3487,7 +3739,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', `
  Otherwise, returns a substring of this string beginning with the first
  code point that is not a `],
-					[/* external link */ 'a', `Character.html#isWhitespace(int)`, `white space`],
+					[/* reference */ 'r', `.Character#isWhitespace(int)`],
 					[/* text */ 't', `
  up to and including the last code point of this string.
  `]
@@ -3496,7 +3748,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', `
  This method may be used to trim
  `],
-					[/* external link */ 'a', `Character.html#isWhitespace(int)`, `white space`],
+					[/* reference */ 'r', `.Character#isWhitespace(int)`],
 					[/* text */ 't', ` from
  the beginning of a string.`]
 				]]
@@ -3512,7 +3764,7 @@ DocsCollector.collect('java.lang.String', [
 			[/* method description */
 				[/* text */ 't', `Returns a string whose value is this string, with all trailing
  `],
-				[/* external link */ 'a', `Character.html#isWhitespace(int)`, `white space`],
+				[/* reference */ 'r', `.Character#isWhitespace(int)`],
 				[/* text */ 't', ` removed.
  `],
 				[/* block */ 'b', [
@@ -3522,7 +3774,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', ` object represents an empty string,
  or if all characters in this string are
  `],
-					[/* external link */ 'a', `Character.html#isWhitespace(int)`, `white space`],
+					[/* reference */ 'r', `.Character#isWhitespace(int)`],
 					[/* text */ 't', `, then an empty string
  is returned.
  `]
@@ -3532,7 +3784,7 @@ DocsCollector.collect('java.lang.String', [
  Otherwise, returns a substring of this string beginning with the first
  code point of this string up to and including the last code point
  that is not a `],
-					[/* external link */ 'a', `Character.html#isWhitespace(int)`, `white space`],
+					[/* reference */ 'r', `.Character#isWhitespace(int)`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -3540,7 +3792,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', `
  This method may be used to trim
  `],
-					[/* external link */ 'a', `Character.html#isWhitespace(int)`, `white space`],
+					[/* reference */ 'r', `.Character#isWhitespace(int)`],
 					[/* text */ 't', ` from
  the end of a string.`]
 				]]
@@ -3632,7 +3884,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the string is empty or contains only
  `],
-				[/* external link */ 'a', `Character.html#isWhitespace(int)`, `white space`],
+				[/* reference */ 'r', `.Character#isWhitespace(int)`],
 				[/* text */ 't', ` codepoints,
  otherwise `],
 				[/* inline code block */ 'i', `false`],
@@ -3644,7 +3896,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if the string is empty or contains only
          `],
-				[/* external link */ 'a', `Character.html#isWhitespace(int)`, `white space`],
+				[/* reference */ 'r', `.Character#isWhitespace(int)`],
 				[/* text */ 't', ` codepoints,
          otherwise `],
 				[/* inline code block */ 'i', `false`]
@@ -3670,17 +3922,17 @@ DocsCollector.collect('java.lang.String', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The locale always used is the one returned by `],
-					[/* external link */ 'a', `../util/Locale.html#getDefault(java.util.Locale.Category)`, `Locale.getDefault(Locale.Category)`],
+					[/* reference */ 'r', `java.Locale#getDefault(java.util.Locale.Category)`],
 					[/* text */ 't', ` with
  `],
-					[/* external link */ 'a', `../util/Locale.Category.html#FORMAT`, `FORMAT`],
+					[/* reference */ 'r', `java.Locale.Category#FORMAT`],
 					[/* text */ 't', ` category specified.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'format', [/* parameter description */
 					[/* text */ 't', `A `],
-					[/* external link */ 'a', `../util/Formatter.html#syntax`, `format string`]
+					[/* reference */ 'r', `java.Formatter#syntax`]
 				]],
 				[/* parameter */ 'args', [/* parameter description */
 					[/* text */ 't', `Arguments referenced by the format specifiers in the format
@@ -3695,7 +3947,7 @@ DocsCollector.collect('java.lang.String', [
          `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` argument depends on the `],
-					[/* external link */ 'a', `../util/Formatter.html#syntax`, `conversion`],
+					[/* reference */ 'r', `java.Formatter#syntax`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -3706,7 +3958,7 @@ DocsCollector.collect('java.lang.String', [
           insufficient arguments given the format string, or other
           illegal conditions.  For specification of all possible
           formatting errors, see the `],
-					[/* external link */ 'a', `../util/Formatter.html#detail`, `Details`],
+					[/* reference */ 'r', `java.Formatter#detail`],
 					[/* text */ 't', ` section of the
           formatter class specification.`]
 				]]
@@ -3734,7 +3986,7 @@ DocsCollector.collect('java.lang.String', [
 				]],
 				[/* parameter */ 'format', [/* parameter description */
 					[/* text */ 't', `A `],
-					[/* external link */ 'a', `../util/Formatter.html#syntax`, `format string`]
+					[/* reference */ 'r', `java.Formatter#syntax`]
 				]],
 				[/* parameter */ 'args', [/* parameter description */
 					[/* text */ 't', `Arguments referenced by the format specifiers in the format
@@ -3750,7 +4002,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` argument depends on the
          `],
-					[/* external link */ 'a', `../util/Formatter.html#syntax`, `conversion`],
+					[/* reference */ 'r', `java.Formatter#syntax`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -3761,7 +4013,7 @@ DocsCollector.collect('java.lang.String', [
           insufficient arguments given the format string, or other
           illegal conditions.  For specification of all possible
           formatting errors, see the `],
-					[/* external link */ 'a', `../util/Formatter.html#detail`, `Details`],
+					[/* reference */ 'r', `java.Formatter#detail`],
 					[/* text */ 't', ` section of the
           formatter class specification`]
 				]]
@@ -3793,7 +4045,7 @@ DocsCollector.collect('java.lang.String', [
 			[/* method description */
 				[/* text */ 't', `Returns a stream of code point values from this sequence.  Any surrogate
  pairs encountered in the sequence are combined as if by `],
-				[/* external link */ 'a', `Character.html#toCodePoint(char,char)`, `Character.toCodePoint`],
+				[/* reference */ 'r', `.Character#toCodePoint(char,char)`],
 				[/* text */ 't', ` and the result is passed
  to the stream. Any other code units, including ordinary BMP characters,
  unpaired surrogates, and undefined code units, are zero-extended to
@@ -3933,7 +4185,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* inline code block */ 'i', `String`],
 				[/* text */ 't', ` object
           as determined by the `],
-				[/* reference */ 'r', `equals(Object)`],
+				[/* reference */ 'r', `#equals(java.lang.Object)`, `equals(Object)`],
 				[/* text */ 't', ` method.`]
 			]
 		]],
@@ -3946,7 +4198,7 @@ DocsCollector.collect('java.lang.String', [
 
  `],
 				[/* block */ 'b', [
-					[/* code block */ 'c', ` str.subSequence(begin,&nbsp;end)`]
+					[/* code block */ 'c', ` str.subSequence(begin, end)`]
 				]],
 				[/* text */ 't', `
 
@@ -3954,7 +4206,7 @@ DocsCollector.collect('java.lang.String', [
 
  `],
 				[/* block */ 'b', [
-					[/* code block */ 'c', ` str.substring(begin,&nbsp;end)`]
+					[/* code block */ 'c', ` str.substring(begin, end)`]
 				]],
 				[/* block */ 'b', '']
 			],
@@ -4063,7 +4315,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* text */ 't', `
  This string is conceptually separated into lines using
  `],
-					[/* reference */ 'r', `lines()`],
+					[/* reference */ 'r', `#lines()`, `lines()`],
 					[/* text */ 't', `. Each line is then adjusted as described below
  and then suffixed with a line feed `],
 					[/* inline code block */ 'i', `"\\n"`],
@@ -4087,12 +4339,12 @@ DocsCollector.collect('java.lang.String', [
 					[/* inline code block */ 'i', `n < 0`],
 					[/* text */ 't', ` then up to `],
 					[/* inline code block */ 'i', `n`],
-					[/* external link */ 'a', `Character.html#isWhitespace(int)`, `white space characters`],
+					[/* reference */ 'r', `.Character#isWhitespace(int)`],
 					[/* text */ 't', ` are removed
  from the beginning of each line. If a given line does not contain
  sufficient white space then all leading
  `],
-					[/* external link */ 'a', `Character.html#isWhitespace(int)`, `white space characters`],
+					[/* reference */ 'r', `.Character#isWhitespace(int)`],
 					[/* text */ 't', ` are removed.
  Each white space character is treated as a single character. In
  particular, the tab character `],
@@ -4113,7 +4365,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* parameter */ 'n', [/* parameter description */
 					[/* text */ 't', `number of leading
            `],
-					[/* external link */ 'a', `Character.html#isWhitespace(int)`, `white space characters`],
+					[/* reference */ 'r', `.Character#isWhitespace(int)`],
 					[/* text */ 't', `
            to add or remove`]
 				]]
@@ -4127,46 +4379,46 @@ DocsCollector.collect('java.lang.String', [
 			[/* method description */
 				[/* text */ 't', `Returns a string whose value is this string, with incidental
  `],
-				[/* external link */ 'a', `Character.html#isWhitespace(int)`, `white space`],
+				[/* reference */ 'r', `.Character#isWhitespace(int)`],
 				[/* text */ 't', ` removed from
  the beginning and end of every line.
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `
  Incidental `],
-					[/* external link */ 'a', `Character.html#isWhitespace(int)`, `white space`],
+					[/* reference */ 'r', `.Character#isWhitespace(int)`],
 					[/* text */ 't', `
  is often present in a text block to align the content with the opening
  delimiter. For example, in the following code, dots represent incidental
  `],
-					[/* external link */ 'a', `Character.html#isWhitespace(int)`, `white space`],
+					[/* reference */ 'r', `.Character#isWhitespace(int)`],
 					[/* text */ 't', `:
  `]
 				]],
 				[/* block */ 'b', [
 					[/* code block */ 'c', ` String html = """
- ..............&lt;html&gt;
- ..............    &lt;body&gt;
- ..............        &lt;p&gt;Hello, world&lt;/p&gt;
- ..............    &lt;/body&gt;
- ..............&lt;/html&gt;
+ ..............<html>
+ ..............    <body>
+ ..............        <p>Hello, world</p>
+ ..............    </body>
+ ..............</html>
  ..............""";
  `]
 				]],
 				[/* text */ 't', `
  This method treats the incidental
  `],
-				[/* external link */ 'a', `Character.html#isWhitespace(int)`, `white space`],
+				[/* reference */ 'r', `.Character#isWhitespace(int)`],
 				[/* text */ 't', ` as indentation to be
  stripped, producing a string that preserves the relative indentation of
  the content. Using | to visualize the start of each line of the string:
  `],
 				[/* block */ 'b', [
-					[/* code block */ 'c', ` |&lt;html&gt;
- |    &lt;body&gt;
- |        &lt;p&gt;Hello, world&lt;/p&gt;
- |    &lt;/body&gt;
- |&lt;/html&gt;
+					[/* code block */ 'c', ` |<html>
+ |    <body>
+ |        <p>Hello, world</p>
+ |    </body>
+ |</html>
  `]
 				]],
 				[/* text */ 't', `
@@ -4194,10 +4446,10 @@ DocsCollector.collect('java.lang.String', [
 					[/* block */ 'b', [
 						[/* block */ 'b', [
 							[/* text */ 't', `For each non-blank line (as defined by `],
-							[/* reference */ 'r', `isBlank()`],
+							[/* reference */ 'r', `#isBlank()`, `isBlank()`],
 							[/* text */ 't', `),
    the leading `],
-							[/* external link */ 'a', `Character.html#isWhitespace(int)`, `white space`],
+							[/* reference */ 'r', `.Character#isWhitespace(int)`],
 							[/* text */ 't', `
    characters are counted.`]
 						]]
@@ -4205,11 +4457,11 @@ DocsCollector.collect('java.lang.String', [
 					[/* block */ 'b', [
 						[/* block */ 'b', [
 							[/* text */ 't', `The leading `],
-							[/* external link */ 'a', `Character.html#isWhitespace(int)`, `white space`],
+							[/* reference */ 'r', `.Character#isWhitespace(int)`],
 							[/* text */ 't', `
    characters on the last line are also counted even if
    `],
-							[/* reference */ 'r', `blank`],
+							[/* reference */ 'r', `#isBlank()`, `blank`],
 							[/* text */ 't', `.`]
 						]]
 					]]
@@ -4224,17 +4476,17 @@ DocsCollector.collect('java.lang.String', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  For each `],
-					[/* reference */ 'r', `non-blank`],
+					[/* reference */ 'r', `#isBlank()`, `non-blank`],
 					[/* text */ 't', ` line, `],
 					[/* text */ 't', `min`],
 					[/* text */ 't', ` leading
  `],
-					[/* external link */ 'a', `Character.html#isWhitespace(int)`, `white space`],
+					[/* reference */ 'r', `.Character#isWhitespace(int)`],
 					[/* text */ 't', ` characters are
  removed, and any trailing `],
-					[/* external link */ 'a', `Character.html#isWhitespace(int)`, `white space`],
+					[/* reference */ 'r', `.Character#isWhitespace(int)`],
 					[/* text */ 't', ` characters are removed. `],
-					[/* reference */ 'r', `Blank`],
+					[/* reference */ 'r', `#isBlank()`, `Blank`],
 					[/* text */ 't', ` lines
  are replaced with the empty string.
 
@@ -4263,7 +4515,145 @@ DocsCollector.collect('java.lang.String', [
 				[/* block */ 'b', `
  Escape sequences are translated as follows;
  `],
-				[/* table */ 't', ''],
+				[/* table */ 'tbl',
+					[/* caption */ 'tc'],
+					[/* table header */ 'th', [
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `Escape`]
+							]],
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `Name`]
+							]],
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `Translation`]
+							]]
+						]]
+					]],
+					[/* table body */ 'tb', [
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `\\b`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `backspace`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `U+0008`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `\\t`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `horizontal tab`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `U+0009`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `\\n`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `line feed`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `U+000A`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `\\f`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `form feed`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `U+000C`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `\\r`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `carriage return`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `U+000D`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `\\s`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `space`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `U+0020`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `\\"`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `double quote`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `U+0022`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `\\'`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `single quote`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `U+0027`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `\\\\`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `backslash`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `U+005C`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `\\0 - \\377`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `octal escape`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `code point equivalents`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `\\<line-terminator>`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `continuation`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `discard`]
+							]]
+						]]
+					]],
+				],
 				[/* block */ 'b', '']
 			],
 			/* parameters */ UDF,
@@ -4284,7 +4674,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* inline code block */ 'i', `char`],
 				[/* text */ 't', ` values
  from this sequence.  Any char which maps to a `],
-				[/* external link */ 'a', `../../../java.base/java/lang/Character.html#unicode`, `surrogate code point`],
+				[/* text */ 't', `surrogate code point`],
 				[/* text */ 't', ` is passed through uninterpreted.`]
 			],
 			/* parameters */ UDF,
@@ -4339,7 +4729,7 @@ DocsCollector.collect('java.lang.String', [
 		[/* method */ 'copyValueOf(char[],int,int)', [
 			[/* method description */
 				[/* text */ 't', `Equivalent to `],
-				[/* reference */ 'r', `valueOf(char[], int, int)`],
+				[/* reference */ 'r', `#valueOf(char%5B%5D,int,int)`, `valueOf(char[], int, int)`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -4379,7 +4769,7 @@ DocsCollector.collect('java.lang.String', [
 		[/* method */ 'copyValueOf(char[])', [
 			[/* method description */
 				[/* text */ 't', `Equivalent to `],
-				[/* reference */ 'r', `valueOf(char[])`],
+				[/* reference */ 'r', `#valueOf(char%5B%5D)`, `valueOf(char[])`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -4414,7 +4804,7 @@ DocsCollector.collect('java.lang.String', [
 					[/* inline code block */ 'i', `String`],
 					[/* text */ 't', ` object as determined by
  the `],
-					[/* reference */ 'r', `equals(Object)`],
+					[/* reference */ 'r', `#equals(java.lang.Object)`, `equals(Object)`],
 					[/* text */ 't', ` method, then the string from the pool is
  returned. Otherwise, this `],
 					[/* inline code block */ 'i', `String`],

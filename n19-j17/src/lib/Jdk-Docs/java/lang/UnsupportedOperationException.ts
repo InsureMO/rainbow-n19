@@ -9,7 +9,7 @@ DocsCollector.collect('java.lang.UnsupportedOperationException', [
 
  This class is a member of the
  `],
-			[/* external link */ 'a', `../../../java.base/java/util/package-summary.html#CollectionsFramework`, `Java Collections Framework`],
+			[/* text */ 't', `Java Collections Framework`],
 			[/* text */ 't', `.`]
 		]]
 	],
@@ -33,7 +33,7 @@ DocsCollector.collect('java.lang.UnsupportedOperationException', [
 				[/* parameter */ 'cause', [/* parameter description */
 					[/* text */ 't', `the cause (which is saved for later retrieval by the
          `],
-					[/* external link */ 'a', `Throwable.html#getCause()`, `Throwable.getCause()`],
+					[/* reference */ 'r', `.Throwable#getCause()`],
 					[/* text */ 't', ` method).  (A `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` value is
@@ -63,13 +63,13 @@ DocsCollector.collect('java.lang.UnsupportedOperationException', [
 				[/* parameter */ 'message', [/* parameter description */
 					[/* text */ 't', `the detail message (which is saved for later retrieval
          by the `],
-					[/* external link */ 'a', `Throwable.html#getMessage()`, `Throwable.getMessage()`],
+					[/* reference */ 'r', `.Throwable#getMessage()`],
 					[/* text */ 't', ` method).`]
 				]],
 				[/* parameter */ 'cause', [/* parameter description */
 					[/* text */ 't', `the cause (which is saved for later retrieval by the
          `],
-					[/* external link */ 'a', `Throwable.html#getCause()`, `Throwable.getCause()`],
+					[/* reference */ 'r', `.Throwable#getCause()`],
 					[/* text */ 't', ` method).  (A `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` value

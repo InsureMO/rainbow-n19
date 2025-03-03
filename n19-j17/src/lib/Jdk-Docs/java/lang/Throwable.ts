@@ -47,7 +47,7 @@ DocsCollector.collect('java.lang.Throwable', [
  thread at the time it was created. It can also contain a message
  string that gives more information about the error. Over time, a
  throwable can `],
-			[/* reference */ 'r', `suppress`],
+			[/* reference */ 'r', `#addSuppressed(java.lang.Throwable)`, `suppress`],
 			[/* text */ 't', ` other
  throwables from being propagated.  Finally, the throwable can also
  contain a `],
@@ -110,7 +110,7 @@ DocsCollector.collect('java.lang.Throwable', [
 			[/* text */ 't', `A cause can be associated with a throwable in two ways: via a
  constructor that takes the cause as an argument, or via the
  `],
-			[/* reference */ 'r', `initCause(Throwable)`],
+			[/* reference */ 'r', `#initCause(java.lang.Throwable)`, `initCause(Throwable)`],
 			[/* text */ 't', ` method.  New throwable classes that
  wish to allow causes to be associated with them should provide constructors
  that take a cause and delegate (perhaps indirectly) to one of the
@@ -156,18 +156,18 @@ DocsCollector.collect('java.lang.Throwable', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs a new throwable with the specified detail message,
  cause, `],
-				[/* reference */ 'r', `suppression`],
+				[/* reference */ 'r', `#addSuppressed(java.lang.Throwable)`, `suppression`],
 				[/* text */ 't', ` enabled or
  disabled, and writable stack trace enabled or disabled.  If
  suppression is disabled, `],
-				[/* reference */ 'r', `getSuppressed()`],
+				[/* reference */ 'r', `#getSuppressed()`, `getSuppressed()`],
 				[/* text */ 't', ` for this object
  will return a zero-length array and calls to `],
-				[/* reference */ 'r', `addSuppressed(java.lang.Throwable)`],
+				[/* reference */ 'r', `#addSuppressed(java.lang.Throwable)`, `addSuppressed(java.lang.Throwable)`],
 				[/* text */ 't', ` that would otherwise append an exception to the
  suppressed list will have no effect.  If the writable stack
  trace is false, this constructor will not call `],
-				[/* reference */ 'r', `fillInStackTrace()`],
+				[/* reference */ 'r', `#fillInStackTrace()`, `fillInStackTrace()`],
 				[/* text */ 't', `, a `],
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', ` will be written to the
@@ -176,10 +176,10 @@ DocsCollector.collect('java.lang.Throwable', [
 				[/* text */ 't', ` field, and subsequent calls to `],
 				[/* inline code block */ 'i', `fillInStackTrace`],
 				[/* text */ 't', ` and `],
-				[/* reference */ 'r', `setStackTrace(StackTraceElement[])`],
+				[/* reference */ 'r', `#setStackTrace(java.lang.StackTraceElement%5B%5D)`, `setStackTrace(StackTraceElement[])`],
 				[/* text */ 't', ` will not set the stack
  trace.  If the writable stack trace is false, `],
-				[/* reference */ 'r', `getStackTrace()`],
+				[/* reference */ 'r', `#getStackTrace()`, `getStackTrace()`],
 				[/* text */ 't', ` will return a zero length array.
 
  `],
@@ -239,7 +239,7 @@ DocsCollector.collect('java.lang.Throwable', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `The `],
-					[/* reference */ 'r', `fillInStackTrace()`],
+					[/* reference */ 'r', `#fillInStackTrace()`, `fillInStackTrace()`],
 					[/* text */ 't', ` method is called to initialize
  the stack trace data in the newly created throwable.`]
 				]]
@@ -248,7 +248,7 @@ DocsCollector.collect('java.lang.Throwable', [
 				[/* parameter */ 'cause', [/* parameter description */
 					[/* text */ 't', `the cause (which is saved for later retrieval by the
          `],
-					[/* reference */ 'r', `getCause()`],
+					[/* reference */ 'r', `#getCause()`, `getCause()`],
 					[/* text */ 't', ` method).  (A `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` value is
@@ -275,7 +275,7 @@ DocsCollector.collect('java.lang.Throwable', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `The `],
-					[/* reference */ 'r', `fillInStackTrace()`],
+					[/* reference */ 'r', `#fillInStackTrace()`, `fillInStackTrace()`],
 					[/* text */ 't', ` method is called to initialize
  the stack trace data in the newly created throwable.`]
 				]]
@@ -284,13 +284,13 @@ DocsCollector.collect('java.lang.Throwable', [
 				[/* parameter */ 'message', [/* parameter description */
 					[/* text */ 't', `the detail message (which is saved for later retrieval
          by the `],
-					[/* reference */ 'r', `getMessage()`],
+					[/* reference */ 'r', `#getMessage()`, `getMessage()`],
 					[/* text */ 't', ` method).`]
 				]],
 				[/* parameter */ 'cause', [/* parameter description */
 					[/* text */ 't', `the cause (which is saved for later retrieval by the
          `],
-					[/* reference */ 'r', `getCause()`],
+					[/* reference */ 'r', `#getCause()`, `getCause()`],
 					[/* text */ 't', ` method).  (A `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` value is
@@ -305,13 +305,13 @@ DocsCollector.collect('java.lang.Throwable', [
 				[/* text */ 't', `Constructs a new throwable with the specified detail message.  The
  cause is not initialized, and may subsequently be initialized by
  a call to `],
-				[/* reference */ 'r', `initCause(java.lang.Throwable)`],
+				[/* reference */ 'r', `#initCause(java.lang.Throwable)`, `initCause(java.lang.Throwable)`],
 				[/* text */ 't', `.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `The `],
-					[/* reference */ 'r', `fillInStackTrace()`],
+					[/* reference */ 'r', `#fillInStackTrace()`, `fillInStackTrace()`],
 					[/* text */ 't', ` method is called to initialize
  the stack trace data in the newly created throwable.`]
 				]]
@@ -320,7 +320,7 @@ DocsCollector.collect('java.lang.Throwable', [
 				[/* parameter */ 'message', [/* parameter description */
 					[/* text */ 't', `the detail message. The detail message is saved for
           later retrieval by the `],
-					[/* reference */ 'r', `getMessage()`],
+					[/* reference */ 'r', `#getMessage()`, `getMessage()`],
 					[/* text */ 't', ` method.`]
 				]]
 			],
@@ -333,13 +333,13 @@ DocsCollector.collect('java.lang.Throwable', [
 				[/* text */ 't', ` as its detail message.
  The cause is not initialized, and may subsequently be initialized by a
  call to `],
-				[/* reference */ 'r', `initCause(java.lang.Throwable)`],
+				[/* reference */ 'r', `#initCause(java.lang.Throwable)`, `initCause(java.lang.Throwable)`],
 				[/* text */ 't', `.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `The `],
-					[/* reference */ 'r', `fillInStackTrace()`],
+					[/* reference */ 'r', `#fillInStackTrace()`, `fillInStackTrace()`],
 					[/* text */ 't', ` method is called to initialize
  the stack trace data in the newly created throwable.`]
 				]]
@@ -360,11 +360,11 @@ DocsCollector.collect('java.lang.Throwable', [
 				[/* inline code block */ 'i', `System.err`],
 				[/* text */ 't', `. The first line of
  output contains the result of the `],
-				[/* reference */ 'r', `toString()`],
+				[/* reference */ 'r', `#toString()`, `toString()`],
 				[/* text */ 't', ` method for
  this object.  Remaining lines represent data previously recorded by
  the method `],
-				[/* reference */ 'r', `fillInStackTrace()`],
+				[/* reference */ 'r', `#fillInStackTrace()`, `fillInStackTrace()`],
 				[/* text */ 't', `. The format of this
  information depends on the implementation, but the following
  example may be regarded as typical:
@@ -517,7 +517,7 @@ DocsCollector.collect('java.lang.Throwable', [
           at Resource2.close(Resource2.java:20)
           at Foo4.main(Foo4.java:5)
   Caused by: java.lang.Exception: Rats, you caught me
-          at Resource2$CloseFailException.&lt;init&gt;(Resource2.java:45)
+          at Resource2$CloseFailException.<init>(Resource2.java:45)
           ... 2 more
  `],
 				[/* block */ 'b', '']
@@ -567,7 +567,7 @@ DocsCollector.collect('java.lang.Throwable', [
 				[/* block */ 'b', [
 					[/* text */ 't', `If the stack trace of this `],
 					[/* inline code block */ 'i', `Throwable`],
-					[/* reference */ 'r', `is not writable`],
+					[/* reference */ 'r', `#%3Cinit%3E(java.lang.String,java.lang.Throwable,boolean,boolean)`, `is not writable`],
 					[/* text */ 't', `, calling this method has no effect.`]
 				]]
 			],
@@ -594,7 +594,7 @@ DocsCollector.collect('java.lang.Throwable', [
 					[/* inline code block */ 'i', `Throwable`],
 					[/* text */ 't', `, or that was set after
  creation with the `],
-					[/* reference */ 'r', `initCause(Throwable)`],
+					[/* reference */ 'r', `#initCause(java.lang.Throwable)`, `initCause(Throwable)`],
 					[/* text */ 't', ` method.  While it is
  typically unnecessary to override this method, a subclass can override
  it to return a cause set by some other means.  This is appropriate for
@@ -635,10 +635,10 @@ DocsCollector.collect('java.lang.Throwable', [
  within the constructor, or immediately after creating the
  throwable.  If this throwable was created
  with `],
-					[/* reference */ 'r', `Throwable(Throwable)`],
+					[/* reference */ 'r', `#%3Cinit%3E(java.lang.Throwable)`, `Throwable(Throwable)`],
 					[/* text */ 't', ` or
  `],
-					[/* reference */ 'r', `Throwable(String,Throwable)`],
+					[/* reference */ 'r', `#%3Cinit%3E(java.lang.String,java.lang.Throwable)`, `Throwable(String,Throwable)`],
 					[/* text */ 't', `, this method cannot be called
  even once.
 
@@ -661,7 +661,7 @@ DocsCollector.collect('java.lang.Throwable', [
 				[/* parameter */ 'cause', [/* parameter description */
 					[/* text */ 't', `the cause (which is saved for later retrieval by the
          `],
-					[/* reference */ 'r', `getCause()`],
+					[/* reference */ 'r', `#getCause()`, `getCause()`],
 					[/* text */ 't', ` method).  (A `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` value is
@@ -679,10 +679,10 @@ DocsCollector.collect('java.lang.Throwable', [
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
 					[/* text */ 't', `if this throwable was
          created with `],
-					[/* reference */ 'r', `Throwable(Throwable)`],
+					[/* reference */ 'r', `#%3Cinit%3E(java.lang.Throwable)`, `Throwable(Throwable)`],
 					[/* text */ 't', ` or
          `],
-					[/* reference */ 'r', `Throwable(String,Throwable)`],
+					[/* reference */ 'r', `#%3Cinit%3E(java.lang.String,java.lang.Throwable)`, `Throwable(String,Throwable)`],
 					[/* text */ 't', `, or this method has already
          been called on this throwable.`]
 				]]
@@ -701,7 +701,7 @@ DocsCollector.collect('java.lang.Throwable', [
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* text */ 't', ` the `],
-						[/* external link */ 'a', `Class.html#getName()`, `name`],
+						[/* reference */ 'r', `.Class#getName()`],
 						[/* text */ 't', ` of the class of this object
  `]
 					]],
@@ -709,7 +709,7 @@ DocsCollector.collect('java.lang.Throwable', [
  `],
 					[/* block */ 'b', [
 						[/* text */ 't', ` the result of invoking this object's `],
-						[/* reference */ 'r', `getLocalizedMessage()`],
+						[/* reference */ 'r', `#getLocalizedMessage()`, `getLocalizedMessage()`],
 						[/* text */ 't', `
       method
  `]
@@ -753,7 +753,7 @@ DocsCollector.collect('java.lang.Throwable', [
  statement, in order to deliver this exception.
 
  If no exceptions were suppressed or `],
-				[/* reference */ 'r', `suppression is disabled`],
+				[/* reference */ 'r', `#%3Cinit%3E(java.lang.String,java.lang.Throwable,boolean,boolean)`, `suppression is disabled`],
 				[/* text */ 't', `, an empty array is returned.  This method is
  thread-safe.  Writes to the returned array do not affect future
  calls to this method.`]
@@ -785,7 +785,7 @@ DocsCollector.collect('java.lang.Throwable', [
 			[/* method description */
 				[/* text */ 't', `Provides programmatic access to the stack trace information printed by
  `],
-				[/* reference */ 'r', `printStackTrace()`],
+				[/* reference */ 'r', `#printStackTrace()`, `printStackTrace()`],
 				[/* text */ 't', `.  Returns an array of stack trace elements,
  each representing one stack frame.  The zeroth element of the array
  (assuming the array's length is non-zero) represents the top of the
@@ -820,16 +820,16 @@ DocsCollector.collect('java.lang.Throwable', [
 			[/* method description */
 				[/* text */ 't', `Sets the stack trace elements that will be returned by
  `],
-				[/* reference */ 'r', `getStackTrace()`],
+				[/* reference */ 'r', `#getStackTrace()`, `getStackTrace()`],
 				[/* text */ 't', ` and printed by `],
-				[/* reference */ 'r', `printStackTrace()`],
+				[/* reference */ 'r', `#printStackTrace()`, `printStackTrace()`],
 				[/* text */ 't', `
  and related methods.
 
  This method, which is designed for use by RPC frameworks and other
  advanced systems, allows the client to override the default
  stack trace that is either generated by `],
-				[/* reference */ 'r', `fillInStackTrace()`],
+				[/* reference */ 'r', `#fillInStackTrace()`, `fillInStackTrace()`],
 				[/* text */ 't', `
  when a throwable is constructed or deserialized when a throwable is
  read from a serialization stream.
@@ -838,7 +838,7 @@ DocsCollector.collect('java.lang.Throwable', [
 				[/* block */ 'b', [
 					[/* text */ 't', `If the stack trace of this `],
 					[/* inline code block */ 'i', `Throwable`],
-					[/* reference */ 'r', `is not writable`],
+					[/* reference */ 'r', `#%3Cinit%3E(java.lang.String,java.lang.Throwable,boolean,boolean)`, `is not writable`],
 					[/* text */ 't', `, calling this method has no effect other than
  validating its argument.`]
 				]]
@@ -887,7 +887,7 @@ DocsCollector.collect('java.lang.Throwable', [
 					[/* text */ 't', `unless`],
 					[/* text */ 't', ` disabled
  `],
-					[/* reference */ 'r', `via a constructor`],
+					[/* reference */ 'r', `#%3Cinit%3E(java.lang.String,java.lang.Throwable,boolean,boolean)`, `via a constructor`],
 					[/* text */ 't', `.  When suppression is disabled, this method does
  nothing other than to validate its argument.
 
@@ -895,7 +895,7 @@ DocsCollector.collect('java.lang.Throwable', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `Note that when one exception `],
-					[/* reference */ 'r', `causes`],
+					[/* reference */ 'r', `#initCause(java.lang.Throwable)`, `causes`],
 					[/* text */ 't', ` another exception, the first
  exception is usually caught and then the second exception is
  thrown in response.  In other words, there is a causal

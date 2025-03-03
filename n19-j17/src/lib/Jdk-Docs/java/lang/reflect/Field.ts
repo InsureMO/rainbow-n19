@@ -738,7 +738,7 @@ DocsCollector.collect('java.lang.reflect.Field', [
  value is an array of length 0.
 
  The difference between this method and `],
-				[/* external link */ 'a', `AnnotatedElement.html#getAnnotation(java.lang.Class)`, `AnnotatedElement.getAnnotation(Class)`],
+				[/* reference */ 'r', `.AnnotatedElement#getAnnotation(java.lang.Class)`],
 				[/* text */ 't', `
  is that this method detects if its argument is a `],
 				[/* text */ 't', `repeatable
@@ -829,7 +829,7 @@ DocsCollector.collect('java.lang.reflect.Field', [
 				]],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
-						[/* reference */ 'r', `setAccessible(true)`],
+						[/* reference */ 'r', `#setAccessible(boolean)`, `setAccessible(true)`],
 						[/* text */ 't', ` has succeeded for
      this `],
 						[/* inline code block */ 'i', `Field`],
@@ -838,12 +838,12 @@ DocsCollector.collect('java.lang.reflect.Field', [
 					[/* block */ 'b', `the field is non-static; and`],
 					[/* block */ 'b', [
 						[/* text */ 't', `the field's declaring class is not a `],
-						[/* external link */ 'a', `../Class.html#isHidden()`, `hidden class`],
+						[/* reference */ 'r', `java.Class#isHidden()`],
 						[/* text */ 't', `; and`]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `the field's declaring class is not a `],
-						[/* external link */ 'a', `../Class.html#isRecord()`, `record class`],
+						[/* reference */ 'r', `java.Class#isRecord()`],
 						[/* text */ 't', `.`]
 					]]
 				]],
@@ -961,7 +961,7 @@ DocsCollector.collect('java.lang.reflect.Field', [
  access to a `],
 						[/* reference */ 'r', `java.lang.reflect.Member`],
 						[/* text */ 't', ` of `],
-						[/* external link */ 'a', `Member.html#getDeclaringClass()`, `declaring class`],
+						[/* reference */ 'r', `.Member#getDeclaringClass()`],
 						[/* inline code block */ 'i', `D`],
 						[/* text */ 't', ` if any of the following hold: `]
 					]],
@@ -982,7 +982,7 @@ DocsCollector.collect('java.lang.reflect.Field', [
 							[/* text */ 't', ` in
      a package that the module containing `],
 							[/* inline code block */ 'i', `D`],
-							[/* external link */ 'a', `../Module.html#isExported(java.lang.String,java.lang.Module)`, `exports`],
+							[/* reference */ 'r', `java.Module#isExported(java.lang.String,java.lang.Module)`],
 							[/* text */ 't', ` to at least the module
      containing `],
 							[/* inline code block */ 'i', `C`],
@@ -1013,7 +1013,7 @@ DocsCollector.collect('java.lang.reflect.Field', [
 							[/* inline code block */ 'i', `D`],
 							[/* text */ 't', ` is in a package that the module containing `],
 							[/* inline code block */ 'i', `D`],
-							[/* external link */ 'a', `../Module.html#isOpen(java.lang.String,java.lang.Module)`, `opens`],
+							[/* reference */ 'r', `java.Module#isOpen(java.lang.String,java.lang.Module)`],
 							[/* text */ 't', ` to at least the module
      containing `],
 							[/* inline code block */ 'i', `C`],
@@ -1032,7 +1032,7 @@ DocsCollector.collect('java.lang.reflect.Field', [
  to the caller's module. `],
 					[/* block */ 'b', [
 						[/* text */ 't', ` This method cannot be used to enable `],
-						[/* reference */ 'r', `write`],
+						[/* reference */ 'r', `#set(java.lang.Object,java.lang.Object)`, `write`],
 						[/* text */ 't', `
  access to a `],
 						[/* text */ 't', `non-modifiable`],
@@ -1044,11 +1044,11 @@ DocsCollector.collect('java.lang.reflect.Field', [
 						[/* block */ 'b', `static final fields declared in any class or interface`],
 						[/* block */ 'b', [
 							[/* text */ 't', `final fields declared in a `],
-							[/* external link */ 'a', `../Class.html#isHidden()`, `hidden class`]
+							[/* reference */ 'r', `java.Class#isHidden()`]
 						]],
 						[/* block */ 'b', [
 							[/* text */ 't', `final fields declared in a `],
-							[/* external link */ 'a', `../Class.html#isRecord()`, `record`]
+							[/* reference */ 'r', `java.Class#isRecord()`]
 						]]
 					]],
 					[/* block */ 'b', ''],
@@ -1059,7 +1059,7 @@ DocsCollector.collect('java.lang.reflect.Field', [
 						[/* inline code block */ 'i', `true`],
 						[/* text */ 't', ` suppresses Java language access
  control checks to only enable `],
-						[/* reference */ 'r', `read`],
+						[/* reference */ 'r', `#get(java.lang.Object)`, `read`],
 						[/* text */ 't', ` access to
  these non-modifiable final fields.
 

@@ -65,10 +65,10 @@ DocsCollector.collect('java.time.chrono.Chronology', [
 			[/* inline code block */ 'i', `Chronology`],
 			[/* text */ 't', ` instance also acts as a factory.
  The `],
-			[/* reference */ 'r', `of(String)`],
+			[/* reference */ 'r', `#of(java.lang.String)`, `of(String)`],
 			[/* text */ 't', ` method allows an instance to be looked up by identifier,
  while the `],
-			[/* reference */ 'r', `ofLocale(Locale)`],
+			[/* reference */ 'r', `#ofLocale(java.util.Locale)`, `ofLocale(Locale)`],
 			[/* text */ 't', ` method allows lookup by locale.
  `]
 		]],
@@ -84,28 +84,28 @@ DocsCollector.collect('java.time.chrono.Chronology', [
 		]],
 		[/* list */ 'l', [
 			[/* block */ 'b', [
-				[/* reference */ 'r', `dateNow()`]
+				[/* reference */ 'r', `#dateNow()`, `dateNow()`]
 			]],
 			[/* block */ 'b', [
-				[/* reference */ 'r', `dateNow(clock)`]
+				[/* reference */ 'r', `#dateNow(java.time.Clock)`, `dateNow(clock)`]
 			]],
 			[/* block */ 'b', [
-				[/* reference */ 'r', `dateNow(zone)`]
+				[/* reference */ 'r', `#dateNow(java.time.ZoneId)`, `dateNow(zone)`]
 			]],
 			[/* block */ 'b', [
-				[/* reference */ 'r', `date(yearProleptic, month, day)`]
+				[/* reference */ 'r', `#date(int,int,int)`, `date(yearProleptic, month, day)`]
 			]],
 			[/* block */ 'b', [
-				[/* reference */ 'r', `date(era, yearOfEra, month, day)`]
+				[/* reference */ 'r', `#date(java.time.chrono.Era,int,int,int)`, `date(era, yearOfEra, month, day)`]
 			]],
 			[/* block */ 'b', [
-				[/* reference */ 'r', `dateYearDay(yearProleptic, dayOfYear)`]
+				[/* reference */ 'r', `#dateYearDay(int,int)`, `dateYearDay(yearProleptic, dayOfYear)`]
 			]],
 			[/* block */ 'b', [
-				[/* reference */ 'r', `dateYearDay(era, yearOfEra, dayOfYear)`]
+				[/* reference */ 'r', `#dateYearDay(java.time.chrono.Era,int,int)`, `dateYearDay(era, yearOfEra, dayOfYear)`]
 			]],
 			[/* block */ 'b', [
-				[/* reference */ 'r', `date(TemporalAccessor)`]
+				[/* reference */ 'r', `#date(java.time.temporal.TemporalAccessor)`, `date(TemporalAccessor)`]
 			]]
 		]],
 		[/* block */ 'b', ''],
@@ -230,10 +230,10 @@ DocsCollector.collect('java.time.chrono.Chronology', [
 					[/* text */ 't', `
  This returns a chronology based on either the ID or the type.
  The `],
-					[/* reference */ 'r', `chronology ID`],
+					[/* reference */ 'r', `#getId()`, `chronology ID`],
 					[/* text */ 't', ` uniquely identifies the chronology.
  The `],
-					[/* reference */ 'r', `calendar system type`],
+					[/* reference */ 'r', `#getCalendarType()`, `calendar system type`],
 					[/* text */ 't', ` is defined by the
  CLDR specification.
  `]
@@ -281,7 +281,7 @@ DocsCollector.collect('java.time.chrono.Chronology', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The conversion will obtain the chronology using `],
-					[/* external link */ 'a', `../temporal/TemporalQueries.html#chronology()`, `TemporalQueries.chronology()`],
+					[/* reference */ 'r', `java.TemporalQueries#chronology()`],
 					[/* text */ 't', `.
  If the specified temporal object does not have a chronology, `],
 					[/* reference */ 'r', `java.time.chrono.IsoChronology`],
@@ -325,7 +325,7 @@ DocsCollector.collect('java.time.chrono.Chronology', [
  It can be used to lookup the `],
 					[/* inline code block */ 'i', `Chronology`],
 					[/* text */ 't', ` using `],
-					[/* reference */ 'r', `of(String)`],
+					[/* reference */ 'r', `#of(java.lang.String)`, `of(String)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -432,7 +432,7 @@ DocsCollector.collect('java.time.chrono.Chronology', [
 					[/* text */ 't', `
  This method finds the desired calendar system in a manner equivalent
  to passing "ca" to `],
-					[/* external link */ 'a', `../../util/Locale.html#getUnicodeLocaleType(java.lang.String)`, `Locale.getUnicodeLocaleType(String)`],
+					[/* reference */ 'r', `java.time.Locale#getUnicodeLocaleType(java.lang.String)`],
 					[/* text */ 't', `.
  If the "ca" key is not present, then `],
 					[/* inline code block */ 'i', `IsoChronology`],
@@ -443,7 +443,7 @@ DocsCollector.collect('java.time.chrono.Chronology', [
 					[/* text */ 't', `
  Note that the behavior of this method differs from the older
  `],
-					[/* external link */ 'a', `../../util/Calendar.html#getInstance(java.util.Locale)`, `Calendar.getInstance(Locale)`],
+					[/* reference */ 'r', `java.time.Calendar#getInstance(java.util.Locale)`],
 					[/* text */ 't', ` method.
  If that method receives a locale of "th_TH" it will return `],
 					[/* inline code block */ 'i', `BuddhistCalendar`],
@@ -502,7 +502,7 @@ DocsCollector.collect('java.time.chrono.Chronology', [
  The calendar type is used to lookup the `],
 					[/* inline code block */ 'i', `Chronology`],
 					[/* text */ 't', ` using `],
-					[/* reference */ 'r', `of(String)`],
+					[/* reference */ 'r', `#of(java.lang.String)`, `of(String)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -564,7 +564,7 @@ DocsCollector.collect('java.time.chrono.Chronology', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The conversion typically uses the `],
-					[/* external link */ 'a', `../temporal/ChronoField.html#EPOCH_DAY`, `EPOCH_DAY`],
+					[/* reference */ 'r', `java.ChronoField#EPOCH_DAY`],
 					[/* text */ 't', `
  field, which is standardized across calendar systems.
  `]
@@ -658,7 +658,7 @@ DocsCollector.collect('java.time.chrono.Chronology', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The definition of `],
-					[/* external link */ 'a', `../temporal/ChronoField.html#EPOCH_DAY`, `EPOCH_DAY`],
+					[/* reference */ 'r', `java.ChronoField#EPOCH_DAY`],
 					[/* text */ 't', ` is the same
  for all calendar systems, thus it can be used for conversion.`]
 				]]
@@ -795,7 +795,7 @@ DocsCollector.collect('java.time.chrono.Chronology', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This will query the `],
-					[/* external link */ 'a', `../Clock.html#systemDefaultZone()`, `system clock`],
+					[/* reference */ 'r', `java.Clock#systemDefaultZone()`],
 					[/* text */ 't', ` in the default
  time-zone to obtain the current date.
  `]
@@ -821,7 +821,7 @@ DocsCollector.collect('java.time.chrono.Chronology', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This will query the `],
-					[/* external link */ 'a', `../Clock.html#system(java.time.ZoneId)`, `system clock`],
+					[/* reference */ 'r', `java.Clock#system(java.time.ZoneId)`],
 					[/* text */ 't', ` to obtain the current date.
  Specifying the time-zone avoids dependence on the default time-zone.
  `]

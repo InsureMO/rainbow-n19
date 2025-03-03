@@ -13,10 +13,10 @@ DocsCollector.collect('java.util.function.ToIntFunction', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
-			[/* external link */ 'a', `package-summary.html`, `functional interface`],
+			[/* reference */ 'r', `.package-summary`],
 			[/* text */ 't', `
  whose functional method is `],
-			[/* reference */ 'r', `applyAsInt(Object)`],
+			[/* reference */ 'r', `#applyAsInt(T)`, `applyAsInt(Object)`],
 			[/* text */ 't', `.`]
 		]]
 	],

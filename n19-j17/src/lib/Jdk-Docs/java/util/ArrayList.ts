@@ -89,7 +89,7 @@ DocsCollector.collect('java.util.ArrayList', [
 
  If no such object exists, the list should be "wrapped" using the
  `],
-			[/* external link */ 'a', `Collections.html#synchronizedList(java.util.List)`, `Collections.synchronizedList`],
+			[/* reference */ 'r', `.Collections#synchronizedList(java.util.List)`],
 			[/* text */ 't', `
  method.  This is best done at creation time, to prevent accidental
  unsynchronized access to the list:`]
@@ -99,20 +99,20 @@ DocsCollector.collect('java.util.ArrayList', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  The iterators returned by this class's `],
-			[/* reference */ 'r', `iterator`],
+			[/* reference */ 'r', `#iterator()`, `iterator`],
 			[/* text */ 't', ` and
  `],
-			[/* reference */ 'r', `listIterator`],
+			[/* reference */ 'r', `#listIterator(int)`, `listIterator`],
 			[/* text */ 't', ` methods are `],
 			[/* text */ 't', `fail-fast`],
 			[/* text */ 't', `:
  if the list is structurally modified at any time after the iterator is
  created, in any way except through the iterator's own
  `],
-			[/* external link */ 'a', `ListIterator.html#remove()`, `remove`],
+			[/* reference */ 'r', `.ListIterator#remove()`],
 			[/* text */ 't', ` or
  `],
-			[/* external link */ 'a', `ListIterator.html#add(E)`, `add`],
+			[/* reference */ 'r', `.ListIterator#add(E)`],
 			[/* text */ 't', ` methods, the iterator will throw a
  `],
 			[/* reference */ 'r', `java.util.ConcurrentModificationException`],
@@ -138,7 +138,7 @@ DocsCollector.collect('java.util.ArrayList', [
 		[/* block */ 'b', [
 			[/* text */ 't', `This class is a member of the
  `],
-			[/* external link */ 'a', `../../../java.base/java/util/package-summary.html#CollectionsFramework`, `Java Collections Framework`],
+			[/* text */ 't', `Java Collections Framework`],
 			[/* text */ 't', `.`]
 		]]
 	],
@@ -199,7 +199,7 @@ DocsCollector.collect('java.util.ArrayList', [
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` (as specified by `],
-				[/* external link */ 'a', `Collection.html#add(E)`, `Collection.add(E)`],
+				[/* reference */ 'r', `.Collection#add(E)`],
 				[/* text */ 't', `)`]
 			]
 		]],
@@ -463,10 +463,10 @@ DocsCollector.collect('java.util.ArrayList', [
  `],
 				[/* text */ 't', `
  Similar idioms may be constructed for `],
-				[/* reference */ 'r', `indexOf(Object)`],
+				[/* reference */ 'r', `#indexOf(java.lang.Object)`, `indexOf(Object)`],
 				[/* text */ 't', ` and
  `],
-				[/* reference */ 'r', `lastIndexOf(Object)`],
+				[/* reference */ 'r', `#lastIndexOf(java.lang.Object)`, `lastIndexOf(Object)`],
 				[/* text */ 't', `, and all of the algorithms in the
  `],
 				[/* reference */ 'r', `java.util.Collections`],
@@ -619,7 +619,7 @@ DocsCollector.collect('java.util.ArrayList', [
 		[/* method */ 'spliterator()', [
 			[/* method description */
 				[/* text */ 't', `Creates a `],
-				[/* external link */ 'a', `Spliterator.html#binding`, `late-binding`],
+				[/* reference */ 'r', `.Spliterator#binding`],
 				[/* text */ 't', `
  and `],
 				[/* text */ 't', `fail-fast`],
@@ -632,12 +632,12 @@ DocsCollector.collect('java.util.ArrayList', [
 					[/* text */ 't', `The `],
 					[/* inline code block */ 'i', `Spliterator`],
 					[/* text */ 't', ` reports `],
-					[/* external link */ 'a', `Spliterator.html#SIZED`, `Spliterator.SIZED`],
+					[/* reference */ 'r', `.Spliterator#SIZED`],
 					[/* text */ 't', `,
  `],
-					[/* external link */ 'a', `Spliterator.html#SUBSIZED`, `Spliterator.SUBSIZED`],
+					[/* reference */ 'r', `.Spliterator#SUBSIZED`],
 					[/* text */ 't', `, and `],
-					[/* external link */ 'a', `Spliterator.html#ORDERED`, `Spliterator.ORDERED`],
+					[/* reference */ 'r', `.Spliterator#ORDERED`],
 					[/* text */ 't', `.
  Overriding implementations should document the reporting of additional
  characteristic values.`]
@@ -873,14 +873,14 @@ DocsCollector.collect('java.util.ArrayList', [
 					[/* text */ 't', `if the class of an element of this list
          is incompatible with the specified collection
  (`],
-					[/* external link */ 'a', `Collection.html#optional-restrictions`, `optional`],
+					[/* reference */ 'r', `.Collection#optional-restrictions`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if this list contains a null element and the
          specified collection does not permit null elements
  (`],
-					[/* external link */ 'a', `Collection.html#optional-restrictions`, `optional`],
+					[/* reference */ 'r', `.Collection#optional-restrictions`],
 					[/* text */ 't', `),
          or if the specified collection is null`]
 				]]
@@ -906,14 +906,14 @@ DocsCollector.collect('java.util.ArrayList', [
 					[/* text */ 't', `if the class of an element of this list
          is incompatible with the specified collection
  (`],
-					[/* external link */ 'a', `Collection.html#optional-restrictions`, `optional`],
+					[/* reference */ 'r', `.Collection#optional-restrictions`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if this list contains a null element and the
          specified collection does not permit null elements
  (`],
-					[/* external link */ 'a', `Collection.html#optional-restrictions`, `optional`],
+					[/* reference */ 'r', `.Collection#optional-restrictions`],
 					[/* text */ 't', `),
          or if the specified collection is null`]
 				]]
@@ -948,10 +948,10 @@ DocsCollector.collect('java.util.ArrayList', [
  sequence), starting at the specified position in the list.
  The specified index indicates the first element that would be
  returned by an initial call to `],
-				[/* external link */ 'a', `ListIterator.html#next()`, `next`],
+				[/* reference */ 'r', `.ListIterator#next()`],
 				[/* text */ 't', `.
  An initial call to `],
-				[/* external link */ 'a', `ListIterator.html#previous()`, `previous`],
+				[/* reference */ 'r', `.ListIterator#previous()`],
 				[/* text */ 't', ` would
  return the element with the specified index minus one.
 
@@ -966,7 +966,7 @@ DocsCollector.collect('java.util.ArrayList', [
 				[/* parameter */ 'index', [/* parameter description */
 					[/* text */ 't', `index of the first element to be returned from the
         list iterator (by a call to `],
-					[/* external link */ 'a', `ListIterator.html#next()`, `next`],
+					[/* reference */ 'r', `.ListIterator#next()`],
 					[/* text */ 't', `)`]
 				]]
 			],

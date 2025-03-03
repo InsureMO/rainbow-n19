@@ -10,10 +10,10 @@ DocsCollector.collect('java.nio.channels.CompletionHandler', [
 			[/* text */ 't', ` The asynchronous channels defined in this package allow a completion
  handler to be specified to consume the result of an asynchronous operation.
  The `],
-			[/* reference */ 'r', `completed`],
+			[/* reference */ 'r', `#completed(V,A)`, `completed`],
 			[/* text */ 't', ` method is invoked when the I/O operation
  completes successfully. The `],
-			[/* reference */ 'r', `failed`],
+			[/* reference */ 'r', `#failed(java.lang.Throwable,A)`, `failed`],
 			[/* text */ 't', ` method is invoked if the
  I/O operations fails. The implementations of these methods should complete
  in a timely manner so as to avoid keeping the invoking thread from dispatching

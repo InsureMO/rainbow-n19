@@ -35,7 +35,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
 		[/* reference */ 'r', `java.util.stream.Stream`],
 		[/* text */ 't', ` and the package documentation
  for `],
-		[/* external link */ 'a', `package-summary.html`, `java.util.stream`],
+		[/* reference */ 'r', `.package-summary`],
 		[/* text */ 't', ` for additional
  specification of streams, stream operations, stream pipelines, and
  parallelism.`],
@@ -56,7 +56,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
  the numerical comparison operators, this method considers negative zero
  to be strictly smaller than positive zero. This is a special case of a
  `],
-				[/* external link */ 'a', `package-summary.html#Reduction`, `reduction`],
+				[/* reference */ 'r', `.package-summary#Reduction`],
 				[/* text */ 't', ` and is
  equivalent to:
  `],
@@ -65,7 +65,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* external link */ 'a', `package-summary.html#StreamOps`, `terminal operation`],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -91,7 +91,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
  to be strictly smaller than positive zero. This is a
  special case of a
  `],
-				[/* external link */ 'a', `package-summary.html#Reduction`, `reduction`],
+				[/* reference */ 'r', `.package-summary#Reduction`],
 				[/* text */ 't', ` and is
  equivalent to:
  `],
@@ -100,7 +100,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* external link */ 'a', `package-summary.html#StreamOps`, `terminal operation`],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -120,7 +120,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* external link */ 'a', `package-summary.html#StreamOps`, `terminal operation`],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -139,17 +139,17 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is an `],
-					[/* external link */ 'a', `package-summary.html#StreamOps`, `intermediate operation`],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'mapper', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* external link */ 'a', `package-summary.html#NonInterference`, `non-interfering`],
+					[/* reference */ 'r', `.package-summary#NonInterference`],
 					[/* text */ 't', `,
                `],
-					[/* external link */ 'a', `package-summary.html#Statelessness`, `stateless`],
+					[/* reference */ 'r', `.package-summary#Statelessness`],
 					[/* text */ 't', `
                function to apply to each element`]
 				]]
@@ -162,7 +162,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
 		[/* method */ 'collect(java.util.function.Supplier,java.util.function.ObjDoubleConsumer,java.util.function.BiConsumer)', [
 			[/* method description */
 				[/* text */ 't', `Performs a `],
-				[/* external link */ 'a', `package-summary.html#MutableReduction`, `mutable reduction`],
+				[/* reference */ 'r', `.package-summary#MutableReduction`],
 				[/* text */ 't', ` operation on the elements of this stream.  A mutable
  reduction is one in which the reduced value is a mutable result container,
  such as an `],
@@ -179,7 +179,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `Like `],
-					[/* reference */ 'r', `reduce(double, DoubleBinaryOperator)`],
+					[/* reference */ 'r', `#reduce(double,java.util.function.DoubleBinaryOperator)`, `reduce(double, DoubleBinaryOperator)`],
 					[/* text */ 't', `, `],
 					[/* inline code block */ 'i', `collect`],
 					[/* text */ 't', `
@@ -190,7 +190,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* external link */ 'a', `package-summary.html#StreamOps`, `terminal operation`],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -202,26 +202,26 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
 				]],
 				[/* parameter */ 'accumulator', [/* parameter description */
 					[/* text */ 't', `an `],
-					[/* external link */ 'a', `package-summary.html#Associativity`, `associative`],
+					[/* reference */ 'r', `.package-summary#Associativity`],
 					[/* text */ 't', `,
                     `],
-					[/* external link */ 'a', `package-summary.html#NonInterference`, `non-interfering`],
+					[/* reference */ 'r', `.package-summary#NonInterference`],
 					[/* text */ 't', `,
                     `],
-					[/* external link */ 'a', `package-summary.html#Statelessness`, `stateless`],
+					[/* reference */ 'r', `.package-summary#Statelessness`],
 					[/* text */ 't', `
                     function that must fold an element into a result
                     container.`]
 				]],
 				[/* parameter */ 'combiner', [/* parameter description */
 					[/* text */ 't', `an `],
-					[/* external link */ 'a', `package-summary.html#Associativity`, `associative`],
+					[/* reference */ 'r', `.package-summary#Associativity`],
 					[/* text */ 't', `,
                     `],
-					[/* external link */ 'a', `package-summary.html#NonInterference`, `non-interfering`],
+					[/* reference */ 'r', `.package-summary#NonInterference`],
 					[/* text */ 't', `,
                     `],
-					[/* external link */ 'a', `package-summary.html#Statelessness`, `stateless`],
+					[/* reference */ 'r', `.package-summary#Statelessness`],
 					[/* text */ 't', `
                     function that accepts two partial result containers
                     and merges them, which must be compatible with the
@@ -269,7 +269,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
 			[/* method description */
 				[/* text */ 't', `Returns the count of elements in this stream.  This is a special case of
  a `],
-				[/* external link */ 'a', `package-summary.html#Reduction`, `reduction`],
+				[/* reference */ 'r', `.package-summary#Reduction`],
 				[/* text */ 't', ` and is
  equivalent to:
  `],
@@ -278,7 +278,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* external link */ 'a', `package-summary.html#StreamOps`, `terminal operation`],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -337,7 +337,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* external link */ 'a', `package-summary.html#StreamOps`, `short-circuiting stateful intermediate operation`],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -366,17 +366,17 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is an `],
-					[/* external link */ 'a', `package-summary.html#StreamOps`, `intermediate operation`],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'predicate', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* external link */ 'a', `package-summary.html#NonInterference`, `non-interfering`],
+					[/* reference */ 'r', `.package-summary#NonInterference`],
 					[/* text */ 't', `,
                   `],
-					[/* external link */ 'a', `package-summary.html#Statelessness`, `stateless`],
+					[/* reference */ 'r', `.package-summary#Statelessness`],
 					[/* text */ 't', `
                   predicate to apply to each element to determine if it
                   should be included`]
@@ -411,17 +411,17 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* external link */ 'a', `package-summary.html#StreamOps`, `short-circuiting terminal operation`],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'predicate', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* external link */ 'a', `package-summary.html#NonInterference`, `non-interfering`],
+					[/* reference */ 'r', `.package-summary#NonInterference`],
 					[/* text */ 't', `,
                   `],
-					[/* external link */ 'a', `package-summary.html#Statelessness`, `stateless`],
+					[/* reference */ 'r', `.package-summary#Statelessness`],
 					[/* text */ 't', `
                   predicate to apply to elements of this stream`]
 				]]
@@ -440,7 +440,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
  this stream with the contents of a mapped stream produced by applying
  the provided mapping function to each element.  Each mapped stream is
  `],
-				[/* external link */ 'a', `BaseStream.html#close()`, `closed`],
+				[/* reference */ 'r', `.BaseStream#close()`],
 				[/* text */ 't', ` after its contents
  have been placed into this stream.  (If a mapped stream is `],
 				[/* inline code block */ 'i', `null`],
@@ -450,17 +450,17 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is an `],
-					[/* external link */ 'a', `package-summary.html#StreamOps`, `intermediate operation`],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'mapper', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* external link */ 'a', `package-summary.html#NonInterference`, `non-interfering`],
+					[/* reference */ 'r', `.package-summary#NonInterference`],
 					[/* text */ 't', `,
                `],
-					[/* external link */ 'a', `package-summary.html#Statelessness`, `stateless`],
+					[/* reference */ 'r', `.package-summary#Statelessness`],
 					[/* text */ 't', `
                function to apply to each element which produces a
                `],
@@ -480,26 +480,17 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* external link */ 'a', `package-summary.html#StreamOps`, `terminal operation`],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
 					[/* text */ 't', `.
 
  `]
 				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `For parallel stream pipelines, this operation does `],
-					[/* text */ 't', `not`],
-					[/* text */ 't', `
- guarantee to respect the encounter order of the stream, as doing so
- would sacrifice the benefit of parallelism.  For any given element, the
- action may be performed at whatever time and in whatever thread the
- library chooses.  If the action accesses shared state, it is
- responsible for providing the required synchronization.`]
-				]]
+				[/* block */ 'b', `not`]
 			],
 			[/* parameters */
 				[/* parameter */ 'action', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* external link */ 'a', `package-summary.html#NonInterference`, `non-interfering`],
+					[/* reference */ 'r', `.package-summary#NonInterference`],
 					[/* text */ 't', ` action to perform on the elements`]
 				]]
 			],
@@ -518,7 +509,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* external link */ 'a', `package-summary.html#StreamOps`, `short-circuiting terminal operation`],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
 					[/* text */ 't', `.
 
  `]
@@ -529,7 +520,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
  performance in parallel operations; the cost is that multiple invocations
  on the same source may not return the same result.  (If a stable result
  is desired, use `],
-					[/* reference */ 'r', `findFirst()`],
+					[/* reference */ 'r', `#findFirst()`, `findFirst()`],
 					[/* text */ 't', ` instead.)`]
 				]]
 			],
@@ -558,7 +549,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* external link */ 'a', `package-summary.html#StreamOps`, `stateful intermediate operation`],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -587,7 +578,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is an `],
-					[/* external link */ 'a', `package-summary.html#StreamOps`, `intermediate operation`],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
 					[/* text */ 't', `.
 
  `]
@@ -600,7 +591,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
 			[/* parameters */
 				[/* parameter */ 'action', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* external link */ 'a', `package-summary.html#NonInterference`, `non-interfering`],
+					[/* reference */ 'r', `.package-summary#NonInterference`],
 					[/* text */ 't', ` action to perform on the elements as
                they are consumed from the stream`]
 				]]
@@ -615,7 +606,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
 				[/* text */ 't', `Returns the sum of elements in this stream.
 
  Summation is a special case of a `],
-				[/* external link */ 'a', `package-summary.html#Reduction`, `reduction`],
+				[/* reference */ 'r', `.package-summary#Reduction`],
 				[/* text */ 't', `. If
  floating-point summation were exact, this method would be
  equivalent to:
@@ -697,7 +688,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* external link */ 'a', `package-summary.html#StreamOps`, `terminal operation`],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -710,11 +701,11 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
 		[/* method */ 'reduce(double,java.util.function.DoubleBinaryOperator)', [
 			[/* method description */
 				[/* text */ 't', `Performs a `],
-				[/* external link */ 'a', `package-summary.html#Reduction`, `reduction`],
+				[/* reference */ 'r', `.package-summary#Reduction`],
 				[/* text */ 't', ` on the
  elements of this stream, using the provided identity value and an
  `],
-				[/* external link */ 'a', `package-summary.html#Associativity`, `associative`],
+				[/* reference */ 'r', `.package-summary#Associativity`],
 				[/* text */ 't', `
  accumulation function, and returns the reduced value.  This is equivalent
  to:
@@ -746,14 +737,14 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
 					[/* inline code block */ 'i', `accumulator`],
 					[/* text */ 't', ` function must be an
  `],
-					[/* external link */ 'a', `package-summary.html#Associativity`, `associative`],
+					[/* reference */ 'r', `.package-summary#Associativity`],
 					[/* text */ 't', ` function.
 
  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* external link */ 'a', `package-summary.html#StreamOps`, `terminal operation`],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -763,13 +754,13 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
 				]],
 				[/* parameter */ 'op', [/* parameter description */
 					[/* text */ 't', `an `],
-					[/* external link */ 'a', `package-summary.html#Associativity`, `associative`],
+					[/* reference */ 'r', `.package-summary#Associativity`],
 					[/* text */ 't', `,
            `],
-					[/* external link */ 'a', `package-summary.html#NonInterference`, `non-interfering`],
+					[/* reference */ 'r', `.package-summary#NonInterference`],
 					[/* text */ 't', `,
            `],
-					[/* external link */ 'a', `package-summary.html#Statelessness`, `stateless`],
+					[/* reference */ 'r', `.package-summary#Statelessness`],
 					[/* text */ 't', `
            function for combining two values`]
 				]]
@@ -782,11 +773,11 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
 		[/* method */ 'reduce(java.util.function.DoubleBinaryOperator)', [
 			[/* method description */
 				[/* text */ 't', `Performs a `],
-				[/* external link */ 'a', `package-summary.html#Reduction`, `reduction`],
+				[/* reference */ 'r', `.package-summary#Reduction`],
 				[/* text */ 't', ` on the
  elements of this stream, using an
  `],
-				[/* external link */ 'a', `package-summary.html#Associativity`, `associative`],
+				[/* reference */ 'r', `.package-summary#Associativity`],
 				[/* text */ 't', ` accumulation
  function, and returns an `],
 				[/* inline code block */ 'i', `OptionalDouble`],
@@ -816,27 +807,27 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
 					[/* inline code block */ 'i', `accumulator`],
 					[/* text */ 't', ` function must be an
  `],
-					[/* external link */ 'a', `package-summary.html#Associativity`, `associative`],
+					[/* reference */ 'r', `.package-summary#Associativity`],
 					[/* text */ 't', ` function.
 
  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* external link */ 'a', `package-summary.html#StreamOps`, `terminal operation`],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'op', [/* parameter description */
 					[/* text */ 't', `an `],
-					[/* external link */ 'a', `package-summary.html#Associativity`, `associative`],
+					[/* reference */ 'r', `.package-summary#Associativity`],
 					[/* text */ 't', `,
            `],
-					[/* external link */ 'a', `package-summary.html#NonInterference`, `non-interfering`],
+					[/* reference */ 'r', `.package-summary#NonInterference`],
 					[/* text */ 't', `,
            `],
-					[/* external link */ 'a', `package-summary.html#Statelessness`, `stateless`],
+					[/* reference */ 'r', `.package-summary#Statelessness`],
 					[/* text */ 't', `
            function for combining two values`]
 				]]
@@ -851,13 +842,13 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
 				[/* text */ 't', `Returns a stream consisting of the distinct elements of this stream. The
  elements are compared for equality according to
  `],
-				[/* external link */ 'a', `../../lang/Double.html#compare(double,double)`, `Double.compare(double, double)`],
+				[/* reference */ 'r', `java.util.Double#compare(double,double)`],
 				[/* text */ 't', `.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* external link */ 'a', `package-summary.html#StreamOps`, `stateful intermediate operation`],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -880,7 +871,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* external link */ 'a', `package-summary.html#StreamOps`, `short-circuiting terminal operation`],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -907,17 +898,17 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* external link */ 'a', `package-summary.html#StreamOps`, `short-circuiting terminal operation`],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'predicate', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* external link */ 'a', `package-summary.html#NonInterference`, `non-interfering`],
+					[/* reference */ 'r', `.package-summary#NonInterference`],
 					[/* text */ 't', `,
                   `],
-					[/* external link */ 'a', `package-summary.html#Statelessness`, `stateless`],
+					[/* reference */ 'r', `.package-summary#Statelessness`],
 					[/* text */ 't', `
                   predicate to apply to elements of this stream`]
 				]]
@@ -980,7 +971,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
 					[/* inline code block */ 'i', `f`],
 					[/* text */ 't', ` for one element
  `],
-					[/* external link */ 'a', `../concurrent/package-summary.html#MemoryVisibility`, `happens-before`],
+					[/* text */ 't', `happens-before`],
 					[/* text */ 't', `
  the action of applying `],
 					[/* inline code block */ 'i', `f`],
@@ -1057,7 +1048,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
 					[/* inline code block */ 'i', `hasNext`],
 					[/* text */ 't', ` predicate to an element
  `],
-					[/* external link */ 'a', `../concurrent/package-summary.html#MemoryVisibility`, `happens-before`],
+					[/* text */ 't', `happens-before`],
 					[/* text */ 't', `
  the action of applying the `],
 					[/* inline code block */ 'i', `next`],
@@ -1098,13 +1089,13 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
 				[/* text */ 't', `Returns a stream consisting of the elements of this stream in sorted
  order. The elements are compared for equality according to
  `],
-				[/* external link */ 'a', `../../lang/Double.html#compare(double,double)`, `Double.compare(double, double)`],
+				[/* reference */ 'r', `java.util.Double#compare(double,double)`],
 				[/* text */ 't', `.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* external link */ 'a', `package-summary.html#StreamOps`, `stateful intermediate operation`],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -1146,17 +1137,17 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is an `],
-					[/* external link */ 'a', `package-summary.html#StreamOps`, `intermediate operation`],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'mapper', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* external link */ 'a', `package-summary.html#NonInterference`, `non-interfering`],
+					[/* reference */ 'r', `.package-summary#NonInterference`],
 					[/* text */ 't', `,
                `],
-					[/* external link */ 'a', `package-summary.html#Statelessness`, `stateless`],
+					[/* reference */ 'r', `.package-summary#Statelessness`],
 					[/* text */ 't', `
                function to apply to each element`]
 				]]
@@ -1176,17 +1167,17 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is an `],
-					[/* external link */ 'a', `package-summary.html#StreamOps`, `intermediate operation`],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'mapper', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* external link */ 'a', `package-summary.html#NonInterference`, `non-interfering`],
+					[/* reference */ 'r', `.package-summary#NonInterference`],
 					[/* text */ 't', `,
                `],
-					[/* external link */ 'a', `package-summary.html#Statelessness`, `stateless`],
+					[/* reference */ 'r', `.package-summary#Statelessness`],
 					[/* text */ 't', `
                function to apply to each element`]
 				]]
@@ -1210,7 +1201,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is an `],
-					[/* external link */ 'a', `package-summary.html#StreamOps`, `intermediate operation`],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
 					[/* text */ 't', `.
 
  `]
@@ -1225,10 +1216,10 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
 			[/* parameters */
 				[/* parameter */ 'mapper', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* external link */ 'a', `package-summary.html#NonInterference`, `non-interfering`],
+					[/* reference */ 'r', `.package-summary#NonInterference`],
 					[/* text */ 't', `,
                `],
-					[/* external link */ 'a', `package-summary.html#Statelessness`, `stateless`],
+					[/* reference */ 'r', `.package-summary#Statelessness`],
 					[/* text */ 't', `
                function that generates replacement elements`]
 				]]
@@ -1268,17 +1259,17 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* external link */ 'a', `package-summary.html#StreamOps`, `short-circuiting stateful intermediate operation`],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'predicate', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* external link */ 'a', `package-summary.html#NonInterference`, `non-interfering`],
+					[/* reference */ 'r', `.package-summary#NonInterference`],
 					[/* text */ 't', `,
                   `],
-					[/* external link */ 'a', `package-summary.html#Statelessness`, `stateless`],
+					[/* reference */ 'r', `.package-summary#Statelessness`],
 					[/* text */ 't', `
                   predicate to apply to elements to determine the longest
                   prefix of elements.`]
@@ -1320,17 +1311,17 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* external link */ 'a', `package-summary.html#StreamOps`, `stateful intermediate operation`],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'predicate', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* external link */ 'a', `package-summary.html#NonInterference`, `non-interfering`],
+					[/* reference */ 'r', `.package-summary#NonInterference`],
 					[/* text */ 't', `,
                   `],
-					[/* external link */ 'a', `package-summary.html#Statelessness`, `stateless`],
+					[/* reference */ 'r', `.package-summary#Statelessness`],
 					[/* text */ 't', `
                   predicate to apply to elements to determine the longest
                   prefix of elements.`]
@@ -1350,14 +1341,14 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* external link */ 'a', `package-summary.html#StreamOps`, `terminal operation`],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'action', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* external link */ 'a', `package-summary.html#NonInterference`, `non-interfering`],
+					[/* reference */ 'r', `.package-summary#NonInterference`],
 					[/* text */ 't', ` action to perform on the elements`]
 				]]
 			],
@@ -1376,17 +1367,17 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* external link */ 'a', `package-summary.html#StreamOps`, `short-circuiting terminal operation`],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'predicate', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* external link */ 'a', `package-summary.html#NonInterference`, `non-interfering`],
+					[/* reference */ 'r', `.package-summary#NonInterference`],
 					[/* text */ 't', `,
                   `],
-					[/* external link */ 'a', `package-summary.html#Statelessness`, `stateless`],
+					[/* reference */ 'r', `.package-summary#Statelessness`],
 					[/* text */ 't', `
                   predicate to apply to elements of this stream`]
 				]]
@@ -1409,17 +1400,17 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is an `],
-					[/* external link */ 'a', `package-summary.html#StreamOps`, `intermediate operation`],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
 					[/* text */ 't', `.`]
 				]]
 			],
 			[/* parameters */
 				[/* parameter */ 'mapper', [/* parameter description */
 					[/* text */ 't', `a `],
-					[/* external link */ 'a', `package-summary.html#NonInterference`, `non-interfering`],
+					[/* reference */ 'r', `.package-summary#NonInterference`],
 					[/* text */ 't', `,
                `],
-					[/* external link */ 'a', `package-summary.html#Statelessness`, `stateless`],
+					[/* reference */ 'r', `.package-summary#Statelessness`],
 					[/* text */ 't', `
                function to apply to each element`]
 				]]
@@ -1441,7 +1432,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The computed average can vary numerically and have the
  special case behavior as computing the sum; see `],
-					[/* reference */ 'r', `sum()`],
+					[/* reference */ 'r', `#sum()`, `sum()`],
 					[/* text */ 't', `
  for details.
 
@@ -1449,14 +1440,14 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `The average is a special case of a `],
-					[/* external link */ 'a', `package-summary.html#Reduction`, `reduction`],
+					[/* reference */ 'r', `.package-summary#Reduction`],
 					[/* text */ 't', `.
 
  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* external link */ 'a', `package-summary.html#StreamOps`, `terminal operation`],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -1476,13 +1467,13 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
 				[/* text */ 't', ` describing various summary data
  about the elements of this stream.  This is a special
  case of a `],
-				[/* external link */ 'a', `package-summary.html#Reduction`, `reduction`],
+				[/* reference */ 'r', `.package-summary#Reduction`],
 				[/* text */ 't', `.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is a `],
-					[/* external link */ 'a', `package-summary.html#StreamOps`, `terminal operation`],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -1507,7 +1498,7 @@ DocsCollector.collect('java.util.stream.DoubleStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is an `],
-					[/* external link */ 'a', `package-summary.html#StreamOps`, `intermediate operation`],
+					[/* reference */ 'r', `.package-summary#StreamOps`],
 					[/* text */ 't', `.`]
 				]]
 			],

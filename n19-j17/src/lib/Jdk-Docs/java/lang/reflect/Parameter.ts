@@ -18,7 +18,7 @@ DocsCollector.collect('java.lang.reflect.Parameter', [
 			[/* method description */
 				[/* text */ 't', `Returns the name of the parameter.  If the parameter's name is
  `],
-				[/* reference */ 'r', `present`],
+				[/* reference */ 'r', `#isNamePresent()`, `present`],
 				[/* text */ 't', `, then this method returns
  the name provided by the class file. Otherwise, this method
  synthesizes a name of the form argN, where N is the index of
@@ -152,7 +152,7 @@ DocsCollector.collect('java.lang.reflect.Parameter', [
  value is an array of length 0.
 
  The difference between this method and `],
-				[/* external link */ 'a', `AnnotatedElement.html#getAnnotation(java.lang.Class)`, `AnnotatedElement.getAnnotation(Class)`],
+				[/* reference */ 'r', `.AnnotatedElement#getAnnotation(java.lang.Class)`],
 				[/* text */ 't', `
  is that this method detects if its argument is a `],
 				[/* text */ 't', `repeatable
@@ -253,7 +253,7 @@ DocsCollector.collect('java.lang.reflect.Parameter', [
  0.
 
  The difference between this method and `],
-				[/* external link */ 'a', `AnnotatedElement.html#getDeclaredAnnotation(java.lang.Class)`, `AnnotatedElement.getDeclaredAnnotation(Class)`],
+				[/* reference */ 'r', `.AnnotatedElement#getDeclaredAnnotation(java.lang.Class)`],
 				[/* text */ 't', ` is that this method detects if its
  argument is a `],
 				[/* text */ 't', `repeatable annotation type`],

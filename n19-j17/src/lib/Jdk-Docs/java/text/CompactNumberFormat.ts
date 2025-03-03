@@ -27,7 +27,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
  `],
 			[/* new line */ 'n'],
 			[/* text */ 't', `In the `],
-			[/* external link */ 'a', `../util/Locale.html#US`, `US locale`],
+			[/* reference */ 'r', `java.Locale#US`],
 			[/* text */ 't', `, `],
 			[/* inline code block */ 'i', `1000`],
 			[/* text */ 't', ` can be formatted
@@ -67,7 +67,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 			[/* text */ 't', ` for compact number
  formatting. For example,
  `],
-			[/* external link */ 'a', `NumberFormat.html#getCompactNumberInstance(java.util.Locale,java.text.NumberFormat.Style)`, `NumberFormat.getCompactNumberInstance(Locale, Style)`],
+			[/* reference */ 'r', `.NumberFormat#getCompactNumberInstance(java.util.Locale,java.text.NumberFormat.Style)`],
 			[/* text */ 't', `.
 
  `]
@@ -86,28 +86,28 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 			[/* text */ 't', `
  A number can be formatted in the compact forms with two different
  styles, `],
-			[/* external link */ 'a', `NumberFormat.Style.html#SHORT`, `SHORT`],
+			[/* reference */ 'r', `.NumberFormat.Style#SHORT`],
 			[/* text */ 't', `
  and `],
-			[/* external link */ 'a', `NumberFormat.Style.html#LONG`, `LONG`],
+			[/* reference */ 'r', `.NumberFormat.Style#LONG`],
 			[/* text */ 't', `. Use
  `],
-			[/* external link */ 'a', `NumberFormat.html#getCompactNumberInstance(java.util.Locale,java.text.NumberFormat.Style)`, `NumberFormat.getCompactNumberInstance(Locale, Style)`],
+			[/* reference */ 'r', `.NumberFormat#getCompactNumberInstance(java.util.Locale,java.text.NumberFormat.Style)`],
 			[/* text */ 't', ` for formatting and
  parsing a number in `],
-			[/* external link */ 'a', `NumberFormat.Style.html#SHORT`, `SHORT`],
+			[/* reference */ 'r', `.NumberFormat.Style#SHORT`],
 			[/* text */ 't', ` or
  `],
-			[/* external link */ 'a', `NumberFormat.Style.html#LONG`, `LONG`],
+			[/* reference */ 'r', `.NumberFormat.Style#LONG`],
 			[/* text */ 't', ` compact form,
  where the given `],
 			[/* inline code block */ 'i', `Style`],
 			[/* text */ 't', ` parameter requests the desired
  format. A `],
-			[/* external link */ 'a', `NumberFormat.Style.html#SHORT`, `SHORT`],
+			[/* reference */ 'r', `.NumberFormat.Style#SHORT`],
 			[/* text */ 't', ` style
  compact number instance in the `],
-			[/* external link */ 'a', `../util/Locale.html#US`, `US locale`],
+			[/* reference */ 'r', `java.Locale#US`],
 			[/* text */ 't', ` formats
  `],
 			[/* inline code block */ 'i', `10000`],
@@ -115,7 +115,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 			[/* inline code block */ 'i', `"10K"`],
 			[/* text */ 't', `. However, a
  `],
-			[/* external link */ 'a', `NumberFormat.Style.html#LONG`, `LONG`],
+			[/* reference */ 'r', `.NumberFormat.Style#LONG`],
 			[/* text */ 't', ` style instance in same locale
  formats `],
 			[/* inline code block */ 'i', `10000`],
@@ -133,10 +133,10 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
  The compact number patterns are represented in a series of patterns where each
  pattern is used to format a range of numbers. An example of
  `],
-			[/* external link */ 'a', `NumberFormat.Style.html#SHORT`, `SHORT`],
+			[/* reference */ 'r', `.NumberFormat.Style#SHORT`],
 			[/* text */ 't', ` styled compact number patterns
  for the `],
-			[/* external link */ 'a', `../util/Locale.html#US`, `US locale`],
+			[/* reference */ 'r', `java.Locale#US`],
 			[/* text */ 't', ` is `],
 			[/* inline code block */ 'i', `{"", "", "", "0K", "00K", "000K", "0M", "00M", "000M", "0B", "00B", "000B", "0T", "00T", "000T"}`],
 			[/* text */ 't', `,
@@ -219,7 +219,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
  Many characters in a compact pattern are taken literally, they are matched
  during parsing and output unchanged during formatting.
  `],
-			[/* external link */ 'a', `DecimalFormat.html#special_pattern_character`, `Special characters`],
+			[/* reference */ 'r', `.DecimalFormat#special_pattern_character`],
 			[/* text */ 't', `,
  on the other hand, stand for other characters, strings, or classes of
  characters. They must be quoted, using single quote `],
@@ -302,14 +302,14 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 				[/* text */ 't', `
       Any Unicode characters except \\uFFFE, \\uFFFF, and
       `],
-				[/* external link */ 'a', `DecimalFormat.html#special_pattern_character`, `special characters`],
+				[/* text */ 't', `special characters`],
 				[/* text */ 't', `.
  `],
 				[/* text */ 't', `Suffix:`],
 				[/* text */ 't', `
       Any Unicode characters except \\uFFFE, \\uFFFF, and
       `],
-				[/* external link */ 'a', `DecimalFormat.html#special_pattern_character`, `special characters`],
+				[/* text */ 't', `special characters`],
 				[/* text */ 't', `.
  `],
 				[/* text */ 't', `MinimumInteger:`],
@@ -324,7 +324,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 		[/* text */ 't', `
  The default formatting behavior returns a formatted string with no fractional
  digits, however users can use the `],
-		[/* reference */ 'r', `setMinimumFractionDigits(int)`],
+		[/* reference */ 'r', `#setMinimumFractionDigits(int)`, `setMinimumFractionDigits(int)`],
 		[/* text */ 't', `
  method to include the fractional part.
  The number `],
@@ -337,7 +337,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
  not `],
 		[/* inline code block */ 'i', `"1.00K"`],
 		[/* text */ 't', ` (in the `],
-		[/* external link */ 'a', `../util/Locale.html#US`, `US locale`],
+		[/* reference */ 'r', `java.Locale#US`],
 		[/* text */ 't', `). For this
  reason, the patterns provided for formatting contain only the minimum
  integer digits, prefix and/or suffix, but no fractional part.
@@ -361,10 +361,10 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 		[/* inline code block */ 'i', `true`],
 		[/* text */ 't', ` by using
  `],
-		[/* reference */ 'r', `setGroupingUsed(boolean)`],
+		[/* reference */ 'r', `#setGroupingUsed(boolean)`, `setGroupingUsed(boolean)`],
 		[/* text */ 't', `. The parsing of the fractional part
  depends on the `],
-		[/* reference */ 'r', `isParseIntegerOnly()`],
+		[/* reference */ 'r', `#isParseIntegerOnly()`, `isParseIntegerOnly()`],
 		[/* text */ 't', `. For example, if the
  parse integer only is set to true, then the fractional part is skipped.
 
@@ -376,7 +376,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 		[/* reference */ 'r', `enum class in java.math.RoundingMode`],
 		[/* text */ 't', ` for formatting.  By default, it uses
  `],
-		[/* external link */ 'a', `../math/RoundingMode.html#HALF_EVEN`, `RoundingMode.HALF_EVEN`],
+		[/* reference */ 'r', `java.RoundingMode#HALF_EVEN`],
 		[/* text */ 't', `.`]
 	],
 	/* fields */ UDF,
@@ -400,7 +400,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 				[/* inline code block */ 'i', `NumberFormat`],
 				[/* text */ 't', ` for compact number formatting. For example,
  `],
-				[/* external link */ 'a', `NumberFormat.html#getCompactNumberInstance(java.util.Locale,java.text.NumberFormat.Style)`, `NumberFormat.getCompactNumberInstance(Locale, Style)`],
+				[/* reference */ 'r', `.NumberFormat#getCompactNumberInstance(java.util.Locale,java.text.NumberFormat.Style)`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -413,7 +413,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 				[/* parameter */ 'compactPatterns', [/* parameter description */
 					[/* text */ 't', `an array of
         `],
-					[/* external link */ 'a', `CompactNumberFormat.html#compact_number_patterns`, `compact number patterns`]
+					[/* reference */ 'r', `.CompactNumberFormat#compact_number_patterns`]
 				]]
 			],
 			[/* throws */
@@ -457,7 +457,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 				[/* inline code block */ 'i', `NumberFormat`],
 				[/* text */ 't', ` for compact number formatting. For example,
  `],
-				[/* external link */ 'a', `NumberFormat.html#getCompactNumberInstance(java.util.Locale,java.text.NumberFormat.Style)`, `NumberFormat.getCompactNumberInstance(Locale, Style)`],
+				[/* reference */ 'r', `.NumberFormat#getCompactNumberInstance(java.util.Locale,java.text.NumberFormat.Style)`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -470,7 +470,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 				[/* parameter */ 'compactPatterns', [/* parameter description */
 					[/* text */ 't', `an array of
         `],
-					[/* external link */ 'a', `CompactNumberFormat.html#compact_number_patterns`, `compact number patterns`]
+					[/* reference */ 'r', `.CompactNumberFormat#compact_number_patterns`]
 				]],
 				[/* parameter */ 'pluralRules', [/* parameter description */
 					[/* text */ 't', `a String designating plural rules which associate
@@ -520,7 +520,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 				[/* text */ 't', `
  are compared, other types return false; obeys the general contract of
  `],
-				[/* external link */ 'a', `../lang/Object.html#equals(java.lang.Object)`, `Object.equals`],
+				[/* reference */ 'r', `java.Object#equals(java.lang.Object)`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -584,13 +584,13 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 					[/* inline code block */ 'i', `123456789`],
 					[/* text */ 't', ` in the
                          `],
-					[/* external link */ 'a', `../util/Locale.html#US`, `US locale`],
+					[/* reference */ 'r', `java.Locale#US`],
 					[/* text */ 't', `,
                          if the given `],
 					[/* inline code block */ 'i', `fieldPosition`],
 					[/* text */ 't', ` is
                          `],
-					[/* external link */ 'a', `NumberFormat.html#INTEGER_FIELD`, `NumberFormat.INTEGER_FIELD`],
+					[/* reference */ 'r', `.NumberFormat#INTEGER_FIELD`],
 					[/* text */ 't', `, the begin
                          index and end index of `],
 					[/* inline code block */ 'i', `fieldPosition`],
@@ -601,10 +601,10 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 					[/* text */ 't', `. Similarly, positions
                          of the prefix and the suffix fields can be
                          obtained using `],
-					[/* external link */ 'a', `NumberFormat.Field.html#PREFIX`, `NumberFormat.Field.PREFIX`],
+					[/* reference */ 'r', `.NumberFormat.Field#PREFIX`],
 					[/* text */ 't', `
                          and `],
-					[/* external link */ 'a', `NumberFormat.Field.html#SUFFIX`, `NumberFormat.Field.SUFFIX`],
+					[/* reference */ 'r', `.NumberFormat.Field#SUFFIX`],
 					[/* text */ 't', ` respectively.`]
 				]]
 			],
@@ -658,13 +658,13 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 					[/* inline code block */ 'i', `123456789`],
 					[/* text */ 't', ` in the
                          `],
-					[/* external link */ 'a', `../util/Locale.html#US`, `US locale`],
+					[/* reference */ 'r', `java.Locale#US`],
 					[/* text */ 't', `,
                          if the given `],
 					[/* inline code block */ 'i', `fieldPosition`],
 					[/* text */ 't', ` is
                          `],
-					[/* external link */ 'a', `NumberFormat.html#INTEGER_FIELD`, `NumberFormat.INTEGER_FIELD`],
+					[/* reference */ 'r', `.NumberFormat#INTEGER_FIELD`],
 					[/* text */ 't', `, the begin
                          index and end index of `],
 					[/* inline code block */ 'i', `fieldPosition`],
@@ -675,10 +675,10 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 					[/* text */ 't', `. Similarly, positions
                          of the prefix and the suffix fields can be
                          obtained using `],
-					[/* external link */ 'a', `NumberFormat.Field.html#PREFIX`, `NumberFormat.Field.PREFIX`],
+					[/* reference */ 'r', `.NumberFormat.Field#PREFIX`],
 					[/* text */ 't', `
                          and `],
-					[/* external link */ 'a', `NumberFormat.Field.html#SUFFIX`, `NumberFormat.Field.SUFFIX`],
+					[/* reference */ 'r', `.NumberFormat.Field#SUFFIX`],
 					[/* text */ 't', ` respectively.`]
 				]]
 			],
@@ -723,13 +723,13 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 					[/* inline code block */ 'i', `1234567.89`],
 					[/* text */ 't', ` in the
                          `],
-					[/* external link */ 'a', `../util/Locale.html#US`, `US locale`],
+					[/* reference */ 'r', `java.Locale#US`],
 					[/* text */ 't', `
                          if the given `],
 					[/* inline code block */ 'i', `fieldPosition`],
 					[/* text */ 't', ` is
                          `],
-					[/* external link */ 'a', `NumberFormat.html#INTEGER_FIELD`, `NumberFormat.INTEGER_FIELD`],
+					[/* reference */ 'r', `.NumberFormat#INTEGER_FIELD`],
 					[/* text */ 't', `, the begin
                          index and end index of `],
 					[/* inline code block */ 'i', `fieldPosition`],
@@ -740,10 +740,10 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 					[/* text */ 't', `. Similarly, positions
                          of the prefix and the suffix fields can be
                          obtained using `],
-					[/* external link */ 'a', `NumberFormat.Field.html#PREFIX`, `NumberFormat.Field.PREFIX`],
+					[/* reference */ 'r', `.NumberFormat.Field#PREFIX`],
 					[/* text */ 't', `
                          and `],
-					[/* external link */ 'a', `NumberFormat.Field.html#SUFFIX`, `NumberFormat.Field.SUFFIX`],
+					[/* reference */ 'r', `.NumberFormat.Field#SUFFIX`],
 					[/* text */ 't', ` respectively.`]
 				]]
 			],
@@ -807,18 +807,18 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
  The value is the numeric part in the given text multiplied
  by the numeric equivalent of the affix attached
  (For example, "K" = 1000 in `],
-					[/* external link */ 'a', `../util/Locale.html#US`, `US locale`],
+					[/* reference */ 'r', `java.Locale#US`],
 					[/* text */ 't', `).
  The subclass returned depends on the value of
  `],
-					[/* reference */ 'r', `isParseBigDecimal()`],
+					[/* reference */ 'r', `#isParseBigDecimal()`, `isParseBigDecimal()`],
 					[/* text */ 't', `.
  `]
 				]],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* text */ 't', `If `],
-						[/* reference */ 'r', `isParseBigDecimal()`],
+						[/* reference */ 'r', `#isParseBigDecimal()`, `isParseBigDecimal()`],
 						[/* text */ 't', ` is false (the default),
      most integer values are returned as `],
 						[/* inline code block */ 'i', `Long`],
@@ -858,7 +858,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `If `],
-						[/* reference */ 'r', `isParseBigDecimal()`],
+						[/* reference */ 'r', `#isParseBigDecimal()`, `isParseBigDecimal()`],
 						[/* text */ 't', ` is true, values are returned
      as `],
 						[/* inline code block */ 'i', `BigDecimal`],
@@ -897,7 +897,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 					[/* inline code block */ 'i', `"1.05E4K"`],
 					[/* text */ 't', ` in
  `],
-					[/* external link */ 'a', `../util/Locale.html#US`, `US locale`],
+					[/* reference */ 'r', `java.Locale#US`],
 					[/* text */ 't', ` breaks at character 'E'
  and returns 1.05.`]
 				]]
@@ -970,10 +970,10 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
  being the same as the attribute key. The prefix and the suffix
  parts of the returned iterator (if present) are represented by
  the attributes `],
-					[/* external link */ 'a', `NumberFormat.Field.html#PREFIX`, `NumberFormat.Field.PREFIX`],
+					[/* reference */ 'r', `.NumberFormat.Field#PREFIX`],
 					[/* text */ 't', ` and
  `],
-					[/* external link */ 'a', `NumberFormat.Field.html#SUFFIX`, `NumberFormat.Field.SUFFIX`],
+					[/* reference */ 'r', `.NumberFormat.Field#SUFFIX`],
 					[/* text */ 't', ` respectively.`]
 				]]
 			],
@@ -1026,7 +1026,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
  number.
  The maximum allowed integer range is 309, if the `],
 				[/* inline code block */ 'i', `newValue`],
-				[/* text */ 't', ` &gt; 309,
+				[/* text */ 't', ` > 309,
  then the minimum integer digits count is set to 309. Negative input
  values are replaced with 0.`]
 			],
@@ -1044,7 +1044,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
  number.
  The maximum allowed integer range is 309, if the `],
 				[/* inline code block */ 'i', `newValue`],
-				[/* text */ 't', ` &gt; 309,
+				[/* text */ 't', ` > 309,
  then the maximum integer digits count is set to 309. Negative input
  values are replaced with 0.`]
 			],
@@ -1064,7 +1064,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
  number component, prefix/suffix is still considered to compute the
  resulting output.
  For example, in the `],
-				[/* external link */ 'a', `../util/Locale.html#US`, `US locale`],
+				[/* reference */ 'r', `java.Locale#US`],
 				[/* text */ 't', `, if this method
  returns `],
 				[/* inline code block */ 'i', `true`],
@@ -1115,7 +1115,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 				[/* inline code block */ 'i', `"12,347 trillion"`],
 				[/* text */ 't', ` in the
  `],
-				[/* external link */ 'a', `../util/Locale.html#US`, `US locale`],
+				[/* reference */ 'r', `java.Locale#US`],
 				[/* text */ 't', `.
  The grouping separator is locale dependent.`]
 			],
@@ -1135,7 +1135,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
  number.
  The maximum allowed fraction range is 340, if the `],
 				[/* inline code block */ 'i', `newValue`],
-				[/* text */ 't', ` &gt; 340,
+				[/* text */ 't', ` > 340,
  then the maximum fraction digits count is set to 340. Negative input
  values are replaced with 0.`]
 			],
@@ -1153,7 +1153,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
  number.
  The maximum allowed fraction range is 340, if the `],
 				[/* inline code block */ 'i', `newValue`],
-				[/* text */ 't', ` &gt; 340,
+				[/* text */ 't', ` > 340,
  then the minimum fraction digits count is set to 340. Negative input
  values are replaced with 0.`]
 			],
@@ -1194,7 +1194,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 		[/* method */ 'isParseBigDecimal()', [
 			[/* method description */
 				[/* text */ 't', `Returns whether the `],
-				[/* reference */ 'r', `parse(String, ParsePosition)`],
+				[/* reference */ 'r', `#parse(java.lang.String,java.text.ParsePosition)`, `parse(String, ParsePosition)`],
 				[/* text */ 't', `
  method returns `],
 				[/* inline code block */ 'i', `BigDecimal`],
@@ -1218,7 +1218,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 				[/* inline code block */ 'i', `"12,347 trillion"`],
 				[/* text */ 't', ` for the
  `],
-				[/* external link */ 'a', `../util/Locale.html#US`, `US locale`],
+				[/* reference */ 'r', `java.Locale#US`],
 				[/* text */ 't', `, the grouping size is 3.`]
 			],
 			/* parameters */ UDF,
@@ -1235,7 +1235,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 				[/* inline code block */ 'i', `"12,347 trillion"`],
 				[/* text */ 't', ` for the
  `],
-				[/* external link */ 'a', `../util/Locale.html#US`, `US locale`],
+				[/* reference */ 'r', `java.Locale#US`],
 				[/* text */ 't', `, the grouping size is 3. The grouping
  size must be greater than or equal to zero and less than or equal to 127.`]
 			],
@@ -1257,7 +1257,7 @@ DocsCollector.collect('java.text.CompactNumberFormat', [
 		[/* method */ 'setParseBigDecimal(boolean)', [
 			[/* method description */
 				[/* text */ 't', `Sets whether the `],
-				[/* reference */ 'r', `parse(String, ParsePosition)`],
+				[/* reference */ 'r', `#parse(java.lang.String,java.text.ParsePosition)`, `parse(String, ParsePosition)`],
 				[/* text */ 't', `
  method returns `],
 				[/* inline code block */ 'i', `BigDecimal`],

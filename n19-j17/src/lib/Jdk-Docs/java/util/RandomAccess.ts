@@ -46,7 +46,7 @@ DocsCollector.collect('java.util.RandomAccess', [
  for typical instances of the class, this loop:
  `]
 		]],
-		[/* code block */ 'c', `     for (int i=0, n=list.size(); i &lt; n; i++)
+		[/* code block */ 'c', `     for (int i=0, n=list.size(); i < n; i++)
          list.get(i);
  `],
 		[/* text */ 't', `
@@ -59,7 +59,7 @@ DocsCollector.collect('java.util.RandomAccess', [
 		[/* block */ 'b', [
 			[/* text */ 't', `This interface is a member of the
  `],
-			[/* external link */ 'a', `../../../java.base/java/util/package-summary.html#CollectionsFramework`, `Java Collections Framework`],
+			[/* text */ 't', `Java Collections Framework`],
 			[/* text */ 't', `.`]
 		]]
 	],

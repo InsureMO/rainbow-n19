@@ -98,9 +98,9 @@ DocsCollector.collect('java.util.Scanner', [
 			[/* text */ 't', `default whitespace delimiter`],
 			[/* text */ 't', ` used
  by a scanner is as recognized by `],
-			[/* external link */ 'a', `../lang/Character.html#isWhitespace(int)`, `Character.isWhitespace()`],
+			[/* reference */ 'r', `java.Character#isWhitespace(int)`],
 			[/* text */ 't', `. The `],
-			[/* reference */ 'r', `reset()`],
+			[/* reference */ 'r', `#reset()`, `reset()`],
 			[/* text */ 't', `
  method will reset the value of the scanner's delimiter to the default
  whitespace delimiter regardless of whether it was previously changed.
@@ -112,15 +112,15 @@ DocsCollector.collect('java.util.Scanner', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `The `],
-			[/* reference */ 'r', `next()`],
+			[/* reference */ 'r', `#next()`, `next()`],
 			[/* text */ 't', ` and `],
-			[/* reference */ 'r', `hasNext()`],
+			[/* reference */ 'r', `#hasNext()`, `hasNext()`],
 			[/* text */ 't', ` methods and their
  companion methods (such as `],
-			[/* reference */ 'r', `nextInt()`],
+			[/* reference */ 'r', `#nextInt()`, `nextInt()`],
 			[/* text */ 't', ` and
  `],
-			[/* reference */ 'r', `hasNextInt()`],
+			[/* reference */ 'r', `#hasNextInt()`, `hasNextInt()`],
 			[/* text */ 't', `) first skip any input that matches the delimiter
  pattern, and then attempt to return the next token. Both `],
 			[/* inline code block */ 'i', `hasNext()`],
@@ -134,7 +134,7 @@ DocsCollector.collect('java.util.Scanner', [
  associated `],
 			[/* inline code block */ 'i', `next()`],
 			[/* text */ 't', ` method will block. The `],
-			[/* reference */ 'r', `tokens()`],
+			[/* reference */ 'r', `#tokens()`, `tokens()`],
 			[/* text */ 't', ` method
  may also block waiting for input.
 
@@ -142,15 +142,15 @@ DocsCollector.collect('java.util.Scanner', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `The `],
-			[/* reference */ 'r', `findInLine()`],
+			[/* reference */ 'r', `#findInLine(java.lang.String)`, `findInLine()`],
 			[/* text */ 't', `,
  `],
-			[/* reference */ 'r', `findWithinHorizon()`],
+			[/* reference */ 'r', `#findWithinHorizon(java.lang.String,int)`, `findWithinHorizon()`],
 			[/* text */ 't', `,
  `],
-			[/* reference */ 'r', `skip()`],
+			[/* reference */ 'r', `#skip(java.util.regex.Pattern)`, `skip()`],
 			[/* text */ 't', `, and `],
-			[/* reference */ 'r', `findAll()`],
+			[/* reference */ 'r', `#findAll(java.util.regex.Pattern)`, `findAll()`],
 			[/* text */ 't', `
  methods operate independently of the delimiter pattern. These methods will
  attempt to match the specified pattern with no regard to delimiters in the
@@ -186,7 +186,7 @@ DocsCollector.collect('java.util.Scanner', [
 			[/* reference */ 'r', `java.lang.Readable`],
 			[/* text */ 't', ` interface.  If an invocation of the underlying
  readable's `],
-			[/* external link */ 'a', `../lang/Readable.html#read(java.nio.CharBuffer)`, `read()`],
+			[/* reference */ 'r', `java.Readable#read(java.nio.CharBuffer)`],
 			[/* text */ 't', ` method throws an `],
 			[/* reference */ 'r', `java.io.IOException`],
 			[/* text */ 't', ` then the scanner assumes that the end of the input
@@ -194,7 +194,7 @@ DocsCollector.collect('java.util.Scanner', [
 			[/* inline code block */ 'i', `IOException`],
 			[/* text */ 't', ` thrown by the
  underlying readable can be retrieved via the `],
-			[/* reference */ 'r', `ioException()`],
+			[/* reference */ 'r', `#ioException()`, `ioException()`],
 			[/* text */ 't', ` method.
 
  `]
@@ -233,10 +233,10 @@ DocsCollector.collect('java.util.Scanner', [
 		[/* block */ 'b', [
 			[/* text */ 't', `A scanner will default to interpreting numbers as decimal unless a
  different radix has been set by using the `],
-			[/* reference */ 'r', `useRadix(int)`],
+			[/* reference */ 'r', `#useRadix(int)`, `useRadix(int)`],
 			[/* text */ 't', ` method. The
  `],
-			[/* reference */ 'r', `reset()`],
+			[/* reference */ 'r', `#reset()`, `reset()`],
 			[/* text */ 't', ` method will reset the value of the scanner's radix to
  `],
 			[/* inline code block */ 'i', `10`],
@@ -253,11 +253,11 @@ DocsCollector.collect('java.util.Scanner', [
  `],
 			[/* text */ 't', `initial locale`],
 			[/* text */ 't', `is the value returned by the `],
-			[/* external link */ 'a', `Locale.html#getDefault(java.util.Locale.Category)`, `Locale.getDefault(Locale.Category.FORMAT)`],
+			[/* reference */ 'r', `.Locale#getDefault(java.util.Locale.Category)`],
 			[/* text */ 't', ` method; it may be changed via the `],
-			[/* reference */ 'r', `useLocale()`],
+			[/* reference */ 'r', `#useLocale(java.util.Locale)`, `useLocale()`],
 			[/* text */ 't', ` method. The `],
-			[/* reference */ 'r', `reset()`],
+			[/* reference */ 'r', `#reset()`, `reset()`],
 			[/* text */ 't', ` method will reset the value of the
  scanner's locale to the initial locale regardless of whether it was
  previously changed.
@@ -281,7 +281,129 @@ DocsCollector.collect('java.util.Scanner', [
  `]
 		]],
 		[/* block */ 'b', [
-			[/* dl */ 't', '']
+			[/* dl */ 'dl', [
+				[/* dt */ 'dt', [
+					[/* text */ 't', `LocalGroupSeparator  `],
+					[/* text */ 't', `
+         `]
+				]],
+				[/* dd */ 'dd', [
+					[/* text */ 't', `The character used to separate thousands groups,
+         `],
+					[/* text */ 't', `i.e.,`],
+					[/* text */ 't', ` `],
+					[/* inline code block */ 'i', `dfs.`],
+					[/* reference */ 'r', `java.DecimalFormatSymbols#getGroupingSeparator()`],
+					[/* text */ 't', `
+     `]
+				]],
+				[/* dt */ 'dt', [
+					[/* text */ 't', `LocalDecimalSeparator  `],
+					[/* text */ 't', `
+         `]
+				]],
+				[/* dd */ 'dd', [
+					[/* text */ 't', `The character used for the decimal point,
+     `],
+					[/* text */ 't', `i.e.,`],
+					[/* text */ 't', ` `],
+					[/* inline code block */ 'i', `dfs.`],
+					[/* reference */ 'r', `java.DecimalFormatSymbols#getDecimalSeparator()`],
+					[/* text */ 't', `
+     `]
+				]],
+				[/* dt */ 'dt', [
+					[/* text */ 't', `LocalPositivePrefix  `],
+					[/* text */ 't', `
+         `]
+				]],
+				[/* dd */ 'dd', [
+					[/* text */ 't', `The string that appears before a positive number (may
+         be empty), `],
+					[/* text */ 't', `i.e.,`],
+					[/* text */ 't', ` `],
+					[/* inline code block */ 'i', `df.`],
+					[/* reference */ 'r', `java.DecimalFormat#getPositivePrefix()`],
+					[/* text */ 't', `
+     `]
+				]],
+				[/* dt */ 'dt', [
+					[/* text */ 't', `LocalPositiveSuffix  `],
+					[/* text */ 't', `
+         `]
+				]],
+				[/* dd */ 'dd', [
+					[/* text */ 't', `The string that appears after a positive number (may be
+         empty), `],
+					[/* text */ 't', `i.e.,`],
+					[/* text */ 't', ` `],
+					[/* inline code block */ 'i', `df.`],
+					[/* reference */ 'r', `java.DecimalFormat#getPositiveSuffix()`],
+					[/* text */ 't', `
+     `]
+				]],
+				[/* dt */ 'dt', [
+					[/* text */ 't', `LocalNegativePrefix  `],
+					[/* text */ 't', `
+         `]
+				]],
+				[/* dd */ 'dd', [
+					[/* text */ 't', `The string that appears before a negative number (may
+         be empty), `],
+					[/* text */ 't', `i.e.,`],
+					[/* text */ 't', ` `],
+					[/* inline code block */ 'i', `df.`],
+					[/* reference */ 'r', `java.DecimalFormat#getNegativePrefix()`],
+					[/* text */ 't', `
+     `]
+				]],
+				[/* dt */ 'dt', [
+					[/* text */ 't', `LocalNegativeSuffix  `],
+					[/* text */ 't', `
+         `]
+				]],
+				[/* dd */ 'dd', [
+					[/* text */ 't', `The string that appears after a negative number (may be
+         empty), `],
+					[/* text */ 't', `i.e.,`],
+					[/* text */ 't', ` `],
+					[/* inline code block */ 'i', `df.`],
+					[/* reference */ 'r', `java.DecimalFormat#getNegativeSuffix()`],
+					[/* text */ 't', `
+     `]
+				]],
+				[/* dt */ 'dt', [
+					[/* text */ 't', `LocalNaN  `],
+					[/* text */ 't', `
+         `]
+				]],
+				[/* dd */ 'dd', [
+					[/* text */ 't', `The string that represents not-a-number for
+         floating-point values,
+         `],
+					[/* text */ 't', `i.e.,`],
+					[/* text */ 't', ` `],
+					[/* inline code block */ 'i', `dfs.`],
+					[/* reference */ 'r', `java.DecimalFormatSymbols#getNaN()`],
+					[/* text */ 't', `
+     `]
+				]],
+				[/* dt */ 'dt', [
+					[/* text */ 't', `LocalInfinity  `],
+					[/* text */ 't', `
+         `]
+				]],
+				[/* dd */ 'dd', [
+					[/* text */ 't', `The string that represents infinity for floating-point
+         values, `],
+					[/* text */ 't', `i.e.,`],
+					[/* text */ 't', ` `],
+					[/* inline code block */ 'i', `dfs.`],
+					[/* reference */ 'r', `java.DecimalFormatSymbols#getInfinity()`],
+					[/* text */ 't', `
+ `]
+				]]
+			]]
 		]],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
@@ -292,7 +414,312 @@ DocsCollector.collect('java.util.Scanner', [
  Rmax is the highest digit in the radix being used (for example, Rmax is 9 in base 10).
 
  `],
-		[/* dl */ 't', ''],
+		[/* dl */ 'dl', [
+			[/* dt */ 'dt', [
+				[/* text */ 't', `NonAsciiDigit`],
+				[/* text */ 't', `:
+       `]
+			]],
+			[/* dd */ 'dd', [
+				[/* text */ 't', `A non-ASCII character c for which
+            `],
+				[/* reference */ 'r', `java.Character#isDigit(char)`],
+				[/* inline code block */ 'i', `(c)`],
+				[/* text */ 't', `
+                        returns true
+
+   `]
+			]],
+			[/* dt */ 'dt', [
+				[/* text */ 't', `Non0Digit`],
+				[/* text */ 't', `:
+       `]
+			]],
+			[/* dd */ 'dd', [
+				[/* inline code block */ 'i', `[1-`],
+				[/* text */ 't', `Rmax`],
+				[/* inline code block */ 'i', `] |`],
+				[/* text */ 't', `NonASCIIDigit`],
+				[/* text */ 't', `
+
+   `]
+			]],
+			[/* dt */ 'dt', [
+				[/* text */ 't', `Digit`],
+				[/* text */ 't', `:
+       `]
+			]],
+			[/* dd */ 'dd', [
+				[/* inline code block */ 'i', `[0-`],
+				[/* text */ 't', `Rmax`],
+				[/* inline code block */ 'i', `] |`],
+				[/* text */ 't', `NonASCIIDigit`],
+				[/* text */ 't', `
+
+   `]
+			]],
+			[/* dt */ 'dt', [
+				[/* text */ 't', `GroupedNumeral`],
+				[/* text */ 't', `:
+       `]
+			]],
+			[/* dd */ 'dd', [
+				[/* inline code block */ 'i', `(`],
+				[/* text */ 't', `Non0Digit`],
+				[/* text */ 't', `
+                   `],
+				[/* text */ 't', `Digit`],
+				[/* inline code block */ 'i', `?`],
+				[/* text */ 't', `Digit`],
+				[/* inline code block */ 'i', `?`],
+				[/* text */ 't', `
+       `]
+			]],
+			[/* dd */ 'dd', [
+				[/* text */ 't', `    `],
+				[/* inline code block */ 'i', `(`],
+				[/* text */ 't', `LocalGroupSeparator`],
+				[/* text */ 't', `
+                         `],
+				[/* text */ 't', `Digit`],
+				[/* text */ 't', `
+                         `],
+				[/* text */ 't', `Digit`],
+				[/* text */ 't', `
+                         `],
+				[/* text */ 't', `Digit`],
+				[/* inline code block */ 'i', `)+ )`],
+				[/* text */ 't', `
+
+   `]
+			]],
+			[/* dt */ 'dt', [
+				[/* text */ 't', `Numeral`],
+				[/* text */ 't', `:
+       `]
+			]],
+			[/* dd */ 'dd', [
+				[/* inline code block */ 'i', `( (`],
+				[/* text */ 't', `Digit`],
+				[/* inline code block */ 'i', `+ ) |`],
+				[/* text */ 't', `GroupedNumeral`],
+				[/* inline code block */ 'i', `)`],
+				[/* text */ 't', `
+
+   `]
+			]],
+			[/* dt */ 'dt', [
+				[/* text */ 't', `Integer:`],
+				[/* text */ 't', `
+       `]
+			]],
+			[/* dd */ 'dd', [
+				[/* inline code block */ 'i', `( [-+]? (`],
+				[/* text */ 't', `Numeral`],
+				[/* inline code block */ 'i', `) )`],
+				[/* text */ 't', `
+       `]
+			]],
+			[/* dd */ 'dd', [
+				[/* inline code block */ 'i', `|`],
+				[/* text */ 't', `LocalPositivePrefix`],
+				[/* text */ 't', ` `],
+				[/* text */ 't', `Numeral`],
+				[/* text */ 't', `
+                      `],
+				[/* text */ 't', `LocalPositiveSuffix`],
+				[/* text */ 't', `
+       `]
+			]],
+			[/* dd */ 'dd', [
+				[/* inline code block */ 'i', `|`],
+				[/* text */ 't', `LocalNegativePrefix`],
+				[/* text */ 't', ` `],
+				[/* text */ 't', `Numeral`],
+				[/* text */ 't', `
+                 `],
+				[/* text */ 't', `LocalNegativeSuffix`],
+				[/* text */ 't', `
+
+   `]
+			]],
+			[/* dt */ 'dt', [
+				[/* text */ 't', `DecimalNumeral`],
+				[/* text */ 't', `:
+       `]
+			]],
+			[/* dd */ 'dd', [
+				[/* text */ 't', `Numeral`],
+				[/* text */ 't', `
+       `]
+			]],
+			[/* dd */ 'dd', [
+				[/* inline code block */ 'i', `|`],
+				[/* text */ 't', `Numeral`],
+				[/* text */ 't', `
+                 `],
+				[/* text */ 't', `LocalDecimalSeparator`],
+				[/* text */ 't', `
+                 `],
+				[/* text */ 't', `Digit`],
+				[/* inline code block */ 'i', `*`],
+				[/* text */ 't', `
+       `]
+			]],
+			[/* dd */ 'dd', [
+				[/* inline code block */ 'i', `|`],
+				[/* text */ 't', `LocalDecimalSeparator`],
+				[/* text */ 't', `
+                 `],
+				[/* text */ 't', `Digit`],
+				[/* inline code block */ 'i', `+`],
+				[/* text */ 't', `
+
+   `]
+			]],
+			[/* dt */ 'dt', [
+				[/* text */ 't', `Exponent`],
+				[/* text */ 't', `:
+       `]
+			]],
+			[/* dd */ 'dd', [
+				[/* inline code block */ 'i', `( [eE] [+-]?`],
+				[/* text */ 't', `Digit`],
+				[/* inline code block */ 'i', `+ )`],
+				[/* text */ 't', `
+
+   `]
+			]],
+			[/* dt */ 'dt', [
+				[/* text */ 't', `Decimal:`],
+				[/* text */ 't', `
+       `]
+			]],
+			[/* dd */ 'dd', [
+				[/* inline code block */ 'i', `( [-+]?`],
+				[/* text */ 't', `DecimalNumeral`],
+				[/* text */ 't', `
+                         `],
+				[/* text */ 't', `Exponent`],
+				[/* inline code block */ 'i', `? )`],
+				[/* text */ 't', `
+       `]
+			]],
+			[/* dd */ 'dd', [
+				[/* inline code block */ 'i', `|`],
+				[/* text */ 't', `LocalPositivePrefix`],
+				[/* text */ 't', `
+                 `],
+				[/* text */ 't', `DecimalNumeral`],
+				[/* text */ 't', `
+                 `],
+				[/* text */ 't', `LocalPositiveSuffix`],
+				[/* text */ 't', `
+                 `],
+				[/* text */ 't', `Exponent`],
+				[/* inline code block */ 'i', `?`],
+				[/* text */ 't', `
+       `]
+			]],
+			[/* dd */ 'dd', [
+				[/* inline code block */ 'i', `|`],
+				[/* text */ 't', `LocalNegativePrefix`],
+				[/* text */ 't', `
+                 `],
+				[/* text */ 't', `DecimalNumeral`],
+				[/* text */ 't', `
+                 `],
+				[/* text */ 't', `LocalNegativeSuffix`],
+				[/* text */ 't', `
+                 `],
+				[/* text */ 't', `Exponent`],
+				[/* inline code block */ 'i', `?`],
+				[/* text */ 't', `
+
+   `]
+			]],
+			[/* dt */ 'dt', [
+				[/* text */ 't', `HexFloat`],
+				[/* text */ 't', `:
+       `]
+			]],
+			[/* dd */ 'dd', [
+				[/* inline code block */ 'i', `[-+]? 0[xX][0-9a-fA-F]*\\.[0-9a-fA-F]+ ([pP][-+]?[0-9]+)?`],
+				[/* text */ 't', `
+
+   `]
+			]],
+			[/* dt */ 'dt', [
+				[/* text */ 't', `NonNumber`],
+				[/* text */ 't', `:
+       `]
+			]],
+			[/* dd */ 'dd', [
+				[/* inline code block */ 'i', `NaN |`],
+				[/* text */ 't', `LocalNan`],
+				[/* inline code block */ 'i', `| Infinity |`],
+				[/* text */ 't', `LocalInfinity`],
+				[/* text */ 't', `
+
+   `]
+			]],
+			[/* dt */ 'dt', [
+				[/* text */ 't', `SignedNonNumber`],
+				[/* text */ 't', `:
+       `]
+			]],
+			[/* dd */ 'dd', [
+				[/* inline code block */ 'i', `( [-+]?`],
+				[/* text */ 't', `NonNumber`],
+				[/* inline code block */ 'i', `)`],
+				[/* text */ 't', `
+       `]
+			]],
+			[/* dd */ 'dd', [
+				[/* inline code block */ 'i', `|`],
+				[/* text */ 't', `LocalPositivePrefix`],
+				[/* text */ 't', `
+                 `],
+				[/* text */ 't', `NonNumber`],
+				[/* text */ 't', `
+                 `],
+				[/* text */ 't', `LocalPositiveSuffix`],
+				[/* text */ 't', `
+       `]
+			]],
+			[/* dd */ 'dd', [
+				[/* inline code block */ 'i', `|`],
+				[/* text */ 't', `LocalNegativePrefix`],
+				[/* text */ 't', `
+                 `],
+				[/* text */ 't', `NonNumber`],
+				[/* text */ 't', `
+                 `],
+				[/* text */ 't', `LocalNegativeSuffix`],
+				[/* text */ 't', `
+
+   `]
+			]],
+			[/* dt */ 'dt', [
+				[/* text */ 't', `Float`],
+				[/* text */ 't', `:
+       `]
+			]],
+			[/* dd */ 'dd', [
+				[/* text */ 't', `Decimal`],
+				[/* text */ 't', `
+           `],
+				[/* inline code block */ 'i', `|`],
+				[/* text */ 't', `HexFloat`],
+				[/* text */ 't', `
+           `],
+				[/* inline code block */ 'i', `|`],
+				[/* text */ 't', `SignedNonNumber`],
+				[/* text */ 't', `
+
+ `]
+			]]
+		]],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `Whitespace is not significant in the above regular expressions.`]
 	],
@@ -330,7 +757,7 @@ DocsCollector.collect('java.util.Scanner', [
  from the specified input stream. Bytes from the stream are converted
  into characters using the underlying platform's
  `],
-				[/* external link */ 'a', `../nio/charset/Charset.html#defaultCharset()`, `default charset`],
+				[/* reference */ 'r', `java.Charset#defaultCharset()`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -365,7 +792,7 @@ DocsCollector.collect('java.util.Scanner', [
  from the specified file. Bytes from the file are converted into
  characters using the underlying platform's
  `],
-				[/* external link */ 'a', `../nio/charset/Charset.html#defaultCharset()`, `default charset`],
+				[/* reference */ 'r', `java.Charset#defaultCharset()`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -429,7 +856,7 @@ DocsCollector.collect('java.util.Scanner', [
  from the specified channel. Bytes from the source are converted into
  characters using the underlying platform's
  `],
-				[/* external link */ 'a', `../nio/charset/Charset.html#defaultCharset()`, `default charset`],
+				[/* reference */ 'r', `java.Charset#defaultCharset()`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -517,7 +944,7 @@ DocsCollector.collect('java.util.Scanner', [
  from the specified file. Bytes from the file are converted into
  characters using the underlying platform's
  `],
-				[/* external link */ 'a', `../nio/charset/Charset.html#defaultCharset()`, `default charset`],
+				[/* reference */ 'r', `java.Charset#defaultCharset()`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -703,7 +1130,7 @@ DocsCollector.collect('java.util.Scanner', [
 				[/* text */ 't', `Returns the next token if it matches the specified pattern. This
  method may block while waiting for input to scan, even if a previous
  invocation of `],
-				[/* reference */ 'r', `hasNext(Pattern)`],
+				[/* reference */ 'r', `#hasNext(java.util.regex.Pattern)`, `hasNext(Pattern)`],
 				[/* text */ 't', ` returned `],
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', `.
@@ -767,7 +1194,7 @@ DocsCollector.collect('java.util.Scanner', [
  A complete token is preceded and followed by input that matches
  the delimiter pattern. This method may block while waiting for input
  to scan, even if a previous invocation of `],
-				[/* reference */ 'r', `hasNext()`],
+				[/* reference */ 'r', `#hasNext()`, `hasNext()`],
 				[/* text */ 't', ` returned
  `],
 				[/* inline code block */ 'i', `true`],
@@ -838,7 +1265,7 @@ DocsCollector.collect('java.util.Scanner', [
 					[/* text */ 't', `
  make a match result available if they complete without throwing an
  exception. For instance, after an invocation of the `],
-					[/* reference */ 'r', `nextInt()`],
+					[/* reference */ 'r', `#nextInt()`, `nextInt()`],
 					[/* text */ 't', `
  method that returned an int, this method returns a
  `],
@@ -848,12 +1275,12 @@ DocsCollector.collect('java.util.Scanner', [
 					[/* text */ 't', `Integer`],
 					[/* text */ 't', ` regular expression
  defined above. Similarly the `],
-					[/* reference */ 'r', `findInLine()`],
+					[/* reference */ 'r', `#findInLine(java.lang.String)`, `findInLine()`],
 					[/* text */ 't', `,
  `],
-					[/* reference */ 'r', `findWithinHorizon()`],
+					[/* reference */ 'r', `#findWithinHorizon(java.lang.String,int)`, `findWithinHorizon()`],
 					[/* text */ 't', `, and `],
-					[/* reference */ 'r', `skip()`],
+					[/* reference */ 'r', `#skip(java.util.regex.Pattern)`, `skip()`],
 					[/* text */ 't', `
  methods will make a match available if they succeed.`]
 				]]
@@ -986,13 +1413,13 @@ DocsCollector.collect('java.util.Scanner', [
 					[/* text */ 't', ` Resetting a scanner discards all of its explicit state
  information which may have been changed by invocations of
  `],
-					[/* reference */ 'r', `useDelimiter()`],
+					[/* reference */ 'r', `#useDelimiter(java.util.regex.Pattern)`, `useDelimiter()`],
 					[/* text */ 't', `,
  `],
-					[/* reference */ 'r', `useLocale()`],
+					[/* reference */ 'r', `#useLocale(java.util.Locale)`, `useLocale()`],
 					[/* text */ 't', `, or
  `],
-					[/* reference */ 'r', `useRadix()`],
+					[/* reference */ 'r', `#useRadix(int)`, `useRadix()`],
 					[/* text */ 't', `.
 
  `]
@@ -1063,16 +1490,16 @@ DocsCollector.collect('java.util.Scanner', [
  removing all locale specific prefixes, group separators, and locale
  specific suffixes, then mapping non-ASCII digits into ASCII
  digits via `],
-					[/* external link */ 'a', `../lang/Character.html#digit(char,int)`, `Character.digit`],
+					[/* reference */ 'r', `java.Character#digit(char,int)`],
 					[/* text */ 't', `, prepending a
  negative sign (-) if the locale specific negative prefixes and suffixes
  were present, and passing the resulting string to
  `],
-					[/* external link */ 'a', `../lang/Double.html#parseDouble(java.lang.String)`, `Double.parseDouble`],
+					[/* reference */ 'r', `java.Double#parseDouble(java.lang.String)`],
 					[/* text */ 't', `. If the token matches
  the localized NaN or infinity strings, then either "Nan" or "Infinity"
  is passed to `],
-					[/* external link */ 'a', `../lang/Double.html#parseDouble(java.lang.String)`, `Double.parseDouble`],
+					[/* reference */ 'r', `java.Double#parseDouble(java.lang.String)`],
 					[/* text */ 't', ` as
  appropriate.`]
 				]]
@@ -1095,80 +1522,6 @@ DocsCollector.collect('java.util.Scanner', [
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `double`],
-				[/* text */ 't', ` scanned from the input`]
-			]
-		]],
-		[/* method */ 'nextInt(int)', [
-			[/* method description */
-				[/* text */ 't', `Scans the next token of the input as an `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', `.
- This method will throw `],
-				[/* inline code block */ 'i', `InputMismatchException`],
-				[/* text */ 't', `
- if the next token cannot be translated into a valid int value as
- described below. If the translation is successful, the scanner advances
- past the input that matched.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` If the next token matches the `],
-					[/* text */ 't', `Integer`],
-					[/* text */ 't', ` regular expression defined
- above then the token is converted into an `],
-					[/* inline code block */ 'i', `int`],
-					[/* text */ 't', ` value as if by
- removing all locale specific prefixes, group separators, and locale
- specific suffixes, then mapping non-ASCII digits into ASCII
- digits via `],
-					[/* external link */ 'a', `../lang/Character.html#digit(char,int)`, `Character.digit`],
-					[/* text */ 't', `, prepending a
- negative sign (-) if the locale specific negative prefixes and suffixes
- were present, and passing the resulting string to
- `],
-					[/* external link */ 'a', `../lang/Integer.html#parseInt(java.lang.String,int)`, `Integer.parseInt`],
-					[/* text */ 't', ` with the
- specified radix.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `If the radix is less than `],
-					[/* external link */ 'a', `../lang/Character.html#MIN_RADIX`, `Character.MIN_RADIX`],
-					[/* text */ 't', `
- or greater than `],
-					[/* external link */ 'a', `../lang/Character.html#MAX_RADIX`, `Character.MAX_RADIX`],
-					[/* text */ 't', `, then an
- `],
-					[/* inline code block */ 'i', `IllegalArgumentException`],
-					[/* text */ 't', ` is thrown.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'radix', [/* parameter description */
-					[/* text */ 't', `the radix used to interpret the token as an int value`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.util.InputMismatchException', [/* throw description */
-					[/* text */ 't', `if the next token does not match the `],
-					[/* text */ 't', `Integer`],
-					[/* text */ 't', `
-         regular expression, or is out of range`]
-				]],
-				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
-					[/* text */ 't', `if input is exhausted`]
-				]],
-				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
-					[/* text */ 't', `if this scanner is closed`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the radix is out of range`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the `],
-				[/* inline code block */ 'i', `int`],
 				[/* text */ 't', ` scanned from the input`]
 			]
 		]],
@@ -1213,6 +1566,162 @@ DocsCollector.collect('java.util.Scanner', [
 				[/* text */ 't', ` scanned from the input`]
 			]
 		]],
+		[/* method */ 'nextInt(int)', [
+			[/* method description */
+				[/* text */ 't', `Scans the next token of the input as an `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', `.
+ This method will throw `],
+				[/* inline code block */ 'i', `InputMismatchException`],
+				[/* text */ 't', `
+ if the next token cannot be translated into a valid int value as
+ described below. If the translation is successful, the scanner advances
+ past the input that matched.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` If the next token matches the `],
+					[/* text */ 't', `Integer`],
+					[/* text */ 't', ` regular expression defined
+ above then the token is converted into an `],
+					[/* inline code block */ 'i', `int`],
+					[/* text */ 't', ` value as if by
+ removing all locale specific prefixes, group separators, and locale
+ specific suffixes, then mapping non-ASCII digits into ASCII
+ digits via `],
+					[/* reference */ 'r', `java.Character#digit(char,int)`],
+					[/* text */ 't', `, prepending a
+ negative sign (-) if the locale specific negative prefixes and suffixes
+ were present, and passing the resulting string to
+ `],
+					[/* reference */ 'r', `java.Integer#parseInt(java.lang.String,int)`],
+					[/* text */ 't', ` with the
+ specified radix.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `If the radix is less than `],
+					[/* reference */ 'r', `java.Character#MIN_RADIX`],
+					[/* text */ 't', `
+ or greater than `],
+					[/* reference */ 'r', `java.Character#MAX_RADIX`],
+					[/* text */ 't', `, then an
+ `],
+					[/* inline code block */ 'i', `IllegalArgumentException`],
+					[/* text */ 't', ` is thrown.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'radix', [/* parameter description */
+					[/* text */ 't', `the radix used to interpret the token as an int value`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.util.InputMismatchException', [/* throw description */
+					[/* text */ 't', `if the next token does not match the `],
+					[/* text */ 't', `Integer`],
+					[/* text */ 't', `
+         regular expression, or is out of range`]
+				]],
+				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
+					[/* text */ 't', `if input is exhausted`]
+				]],
+				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
+					[/* text */ 't', `if this scanner is closed`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the radix is out of range`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', ` scanned from the input`]
+			]
+		]],
+		[/* method */ 'findAll(java.util.regex.Pattern)', [
+			[/* method description */
+				[/* text */ 't', `Returns a stream of match results from this scanner. The stream
+ contains the same results in the same order that would be returned by
+ calling `],
+				[/* inline code block */ 'i', `findWithinHorizon(pattern, 0)`],
+				[/* text */ 't', ` and then `],
+				[/* reference */ 'r', `#match()`, `match()`],
+				[/* text */ 't', `
+ successively as long as `],
+				[/* reference */ 'r', `#findWithinHorizon(java.lang.String,int)`, `findWithinHorizon()`],
+				[/* text */ 't', `
+ finds matches.
+
+ `],
+				[/* block */ 'b', `The resulting stream is sequential and ordered. All stream elements are
+ non-null.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `Scanning starts upon initiation of the terminal stream operation, using the
+ current state of this scanner. Subsequent calls to any methods on this scanner
+ other than `],
+					[/* reference */ 'r', `#close()`, `close()`],
+					[/* text */ 't', ` and `],
+					[/* reference */ 'r', `#ioException()`, `ioException()`],
+					[/* text */ 't', ` may return undefined results
+ or may cause undefined effects on the returned stream. The returned stream's source
+ `],
+					[/* inline code block */ 'i', `Spliterator`],
+					[/* text */ 't', ` is `],
+					[/* text */ 't', `fail-fast`],
+					[/* text */ 't', ` and will, on a best-effort basis, throw a
+ `],
+					[/* reference */ 'r', `java.util.ConcurrentModificationException`],
+					[/* text */ 't', ` if any such calls are detected
+ during stream pipeline execution.
+
+ `]
+				]],
+				[/* block */ 'b', `After stream pipeline execution completes, this scanner is left in an indeterminate
+ state and cannot be reused.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `If this scanner contains a resource that must be released, this scanner
+ should be closed, either by calling its `],
+					[/* reference */ 'r', `#close()`, `close()`],
+					[/* text */ 't', ` method, or by
+ closing the returned stream. Closing the stream will close the underlying scanner.
+ `],
+					[/* inline code block */ 'i', `IllegalStateException`],
+					[/* text */ 't', ` is thrown if the scanner has been closed when this
+ method is called, or if this scanner is closed during stream pipeline execution.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `As with the `],
+					[/* reference */ 'r', `#findWithinHorizon(java.lang.String,int)`, `findWithinHorizon()`],
+					[/* text */ 't', ` methods, this method
+ might block waiting for additional input, and it might buffer an unbounded amount of
+ input searching for a match.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'pattern', [/* parameter description */
+					[/* text */ 't', `the pattern to be matched`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if pattern is null`]
+				]],
+				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
+					[/* text */ 't', `if this scanner is closed`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a sequential stream of match results`]
+			]
+		]],
 		[/* method */ 'findAll(java.lang.String)', [
 			[/* method description */
 				[/* text */ 't', `Returns a stream of match results that match the provided pattern string.
@@ -1237,88 +1746,6 @@ DocsCollector.collect('java.util.Scanner', [
 				]],
 				[/* throw */ 'java.util.regex.PatternSyntaxException', [/* throw description */
 					[/* text */ 't', `if the regular expression's syntax is invalid`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a sequential stream of match results`]
-			]
-		]],
-		[/* method */ 'findAll(java.util.regex.Pattern)', [
-			[/* method description */
-				[/* text */ 't', `Returns a stream of match results from this scanner. The stream
- contains the same results in the same order that would be returned by
- calling `],
-				[/* inline code block */ 'i', `findWithinHorizon(pattern, 0)`],
-				[/* text */ 't', ` and then `],
-				[/* reference */ 'r', `match()`],
-				[/* text */ 't', `
- successively as long as `],
-				[/* reference */ 'r', `findWithinHorizon()`],
-				[/* text */ 't', `
- finds matches.
-
- `],
-				[/* block */ 'b', `The resulting stream is sequential and ordered. All stream elements are
- non-null.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `Scanning starts upon initiation of the terminal stream operation, using the
- current state of this scanner. Subsequent calls to any methods on this scanner
- other than `],
-					[/* reference */ 'r', `close()`],
-					[/* text */ 't', ` and `],
-					[/* reference */ 'r', `ioException()`],
-					[/* text */ 't', ` may return undefined results
- or may cause undefined effects on the returned stream. The returned stream's source
- `],
-					[/* inline code block */ 'i', `Spliterator`],
-					[/* text */ 't', ` is `],
-					[/* text */ 't', `fail-fast`],
-					[/* text */ 't', ` and will, on a best-effort basis, throw a
- `],
-					[/* reference */ 'r', `java.util.ConcurrentModificationException`],
-					[/* text */ 't', ` if any such calls are detected
- during stream pipeline execution.
-
- `]
-				]],
-				[/* block */ 'b', `After stream pipeline execution completes, this scanner is left in an indeterminate
- state and cannot be reused.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `If this scanner contains a resource that must be released, this scanner
- should be closed, either by calling its `],
-					[/* reference */ 'r', `close()`],
-					[/* text */ 't', ` method, or by
- closing the returned stream. Closing the stream will close the underlying scanner.
- `],
-					[/* inline code block */ 'i', `IllegalStateException`],
-					[/* text */ 't', ` is thrown if the scanner has been closed when this
- method is called, or if this scanner is closed during stream pipeline execution.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `As with the `],
-					[/* reference */ 'r', `findWithinHorizon()`],
-					[/* text */ 't', ` methods, this method
- might block waiting for additional input, and it might buffer an unbounded amount of
- input searching for a match.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'pattern', [/* parameter description */
-					[/* text */ 't', `the pattern to be matched`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if pattern is null`]
-				]],
-				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
-					[/* text */ 't', `if this scanner is closed`]
 				]]
 			],
 			[/* return description */
@@ -1357,10 +1784,10 @@ DocsCollector.collect('java.util.Scanner', [
 				[/* text */ 't', `Returns a stream of delimiter-separated tokens from this scanner. The
  stream contains the same tokens that would be returned, starting from
  this scanner's current state, by calling the `],
-				[/* reference */ 'r', `next()`],
+				[/* reference */ 'r', `#next()`, `next()`],
 				[/* text */ 't', ` method
  repeatedly until the `],
-				[/* reference */ 'r', `hasNext()`],
+				[/* reference */ 'r', `#hasNext()`, `hasNext()`],
 				[/* text */ 't', ` method returns false.
 
  `],
@@ -1372,9 +1799,9 @@ DocsCollector.collect('java.util.Scanner', [
 					[/* text */ 't', `Scanning starts upon initiation of the terminal stream operation, using the
  current state of this scanner. Subsequent calls to any methods on this scanner
  other than `],
-					[/* reference */ 'r', `close()`],
+					[/* reference */ 'r', `#close()`, `close()`],
 					[/* text */ 't', ` and `],
-					[/* reference */ 'r', `ioException()`],
+					[/* reference */ 'r', `#ioException()`, `ioException()`],
 					[/* text */ 't', ` may return undefined results
  or may cause undefined effects on the returned stream. The returned stream's source
  `],
@@ -1396,7 +1823,7 @@ DocsCollector.collect('java.util.Scanner', [
 				[/* block */ 'b', [
 					[/* text */ 't', `If this scanner contains a resource that must be released, this scanner
  should be closed, either by calling its `],
-					[/* reference */ 'r', `close()`],
+					[/* reference */ 'r', `#close()`, `close()`],
 					[/* text */ 't', ` method, or by
  closing the returned stream. Closing the stream will close the underlying scanner.
  `],
@@ -1441,12 +1868,12 @@ DocsCollector.collect('java.util.Scanner', [
  removing all locale specific prefixes, group separators, and locale
  specific suffixes, then mapping non-ASCII digits into ASCII
  digits via `],
-					[/* external link */ 'a', `../lang/Character.html#digit(char,int)`, `Character.digit`],
+					[/* reference */ 'r', `java.Character#digit(char,int)`],
 					[/* text */ 't', `, prepending a
  negative sign (-) if the locale specific negative prefixes and suffixes
  were present, and passing the resulting string to
  `],
-					[/* external link */ 'a', `../lang/Long.html#parseLong(java.lang.String,int)`, `Long.parseLong`],
+					[/* reference */ 'r', `java.Long#parseLong(java.lang.String,int)`],
 					[/* text */ 't', ` with the
  specified radix.
 
@@ -1454,10 +1881,10 @@ DocsCollector.collect('java.util.Scanner', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `If the radix is less than `],
-					[/* external link */ 'a', `../lang/Character.html#MIN_RADIX`, `Character.MIN_RADIX`],
+					[/* reference */ 'r', `java.Character#MIN_RADIX`],
 					[/* text */ 't', `
  or greater than `],
-					[/* external link */ 'a', `../lang/Character.html#MAX_RADIX`, `Character.MAX_RADIX`],
+					[/* reference */ 'r', `java.Character#MAX_RADIX`],
 					[/* text */ 't', `, then an
  `],
 					[/* inline code block */ 'i', `IllegalArgumentException`],
@@ -1582,16 +2009,16 @@ DocsCollector.collect('java.util.Scanner', [
  removing all locale specific prefixes, group separators, and locale
  specific suffixes, then mapping non-ASCII digits into ASCII
  digits via `],
-					[/* external link */ 'a', `../lang/Character.html#digit(char,int)`, `Character.digit`],
+					[/* reference */ 'r', `java.Character#digit(char,int)`],
 					[/* text */ 't', `, prepending a
  negative sign (-) if the locale specific negative prefixes and suffixes
  were present, and passing the resulting string to
  `],
-					[/* external link */ 'a', `../lang/Float.html#parseFloat(java.lang.String)`, `Float.parseFloat`],
+					[/* reference */ 'r', `java.Float#parseFloat(java.lang.String)`],
 					[/* text */ 't', `. If the token matches
  the localized NaN or infinity strings, then either "Nan" or "Infinity"
  is passed to `],
-					[/* external link */ 'a', `../lang/Float.html#parseFloat(java.lang.String)`, `Float.parseFloat`],
+					[/* reference */ 'r', `java.Float#parseFloat(java.lang.String)`],
 					[/* text */ 't', ` as
  appropriate.`]
 				]]
@@ -1637,137 +2064,6 @@ DocsCollector.collect('java.util.Scanner', [
 				[/* text */ 't', `the last exception thrown by this scanner's readable`]
 			]
 		]],
-		[/* method */ 'hasNextLine()', [
-			[/* method description */
-				[/* text */ 't', `Returns true if there is another line in the input of this scanner.
- This method may block while waiting for input. The scanner does not
- advance past any input.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
-					[/* text */ 't', `if this scanner is closed`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `true if and only if this scanner has another line of input`]
-			]
-		]],
-		[/* method */ 'nextByte()', [
-			[/* method description */
-				[/* text */ 't', `Scans the next token of the input as a `],
-				[/* inline code block */ 'i', `byte`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` An invocation of this method of the form
- `],
-					[/* inline code block */ 'i', `nextByte()`],
-					[/* text */ 't', ` behaves in exactly the same way as the
- invocation `],
-					[/* inline code block */ 'i', `nextByte(radix)`],
-					[/* text */ 't', `, where `],
-					[/* inline code block */ 'i', `radix`],
-					[/* text */ 't', `
- is the default radix of this scanner.`]
-				]]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.util.InputMismatchException', [/* throw description */
-					[/* text */ 't', `if the next token does not match the `],
-					[/* text */ 't', `Integer`],
-					[/* text */ 't', `
-         regular expression, or is out of range`]
-				]],
-				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
-					[/* text */ 't', `if input is exhausted`]
-				]],
-				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
-					[/* text */ 't', `if this scanner is closed`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the `],
-				[/* inline code block */ 'i', `byte`],
-				[/* text */ 't', ` scanned from the input`]
-			]
-		]],
-		[/* method */ 'nextByte(int)', [
-			[/* method description */
-				[/* text */ 't', `Scans the next token of the input as a `],
-				[/* inline code block */ 'i', `byte`],
-				[/* text */ 't', `.
- This method will throw `],
-				[/* inline code block */ 'i', `InputMismatchException`],
-				[/* text */ 't', `
- if the next token cannot be translated into a valid byte value as
- described below. If the translation is successful, the scanner advances
- past the input that matched.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` If the next token matches the `],
-					[/* text */ 't', `Integer`],
-					[/* text */ 't', ` regular expression defined
- above then the token is converted into a `],
-					[/* inline code block */ 'i', `byte`],
-					[/* text */ 't', ` value as if by
- removing all locale specific prefixes, group separators, and locale
- specific suffixes, then mapping non-ASCII digits into ASCII
- digits via `],
-					[/* external link */ 'a', `../lang/Character.html#digit(char,int)`, `Character.digit`],
-					[/* text */ 't', `, prepending a
- negative sign (-) if the locale specific negative prefixes and suffixes
- were present, and passing the resulting string to
- `],
-					[/* external link */ 'a', `../lang/Byte.html#parseByte(java.lang.String,int)`, `Byte.parseByte`],
-					[/* text */ 't', ` with the
- specified radix.
-
- `]
-				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `If the radix is less than `],
-					[/* external link */ 'a', `../lang/Character.html#MIN_RADIX`, `Character.MIN_RADIX`],
-					[/* text */ 't', `
- or greater than `],
-					[/* external link */ 'a', `../lang/Character.html#MAX_RADIX`, `Character.MAX_RADIX`],
-					[/* text */ 't', `, then an
- `],
-					[/* inline code block */ 'i', `IllegalArgumentException`],
-					[/* text */ 't', ` is thrown.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'radix', [/* parameter description */
-					[/* text */ 't', `the radix used to interpret the token as a byte value`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.util.InputMismatchException', [/* throw description */
-					[/* text */ 't', `if the next token does not match the `],
-					[/* text */ 't', `Integer`],
-					[/* text */ 't', `
-         regular expression, or is out of range`]
-				]],
-				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
-					[/* text */ 't', `if input is exhausted`]
-				]],
-				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
-					[/* text */ 't', `if this scanner is closed`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if the radix is out of range`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the `],
-				[/* inline code block */ 'i', `byte`],
-				[/* text */ 't', ` scanned from the input`]
-			]
-		]],
 		[/* method */ 'useLocale(java.util.Locale)', [
 			[/* method description */
 				[/* text */ 't', `Sets this scanner's locale to the specified locale.
@@ -1784,7 +2080,7 @@ DocsCollector.collect('java.util.Scanner', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `Invoking the `],
-					[/* reference */ 'r', `reset()`],
+					[/* reference */ 'r', `#reset()`, `reset()`],
 					[/* text */ 't', ` method will set the scanner's locale to
  the `],
 					[/* text */ 't', `initial locale`],
@@ -1799,43 +2095,6 @@ DocsCollector.collect('java.util.Scanner', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `this scanner`]
-			]
-		]],
-		[/* method */ 'findWithinHorizon(java.lang.String,int)', [
-			[/* method description */
-				[/* text */ 't', `Attempts to find the next occurrence of a pattern constructed from the
- specified string, ignoring delimiters.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `An invocation of this method of the form
- `],
-					[/* inline code block */ 'i', `findWithinHorizon(pattern)`],
-					[/* text */ 't', ` behaves in exactly the same way as
- the invocation
- `],
-					[/* inline code block */ 'i', `findWithinHorizon(Pattern.compile(pattern), horizon)`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'pattern', [/* parameter description */
-					[/* text */ 't', `a string specifying the pattern to search for`]
-				]],
-				[/* parameter */ 'horizon', [/* parameter description */
-					[/* text */ 't', `the search horizon`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
-					[/* text */ 't', `if this scanner is closed`]
-				]],
-				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if horizon is negative`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the text that matched the specified pattern`]
 			]
 		]],
 		[/* method */ 'findWithinHorizon(java.util.regex.Pattern,int)', [
@@ -1859,9 +2118,9 @@ DocsCollector.collect('java.util.Scanner', [
  by the horizon; that is, an arbitrary match result may have been
  different if the horizon had been larger. The scanner treats the
  horizon as a transparent, non-anchoring bound (see `],
-					[/* external link */ 'a', `regex/Matcher.html#useTransparentBounds(boolean)`, `Matcher.useTransparentBounds(boolean)`],
+					[/* reference */ 'r', `.Matcher#useTransparentBounds(boolean)`],
 					[/* text */ 't', ` and `],
-					[/* external link */ 'a', `regex/Matcher.html#useAnchoringBounds(boolean)`, `Matcher.useAnchoringBounds(boolean)`],
+					[/* reference */ 'r', `.Matcher#useAnchoringBounds(boolean)`],
 					[/* text */ 't', `).
 
  `]
@@ -1882,6 +2141,43 @@ DocsCollector.collect('java.util.Scanner', [
 			[/* parameters */
 				[/* parameter */ 'pattern', [/* parameter description */
 					[/* text */ 't', `the pattern to scan for`]
+				]],
+				[/* parameter */ 'horizon', [/* parameter description */
+					[/* text */ 't', `the search horizon`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
+					[/* text */ 't', `if this scanner is closed`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if horizon is negative`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the text that matched the specified pattern`]
+			]
+		]],
+		[/* method */ 'findWithinHorizon(java.lang.String,int)', [
+			[/* method description */
+				[/* text */ 't', `Attempts to find the next occurrence of a pattern constructed from the
+ specified string, ignoring delimiters.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `An invocation of this method of the form
+ `],
+					[/* inline code block */ 'i', `findWithinHorizon(pattern)`],
+					[/* text */ 't', ` behaves in exactly the same way as
+ the invocation
+ `],
+					[/* inline code block */ 'i', `findWithinHorizon(Pattern.compile(pattern), horizon)`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'pattern', [/* parameter description */
+					[/* text */ 't', `a string specifying the pattern to search for`]
 				]],
 				[/* parameter */ 'horizon', [/* parameter description */
 					[/* text */ 't', `the search horizon`]
@@ -1961,40 +2257,21 @@ DocsCollector.collect('java.util.Scanner', [
 				[/* text */ 't', `the text that matched the specified pattern`]
 			]
 		]],
-		[/* method */ 'hasNextByte()', [
-			[/* method description */
-				[/* text */ 't', `Returns true if the next token in this scanner's input can be
- interpreted as a byte value in the default radix using the
- `],
-				[/* reference */ 'r', `nextByte()`],
-				[/* text */ 't', ` method. The scanner does not advance past any input.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
-					[/* text */ 't', `if this scanner is closed`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `true if and only if this scanner's next token is a valid
-         byte value`]
-			]
-		]],
 		[/* method */ 'hasNextByte(int)', [
 			[/* method description */
 				[/* text */ 't', `Returns true if the next token in this scanner's input can be
  interpreted as a byte value in the specified radix using the
  `],
-				[/* reference */ 'r', `nextByte()`],
+				[/* reference */ 'r', `#nextByte()`, `nextByte()`],
 				[/* text */ 't', ` method. The scanner does not advance past any input.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `If the radix is less than `],
-					[/* external link */ 'a', `../lang/Character.html#MIN_RADIX`, `Character.MIN_RADIX`],
+					[/* reference */ 'r', `java.Character#MIN_RADIX`],
 					[/* text */ 't', `
  or greater than `],
-					[/* external link */ 'a', `../lang/Character.html#MAX_RADIX`, `Character.MAX_RADIX`],
+					[/* reference */ 'r', `java.Character#MAX_RADIX`],
 					[/* text */ 't', `, then an
  `],
 					[/* inline code block */ 'i', `IllegalArgumentException`],
@@ -2019,12 +2296,31 @@ DocsCollector.collect('java.util.Scanner', [
          byte value`]
 			]
 		]],
+		[/* method */ 'hasNextByte()', [
+			[/* method description */
+				[/* text */ 't', `Returns true if the next token in this scanner's input can be
+ interpreted as a byte value in the default radix using the
+ `],
+				[/* reference */ 'r', `#nextByte()`, `nextByte()`],
+				[/* text */ 't', ` method. The scanner does not advance past any input.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
+					[/* text */ 't', `if this scanner is closed`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `true if and only if this scanner's next token is a valid
+         byte value`]
+			]
+		]],
 		[/* method */ 'hasNextShort()', [
 			[/* method description */
 				[/* text */ 't', `Returns true if the next token in this scanner's input can be
  interpreted as a short value in the default radix using the
  `],
-				[/* reference */ 'r', `nextShort()`],
+				[/* reference */ 'r', `#nextShort()`, `nextShort()`],
 				[/* text */ 't', ` method. The scanner does not advance past any input.`]
 			],
 			/* parameters */ UDF,
@@ -2043,16 +2339,16 @@ DocsCollector.collect('java.util.Scanner', [
 				[/* text */ 't', `Returns true if the next token in this scanner's input can be
  interpreted as a short value in the specified radix using the
  `],
-				[/* reference */ 'r', `nextShort()`],
+				[/* reference */ 'r', `#nextShort()`, `nextShort()`],
 				[/* text */ 't', ` method. The scanner does not advance past any input.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `If the radix is less than `],
-					[/* external link */ 'a', `../lang/Character.html#MIN_RADIX`, `Character.MIN_RADIX`],
+					[/* reference */ 'r', `java.Character#MIN_RADIX`],
 					[/* text */ 't', `
  or greater than `],
-					[/* external link */ 'a', `../lang/Character.html#MAX_RADIX`, `Character.MAX_RADIX`],
+					[/* reference */ 'r', `java.Character#MAX_RADIX`],
 					[/* text */ 't', `, then an
  `],
 					[/* inline code block */ 'i', `IllegalArgumentException`],
@@ -2090,7 +2386,7 @@ DocsCollector.collect('java.util.Scanner', [
 					[/* inline code block */ 'i', `nextShort()`],
 					[/* text */ 't', ` behaves in exactly the same way as the
  invocation `],
-					[/* reference */ 'r', `nextShort(radix)`],
+					[/* reference */ 'r', `#nextShort(int)`, `nextShort(radix)`],
 					[/* text */ 't', `, where `],
 					[/* inline code block */ 'i', `radix`],
 					[/* text */ 't', `
@@ -2141,12 +2437,12 @@ DocsCollector.collect('java.util.Scanner', [
  removing all locale specific prefixes, group separators, and locale
  specific suffixes, then mapping non-ASCII digits into ASCII
  digits via `],
-					[/* external link */ 'a', `../lang/Character.html#digit(char,int)`, `Character.digit`],
+					[/* reference */ 'r', `java.Character#digit(char,int)`],
 					[/* text */ 't', `, prepending a
  negative sign (-) if the locale specific negative prefixes and suffixes
  were present, and passing the resulting string to
  `],
-					[/* external link */ 'a', `../lang/Short.html#parseShort(java.lang.String,int)`, `Short.parseShort`],
+					[/* reference */ 'r', `java.Short#parseShort(java.lang.String,int)`],
 					[/* text */ 't', ` with the
  specified radix.
 
@@ -2154,10 +2450,10 @@ DocsCollector.collect('java.util.Scanner', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `If the radix is less than `],
-					[/* external link */ 'a', `../lang/Character.html#MIN_RADIX`, `Character.MIN_RADIX`],
+					[/* reference */ 'r', `java.Character#MIN_RADIX`],
 					[/* text */ 't', `
  or greater than `],
-					[/* external link */ 'a', `../lang/Character.html#MAX_RADIX`, `Character.MAX_RADIX`],
+					[/* reference */ 'r', `java.Character#MAX_RADIX`],
 					[/* text */ 't', `, then an
  `],
 					[/* inline code block */ 'i', `IllegalArgumentException`],
@@ -2197,16 +2493,16 @@ DocsCollector.collect('java.util.Scanner', [
 				[/* text */ 't', `Returns true if the next token in this scanner's input can be
  interpreted as an int value in the specified radix using the
  `],
-				[/* reference */ 'r', `nextInt()`],
+				[/* reference */ 'r', `#nextInt()`, `nextInt()`],
 				[/* text */ 't', ` method. The scanner does not advance past any input.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `If the radix is less than `],
-					[/* external link */ 'a', `../lang/Character.html#MIN_RADIX`, `Character.MIN_RADIX`],
+					[/* reference */ 'r', `java.Character#MIN_RADIX`],
 					[/* text */ 't', `
  or greater than `],
-					[/* external link */ 'a', `../lang/Character.html#MAX_RADIX`, `Character.MAX_RADIX`],
+					[/* reference */ 'r', `java.Character#MAX_RADIX`],
 					[/* text */ 't', `, then an
  `],
 					[/* inline code block */ 'i', `IllegalArgumentException`],
@@ -2236,7 +2532,7 @@ DocsCollector.collect('java.util.Scanner', [
 				[/* text */ 't', `Returns true if the next token in this scanner's input can be
  interpreted as an int value in the default radix using the
  `],
-				[/* reference */ 'r', `nextInt()`],
+				[/* reference */ 'r', `#nextInt()`, `nextInt()`],
 				[/* text */ 't', ` method. The scanner does not advance past any input.`]
 			],
 			/* parameters */ UDF,
@@ -2255,16 +2551,16 @@ DocsCollector.collect('java.util.Scanner', [
 				[/* text */ 't', `Returns true if the next token in this scanner's input can be
  interpreted as a long value in the specified radix using the
  `],
-				[/* reference */ 'r', `nextLong()`],
+				[/* reference */ 'r', `#nextLong()`, `nextLong()`],
 				[/* text */ 't', ` method. The scanner does not advance past any input.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `If the radix is less than `],
-					[/* external link */ 'a', `../lang/Character.html#MIN_RADIX`, `Character.MIN_RADIX`],
+					[/* reference */ 'r', `java.Character#MIN_RADIX`],
 					[/* text */ 't', `
  or greater than `],
-					[/* external link */ 'a', `../lang/Character.html#MAX_RADIX`, `Character.MAX_RADIX`],
+					[/* reference */ 'r', `java.Character#MAX_RADIX`],
 					[/* text */ 't', `, then an
  `],
 					[/* inline code block */ 'i', `IllegalArgumentException`],
@@ -2294,7 +2590,7 @@ DocsCollector.collect('java.util.Scanner', [
 				[/* text */ 't', `Returns true if the next token in this scanner's input can be
  interpreted as a long value in the default radix using the
  `],
-				[/* reference */ 'r', `nextLong()`],
+				[/* reference */ 'r', `#nextLong()`, `nextLong()`],
 				[/* text */ 't', ` method. The scanner does not advance past any input.`]
 			],
 			/* parameters */ UDF,
@@ -2308,6 +2604,29 @@ DocsCollector.collect('java.util.Scanner', [
          long value`]
 			]
 		]],
+		[/* method */ 'hasNextBigInteger()', [
+			[/* method description */
+				[/* text */ 't', `Returns true if the next token in this scanner's input can be
+ interpreted as a `],
+				[/* inline code block */ 'i', `BigInteger`],
+				[/* text */ 't', ` in the default radix using the
+ `],
+				[/* reference */ 'r', `#nextBigInteger()`, `nextBigInteger()`],
+				[/* text */ 't', ` method. The scanner does not advance past any
+ input.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
+					[/* text */ 't', `if this scanner is closed`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `true if and only if this scanner's next token is a valid
+         `],
+				[/* inline code block */ 'i', `BigInteger`]
+			]
+		]],
 		[/* method */ 'hasNextBigInteger(int)', [
 			[/* method description */
 				[/* text */ 't', `Returns true if the next token in this scanner's input can be
@@ -2315,17 +2634,17 @@ DocsCollector.collect('java.util.Scanner', [
 				[/* inline code block */ 'i', `BigInteger`],
 				[/* text */ 't', ` in the specified radix using
  the `],
-				[/* reference */ 'r', `nextBigInteger()`],
+				[/* reference */ 'r', `#nextBigInteger()`, `nextBigInteger()`],
 				[/* text */ 't', ` method. The scanner does not advance past
  any input.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `If the radix is less than `],
-					[/* external link */ 'a', `../lang/Character.html#MIN_RADIX`, `Character.MIN_RADIX`],
+					[/* reference */ 'r', `java.Character#MIN_RADIX`],
 					[/* text */ 't', `
  or greater than `],
-					[/* external link */ 'a', `../lang/Character.html#MAX_RADIX`, `Character.MAX_RADIX`],
+					[/* reference */ 'r', `java.Character#MAX_RADIX`],
 					[/* text */ 't', `, then an
  `],
 					[/* inline code block */ 'i', `IllegalArgumentException`],
@@ -2343,29 +2662,6 @@ DocsCollector.collect('java.util.Scanner', [
 				]],
 				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
 					[/* text */ 't', `if the radix is out of range`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `true if and only if this scanner's next token is a valid
-         `],
-				[/* inline code block */ 'i', `BigInteger`]
-			]
-		]],
-		[/* method */ 'hasNextBigInteger()', [
-			[/* method description */
-				[/* text */ 't', `Returns true if the next token in this scanner's input can be
- interpreted as a `],
-				[/* inline code block */ 'i', `BigInteger`],
-				[/* text */ 't', ` in the default radix using the
- `],
-				[/* reference */ 'r', `nextBigInteger()`],
-				[/* text */ 't', ` method. The scanner does not advance past any
- input.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
-					[/* text */ 't', `if this scanner is closed`]
 				]]
 			],
 			[/* return description */
@@ -2431,20 +2727,20 @@ DocsCollector.collect('java.util.Scanner', [
 					[/* text */ 't', ` value as if
  by removing all group separators, mapping non-ASCII digits into ASCII
  digits via the `],
-					[/* external link */ 'a', `../lang/Character.html#digit(char,int)`, `Character.digit`],
+					[/* reference */ 'r', `java.Character#digit(char,int)`],
 					[/* text */ 't', `, and passing the
  resulting string to the `],
-					[/* external link */ 'a', `../math/BigInteger.html#%3Cinit%3E(java.lang.String)`, `BigInteger(String, int)`],
+					[/* reference */ 'r', `java.BigInteger#<init>(java.lang.String)`],
 					[/* text */ 't', ` constructor with the specified radix.
 
  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `If the radix is less than `],
-					[/* external link */ 'a', `../lang/Character.html#MIN_RADIX`, `Character.MIN_RADIX`],
+					[/* reference */ 'r', `java.Character#MIN_RADIX`],
 					[/* text */ 't', `
  or greater than `],
-					[/* external link */ 'a', `../lang/Character.html#MAX_RADIX`, `Character.MAX_RADIX`],
+					[/* reference */ 'r', `java.Character#MAX_RADIX`],
 					[/* text */ 't', `, then an
  `],
 					[/* inline code block */ 'i', `IllegalArgumentException`],
@@ -2495,10 +2791,10 @@ DocsCollector.collect('java.util.Scanner', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `If the radix is less than `],
-					[/* external link */ 'a', `../lang/Character.html#MIN_RADIX`, `Character.MIN_RADIX`],
+					[/* reference */ 'r', `java.Character#MIN_RADIX`],
 					[/* text */ 't', `
  or greater than `],
-					[/* external link */ 'a', `../lang/Character.html#MAX_RADIX`, `Character.MAX_RADIX`],
+					[/* reference */ 'r', `java.Character#MAX_RADIX`],
 					[/* text */ 't', `, then an
  `],
 					[/* inline code block */ 'i', `IllegalArgumentException`],
@@ -2508,7 +2804,7 @@ DocsCollector.collect('java.util.Scanner', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `Invoking the `],
-					[/* reference */ 'r', `reset()`],
+					[/* reference */ 'r', `#reset()`, `reset()`],
 					[/* text */ 't', ` method will set the scanner's radix to
  `],
 					[/* inline code block */ 'i', `10`],
@@ -2564,7 +2860,7 @@ DocsCollector.collect('java.util.Scanner', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Invoking the `],
-					[/* reference */ 'r', `reset()`],
+					[/* reference */ 'r', `#reset()`, `reset()`],
 					[/* text */ 't', ` method will set the scanner's delimiter
  to the `],
 					[/* text */ 't', `default`],
@@ -2603,7 +2899,7 @@ DocsCollector.collect('java.util.Scanner', [
 			[/* method description */
 				[/* text */ 't', `Returns true if the next token in this scanner's input can be
  interpreted as a float value using the `],
-				[/* reference */ 'r', `nextFloat()`],
+				[/* reference */ 'r', `#nextFloat()`, `nextFloat()`],
 				[/* text */ 't', `
  method. The scanner does not advance past any input.`]
 			],
@@ -2622,7 +2918,7 @@ DocsCollector.collect('java.util.Scanner', [
 			[/* method description */
 				[/* text */ 't', `Returns true if the next token in this scanner's input can be
  interpreted as a double value using the `],
-				[/* reference */ 'r', `nextDouble()`],
+				[/* reference */ 'r', `#nextDouble()`, `nextDouble()`],
 				[/* text */ 't', `
  method. The scanner does not advance past any input.`]
 			],
@@ -2644,7 +2940,7 @@ DocsCollector.collect('java.util.Scanner', [
 				[/* inline code block */ 'i', `BigDecimal`],
 				[/* text */ 't', ` using the
  `],
-				[/* reference */ 'r', `nextBigDecimal()`],
+				[/* reference */ 'r', `#nextBigDecimal()`, `nextBigDecimal()`],
 				[/* text */ 't', ` method. The scanner does not advance past any
  input.`]
 			],
@@ -2676,10 +2972,10 @@ DocsCollector.collect('java.util.Scanner', [
 					[/* text */ 't', ` value as if
  by removing all group separators, mapping non-ASCII digits into ASCII
  digits via the `],
-					[/* external link */ 'a', `../lang/Character.html#digit(char,int)`, `Character.digit`],
+					[/* reference */ 'r', `java.Character#digit(char,int)`],
 					[/* text */ 't', `, and passing the
  resulting string to the `],
-					[/* external link */ 'a', `../math/BigDecimal.html#%3Cinit%3E(java.lang.String)`, `BigDecimal(String)`],
+					[/* reference */ 'r', `java.BigDecimal#<init>(java.lang.String)`],
 					[/* text */ 't', `
  constructor.`]
 				]]
@@ -2702,6 +2998,137 @@ DocsCollector.collect('java.util.Scanner', [
 			[/* return description */
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `BigDecimal`],
+				[/* text */ 't', ` scanned from the input`]
+			]
+		]],
+		[/* method */ 'hasNextLine()', [
+			[/* method description */
+				[/* text */ 't', `Returns true if there is another line in the input of this scanner.
+ This method may block while waiting for input. The scanner does not
+ advance past any input.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
+					[/* text */ 't', `if this scanner is closed`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `true if and only if this scanner has another line of input`]
+			]
+		]],
+		[/* method */ 'nextByte(int)', [
+			[/* method description */
+				[/* text */ 't', `Scans the next token of the input as a `],
+				[/* inline code block */ 'i', `byte`],
+				[/* text */ 't', `.
+ This method will throw `],
+				[/* inline code block */ 'i', `InputMismatchException`],
+				[/* text */ 't', `
+ if the next token cannot be translated into a valid byte value as
+ described below. If the translation is successful, the scanner advances
+ past the input that matched.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` If the next token matches the `],
+					[/* text */ 't', `Integer`],
+					[/* text */ 't', ` regular expression defined
+ above then the token is converted into a `],
+					[/* inline code block */ 'i', `byte`],
+					[/* text */ 't', ` value as if by
+ removing all locale specific prefixes, group separators, and locale
+ specific suffixes, then mapping non-ASCII digits into ASCII
+ digits via `],
+					[/* reference */ 'r', `java.Character#digit(char,int)`],
+					[/* text */ 't', `, prepending a
+ negative sign (-) if the locale specific negative prefixes and suffixes
+ were present, and passing the resulting string to
+ `],
+					[/* reference */ 'r', `java.Byte#parseByte(java.lang.String,int)`],
+					[/* text */ 't', ` with the
+ specified radix.
+
+ `]
+				]],
+				[/* block */ 'b', [
+					[/* text */ 't', `If the radix is less than `],
+					[/* reference */ 'r', `java.Character#MIN_RADIX`],
+					[/* text */ 't', `
+ or greater than `],
+					[/* reference */ 'r', `java.Character#MAX_RADIX`],
+					[/* text */ 't', `, then an
+ `],
+					[/* inline code block */ 'i', `IllegalArgumentException`],
+					[/* text */ 't', ` is thrown.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'radix', [/* parameter description */
+					[/* text */ 't', `the radix used to interpret the token as a byte value`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.util.InputMismatchException', [/* throw description */
+					[/* text */ 't', `if the next token does not match the `],
+					[/* text */ 't', `Integer`],
+					[/* text */ 't', `
+         regular expression, or is out of range`]
+				]],
+				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
+					[/* text */ 't', `if input is exhausted`]
+				]],
+				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
+					[/* text */ 't', `if this scanner is closed`]
+				]],
+				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
+					[/* text */ 't', `if the radix is out of range`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the `],
+				[/* inline code block */ 'i', `byte`],
+				[/* text */ 't', ` scanned from the input`]
+			]
+		]],
+		[/* method */ 'nextByte()', [
+			[/* method description */
+				[/* text */ 't', `Scans the next token of the input as a `],
+				[/* inline code block */ 'i', `byte`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` An invocation of this method of the form
+ `],
+					[/* inline code block */ 'i', `nextByte()`],
+					[/* text */ 't', ` behaves in exactly the same way as the
+ invocation `],
+					[/* inline code block */ 'i', `nextByte(radix)`],
+					[/* text */ 't', `, where `],
+					[/* inline code block */ 'i', `radix`],
+					[/* text */ 't', `
+ is the default radix of this scanner.`]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.util.InputMismatchException', [/* throw description */
+					[/* text */ 't', `if the next token does not match the `],
+					[/* text */ 't', `Integer`],
+					[/* text */ 't', `
+         regular expression, or is out of range`]
+				]],
+				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
+					[/* text */ 't', `if input is exhausted`]
+				]],
+				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
+					[/* text */ 't', `if this scanner is closed`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the `],
+				[/* inline code block */ 'i', `byte`],
 				[/* text */ 't', ` scanned from the input`]
 			]
 		]]

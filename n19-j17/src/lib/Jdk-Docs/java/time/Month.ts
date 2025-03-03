@@ -27,8 +27,14 @@ DocsCollector.collect('java.time.Month', [
  `]
 		]],
 		[/* block */ 'b', [
-			[/* text */ 't', `Do not use <code>ordinal()</code> to obtain the numeric representation of <code>Month</code>.
- Use <code>getValue()</code> instead.`]
+			[/* text */ 't', `Do not use `],
+			[/* inline code block */ 'i', `ordinal()`],
+			[/* text */ 't', ` to obtain the numeric representation of `],
+			[/* inline code block */ 'i', `Month`],
+			[/* text */ 't', `.
+ Use `],
+			[/* inline code block */ 'i', `getValue()`],
+			[/* text */ 't', ` instead.`]
 		]],
 		[/* block */ 'b', `
  This enum represents a common concept that is found in many calendar systems.
@@ -53,7 +59,7 @@ DocsCollector.collect('java.time.Month', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is `],
-					[/* external link */ 'a', `temporal/ChronoField.html#MONTH_OF_YEAR`, `MONTH_OF_YEAR`],
+					[/* reference */ 'r', `.ChronoField#MONTH_OF_YEAR`],
 					[/* text */ 't', ` then the
  value of the month-of-year, from 1 to 12, will be returned.
  All other `],
@@ -147,7 +153,7 @@ the order they are declared.`]
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is `],
-					[/* external link */ 'a', `temporal/ChronoField.html#MONTH_OF_YEAR`, `MONTH_OF_YEAR`],
+					[/* reference */ 'r', `.ChronoField#MONTH_OF_YEAR`],
 					[/* text */ 't', ` then the
  value of the month-of-year, from 1 to 12, will be returned.
  All other `],
@@ -286,7 +292,7 @@ not permitted.)`]
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The conversion extracts the `],
-					[/* external link */ 'a', `temporal/ChronoField.html#MONTH_OF_YEAR`, `MONTH_OF_YEAR`],
+					[/* reference */ 'r', `.ChronoField#MONTH_OF_YEAR`],
 					[/* text */ 't', ` field.
  The extraction is only permitted if the temporal object has an ISO
  chronology, or can be converted to a `],
@@ -337,7 +343,7 @@ not permitted.)`]
 					[/* text */ 't', `
  The result of this method is obtained by invoking the
  `],
-					[/* external link */ 'a', `temporal/TemporalQuery.html#queryFrom(java.time.temporal.TemporalAccessor)`, `TemporalQuery.queryFrom(TemporalAccessor)`],
+					[/* reference */ 'r', `.TemporalQuery#queryFrom(java.time.temporal.TemporalAccessor)`],
 					[/* text */ 't', ` method on the
  specified query passing `],
 					[/* inline code block */ 'i', `this`],
@@ -374,7 +380,7 @@ not permitted.)`]
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is `],
-					[/* external link */ 'a', `temporal/ChronoField.html#MONTH_OF_YEAR`, `MONTH_OF_YEAR`],
+					[/* reference */ 'r', `.ChronoField#MONTH_OF_YEAR`],
 					[/* text */ 't', ` then the
  range of the month-of-year, from 1 to 12, will be returned.
  All other `],
@@ -423,17 +429,17 @@ not permitted.)`]
 					[/* text */ 't', `
  This checks if this month-of-year can be queried for the specified field.
  If false, then calling the `],
-					[/* reference */ 'r', `range`],
+					[/* reference */ 'r', `#range(java.time.temporal.TemporalField)`, `range`],
 					[/* text */ 't', ` and
  `],
-					[/* reference */ 'r', `get`],
+					[/* reference */ 'r', `#get(java.time.temporal.TemporalField)`, `get`],
 					[/* text */ 't', ` methods will throw an exception.
  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is `],
-					[/* external link */ 'a', `temporal/ChronoField.html#MONTH_OF_YEAR`, `MONTH_OF_YEAR`],
+					[/* reference */ 'r', `.ChronoField#MONTH_OF_YEAR`],
 					[/* text */ 't', ` then
  this method returns true.
  All other `],
@@ -507,7 +513,7 @@ not permitted.)`]
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If no textual mapping is found then the `],
-					[/* reference */ 'r', `numeric value`],
+					[/* reference */ 'r', `#getValue()`, `numeric value`],
 					[/* text */ 't', ` is returned.`]
 				]]
 			],
@@ -535,10 +541,10 @@ not permitted.)`]
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The adjustment is equivalent to using `],
-					[/* external link */ 'a', `temporal/Temporal.html#with(java.time.temporal.TemporalField,long)`, `Temporal.with(TemporalField, long)`],
+					[/* reference */ 'r', `.Temporal#with(java.time.temporal.TemporalField,long)`],
 					[/* text */ 't', `
  passing `],
-					[/* external link */ 'a', `temporal/ChronoField.html#MONTH_OF_YEAR`, `ChronoField.MONTH_OF_YEAR`],
+					[/* reference */ 'r', `.ChronoField#MONTH_OF_YEAR`],
 					[/* text */ 't', ` as the field.
  If the specified temporal object does not use the ISO calendar system then
  a `],
@@ -550,7 +556,7 @@ not permitted.)`]
 					[/* text */ 't', `
  In most cases, it is clearer to reverse the calling pattern by using
  `],
-					[/* external link */ 'a', `temporal/Temporal.html#with(java.time.temporal.TemporalAdjuster)`, `Temporal.with(TemporalAdjuster)`],
+					[/* reference */ 'r', `.Temporal#with(java.time.temporal.TemporalAdjuster)`],
 					[/* text */ 't', `:
  `]
 				]],

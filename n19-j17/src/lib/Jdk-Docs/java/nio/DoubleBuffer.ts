@@ -14,10 +14,10 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` Absolute and relative `],
-					[/* reference */ 'r', `get`],
+					[/* reference */ 'r', `#get()`, `get`],
 					[/* text */ 't', ` and
    `],
-					[/* reference */ 'r', `put`],
+					[/* reference */ 'r', `#put(double)`, `put`],
 					[/* text */ 't', ` methods that read and write
    single doubles; `]
 				]]
@@ -25,7 +25,7 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` Absolute and relative `],
-					[/* reference */ 'r', `bulk get`],
+					[/* reference */ 'r', `#get(double%5B%5D)`, `bulk get`],
 					[/* text */ 't', `
    methods that transfer contiguous sequences of doubles from this buffer
    into an array; and`]
@@ -34,7 +34,7 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` Absolute and relative `],
-					[/* reference */ 'r', `bulk put`],
+					[/* reference */ 'r', `#put(double%5B%5D)`, `bulk put`],
 					[/* text */ 't', `
    methods that transfer contiguous sequences of doubles from a
    double array{#if[char]?, a string,} or some other double
@@ -44,7 +44,7 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` A method for `],
-					[/* reference */ 'r', `compacting`],
+					[/* reference */ 'r', `#compact()`, `compacting`],
 					[/* text */ 't', `
    a double buffer.  `]
 				]]
@@ -53,7 +53,7 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Double buffers can be created either by `],
-			[/* reference */ 'r', `allocation`],
+			[/* reference */ 'r', `#allocate(int)`, `allocation`],
 			[/* text */ 't', `, which allocates space for the buffer's
 
 
@@ -64,11 +64,11 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
 
 
  content, by `],
-			[/* reference */ 'r', `wrapping`],
+			[/* reference */ 'r', `#wrap(double%5B%5D)`, `wrapping`],
 			[/* text */ 't', ` an existing
  double array {#if[char]?or string} into a buffer, or by creating a
  `],
-			[/* external link */ 'a', `ByteBuffer.html#views`, `view`],
+			[/* reference */ 'r', `.ByteBuffer#views`],
 			[/* text */ 't', ` of an existing byte buffer.
 
 
@@ -178,7 +178,7 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Like a byte buffer, a double buffer is either `],
-			[/* external link */ 'a', `ByteBuffer.html#direct`, `direct or non-direct`],
+			[/* reference */ 'r', `.ByteBuffer#direct`],
 			[/* text */ 't', `.  A
  double buffer created via the `],
 			[/* inline code block */ 'i', `wrap`],
@@ -186,7 +186,7 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
  be non-direct.  A double buffer created as a view of a byte buffer will
  be direct if, and only if, the byte buffer itself is direct.  Whether or not
  a double buffer is direct may be determined by invoking the `],
-			[/* reference */ 'r', `isDirect`],
+			[/* reference */ 'r', `#isDirect()`, `isDirect`],
 			[/* text */ 't', ` method.  `]
 		]],
 		[/* block */ 'b', ` Methods in this class that do not otherwise have a value to return are
@@ -370,9 +370,9 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
  buffer than are required to satisfy the request, that is, if
  `],
 					[/* inline code block */ 'i', `length`],
-					[/* text */ 't', `&nbsp;`],
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `>`],
-					[/* text */ 't', `&nbsp;`],
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `remaining()`],
 					[/* text */ 't', `, then no
  doubles are transferred and a `],
@@ -490,7 +490,7 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
 			[/* method description */
 				[/* text */ 't', `Relative bulk `],
 				[/* text */ 't', `put`],
-				[/* text */ 't', ` method&nbsp;&nbsp;`],
+				[/* text */ 't', ` method  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -529,7 +529,7 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
 			[/* method description */
 				[/* text */ 't', `Absolute bulk `],
 				[/* text */ 't', `put`],
-				[/* text */ 't', ` method&nbsp;&nbsp;`],
+				[/* text */ 't', ` method  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -606,7 +606,7 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
 			[/* method description */
 				[/* text */ 't', `Absolute bulk `],
 				[/* text */ 't', `put`],
-				[/* text */ 't', ` method&nbsp;&nbsp;`],
+				[/* text */ 't', ` method  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -656,7 +656,7 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
 			[/* method description */
 				[/* text */ 't', `Relative bulk `],
 				[/* text */ 't', `put`],
-				[/* text */ 't', ` method&nbsp;&nbsp;`],
+				[/* text */ 't', ` method  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -667,9 +667,9 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
  than remain in this buffer, that is, if
  `],
 					[/* inline code block */ 'i', `length`],
-					[/* text */ 't', `&nbsp;`],
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `>`],
-					[/* text */ 't', `&nbsp;`],
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `remaining()`],
 					[/* text */ 't', `, then no
  doubles are transferred and a `],
@@ -750,7 +750,7 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
 			[/* method description */
 				[/* text */ 't', `Absolute bulk `],
 				[/* text */ 't', `put`],
-				[/* text */ 't', ` method&nbsp;&nbsp;`],
+				[/* text */ 't', ` method  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -837,7 +837,7 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
 			[/* method description */
 				[/* text */ 't', `Relative bulk `],
 				[/* text */ 't', `put`],
-				[/* text */ 't', ` method&nbsp;&nbsp;`],
+				[/* text */ 't', ` method  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -848,9 +848,9 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
  source buffer than in this buffer, that is, if
  `],
 					[/* inline code block */ 'i', `src.remaining()`],
-					[/* text */ 't', `&nbsp;`],
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `>`],
-					[/* text */ 't', `&nbsp;`],
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `remaining()`],
 					[/* text */ 't', `,
  then no doubles are transferred and a `],
@@ -863,7 +863,7 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
 					[/* text */ 't', ` Otherwise, this method copies
  `],
 					[/* text */ 't', `n`],
-					[/* text */ 't', `&nbsp;=&nbsp;`],
+					[/* text */ 't', ` = `],
 					[/* inline code block */ 'i', `src.remaining()`],
 					[/* text */ 't', ` doubles from the given
  buffer into this buffer, starting at each buffer's current position.
@@ -918,7 +918,7 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
 			[/* method description */
 				[/* text */ 't', `Absolute `],
 				[/* text */ 't', `put`],
-				[/* text */ 't', ` method&nbsp;&nbsp;`],
+				[/* text */ 't', ` method  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -953,7 +953,7 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
 			[/* method description */
 				[/* text */ 't', `Relative `],
 				[/* text */ 't', `put`],
-				[/* text */ 't', ` method&nbsp;&nbsp;`],
+				[/* text */ 't', ` method  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -1014,7 +1014,7 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
 							[/* inline code block */ 'i', `+0.0`],
 							[/* text */ 't', ` are considered to be
    equal, unlike `],
-							[/* external link */ 'a', `../lang/Double.html#equals(java.lang.Object)`, `Double.equals(Object)`],
+							[/* reference */ 'r', `java.Double#equals(java.lang.Object)`],
 							[/* text */ 't', `.
 
    `]
@@ -1058,7 +1058,7 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
 					[/* text */ 't', ` up to, and
  including, the element at `],
 					[/* inline code block */ 'i', `limit()`],
-					[/* text */ 't', `&nbsp;-&nbsp;`],
+					[/* text */ 't', ` - `],
 					[/* inline code block */ 'i', `1`],
 					[/* text */ 't', `.
 
@@ -1088,7 +1088,7 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
 					[/* inline code block */ 'i', `double`],
 					[/* text */ 't', ` elements are compared as if by invoking
  `],
-					[/* external link */ 'a', `../lang/Double.html#compare(double,double)`, `Double.compare(double,double)`],
+					[/* reference */ 'r', `java.Double#compare(double,double)`],
 					[/* text */ 't', `, except that
  `],
 					[/* inline code block */ 'i', `-0.0`],
@@ -1170,15 +1170,15 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
 
 
  the `],
-					[/* external link */ 'a', `ByteOrder.html#nativeOrder()`, `native order`],
+					[/* reference */ 'r', `.ByteOrder#nativeOrder()`],
 					[/* text */ 't', ` of the underlying
  hardware.
 
  Its `],
-					[/* reference */ 'r', `backing array`],
+					[/* reference */ 'r', `#array()`, `backing array`],
 					[/* text */ 't', ` will be the given array, and its
  `],
-					[/* reference */ 'r', `array offset`],
+					[/* reference */ 'r', `#arrayOffset()`, `array offset`],
 					[/* text */ 't', ` will be zero.  `]
 				]]
 			],
@@ -1214,15 +1214,15 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
 
 
  the `],
-					[/* external link */ 'a', `ByteOrder.html#nativeOrder()`, `native order`],
+					[/* reference */ 'r', `.ByteOrder#nativeOrder()`],
 					[/* text */ 't', ` of the underlying
  hardware.
 
  Its `],
-					[/* reference */ 'r', `backing array`],
+					[/* reference */ 'r', `#array()`, `backing array`],
 					[/* text */ 't', ` will be the given array, and
  its `],
-					[/* reference */ 'r', `array offset`],
+					[/* reference */ 'r', `#arrayOffset()`, `array offset`],
 					[/* text */ 't', ` will be zero.  `]
 				]]
 			],
@@ -1316,10 +1316,10 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
 					[/* text */ 't', ` If this method returns `],
 					[/* inline code block */ 'i', `true`],
 					[/* text */ 't', ` then the `],
-					[/* reference */ 'r', `array`],
+					[/* reference */ 'r', `#array()`, `array`],
 					[/* text */ 't', `
  and `],
-					[/* reference */ 'r', `arrayOffset`],
+					[/* reference */ 'r', `#arrayOffset()`, `arrayOffset`],
 					[/* text */ 't', ` methods may safely be invoked.
  `]
 				]]
@@ -1335,7 +1335,7 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
 		[/* method */ 'array()', [
 			[/* method description */
 				[/* text */ 't', `Returns the double array that backs this
- buffer&nbsp;&nbsp;`],
+ buffer  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -1346,7 +1346,7 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Invoke the `],
-					[/* reference */ 'r', `hasArray`],
+					[/* reference */ 'r', `#hasArray()`, `hasArray`],
 					[/* text */ 't', ` method before invoking this
  method in order to ensure that this buffer has an accessible backing
  array.  `]
@@ -1368,7 +1368,7 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
 		[/* method */ 'arrayOffset()', [
 			[/* method description */
 				[/* text */ 't', `Returns the offset within this buffer's backing array of the first
- element of the buffer&nbsp;&nbsp;`],
+ element of the buffer  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -1379,7 +1379,7 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
 					[/* text */ 't', `
  corresponds to array index `],
 					[/* text */ 't', `p`],
-					[/* text */ 't', `&nbsp;+&nbsp;`],
+					[/* text */ 't', ` + `],
 					[/* inline code block */ 'i', `arrayOffset()`],
 					[/* text */ 't', `.
 
@@ -1387,7 +1387,7 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Invoke the `],
-					[/* reference */ 'r', `hasArray`],
+					[/* reference */ 'r', `#hasArray()`, `hasArray`],
 					[/* text */ 't', ` method before invoking this
  method in order to ensure that this buffer has an accessible backing
  array.  `]
@@ -1458,7 +1458,7 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method is often used in conjunction with the `],
-					[/* external link */ 'a', `ByteBuffer.html#compact()`, `compact`],
+					[/* reference */ 'r', `.ByteBuffer#compact()`],
 					[/* text */ 't', ` method when transferring data from
  one place to another.  `]
 				]]
@@ -1535,7 +1535,7 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
 					[/* text */ 't', `The position in this buffer at which the content of the new
           buffer will start; must be non-negative and no larger than
           `],
-					[/* external link */ 'a', `Buffer.html#limit()`, `limit()`]
+					[/* reference */ 'r', `.Buffer#limit()`]
 				]],
 				[/* parameter */ 'length', [/* parameter description */
 					[/* text */ 't', `The number of elements the new buffer will contain; must be
@@ -1626,10 +1626,10 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
  wrapping an existing `],
 					[/* inline code block */ 'i', `double`],
 					[/* text */ 't', ` array is the `],
-					[/* external link */ 'a', `ByteOrder.html#nativeOrder()`, `native order`],
+					[/* reference */ 'r', `.ByteOrder#nativeOrder()`],
 					[/* text */ 't', ` of the underlying
  hardware.  The byte order of a double buffer created as a `],
-					[/* external link */ 'a', `ByteBuffer.html#views`, `view`],
+					[/* reference */ 'r', `.ByteBuffer#views`],
 					[/* text */ 't', ` of a byte buffer is that of the
  byte buffer at the moment that the view is created.  `]
 				]]
@@ -1645,10 +1645,10 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
 				[/* text */ 't', `Finds and returns the relative index of the first mismatch between this
  buffer and a given buffer.  The index is relative to the
  `],
-				[/* external link */ 'a', `Buffer.html#position()`, `position`],
+				[/* reference */ 'r', `.Buffer#position()`],
 				[/* text */ 't', ` of each buffer and will be in the range of
  0 (inclusive) up to the smaller of the `],
-				[/* external link */ 'a', `Buffer.html#remaining()`, `remaining`],
+				[/* reference */ 'r', `.Buffer#remaining()`],
 				[/* text */ 't', `
  elements in each buffer (exclusive).
 
@@ -1686,15 +1686,15 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
 
 
  the `],
-					[/* external link */ 'a', `ByteOrder.html#nativeOrder()`, `native order`],
+					[/* reference */ 'r', `.ByteOrder#nativeOrder()`],
 					[/* text */ 't', ` of the underlying
  hardware.
 
  It will have a `],
-					[/* reference */ 'r', `backing array`],
+					[/* reference */ 'r', `#array()`, `backing array`],
 					[/* text */ 't', `, and its
  `],
-					[/* reference */ 'r', `array offset`],
+					[/* reference */ 'r', `#arrayOffset()`, `array offset`],
 					[/* text */ 't', ` will be zero.`]
 				]]
 			],
@@ -1739,7 +1739,7 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` If this buffer is itself read-only then this method behaves in
  exactly the same way as the `],
-					[/* reference */ 'r', `duplicate`],
+					[/* reference */ 'r', `#duplicate()`, `duplicate`],
 					[/* text */ 't', ` method.  `]
 				]]
 			],
@@ -1751,7 +1751,7 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
 		]],
 		[/* method */ 'compact()', [
 			[/* method description */
-				[/* text */ 't', `Compacts this buffer&nbsp;&nbsp;`],
+				[/* text */ 't', `Compacts this buffer  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -1761,23 +1761,23 @@ DocsCollector.collect('java.nio.DoubleBuffer', [
  if any, are copied to the beginning of the buffer.  That is, the
  double at index `],
 					[/* text */ 't', `p`],
-					[/* text */ 't', `&nbsp;=&nbsp;`],
+					[/* text */ 't', ` = `],
 					[/* inline code block */ 'i', `position()`],
 					[/* text */ 't', ` is copied
  to index zero, the double at index `],
 					[/* text */ 't', `p`],
-					[/* text */ 't', `&nbsp;+&nbsp;1 is copied
+					[/* text */ 't', ` + 1 is copied
  to index one, and so forth until the double at index
  `],
 					[/* inline code block */ 'i', `limit()`],
-					[/* text */ 't', `&nbsp;-&nbsp;1 is copied to index
+					[/* text */ 't', ` - 1 is copied to index
  `],
 					[/* text */ 't', `n`],
-					[/* text */ 't', `&nbsp;=&nbsp;`],
+					[/* text */ 't', ` = `],
 					[/* inline code block */ 'i', `limit()`],
-					[/* text */ 't', `&nbsp;-&nbsp;`],
+					[/* text */ 't', ` - `],
 					[/* inline code block */ 'i', `1`],
-					[/* text */ 't', `&nbsp;-&nbsp;`],
+					[/* text */ 't', ` - `],
 					[/* text */ 't', `p`],
 					[/* text */ 't', `.
  The buffer's position is then set to `],

@@ -19,13 +19,7 @@ DocsCollector.collect('java.text.AttributedCharacterIterator', [
  cloned.
 
  `],
-		[/* block */ 'b', [
-			[/* text */ 't', `A `],
-			[/* text */ 't', `run with respect to an attribute`],
-			[/* text */ 't', ` is a maximum text range for
- which:
- `]
-		]],
+		[/* block */ 'b', `run with respect to an attribute`],
 		[/* list */ 'l', [
 			[/* block */ 'b', [
 				[/* text */ 't', `the attribute is undefined or `],
@@ -42,20 +36,13 @@ DocsCollector.collect('java.text.AttributedCharacterIterator', [
 			]]
 		]],
 		[/* block */ 'b', ''],
-		[/* block */ 'b', [
-			[/* text */ 't', `A `],
-			[/* text */ 't', `run with respect to a set of attributes`],
-			[/* text */ 't', ` is a maximum text range for
- which this condition is met for each member attribute.
-
- `]
-		]],
+		[/* block */ 'b', `run with respect to a set of attributes`],
 		[/* block */ 'b', [
 			[/* text */ 't', `When getting a run with no explicit attributes specified (i.e.,
  calling `],
-			[/* reference */ 'r', `getRunStart()`],
+			[/* reference */ 'r', `#getRunStart()`, `getRunStart()`],
 			[/* text */ 't', ` and `],
-			[/* reference */ 'r', `getRunLimit()`],
+			[/* reference */ 'r', `#getRunLimit()`, `getRunLimit()`],
 			[/* text */ 't', `), any
  contiguous text segments having the same attributes (the same set
  of attribute/value pairs) are treated as separate runs if the

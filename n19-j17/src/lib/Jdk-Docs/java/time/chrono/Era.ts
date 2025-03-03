@@ -13,7 +13,7 @@ DocsCollector.collect('java.time.chrono.Era', [
  In all cases, the era is conceptually the largest division of the time-line.
  Each chronology defines the Era's that are known Eras and a
  `],
-			[/* external link */ 'a', `Chronology.html#eras()`, `Chronology.eras`],
+			[/* reference */ 'r', `.Chronology#eras()`],
 			[/* text */ 't', ` to get the valid eras.
  `]
 		]],
@@ -203,7 +203,7 @@ DocsCollector.collect('java.time.chrono.Era', [
 					[/* text */ 't', `
  The result of this method is obtained by invoking the
  `],
-					[/* external link */ 'a', `../temporal/TemporalQuery.html#queryFrom(java.time.temporal.TemporalAccessor)`, `TemporalQuery.queryFrom(TemporalAccessor)`],
+					[/* reference */ 'r', `java.TemporalQuery#queryFrom(java.time.temporal.TemporalAccessor)`],
 					[/* text */ 't', ` method on the
  specified query passing `],
 					[/* inline code block */ 'i', `this`],
@@ -299,10 +299,10 @@ DocsCollector.collect('java.time.chrono.Era', [
 					[/* text */ 't', `
  This checks if this era can be queried for the specified field.
  If false, then calling the `],
-					[/* reference */ 'r', `range`],
+					[/* reference */ 'r', `#range(java.time.temporal.TemporalField)`, `range`],
 					[/* text */ 't', ` and
  `],
-					[/* reference */ 'r', `get`],
+					[/* reference */ 'r', `#get(java.time.temporal.TemporalField)`, `get`],
 					[/* text */ 't', ` methods will throw an exception.
  `]
 				]],
@@ -355,7 +355,7 @@ DocsCollector.collect('java.time.chrono.Era', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If no textual mapping is found then the `],
-					[/* reference */ 'r', `numeric value`],
+					[/* reference */ 'r', `#getValue()`, `numeric value`],
 					[/* text */ 't', ` is returned.`]
 				]]
 			],
@@ -383,10 +383,10 @@ DocsCollector.collect('java.time.chrono.Era', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The adjustment is equivalent to using `],
-					[/* external link */ 'a', `../temporal/Temporal.html#with(java.time.temporal.TemporalField,long)`, `Temporal.with(TemporalField, long)`],
+					[/* reference */ 'r', `java.Temporal#with(java.time.temporal.TemporalField,long)`],
 					[/* text */ 't', `
  passing `],
-					[/* external link */ 'a', `../temporal/ChronoField.html#ERA`, `ChronoField.ERA`],
+					[/* reference */ 'r', `java.ChronoField#ERA`],
 					[/* text */ 't', ` as the field.
  `]
 				]],
@@ -394,7 +394,7 @@ DocsCollector.collect('java.time.chrono.Era', [
 					[/* text */ 't', `
  In most cases, it is clearer to reverse the calling pattern by using
  `],
-					[/* external link */ 'a', `../temporal/Temporal.html#with(java.time.temporal.TemporalAdjuster)`, `Temporal.with(TemporalAdjuster)`],
+					[/* reference */ 'r', `java.Temporal#with(java.time.temporal.TemporalAdjuster)`],
 					[/* text */ 't', `:
  `]
 				]],

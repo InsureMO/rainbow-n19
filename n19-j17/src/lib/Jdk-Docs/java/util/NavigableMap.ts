@@ -8,14 +8,14 @@ DocsCollector.collect('java.util.NavigableMap', [
 		[/* text */ 't', ` extended with navigation methods returning the
  closest matches for given search targets. Methods
  `],
-		[/* reference */ 'r', `lowerEntry(K)`],
+		[/* reference */ 'r', `#lowerEntry(K)`, `lowerEntry(K)`],
 		[/* text */ 't', `, `],
-		[/* reference */ 'r', `floorEntry(K)`],
+		[/* reference */ 'r', `#floorEntry(K)`, `floorEntry(K)`],
 		[/* text */ 't', `, `],
-		[/* reference */ 'r', `ceilingEntry(K)`],
+		[/* reference */ 'r', `#ceilingEntry(K)`, `ceilingEntry(K)`],
 		[/* text */ 't', `,
  and `],
-		[/* reference */ 'r', `higherEntry(K)`],
+		[/* reference */ 'r', `#higherEntry(K)`, `higherEntry(K)`],
 		[/* text */ 't', ` return `],
 		[/* inline code block */ 'i', `Map.Entry`],
 		[/* text */ 't', ` objects
@@ -25,14 +25,14 @@ DocsCollector.collect('java.util.NavigableMap', [
 		[/* inline code block */ 'i', `null`],
 		[/* text */ 't', ` if there is no such key.  Similarly, methods
  `],
-		[/* reference */ 'r', `lowerKey(K)`],
+		[/* reference */ 'r', `#lowerKey(K)`, `lowerKey(K)`],
 		[/* text */ 't', `, `],
-		[/* reference */ 'r', `floorKey(K)`],
+		[/* reference */ 'r', `#floorKey(K)`, `floorKey(K)`],
 		[/* text */ 't', `, `],
-		[/* reference */ 'r', `ceilingKey(K)`],
+		[/* reference */ 'r', `#ceilingKey(K)`, `ceilingKey(K)`],
 		[/* text */ 't', `, and
  `],
-		[/* reference */ 'r', `higherKey(K)`],
+		[/* reference */ 'r', `#higherKey(K)`, `higherKey(K)`],
 		[/* text */ 't', ` return only the associated keys. All of these
  methods are designed for locating, not traversing entries.
 
@@ -42,20 +42,20 @@ DocsCollector.collect('java.util.NavigableMap', [
 			[/* inline code block */ 'i', `NavigableMap`],
 			[/* text */ 't', ` may be accessed and traversed in either
  ascending or descending key order.  The `],
-			[/* reference */ 'r', `descendingMap()`],
+			[/* reference */ 'r', `#descendingMap()`, `descendingMap()`],
 			[/* text */ 't', `
  method returns a view of the map with the senses of all relational
  and directional methods inverted. The performance of ascending
  operations and views is likely to be faster than that of descending
  ones.  Methods
  `],
-			[/* reference */ 'r', `subMap(K, boolean, K, boolean)`],
+			[/* reference */ 'r', `#subMap(K,boolean,K,boolean)`, `subMap(K, boolean, K, boolean)`],
 			[/* text */ 't', `,
  `],
-			[/* reference */ 'r', `headMap(K, boolean)`],
+			[/* reference */ 'r', `#headMap(K,boolean)`, `headMap(K, boolean)`],
 			[/* text */ 't', `, and
  `],
-			[/* reference */ 'r', `tailMap(K, boolean)`],
+			[/* reference */ 'r', `#tailMap(K,boolean)`, `tailMap(K, boolean)`],
 			[/* text */ 't', `
  differ from the like-named `],
 			[/* inline code block */ 'i', `SortedMap`],
@@ -72,15 +72,15 @@ DocsCollector.collect('java.util.NavigableMap', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `This interface additionally defines methods `],
-			[/* reference */ 'r', `firstEntry()`],
+			[/* reference */ 'r', `#firstEntry()`, `firstEntry()`],
 			[/* text */ 't', `,
  `],
-			[/* reference */ 'r', `pollFirstEntry()`],
+			[/* reference */ 'r', `#pollFirstEntry()`, `pollFirstEntry()`],
 			[/* text */ 't', `, `],
-			[/* reference */ 'r', `lastEntry()`],
+			[/* reference */ 'r', `#lastEntry()`, `lastEntry()`],
 			[/* text */ 't', `, and
  `],
-			[/* reference */ 'r', `pollLastEntry()`],
+			[/* reference */ 'r', `#pollLastEntry()`, `pollLastEntry()`],
 			[/* text */ 't', ` that return and/or remove the least and
  greatest mappings, if any exist, else returning `],
 			[/* inline code block */ 'i', `null`],
@@ -109,13 +109,13 @@ DocsCollector.collect('java.util.NavigableMap', [
 		[/* block */ 'b', [
 			[/* text */ 't', `Methods
  `],
-			[/* reference */ 'r', `subMap(K, K)`],
+			[/* reference */ 'r', `#subMap(K,K)`, `subMap(K, K)`],
 			[/* text */ 't', `,
  `],
-			[/* reference */ 'r', `headMap(K)`],
+			[/* reference */ 'r', `#headMap(K)`, `headMap(K)`],
 			[/* text */ 't', `, and
  `],
-			[/* reference */ 'r', `tailMap(K)`],
+			[/* reference */ 'r', `#tailMap(K)`, `tailMap(K)`],
 			[/* text */ 't', `
  are specified to return `],
 			[/* inline code block */ 'i', `SortedMap`],
@@ -131,7 +131,7 @@ DocsCollector.collect('java.util.NavigableMap', [
 			[/* inline code block */ 'i', `NavigableMap`],
 			[/* text */ 't', `.  Similarly,
  `],
-			[/* external link */ 'a', `SortedMap.html#keySet()`, `SortedMap.keySet()`],
+			[/* reference */ 'r', `.SortedMap#keySet()`],
 			[/* text */ 't', ` can be overridden to return `],
 			[/* reference */ 'r', `java.util.NavigableSet`],
 			[/* text */ 't', `.
@@ -141,7 +141,7 @@ DocsCollector.collect('java.util.NavigableMap', [
 		[/* block */ 'b', [
 			[/* text */ 't', `This interface is a member of the
  `],
-			[/* external link */ 'a', `../../../java.base/java/util/package-summary.html#CollectionsFramework`, `Java Collections Framework`],
+			[/* text */ 't', `Java Collections Framework`],
 			[/* text */ 't', `.`]
 		]]
 	],
@@ -854,7 +854,7 @@ DocsCollector.collect('java.util.NavigableMap', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The returned map has an ordering equivalent to
  `],
-					[/* external link */ 'a', `Collections.html#reverseOrder(java.util.Comparator)`, `Collections.reverseOrder`],
+					[/* reference */ 'r', `.Collections#reverseOrder(java.util.Comparator)`],
 					[/* inline code block */ 'i', `(comparator())`],
 					[/* text */ 't', `.
  The expression `],

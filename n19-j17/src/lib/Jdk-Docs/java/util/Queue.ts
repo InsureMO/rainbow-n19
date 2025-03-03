@@ -22,7 +22,57 @@ DocsCollector.collect('java.util.Queue', [
  implementations, insert operations cannot fail.
 
  `],
-		[/* table */ 't', ''],
+		[/* table */ 'tbl',
+			[/* caption */ 'tc', [
+				[/* text */ 't', `Summary of Queue methods`]
+			]],
+			[/* table header */ 'th', [
+				[/* table row */ 'tr', [
+					[/* table cell */ 'tbc'],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Throws exception`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Returns special value`]
+					]]
+				]]
+			]],
+			[/* table body */ 'tb', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Insert`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* reference */ 'r', `#add(E)`, `add(e)`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* reference */ 'r', `#offer(E)`, `offer(e)`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Remove`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* reference */ 'r', `#remove()`, `remove()`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* reference */ 'r', `#poll()`, `poll()`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Examine`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* reference */ 'r', `#element()`, `element()`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* reference */ 'r', `#peek()`, `peek()`]
+					]]
+				]]
+			]],
+		],
 		[/* block */ 'b', [
 			[/* text */ 't', `Queues typically, but do not necessarily, order elements in a
  FIFO (first-in-first-out) manner.  Among the exceptions are
@@ -33,10 +83,10 @@ DocsCollector.collect('java.util.Queue', [
 			[/* text */ 't', `head`],
 			[/* text */ 't', ` of the queue is that
  element which would be removed by a call to `],
-			[/* reference */ 'r', `remove()`],
+			[/* reference */ 'r', `#remove()`, `remove()`],
 			[/* text */ 't', ` or
  `],
-			[/* reference */ 'r', `poll()`],
+			[/* reference */ 'r', `#poll()`, `poll()`],
 			[/* text */ 't', `.  In a FIFO queue, all new elements are inserted at
  the `],
 			[/* text */ 't', `tail`],
@@ -50,12 +100,12 @@ DocsCollector.collect('java.util.Queue', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `The `],
-			[/* reference */ 'r', `offer`],
+			[/* reference */ 'r', `#offer(E)`, `offer`],
 			[/* text */ 't', ` method inserts an element if possible,
  otherwise returning `],
 			[/* inline code block */ 'i', `false`],
 			[/* text */ 't', `.  This differs from the `],
-			[/* external link */ 'a', `Collection.html#add(E)`, `Collection.add`],
+			[/* reference */ 'r', `.Collection#add(E)`],
 			[/* text */ 't', ` method, which can fail to
  add an element only by throwing an unchecked exception.  The
  `],
@@ -68,9 +118,9 @@ DocsCollector.collect('java.util.Queue', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `The `],
-			[/* reference */ 'r', `remove()`],
+			[/* reference */ 'r', `#remove()`, `remove()`],
 			[/* text */ 't', ` and `],
-			[/* reference */ 'r', `poll()`],
+			[/* reference */ 'r', `#poll()`, `poll()`],
 			[/* text */ 't', ` methods remove and
  return the head of the queue.
  Exactly which element is removed from the queue is a
@@ -94,9 +144,9 @@ DocsCollector.collect('java.util.Queue', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `The `],
-			[/* reference */ 'r', `element()`],
+			[/* reference */ 'r', `#element()`, `element()`],
 			[/* text */ 't', ` and `],
-			[/* reference */ 'r', `peek()`],
+			[/* reference */ 'r', `#peek()`, `peek()`],
 			[/* text */ 't', ` methods return, but do
  not remove, the head of the queue.
 
@@ -163,7 +213,7 @@ DocsCollector.collect('java.util.Queue', [
 		[/* block */ 'b', [
 			[/* text */ 't', `This interface is a member of the
  `],
-			[/* external link */ 'a', `../../../java.base/java/util/package-summary.html#CollectionsFramework`, `Java Collections Framework`],
+			[/* text */ 't', `Java Collections Framework`],
 			[/* text */ 't', `.`]
 		]]
 	],
@@ -207,7 +257,7 @@ DocsCollector.collect('java.util.Queue', [
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` (as specified by `],
-				[/* external link */ 'a', `Collection.html#add(E)`, `Collection.add(E)`],
+				[/* reference */ 'r', `.Collection#add(E)`],
 				[/* text */ 't', `)`]
 			]
 		]],
@@ -215,7 +265,7 @@ DocsCollector.collect('java.util.Queue', [
 			[/* method description */
 				[/* text */ 't', `Retrieves and removes the head of this queue.  This method differs
  from `],
-				[/* reference */ 'r', `poll()`],
+				[/* reference */ 'r', `#poll()`, `poll()`],
 				[/* text */ 't', ` only in that it throws an exception if
  this queue is empty.`]
 			],
@@ -263,7 +313,7 @@ DocsCollector.collect('java.util.Queue', [
 			[/* method description */
 				[/* text */ 't', `Retrieves, but does not remove, the head of this queue.  This method
  differs from `],
-				[/* reference */ 'r', `peek`],
+				[/* reference */ 'r', `#peek()`, `peek`],
 				[/* text */ 't', ` only in that it throws an exception
  if this queue is empty.`]
 			],
@@ -283,7 +333,7 @@ DocsCollector.collect('java.util.Queue', [
  so immediately without violating capacity restrictions.
  When using a capacity-restricted queue, this method is generally
  preferable to `],
-				[/* reference */ 'r', `add(E)`],
+				[/* reference */ 'r', `#add(E)`, `add(E)`],
 				[/* text */ 't', `, which can fail to insert an element only
  by throwing an exception.`]
 			],

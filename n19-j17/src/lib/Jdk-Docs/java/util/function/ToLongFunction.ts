@@ -13,10 +13,10 @@ DocsCollector.collect('java.util.function.ToLongFunction', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
-			[/* external link */ 'a', `package-summary.html`, `functional interface`],
+			[/* reference */ 'r', `.package-summary`],
 			[/* text */ 't', `
  whose functional method is `],
-			[/* reference */ 'r', `applyAsLong(Object)`],
+			[/* reference */ 'r', `#applyAsLong(T)`, `applyAsLong(Object)`],
 			[/* text */ 't', `.`]
 		]]
 	],

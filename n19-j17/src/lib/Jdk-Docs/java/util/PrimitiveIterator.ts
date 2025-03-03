@@ -18,25 +18,25 @@ DocsCollector.collect('java.util.PrimitiveIterator', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `The specialized subtype default implementations of `],
-			[/* external link */ 'a', `Iterator.html#next()`, `Iterator.next()`],
+			[/* reference */ 'r', `.Iterator#next()`],
 			[/* text */ 't', `
  and `],
-			[/* external link */ 'a', `Iterator.html#forEachRemaining(java.util.function.Consumer)`, `Iterator.forEachRemaining(java.util.function.Consumer)`],
+			[/* reference */ 'r', `.Iterator#forEachRemaining(java.util.function.Consumer)`],
 			[/* text */ 't', ` box
  primitive values to instances of their corresponding wrapper class.  Such
  boxing may offset any advantages gained when using the primitive
  specializations.  To avoid boxing, the corresponding primitive-based methods
  should be used.  For example, `],
-			[/* external link */ 'a', `PrimitiveIterator.OfInt.html#nextInt()`, `PrimitiveIterator.OfInt.nextInt()`],
+			[/* reference */ 'r', `.PrimitiveIterator.OfInt#nextInt()`],
 			[/* text */ 't', ` and
  `],
-			[/* external link */ 'a', `PrimitiveIterator.OfInt.html#forEachRemaining(java.util.function.IntConsumer)`, `PrimitiveIterator.OfInt.forEachRemaining(java.util.function.IntConsumer)`],
+			[/* reference */ 'r', `.PrimitiveIterator.OfInt#forEachRemaining(java.util.function.IntConsumer)`],
 			[/* text */ 't', `
  should be used in preference to `],
-			[/* external link */ 'a', `PrimitiveIterator.OfInt.html#next()`, `PrimitiveIterator.OfInt.next()`],
+			[/* reference */ 'r', `.PrimitiveIterator.OfInt#next()`],
 			[/* text */ 't', ` and
  `],
-			[/* external link */ 'a', `PrimitiveIterator.OfInt.html#forEachRemaining(java.util.function.Consumer)`, `PrimitiveIterator.OfInt.forEachRemaining(java.util.function.Consumer)`],
+			[/* reference */ 'r', `.PrimitiveIterator.OfInt#forEachRemaining(java.util.function.Consumer)`],
 			[/* text */ 't', `.
 
  `]
@@ -44,10 +44,10 @@ DocsCollector.collect('java.util.PrimitiveIterator', [
 		[/* block */ 'b', [
 			[/* text */ 't', `Iteration of primitive values using boxing-based methods
  `],
-			[/* external link */ 'a', `Iterator.html#next()`, `next()`],
+			[/* reference */ 'r', `.Iterator#next()`],
 			[/* text */ 't', ` and
  `],
-			[/* external link */ 'a', `Iterator.html#forEachRemaining(java.util.function.Consumer)`, `forEachRemaining()`],
+			[/* reference */ 'r', `.Iterator#forEachRemaining(java.util.function.Consumer)`],
 			[/* text */ 't', `,
  does not affect the order in which the values, transformed to boxed values,
  are encountered.`]
@@ -67,7 +67,7 @@ DocsCollector.collect('java.util.PrimitiveIterator', [
 					[/* text */ 't', `
  The behavior of an iterator is unspecified if the action modifies the
  source of elements in any way (even by calling the `],
-					[/* external link */ 'a', `Iterator.html#remove()`, `remove`],
+					[/* reference */ 'r', `.Iterator#remove()`],
 					[/* text */ 't', `
  method or other mutator methods of `],
 					[/* inline code block */ 'i', `Iterator`],

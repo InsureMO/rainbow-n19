@@ -360,7 +360,7 @@ DocsCollector.collect('java.util.UUID', [
 				[/* inline code block */ 'i', `UUID`],
 				[/* text */ 't', ` from the string standard representation as
  described in the `],
-				[/* reference */ 'r', `toString()`],
+				[/* reference */ 'r', `#toString()`, `toString()`],
 				[/* text */ 't', ` method.`]
 			],
 			[/* parameters */
@@ -373,7 +373,7 @@ DocsCollector.collect('java.util.UUID', [
 				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
 					[/* text */ 't', `If name does not conform to the string representation as
           described in `],
-					[/* reference */ 'r', `toString()`]
+					[/* reference */ 'r', `#toString()`, `toString()`]
 				]]
 			],
 			[/* return description */

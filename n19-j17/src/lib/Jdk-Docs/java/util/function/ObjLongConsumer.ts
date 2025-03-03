@@ -20,10 +20,10 @@ DocsCollector.collect('java.util.function.ObjLongConsumer', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
-			[/* external link */ 'a', `package-summary.html`, `functional interface`],
+			[/* reference */ 'r', `.package-summary`],
 			[/* text */ 't', `
  whose functional method is `],
-			[/* reference */ 'r', `accept(Object, long)`],
+			[/* reference */ 'r', `#accept(T,long)`, `accept(Object, long)`],
 			[/* text */ 't', `.`]
 		]]
 	],

@@ -18,16 +18,16 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
 			[/* text */ 't', `
  WeekFields provides five fields,
  `],
-			[/* reference */ 'r', `dayOfWeek()`],
+			[/* reference */ 'r', `#dayOfWeek()`, `dayOfWeek()`],
 			[/* text */ 't', `, `],
-			[/* reference */ 'r', `weekOfMonth()`],
+			[/* reference */ 'r', `#weekOfMonth()`, `weekOfMonth()`],
 			[/* text */ 't', `, `],
-			[/* reference */ 'r', `weekOfYear()`],
+			[/* reference */ 'r', `#weekOfYear()`, `weekOfYear()`],
 			[/* text */ 't', `,
  `],
-			[/* reference */ 'r', `weekOfWeekBasedYear()`],
+			[/* reference */ 'r', `#weekOfWeekBasedYear()`, `weekOfWeekBasedYear()`],
 			[/* text */ 't', `, and `],
-			[/* reference */ 'r', `weekBasedYear()`],
+			[/* reference */ 'r', `#weekBasedYear()`, `weekBasedYear()`],
 			[/* text */ 't', `
  that provide access to the values from any `],
 			[/* reference */ 'r', `java.time.temporal.Temporal`],
@@ -38,22 +38,22 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
 			[/* text */ 't', `
  The computations for day-of-week, week-of-month, and week-of-year are based
  on the  `],
-			[/* external link */ 'a', `ChronoField.html#YEAR`, `proleptic-year`],
+			[/* reference */ 'r', `.ChronoField#YEAR`],
 			[/* text */ 't', `,
  `],
-			[/* external link */ 'a', `ChronoField.html#MONTH_OF_YEAR`, `month-of-year`],
+			[/* reference */ 'r', `.ChronoField#MONTH_OF_YEAR`],
 			[/* text */ 't', `,
  `],
-			[/* external link */ 'a', `ChronoField.html#DAY_OF_MONTH`, `day-of-month`],
+			[/* reference */ 'r', `.ChronoField#DAY_OF_MONTH`],
 			[/* text */ 't', `, and
  `],
-			[/* external link */ 'a', `ChronoField.html#DAY_OF_WEEK`, `ISO day-of-week`],
+			[/* reference */ 'r', `.ChronoField#DAY_OF_WEEK`],
 			[/* text */ 't', ` which are based on the
  `],
-			[/* external link */ 'a', `ChronoField.html#EPOCH_DAY`, `epoch-day`],
+			[/* reference */ 'r', `.ChronoField#EPOCH_DAY`],
 			[/* text */ 't', ` and the chronology.
  The values may not be aligned with the `],
-			[/* external link */ 'a', `ChronoField.html#YEAR_OF_ERA`, `year-of-Era`],
+			[/* reference */ 'r', `.ChronoField#YEAR_OF_ERA`],
 			[/* text */ 't', `
  depending on the Chronology.
  `]
@@ -82,7 +82,89 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
  and week 1 if it has at least the minimal number of days.
 
  `],
-		[/* table */ 't', ''],
+		[/* table */ 'tbl',
+			[/* caption */ 'tc', [
+				[/* text */ 't', `Examples of WeekFields`]
+			]],
+			[/* table header */ 'th', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Date`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Day-of-week`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `First day: Monday`],
+						[/* new line */ 'n'],
+						[/* text */ 't', `Minimal days: 4`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `First day: Monday`],
+						[/* new line */ 'n'],
+						[/* text */ 't', `Minimal days: 5`]
+					]]
+				]]
+			]],
+			[/* table body */ 'tb', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `2008-12-31`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Wednesday`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Week 5 of December 2008`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Week 5 of December 2008`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `2009-01-01`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Thursday`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Week 1 of January 2009`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Week 0 of January 2009`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `2009-01-04`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Sunday`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Week 1 of January 2009`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Week 0 of January 2009`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `2009-01-05`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Monday`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Week 2 of January 2009`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Week 1 of January 2009`]
+					]]
+				]]
+			]],
+		],
 		[/* block */ 'b', `Week of Year`],
 		[/* text */ 't', `
  One field is used: week-of-year.
@@ -96,10 +178,10 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
 		[/* text */ 't', `
  Two fields are used for week-based-year, one for the
  `],
-		[/* reference */ 'r', `week-of-week-based-year`],
+		[/* reference */ 'r', `#weekOfWeekBasedYear()`, `week-of-week-based-year`],
 		[/* text */ 't', ` and one for
  `],
-		[/* reference */ 'r', `week-based-year`],
+		[/* reference */ 'r', `#weekBasedYear()`, `week-based-year`],
 		[/* text */ 't', `.  In a week-based-year, each week
  belongs to only a single year.  Week 1 of a year is the first week that
  starts on the first day-of-week and has at least the minimum number of days.
@@ -107,7 +189,89 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
  previous calendar year or next calendar year respectively.
 
  `],
-		[/* table */ 't', '']
+		[/* table */ 'tbl',
+			[/* caption */ 'tc', [
+				[/* text */ 't', `Examples of WeekFields for week-based-year`]
+			]],
+			[/* table header */ 'th', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Date`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Day-of-week`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `First day: Monday`],
+						[/* new line */ 'n'],
+						[/* text */ 't', `Minimal days: 4`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `First day: Monday`],
+						[/* new line */ 'n'],
+						[/* text */ 't', `Minimal days: 5`]
+					]]
+				]]
+			]],
+			[/* table body */ 'tb', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `2008-12-31`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Wednesday`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Week 1 of 2009`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Week 53 of 2008`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `2009-01-01`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Thursday`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Week 1 of 2009`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Week 53 of 2008`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `2009-01-04`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Sunday`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Week 1 of 2009`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Week 53 of 2008`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `2009-01-05`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Monday`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Week 2 of 2009`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Week 1 of 2009`]
+					]]
+				]]
+			]],
+		]
 	],
 	[/* fields */
 		[/* field */ 'ISO', [
@@ -219,7 +383,7 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
  This will look up appropriate values from the provider of localization data.
  If the locale contains "fw" (First day of week) and/or "rg"
  (Region Override) `],
-					[/* external link */ 'a', `../../util/Locale.html#def_locale_extension`, `Unicode extensions`],
+					[/* reference */ 'r', `java.time.Locale#def_locale_extension`],
 					[/* text */ 't', `, returned instance will reflect the values specified with
  those extensions. If both "fw" and "rg" are specified, the value from
  the "fw" extension supersedes the implicit one from the "rg" extension.`]
@@ -291,14 +455,14 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This is similar to `],
-					[/* external link */ 'a', `ChronoField.html#DAY_OF_WEEK`, `ChronoField.DAY_OF_WEEK`],
+					[/* reference */ 'r', `.ChronoField#DAY_OF_WEEK`],
 					[/* text */ 't', ` but uses values for
  the day-of-week based on this `],
 					[/* inline code block */ 'i', `WeekFields`],
 					[/* text */ 't', `.
  The days are numbered from 1 to 7 where the
  `],
-					[/* reference */ 'r', `first day-of-week`],
+					[/* reference */ 'r', `#getFirstDayOfWeek()`, `first day-of-week`],
 					[/* text */ 't', ` is assigned the value 1.
  `]
 				]],
@@ -368,17 +532,17 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
  This represents the concept of the count of weeks within the year where weeks
  start on a fixed day-of-week, such as Monday.
  This field is typically used with `],
-					[/* reference */ 'r', `dayOfWeek()`],
+					[/* reference */ 'r', `#dayOfWeek()`, `dayOfWeek()`],
 					[/* text */ 't', `.
  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `
  Week one(1) is the week starting on the `],
-					[/* reference */ 'r', `getFirstDayOfWeek()`],
+					[/* reference */ 'r', `#getFirstDayOfWeek()`, `getFirstDayOfWeek()`],
 					[/* text */ 't', `
  where there are at least `],
-					[/* reference */ 'r', `getMinimalDaysInFirstWeek()`],
+					[/* reference */ 'r', `#getMinimalDaysInFirstWeek()`, `getMinimalDaysInFirstWeek()`],
 					[/* text */ 't', ` days in the year.
  Thus, week one may start up to `],
 					[/* inline code block */ 'i', `minDays`],
@@ -413,7 +577,7 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  In `],
-					[/* external link */ 'a', `../format/ResolverStyle.html#STRICT`, `strict mode`],
+					[/* reference */ 'r', `java.ResolverStyle#STRICT`],
 					[/* text */ 't', `, all three fields are
  validated against their range of valid values. The week-of-year field
  is validated to ensure that the resulting year is the year requested.
@@ -422,7 +586,7 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  In `],
-					[/* external link */ 'a', `../format/ResolverStyle.html#SMART`, `smart mode`],
+					[/* reference */ 'r', `java.ResolverStyle#SMART`],
 					[/* text */ 't', `, all three fields are
  validated against their range of valid values. The week-of-year field
  is validated from 0 to 54, meaning that the resulting date can be in a
@@ -432,7 +596,7 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  In `],
-					[/* external link */ 'a', `../format/ResolverStyle.html#LENIENT`, `lenient mode`],
+					[/* reference */ 'r', `java.ResolverStyle#LENIENT`],
 					[/* text */ 't', `, the year and day-of-week
  are validated against the range of valid values. The resulting date is calculated
  equivalent to the following three stage approach.
@@ -458,17 +622,17 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
  This represents the concept of the count of weeks within the month where weeks
  start on a fixed day-of-week, such as Monday.
  This field is typically used with `],
-					[/* reference */ 'r', `dayOfWeek()`],
+					[/* reference */ 'r', `#dayOfWeek()`, `dayOfWeek()`],
 					[/* text */ 't', `.
  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `
  Week one (1) is the week starting on the `],
-					[/* reference */ 'r', `getFirstDayOfWeek()`],
+					[/* reference */ 'r', `#getFirstDayOfWeek()`, `getFirstDayOfWeek()`],
 					[/* text */ 't', `
  where there are at least `],
-					[/* reference */ 'r', `getMinimalDaysInFirstWeek()`],
+					[/* reference */ 'r', `#getMinimalDaysInFirstWeek()`, `getMinimalDaysInFirstWeek()`],
 					[/* text */ 't', ` days in the month.
  Thus, week one may start up to `],
 					[/* inline code block */ 'i', `minDays`],
@@ -503,7 +667,7 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  In `],
-					[/* external link */ 'a', `../format/ResolverStyle.html#STRICT`, `strict mode`],
+					[/* reference */ 'r', `java.ResolverStyle#STRICT`],
 					[/* text */ 't', `, all four fields are
  validated against their range of valid values. The week-of-month field
  is validated to ensure that the resulting month is the month requested.
@@ -512,7 +676,7 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  In `],
-					[/* external link */ 'a', `../format/ResolverStyle.html#SMART`, `smart mode`],
+					[/* reference */ 'r', `java.ResolverStyle#SMART`],
 					[/* text */ 't', `, all four fields are
  validated against their range of valid values. The week-of-month field
  is validated from 0 to 6, meaning that the resulting date can be in a
@@ -522,7 +686,7 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  In `],
-					[/* external link */ 'a', `../format/ResolverStyle.html#LENIENT`, `lenient mode`],
+					[/* reference */ 'r', `java.ResolverStyle#LENIENT`],
 					[/* text */ 't', `, the year and day-of-week
  are validated against the range of valid values. The resulting date is calculated
  equivalent to the following four stage approach.
@@ -549,20 +713,20 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
  This represents the concept of the count of weeks within the year where weeks
  start on a fixed day-of-week, such as Monday and each week belongs to exactly one year.
  This field is typically used with `],
-					[/* reference */ 'r', `dayOfWeek()`],
+					[/* reference */ 'r', `#dayOfWeek()`, `dayOfWeek()`],
 					[/* text */ 't', ` and
  `],
-					[/* reference */ 'r', `weekBasedYear()`],
+					[/* reference */ 'r', `#weekBasedYear()`, `weekBasedYear()`],
 					[/* text */ 't', `.
  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `
  Week one(1) is the week starting on the `],
-					[/* reference */ 'r', `getFirstDayOfWeek()`],
+					[/* reference */ 'r', `#getFirstDayOfWeek()`, `getFirstDayOfWeek()`],
 					[/* text */ 't', `
  where there are at least `],
-					[/* reference */ 'r', `getMinimalDaysInFirstWeek()`],
+					[/* reference */ 'r', `#getMinimalDaysInFirstWeek()`, `getMinimalDaysInFirstWeek()`],
 					[/* text */ 't', ` days in the year.
  If the first week starts after the start of the year then the period before
  is in the last week of the previous year.
@@ -598,7 +762,7 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  In `],
-					[/* external link */ 'a', `../format/ResolverStyle.html#STRICT`, `strict mode`],
+					[/* reference */ 'r', `java.ResolverStyle#STRICT`],
 					[/* text */ 't', `, all three fields are
  validated against their range of valid values. The week-of-year field
  is validated to ensure that the resulting week-based-year is the
@@ -608,7 +772,7 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  In `],
-					[/* external link */ 'a', `../format/ResolverStyle.html#SMART`, `smart mode`],
+					[/* reference */ 'r', `java.ResolverStyle#SMART`],
 					[/* text */ 't', `, all three fields are
  validated against their range of valid values. The week-of-week-based-year field
  is validated from 1 to 53, meaning that the resulting date can be in the
@@ -618,7 +782,7 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  In `],
-					[/* external link */ 'a', `../format/ResolverStyle.html#LENIENT`, `lenient mode`],
+					[/* reference */ 'r', `java.ResolverStyle#LENIENT`],
 					[/* text */ 't', `, the year and day-of-week
  are validated against the range of valid values. The resulting date is calculated
  equivalent to the following three stage approach.
@@ -644,20 +808,20 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
  This represents the concept of the year where weeks start on a fixed day-of-week,
  such as Monday and each week belongs to exactly one year.
  This field is typically used with `],
-					[/* reference */ 'r', `dayOfWeek()`],
+					[/* reference */ 'r', `#dayOfWeek()`, `dayOfWeek()`],
 					[/* text */ 't', ` and
  `],
-					[/* reference */ 'r', `weekOfWeekBasedYear()`],
+					[/* reference */ 'r', `#weekOfWeekBasedYear()`, `weekOfWeekBasedYear()`],
 					[/* text */ 't', `.
  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `
  Week one(1) is the week starting on the `],
-					[/* reference */ 'r', `getFirstDayOfWeek()`],
+					[/* reference */ 'r', `#getFirstDayOfWeek()`, `getFirstDayOfWeek()`],
 					[/* text */ 't', `
  where there are at least `],
-					[/* reference */ 'r', `getMinimalDaysInFirstWeek()`],
+					[/* reference */ 'r', `#getMinimalDaysInFirstWeek()`, `getMinimalDaysInFirstWeek()`],
 					[/* text */ 't', ` days in the year.
  Thus, week one may start before the start of the year.
  If the first week starts after the start of the year then the period before
@@ -674,7 +838,7 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  In `],
-					[/* external link */ 'a', `../format/ResolverStyle.html#STRICT`, `strict mode`],
+					[/* reference */ 'r', `java.ResolverStyle#STRICT`],
 					[/* text */ 't', `, all three fields are
  validated against their range of valid values. The week-of-year field
  is validated to ensure that the resulting week-based-year is the
@@ -684,7 +848,7 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  In `],
-					[/* external link */ 'a', `../format/ResolverStyle.html#SMART`, `smart mode`],
+					[/* reference */ 'r', `java.ResolverStyle#SMART`],
 					[/* text */ 't', `, all three fields are
  validated against their range of valid values. The week-of-week-based-year field
  is validated from 1 to 53, meaning that the resulting date can be in the
@@ -694,7 +858,7 @@ DocsCollector.collect('java.time.temporal.WeekFields', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  In `],
-					[/* external link */ 'a', `../format/ResolverStyle.html#LENIENT`, `lenient mode`],
+					[/* reference */ 'r', `java.ResolverStyle#LENIENT`],
 					[/* text */ 't', `, the year and day-of-week
  are validated against the range of valid values. The resulting date is calculated
  equivalent to the following three stage approach.

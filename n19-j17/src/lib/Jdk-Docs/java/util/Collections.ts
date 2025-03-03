@@ -61,7 +61,7 @@ DocsCollector.collect('java.util.Collections', [
 		[/* block */ 'b', [
 			[/* text */ 't', `This class is a member of the
  `],
-			[/* external link */ 'a', `../../../java.base/java/util/package-summary.html#CollectionsFramework`, `Java Collections Framework`],
+			[/* text */ 't', `Java Collections Framework`],
 			[/* text */ 't', `.`]
 		]]
 	],
@@ -399,14 +399,14 @@ DocsCollector.collect('java.util.Collections', [
  `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
-						[/* external link */ 'a', `Enumeration.html#hasMoreElements()`, `hasMoreElements`],
+						[/* reference */ 'r', `.Enumeration#hasMoreElements()`],
 						[/* text */ 't', ` always
  returns `],
 						[/* inline code block */ 'i', `false`],
 						[/* text */ 't', `.`]
 					]],
 					[/* block */ 'b', [
-						[/* external link */ 'a', `Enumeration.html#nextElement()`, `nextElement`],
+						[/* reference */ 'r', `.Enumeration#nextElement()`],
 						[/* text */ 't', ` always throws
  `],
 						[/* reference */ 'r', `java.util.NoSuchElementException`],
@@ -464,8 +464,8 @@ DocsCollector.collect('java.util.Collections', [
  to this method, and no reference to the map is retained, as illustrated
  in the following code fragment:
  `],
-				[/* code block */ 'c', `    Set&lt;Object&gt; weakHashSet = Collections.newSetFromMap(
-        new WeakHashMap&lt;Object, Boolean&gt;());
+				[/* code block */ 'c', `    Set<Object> weakHashSet = Collections.newSetFromMap(
+        new WeakHashMap<Object, Boolean>());
  `],
 				[/* block */ 'b', '']
 			],
@@ -492,7 +492,7 @@ DocsCollector.collect('java.util.Collections', [
  `],
 				[/* block */ 'b', `This example illustrates the type-safe way to obtain an empty list:
  `],
-				[/* code block */ 'c', `     List&lt;String&gt; s = Collections.emptyList();
+				[/* code block */ 'c', `     List<String> s = Collections.emptyList();
  `],
 				[/* block */ 'b', '']
 			],
@@ -505,7 +505,7 @@ DocsCollector.collect('java.util.Collections', [
 		[/* method */ 'unmodifiableSet(java.util.Set)', [
 			[/* method description */
 				[/* text */ 't', `Returns an `],
-				[/* external link */ 'a', `Collection.html#unmodview`, `unmodifiable view`],
+				[/* reference */ 'r', `.Collection#unmodview`],
 				[/* text */ 't', ` of the
  specified set. Query operations on the returned set "read through" to the specified
  set, and attempts to modify the returned set, whether direct or via its
@@ -536,7 +536,7 @@ DocsCollector.collect('java.util.Collections', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `The iterator returned from a call to `],
-					[/* external link */ 'a', `Enumeration.html#asIterator()`, `Enumeration.asIterator()`],
+					[/* reference */ 'r', `.Enumeration#asIterator()`],
 					[/* text */ 't', `
  does not support removal of elements from the specified collection.  This
  is necessary to avoid unintentionally increasing the capabilities of the
@@ -673,19 +673,19 @@ DocsCollector.collect('java.util.Collections', [
  `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
-						[/* external link */ 'a', `Iterator.html#hasNext()`, `hasNext`],
+						[/* reference */ 'r', `.Iterator#hasNext()`],
 						[/* text */ 't', ` always returns `],
 						[/* inline code block */ 'i', `false`],
 						[/* text */ 't', `.`]
 					]],
 					[/* block */ 'b', [
-						[/* external link */ 'a', `Iterator.html#next()`, `next`],
+						[/* reference */ 'r', `.Iterator#next()`],
 						[/* text */ 't', ` always throws `],
 						[/* reference */ 'r', `java.util.NoSuchElementException`],
 						[/* text */ 't', `.`]
 					]],
 					[/* block */ 'b', [
-						[/* external link */ 'a', `Iterator.html#remove()`, `remove`],
+						[/* reference */ 'r', `.Iterator#remove()`],
 						[/* text */ 't', ` always throws `],
 						[/* reference */ 'r', `java.lang.IllegalStateException`],
 						[/* text */ 't', `.`]
@@ -770,7 +770,7 @@ DocsCollector.collect('java.util.Collections', [
 		[/* method */ 'unmodifiableList(java.util.List)', [
 			[/* method description */
 				[/* text */ 't', `Returns an `],
-				[/* external link */ 'a', `Collection.html#unmodview`, `unmodifiable view`],
+				[/* reference */ 'r', `.Collection#unmodview`],
 				[/* text */ 't', ` of the
  specified list. Query operations on the returned list "read through" to the
  specified list, and attempts to modify the returned list, whether
@@ -955,7 +955,7 @@ DocsCollector.collect('java.util.Collections', [
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', `, this method is
  equivalent to `],
-				[/* reference */ 'r', `reverseOrder()`],
+				[/* reference */ 'r', `#reverseOrder()`, `reverseOrder()`],
 				[/* text */ 't', ` (in other words, it returns a
  comparator that imposes the reverse of the `],
 				[/* text */ 't', `natural ordering`],
@@ -1025,7 +1025,7 @@ DocsCollector.collect('java.util.Collections', [
 		[/* method */ 'unmodifiableMap(java.util.Map)', [
 			[/* method description */
 				[/* text */ 't', `Returns an `],
-				[/* external link */ 'a', `Collection.html#unmodview`, `unmodifiable view`],
+				[/* reference */ 'r', `.Collection#unmodview`],
 				[/* text */ 't', ` of the
  specified map. Query operations on the returned map "read through"
  to the specified map, and attempts to modify the returned
@@ -1072,8 +1072,8 @@ DocsCollector.collect('java.util.Collections', [
 					[/* text */ 't', ` or `],
 					[/* inline code block */ 'i', `j`],
 					[/* text */ 't', `
-         is out of range (i &lt; 0 || i &gt;= list.size()
-         || j &lt; 0 || j &gt;= list.size()).`]
+         is out of range (i < 0 || i >= list.size()
+         || j < 0 || j >= list.size()).`]
 				]]
 			],
 			/* return */ UDF
@@ -1086,7 +1086,7 @@ DocsCollector.collect('java.util.Collections', [
 				[/* reference */ 'r', `java.lang.Comparable`],
 				[/* text */ 't', ` of its
  elements (as by the `],
-				[/* reference */ 'r', `sort(List)`],
+				[/* reference */ 'r', `#sort(java.util.List)`, `sort(List)`],
 				[/* text */ 't', ` method) prior to making this
  call.  If it is not sorted, the results are undefined.  If the list
  contains multiple elements equal to the specified object, there is no
@@ -1134,7 +1134,7 @@ DocsCollector.collect('java.util.Collections', [
 				[/* inline code block */ 'i', `list.size()`],
 				[/* text */ 't', ` if all
          elements in the list are less than the specified key.  Note
-         that this guarantees that the return value will be &gt;= 0 if
+         that this guarantees that the return value will be >= 0 if
          and only if the key is found.`]
 			]
 		]],
@@ -1144,7 +1144,7 @@ DocsCollector.collect('java.util.Collections', [
  search algorithm.  The list must be sorted into ascending order
  according to the specified comparator (as by the
  `],
-				[/* reference */ 'r', `sort(List, Comparator)`],
+				[/* reference */ 'r', `#sort(java.util.List,java.util.Comparator)`, `sort(List, Comparator)`],
 				[/* text */ 't', `
  method), prior to making this call.  If it is
  not sorted, the results are undefined.  If the list contains multiple
@@ -1202,7 +1202,7 @@ DocsCollector.collect('java.util.Collections', [
 				[/* inline code block */ 'i', `list.size()`],
 				[/* text */ 't', ` if all
          elements in the list are less than the specified key.  Note
-         that this guarantees that the return value will be &gt;= 0 if
+         that this guarantees that the return value will be >= 0 if
          and only if the key is found.`]
 			]
 		]],
@@ -1397,7 +1397,7 @@ DocsCollector.collect('java.util.Collections', [
 					[/* inline code block */ 'i', `-distance mod size`],
 					[/* text */ 't', `.
  Then the `],
-					[/* reference */ 'r', `reverse(List)`],
+					[/* reference */ 'r', `#reverse(java.util.List)`, `reverse(List)`],
 					[/* text */ 't', ` method is invoked on each sublist view,
  and finally it is invoked on the entire list.  For a more complete
  description of both algorithms, see Section 2.3 of Jon Bentley's
@@ -1511,7 +1511,7 @@ DocsCollector.collect('java.util.Collections', [
 		[/* method */ 'unmodifiableCollection(java.util.Collection)', [
 			[/* method description */
 				[/* text */ 't', `Returns an `],
-				[/* external link */ 'a', `Collection.html#unmodview`, `unmodifiable view`],
+				[/* reference */ 'r', `.Collection#unmodview`],
 				[/* text */ 't', ` of the
  specified collection. Query operations on the returned collection "read through"
  to the specified collection, and attempts to modify the returned
@@ -1555,7 +1555,7 @@ DocsCollector.collect('java.util.Collections', [
 		[/* method */ 'unmodifiableSortedSet(java.util.SortedSet)', [
 			[/* method description */
 				[/* text */ 't', `Returns an `],
-				[/* external link */ 'a', `Collection.html#unmodview`, `unmodifiable view`],
+				[/* reference */ 'r', `.Collection#unmodview`],
 				[/* text */ 't', ` of the
  specified sorted set. Query operations on the returned sorted set "read
  through" to the specified sorted set.  Attempts to modify the returned
@@ -1589,7 +1589,7 @@ DocsCollector.collect('java.util.Collections', [
 		[/* method */ 'unmodifiableNavigableSet(java.util.NavigableSet)', [
 			[/* method description */
 				[/* text */ 't', `Returns an `],
-				[/* external link */ 'a', `Collection.html#unmodview`, `unmodifiable view`],
+				[/* reference */ 'r', `.Collection#unmodview`],
 				[/* text */ 't', ` of the
  specified navigable set. Query operations on the returned navigable set "read
  through" to the specified navigable set.  Attempts to modify the returned
@@ -1623,7 +1623,7 @@ DocsCollector.collect('java.util.Collections', [
 		[/* method */ 'unmodifiableSortedMap(java.util.SortedMap)', [
 			[/* method description */
 				[/* text */ 't', `Returns an `],
-				[/* external link */ 'a', `Collection.html#unmodview`, `unmodifiable view`],
+				[/* reference */ 'r', `.Collection#unmodview`],
 				[/* text */ 't', ` of the
  specified sorted map. Query operations on the returned sorted map "read through"
  to the specified sorted map.  Attempts to modify the returned
@@ -1657,7 +1657,7 @@ DocsCollector.collect('java.util.Collections', [
 		[/* method */ 'unmodifiableNavigableMap(java.util.NavigableMap)', [
 			[/* method description */
 				[/* text */ 't', `Returns an `],
-				[/* external link */ 'a', `Collection.html#unmodview`, `unmodifiable view`],
+				[/* reference */ 'r', `.Collection#unmodview`],
 				[/* text */ 't', ` of the
  specified navigable map. Query operations on the returned navigable map "read
  through" to the specified navigable map.  Attempts to modify the returned
@@ -2187,7 +2187,7 @@ DocsCollector.collect('java.util.Collections', [
 				[/* block */ 'b', [
 					[/* text */ 't', `A discussion of the use of dynamically typesafe views may be
  found in the documentation for the `],
-					[/* reference */ 'r', `checkedCollection`],
+					[/* reference */ 'r', `#checkedCollection(java.util.Collection,java.lang.Class)`, `checkedCollection`],
 					[/* text */ 't', ` method.
 
  `]
@@ -2240,7 +2240,7 @@ DocsCollector.collect('java.util.Collections', [
 				[/* block */ 'b', [
 					[/* text */ 't', `A discussion of the use of dynamically typesafe views may be
  found in the documentation for the `],
-					[/* reference */ 'r', `checkedCollection`],
+					[/* reference */ 'r', `#checkedCollection(java.util.Collection,java.lang.Class)`, `checkedCollection`],
 					[/* text */ 't', ` method.
 
  `]
@@ -2292,7 +2292,7 @@ DocsCollector.collect('java.util.Collections', [
 				[/* block */ 'b', [
 					[/* text */ 't', `A discussion of the use of dynamically typesafe views may be
  found in the documentation for the `],
-					[/* reference */ 'r', `checkedCollection`],
+					[/* reference */ 'r', `#checkedCollection(java.util.Collection,java.lang.Class)`, `checkedCollection`],
 					[/* text */ 't', ` method.
 
  `]
@@ -2344,7 +2344,7 @@ DocsCollector.collect('java.util.Collections', [
 				[/* block */ 'b', [
 					[/* text */ 't', `A discussion of the use of dynamically typesafe views may be
  found in the documentation for the `],
-					[/* reference */ 'r', `checkedCollection`],
+					[/* reference */ 'r', `#checkedCollection(java.util.Collection,java.lang.Class)`, `checkedCollection`],
 					[/* text */ 't', ` method.
 
  `]
@@ -2395,7 +2395,7 @@ DocsCollector.collect('java.util.Collections', [
 				[/* block */ 'b', [
 					[/* text */ 't', `A discussion of the use of dynamically typesafe views may be
  found in the documentation for the `],
-					[/* reference */ 'r', `checkedCollection`],
+					[/* reference */ 'r', `#checkedCollection(java.util.Collection,java.lang.Class)`, `checkedCollection`],
 					[/* text */ 't', ` method.
 
  `]
@@ -2444,7 +2444,7 @@ DocsCollector.collect('java.util.Collections', [
 				[/* reference */ 'r', `java.util.Map.Entry`],
 				[/* text */ 't', ` instance obtained from the
  map's `],
-				[/* external link */ 'a', `Map.html#entrySet()`, `entry set`],
+				[/* reference */ 'r', `.Map#entrySet()`],
 				[/* text */ 't', ` view.
 
  `],
@@ -2462,7 +2462,7 @@ DocsCollector.collect('java.util.Collections', [
 				[/* block */ 'b', [
 					[/* text */ 't', `A discussion of the use of dynamically typesafe views may be
  found in the documentation for the `],
-					[/* reference */ 'r', `checkedCollection`],
+					[/* reference */ 'r', `#checkedCollection(java.util.Collection,java.lang.Class)`, `checkedCollection`],
 					[/* text */ 't', ` method.
 
  `]
@@ -2516,7 +2516,7 @@ DocsCollector.collect('java.util.Collections', [
 				[/* reference */ 'r', `java.util.Map.Entry`],
 				[/* text */ 't', ` instance obtained from the
  map's `],
-				[/* external link */ 'a', `Map.html#entrySet()`, `entry set`],
+				[/* reference */ 'r', `.Map#entrySet()`],
 				[/* text */ 't', ` view.
 
  `],
@@ -2534,7 +2534,7 @@ DocsCollector.collect('java.util.Collections', [
 				[/* block */ 'b', [
 					[/* text */ 't', `A discussion of the use of dynamically typesafe views may be
  found in the documentation for the `],
-					[/* reference */ 'r', `checkedCollection`],
+					[/* reference */ 'r', `#checkedCollection(java.util.Collection,java.lang.Class)`, `checkedCollection`],
 					[/* text */ 't', ` method.
 
  `]
@@ -2588,25 +2588,15 @@ DocsCollector.collect('java.util.Collections', [
 				[/* reference */ 'r', `java.util.Map.Entry`],
 				[/* text */ 't', ` instance obtained from the
  map's `],
-				[/* external link */ 'a', `Map.html#entrySet()`, `entry set`],
+				[/* reference */ 'r', `.Map#entrySet()`],
 				[/* text */ 't', ` view.
 
  `],
-				[/* block */ 'b', [
-					[/* text */ 't', `Assuming a map contains no incorrectly typed keys or values
- prior to the time a dynamically typesafe view is generated, and
- that all subsequent access to the map takes place through the view
- (or one of its collection views), it is `],
-					[/* text */ 't', `guaranteed`],
-					[/* text */ 't', ` that the
- map cannot contain an incorrectly typed key or value.
-
- `]
-				]],
+				[/* block */ 'b', `guaranteed`],
 				[/* block */ 'b', [
 					[/* text */ 't', `A discussion of the use of dynamically typesafe views may be
  found in the documentation for the `],
-					[/* reference */ 'r', `checkedCollection`],
+					[/* reference */ 'r', `#checkedCollection(java.util.Collection,java.lang.Class)`, `checkedCollection`],
 					[/* text */ 't', ` method.
 
  `]
@@ -2651,44 +2641,44 @@ DocsCollector.collect('java.util.Collections', [
  `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
-						[/* external link */ 'a', `Iterator.html#hasNext()`, `hasNext`],
+						[/* reference */ 'r', `.Iterator#hasNext()`],
 						[/* text */ 't', ` and `],
-						[/* external link */ 'a', `ListIterator.html#hasPrevious()`, `hasPrevious`],
+						[/* reference */ 'r', `.ListIterator#hasPrevious()`],
 						[/* text */ 't', ` always return `],
 						[/* inline code block */ 'i', `false`],
 						[/* text */ 't', `.`]
 					]],
 					[/* block */ 'b', [
-						[/* external link */ 'a', `Iterator.html#next()`, `next`],
+						[/* reference */ 'r', `.Iterator#next()`],
 						[/* text */ 't', ` and `],
-						[/* external link */ 'a', `ListIterator.html#previous()`, `previous`],
+						[/* reference */ 'r', `.ListIterator#previous()`],
 						[/* text */ 't', ` always throw `],
 						[/* reference */ 'r', `java.util.NoSuchElementException`],
 						[/* text */ 't', `.`]
 					]],
 					[/* block */ 'b', [
-						[/* external link */ 'a', `Iterator.html#remove()`, `remove`],
+						[/* reference */ 'r', `.Iterator#remove()`],
 						[/* text */ 't', ` and `],
-						[/* external link */ 'a', `ListIterator.html#set(E)`, `set`],
+						[/* reference */ 'r', `.ListIterator#set(E)`],
 						[/* text */ 't', ` always throw `],
 						[/* reference */ 'r', `java.lang.IllegalStateException`],
 						[/* text */ 't', `.`]
 					]],
 					[/* block */ 'b', [
-						[/* external link */ 'a', `ListIterator.html#add(E)`, `add`],
+						[/* reference */ 'r', `.ListIterator#add(E)`],
 						[/* text */ 't', ` always throws `],
 						[/* reference */ 'r', `java.lang.UnsupportedOperationException`],
 						[/* text */ 't', `.`]
 					]],
 					[/* block */ 'b', [
-						[/* external link */ 'a', `ListIterator.html#nextIndex()`, `nextIndex`],
+						[/* reference */ 'r', `.ListIterator#nextIndex()`],
 						[/* text */ 't', ` always returns
  `],
 						[/* inline code block */ 'i', `0`],
 						[/* text */ 't', `.`]
 					]],
 					[/* block */ 'b', [
-						[/* external link */ 'a', `ListIterator.html#previousIndex()`, `previousIndex`],
+						[/* reference */ 'r', `.ListIterator#previousIndex()`],
 						[/* text */ 't', ` always
  returns `],
 						[/* inline code block */ 'i', `-1`],
@@ -2712,7 +2702,7 @@ DocsCollector.collect('java.util.Collections', [
  `],
 				[/* block */ 'b', `This example illustrates the type-safe way to obtain an empty set:
  `],
-				[/* code block */ 'c', `     Set&lt;String&gt; s = Collections.emptySet();
+				[/* code block */ 'c', `     Set<String> s = Collections.emptySet();
  `],
 				[/* block */ 'b', '']
 			],
@@ -2767,7 +2757,7 @@ DocsCollector.collect('java.util.Collections', [
  `],
 				[/* block */ 'b', `This example illustrates the type-safe way to obtain an empty map:
  `],
-				[/* code block */ 'c', `     Map&lt;String, Date&gt; s = Collections.emptyMap();
+				[/* code block */ 'c', `     Map<String, Date> s = Collections.emptyMap();
  `],
 				[/* block */ 'b', '']
 			],
@@ -2966,14 +2956,14 @@ DocsCollector.collect('java.util.Collections', [
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` is not an eligible element for the other collection.
  (`],
-					[/* external link */ 'a', `Collection.html#optional-restrictions`, `optional`],
+					[/* reference */ 'r', `.Collection#optional-restrictions`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
 					[/* text */ 't', `if one collection contains an element that is
  of a type which is ineligible for the other collection.
  (`],
-					[/* external link */ 'a', `Collection.html#optional-restrictions`, `optional`],
+					[/* reference */ 'r', `.Collection#optional-restrictions`],
 					[/* text */ 't', `)`]
 				]]
 			],
@@ -3010,10 +3000,10 @@ DocsCollector.collect('java.util.Collections', [
 					[/* text */ 't', `Each method invocation on the queue returned by this method
  results in exactly one method invocation on the backing deque, with
  one exception.  The `],
-					[/* external link */ 'a', `Collection.html#addAll(java.util.Collection)`, `addAll`],
+					[/* reference */ 'r', `.Collection#addAll(java.util.Collection)`],
 					[/* text */ 't', ` method is
  implemented as a sequence of `],
-					[/* external link */ 'a', `Deque.html#addFirst(E)`, `addFirst`],
+					[/* reference */ 'r', `.Deque#addFirst(E)`],
 					[/* text */ 't', `
  invocations on the backing deque.`]
 				]]

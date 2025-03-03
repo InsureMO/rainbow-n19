@@ -245,7 +245,7 @@ DocsCollector.collect('java.io.SequenceInputStream', [
 				[/* inline code block */ 'i', `0`],
 				[/* text */ 't', ` if this input stream
            has been closed by invoking its `],
-				[/* reference */ 'r', `close()`],
+				[/* reference */ 'r', `#close()`, `close()`],
 				[/* text */ 't', ` method`]
 			]
 		]]

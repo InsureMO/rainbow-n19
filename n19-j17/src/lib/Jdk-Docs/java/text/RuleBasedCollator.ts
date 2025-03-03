@@ -25,7 +25,7 @@ DocsCollector.collect('java.text.RuleBasedCollator', [
  `]
 		]],
 		[/* list */ 'l', [
-			[/* block */ 'b', `If a special collation rule controlled by a &lt;modifier&gt; is
+			[/* block */ 'b', `If a special collation rule controlled by a <modifier> is
      specified it applies to the whole collator object.
  `],
 			[/* block */ 'b', `All non-mentioned characters are at the end of the
@@ -37,9 +37,9 @@ DocsCollector.collect('java.text.RuleBasedCollator', [
  The collation table is composed of a list of collation rules, where each
  rule is of one of three forms:
  `],
-		[/* code block */ 'c', `    &lt;modifier&gt;
-    &lt;relation&gt; &lt;text-argument&gt;
-    &lt;reset&gt; &lt;text-argument&gt;
+		[/* code block */ 'c', `    <modifier>
+    <relation> <text-argument>
+    <reset> <text-argument>
  `],
 		[/* text */ 't', `
  The definitions of the rule elements is as follows:
@@ -52,7 +52,7 @@ DocsCollector.collect('java.text.RuleBasedCollator', [
         whitespace characters [0009-000D, 0020] and rule syntax characters
         [0021-002F, 003A-0040, 005B-0060, 007B-007E]). If those
         characters are desired, you can put them in single quotes
-        (e.g. ampersand =&gt; '&amp;'). Note that unquoted white space characters
+        (e.g. ampersand => '&'). Note that unquoted white space characters
         are ignored; e.g. `],
 				[/* inline code block */ 'i', `b c`],
 				[/* text */ 't', ` is treated as `],
@@ -86,7 +86,7 @@ DocsCollector.collect('java.text.RuleBasedCollator', [
 				[/* text */ 't', `: The relations are the following:
         `],
 				[/* list */ 'l', [
-					[/* block */ 'b', `'&lt;' : Greater, as a letter difference (primary)
+					[/* block */ 'b', `'<' : Greater, as a letter difference (primary)
             `],
 					[/* block */ 'b', `';' : Greater, as an accent difference (secondary)
             `],
@@ -102,7 +102,7 @@ DocsCollector.collect('java.text.RuleBasedCollator', [
         which is used primarily for contractions and expansions, but which
         can also be used to add a modification at the end of a set of rules.
         `],
-				[/* block */ 'b', `'&amp;' : Indicates that the next rule follows the position to where
+				[/* block */ 'b', `'&' : Indicates that the next rule follows the position to where
             the reset text-argument would be sorted.
  `]
 			]],
@@ -114,9 +114,9 @@ DocsCollector.collect('java.text.RuleBasedCollator', [
  following are equivalent ways of expressing the same thing:
  `],
 		[/* block */ 'b', [
-			[/* code block */ 'c', ` a &lt; b &lt; c
- a &lt; b &amp; b &lt; c
- a &lt; c &amp; a &lt; b
+			[/* code block */ 'c', ` a < b < c
+ a < b & b < c
+ a < c & a < b
  `]
 		]],
 		[/* text */ 't', `
@@ -124,40 +124,36 @@ DocsCollector.collect('java.text.RuleBasedCollator', [
  after the text-argument. The following are not equivalent:
  `],
 		[/* block */ 'b', [
-			[/* code block */ 'c', ` a &lt; b &amp; a &lt; c
- a &lt; c &amp; a &lt; b
+			[/* code block */ 'c', ` a < b & a < c
+ a < c & a < b
  `]
 		]],
 		[/* text */ 't', `
  Either the text-argument must already be present in the sequence, or some
- initial substring of the text-argument must be present. (e.g. "a &lt; b &amp; ae &lt;
+ initial substring of the text-argument must be present. (e.g. "a < b & ae <
  e" is valid since "a" is present in the sequence before "ae" is reset). In
  this latter case, "ae" is not entered and treated as a single character;
  instead, "e" is sorted as if it were expanded to two characters: "a"
  followed by an "e". This difference appears in natural languages: in
  traditional Spanish "ch" is treated as though it contracts to a single
- character (expressed as "c &lt; ch &lt; d"), while in traditional German
+ character (expressed as "c < ch < d"), while in traditional German
  a-umlaut is treated as though it expanded to two characters
- (expressed as "a,A &lt; b,B ... &amp;ae;\\u00e3&amp;AE;\\u00c3").
+ (expressed as "a,A < b,B ... &ae;\\u00e3&AE;\\u00c3").
  [\\u00e3 and \\u00c3 are, of course, the escape sequences for a-umlaut.]
  `],
 		[/* block */ 'b', ''],
-		[/* block */ 'b', [
-			[/* text */ 't', `Ignorable Characters`]
-		]],
+		[/* block */ 'b', `Ignorable Characters`],
 		[/* block */ 'b', `
  For ignorable characters, the first rule must start with a relation (the
- examples we have used above are really fragments; "a &lt; b" really should be
- "&lt; a &lt; b"). If, however, the first relation is not "&lt;", then all the all
- text-arguments up to the first "&lt;" are ignorable. For example, ", - &lt; a &lt; b"
+ examples we have used above are really fragments; "a < b" really should be
+ "< a < b"). If, however, the first relation is not "<", then all the all
+ text-arguments up to the first "<" are ignorable. For example, ", - < a < b"
  makes "-" an ignorable character, as we saw earlier in the word
  "black-birds". In the samples for different languages, you see that most
  accents are ignorable.
 
  `],
-		[/* block */ 'b', [
-			[/* text */ 't', `Normalization and Accents`]
-		]],
+		[/* block */ 'b', `Normalization and Accents`],
 		[/* block */ 'b', [
 			[/* inline code block */ 'i', `RuleBasedCollator`],
 			[/* text */ 't', ` automatically processes its rule table to
@@ -180,22 +176,20 @@ DocsCollector.collect('java.text.RuleBasedCollator', [
  canonical mappings.
 
  `],
-		[/* block */ 'b', [
-			[/* text */ 't', `Errors`]
-		]],
+		[/* block */ 'b', `Errors`],
 		[/* block */ 'b', `
  The following are errors:
  `],
 		[/* list */ 'l', [
 			[/* block */ 'b', `A text-argument contains unquoted punctuation symbols
-        (e.g. "a &lt; b-c &lt; d").
+        (e.g. "a < b-c < d").
      `],
 			[/* block */ 'b', `A relation or reset character not followed by a text-argument
-        (e.g. "a &lt; ,b").
+        (e.g. "a < ,b").
      `],
 			[/* block */ 'b', `A reset where the text-argument (or an initial substring of the
          text-argument) is not already in the sequence.
-         (e.g. "a &lt; b &amp; e &lt; f")
+         (e.g. "a < b & e < f")
  `]
 		]],
 		[/* text */ 't', `
@@ -208,19 +202,17 @@ DocsCollector.collect('java.text.RuleBasedCollator', [
 
  `],
 		[/* block */ 'b', ''],
-		[/* block */ 'b', [
-			[/* text */ 't', `Examples`]
-		]],
-		[/* block */ 'b', `Simple:     "&lt; a &lt; b &lt; c &lt; d"
+		[/* block */ 'b', `Examples`],
+		[/* block */ 'b', `Simple:     "< a < b < c < d"
  `],
-		[/* block */ 'b', `Norwegian:  "&lt; a, A &lt; b, B &lt; c, C &lt; d, D &lt; e, E &lt; f, F
-                 &lt; g, G &lt; h, H &lt; i, I &lt; j, J &lt; k, K &lt; l, L
-                 &lt; m, M &lt; n, N &lt; o, O &lt; p, P &lt; q, Q &lt; r, R
-                 &lt; s, S &lt; t, T &lt; u, U &lt; v, V &lt; w, W &lt; x, X
-                 &lt; y, Y &lt; z, Z
-                 &lt; \\u00E6, \\u00C6
-                 &lt; \\u00F8, \\u00D8
-                 &lt; \\u00E5 = a\\u030A, \\u00C5 = A\\u030A;
+		[/* block */ 'b', `Norwegian:  "< a, A < b, B < c, C < d, D < e, E < f, F
+                 < g, G < h, H < i, I < j, J < k, K < l, L
+                 < m, M < n, N < o, O < p, P < q, Q < r, R
+                 < s, S < t, T < u, U < v, V < w, W < x, X
+                 < y, Y < z, Z
+                 < \\u00E6, \\u00C6
+                 < \\u00F8, \\u00D8
+                 < \\u00E5 = a\\u030A, \\u00C5 = A\\u030A;
                       aa, AA"
 
  `],
@@ -238,7 +230,7 @@ DocsCollector.collect('java.text.RuleBasedCollator', [
  `]
 		]],
 		[/* block */ 'b', [
-			[/* code block */ 'c', ` String simple = "&lt; a&lt; b&lt; c&lt; d";
+			[/* code block */ 'c', ` String simple = "< a< b< c< d";
  RuleBasedCollator mySimple = new RuleBasedCollator(simple);
  `]
 		]],
@@ -246,12 +238,12 @@ DocsCollector.collect('java.text.RuleBasedCollator', [
  Or:
  `],
 		[/* block */ 'b', [
-			[/* code block */ 'c', ` String Norwegian = "&lt; a, A &lt; b, B &lt; c, C &lt; d, D &lt; e, E &lt; f, F &lt; g, G &lt; h, H &lt; i, I" +
-                    "&lt; j, J &lt; k, K &lt; l, L &lt; m, M &lt; n, N &lt; o, O &lt; p, P &lt; q, Q &lt; r, R" +
-                    "&lt; s, S &lt; t, T &lt; u, U &lt; v, V &lt; w, W &lt; x, X &lt; y, Y &lt; z, Z" +
-                    "&lt; \\u00E6, \\u00C6" +     // Latin letter ae &amp; AE
-                    "&lt; \\u00F8, \\u00D8" +     // Latin letter o &amp; O with stroke
-                    "&lt; \\u00E5 = a\\u030A," +  // Latin letter a with ring above
+			[/* code block */ 'c', ` String Norwegian = "< a, A < b, B < c, C < d, D < e, E < f, F < g, G < h, H < i, I" +
+                    "< j, J < k, K < l, L < m, M < n, N < o, O < p, P < q, Q < r, R" +
+                    "< s, S < t, T < u, U < v, V < w, W < x, X < y, Y < z, Z" +
+                    "< \\u00E6, \\u00C6" +     // Latin letter ae & AE
+                    "< \\u00F8, \\u00D8" +     // Latin letter o & O with stroke
+                    "< \\u00E5 = a\\u030A," +  // Latin letter a with ring above
                     "  \\u00C5 = A\\u030A;" +  // Latin letter A with ring above
                     "  aa, AA";
  RuleBasedCollator myNorwegian = new RuleBasedCollator(Norwegian);
@@ -262,7 +254,7 @@ DocsCollector.collect('java.text.RuleBasedCollator', [
 			[/* text */ 't', `
  A new collation rules string can be created by concatenating rules
  strings. For example, the rules returned by `],
-			[/* reference */ 'r', `getRules()`],
+			[/* reference */ 'r', `#getRules()`, `getRules()`],
 			[/* text */ 't', ` could
  be concatenated to combine multiple `],
 			[/* inline code block */ 'i', `RuleBasedCollator`],
@@ -281,10 +273,10 @@ DocsCollector.collect('java.text.RuleBasedCollator', [
                  + ";\\u0306;\\u0307;\\u0309;\\u030A"    // main accents
                  + ";\\u030B;\\u030C;\\u030D;\\u030E"    // main accents
                  + ";\\u030F;\\u0310;\\u0311;\\u0312"    // main accents
-                 + "&lt; a , A ; ae, AE ; \\u00e6 , \\u00c6"
-                 + "&lt; b , B &lt; c, C &lt; e, E &amp; C &lt; d, D";
+                 + "< a , A ; ae, AE ; \\u00e6 , \\u00c6"
+                 + "< b , B < c, C < e, E & C < d, D";
  // change the order of accent characters
- String addOn = "&amp; \\u0300 ; \\u0308 ; \\u0302";
+ String addOn = "& \\u0300 ; \\u0308 ; \\u0302";
  RuleBasedCollator myCollator = new RuleBasedCollator(oldRules + addOn);
  `]
 		]],
@@ -307,7 +299,7 @@ DocsCollector.collect('java.text.RuleBasedCollator', [
 				[/* throw */ 'java.text.ParseException', [/* throw description */
 					[/* text */ 't', `A format exception
  will be thrown if the build process of the rules fails. For
- example, build rule "a &lt; ? &lt; d" will cause the constructor to
+ example, build rule "a < ? < d" will cause the constructor to
  throw the ParseException because the '?' is not quoted.`]
 				]]
 			]

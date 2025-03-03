@@ -233,7 +233,7 @@ DocsCollector.collect('java.text.Bidi', [
 		[/* method */ 'getLevelAt(int)', [
 			[/* method description */
 				[/* text */ 't', `Return the resolved level of the character at offset.  If offset is
- &lt; 0 or ≥ the length of the line, return the base direction
+ < 0 or ≥ the length of the line, return the base direction
  level.`]
 			],
 			[/* parameters */

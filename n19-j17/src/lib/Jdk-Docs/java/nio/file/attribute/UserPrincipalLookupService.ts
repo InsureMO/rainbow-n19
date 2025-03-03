@@ -26,9 +26,9 @@ DocsCollector.collect('java.nio.file.attribute.UserPrincipalLookupService', [
  same or is distinct. To ensure consistent and correct behavior across
  platforms it is recommended that this API be used as if the namespaces are
  distinct. In other words, the `],
-		[/* reference */ 'r', `lookupPrincipalByName`],
+		[/* reference */ 'r', `#lookupPrincipalByName(java.lang.String)`, `lookupPrincipalByName`],
 		[/* text */ 't', ` should be used to lookup users, and `],
-		[/* reference */ 'r', `lookupPrincipalByGroupName`],
+		[/* reference */ 'r', `#lookupPrincipalByGroupName(java.lang.String)`, `lookupPrincipalByGroupName`],
 		[/* text */ 't', ` should be used to
  lookup groups.`]
 	],
@@ -83,7 +83,7 @@ DocsCollector.collect('java.nio.file.attribute.UserPrincipalLookupService', [
 					[/* text */ 't', `. Where
  the namespace for user accounts and groups is the same, then this method
  is identical to invoking `],
-					[/* reference */ 'r', `lookupPrincipalByName`],
+					[/* reference */ 'r', `#lookupPrincipalByName(java.lang.String)`, `lookupPrincipalByName`],
 					[/* text */ 't', `.`]
 				]]
 			],

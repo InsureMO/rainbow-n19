@@ -8,16 +8,16 @@ DocsCollector.collect('java.lang.invoke.MethodHandle', [
  transformations of arguments or return values.
  These transformations are quite general, and include such patterns as
  `],
-		[/* reference */ 'r', `conversion`],
+		[/* reference */ 'r', `#asType(java.lang.invoke.MethodType)`, `conversion`],
 		[/* text */ 't', `,
  `],
-		[/* reference */ 'r', `insertion`],
+		[/* reference */ 'r', `#bindTo(java.lang.Object)`, `insertion`],
 		[/* text */ 't', `,
  `],
-		[/* external link */ 'a', `MethodHandles.html#dropArguments(java.lang.invoke.MethodHandle,int,java.util.List)`, `deletion`],
+		[/* reference */ 'r', `.MethodHandles#dropArguments(java.lang.invoke.MethodHandle,int,java.util.List)`],
 		[/* text */ 't', `,
  and `],
-		[/* external link */ 'a', `MethodHandles.html#filterArguments(java.lang.invoke.MethodHandle,int,java.lang.invoke.MethodHandle...)`, `substitution`],
+		[/* reference */ 'r', `.MethodHandles#filterArguments(java.lang.invoke.MethodHandle,int,java.lang.invoke.MethodHandle...)`],
 		[/* text */ 't', `.
 
  `],
@@ -27,13 +27,13 @@ DocsCollector.collect('java.lang.invoke.MethodHandle', [
  They are not distinguished by the name or the defining class of their underlying methods.
  A method handle must be invoked using a symbolic type descriptor which matches
  the method handle's own `],
-		[/* reference */ 'r', `type descriptor`],
+		[/* reference */ 'r', `#type()`, `type descriptor`],
 		[/* text */ 't', `.
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `
  Every method handle reports its type descriptor via the `],
-			[/* reference */ 'r', `type`],
+			[/* reference */ 'r', `#type()`, `type`],
 			[/* text */ 't', ` accessor.
  This type descriptor is a `],
 			[/* reference */ 'r', `java.lang.invoke.MethodType`],
@@ -52,9 +52,9 @@ DocsCollector.collect('java.lang.invoke.MethodHandle', [
 			[/* text */ 't', `
  A method handle contains a pair of special invoker methods
  called `],
-			[/* reference */ 'r', `invokeExact`],
+			[/* reference */ 'r', `#invokeExact(java.lang.Object...)`, `invokeExact`],
 			[/* text */ 't', ` and `],
-			[/* reference */ 'r', `invoke`],
+			[/* reference */ 'r', `#invoke(java.lang.Object...)`, `invoke`],
 			[/* text */ 't', `.
  Both invoker methods provide direct access to the method handle's
  underlying method, constructor, field, or other operation,
@@ -79,7 +79,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandle', [
 			[/* inline code block */ 'i', `MethodHandle`],
 			[/* text */ 't', `
  which may be visible via the `],
-			[/* external link */ 'a', `../Object.html#getClass()`, `Object.getClass`],
+			[/* reference */ 'r', `java.Object#getClass()`],
 			[/* text */ 't', `
  operation.  The programmer should not draw conclusions about a method handle
  from its specific class, as the method handle class hierarchy (if any)
@@ -206,7 +206,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandle', [
 			[/* inline code block */ 'i', `invoke`],
 			[/* text */ 't', `, the resolved type descriptor
  must be a valid argument to the receiver's `],
-			[/* reference */ 'r', `asType`],
+			[/* reference */ 'r', `#asType(java.lang.invoke.MethodType)`, `asType`],
 			[/* text */ 't', ` method.
  Thus, plain `],
 			[/* inline code block */ 'i', `invoke`],
@@ -238,7 +238,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandle', [
 			[/* text */ 't', ` attempts
  to adjust the type of the receiving method handle,
  as if by a call to `],
-			[/* reference */ 'r', `asType`],
+			[/* reference */ 'r', `#asType(java.lang.invoke.MethodType)`, `asType`],
 			[/* text */ 't', `,
  to obtain an exactly invokable method handle `],
 			[/* inline code block */ 'i', `M2`],
@@ -331,7 +331,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandle', [
  a reflective method is invoked,
  method handle access checking is performed
  `],
-			[/* external link */ 'a', `MethodHandles.Lookup.html#access`, `when the method handle is created`],
+			[/* reference */ 'r', `.MethodHandles.Lookup#access`],
 			[/* text */ 't', `.
  In the case of `],
 			[/* inline code block */ 'i', `ldc`],
@@ -356,11 +356,11 @@ DocsCollector.collect('java.lang.invoke.MethodHandle', [
 		[/* text */ 't', `.
  For example, a static method handle can be obtained
  from `],
-		[/* external link */ 'a', `MethodHandles.Lookup.html#findStatic(java.lang.Class,java.lang.String,java.lang.invoke.MethodType)`, `Lookup.findStatic`],
+		[/* reference */ 'r', `.MethodHandles.Lookup#findStatic(java.lang.Class,java.lang.String,java.lang.invoke.MethodType)`],
 		[/* text */ 't', `.
  There are also conversion methods from Core Reflection API objects,
  such as `],
-		[/* external link */ 'a', `MethodHandles.Lookup.html#unreflect(java.lang.reflect.Method)`, `Lookup.unreflect`],
+		[/* reference */ 'r', `.MethodHandles.Lookup#unreflect(java.lang.reflect.Method)`],
 		[/* text */ 't', `.
  `],
 		[/* block */ 'b', [
@@ -398,10 +398,10 @@ DocsCollector.collect('java.lang.invoke.MethodHandle', [
 			[/* text */ 't', `)
  have a corresponding variable arity, as if they were defined with
  the help of `],
-			[/* reference */ 'r', `asVarargsCollector`],
+			[/* reference */ 'r', `#asVarargsCollector(java.lang.Class)`, `asVarargsCollector`],
 			[/* text */ 't', `
  or `],
-			[/* reference */ 'r', `withVarargs`],
+			[/* reference */ 'r', `#withVarargs(boolean)`, `withVarargs`],
 			[/* text */ 't', `.
  `]
 		]],
@@ -514,7 +514,7 @@ mh.invokeExact(System.out, "Hello, world.");
 		[/* inline code block */ 'i', `assertEquals`],
 		[/* text */ 't', ` is assumed to
  be a method which calls `],
-		[/* external link */ 'a', `../../util/Objects.html#equals(java.lang.Object,java.lang.Object)`, `Objects.equals`],
+		[/* reference */ 'r', `java.lang.Objects#equals(java.lang.Object,java.lang.Object)`],
 		[/* text */ 't', `
  on its arguments, and asserts that the result is true.
 
@@ -597,7 +597,7 @@ mh.invokeExact(System.out, "Hello, world.");
 		[/* text */ 't', ` can
  be converted to a method handle using
  `],
-		[/* external link */ 'a', `MethodHandles.Lookup.html#unreflect(java.lang.reflect.Method)`, `Lookup.unreflect`],
+		[/* reference */ 'r', `.MethodHandles.Lookup#unreflect(java.lang.reflect.Method)`],
 		[/* text */ 't', `.
  The resulting method handles generally provide more direct and efficient
  access to the underlying class members.
@@ -614,11 +614,11 @@ mh.invokeExact(System.out, "Hello, world.");
  they appear as ordinary non-polymorphic methods.
  Their reflective appearance, as viewed by
  `],
-			[/* external link */ 'a', `../Class.html#getDeclaredMethod(java.lang.String,java.lang.Class...)`, `Class.getDeclaredMethod`],
+			[/* reference */ 'r', `java.Class#getDeclaredMethod(java.lang.String,java.lang.Class...)`],
 			[/* text */ 't', `,
  is unaffected by their special status in this API.
  For example, `],
-			[/* external link */ 'a', `../reflect/Method.html#getModifiers()`, `Method.getModifiers`],
+			[/* reference */ 'r', `java.Method#getModifiers()`],
 			[/* text */ 't', `
  will report exactly those modifier bits required for any similarly
  declared method, including in this case `],
@@ -632,7 +632,7 @@ mh.invokeExact(System.out, "Hello, world.");
 			[/* text */ 't', `
  As with any reflected method, these methods (when reflected) may be
  invoked via `],
-			[/* external link */ 'a', `../reflect/Method.html#invoke(java.lang.Object,java.lang.Object...)`, `java.lang.reflect.Method.invoke`],
+			[/* reference */ 'r', `java.Method#invoke(java.lang.Object,java.lang.Object...)`],
 			[/* text */ 't', `.
  However, such reflective calls do not result in method handle invocations.
  Such a call, if passed the required argument
@@ -661,13 +661,13 @@ mh.invokeExact(System.out, "Hello, world.");
 			[/* text */ 't', `
  In order to obtain an invoker method for a particular type descriptor,
  use `],
-			[/* external link */ 'a', `MethodHandles.html#exactInvoker(java.lang.invoke.MethodType)`, `MethodHandles.exactInvoker`],
+			[/* reference */ 'r', `.MethodHandles#exactInvoker(java.lang.invoke.MethodType)`],
 			[/* text */ 't', `,
  or `],
-			[/* external link */ 'a', `MethodHandles.html#invoker(java.lang.invoke.MethodType)`, `MethodHandles.invoker`],
+			[/* reference */ 'r', `.MethodHandles#invoker(java.lang.invoke.MethodType)`],
 			[/* text */ 't', `.
  The `],
-			[/* external link */ 'a', `MethodHandles.Lookup.html#findVirtual(java.lang.Class,java.lang.String,java.lang.invoke.MethodType)`, `Lookup.findVirtual`],
+			[/* reference */ 'r', `.MethodHandles.Lookup#findVirtual(java.lang.Class,java.lang.String,java.lang.invoke.MethodType)`],
 			[/* text */ 't', `
  API is also able to return a method handle
  to call `],
@@ -703,7 +703,7 @@ mh.invokeExact(System.out, "Hello, world.");
 			[/* block */ 'b', [
 				[/* text */ 't', `Method types range over all possible arities,
  from no arguments to up to the  `],
-				[/* external link */ 'a', `MethodHandle.html#maxarity`, `maximum number`],
+				[/* reference */ 'r', `.MethodHandle#maxarity`],
 				[/* text */ 't', ` of allowed arguments.
  Generics are not variadic, and so cannot represent this.`]
 			]],
@@ -764,10 +764,10 @@ mh.invokeExact(System.out, "Hello, world.");
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the call site's symbolic type descriptor exactly matches this method handle's `],
-					[/* reference */ 'r', `type`],
+					[/* reference */ 'r', `#type()`, `type`],
 					[/* text */ 't', `,
  the call proceeds as if by `],
-					[/* reference */ 'r', `invokeExact`],
+					[/* reference */ 'r', `#invokeExact(java.lang.Object...)`, `invokeExact`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -775,11 +775,11 @@ mh.invokeExact(System.out, "Hello, world.");
 					[/* text */ 't', `
  Otherwise, the call proceeds as if this method handle were first
  adjusted by calling `],
-					[/* reference */ 'r', `asType`],
+					[/* reference */ 'r', `#asType(java.lang.invoke.MethodType)`, `asType`],
 					[/* text */ 't', ` to adjust this method handle
  to the required type, and then the call proceeds as if by
  `],
-					[/* reference */ 'r', `invokeExact`],
+					[/* reference */ 'r', `#invokeExact(java.lang.Object...)`, `invokeExact`],
 					[/* text */ 't', ` on the adjusted method handle.
  `]
 				]],
@@ -804,7 +804,7 @@ mh.invokeExact(System.out, "Hello, world.");
  In particular, the caller must specify the same argument arity
  as the callee's type,
  if the callee is not a `],
-					[/* reference */ 'r', `variable arity collector`],
+					[/* reference */ 'r', `#asVarargsCollector(java.lang.Class)`, `variable arity collector`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -814,10 +814,10 @@ mh.invokeExact(System.out, "Hello, world.");
  it will appear as a single native method, taking an object array and returning an object.
  If this native method is invoked directly via
  `],
-					[/* external link */ 'a', `../reflect/Method.html#invoke(java.lang.Object,java.lang.Object...)`, `java.lang.reflect.Method.invoke`],
+					[/* reference */ 'r', `java.Method#invoke(java.lang.Object,java.lang.Object...)`],
 					[/* text */ 't', `, via JNI,
  or indirectly via `],
-					[/* external link */ 'a', `MethodHandles.Lookup.html#unreflect(java.lang.reflect.Method)`, `Lookup.unreflect`],
+					[/* reference */ 'r', `.MethodHandles.Lookup#unreflect(java.lang.reflect.Method)`],
 					[/* text */ 't', `,
  it will throw an `],
 					[/* inline code block */ 'i', `UnsupportedOperationException`],
@@ -852,7 +852,7 @@ mh.invokeExact(System.out, "Hello, world.");
 				[/* inline code block */ 'i', `invokeExact`],
 				[/* text */ 't', ` must
  exactly match this method handle's `],
-				[/* reference */ 'r', `type`],
+				[/* reference */ 'r', `#type()`, `type`],
 				[/* text */ 't', `.
  No conversions are allowed on arguments or return values.
  `],
@@ -862,10 +862,10 @@ mh.invokeExact(System.out, "Hello, world.");
  it will appear as a single native method, taking an object array and returning an object.
  If this native method is invoked directly via
  `],
-					[/* external link */ 'a', `../reflect/Method.html#invoke(java.lang.Object,java.lang.Object...)`, `java.lang.reflect.Method.invoke`],
+					[/* reference */ 'r', `java.Method#invoke(java.lang.Object,java.lang.Object...)`],
 					[/* text */ 't', `, via JNI,
  or indirectly via `],
-					[/* external link */ 'a', `MethodHandles.Lookup.html#unreflect(java.lang.reflect.Method)`, `Lookup.unreflect`],
+					[/* reference */ 'r', `.MethodHandles.Lookup#unreflect(java.lang.reflect.Method)`],
 					[/* text */ 't', `,
  it will throw an `],
 					[/* inline code block */ 'i', `UnsupportedOperationException`],
@@ -917,14 +917,7 @@ mh.invokeExact(System.out, "Hello, world.");
 						[/* inline code block */ 'i', `"MethodHandle" + type().toString()`]
 					]]
 				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- (`],
-					[/* text */ 't', `Note:`],
-					[/* text */ 't', `  Future releases of this API may add further information
- to the string representation.
- Therefore, the present syntax should not be parsed by applications.)`]
-				]]
+				[/* block */ 'b', `Note:`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
@@ -983,14 +976,14 @@ mh.invokeExact(System.out, "Hello, world.");
 					[/* text */ 't', `
  This method provides the crucial behavioral difference between
  `],
-					[/* reference */ 'r', `invokeExact`],
+					[/* reference */ 'r', `#invokeExact(java.lang.Object...)`, `invokeExact`],
 					[/* text */ 't', ` and plain, inexact `],
-					[/* reference */ 'r', `invoke`],
+					[/* reference */ 'r', `#invoke(java.lang.Object...)`, `invoke`],
 					[/* text */ 't', `.
  The two methods
  perform the same steps when the caller's type descriptor exactly matches
  the callee's, but when the types differ, plain `],
-					[/* reference */ 'r', `invoke`],
+					[/* reference */ 'r', `#invoke(java.lang.Object...)`, `invoke`],
 					[/* text */ 't', `
  also calls `],
 					[/* inline code block */ 'i', `asType`],
@@ -1004,7 +997,7 @@ mh.invokeExact(System.out, "Hello, world.");
  argument list conversion may involve the conversion and collection
  of several arguments into an array, as
  `],
-					[/* reference */ 'r', `described elsewhere`],
+					[/* reference */ 'r', `#asVarargsCollector(java.lang.Class)`, `described elsewhere`],
 					[/* text */ 't', `.
  In every other case, all conversions are applied `],
 					[/* text */ 't', `pairwise`],
@@ -1105,7 +1098,7 @@ mh.invokeExact(System.out, "Hello, world.");
 						[/* text */ 't', `T0`],
 						[/* text */ 't', ` is Object, these are the conversions
      allowed by `],
-						[/* external link */ 'a', `../reflect/Method.html#invoke(java.lang.Object,java.lang.Object...)`, `java.lang.reflect.Method.invoke`],
+						[/* reference */ 'r', `java.Method#invoke(java.lang.Object,java.lang.Object...)`],
 						[/* text */ 't', `.)
      The unboxing conversion must have a possibility of success, which means that
      if `],
@@ -1209,7 +1202,7 @@ mh.invokeExact(System.out, "Hello, world.");
 			[/* method description */
 				[/* text */ 't', `Performs a variable arity invocation, passing the arguments in the given array
  to the method handle, as if via an inexact `],
-				[/* reference */ 'r', `invoke`],
+				[/* reference */ 'r', `#invoke(java.lang.Object...)`, `invoke`],
 				[/* text */ 't', ` from a call site
  which mentions only the type `],
 				[/* inline code block */ 'i', `Object`],
@@ -1270,7 +1263,7 @@ mh.invokeExact(System.out, "Hello, world.");
 							[/* block */ 'b', [
 								[/* text */ 't', `Check that this method handle has variable arity with a
          `],
-								[/* external link */ 'a', `MethodType.html#lastParameterType()`, `trailing parameter`],
+								[/* reference */ 'r', `.MethodType#lastParameterType()`],
 								[/* text */ 't', `
          of some array type `],
 								[/* inline code block */ 'i', `A[]`],
@@ -1379,7 +1372,7 @@ mh.invokeExact(System.out, "Hello, world.");
 				[/* block */ 'b', [
 					[/* text */ 't', `
  Unlike the `],
-					[/* reference */ 'r', `generic`],
+					[/* reference */ 'r', `#invoke(java.lang.Object...)`, `generic`],
 					[/* text */ 't', ` invocation mode, which can
  "recycle" an array argument, passing it directly to the target method,
  this invocation mode `],
@@ -1403,7 +1396,7 @@ mh.invokeExact(System.out, "Hello, world.");
 					[/* text */ 't', `, not an array type.
  This is not a special rule for this method, but rather a regular effect
  of the `],
-					[/* reference */ 'r', `rules for variable-arity invocation`],
+					[/* reference */ 'r', `#asVarargsCollector(java.lang.Class)`, `rules for variable-arity invocation`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -1469,7 +1462,7 @@ mh.invokeExact(System.out, "Hello, world.");
 			[/* method description */
 				[/* text */ 't', `Performs a variable arity invocation, passing the arguments in the given list
  to the method handle, as if via an inexact `],
-				[/* reference */ 'r', `invoke`],
+				[/* reference */ 'r', `#invoke(java.lang.Object...)`, `invoke`],
 				[/* text */ 't', ` from a call site
  which mentions only the type `],
 				[/* inline code block */ 'i', `Object`],
@@ -1489,7 +1482,7 @@ mh.invokeExact(System.out, "Hello, world.");
 					[/* text */ 't', `
  Jumbo-sized lists are acceptable if this method handle has variable arity.
  See `],
-					[/* reference */ 'r', `invokeWithArguments(Object[])`],
+					[/* reference */ 'r', `#invokeWithArguments(java.lang.Object...)`, `invokeWithArguments(Object[])`],
 					[/* text */ 't', ` for details.`]
 				]]
 			],
@@ -1541,7 +1534,7 @@ mh.invokeExact(System.out, "Hello, world.");
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This method behaves very much like `],
-					[/* reference */ 'r', `asSpreader(Class, int)`],
+					[/* reference */ 'r', `#asSpreader(java.lang.Class,int)`, `asSpreader(Class, int)`],
 					[/* text */ 't', `, but accepts an additional `],
 					[/* inline code block */ 'i', `spreadArgPos`],
 					[/* text */ 't', `
@@ -1584,7 +1577,7 @@ mh.invokeExact(System.out, "Hello, world.");
          number of arguments),
          or if the resulting method handle's type would have
          `],
-					[/* external link */ 'a', `MethodHandle.html#maxarity`, `too many parameters`]
+					[/* reference */ 'r', `.MethodHandle#maxarity`]
 				]],
 				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
 					[/* text */ 't', `if the implied `],
@@ -1621,7 +1614,7 @@ mh.invokeExact(System.out, "Hello, world.");
  argument types on the original target,
  the original target is adapted to take the array elements directly,
  as if by a call to `],
-					[/* reference */ 'r', `asType`],
+					[/* reference */ 'r', `#asType(java.lang.invoke.MethodType)`, `asType`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -1746,7 +1739,7 @@ assertEquals("[A, B, C]", (String) caToString2.invokeExact('A', "BC".toCharArray
 					[/* text */ 't', ` is negative,
          or if the resulting method handle's type would have
          `],
-					[/* external link */ 'a', `MethodHandle.html#maxarity`, `too many parameters`]
+					[/* reference */ 'r', `.MethodHandle#maxarity`]
 				]],
 				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
 					[/* text */ 't', `if the implied `],
@@ -1763,14 +1756,14 @@ assertEquals("[A, B, C]", (String) caToString2.invokeExact('A', "BC".toCharArray
 			[/* method description */
 				[/* text */ 't', `Determines if this method handle
  supports `],
-				[/* reference */ 'r', `variable arity`],
+				[/* reference */ 'r', `#asVarargsCollector(java.lang.Class)`, `variable arity`],
 				[/* text */ 't', ` calls.
  Such method handles arise from the following sources:
  `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* text */ 't', `a call to `],
-						[/* reference */ 'r', `asVarargsCollector`]
+						[/* reference */ 'r', `#asVarargsCollector(java.lang.Class)`, `asVarargsCollector`]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `a call to a `],
@@ -1819,7 +1812,7 @@ assertEquals("[A, B, C]", (String) caToString2.invokeExact('A', "BC".toCharArray
  trailing parameter.
  Also, the
  `],
-					[/* external link */ 'a', `MethodType.html#lastParameterType()`, `last parameter type`],
+					[/* reference */ 'r', `.MethodType#lastParameterType()`],
 					[/* text */ 't', `
  of the adapter will be
  `],
@@ -1842,14 +1835,14 @@ assertEquals("[A, B, C]", (String) caToString2.invokeExact('A', "BC".toCharArray
 				[/* block */ 'b', [
 					[/* text */ 't', `
  When called with `],
-					[/* reference */ 'r', `invokeExact`],
+					[/* reference */ 'r', `#invokeExact(java.lang.Object...)`, `invokeExact`],
 					[/* text */ 't', `, the adapter invokes
  the target with no argument changes.
  (`],
 					[/* text */ 't', `Note:`],
 					[/* text */ 't', ` This behavior is different from a
  `],
-					[/* reference */ 'r', `fixed arity collector`],
+					[/* reference */ 'r', `#asCollector(java.lang.Class,int)`, `fixed arity collector`],
 					[/* text */ 't', `,
  since it accepts a whole array of indeterminate length,
  rather than a fixed number of arguments.)
@@ -1858,7 +1851,7 @@ assertEquals("[A, B, C]", (String) caToString2.invokeExact('A', "BC".toCharArray
 				[/* block */ 'b', [
 					[/* text */ 't', `
  When called with plain, inexact `],
-					[/* reference */ 'r', `invoke`],
+					[/* reference */ 'r', `#invoke(java.lang.Object...)`, `invoke`],
 					[/* text */ 't', `, if the caller
  type is the same as the adapter, the adapter invokes the target as with
  `],
@@ -1876,7 +1869,7 @@ assertEquals("[A, B, C]", (String) caToString2.invokeExact('A', "BC".toCharArray
  or assignable to the trailing parameter type of the adapter,
  the arguments and return values are converted pairwise,
  as if by `],
-					[/* reference */ 'r', `asType`],
+					[/* reference */ 'r', `#asType(java.lang.invoke.MethodType)`, `asType`],
 					[/* text */ 't', ` on a fixed arity
  method handle.
  `]
@@ -1922,7 +1915,7 @@ assertEquals("[A, B, C]", (String) caToString2.invokeExact('A', "BC".toCharArray
 					[/* text */ 't', `
  In the final case, it is exactly as if the target method handle were
  temporarily adapted with a `],
-					[/* reference */ 'r', `fixed arity collector`],
+					[/* reference */ 'r', `#asCollector(java.lang.Class,int)`, `fixed arity collector`],
 					[/* text */ 't', `
  to the arity required by the caller type.
  (As with `],
@@ -1946,7 +1939,7 @@ assertEquals("[A, B, C]", (String) caToString2.invokeExact('A', "BC".toCharArray
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The behavior of `],
-					[/* reference */ 'r', `asType`],
+					[/* reference */ 'r', `#asType(java.lang.invoke.MethodType)`, `asType`],
 					[/* text */ 't', ` is also specialized for
  variable arity adapters, to maintain the invariant that
  plain, inexact `],
@@ -1992,7 +1985,7 @@ assertEquals("[A, B, C]", (String) caToString2.invokeExact('A', "BC".toCharArray
  In order to create a collecting adapter which collects a predetermined
  number of arguments, and whose type reflects this predetermined number,
  use `],
-					[/* reference */ 'r', `asCollector`],
+					[/* reference */ 'r', `#asCollector(java.lang.Class,int)`, `asCollector`],
 					[/* text */ 't', ` instead.
  `]
 				]],
@@ -2055,22 +2048,7 @@ assertEquals("[three, thee, tee]", Arrays.toString((Object[])ls.get(0)));`]
 					]]
 				]],
 				[/* block */ 'b', ''],
-				[/* block */ 'b', [
-					[/* text */ 't', `Discussion:`],
-					[/* text */ 't', `
- These rules are designed as a dynamically-typed variation
- of the Java rules for variable arity methods.
- In both cases, callers to a variable arity method or method handle
- can either pass zero or more positional arguments, or else pass
- pre-collected arrays of any length.  Users should be aware of the
- special role of the final argument, and of the effect of a
- type match on that final argument, which determines whether
- or not a single trailing argument is interpreted as a whole
- array or a single element of an array to be collected.
- Note that the dynamic type of the trailing argument has no
- effect on this decision, only a comparison between the symbolic
- type descriptor of the call site and the type descriptor of the method handle.)`]
-				]]
+				[/* block */ 'b', `Discussion:`]
 			],
 			[/* parameters */
 				[/* parameter */ 'arrayType', [/* parameter description */
@@ -2124,7 +2102,7 @@ assertEquals("[three, thee, tee]", Arrays.toString((Object[])ls.get(0)));`]
  If the array type differs from the final argument type on the original target,
  the original target is adapted to take the array type directly,
  as if by a call to `],
-					[/* reference */ 'r', `asType`],
+					[/* reference */ 'r', `#asType(java.lang.invoke.MethodType)`, `asType`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -2156,7 +2134,7 @@ assertEquals("[three, thee, tee]", Arrays.toString((Object[])ls.get(0)));`]
 					[/* inline code block */ 'i', `arrayType`],
 					[/* text */ 't', ` is often identical to the
  `],
-					[/* external link */ 'a', `MethodType.html#lastParameterType()`, `last parameter type`],
+					[/* reference */ 'r', `.MethodType#lastParameterType()`],
 					[/* text */ 't', `
  of the original target.
  It is an explicit argument for symmetry with `],
@@ -2171,10 +2149,10 @@ assertEquals("[three, thee, tee]", Arrays.toString((Object[])ls.get(0)));`]
 					[/* text */ 't', `
  In order to create a collecting adapter which is not restricted to a particular
  number of collected arguments, use `],
-					[/* reference */ 'r', `asVarargsCollector`],
+					[/* reference */ 'r', `#asVarargsCollector(java.lang.Class)`, `asVarargsCollector`],
 					[/* text */ 't', `
  or `],
-					[/* reference */ 'r', `withVarargs`],
+					[/* reference */ 'r', `#withVarargs(boolean)`, `withVarargs`],
 					[/* text */ 't', ` instead.
  `]
 				]],
@@ -2214,7 +2192,7 @@ assertEquals("[123]", (String) longsToString.invokeExact((long)123));`]
 				[/* block */ 'b', [
 					[/* text */ 't', `Note:`],
 					[/* text */ 't', ` The resulting adapter is never a `],
-					[/* reference */ 'r', `variable-arity method handle`],
+					[/* reference */ 'r', `#asVarargsCollector(java.lang.Class)`, `variable-arity method handle`],
 					[/* text */ 't', `, even if the original target method handle was.`]
 				]]
 			],
@@ -2246,7 +2224,7 @@ assertEquals("[123]", (String) longsToString.invokeExact((long)123));`]
 					[/* text */ 't', ` is not a legal array size,
          or the resulting method handle's type would have
          `],
-					[/* external link */ 'a', `MethodHandle.html#maxarity`, `too many parameters`]
+					[/* reference */ 'r', `.MethodHandle#maxarity`]
 				]],
 				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
 					[/* text */ 't', `if the implied `],
@@ -2282,7 +2260,7 @@ assertEquals("[123]", (String) longsToString.invokeExact((long)123));`]
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This method behaves very much like `],
-					[/* reference */ 'r', `asCollector(Class, int)`],
+					[/* reference */ 'r', `#asCollector(java.lang.Class,int)`, `asCollector(Class, int)`],
 					[/* text */ 't', `, but differs in that its `],
 					[/* inline code block */ 'i', `collectArgPos`],
 					[/* text */ 't', ` argument indicates at which position in the parameter list arguments should be collected. This
@@ -2323,7 +2301,7 @@ assertEquals("[123]", (String) longsToString.invokeExact((long)123));`]
 					[/* text */ 't', ` has an illegal value (negative, or greater than the number of arguments),
          or the resulting method handle's type would have
          `],
-					[/* external link */ 'a', `MethodHandle.html#maxarity`, `too many parameters`]
+					[/* reference */ 'r', `.MethodHandle#maxarity`]
 				]],
 				[/* throw */ 'java.lang.invoke.WrongMethodTypeException', [/* throw description */
 					[/* text */ 't', `if the implied `],
@@ -2339,10 +2317,10 @@ assertEquals("[123]", (String) longsToString.invokeExact((long)123));`]
 		[/* method */ 'withVarargs(boolean)', [
 			[/* method description */
 				[/* text */ 't', `Adapts this method handle to be `],
-				[/* reference */ 'r', `variable arity`],
+				[/* reference */ 'r', `#asVarargsCollector(java.lang.Class)`, `variable arity`],
 				[/* text */ 't', `
  if the boolean flag is true, else `],
-				[/* reference */ 'r', `fixed arity`],
+				[/* reference */ 'r', `#asFixedArity()`, `fixed arity`],
 				[/* text */ 't', `.
  If the method handle is already of the proper arity mode, it is returned
  unchanged.`]
@@ -2375,7 +2353,7 @@ assertEquals("[123]", (String) longsToString.invokeExact((long)123));`]
 					[/* text */ 't', `
  If the current method handle is not of
  `],
-					[/* reference */ 'r', `variable arity`],
+					[/* reference */ 'r', `#asVarargsCollector(java.lang.Class)`, `variable arity`],
 					[/* text */ 't', `,
  the current method handle is returned.
  This is true even if the current method handle
@@ -2389,7 +2367,7 @@ assertEquals("[123]", (String) longsToString.invokeExact((long)123));`]
  Otherwise, the resulting fixed-arity method handle has the same
  type and behavior of the current method handle,
  except that `],
-					[/* reference */ 'r', `isVarargsCollector`],
+					[/* reference */ 'r', `#isVarargsCollector()`, `isVarargsCollector`],
 					[/* text */ 't', `
  will be false.
  The fixed-arity method handle may (or may not) be the
@@ -2462,16 +2440,11 @@ assertEquals("[three, thee, tee]", asListFix.invoke((Object)argv).toString());`]
  type of the target.
  `]
 				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `Note:`],
-					[/* text */ 't', `  Because method handles are immutable, the target method handle
- retains its original type and behavior.
- `]
-				]],
+				[/* block */ 'b', `Note:`],
 				[/* block */ 'b', [
 					[/* text */ 't', `Note:`],
 					[/* text */ 't', ` The resulting adapter is never a `],
-					[/* reference */ 'r', `variable-arity method handle`],
+					[/* reference */ 'r', `#asVarargsCollector(java.lang.Class)`, `variable-arity method handle`],
 					[/* text */ 't', `, even if the original target method handle was.`]
 				]]
 			],

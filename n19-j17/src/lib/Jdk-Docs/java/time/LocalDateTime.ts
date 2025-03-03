@@ -38,11 +38,11 @@ DocsCollector.collect('java.time.LocalDateTime', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  This is a `],
-			[/* external link */ 'a', `../../../java.base/java/lang/doc-files/ValueBased.html`, `value-based`],
+			[/* text */ 't', `value-based`],
 			[/* text */ 't', `
  class; programmers should treat instances that are
  `],
-			[/* reference */ 'r', `equal`],
+			[/* reference */ 'r', `#equals(java.lang.Object)`, `equal`],
 			[/* text */ 't', ` as interchangeable and should not
  use instances for synchronization, or unpredictable behavior may
  occur. For example, in a future release, synchronization may fail.
@@ -59,9 +59,9 @@ DocsCollector.collect('java.time.LocalDateTime', [
 				[/* text */ 't', `, '-999999999-01-01T00:00:00'.
  This is the local date-time of midnight at the start of the minimum date.
  This combines `],
-				[/* external link */ 'a', `LocalDate.html#MIN`, `LocalDate.MIN`],
+				[/* reference */ 'r', `.LocalDate#MIN`],
 				[/* text */ 't', ` and `],
-				[/* external link */ 'a', `LocalTime.html#MIN`, `LocalTime.MIN`],
+				[/* reference */ 'r', `.LocalTime#MIN`],
 				[/* text */ 't', `.
  This could be used by an application as a "far past" date-time.`]
 			],
@@ -73,9 +73,9 @@ DocsCollector.collect('java.time.LocalDateTime', [
 				[/* text */ 't', `, '+999999999-12-31T23:59:59.999999999'.
  This is the local date-time just before midnight at the end of the maximum date.
  This combines `],
-				[/* external link */ 'a', `LocalDate.html#MAX`, `LocalDate.MAX`],
+				[/* reference */ 'r', `.LocalDate#MAX`],
 				[/* text */ 't', ` and `],
-				[/* external link */ 'a', `LocalTime.html#MAX`, `LocalTime.MAX`],
+				[/* reference */ 'r', `.LocalTime#MAX`],
 				[/* text */ 't', `.
  This could be used by an application as a "far future" date-time.`]
 			],
@@ -101,7 +101,7 @@ DocsCollector.collect('java.time.LocalDateTime', [
 					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
 					[/* text */ 't', ` then the query is implemented here.
  The `],
-					[/* reference */ 'r', `supported fields`],
+					[/* reference */ 'r', `#isSupported(java.time.temporal.TemporalField)`, `supported fields`],
 					[/* text */ 't', ` will return valid
  values based on this date-time, except `],
 					[/* inline code block */ 'i', `NANO_OF_DAY`],
@@ -255,7 +255,7 @@ DocsCollector.collect('java.time.LocalDateTime', [
  then the comparison will be entirely based on the date-time.
  If some dates being compared are in different chronologies, then the
  chronology is also considered, see `],
-					[/* external link */ 'a', `chrono/ChronoLocalDateTime.html#compareTo(java.time.chrono.ChronoLocalDateTime)`, `ChronoLocalDateTime.compareTo(java.time.chrono.ChronoLocalDateTime<?>)`],
+					[/* reference */ 'r', `.ChronoLocalDateTime#compareTo(java.time.chrono.ChronoLocalDateTime)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -286,7 +286,7 @@ DocsCollector.collect('java.time.LocalDateTime', [
 					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
 					[/* text */ 't', ` then the query is implemented here.
  The `],
-					[/* reference */ 'r', `supported fields`],
+					[/* reference */ 'r', `#isSupported(java.time.temporal.TemporalField)`, `supported fields`],
 					[/* text */ 't', ` will return valid
  values based on this date-time.
  All other `],
@@ -722,7 +722,7 @@ DocsCollector.collect('java.time.LocalDateTime', [
 					[/* text */ 't', `
  The result of this method is obtained by invoking the
  `],
-					[/* external link */ 'a', `temporal/TemporalQuery.html#queryFrom(java.time.temporal.TemporalAccessor)`, `TemporalQuery.queryFrom(TemporalAccessor)`],
+					[/* reference */ 'r', `.TemporalQuery#queryFrom(java.time.temporal.TemporalAccessor)`],
 					[/* text */ 't', ` method on the
  specified query passing `],
 					[/* inline code block */ 'i', `this`],
@@ -762,7 +762,7 @@ DocsCollector.collect('java.time.LocalDateTime', [
 					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
 					[/* text */ 't', ` then the query is implemented here.
  The `],
-					[/* reference */ 'r', `supported fields`],
+					[/* reference */ 'r', `#isSupported(java.time.temporal.TemporalField)`, `supported fields`],
 					[/* text */ 't', ` will return
  appropriate range instances.
  All other `],
@@ -811,12 +811,12 @@ DocsCollector.collect('java.time.LocalDateTime', [
 					[/* text */ 't', `
  This checks if this date-time can be queried for the specified field.
  If false, then calling the `],
-					[/* reference */ 'r', `range`],
+					[/* reference */ 'r', `#range(java.time.temporal.TemporalField)`, `range`],
 					[/* text */ 't', `,
  `],
-					[/* reference */ 'r', `get`],
+					[/* reference */ 'r', `#get(java.time.temporal.TemporalField)`, `get`],
 					[/* text */ 't', ` and `],
-					[/* reference */ 'r', `with(TemporalField, long)`],
+					[/* reference */ 'r', `#with(java.time.temporal.TemporalField,long)`, `with(TemporalField, long)`],
 					[/* text */ 't', `
  methods will throw an exception.
  `]
@@ -953,10 +953,10 @@ DocsCollector.collect('java.time.LocalDateTime', [
 					[/* text */ 't', `
  This checks if the specified unit can be added to, or subtracted from, this date-time.
  If false, then calling the `],
-					[/* reference */ 'r', `plus(long, TemporalUnit)`],
+					[/* reference */ 'r', `#plus(long,java.time.temporal.TemporalUnit)`, `plus(long, TemporalUnit)`],
 					[/* text */ 't', ` and
  `],
-					[/* reference */ 'r', `minus`],
+					[/* reference */ 'r', `#minus(long,java.time.temporal.TemporalUnit)`, `minus`],
 					[/* text */ 't', ` methods will throw an exception.
  `]
 				]],
@@ -1057,7 +1057,7 @@ DocsCollector.collect('java.time.LocalDateTime', [
 					[/* text */ 't', `
  The string must represent a valid date-time and is parsed using
  `],
-					[/* external link */ 'a', `format/DateTimeFormatter.html#ISO_LOCAL_DATE_TIME`, `DateTimeFormatter.ISO_LOCAL_DATE_TIME`],
+					[/* reference */ 'r', `.DateTimeFormatter#ISO_LOCAL_DATE_TIME`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -1121,10 +1121,10 @@ DocsCollector.collect('java.time.LocalDateTime', [
  This method only considers the position of the two date-times on the local time-line.
  It does not take into account the chronology, or calendar system.
  This is different from the comparison in `],
-					[/* reference */ 'r', `compareTo(ChronoLocalDateTime)`],
+					[/* reference */ 'r', `#compareTo(java.time.chrono.ChronoLocalDateTime)`, `compareTo(ChronoLocalDateTime)`],
 					[/* text */ 't', `,
  but is the same approach as `],
-					[/* external link */ 'a', `chrono/ChronoLocalDateTime.html#timeLineOrder()`, `ChronoLocalDateTime.timeLineOrder()`],
+					[/* reference */ 'r', `.ChronoLocalDateTime#timeLineOrder()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -1178,7 +1178,7 @@ DocsCollector.collect('java.time.LocalDateTime', [
 					[/* reference */ 'r', `enum class in java.time.Month`],
 					[/* text */ 't', `
  is used by calling `],
-					[/* reference */ 'r', `getMonth()`],
+					[/* reference */ 'r', `#getMonth()`, `getMonth()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -1286,7 +1286,7 @@ DocsCollector.collect('java.time.LocalDateTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This allows the `],
-					[/* external link */ 'a', `temporal/ChronoField.html#INSTANT_SECONDS`, `epoch-second`],
+					[/* reference */ 'r', `.ChronoField#INSTANT_SECONDS`],
 					[/* text */ 't', ` field
  to be converted to a local date-time. This is primarily intended for
  low-level conversions rather than general application usage.`]
@@ -1320,7 +1320,7 @@ DocsCollector.collect('java.time.LocalDateTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This will query the `],
-					[/* external link */ 'a', `Clock.html#systemDefaultZone()`, `system clock`],
+					[/* reference */ 'r', `.Clock#systemDefaultZone()`],
 					[/* text */ 't', ` in the default
  time-zone to obtain the current date-time.
  `]
@@ -1365,7 +1365,7 @@ DocsCollector.collect('java.time.LocalDateTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This will query the `],
-					[/* external link */ 'a', `Clock.html#system(java.time.ZoneId)`, `system clock`],
+					[/* reference */ 'r', `.Clock#system(java.time.ZoneId)`],
 					[/* text */ 't', ` to obtain the current date-time.
  Specifying the time-zone avoids dependence on the default time-zone.
  `]
@@ -1395,13 +1395,13 @@ DocsCollector.collect('java.time.LocalDateTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The adjustment is equivalent to using `],
-					[/* external link */ 'a', `temporal/Temporal.html#with(java.time.temporal.TemporalField,long)`, `Temporal.with(TemporalField, long)`],
+					[/* reference */ 'r', `.Temporal#with(java.time.temporal.TemporalField,long)`],
 					[/* text */ 't', `
  twice, passing `],
-					[/* external link */ 'a', `temporal/ChronoField.html#EPOCH_DAY`, `ChronoField.EPOCH_DAY`],
+					[/* reference */ 'r', `.ChronoField#EPOCH_DAY`],
 					[/* text */ 't', ` and
  `],
-					[/* external link */ 'a', `temporal/ChronoField.html#NANO_OF_DAY`, `ChronoField.NANO_OF_DAY`],
+					[/* reference */ 'r', `.ChronoField#NANO_OF_DAY`],
 					[/* text */ 't', ` as the fields.
  `]
 				]],
@@ -1409,7 +1409,7 @@ DocsCollector.collect('java.time.LocalDateTime', [
 					[/* text */ 't', `
  In most cases, it is clearer to reverse the calling pattern by using
  `],
-					[/* external link */ 'a', `temporal/Temporal.html#with(java.time.temporal.TemporalAdjuster)`, `Temporal.with(TemporalAdjuster)`],
+					[/* reference */ 'r', `.Temporal#with(java.time.temporal.TemporalAdjuster)`],
 					[/* text */ 't', `:
  `]
 				]],
@@ -1465,13 +1465,13 @@ DocsCollector.collect('java.time.LocalDateTime', [
 					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
 					[/* text */ 't', ` then the adjustment is implemented here.
  The `],
-					[/* reference */ 'r', `supported fields`],
+					[/* reference */ 'r', `#isSupported(java.time.temporal.TemporalField)`, `supported fields`],
 					[/* text */ 't', ` will behave as per
  the matching method on `],
-					[/* external link */ 'a', `LocalDate.html#with(java.time.temporal.TemporalField,long)`, `LocalDate`],
+					[/* reference */ 'r', `.LocalDate#with(java.time.temporal.TemporalField,long)`],
 					[/* text */ 't', `
  or `],
-					[/* external link */ 'a', `LocalTime.html#with(java.time.temporal.TemporalField,long)`, `LocalTime`],
+					[/* reference */ 'r', `.LocalTime#with(java.time.temporal.TemporalField,long)`],
 					[/* text */ 't', `.
  All other `],
 					[/* inline code block */ 'i', `ChronoField`],
@@ -1589,7 +1589,7 @@ DocsCollector.collect('java.time.LocalDateTime', [
 					[/* text */ 't', `
  The result of this method is obtained by invoking the
  `],
-					[/* external link */ 'a', `temporal/TemporalAdjuster.html#adjustInto(java.time.temporal.Temporal)`, `TemporalAdjuster.adjustInto(Temporal)`],
+					[/* reference */ 'r', `.TemporalAdjuster#adjustInto(java.time.temporal.Temporal)`],
 					[/* text */ 't', ` method on the
  specified adjuster passing `],
 					[/* inline code block */ 'i', `this`],
@@ -1643,11 +1643,11 @@ DocsCollector.collect('java.time.LocalDateTime', [
 					[/* text */ 't', `
  The calculation is delegated to the amount object by calling
  `],
-					[/* external link */ 'a', `temporal/TemporalAmount.html#addTo(java.time.temporal.Temporal)`, `TemporalAmount.addTo(Temporal)`],
+					[/* reference */ 'r', `.TemporalAmount#addTo(java.time.temporal.Temporal)`],
 					[/* text */ 't', `. The amount implementation is free
  to implement the addition in any way it wishes, however it typically
  calls back to `],
-					[/* reference */ 'r', `plus(long, TemporalUnit)`],
+					[/* reference */ 'r', `#plus(long,java.time.temporal.TemporalUnit)`, `plus(long, TemporalUnit)`],
 					[/* text */ 't', `. Consult the documentation
  of the amount implementation to determine if it can be successfully added.
  `]
@@ -1693,13 +1693,13 @@ DocsCollector.collect('java.time.LocalDateTime', [
 					[/* reference */ 'r', `enum class in java.time.temporal.ChronoUnit`],
 					[/* text */ 't', ` then the addition is implemented here.
  Date units are added as per `],
-					[/* external link */ 'a', `LocalDate.html#plus(long,java.time.temporal.TemporalUnit)`, `LocalDate.plus(long, TemporalUnit)`],
+					[/* reference */ 'r', `.LocalDate#plus(long,java.time.temporal.TemporalUnit)`],
 					[/* text */ 't', `.
  Time units are added as per `],
-					[/* external link */ 'a', `LocalTime.html#plus(long,java.time.temporal.TemporalUnit)`, `LocalTime.plus(long, TemporalUnit)`],
+					[/* reference */ 'r', `.LocalTime#plus(long,java.time.temporal.TemporalUnit)`],
 					[/* text */ 't', ` with
  any overflow in days added equivalent to using `],
-					[/* reference */ 'r', `plusDays(long)`],
+					[/* reference */ 'r', `#plusDays(long)`, `plusDays(long)`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -1767,7 +1767,7 @@ DocsCollector.collect('java.time.LocalDateTime', [
  `],
 					[/* inline code block */ 'i', `LocalDateTime`],
 					[/* text */ 't', ` using `],
-					[/* reference */ 'r', `from(TemporalAccessor)`],
+					[/* reference */ 'r', `#from(java.time.temporal.TemporalAccessor)`, `from(TemporalAccessor)`],
 					[/* text */ 't', `.
  For example, the amount in days between two date-times can be calculated
  using `],
@@ -1786,7 +1786,7 @@ DocsCollector.collect('java.time.LocalDateTime', [
  There are two equivalent ways of using this method.
  The first is to invoke this method.
  The second is to use `],
-					[/* external link */ 'a', `temporal/TemporalUnit.html#between(java.time.temporal.Temporal,java.time.temporal.Temporal)`, `TemporalUnit.between(Temporal, Temporal)`],
+					[/* reference */ 'r', `.TemporalUnit#between(java.time.temporal.Temporal,java.time.temporal.Temporal)`],
 					[/* text */ 't', `:
  `]
 				]],
@@ -2035,7 +2035,7 @@ DocsCollector.collect('java.time.LocalDateTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This method is equivalent to `],
-					[/* reference */ 'r', `plus(long, TemporalUnit)`],
+					[/* reference */ 'r', `#plus(long,java.time.temporal.TemporalUnit)`, `plus(long, TemporalUnit)`],
 					[/* text */ 't', ` with the amount negated.
  See that method for a full description of how addition, and thus subtraction, works.
  `]
@@ -2091,11 +2091,11 @@ DocsCollector.collect('java.time.LocalDateTime', [
 					[/* text */ 't', `
  The calculation is delegated to the amount object by calling
  `],
-					[/* external link */ 'a', `temporal/TemporalAmount.html#subtractFrom(java.time.temporal.Temporal)`, `TemporalAmount.subtractFrom(Temporal)`],
+					[/* reference */ 'r', `.TemporalAmount#subtractFrom(java.time.temporal.Temporal)`],
 					[/* text */ 't', `. The amount implementation is free
  to implement the subtraction in any way it wishes, however it typically
  calls back to `],
-					[/* reference */ 'r', `minus(long, TemporalUnit)`],
+					[/* reference */ 'r', `#minus(long,java.time.temporal.TemporalUnit)`, `minus(long, TemporalUnit)`],
 					[/* text */ 't', `. Consult the documentation
  of the amount implementation to determine if it can be successfully subtracted.
  `]
@@ -2266,7 +2266,7 @@ DocsCollector.collect('java.time.LocalDateTime', [
  Truncation returns a copy of the original date-time with fields
  smaller than the specified unit set to zero.
  For example, truncating with the `],
-					[/* external link */ 'a', `temporal/ChronoUnit.html#MINUTES`, `minutes`],
+					[/* reference */ 'r', `.ChronoUnit#MINUTES`],
 					[/* text */ 't', ` unit
  will set the second-of-minute and nano-of-second field to zero.
  `]
@@ -2274,14 +2274,14 @@ DocsCollector.collect('java.time.LocalDateTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The unit must have a `],
-					[/* external link */ 'a', `temporal/TemporalUnit.html#getDuration()`, `duration`],
+					[/* reference */ 'r', `.TemporalUnit#getDuration()`],
 					[/* text */ 't', `
  that divides into the length of a standard day without remainder.
  This includes all supplied time units on `],
 					[/* reference */ 'r', `enum class in java.time.temporal.ChronoUnit`],
 					[/* text */ 't', ` and
  `],
-					[/* external link */ 'a', `temporal/ChronoUnit.html#DAYS`, `DAYS`],
+					[/* reference */ 'r', `.ChronoUnit#DAYS`],
 					[/* text */ 't', `. Other units throw an exception.
  `]
 				]],
@@ -2325,7 +2325,7 @@ DocsCollector.collect('java.time.LocalDateTime', [
 					[/* inline code block */ 'i', `int`],
 					[/* text */ 't', ` value then the enum
  provides the `],
-					[/* external link */ 'a', `DayOfWeek.html#getValue()`, `int value`],
+					[/* reference */ 'r', `.DayOfWeek#getValue()`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -2598,10 +2598,10 @@ DocsCollector.collect('java.time.LocalDateTime', [
  This method only considers the position of the two date-times on the local time-line.
  It does not take into account the chronology, or calendar system.
  This is different from the comparison in `],
-					[/* reference */ 'r', `compareTo(ChronoLocalDateTime)`],
+					[/* reference */ 'r', `#compareTo(java.time.chrono.ChronoLocalDateTime)`, `compareTo(ChronoLocalDateTime)`],
 					[/* text */ 't', `,
  but is the same approach as `],
-					[/* external link */ 'a', `chrono/ChronoLocalDateTime.html#timeLineOrder()`, `ChronoLocalDateTime.timeLineOrder()`],
+					[/* reference */ 'r', `.ChronoLocalDateTime#timeLineOrder()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -2635,10 +2635,10 @@ DocsCollector.collect('java.time.LocalDateTime', [
  This method only considers the position of the two date-times on the local time-line.
  It does not take into account the chronology, or calendar system.
  This is different from the comparison in `],
-					[/* reference */ 'r', `compareTo(ChronoLocalDateTime)`],
+					[/* reference */ 'r', `#compareTo(java.time.chrono.ChronoLocalDateTime)`, `compareTo(ChronoLocalDateTime)`],
 					[/* text */ 't', `,
  but is the same approach as `],
-					[/* external link */ 'a', `chrono/ChronoLocalDateTime.html#timeLineOrder()`, `ChronoLocalDateTime.timeLineOrder()`],
+					[/* reference */ 'r', `.ChronoLocalDateTime#timeLineOrder()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -2670,7 +2670,7 @@ DocsCollector.collect('java.time.LocalDateTime', [
 					[/* inline code block */ 'i', `int`],
 					[/* text */ 't', ` value then the enum
  provides the `],
-					[/* external link */ 'a', `Month.html#getValue()`, `int value`],
+					[/* reference */ 'r', `.Month#getValue()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -2760,11 +2760,11 @@ DocsCollector.collect('java.time.LocalDateTime', [
 					[/* text */ 't', `
  To obtain the later offset during an overlap, call
  `],
-					[/* external link */ 'a', `ZonedDateTime.html#withLaterOffsetAtOverlap()`, `ZonedDateTime.withLaterOffsetAtOverlap()`],
+					[/* reference */ 'r', `.ZonedDateTime#withLaterOffsetAtOverlap()`],
 					[/* text */ 't', ` on the result of this method.
  To throw an exception when there is a gap or overlap, use
  `],
-					[/* external link */ 'a', `ZonedDateTime.html#ofStrict(java.time.LocalDateTime,java.time.ZoneOffset,java.time.ZoneId)`, `ZonedDateTime.ofStrict(LocalDateTime, ZoneOffset, ZoneId)`],
+					[/* reference */ 'r', `.ZonedDateTime#ofStrict(java.time.LocalDateTime,java.time.ZoneOffset,java.time.ZoneId)`],
 					[/* text */ 't', `.`]
 				]]
 			],

@@ -33,7 +33,7 @@ DocsCollector.collect('java.time.ZoneId', [
 		[/* reference */ 'r', `java.time.ZoneOffset`],
 		[/* text */ 't', `.
  Calling `],
-		[/* reference */ 'r', `normalized()`],
+		[/* reference */ 'r', `#normalized()`, `normalized()`],
 		[/* text */ 't', ` on any `],
 		[/* inline code block */ 'i', `ZoneId`],
 		[/* text */ 't', ` will ensure that a
@@ -168,11 +168,11 @@ DocsCollector.collect('java.time.ZoneId', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  This is a `],
-			[/* external link */ 'a', `../../../java.base/java/lang/doc-files/ValueBased.html`, `value-based`],
+			[/* text */ 't', `value-based`],
 			[/* text */ 't', `
  class; programmers should treat instances that are
  `],
-			[/* reference */ 'r', `equal`],
+			[/* reference */ 'r', `#equals(java.lang.Object)`, `equal`],
 			[/* text */ 't', ` as interchangeable and should not
  use instances for synchronization, or unpredictable behavior may
  occur. For example, in a future release, synchronization may fail.
@@ -193,7 +193,7 @@ DocsCollector.collect('java.time.ZoneId', [
 					[/* text */ 't', `.
  This map allows the IDs to continue to be used via the
  `],
-					[/* reference */ 'r', `of(String, Map)`],
+					[/* reference */ 'r', `#of(java.lang.String,java.util.Map)`, `of(String, Map)`],
 					[/* text */ 't', ` factory method.
  `]
 				]],
@@ -360,7 +360,7 @@ DocsCollector.collect('java.time.ZoneId', [
   `],
 						[/* inline code block */ 'i', `ZoneOffset`],
 						[/* text */ 't', ` using `],
-						[/* external link */ 'a', `ZoneOffset.html#of(java.lang.String)`, `ZoneOffset.of(String)`],
+						[/* reference */ 'r', `.ZoneOffset#of(java.lang.String)`],
 						[/* text */ 't', `.
  `]
 					]],
@@ -378,13 +378,13 @@ DocsCollector.collect('java.time.ZoneId', [
   then the ID is a prefixed offset-based ID. The ID is split in two, with
   a two or three letter prefix and a suffix starting with the sign.
   The suffix is parsed as a `],
-						[/* external link */ 'a', `ZoneOffset.html#of(java.lang.String)`, `ZoneOffset`],
+						[/* reference */ 'r', `.ZoneOffset#of(java.lang.String)`],
 						[/* text */ 't', `.
   The result will be a `],
 						[/* inline code block */ 'i', `ZoneId`],
 						[/* text */ 't', ` with the specified UTC/GMT/UT prefix
   and the normalized offset ID as per `],
-						[/* external link */ 'a', `ZoneOffset.html#getId()`, `ZoneOffset.getId()`],
+						[/* reference */ 'r', `.ZoneOffset#getId()`],
 						[/* text */ 't', `.
   The rules of the returned `],
 						[/* inline code block */ 'i', `ZoneId`],
@@ -464,7 +464,7 @@ DocsCollector.collect('java.time.ZoneId', [
 					[/* text */ 't', `
  The conversion will try to obtain the zone in a way that favours region-based
  zones over offset-based zones using `],
-					[/* external link */ 'a', `temporal/TemporalQueries.html#zone()`, `TemporalQueries.zone()`],
+					[/* reference */ 'r', `.TemporalQueries#zone()`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -501,7 +501,7 @@ DocsCollector.collect('java.time.ZoneId', [
 					[/* text */ 't', `
  This ID uniquely defines this object.
  The format of an offset based ID is defined by `],
-					[/* external link */ 'a', `ZoneOffset.html#getId()`, `ZoneOffset.getId()`],
+					[/* reference */ 'r', `.ZoneOffset#getId()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -556,7 +556,7 @@ DocsCollector.collect('java.time.ZoneId', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This queries `],
-					[/* external link */ 'a', `../util/TimeZone.html#getDefault()`, `TimeZone.getDefault()`],
+					[/* reference */ 'r', `java.TimeZone#getDefault()`],
 					[/* text */ 't', ` to find the default time-zone
  and converts it to a `],
 					[/* inline code block */ 'i', `ZoneId`],
@@ -632,7 +632,7 @@ DocsCollector.collect('java.time.ZoneId', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If no textual mapping is found then the `],
-					[/* reference */ 'r', `full ID`],
+					[/* reference */ 'r', `#getId()`, `full ID`],
 					[/* text */ 't', ` is returned.`]
 				]]
 			],
@@ -658,7 +658,7 @@ DocsCollector.collect('java.time.ZoneId', [
  This set includes the string form of all available region-based IDs.
  Offset-based zone IDs are not included in the returned set.
  The ID can be passed to `],
-					[/* reference */ 'r', `of(String)`],
+					[/* reference */ 'r', `#of(java.lang.String)`, `of(String)`],
 					[/* text */ 't', ` to create a `],
 					[/* inline code block */ 'i', `ZoneId`],
 					[/* text */ 't', `.

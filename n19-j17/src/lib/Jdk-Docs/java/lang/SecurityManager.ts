@@ -88,7 +88,7 @@ DocsCollector.collect('java.lang.SecurityManager', [
  An implementation may also check the package against an additional
  list of restricted packages as noted below. If the package is restricted,
  `],
-					[/* reference */ 'r', `checkPermission(Permission)`],
+					[/* reference */ 'r', `#checkPermission(java.security.Permission)`, `checkPermission(Permission)`],
 					[/* text */ 't', ` is called with a
  `],
 					[/* inline code block */ 'i', `RuntimePermission("accessClassInPackage."+pkg)`],
@@ -1556,7 +1556,7 @@ DocsCollector.collect('java.lang.SecurityManager', [
  Property. An implementation may also check the package against an
  additional list of restricted packages as noted below. If the package
  is restricted, `],
-					[/* reference */ 'r', `checkPermission(Permission)`],
+					[/* reference */ 'r', `#checkPermission(java.security.Permission)`, `checkPermission(Permission)`],
 					[/* text */ 't', ` is called with a
  `],
 					[/* inline code block */ 'i', `RuntimePermission("defineClassInPackage."+pkg)`],

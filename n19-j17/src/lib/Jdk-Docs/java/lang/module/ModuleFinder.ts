@@ -7,10 +7,10 @@ DocsCollector.collect('java.lang.module.ModuleFinder', [
 		[/* inline code block */ 'i', `ModuleFinder`],
 		[/* text */ 't', ` is used to find modules during
  `],
-		[/* external link */ 'a', `package-summary.html#resolution`, `resolution`],
+		[/* reference */ 'r', `.package-summary#resolution`],
 		[/* text */ 't', ` or
  `],
-		[/* external link */ 'a', `Configuration.html#service-binding`, `service binding`],
+		[/* reference */ 'r', `.Configuration#service-binding`],
 		[/* text */ 't', `.
 
  `],
@@ -36,9 +36,9 @@ DocsCollector.collect('java.lang.module.ModuleFinder', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The `],
-			[/* reference */ 'r', `find`],
+			[/* reference */ 'r', `#find(java.lang.String)`, `find`],
 			[/* text */ 't', ` and `],
-			[/* reference */ 'r', `findAll`],
+			[/* reference */ 'r', `#findAll()`, `findAll`],
 			[/* text */ 't', ` methods
  defined here can fail for several reasons. These include I/O errors, errors
  detected parsing a module descriptor (`],
@@ -47,13 +47,13 @@ DocsCollector.collect('java.lang.module.ModuleFinder', [
  case of `],
 			[/* inline code block */ 'i', `ModuleFinder`],
 			[/* text */ 't', ` returned by `],
-			[/* reference */ 'r', `ModuleFinder.of`],
+			[/* reference */ 'r', `#of(java.nio.file.Path...)`, `ModuleFinder.of`],
 			[/* text */ 't', `, that
  two or more modules with the same name are found in a directory.
  When an error is detected then these methods throw `],
 			[/* reference */ 'r', `java.lang.module.FindException`],
 			[/* text */ 't', ` with an appropriate `],
-			[/* external link */ 'a', `../Throwable.html#getCause()`, `cause`],
+			[/* reference */ 'r', `java.Throwable#getCause()`],
 			[/* text */ 't', `.
  The behavior of a `],
 			[/* inline code block */ 'i', `ModuleFinder`],
@@ -98,11 +98,7 @@ DocsCollector.collect('java.lang.module.ModuleFinder', [
 						]]
 					]],
 					[/* block */ 'b', [
-						[/* block */ 'b', [
-							[/* text */ 't', ` A path to a `],
-							[/* text */ 't', `packaged module`],
-							[/* text */ 't', `. `]
-						]]
+						[/* block */ 'b', `packaged module`]
 					]]
 				]],
 				[/* text */ 't', `
@@ -130,7 +126,7 @@ DocsCollector.collect('java.lang.module.ModuleFinder', [
 					[/* inline code block */ 'i', `module-info.class`],
 					[/* text */ 't', ` in its top-level directory, or in a versioned entry
  in a `],
-					[/* external link */ 'a', `../../util/jar/JarFile.html#isMultiRelease()`, `multi-release`],
+					[/* reference */ 'r', `java.lang.JarFile#isMultiRelease()`],
 					[/* text */ 't', `
  JAR file, is a modular JAR file and thus defines an `],
 					[/* text */ 't', `explicit`],
@@ -150,7 +146,7 @@ DocsCollector.collect('java.lang.module.ModuleFinder', [
 							[/* inline code block */ 'i', `Automatic-Module-Name`],
 							[/* text */ 't', `"
      in its main manifest then its value is the `],
-							[/* external link */ 'a', `ModuleDescriptor.html#name()`, `module name`],
+							[/* reference */ 'r', `.ModuleDescriptor#name()`],
 							[/* text */ 't', `. The module name is otherwise
      derived from the name of the JAR file. `]
 						]]
@@ -158,7 +154,7 @@ DocsCollector.collect('java.lang.module.ModuleFinder', [
 					[/* block */ 'b', [
 						[/* block */ 'b', [
 							[/* text */ 't', ` The `],
-							[/* external link */ 'a', `ModuleDescriptor.html#version()`, `version`],
+							[/* reference */ 'r', `.ModuleDescriptor#version()`],
 							[/* text */ 't', `, and the
      module name when the attribute "`],
 							[/* inline code block */ 'i', `Automatic-Module-Name`],
@@ -265,7 +261,7 @@ DocsCollector.collect('java.lang.module.ModuleFinder', [
      main manifest, its value is a legal class name, and its package is
      in the set of packages derived for the module, then the value is the
      module `],
-							[/* external link */ 'a', `ModuleDescriptor.html#mainClass()`, `main class`],
+							[/* reference */ 'r', `.ModuleDescriptor#mainClass()`],
 							[/* text */ 't', `. `]
 						]]
 					]]
@@ -309,7 +305,7 @@ DocsCollector.collect('java.lang.module.ModuleFinder', [
 					[/* text */ 't', `scanned`],
 					[/* text */ 't', ` in order to determine the packages
  in the module. Whether `],
-					[/* external link */ 'a', `../../nio/file/Files.html#isHidden(java.nio.file.Path)`, `hidden files`],
+					[/* reference */ 'r', `java.lang.Files#isHidden(java.nio.file.Path)`],
 					[/* text */ 't', ` are ignored or not is implementation specific and therefore
  not specified. If a `],
 					[/* inline code block */ 'i', `.class`],
@@ -361,7 +357,7 @@ DocsCollector.collect('java.lang.module.ModuleFinder', [
  locate the same module (by name) then it will return the same result
  each time. If a module is located then it is guaranteed to be a member
  of the set of modules returned by the `],
-					[/* reference */ 'r', `findAll`],
+					[/* reference */ 'r', `#findAll()`, `findAll`],
 					[/* text */ 't', `
  method. `]
 				]]
@@ -399,7 +395,7 @@ DocsCollector.collect('java.lang.module.ModuleFinder', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` If there is a security manager set then its `],
-					[/* external link */ 'a', `../SecurityManager.html#checkPermission(java.security.Permission)`, `checkPermission`],
+					[/* reference */ 'r', `java.SecurityManager#checkPermission(java.security.Permission)`],
 					[/* text */ 't', ` method is
  invoked to check that the caller has been granted
  `],
@@ -424,14 +420,14 @@ DocsCollector.collect('java.lang.module.ModuleFinder', [
 			[/* method description */
 				[/* text */ 't', `Returns a module finder that is composed from a sequence of zero or more
  module finders. The `],
-				[/* reference */ 'r', `find`],
+				[/* reference */ 'r', `#find(java.lang.String)`, `find`],
 				[/* text */ 't', ` method of the resulting
  module finder will locate a module by invoking the `],
 				[/* inline code block */ 'i', `find`],
 				[/* text */ 't', ` method
  of each module finder, in array index order, until either the module is
  found or all module finders have been searched. The `],
-				[/* reference */ 'r', `findAll`],
+				[/* reference */ 'r', `#findAll()`, `findAll`],
 				[/* text */ 't', ` method of the resulting module finder will return a set of
  modules that includes all modules located by the first module finder.
  The set of modules will include all modules located by the second or
@@ -476,13 +472,13 @@ DocsCollector.collect('java.lang.module.ModuleFinder', [
 					[/* inline code block */ 'i', `ModuleFinder`],
 					[/* text */ 't', ` provides a consistent view of the modules
  that it locates. If `],
-					[/* reference */ 'r', `findAll`],
+					[/* reference */ 'r', `#findAll()`, `findAll`],
 					[/* text */ 't', ` is invoked several times
  then it will return the same (equals) result each time. For each `],
 					[/* inline code block */ 'i', `ModuleReference`],
 					[/* text */ 't', ` element in the returned set then it is guaranteed that
  `],
-					[/* reference */ 'r', `find`],
+					[/* reference */ 'r', `#find(java.lang.String)`, `find`],
 					[/* text */ 't', ` will locate the `],
 					[/* inline code block */ 'i', `ModuleReference`],
 					[/* text */ 't', ` if invoked

@@ -8,7 +8,7 @@ DocsCollector.collect('java.util.zip.Inflater', [
  initially developed as part of the PNG graphics standard and is not
  protected by patents. It is fully described in the specifications at
  the `],
-		[/* external link */ 'a', `package-summary.html#package-description`, `java.util.zip package description`],
+		[/* reference */ 'r', `.package-summary#package-description`],
 		[/* text */ 't', `.
  `],
 		[/* block */ 'b', [
@@ -122,10 +122,10 @@ DocsCollector.collect('java.util.zip.Inflater', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The `],
-					[/* reference */ 'r', `remaining byte count`],
+					[/* reference */ 'r', `#getRemaining()`, `remaining byte count`],
 					[/* text */ 't', ` will be reduced by
  the number of consumed input bytes.  If the `],
-					[/* reference */ 'r', `setInput(ByteBuffer)`],
+					[/* reference */ 'r', `#setInput(java.nio.ByteBuffer)`, `setInput(ByteBuffer)`],
 					[/* text */ 't', `
  method was called to provide a buffer for input, the input buffer's position
  will be advanced the number of consumed bytes.
@@ -135,10 +135,10 @@ DocsCollector.collect('java.util.zip.Inflater', [
 					[/* text */ 't', `
  These byte totals, as well as
  the `],
-					[/* reference */ 'r', `total bytes read`],
+					[/* reference */ 'r', `#getBytesRead()`, `total bytes read`],
 					[/* text */ 't', `
  and the `],
-					[/* reference */ 'r', `total bytes written`],
+					[/* reference */ 'r', `#getBytesWritten()`, `total bytes written`],
 					[/* text */ 't', `
  values, will be updated even in the event that a `],
 					[/* reference */ 'r', `java.util.zip.DataFormatException`],
@@ -176,10 +176,10 @@ DocsCollector.collect('java.util.zip.Inflater', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The `],
-					[/* reference */ 'r', `remaining byte count`],
+					[/* reference */ 'r', `#getRemaining()`, `remaining byte count`],
 					[/* text */ 't', ` will be reduced by
  the number of consumed input bytes.  If the `],
-					[/* reference */ 'r', `setInput(ByteBuffer)`],
+					[/* reference */ 'r', `#setInput(java.nio.ByteBuffer)`, `setInput(ByteBuffer)`],
 					[/* text */ 't', `
  method was called to provide a buffer for input, the input buffer's position
  will be advanced the number of consumed bytes.
@@ -189,10 +189,10 @@ DocsCollector.collect('java.util.zip.Inflater', [
 					[/* text */ 't', `
  These byte totals, as well as
  the `],
-					[/* reference */ 'r', `total bytes read`],
+					[/* reference */ 'r', `#getBytesRead()`, `total bytes read`],
 					[/* text */ 't', `
  and the `],
-					[/* reference */ 'r', `total bytes written`],
+					[/* reference */ 'r', `#getBytesWritten()`, `total bytes written`],
 					[/* text */ 't', `
  values, will be updated even in the event that a `],
 					[/* reference */ 'r', `java.util.zip.DataFormatException`],
@@ -227,7 +227,7 @@ DocsCollector.collect('java.util.zip.Inflater', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the `],
-					[/* reference */ 'r', `setInput(ByteBuffer)`],
+					[/* reference */ 'r', `#setInput(java.nio.ByteBuffer)`, `setInput(ByteBuffer)`],
 					[/* text */ 't', ` method was called to provide a buffer
  for input, the input buffer's position will be advanced by the number of bytes
  consumed by this operation, even in the event that a `],
@@ -239,10 +239,10 @@ DocsCollector.collect('java.util.zip.Inflater', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The `],
-					[/* reference */ 'r', `remaining byte count`],
+					[/* reference */ 'r', `#getRemaining()`, `remaining byte count`],
 					[/* text */ 't', ` will be reduced by
  the number of consumed input bytes.  If the `],
-					[/* reference */ 'r', `setInput(ByteBuffer)`],
+					[/* reference */ 'r', `#setInput(java.nio.ByteBuffer)`, `setInput(ByteBuffer)`],
 					[/* text */ 't', `
  method was called to provide a buffer for input, the input buffer's position
  will be advanced the number of consumed bytes.
@@ -252,10 +252,10 @@ DocsCollector.collect('java.util.zip.Inflater', [
 					[/* text */ 't', `
  These byte totals, as well as
  the `],
-					[/* reference */ 'r', `total bytes read`],
+					[/* reference */ 'r', `#getBytesRead()`, `total bytes read`],
 					[/* text */ 't', `
  and the `],
-					[/* reference */ 'r', `total bytes written`],
+					[/* reference */ 'r', `#getBytesWritten()`, `total bytes written`],
 					[/* text */ 't', `
  values, will be updated even in the event that a `],
 					[/* reference */ 'r', `java.util.zip.DataFormatException`],
@@ -533,7 +533,7 @@ DocsCollector.collect('java.util.zip.Inflater', [
 				[/* block */ 'b', [
 					[/* text */ 't', `Since the number of bytes may be greater than
  Integer.MAX_VALUE, the `],
-					[/* reference */ 'r', `getBytesRead()`],
+					[/* reference */ 'r', `#getBytesRead()`, `getBytesRead()`],
 					[/* text */ 't', ` method is now
  the preferred means of obtaining this information.`]
 				]]
@@ -552,7 +552,7 @@ DocsCollector.collect('java.util.zip.Inflater', [
 				[/* block */ 'b', [
 					[/* text */ 't', `Since the number of bytes may be greater than
  Integer.MAX_VALUE, the `],
-					[/* reference */ 'r', `getBytesWritten()`],
+					[/* reference */ 'r', `#getBytesWritten()`, `getBytesWritten()`],
 					[/* text */ 't', ` method is now
  the preferred means of obtaining this information.`]
 				]]

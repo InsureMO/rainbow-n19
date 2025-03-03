@@ -42,7 +42,7 @@ DocsCollector.collect('java.time.temporal.TemporalAccessor', [
 			[/* reference */ 'r', `java.time.ZoneId`],
 			[/* text */ 't', `.
  These can be accessed via `],
-			[/* reference */ 'r', `queries`],
+			[/* reference */ 'r', `#query(java.time.temporal.TemporalQuery)`, `queries`],
 			[/* text */ 't', ` using
  the static methods defined on `],
 			[/* reference */ 'r', `java.time.temporal.TemporalQuery`],
@@ -230,9 +230,9 @@ DocsCollector.collect('java.time.temporal.TemporalAccessor', [
 					[/* text */ 't', `
  This checks if the date-time can be queried for the specified field.
  If false, then calling the `],
-					[/* reference */ 'r', `range`],
+					[/* reference */ 'r', `#range(java.time.temporal.TemporalField)`, `range`],
 					[/* text */ 't', ` and `],
-					[/* reference */ 'r', `get`],
+					[/* reference */ 'r', `#get(java.time.temporal.TemporalField)`, `get`],
 					[/* text */ 't', `
  methods will throw an exception.`]
 				]]

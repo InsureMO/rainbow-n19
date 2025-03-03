@@ -154,7 +154,7 @@ DocsCollector.collect('java.util.Currency', [
 					[/* inline code block */ 'i', `locale`],
 					[/* text */ 't', ` contains "cu" and/or "rg"
  `],
-					[/* external link */ 'a', `./Locale.html#def_locale_extension`, `Unicode extensions`],
+					[/* reference */ 'r', `.Locale#def_locale_extension`],
 					[/* text */ 't', `,
  the instance returned from this method reflects
  the values specified with those extensions. If both "cu" and "rg" are
@@ -228,7 +228,7 @@ DocsCollector.collect('java.util.Currency', [
 			[/* method description */
 				[/* text */ 't', `Gets the name that is suitable for displaying this currency for
  the default `],
-				[/* external link */ 'a', `Locale.Category.html#DISPLAY`, `DISPLAY`],
+				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
 				[/* text */ 't', ` locale.
  If there is no suitable display name found
  for the default locale, the ISO 4217 currency code is returned.
@@ -237,7 +237,7 @@ DocsCollector.collect('java.util.Currency', [
 					[/* text */ 't', `
  This is equivalent to calling
  `],
-					[/* reference */ 'r', `getDisplayName(Locale.getDefault(Locale.Category.DISPLAY))`],
+					[/* reference */ 'r', `#getDisplayName(java.util.Locale)`, `getDisplayName(Locale.getDefault(Locale.Category.DISPLAY))`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -246,7 +246,7 @@ DocsCollector.collect('java.util.Currency', [
 			[/* return description */
 				[/* text */ 't', `the display name of this currency for the default
      `],
-				[/* external link */ 'a', `Locale.Category.html#DISPLAY`, `DISPLAY`],
+				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
 				[/* text */ 't', ` locale`]
 			]
 		]],
@@ -254,7 +254,7 @@ DocsCollector.collect('java.util.Currency', [
 			[/* method description */
 				[/* text */ 't', `Gets the symbol of this currency for the default
  `],
-				[/* external link */ 'a', `Locale.Category.html#DISPLAY`, `DISPLAY`],
+				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
 				[/* text */ 't', ` locale.
  For example, for the US Dollar, the symbol is "$" if the default
  locale is the US, while for other locales it may be "US$". If no
@@ -263,11 +263,11 @@ DocsCollector.collect('java.util.Currency', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the default `],
-					[/* external link */ 'a', `Locale.Category.html#DISPLAY`, `DISPLAY`],
+					[/* reference */ 'r', `.Locale.Category#DISPLAY`],
 					[/* text */ 't', ` locale
  contains "rg" (region override)
  `],
-					[/* external link */ 'a', `./Locale.html#def_locale_extension`, `Unicode extension`],
+					[/* reference */ 'r', `.Locale#def_locale_extension`],
 					[/* text */ 't', `,
  the symbol returned from this method reflects
  the value specified with that extension.
@@ -277,7 +277,7 @@ DocsCollector.collect('java.util.Currency', [
 					[/* text */ 't', `
  This is equivalent to calling
  `],
-					[/* reference */ 'r', `getSymbol(Locale.getDefault(Locale.Category.DISPLAY))`],
+					[/* reference */ 'r', `#getSymbol(java.util.Locale)`, `getSymbol(Locale.getDefault(Locale.Category.DISPLAY))`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -286,7 +286,7 @@ DocsCollector.collect('java.util.Currency', [
 			[/* return description */
 				[/* text */ 't', `the symbol of this currency for the default
      `],
-				[/* external link */ 'a', `Locale.Category.html#DISPLAY`, `DISPLAY`],
+				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
 				[/* text */ 't', ` locale`]
 			]
 		]],
@@ -303,7 +303,7 @@ DocsCollector.collect('java.util.Currency', [
 					[/* inline code block */ 'i', `locale`],
 					[/* text */ 't', ` contains "rg" (region override)
  `],
-					[/* external link */ 'a', `./Locale.html#def_locale_extension`, `Unicode extension`],
+					[/* reference */ 'r', `.Locale#def_locale_extension`],
 					[/* text */ 't', `,
  the symbol returned from this method reflects
  the value specified with that extension.`]
@@ -382,7 +382,7 @@ DocsCollector.collect('java.util.Currency', [
 				[/* inline code block */ 'i', `String`],
 				[/* text */ 't', `.
  Unlike `],
-				[/* reference */ 'r', `getNumericCode()`],
+				[/* reference */ 'r', `#getNumericCode()`, `getNumericCode()`],
 				[/* text */ 't', `, which returns the numeric code as `],
 				[/* inline code block */ 'i', `int`],
 				[/* text */ 't', `,

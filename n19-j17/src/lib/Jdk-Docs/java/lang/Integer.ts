@@ -36,11 +36,11 @@ DocsCollector.collect('java.lang.Integer', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
-			[/* external link */ 'a', `../../../java.base/java/lang/doc-files/ValueBased.html`, `value-based`],
+			[/* text */ 't', `value-based`],
 			[/* text */ 't', `
  class; programmers should treat instances that are
  `],
-			[/* reference */ 'r', `equal`],
+			[/* reference */ 'r', `#equals(java.lang.Object)`, `equal`],
 			[/* text */ 't', ` as interchangeable and should not
  use instances for synchronization, or unpredictable behavior may
  occur. For example, in a future release, synchronization may fail.
@@ -50,10 +50,10 @@ DocsCollector.collect('java.lang.Integer', [
 		[/* block */ 'b', [
 			[/* text */ 't', `Implementation note: The implementations of the "bit twiddling"
  methods (such as `],
-			[/* reference */ 'r', `highestOneBit`],
+			[/* reference */ 'r', `#highestOneBit(int)`, `highestOneBit`],
 			[/* text */ 't', ` and
  `],
-			[/* reference */ 'r', `numberOfTrailingZeros`],
+			[/* reference */ 'r', `#numberOfTrailingZeros(int)`, `numberOfTrailingZeros`],
 			[/* text */ 't', `) are
  based on material from Henry S. Warren, Jr.'s `],
 			[/* text */ 't', `Hacker's
@@ -301,7 +301,7 @@ DocsCollector.collect('java.lang.Integer', [
  specified integer. The argument is converted to signed decimal
  representation and returned as a string, exactly as if the
  argument and radix 10 were given as arguments to the `],
-				[/* reference */ 'r', `toString(int, int)`],
+				[/* reference */ 'r', `#toString(int,int)`, `toString(int, int)`],
 				[/* text */ 't', ` method.`]
 			],
 			[/* parameters */
@@ -311,7 +311,7 @@ DocsCollector.collect('java.lang.Integer', [
 			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a string representation of the argument in base&nbsp;10.`]
+				[/* text */ 't', `a string representation of the argument in base 10.`]
 			]
 		]],
 		[/* method */ 'toString()', [
@@ -324,14 +324,14 @@ DocsCollector.collect('java.lang.Integer', [
 				[/* text */ 't', `'s value. The value is converted to signed
  decimal representation and returned as a string, exactly as if
  the integer value were given as an argument to the `],
-				[/* reference */ 'r', `toString(int)`],
+				[/* reference */ 'r', `#toString(int)`, `toString(int)`],
 				[/* text */ 't', ` method.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `a string representation of the value of this object in
-          base&nbsp;10.`]
+          base 10.`]
 			]
 		]],
 		[/* method */ 'toString(int,int)', [
@@ -410,7 +410,7 @@ DocsCollector.collect('java.lang.Integer', [
 				[/* inline code block */ 'i', `0123456789abcdef`],
 				[/* text */ 't', `. If uppercase letters are
  desired, the `],
-				[/* external link */ 'a', `String.html#toUpperCase()`, `String.toUpperCase()`],
+				[/* reference */ 'r', `.String#toUpperCase()`],
 				[/* text */ 't', ` method may
  be called on the result:
 
@@ -478,7 +478,7 @@ DocsCollector.collect('java.lang.Integer', [
 				[/* inline code block */ 'i', `int`],
 				[/* text */ 't', ` values
  as if by calling `],
-				[/* external link */ 'a', `Math.html#min(double,double)`, `Math.min`],
+				[/* reference */ 'r', `.Math#min(double,double)`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -503,7 +503,7 @@ DocsCollector.collect('java.lang.Integer', [
 				[/* inline code block */ 'i', `int`],
 				[/* text */ 't', ` values
  as if by calling `],
-				[/* external link */ 'a', `Math.html#max(double,double)`, `Math.max`],
+				[/* reference */ 'r', `.Math#max(double,double)`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -764,7 +764,7 @@ DocsCollector.collect('java.lang.Integer', [
  is interpreted as representing a signed integer in the radix
  specified by the second argument, exactly as if the arguments
  were given to the `],
-				[/* reference */ 'r', `parseInt(java.lang.String, int)`],
+				[/* reference */ 'r', `#parseInt(java.lang.String,int)`, `parseInt(java.lang.String, int)`],
 				[/* text */ 't', `
  method. The result is an `],
 				[/* inline code block */ 'i', `Integer`],
@@ -822,7 +822,7 @@ DocsCollector.collect('java.lang.Integer', [
 				[/* text */ 't', `. The argument is
  interpreted as representing a signed decimal integer, exactly
  as if the argument were given to the `],
-				[/* reference */ 'r', `parseInt(java.lang.String)`],
+				[/* reference */ 'r', `#parseInt(java.lang.String)`, `parseInt(java.lang.String)`],
 				[/* text */ 't', ` method. The result is an
  `],
 				[/* inline code block */ 'i', `Integer`],
@@ -873,7 +873,7 @@ DocsCollector.collect('java.lang.Integer', [
 				[/* text */ 't', ` instance is not
  required, this method should generally be used in preference to
  the constructor `],
-				[/* reference */ 'r', `Integer(int)`],
+				[/* reference */ 'r', `#%3Cinit%3E(int)`, `Integer(int)`],
 				[/* text */ 't', `, as this method is likely
  to yield significantly better space and time performance by
  caching frequently requested values.
@@ -900,7 +900,7 @@ DocsCollector.collect('java.lang.Integer', [
 		[/* method */ 'toHexString(int)', [
 			[/* method description */
 				[/* text */ 't', `Returns a string representation of the integer argument as an
- unsigned integer in base&nbsp;16.
+ unsigned integer in base 16.
 
  `],
 				[/* block */ 'b', [
@@ -909,7 +909,7 @@ DocsCollector.collect('java.lang.Integer', [
 					[/* text */ 't', `
  if the argument is negative; otherwise, it is equal to the
  argument.  This value is converted to a string of ASCII digits
- in hexadecimal (base&nbsp;16) with no extra leading
+ in hexadecimal (base 16) with no extra leading
  `],
 					[/* inline code block */ 'i', `0`],
 					[/* text */ 't', `s.
@@ -921,7 +921,7 @@ DocsCollector.collect('java.lang.Integer', [
  string `],
 					[/* inline code block */ 'i', `s`],
 					[/* text */ 't', ` by calling `],
-					[/* reference */ 'r', `Integer.parseUnsignedInt(s, 16)`],
+					[/* reference */ 'r', `#parseUnsignedInt(java.lang.String,int)`, `Integer.parseUnsignedInt(s, 16)`],
 					[/* text */ 't', `.
 
  `]
@@ -956,7 +956,7 @@ DocsCollector.collect('java.lang.Integer', [
 				[/* inline code block */ 'i', `'\\u0066'`],
 				[/* text */ 't', `. If uppercase letters are
  desired, the `],
-				[/* external link */ 'a', `String.html#toUpperCase()`, `String.toUpperCase()`],
+				[/* reference */ 'r', `.String#toUpperCase()`],
 				[/* text */ 't', ` method may
  be called on the result:
 
@@ -974,7 +974,7 @@ DocsCollector.collect('java.lang.Integer', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `the string representation of the unsigned integer value
-          represented by the argument in hexadecimal (base&nbsp;16).`]
+          represented by the argument in hexadecimal (base 16).`]
 			]
 		]],
 		[/* method */ 'decode(java.lang.String)', [
@@ -989,7 +989,70 @@ DocsCollector.collect('java.lang.Integer', [
 
  `],
 				[/* block */ 'b', [
-					[/* dl */ 't', '']
+					[/* dl */ 'dl', [
+						[/* dt */ 'dt', [
+							[/* text */ 't', `DecodableString:`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `opt`, 'sub'],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `opt`, 'sub'],
+							[/* text */ 't', ` `],
+							[/* inline code block */ 'i', `0x`],
+							[/* text */ 't', ` `],
+							[/* text */ 't', `HexDigits`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `opt`, 'sub'],
+							[/* text */ 't', ` `],
+							[/* inline code block */ 'i', `0X`],
+							[/* text */ 't', ` `],
+							[/* text */ 't', `HexDigits`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `opt`, 'sub'],
+							[/* text */ 't', ` `],
+							[/* inline code block */ 'i', `#`],
+							[/* text */ 't', ` `],
+							[/* text */ 't', `HexDigits`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `opt`, 'sub'],
+							[/* text */ 't', ` `],
+							[/* inline code block */ 'i', `0`],
+							[/* text */ 't', ` `],
+							[/* text */ 't', `OctalDigits`],
+							[/* text */ 't', `
+
+ `]
+						]],
+						[/* dt */ 'dt', [
+							[/* text */ 't', `Sign:`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* inline code block */ 'i', `-`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* inline code block */ 'i', `+`],
+							[/* text */ 't', `
+ `]
+						]]
+					]]
 				]],
 				[/* text */ 't', `DecimalNumeral`],
 				[/* text */ 't', `, `],
@@ -1254,10 +1317,10 @@ DocsCollector.collect('java.lang.Integer', [
 					[/* inline code block */ 'i', `radix`],
 					[/* text */ 't', ` is either smaller than
              `],
-					[/* external link */ 'a', `Character.html#MIN_RADIX`, `Character.MIN_RADIX`],
+					[/* reference */ 'r', `.Character#MIN_RADIX`],
 					[/* text */ 't', ` or larger than
              `],
-					[/* external link */ 'a', `Character.html#MAX_RADIX`, `Character.MAX_RADIX`],
+					[/* reference */ 'r', `.Character#MAX_RADIX`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -1286,7 +1349,7 @@ DocsCollector.collect('java.lang.Integer', [
  indicate a positive value. The resulting integer value is
  returned, exactly as if the argument and the radix 10 were
  given as arguments to the `],
-				[/* reference */ 'r', `parseInt(java.lang.String, int)`],
+				[/* reference */ 'r', `#parseInt(java.lang.String,int)`, `parseInt(java.lang.String, int)`],
 				[/* text */ 't', ` method.`]
 			],
 			[/* parameters */
@@ -1315,7 +1378,7 @@ DocsCollector.collect('java.lang.Integer', [
  specified by the second argument. The characters in the string
  must all be digits of the specified radix (as determined by
  whether `],
-				[/* external link */ 'a', `Character.html#digit(int,int)`, `Character.digit(char, int)`],
+				[/* reference */ 'r', `.Character#digit(int,int)`],
 				[/* text */ 't', ` returns a
  nonnegative value), except that the first character may be an
  ASCII minus sign `],
@@ -1351,10 +1414,10 @@ DocsCollector.collect('java.lang.Integer', [
 					[/* block */ 'b', [
 						[/* text */ 't', `The radix is either smaller than
  `],
-						[/* external link */ 'a', `Character.html#MIN_RADIX`, `Character.MIN_RADIX`],
+						[/* reference */ 'r', `.Character#MIN_RADIX`],
 						[/* text */ 't', ` or
  larger than `],
-						[/* external link */ 'a', `Character.html#MAX_RADIX`, `Character.MAX_RADIX`],
+						[/* reference */ 'r', `.Character#MAX_RADIX`],
 						[/* text */ 't', `.
 
  `]
@@ -1510,7 +1573,7 @@ DocsCollector.collect('java.lang.Integer', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The behavior of radixes and the characters used as digits
  are the same as `],
-					[/* reference */ 'r', `toString`],
+					[/* reference */ 'r', `#toString(int,int)`, `toString`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -1535,7 +1598,7 @@ DocsCollector.collect('java.lang.Integer', [
  The argument is converted to unsigned decimal representation
  and returned as a string exactly as if the argument and radix
  10 were given as arguments to the `],
-				[/* reference */ 'r', `toUnsignedString(int, int)`],
+				[/* reference */ 'r', `#toUnsignedString(int,int)`, `toUnsignedString(int, int)`],
 				[/* text */ 't', ` method.`]
 			],
 			[/* parameters */
@@ -1559,7 +1622,7 @@ DocsCollector.collect('java.lang.Integer', [
 
  The characters in the string must all be digits of the
  specified radix (as determined by whether `],
-				[/* external link */ 'a', `Character.html#digit(int,int)`, `Character.digit(char, int)`],
+				[/* reference */ 'r', `.Character#digit(int,int)`],
 				[/* text */ 't', ` returns a nonnegative
  value), except that the first character may be an ASCII plus
  sign `],
@@ -1589,10 +1652,10 @@ DocsCollector.collect('java.lang.Integer', [
 					[/* block */ 'b', [
 						[/* text */ 't', `The radix is either smaller than
  `],
-						[/* external link */ 'a', `Character.html#MIN_RADIX`, `Character.MIN_RADIX`],
+						[/* reference */ 'r', `.Character#MIN_RADIX`],
 						[/* text */ 't', ` or
  larger than `],
-						[/* external link */ 'a', `Character.html#MAX_RADIX`, `Character.MAX_RADIX`],
+						[/* reference */ 'r', `.Character#MAX_RADIX`],
 						[/* text */ 't', `.
 
  `]
@@ -1730,10 +1793,10 @@ DocsCollector.collect('java.lang.Integer', [
 					[/* inline code block */ 'i', `radix`],
 					[/* text */ 't', ` is either smaller than
              `],
-					[/* external link */ 'a', `Character.html#MIN_RADIX`, `Character.MIN_RADIX`],
+					[/* reference */ 'r', `.Character#MIN_RADIX`],
 					[/* text */ 't', ` or larger than
              `],
-					[/* external link */ 'a', `Character.html#MAX_RADIX`, `Character.MAX_RADIX`],
+					[/* reference */ 'r', `.Character#MAX_RADIX`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -1755,7 +1818,7 @@ DocsCollector.collect('java.lang.Integer', [
 				[/* text */ 't', `). The resulting integer value
  is returned, exactly as if the argument and the radix 10 were
  given as arguments to the `],
-				[/* reference */ 'r', `parseUnsignedInt(java.lang.String, int)`],
+				[/* reference */ 'r', `#parseUnsignedInt(java.lang.String,int)`, `parseUnsignedInt(java.lang.String, int)`],
 				[/* text */ 't', ` method.`]
 			],
 			[/* parameters */
@@ -1784,11 +1847,11 @@ DocsCollector.collect('java.lang.Integer', [
  specified name.  The first argument is treated as the name of a
  system property.  System properties are accessible through the
  `],
-				[/* external link */ 'a', `System.html#getProperty(java.lang.String)`, `System.getProperty(java.lang.String)`],
+				[/* reference */ 'r', `.System#getProperty(java.lang.String)`],
 				[/* text */ 't', ` method.
  The string value of this property is then interpreted as an
  integer value, as per the `],
-				[/* reference */ 'r', `decode`],
+				[/* reference */ 'r', `#decode(java.lang.String)`, `decode`],
 				[/* text */ 't', ` method,
  and an `],
 				[/* inline code block */ 'i', `Integer`],
@@ -1807,7 +1870,7 @@ DocsCollector.collect('java.lang.Integer', [
       followed by a minus sign, then the rest of it is parsed as a
       hexadecimal integer exactly as by the method
       `],
-						[/* reference */ 'r', `valueOf(java.lang.String, int)`],
+						[/* reference */ 'r', `#valueOf(java.lang.String,int)`, `valueOf(java.lang.String, int)`],
 						[/* text */ 't', ` with radix 16.
  `]
 					]],
@@ -1818,14 +1881,14 @@ DocsCollector.collect('java.lang.Integer', [
 						[/* text */ 't', ` followed by another character, it is parsed as an
      octal integer exactly as by the method
      `],
-						[/* reference */ 'r', `valueOf(java.lang.String, int)`],
+						[/* reference */ 'r', `#valueOf(java.lang.String,int)`, `valueOf(java.lang.String, int)`],
 						[/* text */ 't', ` with radix 8.
  `]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `Otherwise, the property value is parsed as a decimal integer
  exactly as by the method `],
-						[/* reference */ 'r', `valueOf(java.lang.String, int)`],
+						[/* reference */ 'r', `#valueOf(java.lang.String,int)`, `valueOf(java.lang.String, int)`],
 						[/* text */ 't', `
  with radix 10.
  `]
@@ -1852,7 +1915,7 @@ DocsCollector.collect('java.lang.Integer', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `for the same reasons as
           `],
-					[/* external link */ 'a', `System.html#getProperty(java.lang.String)`, `System.getProperty`]
+					[/* reference */ 'r', `.System#getProperty(java.lang.String)`]
 				]]
 			],
 			[/* return description */
@@ -1870,11 +1933,11 @@ DocsCollector.collect('java.lang.Integer', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The first argument is treated as the name of a system
  property.  System properties are accessible through the `],
-					[/* external link */ 'a', `System.html#getProperty(java.lang.String)`, `System.getProperty(java.lang.String)`],
+					[/* reference */ 'r', `.System#getProperty(java.lang.String)`],
 					[/* text */ 't', ` method. The
  string value of this property is then interpreted as an integer
  value using the grammar supported by `],
-					[/* reference */ 'r', `decode`],
+					[/* reference */ 'r', `#decode(java.lang.String)`, `decode`],
 					[/* text */ 't', ` and
  an `],
 					[/* inline code block */ 'i', `Integer`],
@@ -1916,7 +1979,7 @@ DocsCollector.collect('java.lang.Integer', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `for the same reasons as
           `],
-					[/* external link */ 'a', `System.html#getProperty(java.lang.String)`, `System.getProperty`]
+					[/* reference */ 'r', `.System#getProperty(java.lang.String)`]
 				]]
 			],
 			[/* return description */
@@ -1934,11 +1997,11 @@ DocsCollector.collect('java.lang.Integer', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The first argument is treated as the name of a system
  property.  System properties are accessible through the `],
-					[/* external link */ 'a', `System.html#getProperty(java.lang.String)`, `System.getProperty(java.lang.String)`],
+					[/* reference */ 'r', `.System#getProperty(java.lang.String)`],
 					[/* text */ 't', ` method. The
  string value of this property is then interpreted as an integer
  value using the grammar supported by `],
-					[/* reference */ 'r', `decode`],
+					[/* reference */ 'r', `#decode(java.lang.String)`, `decode`],
 					[/* text */ 't', ` and
  an `],
 					[/* inline code block */ 'i', `Integer`],
@@ -2000,7 +2063,7 @@ DocsCollector.collect('java.lang.Integer', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `for the same reasons as
           `],
-					[/* external link */ 'a', `System.html#getProperty(java.lang.String)`, `System.getProperty`]
+					[/* reference */ 'r', `.System#getProperty(java.lang.String)`]
 				]]
 			],
 			[/* return description */
@@ -2012,7 +2075,7 @@ DocsCollector.collect('java.lang.Integer', [
 		[/* method */ 'toOctalString(int)', [
 			[/* method description */
 				[/* text */ 't', `Returns a string representation of the integer argument as an
- unsigned integer in base&nbsp;8.
+ unsigned integer in base 8.
 
  `],
 				[/* block */ 'b', [
@@ -2021,7 +2084,7 @@ DocsCollector.collect('java.lang.Integer', [
 					[/* text */ 't', `
  if the argument is negative; otherwise, it is equal to the
  argument.  This value is converted to a string of ASCII digits
- in octal (base&nbsp;8) with no extra leading `],
+ in octal (base 8) with no extra leading `],
 					[/* inline code block */ 'i', `0`],
 					[/* text */ 't', `s.
 
@@ -2032,7 +2095,7 @@ DocsCollector.collect('java.lang.Integer', [
  string `],
 					[/* inline code block */ 'i', `s`],
 					[/* text */ 't', ` by calling `],
-					[/* reference */ 'r', `Integer.parseUnsignedInt(s, 8)`],
+					[/* reference */ 'r', `#parseUnsignedInt(java.lang.String,int)`, `Integer.parseUnsignedInt(s, 8)`],
 					[/* text */ 't', `.
 
  `]
@@ -2071,13 +2134,13 @@ DocsCollector.collect('java.lang.Integer', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `the string representation of the unsigned integer value
-          represented by the argument in octal (base&nbsp;8).`]
+          represented by the argument in octal (base 8).`]
 			]
 		]],
 		[/* method */ 'toBinaryString(int)', [
 			[/* method description */
 				[/* text */ 't', `Returns a string representation of the integer argument as an
- unsigned integer in base&nbsp;2.
+ unsigned integer in base 2.
 
  `],
 				[/* block */ 'b', [
@@ -2086,7 +2149,7 @@ DocsCollector.collect('java.lang.Integer', [
 					[/* text */ 't', `
  if the argument is negative; otherwise it is equal to the
  argument.  This value is converted to a string of ASCII digits
- in binary (base&nbsp;2) with no extra leading `],
+ in binary (base 2) with no extra leading `],
 					[/* inline code block */ 'i', `0`],
 					[/* text */ 't', `s.
 
@@ -2097,7 +2160,7 @@ DocsCollector.collect('java.lang.Integer', [
  string `],
 					[/* inline code block */ 'i', `s`],
 					[/* text */ 't', ` by calling `],
-					[/* reference */ 'r', `Integer.parseUnsignedInt(s, 2)`],
+					[/* reference */ 'r', `#parseUnsignedInt(java.lang.String,int)`, `Integer.parseUnsignedInt(s, 2)`],
 					[/* text */ 't', `.
 
  `]
@@ -2130,7 +2193,7 @@ DocsCollector.collect('java.lang.Integer', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `the string representation of the unsigned integer value
-          represented by the argument in binary (base&nbsp;2).`]
+          represented by the argument in binary (base 2).`]
 			]
 		]],
 		[/* method */ 'divideUnsigned(int,int)', [

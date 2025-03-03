@@ -11,7 +11,7 @@ DocsCollector.collect('java.lang.ref.WeakReference', [
 		[/* block */ 'b', [
 			[/* text */ 't', ` Suppose that the garbage collector determines at a certain point in time
  that an object is `],
-			[/* external link */ 'a', `package-summary.html#reachability`, `weakly reachable`],
+			[/* reference */ 'r', `.package-summary#reachability`],
 			[/* text */ 't', `.  At that time it will atomically clear all weak references to
  that object and all weak references to any other weakly-reachable objects
  from which that object is reachable through a chain of strong and soft

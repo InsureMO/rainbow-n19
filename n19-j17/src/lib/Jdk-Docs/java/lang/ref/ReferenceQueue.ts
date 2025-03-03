@@ -26,7 +26,7 @@ DocsCollector.collect('java.lang.ref.ReferenceQueue', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method does not offer real-time guarantees: It schedules the
  timeout as if by invoking the `],
-					[/* external link */ 'a', `../Object.html#wait(long)`, `Object.wait(long)`],
+					[/* reference */ 'r', `java.Object#wait(long)`],
 					[/* text */ 't', ` method.`]
 				]]
 			],

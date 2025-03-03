@@ -20,7 +20,7 @@ DocsCollector.collect('java.security.Key', [
  algorithms (such as MD5 with RSA, SHA-1 with RSA, Raw DSA, etc.)
  The name of the algorithm of a key is obtained using the
  `],
-					[/* reference */ 'r', `getAlgorithm`],
+					[/* reference */ 'r', `#getAlgorithm()`, `getAlgorithm`],
 					[/* text */ 't', ` method.
 
  `]
@@ -39,7 +39,7 @@ DocsCollector.collect('java.security.Key', [
 					[/* inline code block */ 'i', `SubjectPublicKeyInfo`],
 					[/* text */ 't', ` or PKCS#8), and
  is returned using the `],
-					[/* reference */ 'r', `getEncoded`],
+					[/* reference */ 'r', `#getEncoded()`, `getEncoded`],
 					[/* text */ 't', ` method.
  Note: The syntax of the ASN.1 type `],
 					[/* inline code block */ 'i', `SubjectPublicKeyInfo`],
@@ -72,7 +72,7 @@ DocsCollector.collect('java.security.Key', [
 				[/* block */ 'b', [
 					[/* text */ 't', `This is the name of the format of the encoded key. It is returned
  by the `],
-					[/* reference */ 'r', `getFormat`],
+					[/* reference */ 'r', `#getFormat()`, `getFormat`],
 					[/* text */ 't', ` method.
 
  `]
@@ -97,7 +97,7 @@ DocsCollector.collect('java.security.Key', [
  Note that a serialized Key may contain sensitive information
  which should not be exposed in untrusted environments.  See the
  `],
-			[/* external link */ 'a', `../../../../specs/serialization/security.html`, `Security Appendix`],
+			[/* text */ 't', `Security Appendix`],
 			[/* text */ 't', `
  of the Serialization Specification for more information.`]
 		]]
@@ -161,7 +161,7 @@ DocsCollector.collect('java.security.Key', [
  example, "DSA" would indicate that this key is a DSA key.
  See the key related sections (KeyFactory, KeyGenerator,
  KeyPairGenerator, and SecretKeyFactory) in the `],
-				[/* external link */ 'a', `../../../../specs/security/standard-names.html`, `Java Security Standard Algorithm Names Specification`],
+				[/* text */ 't', `Java Security Standard Algorithm Names Specification`],
 				[/* text */ 't', `
  for information about standard key algorithm names.`]
 			],

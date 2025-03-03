@@ -90,18 +90,7 @@ DocsCollector.collect('java.lang.invoke.SwitchPoint', [
  assertEquals("hodmet", (String) worker.invokeExact("met", "hod"));`]
 		]],
 		[/* block */ 'b', ''],
-		[/* block */ 'b', [
-			[/* text */ 't', `Discussion:`],
-			[/* text */ 't', `
- Switch points are useful without subclassing.  They may also be subclassed.
- This may be useful in order to associate application-specific invalidation logic
- with the switch point.
- Notice that there is no permanent association between a switch point and
- the method handles it produces and consumes.
- The garbage collector may collect method handles produced or consumed
- by a switch point independently of the lifetime of the switch point itself.
- `]
-		]],
+		[/* block */ 'b', `Discussion:`],
 		[/* block */ 'b', [
 			[/* text */ 't', `Implementation Note:`],
 			[/* text */ 't', `
@@ -211,7 +200,7 @@ DocsCollector.collect('java.lang.invoke.SwitchPoint', [
 					[/* inline code block */ 'i', `s.guardWithTest`],
 					[/* text */ 't', ` on
  `],
-					[/* external link */ 'a', `MethodHandles.html#constant(java.lang.Class,java.lang.Object)`, `constant`],
+					[/* reference */ 'r', `.MethodHandles#constant(java.lang.Class,java.lang.Object)`],
 					[/* text */ 't', ` true and false method handles.`]
 				]]
 			],
@@ -278,7 +267,7 @@ DocsCollector.collect('java.lang.invoke.SwitchPoint', [
 					[/* text */ 't', ` method can
  simply change the call site's target, and issue one call to
  `],
-					[/* external link */ 'a', `MutableCallSite.html#syncAll(java.lang.invoke.MutableCallSite%5B%5D)`, `synchronize`],
+					[/* reference */ 'r', `.MutableCallSite#syncAll(java.lang.invoke.MutableCallSite[])`],
 					[/* text */ 't', ` all the
  private call sites.`]
 				]]

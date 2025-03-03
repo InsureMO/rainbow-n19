@@ -152,7 +152,7 @@ DocsCollector.collect('java.util.random.RandomGenerator', [
 				[/* reference */ 'r', `java.util.random.RandomGenerator`],
 				[/* text */ 't', ` meeting the minimal requirement
  of having an `],
-				[/* external link */ 'a', `package-summary.html#algorithms`, `algorithm`],
+				[/* reference */ 'r', `.package-summary#algorithms`],
 				[/* text */ 't', `
  whose state bits are greater than or equal 64.`]
 			],
@@ -170,14 +170,14 @@ DocsCollector.collect('java.util.random.RandomGenerator', [
 				[/* text */ 't', ` that utilizes the
  `],
 				[/* inline code block */ 'i', `name`],
-				[/* external link */ 'a', `package-summary.html#algorithms`, `algorithm`],
+				[/* reference */ 'r', `.package-summary#algorithms`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'name', [/* parameter description */
 					[/* text */ 't', `Name of random number generator
               `],
-					[/* external link */ 'a', `package-summary.html#algorithms`, `algorithm`]
+					[/* reference */ 'r', `.package-summary#algorithms`]
 				]]
 			],
 			[/* throws */
@@ -795,7 +795,7 @@ DocsCollector.collect('java.util.random.RandomGenerator', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The default implementation tests the high-order bit (sign bit) of a
  value produced by `],
-					[/* reference */ 'r', `nextInt`],
+					[/* reference */ 'r', `#nextInt()`, `nextInt`],
 					[/* text */ 't', `(), on the
  grounds that some algorithms for pseudorandom number generation produce
  values whose high-order bits have better statistical quality than the

@@ -26,7 +26,7 @@ DocsCollector.collect('java.util.InvalidPropertiesFormatException', [
 				[/* parameter */ 'cause', [/* parameter description */
 					[/* text */ 't', `the cause (which is saved for later retrieval by the
          `],
-					[/* external link */ 'a', `../lang/Throwable.html#getCause()`, `Throwable.getCause()`],
+					[/* reference */ 'r', `java.Throwable#getCause()`],
 					[/* text */ 't', ` method).`]
 				]]
 			],
@@ -41,7 +41,7 @@ DocsCollector.collect('java.util.InvalidPropertiesFormatException', [
 				[/* parameter */ 'message', [/* parameter description */
 					[/* text */ 't', `the detail message. The detail message is saved for
           later retrieval by the `],
-					[/* external link */ 'a', `../lang/Throwable.html#getMessage()`, `Throwable.getMessage()`],
+					[/* reference */ 'r', `java.Throwable#getMessage()`],
 					[/* text */ 't', ` method.`]
 				]]
 			],

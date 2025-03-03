@@ -60,7 +60,7 @@ DocsCollector.collect('java.io.BufferedOutputStream', [
 			],
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `if size &lt;= 0.`]
+					[/* text */ 't', `if size <= 0.`]
 				]]
 			]
 		]]

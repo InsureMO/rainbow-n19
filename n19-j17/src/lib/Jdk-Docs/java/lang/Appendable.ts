@@ -17,7 +17,7 @@ DocsCollector.collect('java.lang.Appendable', [
 		[/* block */ 'b', [
 			[/* text */ 't', ` The characters to be appended should be valid Unicode characters as
  described in `],
-			[/* external link */ 'a', `Character.html#unicode`, `Unicode Character Representation`],
+			[/* reference */ 'r', `.Character#unicode`],
 			[/* text */ 't', `.  Note that supplementary characters may be composed of
  multiple 16-bit `],
 			[/* inline code block */ 'i', `char`],

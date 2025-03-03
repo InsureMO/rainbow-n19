@@ -27,9 +27,9 @@ DocsCollector.collect('java.lang.reflect.AccessibleObject', [
  their top-level class; package access members outside their package; protected members
  outside their package or subclasses; and public members outside their
  module unless they are declared in an `],
-			[/* external link */ 'a', `../Module.html#isExported(java.lang.String,java.lang.Module)`, `exported`],
+			[/* reference */ 'r', `java.Module#isExported(java.lang.String,java.lang.Module)`],
 			[/* text */ 't', ` package and the user `],
-			[/* external link */ 'a', `../Module.html#canRead(java.lang.Module)`, `reads`],
+			[/* reference */ 'r', `java.Module#canRead(java.lang.Module)`],
 			[/* text */ 't', ` their module. By
  default, Java language access control is enforced (with one variation) when
  `],
@@ -43,7 +43,7 @@ DocsCollector.collect('java.lang.reflect.AccessibleObject', [
  classes, respectively. Every reflected object checks that the code using it
  is in an appropriate class, package, or module. The check when invoked by
  `],
-			[/* external link */ 'a', `../../../../../specs/jni/index.html`, `JNI code`],
+			[/* text */ 't', `JNI code`],
 			[/* text */ 't', ` with no Java
  class on the stack only succeeds if the member and the declaring class are
  public, and the class is in a package that is exported to all modules. `]
@@ -57,7 +57,7 @@ DocsCollector.collect('java.lang.reflect.AccessibleObject', [
  (and thus, whether access can be enabled) depends on whether the reflected
  object corresponds to a member in an exported or open package
  (see `],
-			[/* reference */ 'r', `setAccessible(boolean)`],
+			[/* reference */ 'r', `#setAccessible(boolean)`, `setAccessible(boolean)`],
 			[/* text */ 't', `). `]
 		]]
 	],
@@ -142,7 +142,7 @@ DocsCollector.collect('java.lang.reflect.AccessibleObject', [
  value is an array of length 0.
 
  The difference between this method and `],
-				[/* external link */ 'a', `AnnotatedElement.html#getAnnotation(java.lang.Class)`, `AnnotatedElement.getAnnotation(Class)`],
+				[/* reference */ 'r', `.AnnotatedElement#getAnnotation(java.lang.Class)`],
 				[/* text */ 't', `
  is that this method detects if its argument is a `],
 				[/* text */ 't', `repeatable
@@ -246,7 +246,7 @@ DocsCollector.collect('java.lang.reflect.AccessibleObject', [
  0.
 
  The difference between this method and `],
-				[/* external link */ 'a', `AnnotatedElement.html#getDeclaredAnnotation(java.lang.Class)`, `AnnotatedElement.getDeclaredAnnotation(Class)`],
+				[/* reference */ 'r', `.AnnotatedElement#getDeclaredAnnotation(java.lang.Class)`],
 				[/* text */ 't', ` is that this method detects if its
  argument is a `],
 				[/* text */ 't', `repeatable annotation type`],
@@ -327,7 +327,7 @@ DocsCollector.collect('java.lang.reflect.AccessibleObject', [
  access to a `],
 					[/* reference */ 'r', `java.lang.reflect.Member`],
 					[/* text */ 't', ` of `],
-					[/* external link */ 'a', `Member.html#getDeclaringClass()`, `declaring class`],
+					[/* reference */ 'r', `.Member#getDeclaringClass()`],
 					[/* inline code block */ 'i', `D`],
 					[/* text */ 't', ` if any of the following hold: `]
 				]],
@@ -348,7 +348,7 @@ DocsCollector.collect('java.lang.reflect.AccessibleObject', [
 						[/* text */ 't', ` in
      a package that the module containing `],
 						[/* inline code block */ 'i', `D`],
-						[/* external link */ 'a', `../Module.html#isExported(java.lang.String,java.lang.Module)`, `exports`],
+						[/* reference */ 'r', `java.Module#isExported(java.lang.String,java.lang.Module)`],
 						[/* text */ 't', ` to at least the module
      containing `],
 						[/* inline code block */ 'i', `C`],
@@ -379,7 +379,7 @@ DocsCollector.collect('java.lang.reflect.AccessibleObject', [
 						[/* inline code block */ 'i', `D`],
 						[/* text */ 't', ` is in a package that the module containing `],
 						[/* inline code block */ 'i', `D`],
-						[/* external link */ 'a', `../Module.html#isOpen(java.lang.String,java.lang.Module)`, `opens`],
+						[/* reference */ 'r', `java.Module#isOpen(java.lang.String,java.lang.Module)`],
 						[/* text */ 't', ` to at least the module
      containing `],
 						[/* inline code block */ 'i', `C`],
@@ -398,7 +398,7 @@ DocsCollector.collect('java.lang.reflect.AccessibleObject', [
  to the caller's module. `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method cannot be used to enable `],
-					[/* external link */ 'a', `Field.html#set(java.lang.Object,java.lang.Object)`, `write`],
+					[/* reference */ 'r', `.Field#set(java.lang.Object,java.lang.Object)`],
 					[/* text */ 't', `
  access to a `],
 					[/* text */ 't', `non-modifiable`],
@@ -410,11 +410,11 @@ DocsCollector.collect('java.lang.reflect.AccessibleObject', [
 					[/* block */ 'b', `static final fields declared in any class or interface`],
 					[/* block */ 'b', [
 						[/* text */ 't', `final fields declared in a `],
-						[/* external link */ 'a', `../Class.html#isHidden()`, `hidden class`]
+						[/* reference */ 'r', `java.Class#isHidden()`]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `final fields declared in a `],
-						[/* external link */ 'a', `../Class.html#isRecord()`, `record`]
+						[/* reference */ 'r', `java.Class#isRecord()`]
 					]]
 				]],
 				[/* block */ 'b', ''],
@@ -425,7 +425,7 @@ DocsCollector.collect('java.lang.reflect.AccessibleObject', [
 					[/* inline code block */ 'i', `true`],
 					[/* text */ 't', ` suppresses Java language access
  control checks to only enable `],
-					[/* external link */ 'a', `Field.html#get(java.lang.Object)`, `read`],
+					[/* reference */ 'r', `.Field#get(java.lang.Object)`],
 					[/* text */ 't', ` access to
  these non-modifiable final fields.
 
@@ -470,7 +470,7 @@ DocsCollector.collect('java.lang.reflect.AccessibleObject', [
 					[/* text */ 't', ` This method may be used to enable access to all reflected objects in
  the array when access to each reflected object can be enabled as
  specified by `],
-					[/* reference */ 'r', `setAccessible(boolean)`],
+					[/* reference */ 'r', `#setAccessible(boolean)`, `setAccessible(boolean)`],
 					[/* text */ 't', `. `]
 				]],
 				[/* block */ 'b', [
@@ -535,7 +535,7 @@ DocsCollector.collect('java.lang.reflect.AccessibleObject', [
 				[/* inline code block */ 'i', `accessible`],
 				[/* text */ 't', ` flag, as if by
  invoking `],
-				[/* reference */ 'r', `setAccessible(true)`],
+				[/* reference */ 'r', `#setAccessible(boolean)`, `setAccessible(true)`],
 				[/* text */ 't', `, and returns
  the possibly-updated value for the `],
 				[/* inline code block */ 'i', `accessible`],
@@ -654,7 +654,7 @@ DocsCollector.collect('java.lang.reflect.AccessibleObject', [
 				[/* inline code block */ 'i', `obj`],
 				[/* text */ 't', ` argument must be an
  instance of the `],
-				[/* external link */ 'a', `Member.html#getDeclaringClass()`, `declaring class`],
+				[/* reference */ 'r', `.Member#getDeclaringClass()`],
 				[/* text */ 't', `. For
  static members and constructors then `],
 				[/* inline code block */ 'i', `obj`],
@@ -705,7 +705,7 @@ DocsCollector.collect('java.lang.reflect.AccessibleObject', [
 							[/* inline code block */ 'i', `null`],
 							[/* text */ 't', ` or of type
               that is not a subclass of the `],
-							[/* external link */ 'a', `Member.html#getDeclaringClass()`, `declaring class`],
+							[/* reference */ 'r', `.Member#getDeclaringClass()`],
 							[/* text */ 't', ` of the member.`]
 						]]
 					]]

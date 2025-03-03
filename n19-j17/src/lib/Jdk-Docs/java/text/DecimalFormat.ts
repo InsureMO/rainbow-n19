@@ -228,14 +228,264 @@ DocsCollector.collect('java.text.DecimalFormat', [
  `]
 		]],
 		[/* block */ 'b', [
-			[/* table */ 't', '']
+			[/* table */ 'tbl',
+				[/* caption */ 'tc'],
+				[/* table header */ 'th', [
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* text */ 't', `Symbol
+          `]
+						]],
+						[/* table header cell */ 'thc', [
+							[/* text */ 't', `Location
+          `]
+						]],
+						[/* table header cell */ 'thc', [
+							[/* text */ 't', `Localized?
+          `]
+						]],
+						[/* table header cell */ 'thc', [
+							[/* text */ 't', `Meaning
+ `]
+						]]
+					]]
+				]],
+				[/* table body */ 'tb', [
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `0`],
+							[/* text */ 't', `
+          `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Number
+          `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Yes
+          `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Digit
+     `]
+						]]
+					]],
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `#`],
+							[/* text */ 't', `
+          `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Number
+          `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Yes
+          `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Digit, zero shows as absent
+     `]
+						]]
+					]],
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `.`],
+							[/* text */ 't', `
+          `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Number
+          `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Yes
+          `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Decimal separator or monetary decimal separator
+     `]
+						]]
+					]],
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `-`],
+							[/* text */ 't', `
+          `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Number
+          `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Yes
+          `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Minus sign
+     `]
+						]]
+					]],
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `,`],
+							[/* text */ 't', `
+          `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Number
+          `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Yes
+          `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Grouping separator or monetary grouping separator
+     `]
+						]]
+					]],
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `E`],
+							[/* text */ 't', `
+          `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Number
+          `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Yes
+          `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Separates mantissa and exponent in scientific notation.
+              `],
+							[/* text */ 't', `Need not be quoted in prefix or suffix.`],
+							[/* text */ 't', `
+     `]
+						]]
+					]],
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `;`],
+							[/* text */ 't', `
+          `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Subpattern boundary
+          `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Yes
+          `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Separates positive and negative subpatterns
+     `]
+						]]
+					]],
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `%`],
+							[/* text */ 't', `
+          `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Prefix or suffix
+          `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Yes
+          `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Multiply by 100 and show as percentage
+     `]
+						]]
+					]],
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `&#92;u2030`],
+							[/* text */ 't', `
+          `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Prefix or suffix
+          `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Yes
+          `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Multiply by 1000 and show as per mille value
+     `]
+						]]
+					]],
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `&#164;`],
+							[/* text */ 't', ` (`],
+							[/* inline code block */ 'i', `&#92;u00A4`],
+							[/* text */ 't', `)
+          `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Prefix or suffix
+          `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `No
+          `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Currency sign, replaced by currency symbol.  If
+              doubled, replaced by international currency symbol.
+              If present in a pattern, the monetary decimal/grouping separators
+              are used instead of the decimal/grouping separators.
+     `]
+						]]
+					]],
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `'`],
+							[/* text */ 't', `
+          `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Prefix or suffix
+          `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `No
+          `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Used to quote special characters in a prefix or suffix,
+              for example, `],
+							[/* inline code block */ 'i', `"'#'#"`],
+							[/* text */ 't', ` formats 123 to
+              `],
+							[/* inline code block */ 'i', `"#123"`],
+							[/* text */ 't', `.  To create a single quote
+              itself, use two in a row: `],
+							[/* inline code block */ 'i', `"# o''clock"`],
+							[/* text */ 't', `.
+ `]
+						]]
+					]]
+				]],
+			]
 		]],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `Scientific Notation`],
 		[/* block */ 'b', [
 			[/* text */ 't', `Numbers in scientific notation are expressed as the product of a mantissa
  and a power of ten, for example, 1234 can be expressed as 1.234 x 10^3.  The
- mantissa is often in the range 1.0 ≤ x &lt; 10.0, but it need not
+ mantissa is often in the range 1.0 ≤ x < 10.0, but it need not
  be.
  `],
 			[/* inline code block */ 'i', `DecimalFormat`],
@@ -334,7 +584,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
 		[/* reference */ 'r', `enum class in java.math.RoundingMode`],
 		[/* text */ 't', ` for formatting.  By default, it uses
  `],
-		[/* external link */ 'a', `../math/RoundingMode.html#HALF_EVEN`, `RoundingMode.HALF_EVEN`],
+		[/* reference */ 'r', `java.RoundingMode#HALF_EVEN`],
 		[/* text */ 't', `.
 
  `],
@@ -350,7 +600,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
 		[/* text */ 't', ` object as digits. For parsing, these
  digits as well as all Unicode decimal digits, as defined by
  `],
-		[/* external link */ 'a', `../lang/Character.html#digit(char,int)`, `Character.digit`],
+		[/* reference */ 'r', `java.Character#digit(char,int)`],
 		[/* text */ 't', `, are recognized.
 
  `],
@@ -500,7 +750,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a DecimalFormat using the given pattern and the symbols
  for the default `],
-				[/* external link */ 'a', `../util/Locale.Category.html#FORMAT`, `FORMAT`],
+				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
 				[/* text */ 't', ` locale.
  This is a convenient way to obtain a
  DecimalFormat when internationalization is not the main concern.
@@ -531,7 +781,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
 			[/* constructor description */
 				[/* text */ 't', `Creates a DecimalFormat using the default pattern and symbols
  for the default `],
-				[/* external link */ 'a', `../util/Locale.Category.html#FORMAT`, `FORMAT`],
+				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
 				[/* text */ 't', ` locale.
  This is a convenient way to obtain a
  DecimalFormat when internationalization is not the main concern.
@@ -608,7 +858,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
 					[/* inline code block */ 'i', `fieldPosition`],
 					[/* text */ 't', ` is
                          `],
-					[/* external link */ 'a', `NumberFormat.html#INTEGER_FIELD`, `NumberFormat.INTEGER_FIELD`],
+					[/* reference */ 'r', `.NumberFormat#INTEGER_FIELD`],
 					[/* text */ 't', `, the begin index
                          and end index of `],
 					[/* inline code block */ 'i', `fieldPosition`],
@@ -671,7 +921,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
 					[/* inline code block */ 'i', `fieldPosition`],
 					[/* text */ 't', ` is
                    `],
-					[/* external link */ 'a', `NumberFormat.html#INTEGER_FIELD`, `NumberFormat.INTEGER_FIELD`],
+					[/* reference */ 'r', `.NumberFormat#INTEGER_FIELD`],
 					[/* text */ 't', `, the begin index
                    and end index of `],
 					[/* inline code block */ 'i', `fieldPosition`],
@@ -732,7 +982,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
 					[/* inline code block */ 'i', `fieldPosition`],
 					[/* text */ 't', ` is
                          `],
-					[/* external link */ 'a', `NumberFormat.html#INTEGER_FIELD`, `NumberFormat.INTEGER_FIELD`],
+					[/* reference */ 'r', `.NumberFormat#INTEGER_FIELD`],
 					[/* text */ 't', `, the begin index
                          and end index of `],
 					[/* inline code block */ 'i', `fieldPosition`],
@@ -795,7 +1045,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The subclass returned depends on the value of `],
-					[/* reference */ 'r', `isParseBigDecimal()`],
+					[/* reference */ 'r', `#isParseBigDecimal()`, `isParseBigDecimal()`],
 					[/* text */ 't', `
  as well as on the string being parsed.
  `]
@@ -864,7 +1114,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
 						[/* inline code block */ 'i', `BigDecimal`],
 						[/* text */ 't', ` objects. The values are the ones
        constructed by `],
-						[/* external link */ 'a', `../math/BigDecimal.html#%3Cinit%3E(java.lang.String)`, `BigDecimal(String)`],
+						[/* reference */ 'r', `java.BigDecimal#<init>(java.lang.String)`],
 						[/* text */ 't', `
        for corresponding strings in locale-independent format. The
        special cases negative and positive infinity and NaN are returned
@@ -1284,7 +1534,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
  currency values.
  The currency is obtained by calling
  `],
-				[/* external link */ 'a', `DecimalFormatSymbols.html#getCurrency()`, `DecimalFormatSymbols.getCurrency`],
+				[/* reference */ 'r', `.DecimalFormatSymbols#getCurrency()`],
 				[/* text */ 't', `
  on this number format's symbols.`]
 			],
@@ -1302,7 +1552,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
  number of fraction digits used by the number format.
  The currency is set by calling
  `],
-				[/* external link */ 'a', `DecimalFormatSymbols.html#setCurrency(java.util.Currency)`, `DecimalFormatSymbols.setCurrency`],
+				[/* reference */ 'r', `.DecimalFormatSymbols#setCurrency(java.util.Currency)`],
 				[/* text */ 't', `
  on this number format's symbols.`]
 			],
@@ -1365,7 +1615,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
 		[/* method */ 'isParseBigDecimal()', [
 			[/* method description */
 				[/* text */ 't', `Returns whether the `],
-				[/* reference */ 'r', `parse(java.lang.String, java.text.ParsePosition)`],
+				[/* reference */ 'r', `#parse(java.lang.String,java.text.ParsePosition)`, `parse(java.lang.String, java.text.ParsePosition)`],
 				[/* text */ 't', `
  method returns `],
 				[/* inline code block */ 'i', `BigDecimal`],
@@ -1537,7 +1787,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
  in the number "123,456.78", the grouping size is 3. Grouping size of
  zero designates that grouping is not used, which provides the same
  formatting as if calling `],
-				[/* external link */ 'a', `NumberFormat.html#setGroupingUsed(boolean)`, `setGroupingUsed(false)`],
+				[/* reference */ 'r', `.NumberFormat#setGroupingUsed(boolean)`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -1553,7 +1803,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
  in the number "123,456.78", the grouping size is 3. Grouping size of
  zero designates that grouping is not used, which provides the same
  formatting as if calling `],
-				[/* external link */ 'a', `NumberFormat.html#setGroupingUsed(boolean)`, `setGroupingUsed(false)`],
+				[/* reference */ 'r', `.NumberFormat#setGroupingUsed(boolean)`],
 				[/* text */ 't', `.
  `],
 				[/* block */ 'b', [
@@ -1561,7 +1811,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
  The value passed in is converted to a byte, which may lose information.
  Values that are negative or greater than
  `],
-					[/* external link */ 'a', `../lang/Byte.html#MAX_VALUE`, `Byte.MAX_VALUE`],
+					[/* reference */ 'r', `java.Byte#MAX_VALUE`],
 					[/* text */ 't', `, will throw an
  `],
 					[/* inline code block */ 'i', `IllegalArgumentException`],
@@ -1579,7 +1829,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
 					[/* inline code block */ 'i', `newValue`],
 					[/* text */ 't', ` is negative or
           greater than `],
-					[/* external link */ 'a', `../lang/Byte.html#MAX_VALUE`, `Byte.MAX_VALUE`]
+					[/* reference */ 'r', `java.Byte#MAX_VALUE`]
 				]]
 			],
 			/* return */ UDF
@@ -1604,7 +1854,7 @@ DocsCollector.collect('java.text.DecimalFormat', [
 		[/* method */ 'setParseBigDecimal(boolean)', [
 			[/* method description */
 				[/* text */ 't', `Sets whether the `],
-				[/* reference */ 'r', `parse(java.lang.String, java.text.ParsePosition)`],
+				[/* reference */ 'r', `#parse(java.lang.String,java.text.ParsePosition)`, `parse(java.lang.String, java.text.ParsePosition)`],
 				[/* text */ 't', `
  method returns `],
 				[/* inline code block */ 'i', `BigDecimal`],

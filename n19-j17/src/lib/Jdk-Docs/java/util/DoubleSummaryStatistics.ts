@@ -10,7 +10,7 @@ DocsCollector.collect('java.util.DoubleSummaryStatistics', [
 		[/* block */ 'b', [
 			[/* text */ 't', `This class is designed to work with (though does not require)
  `],
-			[/* external link */ 'a', `stream/package-summary.html`, `streams`],
+			[/* text */ 't', `streams`],
 			[/* text */ 't', `. For example, you can compute
  summary statistics on a stream of doubles with:
  `]
@@ -25,7 +25,7 @@ DocsCollector.collect('java.util.DoubleSummaryStatistics', [
 			[/* inline code block */ 'i', `DoubleSummaryStatistics`],
 			[/* text */ 't', ` can be used as a
  `],
-			[/* external link */ 'a', `stream/Stream.html#collect(java.util.stream.Collector)`, `reduction`],
+			[/* reference */ 'r', `.Stream#collect(java.util.stream.Collector)`],
 			[/* text */ 't', `
  target for a `],
 			[/* reference */ 'r', `java.util.stream.Stream`],
@@ -281,7 +281,7 @@ DocsCollector.collect('java.util.DoubleSummaryStatistics', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The computed average can vary numerically and have the
  special case behavior as computing the sum; see `],
-					[/* reference */ 'r', `getSum()`],
+					[/* reference */ 'r', `#getSum()`, `getSum()`],
 					[/* text */ 't', `
  for details.`]
 				]]

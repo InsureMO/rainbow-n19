@@ -67,7 +67,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
 			[/* inline code block */ 'i', `ResourceBundle`],
 			[/* text */ 't', ` class using the
  `],
-			[/* reference */ 'r', `getBundle`],
+			[/* reference */ 'r', `#getBundle(java.lang.String,java.util.Locale)`, `getBundle`],
 			[/* text */ 't', `
  method:
  `]
@@ -232,10 +232,10 @@ DocsCollector.collect('java.util.ResourceBundle', [
  Resource bundles can be deployed together with an application in the same
  module.  In that case, the resource bundles are loaded
  by code in the module by calling the `],
-		[/* reference */ 'r', `getBundle(String)`],
+		[/* reference */ 'r', `#getBundle(java.lang.String)`, `getBundle(String)`],
 		[/* text */ 't', `
  or `],
-		[/* reference */ 'r', `getBundle(String, Locale)`],
+		[/* reference */ 'r', `#getBundle(java.lang.String,java.util.Locale)`, `getBundle(String, Locale)`],
 		[/* text */ 't', ` method.
 
  `],
@@ -287,7 +287,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
  in unnamed modules and class path are open for any module to access.
  Resource bundle follows the resource encapsulation rules as specified
  in `],
-		[/* external link */ 'a', `../lang/Module.html#getResourceAsStream(java.lang.String)`, `Module.getResourceAsStream(String)`],
+		[/* reference */ 'r', `java.Module#getResourceAsStream(java.lang.String)`],
 		[/* text */ 't', `.
 
  `],
@@ -302,11 +302,11 @@ DocsCollector.collect('java.util.ResourceBundle', [
 			[/* reference */ 'r', `java.util.spi.ResourceBundleProvider`],
 			[/* text */ 't', `.
  It may continue the search as if calling `],
-			[/* external link */ 'a', `../lang/Module.html#getResourceAsStream(java.lang.String)`, `Module.getResourceAsStream(String)`],
+			[/* reference */ 'r', `java.Module#getResourceAsStream(java.lang.String)`],
 			[/* text */ 't', `
  to find the named resource from a given module and calling
  `],
-			[/* external link */ 'a', `../lang/ClassLoader.html#getResourceAsStream(java.lang.String)`, `ClassLoader.getResourceAsStream(String)`],
+			[/* reference */ 'r', `java.ClassLoader#getResourceAsStream(java.lang.String)`],
 			[/* text */ 't', `; refer to
  the specification of the `],
 			[/* inline code block */ 'i', `getBundle`],
@@ -323,7 +323,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
 		[/* block */ 'b', [
 			[/* text */ 't', `If the caller module is a
  `],
-			[/* external link */ 'a', `../../../java.base/java/util/spi/ResourceBundleProvider.html#obtain-resource-bundle`, `resource bundle provider`],
+			[/* text */ 't', `resource bundle provider`],
 			[/* text */ 't', `, it does not fall back to the
  class loader search.
 
@@ -339,7 +339,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
 		[/* text */ 't', ` resource bundles
  are packaged in a JAR file.  Resource bundle only JAR file can be readily
  deployed as an `],
-		[/* external link */ 'a', `../../../java.base/java/lang/module/ModuleFinder.html#automatic-modules`, `automatic module`],
+		[/* text */ 't', `automatic module`],
 		[/* text */ 't', `.  For example, if the JAR file contains the
  entry "`],
 		[/* inline code block */ 'i', `p/q/Foo_ja.properties`],
@@ -371,7 +371,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
  non-standard resource bundle formats, change the search strategy, or
  define caching parameters. Refer to the descriptions of the class and the
  `],
-		[/* reference */ 'r', `getBundle`],
+		[/* reference */ 'r', `#getBundle(java.lang.String,java.util.Locale,java.lang.ClassLoader,java.util.ResourceBundle.Control)`, `getBundle`],
 		[/* text */ 't', `
  factory method for details.
 
@@ -439,13 +439,13 @@ DocsCollector.collect('java.util.ResourceBundle', [
  lifetime of cached resource bundle instances using time-to-live values,
  or specify not to cache resource bundle instances. Refer to the
  descriptions of the `],
-		[/* reference */ 'r', `getBundle`],
+		[/* reference */ 'r', `#getBundle(java.lang.String,java.util.Locale,java.lang.ClassLoader,java.util.ResourceBundle.Control)`, `getBundle`],
 		[/* text */ 't', `, `],
-		[/* reference */ 'r', `clearCache`],
+		[/* reference */ 'r', `#clearCache(java.lang.ClassLoader)`, `clearCache`],
 		[/* text */ 't', `, `],
-		[/* external link */ 'a', `ResourceBundle.Control.html#getTimeToLive(java.lang.String,java.util.Locale)`, `ResourceBundle.Control.getTimeToLive`],
+		[/* reference */ 'r', `.ResourceBundle.Control#getTimeToLive(java.lang.String,java.util.Locale)`],
 		[/* text */ 't', `, and `],
-		[/* external link */ 'a', `ResourceBundle.Control.html#needsReload(java.lang.String,java.util.Locale,java.lang.String,java.lang.ClassLoader,java.util.ResourceBundle,long)`, `ResourceBundle.Control.needsReload`],
+		[/* reference */ 'r', `.ResourceBundle.Control#needsReload(java.lang.String,java.util.Locale,java.lang.String,java.lang.ClassLoader,java.util.ResourceBundle,long)`],
 		[/* text */ 't', ` for details.
 
  `],
@@ -476,14 +476,14 @@ DocsCollector.collect('java.util.ResourceBundle', [
          return null;
      }
 
-     public Enumeration&lt;String&gt; getKeys() {
+     public Enumeration<String> getKeys() {
          return Collections.enumeration(keySet());
      }
 
      // Overrides handleKeySet() so that the getKeys() implementation
      // can rely on the keySet() value.
-     protected Set&lt;String&gt; handleKeySet() {
-         return new HashSet&lt;String&gt;(Arrays.asList("okKey", "cancelKey"));
+     protected Set<String> handleKeySet() {
+         return new HashSet<String>(Arrays.asList("okKey", "cancelKey"));
      }
  }
 
@@ -495,8 +495,8 @@ DocsCollector.collect('java.util.ResourceBundle', [
          return null;
      }
 
-     protected Set&lt;String&gt; handleKeySet() {
-         return new HashSet&lt;String&gt;(Arrays.asList("cancelKey"));
+     protected Set<String> handleKeySet() {
+         return new HashSet<String>(Arrays.asList("cancelKey"));
      }
  }
  `]
@@ -528,7 +528,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
 			[/* field description */
 				[/* text */ 't', `The parent bundle of this bundle.
  The parent bundle is searched by `],
-				[/* reference */ 'r', `getObject`],
+				[/* reference */ 'r', `#getObject(java.lang.String)`, `getObject`],
 				[/* text */ 't', `
  when this bundle does not contain a particular resource.`]
 			],
@@ -605,7 +605,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
 			[/* method description */
 				[/* text */ 't', `Sets the parent bundle of this bundle.
  The parent bundle is searched by `],
-				[/* reference */ 'r', `getObject`],
+				[/* reference */ 'r', `#getObject(java.lang.String)`, `getObject`],
 				[/* text */ 't', `
  when this bundle does not contain a particular resource.`]
 			],
@@ -622,7 +622,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
 				[/* text */ 't', `Gets an object for the given key from this resource bundle or one of its parents.
  This method first tries to obtain the object from this resource bundle using
  `],
-				[/* reference */ 'r', `handleGetObject`],
+				[/* reference */ 'r', `#handleGetObject(java.lang.String)`, `handleGetObject`],
 				[/* text */ 't', `.
  If not successful, and the parent resource bundle is not null,
  it calls the parent's `],
@@ -769,7 +769,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
 					[/* inline code block */ 'i', `getBundle`],
 					[/* text */ 't', ` uses the base name, the specified locale, and
  the default locale (obtained from `],
-					[/* external link */ 'a', `Locale.html#getDefault()`, `Locale.getDefault`],
+					[/* reference */ 'r', `.Locale#getDefault()`],
 					[/* text */ 't', `) to generate a sequence of `],
 					[/* text */ 't', `candidate bundle names`],
 					[/* text */ 't', `.  If the specified
@@ -828,7 +828,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
  candidate bundle names contains extra names, or the order of bundle names
  is slightly modified.  See the description of the default implementation
  of `],
-					[/* external link */ 'a', `ResourceBundle.Control.html#getCandidateLocales(java.lang.String,java.util.Locale)`, `getCandidateLocales`],
+					[/* reference */ 'r', `.ResourceBundle.Control#getCandidateLocales(java.lang.String,java.util.Locale)`],
 					[/* text */ 't', ` for details.`]
 				]],
 				[/* block */ 'b', ''],
@@ -839,7 +839,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
 					[/* text */ 't', `instantiate`],
 					[/* text */ 't', ` an actual
  resource bundle. It uses the default controls' `],
-					[/* external link */ 'a', `ResourceBundle.Control.html#getFormats(java.lang.String)`, `getFormats`],
+					[/* reference */ 'r', `.ResourceBundle.Control#getFormats(java.lang.String)`],
 					[/* text */ 't', ` method, which generates two bundle names for each generated
  name, the first a class name and the second a properties file name. For
  each candidate bundle name, it attempts to create a resource bundle:
@@ -869,7 +869,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
  path name from the candidate bundle name by replacing all "." characters
  with "/" and appending the string ".properties".  It attempts to find a
  "resource" with this name using `],
-						[/* external link */ 'a', `../lang/ClassLoader.html#getResource(java.lang.String)`, `ClassLoader.getResource`],
+						[/* reference */ 'r', `java.ClassLoader#getResource(java.lang.String)`],
 						[/* text */ 't', `.  (Note that a "resource" in the sense of
  `],
 						[/* inline code block */ 'i', `getResource`],
@@ -888,7 +888,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
 					[/* text */ 't', `This continues until a result resource bundle is instantiated or the
  list of candidate bundle names is exhausted.  If no matching resource
  bundle is found, the default control's `],
-					[/* external link */ 'a', `ResourceBundle.Control.html#getFallbackLocale(java.lang.String,java.util.Locale)`, `getFallbackLocale`],
+					[/* reference */ 'r', `.ResourceBundle.Control#getFallbackLocale(java.lang.String,java.util.Locale)`],
 					[/* text */ 't', ` method is called, which returns the current default
  locale.  A new sequence of candidate locale names is generated using this
  locale and searched again, as above.
@@ -927,7 +927,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
 				[/* block */ 'b', [
 					[/* text */ 't', `Whenever it succeeds, it calls the previously instantiated resource
  bundle's `],
-					[/* reference */ 'r', `setParent`],
+					[/* reference */ 'r', `#setParent(java.util.ResourceBundle)`, `setParent`],
 					[/* text */ 't', ` method
  with the new resource bundle.  This continues until the list of names
  is exhausted or the current bundle already has a non-null parent.
@@ -1003,7 +1003,61 @@ DocsCollector.collect('java.util.ResourceBundle', [
 
  `]
 				]],
-				[/* table */ 't', ''],
+				[/* table */ 'tbl',
+					[/* caption */ 'tc'],
+					[/* table header */ 'th', [
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `Locale`]
+							]],
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `Resource bundle`]
+							]]
+						]]
+					]],
+					[/* table body */ 'tb', [
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `Locale("fr", "CH")`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `MyResources_fr_CH.class, parent MyResources_fr.properties, parent MyResources.class`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `Locale("fr", "FR")`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `MyResources_fr.properties, parent MyResources.class`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `Locale("de", "DE")`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `MyResources_en.properties, parent MyResources.class`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `Locale("en", "US")`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `MyResources_en.properties, parent MyResources.class`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `Locale("es", "ES")`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `MyResources_es_ES.class, parent MyResources.class`]
+							]]
+						]]
+					]],
+				],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `The file MyResources_fr_CH.properties is never used because it is
  hidden by the MyResources_fr_CH.class. Likewise, MyResources.properties
@@ -1043,7 +1097,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
 			[/* method description */
 				[/* text */ 't', `Returns a resource bundle using the specified base name, target
  locale, class loader and control. Unlike the `],
-				[/* reference */ 'r', `getBundle`],
+				[/* reference */ 'r', `#getBundle(java.lang.String,java.util.Locale,java.lang.ClassLoader)`, `getBundle`],
 				[/* text */ 't', `
  factory methods with no `],
 				[/* inline code block */ 'i', `control`],
@@ -1075,7 +1129,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `The `],
-						[/* external link */ 'a', `ResourceBundle.Control.html#getFormats(java.lang.String)`, `control.getFormats`],
+						[/* reference */ 'r', `.ResourceBundle.Control#getFormats(java.lang.String)`],
 						[/* text */ 't', ` method is called to get resource bundle formats
  to produce bundle or resource names. The strings
  `],
@@ -1094,7 +1148,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `The `],
-						[/* external link */ 'a', `ResourceBundle.Control.html#getCandidateLocales(java.lang.String,java.util.Locale)`, `control.getCandidateLocales`],
+						[/* reference */ 'r', `.ResourceBundle.Control#getCandidateLocales(java.lang.String,java.util.Locale)`],
 						[/* text */ 't', ` method is called with the target
  locale to get a list of `],
 						[/* inline code block */ 'i', `Locale`],
@@ -1103,7 +1157,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `The `],
-						[/* external link */ 'a', `ResourceBundle.Control.html#newBundle(java.lang.String,java.util.Locale,java.lang.String,java.lang.ClassLoader,boolean)`, `control.newBundle`],
+						[/* reference */ 'r', `.ResourceBundle.Control#newBundle(java.lang.String,java.util.Locale,java.lang.String,java.lang.ClassLoader,boolean)`],
 						[/* text */ 't', ` method is called to
  instantiate a `],
 						[/* inline code block */ 'i', `ResourceBundle`],
@@ -1136,7 +1190,90 @@ DocsCollector.collect('java.util.ResourceBundle', [
 						[/* text */ 't', `.
 
  `],
-						[/* table */ 't', '']
+						[/* table */ 'tbl',
+							[/* caption */ 'tc'],
+							[/* table header */ 'th', [
+								[/* table row */ 'tr', [
+									[/* table header cell */ 'thc', [
+										[/* text */ 't', `Index`]
+									]],
+									[/* table header cell */ 'thc', [
+										[/* inline code block */ 'i', `Locale`]
+									]],
+									[/* table header cell */ 'thc', [
+										[/* inline code block */ 'i', `format`]
+									]]
+								]]
+							]],
+							[/* table body */ 'tb', [
+								[/* table row */ 'tr', [
+									[/* table header cell */ 'thc', [
+										[/* text */ 't', `1`]
+									]],
+									[/* table cell */ 'tbc', [
+										[/* inline code block */ 'i', `Locale("de", "DE")`]
+									]],
+									[/* table cell */ 'tbc', [
+										[/* inline code block */ 'i', `java.class`]
+									]]
+								]],
+								[/* table row */ 'tr', [
+									[/* table header cell */ 'thc', [
+										[/* text */ 't', `2`]
+									]],
+									[/* table cell */ 'tbc', [
+										[/* inline code block */ 'i', `Locale("de", "DE")`]
+									]],
+									[/* table cell */ 'tbc', [
+										[/* inline code block */ 'i', `java.properties`]
+									]]
+								]],
+								[/* table row */ 'tr', [
+									[/* table header cell */ 'thc', [
+										[/* text */ 't', `3`]
+									]],
+									[/* table cell */ 'tbc', [
+										[/* inline code block */ 'i', `Locale("de")`]
+									]],
+									[/* table cell */ 'tbc', [
+										[/* inline code block */ 'i', `java.class`]
+									]]
+								]],
+								[/* table row */ 'tr', [
+									[/* table header cell */ 'thc', [
+										[/* text */ 't', `4`]
+									]],
+									[/* table cell */ 'tbc', [
+										[/* inline code block */ 'i', `Locale("de")`]
+									]],
+									[/* table cell */ 'tbc', [
+										[/* inline code block */ 'i', `java.properties`]
+									]]
+								]],
+								[/* table row */ 'tr', [
+									[/* table header cell */ 'thc', [
+										[/* text */ 't', `5`]
+									]],
+									[/* table cell */ 'tbc', [
+										[/* inline code block */ 'i', `Locale("")`]
+									]],
+									[/* table cell */ 'tbc', [
+										[/* inline code block */ 'i', `java.class`]
+									]]
+								]],
+								[/* table row */ 'tr', [
+									[/* table header cell */ 'thc', [
+										[/* text */ 't', `6`]
+									]],
+									[/* table cell */ 'tbc', [
+										[/* inline code block */ 'i', `Locale("")`]
+									]],
+									[/* table cell */ 'tbc', [
+										[/* inline code block */ 'i', `java.properties`]
+									]]
+								]]
+							]],
+						]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `If the previous step has found no resource bundle, proceed to
@@ -1154,7 +1291,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `The `],
-						[/* external link */ 'a', `ResourceBundle.Control.html#getFallbackLocale(java.lang.String,java.util.Locale)`, `control.getFallbackLocale`],
+						[/* reference */ 'r', `.ResourceBundle.Control#getFallbackLocale(java.lang.String,java.util.Locale)`],
 						[/* text */ 't', ` method is called to get a fallback
  locale (alternative to the current target locale) to try further
  finding a resource bundle. If the method returns a non-null locale,
@@ -1167,7 +1304,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
 						[/* text */ 't', `At this point, we have found a resource bundle that's not the
  base bundle. If this bundle set its parent during its instantiation,
  it is returned to the caller. Otherwise, its `],
-						[/* external link */ 'a', `./ResourceBundle.html#parent_chain`, `parent chain`],
+						[/* reference */ 'r', `.ResourceBundle#parent_chain`],
 						[/* text */ 't', ` is
  instantiated based on the list of candidate locales from which it was
  found. Finally, the bundle is returned to the caller.`]
@@ -1176,11 +1313,11 @@ DocsCollector.collect('java.util.ResourceBundle', [
 				[/* block */ 'b', [
 					[/* text */ 't', `During the resource bundle loading process above, this factory
  method looks up the cache before calling the `],
-					[/* external link */ 'a', `ResourceBundle.Control.html#newBundle(java.lang.String,java.util.Locale,java.lang.String,java.lang.ClassLoader,boolean)`, `control.newBundle`],
+					[/* reference */ 'r', `.ResourceBundle.Control#newBundle(java.lang.String,java.util.Locale,java.lang.String,java.lang.ClassLoader,boolean)`],
 					[/* text */ 't', ` method.  If the time-to-live period of the
  resource bundle found in the cache has expired, the factory method
  calls the `],
-					[/* external link */ 'a', `ResourceBundle.Control.html#needsReload(java.lang.String,java.util.Locale,java.lang.String,java.lang.ClassLoader,java.util.ResourceBundle,long)`, `control.needsReload`],
+					[/* reference */ 'r', `.ResourceBundle.Control#needsReload(java.lang.String,java.util.Locale,java.lang.String,java.lang.ClassLoader,java.util.ResourceBundle,long)`],
 					[/* text */ 't', `
  method to determine whether the resource bundle needs to be reloaded.
  If reloading is required, the factory method calls
@@ -1204,7 +1341,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
 				[/* block */ 'b', [
 					[/* text */ 't', `All resource bundles loaded are cached by default. Refer to
  `],
-					[/* external link */ 'a', `ResourceBundle.Control.html#getTimeToLive(java.lang.String,java.util.Locale)`, `control.getTimeToLive`],
+					[/* reference */ 'r', `.ResourceBundle.Control#getTimeToLive(java.lang.String,java.util.Locale)`],
 					[/* text */ 't', ` for details.
 
  `]
@@ -1228,13 +1365,13 @@ DocsCollector.collect('java.util.ResourceBundle', [
 						[/* text */ 't', `Requested `],
 						[/* inline code block */ 'i', `Locale`],
 						[/* text */ 't', `: `],
-						[/* external link */ 'a', `Locale.html#ITALY`, `Locale.ITALY`]
+						[/* reference */ 'r', `.Locale#ITALY`]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `Default `],
 						[/* inline code block */ 'i', `Locale`],
 						[/* text */ 't', `: `],
-						[/* external link */ 'a', `Locale.html#FRENCH`, `Locale.FRENCH`]
+						[/* reference */ 'r', `.Locale#FRENCH`]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `Available resource bundles:
@@ -1291,7 +1428,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
  because it's the base bundle.  `],
 					[/* inline code block */ 'i', `getBundle`],
 					[/* text */ 't', ` calls `],
-					[/* external link */ 'a', `ResourceBundle.Control.html#getFallbackLocale(java.lang.String,java.util.Locale)`, `control.getFallbackLocale("foo.bar.Messages", Locale.ITALY)`],
+					[/* reference */ 'r', `.ResourceBundle.Control#getFallbackLocale(java.lang.String,java.util.Locale)`],
 					[/* text */ 't', ` which
  returns `],
 					[/* inline code block */ 'i', `Locale.FRENCH`],
@@ -1417,7 +1554,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
  privileges of `],
 				[/* inline code block */ 'i', `ResourceBundle`],
 				[/* text */ 't', `.  See `],
-				[/* reference */ 'r', `getBundle`],
+				[/* reference */ 'r', `#getBundle(java.lang.String,java.util.Locale,java.lang.ClassLoader,java.util.ResourceBundle.Control)`, `getBundle`],
 				[/* text */ 't', ` for the
  complete description of the resource bundle loading process with a
  `],
@@ -1598,16 +1735,16 @@ DocsCollector.collect('java.util.ResourceBundle', [
  for the named resource bundle.
  Otherwise, it will load the resource bundles that are local in the
  given module as if calling `],
-					[/* external link */ 'a', `../lang/Module.html#getResourceAsStream(java.lang.String)`, `Module.getResourceAsStream(String)`],
+					[/* reference */ 'r', `java.Module#getResourceAsStream(java.lang.String)`],
 					[/* text */ 't', `
  or that are visible to the class loader of the given module
  as if calling `],
-					[/* external link */ 'a', `../lang/ClassLoader.html#getResourceAsStream(java.lang.String)`, `ClassLoader.getResourceAsStream(String)`],
+					[/* reference */ 'r', `java.ClassLoader#getResourceAsStream(java.lang.String)`],
 					[/* text */ 't', `.
  When the resource bundle is loaded from the specified module, it is
  subject to the encapsulation rules specified by
  `],
-					[/* external link */ 'a', `../lang/Module.html#getResourceAsStream(java.lang.String)`, `Module.getResourceAsStream`],
+					[/* reference */ 'r', `java.Module#getResourceAsStream(java.lang.String)`],
 					[/* text */ 't', `.
 
  `]
@@ -1618,7 +1755,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
 					[/* inline code block */ 'i', `module`],
 					[/* text */ 't', ` is an unnamed module, then this method is
  equivalent to calling `],
-					[/* reference */ 'r', `getBundle(baseName, targetLocale, module.getClassLoader()`],
+					[/* reference */ 'r', `#getBundle(java.lang.String,java.util.Locale,java.lang.ClassLoader)`, `getBundle(baseName, targetLocale, module.getClassLoader()`],
 					[/* text */ 't', ` to load
  resource bundles that are visible to the class loader of the given
  unnamed module. Custom `],
@@ -1683,7 +1820,7 @@ DocsCollector.collect('java.util.ResourceBundle', [
  privileges of `],
 				[/* inline code block */ 'i', `ResourceBundle`],
 				[/* text */ 't', `.  See `],
-				[/* reference */ 'r', `getBundle`],
+				[/* reference */ 'r', `#getBundle(java.lang.String,java.util.Locale,java.lang.ClassLoader,java.util.ResourceBundle.Control)`, `getBundle`],
 				[/* text */ 't', ` for the
  complete description of the resource bundle loading process with a
  `],
@@ -1797,10 +1934,10 @@ DocsCollector.collect('java.util.ResourceBundle', [
 					[/* inline code block */ 'i', `Set`],
 					[/* text */ 't', ` of the
  keys returned by the `],
-					[/* reference */ 'r', `getKeys`],
+					[/* reference */ 'r', `#getKeys()`, `getKeys`],
 					[/* text */ 't', ` method except
  for the ones for which the `],
-					[/* reference */ 'r', `handleGetObject`],
+					[/* reference */ 'r', `#handleGetObject(java.lang.String)`, `handleGetObject`],
 					[/* text */ 't', ` method returns `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', `. Once the

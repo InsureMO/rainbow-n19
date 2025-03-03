@@ -192,7 +192,7 @@ DocsCollector.collect('java.math.BigInteger', [
  optional minus or plus sign followed by a sequence of one or
  more decimal digits.  The character-to-digit mapping is
  provided by `],
-				[/* external link */ 'a', `../lang/Character.html#digit(int,int)`, `Character.digit`],
+				[/* reference */ 'r', `java.Character#digit(int,int)`],
 				[/* text */ 't', `.  The String may not contain any extraneous
  characters (whitespace, for example).`]
 			],
@@ -404,7 +404,7 @@ DocsCollector.collect('java.math.BigInteger', [
  consists of an optional minus or plus sign followed by a
  sequence of one or more digits in the specified radix.  The
  character-to-digit mapping is provided by `],
-				[/* external link */ 'a', `../lang/Character.html#digit(int,int)`, `Character.digit`],
+				[/* reference */ 'r', `java.Character#digit(int,int)`],
 				[/* text */ 't', `.  The String may
  not contain any extraneous characters (whitespace, for
  example).`]
@@ -428,10 +428,10 @@ DocsCollector.collect('java.math.BigInteger', [
 					[/* inline code block */ 'i', `radix`],
 					[/* text */ 't', ` is
          outside the range from `],
-					[/* external link */ 'a', `../lang/Character.html#MIN_RADIX`, `Character.MIN_RADIX`],
+					[/* reference */ 'r', `java.Character#MIN_RADIX`],
 					[/* text */ 't', ` to
          `],
-					[/* external link */ 'a', `../lang/Character.html#MAX_RADIX`, `Character.MAX_RADIX`],
+					[/* reference */ 'r', `java.Character#MAX_RADIX`],
 					[/* text */ 't', `, inclusive.`]
 				]]
 			]
@@ -526,9 +526,9 @@ DocsCollector.collect('java.math.BigInteger', [
 			[/* method description */
 				[/* text */ 't', `Returns the String representation of this BigInteger in the
  given radix.  If the radix is outside the range from `],
-				[/* external link */ 'a', `../lang/Character.html#MIN_RADIX`, `Character.MIN_RADIX`],
+				[/* reference */ 'r', `java.Character#MIN_RADIX`],
 				[/* text */ 't', ` to `],
-				[/* external link */ 'a', `../lang/Character.html#MAX_RADIX`, `Character.MAX_RADIX`],
+				[/* reference */ 'r', `java.Character#MAX_RADIX`],
 				[/* text */ 't', ` inclusive,
  it will default to 10 (as is the case for
  `],
@@ -539,7 +539,7 @@ DocsCollector.collect('java.math.BigInteger', [
 				[/* text */ 't', ` is used, and a minus
  sign is prepended if appropriate.  (This representation is
  compatible with the `],
-				[/* reference */ 'r', `(String, int)`],
+				[/* reference */ 'r', `#%3Cinit%3E(java.lang.String,int)`, `(String, int)`],
 				[/* text */ 't', ` constructor.)`]
 			],
 			[/* parameters */
@@ -561,7 +561,7 @@ DocsCollector.collect('java.math.BigInteger', [
 				[/* text */ 't', ` is used, and a minus sign is
  prepended if appropriate.  (This representation is compatible
  with the `],
-				[/* reference */ 'r', `(String)`],
+				[/* reference */ 'r', `#%3Cinit%3E(java.lang.String)`, `(String)`],
 				[/* text */ 't', ` constructor, and
  allows for String concatenation with Java's + operator.)`]
 			],
@@ -720,18 +720,18 @@ DocsCollector.collect('java.math.BigInteger', [
 			[/* method description */
 				[/* text */ 't', `Compares this BigInteger with the specified BigInteger.  This
  method is provided in preference to individual methods for each
- of the six boolean comparison operators (&lt;, ==,
- &gt;, &gt;=, !=, &lt;=).  The suggested
+ of the six boolean comparison operators (<, ==,
+ >, >=, !=, <=).  The suggested
  idiom for performing these comparisons is: `],
 				[/* inline code block */ 'i', `(x.compareTo(y)`],
-				[/* text */ 't', ` &lt;`],
+				[/* text */ 't', ` <`],
 				[/* text */ 't', `op`],
-				[/* text */ 't', `&gt; `],
+				[/* text */ 't', `> `],
 				[/* inline code block */ 'i', `0)`],
 				[/* text */ 't', `, where
- &lt;`],
+ <`],
 				[/* text */ 't', `op`],
-				[/* text */ 't', `&gt; is one of the six comparison operators.`]
+				[/* text */ 't', `> is one of the six comparison operators.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'val', [/* parameter description */
@@ -834,9 +834,9 @@ DocsCollector.collect('java.math.BigInteger', [
 				[/* inline code block */ 'i', `float`],
 				[/* text */ 't', `, it will be converted to
  `],
-				[/* external link */ 'a', `../lang/Float.html#NEGATIVE_INFINITY`, `Float.NEGATIVE_INFINITY`],
+				[/* reference */ 'r', `java.Float#NEGATIVE_INFINITY`],
 				[/* text */ 't', ` or `],
-				[/* external link */ 'a', `../lang/Float.html#POSITIVE_INFINITY`, `Float.POSITIVE_INFINITY`],
+				[/* reference */ 'r', `java.Float#POSITIVE_INFINITY`],
 				[/* text */ 't', ` as appropriate.  Note that even when
  the return value is finite, this conversion can lose
  information about the precision of the BigInteger value.`]
@@ -871,9 +871,9 @@ DocsCollector.collect('java.math.BigInteger', [
 				[/* inline code block */ 'i', `double`],
 				[/* text */ 't', `, it will be converted to
  `],
-				[/* external link */ 'a', `../lang/Double.html#NEGATIVE_INFINITY`, `Double.NEGATIVE_INFINITY`],
+				[/* reference */ 'r', `java.Double#NEGATIVE_INFINITY`],
 				[/* text */ 't', ` or `],
-				[/* external link */ 'a', `../lang/Double.html#POSITIVE_INFINITY`, `Double.POSITIVE_INFINITY`],
+				[/* reference */ 'r', `java.Double#POSITIVE_INFINITY`],
 				[/* text */ 't', ` as appropriate.  Note that even when
  the return value is finite, this conversion can lose
  information about the precision of the BigInteger value.`]
@@ -916,7 +916,7 @@ DocsCollector.collect('java.math.BigInteger', [
 				[/* inline code block */ 'i', `(ceil((this.bitLength() + 1)/8))`],
 				[/* text */ 't', `.  (This representation is compatible with the
  `],
-				[/* reference */ 'r', `(byte[])`],
+				[/* reference */ 'r', `#%3Cinit%3E(byte%5B%5D)`, `(byte[])`],
 				[/* text */ 't', ` constructor.)`]
 			],
 			/* parameters */ UDF,

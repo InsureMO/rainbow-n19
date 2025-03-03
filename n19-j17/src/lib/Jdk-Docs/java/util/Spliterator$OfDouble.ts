@@ -16,7 +16,7 @@ DocsCollector.collect('java.util.Spliterator$OfDouble', [
 				[/* text */ 't', `Performs the given action for each remaining element, sequentially in
  the current thread, until all elements have been processed or the action
  throws an exception.  If this Spliterator is `],
-				[/* external link */ 'a', `Spliterator.html#ORDERED`, `Spliterator.ORDERED`],
+				[/* reference */ 'r', `.Spliterator#ORDERED`],
 				[/* text */ 't', `, actions
  are performed in encounter order.  Exceptions thrown by the action
  are relayed to the caller.
@@ -44,7 +44,7 @@ DocsCollector.collect('java.util.Spliterator$OfDouble', [
 				[/* inline code block */ 'i', `false`],
 				[/* text */ 't', `.  If this
  Spliterator is `],
-				[/* external link */ 'a', `Spliterator.html#ORDERED`, `Spliterator.ORDERED`],
+				[/* reference */ 'r', `.Spliterator#ORDERED`],
 				[/* text */ 't', ` the action is performed on the
  next element in encounter order.  Exceptions thrown by the
  action are relayed to the caller.

@@ -130,10 +130,10 @@ DocsCollector.collect('java.util.Hashtable', [
  modification, the iterator fails quickly and cleanly, rather than risking
  arbitrary, non-deterministic behavior at an undetermined time in the future.
  The Enumerations returned by Hashtable's `],
-			[/* reference */ 'r', `keys`],
+			[/* reference */ 'r', `#keys()`, `keys`],
 			[/* text */ 't', ` and
  `],
-			[/* reference */ 'r', `elements`],
+			[/* reference */ 'r', `#elements()`, `elements`],
 			[/* text */ 't', ` methods are `],
 			[/* text */ 't', `not`],
 			[/* text */ 't', ` fail-fast; if the
@@ -160,7 +160,7 @@ DocsCollector.collect('java.util.Hashtable', [
 			[/* reference */ 'r', `java.util.Map`],
 			[/* text */ 't', ` interface, making it a member of the
  `],
-			[/* external link */ 'a', `../../../java.base/java/util/package-summary.html#CollectionsFramework`, `Java Collections Framework`],
+			[/* text */ 't', `Java Collections Framework`],
 			[/* text */ 't', `.  Unlike the new collection
  implementations, `],
 			[/* inline code block */ 'i', `Hashtable`],
@@ -492,14 +492,14 @@ DocsCollector.collect('java.util.Hashtable', [
 			[/* method description */
 				[/* text */ 't', `Tests if some key maps into the specified value in this hashtable.
  This operation is more expensive than the `],
-				[/* reference */ 'r', `containsKey`],
+				[/* reference */ 'r', `#containsKey(java.lang.Object)`, `containsKey`],
 				[/* text */ 't', ` method.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `Note that this method is identical in functionality to
  `],
-					[/* reference */ 'r', `containsValue`],
+					[/* reference */ 'r', `#containsValue(java.lang.Object)`, `containsValue`],
 					[/* text */ 't', `, (which is part of the
  `],
 					[/* reference */ 'r', `java.util.Map`],
@@ -684,7 +684,7 @@ DocsCollector.collect('java.util.Hashtable', [
 				]],
 				[/* text */ 't', `
  (Method `],
-				[/* external link */ 'a', `Map.html#merge(K,V,java.util.function.BiFunction)`, `merge()`],
+				[/* reference */ 'r', `.Map#merge(K,V,java.util.function.BiFunction)`],
 				[/* text */ 't', ` is often simpler to use for such purposes.)
 
  `],
@@ -880,7 +880,7 @@ DocsCollector.collect('java.util.Hashtable', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `Note that this method is identical in functionality to `],
-					[/* reference */ 'r', `contains`],
+					[/* reference */ 'r', `#contains(java.lang.Object)`, `contains`],
 					[/* text */ 't', ` (which predates the `],
 					[/* reference */ 'r', `java.util.Map`],
 					[/* text */ 't', ` interface).`]

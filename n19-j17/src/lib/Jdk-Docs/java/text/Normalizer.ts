@@ -103,16 +103,16 @@ DocsCollector.collect('java.text.Normalizer', [
 				[/* parameter */ 'form', [/* parameter description */
 					[/* text */ 't', `The normalization form; one of
                    `],
-					[/* external link */ 'a', `Normalizer.Form.html#NFC`, `Normalizer.Form.NFC`],
+					[/* reference */ 'r', `.Normalizer.Form#NFC`],
 					[/* text */ 't', `,
                    `],
-					[/* external link */ 'a', `Normalizer.Form.html#NFD`, `Normalizer.Form.NFD`],
+					[/* reference */ 'r', `.Normalizer.Form#NFD`],
 					[/* text */ 't', `,
                    `],
-					[/* external link */ 'a', `Normalizer.Form.html#NFKC`, `Normalizer.Form.NFKC`],
+					[/* reference */ 'r', `.Normalizer.Form#NFKC`],
 					[/* text */ 't', `,
                    `],
-					[/* external link */ 'a', `Normalizer.Form.html#NFKD`, `Normalizer.Form.NFKD`]
+					[/* reference */ 'r', `.Normalizer.Form#NFKD`]
 				]]
 			],
 			[/* throws */
@@ -140,16 +140,16 @@ DocsCollector.collect('java.text.Normalizer', [
 				[/* parameter */ 'form', [/* parameter description */
 					[/* text */ 't', `The normalization form; one of
                    `],
-					[/* external link */ 'a', `Normalizer.Form.html#NFC`, `Normalizer.Form.NFC`],
+					[/* reference */ 'r', `.Normalizer.Form#NFC`],
 					[/* text */ 't', `,
                    `],
-					[/* external link */ 'a', `Normalizer.Form.html#NFD`, `Normalizer.Form.NFD`],
+					[/* reference */ 'r', `.Normalizer.Form#NFD`],
 					[/* text */ 't', `,
                    `],
-					[/* external link */ 'a', `Normalizer.Form.html#NFKC`, `Normalizer.Form.NFKC`],
+					[/* reference */ 'r', `.Normalizer.Form#NFKC`],
 					[/* text */ 't', `,
                    `],
-					[/* external link */ 'a', `Normalizer.Form.html#NFKD`, `Normalizer.Form.NFKD`]
+					[/* reference */ 'r', `.Normalizer.Form#NFKD`]
 				]]
 			],
 			[/* throws */

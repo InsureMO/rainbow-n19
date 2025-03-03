@@ -1,4 +1,3 @@
-import {UDF} from '../../../../utils';
 import {DocsCollector} from '../../../DocsCollector';
 
 DocsCollector.collect('java.lang.reflect.Proxy', [
@@ -36,7 +35,7 @@ DocsCollector.collect('java.lang.reflect.Proxy', [
 			[/* text */ 't', `.
  A method invocation on a proxy instance through one of its proxy
  interfaces will be dispatched to the `],
-			[/* external link */ 'a', `InvocationHandler.html#invoke(java.lang.Object,java.lang.reflect.Method,java.lang.Object%5B%5D)`, `invoke`],
+			[/* reference */ 'r', `.InvocationHandler#invoke(java.lang.Object,java.lang.reflect.Method,java.lang.Object[])`],
 			[/* text */ 't', ` method of the instance's invocation handler, passing the proxy
  instance, a `],
 			[/* inline code block */ 'i', `java.lang.reflect.Method`],
@@ -89,14 +88,14 @@ DocsCollector.collect('java.lang.reflect.Proxy', [
 			[/* block */ 'b', [
 				[/* text */ 't', `A proxy class implements exactly the interfaces specified at its
  creation, in the same order. Invoking `],
-				[/* external link */ 'a', `../Class.html#getInterfaces()`, `getInterfaces`],
+				[/* reference */ 'r', `java.Class#getInterfaces()`],
 				[/* text */ 't', `
  on its `],
 				[/* inline code block */ 'i', `Class`],
 				[/* text */ 't', ` object will return an array containing the same
  list of interfaces (in the order specified at its creation), invoking
  `],
-				[/* external link */ 'a', `../Class.html#getMethods()`, `getMethods`],
+				[/* reference */ 'r', `java.Class#getMethods()`],
 				[/* text */ 't', ` on its `],
 				[/* inline code block */ 'i', `Class`],
 				[/* text */ 't', ` object will return
@@ -127,7 +126,7 @@ DocsCollector.collect('java.lang.reflect.Proxy', [
 			]],
 			[/* block */ 'b', [
 				[/* text */ 't', `The `],
-				[/* reference */ 'r', `Proxy.isProxyClass`],
+				[/* reference */ 'r', `#isProxyClass(java.lang.Class)`, `Proxy.isProxyClass`],
 				[/* text */ 't', ` method can be used
  to determine if a given class is a proxy class.
  `]
@@ -164,7 +163,7 @@ DocsCollector.collect('java.lang.reflect.Proxy', [
 				[/* text */ 't', `Each proxy instance has an associated invocation handler, the one
  that was passed to its constructor.  The static
  `],
-				[/* reference */ 'r', `Proxy.getInvocationHandler`],
+				[/* reference */ 'r', `#getInvocationHandler(java.lang.Object)`, `Proxy.getInvocationHandler`],
 				[/* text */ 't', ` method
  will return the invocation handler associated with the proxy instance
  passed as its argument.
@@ -174,7 +173,7 @@ DocsCollector.collect('java.lang.reflect.Proxy', [
 			[/* block */ 'b', [
 				[/* text */ 't', `An interface method invocation on a proxy instance will be
  encoded and dispatched to the invocation handler's `],
-				[/* external link */ 'a', `InvocationHandler.html#invoke(java.lang.Object,java.lang.reflect.Method,java.lang.Object%5B%5D)`, `invoke`],
+				[/* reference */ 'r', `.InvocationHandler#invoke(java.lang.Object,java.lang.reflect.Method,java.lang.Object[])`],
 				[/* text */ 't', ` method as described in the
  documentation for that method.
 
@@ -185,7 +184,7 @@ DocsCollector.collect('java.lang.reflect.Proxy', [
  a default method from its superinterface directly or indirectly.
  An invocation handler can invoke a default method of a proxy interface
  by calling `],
-				[/* external link */ 'a', `InvocationHandler.html#invokeDefault(java.lang.Object,java.lang.reflect.Method,java.lang.Object...)`, `InvocationHandler::invokeDefault`],
+				[/* reference */ 'r', `.InvocationHandler#invokeDefault(java.lang.Object,java.lang.reflect.Method,java.lang.Object...)`],
 				[/* text */ 't', `.
 
  `]
@@ -236,10 +235,10 @@ DocsCollector.collect('java.lang.reflect.Proxy', [
  the proxy interfaces. Specifically, the package and the module membership
  of a proxy class defined via the
  `],
-		[/* reference */ 'r', `getProxyClass(ClassLoader, Class[])`],
+		[/* reference */ 'r', `#getProxyClass(java.lang.ClassLoader,java.lang.Class...)`, `getProxyClass(ClassLoader, Class[])`],
 		[/* text */ 't', ` or
  `],
-		[/* reference */ 'r', `newProxyInstance(ClassLoader, Class[], InvocationHandler)`],
+		[/* reference */ 'r', `#newProxyInstance(java.lang.ClassLoader,java.lang.Class%5B%5D,java.lang.reflect.InvocationHandler)`, `newProxyInstance(ClassLoader, Class[], InvocationHandler)`],
 		[/* text */ 't', `
  methods is specified as follows:
 
@@ -329,7 +328,7 @@ DocsCollector.collect('java.lang.reflect.Proxy', [
 			[/* text */ 't', `
  Note that it is possible for arbitrary code to obtain access to a proxy class
  in an open package with `],
-			[/* external link */ 'a', `AccessibleObject.html#setAccessible(java.lang.reflect.AccessibleObject%5B%5D,boolean)`, `setAccessible`],
+			[/* reference */ 'r', `.AccessibleObject#setAccessible(java.lang.reflect.AccessibleObject[],boolean)`],
 			[/* text */ 't', `,
  whereas a proxy class in a non-open package is never accessible to
  code outside the module of the proxy class.
@@ -352,7 +351,7 @@ DocsCollector.collect('java.lang.reflect.Proxy', [
  A dynamic module is a named module generated at runtime. A proxy class
  defined in a dynamic module is encapsulated and not accessible to any module.
  Calling `],
-			[/* external link */ 'a', `Constructor.html#newInstance(java.lang.Object...)`, `Constructor.newInstance(Object...)`],
+			[/* reference */ 'r', `.Constructor#newInstance(java.lang.Object...)`],
 			[/* text */ 't', ` on a proxy class in
  a dynamic module will throw `],
 			[/* inline code block */ 'i', `IllegalAccessException`],
@@ -550,10 +549,10 @@ DocsCollector.collect('java.lang.reflect.Proxy', [
 						[/* inline code block */ 'i', `interfaces`],
 						[/* text */ 't', ` array
  must represent `],
-						[/* external link */ 'a', `../Class.html#isHidden()`, `non-hidden`],
+						[/* reference */ 'r', `java.Class#isHidden()`],
 						[/* text */ 't', ` and
  `],
-						[/* external link */ 'a', `../Class.html#isSealed()`, `non-sealed`],
+						[/* reference */ 'r', `java.Class#isSealed()`],
 						[/* text */ 't', ` interfaces,
  not classes or primitive types.
 
@@ -664,7 +663,7 @@ DocsCollector.collect('java.lang.reflect.Proxy', [
 							[/* inline code block */ 'i', `null`],
 							[/* text */ 't', ` and the
                invocation of `],
-							[/* external link */ 'a', `../SecurityManager.html#checkPermission(java.security.Permission)`, `s.checkPermission`],
+							[/* reference */ 'r', `java.SecurityManager#checkPermission(java.security.Permission)`],
 							[/* text */ 't', ` with
                `],
 							[/* inline code block */ 'i', `RuntimePermission("getClassLoader")`],
@@ -680,7 +679,7 @@ DocsCollector.collect('java.lang.reflect.Proxy', [
 							[/* inline code block */ 'i', `intf`],
 							[/* text */ 't', ` and
                invocation of `],
-							[/* external link */ 'a', `../SecurityManager.html#checkPackageAccess(java.lang.String)`, `s.checkPackageAccess()`],
+							[/* reference */ 'r', `java.SecurityManager#checkPackageAccess(java.lang.String)`],
 							[/* text */ 't', ` denies access to `],
 							[/* inline code block */ 'i', `intf`],
 							[/* text */ 't', `;`]
@@ -692,7 +691,7 @@ DocsCollector.collect('java.lang.reflect.Proxy', [
 							[/* text */ 't', `
                as the non-public interface and the invocation of
                `],
-							[/* external link */ 'a', `../SecurityManager.html#checkPermission(java.security.Permission)`, `s.checkPermission`],
+							[/* reference */ 'r', `java.SecurityManager#checkPermission(java.security.Permission)`],
 							[/* text */ 't', ` with
                `],
 							[/* inline code block */ 'i', `ReflectPermission("newProxyInPackage.{package name}")`],
@@ -742,7 +741,7 @@ DocsCollector.collect('java.lang.reflect.Proxy', [
           and the caller's class loader is not the same as or an
           ancestor of the class loader for the invocation handler
           and invocation of `],
-					[/* external link */ 'a', `../SecurityManager.html#checkPackageAccess(java.lang.String)`, `s.checkPackageAccess()`],
+					[/* reference */ 'r', `java.SecurityManager#checkPackageAccess(java.lang.String)`],
 					[/* text */ 't', ` denies access to the invocation
           handler's class.`]
 				]]
@@ -797,7 +796,7 @@ DocsCollector.collect('java.lang.reflect.Proxy', [
 							[/* inline code block */ 'i', `null`],
 							[/* text */ 't', ` and the
              invocation of `],
-							[/* external link */ 'a', `../SecurityManager.html#checkPermission(java.security.Permission)`, `s.checkPermission`],
+							[/* reference */ 'r', `java.SecurityManager#checkPermission(java.security.Permission)`],
 							[/* text */ 't', ` with
              `],
 							[/* inline code block */ 'i', `RuntimePermission("getClassLoader")`],
@@ -813,7 +812,7 @@ DocsCollector.collect('java.lang.reflect.Proxy', [
 							[/* inline code block */ 'i', `intf`],
 							[/* text */ 't', ` and
              invocation of `],
-							[/* external link */ 'a', `../SecurityManager.html#checkPackageAccess(java.lang.String)`, `s.checkPackageAccess()`],
+							[/* reference */ 'r', `java.SecurityManager#checkPackageAccess(java.lang.String)`],
 							[/* text */ 't', ` denies access to `],
 							[/* inline code block */ 'i', `intf`],
 							[/* text */ 't', `.`]

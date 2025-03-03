@@ -232,7 +232,7 @@ DocsCollector.collect('java.util.StringJoiner', [
 					[/* text */ 't', `A `],
 					[/* inline code block */ 'i', `StringJoiner`],
 					[/* text */ 't', ` is empty if `],
-					[/* reference */ 'r', `add()`],
+					[/* reference */ 'r', `#add(java.lang.CharSequence)`, `add()`],
 					[/* text */ 't', `
  has never been called, and if `],
 					[/* inline code block */ 'i', `merge()`],

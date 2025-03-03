@@ -24,7 +24,7 @@ DocsCollector.collect('java.lang.InheritableThreadLocal', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `Note: During the creation of a new `],
-			[/* external link */ 'a', `Thread.html#%3Cinit%3E(java.lang.ThreadGroup,java.lang.Runnable,java.lang.String,long,boolean)`, `thread`],
+			[/* reference */ 'r', `.Thread#<init>(java.lang.ThreadGroup,java.lang.Runnable,java.lang.String,long,boolean)`],
 			[/* text */ 't', `, it is
  possible to `],
 			[/* text */ 't', `opt out`],

@@ -8,10 +8,10 @@ DocsCollector.collect('java.util.function.Function', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
-			[/* external link */ 'a', `package-summary.html`, `functional interface`],
+			[/* reference */ 'r', `.package-summary`],
 			[/* text */ 't', `
  whose functional method is `],
-			[/* reference */ 'r', `apply(Object)`],
+			[/* reference */ 'r', `#apply(T)`, `apply(Object)`],
 			[/* text */ 't', `.`]
 		]]
 	],

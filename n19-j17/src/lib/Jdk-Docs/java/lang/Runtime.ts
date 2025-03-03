@@ -45,12 +45,12 @@ DocsCollector.collect('java.lang.Runtime', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` All registered `],
-					[/* reference */ 'r', `shutdown hooks`],
+					[/* reference */ 'r', `#addShutdownHook(java.lang.Thread)`, `shutdown hooks`],
 					[/* text */ 't', `, if any,
  are started in some unspecified order and allowed to run concurrently
  until they finish.  Once this is done the virtual machine
  `],
-					[/* reference */ 'r', `halts`],
+					[/* reference */ 'r', `#halt(int)`, `halts`],
 					[/* text */ 't', `.
 
  `]
@@ -63,7 +63,7 @@ DocsCollector.collect('java.lang.Runtime', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The `],
-					[/* external link */ 'a', `System.html#exit(int)`, `System.exit`],
+					[/* reference */ 'r', `.System#exit(int)`],
 					[/* text */ 't', ` method is the
  conventional and convenient means of invoking this method.`]
 				]]
@@ -78,7 +78,7 @@ DocsCollector.collect('java.lang.Runtime', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager is present and its
          `],
-					[/* external link */ 'a', `SecurityManager.html#checkExit(int)`, `checkExit`],
+					[/* reference */ 'r', `.SecurityManager#checkExit(int)`],
 					[/* text */ 't', ` method does not permit
          exiting with the specified status`]
 				]]
@@ -111,7 +111,7 @@ DocsCollector.collect('java.lang.Runtime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The method `],
-					[/* external link */ 'a', `System.html#runFinalization()`, `System.runFinalization()`],
+					[/* reference */ 'r', `.System#runFinalization()`],
 					[/* text */ 't', ` is the conventional
  and convenient means of invoking this method.`]
 				]]
@@ -151,7 +151,7 @@ DocsCollector.collect('java.lang.Runtime', [
  A filename matching the argument does not have to exist in the file
  system.
  See the `],
-				[/* external link */ 'a', `../../../../specs/jni/index.html`, `JNI Specification`],
+				[/* text */ 't', `JNI Specification`],
 				[/* text */ 't', `
  for more details.
 
@@ -172,7 +172,7 @@ DocsCollector.collect('java.lang.Runtime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This is similar to the method `],
-					[/* reference */ 'r', `loadLibrary(String)`],
+					[/* reference */ 'r', `#loadLibrary(java.lang.String)`, `loadLibrary(String)`],
 					[/* text */ 't', `, but it
  accepts a general file name as an argument rather than just a library
  name, allowing any file of native code to be loaded.
@@ -181,7 +181,7 @@ DocsCollector.collect('java.lang.Runtime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The method `],
-					[/* external link */ 'a', `System.html#load(java.lang.String)`, `System.load(String)`],
+					[/* reference */ 'r', `.System#load(java.lang.String)`],
 					[/* text */ 't', ` is the conventional and
  convenient means of invoking this method.`]
 				]]
@@ -231,7 +231,7 @@ DocsCollector.collect('java.lang.Runtime', [
 				[/* inline code block */ 'i', `libname`],
 				[/* text */ 't', ` function exported by the library is invoked.
  See the `],
-				[/* external link */ 'a', `../../../../specs/jni/index.html`, `JNI Specification`],
+				[/* text */ 't', `JNI Specification`],
 				[/* text */ 't', `
  for more details.
 
@@ -253,7 +253,7 @@ DocsCollector.collect('java.lang.Runtime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The method `],
-					[/* external link */ 'a', `System.html#loadLibrary(java.lang.String)`, `System.loadLibrary(String)`],
+					[/* reference */ 'r', `.System#loadLibrary(java.lang.String)`],
 					[/* text */ 't', ` is the conventional
  and convenient means of invoking this method. If native
  methods are to be used in the implementation of a class, a standard
@@ -344,7 +344,7 @@ DocsCollector.collect('java.lang.Runtime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The method `],
-					[/* external link */ 'a', `System.html#gc()`, `System.gc()`],
+					[/* reference */ 'r', `.System#gc()`],
 					[/* text */ 't', ` is the conventional and convenient
  means of invoking this method.`]
 				]]
@@ -399,7 +399,7 @@ DocsCollector.collect('java.lang.Runtime', [
 					[/* text */ 't', `
  behaves in exactly the same way as the invocation
  `],
-					[/* reference */ 'r', `exec`],
+					[/* reference */ 'r', `#exec(java.lang.String%5B%5D,java.lang.String%5B%5D,java.io.File)`, `exec`],
 					[/* inline code block */ 'i', `(cmdarray, null, null)`],
 					[/* text */ 't', `.`]
 				]]
@@ -414,7 +414,7 @@ DocsCollector.collect('java.lang.Runtime', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its
           `],
-					[/* external link */ 'a', `SecurityManager.html#checkExec(java.lang.String)`, `checkExec`],
+					[/* reference */ 'r', `.SecurityManager#checkExec(java.lang.String)`],
 					[/* text */ 't', `
           method doesn't allow creation of the subprocess`]
 				]],
@@ -460,7 +460,7 @@ DocsCollector.collect('java.lang.Runtime', [
 					[/* text */ 't', `
  behaves in exactly the same way as the invocation
  `],
-					[/* reference */ 'r', `exec`],
+					[/* reference */ 'r', `#exec(java.lang.String%5B%5D,java.lang.String%5B%5D,java.io.File)`, `exec`],
 					[/* inline code block */ 'i', `(cmdarray, envp, dir)`],
 					[/* text */ 't', `,
  where `],
@@ -518,7 +518,7 @@ DocsCollector.collect('java.lang.Runtime', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its
           `],
-					[/* external link */ 'a', `SecurityManager.html#checkExec(java.lang.String)`, `checkExec`],
+					[/* reference */ 'r', `.SecurityManager#checkExec(java.lang.String)`],
 					[/* text */ 't', `
           method doesn't allow creation of the subprocess`]
 				]],
@@ -561,7 +561,7 @@ DocsCollector.collect('java.lang.Runtime', [
 					[/* text */ 't', `
  behaves in exactly the same way as the invocation
  `],
-					[/* reference */ 'r', `exec`],
+					[/* reference */ 'r', `#exec(java.lang.String,java.lang.String%5B%5D,java.io.File)`, `exec`],
 					[/* inline code block */ 'i', `(command, envp, null)`],
 					[/* text */ 't', `.`]
 				]]
@@ -588,7 +588,7 @@ DocsCollector.collect('java.lang.Runtime', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its
           `],
-					[/* external link */ 'a', `SecurityManager.html#checkExec(java.lang.String)`, `checkExec`],
+					[/* reference */ 'r', `.SecurityManager#checkExec(java.lang.String)`],
 					[/* text */ 't', `
           method doesn't allow creation of the subprocess`]
 				]],
@@ -630,7 +630,7 @@ DocsCollector.collect('java.lang.Runtime', [
 					[/* text */ 't', `
  behaves in exactly the same way as the invocation
  `],
-					[/* reference */ 'r', `exec`],
+					[/* reference */ 'r', `#exec(java.lang.String,java.lang.String%5B%5D,java.io.File)`, `exec`],
 					[/* inline code block */ 'i', `(command, null, null)`],
 					[/* text */ 't', `.`]
 				]]
@@ -644,7 +644,7 @@ DocsCollector.collect('java.lang.Runtime', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its
           `],
-					[/* external link */ 'a', `SecurityManager.html#checkExec(java.lang.String)`, `checkExec`],
+					[/* reference */ 'r', `.SecurityManager#checkExec(java.lang.String)`],
 					[/* text */ 't', `
           method doesn't allow creation of the subprocess`]
 				]],
@@ -714,7 +714,7 @@ DocsCollector.collect('java.lang.Runtime', [
 
  `],
 				[/* block */ 'b', [
-					[/* external link */ 'a', `ProcessBuilder.html#start()`, `ProcessBuilder.start()`],
+					[/* reference */ 'r', `.ProcessBuilder#start()`],
 					[/* text */ 't', ` is now the preferred way to
  start a process with a modified environment.
 
@@ -736,7 +736,7 @@ DocsCollector.collect('java.lang.Runtime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `If a security manager exists, its
  `],
-					[/* external link */ 'a', `SecurityManager.html#checkExec(java.lang.String)`, `checkExec`],
+					[/* reference */ 'r', `.SecurityManager#checkExec(java.lang.String)`],
 					[/* text */ 't', `
  method is invoked with the first component of the array
  `],
@@ -806,7 +806,7 @@ DocsCollector.collect('java.lang.Runtime', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its
           `],
-					[/* external link */ 'a', `SecurityManager.html#checkExec(java.lang.String)`, `checkExec`],
+					[/* reference */ 'r', `.SecurityManager#checkExec(java.lang.String)`],
 					[/* text */ 't', `
           method doesn't allow creation of the subprocess`]
 				]],
@@ -860,7 +860,7 @@ DocsCollector.collect('java.lang.Runtime', [
 					[/* text */ 't', `
  behaves in exactly the same way as the invocation
  `],
-					[/* reference */ 'r', `exec`],
+					[/* reference */ 'r', `#exec(java.lang.String%5B%5D,java.lang.String%5B%5D,java.io.File)`, `exec`],
 					[/* inline code block */ 'i', `(cmdarray, envp, null)`],
 					[/* text */ 't', `.`]
 				]]
@@ -888,7 +888,7 @@ DocsCollector.collect('java.lang.Runtime', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its
           `],
-					[/* external link */ 'a', `SecurityManager.html#checkExec(java.lang.String)`, `checkExec`],
+					[/* reference */ 'r', `.SecurityManager#checkExec(java.lang.String)`],
 					[/* text */ 't', `
           method doesn't allow creation of the subprocess`]
 				]],
@@ -935,7 +935,7 @@ DocsCollector.collect('java.lang.Runtime', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method should be used with extreme caution.  Unlike the
  `],
-					[/* reference */ 'r', `exit`],
+					[/* reference */ 'r', `#exit(int)`, `exit`],
 					[/* text */ 't', ` method, this method does not cause shutdown
  hooks to be started.  If the shutdown sequence has already been
  initiated then this method does not wait for any running
@@ -946,10 +946,10 @@ DocsCollector.collect('java.lang.Runtime', [
 				[/* parameter */ 'status', [/* parameter description */
 					[/* text */ 't', `Termination status. By convention, a nonzero status code
          indicates abnormal termination. If the `],
-					[/* reference */ 'r', `exit`],
+					[/* reference */ 'r', `#exit(int)`, `exit`],
 					[/* text */ 't', `
          (equivalently, `],
-					[/* external link */ 'a', `System.html#exit(int)`, `System.exit`],
+					[/* reference */ 'r', `.System#exit(int)`],
 					[/* text */ 't', `) method
          has already been invoked then this status code
          will override the status code passed to that method.`]
@@ -959,7 +959,7 @@ DocsCollector.collect('java.lang.Runtime', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager is present and its
          `],
-					[/* external link */ 'a', `SecurityManager.html#checkExit(int)`, `checkExit`],
+					[/* reference */ 'r', `.SecurityManager#checkExit(int)`],
 					[/* text */ 't', ` method
          does not permit an exit with the specified status`]
 				]]
@@ -985,10 +985,10 @@ DocsCollector.collect('java.lang.Runtime', [
 						[/* text */ 't', `exits`],
 						[/* text */ 't', ` normally, when the last non-daemon
    thread exits or when the `],
-						[/* reference */ 'r', `exit`],
+						[/* reference */ 'r', `#exit(int)`, `exit`],
 						[/* text */ 't', ` (equivalently,
    `],
-						[/* external link */ 'a', `System.html#exit(int)`, `System.exit`],
+						[/* reference */ 'r', `.System#exit(int)`],
 						[/* text */ 't', `) method is invoked, or
 
    `]
@@ -1016,7 +1016,7 @@ DocsCollector.collect('java.lang.Runtime', [
  halt. Note that daemon threads will continue to run during the shutdown
  sequence, as will non-daemon threads if shutdown was initiated by
  invoking the `],
-					[/* reference */ 'r', `exit`],
+					[/* reference */ 'r', `#exit(int)`, `exit`],
 					[/* text */ 't', ` method.
 
  `]
@@ -1024,7 +1024,7 @@ DocsCollector.collect('java.lang.Runtime', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` Once the shutdown sequence has begun it can be stopped only by
  invoking the `],
-					[/* reference */ 'r', `halt`],
+					[/* reference */ 'r', `#halt(int)`, `halt`],
 					[/* text */ 't', ` method, which forcibly
  terminates the virtual machine.
 
@@ -1053,7 +1053,7 @@ DocsCollector.collect('java.lang.Runtime', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` Shutdown hooks should also finish their work quickly.  When a
  program invokes `],
-					[/* reference */ 'r', `exit`],
+					[/* reference */ 'r', `#exit(int)`, `exit`],
 					[/* text */ 't', ` the expectation is
  that the virtual machine will promptly shut down and exit.  When the
  virtual machine is terminated due to user logoff or system shutdown the
@@ -1068,13 +1068,13 @@ DocsCollector.collect('java.lang.Runtime', [
 					[/* text */ 't', ` Uncaught exceptions are handled in shutdown hooks just as in any
  other thread, by invoking the
  `],
-					[/* external link */ 'a', `ThreadGroup.html#uncaughtException(java.lang.Thread,java.lang.Throwable)`, `uncaughtException`],
+					[/* reference */ 'r', `.ThreadGroup#uncaughtException(java.lang.Thread,java.lang.Throwable)`],
 					[/* text */ 't', ` method of the
  thread's `],
 					[/* reference */ 'r', `java.lang.ThreadGroup`],
 					[/* text */ 't', ` object. The default implementation of this
  method prints the exception's stack trace to `],
-					[/* external link */ 'a', `System.html#err`, `System.err`],
+					[/* reference */ 'r', `.System#err`],
 					[/* text */ 't', ` and
  terminates the thread; it does not cause the virtual machine to exit or
  halt.
@@ -1177,7 +1177,7 @@ DocsCollector.collect('java.lang.Runtime', [
 				[/* text */ 't', `Returns the maximum amount of memory that the Java virtual machine
  will attempt to use.  If there is no inherent limit then the value
  `],
-				[/* external link */ 'a', `Long.html#MAX_VALUE`, `Long.MAX_VALUE`],
+				[/* reference */ 'r', `.Long#MAX_VALUE`],
 				[/* text */ 't', ` will be returned.`]
 			],
 			/* parameters */ UDF,

@@ -25,20 +25,20 @@ DocsCollector.collect('java.util.regex.Pattern', [
 		[/* block */ 'b', [
 			[/* code block */ 'c', [
 				[/* text */ 't', ` Pattern p = Pattern.`],
-				[/* reference */ 'r', `compile`],
+				[/* text */ 't', `compile`],
 				[/* text */ 't', `("a*b");
  Matcher m = p.`],
-				[/* reference */ 'r', `matcher`],
+				[/* text */ 't', `matcher`],
 				[/* text */ 't', `("aaaaab");
  boolean b = m.`],
-				[/* external link */ 'a', `Matcher.html#matches()`, `matches`],
+				[/* text */ 't', `matches`],
 				[/* text */ 't', `();`]
 			]]
 		]],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` A `],
-			[/* reference */ 'r', `matches`],
+			[/* reference */ 'r', `#matches(java.lang.String,java.lang.CharSequence)`, `matches`],
 			[/* text */ 't', ` method is defined by this class as a
  convenience for when a regular expression is used just once.  This method
  compiles an expression and matches an input sequence against it in a single
@@ -69,8 +69,1281 @@ DocsCollector.collect('java.util.regex.Pattern', [
 		[/* block */ 'b', [
 			[/* text */ 't', `Summary of regular-expression constructs`]
 		]],
-		[/* table */ 't', ''],
-		[/* block */ 'b', `<hr>`],
+		[/* table */ 'tbl',
+			[/* caption */ 'tc'],
+			[/* table header */ 'th', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Construct`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Matches`]
+					]]
+				]]
+			]],
+			[/* table body */ 'tb', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', 2, 1, [
+						[/* text */ 't', `Characters`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `x`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `The character `],
+						[/* text */ 't', `x`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\\\`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `The backslash character`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\0`],
+						[/* text */ 't', `n`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `The character with octal value `],
+						[/* inline code block */ 'i', `0`],
+						[/* text */ 't', `n`],
+						[/* text */ 't', `
+         (0 `],
+						[/* inline code block */ 'i', `<=`],
+						[/* text */ 't', ` `],
+						[/* text */ 't', `n`],
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `<=`],
+						[/* text */ 't', ` 7)`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\0`],
+						[/* text */ 't', `nn`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `The character with octal value `],
+						[/* inline code block */ 'i', `0`],
+						[/* text */ 't', `nn`],
+						[/* text */ 't', `
+         (0 `],
+						[/* inline code block */ 'i', `<=`],
+						[/* text */ 't', ` `],
+						[/* text */ 't', `n`],
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `<=`],
+						[/* text */ 't', ` 7)`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\0`],
+						[/* text */ 't', `mnn`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `The character with octal value `],
+						[/* inline code block */ 'i', `0`],
+						[/* text */ 't', `mnn`],
+						[/* text */ 't', `
+         (0 `],
+						[/* inline code block */ 'i', `<=`],
+						[/* text */ 't', ` `],
+						[/* text */ 't', `m`],
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `<=`],
+						[/* text */ 't', ` 3,
+         0 `],
+						[/* inline code block */ 'i', `<=`],
+						[/* text */ 't', ` `],
+						[/* text */ 't', `n`],
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `<=`],
+						[/* text */ 't', ` 7)`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\x`],
+						[/* text */ 't', `hh`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `The character with hexadecimal value `],
+						[/* inline code block */ 'i', `0x`],
+						[/* text */ 't', `hh`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\u`],
+						[/* text */ 't', `hhhh`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `The character with hexadecimal value `],
+						[/* inline code block */ 'i', `0x`],
+						[/* text */ 't', `hhhh`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\x`],
+						[/* text */ 't', `{h...h}`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `The character with hexadecimal value `],
+						[/* inline code block */ 'i', `0x`],
+						[/* text */ 't', `h...h`],
+						[/* text */ 't', `
+         (`],
+						[/* reference */ 'r', `java.util.Character#MIN_CODE_POINT`],
+						[/* text */ 't', `
+          <= `],
+						[/* inline code block */ 'i', `0x`],
+						[/* text */ 't', `h...h`],
+						[/* text */ 't', ` <= 
+          `],
+						[/* reference */ 'r', `java.util.Character#MAX_CODE_POINT`],
+						[/* text */ 't', `)`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\N{`],
+						[/* text */ 't', `name`],
+						[/* inline code block */ 'i', `}`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `The character with Unicode character name `],
+						[/* text */ 't', `'name'`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\t`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `The tab character (`],
+						[/* inline code block */ 'i', `'\\u0009'`],
+						[/* text */ 't', `)`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\n`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `The newline (line feed) character (`],
+						[/* inline code block */ 'i', `'\\u000A'`],
+						[/* text */ 't', `)`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\r`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `The carriage-return character (`],
+						[/* inline code block */ 'i', `'\\u000D'`],
+						[/* text */ 't', `)`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\f`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `The form-feed character (`],
+						[/* inline code block */ 'i', `'\\u000C'`],
+						[/* text */ 't', `)`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\a`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `The alert (bell) character (`],
+						[/* inline code block */ 'i', `'\\u0007'`],
+						[/* text */ 't', `)`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\e`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `The escape character (`],
+						[/* inline code block */ 'i', `'\\u001B'`],
+						[/* text */ 't', `)`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\c`],
+						[/* text */ 't', `x`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `The control character corresponding to `],
+						[/* text */ 't', `x`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', 2, 1, [
+						[/* text */ 't', `Character classes`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `[abc]`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `a`],
+						[/* text */ 't', `, `],
+						[/* inline code block */ 'i', `b`],
+						[/* text */ 't', `, or `],
+						[/* inline code block */ 'i', `c`],
+						[/* text */ 't', ` (simple class)`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `[^abc]`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Any character except `],
+						[/* inline code block */ 'i', `a`],
+						[/* text */ 't', `, `],
+						[/* inline code block */ 'i', `b`],
+						[/* text */ 't', `, or `],
+						[/* inline code block */ 'i', `c`],
+						[/* text */ 't', ` (negation)`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `[a-zA-Z]`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `a`],
+						[/* text */ 't', ` through `],
+						[/* inline code block */ 'i', `z`],
+						[/* text */ 't', `
+         or `],
+						[/* inline code block */ 'i', `A`],
+						[/* text */ 't', ` through `],
+						[/* inline code block */ 'i', `Z`],
+						[/* text */ 't', `, inclusive (range)`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `[a-d[m-p]]`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `a`],
+						[/* text */ 't', ` through `],
+						[/* inline code block */ 'i', `d`],
+						[/* text */ 't', `,
+      or `],
+						[/* inline code block */ 'i', `m`],
+						[/* text */ 't', ` through `],
+						[/* inline code block */ 'i', `p`],
+						[/* text */ 't', `: `],
+						[/* inline code block */ 'i', `[a-dm-p]`],
+						[/* text */ 't', ` (union)`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `[a-z&&[def]]`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `d`],
+						[/* text */ 't', `, `],
+						[/* inline code block */ 'i', `e`],
+						[/* text */ 't', `, or `],
+						[/* inline code block */ 'i', `f`],
+						[/* text */ 't', ` (intersection)`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `[a-z&&[^bc]]`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `a`],
+						[/* text */ 't', ` through `],
+						[/* inline code block */ 'i', `z`],
+						[/* text */ 't', `,
+         except for `],
+						[/* inline code block */ 'i', `b`],
+						[/* text */ 't', ` and `],
+						[/* inline code block */ 'i', `c`],
+						[/* text */ 't', `: `],
+						[/* inline code block */ 'i', `[ad-z]`],
+						[/* text */ 't', ` (subtraction)`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `[a-z&&[^m-p]]`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `a`],
+						[/* text */ 't', ` through `],
+						[/* inline code block */ 'i', `z`],
+						[/* text */ 't', `,
+          and not `],
+						[/* inline code block */ 'i', `m`],
+						[/* text */ 't', ` through `],
+						[/* inline code block */ 'i', `p`],
+						[/* text */ 't', `: `],
+						[/* inline code block */ 'i', `[a-lq-z]`],
+						[/* text */ 't', `(subtraction)`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', 2, 1, [
+						[/* text */ 't', `Predefined character classes`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `.`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Any character (may or may not match `],
+						[/* text */ 't', `line terminators`],
+						[/* text */ 't', `)`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\d`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `A digit: `],
+						[/* inline code block */ 'i', `[0-9]`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\D`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `A non-digit: `],
+						[/* inline code block */ 'i', `[^0-9]`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\h`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `A horizontal whitespace character:
+     `],
+						[/* inline code block */ 'i', `[ \\t\\xA0\\u1680\\u180e\\u2000-\\u200a\\u202f\\u205f\\u3000]`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\H`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `A non-horizontal whitespace character: `],
+						[/* inline code block */ 'i', `[^\\h]`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\s`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `A whitespace character: `],
+						[/* inline code block */ 'i', `[ \\t\\n\\x0B\\f\\r]`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\S`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `A non-whitespace character: `],
+						[/* inline code block */ 'i', `[^\\s]`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\v`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `A vertical whitespace character: `],
+						[/* inline code block */ 'i', `[\\n\\x0B\\f\\r\\x85\\u2028\\u2029]`],
+						[/* text */ 't', `
+     `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\V`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `A non-vertical whitespace character: `],
+						[/* inline code block */ 'i', `[^\\v]`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\w`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `A word character: `],
+						[/* inline code block */ 'i', `[a-zA-Z_0-9]`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\W`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `A non-word character: `],
+						[/* inline code block */ 'i', `[^\\w]`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', 2, 1, [
+						[/* text */ 't', `POSIX character classes (US-ASCII only)`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\p{Lower}`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `A lower-case alphabetic character: `],
+						[/* inline code block */ 'i', `[a-z]`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\p{Upper}`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `An upper-case alphabetic character:`],
+						[/* inline code block */ 'i', `[A-Z]`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\p{ASCII}`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `All ASCII:`],
+						[/* inline code block */ 'i', `[\\x00-\\x7F]`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\p{Alpha}`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `An alphabetic character:`],
+						[/* inline code block */ 'i', `[\\p{Lower}\\p{Upper}]`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\p{Digit}`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `A decimal digit: `],
+						[/* inline code block */ 'i', `[0-9]`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\p{Alnum}`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `An alphanumeric character:`],
+						[/* inline code block */ 'i', `[\\p{Alpha}\\p{Digit}]`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\p{Punct}`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Punctuation: One of `],
+						[/* inline code block */ 'i', `!"#$%&'()*+,-./:;<=>?@[\\]^_\`{|}~`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\p{Graph}`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `A visible character: `],
+						[/* inline code block */ 'i', `[\\p{Alnum}\\p{Punct}]`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\p{Print}`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `A printable character: `],
+						[/* inline code block */ 'i', `[\\p{Graph}\\x20]`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\p{Blank}`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `A space or a tab: `],
+						[/* inline code block */ 'i', `[ \\t]`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\p{Cntrl}`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `A control character: `],
+						[/* inline code block */ 'i', `[\\x00-\\x1F\\x7F]`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\p{XDigit}`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `A hexadecimal digit: `],
+						[/* inline code block */ 'i', `[0-9a-fA-F]`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\p{Space}`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `A whitespace character: `],
+						[/* inline code block */ 'i', `[ \\t\\n\\x0B\\f\\r]`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', 2, 1, [
+						[/* text */ 't', `java.lang.Character classes (simple `],
+						[/* text */ 't', `java character type`],
+						[/* text */ 't', `)`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\p{javaLowerCase}`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Equivalent to java.lang.Character.isLowerCase()`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\p{javaUpperCase}`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Equivalent to java.lang.Character.isUpperCase()`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\p{javaWhitespace}`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Equivalent to java.lang.Character.isWhitespace()`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\p{javaMirrored}`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Equivalent to java.lang.Character.isMirrored()`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', 2, 1, [
+						[/* text */ 't', `Classes for Unicode scripts, blocks, categories and binary properties`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\p{IsLatin}`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `A Latin script character (`],
+						[/* text */ 't', `script`],
+						[/* text */ 't', `)`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\p{InGreek}`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `A character in the Greek block (`],
+						[/* text */ 't', `block`],
+						[/* text */ 't', `)`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\p{Lu}`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `An uppercase letter (`],
+						[/* text */ 't', `category`],
+						[/* text */ 't', `)`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\p{IsAlphabetic}`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `An alphabetic character (`],
+						[/* text */ 't', `binary property`],
+						[/* text */ 't', `)`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\p{Sc}`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `A currency symbol`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\P{InGreek}`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Any character except one in the Greek block (negation)`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `[\\p{L}&&[^\\p{Lu}]]`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Any letter except an uppercase letter (subtraction)`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', 2, 1, [
+						[/* text */ 't', `Boundary matchers`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `^`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `The beginning of a line`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `$`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `The end of a line`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\b`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `A word boundary`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\b{g}`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `A Unicode extended grapheme cluster boundary`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\B`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `A non-word boundary`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\A`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `The beginning of the input`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\G`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `The end of the previous match`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\Z`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `The end of the input but for the final
+         `],
+						[/* text */ 't', `terminator`],
+						[/* text */ 't', `, if any`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\z`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `The end of the input`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', 2, 1, [
+						[/* text */ 't', `Linebreak matcher`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\R`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Any Unicode linebreak sequence, is equivalent to
+     `],
+						[/* inline code block */ 'i', `\\u000D\\u000A|[\\u000A\\u000B\\u000C\\u000D\\u0085\\u2028\\u2029]`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', 2, 1, [
+						[/* text */ 't', `Unicode Extended Grapheme matcher`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\X`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Any Unicode extended grapheme cluster`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', 2, 1, [
+						[/* text */ 't', `Greedy quantifiers`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `X`],
+						[/* inline code block */ 'i', `?`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `X`],
+						[/* text */ 't', `, once or not at all`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `X`],
+						[/* inline code block */ 'i', `*`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `X`],
+						[/* text */ 't', `, zero or more times`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `X`],
+						[/* inline code block */ 'i', `+`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `X`],
+						[/* text */ 't', `, one or more times`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `X`],
+						[/* inline code block */ 'i', `{`],
+						[/* text */ 't', `n`],
+						[/* inline code block */ 'i', `}`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `X`],
+						[/* text */ 't', `, exactly `],
+						[/* text */ 't', `n`],
+						[/* text */ 't', ` times`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `X`],
+						[/* inline code block */ 'i', `{`],
+						[/* text */ 't', `n`],
+						[/* inline code block */ 'i', `,`],
+						[/* text */ 't', `}`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `X`],
+						[/* text */ 't', `, at least `],
+						[/* text */ 't', `n`],
+						[/* text */ 't', ` times`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `X`],
+						[/* inline code block */ 'i', `{`],
+						[/* text */ 't', `n`],
+						[/* inline code block */ 'i', `,`],
+						[/* text */ 't', `m`],
+						[/* inline code block */ 'i', `}`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `X`],
+						[/* text */ 't', `, at least `],
+						[/* text */ 't', `n`],
+						[/* text */ 't', ` but not more than `],
+						[/* text */ 't', `m`],
+						[/* text */ 't', ` times`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', 2, 1, [
+						[/* text */ 't', `Reluctant quantifiers`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `X`],
+						[/* inline code block */ 'i', `??`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `X`],
+						[/* text */ 't', `, once or not at all`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `X`],
+						[/* inline code block */ 'i', `*?`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `X`],
+						[/* text */ 't', `, zero or more times`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `X`],
+						[/* inline code block */ 'i', `+?`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `X`],
+						[/* text */ 't', `, one or more times`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `X`],
+						[/* inline code block */ 'i', `{`],
+						[/* text */ 't', `n`],
+						[/* inline code block */ 'i', `}?`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `X`],
+						[/* text */ 't', `, exactly `],
+						[/* text */ 't', `n`],
+						[/* text */ 't', ` times`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `X`],
+						[/* inline code block */ 'i', `{`],
+						[/* text */ 't', `n`],
+						[/* inline code block */ 'i', `,}?`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `X`],
+						[/* text */ 't', `, at least `],
+						[/* text */ 't', `n`],
+						[/* text */ 't', ` times`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `X`],
+						[/* inline code block */ 'i', `{`],
+						[/* text */ 't', `n`],
+						[/* inline code block */ 'i', `,`],
+						[/* text */ 't', `m`],
+						[/* inline code block */ 'i', `}?`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `X`],
+						[/* text */ 't', `, at least `],
+						[/* text */ 't', `n`],
+						[/* text */ 't', ` but not more than `],
+						[/* text */ 't', `m`],
+						[/* text */ 't', ` times`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', 2, 1, [
+						[/* text */ 't', `Possessive quantifiers`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `X`],
+						[/* inline code block */ 'i', `?+`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `X`],
+						[/* text */ 't', `, once or not at all`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `X`],
+						[/* inline code block */ 'i', `*+`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `X`],
+						[/* text */ 't', `, zero or more times`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `X`],
+						[/* inline code block */ 'i', `++`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `X`],
+						[/* text */ 't', `, one or more times`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `X`],
+						[/* inline code block */ 'i', `{`],
+						[/* text */ 't', `n`],
+						[/* inline code block */ 'i', `}+`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `X`],
+						[/* text */ 't', `, exactly `],
+						[/* text */ 't', `n`],
+						[/* text */ 't', ` times`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `X`],
+						[/* inline code block */ 'i', `{`],
+						[/* text */ 't', `n`],
+						[/* inline code block */ 'i', `,}+`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `X`],
+						[/* text */ 't', `, at least `],
+						[/* text */ 't', `n`],
+						[/* text */ 't', ` times`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `X`],
+						[/* inline code block */ 'i', `{`],
+						[/* text */ 't', `n`],
+						[/* inline code block */ 'i', `,`],
+						[/* text */ 't', `m`],
+						[/* inline code block */ 'i', `}+`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `X`],
+						[/* text */ 't', `, at least `],
+						[/* text */ 't', `n`],
+						[/* text */ 't', ` but not more than `],
+						[/* text */ 't', `m`],
+						[/* text */ 't', ` times`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', 2, 1, [
+						[/* text */ 't', `Logical operators`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `XY`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `X`],
+						[/* text */ 't', ` followed by `],
+						[/* text */ 't', `Y`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `X`],
+						[/* inline code block */ 'i', `|`],
+						[/* text */ 't', `Y`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Either `],
+						[/* text */ 't', `X`],
+						[/* text */ 't', ` or `],
+						[/* text */ 't', `Y`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `(`],
+						[/* text */ 't', `X`],
+						[/* inline code block */ 'i', `)`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `X, as a `],
+						[/* text */ 't', `capturing group`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', 2, 1, [
+						[/* text */ 't', `Back references`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\`],
+						[/* text */ 't', `n`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Whatever the `],
+						[/* text */ 't', `n`],
+						[/* text */ 't', `th`, 'sup'],
+						[/* text */ 't', `
+     `],
+						[/* text */ 't', `capturing group`],
+						[/* text */ 't', ` matched`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\`],
+						[/* text */ 't', `k`],
+						[/* text */ 't', `<`],
+						[/* text */ 't', `name`],
+						[/* text */ 't', `>`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Whatever the
+     `],
+						[/* text */ 't', `named-capturing group`],
+						[/* text */ 't', ` "name" matched`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', 2, 1, [
+						[/* text */ 't', `Quotation`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Nothing, but quotes the following character`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\Q`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Nothing, but quotes all characters until `],
+						[/* inline code block */ 'i', `\\E`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\E`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Nothing, but ends quoting started by `],
+						[/* inline code block */ 'i', `\\Q`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', 2, 1, [
+						[/* text */ 't', `Special constructs (named-capturing and non-capturing)`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `(?<name>`],
+						[/* text */ 't', `X`],
+						[/* inline code block */ 'i', `)`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `X`],
+						[/* text */ 't', `, as a named-capturing group`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `(?:`],
+						[/* text */ 't', `X`],
+						[/* inline code block */ 'i', `)`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `X`],
+						[/* text */ 't', `, as a non-capturing group`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `(?idmsuxU-idmsuxU)`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Nothing, but turns match flags `],
+						[/* text */ 't', `i`],
+						[/* text */ 't', `
+ `],
+						[/* text */ 't', `d`],
+						[/* text */ 't', ` `],
+						[/* text */ 't', `m`],
+						[/* text */ 't', ` `],
+						[/* text */ 't', `s`],
+						[/* text */ 't', `
+ `],
+						[/* text */ 't', `u`],
+						[/* text */ 't', ` `],
+						[/* text */ 't', `x`],
+						[/* text */ 't', ` `],
+						[/* text */ 't', `U`],
+						[/* text */ 't', `
+ on - off`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `(?idmsuxU-idmsuxU:`],
+						[/* text */ 't', `X`],
+						[/* inline code block */ 'i', `)`],
+						[/* text */ 't', `  `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `X`],
+						[/* text */ 't', `, as a `],
+						[/* text */ 't', `non-capturing group`],
+						[/* text */ 't', ` with the
+         given flags `],
+						[/* text */ 't', `i`],
+						[/* text */ 't', ` `],
+						[/* text */ 't', `d`],
+						[/* text */ 't', `
+ `],
+						[/* text */ 't', `m`],
+						[/* text */ 't', ` `],
+						[/* text */ 't', `s`],
+						[/* text */ 't', ` `],
+						[/* text */ 't', `u`],
+						[/* text */ 't', `
+ `],
+						[/* text */ 't', `x`],
+						[/* text */ 't', ` `],
+						[/* text */ 't', `U`],
+						[/* text */ 't', ` on - off`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `(?=`],
+						[/* text */ 't', `X`],
+						[/* inline code block */ 'i', `)`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `X`],
+						[/* text */ 't', `, via zero-width positive lookahead`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `(?!`],
+						[/* text */ 't', `X`],
+						[/* inline code block */ 'i', `)`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `X`],
+						[/* text */ 't', `, via zero-width negative lookahead`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `(?<=`],
+						[/* text */ 't', `X`],
+						[/* inline code block */ 'i', `)`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `X`],
+						[/* text */ 't', `, via zero-width positive lookbehind`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `(?<!`],
+						[/* text */ 't', `X`],
+						[/* inline code block */ 'i', `)`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `X`],
+						[/* text */ 't', `, via zero-width negative lookbehind`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `(?>`],
+						[/* text */ 't', `X`],
+						[/* inline code block */ 'i', `)`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `X`],
+						[/* text */ 't', `, as an independent, non-capturing group`]
+					]]
+				]]
+			]],
+		],
+		[/* new line */ 'n'],
 		[/* block */ 'b', [
 			[/* text */ 't', `Backslashes, escapes, and quoting`]
 		]],
@@ -149,7 +1422,80 @@ DocsCollector.collect('java.util.regex.Pattern', [
     highest to lowest:
 
     `],
-		[/* table */ 't', ''],
+		[/* table */ 'tbl',
+			[/* caption */ 'tc'],
+			[/* table header */ 'th', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Precedence`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Name`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Example
+      `]
+					]]
+				]]
+			]],
+			[/* table body */ 'tb', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `1`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Literal escape    `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `\\x`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `2`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Grouping`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `[...]`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `3`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Range`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `a-z`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `4`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Union`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `[a-e][i-u]`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `5`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Intersection`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `[a-z&&[aeiou]]`]
+					]]
+				]]
+			]],
+		],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Note that a different set of metacharacters are in effect inside
@@ -321,7 +1667,7 @@ DocsCollector.collect('java.util.regex.Pattern', [
 				[/* text */ 't', `
         (`],
 				[/* inline code block */ 'i', `'\\u0041'`],
-				[/* text */ 't', `&nbsp;through&nbsp;`],
+				[/* text */ 't', ` through `],
 				[/* inline code block */ 'i', `'\\u005a'`],
 				[/* text */ 't', `),
    `]
@@ -334,7 +1680,7 @@ DocsCollector.collect('java.util.regex.Pattern', [
 				[/* text */ 't', `
         (`],
 				[/* inline code block */ 'i', `'\\u0061'`],
-				[/* text */ 't', `&nbsp;through&nbsp;`],
+				[/* text */ 't', ` through `],
 				[/* inline code block */ 'i', `'\\u007a'`],
 				[/* text */ 't', `),
    `]
@@ -347,7 +1693,7 @@ DocsCollector.collect('java.util.regex.Pattern', [
 				[/* text */ 't', `
         (`],
 				[/* inline code block */ 'i', `'\\u0030'`],
-				[/* text */ 't', `&nbsp;through&nbsp;`],
+				[/* text */ 't', ` through `],
 				[/* inline code block */ 'i', `'\\u0039'`],
 				[/* text */ 't', `),
  `]
@@ -459,7 +1805,7 @@ DocsCollector.collect('java.util.regex.Pattern', [
 			[/* text */ 't', `. The character names supported
  by this class are the valid Unicode character names matched by
  `],
-			[/* external link */ 'a', `../../lang/Character.html#codePointOf(java.lang.String)`, `Character.codePointOf(name)`],
+			[/* reference */ 'r', `java.util.Character#codePointOf(java.lang.String)`],
 			[/* text */ 't', `.
  `]
 		]],
@@ -527,7 +1873,7 @@ DocsCollector.collect('java.util.regex.Pattern', [
 			[/* text */ 't', ` are the valid script names
  accepted and defined by
  `],
-			[/* external link */ 'a', `../../lang/Character.UnicodeScript.html#forName(java.lang.String)`, `UnicodeScript.forName`],
+			[/* reference */ 'r', `java.util.Character.UnicodeScript#forName(java.lang.String)`],
 			[/* text */ 't', `.
 
  `]
@@ -558,7 +1904,7 @@ DocsCollector.collect('java.util.regex.Pattern', [
 			[/* text */ 't', ` are the valid block names
  accepted and defined by
  `],
-			[/* external link */ 'a', `../../lang/Character.UnicodeBlock.html#forName(java.lang.String)`, `UnicodeBlock.forName`],
+			[/* reference */ 'r', `java.util.Character.UnicodeBlock#forName(java.lang.String)`],
 			[/* text */ 't', `.
  `]
 		]],
@@ -659,7 +2005,192 @@ DocsCollector.collect('java.util.regex.Pattern', [
 
  `]
 		]],
-		[/* table */ 't', ''],
+		[/* table */ 'tbl',
+			[/* caption */ 'tc'],
+			[/* table header */ 'th', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Classes`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Matches`]
+					]]
+				]]
+			]],
+			[/* table body */ 'tb', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\p{Lower}`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `A lowercase character:`],
+						[/* inline code block */ 'i', `\\p{IsLowercase}`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\p{Upper}`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `An uppercase character:`],
+						[/* inline code block */ 'i', `\\p{IsUppercase}`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\p{ASCII}`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `All ASCII:`],
+						[/* inline code block */ 'i', `[\\x00-\\x7F]`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\p{Alpha}`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `An alphabetic character:`],
+						[/* inline code block */ 'i', `\\p{IsAlphabetic}`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\p{Digit}`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `A decimal digit character:`],
+						[/* inline code block */ 'i', `\\p{IsDigit}`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\p{Alnum}`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `An alphanumeric character:`],
+						[/* inline code block */ 'i', `[\\p{IsAlphabetic}\\p{IsDigit}]`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\p{Punct}`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `A punctuation character:`],
+						[/* inline code block */ 'i', `\\p{IsPunctuation}`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\p{Graph}`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `A visible character: `],
+						[/* inline code block */ 'i', `[^\\p{IsWhite_Space}\\p{gc=Cc}\\p{gc=Cs}\\p{gc=Cn}]`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\p{Print}`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `A printable character: `],
+						[/* inline code block */ 'i', `[\\p{Graph}\\p{Blank}&&[^\\p{Cntrl}]]`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\p{Blank}`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `A space or a tab: `],
+						[/* inline code block */ 'i', `[\\p{IsWhite_Space}&&[^\\p{gc=Zl}\\p{gc=Zp}\\x0a\\x0b\\x0c\\x0d\\x85]]`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\p{Cntrl}`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `A control character: `],
+						[/* inline code block */ 'i', `\\p{gc=Cc}`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\p{XDigit}`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `A hexadecimal digit: `],
+						[/* inline code block */ 'i', `[\\p{gc=Nd}\\p{IsHex_Digit}]`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\p{Space}`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `A whitespace character:`],
+						[/* inline code block */ 'i', `\\p{IsWhite_Space}`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\d`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `A digit: `],
+						[/* inline code block */ 'i', `\\p{IsDigit}`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\D`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `A non-digit: `],
+						[/* inline code block */ 'i', `[^\\d]`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\s`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `A whitespace character: `],
+						[/* inline code block */ 'i', `\\p{IsWhite_Space}`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\S`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `A non-whitespace character: `],
+						[/* inline code block */ 'i', `[^\\s]`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\w`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `A word character: `],
+						[/* inline code block */ 'i', `[\\p{Alpha}\\p{gc=Mn}\\p{gc=Me}\\p{gc=Mc}\\p{Digit}\\p{gc=Pc}\\p{IsJoin_Control}]`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `\\W`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `A non-word character: `],
+						[/* inline code block */ 'i', `[^\\w]`]
+					]]
+				]]
+			]],
+		],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `Categories that behave like the java.lang.Character boolean ismethodname methods (except for the deprecated ones) are available through the same \\p{prop} syntax where the specified property has the name javamethodname`],
@@ -805,7 +2336,7 @@ DocsCollector.collect('java.util.regex.Pattern', [
     by the `],
 					[/* reference */ 'r', `java.util.regex.Matcher`],
 					[/* text */ 't', ` class: Repeated invocations of the `],
-					[/* external link */ 'a', `Matcher.html#find()`, `find`],
+					[/* reference */ 'r', `.Matcher#find()`],
 					[/* text */ 't', ` method will resume where the last match left off,
     unless the matcher is reset.  `]
 				]]
@@ -846,7 +2377,7 @@ DocsCollector.collect('java.util.regex.Pattern', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Unix lines mode can also be enabled via the embedded flag
- expression&nbsp;`],
+ expression `],
 					[/* inline code block */ 'i', `(?d)`],
 					[/* text */ 't', `.`]
 				]]
@@ -868,7 +2399,7 @@ DocsCollector.collect('java.util.regex.Pattern', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Case-insensitive matching can also be enabled via the embedded flag
- expression&nbsp;`],
+ expression `],
 					[/* inline code block */ 'i', `(?i)`],
 					[/* text */ 't', `.
 
@@ -892,7 +2423,7 @@ DocsCollector.collect('java.util.regex.Pattern', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Comments mode can also be enabled via the embedded flag
- expression&nbsp;`],
+ expression `],
 					[/* inline code block */ 'i', `(?x)`],
 					[/* text */ 't', `.`]
 				]]
@@ -917,7 +2448,7 @@ DocsCollector.collect('java.util.regex.Pattern', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Multiline mode can also be enabled via the embedded flag
- expression&nbsp;`],
+ expression `],
 					[/* inline code block */ 'i', `(?m)`],
 					[/* text */ 't', `.  `]
 				]]
@@ -958,7 +2489,7 @@ DocsCollector.collect('java.util.regex.Pattern', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Dotall mode can also be enabled via the embedded flag
- expression&nbsp;`],
+ expression `],
 					[/* inline code block */ 'i', `(?s)`],
 					[/* text */ 't', `.  (The `],
 					[/* inline code block */ 'i', `s`],
@@ -985,7 +2516,7 @@ DocsCollector.collect('java.util.regex.Pattern', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Unicode-aware case folding can also be enabled via the embedded flag
- expression&nbsp;`],
+ expression `],
 					[/* inline code block */ 'i', `(?u)`],
 					[/* text */ 't', `.
 
@@ -1046,7 +2577,7 @@ DocsCollector.collect('java.util.regex.Pattern', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The UNICODE_CHARACTER_CLASS mode can also be enabled via the embedded
- flag expression&nbsp;`],
+ flag expression `],
 					[/* inline code block */ 'i', `(?U)`],
 					[/* text */ 't', `.
  `]
@@ -1212,7 +2743,7 @@ DocsCollector.collect('java.util.regex.Pattern', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method works as if by invoking the two-argument `],
-					[/* reference */ 'r', `split`],
+					[/* reference */ 'r', `#split(java.lang.CharSequence,int)`, `split`],
 					[/* text */ 't', ` method with the given input
  sequence and a limit argument of zero.  Trailing empty strings are
  therefore not included in the resulting array. `]
@@ -1225,7 +2756,37 @@ DocsCollector.collect('java.util.regex.Pattern', [
 
  `]
 				]],
-				[/* table */ 't', ''],
+				[/* table */ 'tbl',
+					[/* caption */ 'tc'],
+					[/* table header */ 'th', [
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `Regex`]
+							]],
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `Result`]
+							]]
+						]]
+					]],
+					[/* table body */ 'tb', [
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `:`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `{ "boo", "and", "foo" }`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `o`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `{ "b", "", ":and:f" }`]
+							]]
+						]]
+					]],
+				],
 				[/* block */ 'b', '']
 			],
 			[/* parameters */
@@ -1276,7 +2837,7 @@ DocsCollector.collect('java.util.regex.Pattern', [
 							[/* text */ 't', ` is positive then the pattern will be applied
     at most `],
 							[/* text */ 't', `limit`],
-							[/* text */ 't', `&nbsp;-&nbsp;1 times, the array's length will be
+							[/* text */ 't', ` - 1 times, the array's length will be
     no greater than `],
 							[/* text */ 't', `limit`],
 							[/* text */ 't', `, and the array's last entry will contain
@@ -1312,7 +2873,78 @@ DocsCollector.collect('java.util.regex.Pattern', [
 
  `]
 				]],
-				[/* table */ 't', ''],
+				[/* table */ 'tbl',
+					[/* caption */ 'tc'],
+					[/* table header */ 'th', [
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `Regex`]
+							]],
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `Limit`]
+							]],
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `Result`]
+							]]
+						]]
+					]],
+					[/* table body */ 'tb', [
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', 1, 3, [
+								[/* text */ 't', `:`]
+							]],
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `2`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `{ "boo", "and:foo" }`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `5`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `{ "boo", "and", "foo" }`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `-2`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `{ "boo", "and", "foo" }`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', 1, 3, [
+								[/* text */ 't', `o`]
+							]],
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `5`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `{ "b", "", ":and:f", "", "" }`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `-2`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `{ "b", "", ":and:f", "", "" }`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `0`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `{ "b", "", ":and:f" }`]
+							]]
+						]]
+					]],
+				],
 				[/* block */ 'b', '']
 			],
 			[/* parameters */

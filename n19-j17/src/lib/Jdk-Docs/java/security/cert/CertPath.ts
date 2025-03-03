@@ -83,7 +83,7 @@ DocsCollector.collect('java.security.cert.CertPath', [
 			[/* text */ 't', ` is considered the default encoding. This
  encoding is used if no encoding is explicitly requested (for the
  `],
-			[/* reference */ 'r', `getEncoded()`],
+			[/* reference */ 'r', `#getEncoded()`, `getEncoded()`],
 			[/* text */ 't', ` method, for instance).
  `]
 		]],
@@ -160,16 +160,14 @@ DocsCollector.collect('java.security.cert.CertPath', [
 		]],
 		[/* text */ 't', `
  These encodings are described in the `],
-		[/* external link */ 'a', `../../../../../specs/security/standard-names.html#certpath-encodings`, `CertPath Encodings section`],
+		[/* text */ 't', `CertPath Encodings section`],
 		[/* text */ 't', ` of the
  Java Security Standard Algorithm Names Specification.
  Consult the release documentation for your implementation to see if any
  other encodings are supported.
  `],
 		[/* block */ 'b', ''],
-		[/* block */ 'b', [
-			[/* text */ 't', `Concurrent Access`]
-		]],
+		[/* block */ 'b', `Concurrent Access`],
 		[/* block */ 'b', [
 			[/* text */ 't', `
  All `],
@@ -341,7 +339,7 @@ DocsCollector.collect('java.security.cert.CertPath', [
 				[/* text */ 't', `s in this certification
  path. This is the same string that would be returned by
  `],
-				[/* external link */ 'a', `Certificate.html#getType()`, `cert.getType()`],
+				[/* reference */ 'r', `.Certificate#getType()`],
 				[/* text */ 't', `
  for all `],
 				[/* inline code block */ 'i', `Certificate`],

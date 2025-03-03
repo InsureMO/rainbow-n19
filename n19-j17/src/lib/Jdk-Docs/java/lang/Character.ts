@@ -51,7 +51,109 @@ DocsCollector.collect('java.lang.Character', [
  Standard over time. Upgrades to newer versions of the Unicode Standard
  occurred in the following Java releases, each indicating the new version:
  `],
-		[/* table */ 't', ''],
+		[/* table */ 'tbl',
+			[/* caption */ 'tc'],
+			[/* table header */ 'th', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Java release`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Unicode version`]
+					]]
+				]]
+			]],
+			[/* table body */ 'tb', [
+				[/* table row */ 'tr', [
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Java SE 15`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Unicode 13.0`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Java SE 13`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Unicode 12.1`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Java SE 12`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Unicode 11.0`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Java SE 11`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Unicode 10.0`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Java SE 9`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Unicode 8.0`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Java SE 8`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Unicode 6.2`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Java SE 7`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Unicode 6.0`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Java SE 5.0`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Unicode 4.0`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Java SE 1.4`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Unicode 3.0`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `JDK 1.1`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Unicode 2.0`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `JDK 1.0.2`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Unicode 1.1.5`]
+					]]
+				]]
+			]],
+		],
 		[/* text */ 't', `
  Variations from these base Unicode versions, such as recognized appendixes,
  are documented elsewhere.
@@ -197,11 +299,11 @@ DocsCollector.collect('java.lang.Character', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
-			[/* external link */ 'a', `../../../java.base/java/lang/doc-files/ValueBased.html`, `value-based`],
+			[/* text */ 't', `value-based`],
 			[/* text */ 't', `
  class; programmers should treat instances that are
  `],
-			[/* reference */ 'r', `equal`],
+			[/* reference */ 'r', `#equals(java.lang.Object)`, `equal`],
 			[/* text */ 't', ` as interchangeable and should not
  use instances for synchronization, or unpredictable behavior may
  occur. For example, in a future release, synchronization may fail.`]
@@ -744,12 +846,12 @@ DocsCollector.collect('java.lang.Character', [
  `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
-						[/* reference */ 'r', `isLetter(ch)`],
+						[/* reference */ 'r', `#isLetter(int)`, `isLetter(ch)`],
 						[/* text */ 't', ` returns `],
 						[/* inline code block */ 'i', `true`]
 					]],
 					[/* block */ 'b', [
-						[/* reference */ 'r', `getType(ch)`],
+						[/* reference */ 'r', `#getType(int)`, `getType(ch)`],
 						[/* text */ 't', ` returns `],
 						[/* inline code block */ 'i', `LETTER_NUMBER`]
 					]],
@@ -776,7 +878,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `. To support
  all Unicode characters, including supplementary characters, use
  the `],
-					[/* reference */ 'r', `isJavaIdentifierStart(int)`],
+					[/* reference */ 'r', `#isJavaIdentifierStart(int)`, `isJavaIdentifierStart(int)`],
 					[/* text */ 't', ` method.`]
 				]]
 			],
@@ -805,13 +907,13 @@ DocsCollector.collect('java.lang.Character', [
  `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
-						[/* reference */ 'r', `isLetter(codePoint)`],
+						[/* reference */ 'r', `#isLetter(int)`, `isLetter(codePoint)`],
 						[/* text */ 't', `
       returns `],
 						[/* inline code block */ 'i', `true`]
 					]],
 					[/* block */ 'b', [
-						[/* reference */ 'r', `getType(codePoint)`],
+						[/* reference */ 'r', `#getType(int)`, `getType(codePoint)`],
 						[/* text */ 't', `
       returns `],
 						[/* inline code block */ 'i', `LETTER_NUMBER`]
@@ -895,7 +997,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `. To support
  all Unicode characters, including supplementary characters, use
  the `],
-					[/* reference */ 'r', `isJavaIdentifierPart(int)`],
+					[/* reference */ 'r', `#isJavaIdentifierPart(int)`, `isJavaIdentifierPart(int)`],
 					[/* text */ 't', ` method.`]
 				]]
 			],
@@ -946,7 +1048,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* block */ 'b', `  it is a non-spacing mark
  `],
 					[/* block */ 'b', [
-						[/* reference */ 'r', `isIdentifierIgnorable(codePoint)`],
+						[/* reference */ 'r', `#isIdentifierIgnorable(int)`, `isIdentifierIgnorable(codePoint)`],
 						[/* text */ 't', ` returns `],
 						[/* inline code block */ 'i', `true`],
 						[/* text */ 't', ` for
@@ -1022,7 +1124,7 @@ DocsCollector.collect('java.lang.Character', [
       `],
 					[/* inline code block */ 'i', `codePoint`],
 					[/* text */ 't', ` is not a `],
-					[/* reference */ 'r', `valid Unicode code point`],
+					[/* reference */ 'r', `#isValidCodePoint(int)`, `valid Unicode code point`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -1190,7 +1292,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `
  A character is a digit if its general category type, provided
  by `],
-					[/* reference */ 'r', `getType(codePoint)`],
+					[/* reference */ 'r', `#getType(int)`, `getType(codePoint)`],
 					[/* text */ 't', `, is
  `],
 					[/* inline code block */ 'i', `DECIMAL_DIGIT_NUMBER`],
@@ -1342,7 +1444,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `. To support
  all Unicode characters, including supplementary characters, use
  the `],
-					[/* reference */ 'r', `isDigit(int)`],
+					[/* reference */ 'r', `#isDigit(int)`, `isDigit(int)`],
 					[/* text */ 't', ` method.`]
 				]]
 			],
@@ -1369,7 +1471,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `
  A character is lowercase if its general category type, provided
  by `],
-					[/* reference */ 'r', `getType(codePoint)`],
+					[/* reference */ 'r', `#getType(char)`, `getType(codePoint)`],
 					[/* text */ 't', `, is
  `],
 					[/* inline code block */ 'i', `LOWERCASE_LETTER`],
@@ -1443,7 +1545,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `. To support
  all Unicode characters, including supplementary characters, use
  the `],
-					[/* reference */ 'r', `isLowerCase(int)`],
+					[/* reference */ 'r', `#isLowerCase(int)`, `isLowerCase(int)`],
 					[/* text */ 't', ` method.`]
 				]]
 			],
@@ -1498,7 +1600,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `. To support
  all Unicode characters, including supplementary characters, use
  the `],
-					[/* reference */ 'r', `isUpperCase(int)`],
+					[/* reference */ 'r', `#isUpperCase(int)`, `isUpperCase(int)`],
 					[/* text */ 't', ` method.`]
 				]]
 			],
@@ -1524,7 +1626,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `
  A character is uppercase if its general category type, provided by
  `],
-					[/* reference */ 'r', `getType(codePoint)`],
+					[/* reference */ 'r', `#getType(int)`, `getType(codePoint)`],
 					[/* text */ 't', `, is `],
 					[/* inline code block */ 'i', `UPPERCASE_LETTER`],
 					[/* text */ 't', `,
@@ -1744,7 +1846,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `. To support
  all Unicode characters, including supplementary characters, use
  the `],
-					[/* reference */ 'r', `isWhitespace(int)`],
+					[/* reference */ 'r', `#isWhitespace(int)`, `isWhitespace(int)`],
 					[/* text */ 't', ` method.`]
 				]]
 			],
@@ -1830,7 +1932,7 @@ DocsCollector.collect('java.lang.Character', [
 				[/* text */ 't', ` instance is not required, this method
  should generally be used in preference to the constructor
  `],
-				[/* reference */ 'r', `Character(char)`],
+				[/* reference */ 'r', `#%3Cinit%3E(char)`, `Character(char)`],
 				[/* text */ 't', `, as this method is likely to yield
  significantly better space and time performance by caching
  frequently requested values.
@@ -2094,10 +2196,10 @@ DocsCollector.collect('java.lang.Character', [
 				[/* block */ 'b', [
 					[/* text */ 't', `A char value is a surrogate code unit if and only if it is either
  a `],
-					[/* reference */ 'r', `low-surrogate code unit`],
+					[/* reference */ 'r', `#isLowSurrogate(char)`, `low-surrogate code unit`],
 					[/* text */ 't', ` or
  a `],
-					[/* reference */ 'r', `high-surrogate code unit`],
+					[/* reference */ 'r', `#isHighSurrogate(char)`, `high-surrogate code unit`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -2165,7 +2267,7 @@ DocsCollector.collect('java.lang.Character', [
  code point) in the UTF-16 encoding.  If the specified character
  is not a
  `],
-				[/* external link */ 'a', `Character.html#supplementary`, `supplementary character`],
+				[/* reference */ 'r', `.Character#supplementary`],
 				[/* text */ 't', `,
  an unspecified `],
 				[/* inline code block */ 'i', `char`],
@@ -2175,19 +2277,19 @@ DocsCollector.collect('java.lang.Character', [
 				[/* block */ 'b', [
 					[/* text */ 't', `If
  `],
-					[/* reference */ 'r', `isSupplementaryCodePoint(x)`],
+					[/* reference */ 'r', `#isSupplementaryCodePoint(int)`, `isSupplementaryCodePoint(x)`],
 					[/* text */ 't', `
  is `],
 					[/* inline code block */ 'i', `true`],
 					[/* text */ 't', `, then
  `],
-					[/* reference */ 'r', `isHighSurrogate`],
+					[/* reference */ 'r', `#isHighSurrogate(char)`, `isHighSurrogate`],
 					[/* inline code block */ 'i', `(highSurrogate(x))`],
 					[/* text */ 't', ` and
  `],
-					[/* reference */ 'r', `toCodePoint`],
+					[/* reference */ 'r', `#toCodePoint(char,char)`, `toCodePoint`],
 					[/* inline code block */ 'i', `(highSurrogate(x),`],
-					[/* reference */ 'r', `lowSurrogate`],
+					[/* reference */ 'r', `#lowSurrogate(int)`, `lowSurrogate`],
 					[/* inline code block */ 'i', `(x)) == x`],
 					[/* text */ 't', `
  are also always `],
@@ -2219,7 +2321,7 @@ DocsCollector.collect('java.lang.Character', [
  code point) in the UTF-16 encoding.  If the specified character
  is not a
  `],
-				[/* external link */ 'a', `Character.html#supplementary`, `supplementary character`],
+				[/* reference */ 'r', `.Character#supplementary`],
 				[/* text */ 't', `,
  an unspecified `],
 				[/* inline code block */ 'i', `char`],
@@ -2229,19 +2331,19 @@ DocsCollector.collect('java.lang.Character', [
 				[/* block */ 'b', [
 					[/* text */ 't', `If
  `],
-					[/* reference */ 'r', `isSupplementaryCodePoint(x)`],
+					[/* reference */ 'r', `#isSupplementaryCodePoint(int)`, `isSupplementaryCodePoint(x)`],
 					[/* text */ 't', `
  is `],
 					[/* inline code block */ 'i', `true`],
 					[/* text */ 't', `, then
  `],
-					[/* reference */ 'r', `isLowSurrogate`],
+					[/* reference */ 'r', `#isLowSurrogate(char)`, `isLowSurrogate`],
 					[/* inline code block */ 'i', `(lowSurrogate(x))`],
 					[/* text */ 't', ` and
  `],
-					[/* reference */ 'r', `toCodePoint`],
+					[/* reference */ 'r', `#toCodePoint(char,char)`, `toCodePoint`],
 					[/* inline code block */ 'i', `(`],
-					[/* reference */ 'r', `highSurrogate`],
+					[/* reference */ 'r', `#highSurrogate(int)`, `highSurrogate`],
 					[/* inline code block */ 'i', `(x), lowSurrogate(x)) == x`],
 					[/* text */ 't', `
  are also always `],
@@ -2265,7 +2367,7 @@ DocsCollector.collect('java.lang.Character', [
 				[/* text */ 't', `Converts the specified surrogate pair to its supplementary code
  point value. This method does not validate the specified
  surrogate pair. The caller must validate it using `],
-				[/* reference */ 'r', `isSurrogatePair`],
+				[/* reference */ 'r', `#isSurrogatePair(char,char)`, `isSurrogatePair`],
 				[/* text */ 't', ` if necessary.`]
 			],
 			[/* parameters */
@@ -2468,7 +2570,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* inline code block */ 'i', `index`],
 					[/* text */ 't', ` is negative or not less than
  `],
-					[/* external link */ 'a', `CharSequence.html#length()`, `seq.length()`],
+					[/* reference */ 'r', `.CharSequence#length()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -2530,7 +2632,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* inline code block */ 'i', `index`],
 					[/* text */ 't', `
  argument is less than 1 or greater than `],
-					[/* external link */ 'a', `CharSequence.html#length()`, `seq.length()`],
+					[/* reference */ 'r', `.CharSequence#length()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -2996,7 +3098,7 @@ DocsCollector.collect('java.lang.Character', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `In general, `],
-					[/* external link */ 'a', `String.html#toLowerCase()`, `String.toLowerCase()`],
+					[/* reference */ 'r', `.String#toLowerCase()`],
 					[/* text */ 't', ` should be used to map
  characters to lowercase. `],
 					[/* inline code block */ 'i', `String`],
@@ -3044,7 +3146,7 @@ DocsCollector.collect('java.lang.Character', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `In general, `],
-					[/* external link */ 'a', `String.html#toLowerCase()`, `String.toLowerCase()`],
+					[/* reference */ 'r', `.String#toLowerCase()`],
 					[/* text */ 't', ` should be used to map
  characters to lowercase. `],
 					[/* inline code block */ 'i', `String`],
@@ -3069,7 +3171,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `. To support
  all Unicode characters, including supplementary characters, use
  the `],
-					[/* reference */ 'r', `toLowerCase(int)`],
+					[/* reference */ 'r', `#toLowerCase(int)`, `toLowerCase(int)`],
 					[/* text */ 't', ` method.`]
 				]]
 			],
@@ -3104,7 +3206,7 @@ DocsCollector.collect('java.lang.Character', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `In general, `],
-					[/* external link */ 'a', `String.html#toUpperCase()`, `String.toUpperCase()`],
+					[/* reference */ 'r', `.String#toUpperCase()`],
 					[/* text */ 't', ` should be used to map
  characters to uppercase. `],
 					[/* inline code block */ 'i', `String`],
@@ -3129,7 +3231,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `. To support
  all Unicode characters, including supplementary characters, use
  the `],
-					[/* reference */ 'r', `toUpperCase(int)`],
+					[/* reference */ 'r', `#toUpperCase(int)`, `toUpperCase(int)`],
 					[/* text */ 't', ` method.`]
 				]]
 			],
@@ -3165,7 +3267,7 @@ DocsCollector.collect('java.lang.Character', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `In general, `],
-					[/* external link */ 'a', `String.html#toUpperCase()`, `String.toUpperCase()`],
+					[/* reference */ 'r', `.String#toUpperCase()`],
 					[/* text */ 't', ` should be used to map
  characters to uppercase. `],
 					[/* inline code block */ 'i', `String`],
@@ -3251,7 +3353,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `. To support
  all Unicode characters, including supplementary characters, use
  the `],
-					[/* reference */ 'r', `getType(int)`],
+					[/* reference */ 'r', `#getType(int)`, `getType(int)`],
 					[/* text */ 't', ` method.`]
 				]]
 			],
@@ -3329,7 +3431,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `. To support
  all Unicode characters, including supplementary characters, use
  the `],
-					[/* reference */ 'r', `isLetter(int)`],
+					[/* reference */ 'r', `#isLetter(int)`, `isLetter(int)`],
 					[/* text */ 't', ` method.`]
 				]]
 			],
@@ -3355,7 +3457,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `
  A character is considered to be a letter if its general
  category type, provided by `],
-					[/* reference */ 'r', `getType(codePoint)`],
+					[/* reference */ 'r', `#getType(int)`, `getType(codePoint)`],
 					[/* text */ 't', `,
  is any of the following:
  `]
@@ -3405,10 +3507,10 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `
  A character is considered to be a letter or digit if either
  `],
-					[/* reference */ 'r', `isLetter(codePoint)`],
+					[/* reference */ 'r', `#isLetter(int)`, `isLetter(codePoint)`],
 					[/* text */ 't', ` or
  `],
-					[/* reference */ 'r', `isDigit(codePoint)`],
+					[/* reference */ 'r', `#isDigit(int)`, `isDigit(codePoint)`],
 					[/* text */ 't', ` returns
  `],
 					[/* inline code block */ 'i', `true`],
@@ -3455,7 +3557,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `. To support
  all Unicode characters, including supplementary characters, use
  the `],
-					[/* reference */ 'r', `isLetterOrDigit(int)`],
+					[/* reference */ 'r', `#isLetterOrDigit(int)`, `isLetterOrDigit(int)`],
 					[/* text */ 't', ` method.`]
 				]]
 			],
@@ -3508,7 +3610,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `
  A character is a titlecase character if its general
  category type, provided by `],
-					[/* reference */ 'r', `getType(codePoint)`],
+					[/* reference */ 'r', `#getType(int)`, `getType(codePoint)`],
 					[/* text */ 't', `,
  is `],
 					[/* inline code block */ 'i', `TITLECASE_LETTER`],
@@ -3616,7 +3718,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `. To support
  all Unicode characters, including supplementary characters, use
  the `],
-					[/* reference */ 'r', `isTitleCase(int)`],
+					[/* reference */ 'r', `#isTitleCase(int)`, `isTitleCase(int)`],
 					[/* text */ 't', ` method.`]
 				]]
 			],
@@ -3684,7 +3786,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `. To support
  all Unicode characters, including supplementary characters, use
  the `],
-					[/* reference */ 'r', `isDefined(int)`],
+					[/* reference */ 'r', `#isDefined(int)`, `isDefined(int)`],
 					[/* text */ 't', ` method.`]
 				]]
 			],
@@ -3733,13 +3835,13 @@ DocsCollector.collect('java.lang.Character', [
  `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
-						[/* reference */ 'r', `isLetter(codePoint)`],
+						[/* reference */ 'r', `#isLetter(int)`, `isLetter(codePoint)`],
 						[/* text */ 't', `
       returns `],
 						[/* inline code block */ 'i', `true`]
 					]],
 					[/* block */ 'b', [
-						[/* reference */ 'r', `getType(codePoint)`],
+						[/* reference */ 'r', `#getType(int)`, `getType(codePoint)`],
 						[/* text */ 't', `
       returns `],
 						[/* inline code block */ 'i', `LETTER_NUMBER`],
@@ -3796,12 +3898,12 @@ DocsCollector.collect('java.lang.Character', [
  `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
-						[/* reference */ 'r', `isLetter(ch)`],
+						[/* reference */ 'r', `#isLetter(int)`, `isLetter(ch)`],
 						[/* text */ 't', ` returns `],
 						[/* inline code block */ 'i', `true`]
 					]],
 					[/* block */ 'b', [
-						[/* reference */ 'r', `getType(ch)`],
+						[/* reference */ 'r', `#getType(int)`, `getType(ch)`],
 						[/* text */ 't', ` returns
       `],
 						[/* inline code block */ 'i', `LETTER_NUMBER`],
@@ -3841,7 +3943,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `. To support
  all Unicode characters, including supplementary characters, use
  the `],
-					[/* reference */ 'r', `isUnicodeIdentifierStart(int)`],
+					[/* reference */ 'r', `#isUnicodeIdentifierStart(int)`, `isUnicodeIdentifierStart(int)`],
 					[/* text */ 't', ` method.`]
 				]]
 			],
@@ -4015,7 +4117,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `. To support
  all Unicode characters, including supplementary characters, use
  the `],
-					[/* reference */ 'r', `isUnicodeIdentifierPart(int)`],
+					[/* reference */ 'r', `#isUnicodeIdentifierPart(int)`, `isUnicodeIdentifierPart(int)`],
 					[/* text */ 't', ` method.`]
 				]]
 			],
@@ -4136,7 +4238,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `. To support
  all Unicode characters, including supplementary characters, use
  the `],
-					[/* reference */ 'r', `isIdentifierIgnorable(int)`],
+					[/* reference */ 'r', `#isIdentifierIgnorable(int)`, `isIdentifierIgnorable(int)`],
 					[/* text */ 't', ` method.`]
 				]]
 			],
@@ -4226,7 +4328,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `. To support
  all Unicode characters, including supplementary characters, use
  the `],
-					[/* reference */ 'r', `toTitleCase(int)`],
+					[/* reference */ 'r', `#toTitleCase(int)`, `toTitleCase(int)`],
 					[/* text */ 't', ` method.`]
 				]]
 			],
@@ -4266,7 +4368,7 @@ DocsCollector.collect('java.lang.Character', [
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* text */ 't', `The method `],
-						[/* reference */ 'r', `isDigit(codePoint)`],
+						[/* reference */ 'r', `#isDigit(int)`, `isDigit(codePoint)`],
 						[/* text */ 't', ` is `],
 						[/* inline code block */ 'i', `true`],
 						[/* text */ 't', ` of the character
@@ -4473,7 +4575,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `. To support
  all Unicode characters, including supplementary characters, use
  the `],
-					[/* reference */ 'r', `digit(int, int)`],
+					[/* reference */ 'r', `#digit(int,int)`, `digit(int, int)`],
 					[/* text */ 't', ` method.`]
 				]]
 			],
@@ -4614,7 +4716,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `. To support
  all Unicode characters, including supplementary characters, use
  the `],
-					[/* reference */ 'r', `getNumericValue(int)`],
+					[/* reference */ 'r', `#getNumericValue(int)`, `getNumericValue(int)`],
 					[/* text */ 't', ` method.`]
 				]]
 			],
@@ -4696,7 +4798,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `. To support
  all Unicode characters, including supplementary characters, use
  the `],
-					[/* reference */ 'r', `isSpaceChar(int)`],
+					[/* reference */ 'r', `#isSpaceChar(int)`, `isSpaceChar(int)`],
 					[/* text */ 't', ` method.`]
 				]]
 			],
@@ -4738,7 +4840,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `. To support
  all Unicode characters, including supplementary characters, use
  the `],
-					[/* reference */ 'r', `isISOControl(int)`],
+					[/* reference */ 'r', `#isISOControl(int)`, `isISOControl(int)`],
 					[/* text */ 't', ` method.`]
 				]]
 			],
@@ -4825,7 +4927,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `. To support
  all Unicode characters, including supplementary characters, use
  the `],
-					[/* reference */ 'r', `getDirectionality(int)`],
+					[/* reference */ 'r', `#getDirectionality(int)`, `getDirectionality(int)`],
 					[/* text */ 't', ` method.`]
 				]]
 			],
@@ -4866,7 +4968,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `. To support
  all Unicode characters, including supplementary characters, use
  the `],
-					[/* reference */ 'r', `isMirrored(int)`],
+					[/* reference */ 'r', `#isMirrored(int)`, `isMirrored(int)`],
 					[/* text */ 't', ` method.`]
 				]]
 			],
@@ -4969,7 +5071,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `This method doesn't validate the specified character to be a
  valid Unicode code point. The caller must validate the
  character value using `],
-					[/* reference */ 'r', `isValidCodePoint`],
+					[/* reference */ 'r', `#isValidCodePoint(int)`, `isValidCodePoint`],
 					[/* text */ 't', `
  if necessary.`]
 				]]
@@ -4995,12 +5097,12 @@ DocsCollector.collect('java.lang.Character', [
  `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
-						[/* reference */ 'r', `isLetter(ch)`],
+						[/* reference */ 'r', `#isLetter(int)`, `isLetter(ch)`],
 						[/* text */ 't', ` returns `],
 						[/* inline code block */ 'i', `true`]
 					]],
 					[/* block */ 'b', [
-						[/* reference */ 'r', `getType(ch)`],
+						[/* reference */ 'r', `#getType(int)`, `getType(ch)`],
 						[/* text */ 't', ` returns `],
 						[/* inline code block */ 'i', `LETTER_NUMBER`]
 					]],
@@ -5100,7 +5202,7 @@ DocsCollector.collect('java.lang.Character', [
 					[/* text */ 't', `
  A character is considered to be alphabetic if its general category type,
  provided by `],
-					[/* reference */ 'r', `getType(codePoint)`],
+					[/* reference */ 'r', `#getType(int)`, `getType(codePoint)`],
 					[/* text */ 't', `, is any of
  the following:
  `]
@@ -5152,7 +5254,82 @@ DocsCollector.collect('java.lang.Character', [
 				[/* text */ 't', ` for the following five
  characters only:
  `],
-				[/* table */ 't', '']
+				[/* table */ 'tbl',
+					[/* caption */ 'tc'],
+					[/* table header */ 'th', [
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `Character
+     `]
+							]],
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `Code
+     `]
+							]],
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `Name
+ `]
+							]]
+						]]
+					]],
+					[/* table body */ 'tb', [
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `'\\t'`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `U+0009`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `HORIZONTAL TABULATION`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `'\\n'`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `U+000A`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `NEW LINE`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `'\\f'`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `U+000C`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `FORM FEED`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `'\\r'`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `U+000D`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `CARRIAGE RETURN`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `' '`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `U+0020`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `SPACE`]
+							]]
+						]]
+					]],
+				]
 			],
 			[/* parameters */
 				[/* parameter */ 'ch', [/* parameter description */

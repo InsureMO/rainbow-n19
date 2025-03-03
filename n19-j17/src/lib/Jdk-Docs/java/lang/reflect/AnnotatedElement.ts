@@ -45,9 +45,9 @@ DocsCollector.collect('java.lang.reflect.AnnotatedElement', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `The `],
-			[/* reference */ 'r', `getAnnotationsByType(Class)`],
+			[/* reference */ 'r', `#getAnnotationsByType(java.lang.Class)`, `getAnnotationsByType(Class)`],
 			[/* text */ 't', ` and `],
-			[/* reference */ 'r', `getDeclaredAnnotationsByType(Class)`],
+			[/* reference */ 'r', `#getDeclaredAnnotationsByType(java.lang.Class)`, `getDeclaredAnnotationsByType(Class)`],
 			[/* text */ 't', ` methods support multiple
  annotations of the same type on an element. If the argument to
  either method is a repeatable annotation type (JLS `],
@@ -220,7 +220,141 @@ DocsCollector.collect('java.lang.reflect.AnnotatedElement', [
  different methods in this interface examine.
 
  `],
-		[/* table */ 't', ''],
+		[/* table */ 'tbl',
+			[/* caption */ 'tc', [
+				[/* text */ 't', `Overview of kind of presence detected by different AnnotatedElement methods`]
+			]],
+			[/* table header */ 'th', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', 2, 1, [
+						[/* text */ 't', `Method`]
+					]],
+					[/* table header cell */ 'thc', 4, 1, [
+						[/* text */ 't', `Kind of Presence`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Return Type`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Signature`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Directly Present`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Indirectly Present`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Present`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Associated`]
+					]]
+				]]
+			]],
+			[/* table body */ 'tb', [
+				[/* table row */ 'tr', [
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `T`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* reference */ 'r', `#getAnnotation(java.lang.Class)`, `getAnnotation(Class<T>)`],
+						[/* text */ 't', `
+ `]
+					]],
+					[/* table cell */ 'tbc'],
+					[/* table cell */ 'tbc'],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `X`]
+					]],
+					[/* table cell */ 'tbc']
+				]],
+				[/* table row */ 'tr', [
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `Annotation[]`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* reference */ 'r', `#getAnnotations()`, `getAnnotations()`],
+						[/* text */ 't', `
+ `]
+					]],
+					[/* table cell */ 'tbc'],
+					[/* table cell */ 'tbc'],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `X`]
+					]],
+					[/* table cell */ 'tbc']
+				]],
+				[/* table row */ 'tr', [
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `T[]`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* reference */ 'r', `#getAnnotationsByType(java.lang.Class)`, `getAnnotationsByType(Class<T>)`],
+						[/* text */ 't', `
+ `]
+					]],
+					[/* table cell */ 'tbc'],
+					[/* table cell */ 'tbc'],
+					[/* table cell */ 'tbc'],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `X`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `T`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* reference */ 'r', `#getDeclaredAnnotation(java.lang.Class)`, `getDeclaredAnnotation(Class<T>)`],
+						[/* text */ 't', `
+ `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `X`]
+					]],
+					[/* table cell */ 'tbc'],
+					[/* table cell */ 'tbc'],
+					[/* table cell */ 'tbc']
+				]],
+				[/* table row */ 'tr', [
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `Annotation[]`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* reference */ 'r', `#getDeclaredAnnotations()`, `getDeclaredAnnotations()`],
+						[/* text */ 't', `
+ `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `X`]
+					]],
+					[/* table cell */ 'tbc'],
+					[/* table cell */ 'tbc'],
+					[/* table cell */ 'tbc']
+				]],
+				[/* table row */ 'tr', [
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `T[]`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* reference */ 'r', `#getDeclaredAnnotationsByType(java.lang.Class)`, `getDeclaredAnnotationsByType(Class<T>)`],
+						[/* text */ 't', `
+ `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `X`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `X`]
+					]],
+					[/* table cell */ 'tbc'],
+					[/* table cell */ 'tbc']
+				]]
+			]],
+		],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `For an invocation of `],
@@ -546,7 +680,7 @@ DocsCollector.collect('java.lang.reflect.AnnotatedElement', [
  value is an array of length 0.
 
  The difference between this method and `],
-				[/* reference */ 'r', `getAnnotation(Class)`],
+				[/* reference */ 'r', `#getAnnotation(java.lang.Class)`, `getAnnotation(Class)`],
 				[/* text */ 't', `
  is that this method detects if its argument is a `],
 				[/* text */ 't', `repeatable
@@ -638,7 +772,7 @@ DocsCollector.collect('java.lang.reflect.AnnotatedElement', [
  0.
 
  The difference between this method and `],
-				[/* reference */ 'r', `getDeclaredAnnotation(Class)`],
+				[/* reference */ 'r', `#getDeclaredAnnotation(java.lang.Class)`, `getDeclaredAnnotation(Class)`],
 				[/* text */ 't', ` is that this method detects if its
  argument is a `],
 				[/* text */ 't', `repeatable annotation type`],

@@ -22,7 +22,7 @@ DocsCollector.collect('java.io.Console', [
  If this virtual machine has a console then it is represented by a
  unique instance of this class which can be obtained by invoking the
  `],
-			[/* external link */ 'a', `../lang/System.html#console()`, `System.console()`],
+			[/* reference */ 'r', `java.System#console()`],
 			[/* text */ 't', ` method.  If no console device is
  available then an invocation of that method will return `],
 			[/* inline code block */ 'i', `null`],
@@ -34,19 +34,19 @@ DocsCollector.collect('java.io.Console', [
  Read and write operations are synchronized to guarantee the atomic
  completion of critical operations; therefore invoking methods
  `],
-			[/* reference */ 'r', `readLine()`],
+			[/* reference */ 'r', `#readLine()`, `readLine()`],
 			[/* text */ 't', `, `],
-			[/* reference */ 'r', `readPassword()`],
+			[/* reference */ 'r', `#readPassword()`, `readPassword()`],
 			[/* text */ 't', `, `],
-			[/* reference */ 'r', `format()`],
+			[/* reference */ 'r', `#format(java.lang.String,java.lang.Object...)`, `format()`],
 			[/* text */ 't', `,
  `],
-			[/* reference */ 'r', `printf()`],
+			[/* reference */ 'r', `#printf(java.lang.String,java.lang.Object...)`, `printf()`],
 			[/* text */ 't', ` as well as the read, format and write operations
  on the objects returned by `],
-			[/* reference */ 'r', `reader()`],
+			[/* reference */ 'r', `#reader()`, `reader()`],
 			[/* text */ 't', ` and `],
-			[/* reference */ 'r', `writer()`],
+			[/* reference */ 'r', `#writer()`, `writer()`],
 			[/* text */ 't', ` may
  block in multithreaded scenarios.
  `]
@@ -56,10 +56,10 @@ DocsCollector.collect('java.io.Console', [
  Invoking `],
 			[/* inline code block */ 'i', `close()`],
 			[/* text */ 't', ` on the objects returned by the `],
-			[/* reference */ 'r', `reader()`],
+			[/* reference */ 'r', `#reader()`, `reader()`],
 			[/* text */ 't', `
  and the `],
-			[/* reference */ 'r', `writer()`],
+			[/* reference */ 'r', `#writer()`, `writer()`],
 			[/* text */ 't', ` will not close the underlying stream of those
  objects.
  `]
@@ -90,9 +90,9 @@ DocsCollector.collect('java.io.Console', [
 			[/* text */ 't', `
  If an application needs to read a password or other secure data, it should
  use `],
-			[/* reference */ 'r', `readPassword()`],
+			[/* reference */ 'r', `#readPassword()`, `readPassword()`],
 			[/* text */ 't', ` or `],
-			[/* reference */ 'r', `readPassword(String, Object...)`],
+			[/* reference */ 'r', `#readPassword(java.lang.String,java.lang.Object...)`, `readPassword(String, Object...)`],
 			[/* text */ 't', ` and
  manually zero the returned character array after processing to minimize the
  lifetime of sensitive data in memory.
@@ -132,7 +132,7 @@ DocsCollector.collect('java.io.Console', [
 			[/* parameters */
 				[/* parameter */ 'fmt', [/* parameter description */
 					[/* text */ 't', `A format string as described in `],
-					[/* external link */ 'a', `../util/Formatter.html#syntax`, `Format string syntax`]
+					[/* reference */ 'r', `java.Formatter#syntax`]
 				]],
 				[/* parameter */ 'args', [/* parameter description */
 					[/* text */ 't', `Arguments referenced by the format specifiers in the format
@@ -147,7 +147,7 @@ DocsCollector.collect('java.io.Console', [
          `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` argument depends on the `],
-					[/* external link */ 'a', `../util/Formatter.html#syntax`, `conversion`],
+					[/* reference */ 'r', `java.Formatter#syntax`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -158,7 +158,7 @@ DocsCollector.collect('java.io.Console', [
           insufficient arguments given the format string, or other
           illegal conditions.  For specification of all possible
           formatting errors, see the `],
-					[/* external link */ 'a', `../util/Formatter.html#detail`, `Details`],
+					[/* reference */ 'r', `java.Formatter#detail`],
 					[/* text */ 't', ` section
           of the formatter class specification.`]
 				]]
@@ -182,7 +182,7 @@ DocsCollector.collect('java.io.Console', [
  (e.g., keyboard and/or display) specified by the host environment or user.
  It may not necessarily be the same as the default charset returned from
  `],
-					[/* external link */ 'a', `../nio/charset/Charset.html#defaultCharset()`, `Charset.defaultCharset()`],
+					[/* reference */ 'r', `java.Charset#defaultCharset()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -217,7 +217,7 @@ DocsCollector.collect('java.io.Console', [
 			[/* parameters */
 				[/* parameter */ 'format', [/* parameter description */
 					[/* text */ 't', `A format string as described in `],
-					[/* external link */ 'a', `../util/Formatter.html#syntax`, `Format string syntax`],
+					[/* reference */ 'r', `java.Formatter#syntax`],
 					[/* text */ 't', `.`]
 				]],
 				[/* parameter */ 'args', [/* parameter description */
@@ -233,7 +233,7 @@ DocsCollector.collect('java.io.Console', [
          `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` argument depends on the `],
-					[/* external link */ 'a', `../util/Formatter.html#syntax`, `conversion`],
+					[/* reference */ 'r', `java.Formatter#syntax`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -244,7 +244,7 @@ DocsCollector.collect('java.io.Console', [
           insufficient arguments given the format string, or other
           illegal conditions.  For specification of all possible
           formatting errors, see the `],
-					[/* external link */ 'a', `../util/Formatter.html#detail`, `Details`],
+					[/* reference */ 'r', `java.Formatter#detail`],
 					[/* text */ 't', ` section of the
           formatter class specification.`]
 				]]
@@ -279,7 +279,7 @@ DocsCollector.collect('java.io.Console', [
 			[/* parameters */
 				[/* parameter */ 'fmt', [/* parameter description */
 					[/* text */ 't', `A format string as described in `],
-					[/* external link */ 'a', `../util/Formatter.html#syntax`, `Format string syntax`],
+					[/* reference */ 'r', `java.Formatter#syntax`],
 					[/* text */ 't', `.`]
 				]],
 				[/* parameter */ 'args', [/* parameter description */
@@ -299,7 +299,7 @@ DocsCollector.collect('java.io.Console', [
           insufficient arguments given the format string, or other
           illegal conditions.  For specification of all possible
           formatting errors, see the `],
-					[/* external link */ 'a', `../util/Formatter.html#detail`, `Details`],
+					[/* reference */ 'r', `java.Formatter#detail`],
 					[/* text */ 't', ` section
           of the formatter class specification.`]
 				]],
@@ -346,20 +346,20 @@ DocsCollector.collect('java.io.Console', [
 					[/* text */ 't', `
  For simple applications requiring only line-oriented reading, use
  `],
-					[/* reference */ 'r', `readLine(java.lang.String, java.lang.Object...)`],
+					[/* reference */ 'r', `#readLine(java.lang.String,java.lang.Object...)`, `readLine(java.lang.String, java.lang.Object...)`],
 					[/* text */ 't', `.
  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The bulk read operations `],
-					[/* external link */ 'a', `Reader.html#read(char%5B%5D)`, `read(char[])`],
+					[/* reference */ 'r', `.Reader#read(char[])`],
 					[/* text */ 't', `,
  `],
-					[/* external link */ 'a', `Reader.html#read(char%5B%5D,int,int)`, `read(char[], int, int)`],
+					[/* reference */ 'r', `.Reader#read(char[],int,int)`],
 					[/* text */ 't', ` and
  `],
-					[/* external link */ 'a', `Reader.html#read(java.nio.CharBuffer)`, `read(java.nio.CharBuffer)`],
+					[/* reference */ 'r', `.Reader#read(java.nio.CharBuffer)`],
 					[/* text */ 't', `
  on the returned object will not read in characters beyond the line
  bound for each invocation, even if the destination buffer has space for
@@ -405,7 +405,7 @@ DocsCollector.collect('java.io.Console', [
 			[/* parameters */
 				[/* parameter */ 'fmt', [/* parameter description */
 					[/* text */ 't', `A format string as described in `],
-					[/* external link */ 'a', `../util/Formatter.html#syntax`, `Format string syntax`],
+					[/* reference */ 'r', `java.Formatter#syntax`],
 					[/* text */ 't', `
          for the prompt text.`]
 				]],
@@ -426,7 +426,7 @@ DocsCollector.collect('java.io.Console', [
           insufficient arguments given the format string, or other
           illegal conditions.  For specification of all possible
           formatting errors, see the `],
-					[/* external link */ 'a', `../util/Formatter.html#detail`, `Details`],
+					[/* reference */ 'r', `java.Formatter#detail`],
 					[/* text */ 't', `
           section of the formatter class specification.`]
 				]],

@@ -148,7 +148,7 @@ DocsCollector.collect('java.util.Spliterators', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The spliterator is not
  `],
-					[/* external link */ 'a', `Spliterator.html#binding`, `late-binding`],
+					[/* reference */ 'r', `.Spliterator#binding`],
 					[/* text */ 't', `, inherits
  the `],
 					[/* text */ 't', `fail-fast`],
@@ -201,7 +201,7 @@ DocsCollector.collect('java.util.Spliterators', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The spliterator is not
  `],
-					[/* external link */ 'a', `Spliterator.html#binding`, `late-binding`],
+					[/* reference */ 'r', `.Spliterator#binding`],
 					[/* text */ 't', `, inherits
  the `],
 					[/* text */ 't', `fail-fast`],
@@ -253,7 +253,7 @@ DocsCollector.collect('java.util.Spliterators', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The spliterator is not
  `],
-					[/* external link */ 'a', `Spliterator.html#binding`, `late-binding`],
+					[/* reference */ 'r', `.Spliterator#binding`],
 					[/* text */ 't', `, inherits
  the `],
 					[/* text */ 't', `fail-fast`],
@@ -306,7 +306,7 @@ DocsCollector.collect('java.util.Spliterators', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The spliterator is not
  `],
-					[/* external link */ 'a', `Spliterator.html#binding`, `late-binding`],
+					[/* reference */ 'r', `.Spliterator#binding`],
 					[/* text */ 't', `, inherits
  the `],
 					[/* text */ 't', `fail-fast`],
@@ -351,17 +351,17 @@ DocsCollector.collect('java.util.Spliterators', [
 				[/* inline code block */ 'i', `Spliterator`],
 				[/* text */ 't', ` using the given collection's
  `],
-				[/* external link */ 'a', `Collection.html#iterator()`, `Collection.iterator()`],
+				[/* reference */ 'r', `.Collection#iterator()`],
 				[/* text */ 't', ` as the source of elements, and
  reporting its `],
-				[/* external link */ 'a', `Collection.html#size()`, `Collection.size()`],
+				[/* reference */ 'r', `.Collection#size()`],
 				[/* text */ 't', ` as its initial size.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `The spliterator is
  `],
-					[/* external link */ 'a', `Spliterator.html#binding`, `late-binding`],
+					[/* reference */ 'r', `.Spliterator#binding`],
 					[/* text */ 't', `, inherits
  the `],
 					[/* text */ 't', `fail-fast`],
@@ -411,7 +411,7 @@ DocsCollector.collect('java.util.Spliterators', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The spliterator is not
  `],
-					[/* external link */ 'a', `Spliterator.html#binding`, `late-binding`],
+					[/* reference */ 'r', `.Spliterator#binding`],
 					[/* text */ 't', `, inherits
  the `],
 					[/* text */ 't', `fail-fast`],
@@ -473,7 +473,7 @@ DocsCollector.collect('java.util.Spliterators', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The spliterator is not
  `],
-					[/* external link */ 'a', `Spliterator.html#binding`, `late-binding`],
+					[/* reference */ 'r', `.Spliterator#binding`],
 					[/* text */ 't', `, inherits
  the `],
 					[/* text */ 't', `fail-fast`],
@@ -534,7 +534,7 @@ DocsCollector.collect('java.util.Spliterators', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The spliterator is not
  `],
-					[/* external link */ 'a', `Spliterator.html#binding`, `late-binding`],
+					[/* reference */ 'r', `.Spliterator#binding`],
 					[/* text */ 't', `, inherits
  the `],
 					[/* text */ 't', `fail-fast`],
@@ -596,7 +596,7 @@ DocsCollector.collect('java.util.Spliterators', [
  fine control over Spliterator characteristics.  Most other situations in
  which a Spliterator for an array is needed should use
  `],
-					[/* external link */ 'a', `Arrays.html#spliterator(long%5B%5D,int,int)`, `Arrays.spliterator(long[], int, int)`],
+					[/* reference */ 'r', `.Arrays#spliterator(long[],int,int)`],
 					[/* text */ 't', `.
 
  `]
@@ -616,7 +616,7 @@ DocsCollector.collect('java.util.Spliterators', [
  `],
 					[/* inline code block */ 'i', `ORDERED`],
 					[/* text */ 't', `).  The method `],
-					[/* external link */ 'a', `Arrays.html#spliterator(long%5B%5D,int,int)`, `Arrays.spliterator(long[], int, int)`],
+					[/* reference */ 'r', `.Arrays#spliterator(long[],int,int)`],
 					[/* text */ 't', ` can
  often be used instead, which returns a spliterator that reports
  `],
@@ -687,7 +687,7 @@ DocsCollector.collect('java.util.Spliterators', [
  fine control over Spliterator characteristics.  Most other situations in
  which a Spliterator for an array is needed should use
  `],
-					[/* external link */ 'a', `Arrays.html#spliterator(long%5B%5D)`, `Arrays.spliterator(long[])`],
+					[/* reference */ 'r', `.Arrays#spliterator(long[])`],
 					[/* text */ 't', `.
 
  `]
@@ -745,7 +745,7 @@ DocsCollector.collect('java.util.Spliterators', [
  fine control over Spliterator characteristics.  Most other situations in
  which a Spliterator for an array is needed should use
  `],
-					[/* external link */ 'a', `Arrays.html#spliterator(int%5B%5D,int,int)`, `Arrays.spliterator(int[], int, int)`],
+					[/* reference */ 'r', `.Arrays#spliterator(int[],int,int)`],
 					[/* text */ 't', `.
 
  `]
@@ -822,7 +822,7 @@ DocsCollector.collect('java.util.Spliterators', [
  fine control over Spliterator characteristics.  Most other situations in
  which a Spliterator for an array is needed should use
  `],
-					[/* external link */ 'a', `Arrays.html#spliterator(T%5B%5D)`, `Arrays.spliterator(Object[])`],
+					[/* reference */ 'r', `.Arrays#spliterator(T[])`],
 					[/* text */ 't', `.
 
  `]
@@ -880,7 +880,7 @@ DocsCollector.collect('java.util.Spliterators', [
  fine control over Spliterator characteristics.  Most other situations in
  which a Spliterator for an array is needed should use
  `],
-					[/* external link */ 'a', `Arrays.html#spliterator(T%5B%5D)`, `Arrays.spliterator(Object[])`],
+					[/* reference */ 'r', `.Arrays#spliterator(T[])`],
 					[/* text */ 't', `.
 
  `]
@@ -957,7 +957,7 @@ DocsCollector.collect('java.util.Spliterators', [
  fine control over Spliterator characteristics.  Most other situations in
  which a Spliterator for an array is needed should use
  `],
-					[/* external link */ 'a', `Arrays.html#spliterator(int%5B%5D)`, `Arrays.spliterator(int[])`],
+					[/* reference */ 'r', `.Arrays#spliterator(int[])`],
 					[/* text */ 't', `.
 
  `]
@@ -1014,7 +1014,7 @@ DocsCollector.collect('java.util.Spliterators', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The spliterator is not
  `],
-					[/* external link */ 'a', `Spliterator.html#binding`, `late-binding`],
+					[/* reference */ 'r', `.Spliterator#binding`],
 					[/* text */ 't', `, inherits
  the `],
 					[/* text */ 't', `fail-fast`],
@@ -1075,7 +1075,7 @@ DocsCollector.collect('java.util.Spliterators', [
  fine control over Spliterator characteristics.  Most other situations in
  which a Spliterator for an array is needed should use
  `],
-					[/* external link */ 'a', `Arrays.html#spliterator(double%5B%5D,int,int)`, `Arrays.spliterator(double[], int, int)`],
+					[/* reference */ 'r', `.Arrays#spliterator(double[],int,int)`],
 					[/* text */ 't', `.
 
  `]
@@ -1095,7 +1095,7 @@ DocsCollector.collect('java.util.Spliterators', [
  `],
 					[/* inline code block */ 'i', `ORDERED`],
 					[/* text */ 't', `).  The method `],
-					[/* external link */ 'a', `Arrays.html#spliterator(long%5B%5D,int,int)`, `Arrays.spliterator(long[], int, int)`],
+					[/* reference */ 'r', `.Arrays#spliterator(long[],int,int)`],
 					[/* text */ 't', ` can
  often be used instead, which returns a spliterator that reports
  `],
@@ -1166,7 +1166,7 @@ DocsCollector.collect('java.util.Spliterators', [
  fine control over Spliterator characteristics.  Most other situations in
  which a Spliterator for an array is needed should use
  `],
-					[/* external link */ 'a', `Arrays.html#spliterator(double%5B%5D)`, `Arrays.spliterator(double[])`],
+					[/* reference */ 'r', `.Arrays#spliterator(double[])`],
 					[/* text */ 't', `.
 
  `]
@@ -1216,13 +1216,13 @@ DocsCollector.collect('java.util.Spliterators', [
 				[/* inline code block */ 'i', `Spliterator`],
 				[/* block */ 'b', [
 					[/* text */ 't', `The empty spliterator reports `],
-					[/* external link */ 'a', `Spliterator.html#SIZED`, `Spliterator.SIZED`],
+					[/* reference */ 'r', `.Spliterator#SIZED`],
 					[/* text */ 't', ` and
  `],
-					[/* external link */ 'a', `Spliterator.html#SUBSIZED`, `Spliterator.SUBSIZED`],
+					[/* reference */ 'r', `.Spliterator#SUBSIZED`],
 					[/* text */ 't', `.  Calls to
  `],
-					[/* external link */ 'a', `Spliterator.html#trySplit()`, `Spliterator.trySplit()`],
+					[/* reference */ 'r', `.Spliterator#trySplit()`],
 					[/* text */ 't', ` always return `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', `.`]
@@ -1240,13 +1240,13 @@ DocsCollector.collect('java.util.Spliterators', [
 				[/* inline code block */ 'i', `Spliterator.OfInt`],
 				[/* block */ 'b', [
 					[/* text */ 't', `The empty spliterator reports `],
-					[/* external link */ 'a', `Spliterator.html#SIZED`, `Spliterator.SIZED`],
+					[/* reference */ 'r', `.Spliterator#SIZED`],
 					[/* text */ 't', ` and
  `],
-					[/* external link */ 'a', `Spliterator.html#SUBSIZED`, `Spliterator.SUBSIZED`],
+					[/* reference */ 'r', `.Spliterator#SUBSIZED`],
 					[/* text */ 't', `.  Calls to
  `],
-					[/* external link */ 'a', `Spliterator.html#trySplit()`, `Spliterator.trySplit()`],
+					[/* reference */ 'r', `.Spliterator#trySplit()`],
 					[/* text */ 't', ` always return `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', `.`]
@@ -1264,13 +1264,13 @@ DocsCollector.collect('java.util.Spliterators', [
 				[/* inline code block */ 'i', `Spliterator.OfLong`],
 				[/* block */ 'b', [
 					[/* text */ 't', `The empty spliterator reports `],
-					[/* external link */ 'a', `Spliterator.html#SIZED`, `Spliterator.SIZED`],
+					[/* reference */ 'r', `.Spliterator#SIZED`],
 					[/* text */ 't', ` and
  `],
-					[/* external link */ 'a', `Spliterator.html#SUBSIZED`, `Spliterator.SUBSIZED`],
+					[/* reference */ 'r', `.Spliterator#SUBSIZED`],
 					[/* text */ 't', `.  Calls to
  `],
-					[/* external link */ 'a', `Spliterator.html#trySplit()`, `Spliterator.trySplit()`],
+					[/* reference */ 'r', `.Spliterator#trySplit()`],
 					[/* text */ 't', ` always return `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', `.`]
@@ -1288,13 +1288,13 @@ DocsCollector.collect('java.util.Spliterators', [
 				[/* inline code block */ 'i', `Spliterator.OfDouble`],
 				[/* block */ 'b', [
 					[/* text */ 't', `The empty spliterator reports `],
-					[/* external link */ 'a', `Spliterator.html#SIZED`, `Spliterator.SIZED`],
+					[/* reference */ 'r', `.Spliterator#SIZED`],
 					[/* text */ 't', ` and
  `],
-					[/* external link */ 'a', `Spliterator.html#SUBSIZED`, `Spliterator.SUBSIZED`],
+					[/* reference */ 'r', `.Spliterator#SUBSIZED`],
 					[/* text */ 't', `.  Calls to
  `],
-					[/* external link */ 'a', `Spliterator.html#trySplit()`, `Spliterator.trySplit()`],
+					[/* reference */ 'r', `.Spliterator#trySplit()`],
 					[/* text */ 't', ` always return `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', `.`]

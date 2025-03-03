@@ -58,13 +58,13 @@ DocsCollector.collect('java.nio.channels.ScatteringByteChannel', [
 					[/* text */ 't', ` is read, where
  `],
 					[/* inline code block */ 'i', `0`],
-					[/* text */ 't', `&nbsp;`],
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `<=`],
-					[/* text */ 't', `&nbsp;`],
+					[/* text */ 't', ` `],
 					[/* text */ 't', `n`],
-					[/* text */ 't', `&nbsp;`],
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `<=`],
-					[/* text */ 't', `&nbsp;`],
+					[/* text */ 't', ` `],
 					[/* text */ 't', `r`],
 					[/* text */ 't', `.
  Up to the first `],
@@ -106,7 +106,7 @@ DocsCollector.collect('java.nio.channels.ScatteringByteChannel', [
          non-negative and no larger than
          `],
 					[/* inline code block */ 'i', `dsts.length`],
-					[/* text */ 't', `&nbsp;-&nbsp;`],
+					[/* text */ 't', ``],
 					[/* inline code block */ 'i', `offset`]
 				]]
 			],

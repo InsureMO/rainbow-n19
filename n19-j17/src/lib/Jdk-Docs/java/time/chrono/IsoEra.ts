@@ -11,11 +11,78 @@ DocsCollector.collect('java.time.chrono.IsoEra', [
  years on or after 0001-01-01 (ISO), and 'Before current era' (BCE) for years before that.
 
  `],
-		[/* table */ 't', ''],
+		[/* table */ 'tbl',
+			[/* caption */ 'tc'],
+			[/* table header */ 'th', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `year-of-era`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `era`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `proleptic-year`]
+					]]
+				]]
+			]],
+			[/* table body */ 'tb', [
+				[/* table row */ 'tr', [
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `2`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `CE`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `2`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `1`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `CE`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `1`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `1`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `BCE`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `0`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `2`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `BCE`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `-1`]
+					]]
+				]]
+			]],
+		],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
-			[/* text */ 't', `Do not use <code>ordinal()</code> to obtain the numeric representation of <code>IsoEra</code>.
- Use <code>getValue()</code> instead.`]
+			[/* text */ 't', `Do not use `],
+			[/* inline code block */ 'i', `ordinal()`],
+			[/* text */ 't', ` to obtain the numeric representation of `],
+			[/* inline code block */ 'i', `IsoEra`],
+			[/* text */ 't', `.
+ Use `],
+			[/* inline code block */ 'i', `getValue()`],
+			[/* text */ 't', ` instead.`]
 		]]
 	],
 	/* fields */ UDF,

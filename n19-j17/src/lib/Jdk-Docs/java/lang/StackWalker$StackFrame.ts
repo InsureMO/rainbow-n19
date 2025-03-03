@@ -13,7 +13,7 @@ DocsCollector.collect('java.lang.StackWalker$StackFrame', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The `],
-			[/* reference */ 'r', `getDeclaringClass()`],
+			[/* reference */ 'r', `#getDeclaringClass()`, `getDeclaringClass()`],
 			[/* text */ 't', ` method may be unsupported as determined
  by the `],
 			[/* reference */ 'r', `enum class in java.lang.StackWalker.Option`],
@@ -56,7 +56,7 @@ DocsCollector.collect('java.lang.StackWalker$StackFrame', [
 					[/* inline code block */ 'i', `StackWalker`],
 					[/* text */ 't', `
          is not configured with `],
-					[/* external link */ 'a', `StackWalker.Option.html#RETAIN_CLASS_REFERENCE`, `Option.RETAIN_CLASS_REFERENCE`],
+					[/* reference */ 'r', `.StackWalker.Option#RETAIN_CLASS_REFERENCE`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -81,7 +81,7 @@ DocsCollector.collect('java.lang.StackWalker$StackFrame', [
 					[/* inline code block */ 'i', `StackWalker`],
 					[/* text */ 't', `
          is not configured with `],
-					[/* external link */ 'a', `StackWalker.Option.html#RETAIN_CLASS_REFERENCE`, `Option.RETAIN_CLASS_REFERENCE`],
+					[/* reference */ 'r', `.StackWalker.Option#RETAIN_CLASS_REFERENCE`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -156,7 +156,7 @@ DocsCollector.collect('java.lang.StackWalker$StackFrame', [
 		[/* method */ 'getClassName()', [
 			[/* method description */
 				[/* text */ 't', `Gets the `],
-				[/* external link */ 'a', `ClassLoader.html#binary-name`, `binary name`],
+				[/* reference */ 'r', `.ClassLoader#binary-name`],
 				[/* text */ 't', `
  of the declaring class of the method represented by this stack frame.`]
 			],

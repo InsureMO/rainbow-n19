@@ -4,7 +4,7 @@ import {DocsCollector} from '../../../DocsCollector';
 DocsCollector.collect('java.util.stream.Collector', [
 	[/* class description */
 		[/* text */ 't', `A `],
-		[/* external link */ 'a', `package-summary.html#Reduction`, `mutable reduction operation`],
+		[/* reference */ 'r', `.package-summary#Reduction`],
 		[/* text */ 't', ` that
  accumulates input elements into a mutable result container, optionally transforming
  the accumulated result into a final representation after all input elements
@@ -38,22 +38,22 @@ DocsCollector.collect('java.util.stream.Collector', [
 		[/* list */ 'l', [
 			[/* block */ 'b', [
 				[/* text */ 't', `creation of a new result container (`],
-				[/* reference */ 'r', `supplier()`],
+				[/* reference */ 'r', `#supplier()`, `supplier()`],
 				[/* text */ 't', `)`]
 			]],
 			[/* block */ 'b', [
 				[/* text */ 't', `incorporating a new data element into a result container (`],
-				[/* reference */ 'r', `accumulator()`],
+				[/* reference */ 'r', `#accumulator()`, `accumulator()`],
 				[/* text */ 't', `)`]
 			]],
 			[/* block */ 'b', [
 				[/* text */ 't', `combining two result containers into one (`],
-				[/* reference */ 'r', `combiner()`],
+				[/* reference */ 'r', `#combiner()`, `combiner()`],
 				[/* text */ 't', `)`]
 			]],
 			[/* block */ 'b', [
 				[/* text */ 't', `performing an optional final transform on the container (`],
-				[/* reference */ 'r', `finisher()`],
+				[/* reference */ 'r', `#finisher()`, `finisher()`],
 				[/* text */ 't', `)`]
 			]]
 		]],
@@ -61,7 +61,7 @@ DocsCollector.collect('java.util.stream.Collector', [
 		[/* block */ 'b', [
 			[/* text */ 't', `Collectors also have a set of characteristics, such as
  `],
-			[/* external link */ 'a', `Collector.Characteristics.html#CONCURRENT`, `Collector.Characteristics.CONCURRENT`],
+			[/* reference */ 'r', `.Collector.Characteristics#CONCURRENT`],
 			[/* text */ 't', `, that provide hints that can be used by a
  reduction implementation to provide better performance.
 
@@ -82,7 +82,7 @@ DocsCollector.collect('java.util.stream.Collector', [
 			[/* text */ 't', `identity`],
 			[/* text */ 't', ` and an
  `],
-			[/* external link */ 'a', `package-summary.html#Associativity`, `associativity`],
+			[/* reference */ 'r', `.package-summary#Associativity`],
 			[/* text */ 't', ` constraints.
 
  `]
@@ -156,7 +156,7 @@ DocsCollector.collect('java.util.stream.Collector', [
 			[/* inline code block */ 'i', `Collector`],
 			[/* text */ 't', `, such as
  `],
-			[/* external link */ 'a', `Stream.html#collect(java.util.stream.Collector)`, `Stream.collect(Collector)`],
+			[/* reference */ 'r', `.Stream#collect(java.util.stream.Collector)`],
 			[/* text */ 't', `, must adhere to the following constraints:
  `]
 		]],
@@ -193,7 +193,7 @@ DocsCollector.collect('java.util.stream.Collector', [
      rather than keeping the result isolated during accumulation.
      A concurrent reduction should only be applied if the collector has the
      `],
-				[/* external link */ 'a', `Collector.Characteristics.html#UNORDERED`, `Collector.Characteristics.UNORDERED`],
+				[/* reference */ 'r', `.Collector.Characteristics#UNORDERED`],
 				[/* text */ 't', ` characteristics or if the
      originating data is unordered.`]
 			]]
@@ -204,7 +204,7 @@ DocsCollector.collect('java.util.stream.Collector', [
 			[/* reference */ 'r', `java.util.stream.Collectors`],
 			[/* text */ 't', `, the
  static factory methods `],
-			[/* reference */ 'r', `of(Supplier, BiConsumer, BinaryOperator, Characteristics...)`],
+			[/* reference */ 'r', `#of(java.util.function.Supplier,java.util.function.BiConsumer,java.util.function.BinaryOperator,java.util.stream.Collector.Characteristics...)`, `of(Supplier, BiConsumer, BinaryOperator, Characteristics...)`],
 			[/* text */ 't', `
  can be used to construct collectors.  For example, you could create a collector
  that accumulates widgets into a `],
@@ -222,7 +222,7 @@ DocsCollector.collect('java.util.stream.Collector', [
 
  (This behavior is also implemented by the predefined collector
  `],
-		[/* external link */ 'a', `Collectors.html#toCollection(java.util.function.Supplier)`, `Collectors.toCollection(Supplier)`],
+		[/* reference */ 'r', `.Collectors#toCollection(java.util.function.Supplier)`],
 		[/* text */ 't', `).`],
 		[/* block */ 'b', '']
 	],

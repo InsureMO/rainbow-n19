@@ -153,7 +153,7 @@ DocsCollector.collect('java.util.SortedMap', [
 			[/* inline code block */ 'i', `high`],
 			[/* text */ 't', `, inclusive:`]
 		]],
-		[/* code block */ 'c', `   SortedMap&lt;String, V&gt; sub = m.subMap(low, high+"\\0");`],
+		[/* code block */ 'c', `   SortedMap<String, V> sub = m.subMap(low, high+"\\0");`],
 		[/* text */ 't', `
 
  A similar technique can be used to generate an `],
@@ -168,12 +168,12 @@ DocsCollector.collect('java.util.SortedMap', [
 		[/* text */ 't', ` and `],
 		[/* inline code block */ 'i', `high`],
 		[/* text */ 't', `, exclusive:`],
-		[/* code block */ 'c', `   SortedMap&lt;String, V&gt; sub = m.subMap(low+"\\0", high);`],
+		[/* code block */ 'c', `   SortedMap<String, V> sub = m.subMap(low+"\\0", high);`],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `This interface is a member of the
  `],
-			[/* external link */ 'a', `../../../java.base/java/util/package-summary.html#CollectionsFramework`, `Java Collections Framework`],
+			[/* text */ 't', `Java Collections Framework`],
 			[/* text */ 't', `.`]
 		]]
 	],

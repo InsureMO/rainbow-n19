@@ -101,7 +101,7 @@ not permitted.)`]
  There are two equivalent ways of using this method.
  The first is to invoke this method directly.
  The second is to use `],
-						[/* external link */ 'a', `Temporal.html#until(java.time.temporal.Temporal,java.time.temporal.TemporalUnit)`, `Temporal.until(Temporal, TemporalUnit)`],
+						[/* reference */ 'r', `.Temporal#until(java.time.temporal.Temporal,java.time.temporal.TemporalUnit)`],
 						[/* text */ 't', `:
  `]
 					]],
@@ -237,7 +237,7 @@ not permitted.)`]
  There are two equivalent ways of using this method.
  The first is to invoke this method directly.
  The second is to use `],
-						[/* external link */ 'a', `Temporal.html#plus(long,java.time.temporal.TemporalUnit)`, `Temporal.plus(long, TemporalUnit)`],
+						[/* reference */ 'r', `.Temporal#plus(long,java.time.temporal.TemporalUnit)`],
 						[/* text */ 't', `:
  `]
 					]],

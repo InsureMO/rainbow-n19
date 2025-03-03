@@ -11,11 +11,7 @@ DocsCollector.collect('java.nio.file.WatchEvent$Modifier', [
 		[/* text */ 't', `.
 
  `],
-		[/* block */ 'b', [
-			[/* text */ 't', ` This release does not define any `],
-			[/* text */ 't', `standard`],
-			[/* text */ 't', ` modifiers.`]
-		]]
+		[/* block */ 'b', `standard`]
 	],
 	/* fields */ UDF,
 	/* constructors */ UDF,

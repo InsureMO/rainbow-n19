@@ -73,7 +73,7 @@ DocsCollector.collect('java.net.URL', [
 			[/* text */ 't', `. The Literal IPv6 address format
  also supports scope_ids. The syntax and usage of scope_ids is described
  `],
-			[/* external link */ 'a', `Inet6Address.html#scoped`, `here`],
+			[/* reference */ 'r', `.Inet6Address#scoped`],
 			[/* text */ 't', `.
  `]
 		]],
@@ -155,10 +155,10 @@ DocsCollector.collect('java.net.URL', [
 			[/* reference */ 'r', `java.net.URI`],
 			[/* text */ 't', `,
  and to convert between these two classes using `],
-			[/* reference */ 'r', `toURI()`],
+			[/* reference */ 'r', `#toURI()`, `toURI()`],
 			[/* text */ 't', ` and
  `],
-			[/* external link */ 'a', `URI.html#toURL()`, `URI.toURL()`],
+			[/* reference */ 'r', `.URI#toURL()`],
 			[/* text */ 't', `.
  `]
 		]],
@@ -223,7 +223,7 @@ DocsCollector.collect('java.net.URL', [
  RFC2396 "Uniform Resource Identifiers : Generic * Syntax" :
  `],
 				[/* block */ 'b', [
-					[/* code block */ 'c', `          &lt;scheme&gt;://&lt;authority&gt;&lt;path&gt;?&lt;query&gt;#&lt;fragment&gt;
+					[/* code block */ 'c', `          <scheme>://<authority><path>?<query>#<fragment>
  `]
 				]],
 				[/* text */ 't', `
@@ -586,7 +586,7 @@ DocsCollector.collect('java.net.URL', [
  should use a default stream handler for the protocol, as outlined
  for:
      `],
-				[/* reference */ 'r', `URL(java.lang.String, java.lang.String, int, java.lang.String)`],
+				[/* reference */ 'r', `#%3Cinit%3E(java.lang.String,java.lang.String,int,java.lang.String)`, `URL(java.lang.String, java.lang.String, int, java.lang.String)`],
 				[/* block */ 'b', [
 					[/* text */ 't', `If the handler is not null and there is a security manager,
  the security manager's `],
@@ -854,7 +854,7 @@ DocsCollector.collect('java.net.URL', [
 					[/* text */ 't', ` is
  created every time when invoking the
  `],
-					[/* external link */ 'a', `URLStreamHandler.html#openConnection(java.net.URL)`, `URLStreamHandler.openConnection(URL)`],
+					[/* reference */ 'r', `.URLStreamHandler#openConnection(java.net.URL)`],
 					[/* text */ 't', ` method of the protocol handler for
  this URL.`]
 				]],
@@ -862,7 +862,7 @@ DocsCollector.collect('java.net.URL', [
 					[/* text */ 't', `It should be noted that a URLConnection instance does not establish
  the actual network connection on creation. This will happen only when
  calling `],
-					[/* external link */ 'a', `URLConnection.html#connect()`, `URLConnection.connect()`],
+					[/* reference */ 'r', `.URLConnection#connect()`],
 					[/* text */ 't', `.`]
 				]],
 				[/* block */ 'b', `If for the URL's protocol (such as HTTP or JAR), there
@@ -889,7 +889,7 @@ DocsCollector.collect('java.net.URL', [
 		[/* method */ 'openConnection(java.net.Proxy)', [
 			[/* method description */
 				[/* text */ 't', `Same as `],
-				[/* reference */ 'r', `openConnection()`],
+				[/* reference */ 'r', `#openConnection()`, `openConnection()`],
 				[/* text */ 't', `, except that the connection will be
  made through the specified proxy; Protocol handlers that do not
  support proxying will ignore the proxy parameter and make a

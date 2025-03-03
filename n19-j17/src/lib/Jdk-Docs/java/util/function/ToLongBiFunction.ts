@@ -14,10 +14,10 @@ DocsCollector.collect('java.util.function.ToLongBiFunction', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
-			[/* external link */ 'a', `package-summary.html`, `functional interface`],
+			[/* reference */ 'r', `.package-summary`],
 			[/* text */ 't', `
  whose functional method is `],
-			[/* reference */ 'r', `applyAsLong(Object, Object)`],
+			[/* reference */ 'r', `#applyAsLong(T,U)`, `applyAsLong(Object, Object)`],
 			[/* text */ 't', `.`]
 		]]
 	],

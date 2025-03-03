@@ -7,7 +7,10 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDate', [
  for advanced globalization use cases.
  `],
 		[/* block */ 'b', [
-			[/* reference */ 'r', `java.time.LocalDate`]
+			[/* text */ 't', `Most applications should declare method signatures, fields and variables
+ as `],
+			[/* reference */ 'r', `java.time.LocalDate`],
+			[/* text */ 't', `, not this interface.`]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `
@@ -264,7 +267,7 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDate', [
 					[/* inline code block */ 'i', `TemporalAccessor`],
 					[/* text */ 't', ` instances, including dates
  in two different chronologies, use `],
-					[/* external link */ 'a', `../temporal/ChronoField.html#EPOCH_DAY`, `ChronoField.EPOCH_DAY`],
+					[/* reference */ 'r', `java.ChronoField#EPOCH_DAY`],
 					[/* text */ 't', ` as a comparator.`]
 				]]
 			],
@@ -347,7 +350,7 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDate', [
 					[/* inline code block */ 'i', `TemporalAccessor`],
 					[/* text */ 't', ` instances, including dates
  in two different chronologies, use `],
-					[/* external link */ 'a', `../temporal/ChronoField.html#EPOCH_DAY`, `ChronoField.EPOCH_DAY`],
+					[/* reference */ 'r', `java.ChronoField#EPOCH_DAY`],
 					[/* text */ 't', ` as a comparator.
  `]
 				]],
@@ -414,7 +417,7 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDate', [
  The conversion extracts and combines the chronology and the date
  from the temporal object. The behavior is equivalent to using
  `],
-					[/* external link */ 'a', `Chronology.html#date(java.time.temporal.TemporalAccessor)`, `Chronology.date(TemporalAccessor)`],
+					[/* reference */ 'r', `.Chronology#date(java.time.temporal.TemporalAccessor)`],
 					[/* text */ 't', ` with the extracted chronology.
  Implementations are permitted to perform optimizations such as accessing
  those fields that are equivalent to the relevant objects.
@@ -463,7 +466,7 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDate', [
 					[/* text */ 't', `
  The result of this method is obtained by invoking the
  `],
-					[/* external link */ 'a', `../temporal/TemporalQuery.html#queryFrom(java.time.temporal.TemporalAccessor)`, `TemporalQuery.queryFrom(TemporalAccessor)`],
+					[/* reference */ 'r', `java.TemporalQuery#queryFrom(java.time.temporal.TemporalAccessor)`],
 					[/* text */ 't', ` method on the
  specified query passing `],
 					[/* inline code block */ 'i', `this`],
@@ -495,10 +498,10 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDate', [
 					[/* text */ 't', `
  This checks if the specified unit can be added to or subtracted from this date.
  If false, then calling the `],
-					[/* reference */ 'r', `plus(long, TemporalUnit)`],
+					[/* reference */ 'r', `#plus(long,java.time.temporal.TemporalUnit)`, `plus(long, TemporalUnit)`],
 					[/* text */ 't', ` and
  `],
-					[/* reference */ 'r', `minus`],
+					[/* reference */ 'r', `#minus(long,java.time.temporal.TemporalUnit)`, `minus`],
 					[/* text */ 't', ` methods will throw an exception.
  `]
 				]],
@@ -544,12 +547,12 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDate', [
 					[/* text */ 't', `
  This checks if the specified field can be queried on this date.
  If false, then calling the `],
-					[/* external link */ 'a', `../temporal/TemporalAccessor.html#range(java.time.temporal.TemporalField)`, `range`],
+					[/* reference */ 'r', `java.TemporalAccessor#range(java.time.temporal.TemporalField)`],
 					[/* text */ 't', `,
  `],
-					[/* external link */ 'a', `../temporal/TemporalAccessor.html#get(java.time.temporal.TemporalField)`, `get`],
+					[/* reference */ 'r', `java.TemporalAccessor#get(java.time.temporal.TemporalField)`],
 					[/* text */ 't', ` and `],
-					[/* reference */ 'r', `with(TemporalField, long)`],
+					[/* reference */ 'r', `#with(java.time.temporal.TemporalField,long)`, `with(TemporalField, long)`],
 					[/* text */ 't', `
  methods will throw an exception.
  `]
@@ -593,7 +596,7 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDate', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This method differs from the comparison in `],
-					[/* reference */ 'r', `compareTo(java.time.chrono.ChronoLocalDate)`],
+					[/* reference */ 'r', `#compareTo(java.time.chrono.ChronoLocalDate)`, `compareTo(java.time.chrono.ChronoLocalDate)`],
 					[/* text */ 't', ` in that it
  only compares the underlying date and not the chronology.
  This allows dates in different calendar systems to be compared based
@@ -647,10 +650,10 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDate', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The adjustment is equivalent to using `],
-					[/* external link */ 'a', `../temporal/Temporal.html#with(java.time.temporal.TemporalField,long)`, `Temporal.with(TemporalField, long)`],
+					[/* reference */ 'r', `java.Temporal#with(java.time.temporal.TemporalField,long)`],
 					[/* text */ 't', `
  passing `],
-					[/* external link */ 'a', `../temporal/ChronoField.html#EPOCH_DAY`, `ChronoField.EPOCH_DAY`],
+					[/* reference */ 'r', `java.ChronoField#EPOCH_DAY`],
 					[/* text */ 't', ` as the field.
  `]
 				]],
@@ -658,7 +661,7 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDate', [
 					[/* text */ 't', `
  In most cases, it is clearer to reverse the calling pattern by using
  `],
-					[/* external link */ 'a', `../temporal/Temporal.html#with(java.time.temporal.TemporalAdjuster)`, `Temporal.with(TemporalAdjuster)`],
+					[/* reference */ 'r', `java.Temporal#with(java.time.temporal.TemporalAdjuster)`],
 					[/* text */ 't', `:
  `]
 				]],
@@ -886,7 +889,7 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDate', [
  `],
 					[/* inline code block */ 'i', `ChronoLocalDate`],
 					[/* text */ 't', ` using `],
-					[/* external link */ 'a', `Chronology.html#date(java.time.temporal.TemporalAccessor)`, `Chronology.date(TemporalAccessor)`],
+					[/* reference */ 'r', `.Chronology#date(java.time.temporal.TemporalAccessor)`],
 					[/* text */ 't', `.
  The calculation returns a whole number, representing the number of
  complete units between the two dates.
@@ -901,7 +904,7 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDate', [
  There are two equivalent ways of using this method.
  The first is to invoke this method.
  The second is to use `],
-					[/* external link */ 'a', `../temporal/TemporalUnit.html#between(java.time.temporal.Temporal,java.time.temporal.Temporal)`, `TemporalUnit.between(Temporal, Temporal)`],
+					[/* reference */ 'r', `java.TemporalUnit#between(java.time.temporal.Temporal,java.time.temporal.Temporal)`],
 					[/* text */ 't', `:
  `]
 				]],
@@ -1141,7 +1144,7 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDate', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This default implementation uses `],
-					[/* external link */ 'a', `Chronology.html#isLeapYear(long)`, `Chronology.isLeapYear(long)`],
+					[/* reference */ 'r', `.Chronology#isLeapYear(long)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -1182,7 +1185,7 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDate', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The `],
-					[/* external link */ 'a', `../temporal/ChronoField.html#EPOCH_DAY`, `Epoch Day count`],
+					[/* reference */ 'r', `java.ChronoField#EPOCH_DAY`],
 					[/* text */ 't', ` is a simple
  incrementing count of days where day 0 is 1970-01-01 (ISO).
  This definition is the same for all chronologies, enabling conversion.
@@ -1228,7 +1231,7 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDate', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This default implementation uses `],
-					[/* external link */ 'a', `Chronology.html#eraOf(int)`, `Chronology.eraOf(int)`],
+					[/* reference */ 'r', `.Chronology#eraOf(int)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -1245,7 +1248,7 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDate', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This method differs from the comparison in `],
-					[/* reference */ 'r', `compareTo(java.time.chrono.ChronoLocalDate)`],
+					[/* reference */ 'r', `#compareTo(java.time.chrono.ChronoLocalDate)`, `compareTo(java.time.chrono.ChronoLocalDate)`],
 					[/* text */ 't', ` in that it
  only compares the underlying date and not the chronology.
  This allows dates in different calendar systems to be compared based
@@ -1275,7 +1278,7 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDate', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This method differs from the comparison in `],
-					[/* reference */ 'r', `compareTo(java.time.chrono.ChronoLocalDate)`],
+					[/* reference */ 'r', `#compareTo(java.time.chrono.ChronoLocalDate)`, `compareTo(java.time.chrono.ChronoLocalDate)`],
 					[/* text */ 't', ` in that it
  only compares the underlying date and not the chronology.
  This allows dates in different calendar systems to be compared based
@@ -1308,7 +1311,7 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDate', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This comparator differs from the comparison in `],
-					[/* reference */ 'r', `compareTo(java.time.chrono.ChronoLocalDate)`],
+					[/* reference */ 'r', `#compareTo(java.time.chrono.ChronoLocalDate)`, `compareTo(java.time.chrono.ChronoLocalDate)`],
 					[/* text */ 't', ` in that it
  only compares the underlying date and not the chronology.
  This allows dates in different calendar systems to be compared based
@@ -1345,7 +1348,7 @@ DocsCollector.collect('java.time.chrono.ChronoLocalDate', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The default implementation uses `],
-					[/* reference */ 'r', `isLeapYear()`],
+					[/* reference */ 'r', `#isLeapYear()`, `isLeapYear()`],
 					[/* text */ 't', ` and returns 365 or 366.`]
 				]]
 			],

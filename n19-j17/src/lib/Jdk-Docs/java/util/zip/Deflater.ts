@@ -8,7 +8,7 @@ DocsCollector.collect('java.util.zip.Deflater', [
  initially developed as part of the PNG graphics standard and is not
  protected by patents. It is fully described in the specifications at
  the `],
-		[/* external link */ 'a', `package-summary.html#package-description`, `java.util.zip package description`],
+		[/* reference */ 'r', `.package-summary#package-description`],
 		[/* text */ 't', `.
  `],
 		[/* block */ 'b', [
@@ -412,7 +412,7 @@ DocsCollector.collect('java.util.zip.Deflater', [
 				[/* block */ 'b', [
 					[/* text */ 't', `Since the number of bytes may be greater than
  Integer.MAX_VALUE, the `],
-					[/* reference */ 'r', `getBytesRead()`],
+					[/* reference */ 'r', `#getBytesRead()`, `getBytesRead()`],
 					[/* text */ 't', ` method is now
  the preferred means of obtaining this information.`]
 				]]
@@ -431,7 +431,7 @@ DocsCollector.collect('java.util.zip.Deflater', [
 				[/* block */ 'b', [
 					[/* text */ 't', `Since the number of bytes may be greater than
  Integer.MAX_VALUE, the `],
-					[/* reference */ 'r', `getBytesWritten()`],
+					[/* reference */ 'r', `#getBytesWritten()`, `getBytesWritten()`],
 					[/* text */ 't', ` method is now
  the preferred means of obtaining this information.`]
 				]]
@@ -484,7 +484,7 @@ DocsCollector.collect('java.util.zip.Deflater', [
  to accumulate, before producing output, in order to achieve the best
  compression (should be used in normal use scenario). A return value
  of 0 in this flush mode indicates that `],
-						[/* reference */ 'r', `needsInput()`],
+						[/* reference */ 'r', `#needsInput()`, `needsInput()`],
 						[/* text */ 't', ` should
  be called in order to determine if more input data is required.
 
@@ -496,7 +496,7 @@ DocsCollector.collect('java.util.zip.Deflater', [
  to the specified output buffer, so that an inflater that works on
  compressed data can get all input data available so far (In particular
  the `],
-						[/* reference */ 'r', `needsInput()`],
+						[/* reference */ 'r', `#needsInput()`, `needsInput()`],
 						[/* text */ 't', ` returns `],
 						[/* inline code block */ 'i', `true`],
 						[/* text */ 't', ` after this invocation
@@ -531,7 +531,7 @@ DocsCollector.collect('java.util.zip.Deflater', [
 					[/* text */ 't', `SYNC_FLUSH`],
 					[/* text */ 't', `, if
  the return value is equal to the `],
-					[/* external link */ 'a', `../../nio/Buffer.html#remaining()`, `remaining space`],
+					[/* reference */ 'r', `java.util.Buffer#remaining()`],
 					[/* text */ 't', `
  of the buffer, this method should be invoked again with the same
  `],
@@ -554,7 +554,7 @@ DocsCollector.collect('java.util.zip.Deflater', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `If the `],
-					[/* reference */ 'r', `setInput(ByteBuffer)`],
+					[/* reference */ 'r', `#setInput(java.nio.ByteBuffer)`, `setInput(ByteBuffer)`],
 					[/* text */ 't', ` method was called to provide a buffer
  for input, the input buffer's position will be advanced by the number of bytes
  consumed by this operation.`]
@@ -583,7 +583,7 @@ DocsCollector.collect('java.util.zip.Deflater', [
 				[/* text */ 't', `Compresses the input data and fills specified buffer with compressed
  data. Returns actual number of bytes of compressed data. A return value
  of 0 indicates that `],
-				[/* reference */ 'r', `needsInput`],
+				[/* reference */ 'r', `#needsInput()`, `needsInput`],
 				[/* text */ 't', ` should be called
  in order to determine if more input data is required.
 
@@ -623,7 +623,7 @@ DocsCollector.collect('java.util.zip.Deflater', [
 				[/* text */ 't', `Compresses the input data and fills specified buffer with compressed
  data. Returns actual number of bytes of compressed data. A return value
  of 0 indicates that `],
-				[/* reference */ 'r', `needsInput`],
+				[/* reference */ 'r', `#needsInput()`, `needsInput`],
 				[/* text */ 't', ` should be called
  in order to determine if more input data is required.
 
@@ -668,7 +668,7 @@ DocsCollector.collect('java.util.zip.Deflater', [
  to accumulate, before producing output, in order to achieve the best
  compression (should be used in normal use scenario). A return value
  of 0 in this flush mode indicates that `],
-						[/* reference */ 'r', `needsInput()`],
+						[/* reference */ 'r', `#needsInput()`, `needsInput()`],
 						[/* text */ 't', ` should
  be called in order to determine if more input data is required.
 
@@ -680,7 +680,7 @@ DocsCollector.collect('java.util.zip.Deflater', [
  to the specified output buffer, so that an inflater that works on
  compressed data can get all input data available so far (In particular
  the `],
-						[/* reference */ 'r', `needsInput()`],
+						[/* reference */ 'r', `#needsInput()`, `needsInput()`],
 						[/* text */ 't', ` returns `],
 						[/* inline code block */ 'i', `true`],
 						[/* text */ 't', ` after this invocation
@@ -733,7 +733,7 @@ DocsCollector.collect('java.util.zip.Deflater', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `If the `],
-					[/* reference */ 'r', `setInput(ByteBuffer)`],
+					[/* reference */ 'r', `#setInput(java.nio.ByteBuffer)`, `setInput(ByteBuffer)`],
 					[/* text */ 't', ` method was called to provide a buffer
  for input, the input buffer's position will be advanced by the number of bytes
  consumed by this operation.`]
@@ -768,7 +768,7 @@ DocsCollector.collect('java.util.zip.Deflater', [
 				[/* text */ 't', `Compresses the input data and fills specified buffer with compressed
  data. Returns actual number of bytes of compressed data. A return value
  of 0 indicates that `],
-				[/* reference */ 'r', `needsInput`],
+				[/* reference */ 'r', `#needsInput()`, `needsInput`],
 				[/* text */ 't', ` should be called
  in order to determine if more input data is required.
 

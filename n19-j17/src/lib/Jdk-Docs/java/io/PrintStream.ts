@@ -86,7 +86,7 @@ DocsCollector.collect('java.io.PrintStream', [
 				]],
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager is present and `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkWrite(java.io.FileDescriptor)`, `checkWrite(fileName)`],
+					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.io.FileDescriptor)`],
 					[/* text */ 't', ` denies write
           access to the file`]
 				]],
@@ -103,7 +103,7 @@ DocsCollector.collect('java.io.PrintStream', [
 				[/* reference */ 'r', `java.io.OutputStreamWriter`],
 				[/* text */ 't', `, which will encode characters using the
  `],
-				[/* external link */ 'a', `../nio/charset/Charset.html#defaultCharset()`, `default charset`],
+				[/* reference */ 'r', `java.Charset#defaultCharset()`],
 				[/* text */ 't', `
  for this instance of the Java virtual machine.`]
 			],
@@ -124,7 +124,7 @@ DocsCollector.collect('java.io.PrintStream', [
 				]],
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager is present and `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkWrite(java.io.FileDescriptor)`, `checkWrite(fileName)`],
+					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.io.FileDescriptor)`],
 					[/* text */ 't', ` denies write
           access to the file`]
 				]]
@@ -151,7 +151,7 @@ DocsCollector.collect('java.io.PrintStream', [
 					[/* inline code block */ 'i', `println`],
 					[/* text */ 't', ` methods is invoked, or a newline
                     character or byte (`],
-					[/* inline code block */ 'i', `'\n'`],
+					[/* inline code block */ 'i', `'\\n'`],
 					[/* text */ 't', `) is written`]
 				]],
 				[/* parameter */ 'charset', [/* parameter description */
@@ -178,13 +178,13 @@ DocsCollector.collect('java.io.PrintStream', [
 					[/* inline code block */ 'i', `println`],
 					[/* text */ 't', ` methods is invoked, or a newline
                     character or byte (`],
-					[/* inline code block */ 'i', `'\n'`],
+					[/* inline code block */ 'i', `'\\n'`],
 					[/* text */ 't', `) is written`]
 				]],
 				[/* parameter */ 'encoding', [/* parameter description */
 					[/* text */ 't', `The name of a supported
                     `],
-					[/* external link */ 'a', `../lang/package-summary.html#charenc`, `character encoding`]
+					[/* text */ 't', `character encoding`]
 				]]
 			],
 			[/* throws */
@@ -220,7 +220,7 @@ DocsCollector.collect('java.io.PrintStream', [
 				]],
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager is present and `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkWrite(java.io.FileDescriptor)`, `checkWrite(fileName)`],
+					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.io.FileDescriptor)`],
 					[/* text */ 't', ` denies write
           access to the file`]
 				]]
@@ -256,7 +256,7 @@ DocsCollector.collect('java.io.PrintStream', [
 				]],
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager is present and `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkWrite(java.io.FileDescriptor)`, `checkWrite(file.getPath())`],
+					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.io.FileDescriptor)`],
 					[/* text */ 't', `
           denies write access to the file`]
 				]],
@@ -292,7 +292,7 @@ DocsCollector.collect('java.io.PrintStream', [
 				]],
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager is present and `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkWrite(java.io.FileDescriptor)`, `checkWrite(file.getPath())`],
+					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.io.FileDescriptor)`],
 					[/* text */ 't', `
           denies write access to the file`]
 				]]
@@ -306,7 +306,7 @@ DocsCollector.collect('java.io.PrintStream', [
 				[/* reference */ 'r', `java.io.OutputStreamWriter`],
 				[/* text */ 't', `,
  which will encode characters using the `],
-				[/* external link */ 'a', `../nio/charset/Charset.html#defaultCharset()`, `default charset`],
+				[/* reference */ 'r', `java.Charset#defaultCharset()`],
 				[/* text */ 't', ` for this
  instance of the Java virtual machine.`]
 			],
@@ -327,7 +327,7 @@ DocsCollector.collect('java.io.PrintStream', [
 				]],
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager is present and `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkWrite(java.io.FileDescriptor)`, `checkWrite(file.getPath())`],
+					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.io.FileDescriptor)`],
 					[/* text */ 't', `
           denies write access to the file`]
 				]]
@@ -365,7 +365,7 @@ DocsCollector.collect('java.io.PrintStream', [
 					[/* inline code block */ 'i', `println`],
 					[/* text */ 't', ` methods is invoked, or a newline
                     character or byte (`],
-					[/* inline code block */ 'i', `'\n'`],
+					[/* inline code block */ 'i', `'\\n'`],
 					[/* text */ 't', `) is written`]
 				]]
 			],
@@ -377,10 +377,10 @@ DocsCollector.collect('java.io.PrintStream', [
 			[/* method description */
 				[/* text */ 't', `Prints a String and then terminate the line.  This method behaves as
  though it invokes `],
-				[/* reference */ 'r', `print(String)`],
+				[/* reference */ 'r', `#print(java.lang.Object)`, `print(String)`],
 				[/* text */ 't', ` and then
  `],
-				[/* reference */ 'r', `println()`],
+				[/* reference */ 'r', `#println()`, `println()`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -399,10 +399,10 @@ DocsCollector.collect('java.io.PrintStream', [
  at first String.valueOf(x) to get the printed object's string value,
  then behaves as
  though it invokes `],
-				[/* reference */ 'r', `print(String)`],
+				[/* reference */ 'r', `#print(java.lang.Object)`, `print(String)`],
 				[/* text */ 't', ` and then
  `],
-				[/* reference */ 'r', `println()`],
+				[/* reference */ 'r', `#println()`, `println()`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -419,10 +419,10 @@ DocsCollector.collect('java.io.PrintStream', [
 			[/* method description */
 				[/* text */ 't', `Prints a float and then terminate the line.  This method behaves as
  though it invokes `],
-				[/* reference */ 'r', `print(float)`],
+				[/* reference */ 'r', `#print(double)`, `print(float)`],
 				[/* text */ 't', ` and then
  `],
-				[/* reference */ 'r', `println()`],
+				[/* reference */ 'r', `#println()`, `println()`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -439,10 +439,10 @@ DocsCollector.collect('java.io.PrintStream', [
 			[/* method description */
 				[/* text */ 't', `Prints a double and then terminate the line.  This method behaves as
  though it invokes `],
-				[/* reference */ 'r', `print(double)`],
+				[/* reference */ 'r', `#print(double)`, `print(double)`],
 				[/* text */ 't', ` and then
  `],
-				[/* reference */ 'r', `println()`],
+				[/* reference */ 'r', `#println()`, `println()`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -459,10 +459,10 @@ DocsCollector.collect('java.io.PrintStream', [
 			[/* method description */
 				[/* text */ 't', `Prints an array of characters and then terminate the line.  This method
  behaves as though it invokes `],
-				[/* reference */ 'r', `print(char[])`],
+				[/* reference */ 'r', `#print(java.lang.Object)`, `print(char[])`],
 				[/* text */ 't', ` and
  then `],
-				[/* reference */ 'r', `println()`],
+				[/* reference */ 'r', `#println()`, `println()`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -477,10 +477,10 @@ DocsCollector.collect('java.io.PrintStream', [
 			[/* method description */
 				[/* text */ 't', `Prints a boolean and then terminate the line.  This method behaves as
  though it invokes `],
-				[/* reference */ 'r', `print(boolean)`],
+				[/* reference */ 'r', `#print(boolean)`, `print(boolean)`],
 				[/* text */ 't', ` and then
  `],
-				[/* reference */ 'r', `println()`],
+				[/* reference */ 'r', `#println()`, `println()`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -512,10 +512,10 @@ DocsCollector.collect('java.io.PrintStream', [
 			[/* method description */
 				[/* text */ 't', `Prints a character and then terminate the line.  This method behaves as
  though it invokes `],
-				[/* reference */ 'r', `print(char)`],
+				[/* reference */ 'r', `#print(double)`, `print(char)`],
 				[/* text */ 't', ` and then
  `],
-				[/* reference */ 'r', `println()`],
+				[/* reference */ 'r', `#println()`, `println()`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -532,10 +532,10 @@ DocsCollector.collect('java.io.PrintStream', [
 			[/* method description */
 				[/* text */ 't', `Prints an integer and then terminate the line.  This method behaves as
  though it invokes `],
-				[/* reference */ 'r', `print(int)`],
+				[/* reference */ 'r', `#print(double)`, `print(int)`],
 				[/* text */ 't', ` and then
  `],
-				[/* reference */ 'r', `println()`],
+				[/* reference */ 'r', `#println()`, `println()`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -552,10 +552,10 @@ DocsCollector.collect('java.io.PrintStream', [
 			[/* method description */
 				[/* text */ 't', `Prints a long and then terminate the line.  This method behaves as
  though it invokes `],
-				[/* reference */ 'r', `print(long)`],
+				[/* reference */ 'r', `#print(double)`, `print(long)`],
 				[/* text */ 't', ` and then
  `],
-				[/* reference */ 'r', `println()`],
+				[/* reference */ 'r', `#println()`, `println()`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -732,10 +732,10 @@ DocsCollector.collect('java.io.PrintStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The locale always used is the one returned by `],
-					[/* external link */ 'a', `../util/Locale.html#getDefault(java.util.Locale.Category)`, `Locale.getDefault(Locale.Category)`],
+					[/* reference */ 'r', `java.Locale#getDefault(java.util.Locale.Category)`],
 					[/* text */ 't', ` with
  `],
-					[/* external link */ 'a', `../util/Locale.Category.html#FORMAT`, `FORMAT`],
+					[/* reference */ 'r', `java.Locale.Category#FORMAT`],
 					[/* text */ 't', ` category specified,
  regardless of any previous invocations of other formatting methods on
  this object.`]
@@ -744,7 +744,7 @@ DocsCollector.collect('java.io.PrintStream', [
 			[/* parameters */
 				[/* parameter */ 'format', [/* parameter description */
 					[/* text */ 't', `A format string as described in `],
-					[/* external link */ 'a', `../util/Formatter.html#syntax`, `Format string syntax`]
+					[/* reference */ 'r', `java.Formatter#syntax`]
 				]],
 				[/* parameter */ 'args', [/* parameter description */
 					[/* text */ 't', `Arguments referenced by the format specifiers in the format
@@ -759,7 +759,7 @@ DocsCollector.collect('java.io.PrintStream', [
          `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` argument depends on the `],
-					[/* external link */ 'a', `../util/Formatter.html#syntax`, `conversion`],
+					[/* reference */ 'r', `java.Formatter#syntax`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -770,7 +770,7 @@ DocsCollector.collect('java.io.PrintStream', [
           insufficient arguments given the format string, or other
           illegal conditions.  For specification of all possible
           formatting errors, see the `],
-					[/* external link */ 'a', `../util/Formatter.html#detail`, `Details`],
+					[/* reference */ 'r', `java.Formatter#detail`],
 					[/* text */ 't', ` section of the
           formatter class specification.`]
 				]],
@@ -804,7 +804,7 @@ DocsCollector.collect('java.io.PrintStream', [
 				]],
 				[/* parameter */ 'format', [/* parameter description */
 					[/* text */ 't', `A format string as described in `],
-					[/* external link */ 'a', `../util/Formatter.html#syntax`, `Format string syntax`]
+					[/* reference */ 'r', `java.Formatter#syntax`]
 				]],
 				[/* parameter */ 'args', [/* parameter description */
 					[/* text */ 't', `Arguments referenced by the format specifiers in the format
@@ -819,7 +819,7 @@ DocsCollector.collect('java.io.PrintStream', [
          `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` argument depends on the `],
-					[/* external link */ 'a', `../util/Formatter.html#syntax`, `conversion`],
+					[/* reference */ 'r', `java.Formatter#syntax`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -830,7 +830,7 @@ DocsCollector.collect('java.io.PrintStream', [
           insufficient arguments given the format string, or other
           illegal conditions.  For specification of all possible
           formatting errors, see the `],
-					[/* external link */ 'a', `../util/Formatter.html#detail`, `Details`],
+					[/* reference */ 'r', `java.Formatter#detail`],
 					[/* text */ 't', ` section of the
           formatter class specification.`]
 				]],
@@ -879,7 +879,7 @@ DocsCollector.collect('java.io.PrintStream', [
 				]],
 				[/* parameter */ 'format', [/* parameter description */
 					[/* text */ 't', `A format string as described in `],
-					[/* external link */ 'a', `../util/Formatter.html#syntax`, `Format string syntax`]
+					[/* reference */ 'r', `java.Formatter#syntax`]
 				]],
 				[/* parameter */ 'args', [/* parameter description */
 					[/* text */ 't', `Arguments referenced by the format specifiers in the format
@@ -894,7 +894,7 @@ DocsCollector.collect('java.io.PrintStream', [
          `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` argument depends on the `],
-					[/* external link */ 'a', `../util/Formatter.html#syntax`, `conversion`],
+					[/* reference */ 'r', `java.Formatter#syntax`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -905,7 +905,7 @@ DocsCollector.collect('java.io.PrintStream', [
           insufficient arguments given the format string, or other
           illegal conditions.  For specification of all possible
           formatting errors, see the `],
-					[/* external link */ 'a', `../util/Formatter.html#detail`, `Details`],
+					[/* reference */ 'r', `java.Formatter#detail`],
 					[/* text */ 't', ` section of the
           formatter class specification.`]
 				]],
@@ -943,7 +943,7 @@ DocsCollector.collect('java.io.PrintStream', [
 			[/* parameters */
 				[/* parameter */ 'format', [/* parameter description */
 					[/* text */ 't', `A format string as described in `],
-					[/* external link */ 'a', `../util/Formatter.html#syntax`, `Format string syntax`]
+					[/* reference */ 'r', `java.Formatter#syntax`]
 				]],
 				[/* parameter */ 'args', [/* parameter description */
 					[/* text */ 't', `Arguments referenced by the format specifiers in the format
@@ -958,7 +958,7 @@ DocsCollector.collect('java.io.PrintStream', [
          `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` argument depends on the `],
-					[/* external link */ 'a', `../util/Formatter.html#syntax`, `conversion`],
+					[/* reference */ 'r', `java.Formatter#syntax`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -969,7 +969,7 @@ DocsCollector.collect('java.io.PrintStream', [
           insufficient arguments given the format string, or other
           illegal conditions.  For specification of all possible
           formatting errors, see the `],
-					[/* external link */ 'a', `../util/Formatter.html#detail`, `Details`],
+					[/* reference */ 'r', `java.Formatter#detail`],
 					[/* text */ 't', ` section of the
           formatter class specification.`]
 				]],
@@ -1086,12 +1086,12 @@ DocsCollector.collect('java.io.PrintStream', [
 		[/* method */ 'print(boolean)', [
 			[/* method description */
 				[/* text */ 't', `Prints a boolean value.  The string produced by `],
-				[/* external link */ 'a', `../lang/String.html#valueOf(boolean)`, `String.valueOf(boolean)`],
+				[/* reference */ 'r', `java.String#valueOf(boolean)`],
 				[/* text */ 't', ` is translated into bytes
  according to the platform's default character encoding, and these bytes
  are written in exactly the manner of the
  `],
-				[/* reference */ 'r', `write(int)`],
+				[/* reference */ 'r', `#write(int)`, `write(int)`],
 				[/* text */ 't', ` method.`]
 			],
 			[/* parameters */
@@ -1116,7 +1116,7 @@ DocsCollector.collect('java.io.PrintStream', [
  constructor, or the platform's default character encoding if none
  specified. These bytes are written in exactly the manner of the
  `],
-				[/* reference */ 'r', `write(int)`],
+				[/* reference */ 'r', `#write(int)`, `write(int)`],
 				[/* text */ 't', ` method.`]
 			],
 			[/* parameters */
@@ -1135,7 +1135,7 @@ DocsCollector.collect('java.io.PrintStream', [
  according to the character encoding given to the constructor, or the
  platform's default character encoding if none specified. These bytes
  are written in exactly the manner of the `],
-				[/* reference */ 'r', `write(int)`],
+				[/* reference */ 'r', `#write(int)`, `write(int)`],
 				[/* text */ 't', ` method.`]
 			],
 			[/* parameters */
@@ -1156,12 +1156,12 @@ DocsCollector.collect('java.io.PrintStream', [
 		[/* method */ 'print(long)', [
 			[/* method description */
 				[/* text */ 't', `Prints a long integer.  The string produced by `],
-				[/* external link */ 'a', `../lang/String.html#valueOf(double)`, `String.valueOf(long)`],
+				[/* reference */ 'r', `java.String#valueOf(double)`],
 				[/* text */ 't', ` is translated into bytes
  according to the platform's default character encoding, and these bytes
  are written in exactly the manner of the
  `],
-				[/* reference */ 'r', `write(int)`],
+				[/* reference */ 'r', `#write(int)`, `write(int)`],
 				[/* text */ 't', ` method.`]
 			],
 			[/* parameters */
@@ -1178,11 +1178,11 @@ DocsCollector.collect('java.io.PrintStream', [
 			[/* method description */
 				[/* text */ 't', `Prints a double-precision floating-point number.  The string produced by
  `],
-				[/* external link */ 'a', `../lang/String.html#valueOf(double)`, `String.valueOf(double)`],
+				[/* reference */ 'r', `java.String#valueOf(double)`],
 				[/* text */ 't', ` is translated into
  bytes according to the platform's default character encoding, and these
  bytes are written in exactly the manner of the `],
-				[/* reference */ 'r', `write(int)`],
+				[/* reference */ 'r', `#write(int)`, `write(int)`],
 				[/* text */ 't', ` method.`]
 			],
 			[/* parameters */
@@ -1198,12 +1198,12 @@ DocsCollector.collect('java.io.PrintStream', [
 		[/* method */ 'print(float)', [
 			[/* method description */
 				[/* text */ 't', `Prints a floating-point number.  The string produced by `],
-				[/* external link */ 'a', `../lang/String.html#valueOf(double)`, `String.valueOf(float)`],
+				[/* reference */ 'r', `java.String#valueOf(double)`],
 				[/* text */ 't', ` is translated into bytes
  according to the platform's default character encoding, and these bytes
  are written in exactly the manner of the
  `],
-				[/* reference */ 'r', `write(int)`],
+				[/* reference */ 'r', `#write(int)`, `write(int)`],
 				[/* text */ 't', ` method.`]
 			],
 			[/* parameters */
@@ -1222,7 +1222,7 @@ DocsCollector.collect('java.io.PrintStream', [
  according to the character encoding given to the constructor, or the
  platform's default character encoding if none specified. These bytes
  are written in exactly the manner of the `],
-				[/* reference */ 'r', `write(int)`],
+				[/* reference */ 'r', `#write(int)`, `write(int)`],
 				[/* text */ 't', ` method.`]
 			],
 			[/* parameters */
@@ -1238,12 +1238,12 @@ DocsCollector.collect('java.io.PrintStream', [
 		[/* method */ 'print(int)', [
 			[/* method description */
 				[/* text */ 't', `Prints an integer.  The string produced by `],
-				[/* external link */ 'a', `../lang/String.html#valueOf(double)`, `String.valueOf(int)`],
+				[/* reference */ 'r', `java.String#valueOf(double)`],
 				[/* text */ 't', ` is translated into bytes
  according to the platform's default character encoding, and these bytes
  are written in exactly the manner of the
  `],
-				[/* reference */ 'r', `write(int)`],
+				[/* reference */ 'r', `#write(int)`, `write(int)`],
 				[/* text */ 't', ` method.`]
 			],
 			[/* parameters */
@@ -1259,12 +1259,12 @@ DocsCollector.collect('java.io.PrintStream', [
 		[/* method */ 'print(java.lang.Object)', [
 			[/* method description */
 				[/* text */ 't', `Prints an object.  The string produced by the `],
-				[/* external link */ 'a', `../lang/String.html#valueOf(java.lang.Object)`, `String.valueOf(Object)`],
+				[/* reference */ 'r', `java.String#valueOf(java.lang.Object)`],
 				[/* text */ 't', ` method is translated into bytes
  according to the platform's default character encoding, and these bytes
  are written in exactly the manner of the
  `],
-				[/* reference */ 'r', `write(int)`],
+				[/* reference */ 'r', `#write(int)`, `write(int)`],
 				[/* text */ 't', ` method.`]
 			],
 			[/* parameters */
@@ -1367,12 +1367,12 @@ DocsCollector.collect('java.io.PrintStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method will cause subsequent invocations of `],
-					[/* reference */ 'r', `checkError()`],
+					[/* reference */ 'r', `#checkError()`, `checkError()`],
 					[/* text */ 't', ` to return `],
 					[/* inline code block */ 'i', `true`],
 					[/* text */ 't', ` until
  `],
-					[/* reference */ 'r', `clearError()`],
+					[/* reference */ 'r', `#clearError()`, `clearError()`],
 					[/* text */ 't', ` is invoked.`]
 				]]
 			],
@@ -1387,12 +1387,12 @@ DocsCollector.collect('java.io.PrintStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method will cause subsequent invocations of `],
-					[/* reference */ 'r', `checkError()`],
+					[/* reference */ 'r', `#checkError()`, `checkError()`],
 					[/* text */ 't', ` to return `],
 					[/* inline code block */ 'i', `false`],
 					[/* text */ 't', ` until another write
  operation fails and invokes `],
-					[/* reference */ 'r', `setError()`],
+					[/* reference */ 'r', `#setError()`, `setError()`],
 					[/* text */ 't', `.`]
 				]]
 			],

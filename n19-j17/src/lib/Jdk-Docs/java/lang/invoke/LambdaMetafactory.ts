@@ -146,11 +146,11 @@ DocsCollector.collect('java.lang.invoke.LambdaMetafactory', [
 		[/* block */ 'b', [
 			[/* text */ 't', `This class provides two forms of linkage methods: a standard version
  (`],
-			[/* reference */ 'r', `metafactory(MethodHandles.Lookup, String, MethodType, MethodType, MethodHandle, MethodType)`],
+			[/* reference */ 'r', `#metafactory(java.lang.invoke.MethodHandles.Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.invoke.MethodType,java.lang.invoke.MethodHandle,java.lang.invoke.MethodType)`, `metafactory(MethodHandles.Lookup, String, MethodType, MethodType, MethodHandle, MethodType)`],
 			[/* text */ 't', `)
  using an optimized protocol, and an alternate version
  `],
-			[/* reference */ 'r', `altMetafactory(MethodHandles.Lookup, String, MethodType, Object...)`],
+			[/* reference */ 'r', `#altMetafactory(java.lang.invoke.MethodHandles.Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.Object...)`, `altMetafactory(MethodHandles.Lookup, String, MethodType, Object...)`],
 			[/* text */ 't', `).
  The alternate version is a generalization of the standard version, providing
  additional control over the behavior of the generated function objects via
@@ -273,14 +273,99 @@ DocsCollector.collect('java.lang.invoke.LambdaMetafactory', [
 		]],
 		[/* block */ 'b', `A type Q is considered adaptable to S as follows:
  `],
-		[/* table */ 't', ''],
+		[/* table */ 'tbl',
+			[/* caption */ 'tc'],
+			[/* table header */ 'th', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Q`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `S`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Link-time checks`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Invocation-time checks`]
+					]]
+				]]
+			]],
+			[/* table body */ 'tb', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Primitive`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Primitive`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Q can be converted to S via a primitive widening conversion`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `None`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Primitive`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Reference`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `S is a supertype of the Wrapper(Q)`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Cast from Wrapper(Q) to S`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Reference`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Primitive`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `for parameter types: Q is a primitive wrapper and Primitive(Q)
+         can be widened to S
+         `],
+						[/* new line */ 'n'],
+						[/* text */ 't', `for return types: If Q is a primitive wrapper, check that
+         Primitive(Q) can be widened to S`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `If Q is not a primitive wrapper, cast Q to the base Wrapper(S);
+         for example Number for numeric types`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Reference`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Reference`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `for parameter types: S is a supertype of Q
+         `],
+						[/* new line */ 'n'],
+						[/* text */ 't', `for return types: none`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Cast from Q to S`]
+					]]
+				]]
+			]],
+		],
 		[/* block */ 'b', '']
 	],
 	[/* fields */
 		[/* field */ 'FLAG_SERIALIZABLE', [
 			[/* field description */
 				[/* text */ 't', `Flag for `],
-				[/* reference */ 'r', `altMetafactory(java.lang.invoke.MethodHandles.Lookup, java.lang.String, java.lang.invoke.MethodType, java.lang.Object...)`],
+				[/* reference */ 'r', `#altMetafactory(java.lang.invoke.MethodHandles.Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.Object...)`, `altMetafactory(java.lang.invoke.MethodHandles.Lookup, java.lang.String, java.lang.invoke.MethodType, java.lang.Object...)`],
 				[/* text */ 't', ` indicating the lambda object
  must be serializable`]
 			],
@@ -288,7 +373,7 @@ DocsCollector.collect('java.lang.invoke.LambdaMetafactory', [
 		[/* field */ 'FLAG_MARKERS', [
 			[/* field description */
 				[/* text */ 't', `Flag for `],
-				[/* reference */ 'r', `altMetafactory(java.lang.invoke.MethodHandles.Lookup, java.lang.String, java.lang.invoke.MethodType, java.lang.Object...)`],
+				[/* reference */ 'r', `#altMetafactory(java.lang.invoke.MethodHandles.Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.Object...)`, `altMetafactory(java.lang.invoke.MethodHandles.Lookup, java.lang.String, java.lang.invoke.MethodType, java.lang.Object...)`],
 				[/* text */ 't', ` indicating the lambda object implements
  other interfaces besides `],
 				[/* inline code block */ 'i', `Serializable`]
@@ -327,7 +412,7 @@ DocsCollector.collect('java.lang.invoke.LambdaMetafactory', [
 				[/* block */ 'b', [
 					[/* text */ 't', `This is the standard, streamlined metafactory; additional flexibility
  is provided by `],
-					[/* reference */ 'r', `altMetafactory(MethodHandles.Lookup, String, MethodType, Object...)`],
+					[/* reference */ 'r', `#altMetafactory(java.lang.invoke.MethodHandles.Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.Object...)`, `altMetafactory(MethodHandles.Lookup, String, MethodType, Object...)`],
 					[/* text */ 't', `.
  A general description of the behavior of this method is provided
  `],
@@ -360,7 +445,7 @@ DocsCollector.collect('java.lang.invoke.LambdaMetafactory', [
 					[/* text */ 't', `Represents a lookup context with the accessibility
                privileges of the caller.  Specifically, the lookup context
                must have `],
-					[/* external link */ 'a', `MethodHandles.Lookup.html#hasFullPrivilegeAccess()`, `full privilege access`],
+					[/* reference */ 'r', `.MethodHandles.Lookup#hasFullPrivilegeAccess()`],
 					[/* text */ 't', `.
                When used with `],
 					[/* inline code block */ 'i', `invokedynamic`],
@@ -442,7 +527,7 @@ DocsCollector.collect('java.lang.invoke.LambdaMetafactory', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager is present, and it
          `],
-					[/* external link */ 'a', `MethodHandles.Lookup.html#secmgr`, `refuses access`],
+					[/* reference */ 'r', `.MethodHandles.Lookup#secmgr`],
 					[/* text */ 't', `
          from `],
 					[/* inline code block */ 'i', `caller`],
@@ -480,7 +565,7 @@ DocsCollector.collect('java.lang.invoke.LambdaMetafactory', [
 				[/* block */ 'b', [
 					[/* text */ 't', `This is the general, more flexible metafactory; a streamlined version
  is provided by `],
-					[/* reference */ 'r', `metafactory(java.lang.invoke.MethodHandles.Lookup, String, MethodType, MethodType, MethodHandle, MethodType)`],
+					[/* reference */ 'r', `#metafactory(java.lang.invoke.MethodHandles.Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.invoke.MethodType,java.lang.invoke.MethodHandle,java.lang.invoke.MethodType)`, `metafactory(java.lang.invoke.MethodHandles.Lookup, String, MethodType, MethodType, MethodHandle, MethodType)`],
 					[/* text */ 't', `.
  A general description of the behavior of this method is provided
  `],
@@ -530,7 +615,7 @@ DocsCollector.collect('java.lang.invoke.LambdaMetafactory', [
 				[/* block */ 'b', [
 					[/* text */ 't', `Arguments that appear in the argument list for
  `],
-					[/* reference */ 'r', `metafactory(MethodHandles.Lookup, String, MethodType, MethodType, MethodHandle, MethodType)`],
+					[/* reference */ 'r', `#metafactory(java.lang.invoke.MethodHandles.Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.invoke.MethodType,java.lang.invoke.MethodHandle,java.lang.invoke.MethodType)`, `metafactory(MethodHandles.Lookup, String, MethodType, MethodType, MethodHandle, MethodType)`],
 					[/* text */ 't', `
  have the same specification as in that method.  The additional arguments
  are interpreted as follows:
@@ -675,7 +760,7 @@ DocsCollector.collect('java.lang.invoke.LambdaMetafactory', [
 					[/* text */ 't', `Represents a lookup context with the accessibility
                privileges of the caller.  Specifically, the lookup context
                must have `],
-					[/* external link */ 'a', `MethodHandles.Lookup.html#hasFullPrivilegeAccess()`, `full privilege access`],
+					[/* reference */ 'r', `.MethodHandles.Lookup#hasFullPrivilegeAccess()`],
 					[/* text */ 't', `.
                When used with `],
 					[/* inline code block */ 'i', `invokedynamic`],
@@ -772,7 +857,7 @@ DocsCollector.collect('java.lang.invoke.LambdaMetafactory', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager is present, and it
          `],
-					[/* external link */ 'a', `MethodHandles.Lookup.html#secmgr`, `refuses access`],
+					[/* reference */ 'r', `.MethodHandles.Lookup#secmgr`],
 					[/* text */ 't', `
          from `],
 					[/* inline code block */ 'i', `caller`],

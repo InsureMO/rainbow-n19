@@ -22,7 +22,7 @@ DocsCollector.collect('java.util.stream.Stream$Builder', [
  phase, during which elements can be added, and then transitions to a built
  phase, after which elements may not be added.  The built phase begins
  when the `],
-			[/* reference */ 'r', `build()`],
+			[/* reference */ 'r', `#build()`, `build()`],
 			[/* text */ 't', ` method is called, which creates an ordered
  `],
 			[/* inline code block */ 'i', `Stream`],

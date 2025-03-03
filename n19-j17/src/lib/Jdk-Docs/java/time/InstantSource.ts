@@ -11,7 +11,7 @@ DocsCollector.collect('java.time.InstantSource', [
  For example, `],
 			[/* inline code block */ 'i', `InstantSource`],
 			[/* text */ 't', ` can be used instead of `],
-			[/* external link */ 'a', `../lang/System.html#currentTimeMillis()`, `System.currentTimeMillis()`],
+			[/* reference */ 'r', `java.System#currentTimeMillis()`],
 			[/* text */ 't', `.
  `]
 		]],
@@ -46,10 +46,10 @@ DocsCollector.collect('java.time.InstantSource', [
  `],
 		[/* text */ 't', `
  This approach allows an alternative source, such as `],
-		[/* reference */ 'r', `fixed`],
+		[/* reference */ 'r', `#fixed(java.time.Instant)`, `fixed`],
 		[/* text */ 't', `
  or `],
-		[/* reference */ 'r', `offset`],
+		[/* reference */ 'r', `#offset(java.time.InstantSource,java.time.Duration)`, `offset`],
 		[/* text */ 't', ` to be used during testing.
  `],
 		[/* block */ 'b', ''],
@@ -59,7 +59,7 @@ DocsCollector.collect('java.time.InstantSource', [
 			[/* inline code block */ 'i', `system`],
 			[/* text */ 't', ` factory method provides a source based on the best available
  system clock. This may use `],
-			[/* external link */ 'a', `../lang/System.html#currentTimeMillis()`, `System.currentTimeMillis()`],
+			[/* reference */ 'r', `java.System#currentTimeMillis()`],
 			[/* text */ 't', `, or a higher
  resolution clock if one is available.`]
 		]]
@@ -111,7 +111,7 @@ DocsCollector.collect('java.time.InstantSource', [
 					[/* text */ 't', `
  This returns the millisecond-based instant, measured from 1970-01-01T00:00Z (UTC).
  This is equivalent to the definition of `],
-					[/* external link */ 'a', `../lang/System.html#currentTimeMillis()`, `System.currentTimeMillis()`],
+					[/* reference */ 'r', `java.System#currentTimeMillis()`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -145,7 +145,7 @@ DocsCollector.collect('java.time.InstantSource', [
 					[/* text */ 't', `
  This source is based on the best available system clock. This may use
  `],
-					[/* external link */ 'a', `../lang/System.html#currentTimeMillis()`, `System.currentTimeMillis()`],
+					[/* reference */ 'r', `java.System#currentTimeMillis()`],
 					[/* text */ 't', `, or a higher resolution system clock if
  one is available.
  `]

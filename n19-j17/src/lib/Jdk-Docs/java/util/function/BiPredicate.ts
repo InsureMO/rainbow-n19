@@ -11,10 +11,10 @@ DocsCollector.collect('java.util.function.BiPredicate', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
-			[/* external link */ 'a', `package-summary.html`, `functional interface`],
+			[/* reference */ 'r', `.package-summary`],
 			[/* text */ 't', `
  whose functional method is `],
-			[/* reference */ 'r', `test(Object, Object)`],
+			[/* reference */ 'r', `#test(T,U)`, `test(Object, Object)`],
 			[/* text */ 't', `.`]
 		]]
 	],

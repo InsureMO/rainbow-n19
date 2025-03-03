@@ -158,7 +158,7 @@ DocsCollector.collect('java.time.temporal.TemporalField', [
 					[/* text */ 't', `
  This uses the temporal object to find the range of valid values for the field.
  This is similar to `],
-					[/* reference */ 'r', `range()`],
+					[/* reference */ 'r', `#range()`, `range()`],
 					[/* text */ 't', `, however this method refines the result
  using the temporal. For example, if the field is `],
 					[/* inline code block */ 'i', `DAY_OF_MONTH`],
@@ -175,7 +175,7 @@ DocsCollector.collect('java.time.temporal.TemporalField', [
  There are two equivalent ways of using this method.
  The first is to invoke this method directly.
  The second is to use `],
-					[/* external link */ 'a', `TemporalAccessor.html#range(java.time.temporal.TemporalField)`, `TemporalAccessor.range(TemporalField)`],
+					[/* reference */ 'r', `.TemporalAccessor#range(java.time.temporal.TemporalField)`],
 					[/* text */ 't', `:
  `]
 				]],
@@ -227,7 +227,7 @@ DocsCollector.collect('java.time.temporal.TemporalField', [
  The unit of the field is the period that varies within the range.
  For example, in the field 'MonthOfYear', the unit is 'Months'.
  See also `],
-					[/* reference */ 'r', `getRangeUnit()`],
+					[/* reference */ 'r', `#getRangeUnit()`, `getRangeUnit()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -246,7 +246,7 @@ DocsCollector.collect('java.time.temporal.TemporalField', [
  The range of the field is the period that the field varies within.
  For example, in the field 'MonthOfYear', the range is 'Years'.
  See also `],
-					[/* reference */ 'r', `getBaseUnit()`],
+					[/* reference */ 'r', `#getBaseUnit()`, `getBaseUnit()`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -268,7 +268,7 @@ DocsCollector.collect('java.time.temporal.TemporalField', [
 					[/* text */ 't', `
  A field is date-based if it can be derived from
  `],
-					[/* external link */ 'a', `ChronoField.html#EPOCH_DAY`, `EPOCH_DAY`],
+					[/* reference */ 'r', `.ChronoField#EPOCH_DAY`],
 					[/* text */ 't', `.
  Note that it is valid for both `],
 					[/* inline code block */ 'i', `isDateBased()`],
@@ -292,7 +292,7 @@ DocsCollector.collect('java.time.temporal.TemporalField', [
 					[/* text */ 't', `
  A field is time-based if it can be derived from
  `],
-					[/* external link */ 'a', `ChronoField.html#NANO_OF_DAY`, `NANO_OF_DAY`],
+					[/* reference */ 'r', `.ChronoField#NANO_OF_DAY`],
 					[/* text */ 't', `.
  Note that it is valid for both `],
 					[/* inline code block */ 'i', `isDateBased()`],
@@ -321,7 +321,7 @@ DocsCollector.collect('java.time.temporal.TemporalField', [
  There are two equivalent ways of using this method.
  The first is to invoke this method directly.
  The second is to use `],
-					[/* external link */ 'a', `TemporalAccessor.html#isSupported(java.time.temporal.TemporalField)`, `TemporalAccessor.isSupported(TemporalField)`],
+					[/* reference */ 'r', `.TemporalAccessor#isSupported(java.time.temporal.TemporalField)`],
 					[/* text */ 't', `:
  `]
 				]],
@@ -366,10 +366,10 @@ DocsCollector.collect('java.time.temporal.TemporalField', [
  There are two equivalent ways of using this method.
  The first is to invoke this method directly.
  The second is to use `],
-					[/* external link */ 'a', `TemporalAccessor.html#getLong(java.time.temporal.TemporalField)`, `TemporalAccessor.getLong(TemporalField)`],
+					[/* reference */ 'r', `.TemporalAccessor#getLong(java.time.temporal.TemporalField)`],
 					[/* text */ 't', `
  (or `],
-					[/* external link */ 'a', `TemporalAccessor.html#get(java.time.temporal.TemporalField)`, `TemporalAccessor.get(TemporalField)`],
+					[/* reference */ 'r', `.TemporalAccessor#get(java.time.temporal.TemporalField)`],
 					[/* text */ 't', `):
  `]
 				]],
@@ -441,7 +441,7 @@ DocsCollector.collect('java.time.temporal.TemporalField', [
  There are two equivalent ways of using this method.
  The first is to invoke this method directly.
  The second is to use `],
-					[/* external link */ 'a', `Temporal.html#with(java.time.temporal.TemporalField,long)`, `Temporal.with(TemporalField, long)`],
+					[/* reference */ 'r', `.Temporal#with(java.time.temporal.TemporalField,long)`],
 					[/* text */ 't', `:
  `]
 				]],

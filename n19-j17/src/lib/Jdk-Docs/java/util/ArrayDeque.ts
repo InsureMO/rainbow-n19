@@ -24,19 +24,19 @@ DocsCollector.collect('java.util.ArrayDeque', [
 			[/* text */ 't', ` operations run in amortized constant time.
  Exceptions include
  `],
-			[/* reference */ 'r', `remove`],
+			[/* reference */ 'r', `#remove(java.lang.Object)`, `remove`],
 			[/* text */ 't', `,
  `],
-			[/* reference */ 'r', `removeFirstOccurrence`],
+			[/* reference */ 'r', `#removeFirstOccurrence(java.lang.Object)`, `removeFirstOccurrence`],
 			[/* text */ 't', `,
  `],
-			[/* reference */ 'r', `removeLastOccurrence`],
+			[/* reference */ 'r', `#removeLastOccurrence(java.lang.Object)`, `removeLastOccurrence`],
 			[/* text */ 't', `,
  `],
-			[/* reference */ 'r', `contains`],
+			[/* reference */ 'r', `#contains(java.lang.Object)`, `contains`],
 			[/* text */ 't', `,
  `],
-			[/* reference */ 'r', `iterator.remove()`],
+			[/* reference */ 'r', `#iterator()`, `iterator.remove()`],
 			[/* text */ 't', `,
  and the bulk operations, all of which run in linear time.
 
@@ -44,7 +44,7 @@ DocsCollector.collect('java.util.ArrayDeque', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `The iterators returned by this class's `],
-			[/* reference */ 'r', `iterator`],
+			[/* reference */ 'r', `#iterator()`, `iterator`],
 			[/* text */ 't', `
  method are `],
 			[/* text */ 't', `fail-fast`],
@@ -88,7 +88,7 @@ DocsCollector.collect('java.util.ArrayDeque', [
 		[/* block */ 'b', [
 			[/* text */ 't', `This class is a member of the
  `],
-			[/* external link */ 'a', `../../../java.base/java/util/package-summary.html#CollectionsFramework`, `Java Collections Framework`],
+			[/* text */ 't', `Java Collections Framework`],
 			[/* text */ 't', `.`]
 		]]
 	],
@@ -144,7 +144,7 @@ DocsCollector.collect('java.util.ArrayDeque', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This method is equivalent to `],
-					[/* reference */ 'r', `addLast(E)`],
+					[/* reference */ 'r', `#addLast(E)`, `addLast(E)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -161,7 +161,7 @@ DocsCollector.collect('java.util.ArrayDeque', [
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` (as specified by `],
-				[/* external link */ 'a', `Collection.html#add(E)`, `Collection.add(E)`],
+				[/* reference */ 'r', `.Collection#add(E)`],
 				[/* text */ 't', `)`]
 			]
 		]],
@@ -170,14 +170,14 @@ DocsCollector.collect('java.util.ArrayDeque', [
 				[/* text */ 't', `Retrieves and removes the head of the queue represented by this deque.
 
  This method differs from `],
-				[/* reference */ 'r', `poll()`],
+				[/* reference */ 'r', `#poll()`, `poll()`],
 				[/* text */ 't', ` only in that it
  throws an exception if this deque is empty.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This method is equivalent to `],
-					[/* reference */ 'r', `removeFirst()`],
+					[/* reference */ 'r', `#removeFirst()`, `removeFirst()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -209,7 +209,7 @@ DocsCollector.collect('java.util.ArrayDeque', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This method is equivalent to `],
-					[/* reference */ 'r', `removeFirstOccurrence(Object)`],
+					[/* reference */ 'r', `#removeFirstOccurrence(java.lang.Object)`, `removeFirstOccurrence(Object)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -288,7 +288,7 @@ DocsCollector.collect('java.util.ArrayDeque', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `Like the `],
-					[/* reference */ 'r', `toArray()`],
+					[/* reference */ 'r', `#toArray()`, `toArray()`],
 					[/* text */ 't', ` method, this method acts as bridge between
  array-based and collection-based APIs.  Further, this method allows
  precise control over the runtime type of the output array, and may,
@@ -367,9 +367,9 @@ DocsCollector.collect('java.util.ArrayDeque', [
  will be ordered from first (head) to last (tail).  This is the same
  order that elements would be dequeued (via successive calls to
  `],
-				[/* reference */ 'r', `remove()`],
+				[/* reference */ 'r', `#remove()`, `remove()`],
 				[/* text */ 't', ` or popped (via successive calls to `],
-				[/* reference */ 'r', `pop()`],
+				[/* reference */ 'r', `#pop()`, `pop()`],
 				[/* text */ 't', `).`]
 			],
 			/* parameters */ UDF,
@@ -406,7 +406,7 @@ DocsCollector.collect('java.util.ArrayDeque', [
 		[/* method */ 'spliterator()', [
 			[/* method description */
 				[/* text */ 't', `Creates a `],
-				[/* external link */ 'a', `Spliterator.html#binding`, `late-binding`],
+				[/* reference */ 'r', `.Spliterator#binding`],
 				[/* text */ 't', `
  and `],
 				[/* text */ 't', `fail-fast`],
@@ -419,15 +419,15 @@ DocsCollector.collect('java.util.ArrayDeque', [
 					[/* text */ 't', `The `],
 					[/* inline code block */ 'i', `Spliterator`],
 					[/* text */ 't', ` reports `],
-					[/* external link */ 'a', `Spliterator.html#SIZED`, `Spliterator.SIZED`],
+					[/* reference */ 'r', `.Spliterator#SIZED`],
 					[/* text */ 't', `,
  `],
-					[/* external link */ 'a', `Spliterator.html#SUBSIZED`, `Spliterator.SUBSIZED`],
+					[/* reference */ 'r', `.Spliterator#SUBSIZED`],
 					[/* text */ 't', `, `],
-					[/* external link */ 'a', `Spliterator.html#ORDERED`, `Spliterator.ORDERED`],
+					[/* reference */ 'r', `.Spliterator#ORDERED`],
 					[/* text */ 't', `, and
  `],
-					[/* external link */ 'a', `Spliterator.html#NONNULL`, `Spliterator.NONNULL`],
+					[/* reference */ 'r', `.Spliterator#NONNULL`],
 					[/* text */ 't', `.  Overriding implementations should document
  the reporting of additional characteristic values.`]
 				]]
@@ -444,7 +444,7 @@ DocsCollector.collect('java.util.ArrayDeque', [
 			[/* method description */
 				[/* text */ 't', `Adds all of the elements in the specified collection at the end
  of this deque, as if by calling `],
-				[/* reference */ 'r', `addLast(E)`],
+				[/* reference */ 'r', `#addLast(E)`, `addLast(E)`],
 				[/* text */ 't', ` on each one,
  in the order that they are returned by the collection's iterator.`]
 			],
@@ -504,7 +504,7 @@ DocsCollector.collect('java.util.ArrayDeque', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This method is equivalent to `],
-					[/* reference */ 'r', `pollFirst()`],
+					[/* reference */ 'r', `#pollFirst()`, `pollFirst()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -527,7 +527,7 @@ DocsCollector.collect('java.util.ArrayDeque', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This method is equivalent to `],
-					[/* reference */ 'r', `peekFirst()`],
+					[/* reference */ 'r', `#peekFirst()`, `peekFirst()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -568,14 +568,14 @@ DocsCollector.collect('java.util.ArrayDeque', [
 			[/* method description */
 				[/* text */ 't', `Retrieves, but does not remove, the head of the queue represented by
  this deque.  This method differs from `],
-				[/* reference */ 'r', `peek`],
+				[/* reference */ 'r', `#peek()`, `peek`],
 				[/* text */ 't', ` only in
  that it throws an exception if this deque is empty.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This method is equivalent to `],
-					[/* reference */ 'r', `getFirst()`],
+					[/* reference */ 'r', `#getFirst()`, `getFirst()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -607,7 +607,7 @@ DocsCollector.collect('java.util.ArrayDeque', [
          null elements and the specified collection does not support
          null elements
          (`],
-					[/* external link */ 'a', `../../../java.base/java/util/Collection.html#optional-restrictions`, `optional`],
+					[/* text */ 't', `optional`],
 					[/* text */ 't', `),
          or if the specified collection is null`]
 				]]
@@ -636,7 +636,7 @@ DocsCollector.collect('java.util.ArrayDeque', [
          null elements and the specified collection does not permit null
          elements
          (`],
-					[/* external link */ 'a', `../../../java.base/java/util/Collection.html#optional-restrictions`, `optional`],
+					[/* text */ 't', `optional`],
 					[/* text */ 't', `),
          or if the specified collection is null`]
 				]]
@@ -654,7 +654,7 @@ DocsCollector.collect('java.util.ArrayDeque', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This method is equivalent to `],
-					[/* reference */ 'r', `addFirst(E)`],
+					[/* reference */ 'r', `#addFirst(E)`, `addFirst(E)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -678,7 +678,7 @@ DocsCollector.collect('java.util.ArrayDeque', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This method is equivalent to `],
-					[/* reference */ 'r', `removeFirst()`],
+					[/* reference */ 'r', `#removeFirst()`, `removeFirst()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -716,7 +716,7 @@ DocsCollector.collect('java.util.ArrayDeque', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This method is equivalent to `],
-					[/* reference */ 'r', `add(E)`],
+					[/* reference */ 'r', `#add(E)`, `add(E)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -783,7 +783,7 @@ DocsCollector.collect('java.util.ArrayDeque', [
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` (as specified by `],
-				[/* external link */ 'a', `Deque.html#offerLast(E)`, `Deque.offerLast(E)`],
+				[/* reference */ 'r', `.Deque#offerLast(E)`],
 				[/* text */ 't', `)`]
 			]
 		]],
@@ -792,7 +792,7 @@ DocsCollector.collect('java.util.ArrayDeque', [
 				[/* block */ 'b', [
 					[/* text */ 't', `Retrieves and removes the first element of this deque.  This method
  differs from `],
-					[/* external link */ 'a', `Deque.html#pollFirst()`, `pollFirst`],
+					[/* reference */ 'r', `.Deque#pollFirst()`],
 					[/* text */ 't', ` only in that it throws an
  exception if this deque is empty.`]
 				]]
@@ -813,7 +813,7 @@ DocsCollector.collect('java.util.ArrayDeque', [
 					[/* text */ 't', `Retrieves, but does not remove, the first element of this deque.
 
  This method differs from `],
-					[/* external link */ 'a', `Deque.html#peekFirst()`, `peekFirst`],
+					[/* reference */ 'r', `.Deque#peekFirst()`],
 					[/* text */ 't', ` only in that it
  throws an exception if this deque is empty.`]
 				]]
@@ -889,7 +889,7 @@ DocsCollector.collect('java.util.ArrayDeque', [
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` (as specified by `],
-				[/* external link */ 'a', `Deque.html#offerFirst(E)`, `Deque.offerFirst(E)`],
+				[/* reference */ 'r', `.Deque#offerFirst(E)`],
 				[/* text */ 't', `)`]
 			]
 		]],
@@ -898,7 +898,7 @@ DocsCollector.collect('java.util.ArrayDeque', [
 				[/* block */ 'b', [
 					[/* text */ 't', `Retrieves and removes the last element of this deque.  This method
  differs from `],
-					[/* external link */ 'a', `Deque.html#pollLast()`, `pollLast`],
+					[/* reference */ 'r', `.Deque#pollLast()`],
 					[/* text */ 't', ` only in that it throws an
  exception if this deque is empty.`]
 				]]
@@ -918,7 +918,7 @@ DocsCollector.collect('java.util.ArrayDeque', [
 				[/* block */ 'b', [
 					[/* text */ 't', `Retrieves, but does not remove, the last element of this deque.
  This method differs from `],
-					[/* external link */ 'a', `Deque.html#peekLast()`, `peekLast`],
+					[/* reference */ 'r', `.Deque#peekLast()`],
 					[/* text */ 't', ` only in that it
  throws an exception if this deque is empty.`]
 				]]
@@ -984,7 +984,7 @@ DocsCollector.collect('java.util.ArrayDeque', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This method is equivalent to `],
-					[/* reference */ 'r', `offerLast(E)`],
+					[/* reference */ 'r', `#offerLast(E)`, `offerLast(E)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -1001,7 +1001,7 @@ DocsCollector.collect('java.util.ArrayDeque', [
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` (as specified by `],
-				[/* external link */ 'a', `Queue.html#offer(E)`, `Queue.offer(E)`],
+				[/* reference */ 'r', `.Queue#offer(E)`],
 				[/* text */ 't', `)`]
 			]
 		]],

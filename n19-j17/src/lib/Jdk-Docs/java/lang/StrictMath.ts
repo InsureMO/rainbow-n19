@@ -142,7 +142,7 @@ DocsCollector.collect('java.lang.StrictMath', [
  `],
 		[/* inline code block */ 'i', `StrictMath`],
 		[/* text */ 't', ` methods `],
-		[/* external link */ 'a', `Math.html#Ieee754RecommendedOps`, `relate to the IEEE 754 recommended operations`],
+		[/* reference */ 'r', `.Math#Ieee754RecommendedOps`],
 		[/* text */ 't', `.`]
 	],
 	[/* fields */
@@ -181,13 +181,13 @@ DocsCollector.collect('java.lang.StrictMath', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `Note that if the argument is equal to the value of `],
-					[/* external link */ 'a', `Integer.html#MIN_VALUE`, `Integer.MIN_VALUE`],
+					[/* reference */ 'r', `.Integer#MIN_VALUE`],
 					[/* text */ 't', `, the most negative representable `],
 					[/* inline code block */ 'i', `int`],
 					[/* text */ 't', `
  value, the result is that same value, which is negative. In
  contrast, the `],
-					[/* reference */ 'r', `absExact(int)`],
+					[/* reference */ 'r', `#absExact(long)`, `absExact(int)`],
 					[/* text */ 't', ` method throws an
  `],
 					[/* inline code block */ 'i', `ArithmeticException`],
@@ -243,13 +243,13 @@ DocsCollector.collect('java.lang.StrictMath', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `Note that if the argument is equal to the value of `],
-					[/* external link */ 'a', `Long.html#MIN_VALUE`, `Long.MIN_VALUE`],
+					[/* reference */ 'r', `.Long#MIN_VALUE`],
 					[/* text */ 't', `, the most negative representable `],
 					[/* inline code block */ 'i', `long`],
 					[/* text */ 't', `
  value, the result is that same value, which is negative. In
  contrast, the `],
-					[/* reference */ 'r', `absExact(long)`],
+					[/* reference */ 'r', `#absExact(long)`, `absExact(long)`],
 					[/* text */ 't', ` method throws
  an `],
 					[/* inline code block */ 'i', `ArithmeticException`],
@@ -371,10 +371,10 @@ DocsCollector.collect('java.lang.StrictMath', [
 				[/* text */ 't', ` from the conversion of rectangular
  coordinates (`],
 				[/* inline code block */ 'i', `x`],
-				[/* text */ 't', `,&nbsp;`],
+				[/* text */ 't', `, `],
 				[/* inline code block */ 'i', `y`],
 				[/* text */ 't', `) to polar
- coordinates (r,&nbsp;`],
+ coordinates (r, `],
 				[/* text */ 't', `theta`],
 				[/* text */ 't', `).
  This method computes the phase `],
@@ -499,13 +499,13 @@ DocsCollector.collect('java.lang.StrictMath', [
 				[/* text */ 't', ` component of the point
           (`],
 				[/* text */ 't', `r`],
-				[/* text */ 't', `,&nbsp;`],
+				[/* text */ 't', `, `],
 				[/* text */ 't', `theta`],
 				[/* text */ 't', `)
           in polar coordinates that corresponds to the point
           (`],
 				[/* text */ 't', `x`],
-				[/* text */ 't', `,&nbsp;`],
+				[/* text */ 't', `, `],
 				[/* text */ 't', `y`],
 				[/* text */ 't', `) in Cartesian coordinates.`]
 			]
@@ -581,7 +581,7 @@ DocsCollector.collect('java.lang.StrictMath', [
 			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the value ln&nbsp;`],
+				[/* text */ 't', `the value ln `],
 				[/* inline code block */ 'i', `a`],
 				[/* text */ 't', `, the natural logarithm of
           `],
@@ -823,10 +823,10 @@ DocsCollector.collect('java.lang.StrictMath', [
 					[/* text */ 't', `(In the foregoing descriptions, a floating-point value is
  considered to be an integer if and only if it is finite and a
  fixed point of the method `],
-					[/* reference */ 'r', `ceil`],
+					[/* reference */ 'r', `#ceil(double)`, `ceil`],
 					[/* text */ 't', ` or,
  equivalently, a fixed point of the method `],
-					[/* reference */ 'r', `floor`],
+					[/* reference */ 'r', `#floor(double)`, `floor`],
 					[/* text */ 't', `. A value is a fixed point of a one-argument
  method if and only if the result of applying the method to the
  value is equal to the value.)`]
@@ -899,7 +899,7 @@ DocsCollector.collect('java.lang.StrictMath', [
 				[/* text */ 't', ` values. That is,
  the result is the argument closer to the value of
  `],
-				[/* external link */ 'a', `Long.html#MIN_VALUE`, `Long.MIN_VALUE`],
+				[/* reference */ 'r', `.Long#MIN_VALUE`],
 				[/* text */ 't', `. If the arguments have the same
  value, the result is that same value.`]
 			],
@@ -956,7 +956,7 @@ DocsCollector.collect('java.lang.StrictMath', [
 				[/* text */ 't', ` values. That is,
  the result the argument closer to the value of
  `],
-				[/* external link */ 'a', `Integer.html#MIN_VALUE`, `Integer.MIN_VALUE`],
+				[/* reference */ 'r', `.Integer#MIN_VALUE`],
 				[/* text */ 't', `.  If the arguments have the same
  value, the result is that same value.`]
 			],
@@ -1014,7 +1014,7 @@ DocsCollector.collect('java.lang.StrictMath', [
 				[/* text */ 't', ` values. That is, the
  result is the argument closer to the value of
  `],
-				[/* external link */ 'a', `Integer.html#MAX_VALUE`, `Integer.MAX_VALUE`],
+				[/* reference */ 'r', `.Integer#MAX_VALUE`],
 				[/* text */ 't', `. If the arguments have the same value,
  the result is that same value.`]
 			],
@@ -1072,7 +1072,7 @@ DocsCollector.collect('java.lang.StrictMath', [
 				[/* text */ 't', ` values. That is, the
  result is the argument closer to the value of
  `],
-				[/* external link */ 'a', `Long.html#MAX_VALUE`, `Long.MAX_VALUE`],
+				[/* reference */ 'r', `.Long#MAX_VALUE`],
 				[/* text */ 't', `. If the arguments have the same value,
  the result is that same value.`]
 			],
@@ -1278,7 +1278,7 @@ DocsCollector.collect('java.lang.StrictMath', [
 				[/* inline code block */ 'i', `int`],
 				[/* text */ 't', `.
  The overflow only occurs for `],
-				[/* external link */ 'a', `Integer.html#MIN_VALUE`, `the minimum value`],
+				[/* reference */ 'r', `.Integer#MIN_VALUE`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -1302,7 +1302,7 @@ DocsCollector.collect('java.lang.StrictMath', [
 				[/* inline code block */ 'i', `long`],
 				[/* text */ 't', `.
  The overflow only occurs for `],
-				[/* external link */ 'a', `Long.html#MIN_VALUE`, `the minimum value`],
+				[/* reference */ 'r', `.Long#MIN_VALUE`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -1326,7 +1326,7 @@ DocsCollector.collect('java.lang.StrictMath', [
 				[/* inline code block */ 'i', `int`],
 				[/* text */ 't', `.
  The overflow only occurs for `],
-				[/* external link */ 'a', `Integer.html#MAX_VALUE`, `the maximum value`],
+				[/* reference */ 'r', `.Integer#MAX_VALUE`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -1350,7 +1350,7 @@ DocsCollector.collect('java.lang.StrictMath', [
 				[/* inline code block */ 'i', `long`],
 				[/* text */ 't', `.
  The overflow only occurs for `],
-				[/* external link */ 'a', `Long.html#MAX_VALUE`, `the maximum value`],
+				[/* reference */ 'r', `.Long#MAX_VALUE`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -1466,7 +1466,7 @@ DocsCollector.collect('java.lang.StrictMath', [
 				[/* inline code block */ 'i', `long`],
 				[/* text */ 't', `.
  The overflow only occurs for `],
-				[/* external link */ 'a', `Long.html#MIN_VALUE`, `the minimum value`],
+				[/* reference */ 'r', `.Long#MIN_VALUE`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -1490,7 +1490,7 @@ DocsCollector.collect('java.lang.StrictMath', [
 				[/* inline code block */ 'i', `int`],
 				[/* text */ 't', `.
  The overflow only occurs for `],
-				[/* external link */ 'a', `Integer.html#MIN_VALUE`, `the minimum value`],
+				[/* reference */ 'r', `.Integer#MIN_VALUE`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -1565,7 +1565,7 @@ DocsCollector.collect('java.lang.StrictMath', [
 				[/* text */ 't', `.
 
  The rounding is done using the `],
-				[/* external link */ 'a', `../math/RoundingMode.html#HALF_EVEN`, `round to nearest even rounding mode`],
+				[/* reference */ 'r', `java.RoundingMode#HALF_EVEN`],
 				[/* text */ 't', `.
 
  In contrast, if `],
@@ -1641,9 +1641,9 @@ DocsCollector.collect('java.lang.StrictMath', [
 			[/* return description */
 				[/* text */ 't', `(`],
 				[/* text */ 't', `a`],
-				[/* text */ 't', `&nbsp;×&nbsp;`],
+				[/* text */ 't', ` × `],
 				[/* text */ 't', `b`],
-				[/* text */ 't', `&nbsp;+&nbsp;`],
+				[/* text */ 't', ` + `],
 				[/* text */ 't', `c`],
 				[/* text */ 't', `)
  computed, as if with unlimited range and precision, and rounded
@@ -1662,7 +1662,7 @@ DocsCollector.collect('java.lang.StrictMath', [
 				[/* text */ 't', `.
 
  The rounding is done using the `],
-				[/* external link */ 'a', `../math/RoundingMode.html#HALF_EVEN`, `round to nearest even rounding mode`],
+				[/* reference */ 'r', `java.RoundingMode#HALF_EVEN`],
 				[/* text */ 't', `.
 
  In contrast, if `],
@@ -1738,9 +1738,9 @@ DocsCollector.collect('java.lang.StrictMath', [
 			[/* return description */
 				[/* text */ 't', `(`],
 				[/* text */ 't', `a`],
-				[/* text */ 't', `&nbsp;×&nbsp;`],
+				[/* text */ 't', ` × `],
 				[/* text */ 't', `b`],
-				[/* text */ 't', `&nbsp;+&nbsp;`],
+				[/* text */ 't', ` + `],
 				[/* text */ 't', `c`],
 				[/* text */ 't', `)
  computed, as if with unlimited range and precision, and rounded
@@ -1869,9 +1869,9 @@ DocsCollector.collect('java.lang.StrictMath', [
  rounded as if performed by a single correctly rounded
  floating-point multiply.  If the exponent of the result is
  between `],
-				[/* external link */ 'a', `Float.html#MIN_EXPONENT`, `Float.MIN_EXPONENT`],
+				[/* reference */ 'r', `.Float#MIN_EXPONENT`],
 				[/* text */ 't', ` and `],
-				[/* external link */ 'a', `Float.html#MAX_EXPONENT`, `Float.MAX_EXPONENT`],
+				[/* reference */ 'r', `.Float#MAX_EXPONENT`],
 				[/* text */ 't', `, the answer is calculated exactly.  If the
  exponent of the result would be larger than `],
 				[/* inline code block */ 'i', `Float.MAX_EXPONENT`],
@@ -1929,9 +1929,9 @@ DocsCollector.collect('java.lang.StrictMath', [
  rounded as if performed by a single correctly rounded
  floating-point multiply.  If the exponent of the result is
  between `],
-				[/* external link */ 'a', `Double.html#MIN_EXPONENT`, `Double.MIN_EXPONENT`],
+				[/* reference */ 'r', `.Double#MIN_EXPONENT`],
 				[/* text */ 't', ` and `],
-				[/* external link */ 'a', `Double.html#MAX_EXPONENT`, `Double.MAX_EXPONENT`],
+				[/* reference */ 'r', `.Double#MAX_EXPONENT`],
 				[/* text */ 't', `, the answer is calculated exactly.  If the
  exponent of the result would be larger than `],
 				[/* inline code block */ 'i', `Double.MAX_EXPONENT`],
@@ -1991,14 +1991,14 @@ DocsCollector.collect('java.lang.StrictMath', [
 					[/* block */ 'b', [
 						[/* text */ 't', `If the argument is NaN or infinite, then the result is
  `],
-						[/* external link */ 'a', `Float.html#MAX_EXPONENT`, `Float.MAX_EXPONENT`],
+						[/* reference */ 'r', `.Float#MAX_EXPONENT`],
 						[/* text */ 't', ` + 1.
  `]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `If the argument is zero or subnormal, then the result is
  `],
-						[/* external link */ 'a', `Float.html#MIN_EXPONENT`, `Float.MIN_EXPONENT`],
+						[/* reference */ 'r', `.Float#MIN_EXPONENT`],
 						[/* text */ 't', ` -1.
  `]
 					]]
@@ -2028,14 +2028,14 @@ DocsCollector.collect('java.lang.StrictMath', [
 					[/* block */ 'b', [
 						[/* text */ 't', `If the argument is NaN or infinite, then the result is
  `],
-						[/* external link */ 'a', `Double.html#MAX_EXPONENT`, `Double.MAX_EXPONENT`],
+						[/* reference */ 'r', `.Double#MAX_EXPONENT`],
 						[/* text */ 't', ` + 1.
  `]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `If the argument is zero or subnormal, then the result is
  `],
-						[/* external link */ 'a', `Double.html#MIN_EXPONENT`, `Double.MIN_EXPONENT`],
+						[/* reference */ 'r', `.Double#MIN_EXPONENT`],
 						[/* text */ 't', ` -1.
  `]
 					]]
@@ -2093,7 +2093,7 @@ DocsCollector.collect('java.lang.StrictMath', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  See `],
-					[/* external link */ 'a', `Math.html#floorMod(long,long)`, `Math.floorMod`],
+					[/* reference */ 'r', `.Math#floorMod(long,long)`],
 					[/* text */ 't', ` for examples and
  a comparison to the `],
 					[/* inline code block */ 'i', `%`],
@@ -2157,7 +2157,7 @@ DocsCollector.collect('java.lang.StrictMath', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  See `],
-					[/* external link */ 'a', `Math.html#floorMod(long,long)`, `Math.floorMod`],
+					[/* reference */ 'r', `.Math#floorMod(long,long)`],
 					[/* text */ 't', ` for examples and
  a comparison to the `],
 					[/* inline code block */ 'i', `%`],
@@ -2221,7 +2221,7 @@ DocsCollector.collect('java.lang.StrictMath', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  See `],
-					[/* external link */ 'a', `Math.html#floorMod(long,long)`, `Math.floorMod`],
+					[/* reference */ 'r', `.Math#floorMod(long,long)`],
 					[/* text */ 't', ` for examples and
  a comparison to the `],
 					[/* inline code block */ 'i', `%`],
@@ -2321,7 +2321,7 @@ DocsCollector.collect('java.lang.StrictMath', [
  `],
 					[/* block */ 'b', [
 						[/* text */ 't', `If the argument is `],
-						[/* external link */ 'a', `Double.html#isInfinite(double)`, `infinite`],
+						[/* reference */ 'r', `.Double#isInfinite(double)`],
 						[/* text */ 't', `,
  then the result is the closest value to `],
 						[/* text */ 't', `pi`],
@@ -2388,7 +2388,7 @@ DocsCollector.collect('java.lang.StrictMath', [
  The remainder value is mathematically equal to
  `],
 				[/* inline code block */ 'i', `f1 - f2`],
-				[/* text */ 't', `&nbsp;×&nbsp;`],
+				[/* text */ 't', ` × `],
 				[/* text */ 't', `n`],
 				[/* text */ 't', `,
  where `],
@@ -2441,7 +2441,7 @@ DocsCollector.collect('java.lang.StrictMath', [
 				[/* text */ 't', ` value that is less than or equal to the algebraic quotient.
  There is one special case, if the dividend is the
  `],
-				[/* external link */ 'a', `Long.html#MIN_VALUE`, `Long.MIN_VALUE`],
+				[/* reference */ 'r', `.Long#MIN_VALUE`],
 				[/* text */ 't', ` and the divisor is `],
 				[/* inline code block */ 'i', `-1`],
 				[/* text */ 't', `,
@@ -2453,7 +2453,7 @@ DocsCollector.collect('java.lang.StrictMath', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  See `],
-					[/* external link */ 'a', `Math.html#floorDiv(long,long)`, `Math.floorDiv`],
+					[/* reference */ 'r', `.Math#floorDiv(long,long)`],
 					[/* text */ 't', ` for examples and
  a comparison to the integer division `],
 					[/* inline code block */ 'i', `/`],
@@ -2490,7 +2490,7 @@ DocsCollector.collect('java.lang.StrictMath', [
 				[/* text */ 't', ` value that is less than or equal to the algebraic quotient.
  There is one special case, if the dividend is the
  `],
-				[/* external link */ 'a', `Long.html#MIN_VALUE`, `Long.MIN_VALUE`],
+				[/* reference */ 'r', `.Long#MIN_VALUE`],
 				[/* text */ 't', ` and the divisor is `],
 				[/* inline code block */ 'i', `-1`],
 				[/* text */ 't', `,
@@ -2502,7 +2502,7 @@ DocsCollector.collect('java.lang.StrictMath', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  See `],
-					[/* external link */ 'a', `Math.html#floorDiv(long,long)`, `Math.floorDiv`],
+					[/* reference */ 'r', `.Math#floorDiv(long,long)`],
 					[/* text */ 't', ` for examples and
  a comparison to the integer division `],
 					[/* inline code block */ 'i', `/`],
@@ -2539,7 +2539,7 @@ DocsCollector.collect('java.lang.StrictMath', [
 				[/* text */ 't', ` value that is less than or equal to the algebraic quotient.
  There is one special case, if the dividend is the
  `],
-				[/* external link */ 'a', `Integer.html#MIN_VALUE`, `Integer.MIN_VALUE`],
+				[/* reference */ 'r', `.Integer#MIN_VALUE`],
 				[/* text */ 't', ` and the divisor is `],
 				[/* inline code block */ 'i', `-1`],
 				[/* text */ 't', `,
@@ -2551,7 +2551,7 @@ DocsCollector.collect('java.lang.StrictMath', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  See `],
-					[/* external link */ 'a', `Math.html#floorDiv(long,long)`, `Math.floorDiv`],
+					[/* reference */ 'r', `.Math#floorDiv(long,long)`],
 					[/* text */ 't', ` for examples and
  a comparison to the integer division `],
 					[/* inline code block */ 'i', `/`],
@@ -2589,12 +2589,12 @@ DocsCollector.collect('java.lang.StrictMath', [
 				[/* text */ 't', `x`],
 				[/* text */ 't', ` is defined to be
  (`],
-				[/* text */ 't', `e<sup>x</sup>&nbsp;-&nbsp;e<sup>-x</sup>`],
+				[/* text */ 't', `e<sup>x</sup> - e<sup>-x</sup>`],
 				[/* text */ 't', `)/2
  where `],
 				[/* text */ 't', `e`],
 				[/* text */ 't', ` is `],
-				[/* external link */ 'a', `Math.html#E`, `Euler's number`],
+				[/* reference */ 'r', `.Math#E`],
 				[/* text */ 't', `.
 
  `],
@@ -2636,12 +2636,12 @@ DocsCollector.collect('java.lang.StrictMath', [
 				[/* text */ 't', `x`],
 				[/* text */ 't', ` is defined to be
  (`],
-				[/* text */ 't', `e<sup>x</sup>&nbsp;+&nbsp;e<sup>-x</sup>`],
+				[/* text */ 't', `e<sup>x</sup> + e<sup>-x</sup>`],
 				[/* text */ 't', `)/2
  where `],
 				[/* text */ 't', `e`],
 				[/* text */ 't', ` is `],
-				[/* external link */ 'a', `Math.html#E`, `Euler's number`],
+				[/* reference */ 'r', `.Math#E`],
 				[/* text */ 't', `.
 
  `],
@@ -2686,14 +2686,14 @@ DocsCollector.collect('java.lang.StrictMath', [
 				[/* text */ 't', `x`],
 				[/* text */ 't', ` is defined to be
  (`],
-				[/* text */ 't', `e<sup>x</sup>&nbsp;-&nbsp;e<sup>-x</sup>`],
+				[/* text */ 't', `e<sup>x</sup> - e<sup>-x</sup>`],
 				[/* text */ 't', `)/(`],
-				[/* text */ 't', `e<sup>x</sup>&nbsp;+&nbsp;e<sup>-x</sup>`],
+				[/* text */ 't', `e<sup>x</sup> + e<sup>-x</sup>`],
 				[/* text */ 't', `),
  in other words, `],
-				[/* external link */ 'a', `Math.html#sinh(double)`, `sinh(x)`],
+				[/* reference */ 'r', `.Math#sinh(double)`],
 				[/* text */ 't', `/`],
-				[/* external link */ 'a', `Math.html#cosh(double)`, `cosh(x)`],
+				[/* reference */ 'r', `.Math#cosh(double)`],
 				[/* text */ 't', `.  Note
  that the absolute value of the exact tanh is always less than
  1.
@@ -2745,7 +2745,7 @@ DocsCollector.collect('java.lang.StrictMath', [
 				[/* text */ 't', `Returns sqrt(`],
 				[/* text */ 't', `x`],
 				[/* text */ 't', `2`, 'sup'],
-				[/* text */ 't', `&nbsp;+`],
+				[/* text */ 't', ` +`],
 				[/* text */ 't', `y`],
 				[/* text */ 't', `2`, 'sup'],
 				[/* text */ 't', `)
@@ -2781,7 +2781,7 @@ DocsCollector.collect('java.lang.StrictMath', [
 				[/* text */ 't', `sqrt(`],
 				[/* text */ 't', `x`],
 				[/* text */ 't', `2`, 'sup'],
-				[/* text */ 't', `&nbsp;+`],
+				[/* text */ 't', ` +`],
 				[/* text */ 't', `y`],
 				[/* text */ 't', `2`, 'sup'],
 				[/* text */ 't', `)
@@ -2793,13 +2793,13 @@ DocsCollector.collect('java.lang.StrictMath', [
 				[/* text */ 't', `Returns `],
 				[/* text */ 't', `e`],
 				[/* text */ 't', `x`, 'sup'],
-				[/* text */ 't', `&nbsp;-1.  Note that for values of
+				[/* text */ 't', ` -1.  Note that for values of
  `],
 				[/* text */ 't', `x`],
 				[/* text */ 't', ` near 0, the exact sum of
  `],
 				[/* inline code block */ 'i', `expm1(x)`],
-				[/* text */ 't', `&nbsp;+&nbsp;1 is much closer to the true
+				[/* text */ 't', ` + 1 is much closer to the true
  result of `],
 				[/* text */ 't', `e`],
 				[/* text */ 't', `x`, 'sup'],
@@ -2837,7 +2837,7 @@ DocsCollector.collect('java.lang.StrictMath', [
               `],
 					[/* text */ 't', `e`],
 					[/* text */ 't', `x`, 'sup'],
-					[/* text */ 't', `&nbsp;-1.`]
+					[/* text */ 't', ` -1.`]
 				]]
 			],
 			/* throws */ UDF,
@@ -2845,7 +2845,7 @@ DocsCollector.collect('java.lang.StrictMath', [
 				[/* text */ 't', `the value `],
 				[/* text */ 't', `e`],
 				[/* text */ 't', `x`, 'sup'],
-				[/* text */ 't', `&nbsp;-&nbsp;1.`]
+				[/* text */ 't', ` - 1.`]
 			]
 		]],
 		[/* method */ 'log1p(double)', [
@@ -2896,10 +2896,10 @@ DocsCollector.collect('java.lang.StrictMath', [
 			[/* return description */
 				[/* text */ 't', `the value ln(`],
 				[/* inline code block */ 'i', `x`],
-				[/* text */ 't', `&nbsp;+&nbsp;1), the natural
+				[/* text */ 't', ` + 1), the natural
  log of `],
 				[/* inline code block */ 'i', `x`],
-				[/* text */ 't', `&nbsp;+&nbsp;1`]
+				[/* text */ 't', ` + 1`]
 			]
 		]],
 		[/* method */ 'toRadians(double)', [
@@ -3157,7 +3157,7 @@ DocsCollector.collect('java.lang.StrictMath', [
 					[/* external link */ 'a', `https://docs.oracle.com/javase/specs/jls/se17/html/jls-4.html#jls-4.2.1`, `4.2.1`],
 					[/* text */ 't', `), the
  mathematical absolute value of `],
-					[/* external link */ 'a', `Integer.html#MIN_VALUE`, `Integer.MIN_VALUE`],
+					[/* reference */ 'r', `.Integer#MIN_VALUE`],
 					[/* text */ 't', `
  overflows the positive `],
 					[/* inline code block */ 'i', `int`],
@@ -3173,7 +3173,7 @@ DocsCollector.collect('java.lang.StrictMath', [
 			[/* throws */
 				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
 					[/* text */ 't', `if the argument is `],
-					[/* external link */ 'a', `Integer.html#MIN_VALUE`, `Integer.MIN_VALUE`]
+					[/* reference */ 'r', `.Integer#MIN_VALUE`]
 				]]
 			],
 			[/* return description */
@@ -3202,7 +3202,7 @@ DocsCollector.collect('java.lang.StrictMath', [
 					[/* external link */ 'a', `https://docs.oracle.com/javase/specs/jls/se17/html/jls-4.html#jls-4.2.1`, `4.2.1`],
 					[/* text */ 't', `), the
  mathematical absolute value of `],
-					[/* external link */ 'a', `Long.html#MIN_VALUE`, `Long.MIN_VALUE`],
+					[/* reference */ 'r', `.Long#MIN_VALUE`],
 					[/* text */ 't', ` overflows
  the positive `],
 					[/* inline code block */ 'i', `long`],
@@ -3218,7 +3218,7 @@ DocsCollector.collect('java.lang.StrictMath', [
 			[/* throws */
 				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
 					[/* text */ 't', `if the argument is `],
-					[/* external link */ 'a', `Long.html#MIN_VALUE`, `Long.MIN_VALUE`]
+					[/* reference */ 'r', `.Long#MIN_VALUE`]
 				]]
 			],
 			[/* return description */
@@ -3359,7 +3359,7 @@ DocsCollector.collect('java.lang.StrictMath', [
 						[/* inline code block */ 'i', `start`],
 						[/* text */ 't', ` is
  ±`],
-						[/* external link */ 'a', `Double.html#MIN_VALUE`, `Double.MIN_VALUE`],
+						[/* reference */ 'r', `.Double#MIN_VALUE`],
 						[/* text */ 't', ` and `],
 						[/* inline code block */ 'i', `direction`],
 						[/* text */ 't', `
@@ -3379,7 +3379,7 @@ DocsCollector.collect('java.lang.StrictMath', [
 						[/* inline code block */ 'i', `direction`],
 						[/* text */ 't', ` has a value such that the result should
  have a smaller magnitude, `],
-						[/* external link */ 'a', `Double.html#MAX_VALUE`, `Double.MAX_VALUE`],
+						[/* reference */ 'r', `.Double#MAX_VALUE`],
 						[/* text */ 't', ` with the
  same sign as `],
 						[/* inline code block */ 'i', `start`],
@@ -3392,7 +3392,7 @@ DocsCollector.collect('java.lang.StrictMath', [
 						[/* inline code block */ 'i', `start`],
 						[/* text */ 't', ` is equal to ±
  `],
-						[/* external link */ 'a', `Double.html#MAX_VALUE`, `Double.MAX_VALUE`],
+						[/* reference */ 'r', `.Double#MAX_VALUE`],
 						[/* text */ 't', ` and `],
 						[/* inline code block */ 'i', `direction`],
 						[/* text */ 't', ` has a
@@ -3456,7 +3456,7 @@ DocsCollector.collect('java.lang.StrictMath', [
 						[/* inline code block */ 'i', `start`],
 						[/* text */ 't', ` is
  ±`],
-						[/* external link */ 'a', `Float.html#MIN_VALUE`, `Float.MIN_VALUE`],
+						[/* reference */ 'r', `.Float#MIN_VALUE`],
 						[/* text */ 't', ` and `],
 						[/* inline code block */ 'i', `direction`],
 						[/* text */ 't', `
@@ -3476,7 +3476,7 @@ DocsCollector.collect('java.lang.StrictMath', [
 						[/* inline code block */ 'i', `direction`],
 						[/* text */ 't', ` has a value such that the result should
  have a smaller magnitude, `],
-						[/* external link */ 'a', `Float.html#MAX_VALUE`, `Float.MAX_VALUE`],
+						[/* reference */ 'r', `.Float#MAX_VALUE`],
 						[/* text */ 't', ` with the
  same sign as `],
 						[/* inline code block */ 'i', `start`],
@@ -3489,7 +3489,7 @@ DocsCollector.collect('java.lang.StrictMath', [
 						[/* inline code block */ 'i', `start`],
 						[/* text */ 't', ` is equal to ±
  `],
-						[/* external link */ 'a', `Float.html#MAX_VALUE`, `Float.MAX_VALUE`],
+						[/* reference */ 'r', `.Float#MAX_VALUE`],
 						[/* text */ 't', ` and `],
 						[/* inline code block */ 'i', `direction`],
 						[/* text */ 't', ` has a
@@ -3556,7 +3556,7 @@ DocsCollector.collect('java.lang.StrictMath', [
 					[/* block */ 'b', [
 						[/* text */ 't', ` If the argument is zero, the result is
  `],
-						[/* external link */ 'a', `Double.html#MIN_VALUE`, `Double.MIN_VALUE`]
+						[/* reference */ 'r', `.Double#MIN_VALUE`]
 					]]
 				]],
 				[/* block */ 'b', '']
@@ -3602,7 +3602,7 @@ DocsCollector.collect('java.lang.StrictMath', [
 					[/* block */ 'b', [
 						[/* text */ 't', ` If the argument is zero, the result is
  `],
-						[/* external link */ 'a', `Float.html#MIN_VALUE`, `Float.MIN_VALUE`]
+						[/* reference */ 'r', `.Float#MIN_VALUE`]
 					]]
 				]],
 				[/* block */ 'b', '']

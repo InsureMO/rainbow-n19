@@ -21,7 +21,7 @@ DocsCollector.collect('java.util.PrimitiveIterator$OfDouble', [
 					[/* text */ 't', `
  The behavior of an iterator is unspecified if the action modifies the
  source of elements in any way (even by calling the `],
-					[/* external link */ 'a', `Iterator.html#remove()`, `remove`],
+					[/* reference */ 'r', `.Iterator#remove()`],
 					[/* text */ 't', `
  method or other mutator methods of `],
 					[/* inline code block */ 'i', `Iterator`],
@@ -52,7 +52,7 @@ DocsCollector.collect('java.util.PrimitiveIterator$OfDouble', [
 					[/* text */ 't', `
  The behavior of an iterator is unspecified if the action modifies the
  collection in any way (even by calling the `],
-					[/* external link */ 'a', `Iterator.html#remove()`, `remove`],
+					[/* reference */ 'r', `.Iterator#remove()`],
 					[/* text */ 't', ` method
  or other mutator methods of `],
 					[/* inline code block */ 'i', `Iterator`],

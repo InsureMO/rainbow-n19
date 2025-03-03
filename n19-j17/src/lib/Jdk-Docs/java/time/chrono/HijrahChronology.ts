@@ -25,11 +25,46 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
 		[/* block */ 'b', `
  CLDR and LDML identify variants:
  `],
-		[/* table */ 't', ''],
+		[/* table */ 'tbl',
+			[/* caption */ 'tc'],
+			[/* table header */ 'th', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Chronology ID`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Calendar Type`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Locale extension, see `],
+						[/* reference */ 'r', `java.util.Locale`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Description`]
+					]]
+				]]
+			]],
+			[/* table body */ 'tb', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Hijrah-umalqura`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `islamic-umalqura`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `ca-islamic-umalqura`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Islamic - Umm Al-Qura calendar of Saudi Arabia`]
+					]]
+				]]
+			]],
+		],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `Additional variants may be available through `],
-			[/* external link */ 'a', `Chronology.html#getAvailableChronologies()`, `Chronology.getAvailableChronologies()`],
+			[/* reference */ 'r', `.Chronology#getAvailableChronologies()`],
 			[/* text */ 't', `.
 
  `]
@@ -38,7 +73,7 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  Selecting the chronology from the locale uses `],
-			[/* external link */ 'a', `Chronology.html#ofLocale(java.util.Locale)`, `Chronology.ofLocale(java.util.Locale)`],
+			[/* reference */ 'r', `.Chronology#ofLocale(java.util.Locale)`],
 			[/* text */ 't', `
  to find the Chronology based on Locale supported BCP 47 extension mechanism
  to request a specific calendar ("ca"). For example,
@@ -54,7 +89,7 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
 				[/* text */ 't', `Singleton instance of the Islamic Umm Al-Qura calendar of Saudi Arabia.
  Other Hijrah chronology variants may be available from
  `],
-				[/* external link */ 'a', `Chronology.html#getAvailableChronologies()`, `Chronology.getAvailableChronologies()`],
+				[/* reference */ 'r', `.Chronology#getAvailableChronologies()`],
 				[/* text */ 't', `.`]
 			],
 		]]
@@ -73,7 +108,7 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
  lookup the `],
 					[/* inline code block */ 'i', `Chronology`],
 					[/* text */ 't', ` using `],
-					[/* external link */ 'a', `Chronology.html#of(java.lang.String)`, `Chronology.of(String)`],
+					[/* reference */ 'r', `.Chronology#of(java.lang.String)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -128,7 +163,7 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
  It can be used to lookup the `],
 					[/* inline code block */ 'i', `Chronology`],
 					[/* text */ 't', ` using `],
-					[/* external link */ 'a', `Chronology.html#of(java.lang.String)`, `Chronology.of(String)`],
+					[/* reference */ 'r', `.Chronology#of(java.lang.String)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -228,7 +263,7 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
 					[/* block */ 'b', [
 						[/* text */ 't', `
  The conversion typically uses the `],
-						[/* external link */ 'a', `../temporal/ChronoField.html#EPOCH_DAY`, `EPOCH_DAY`],
+						[/* reference */ 'r', `java.ChronoField#EPOCH_DAY`],
 						[/* text */ 't', `
  field, which is standardized across calendar systems.
  `]
@@ -390,7 +425,7 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
 					[/* block */ 'b', [
 						[/* text */ 't', `
  This will query the `],
-						[/* external link */ 'a', `../Clock.html#systemDefaultZone()`, `system clock`],
+						[/* reference */ 'r', `java.Clock#systemDefaultZone()`],
 						[/* text */ 't', ` in the default
  time-zone to obtain the current date.
  `]
@@ -439,7 +474,7 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
 					[/* block */ 'b', [
 						[/* text */ 't', `
  This will query the `],
-						[/* external link */ 'a', `../Clock.html#system(java.time.ZoneId)`, `system clock`],
+						[/* reference */ 'r', `java.Clock#system(java.time.ZoneId)`],
 						[/* text */ 't', ` to obtain the current date.
  Specifying the time-zone avoids dependence on the default time-zone.
  `]
@@ -832,12 +867,12 @@ DocsCollector.collect('java.time.chrono.HijrahChronology', [
 						[/* text */ 't', `
  The default implementation is suitable for most calendar systems.
  If `],
-						[/* external link */ 'a', `../temporal/ChronoField.html#YEAR_OF_ERA`, `ChronoField.YEAR_OF_ERA`],
+						[/* reference */ 'r', `java.ChronoField#YEAR_OF_ERA`],
 						[/* text */ 't', ` is found without an `],
-						[/* external link */ 'a', `../temporal/ChronoField.html#ERA`, `ChronoField.ERA`],
+						[/* reference */ 'r', `java.ChronoField#ERA`],
 						[/* text */ 't', `
  then the last era in `],
-						[/* external link */ 'a', `Chronology.html#eras()`, `Chronology.eras()`],
+						[/* reference */ 'r', `.Chronology#eras()`],
 						[/* text */ 't', ` is used.
  The implementation assumes a 7 day week, that the first day-of-month
  has the value 1, that first day-of-year has the value 1, and that the

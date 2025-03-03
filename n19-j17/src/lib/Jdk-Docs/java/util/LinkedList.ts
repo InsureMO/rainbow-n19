@@ -34,7 +34,7 @@ DocsCollector.collect('java.util.LinkedList', [
 
  If no such object exists, the list should be "wrapped" using the
  `],
-			[/* external link */ 'a', `Collections.html#synchronizedList(java.util.List)`, `Collections.synchronizedList`],
+			[/* reference */ 'r', `.Collections#synchronizedList(java.util.List)`],
 			[/* text */ 't', `
  method.  This is best done at creation time, to prevent accidental
  unsynchronized access to the list:`]
@@ -80,7 +80,7 @@ DocsCollector.collect('java.util.LinkedList', [
 		[/* block */ 'b', [
 			[/* text */ 't', `This class is a member of the
  `],
-			[/* external link */ 'a', `../../../java.base/java/util/package-summary.html#CollectionsFramework`, `Java Collections Framework`],
+			[/* text */ 't', `Java Collections Framework`],
 			[/* text */ 't', `.`]
 		]]
 	],
@@ -119,7 +119,7 @@ DocsCollector.collect('java.util.LinkedList', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This method is equivalent to `],
-					[/* reference */ 'r', `addLast(E)`],
+					[/* reference */ 'r', `#addLast(E)`, `addLast(E)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -132,7 +132,7 @@ DocsCollector.collect('java.util.LinkedList', [
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` (as specified by `],
-				[/* external link */ 'a', `Collection.html#add(E)`, `Collection.add(E)`],
+				[/* reference */ 'r', `.Collection#add(E)`],
 				[/* text */ 't', `)`]
 			]
 		]],
@@ -372,7 +372,7 @@ DocsCollector.collect('java.util.LinkedList', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `Like the `],
-					[/* reference */ 'r', `toArray()`],
+					[/* reference */ 'r', `#toArray()`, `toArray()`],
 					[/* text */ 't', ` method, this method acts as bridge between
  array-based and collection-based APIs.  Further, this method allows
  precise control over the runtime type of the output array, and may,
@@ -452,7 +452,7 @@ DocsCollector.collect('java.util.LinkedList', [
 		[/* method */ 'spliterator()', [
 			[/* method description */
 				[/* text */ 't', `Creates a `],
-				[/* external link */ 'a', `Spliterator.html#binding`, `late-binding`],
+				[/* reference */ 'r', `.Spliterator#binding`],
 				[/* text */ 't', `
  and `],
 				[/* text */ 't', `fail-fast`],
@@ -465,10 +465,10 @@ DocsCollector.collect('java.util.LinkedList', [
 					[/* text */ 't', `The `],
 					[/* inline code block */ 'i', `Spliterator`],
 					[/* text */ 't', ` reports `],
-					[/* external link */ 'a', `Spliterator.html#SIZED`, `Spliterator.SIZED`],
+					[/* reference */ 'r', `.Spliterator#SIZED`],
 					[/* text */ 't', ` and
  `],
-					[/* external link */ 'a', `Spliterator.html#ORDERED`, `Spliterator.ORDERED`],
+					[/* reference */ 'r', `.Spliterator#ORDERED`],
 					[/* text */ 't', `.  Overriding implementations should document
  the reporting of additional characteristic values.`]
 				]]
@@ -659,7 +659,7 @@ DocsCollector.collect('java.util.LinkedList', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This method is equivalent to `],
-					[/* reference */ 'r', `addFirst(E)`],
+					[/* reference */ 'r', `#addFirst(E)`, `addFirst(E)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -679,7 +679,7 @@ DocsCollector.collect('java.util.LinkedList', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This method is equivalent to `],
-					[/* reference */ 'r', `removeFirst()`],
+					[/* reference */ 'r', `#removeFirst()`, `removeFirst()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -713,7 +713,7 @@ DocsCollector.collect('java.util.LinkedList', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This method is equivalent to `],
-					[/* reference */ 'r', `add(E)`],
+					[/* reference */ 'r', `#add(E)`, `add(E)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -770,7 +770,7 @@ DocsCollector.collect('java.util.LinkedList', [
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` (as specified by `],
-				[/* external link */ 'a', `Deque.html#offerLast(E)`, `Deque.offerLast(E)`],
+				[/* reference */ 'r', `.Deque#offerLast(E)`],
 				[/* text */ 't', `)`]
 			]
 		]],
@@ -848,7 +848,7 @@ DocsCollector.collect('java.util.LinkedList', [
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` (as specified by `],
-				[/* external link */ 'a', `Deque.html#offerFirst(E)`, `Deque.offerFirst(E)`],
+				[/* reference */ 'r', `.Deque#offerFirst(E)`],
 				[/* text */ 't', `)`]
 			]
 		]],
@@ -926,7 +926,7 @@ DocsCollector.collect('java.util.LinkedList', [
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` (as specified by `],
-				[/* external link */ 'a', `Queue.html#offer(E)`, `Queue.offer(E)`],
+				[/* reference */ 'r', `.Queue#offer(E)`],
 				[/* text */ 't', `)`]
 			]
 		]],

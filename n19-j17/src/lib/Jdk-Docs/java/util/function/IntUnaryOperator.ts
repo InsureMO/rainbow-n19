@@ -18,10 +18,10 @@ DocsCollector.collect('java.util.function.IntUnaryOperator', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
-			[/* external link */ 'a', `package-summary.html`, `functional interface`],
+			[/* reference */ 'r', `.package-summary`],
 			[/* text */ 't', `
  whose functional method is `],
-			[/* reference */ 'r', `applyAsInt(int)`],
+			[/* reference */ 'r', `#applyAsInt(int)`, `applyAsInt(int)`],
 			[/* text */ 't', `.`]
 		]]
 	],

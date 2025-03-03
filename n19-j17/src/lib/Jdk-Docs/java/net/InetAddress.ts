@@ -26,7 +26,67 @@ DocsCollector.collect('java.net.InetAddress', [
  `]
 		]],
 		[/* block */ 'b', ` Address types `],
-		[/* table */ 't', ''],
+		[/* table */ 'tbl',
+			[/* caption */ 'tc'],
+			[/* table header */ 'th', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Address Type`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Description`]
+					]]
+				]]
+			]],
+			[/* table body */ 'tb', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `unicast`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `An identifier for a single interface. A packet sent to
+         a unicast address is delivered to the interface identified by
+         that address.
+
+         `],
+						[/* block */ 'b', ` The Unspecified Address -- Also called anylocal or wildcard
+         address. It must never be assigned to any node. It indicates the
+         absence of an address. One example of its use is as the target of
+         bind, which allows a server to accept a client connection on any
+         interface, in case the server host has multiple interfaces.
+
+         `],
+						[/* block */ 'b', [
+							[/* text */ 't', ` The `],
+							[/* text */ 't', `unspecified`],
+							[/* text */ 't', ` address must not be used as
+         the destination address of an IP packet.
+
+         `]
+						]],
+						[/* block */ 'b', [
+							[/* text */ 't', ` The `],
+							[/* text */ 't', `Loopback`],
+							[/* text */ 't', ` Addresses -- This is the address
+         assigned to the loopback interface. Anything sent to this
+         IP address loops around and becomes IP input on the local
+         host. This address is often used when testing a
+         client.`]
+						]]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `multicast`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `An identifier for a set of interfaces (typically belonging
+         to different nodes). A packet sent to a multicast address is
+         delivered to all interfaces identified by that address.`]
+					]]
+				]]
+			]],
+		],
 		[/* block */ 'b', ` IP address scope `],
 		[/* block */ 'b', [
 			[/* text */ 't', `Link-local`],
@@ -59,17 +119,17 @@ DocsCollector.collect('java.net.InetAddress', [
 			[/* text */ 't', `
 
  For IPv4 address format, please refer to `],
-			[/* external link */ 'a', `Inet4Address.html#format`, `Inet4Address#format`],
+			[/* reference */ 'r', `.Inet4Address#format`],
 			[/* text */ 't', `; For IPv6
  address format, please refer to `],
-			[/* external link */ 'a', `Inet6Address.html#format`, `Inet6Address#format`],
+			[/* reference */ 'r', `.Inet6Address#format`],
 			[/* text */ 't', `.
 
  `]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `There is a `],
-			[/* external link */ 'a', `doc-files/net-properties.html#Ipv4IPv6`, `couple of System Properties`],
+			[/* reference */ 'r', `.net-properties#Ipv4IPv6`],
 			[/* text */ 't', ` affecting how IPv4 and IPv6 addresses are used.`]
 		]],
 		[/* block */ 'b', ` Host Name Resolution `],
@@ -123,7 +183,36 @@ DocsCollector.collect('java.net.InetAddress', [
   positive and negative host name resolution caching:
 
  `],
-		[/* dl */ 't', ''],
+		[/* dl */ 'dl', [
+			[/* dt */ 'dt', [
+				[/* text */ 't', `networkaddress.cache.ttl`]
+			]],
+			[/* dd */ 'dd', [
+				[/* text */ 't', `Indicates the caching policy for successful name lookups from
+ the name service. The value is specified as an integer to indicate
+ the number of seconds to cache the successful lookup. The default
+ setting is to cache for an implementation specific period of time.
+ `],
+				[/* block */ 'b', `
+ A value of -1 indicates "cache forever".
+ `]
+			]],
+			[/* dt */ 'dt', [
+				[/* text */ 't', `networkaddress.cache.negative.ttl`],
+				[/* text */ 't', ` (default: 10)`]
+			]],
+			[/* dd */ 'dd', [
+				[/* text */ 't', `Indicates the caching policy for un-successful name lookups
+ from the name service. The value is specified as an integer to
+ indicate the number of seconds to cache the failure for
+ un-successful lookups.
+ `],
+				[/* block */ 'b', `
+ A value of 0 indicates "never cache".
+ A value of -1 indicates "cache forever".
+ `]
+			]]
+		]],
 		[/* block */ 'b', '']
 	],
 	/* fields */ UDF,
@@ -241,7 +330,7 @@ DocsCollector.collect('java.net.InetAddress', [
  either the form defined in RFC 2732 or the literal IPv6 address
  format defined in RFC 2373 is accepted. IPv6 scoped addresses are also
  supported. See `],
-					[/* external link */ 'a', `Inet6Address.html#scoped`, `here`],
+					[/* reference */ 'r', `.Inet6Address#scoped`],
 					[/* text */ 't', ` for a description of IPv6
  scoped addresses.
 
@@ -260,10 +349,10 @@ DocsCollector.collect('java.net.InetAddress', [
  See `],
 					[/* external link */ 'a', `http://www.ietf.org/rfc/rfc3330.txt`, `RFC 3330`],
 					[/* text */ 't', `
- section&nbsp;2 and `],
+ section 2 and `],
 					[/* external link */ 'a', `http://www.ietf.org/rfc/rfc2373.txt`, `RFC 2373`],
 					[/* text */ 't', `
- section&nbsp;2.5.3.
+ section 2.5.3.
 
  `]
 				]],
@@ -321,7 +410,7 @@ DocsCollector.collect('java.net.InetAddress', [
  configured name lookup service. If a lookup of the name service
  is required, call
  `],
-					[/* reference */ 'r', `getCanonicalHostName`],
+					[/* reference */ 'r', `#getCanonicalHostName()`, `getCanonicalHostName`],
 					[/* text */ 't', `.
 
  `]
@@ -487,7 +576,7 @@ DocsCollector.collect('java.net.InetAddress', [
  also be qualified by appending a scoped zone identifier or scope_id.
  The syntax and usage of scope_ids is described
  `],
-					[/* external link */ 'a', `Inet6Address.html#scoped`, `here`],
+					[/* reference */ 'r', `.Inet6Address#scoped`],
 					[/* text */ 't', `.
 
  `]
@@ -505,10 +594,10 @@ DocsCollector.collect('java.net.InetAddress', [
  See `],
 					[/* external link */ 'a', `http://www.ietf.org/rfc/rfc3330.txt`, `RFC 3330`],
 					[/* text */ 't', `
- section&nbsp;2 and `],
+ section 2 and `],
 					[/* external link */ 'a', `http://www.ietf.org/rfc/rfc2373.txt`, `RFC 2373`],
 					[/* text */ 't', `
- section&nbsp;2.5.3. `]
+ section 2.5.3. `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` If there is a security manager, and `],

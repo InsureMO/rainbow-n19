@@ -38,7 +38,7 @@ DocsCollector.collect('java.math.RoundingMode', [
 			[/* inline code block */ 'i', `roundingMode`],
 			[/* text */ 't', ` set to the rounding mode in question), and
  calling `],
-			[/* external link */ 'a', `BigDecimal.html#round(java.math.MathContext)`, `round`],
+			[/* reference */ 'r', `.BigDecimal#round(java.math.MathContext)`],
 			[/* text */ 't', ` on this number with the
  proper `],
 			[/* inline code block */ 'i', `MathContext`],
@@ -47,7 +47,348 @@ DocsCollector.collect('java.math.RoundingMode', [
 
 `]
 		]],
-		[/* table */ 't', ''],
+		[/* table */ 'tbl',
+			[/* caption */ 'tc', [
+				[/* text */ 't', `Summary of Rounding Operations Under Different Rounding Modes`]
+			]],
+			[/* table header */ 'th', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', 1, 2, [
+						[/* text */ 't', `Input Number`]
+					]],
+					[/* table header cell */ 'thc', 8, 1, [
+						[/* text */ 't', `Result of rounding input to one digit with the given
+                           rounding mode`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `UP`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `DOWN`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `CEILING`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `FLOOR`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `HALF_UP`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `HALF_DOWN`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `HALF_EVEN`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `UNNECESSARY`]
+					]]
+				]]
+			]],
+			[/* table body */ 'tb', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `5.5`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `6`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `5`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `6`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `5`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `6`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `5`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `6`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `throw `],
+						[/* inline code block */ 'i', `ArithmeticException`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `2.5`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `3`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `2`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `3`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `2`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `3`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `2`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `2`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `throw `],
+						[/* inline code block */ 'i', `ArithmeticException`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `1.6`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `2`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `1`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `2`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `1`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `2`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `2`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `2`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `throw `],
+						[/* inline code block */ 'i', `ArithmeticException`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `1.1`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `2`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `1`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `2`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `1`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `1`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `1`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `1`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `throw `],
+						[/* inline code block */ 'i', `ArithmeticException`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `1.0`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `1`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `1`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `1`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `1`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `1`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `1`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `1`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `1`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `-1.0`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `-1`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `-1`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `-1`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `-1`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `-1`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `-1`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `-1`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `-1`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `-1.1`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `-2`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `-1`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `-1`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `-2`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `-1`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `-1`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `-1`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `throw `],
+						[/* inline code block */ 'i', `ArithmeticException`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `-1.6`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `-2`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `-1`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `-1`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `-2`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `-2`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `-2`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `-2`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `throw `],
+						[/* inline code block */ 'i', `ArithmeticException`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `-2.5`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `-3`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `-2`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `-2`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `-3`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `-3`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `-2`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `-2`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `throw `],
+						[/* inline code block */ 'i', `ArithmeticException`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `-5.5`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `-6`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `-5`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `-5`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `-6`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `-6`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `-5`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `-6`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `throw `],
+						[/* inline code block */ 'i', `ArithmeticException`]
+					]]
+				]]
+			]],
+		],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `This `],
@@ -57,9 +398,9 @@ DocsCollector.collect('java.math.RoundingMode', [
 			[/* reference */ 'r', `java.math.BigDecimal`],
 			[/* text */ 't', `
  (`],
-			[/* external link */ 'a', `BigDecimal.html#ROUND_UP`, `BigDecimal.ROUND_UP`],
+			[/* reference */ 'r', `.BigDecimal#ROUND_UP`],
 			[/* text */ 't', `, `],
-			[/* external link */ 'a', `BigDecimal.html#ROUND_DOWN`, `BigDecimal.ROUND_DOWN`],
+			[/* reference */ 'r', `.BigDecimal#ROUND_DOWN`],
 			[/* text */ 't', `,
  etc. ).`]
 		]]

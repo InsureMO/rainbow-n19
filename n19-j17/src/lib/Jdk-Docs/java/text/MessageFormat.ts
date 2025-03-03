@@ -182,7 +182,24 @@ DocsCollector.collect('java.text.MessageFormat', [
 
  `]
 		]],
-		[/* dl */ 't', ''],
+		[/* dl */ 'dl', [
+			[/* dt */ 'dt', [
+				[/* text */ 't', `Warning:`]
+			]],
+			[/* dd */ 'dd', [
+				[/* text */ 't', `The rules for using quotes within message
+ format patterns unfortunately have shown to be somewhat confusing.
+ In particular, it isn't always obvious to localizers whether single
+ quotes need to be doubled or not. Make sure to inform localizers about
+ the rules, and tell them (for example, by using comments in resource
+ bundle source files) which strings will be processed by `],
+				[/* inline code block */ 'i', `MessageFormat`],
+				[/* text */ 't', `.
+ Note that localizers may need to use single quotes in translated
+ strings where the original version doesn't have them.
+ `]
+			]]
+		]],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `
@@ -226,7 +243,329 @@ DocsCollector.collect('java.text.MessageFormat', [
 
  `]
 		]],
-		[/* table */ 't', ''],
+		[/* table */ 'tbl',
+			[/* caption */ 'tc'],
+			[/* table header */ 'th', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `FormatType
+       `]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `FormatStyle
+       `]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Subformat Created
+ `]
+					]]
+				]]
+			]],
+			[/* table body */ 'tb', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `(none)`],
+						[/* text */ 't', `
+       `]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `(none)`],
+						[/* text */ 't', `
+       `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `null`],
+						[/* text */ 't', `
+    `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', 1, 5, [
+						[/* inline code block */ 'i', `number`],
+						[/* text */ 't', `
+       `]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `(none)`],
+						[/* text */ 't', `
+       `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* reference */ 'r', `.NumberFormat#getInstance(java.util.Locale)`],
+						[/* inline code block */ 'i', `(getLocale())`],
+						[/* text */ 't', `
+    `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `integer`],
+						[/* text */ 't', `
+       `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* reference */ 'r', `.NumberFormat#getIntegerInstance(java.util.Locale)`],
+						[/* inline code block */ 'i', `(getLocale())`],
+						[/* text */ 't', `
+    `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `currency`],
+						[/* text */ 't', `
+       `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* reference */ 'r', `.NumberFormat#getCurrencyInstance(java.util.Locale)`],
+						[/* inline code block */ 'i', `(getLocale())`],
+						[/* text */ 't', `
+    `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `percent`],
+						[/* text */ 't', `
+       `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* reference */ 'r', `.NumberFormat#getPercentInstance(java.util.Locale)`],
+						[/* inline code block */ 'i', `(getLocale())`],
+						[/* text */ 't', `
+    `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `SubformatPattern`],
+						[/* text */ 't', `
+       `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `new`],
+						[/* text */ 't', ` `],
+						[/* reference */ 'r', `.DecimalFormat#<init>(java.lang.String,java.text.DecimalFormatSymbols)`],
+						[/* inline code block */ 'i', `(subformatPattern,`],
+						[/* text */ 't', ` `],
+						[/* reference */ 'r', `.DecimalFormatSymbols#getInstance(java.util.Locale)`],
+						[/* inline code block */ 'i', `(getLocale()))`],
+						[/* text */ 't', `
+    `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', 1, 6, [
+						[/* inline code block */ 'i', `date`],
+						[/* text */ 't', `
+       `]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `(none)`],
+						[/* text */ 't', `
+       `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* reference */ 'r', `.DateFormat#getDateInstance(int,java.util.Locale)`],
+						[/* inline code block */ 'i', `(`],
+						[/* reference */ 'r', `.DateFormat#DEFAULT`],
+						[/* inline code block */ 'i', `, getLocale())`],
+						[/* text */ 't', `
+    `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `short`],
+						[/* text */ 't', `
+       `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* reference */ 'r', `.DateFormat#getDateInstance(int,java.util.Locale)`],
+						[/* inline code block */ 'i', `(`],
+						[/* reference */ 'r', `.DateFormat#SHORT`],
+						[/* inline code block */ 'i', `, getLocale())`],
+						[/* text */ 't', `
+    `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `medium`],
+						[/* text */ 't', `
+       `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* reference */ 'r', `.DateFormat#getDateInstance(int,java.util.Locale)`],
+						[/* inline code block */ 'i', `(`],
+						[/* reference */ 'r', `.DateFormat#DEFAULT`],
+						[/* inline code block */ 'i', `, getLocale())`],
+						[/* text */ 't', `
+    `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `long`],
+						[/* text */ 't', `
+       `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* reference */ 'r', `.DateFormat#getDateInstance(int,java.util.Locale)`],
+						[/* inline code block */ 'i', `(`],
+						[/* reference */ 'r', `.DateFormat#LONG`],
+						[/* inline code block */ 'i', `, getLocale())`],
+						[/* text */ 't', `
+    `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `full`],
+						[/* text */ 't', `
+       `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* reference */ 'r', `.DateFormat#getDateInstance(int,java.util.Locale)`],
+						[/* inline code block */ 'i', `(`],
+						[/* reference */ 'r', `.DateFormat#FULL`],
+						[/* inline code block */ 'i', `, getLocale())`],
+						[/* text */ 't', `
+    `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `SubformatPattern`],
+						[/* text */ 't', `
+       `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `new`],
+						[/* text */ 't', ` `],
+						[/* reference */ 'r', `.SimpleDateFormat#<init>(java.lang.String,java.util.Locale)`],
+						[/* inline code block */ 'i', `(subformatPattern, getLocale())`],
+						[/* text */ 't', `
+    `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', 1, 6, [
+						[/* inline code block */ 'i', `time`],
+						[/* text */ 't', `
+       `]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `(none)`],
+						[/* text */ 't', `
+       `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* reference */ 'r', `.DateFormat#getTimeInstance(int,java.util.Locale)`],
+						[/* inline code block */ 'i', `(`],
+						[/* reference */ 'r', `.DateFormat#DEFAULT`],
+						[/* inline code block */ 'i', `, getLocale())`],
+						[/* text */ 't', `
+    `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `short`],
+						[/* text */ 't', `
+       `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* reference */ 'r', `.DateFormat#getTimeInstance(int,java.util.Locale)`],
+						[/* inline code block */ 'i', `(`],
+						[/* reference */ 'r', `.DateFormat#SHORT`],
+						[/* inline code block */ 'i', `, getLocale())`],
+						[/* text */ 't', `
+    `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `medium`],
+						[/* text */ 't', `
+       `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* reference */ 'r', `.DateFormat#getTimeInstance(int,java.util.Locale)`],
+						[/* inline code block */ 'i', `(`],
+						[/* reference */ 'r', `.DateFormat#DEFAULT`],
+						[/* inline code block */ 'i', `, getLocale())`],
+						[/* text */ 't', `
+    `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `long`],
+						[/* text */ 't', `
+       `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* reference */ 'r', `.DateFormat#getTimeInstance(int,java.util.Locale)`],
+						[/* inline code block */ 'i', `(`],
+						[/* reference */ 'r', `.DateFormat#LONG`],
+						[/* inline code block */ 'i', `, getLocale())`],
+						[/* text */ 't', `
+    `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `full`],
+						[/* text */ 't', `
+       `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* reference */ 'r', `.DateFormat#getTimeInstance(int,java.util.Locale)`],
+						[/* inline code block */ 'i', `(`],
+						[/* reference */ 'r', `.DateFormat#FULL`],
+						[/* inline code block */ 'i', `, getLocale())`],
+						[/* text */ 't', `
+    `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `SubformatPattern`],
+						[/* text */ 't', `
+       `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `new`],
+						[/* text */ 't', ` `],
+						[/* reference */ 'r', `.SimpleDateFormat#<init>(java.lang.String,java.util.Locale)`],
+						[/* inline code block */ 'i', `(subformatPattern, getLocale())`],
+						[/* text */ 't', `
+    `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `choice`],
+						[/* text */ 't', `
+       `]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `SubformatPattern`],
+						[/* text */ 't', `
+       `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `new`],
+						[/* text */ 't', ` `],
+						[/* reference */ 'r', `.ChoiceFormat#<init>(java.lang.String)`],
+						[/* inline code block */ 'i', `(subformatPattern)`],
+						[/* text */ 't', `
+ `]
+					]]
+				]]
+			]],
+		],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `Usage Information`],
 		[/* block */ 'b', `
@@ -410,7 +749,7 @@ DocsCollector.collect('java.text.MessageFormat', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs a MessageFormat for the default
  `],
-				[/* external link */ 'a', `../util/Locale.Category.html#FORMAT`, `FORMAT`],
+				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
 				[/* text */ 't', ` locale and the
  specified pattern.
  The constructor first sets the locale, then parses the pattern and
@@ -539,7 +878,143 @@ DocsCollector.collect('java.text.MessageFormat', [
 
  `]
 				]],
-				[/* table */ 't', ''],
+				[/* table */ 'tbl',
+					[/* caption */ 'tc'],
+					[/* table header */ 'th', [
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `Subformat
+       `]
+							]],
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `Argument
+       `]
+							]],
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `Formatted Text
+ `]
+							]]
+						]]
+					]],
+					[/* table body */ 'tb', [
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', 1, 2, [
+								[/* text */ 't', `any`],
+								[/* text */ 't', `
+       `]
+							]],
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `unavailable`],
+								[/* text */ 't', `
+       `]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `"{" + argumentIndex + "}"`],
+								[/* text */ 't', `
+    `]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `null`],
+								[/* text */ 't', `
+       `]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `"null"`],
+								[/* text */ 't', `
+    `]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `instanceof ChoiceFormat`],
+								[/* text */ 't', `
+       `]
+							]],
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `any`],
+								[/* text */ 't', `
+       `]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `subformat.format(argument).indexOf('{') >= 0 ? (new MessageFormat(subformat.format(argument), getLocale())).format(argument) : subformat.format(argument)`],
+								[/* text */ 't', `
+    `]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `!= null`],
+								[/* text */ 't', `
+       `]
+							]],
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `any`],
+								[/* text */ 't', `
+       `]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `subformat.format(argument)`],
+								[/* text */ 't', `
+    `]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', 1, 4, [
+								[/* inline code block */ 'i', `null`],
+								[/* text */ 't', `
+       `]
+							]],
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `instanceof Number`],
+								[/* text */ 't', `
+       `]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `NumberFormat.getInstance(getLocale()).format(argument)`],
+								[/* text */ 't', `
+    `]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `instanceof Date`],
+								[/* text */ 't', `
+       `]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `DateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.SHORT, getLocale()).format(argument)`],
+								[/* text */ 't', `
+    `]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `instanceof String`],
+								[/* text */ 't', `
+       `]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `argument`],
+								[/* text */ 't', `
+    `]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `any`],
+								[/* text */ 't', `
+       `]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `argument.toString()`],
+								[/* text */ 't', `
+ `]
+							]]
+						]]
+					]],
+				],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', `
@@ -742,7 +1217,7 @@ DocsCollector.collect('java.text.MessageFormat', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  See the `],
-					[/* reference */ 'r', `parse(String, ParsePosition)`],
+					[/* reference */ 'r', `#parse(java.lang.String,java.text.ParsePosition)`, `parse(String, ParsePosition)`],
 					[/* text */ 't', ` method for more information
  on message parsing.`]
 				]]
@@ -807,7 +1282,7 @@ DocsCollector.collect('java.text.MessageFormat', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  See the `],
-					[/* reference */ 'r', `parse(String, ParsePosition)`],
+					[/* reference */ 'r', `#parse(java.lang.String,java.text.ParsePosition)`, `parse(String, ParsePosition)`],
 					[/* text */ 't', ` method for more information
  on message parsing.`]
 				]]
@@ -932,10 +1407,10 @@ DocsCollector.collect('java.text.MessageFormat', [
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* text */ 't', `to the `],
-						[/* reference */ 'r', `applyPattern`],
+						[/* reference */ 'r', `#applyPattern(java.lang.String)`, `applyPattern`],
 						[/* text */ 't', `
      and `],
-						[/* reference */ 'r', `toPattern`],
+						[/* reference */ 'r', `#toPattern()`, `toPattern`],
 						[/* text */ 't', ` methods if format elements specify
      a format type and therefore have the subformats created in the
      `],
@@ -948,7 +1423,7 @@ DocsCollector.collect('java.text.MessageFormat', [
 						[/* inline code block */ 'i', `format`],
 						[/* text */ 't', ` and
      `],
-						[/* reference */ 'r', `formatToCharacterIterator`],
+						[/* reference */ 'r', `#formatToCharacterIterator(java.lang.Object)`, `formatToCharacterIterator`],
 						[/* text */ 't', ` methods
      if format elements do not specify a format type and therefore have
      the subformats created in the formatting methods.
@@ -1019,7 +1494,7 @@ DocsCollector.collect('java.text.MessageFormat', [
  Since the order of format elements in a pattern string often
  changes during localization, it's generally better to use the
  `],
-					[/* reference */ 'r', `getFormatsByArgumentIndex`],
+					[/* reference */ 'r', `#getFormatsByArgumentIndex()`, `getFormatsByArgumentIndex`],
 					[/* text */ 't', `
  method, which assumes an order of formats corresponding to the
  order of elements in the `],
@@ -1051,7 +1526,7 @@ DocsCollector.collect('java.text.MessageFormat', [
  Since the order of format elements in a pattern string often
  changes during localization, it is generally better to use the
  `],
-					[/* reference */ 'r', `setFormatByArgumentIndex`],
+					[/* reference */ 'r', `#setFormatByArgumentIndex(int,java.text.Format)`, `setFormatByArgumentIndex`],
 					[/* text */ 't', `
  method, which accesses format elements based on the argument
  index they specify.`]
@@ -1152,7 +1627,7 @@ DocsCollector.collect('java.text.MessageFormat', [
  Since the order of format elements in a pattern string often
  changes during localization, it is generally better to use the
  `],
-					[/* reference */ 'r', `setFormatsByArgumentIndex`],
+					[/* reference */ 'r', `#setFormatsByArgumentIndex(java.text.Format%5B%5D)`, `setFormatsByArgumentIndex`],
 					[/* text */ 't', `
  method, which assumes an order of formats corresponding to the
  order of elements in the `],

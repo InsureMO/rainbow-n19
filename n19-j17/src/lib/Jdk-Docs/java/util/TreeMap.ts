@@ -84,7 +84,7 @@ DocsCollector.collect('java.util.TreeMap', [
  encapsulates the map.
  If no such object exists, the map should be "wrapped" using the
  `],
-			[/* external link */ 'a', `Collections.html#synchronizedSortedMap(java.util.SortedMap)`, `Collections.synchronizedSortedMap`],
+			[/* reference */ 'r', `.Collections#synchronizedSortedMap(java.util.SortedMap)`],
 			[/* text */ 't', `
  method.  This is best done at creation time, to prevent accidental
  unsynchronized access to the map: `]
@@ -142,7 +142,7 @@ DocsCollector.collect('java.util.TreeMap', [
 		[/* block */ 'b', [
 			[/* text */ 't', `This class is a member of the
  `],
-			[/* external link */ 'a', `../../../java.base/java/util/package-summary.html#CollectionsFramework`, `Java Collections Framework`],
+			[/* text */ 't', `Java Collections Framework`],
 			[/* text */ 't', `.`]
 		]]
 	],
@@ -353,7 +353,7 @@ DocsCollector.collect('java.util.TreeMap', [
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', `.
  The `],
-					[/* reference */ 'r', `containsKey`],
+					[/* reference */ 'r', `#containsKey(java.lang.Object)`, `containsKey`],
 					[/* text */ 't', ` operation may be used to
  distinguish these two cases.`]
 				]]
@@ -436,12 +436,12 @@ DocsCollector.collect('java.util.TreeMap', [
 					[/* text */ 't', `The collection's iterator returns the values in ascending order
  of the corresponding keys. The collection's spliterator is
  `],
-					[/* external link */ 'a', `Spliterator.html#binding`, `late-binding`],
+					[/* reference */ 'r', `.Spliterator#binding`],
 					[/* text */ 't', `,
  `],
 					[/* text */ 't', `fail-fast`],
 					[/* text */ 't', `, and additionally reports `],
-					[/* external link */ 'a', `Spliterator.html#ORDERED`, `Spliterator.ORDERED`],
+					[/* reference */ 'r', `.Spliterator#ORDERED`],
 					[/* text */ 't', `
  with an encounter order that is ascending order of the corresponding
  keys.
@@ -592,15 +592,15 @@ DocsCollector.collect('java.util.TreeMap', [
 					[/* text */ 't', `The set's iterator returns the entries in ascending key order. The
  set's spliterator is
  `],
-					[/* external link */ 'a', `Spliterator.html#binding`, `late-binding`],
+					[/* reference */ 'r', `.Spliterator#binding`],
 					[/* text */ 't', `,
  `],
 					[/* text */ 't', `fail-fast`],
 					[/* text */ 't', `, and additionally reports `],
-					[/* external link */ 'a', `Spliterator.html#SORTED`, `Spliterator.SORTED`],
+					[/* reference */ 'r', `.Spliterator#SORTED`],
 					[/* text */ 't', ` and
  `],
-					[/* external link */ 'a', `Spliterator.html#ORDERED`, `Spliterator.ORDERED`],
+					[/* reference */ 'r', `.Spliterator#ORDERED`],
 					[/* text */ 't', ` with an encounter order that is ascending key
  order.
 
@@ -687,7 +687,7 @@ DocsCollector.collect('java.util.TreeMap', [
 				]],
 				[/* text */ 't', `
  (Method `],
-				[/* external link */ 'a', `Map.html#merge(K,V,java.util.function.BiFunction)`, `merge()`],
+				[/* reference */ 'r', `.Map#merge(K,V,java.util.function.BiFunction)`],
 				[/* text */ 't', ` is often simpler to use for such purposes.)
 
  `],
@@ -839,24 +839,24 @@ DocsCollector.collect('java.util.TreeMap', [
 					[/* text */ 't', `The set's iterator returns the keys in ascending order.
  The set's spliterator is
  `],
-					[/* external link */ 'a', `Spliterator.html#binding`, `late-binding`],
+					[/* reference */ 'r', `.Spliterator#binding`],
 					[/* text */ 't', `,
  `],
 					[/* text */ 't', `fail-fast`],
 					[/* text */ 't', `, and additionally reports `],
-					[/* external link */ 'a', `Spliterator.html#SORTED`, `Spliterator.SORTED`],
+					[/* reference */ 'r', `.Spliterator#SORTED`],
 					[/* text */ 't', `
  and `],
-					[/* external link */ 'a', `Spliterator.html#ORDERED`, `Spliterator.ORDERED`],
+					[/* reference */ 'r', `.Spliterator#ORDERED`],
 					[/* text */ 't', ` with an encounter order that is ascending
  key order.  The spliterator's comparator (see
  `],
-					[/* external link */ 'a', `Spliterator.html#getComparator()`, `Spliterator.getComparator()`],
+					[/* reference */ 'r', `.Spliterator#getComparator()`],
 					[/* text */ 't', `) is `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` if
  the tree map's comparator (see `],
-					[/* reference */ 'r', `comparator()`],
+					[/* reference */ 'r', `#comparator()`, `comparator()`],
 					[/* text */ 't', `) is `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', `.
@@ -1771,7 +1771,7 @@ DocsCollector.collect('java.util.TreeMap', [
 					[/* block */ 'b', [
 						[/* text */ 't', `The returned map has an ordering equivalent to
  `],
-						[/* external link */ 'a', `Collections.html#reverseOrder(java.util.Comparator)`, `Collections.reverseOrder`],
+						[/* reference */ 'r', `.Collections#reverseOrder(java.util.Comparator)`],
 						[/* inline code block */ 'i', `(comparator())`],
 						[/* text */ 't', `.
  The expression `],

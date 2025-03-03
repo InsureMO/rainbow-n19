@@ -33,11 +33,11 @@ DocsCollector.collect('java.time.YearMonth', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  This is a `],
-			[/* external link */ 'a', `../../../java.base/java/lang/doc-files/ValueBased.html`, `value-based`],
+			[/* text */ 't', `value-based`],
 			[/* text */ 't', `
  class; programmers should treat instances that are
  `],
-			[/* reference */ 'r', `equal`],
+			[/* reference */ 'r', `#equals(java.lang.Object)`, `equal`],
 			[/* text */ 't', ` as interchangeable and should not
  use instances for synchronization, or unpredictable behavior may
  occur. For example, in a future release, synchronization may fail.
@@ -67,7 +67,7 @@ DocsCollector.collect('java.time.YearMonth', [
 					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
 					[/* text */ 't', ` then the query is implemented here.
  The `],
-					[/* reference */ 'r', `supported fields`],
+					[/* reference */ 'r', `#isSupported(java.time.temporal.TemporalField)`, `supported fields`],
 					[/* text */ 't', ` will return valid
  values based on this year-month, except `],
 					[/* inline code block */ 'i', `PROLEPTIC_MONTH`],
@@ -208,7 +208,7 @@ DocsCollector.collect('java.time.YearMonth', [
 					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
 					[/* text */ 't', ` then the query is implemented here.
  The `],
-					[/* reference */ 'r', `supported fields`],
+					[/* reference */ 'r', `#isSupported(java.time.temporal.TemporalField)`, `supported fields`],
 					[/* text */ 't', ` will return valid
  values based on this year-month.
  All other `],
@@ -339,10 +339,10 @@ DocsCollector.collect('java.time.YearMonth', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The conversion extracts the `],
-					[/* external link */ 'a', `temporal/ChronoField.html#YEAR`, `YEAR`],
+					[/* reference */ 'r', `.ChronoField#YEAR`],
 					[/* text */ 't', ` and
  `],
-					[/* external link */ 'a', `temporal/ChronoField.html#MONTH_OF_YEAR`, `MONTH_OF_YEAR`],
+					[/* reference */ 'r', `.ChronoField#MONTH_OF_YEAR`],
 					[/* text */ 't', ` fields.
  The extraction is only permitted if the temporal object has an ISO
  chronology, or can be converted to a `],
@@ -393,7 +393,7 @@ DocsCollector.collect('java.time.YearMonth', [
 					[/* text */ 't', `
  The result of this method is obtained by invoking the
  `],
-					[/* external link */ 'a', `temporal/TemporalQuery.html#queryFrom(java.time.temporal.TemporalAccessor)`, `TemporalQuery.queryFrom(TemporalAccessor)`],
+					[/* reference */ 'r', `.TemporalQuery#queryFrom(java.time.temporal.TemporalAccessor)`],
 					[/* text */ 't', ` method on the
  specified query passing `],
 					[/* inline code block */ 'i', `this`],
@@ -433,7 +433,7 @@ DocsCollector.collect('java.time.YearMonth', [
 					[/* reference */ 'r', `enum class in java.time.temporal.ChronoField`],
 					[/* text */ 't', ` then the query is implemented here.
  The `],
-					[/* reference */ 'r', `supported fields`],
+					[/* reference */ 'r', `#isSupported(java.time.temporal.TemporalField)`, `supported fields`],
 					[/* text */ 't', ` will return
  appropriate range instances.
  All other `],
@@ -482,10 +482,10 @@ DocsCollector.collect('java.time.YearMonth', [
 					[/* text */ 't', `
  This checks if the specified unit can be added to, or subtracted from, this year-month.
  If false, then calling the `],
-					[/* reference */ 'r', `plus(long, TemporalUnit)`],
+					[/* reference */ 'r', `#plus(long,java.time.temporal.TemporalUnit)`, `plus(long, TemporalUnit)`],
 					[/* text */ 't', ` and
  `],
-					[/* reference */ 'r', `minus`],
+					[/* reference */ 'r', `#minus(long,java.time.temporal.TemporalUnit)`, `minus`],
 					[/* text */ 't', ` methods will throw an exception.
  `]
 				]],
@@ -555,12 +555,12 @@ DocsCollector.collect('java.time.YearMonth', [
 					[/* text */ 't', `
  This checks if this year-month can be queried for the specified field.
  If false, then calling the `],
-					[/* reference */ 'r', `range`],
+					[/* reference */ 'r', `#range(java.time.temporal.TemporalField)`, `range`],
 					[/* text */ 't', `,
  `],
-					[/* reference */ 'r', `get`],
+					[/* reference */ 'r', `#get(java.time.temporal.TemporalField)`, `get`],
 					[/* text */ 't', ` and `],
-					[/* reference */ 'r', `with(TemporalField, long)`],
+					[/* reference */ 'r', `#with(java.time.temporal.TemporalField,long)`, `with(TemporalField, long)`],
 					[/* text */ 't', `
  methods will throw an exception.
  `]
@@ -714,7 +714,7 @@ DocsCollector.collect('java.time.YearMonth', [
 					[/* reference */ 'r', `enum class in java.time.Month`],
 					[/* text */ 't', `
  is used by calling `],
-					[/* reference */ 'r', `getMonth()`],
+					[/* reference */ 'r', `#getMonth()`, `getMonth()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -731,7 +731,7 @@ DocsCollector.collect('java.time.YearMonth', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This will query the `],
-					[/* external link */ 'a', `Clock.html#systemDefaultZone()`, `system clock`],
+					[/* reference */ 'r', `.Clock#systemDefaultZone()`],
 					[/* text */ 't', ` in the default
  time-zone to obtain the current year-month.
  `]
@@ -776,7 +776,7 @@ DocsCollector.collect('java.time.YearMonth', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This will query the `],
-					[/* external link */ 'a', `Clock.html#system(java.time.ZoneId)`, `system clock`],
+					[/* reference */ 'r', `.Clock#system(java.time.ZoneId)`],
 					[/* text */ 't', ` to obtain the current year-month.
  Specifying the time-zone avoids dependence on the default time-zone.
  `]
@@ -806,10 +806,10 @@ DocsCollector.collect('java.time.YearMonth', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The adjustment is equivalent to using `],
-					[/* external link */ 'a', `temporal/Temporal.html#with(java.time.temporal.TemporalField,long)`, `Temporal.with(TemporalField, long)`],
+					[/* reference */ 'r', `.Temporal#with(java.time.temporal.TemporalField,long)`],
 					[/* text */ 't', `
  passing `],
-					[/* external link */ 'a', `temporal/ChronoField.html#PROLEPTIC_MONTH`, `ChronoField.PROLEPTIC_MONTH`],
+					[/* reference */ 'r', `.ChronoField#PROLEPTIC_MONTH`],
 					[/* text */ 't', ` as the field.
  If the specified temporal object does not use the ISO calendar system then
  a `],
@@ -821,7 +821,7 @@ DocsCollector.collect('java.time.YearMonth', [
 					[/* text */ 't', `
  In most cases, it is clearer to reverse the calling pattern by using
  `],
-					[/* external link */ 'a', `temporal/Temporal.html#with(java.time.temporal.TemporalAdjuster)`, `Temporal.with(TemporalAdjuster)`],
+					[/* reference */ 'r', `.Temporal#with(java.time.temporal.TemporalAdjuster)`],
 					[/* text */ 't', `:
  `]
 				]],
@@ -872,7 +872,7 @@ DocsCollector.collect('java.time.YearMonth', [
 					[/* text */ 't', `
  The result of this method is obtained by invoking the
  `],
-					[/* external link */ 'a', `temporal/TemporalAdjuster.html#adjustInto(java.time.temporal.Temporal)`, `TemporalAdjuster.adjustInto(Temporal)`],
+					[/* reference */ 'r', `.TemporalAdjuster#adjustInto(java.time.temporal.Temporal)`],
 					[/* text */ 't', ` method on the
  specified adjuster passing `],
 					[/* inline code block */ 'i', `this`],
@@ -1064,7 +1064,7 @@ DocsCollector.collect('java.time.YearMonth', [
 						[/* inline code block */ 'i', `YearMonth`],
 						[/* text */ 't', ` with the specified number of months added.
   This is equivalent to `],
-						[/* reference */ 'r', `plusMonths(long)`],
+						[/* reference */ 'r', `#plusMonths(long)`, `plusMonths(long)`],
 						[/* text */ 't', `.
  `]
 					]],
@@ -1075,7 +1075,7 @@ DocsCollector.collect('java.time.YearMonth', [
 						[/* inline code block */ 'i', `YearMonth`],
 						[/* text */ 't', ` with the specified number of years added.
   This is equivalent to `],
-						[/* reference */ 'r', `plusYears(long)`],
+						[/* reference */ 'r', `#plusYears(long)`, `plusYears(long)`],
 						[/* text */ 't', `.
  `]
 					]],
@@ -1086,7 +1086,7 @@ DocsCollector.collect('java.time.YearMonth', [
 						[/* inline code block */ 'i', `YearMonth`],
 						[/* text */ 't', ` with the specified number of decades added.
   This is equivalent to calling `],
-						[/* reference */ 'r', `plusYears(long)`],
+						[/* reference */ 'r', `#plusYears(long)`, `plusYears(long)`],
 						[/* text */ 't', ` with the amount
   multiplied by 10.
  `]
@@ -1098,7 +1098,7 @@ DocsCollector.collect('java.time.YearMonth', [
 						[/* inline code block */ 'i', `YearMonth`],
 						[/* text */ 't', ` with the specified number of centuries added.
   This is equivalent to calling `],
-						[/* reference */ 'r', `plusYears(long)`],
+						[/* reference */ 'r', `#plusYears(long)`, `plusYears(long)`],
 						[/* text */ 't', ` with the amount
   multiplied by 100.
  `]
@@ -1110,7 +1110,7 @@ DocsCollector.collect('java.time.YearMonth', [
 						[/* inline code block */ 'i', `YearMonth`],
 						[/* text */ 't', ` with the specified number of millennia added.
   This is equivalent to calling `],
-						[/* reference */ 'r', `plusYears(long)`],
+						[/* reference */ 'r', `#plusYears(long)`, `plusYears(long)`],
 						[/* text */ 't', ` with the amount
   multiplied by 1,000.
  `]
@@ -1200,11 +1200,11 @@ DocsCollector.collect('java.time.YearMonth', [
 					[/* text */ 't', `
  The calculation is delegated to the amount object by calling
  `],
-					[/* external link */ 'a', `temporal/TemporalAmount.html#addTo(java.time.temporal.Temporal)`, `TemporalAmount.addTo(Temporal)`],
+					[/* reference */ 'r', `.TemporalAmount#addTo(java.time.temporal.Temporal)`],
 					[/* text */ 't', `. The amount implementation is free
  to implement the addition in any way it wishes, however it typically
  calls back to `],
-					[/* reference */ 'r', `plus(long, TemporalUnit)`],
+					[/* reference */ 'r', `#plus(long,java.time.temporal.TemporalUnit)`, `plus(long, TemporalUnit)`],
 					[/* text */ 't', `. Consult the documentation
  of the amount implementation to determine if it can be successfully added.
  `]
@@ -1253,7 +1253,7 @@ DocsCollector.collect('java.time.YearMonth', [
  `],
 					[/* inline code block */ 'i', `YearMonth`],
 					[/* text */ 't', ` using `],
-					[/* reference */ 'r', `from(TemporalAccessor)`],
+					[/* reference */ 'r', `#from(java.time.temporal.TemporalAccessor)`, `from(TemporalAccessor)`],
 					[/* text */ 't', `.
  For example, the amount in years between two year-months can be calculated
  using `],
@@ -1272,7 +1272,7 @@ DocsCollector.collect('java.time.YearMonth', [
  There are two equivalent ways of using this method.
  The first is to invoke this method.
  The second is to use `],
-					[/* external link */ 'a', `temporal/TemporalUnit.html#between(java.time.temporal.Temporal,java.time.temporal.Temporal)`, `TemporalUnit.between(Temporal, Temporal)`],
+					[/* reference */ 'r', `.TemporalUnit#between(java.time.temporal.Temporal,java.time.temporal.Temporal)`],
 					[/* text */ 't', `:
  `]
 				]],
@@ -1368,7 +1368,7 @@ DocsCollector.collect('java.time.YearMonth', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This method is equivalent to `],
-					[/* reference */ 'r', `plus(long, TemporalUnit)`],
+					[/* reference */ 'r', `#plus(long,java.time.temporal.TemporalUnit)`, `plus(long, TemporalUnit)`],
 					[/* text */ 't', ` with the amount negated.
  See that method for a full description of how addition, and thus subtraction, works.
  `]
@@ -1422,11 +1422,11 @@ DocsCollector.collect('java.time.YearMonth', [
 					[/* text */ 't', `
  The calculation is delegated to the amount object by calling
  `],
-					[/* external link */ 'a', `temporal/TemporalAmount.html#subtractFrom(java.time.temporal.Temporal)`, `TemporalAmount.subtractFrom(Temporal)`],
+					[/* reference */ 'r', `.TemporalAmount#subtractFrom(java.time.temporal.Temporal)`],
 					[/* text */ 't', `. The amount implementation is free
  to implement the subtraction in any way it wishes, however it typically
  calls back to `],
-					[/* reference */ 'r', `minus(long, TemporalUnit)`],
+					[/* reference */ 'r', `#minus(long,java.time.temporal.TemporalUnit)`, `minus(long, TemporalUnit)`],
 					[/* text */ 't', `. Consult the documentation
  of the amount implementation to determine if it can be successfully subtracted.
  `]
@@ -1625,7 +1625,7 @@ DocsCollector.collect('java.time.YearMonth', [
 					[/* inline code block */ 'i', `int`],
 					[/* text */ 't', ` value then the enum
  provides the `],
-					[/* external link */ 'a', `Month.html#getValue()`, `int value`],
+					[/* reference */ 'r', `.Month#getValue()`],
 					[/* text */ 't', `.`]
 				]]
 			],

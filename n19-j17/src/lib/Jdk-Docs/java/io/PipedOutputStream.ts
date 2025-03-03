@@ -94,7 +94,7 @@ DocsCollector.collect('java.io.PipedOutputStream', [
 					[/* text */ 't', `broken`],
 					[/* text */ 't', `,
           `],
-					[/* reference */ 'r', `unconnected`],
+					[/* reference */ 'r', `#connect(java.io.PipedInputStream)`, `unconnected`],
 					[/* text */ 't', `,
           closed, or if an I/O error occurs.`]
 				]]
@@ -129,7 +129,7 @@ DocsCollector.collect('java.io.PipedOutputStream', [
 					[/* text */ 't', `broken`],
 					[/* text */ 't', `,
           `],
-					[/* reference */ 'r', `unconnected`],
+					[/* reference */ 'r', `#connect(java.io.PipedInputStream)`, `unconnected`],
 					[/* text */ 't', `,
           closed, or if an I/O error occurs.`]
 				]]

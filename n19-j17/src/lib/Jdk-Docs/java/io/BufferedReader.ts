@@ -81,7 +81,7 @@ DocsCollector.collect('java.io.BufferedReader', [
 				[/* text */ 't', ` is lazily populated,
  i.e., read only occurs during the
  `],
-				[/* external link */ 'a', `../util/stream/package-summary.html#StreamOps`, `terminal stream operation`],
+				[/* text */ 't', `terminal stream operation`],
 				[/* text */ 't', `.
 
  `],
@@ -148,7 +148,7 @@ DocsCollector.collect('java.io.BufferedReader', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method implements the general contract of the corresponding
  `],
-					[/* external link */ 'a', `Reader.html#read(char%5B%5D,int,int)`, `read`],
+					[/* reference */ 'r', `.Reader#read(char[],int,int)`],
 					[/* text */ 't', ` method of the
  `],
 					[/* reference */ 'r', `java.io.Reader`],

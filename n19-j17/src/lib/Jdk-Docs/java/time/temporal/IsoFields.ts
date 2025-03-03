@@ -36,7 +36,7 @@ DocsCollector.collect('java.time.temporal.IsoFields', [
  `]
 			]],
 			[/* block */ 'b', [
-				[/* external link */ 'a', `ChronoField.html#YEAR`, `YEAR`],
+				[/* reference */ 'r', `.ChronoField#YEAR`],
 				[/* text */ 't', ` - the standard ISO year
  `]
 			]]
@@ -53,7 +53,7 @@ DocsCollector.collect('java.time.temporal.IsoFields', [
  `],
 		[/* list */ 'l', [
 			[/* block */ 'b', [
-				[/* external link */ 'a', `ChronoField.html#DAY_OF_WEEK`, `DAY_OF_WEEK`],
+				[/* reference */ 'r', `.ChronoField#DAY_OF_WEEK`],
 				[/* text */ 't', ` - the standard field defining the
   day-of-week from Monday (1) to Sunday (7)
  `]
@@ -102,7 +102,92 @@ DocsCollector.collect('java.time.temporal.IsoFields', [
  For example:
 
  `],
-		[/* table */ 't', ''],
+		[/* table */ 'tbl',
+			[/* caption */ 'tc', [
+				[/* text */ 't', `Examples of Week based Years`]
+			]],
+			[/* table header */ 'th', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Date`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Day-of-week`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Field values`]
+					]]
+				]]
+			]],
+			[/* table body */ 'tb', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `2008-12-28`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Sunday`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Week 52 of week-based-year 2008`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `2008-12-29`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Monday`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Week 1 of week-based-year 2009`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `2008-12-31`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Wednesday`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Week 1 of week-based-year 2009`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `2009-01-01`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Thursday`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Week 1 of week-based-year 2009`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `2009-01-04`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Sunday`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Week 1 of week-based-year 2009`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `2009-01-05`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Monday`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Week 2 of week-based-year 2009`]
+					]]
+				]]
+			]],
+		],
 		[/* block */ 'b', '']
 	],
 	[/* fields */
@@ -131,7 +216,7 @@ DocsCollector.collect('java.time.temporal.IsoFields', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  In `],
-					[/* external link */ 'a', `../format/ResolverStyle.html#STRICT`, `strict mode`],
+					[/* reference */ 'r', `java.ResolverStyle#STRICT`],
 					[/* text */ 't', `, all three fields are
  validated against their range of valid values. The day-of-quarter field
  is validated from 1 to 90, 91 or 92 depending on the year and quarter.
@@ -140,7 +225,7 @@ DocsCollector.collect('java.time.temporal.IsoFields', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  In `],
-					[/* external link */ 'a', `../format/ResolverStyle.html#SMART`, `smart mode`],
+					[/* reference */ 'r', `java.ResolverStyle#SMART`],
 					[/* text */ 't', `, all three fields are
  validated against their range of valid values. The day-of-quarter field is
  validated between 1 and 92, ignoring the actual range based on the year and quarter.
@@ -152,7 +237,7 @@ DocsCollector.collect('java.time.temporal.IsoFields', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  In `],
-					[/* external link */ 'a', `../format/ResolverStyle.html#LENIENT`, `lenient mode`],
+					[/* reference */ 'r', `java.ResolverStyle#LENIENT`],
 					[/* text */ 't', `, only the year is validated
  against the range of valid values. The resulting date is calculated equivalent to
  the following three stage approach. First, create a date on the first of January
@@ -205,7 +290,7 @@ DocsCollector.collect('java.time.temporal.IsoFields', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  In `],
-					[/* external link */ 'a', `../format/ResolverStyle.html#STRICT`, `strict mode`],
+					[/* reference */ 'r', `java.ResolverStyle#STRICT`],
 					[/* text */ 't', `, all three fields are
  validated against their range of valid values. The week-of-week-based-year
  field is validated from 1 to 52 or 53 depending on the week-based-year.
@@ -214,7 +299,7 @@ DocsCollector.collect('java.time.temporal.IsoFields', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  In `],
-					[/* external link */ 'a', `../format/ResolverStyle.html#SMART`, `smart mode`],
+					[/* reference */ 'r', `java.ResolverStyle#SMART`],
 					[/* text */ 't', `, all three fields are
  validated against their range of valid values. The week-of-week-based-year
  field is validated between 1 and 53, ignoring the week-based-year.
@@ -225,7 +310,7 @@ DocsCollector.collect('java.time.temporal.IsoFields', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  In `],
-					[/* external link */ 'a', `../format/ResolverStyle.html#LENIENT`, `lenient mode`],
+					[/* reference */ 'r', `java.ResolverStyle#LENIENT`],
 					[/* text */ 't', `, only the week-based-year
  is validated against the range of valid values. If the day-of-week is outside
  the range 1 to 7, then the resulting date is adjusted by a suitable number of
@@ -248,9 +333,9 @@ DocsCollector.collect('java.time.temporal.IsoFields', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The field has a range that matches `],
-					[/* external link */ 'a', `../LocalDate.html#MAX`, `LocalDate.MAX`],
+					[/* reference */ 'r', `java.LocalDate#MAX`],
 					[/* text */ 't', ` and `],
-					[/* external link */ 'a', `../LocalDate.html#MIN`, `LocalDate.MIN`],
+					[/* reference */ 'r', `java.LocalDate#MIN`],
 					[/* text */ 't', `.
  `]
 				]],

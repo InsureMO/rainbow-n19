@@ -48,20 +48,20 @@ DocsCollector.collect('java.util.Formatter', [
 
    // Explicit argument indices may be used to re-order output.
    formatter.format("%4$2s %3$2s %2$2s %1$2s", "a", "b", "c", "d")
-   // -&gt; " d  c  b  a"
+   // -> " d  c  b  a"
 
    // Optional locale as the first argument can be used to get
    // locale-specific formatting of numbers.  The precision and width can be
    // given to round and align the value.
    formatter.format(Locale.FRANCE, "e = %+10.4f", Math.E);
-   // -&gt; "e =    +2,7183"
+   // -> "e =    +2,7183"
 
    // The '(' numeric flag may be used to format negative numbers with
    // parentheses rather than a minus sign.  Group separators are
    // automatically inserted.
    formatter.format("Amount gained or lost since last statement: $ %(,.2f",
                     balanceDelta);
-   // -&gt; "Amount gained or lost since last statement: $ (6,217.58)"
+   // -> "Amount gained or lost since last statement: $ (6,217.58)"
  `]
 		]],
 		[/* block */ 'b', ''],
@@ -72,12 +72,12 @@ DocsCollector.collect('java.util.Formatter', [
 		[/* block */ 'b', [
 			[/* code block */ 'c', `   // Writes a formatted string to System.out.
    System.out.format("Local time: %tT", Calendar.getInstance());
-   // -&gt; "Local time: 13:34:18"
+   // -> "Local time: 13:34:18"
 
    // Writes formatted output to System.err.
    System.err.printf("Unable to open file '%1$s': %2$s",
                      fileName, exception.getMessage());
-   // -&gt; "Unable to open file 'food': No such file or directory"
+   // -> "Unable to open file 'food': No such file or directory"
  `]
 		]],
 		[/* block */ 'b', ''],
@@ -86,7 +86,7 @@ DocsCollector.collect('java.util.Formatter', [
 			[/* inline code block */ 'i', `sprintf(3)`],
 			[/* text */ 't', `, Strings may be formatted using the static
  method `],
-			[/* external link */ 'a', `../lang/String.html#format(java.lang.String,java.lang.Object...)`, `String.format`],
+			[/* reference */ 'r', `java.String#format(java.lang.String,java.lang.Object...)`],
 			[/* text */ 't', `:
 
  `]
@@ -99,7 +99,7 @@ DocsCollector.collect('java.util.Formatter', [
 
    Calendar c = new GregorianCalendar(1995, MAY, 23);
    String s = String.format("Duke's Birthday: %1$tb %1$te, %1$tY", c);
-   // -&gt; s == "Duke's Birthday: May 23, 1995"
+   // -> s == "Duke's Birthday: May 23, 1995"
  `]
 		]],
 		[/* block */ 'b', ''],
@@ -345,7 +345,7 @@ DocsCollector.collect('java.util.Formatter', [
 				[/* text */ 't', ` and `],
 				[/* reference */ 'r', `java.lang.Integer`],
 				[/* text */ 't', ` when `],
-				[/* external link */ 'a', `../lang/Character.html#isValidCodePoint(int)`, `Character.isValidCodePoint(int)`],
+				[/* reference */ 'r', `java.Character#isValidCodePoint(int)`],
 				[/* text */ 't', ` returns `],
 				[/* inline code block */ 'i', `true`]
 			]],
@@ -483,14 +483,325 @@ DocsCollector.collect('java.util.Formatter', [
 			[/* text */ 't', `. If there is no explicit locale specified, either at the
  construction of the instance or as a parameter to its method
  invocation, then the `],
-			[/* external link */ 'a', `Locale.Category.html#FORMAT`, `default locale`],
+			[/* reference */ 'r', `.Locale.Category#FORMAT`],
 			[/* text */ 't', `
  is used.
 
 
  `]
 		]],
-		[/* table */ 't', ''],
+		[/* table */ 'tbl',
+			[/* caption */ 'tc'],
+			[/* table header */ 'th', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` Conversion
+     `]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` Argument Category
+     `]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` Description
+ `]
+					]]
+				]]
+			]],
+			[/* table body */ 'tb', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'b'`],
+						[/* text */ 't', `, `],
+						[/* inline code block */ 'i', `'B'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` general
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` If the argument `],
+						[/* text */ 't', `arg`],
+						[/* text */ 't', ` is `],
+						[/* inline code block */ 'i', `null`],
+						[/* text */ 't', `, then the result is
+     "`],
+						[/* inline code block */ 'i', `false`],
+						[/* text */ 't', `".  If `],
+						[/* text */ 't', `arg`],
+						[/* text */ 't', ` is a `],
+						[/* inline code block */ 'i', `boolean`],
+						[/* text */ 't', ` or `],
+						[/* reference */ 'r', `java.lang.Boolean`],
+						[/* text */ 't', `, then the result is the string returned by `],
+						[/* reference */ 'r', `java.String#valueOf(boolean)`],
+						[/* text */ 't', `.  Otherwise, the result is
+     "true".
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'h'`],
+						[/* text */ 't', `, `],
+						[/* inline code block */ 'i', `'H'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` general
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` The result is obtained by invoking
+     `],
+						[/* inline code block */ 'i', `Integer.toHexString(arg.hashCode())`],
+						[/* text */ 't', `.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'s'`],
+						[/* text */ 't', `, `],
+						[/* inline code block */ 'i', `'S'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` general
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` If `],
+						[/* text */ 't', `arg`],
+						[/* text */ 't', ` implements `],
+						[/* reference */ 'r', `java.util.Formattable`],
+						[/* text */ 't', `, then
+     `],
+						[/* reference */ 'r', `.Formattable#formatTo(java.util.Formatter,int,int,int)`],
+						[/* text */ 't', ` is invoked. Otherwise, the
+     result is obtained by invoking `],
+						[/* inline code block */ 'i', `arg.toString()`],
+						[/* text */ 't', `.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'c'`],
+						[/* text */ 't', `, `],
+						[/* inline code block */ 'i', `'C'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` character
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` The result is a Unicode character
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'d'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` integral
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` The result is formatted as a decimal integer
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'o'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` integral
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` The result is formatted as an octal integer
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'x'`],
+						[/* text */ 't', `, `],
+						[/* inline code block */ 'i', `'X'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` integral
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` The result is formatted as a hexadecimal integer
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'e'`],
+						[/* text */ 't', `, `],
+						[/* inline code block */ 'i', `'E'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` floating point
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` The result is formatted as a decimal number in computerized
+     scientific notation
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'f'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` floating point
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` The result is formatted as a decimal number
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'g'`],
+						[/* text */ 't', `, `],
+						[/* inline code block */ 'i', `'G'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` floating point
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` The result is formatted using computerized scientific notation or
+     decimal format, depending on the precision and the value after rounding.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'a'`],
+						[/* text */ 't', `, `],
+						[/* inline code block */ 'i', `'A'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` floating point
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` The result is formatted as a hexadecimal floating-point number with
+     a significand and an exponent. This conversion is `],
+						[/* text */ 't', `not`],
+						[/* text */ 't', ` supported
+     for the `],
+						[/* inline code block */ 'i', `BigDecimal`],
+						[/* text */ 't', ` type despite the latter's being in the
+     `],
+						[/* text */ 't', `floating point`],
+						[/* text */ 't', ` argument category.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'t'`],
+						[/* text */ 't', `, `],
+						[/* inline code block */ 'i', `'T'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` date/time
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Prefix for date and time conversion characters.  See `],
+						[/* text */ 't', `Date/Time Conversions`],
+						[/* text */ 't', `.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'%'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` percent
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` The result is a literal `],
+						[/* inline code block */ 'i', `'%'`],
+						[/* text */ 't', ` (`],
+						[/* inline code block */ 'i', `'\\u0025'`],
+						[/* text */ 't', `)
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'n'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` line separator
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` The result is the platform-specific line separator
+
+ `]
+					]]
+				]]
+			]],
+		],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', ` Any characters not explicitly defined as conversions are illegal and are
  reserved for future extensions.
@@ -522,18 +833,563 @@ DocsCollector.collect('java.util.Formatter', [
 		[/* block */ 'b', ` The following conversion characters are used for formatting times:
 
  `],
-		[/* table */ 't', ''],
+		[/* table */ 'tbl',
+			[/* caption */ 'tc'],
+			[/* table header */ 'th'],
+			[/* table body */ 'tb', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'H'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Hour of the day for the 24-hour clock, formatted as two digits with
+     a leading zero as necessary i.e. `],
+						[/* inline code block */ 'i', `00 - 23`],
+						[/* text */ 't', `.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'I'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Hour for the 12-hour clock, formatted as two digits with a leading
+     zero as necessary, i.e.  `],
+						[/* inline code block */ 'i', `01 - 12`],
+						[/* text */ 't', `.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'k'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Hour of the day for the 24-hour clock, i.e. `],
+						[/* inline code block */ 'i', `0 - 23`],
+						[/* text */ 't', `.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'l'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Hour for the 12-hour clock, i.e. `],
+						[/* inline code block */ 'i', `1 - 12`],
+						[/* text */ 't', `.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'M'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Minute within the hour formatted as two digits with a leading zero
+     as necessary, i.e.  `],
+						[/* inline code block */ 'i', `00 - 59`],
+						[/* text */ 't', `.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'S'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Seconds within the minute, formatted as two digits with a leading
+     zero as necessary, i.e. `],
+						[/* inline code block */ 'i', `00 - 60`],
+						[/* text */ 't', ` ("`],
+						[/* inline code block */ 'i', `60`],
+						[/* text */ 't', `" is a special
+     value required to support leap seconds).
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'L'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Millisecond within the second formatted as three digits with
+     leading zeros as necessary, i.e. `],
+						[/* inline code block */ 'i', `000 - 999`],
+						[/* text */ 't', `.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'N'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Nanosecond within the second, formatted as nine digits with leading
+     zeros as necessary, i.e. `],
+						[/* inline code block */ 'i', `000000000 - 999999999`],
+						[/* text */ 't', `.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'p'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Locale-specific `],
+						[/* reference */ 'r', `java.DateFormatSymbols#getAmPmStrings()`],
+						[/* text */ 't', ` marker
+     in lower case, e.g."`],
+						[/* inline code block */ 'i', `am`],
+						[/* text */ 't', `" or "`],
+						[/* inline code block */ 'i', `pm`],
+						[/* text */ 't', `". Use of the conversion
+     prefix `],
+						[/* inline code block */ 'i', `'T'`],
+						[/* text */ 't', ` forces this output to upper case.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'z'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* external link */ 'a', `http://www.ietf.org/rfc/rfc0822.txt`, `RFC 822`],
+						[/* text */ 't', `
+     style numeric time zone offset from GMT, e.g. `],
+						[/* inline code block */ 'i', `-0800`],
+						[/* text */ 't', `.  This
+     value will be adjusted as necessary for Daylight Saving Time.  For
+     `],
+						[/* inline code block */ 'i', `long`],
+						[/* text */ 't', `, `],
+						[/* reference */ 'r', `java.lang.Long`],
+						[/* text */ 't', `, and `],
+						[/* reference */ 'r', `java.util.Date`],
+						[/* text */ 't', ` the time zone used is
+     the `],
+						[/* reference */ 'r', `.TimeZone#getDefault()`],
+						[/* text */ 't', ` for this
+     instance of the Java virtual machine.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'Z'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` A string representing the abbreviation for the time zone.  This
+     value will be adjusted as necessary for Daylight Saving Time.  For
+     `],
+						[/* inline code block */ 'i', `long`],
+						[/* text */ 't', `, `],
+						[/* reference */ 'r', `java.lang.Long`],
+						[/* text */ 't', `, and `],
+						[/* reference */ 'r', `java.util.Date`],
+						[/* text */ 't', ` the  time zone used is
+     the `],
+						[/* reference */ 'r', `.TimeZone#getDefault()`],
+						[/* text */ 't', ` for this
+     instance of the Java virtual machine.  The Formatter's locale will
+     supersede the locale of the argument (if any).
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'s'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Seconds since the beginning of the epoch starting at 1 January 1970
+     `],
+						[/* inline code block */ 'i', `00:00:00`],
+						[/* text */ 't', ` UTC, i.e. `],
+						[/* inline code block */ 'i', `Long.MIN_VALUE/1000`],
+						[/* text */ 't', ` to
+     `],
+						[/* inline code block */ 'i', `Long.MAX_VALUE/1000`],
+						[/* text */ 't', `.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'Q'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Milliseconds since the beginning of the epoch starting at 1 January
+     1970 `],
+						[/* inline code block */ 'i', `00:00:00`],
+						[/* text */ 't', ` UTC, i.e. `],
+						[/* inline code block */ 'i', `Long.MIN_VALUE`],
+						[/* text */ 't', ` to
+     `],
+						[/* inline code block */ 'i', `Long.MAX_VALUE`],
+						[/* text */ 't', `.
+
+ `]
+					]]
+				]]
+			]],
+		],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', ` The following conversion characters are used for formatting dates:
 
  `],
-		[/* table */ 't', ''],
+		[/* table */ 'tbl',
+			[/* caption */ 'tc'],
+			[/* table header */ 'th'],
+			[/* table body */ 'tb', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'B'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Locale-specific `],
+						[/* reference */ 'r', `java.DateFormatSymbols#getMonths()`],
+						[/* text */ 't', `, e.g. `],
+						[/* inline code block */ 'i', `"January"`],
+						[/* text */ 't', `, `],
+						[/* inline code block */ 'i', `"February"`],
+						[/* text */ 't', `.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'b'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Locale-specific `],
+						[/* reference */ 'r', `java.DateFormatSymbols#getShortMonths()`],
+						[/* text */ 't', `,
+     e.g. `],
+						[/* inline code block */ 'i', `"Jan"`],
+						[/* text */ 't', `, `],
+						[/* inline code block */ 'i', `"Feb"`],
+						[/* text */ 't', `.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'h'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Same as `],
+						[/* inline code block */ 'i', `'b'`],
+						[/* text */ 't', `.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'A'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Locale-specific full name of the `],
+						[/* reference */ 'r', `java.DateFormatSymbols#getWeekdays()`],
+						[/* text */ 't', `,
+     e.g. `],
+						[/* inline code block */ 'i', `"Sunday"`],
+						[/* text */ 't', `, `],
+						[/* inline code block */ 'i', `"Monday"`],
+						[/* text */ 't', `
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'a'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Locale-specific short name of the `],
+						[/* reference */ 'r', `java.DateFormatSymbols#getShortWeekdays()`],
+						[/* text */ 't', `,
+     e.g. `],
+						[/* inline code block */ 'i', `"Sun"`],
+						[/* text */ 't', `, `],
+						[/* inline code block */ 'i', `"Mon"`],
+						[/* text */ 't', `
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'C'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Four-digit year divided by `],
+						[/* inline code block */ 'i', `100`],
+						[/* text */ 't', `, formatted as two digits
+     with leading zero as necessary, i.e. `],
+						[/* inline code block */ 'i', `00 - 99`],
+						[/* text */ 't', `
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'Y'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Year, formatted as at least four digits with leading zeros as
+     necessary, e.g. `],
+						[/* inline code block */ 'i', `0092`],
+						[/* text */ 't', ` equals `],
+						[/* inline code block */ 'i', `92`],
+						[/* text */ 't', ` CE for the Gregorian
+     calendar.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'y'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Last two digits of the year, formatted with leading zeros as
+     necessary, i.e. `],
+						[/* inline code block */ 'i', `00 - 99`],
+						[/* text */ 't', `.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'j'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Day of year, formatted as three digits with leading zeros as
+     necessary, e.g. `],
+						[/* inline code block */ 'i', `001 - 366`],
+						[/* text */ 't', ` for the Gregorian calendar.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'m'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Month, formatted as two digits with leading zeros as necessary,
+     i.e. `],
+						[/* inline code block */ 'i', `01 - 13`],
+						[/* text */ 't', `.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'d'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Day of month, formatted as two digits with leading zeros as
+     necessary, i.e. `],
+						[/* inline code block */ 'i', `01 - 31`],
+						[/* text */ 't', `
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'e'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Day of month, formatted as two digits, i.e. `],
+						[/* inline code block */ 'i', `1 - 31`],
+						[/* text */ 't', `.
+
+ `]
+					]]
+				]]
+			]],
+		],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', ` The following conversion characters are used for formatting common
  date/time compositions.
 
  `],
-		[/* table */ 't', ''],
+		[/* table */ 'tbl',
+			[/* caption */ 'tc'],
+			[/* table header */ 'th'],
+			[/* table body */ 'tb', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'R'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Time formatted for the 24-hour clock as `],
+						[/* inline code block */ 'i', `"%tH:%tM"`],
+						[/* text */ 't', `
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'T'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Time formatted for the 24-hour clock as `],
+						[/* inline code block */ 'i', `"%tH:%tM:%tS"`],
+						[/* text */ 't', `.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'r'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Time formatted for the 12-hour clock as `],
+						[/* inline code block */ 'i', `"%tI:%tM:%tS %Tp"`],
+						[/* text */ 't', `.
+     The location of the morning or afternoon marker (`],
+						[/* inline code block */ 'i', `'%Tp'`],
+						[/* text */ 't', `) may be
+     locale-dependent.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'D'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Date formatted as `],
+						[/* inline code block */ 'i', `"%tm/%td/%ty"`],
+						[/* text */ 't', `.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'F'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* external link */ 'a', `http://www.w3.org/TR/NOTE-datetime`, `ISO 8601`],
+						[/* text */ 't', `
+     complete date formatted as `],
+						[/* inline code block */ 'i', `"%tY-%tm-%td"`],
+						[/* text */ 't', `.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'c'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Date and time formatted as `],
+						[/* inline code block */ 'i', `"%ta %tb %td %tT %tZ %tY"`],
+						[/* text */ 't', `,
+     e.g. `],
+						[/* inline code block */ 'i', `"Sun Jul 20 16:17:00 EDT 1969"`],
+						[/* text */ 't', `.
+
+ `]
+					]]
+				]]
+			]],
+		],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', ` Any characters not explicitly defined as date/time conversion suffixes
  are illegal and are reserved for future extensions.
@@ -548,7 +1404,269 @@ DocsCollector.collect('java.util.Formatter', [
 
  `]
 		]],
-		[/* table */ 't', ''],
+		[/* table */ 'tbl',
+			[/* caption */ 'tc'],
+			[/* table header */ 'th', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` Flag `]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` General
+     `]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` Character `]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` Integral
+     `]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` Floating Point
+     `]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` Date/Time
+     `]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` Description
+ `]
+					]]
+				]]
+			]],
+			[/* table body */ 'tb', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` '-' `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` y
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` y
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` y
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` y
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` y
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` The result will be left-justified.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` '#' `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` y`],
+						[/* text */ 't', `1`, 'sup'],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` -
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` y`],
+						[/* text */ 't', `3`, 'sup'],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` y
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` -
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` The result should use a conversion-dependent alternate form
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` '+' `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` -
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` -
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` y`],
+						[/* text */ 't', `4`, 'sup'],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` y
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` -
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` The result will always include a sign
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` '  ' `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` -
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` -
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` y`],
+						[/* text */ 't', `4`, 'sup'],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` y
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` -
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` The result will include a leading space for positive values
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` '0' `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` -
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` -
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` y
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` y
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` -
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` The result will be zero-padded
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` ',' `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` -
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` -
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` y`],
+						[/* text */ 't', `2`, 'sup'],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` y`],
+						[/* text */ 't', `5`, 'sup'],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` -
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` The result will include locale-specific `],
+						[/* reference */ 'r', `java.DecimalFormatSymbols#getGroupingSeparator()`],
+						[/* text */ 't', `
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` '(' `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` -
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` -
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` y`],
+						[/* text */ 't', `4`, 'sup'],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` y`],
+						[/* text */ 't', `5`, 'sup'],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` -
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` The result will enclose negative numbers in parentheses
+
+ `]
+					]]
+				]]
+			]],
+		],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `1`, 'sup'],
@@ -703,10 +1821,10 @@ DocsCollector.collect('java.util.Formatter', [
 			[/* code block */ 'c', `   Calendar c = ...;
    String s1 = String.format("Duke's Birthday: %1$tm %1$te,%1$tY", c);
 
-   String s2 = String.format("Duke's Birthday: %1$tm %&lt;te,%&lt;tY", c);
+   String s2 = String.format("Duke's Birthday: %1$tm %<te,%<tY", c);
  `]
 		]],
-		[/* block */ 'b', `<hr>`],
+		[/* new line */ 'n'],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `Details`]
@@ -757,7 +1875,7 @@ DocsCollector.collect('java.util.Formatter', [
 			[/* text */ 't', `precision`],
 			[/* text */ 't', ` must be in the range zero to
  `],
-			[/* external link */ 'a', `../lang/Integer.html#MAX_VALUE`, `Integer.MAX_VALUE`],
+			[/* reference */ 'r', `java.Integer#MAX_VALUE`],
 			[/* text */ 't', `, inclusive, otherwise
  `],
 			[/* reference */ 'r', `java.util.IllegalFormatPrecisionException`],
@@ -768,7 +1886,7 @@ DocsCollector.collect('java.util.Formatter', [
 			[/* text */ 't', `width`],
 			[/* text */ 't', ` must be in the range one to
  `],
-			[/* external link */ 'a', `../lang/Integer.html#MAX_VALUE`, `Integer.MAX_VALUE`],
+			[/* reference */ 'r', `java.Integer#MAX_VALUE`],
 			[/* text */ 't', `, inclusive, otherwise
  `],
 			[/* reference */ 'r', `java.util.IllegalFormatWidthException`],
@@ -792,7 +1910,7 @@ DocsCollector.collect('java.util.Formatter', [
 			[/* text */ 't', `index`],
 			[/* text */ 't', ` must be in the range one to
  `],
-			[/* external link */ 'a', `../lang/Integer.html#MAX_VALUE`, `Integer.MAX_VALUE`],
+			[/* reference */ 'r', `java.Integer#MAX_VALUE`],
 			[/* text */ 't', `, inclusive, otherwise
  `],
 			[/* reference */ 'r', `java.util.IllegalFormatException`],
@@ -808,10 +1926,10 @@ DocsCollector.collect('java.util.Formatter', [
 			[/* inline code block */ 'i', `format`],
 			[/* text */ 't', ` convenience
  methods such as `],
-			[/* external link */ 'a', `../lang/String.html#format(java.lang.String,java.lang.Object...)`, `String.format`],
+			[/* reference */ 'r', `java.String#format(java.lang.String,java.lang.Object...)`],
 			[/* text */ 't', ` and
  `],
-			[/* external link */ 'a', `../io/PrintStream.html#printf(java.lang.String,java.lang.Object...)`, `PrintStream.printf`],
+			[/* reference */ 'r', `java.PrintStream#printf(java.lang.String,java.lang.Object...)`],
 			[/* text */ 't', `.
 
  `]
@@ -867,7 +1985,7 @@ DocsCollector.collect('java.util.Formatter', [
 			[/* text */ 't', `. If there is no explicit locale specified,
  either at the construction of the instance or as a parameter to its method
  invocation, then the `],
-			[/* external link */ 'a', `Locale.Category.html#FORMAT`, `default locale`],
+			[/* reference */ 'r', `.Locale.Category#FORMAT`],
 			[/* text */ 't', `
  is used.
 
@@ -882,7 +2000,210 @@ DocsCollector.collect('java.util.Formatter', [
 		[/* block */ 'b', ''],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', ''],
-		[/* table */ 't', ''],
+		[/* table */ 'tbl',
+			[/* caption */ 'tc'],
+			[/* table header */ 'th'],
+			[/* table body */ 'tb', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'b'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0062'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Produces either "`],
+						[/* inline code block */ 'i', `true`],
+						[/* text */ 't', `" or "`],
+						[/* inline code block */ 'i', `false`],
+						[/* text */ 't', `" as returned by
+     `],
+						[/* reference */ 'r', `java.Boolean#toString(boolean)`],
+						[/* text */ 't', `.
+
+     `],
+						[/* block */ 'b', [
+							[/* text */ 't', ` If the argument is `],
+							[/* inline code block */ 'i', `null`],
+							[/* text */ 't', `, then the result is
+     "`],
+							[/* inline code block */ 'i', `false`],
+							[/* text */ 't', `".  If the argument is a `],
+							[/* inline code block */ 'i', `boolean`],
+							[/* text */ 't', ` or `],
+							[/* reference */ 'r', `java.lang.Boolean`],
+							[/* text */ 't', `, then the result is the string returned by `],
+							[/* reference */ 'r', `java.String#valueOf(boolean)`],
+							[/* text */ 't', `.  Otherwise, the result is
+     "`],
+							[/* inline code block */ 'i', `true`],
+							[/* text */ 't', `".
+
+     `]
+						]],
+						[/* block */ 'b', [
+							[/* text */ 't', ` If the `],
+							[/* inline code block */ 'i', `'#'`],
+							[/* text */ 't', ` flag is given, then a `],
+							[/* reference */ 'r', `java.util.FormatFlagsConversionMismatchException`],
+							[/* text */ 't', ` will be thrown.
+
+ `]
+						]]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'B'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0042'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` The upper-case variant of `],
+						[/* inline code block */ 'i', `'b'`],
+						[/* text */ 't', `.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'h'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0068'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Produces a string representing the hash code value of the object.
+
+     `],
+						[/* block */ 'b', [
+							[/* text */ 't', ` The result is obtained by invoking
+     `],
+							[/* inline code block */ 'i', `Integer.toHexString(arg.hashCode())`],
+							[/* text */ 't', `.
+
+     `]
+						]],
+						[/* block */ 'b', [
+							[/* text */ 't', ` If the `],
+							[/* inline code block */ 'i', `'#'`],
+							[/* text */ 't', ` flag is given, then a `],
+							[/* reference */ 'r', `java.util.FormatFlagsConversionMismatchException`],
+							[/* text */ 't', ` will be thrown.
+
+ `]
+						]]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'H'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0048'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` The upper-case variant of `],
+						[/* inline code block */ 'i', `'h'`],
+						[/* text */ 't', `.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'s'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0073'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Produces a string.
+
+     `],
+						[/* block */ 'b', [
+							[/* text */ 't', ` If the argument implements `],
+							[/* reference */ 'r', `java.util.Formattable`],
+							[/* text */ 't', `, then
+     its `],
+							[/* reference */ 'r', `.Formattable#formatTo(java.util.Formatter,int,int,int)`],
+							[/* text */ 't', ` method is invoked.
+     Otherwise, the result is obtained by invoking the argument's
+     `],
+							[/* inline code block */ 'i', `toString()`],
+							[/* text */ 't', ` method.
+
+     `]
+						]],
+						[/* block */ 'b', [
+							[/* text */ 't', ` If the `],
+							[/* inline code block */ 'i', `'#'`],
+							[/* text */ 't', ` flag is given and the argument is not a `],
+							[/* reference */ 'r', `java.util.Formattable`],
+							[/* text */ 't', `, then a `],
+							[/* reference */ 'r', `java.util.FormatFlagsConversionMismatchException`],
+							[/* text */ 't', `
+     will be thrown.
+
+ `]
+						]]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'S'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0053'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` The upper-case variant of `],
+						[/* inline code block */ 'i', `'s'`],
+						[/* text */ 't', `.
+
+ `]
+					]]
+				]]
+			]],
+		],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The following `],
@@ -891,7 +2212,58 @@ DocsCollector.collect('java.util.Formatter', [
 
  `]
 		]],
-		[/* table */ 't', ''],
+		[/* table */ 'tbl',
+			[/* caption */ 'tc'],
+			[/* table header */ 'th'],
+			[/* table body */ 'tb', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'-'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u002d'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Left justifies the output.  Spaces (`],
+						[/* inline code block */ 'i', `'\\u0020'`],
+						[/* text */ 't', `) will be
+     added at the end of the converted value as required to fill the minimum
+     width of the field.  If the width is not provided, then a `],
+						[/* reference */ 'r', `java.util.MissingFormatWidthException`],
+						[/* text */ 't', ` will be thrown.  If this flag is not given
+     then the output will be right-justified.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'#'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0023'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Requires the output use an alternate form.  The definition of the
+     form is specified by the conversion.
+
+ `]
+					]]
+				]]
+			]],
+		],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The `],
@@ -949,7 +2321,7 @@ DocsCollector.collect('java.util.Formatter', [
 		[/* reference */ 'r', `java.lang.Integer`],
 		[/* text */ 't', ` when
  `],
-		[/* external link */ 'a', `../lang/Character.html#isValidCodePoint(int)`, `Character.isValidCodePoint(int)`],
+		[/* reference */ 'r', `java.Character#isValidCodePoint(int)`],
 		[/* text */ 't', ` returns `],
 		[/* inline code block */ 'i', `true`],
 		[/* text */ 't', `.  If it returns
@@ -962,7 +2334,66 @@ DocsCollector.collect('java.util.Formatter', [
 
  `],
 		[/* block */ 'b', ''],
-		[/* table */ 't', ''],
+		[/* table */ 'tbl',
+			[/* caption */ 'tc'],
+			[/* table header */ 'th'],
+			[/* table body */ 'tb', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'c'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0063'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Formats the argument as a Unicode character as described in `],
+						[/* text */ 't', `Unicode Character Representation`],
+						[/* text */ 't', `.  This may be more than one 16-bit `],
+						[/* inline code block */ 'i', `char`],
+						[/* text */ 't', ` in
+     the case where the argument represents a supplementary character.
+
+     `],
+						[/* block */ 'b', [
+							[/* text */ 't', ` If the `],
+							[/* inline code block */ 'i', `'#'`],
+							[/* text */ 't', ` flag is given, then a `],
+							[/* reference */ 'r', `java.util.FormatFlagsConversionMismatchException`],
+							[/* text */ 't', ` will be thrown.
+
+ `]
+						]]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'C'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0043'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` The upper-case variant of `],
+						[/* inline code block */ 'i', `'c'`],
+						[/* text */ 't', `.
+
+ `]
+					]]
+				]]
+			]],
+		],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The `],
 			[/* inline code block */ 'i', `'-'`],
@@ -1030,19 +2461,19 @@ DocsCollector.collect('java.util.Formatter', [
 				[/* text */ 't', ` in the string is replaced by a
  locale-specific digit computed relative to the current locale's
  `],
-				[/* external link */ 'a', `../text/DecimalFormatSymbols.html#getZeroDigit()`, `zero digit`],
+				[/* reference */ 'r', `java.DecimalFormatSymbols#getZeroDigit()`],
 				[/* text */ 't', `z`],
 				[/* text */ 't', `; that is `],
-				[/* text */ 't', `d&nbsp;-&nbsp;`],
+				[/* text */ 't', `d - `],
 				[/* inline code block */ 'i', `'0'`],
-				[/* text */ 't', `&nbsp;+&nbsp;z`],
+				[/* text */ 't', ` + z`],
 				[/* text */ 't', `.
 
  `]
 			]],
 			[/* block */ 'b', [
 				[/* text */ 't', ` If a decimal separator is present, a locale-specific `],
-				[/* external link */ 'a', `../text/DecimalFormatSymbols.html#getDecimalSeparator()`, `decimal separator`],
+				[/* reference */ 'r', `java.DecimalFormatSymbols#getDecimalSeparator()`],
 				[/* text */ 't', ` is
  substituted.
 
@@ -1057,12 +2488,12 @@ DocsCollector.collect('java.util.Formatter', [
  `],
 				[/* text */ 't', `flag`],
 				[/* text */ 't', ` is given, then the locale-specific `],
-				[/* external link */ 'a', `../text/DecimalFormatSymbols.html#getGroupingSeparator()`, `grouping separator`],
+				[/* reference */ 'r', `java.DecimalFormatSymbols#getGroupingSeparator()`],
 				[/* text */ 't', ` is
  inserted by scanning the integer part of the string from least significant
  to most significant digits and inserting a separator at intervals defined by
  the locale's `],
-				[/* external link */ 'a', `../text/DecimalFormat.html#getGroupingSize()`, `grouping size`],
+				[/* reference */ 'r', `java.DecimalFormat#getGroupingSize()`],
 				[/* text */ 't', `.
 
  `]
@@ -1071,7 +2502,7 @@ DocsCollector.collect('java.util.Formatter', [
 				[/* text */ 't', ` If the `],
 				[/* inline code block */ 'i', `'0'`],
 				[/* text */ 't', ` flag is given, then the locale-specific `],
-				[/* external link */ 'a', `../text/DecimalFormatSymbols.html#getZeroDigit()`, `zero digits`],
+				[/* reference */ 'r', `java.DecimalFormatSymbols#getZeroDigit()`],
 				[/* text */ 't', ` are inserted
  after the sign character, if any, and before the first non-zero digit, until
  the length of the string is equal to the requested field width.
@@ -1162,7 +2593,246 @@ DocsCollector.collect('java.util.Formatter', [
 		[/* block */ 'b', ''],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', ''],
-		[/* table */ 't', ''],
+		[/* table */ 'tbl',
+			[/* caption */ 'tc'],
+			[/* table header */ 'th'],
+			[/* table body */ 'tb', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'d'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0064'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Formats the argument as a decimal integer. The `],
+						[/* text */ 't', `localization algorithm`],
+						[/* text */ 't', ` is applied.
+
+     `],
+						[/* block */ 'b', [
+							[/* text */ 't', ` If the `],
+							[/* inline code block */ 'i', `'0'`],
+							[/* text */ 't', ` flag is given and the value is negative, then
+     the zero padding will occur after the sign.
+
+     `]
+						]],
+						[/* block */ 'b', [
+							[/* text */ 't', ` If the `],
+							[/* inline code block */ 'i', `'#'`],
+							[/* text */ 't', ` flag is given then a `],
+							[/* reference */ 'r', `java.util.FormatFlagsConversionMismatchException`],
+							[/* text */ 't', ` will be thrown.
+
+ `]
+						]]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'o'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u006f'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Formats the argument as an integer in base eight.  No localization
+     is applied.
+
+     `],
+						[/* block */ 'b', [
+							[/* text */ 't', ` If `],
+							[/* text */ 't', `x`],
+							[/* text */ 't', ` is negative then the result will be an unsigned value
+     generated by adding 2`],
+							[/* text */ 't', `n`, 'sup'],
+							[/* text */ 't', ` to the value where `],
+							[/* inline code block */ 'i', `n`],
+							[/* text */ 't', ` is the
+     number of bits in the type as returned by the static `],
+							[/* inline code block */ 'i', `SIZE`],
+							[/* text */ 't', ` field
+     in the `],
+							[/* reference */ 'r', `java.Byte#SIZE`],
+							[/* text */ 't', `, `],
+							[/* reference */ 'r', `java.Short#SIZE`],
+							[/* text */ 't', `,
+     `],
+							[/* reference */ 'r', `java.Integer#SIZE`],
+							[/* text */ 't', `, or `],
+							[/* reference */ 'r', `java.Long#SIZE`],
+							[/* text */ 't', `
+     classes as appropriate.
+
+     `]
+						]],
+						[/* block */ 'b', [
+							[/* text */ 't', ` If the `],
+							[/* inline code block */ 'i', `'#'`],
+							[/* text */ 't', ` flag is given then the output will always begin
+     with the radix indicator `],
+							[/* inline code block */ 'i', `'0'`],
+							[/* text */ 't', `.
+
+     `]
+						]],
+						[/* block */ 'b', [
+							[/* text */ 't', ` If the `],
+							[/* inline code block */ 'i', `'0'`],
+							[/* text */ 't', ` flag is given then the output will be padded
+     with leading zeros to the field width following any indication of sign.
+
+     `]
+						]],
+						[/* block */ 'b', [
+							[/* text */ 't', ` If `],
+							[/* inline code block */ 'i', `'('`],
+							[/* text */ 't', `, `],
+							[/* inline code block */ 'i', `'+'`],
+							[/* text */ 't', `, '  ', or `],
+							[/* inline code block */ 'i', `','`],
+							[/* text */ 't', ` flags
+     are given then a `],
+							[/* reference */ 'r', `java.util.FormatFlagsConversionMismatchException`],
+							[/* text */ 't', ` will be
+     thrown.
+
+ `]
+						]]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'x'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0078'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Formats the argument as an integer in base sixteen. No
+     localization is applied.
+
+     `],
+						[/* block */ 'b', [
+							[/* text */ 't', ` If `],
+							[/* text */ 't', `x`],
+							[/* text */ 't', ` is negative then the result will be an unsigned value
+     generated by adding 2`],
+							[/* text */ 't', `n`, 'sup'],
+							[/* text */ 't', ` to the value where `],
+							[/* inline code block */ 'i', `n`],
+							[/* text */ 't', ` is the
+     number of bits in the type as returned by the static `],
+							[/* inline code block */ 'i', `SIZE`],
+							[/* text */ 't', ` field
+     in the `],
+							[/* reference */ 'r', `java.Byte#SIZE`],
+							[/* text */ 't', `, `],
+							[/* reference */ 'r', `java.Short#SIZE`],
+							[/* text */ 't', `,
+     `],
+							[/* reference */ 'r', `java.Integer#SIZE`],
+							[/* text */ 't', `, or `],
+							[/* reference */ 'r', `java.Long#SIZE`],
+							[/* text */ 't', `
+     classes as appropriate.
+
+     `]
+						]],
+						[/* block */ 'b', [
+							[/* text */ 't', ` If the `],
+							[/* inline code block */ 'i', `'#'`],
+							[/* text */ 't', ` flag is given then the output will always begin
+     with the radix indicator `],
+							[/* inline code block */ 'i', `"0x"`],
+							[/* text */ 't', `.
+
+     `]
+						]],
+						[/* block */ 'b', [
+							[/* text */ 't', ` If the `],
+							[/* inline code block */ 'i', `'0'`],
+							[/* text */ 't', ` flag is given then the output will be padded to
+     the field width with leading zeros after the radix indicator or sign (if
+     present).
+
+     `]
+						]],
+						[/* block */ 'b', [
+							[/* text */ 't', ` If `],
+							[/* inline code block */ 'i', `'('`],
+							[/* text */ 't', `, `],
+							[/* inline code block */ 'i', `' '`],
+							[/* text */ 't', `, `],
+							[/* inline code block */ 'i', `'+'`],
+							[/* text */ 't', `, or
+     `],
+							[/* inline code block */ 'i', `','`],
+							[/* text */ 't', ` flags are given then a `],
+							[/* reference */ 'r', `java.util.FormatFlagsConversionMismatchException`],
+							[/* text */ 't', ` will be thrown.
+
+ `]
+						]]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'X'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0058'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` The upper-case variant of `],
+						[/* inline code block */ 'i', `'x'`],
+						[/* text */ 't', `.  The entire string
+     representing the number will be converted to `],
+						[/* reference */ 'r', `java.String#toUpperCase(java.util.Locale)`],
+						[/* text */ 't', ` including the `],
+						[/* inline code block */ 'i', `'x'`],
+						[/* text */ 't', ` (if any) and
+     all hexadecimal digits `],
+						[/* inline code block */ 'i', `'a'`],
+						[/* text */ 't', ` - `],
+						[/* inline code block */ 'i', `'f'`],
+						[/* text */ 't', `
+     (`],
+						[/* inline code block */ 'i', `'\\u0061'`],
+						[/* text */ 't', ` -  `],
+						[/* inline code block */ 'i', `'\\u0066'`],
+						[/* text */ 't', `).
+
+ `]
+					]]
+				]]
+			]],
+		],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` If the conversion is `],
@@ -1208,7 +2878,170 @@ DocsCollector.collect('java.util.Formatter', [
 		[/* block */ 'b', ''],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', ''],
-		[/* table */ 't', ''],
+		[/* table */ 'tbl',
+			[/* caption */ 'tc'],
+			[/* table header */ 'th'],
+			[/* table body */ 'tb', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'+'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u002b'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Requires the output to include a positive sign for all positive
+     numbers.  If this flag is not given then only negative values will
+     include a sign.
+
+     `],
+						[/* block */ 'b', [
+							[/* text */ 't', ` If both the `],
+							[/* inline code block */ 'i', `'+'`],
+							[/* text */ 't', ` and `],
+							[/* inline code block */ 'i', `' '`],
+							[/* text */ 't', ` flags are given
+     then an `],
+							[/* reference */ 'r', `java.util.IllegalFormatFlagsException`],
+							[/* text */ 't', ` will be thrown.
+
+ `]
+						]]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `' '`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0020'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Requires the output to include a single extra space
+     (`],
+						[/* inline code block */ 'i', `'\\u0020'`],
+						[/* text */ 't', `) for non-negative values.
+
+     `],
+						[/* block */ 'b', [
+							[/* text */ 't', ` If both the `],
+							[/* inline code block */ 'i', `'+'`],
+							[/* text */ 't', ` and `],
+							[/* inline code block */ 'i', `' '`],
+							[/* text */ 't', ` flags are given
+     then an `],
+							[/* reference */ 'r', `java.util.IllegalFormatFlagsException`],
+							[/* text */ 't', ` will be thrown.
+
+ `]
+						]]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'0'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0030'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Requires the output to be padded with leading `],
+						[/* reference */ 'r', `java.DecimalFormatSymbols#getZeroDigit()`],
+						[/* text */ 't', ` to the minimum field
+     width following any sign or radix indicator except when converting NaN
+     or infinity.  If the width is not provided, then a `],
+						[/* reference */ 'r', `java.util.MissingFormatWidthException`],
+						[/* text */ 't', ` will be thrown.
+
+     `],
+						[/* block */ 'b', [
+							[/* text */ 't', ` If both the `],
+							[/* inline code block */ 'i', `'-'`],
+							[/* text */ 't', ` and `],
+							[/* inline code block */ 'i', `'0'`],
+							[/* text */ 't', ` flags are given then an
+     `],
+							[/* reference */ 'r', `java.util.IllegalFormatFlagsException`],
+							[/* text */ 't', ` will be thrown.
+
+ `]
+						]]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `','`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u002c'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Requires the output to include the locale-specific `],
+						[/* reference */ 'r', `java.DecimalFormatSymbols#getGroupingSeparator()`],
+						[/* text */ 't', ` as
+     described in the `],
+						[/* text */ 't', `"group" section`],
+						[/* text */ 't', ` of the
+     localization algorithm.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'('`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0028'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Requires the output to prepend a `],
+						[/* inline code block */ 'i', `'('`],
+						[/* text */ 't', `
+     (`],
+						[/* inline code block */ 'i', `'\\u0028'`],
+						[/* text */ 't', `) and append a `],
+						[/* inline code block */ 'i', `')'`],
+						[/* text */ 't', `
+     (`],
+						[/* inline code block */ 'i', `'\\u0029'`],
+						[/* text */ 't', `) to negative values.
+
+ `]
+					]]
+				]]
+			]],
+		],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` If no `],
@@ -1280,7 +3113,231 @@ DocsCollector.collect('java.util.Formatter', [
 		[/* block */ 'b', ''],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', ''],
-		[/* table */ 't', ''],
+		[/* table */ 'tbl',
+			[/* caption */ 'tc'],
+			[/* table header */ 'th'],
+			[/* table body */ 'tb', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'d'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0064'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Requires the output to be formatted as a decimal integer. The `],
+						[/* text */ 't', `localization algorithm`],
+						[/* text */ 't', ` is applied.
+
+     `],
+						[/* block */ 'b', [
+							[/* text */ 't', ` If the `],
+							[/* inline code block */ 'i', `'#'`],
+							[/* text */ 't', ` flag is given `],
+							[/* reference */ 'r', `java.util.FormatFlagsConversionMismatchException`],
+							[/* text */ 't', ` will be thrown.
+
+ `]
+						]]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'o'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u006f'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Requires the output to be formatted as an integer in base eight.
+     No localization is applied.
+
+     `],
+						[/* block */ 'b', [
+							[/* text */ 't', ` If `],
+							[/* text */ 't', `x`],
+							[/* text */ 't', ` is negative then the result will be a signed value
+     beginning with `],
+							[/* inline code block */ 'i', `'-'`],
+							[/* text */ 't', ` (`],
+							[/* inline code block */ 'i', `'\\u002d'`],
+							[/* text */ 't', `).  Signed output is
+     allowed for this type because unlike the primitive types it is not
+     possible to create an unsigned equivalent without assuming an explicit
+     data-type size.
+
+     `]
+						]],
+						[/* block */ 'b', [
+							[/* text */ 't', ` If `],
+							[/* text */ 't', `x`],
+							[/* text */ 't', ` is positive or zero and the `],
+							[/* inline code block */ 'i', `'+'`],
+							[/* text */ 't', ` flag is given
+     then the result will begin with `],
+							[/* inline code block */ 'i', `'+'`],
+							[/* text */ 't', ` (`],
+							[/* inline code block */ 'i', `'\\u002b'`],
+							[/* text */ 't', `).
+
+     `]
+						]],
+						[/* block */ 'b', [
+							[/* text */ 't', ` If the `],
+							[/* inline code block */ 'i', `'#'`],
+							[/* text */ 't', ` flag is given then the output will always begin
+     with `],
+							[/* inline code block */ 'i', `'0'`],
+							[/* text */ 't', ` prefix.
+
+     `]
+						]],
+						[/* block */ 'b', [
+							[/* text */ 't', ` If the `],
+							[/* inline code block */ 'i', `'0'`],
+							[/* text */ 't', ` flag is given then the output will be padded
+     with leading zeros to the field width following any indication of sign.
+
+     `]
+						]],
+						[/* block */ 'b', [
+							[/* text */ 't', ` If the `],
+							[/* inline code block */ 'i', `','`],
+							[/* text */ 't', ` flag is given then a `],
+							[/* reference */ 'r', `java.util.FormatFlagsConversionMismatchException`],
+							[/* text */ 't', ` will be thrown.
+
+ `]
+						]]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'x'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0078'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Requires the output to be formatted as an integer in base
+     sixteen.  No localization is applied.
+
+     `],
+						[/* block */ 'b', [
+							[/* text */ 't', ` If `],
+							[/* text */ 't', `x`],
+							[/* text */ 't', ` is negative then the result will be a signed value
+     beginning with `],
+							[/* inline code block */ 'i', `'-'`],
+							[/* text */ 't', ` (`],
+							[/* inline code block */ 'i', `'\\u002d'`],
+							[/* text */ 't', `).  Signed output is
+     allowed for this type because unlike the primitive types it is not
+     possible to create an unsigned equivalent without assuming an explicit
+     data-type size.
+
+     `]
+						]],
+						[/* block */ 'b', [
+							[/* text */ 't', ` If `],
+							[/* text */ 't', `x`],
+							[/* text */ 't', ` is positive or zero and the `],
+							[/* inline code block */ 'i', `'+'`],
+							[/* text */ 't', ` flag is given
+     then the result will begin with `],
+							[/* inline code block */ 'i', `'+'`],
+							[/* text */ 't', ` (`],
+							[/* inline code block */ 'i', `'\\u002b'`],
+							[/* text */ 't', `).
+
+     `]
+						]],
+						[/* block */ 'b', [
+							[/* text */ 't', ` If the `],
+							[/* inline code block */ 'i', `'#'`],
+							[/* text */ 't', ` flag is given then the output will always begin
+     with the radix indicator `],
+							[/* inline code block */ 'i', `"0x"`],
+							[/* text */ 't', `.
+
+     `]
+						]],
+						[/* block */ 'b', [
+							[/* text */ 't', ` If the `],
+							[/* inline code block */ 'i', `'0'`],
+							[/* text */ 't', ` flag is given then the output will be padded to
+     the field width with leading zeros after the radix indicator or sign (if
+     present).
+
+     `]
+						]],
+						[/* block */ 'b', [
+							[/* text */ 't', ` If the `],
+							[/* inline code block */ 'i', `','`],
+							[/* text */ 't', ` flag is given then a `],
+							[/* reference */ 'r', `java.util.FormatFlagsConversionMismatchException`],
+							[/* text */ 't', ` will be thrown.
+
+ `]
+						]]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'X'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0058'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` The upper-case variant of `],
+						[/* inline code block */ 'i', `'x'`],
+						[/* text */ 't', `.  The entire string
+     representing the number will be converted to `],
+						[/* reference */ 'r', `java.String#toUpperCase(java.util.Locale)`],
+						[/* text */ 't', ` including the `],
+						[/* inline code block */ 'i', `'x'`],
+						[/* text */ 't', ` (if any) and
+     all hexadecimal digits `],
+						[/* inline code block */ 'i', `'a'`],
+						[/* text */ 't', ` - `],
+						[/* inline code block */ 'i', `'f'`],
+						[/* text */ 't', `
+     (`],
+						[/* inline code block */ 'i', `'\\u0061'`],
+						[/* text */ 't', ` - `],
+						[/* inline code block */ 'i', `'\\u0066'`],
+						[/* text */ 't', `).
+
+ `]
+					]]
+				]]
+			]],
+		],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` If the conversion is `],
@@ -1370,7 +3427,551 @@ DocsCollector.collect('java.util.Formatter', [
 		[/* block */ 'b', ''],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', ''],
-		[/* table */ 't', ''],
+		[/* table */ 'tbl',
+			[/* caption */ 'tc'],
+			[/* table header */ 'th'],
+			[/* table body */ 'tb', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'e'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0065'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Requires the output to be formatted using `],
+						[/* text */ 't', `computerized scientific notation`],
+						[/* text */ 't', `.  The `],
+						[/* text */ 't', `localization algorithm`],
+						[/* text */ 't', ` is applied.
+
+     `],
+						[/* block */ 'b', [
+							[/* text */ 't', ` The formatting of the magnitude `],
+							[/* text */ 't', `m`],
+							[/* text */ 't', ` depends upon its value.
+
+     `]
+						]],
+						[/* block */ 'b', [
+							[/* text */ 't', ` If `],
+							[/* text */ 't', `m`],
+							[/* text */ 't', ` is NaN or infinite, the literal strings "NaN" or
+     "Infinity", respectively, will be output.  These values are not
+     localized.
+
+     `]
+						]],
+						[/* block */ 'b', [
+							[/* text */ 't', ` If `],
+							[/* text */ 't', `m`],
+							[/* text */ 't', ` is positive-zero or negative-zero, then the exponent
+     will be `],
+							[/* inline code block */ 'i', `"+00"`],
+							[/* text */ 't', `.
+
+     `]
+						]],
+						[/* block */ 'b', [
+							[/* text */ 't', ` Otherwise, the result is a string that represents the sign and
+     magnitude (absolute value) of the argument.  The formatting of the sign
+     is described in the `],
+							[/* text */ 't', `localization algorithm`],
+							[/* text */ 't', `. The formatting of the magnitude `],
+							[/* text */ 't', `m`],
+							[/* text */ 't', ` depends upon its
+     value.
+
+     `]
+						]],
+						[/* block */ 'b', [
+							[/* text */ 't', ` Let `],
+							[/* text */ 't', `n`],
+							[/* text */ 't', ` be the unique integer such that 10`],
+							[/* text */ 't', `n`, 'sup'],
+							[/* text */ 't', `
+     <= `],
+							[/* text */ 't', `m`],
+							[/* text */ 't', ` < 10`],
+							[/* text */ 't', `n+1`, 'sup'],
+							[/* text */ 't', `; then let `],
+							[/* text */ 't', `a`],
+							[/* text */ 't', ` be the
+     mathematically exact quotient of `],
+							[/* text */ 't', `m`],
+							[/* text */ 't', ` and 10`],
+							[/* text */ 't', `n`, 'sup'],
+							[/* text */ 't', ` so
+     that 1 <= `],
+							[/* text */ 't', `a`],
+							[/* text */ 't', ` < 10. The magnitude is then represented as the
+     integer part of `],
+							[/* text */ 't', `a`],
+							[/* text */ 't', `, as a single decimal digit, followed by the
+     decimal separator followed by decimal digits representing the fractional
+     part of `],
+							[/* text */ 't', `a`],
+							[/* text */ 't', `, followed by the exponent symbol `],
+							[/* inline code block */ 'i', `'e'`],
+							[/* text */ 't', `
+     (`],
+							[/* inline code block */ 'i', `'\\u0065'`],
+							[/* text */ 't', `), followed by the sign of the exponent, followed
+     by a representation of `],
+							[/* text */ 't', `n`],
+							[/* text */ 't', ` as a decimal integer, as produced by the
+     method `],
+							[/* reference */ 'r', `java.Long#toString(long,int)`],
+							[/* text */ 't', `, and zero-padded to include at
+     least two digits.
+
+     `]
+						]],
+						[/* block */ 'b', [
+							[/* text */ 't', ` The number of digits in the result for the fractional part of
+     `],
+							[/* text */ 't', `m`],
+							[/* text */ 't', ` or `],
+							[/* text */ 't', `a`],
+							[/* text */ 't', ` is equal to the precision.  If the precision is not
+     specified then the default value is `],
+							[/* inline code block */ 'i', `6`],
+							[/* text */ 't', `. If the precision is less
+     than the number of digits which would appear after the decimal point in
+     the string returned by `],
+							[/* reference */ 'r', `java.Float#toString(float)`],
+							[/* text */ 't', ` or `],
+							[/* reference */ 'r', `java.Double#toString(double)`],
+							[/* text */ 't', ` respectively, then the value will be rounded
+     using the `],
+							[/* reference */ 'r', `java.RoundingMode#HALF_UP`],
+							[/* text */ 't', `.  Otherwise, zeros may be appended to reach the precision.
+     For a canonical representation of the value, use `],
+							[/* reference */ 'r', `java.Float#toString(float)`],
+							[/* text */ 't', ` or `],
+							[/* reference */ 'r', `java.Double#toString(double)`],
+							[/* text */ 't', ` as
+     appropriate.
+
+     `]
+						]],
+						[/* block */ 'b', [
+							[/* text */ 't', `If the `],
+							[/* inline code block */ 'i', `','`],
+							[/* text */ 't', ` flag is given, then an `],
+							[/* reference */ 'r', `java.util.FormatFlagsConversionMismatchException`],
+							[/* text */ 't', ` will be thrown.
+
+ `]
+						]]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'E'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0045'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` The upper-case variant of `],
+						[/* inline code block */ 'i', `'e'`],
+						[/* text */ 't', `.  The exponent symbol
+     will be `],
+						[/* inline code block */ 'i', `'E'`],
+						[/* text */ 't', ` (`],
+						[/* inline code block */ 'i', `'\\u0045'`],
+						[/* text */ 't', `).
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'g'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0067'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Requires the output to be formatted in general scientific notation
+     as described below. The `],
+						[/* text */ 't', `localization algorithm`],
+						[/* text */ 't', ` is applied.
+
+     `],
+						[/* block */ 'b', [
+							[/* text */ 't', ` After rounding for the precision, the formatting of the resulting
+     magnitude `],
+							[/* text */ 't', `m`],
+							[/* text */ 't', ` depends on its value.
+
+     `]
+						]],
+						[/* block */ 'b', [
+							[/* text */ 't', ` If `],
+							[/* text */ 't', `m`],
+							[/* text */ 't', ` is greater than or equal to 10`],
+							[/* text */ 't', `-4`, 'sup'],
+							[/* text */ 't', ` but less
+     than 10`],
+							[/* text */ 't', `precision`, 'sup'],
+							[/* text */ 't', ` then it is represented in `],
+							[/* text */ 't', `decimal format`],
+							[/* text */ 't', `.
+
+     `]
+						]],
+						[/* block */ 'b', [
+							[/* text */ 't', ` If `],
+							[/* text */ 't', `m`],
+							[/* text */ 't', ` is less than 10`],
+							[/* text */ 't', `-4`, 'sup'],
+							[/* text */ 't', ` or greater than or equal to
+     10`],
+							[/* text */ 't', `precision`, 'sup'],
+							[/* text */ 't', `, then it is represented in `],
+							[/* text */ 't', `computerized scientific notation`],
+							[/* text */ 't', `.
+
+     `]
+						]],
+						[/* block */ 'b', [
+							[/* text */ 't', ` The total number of significant digits in `],
+							[/* text */ 't', `m`],
+							[/* text */ 't', ` is equal to the
+     precision.  If the precision is not specified, then the default value is
+     `],
+							[/* inline code block */ 'i', `6`],
+							[/* text */ 't', `.  If the precision is `],
+							[/* inline code block */ 'i', `0`],
+							[/* text */ 't', `, then it is taken to be
+     `],
+							[/* inline code block */ 'i', `1`],
+							[/* text */ 't', `.
+
+     `]
+						]],
+						[/* block */ 'b', [
+							[/* text */ 't', ` If the `],
+							[/* inline code block */ 'i', `'#'`],
+							[/* text */ 't', ` flag is given then an `],
+							[/* reference */ 'r', `java.util.FormatFlagsConversionMismatchException`],
+							[/* text */ 't', ` will be thrown.
+
+ `]
+						]]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'G'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0047'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` The upper-case variant of `],
+						[/* inline code block */ 'i', `'g'`],
+						[/* text */ 't', `.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'f'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0066'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Requires the output to be formatted using `],
+						[/* text */ 't', `decimal format`],
+						[/* text */ 't', `.  The `],
+						[/* text */ 't', `localization algorithm`],
+						[/* text */ 't', ` is
+     applied.
+
+     `],
+						[/* block */ 'b', [
+							[/* text */ 't', ` The result is a string that represents the sign and magnitude
+     (absolute value) of the argument.  The formatting of the sign is
+     described in the `],
+							[/* text */ 't', `localization algorithm`],
+							[/* text */ 't', `. The formatting of the magnitude `],
+							[/* text */ 't', `m`],
+							[/* text */ 't', ` depends upon its
+     value.
+
+     `]
+						]],
+						[/* block */ 'b', [
+							[/* text */ 't', ` If `],
+							[/* text */ 't', `m`],
+							[/* text */ 't', ` NaN or infinite, the literal strings "NaN" or
+     "Infinity", respectively, will be output.  These values are not
+     localized.
+
+     `]
+						]],
+						[/* block */ 'b', [
+							[/* text */ 't', ` The magnitude is formatted as the integer part of `],
+							[/* text */ 't', `m`],
+							[/* text */ 't', `, with no
+     leading zeroes, followed by the decimal separator followed by one or
+     more decimal digits representing the fractional part of `],
+							[/* text */ 't', `m`],
+							[/* text */ 't', `.
+
+     `]
+						]],
+						[/* block */ 'b', [
+							[/* text */ 't', ` The number of digits in the result for the fractional part of
+     `],
+							[/* text */ 't', `m`],
+							[/* text */ 't', ` or `],
+							[/* text */ 't', `a`],
+							[/* text */ 't', ` is equal to the precision.  If the precision is not
+     specified then the default value is `],
+							[/* inline code block */ 'i', `6`],
+							[/* text */ 't', `. If the precision is less
+     than the number of digits which would appear after the decimal point in
+     the string returned by `],
+							[/* reference */ 'r', `java.Float#toString(float)`],
+							[/* text */ 't', ` or `],
+							[/* reference */ 'r', `java.Double#toString(double)`],
+							[/* text */ 't', ` respectively, then the value will be rounded
+     using the `],
+							[/* reference */ 'r', `java.RoundingMode#HALF_UP`],
+							[/* text */ 't', `.  Otherwise, zeros may be appended to reach the precision.
+     For a canonical representation of the value, use `],
+							[/* reference */ 'r', `java.Float#toString(float)`],
+							[/* text */ 't', ` or `],
+							[/* reference */ 'r', `java.Double#toString(double)`],
+							[/* text */ 't', ` as
+     appropriate.
+
+ `]
+						]]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'a'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0061'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Requires the output to be formatted in hexadecimal exponential
+     form.  No localization is applied.
+
+     `],
+						[/* block */ 'b', [
+							[/* text */ 't', ` The result is a string that represents the sign and magnitude
+     (absolute value) of the argument `],
+							[/* text */ 't', `x`],
+							[/* text */ 't', `.
+
+     `]
+						]],
+						[/* block */ 'b', [
+							[/* text */ 't', ` If `],
+							[/* text */ 't', `x`],
+							[/* text */ 't', ` is negative or a negative-zero value then the result
+     will begin with `],
+							[/* inline code block */ 'i', `'-'`],
+							[/* text */ 't', ` (`],
+							[/* inline code block */ 'i', `'\\u002d'`],
+							[/* text */ 't', `).
+
+     `]
+						]],
+						[/* block */ 'b', [
+							[/* text */ 't', ` If `],
+							[/* text */ 't', `x`],
+							[/* text */ 't', ` is positive or a positive-zero value and the
+     `],
+							[/* inline code block */ 'i', `'+'`],
+							[/* text */ 't', ` flag is given then the result will begin with `],
+							[/* inline code block */ 'i', `'+'`],
+							[/* text */ 't', `
+     (`],
+							[/* inline code block */ 'i', `'\\u002b'`],
+							[/* text */ 't', `).
+
+     `]
+						]],
+						[/* block */ 'b', [
+							[/* text */ 't', ` The formatting of the magnitude `],
+							[/* text */ 't', `m`],
+							[/* text */ 't', ` depends upon its value.
+
+     `]
+						]],
+						[/* list */ 'l', [
+							[/* block */ 'b', ` If the value is NaN or infinite, the literal strings "NaN" or
+     "Infinity", respectively, will be output.
+
+     `],
+							[/* block */ 'b', [
+								[/* text */ 't', ` If `],
+								[/* text */ 't', `m`],
+								[/* text */ 't', ` is zero then it is represented by the string
+     `],
+								[/* inline code block */ 'i', `"0x0.0p0"`],
+								[/* text */ 't', `.
+
+     `]
+							]],
+							[/* block */ 'b', [
+								[/* text */ 't', ` If `],
+								[/* text */ 't', `m`],
+								[/* text */ 't', ` is a `],
+								[/* inline code block */ 'i', `double`],
+								[/* text */ 't', ` value with a normalized
+     representation then substrings are used to represent the significand and
+     exponent fields.  The significand is represented by the characters
+     `],
+								[/* inline code block */ 'i', `"0x1."`],
+								[/* text */ 't', ` followed by the hexadecimal representation of the rest
+     of the significand as a fraction.  The exponent is represented by
+     `],
+								[/* inline code block */ 'i', `'p'`],
+								[/* text */ 't', ` (`],
+								[/* inline code block */ 'i', `'\\u0070'`],
+								[/* text */ 't', `) followed by a decimal string of the
+     unbiased exponent as if produced by invoking `],
+								[/* reference */ 'r', `java.Integer#toString(int)`],
+								[/* text */ 't', ` on the exponent value.  If the
+     precision is specified, the value is rounded to the given number of
+     hexadecimal digits.
+
+     `]
+							]],
+							[/* block */ 'b', [
+								[/* text */ 't', ` If `],
+								[/* text */ 't', `m`],
+								[/* text */ 't', ` is a `],
+								[/* inline code block */ 'i', `double`],
+								[/* text */ 't', ` value with a subnormal
+     representation then, unless the precision is specified to be in the range
+     1 through 12, inclusive, the significand is represented by the characters
+     `],
+								[/* inline code block */ 'i', `'0x0.'`],
+								[/* text */ 't', ` followed by the hexadecimal representation of the rest of
+     the significand as a fraction, and the exponent represented by
+     `],
+								[/* inline code block */ 'i', `'p-1022'`],
+								[/* text */ 't', `.  If the precision is in the interval
+     [1, 12], the subnormal value is normalized such that it
+     begins with the characters `],
+								[/* inline code block */ 'i', `'0x1.'`],
+								[/* text */ 't', `, rounded to the number of
+     hexadecimal digits of precision, and the exponent adjusted
+     accordingly.  Note that there must be at least one nonzero digit in a
+     subnormal significand.
+
+     `]
+							]]
+						]],
+						[/* text */ 't', `
+
+     `],
+						[/* block */ 'b', ''],
+						[/* block */ 'b', [
+							[/* text */ 't', ` If the `],
+							[/* inline code block */ 'i', `'('`],
+							[/* text */ 't', ` or `],
+							[/* inline code block */ 'i', `','`],
+							[/* text */ 't', ` flags are given, then a `],
+							[/* reference */ 'r', `java.util.FormatFlagsConversionMismatchException`],
+							[/* text */ 't', ` will be thrown.
+
+ `]
+						]]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'A'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0041'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` The upper-case variant of `],
+						[/* inline code block */ 'i', `'a'`],
+						[/* text */ 't', `.  The entire string
+     representing the number will be converted to upper case including the
+     `],
+						[/* inline code block */ 'i', `'x'`],
+						[/* text */ 't', ` (`],
+						[/* inline code block */ 'i', `'\\u0078'`],
+						[/* text */ 't', `) and `],
+						[/* inline code block */ 'i', `'p'`],
+						[/* text */ 't', `
+     (`],
+						[/* inline code block */ 'i', `'\\u0070'`],
+						[/* text */ 't', ` and all hexadecimal digits `],
+						[/* inline code block */ 'i', `'a'`],
+						[/* text */ 't', ` -
+     `],
+						[/* inline code block */ 'i', `'f'`],
+						[/* text */ 't', ` (`],
+						[/* inline code block */ 'i', `'\\u0061'`],
+						[/* text */ 't', ` - `],
+						[/* inline code block */ 'i', `'\\u0066'`],
+						[/* text */ 't', `).
+
+ `]
+					]]
+				]]
+			]],
+		],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` All `],
@@ -1481,7 +4082,7 @@ DocsCollector.collect('java.util.Formatter', [
 			[/* text */ 't', `, then the precision
  is the number of hexadecimal digits after the radix point.  If the
  precision is not provided, then all of the digits as returned by `],
-			[/* external link */ 'a', `../lang/Double.html#toHexString(double)`, `Double.toHexString(double)`],
+			[/* reference */ 'r', `java.Double#toHexString(double)`],
 			[/* text */ 't', ` will be output.
 
  `]
@@ -1498,7 +4099,335 @@ DocsCollector.collect('java.util.Formatter', [
 		]],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', ''],
-		[/* table */ 't', ''],
+		[/* table */ 'tbl',
+			[/* caption */ 'tc'],
+			[/* table header */ 'th'],
+			[/* table body */ 'tb', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'e'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0065'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Requires the output to be formatted using `],
+						[/* text */ 't', `computerized scientific notation`],
+						[/* text */ 't', `.  The `],
+						[/* text */ 't', `localization algorithm`],
+						[/* text */ 't', ` is applied.
+
+     `],
+						[/* block */ 'b', [
+							[/* text */ 't', ` The formatting of the magnitude `],
+							[/* text */ 't', `m`],
+							[/* text */ 't', ` depends upon its value.
+
+     `]
+						]],
+						[/* block */ 'b', [
+							[/* text */ 't', ` If `],
+							[/* text */ 't', `m`],
+							[/* text */ 't', ` is positive-zero or negative-zero, then the exponent
+     will be `],
+							[/* inline code block */ 'i', `"+00"`],
+							[/* text */ 't', `.
+
+     `]
+						]],
+						[/* block */ 'b', [
+							[/* text */ 't', ` Otherwise, the result is a string that represents the sign and
+     magnitude (absolute value) of the argument.  The formatting of the sign
+     is described in the `],
+							[/* text */ 't', `localization algorithm`],
+							[/* text */ 't', `. The formatting of the magnitude `],
+							[/* text */ 't', `m`],
+							[/* text */ 't', ` depends upon its
+     value.
+
+     `]
+						]],
+						[/* block */ 'b', [
+							[/* text */ 't', ` Let `],
+							[/* text */ 't', `n`],
+							[/* text */ 't', ` be the unique integer such that 10`],
+							[/* text */ 't', `n`, 'sup'],
+							[/* text */ 't', `
+     <= `],
+							[/* text */ 't', `m`],
+							[/* text */ 't', ` < 10`],
+							[/* text */ 't', `n+1`, 'sup'],
+							[/* text */ 't', `; then let `],
+							[/* text */ 't', `a`],
+							[/* text */ 't', ` be the
+     mathematically exact quotient of `],
+							[/* text */ 't', `m`],
+							[/* text */ 't', ` and 10`],
+							[/* text */ 't', `n`, 'sup'],
+							[/* text */ 't', ` so
+     that 1 <= `],
+							[/* text */ 't', `a`],
+							[/* text */ 't', ` < 10. The magnitude is then represented as the
+     integer part of `],
+							[/* text */ 't', `a`],
+							[/* text */ 't', `, as a single decimal digit, followed by the
+     decimal separator followed by decimal digits representing the fractional
+     part of `],
+							[/* text */ 't', `a`],
+							[/* text */ 't', `, followed by the exponent symbol `],
+							[/* inline code block */ 'i', `'e'`],
+							[/* text */ 't', `
+     (`],
+							[/* inline code block */ 'i', `'\\u0065'`],
+							[/* text */ 't', `), followed by the sign of the exponent, followed
+     by a representation of `],
+							[/* text */ 't', `n`],
+							[/* text */ 't', ` as a decimal integer, as produced by the
+     method `],
+							[/* reference */ 'r', `java.Long#toString(long,int)`],
+							[/* text */ 't', `, and zero-padded to include at
+     least two digits.
+
+     `]
+						]],
+						[/* block */ 'b', [
+							[/* text */ 't', ` The number of digits in the result for the fractional part of
+     `],
+							[/* text */ 't', `m`],
+							[/* text */ 't', ` or `],
+							[/* text */ 't', `a`],
+							[/* text */ 't', ` is equal to the precision.  If the precision is not
+     specified then the default value is `],
+							[/* inline code block */ 'i', `6`],
+							[/* text */ 't', `.  If the precision is
+     less than the number of digits to the right of the decimal point then
+     the value will be rounded using the
+     `],
+							[/* reference */ 'r', `java.RoundingMode#HALF_UP`],
+							[/* text */ 't', `.  Otherwise, zeros may be appended to reach the precision.
+     For a canonical representation of the value, use `],
+							[/* reference */ 'r', `java.BigDecimal#toString()`],
+							[/* text */ 't', `.
+
+     `]
+						]],
+						[/* block */ 'b', [
+							[/* text */ 't', ` If the `],
+							[/* inline code block */ 'i', `','`],
+							[/* text */ 't', ` flag is given, then an `],
+							[/* reference */ 'r', `java.util.FormatFlagsConversionMismatchException`],
+							[/* text */ 't', ` will be thrown.
+
+ `]
+						]]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'E'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0045'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` The upper-case variant of `],
+						[/* inline code block */ 'i', `'e'`],
+						[/* text */ 't', `.  The exponent symbol
+     will be `],
+						[/* inline code block */ 'i', `'E'`],
+						[/* text */ 't', ` (`],
+						[/* inline code block */ 'i', `'\\u0045'`],
+						[/* text */ 't', `).
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'g'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0067'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Requires the output to be formatted in general scientific notation
+     as described below. The `],
+						[/* text */ 't', `localization algorithm`],
+						[/* text */ 't', ` is applied.
+
+     `],
+						[/* block */ 'b', [
+							[/* text */ 't', ` After rounding for the precision, the formatting of the resulting
+     magnitude `],
+							[/* text */ 't', `m`],
+							[/* text */ 't', ` depends on its value.
+
+     `]
+						]],
+						[/* block */ 'b', [
+							[/* text */ 't', ` If `],
+							[/* text */ 't', `m`],
+							[/* text */ 't', ` is greater than or equal to 10`],
+							[/* text */ 't', `-4`, 'sup'],
+							[/* text */ 't', ` but less
+     than 10`],
+							[/* text */ 't', `precision`, 'sup'],
+							[/* text */ 't', ` then it is represented in `],
+							[/* text */ 't', `decimal format`],
+							[/* text */ 't', `.
+
+     `]
+						]],
+						[/* block */ 'b', [
+							[/* text */ 't', ` If `],
+							[/* text */ 't', `m`],
+							[/* text */ 't', ` is less than 10`],
+							[/* text */ 't', `-4`, 'sup'],
+							[/* text */ 't', ` or greater than or equal to
+     10`],
+							[/* text */ 't', `precision`, 'sup'],
+							[/* text */ 't', `, then it is represented in `],
+							[/* text */ 't', `computerized scientific notation`],
+							[/* text */ 't', `.
+
+     `]
+						]],
+						[/* block */ 'b', [
+							[/* text */ 't', ` The total number of significant digits in `],
+							[/* text */ 't', `m`],
+							[/* text */ 't', ` is equal to the
+     precision.  If the precision is not specified, then the default value is
+     `],
+							[/* inline code block */ 'i', `6`],
+							[/* text */ 't', `.  If the precision is `],
+							[/* inline code block */ 'i', `0`],
+							[/* text */ 't', `, then it is taken to be
+     `],
+							[/* inline code block */ 'i', `1`],
+							[/* text */ 't', `.
+
+     `]
+						]],
+						[/* block */ 'b', [
+							[/* text */ 't', ` If the `],
+							[/* inline code block */ 'i', `'#'`],
+							[/* text */ 't', ` flag is given then an `],
+							[/* reference */ 'r', `java.util.FormatFlagsConversionMismatchException`],
+							[/* text */ 't', ` will be thrown.
+
+ `]
+						]]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'G'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0047'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` The upper-case variant of `],
+						[/* inline code block */ 'i', `'g'`],
+						[/* text */ 't', `.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'f'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0066'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Requires the output to be formatted using `],
+						[/* text */ 't', `decimal format`],
+						[/* text */ 't', `.  The `],
+						[/* text */ 't', `localization algorithm`],
+						[/* text */ 't', ` is
+     applied.
+
+     `],
+						[/* block */ 'b', [
+							[/* text */ 't', ` The result is a string that represents the sign and magnitude
+     (absolute value) of the argument.  The formatting of the sign is
+     described in the `],
+							[/* text */ 't', `localization algorithm`],
+							[/* text */ 't', `. The formatting of the magnitude `],
+							[/* text */ 't', `m`],
+							[/* text */ 't', ` depends upon its
+     value.
+
+     `]
+						]],
+						[/* block */ 'b', [
+							[/* text */ 't', ` The magnitude is formatted as the integer part of `],
+							[/* text */ 't', `m`],
+							[/* text */ 't', `, with no
+     leading zeroes, followed by the decimal separator followed by one or
+     more decimal digits representing the fractional part of `],
+							[/* text */ 't', `m`],
+							[/* text */ 't', `.
+
+     `]
+						]],
+						[/* block */ 'b', [
+							[/* text */ 't', ` The number of digits in the result for the fractional part of
+     `],
+							[/* text */ 't', `m`],
+							[/* text */ 't', ` or `],
+							[/* text */ 't', `a`],
+							[/* text */ 't', ` is equal to the precision. If the precision is not
+     specified then the default value is `],
+							[/* inline code block */ 'i', `6`],
+							[/* text */ 't', `.  If the precision is
+     less than the number of digits to the right of the decimal point
+     then the value will be rounded using the
+     `],
+							[/* reference */ 'r', `java.RoundingMode#HALF_UP`],
+							[/* text */ 't', `.  Otherwise, zeros may be appended to reach the precision.
+     For a canonical representation of the value, use `],
+							[/* reference */ 'r', `java.BigDecimal#toString()`],
+							[/* text */ 't', `.
+
+ `]
+						]]
+					]]
+				]]
+			]],
+		],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` All `],
@@ -1549,7 +4478,51 @@ DocsCollector.collect('java.util.Formatter', [
 			[/* text */ 't', ` and `],
 			[/* reference */ 'r', `java.time.temporal.TemporalAccessor`]
 		]],
-		[/* table */ 't', ''],
+		[/* table */ 'tbl',
+			[/* caption */ 'tc'],
+			[/* table header */ 'th'],
+			[/* table body */ 'tb', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'t'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0074'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Prefix for date and time conversion characters.
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'T'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0054'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` The upper-case variant of `],
+						[/* inline code block */ 'i', `'t'`],
+						[/* text */ 't', `.
+
+ `]
+					]]
+				]]
+			]],
+		],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The following date and time conversion character suffixes are defined
@@ -1574,18 +4547,786 @@ DocsCollector.collect('java.util.Formatter', [
 		[/* block */ 'b', ` The following conversion characters are used for formatting times:
 
  `],
-		[/* table */ 't', ''],
+		[/* table */ 'tbl',
+			[/* caption */ 'tc'],
+			[/* table header */ 'th'],
+			[/* table body */ 'tb', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'H'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0048'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Hour of the day for the 24-hour clock, formatted as two digits with
+     a leading zero as necessary i.e. `],
+						[/* inline code block */ 'i', `00 - 23`],
+						[/* text */ 't', `. `],
+						[/* inline code block */ 'i', `00`],
+						[/* text */ 't', `
+     corresponds to midnight.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'I'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0049'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Hour for the 12-hour clock, formatted as two digits with a leading
+     zero as necessary, i.e.  `],
+						[/* inline code block */ 'i', `01 - 12`],
+						[/* text */ 't', `.  `],
+						[/* inline code block */ 'i', `01`],
+						[/* text */ 't', ` corresponds to
+     one o'clock (either morning or afternoon).
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'k'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u006b'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Hour of the day for the 24-hour clock, i.e. `],
+						[/* inline code block */ 'i', `0 - 23`],
+						[/* text */ 't', `.
+     `],
+						[/* inline code block */ 'i', `0`],
+						[/* text */ 't', ` corresponds to midnight.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'l'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u006c'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Hour for the 12-hour clock, i.e. `],
+						[/* inline code block */ 'i', `1 - 12`],
+						[/* text */ 't', `.  `],
+						[/* inline code block */ 'i', `1`],
+						[/* text */ 't', `
+     corresponds to one o'clock (either morning or afternoon).
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'M'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u004d'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Minute within the hour formatted as two digits with a leading zero
+     as necessary, i.e.  `],
+						[/* inline code block */ 'i', `00 - 59`],
+						[/* text */ 't', `.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'S'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0053'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Seconds within the minute, formatted as two digits with a leading
+     zero as necessary, i.e. `],
+						[/* inline code block */ 'i', `00 - 60`],
+						[/* text */ 't', ` ("`],
+						[/* inline code block */ 'i', `60`],
+						[/* text */ 't', `" is a special
+     value required to support leap seconds).
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'L'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u004c'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Millisecond within the second formatted as three digits with
+     leading zeros as necessary, i.e. `],
+						[/* inline code block */ 'i', `000 - 999`],
+						[/* text */ 't', `.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'N'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u004e'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Nanosecond within the second, formatted as nine digits with leading
+     zeros as necessary, i.e. `],
+						[/* inline code block */ 'i', `000000000 - 999999999`],
+						[/* text */ 't', `.  The precision
+     of this value is limited by the resolution of the underlying operating
+     system or hardware.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'p'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0070'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Locale-specific `],
+						[/* reference */ 'r', `java.DateFormatSymbols#getAmPmStrings()`],
+						[/* text */ 't', ` marker
+     in lower case, e.g."`],
+						[/* inline code block */ 'i', `am`],
+						[/* text */ 't', `" or "`],
+						[/* inline code block */ 'i', `pm`],
+						[/* text */ 't', `".  Use of the
+     conversion prefix `],
+						[/* inline code block */ 'i', `'T'`],
+						[/* text */ 't', ` forces this output to upper case.  (Note
+     that `],
+						[/* inline code block */ 'i', `'p'`],
+						[/* text */ 't', ` produces lower-case output.  This is different from
+     GNU `],
+						[/* inline code block */ 'i', `date`],
+						[/* text */ 't', ` and POSIX `],
+						[/* inline code block */ 'i', `strftime(3c)`],
+						[/* text */ 't', ` which produce
+     upper-case output.)
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'z'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u007a'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* external link */ 'a', `http://www.ietf.org/rfc/rfc0822.txt`, `RFC 822`],
+						[/* text */ 't', `
+     style numeric time zone offset from GMT, e.g. `],
+						[/* inline code block */ 'i', `-0800`],
+						[/* text */ 't', `.  This
+     value will be adjusted as necessary for Daylight Saving Time.  For
+     `],
+						[/* inline code block */ 'i', `long`],
+						[/* text */ 't', `, `],
+						[/* reference */ 'r', `java.lang.Long`],
+						[/* text */ 't', `, and `],
+						[/* reference */ 'r', `java.util.Date`],
+						[/* text */ 't', ` the time zone used is
+     the `],
+						[/* reference */ 'r', `.TimeZone#getDefault()`],
+						[/* text */ 't', ` for this
+     instance of the Java virtual machine.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'Z'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u005a'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` A string representing the abbreviation for the time zone.  This
+     value will be adjusted as necessary for Daylight Saving Time.  For
+     `],
+						[/* inline code block */ 'i', `long`],
+						[/* text */ 't', `, `],
+						[/* reference */ 'r', `java.lang.Long`],
+						[/* text */ 't', `, and `],
+						[/* reference */ 'r', `java.util.Date`],
+						[/* text */ 't', ` the time zone used is
+     the `],
+						[/* reference */ 'r', `.TimeZone#getDefault()`],
+						[/* text */ 't', ` for this
+     instance of the Java virtual machine.  The Formatter's locale will
+     supersede the locale of the argument (if any).
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'s'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0073'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Seconds since the beginning of the epoch starting at 1 January 1970
+     `],
+						[/* inline code block */ 'i', `00:00:00`],
+						[/* text */ 't', ` UTC, i.e. `],
+						[/* inline code block */ 'i', `Long.MIN_VALUE/1000`],
+						[/* text */ 't', ` to
+     `],
+						[/* inline code block */ 'i', `Long.MAX_VALUE/1000`],
+						[/* text */ 't', `.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'Q'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u004f'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Milliseconds since the beginning of the epoch starting at 1 January
+     1970 `],
+						[/* inline code block */ 'i', `00:00:00`],
+						[/* text */ 't', ` UTC, i.e. `],
+						[/* inline code block */ 'i', `Long.MIN_VALUE`],
+						[/* text */ 't', ` to
+     `],
+						[/* inline code block */ 'i', `Long.MAX_VALUE`],
+						[/* text */ 't', `. The precision of this value is limited by
+     the resolution of the underlying operating system or hardware.
+
+ `]
+					]]
+				]]
+			]],
+		],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', ` The following conversion characters are used for formatting dates:
 
  `],
-		[/* table */ 't', ''],
+		[/* table */ 'tbl',
+			[/* caption */ 'tc'],
+			[/* table header */ 'th'],
+			[/* table body */ 'tb', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'B'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0042'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Locale-specific `],
+						[/* reference */ 'r', `java.DateFormatSymbols#getMonths()`],
+						[/* text */ 't', `, e.g. `],
+						[/* inline code block */ 'i', `"January"`],
+						[/* text */ 't', `, `],
+						[/* inline code block */ 'i', `"February"`],
+						[/* text */ 't', `.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'b'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0062'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Locale-specific `],
+						[/* reference */ 'r', `java.DateFormatSymbols#getShortMonths()`],
+						[/* text */ 't', `,
+     e.g. `],
+						[/* inline code block */ 'i', `"Jan"`],
+						[/* text */ 't', `, `],
+						[/* inline code block */ 'i', `"Feb"`],
+						[/* text */ 't', `.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'h'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0068'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Same as `],
+						[/* inline code block */ 'i', `'b'`],
+						[/* text */ 't', `.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'A'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0041'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Locale-specific full name of the `],
+						[/* reference */ 'r', `java.DateFormatSymbols#getWeekdays()`],
+						[/* text */ 't', `,
+     e.g. `],
+						[/* inline code block */ 'i', `"Sunday"`],
+						[/* text */ 't', `, `],
+						[/* inline code block */ 'i', `"Monday"`],
+						[/* text */ 't', `
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'a'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0061'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Locale-specific short name of the `],
+						[/* reference */ 'r', `java.DateFormatSymbols#getShortWeekdays()`],
+						[/* text */ 't', `,
+     e.g. `],
+						[/* inline code block */ 'i', `"Sun"`],
+						[/* text */ 't', `, `],
+						[/* inline code block */ 'i', `"Mon"`],
+						[/* text */ 't', `
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'C'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0043'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Four-digit year divided by `],
+						[/* inline code block */ 'i', `100`],
+						[/* text */ 't', `, formatted as two digits
+     with leading zero as necessary, i.e. `],
+						[/* inline code block */ 'i', `00 - 99`],
+						[/* text */ 't', `
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'Y'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0059'`],
+						[/* text */ 't', ` `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Year, formatted to at least
+     four digits with leading zeros as necessary, e.g. `],
+						[/* inline code block */ 'i', `0092`],
+						[/* text */ 't', ` equals
+     `],
+						[/* inline code block */ 'i', `92`],
+						[/* text */ 't', ` CE for the Gregorian calendar.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'y'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0079'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Last two digits of the year, formatted with leading zeros as
+     necessary, i.e. `],
+						[/* inline code block */ 'i', `00 - 99`],
+						[/* text */ 't', `.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'j'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u006a'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Day of year, formatted as three digits with leading zeros as
+     necessary, e.g. `],
+						[/* inline code block */ 'i', `001 - 366`],
+						[/* text */ 't', ` for the Gregorian calendar.
+     `],
+						[/* inline code block */ 'i', `001`],
+						[/* text */ 't', ` corresponds to the first day of the year.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'m'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u006d'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Month, formatted as two digits with leading zeros as necessary,
+     i.e. `],
+						[/* inline code block */ 'i', `01 - 13`],
+						[/* text */ 't', `, where "`],
+						[/* inline code block */ 'i', `01`],
+						[/* text */ 't', `" is the first month of the
+     year and ("`],
+						[/* inline code block */ 'i', `13`],
+						[/* text */ 't', `" is a special value required to support lunar
+     calendars).
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'d'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0064'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Day of month, formatted as two digits with leading zeros as
+     necessary, i.e. `],
+						[/* inline code block */ 'i', `01 - 31`],
+						[/* text */ 't', `, where "`],
+						[/* inline code block */ 'i', `01`],
+						[/* text */ 't', `" is the first day
+     of the month.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'e'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0065'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Day of month, formatted as two digits, i.e. `],
+						[/* inline code block */ 'i', `1 - 31`],
+						[/* text */ 't', ` where
+     "`],
+						[/* inline code block */ 'i', `1`],
+						[/* text */ 't', `" is the first day of the month.
+
+ `]
+					]]
+				]]
+			]],
+		],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', ` The following conversion characters are used for formatting common
  date/time compositions.
 
  `],
-		[/* table */ 't', ''],
+		[/* table */ 'tbl',
+			[/* caption */ 'tc'],
+			[/* table header */ 'th'],
+			[/* table body */ 'tb', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'R'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0052'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Time formatted for the 24-hour clock as `],
+						[/* inline code block */ 'i', `"%tH:%tM"`],
+						[/* text */ 't', `
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'T'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0054'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Time formatted for the 24-hour clock as `],
+						[/* inline code block */ 'i', `"%tH:%tM:%tS"`],
+						[/* text */ 't', `.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'r'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0072'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Time formatted for the 12-hour clock as `],
+						[/* inline code block */ 'i', `"%tI:%tM:%tS %Tp"`],
+						[/* text */ 't', `.  The location of the morning or afternoon marker
+     (`],
+						[/* inline code block */ 'i', `'%Tp'`],
+						[/* text */ 't', `) may be locale-dependent.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'D'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0044'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Date formatted as `],
+						[/* inline code block */ 'i', `"%tm/%td/%ty"`],
+						[/* text */ 't', `.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'F'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0046'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* external link */ 'a', `http://www.w3.org/TR/NOTE-datetime`, `ISO 8601`],
+						[/* text */ 't', `
+     complete date formatted as `],
+						[/* inline code block */ 'i', `"%tY-%tm-%td"`],
+						[/* text */ 't', `.
+
+ `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'c'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `'\\u0063'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` Date and time formatted as `],
+						[/* inline code block */ 'i', `"%ta %tb %td %tT %tZ %tY"`],
+						[/* text */ 't', `,
+     e.g. `],
+						[/* inline code block */ 'i', `"Sun Jul 20 16:17:00 EDT 1969"`],
+						[/* text */ 't', `.
+
+ `]
+					]]
+				]]
+			]],
+		],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The `],
@@ -1631,7 +5372,66 @@ DocsCollector.collect('java.util.Formatter', [
 		[/* block */ 'b', ` The conversion does not correspond to any argument.
 
  `],
-		[/* table */ 't', ''],
+		[/* table */ 'tbl',
+			[/* caption */ 'tc'],
+			[/* table header */ 'th'],
+			[/* table body */ 'tb', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'%'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` The result is a literal `],
+						[/* inline code block */ 'i', `'%'`],
+						[/* text */ 't', ` (`],
+						[/* inline code block */ 'i', `'\\u0025'`],
+						[/* text */ 't', `)
+
+ `],
+						[/* block */ 'b', [
+							[/* text */ 't', ` The width is the minimum number of characters to
+ be written to the output including the `],
+							[/* inline code block */ 'i', `'%'`],
+							[/* text */ 't', `.  If the length of the
+ converted value is less than the `],
+							[/* inline code block */ 'i', `width`],
+							[/* text */ 't', ` then the output will be
+ padded by spaces (`],
+							[/* inline code block */ 'i', `'\\u0020'`],
+							[/* text */ 't', `) until the total number of
+ characters equals width.  The padding is on the left.  If width is not
+ specified then just the `],
+							[/* inline code block */ 'i', `'%'`],
+							[/* text */ 't', ` is output.
+
+ `]
+						]],
+						[/* block */ 'b', [
+							[/* text */ 't', ` The `],
+							[/* inline code block */ 'i', `'-'`],
+							[/* text */ 't', ` flag defined for `],
+							[/* text */ 't', `General conversions`],
+							[/* text */ 't', ` applies.  If any other flags are provided, then a
+ `],
+							[/* reference */ 'r', `java.util.IllegalFormatFlagsException`],
+							[/* text */ 't', ` will be thrown.
+
+ `]
+						]],
+						[/* block */ 'b', [
+							[/* text */ 't', ` The precision is not applicable.  If the precision is specified an
+ `],
+							[/* reference */ 'r', `java.util.IllegalFormatPrecisionException`],
+							[/* text */ 't', ` will be thrown.
+
+ `]
+						]]
+					]]
+				]]
+			]],
+		],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `Line Separator`]
@@ -1639,7 +5439,26 @@ DocsCollector.collect('java.util.Formatter', [
 		[/* block */ 'b', ` The conversion does not correspond to any argument.
 
  `],
-		[/* table */ 't', ''],
+		[/* table */ 'tbl',
+			[/* caption */ 'tc'],
+			[/* table header */ 'th'],
+			[/* table body */ 'tb', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `'n'`],
+						[/* text */ 't', `
+     `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', ` the platform-specific line separator as returned by `],
+						[/* reference */ 'r', `java.System#lineSeparator()`],
+						[/* text */ 't', `.
+
+ `]
+					]]
+				]]
+			]],
+		],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Flags, width, and precision are not applicable.  If any are provided an
@@ -1680,7 +5499,7 @@ DocsCollector.collect('java.util.Formatter', [
 				[/* block */ 'b', [
 					[/* code block */ 'c', `   formatter.format("%4$s %3$s %2$s %1$s %4$s %3$s %2$s %1$s",
                     "a", "b", "c", "d")
-   // -&gt; "d c b a d c b a"
+   // -> "d c b a d c b a"
  `]
 				]]
 			]],
@@ -1699,8 +5518,8 @@ DocsCollector.collect('java.util.Formatter', [
 
  `],
 				[/* block */ 'b', [
-					[/* code block */ 'c', `    formatter.format("%s %s %&lt;s %&lt;s", "a", "b", "c", "d")
-    // -&gt; "a b b b"
+					[/* code block */ 'c', `    formatter.format("%s %s %<s %<s", "a", "b", "c", "d")
+    // -> "a b b b"
     // "c" and "d" are ignored because they are not referenced
  `]
 				]]
@@ -1718,7 +5537,7 @@ DocsCollector.collect('java.util.Formatter', [
  `],
 				[/* block */ 'b', [
 					[/* code block */ 'c', `   formatter.format("%s %s %s %s", "a", "b", "c", "d")
-   // -&gt; "a b c d"
+   // -> "a b c d"
  `]
 				]]
 			]],
@@ -1730,8 +5549,8 @@ DocsCollector.collect('java.util.Formatter', [
 
  `],
 		[/* block */ 'b', [
-			[/* code block */ 'c', `   formatter.format("%2$s %s %&lt;s %s", "a", "b", "c", "d")
-   // -&gt; "b a a b"
+			[/* code block */ 'c', `   formatter.format("%2$s %s %<s %s", "a", "b", "c", "d")
+   // -> "b a a b"
    // "c" and "d" are ignored because they are not referenced
  `]
 		]],
@@ -1771,10 +5590,10 @@ DocsCollector.collect('java.util.Formatter', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The locale used is the `],
-					[/* external link */ 'a', `Locale.html#getDefault(java.util.Locale.Category)`, `default locale`],
+					[/* reference */ 'r', `.Locale#getDefault(java.util.Locale.Category)`],
 					[/* text */ 't', ` for
  `],
-					[/* external link */ 'a', `Locale.Category.html#FORMAT`, `formatting`],
+					[/* reference */ 'r', `.Locale.Category#FORMAT`],
 					[/* text */ 't', ` for this instance of the Java
  virtual machine.`]
 				]]
@@ -1800,7 +5619,7 @@ DocsCollector.collect('java.util.Formatter', [
 				]],
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager is present and `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkWrite(java.io.FileDescriptor)`, `checkWrite(file.getPath())`],
+					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.io.FileDescriptor)`],
 					[/* text */ 't', ` denies
           write access to the file`]
 				]],
@@ -1816,7 +5635,7 @@ DocsCollector.collect('java.util.Formatter', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The charset used is the `],
-					[/* external link */ 'a', `../nio/charset/Charset.html#defaultCharset()`, `default charset`],
+					[/* reference */ 'r', `java.Charset#defaultCharset()`],
 					[/* text */ 't', ` for this
  instance of the Java virtual machine.
 
@@ -1824,10 +5643,10 @@ DocsCollector.collect('java.util.Formatter', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The locale used is the `],
-					[/* external link */ 'a', `Locale.html#getDefault(java.util.Locale.Category)`, `default locale`],
+					[/* reference */ 'r', `.Locale#getDefault(java.util.Locale.Category)`],
 					[/* text */ 't', ` for
  `],
-					[/* external link */ 'a', `Locale.Category.html#FORMAT`, `formatting`],
+					[/* reference */ 'r', `.Locale.Category#FORMAT`],
 					[/* text */ 't', ` for this instance of the Java
  virtual machine.`]
 				]]
@@ -1843,7 +5662,7 @@ DocsCollector.collect('java.util.Formatter', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager is present and `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkWrite(java.io.FileDescriptor)`, `checkWrite(file.getPath())`],
+					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.io.FileDescriptor)`],
 					[/* text */ 't', ` denies
           write access to the file`]
 				]],
@@ -1889,7 +5708,7 @@ DocsCollector.collect('java.util.Formatter', [
 				]],
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager is present and `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkWrite(java.io.FileDescriptor)`, `checkWrite(fileName)`],
+					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.io.FileDescriptor)`],
 					[/* text */ 't', ` denies write
           access to the file`]
 				]],
@@ -1941,7 +5760,7 @@ DocsCollector.collect('java.util.Formatter', [
 				]],
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager is present and `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkWrite(java.io.FileDescriptor)`, `checkWrite(fileName)`],
+					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.io.FileDescriptor)`],
 					[/* text */ 't', ` denies write
           access to the file`]
 				]],
@@ -1957,10 +5776,10 @@ DocsCollector.collect('java.util.Formatter', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The locale used is the `],
-					[/* external link */ 'a', `Locale.html#getDefault(java.util.Locale.Category)`, `default locale`],
+					[/* reference */ 'r', `.Locale#getDefault(java.util.Locale.Category)`],
 					[/* text */ 't', ` for
  `],
-					[/* external link */ 'a', `Locale.Category.html#FORMAT`, `formatting`],
+					[/* reference */ 'r', `.Locale.Category#FORMAT`],
 					[/* text */ 't', ` for this instance of the Java
  virtual machine.`]
 				]]
@@ -1986,7 +5805,7 @@ DocsCollector.collect('java.util.Formatter', [
 				]],
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager is present and `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkWrite(java.io.FileDescriptor)`, `checkWrite(fileName)`],
+					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.io.FileDescriptor)`],
 					[/* text */ 't', ` denies write
           access to the file`]
 				]],
@@ -2003,10 +5822,10 @@ DocsCollector.collect('java.util.Formatter', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The locale used is the `],
-					[/* external link */ 'a', `Locale.html#getDefault(java.util.Locale.Category)`, `default locale`],
+					[/* reference */ 'r', `.Locale#getDefault(java.util.Locale.Category)`],
 					[/* text */ 't', ` for
  `],
-					[/* external link */ 'a', `Locale.Category.html#FORMAT`, `formatting`],
+					[/* reference */ 'r', `.Locale.Category#FORMAT`],
 					[/* text */ 't', ` for this instance of the Java
  virtual machine.`]
 				]]
@@ -2034,7 +5853,7 @@ DocsCollector.collect('java.util.Formatter', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The charset used is the `],
-					[/* external link */ 'a', `../nio/charset/Charset.html#defaultCharset()`, `default charset`],
+					[/* reference */ 'r', `java.Charset#defaultCharset()`],
 					[/* text */ 't', ` for this
  instance of the Java virtual machine.
 
@@ -2042,10 +5861,10 @@ DocsCollector.collect('java.util.Formatter', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The locale used is the `],
-					[/* external link */ 'a', `Locale.html#getDefault(java.util.Locale.Category)`, `default locale`],
+					[/* reference */ 'r', `.Locale#getDefault(java.util.Locale.Category)`],
 					[/* text */ 't', ` for
  `],
-					[/* external link */ 'a', `Locale.Category.html#FORMAT`, `formatting`],
+					[/* reference */ 'r', `.Locale.Category#FORMAT`],
 					[/* text */ 't', ` for this instance of the Java
  virtual machine.`]
 				]]
@@ -2124,7 +5943,7 @@ DocsCollector.collect('java.util.Formatter', [
 				]],
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager is present and `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkWrite(java.io.FileDescriptor)`, `checkWrite(file.getPath())`],
+					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.io.FileDescriptor)`],
 					[/* text */ 't', ` denies
          write access to the file`]
 				]],
@@ -2176,7 +5995,7 @@ DocsCollector.collect('java.util.Formatter', [
 				]],
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager is present and `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkWrite(java.io.FileDescriptor)`, `checkWrite(file.getPath())`],
+					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.io.FileDescriptor)`],
 					[/* text */ 't', ` denies
           write access to the file`]
 				]],
@@ -2195,15 +6014,15 @@ DocsCollector.collect('java.util.Formatter', [
 					[/* reference */ 'r', `java.lang.StringBuilder`],
 					[/* text */ 't', `
  which may be retrieved by invoking `],
-					[/* reference */ 'r', `out()`],
+					[/* reference */ 'r', `#out()`, `out()`],
 					[/* text */ 't', ` and whose
  current content may be converted into a string by invoking `],
-					[/* reference */ 'r', `toString()`],
+					[/* reference */ 'r', `#toString()`, `toString()`],
 					[/* text */ 't', `.  The locale used is the `],
-					[/* external link */ 'a', `Locale.html#getDefault(java.util.Locale.Category)`, `default locale`],
+					[/* reference */ 'r', `.Locale#getDefault(java.util.Locale.Category)`],
 					[/* text */ 't', ` for
  `],
-					[/* external link */ 'a', `Locale.Category.html#FORMAT`, `formatting`],
+					[/* reference */ 'r', `.Locale.Category#FORMAT`],
 					[/* text */ 't', ` for this instance of the Java
  virtual machine.`]
 				]]
@@ -2256,10 +6075,10 @@ DocsCollector.collect('java.util.Formatter', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The locale used is the `],
-					[/* external link */ 'a', `Locale.html#getDefault(java.util.Locale.Category)`, `default locale`],
+					[/* reference */ 'r', `.Locale#getDefault(java.util.Locale.Category)`],
 					[/* text */ 't', ` for
  `],
-					[/* external link */ 'a', `Locale.Category.html#FORMAT`, `formatting`],
+					[/* reference */ 'r', `.Locale.Category#FORMAT`],
 					[/* text */ 't', ` for this instance of the Java
  virtual machine.
 
@@ -2286,7 +6105,7 @@ DocsCollector.collect('java.util.Formatter', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The charset used is the `],
-					[/* external link */ 'a', `../nio/charset/Charset.html#defaultCharset()`, `default charset`],
+					[/* reference */ 'r', `java.Charset#defaultCharset()`],
 					[/* text */ 't', ` for this
  instance of the Java virtual machine.
 
@@ -2294,10 +6113,10 @@ DocsCollector.collect('java.util.Formatter', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The locale used is the `],
-					[/* external link */ 'a', `Locale.html#getDefault(java.util.Locale.Category)`, `default locale`],
+					[/* reference */ 'r', `.Locale#getDefault(java.util.Locale.Category)`],
 					[/* text */ 't', ` for
  `],
-					[/* external link */ 'a', `Locale.Category.html#FORMAT`, `formatting`],
+					[/* reference */ 'r', `.Locale.Category#FORMAT`],
 					[/* text */ 't', ` for this instance of the Java
  virtual machine.`]
 				]]
@@ -2313,7 +6132,7 @@ DocsCollector.collect('java.util.Formatter', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager is present and `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkWrite(java.io.FileDescriptor)`, `checkWrite(fileName)`],
+					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.io.FileDescriptor)`],
 					[/* text */ 't', ` denies write
           access to the file`]
 				]],
@@ -2364,10 +6183,10 @@ DocsCollector.collect('java.util.Formatter', [
 					[/* reference */ 'r', `java.lang.StringBuilder`],
 					[/* text */ 't', `
  which may be retrieved by invoking `],
-					[/* reference */ 'r', `out()`],
+					[/* reference */ 'r', `#out()`, `out()`],
 					[/* text */ 't', ` and whose current
  content may be converted into a string by invoking `],
-					[/* reference */ 'r', `toString()`],
+					[/* reference */ 'r', `#toString()`, `toString()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -2393,10 +6212,10 @@ DocsCollector.collect('java.util.Formatter', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The locale used is the `],
-					[/* external link */ 'a', `Locale.html#getDefault(java.util.Locale.Category)`, `default locale`],
+					[/* reference */ 'r', `.Locale#getDefault(java.util.Locale.Category)`],
 					[/* text */ 't', ` for
  `],
-					[/* external link */ 'a', `Locale.Category.html#FORMAT`, `formatting`],
+					[/* reference */ 'r', `.Locale.Category#FORMAT`],
 					[/* text */ 't', ` for this instance of the Java
  virtual machine.`]
 				]]
@@ -2432,7 +6251,7 @@ DocsCollector.collect('java.util.Formatter', [
 					[/* code block */ 'c', `   Formatter f = new Formatter();
    f.format("Last reboot at %tc", lastRebootDate);
    String s = f.toString();
-   // -&gt; s == "Last reboot at Sat Jan 01 00:00:00 PST 2000"
+   // -> s == "Last reboot at Sat Jan 01 00:00:00 PST 2000"
  `]
 				]],
 				[/* block */ 'b', ` An invocation of this method behaves in exactly the same way as the
@@ -2458,7 +6277,7 @@ DocsCollector.collect('java.util.Formatter', [
 			[/* throws */
 				[/* throw */ 'java.util.FormatterClosedException', [/* throw description */
 					[/* text */ 't', `If this formatter has been closed by invoking its `],
-					[/* reference */ 'r', `close()`],
+					[/* reference */ 'r', `#close()`, `close()`],
 					[/* text */ 't', ` method`]
 				]]
 			],
@@ -2485,7 +6304,7 @@ DocsCollector.collect('java.util.Formatter', [
 			[/* throws */
 				[/* throw */ 'java.util.FormatterClosedException', [/* throw description */
 					[/* text */ 't', `If this formatter has been closed by invoking its `],
-					[/* reference */ 'r', `close()`],
+					[/* reference */ 'r', `#close()`, `close()`],
 					[/* text */ 't', ` method`]
 				]]
 			],
@@ -2526,7 +6345,7 @@ DocsCollector.collect('java.util.Formatter', [
 				]],
 				[/* throw */ 'java.util.FormatterClosedException', [/* throw description */
 					[/* text */ 't', `If this formatter has been closed by invoking its `],
-					[/* reference */ 'r', `close()`],
+					[/* reference */ 'r', `#close()`, `close()`],
 					[/* text */ 't', ` method`]
 				]]
 			],
@@ -2579,7 +6398,7 @@ DocsCollector.collect('java.util.Formatter', [
 				]],
 				[/* throw */ 'java.util.FormatterClosedException', [/* throw description */
 					[/* text */ 't', `If this formatter has been closed by invoking its `],
-					[/* reference */ 'r', `close()`],
+					[/* reference */ 'r', `#close()`, `close()`],
 					[/* text */ 't', ` method`]
 				]]
 			],
@@ -2594,7 +6413,7 @@ DocsCollector.collect('java.util.Formatter', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The `],
-					[/* reference */ 'r', `format`],
+					[/* reference */ 'r', `#format(java.util.Locale,java.lang.String,java.lang.Object...)`, `format`],
 					[/* text */ 't', ` method
  for this object which has a locale argument does not change this value.`]
 				]]
@@ -2603,7 +6422,7 @@ DocsCollector.collect('java.util.Formatter', [
 			[/* throws */
 				[/* throw */ 'java.util.FormatterClosedException', [/* throw description */
 					[/* text */ 't', `If this formatter has been closed by invoking its `],
-					[/* reference */ 'r', `close()`],
+					[/* reference */ 'r', `#close()`, `close()`],
 					[/* text */ 't', ` method`]
 				]]
 			],
@@ -2621,7 +6440,7 @@ DocsCollector.collect('java.util.Formatter', [
 			[/* throws */
 				[/* throw */ 'java.util.FormatterClosedException', [/* throw description */
 					[/* text */ 't', `If this formatter has been closed by invoking its `],
-					[/* reference */ 'r', `close()`],
+					[/* reference */ 'r', `#close()`, `close()`],
 					[/* text */ 't', ` method`]
 				]]
 			],
@@ -2645,7 +6464,7 @@ DocsCollector.collect('java.util.Formatter', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Attempting to invoke any methods except `],
-					[/* reference */ 'r', `ioException()`],
+					[/* reference */ 'r', `#ioException()`, `ioException()`],
 					[/* text */ 't', ` in
  this formatter after it has been closed will result in a `],
 					[/* reference */ 'r', `java.util.FormatterClosedException`],

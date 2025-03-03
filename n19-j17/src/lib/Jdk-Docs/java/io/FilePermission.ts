@@ -19,14 +19,7 @@ DocsCollector.collect('java.io.FilePermission', [
  a wildcard pathname. Otherwise, it's a simple pathname.
  `]
 		]],
-		[/* block */ 'b', [
-			[/* text */ 't', `
- A pathname consisting of the special token "&lt;&lt;ALL FILES&gt;&gt;"
- matches `],
-			[/* text */ 't', `any`],
-			[/* text */ 't', ` file.
- `]
-		]],
+		[/* block */ 'b', `any`],
 		[/* block */ 'b', `
  Note: A pathname consisting of a single "*" indicates all the files
  in the current directory, while a pathname consisting of a single "-"
@@ -41,7 +34,62 @@ DocsCollector.collect('java.io.FilePermission', [
  defined as follows:
 
  `],
-		[/* dl */ 't', ''],
+		[/* dl */ 'dl', [
+			[/* dt */ 'dt', [
+				[/* text */ 't', ` read `]
+			]],
+			[/* dd */ 'dd', [
+				[/* text */ 't', ` read permission
+    `]
+			]],
+			[/* dt */ 'dt', [
+				[/* text */ 't', ` write `]
+			]],
+			[/* dd */ 'dd', [
+				[/* text */ 't', ` write permission
+    `]
+			]],
+			[/* dt */ 'dt', [
+				[/* text */ 't', ` execute
+    `]
+			]],
+			[/* dd */ 'dd', [
+				[/* text */ 't', ` execute permission. Allows `],
+				[/* inline code block */ 'i', `Runtime.exec`],
+				[/* text */ 't', ` to
+         be called. Corresponds to `],
+				[/* inline code block */ 'i', `SecurityManager.checkExec`],
+				[/* text */ 't', `.
+    `]
+			]],
+			[/* dt */ 'dt', [
+				[/* text */ 't', ` delete
+    `]
+			]],
+			[/* dd */ 'dd', [
+				[/* text */ 't', ` delete permission. Allows `],
+				[/* inline code block */ 'i', `File.delete`],
+				[/* text */ 't', ` to
+         be called. Corresponds to `],
+				[/* inline code block */ 'i', `SecurityManager.checkDelete`],
+				[/* text */ 't', `.
+    `]
+			]],
+			[/* dt */ 'dt', [
+				[/* text */ 't', ` readlink
+    `]
+			]],
+			[/* dd */ 'dd', [
+				[/* text */ 't', ` read link permission. Allows the target of a
+         `],
+				[/* text */ 't', `symbolic link`],
+				[/* text */ 't', `
+         to be read by invoking the `],
+				[/* reference */ 'r', `java.Files#readSymbolicLink(java.nio.file.Path)`],
+				[/* text */ 't', ` method.
+ `]
+			]]
+		]],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `
  The actions string is converted to lowercase before processing.
@@ -49,7 +97,7 @@ DocsCollector.collect('java.io.FilePermission', [
 		[/* block */ 'b', `
  Be careful when granting FilePermissions. Think about the implications
  of granting read and especially write access to various files and
- directories. The "&lt;&lt;ALL FILES&gt;&gt;" permission with write action is
+ directories. The "<<ALL FILES>>" permission with write action is
  especially dangerous. This grants permission to write to the entire
  file system. One thing this effectively allows is replacement of the
  system binary, including the JVM runtime environment.
@@ -82,7 +130,7 @@ DocsCollector.collect('java.io.FilePermission', [
  indicates all the files and directories contained in that directory.
  A pathname that ends with "/-" indicates (recursively) all files and
  subdirectories contained in that directory. The special pathname
- "&lt;&lt;ALL FILES&gt;&gt;" matches any file.
+ "<<ALL FILES>>" matches any file.
 
  `]
 				]],
@@ -194,9 +242,9 @@ DocsCollector.collect('java.io.FilePermission', [
 				]],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `
- "&lt;&lt;ALL FILES&gt;&gt;" implies every other pathname. No pathname,
- except for "&lt;&lt;ALL FILES&gt;&gt;" itself, implies
- "&lt;&lt;ALL FILES&gt;&gt;".`]
+ "<<ALL FILES>>" implies every other pathname. No pathname,
+ except for "<<ALL FILES>>" itself, implies
+ "<<ALL FILES>>".`]
 			],
 			[/* parameters */
 				[/* parameter */ 'p', [/* parameter description */

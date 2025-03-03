@@ -111,7 +111,7 @@ DocsCollector.collect('java.security.CodeSource', [
 					[/* text */ 't', `
  If this CodeSource object was created using the
  `],
-					[/* reference */ 'r', `CodeSource(URL url, CodeSigner[] signers)`],
+					[/* reference */ 'r', `#%3Cinit%3E(java.net.URL,java.security.CodeSigner%5B%5D)`, `CodeSource(URL url, CodeSigner[] signers)`],
 					[/* text */ 't', `
  constructor then its certificate chains are extracted and used to
  create an array of Certificate objects. Each signer certificate is
@@ -273,7 +273,7 @@ DocsCollector.collect('java.security.CodeSource', [
 					[/* text */ 't', `
  If this CodeSource object was created using the
  `],
-					[/* reference */ 'r', `CodeSource(URL url, java.security.cert.Certificate[] certs)`],
+					[/* reference */ 'r', `#%3Cinit%3E(java.net.URL,java.security.cert.Certificate%5B%5D)`, `CodeSource(URL url, java.security.cert.Certificate[] certs)`],
 					[/* text */ 't', `
  constructor then its certificate chains are extracted and used to
  create an array of CodeSigner objects. Note that only X.509 certificates

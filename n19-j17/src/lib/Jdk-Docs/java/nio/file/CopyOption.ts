@@ -8,12 +8,12 @@ DocsCollector.collect('java.nio.file.CopyOption', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Objects of this type may be used with the `],
-			[/* external link */ 'a', `Files.html#copy(java.nio.file.Path,java.nio.file.Path,java.nio.file.CopyOption...)`, `Files.copy(Path,Path,CopyOption...)`],
+			[/* reference */ 'r', `.Files#copy(java.nio.file.Path,java.nio.file.Path,java.nio.file.CopyOption...)`],
 			[/* text */ 't', `,
  `],
-			[/* external link */ 'a', `Files.html#copy(java.io.InputStream,java.nio.file.Path,java.nio.file.CopyOption...)`, `Files.copy(InputStream,Path,CopyOption...)`],
+			[/* reference */ 'r', `.Files#copy(java.io.InputStream,java.nio.file.Path,java.nio.file.CopyOption...)`],
 			[/* text */ 't', ` and `],
-			[/* external link */ 'a', `Files.html#move(java.nio.file.Path,java.nio.file.Path,java.nio.file.CopyOption...)`, `Files.move(Path,Path,CopyOption...)`],
+			[/* reference */ 'r', `.Files#move(java.nio.file.Path,java.nio.file.Path,java.nio.file.CopyOption...)`],
 			[/* text */ 't', ` methods to configure how a file is
  copied or moved.
 

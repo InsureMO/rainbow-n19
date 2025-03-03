@@ -10,13 +10,13 @@ DocsCollector.collect('java.nio.file.WatchEvent', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` An event is classified by its `],
-			[/* reference */ 'r', `kind`],
+			[/* reference */ 'r', `#kind()`, `kind`],
 			[/* text */ 't', ` and has a `],
-			[/* reference */ 'r', `count`],
+			[/* reference */ 'r', `#count()`, `count`],
 			[/* text */ 't', ` to indicate the number of times that the event has been
  observed. This allows for efficient representation of repeated events. The
  `],
-			[/* reference */ 'r', `context`],
+			[/* reference */ 'r', `#context()`, `context`],
 			[/* text */ 't', ` method returns any context associated with
  the event. In the case of a repeated event then the context is the same for
  all events.
@@ -36,17 +36,17 @@ DocsCollector.collect('java.nio.file.WatchEvent', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` In the case of `],
-					[/* external link */ 'a', `StandardWatchEventKinds.html#ENTRY_CREATE`, `ENTRY_CREATE`],
+					[/* reference */ 'r', `.StandardWatchEventKinds#ENTRY_CREATE`],
 					[/* text */ 't', `,
  `],
-					[/* external link */ 'a', `StandardWatchEventKinds.html#ENTRY_DELETE`, `ENTRY_DELETE`],
+					[/* reference */ 'r', `.StandardWatchEventKinds#ENTRY_DELETE`],
 					[/* text */ 't', `, and `],
-					[/* external link */ 'a', `StandardWatchEventKinds.html#ENTRY_MODIFY`, `ENTRY_MODIFY`],
+					[/* reference */ 'r', `.StandardWatchEventKinds#ENTRY_MODIFY`],
 					[/* text */ 't', ` events the context is
  a `],
 					[/* inline code block */ 'i', `Path`],
 					[/* text */ 't', ` that is the `],
-					[/* external link */ 'a', `Path.html#relativize(java.nio.file.Path)`, `relative`],
+					[/* reference */ 'r', `.Path#relativize(java.nio.file.Path)`],
 					[/* text */ 't', ` path between
  the directory registered with the watch service, and the entry that is
  created, deleted, or modified.`]

@@ -6,7 +6,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 		[/* text */ 't', `A symbolic reference obtained by cracking a direct method handle
  into its constituent symbolic parts.
  To crack a direct method handle, call `],
-		[/* external link */ 'a', `MethodHandles.Lookup.html#revealDirect(java.lang.invoke.MethodHandle)`, `Lookup.revealDirect`],
+		[/* reference */ 'r', `.MethodHandles.Lookup#revealDirect(java.lang.invoke.MethodHandle)`],
 		[/* text */ 't', `.
  `],
 		[/* block */ 'b', [
@@ -40,10 +40,10 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 			]],
 			[/* block */ 'b', [
 				[/* text */ 't', `By calling one of the `],
-				[/* external link */ 'a', `MethodHandles.Lookup.html#lookups`, `Lookup Factory Methods`],
+				[/* reference */ 'r', `.MethodHandles.Lookup#lookups`],
 				[/* text */ 't', `,
      such as `],
-				[/* external link */ 'a', `MethodHandles.Lookup.html#findVirtual(java.lang.Class,java.lang.String,java.lang.invoke.MethodType)`, `Lookup.findVirtual`],
+				[/* reference */ 'r', `.MethodHandles.Lookup#findVirtual(java.lang.Class,java.lang.String,java.lang.invoke.MethodType)`],
 				[/* text */ 't', `,
      to resolve a symbolic reference into a method handle.
      A symbolic reference consists of a class, name string, and type.
@@ -51,10 +51,10 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 			]],
 			[/* block */ 'b', [
 				[/* text */ 't', `By calling the factory method `],
-				[/* external link */ 'a', `MethodHandles.Lookup.html#unreflect(java.lang.reflect.Method)`, `Lookup.unreflect`],
+				[/* reference */ 'r', `.MethodHandles.Lookup#unreflect(java.lang.reflect.Method)`],
 				[/* text */ 't', `
      or `],
-				[/* external link */ 'a', `MethodHandles.Lookup.html#unreflectSpecial(java.lang.reflect.Method,java.lang.Class)`, `Lookup.unreflectSpecial`],
+				[/* reference */ 'r', `.MethodHandles.Lookup#unreflectSpecial(java.lang.reflect.Method,java.lang.Class)`],
 				[/* text */ 't', `
      to convert a `],
 				[/* reference */ 'r', `java.lang.reflect.Method`],
@@ -63,7 +63,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 			]],
 			[/* block */ 'b', [
 				[/* text */ 't', `By calling the factory method `],
-				[/* external link */ 'a', `MethodHandles.Lookup.html#unreflectConstructor(java.lang.reflect.Constructor)`, `Lookup.unreflectConstructor`],
+				[/* reference */ 'r', `.MethodHandles.Lookup#unreflectConstructor(java.lang.reflect.Constructor)`],
 				[/* text */ 't', `
      to convert a `],
 				[/* reference */ 'r', `java.lang.reflect.Constructor`],
@@ -72,10 +72,10 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 			]],
 			[/* block */ 'b', [
 				[/* text */ 't', `By calling the factory method `],
-				[/* external link */ 'a', `MethodHandles.Lookup.html#unreflectGetter(java.lang.reflect.Field)`, `Lookup.unreflectGetter`],
+				[/* reference */ 'r', `.MethodHandles.Lookup#unreflectGetter(java.lang.reflect.Field)`],
 				[/* text */ 't', `
      or `],
-				[/* external link */ 'a', `MethodHandles.Lookup.html#unreflectSetter(java.lang.reflect.Field)`, `Lookup.unreflectSetter`],
+				[/* reference */ 'r', `.MethodHandles.Lookup#unreflectSetter(java.lang.reflect.Field)`],
 				[/* text */ 't', `
      to convert a `],
 				[/* reference */ 'r', `java.lang.reflect.Field`],
@@ -98,11 +98,11 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  If the underlying method is `],
-			[/* external link */ 'a', `MethodHandles.Lookup.html#callsens`, `caller sensitive`],
+			[/* reference */ 'r', `.MethodHandles.Lookup#callsens`],
 			[/* text */ 't', `,
  the direct method handle will have been "bound" to a particular caller class, the
  `],
-			[/* external link */ 'a', `MethodHandles.Lookup.html#lookupClass()`, `lookup class`],
+			[/* reference */ 'r', `.MethodHandles.Lookup#lookupClass()`],
 			[/* text */ 't', `
  of the lookup object used to create it.
  Cracking this method handle with a different lookup class will fail
@@ -117,7 +117,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
  for programs which may otherwise trust erroneous revelation of a method
  handle with symbolic information (or caller binding) from an unexpected scope.
  Use `],
-			[/* external link */ 'a', `MethodHandles.html#reflectAs(java.lang.Class,java.lang.invoke.MethodHandle)`, `MethodHandles.reflectAs(java.lang.Class<T>, java.lang.invoke.MethodHandle)`],
+			[/* reference */ 'r', `.MethodHandles#reflectAs(java.lang.Class,java.lang.invoke.MethodHandle)`],
 			[/* text */ 't', ` to override this limitation.
 
  `]
@@ -128,19 +128,207 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 		]],
 		[/* text */ 't', `
  The `],
-		[/* external link */ 'a', `MethodHandles.Lookup.html#lookups`, `Lookup Factory Methods`],
+		[/* reference */ 'r', `.MethodHandles.Lookup#lookups`],
 		[/* text */ 't', `
  correspond to all major use cases for methods, constructors, and fields.
  These use cases may be distinguished using small integers as follows:
  `],
-		[/* table */ 't', '']
+		[/* table */ 'tbl',
+			[/* caption */ 'tc'],
+			[/* table header */ 'th', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `reference kind`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `descriptive name`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `scope`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `member`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `behavior`]
+					]]
+				]]
+			]],
+			[/* table body */ 'tb', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `1`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `REF_getField`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `class`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `FT f;`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `(T) this.f;`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `2`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `REF_getStatic`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `class`],
+						[/* text */ 't', ` or `],
+						[/* inline code block */ 'i', `interface`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `static`],
+						[/* new line */ 'n'],
+						[/* inline code block */ 'i', `FT f;`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `(T) C.f;`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `3`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `REF_putField`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `class`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `FT f;`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `this.f = x;`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `4`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `REF_putStatic`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `class`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `static`],
+						[/* new line */ 'n'],
+						[/* inline code block */ 'i', `FT f;`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `C.f = arg;`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `5`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `REF_invokeVirtual`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `class`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `T m(A*);`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `(T) this.m(arg*);`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `6`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `REF_invokeStatic`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `class`],
+						[/* text */ 't', ` or `],
+						[/* inline code block */ 'i', `interface`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `static`],
+						[/* new line */ 'n'],
+						[/* inline code block */ 'i', `T m(A*);`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `(T) C.m(arg*);`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `7`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `REF_invokeSpecial`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `class`],
+						[/* text */ 't', ` or `],
+						[/* inline code block */ 'i', `interface`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `T m(A*);`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `(T) super.m(arg*);`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `8`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `REF_newInvokeSpecial`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `class`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `C(A*);`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `new C(arg*);`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* inline code block */ 'i', `9`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `REF_invokeInterface`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `interface`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `T m(A*);`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `(T) this.m(arg*);`]
+					]]
+				]]
+			]],
+		]
 	],
 	[/* fields */
 		[/* field */ 'REF_getField', [
 			[/* field description */
 				[/* text */ 't', `A direct method handle reference kind,
  as defined in the `],
-				[/* external link */ 'a', `MethodHandleInfo.html#refkinds`, `table above`],
+				[/* reference */ 'r', `.MethodHandleInfo#refkinds`],
 				[/* text */ 't', `.`]
 			],
 		]],
@@ -148,7 +336,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 			[/* field description */
 				[/* text */ 't', `A direct method handle reference kind,
  as defined in the `],
-				[/* external link */ 'a', `MethodHandleInfo.html#refkinds`, `table above`],
+				[/* reference */ 'r', `.MethodHandleInfo#refkinds`],
 				[/* text */ 't', `.`]
 			],
 		]],
@@ -156,7 +344,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 			[/* field description */
 				[/* text */ 't', `A direct method handle reference kind,
  as defined in the `],
-				[/* external link */ 'a', `MethodHandleInfo.html#refkinds`, `table above`],
+				[/* reference */ 'r', `.MethodHandleInfo#refkinds`],
 				[/* text */ 't', `.`]
 			],
 		]],
@@ -164,7 +352,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 			[/* field description */
 				[/* text */ 't', `A direct method handle reference kind,
  as defined in the `],
-				[/* external link */ 'a', `MethodHandleInfo.html#refkinds`, `table above`],
+				[/* reference */ 'r', `.MethodHandleInfo#refkinds`],
 				[/* text */ 't', `.`]
 			],
 		]],
@@ -172,7 +360,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 			[/* field description */
 				[/* text */ 't', `A direct method handle reference kind,
  as defined in the `],
-				[/* external link */ 'a', `MethodHandleInfo.html#refkinds`, `table above`],
+				[/* reference */ 'r', `.MethodHandleInfo#refkinds`],
 				[/* text */ 't', `.`]
 			],
 		]],
@@ -180,7 +368,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 			[/* field description */
 				[/* text */ 't', `A direct method handle reference kind,
  as defined in the `],
-				[/* external link */ 'a', `MethodHandleInfo.html#refkinds`, `table above`],
+				[/* reference */ 'r', `.MethodHandleInfo#refkinds`],
 				[/* text */ 't', `.`]
 			],
 		]],
@@ -188,7 +376,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 			[/* field description */
 				[/* text */ 't', `A direct method handle reference kind,
  as defined in the `],
-				[/* external link */ 'a', `MethodHandleInfo.html#refkinds`, `table above`],
+				[/* reference */ 'r', `.MethodHandleInfo#refkinds`],
 				[/* text */ 't', `.`]
 			],
 		]],
@@ -196,7 +384,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 			[/* field description */
 				[/* text */ 't', `A direct method handle reference kind,
  as defined in the `],
-				[/* external link */ 'a', `MethodHandleInfo.html#refkinds`, `table above`],
+				[/* reference */ 'r', `.MethodHandleInfo#refkinds`],
 				[/* text */ 't', `.`]
 			],
 		]],
@@ -204,7 +392,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 			[/* field description */
 				[/* text */ 't', `A direct method handle reference kind,
  as defined in the `],
-				[/* external link */ 'a', `MethodHandleInfo.html#refkinds`, `table above`],
+				[/* reference */ 'r', `.MethodHandleInfo#refkinds`],
 				[/* text */ 't', `.`]
 			],
 		]]
@@ -237,14 +425,14 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 				[/* inline code block */ 'i', `RK`],
 				[/* text */ 't', ` is the
  `],
-				[/* reference */ 'r', `reference kind string`],
+				[/* reference */ 'r', `#referenceKindToString(int)`, `reference kind string`],
 				[/* text */ 't', ` for `],
 				[/* inline code block */ 'i', `kind`],
 				[/* text */ 't', `,
  `],
 				[/* inline code block */ 'i', `C`],
 				[/* text */ 't', ` is the `],
-				[/* external link */ 'a', `../Class.html#getName()`, `name`],
+				[/* reference */ 'r', `java.Class#getName()`],
 				[/* text */ 't', ` of `],
 				[/* inline code block */ 'i', `defc`],
 				[/* inline code block */ 'i', `N`],
@@ -258,16 +446,16 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 				[/* text */ 't', `.
  These four values may be obtained from the
  `],
-				[/* reference */ 'r', `reference kind`],
+				[/* reference */ 'r', `#getReferenceKind()`, `reference kind`],
 				[/* text */ 't', `,
  `],
-				[/* reference */ 'r', `declaring class`],
+				[/* reference */ 'r', `#getDeclaringClass()`, `declaring class`],
 				[/* text */ 't', `,
  `],
-				[/* reference */ 'r', `member name`],
+				[/* reference */ 'r', `#getName()`, `member name`],
 				[/* text */ 't', `,
  and `],
-				[/* reference */ 'r', `method type`],
+				[/* reference */ 'r', `#getMethodType()`, `method type`],
 				[/* text */ 't', `
  of a `],
 				[/* inline code block */ 'i', `MethodHandleInfo`],
@@ -276,22 +464,22 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 			[/* parameters */
 				[/* parameter */ 'kind', [/* parameter description */
 					[/* text */ 't', `the `],
-					[/* reference */ 'r', `reference kind`],
+					[/* reference */ 'r', `#getReferenceKind()`, `reference kind`],
 					[/* text */ 't', ` part of the symbolic reference`]
 				]],
 				[/* parameter */ 'defc', [/* parameter description */
 					[/* text */ 't', `the `],
-					[/* reference */ 'r', `declaring class`],
+					[/* reference */ 'r', `#getDeclaringClass()`, `declaring class`],
 					[/* text */ 't', ` part of the symbolic reference`]
 				]],
 				[/* parameter */ 'name', [/* parameter description */
 					[/* text */ 't', `the `],
-					[/* reference */ 'r', `member name`],
+					[/* reference */ 'r', `#getName()`, `member name`],
 					[/* text */ 't', ` part of the symbolic reference`]
 				]],
 				[/* parameter */ 'type', [/* parameter description */
 					[/* text */ 't', `the `],
-					[/* reference */ 'r', `method type`],
+					[/* reference */ 'r', `#getMethodType()`, `method type`],
 					[/* text */ 't', ` part of the symbolic reference`]
 				]]
 			],
@@ -299,7 +487,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
 					[/* text */ 't', `if the first argument is not a valid
             `],
-					[/* external link */ 'a', `MethodHandleInfo.html#refkinds`, `reference kind number`]
+					[/* reference */ 'r', `.MethodHandleInfo#refkinds`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if any reference argument is `],
@@ -349,7 +537,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 				[/* text */ 't', `Returns the reference kind of the cracked method handle, which in turn
  determines whether the method handle's underlying member was a constructor, method, or field.
  See the `],
-				[/* external link */ 'a', `MethodHandleInfo.html#refkinds`, `table above`],
+				[/* reference */ 'r', `.MethodHandleInfo#refkinds`],
 				[/* text */ 't', ` for definitions.`]
 			],
 			/* parameters */ UDF,
@@ -447,7 +635,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 			[/* method description */
 				[/* text */ 't', `Returns the descriptive name of the given reference kind,
  as defined in the `],
-				[/* external link */ 'a', `MethodHandleInfo.html#refkinds`, `table above`],
+				[/* reference */ 'r', `.MethodHandleInfo#refkinds`],
 				[/* text */ 't', `.
  The conventional prefix "REF_" is omitted.`]
 			],
@@ -460,7 +648,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandleInfo', [
 				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
 					[/* text */ 't', `if the argument is not a valid
             `],
-					[/* external link */ 'a', `MethodHandleInfo.html#refkinds`, `reference kind number`]
+					[/* reference */ 'r', `.MethodHandleInfo#refkinds`]
 				]]
 			],
 			[/* return description */

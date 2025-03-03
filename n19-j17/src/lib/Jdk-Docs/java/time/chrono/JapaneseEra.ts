@@ -16,15 +16,15 @@ DocsCollector.collect('java.time.chrono.JapaneseEra', [
  The Java SE Platform supports all eras defined by the Japanese government,
  beginning with the Meiji era. Each era is identified in the Platform by an
  integer value and a name. The `],
-			[/* reference */ 'r', `of(int)`],
+			[/* reference */ 'r', `#of(int)`, `of(int)`],
 			[/* text */ 't', ` and `],
-			[/* reference */ 'r', `valueOf(String)`],
+			[/* reference */ 'r', `#valueOf(java.lang.String)`, `valueOf(String)`],
 			[/* text */ 't', `
  methods may be used to obtain a singleton instance of `],
 			[/* inline code block */ 'i', `JapaneseEra`],
 			[/* text */ 't', `
  for each era. The `],
-			[/* reference */ 'r', `values()`],
+			[/* reference */ 'r', `#values()`, `values()`],
 			[/* text */ 't', ` method returns the singleton instances
  of all supported eras.
  `]
@@ -33,7 +33,7 @@ DocsCollector.collect('java.time.chrono.JapaneseEra', [
 			[/* text */ 't', `
  For convenience, this class declares a number of public static final fields
  that refer to singleton instances returned by the `],
-			[/* reference */ 'r', `values()`],
+			[/* reference */ 'r', `#values()`, `values()`],
 			[/* text */ 't', ` method.`]
 		]]
 	],
@@ -106,7 +106,7 @@ DocsCollector.collect('java.time.chrono.JapaneseEra', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  Valid era names are the names of eras returned from `],
-					[/* reference */ 'r', `values()`],
+					[/* reference */ 'r', `#values()`, `values()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -190,10 +190,10 @@ DocsCollector.collect('java.time.chrono.JapaneseEra', [
  Every instance of `],
 					[/* inline code block */ 'i', `JapaneseEra`],
 					[/* text */ 't', ` that is returned from the `],
-					[/* reference */ 'r', `values()`],
+					[/* reference */ 'r', `#values()`, `values()`],
 					[/* text */ 't', `
  method has an int value (available via `],
-					[/* external link */ 'a', `Era.html#getValue()`, `Era.getValue()`],
+					[/* reference */ 'r', `.Era#getValue()`],
 					[/* text */ 't', ` which is
  accepted by this method.`]
 				]]
@@ -286,7 +286,7 @@ DocsCollector.collect('java.time.chrono.JapaneseEra', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If no textual mapping is found then the `],
-					[/* external link */ 'a', `Era.html#getValue()`, `numeric value`],
+					[/* reference */ 'r', `.Era#getValue()`],
 					[/* text */ 't', ` is returned.`]
 				]]
 			],

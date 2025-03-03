@@ -184,9 +184,9 @@ DocsCollector.collect('java.lang.reflect.Modifier', [
 				[/* inline code block */ 'i', `toString`],
 				[/* text */ 't', ` with the appropriate mask from a method like
  `],
-				[/* reference */ 'r', `constructorModifiers()`],
+				[/* reference */ 'r', `#constructorModifiers()`, `constructorModifiers()`],
 				[/* text */ 't', ` or `],
-				[/* reference */ 'r', `methodModifiers()`],
+				[/* reference */ 'r', `#methodModifiers()`, `methodModifiers()`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */

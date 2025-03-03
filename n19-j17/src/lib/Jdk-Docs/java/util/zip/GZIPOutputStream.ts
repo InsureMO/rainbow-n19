@@ -28,11 +28,11 @@ DocsCollector.collect('java.util.zip.GZIPOutputStream', [
 					[/* inline code block */ 'i', `true`],
 					[/* text */ 't', ` invocation of the inherited
         `],
-					[/* external link */ 'a', `DeflaterOutputStream.html#flush()`, `flush()`],
+					[/* reference */ 'r', `.DeflaterOutputStream#flush()`],
 					[/* text */ 't', ` method of
         this instance flushes the compressor with flush mode
         `],
-					[/* external link */ 'a', `Deflater.html#SYNC_FLUSH`, `Deflater.SYNC_FLUSH`],
+					[/* reference */ 'r', `.Deflater#SYNC_FLUSH`],
 					[/* text */ 't', ` before flushing the output
         stream, otherwise only flushes the output stream`]
 				]]
@@ -79,11 +79,11 @@ DocsCollector.collect('java.util.zip.GZIPOutputStream', [
 					[/* inline code block */ 'i', `true`],
 					[/* text */ 't', ` invocation of the inherited
         `],
-					[/* external link */ 'a', `DeflaterOutputStream.html#flush()`, `flush()`],
+					[/* reference */ 'r', `.DeflaterOutputStream#flush()`],
 					[/* text */ 't', ` method of
         this instance flushes the compressor with flush mode
         `],
-					[/* external link */ 'a', `Deflater.html#SYNC_FLUSH`, `Deflater.SYNC_FLUSH`],
+					[/* reference */ 'r', `.Deflater#SYNC_FLUSH`],
 					[/* text */ 't', ` before flushing the output
         stream, otherwise only flushes the output stream`]
 				]]

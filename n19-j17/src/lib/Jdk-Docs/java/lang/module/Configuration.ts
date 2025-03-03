@@ -4,10 +4,10 @@ import {DocsCollector} from '../../../DocsCollector';
 DocsCollector.collect('java.lang.module.Configuration', [
 	[/* class description */
 		[/* text */ 't', `A configuration that is the result of `],
-		[/* external link */ 'a', `package-summary.html#resolution`, `resolution`],
+		[/* reference */ 'r', `.package-summary#resolution`],
 		[/* text */ 't', ` or resolution with
  `],
-		[/* external link */ 'a', `../../../../java.base/java/lang/module/Configuration.html#service-binding`, `service binding`],
+		[/* text */ 't', `service binding`],
 		[/* text */ 't', `.
 
  `],
@@ -22,23 +22,23 @@ DocsCollector.collect('java.lang.module.Configuration', [
  amongst the modules. `],
 			[/* inline code block */ 'i', `Configuration`],
 			[/* text */ 't', ` defines the `],
-			[/* reference */ 'r', `modules()`],
+			[/* reference */ 'r', `#modules()`, `modules()`],
 			[/* text */ 't', ` method to get the set of resolved modules in the graph. `],
 			[/* inline code block */ 'i', `ResolvedModule`],
 			[/* text */ 't', ` defines the `],
-			[/* external link */ 'a', `ResolvedModule.html#reads()`, `reads()`],
+			[/* reference */ 'r', `.ResolvedModule#reads()`],
 			[/* text */ 't', ` method to
  get the set of modules that a resolved module reads. The modules that are
  read may be in the same configuration or may be in `],
-			[/* reference */ 'r', `parent`],
+			[/* reference */ 'r', `#parents()`, `parent`],
 			[/* text */ 't', `
  configurations. `]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Configuration defines the `],
-			[/* reference */ 'r', `resolve`],
+			[/* reference */ 'r', `#resolve(java.lang.module.ModuleFinder,java.util.List,java.lang.module.ModuleFinder,java.util.Collection)`, `resolve`],
 			[/* text */ 't', ` method to resolve a collection of root modules, and the `],
-			[/* reference */ 'r', `resolveAndBind`],
+			[/* reference */ 'r', `#resolveAndBind(java.lang.module.ModuleFinder,java.util.List,java.lang.module.ModuleFinder,java.util.Collection)`, `resolveAndBind`],
 			[/* text */ 't', `
  method to do resolution with service binding. There are instance and
  static variants of both methods. The instance methods create a configuration
@@ -50,7 +50,7 @@ DocsCollector.collect('java.lang.module.Configuration', [
 			[/* reference */ 'r', `java.lang.ModuleLayer`],
 			[/* text */ 't', ` of modules in the Java virtual
  machine is created from a configuration. The configuration for the `],
-			[/* external link */ 'a', `../ModuleLayer.html#boot()`, `boot`],
+			[/* reference */ 'r', `java.ModuleLayer#boot()`],
 			[/* text */ 't', ` layer is obtained by invoking `],
 			[/* inline code block */ 'i', `ModuleLayer.boot().configuration()`],
 			[/* text */ 't', `. The configuration for the boot layer
@@ -59,7 +59,7 @@ DocsCollector.collect('java.lang.module.Configuration', [
 		[/* block */ 'b', ` Example `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The following example uses the `],
-			[/* reference */ 'r', `resolve`],
+			[/* reference */ 'r', `#resolve(java.lang.module.ModuleFinder,java.lang.module.ModuleFinder,java.util.Collection)`, `resolve`],
 			[/* text */ 't', ` method to resolve a
  module named `],
 			[/* text */ 't', `myapp`],
@@ -113,7 +113,7 @@ DocsCollector.collect('java.lang.module.Configuration', [
 				[/* text */ 't', `Resolves a collection of root modules, with this configuration as its
  parent, to create a new configuration. This method works exactly as
  specified by the static `],
-				[/* reference */ 'r', `resolve`],
+				[/* reference */ 'r', `#resolve(java.lang.module.ModuleFinder,java.util.List,java.lang.module.ModuleFinder,java.util.Collection)`, `resolve`],
 				[/* text */ 't', `
  method when invoked with this configuration as the parent. In other words,
  if this configuration is `],
@@ -178,7 +178,7 @@ DocsCollector.collect('java.lang.module.Configuration', [
 					[/* text */ 't', ` module
  finder. If a module is not found then it is located in the parent
  configuration as if by invoking the `],
-					[/* reference */ 'r', `findModule`],
+					[/* reference */ 'r', `#findModule(java.lang.String)`, `findModule`],
 					[/* text */ 't', ` method on each parent in iteration order. If not found then
  the module is located using the given `],
 					[/* inline code block */ 'i', `after`],
@@ -341,7 +341,7 @@ DocsCollector.collect('java.lang.module.Configuration', [
 			[/* method description */
 				[/* text */ 't', `Returns an unmodifiable list of this configuration's parents, in search
  order. If this is the `],
-				[/* reference */ 'r', `empty configuration`],
+				[/* reference */ 'r', `#empty()`, `empty configuration`],
 				[/* text */ 't', ` then an
  empty list is returned.`]
 			],
@@ -355,7 +355,7 @@ DocsCollector.collect('java.lang.module.Configuration', [
 			[/* method description */
 				[/* text */ 't', `Finds a resolved module in this configuration, or if not in this
  configuration, the `],
-				[/* reference */ 'r', `parent`],
+				[/* reference */ 'r', `#parents()`, `parent`],
 				[/* text */ 't', ` configurations.
  Finding a module in parent configurations is equivalent to invoking
  `],
@@ -387,7 +387,7 @@ DocsCollector.collect('java.lang.module.Configuration', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method works exactly as specified by `],
-					[/* reference */ 'r', `resolve`],
+					[/* reference */ 'r', `#resolve(java.lang.module.ModuleFinder,java.util.List,java.lang.module.ModuleFinder,java.util.Collection)`, `resolve`],
 					[/* text */ 't', ` except that the graph of resolved modules is augmented
  with modules induced by the service-use dependence relation. `]
 				]],
@@ -398,10 +398,10 @@ DocsCollector.collect('java.lang.module.Configuration', [
 					[/* inline code block */ 'i', `resolve`],
 					[/* text */ 't', `. The resolved modules, and
  all modules in the parent configurations, with `],
-					[/* external link */ 'a', `ModuleDescriptor.html#uses()`, `service dependences`],
+					[/* reference */ 'r', `.ModuleDescriptor#uses()`],
 					[/* text */ 't', ` are then examined. All modules found by the given
  module finders that `],
-					[/* external link */ 'a', `ModuleDescriptor.html#provides()`, `provide`],
+					[/* reference */ 'r', `.ModuleDescriptor#provides()`],
 					[/* text */ 't', ` an
  implementation of one or more of the service types are added to the
  module graph and then resolved as if by calling the `],
@@ -476,7 +476,7 @@ DocsCollector.collect('java.lang.module.Configuration', [
 				[/* text */ 't', `Resolves a collection of root modules, with service binding, and with
  this configuration as its parent, to create a new configuration.
  This method works exactly as specified by the static `],
-				[/* reference */ 'r', `resolveAndBind`],
+				[/* reference */ 'r', `#resolveAndBind(java.lang.module.ModuleFinder,java.util.List,java.lang.module.ModuleFinder,java.util.Collection)`, `resolveAndBind`],
 				[/* text */ 't', ` method when invoked with this configuration
  as the parent. In other words, if this configuration is `],
 				[/* inline code block */ 'i', `cf`],

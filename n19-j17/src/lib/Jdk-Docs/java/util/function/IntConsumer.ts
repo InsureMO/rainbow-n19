@@ -19,10 +19,10 @@ DocsCollector.collect('java.util.function.IntConsumer', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
-			[/* external link */ 'a', `package-summary.html`, `functional interface`],
+			[/* reference */ 'r', `.package-summary`],
 			[/* text */ 't', `
  whose functional method is `],
-			[/* reference */ 'r', `accept(int)`],
+			[/* reference */ 'r', `#accept(int)`, `accept(int)`],
 			[/* text */ 't', `.`]
 		]]
 	],

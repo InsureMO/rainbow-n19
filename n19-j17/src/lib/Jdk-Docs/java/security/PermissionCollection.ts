@@ -237,7 +237,7 @@ DocsCollector.collect('java.security.PermissionCollection', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The collection should not be modified (see `],
-					[/* reference */ 'r', `add(java.security.Permission)`],
+					[/* reference */ 'r', `#add(java.security.Permission)`, `add(java.security.Permission)`],
 					[/* text */ 't', `) during the
  execution of the terminal stream operation. Otherwise, the result of the
  terminal stream operation is undefined.`]

@@ -31,31 +31,19 @@ DocsCollector.collect('java.lang.Record', [
 
  `]
 		]],
-		[/* block */ 'b', [
-			[/* text */ 't', `A record class has the following mandated members: a `],
-			[/* text */ 't', `canonical
+		[/* block */ 'b', `canonical
  constructor`],
-			[/* text */ 't', `, which must provide at least as much access as the record
- class and whose descriptor is the same as the record descriptor;
- a private final field corresponding to each component, whose name and
- type are the same as that of the component; a public accessor method
- corresponding to each component, whose name and return type are the same as
- that of the component.  If not explicitly declared in the body of the record,
- implicit implementations for these members are provided.
-
- `]
-		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `The implicit declaration of the canonical constructor has the same accessibility
  as the record class and initializes the component fields from the corresponding
  constructor arguments.  The implicit declaration of the accessor methods returns
  the value of the corresponding component field.  The implicit declaration of the
  `],
-			[/* external link */ 'a', `Object.html#equals(java.lang.Object)`, `Object.equals(Object)`],
+			[/* reference */ 'r', `.Object#equals(java.lang.Object)`],
 			[/* text */ 't', `, `],
-			[/* external link */ 'a', `Object.html#hashCode()`, `Object.hashCode()`],
+			[/* reference */ 'r', `.Object#hashCode()`],
 			[/* text */ 't', `, and `],
-			[/* external link */ 'a', `Object.html#toString()`, `Object.toString()`],
+			[/* reference */ 'r', `.Object#toString()`],
 			[/* text */ 't', `
  methods are derived from all of the component fields.
 
@@ -98,7 +86,7 @@ DocsCollector.collect('java.lang.Record', [
 			[/* method description */
 				[/* text */ 't', `Indicates whether some other object is "equal to" this one.  In addition
  to the general contract of `],
-				[/* external link */ 'a', `Object.html#equals(java.lang.Object)`, `Object.equals`],
+				[/* reference */ 'r', `.Object#equals(java.lang.Object)`],
 				[/* text */ 't', `,
  record classes must further obey the invariant that when
  a record instance is "copied" by passing the result of the record component
@@ -129,7 +117,7 @@ DocsCollector.collect('java.lang.Record', [
 			[/* method description */
 				[/* text */ 't', `Returns a string representation of the record.
  In accordance with the general contract of `],
-				[/* external link */ 'a', `Object.html#toString()`, `Object.toString()`],
+				[/* reference */ 'r', `.Object#toString()`],
 				[/* text */ 't', `,
  the `],
 				[/* inline code block */ 'i', `toString`],
@@ -143,7 +131,7 @@ DocsCollector.collect('java.lang.Record', [
  In addition to this general contract, record classes must further
  participate in the invariant that any two records which are
  `],
-					[/* reference */ 'r', `equal`],
+					[/* reference */ 'r', `#equals(java.lang.Object)`, `equal`],
 					[/* text */ 't', ` must produce equal
  strings.  This invariant is necessarily relaxed in the rare
  case where corresponding equal component values might fail
@@ -160,11 +148,11 @@ DocsCollector.collect('java.lang.Record', [
 			[/* method description */
 				[/* text */ 't', `Returns a hash code value for the record.
  Obeys the general contract of `],
-				[/* external link */ 'a', `Object.html#hashCode()`, `Object.hashCode`],
+				[/* reference */ 'r', `.Object#hashCode()`],
 				[/* text */ 't', `.
  For records, hashing behavior is constrained by the refined contract
  of `],
-				[/* reference */ 'r', `Record.equals`],
+				[/* reference */ 'r', `#equals(java.lang.Object)`, `Record.equals`],
 				[/* text */ 't', `, so that any two records
  created from the same components must have the same hash code.`]
 			],

@@ -30,13 +30,7 @@ DocsCollector.collect('java.util.concurrent.Future', [
 		[/* text */ 't', ` as a result of the underlying task.
 
  `],
-		[/* block */ 'b', [
-			[/* text */ 't', `Sample Usage`],
-			[/* text */ 't', ` (Note that the following classes are all
- made-up.)
-
- `]
-		]],
+		[/* block */ 'b', `Sample Usage`],
 		[/* code block */ 'c', [
 			[/* inline code block */ 'i', `interface ArchiveSearcher { String search(String target); }
  class App {
@@ -76,7 +70,7 @@ DocsCollector.collect('java.util.concurrent.Future', [
 		[/* block */ 'b', [
 			[/* text */ 't', `Memory consistency effects: Actions taken by the asynchronous computation
  `],
-			[/* external link */ 'a', `package-summary.html#MemoryVisibility`, `happen-before`],
+			[/* reference */ 'r', `.package-summary#MemoryVisibility`],
 			[/* text */ 't', `
  actions following the corresponding `],
 			[/* inline code block */ 'i', `Future.get()`],
@@ -161,7 +155,7 @@ DocsCollector.collect('java.util.concurrent.Future', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The return value from this method does not necessarily
  indicate whether the task is now cancelled; use `],
-					[/* reference */ 'r', `isCancelled()`],
+					[/* reference */ 'r', `#isCancelled()`, `isCancelled()`],
 					[/* text */ 't', `.`]
 				]]
 			],

@@ -10,13 +10,13 @@ DocsCollector.collect('java.util.Date', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `
- Prior to JDK&nbsp;1.1, the class `],
+ Prior to JDK 1.1, the class `],
 			[/* inline code block */ 'i', `Date`],
 			[/* text */ 't', ` had two additional
  functions.  It allowed the interpretation of dates as year, month, day, hour,
  minute, and second values.  It also allowed the formatting and parsing
  of date strings.  Unfortunately, the API for these functions was not
- amenable to internationalization.  As of JDK&nbsp;1.1, the
+ amenable to internationalization.  As of JDK 1.1, the
  `],
 			[/* inline code block */ 'i', `Calendar`],
 			[/* text */ 't', ` class should be used to convert between dates and time
@@ -36,8 +36,8 @@ DocsCollector.collect('java.util.Date', [
 			[/* text */ 't', ` class is intended to reflect
  coordinated universal time (UTC), it may not do so exactly,
  depending on the host environment of the Java Virtual Machine.
- Nearly all modern operating systems assume that 1&nbsp;day&nbsp;=
- 24&nbsp;×&nbsp;60&nbsp;×&nbsp;60&nbsp;= 86400 seconds
+ Nearly all modern operating systems assume that 1 day =
+ 24 × 60 × 60 = 86400 seconds
  in all cases. In UTC, however, about once every year or two there
  is an extra second, called a "leap second." The leap
  second is always added as the last second of the day, and always
@@ -71,7 +71,7 @@ DocsCollector.collect('java.util.Date', [
 		]],
 		[/* block */ 'b', [
 			[/* code block */ 'c', [
-				[/* external link */ 'a', `https://www.usno.navy.mil/USNO`, `https://www.usno.navy.mil/USNO`]
+				[/* text */ 't', `https://www.usno.navy.mil/USNO`]
 			]]
 		]],
 		[/* block */ 'b', ''],
@@ -80,7 +80,7 @@ DocsCollector.collect('java.util.Date', [
  `],
 		[/* block */ 'b', [
 			[/* code block */ 'c', [
-				[/* external link */ 'a', `https://www.usno.navy.mil/USNO/time/master-clock/systems-of-time`, `https://www.usno.navy.mil/USNO/time/master-clock/systems-of-time`]
+				[/* text */ 't', `https://www.usno.navy.mil/USNO/time/master-clock/systems-of-time`]
 			]]
 		]],
 		[/* block */ 'b', ''],
@@ -104,7 +104,7 @@ DocsCollector.collect('java.util.Date', [
 				[/* text */ 't', ` is represented by the integer
      `],
 				[/* text */ 't', `y`],
-				[/* text */ 't', `&nbsp;`],
+				[/* text */ 't', ` `],
 				[/* inline code block */ 'i', `- 1900`],
 				[/* text */ 't', `.
  `]
@@ -148,7 +148,7 @@ DocsCollector.collect('java.util.Date', [
 				[/* inline code block */ 'i', `s`],
 				[/* text */ 't', `, which is interpreted as if by the
  `],
-				[/* reference */ 'r', `parse(java.lang.String)`],
+				[/* reference */ 'r', `#parse(java.lang.String)`, `parse(java.lang.String)`],
 				[/* text */ 't', ` method.`]
 			],
 			[/* parameters */
@@ -440,7 +440,7 @@ DocsCollector.collect('java.util.Date', [
 				[/* inline code block */ 'i', `long`],
 				[/* text */ 't', `
  value returned by the `],
-				[/* reference */ 'r', `getTime()`],
+				[/* reference */ 'r', `#getTime()`, `getTime()`],
 				[/* text */ 't', `
  method. That is, the hash code is the value of the expression:
  `],
@@ -1246,7 +1246,7 @@ DocsCollector.collect('java.util.Date', [
 				[/* text */ 't', `" format supported by the `],
 				[/* inline code block */ 'i', `strftime()`],
 				[/* text */ 't', `
- function of ISO&nbsp;C.`]
+ function of ISO C.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,

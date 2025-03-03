@@ -11,8 +11,12 @@ DocsCollector.collect('java.io.Serializable', [
 			[/* text */ 't', `Warning: Deserialization of untrusted data is inherently dangerous
  and should be avoided. Untrusted data should be carefully validated according to the
  "Serialization and Deserialization" section of the
- <a href="https://docs.oracle.com/pls/topic/lookup?ctx=javase17&amp;id=secure_coding_guidelines_javase">Secure Coding Guidelines for Java SE</a>.
- <a href="https://docs.oracle.com/pls/topic/lookup?ctx=javase17&amp;id=serialization_filter_guide">Serialization Filtering</a> describes best
+ `],
+			[/* external link */ 'a', `https://docs.oracle.com/pls/topic/lookup?ctx=javase17&id=secure_coding_guidelines_javase`, `Secure Coding Guidelines for Java SE`],
+			[/* text */ 't', `.
+ `],
+			[/* external link */ 'a', `https://docs.oracle.com/pls/topic/lookup?ctx=javase17&id=serialization_filter_guide`, `Serialization Filtering`],
+			[/* text */ 't', ` describes best
  practices for defensive use of serial filters.
  `]
 		]],
@@ -36,7 +40,7 @@ DocsCollector.collect('java.io.Serializable', [
  assume responsibility for saving and restoring the state of a non-serializable
  supertype's public, protected, and (if accessible) package-access fields. See
  the `],
-			[/* external link */ 'a', `../../../../specs/serialization/input.html#the-objectinputstream-class`, `Java Object Serialization Specification,`],
+			[/* text */ 't', `Java Object Serialization Specification,`],
 			[/* text */ 't', ` section 3.1, for
  a detailed specification of the deserialization process, including handling of
  serializable and non-serializable classes. `]
@@ -132,7 +136,7 @@ DocsCollector.collect('java.io.Serializable', [
 
  Enum types are all serializable and receive treatment defined by
  the `],
-			[/* external link */ 'a', `../../../../specs/serialization/index.html`, `Java Object Serialization Specification`],
+			[/* text */ 't', `Java Object Serialization Specification`],
 			[/* text */ 't', ` during
  serialization and deserialization. Any declarations of the special
  handling methods discussed above are ignored for enum types.`]
@@ -144,7 +148,7 @@ DocsCollector.collect('java.io.Serializable', [
 			[/* inline code block */ 'i', `Serializable`],
 			[/* text */ 't', ` and receive treatment defined
  by the `],
-			[/* external link */ 'a', `../../../../specs/serialization/serial-arch.html#serialization-of-records`, `Java Object Serialization Specification, Section 1.13, "Serialization of Records"`],
+			[/* text */ 't', `Java Object Serialization Specification, Section 1.13, "Serialization of Records"`],
 			[/* text */ 't', `. Any declarations of the special
  handling methods discussed above are ignored for record types.`]
 		]],
@@ -178,7 +182,7 @@ DocsCollector.collect('java.io.Serializable', [
  the serialization runtime will calculate a default serialVersionUID value
  for that class based on various aspects of the class, as described in the
  `],
-		[/* external link */ 'a', `../../../../specs/serialization/index.html`, `Java Object Serialization Specification.`],
+		[/* text */ 't', `Java Object Serialization Specification.`],
 		[/* text */ 't', ` This specification defines the
  serialVersionUID of an enum type to be 0L. However, it is `],
 		[/* text */ 't', `strongly

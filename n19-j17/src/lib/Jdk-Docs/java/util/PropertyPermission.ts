@@ -21,7 +21,30 @@ DocsCollector.collect('java.util.PropertyPermission', [
  "read" and "write". Their meaning is defined as follows:
 
  `],
-		[/* dl */ 't', ''],
+		[/* dl */ 'dl', [
+			[/* dt */ 'dt', [
+				[/* text */ 't', ` read
+    `]
+			]],
+			[/* dd */ 'dd', [
+				[/* text */ 't', ` read permission. Allows `],
+				[/* inline code block */ 'i', `System.getProperty`],
+				[/* text */ 't', ` to
+         be called.
+    `]
+			]],
+			[/* dt */ 'dt', [
+				[/* text */ 't', ` write
+    `]
+			]],
+			[/* dd */ 'dd', [
+				[/* text */ 't', ` write permission. Allows `],
+				[/* inline code block */ 'i', `System.setProperty`],
+				[/* text */ 't', ` to
+         be called.
+ `]
+			]]
+		]],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `
  The actions string is converted to lowercase before processing.

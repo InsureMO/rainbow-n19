@@ -4,15 +4,7 @@ import {DocsCollector} from '../../../DocsCollector';
 DocsCollector.collect('java.lang.module.ModuleDescriptor$Opens', [
 	[/* class description */
 		[/* block */ 'b', ` A package opened by a module, may be qualified or unqualified. `],
-		[/* block */ 'b', [
-			[/* text */ 't', ` The `],
-			[/* text */ 't', `opens`],
-			[/* text */ 't', ` directive in a module declaration declares a
- package to be open to allow all types in the package, and all their
- members, not just public types and their public members to be reflected
- on by APIs that support private access or a way to bypass or suppress
- default Java language access control checks. `]
-		]]
+		[/* block */ 'b', `opens`]
 	],
 	/* fields */ UDF,
 	/* constructors */ UDF,
@@ -48,7 +40,7 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Opens', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method satisfies the general contract of the `],
-					[/* external link */ 'a', `../Object.html#equals(java.lang.Object)`, `Object.equals`],
+					[/* reference */ 'r', `java.Object#equals(java.lang.Object)`],
 					[/* text */ 't', ` method. `]
 				]]
 			],
@@ -88,7 +80,7 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Opens', [
 					[/* text */ 't', `, the set of modules names to which the
  package is opened. It satisfies the general contract of the
  `],
-					[/* external link */ 'a', `../Object.html#hashCode()`, `Object.hashCode`],
+					[/* reference */ 'r', `java.Object#hashCode()`],
 					[/* text */ 't', ` method.`]
 				]]
 			],
@@ -113,7 +105,7 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Opens', [
  names lexicographically. Where the packages names are equal then the
  sets of modifiers are compared in the same way that module modifiers
  are compared (see `],
-					[/* external link */ 'a', `ModuleDescriptor.html#compareTo(java.lang.module.ModuleDescriptor)`, `ModuleDescriptor.compareTo`],
+					[/* reference */ 'r', `.ModuleDescriptor#compareTo(java.lang.module.ModuleDescriptor)`],
 					[/* text */ 't', `). Where the package names are equal and
  the set of modifiers are equal then the set of target modules are
  compared. This is done by sorting the names of the target modules

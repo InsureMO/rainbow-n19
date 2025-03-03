@@ -82,10 +82,10 @@ DocsCollector.collect('java.util.Set', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `The `],
-			[/* reference */ 'r', `Set.of`],
+			[/* reference */ 'r', `#of(E...)`, `Set.of`],
 			[/* text */ 't', ` and
  `],
-			[/* reference */ 'r', `Set.copyOf`],
+			[/* reference */ 'r', `#copyOf(java.util.Collection)`, `Set.copyOf`],
 			[/* text */ 't', ` static factory methods
  provide a convenient way to create unmodifiable sets. The `],
 			[/* inline code block */ 'i', `Set`],
@@ -97,7 +97,7 @@ DocsCollector.collect('java.util.Set', [
 		[/* list */ 'l', [
 			[/* block */ 'b', [
 				[/* text */ 't', `They are `],
-				[/* external link */ 'a', `Collection.html#unmodifiable`, `unmodifiable`],
+				[/* reference */ 'r', `.Collection#unmodifiable`],
 				[/* text */ 't', `. Elements cannot
  be added or removed. Calling any mutator method on the Set
  will always cause `],
@@ -131,10 +131,10 @@ DocsCollector.collect('java.util.Set', [
  `],
 			[/* block */ 'b', [
 				[/* text */ 't', `They are `],
-				[/* external link */ 'a', `../lang/doc-files/ValueBased.html`, `value-based`],
+				[/* text */ 't', `value-based`],
 				[/* text */ 't', `.
  Programmers should treat instances that are `],
-				[/* reference */ 'r', `equal`],
+				[/* reference */ 'r', `#equals(java.lang.Object)`, `equal`],
 				[/* text */ 't', `
  as interchangeable and should not use them for synchronization, or
  unpredictable behavior may occur. For example, in a future release,
@@ -146,7 +146,7 @@ DocsCollector.collect('java.util.Set', [
 			[/* block */ 'b', [
 				[/* text */ 't', `They are serialized as specified on the
  `],
-				[/* external link */ 'a', `../../../serialized-form.html#java.util.CollSer`, `Serialized Form`],
+				[/* text */ 't', `Serialized Form`],
 				[/* text */ 't', `
  page.
  `]
@@ -156,7 +156,7 @@ DocsCollector.collect('java.util.Set', [
 		[/* block */ 'b', [
 			[/* text */ 't', `This interface is a member of the
  `],
-			[/* external link */ 'a', `../../../java.base/java/util/package-summary.html#CollectionsFramework`, `Java Collections Framework`],
+			[/* text */ 't', `Java Collections Framework`],
 			[/* text */ 't', `.`]
 		]]
 	],
@@ -191,7 +191,7 @@ DocsCollector.collect('java.util.Set', [
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', `, and throw an exception, as described in the
  specification for `],
-					[/* external link */ 'a', `Collection.html#add(E)`, `Collection.add`],
+					[/* reference */ 'r', `.Collection#add(E)`],
 					[/* text */ 't', `.
  Individual set implementations should clearly document any
  restrictions on the elements that they may contain.`]
@@ -255,14 +255,14 @@ DocsCollector.collect('java.util.Set', [
 					[/* text */ 't', `if the type of the specified element
          is incompatible with this set
  (`],
-					[/* external link */ 'a', `Collection.html#optional-restrictions`, `optional`],
+					[/* reference */ 'r', `.Collection#optional-restrictions`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if the specified element is null and this
          set does not permit null elements
  (`],
-					[/* external link */ 'a', `Collection.html#optional-restrictions`, `optional`],
+					[/* reference */ 'r', `.Collection#optional-restrictions`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
@@ -319,7 +319,7 @@ DocsCollector.collect('java.util.Set', [
 				[/* inline code block */ 'i', `s2`],
 				[/* text */ 't', `, as required by the general contract of
  `],
-				[/* external link */ 'a', `../lang/Object.html#hashCode()`, `Object.hashCode()`],
+				[/* reference */ 'r', `java.Object#hashCode()`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -432,7 +432,7 @@ DocsCollector.collect('java.util.Set', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `Like the `],
-					[/* reference */ 'r', `toArray()`],
+					[/* reference */ 'r', `#toArray()`, `toArray()`],
 					[/* text */ 't', ` method, this method acts as bridge between
  array-based and collection-based APIs.  Further, this method allows
  precise control over the runtime type of the output array, and may,
@@ -960,14 +960,14 @@ DocsCollector.collect('java.util.Set', [
 					[/* text */ 't', `if the type of the specified element
          is incompatible with this set
  (`],
-					[/* external link */ 'a', `Collection.html#optional-restrictions`, `optional`],
+					[/* reference */ 'r', `.Collection#optional-restrictions`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if the specified element is null and this
          set does not permit null elements
  (`],
-					[/* external link */ 'a', `Collection.html#optional-restrictions`, `optional`],
+					[/* reference */ 'r', `.Collection#optional-restrictions`],
 					[/* text */ 't', `)`]
 				]]
 			],
@@ -987,7 +987,7 @@ DocsCollector.collect('java.util.Set', [
 					[/* text */ 't', `The `],
 					[/* inline code block */ 'i', `Spliterator`],
 					[/* text */ 't', ` reports `],
-					[/* external link */ 'a', `Spliterator.html#DISTINCT`, `Spliterator.DISTINCT`],
+					[/* reference */ 'r', `.Spliterator#DISTINCT`],
 					[/* text */ 't', `.
  Implementations should document the reporting of additional
  characteristic values.`]
@@ -1071,14 +1071,14 @@ DocsCollector.collect('java.util.Set', [
 					[/* text */ 't', `if the class of an element of this set
          is incompatible with the specified collection
  (`],
-					[/* external link */ 'a', `Collection.html#optional-restrictions`, `optional`],
+					[/* reference */ 'r', `.Collection#optional-restrictions`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if this set contains a null element and the
          specified collection does not permit null elements
          (`],
-					[/* external link */ 'a', `Collection.html#optional-restrictions`, `optional`],
+					[/* reference */ 'r', `.Collection#optional-restrictions`],
 					[/* text */ 't', `),
          or if the specified collection is null`]
 				]]
@@ -1115,14 +1115,14 @@ DocsCollector.collect('java.util.Set', [
 					[/* text */ 't', `if the class of an element of this set
          is incompatible with the specified collection
  (`],
-					[/* external link */ 'a', `Collection.html#optional-restrictions`, `optional`],
+					[/* reference */ 'r', `.Collection#optional-restrictions`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if this set contains a null element and the
          specified collection does not permit null elements
          (`],
-					[/* external link */ 'a', `Collection.html#optional-restrictions`, `optional`],
+					[/* reference */ 'r', `.Collection#optional-restrictions`],
 					[/* text */ 't', `),
          or if the specified collection is null`]
 				]]
@@ -1155,7 +1155,7 @@ DocsCollector.collect('java.util.Set', [
          in the specified collection are incompatible with this
          set
  (`],
-					[/* external link */ 'a', `Collection.html#optional-restrictions`, `optional`],
+					[/* reference */ 'r', `.Collection#optional-restrictions`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
@@ -1163,7 +1163,7 @@ DocsCollector.collect('java.util.Set', [
          or more null elements and this set does not permit null
          elements
  (`],
-					[/* external link */ 'a', `Collection.html#optional-restrictions`, `optional`],
+					[/* reference */ 'r', `.Collection#optional-restrictions`],
 					[/* text */ 't', `),
          or if the specified collection is null`]
 				]]

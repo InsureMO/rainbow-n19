@@ -54,7 +54,7 @@ DocsCollector.collect('java.lang.Math', [
 			[/* text */ 't', `ulps`],
 			[/* text */ 't', `, units in the last place.  For a
  given floating-point format, an `],
-			[/* reference */ 'r', `ulp`],
+			[/* reference */ 'r', `#ulp(double)`, `ulp`],
 			[/* text */ 't', ` of a
  specific real number value is the distance between the two
  floating-point values bracketing that numerical value.  When
@@ -138,40 +138,40 @@ DocsCollector.collect('java.lang.Math', [
  a section of recommended operations and the semantics of those
  operations if they are included in a programming environment. The
  recommended operations present in this class include `],
-		[/* reference */ 'r', `sin`],
+		[/* reference */ 'r', `#sin(double)`, `sin`],
 		[/* text */ 't', `, `],
-		[/* reference */ 'r', `cos`],
+		[/* reference */ 'r', `#cos(double)`, `cos`],
 		[/* text */ 't', `, `],
-		[/* reference */ 'r', `tan`],
+		[/* reference */ 'r', `#tan(double)`, `tan`],
 		[/* text */ 't', `, `],
-		[/* reference */ 'r', `asin`],
+		[/* reference */ 'r', `#asin(double)`, `asin`],
 		[/* text */ 't', `, `],
-		[/* reference */ 'r', `acos`],
+		[/* reference */ 'r', `#acos(double)`, `acos`],
 		[/* text */ 't', `, `],
-		[/* reference */ 'r', `atan`],
+		[/* reference */ 'r', `#atan(double)`, `atan`],
 		[/* text */ 't', `, `],
-		[/* reference */ 'r', `exp`],
+		[/* reference */ 'r', `#exp(double)`, `exp`],
 		[/* text */ 't', `, `],
-		[/* reference */ 'r', `expm1`],
+		[/* reference */ 'r', `#expm1(double)`, `expm1`],
 		[/* text */ 't', `, `],
-		[/* reference */ 'r', `log`],
+		[/* reference */ 'r', `#log(double)`, `log`],
 		[/* text */ 't', `, `],
-		[/* reference */ 'r', `log10`],
+		[/* reference */ 'r', `#log10(double)`, `log10`],
 		[/* text */ 't', `, `],
-		[/* reference */ 'r', `log1p`],
+		[/* reference */ 'r', `#log1p(double)`, `log1p`],
 		[/* text */ 't', `,
  `],
-		[/* reference */ 'r', `sinh`],
+		[/* reference */ 'r', `#sinh(double)`, `sinh`],
 		[/* text */ 't', `, `],
-		[/* reference */ 'r', `cosh`],
+		[/* reference */ 'r', `#cosh(double)`, `cosh`],
 		[/* text */ 't', `, `],
-		[/* reference */ 'r', `tanh`],
+		[/* reference */ 'r', `#tanh(double)`, `tanh`],
 		[/* text */ 't', `, `],
-		[/* reference */ 'r', `hypot`],
+		[/* reference */ 'r', `#hypot(double,double)`, `hypot`],
 		[/* text */ 't', `, and `],
-		[/* reference */ 'r', `pow`],
+		[/* reference */ 'r', `#pow(double,double)`, `pow`],
 		[/* text */ 't', `.  (The `],
-		[/* reference */ 'r', `sqrt`],
+		[/* reference */ 'r', `#sqrt(double)`, `sqrt`],
 		[/* text */ 't', `
  operation is a required part of IEEE 754 from a different section
  of the standard.) The special case behavior of the recommended
@@ -180,7 +180,7 @@ DocsCollector.collect('java.lang.Math', [
 		[/* inline code block */ 'i', `pow`],
 		[/* text */ 't', ` method defines different
  behavior for some arguments, as noted in its `],
-		[/* reference */ 'r', `specification`],
+		[/* reference */ 'r', `#pow(double,double)`, `specification`],
 		[/* text */ 't', `. The IEEE 754 standard defines its operations to be
  correctly rounded, which is a more stringent quality of
  implementation condition than required for most of the methods in
@@ -222,13 +222,13 @@ DocsCollector.collect('java.lang.Math', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `Note that if the argument is equal to the value of `],
-					[/* external link */ 'a', `Integer.html#MIN_VALUE`, `Integer.MIN_VALUE`],
+					[/* reference */ 'r', `.Integer#MIN_VALUE`],
 					[/* text */ 't', `, the most negative representable `],
 					[/* inline code block */ 'i', `int`],
 					[/* text */ 't', `
  value, the result is that same value, which is negative. In
  contrast, the `],
-					[/* reference */ 'r', `absExact(int)`],
+					[/* reference */ 'r', `#absExact(long)`, `absExact(int)`],
 					[/* text */ 't', ` method throws an
  `],
 					[/* inline code block */ 'i', `ArithmeticException`],
@@ -256,13 +256,13 @@ DocsCollector.collect('java.lang.Math', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `Note that if the argument is equal to the value of `],
-					[/* external link */ 'a', `Long.html#MIN_VALUE`, `Long.MIN_VALUE`],
+					[/* reference */ 'r', `.Long#MIN_VALUE`],
 					[/* text */ 't', `, the most negative representable `],
 					[/* inline code block */ 'i', `long`],
 					[/* text */ 't', `
  value, the result is that same value, which is negative. In
  contrast, the `],
-					[/* reference */ 'r', `absExact(long)`],
+					[/* reference */ 'r', `#absExact(long)`, `absExact(long)`],
 					[/* text */ 't', ` method throws an
  `],
 					[/* inline code block */ 'i', `ArithmeticException`],
@@ -418,10 +418,10 @@ DocsCollector.collect('java.lang.Math', [
 				[/* text */ 't', ` from the conversion of rectangular
  coordinates (`],
 				[/* inline code block */ 'i', `x`],
-				[/* text */ 't', `,&nbsp;`],
+				[/* text */ 't', `, `],
 				[/* inline code block */ 'i', `y`],
 				[/* text */ 't', `) to polar
- coordinates (r,&nbsp;`],
+ coordinates (r, `],
 				[/* text */ 't', `theta`],
 				[/* text */ 't', `).
  This method computes the phase `],
@@ -548,13 +548,13 @@ DocsCollector.collect('java.lang.Math', [
 				[/* text */ 't', ` component of the point
           (`],
 				[/* text */ 't', `r`],
-				[/* text */ 't', `,&nbsp;`],
+				[/* text */ 't', `, `],
 				[/* text */ 't', `theta`],
 				[/* text */ 't', `)
           in polar coordinates that corresponds to the point
           (`],
 				[/* text */ 't', `x`],
-				[/* text */ 't', `,&nbsp;`],
+				[/* text */ 't', `, `],
 				[/* text */ 't', `y`],
 				[/* text */ 't', `) in Cartesian coordinates.`]
 			]
@@ -633,7 +633,7 @@ DocsCollector.collect('java.lang.Math', [
 			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the value ln&nbsp;`],
+				[/* text */ 't', `the value ln `],
 				[/* inline code block */ 'i', `a`],
 				[/* text */ 't', `, the natural logarithm of
           `],
@@ -877,10 +877,10 @@ DocsCollector.collect('java.lang.Math', [
 					[/* text */ 't', `(In the foregoing descriptions, a floating-point value is
  considered to be an integer if and only if it is finite and a
  fixed point of the method `],
-					[/* reference */ 'r', `ceil`],
+					[/* reference */ 'r', `#ceil(double)`, `ceil`],
 					[/* text */ 't', ` or,
  equivalently, a fixed point of the method `],
-					[/* reference */ 'r', `floor`],
+					[/* reference */ 'r', `#floor(double)`, `floor`],
 					[/* text */ 't', `. A value is a fixed point of a one-argument
  method if and only if the result of applying the method to the
  value is equal to the value.)
@@ -959,7 +959,7 @@ DocsCollector.collect('java.lang.Math', [
 				[/* text */ 't', ` values. That is,
  the result the argument closer to the value of
  `],
-				[/* external link */ 'a', `Integer.html#MIN_VALUE`, `Integer.MIN_VALUE`],
+				[/* reference */ 'r', `.Integer#MIN_VALUE`],
 				[/* text */ 't', `.  If the arguments have the same
  value, the result is that same value.`]
 			],
@@ -1017,7 +1017,7 @@ DocsCollector.collect('java.lang.Math', [
 				[/* text */ 't', ` values. That is,
  the result is the argument closer to the value of
  `],
-				[/* external link */ 'a', `Long.html#MIN_VALUE`, `Long.MIN_VALUE`],
+				[/* reference */ 'r', `.Long#MIN_VALUE`],
 				[/* text */ 't', `. If the arguments have the same
  value, the result is that same value.`]
 			],
@@ -1075,7 +1075,7 @@ DocsCollector.collect('java.lang.Math', [
 				[/* text */ 't', ` values. That is, the
  result is the argument closer to the value of
  `],
-				[/* external link */ 'a', `Integer.html#MAX_VALUE`, `Integer.MAX_VALUE`],
+				[/* reference */ 'r', `.Integer#MAX_VALUE`],
 				[/* text */ 't', `. If the arguments have the same value,
  the result is that same value.`]
 			],
@@ -1133,7 +1133,7 @@ DocsCollector.collect('java.lang.Math', [
 				[/* text */ 't', ` values. That is, the
  result is the argument closer to the value of
  `],
-				[/* external link */ 'a', `Long.html#MAX_VALUE`, `Long.MAX_VALUE`],
+				[/* reference */ 'r', `.Long#MAX_VALUE`],
 				[/* text */ 't', `. If the arguments have the same value,
  the result is that same value.`]
 			],
@@ -1341,7 +1341,7 @@ DocsCollector.collect('java.lang.Math', [
 				[/* inline code block */ 'i', `long`],
 				[/* text */ 't', `.
  The overflow only occurs for `],
-				[/* external link */ 'a', `Long.html#MIN_VALUE`, `the minimum value`],
+				[/* reference */ 'r', `.Long#MIN_VALUE`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -1365,7 +1365,7 @@ DocsCollector.collect('java.lang.Math', [
 				[/* inline code block */ 'i', `int`],
 				[/* text */ 't', `.
  The overflow only occurs for `],
-				[/* external link */ 'a', `Integer.html#MIN_VALUE`, `the minimum value`],
+				[/* reference */ 'r', `.Integer#MIN_VALUE`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -1389,7 +1389,7 @@ DocsCollector.collect('java.lang.Math', [
 				[/* inline code block */ 'i', `int`],
 				[/* text */ 't', `.
  The overflow only occurs for `],
-				[/* external link */ 'a', `Integer.html#MAX_VALUE`, `the maximum value`],
+				[/* reference */ 'r', `.Integer#MAX_VALUE`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -1413,7 +1413,7 @@ DocsCollector.collect('java.lang.Math', [
 				[/* inline code block */ 'i', `long`],
 				[/* text */ 't', `.
  The overflow only occurs for `],
-				[/* external link */ 'a', `Long.html#MAX_VALUE`, `the maximum value`],
+				[/* reference */ 'r', `.Long#MAX_VALUE`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -1529,7 +1529,7 @@ DocsCollector.collect('java.lang.Math', [
 				[/* inline code block */ 'i', `long`],
 				[/* text */ 't', `.
  The overflow only occurs for `],
-				[/* external link */ 'a', `Long.html#MIN_VALUE`, `the minimum value`],
+				[/* reference */ 'r', `.Long#MIN_VALUE`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -1553,7 +1553,7 @@ DocsCollector.collect('java.lang.Math', [
 				[/* inline code block */ 'i', `int`],
 				[/* text */ 't', `.
  The overflow only occurs for `],
-				[/* external link */ 'a', `Integer.html#MIN_VALUE`, `the minimum value`],
+				[/* reference */ 'r', `.Integer#MIN_VALUE`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -1628,7 +1628,7 @@ DocsCollector.collect('java.lang.Math', [
 				[/* text */ 't', `.
 
  The rounding is done using the `],
-				[/* external link */ 'a', `../math/RoundingMode.html#HALF_EVEN`, `round to nearest even rounding mode`],
+				[/* reference */ 'r', `java.RoundingMode#HALF_EVEN`],
 				[/* text */ 't', `.
 
  In contrast, if `],
@@ -1704,9 +1704,9 @@ DocsCollector.collect('java.lang.Math', [
 			[/* return description */
 				[/* text */ 't', `(`],
 				[/* text */ 't', `a`],
-				[/* text */ 't', `&nbsp;×&nbsp;`],
+				[/* text */ 't', ` × `],
 				[/* text */ 't', `b`],
-				[/* text */ 't', `&nbsp;+&nbsp;`],
+				[/* text */ 't', ` + `],
 				[/* text */ 't', `c`],
 				[/* text */ 't', `)
  computed, as if with unlimited range and precision, and rounded
@@ -1725,7 +1725,7 @@ DocsCollector.collect('java.lang.Math', [
 				[/* text */ 't', `.
 
  The rounding is done using the `],
-				[/* external link */ 'a', `../math/RoundingMode.html#HALF_EVEN`, `round to nearest even rounding mode`],
+				[/* reference */ 'r', `java.RoundingMode#HALF_EVEN`],
 				[/* text */ 't', `.
 
  In contrast, if `],
@@ -1801,9 +1801,9 @@ DocsCollector.collect('java.lang.Math', [
 			[/* return description */
 				[/* text */ 't', `(`],
 				[/* text */ 't', `a`],
-				[/* text */ 't', `&nbsp;×&nbsp;`],
+				[/* text */ 't', ` × `],
 				[/* text */ 't', `b`],
-				[/* text */ 't', `&nbsp;+&nbsp;`],
+				[/* text */ 't', ` + `],
 				[/* text */ 't', `c`],
 				[/* text */ 't', `)
  computed, as if with unlimited range and precision, and rounded
@@ -1816,7 +1816,7 @@ DocsCollector.collect('java.lang.Math', [
 			[/* method description */
 				[/* text */ 't', `Returns the first floating-point argument with the sign of the
  second floating-point argument.  Note that unlike the `],
-				[/* external link */ 'a', `StrictMath.html#copySign(float,float)`, `StrictMath.copySign`],
+				[/* reference */ 'r', `.StrictMath#copySign(float,float)`],
 				[/* text */ 't', `
  method, this method does not require NaN `],
 				[/* inline code block */ 'i', `sign`],
@@ -1847,7 +1847,7 @@ DocsCollector.collect('java.lang.Math', [
 			[/* method description */
 				[/* text */ 't', `Returns the first floating-point argument with the sign of the
  second floating-point argument.  Note that unlike the `],
-				[/* external link */ 'a', `StrictMath.html#copySign(double,double)`, `StrictMath.copySign`],
+				[/* reference */ 'r', `.StrictMath#copySign(double,double)`],
 				[/* text */ 't', `
  method, this method does not require NaN `],
 				[/* inline code block */ 'i', `sign`],
@@ -1940,9 +1940,9 @@ DocsCollector.collect('java.lang.Math', [
  rounded as if performed by a single correctly rounded
  floating-point multiply.  If the exponent of the result is
  between `],
-				[/* external link */ 'a', `Double.html#MIN_EXPONENT`, `Double.MIN_EXPONENT`],
+				[/* reference */ 'r', `.Double#MIN_EXPONENT`],
 				[/* text */ 't', ` and `],
-				[/* external link */ 'a', `Double.html#MAX_EXPONENT`, `Double.MAX_EXPONENT`],
+				[/* reference */ 'r', `.Double#MAX_EXPONENT`],
 				[/* text */ 't', `, the answer is calculated exactly.  If the
  exponent of the result would be larger than `],
 				[/* inline code block */ 'i', `Double.MAX_EXPONENT`],
@@ -2000,9 +2000,9 @@ DocsCollector.collect('java.lang.Math', [
  rounded as if performed by a single correctly rounded
  floating-point multiply.  If the exponent of the result is
  between `],
-				[/* external link */ 'a', `Float.html#MIN_EXPONENT`, `Float.MIN_EXPONENT`],
+				[/* reference */ 'r', `.Float#MIN_EXPONENT`],
 				[/* text */ 't', ` and `],
-				[/* external link */ 'a', `Float.html#MAX_EXPONENT`, `Float.MAX_EXPONENT`],
+				[/* reference */ 'r', `.Float#MAX_EXPONENT`],
 				[/* text */ 't', `, the answer is calculated exactly.  If the
  exponent of the result would be larger than `],
 				[/* inline code block */ 'i', `Float.MAX_EXPONENT`],
@@ -2062,14 +2062,14 @@ DocsCollector.collect('java.lang.Math', [
 					[/* block */ 'b', [
 						[/* text */ 't', `If the argument is NaN or infinite, then the result is
  `],
-						[/* external link */ 'a', `Float.html#MAX_EXPONENT`, `Float.MAX_EXPONENT`],
+						[/* reference */ 'r', `.Float#MAX_EXPONENT`],
 						[/* text */ 't', ` + 1.
  `]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `If the argument is zero or subnormal, then the result is
  `],
-						[/* external link */ 'a', `Float.html#MIN_EXPONENT`, `Float.MIN_EXPONENT`],
+						[/* reference */ 'r', `.Float#MIN_EXPONENT`],
 						[/* text */ 't', ` -1.
  `]
 					]]
@@ -2099,14 +2099,14 @@ DocsCollector.collect('java.lang.Math', [
 					[/* block */ 'b', [
 						[/* text */ 't', `If the argument is NaN or infinite, then the result is
  `],
-						[/* external link */ 'a', `Double.html#MAX_EXPONENT`, `Double.MAX_EXPONENT`],
+						[/* reference */ 'r', `.Double#MAX_EXPONENT`],
 						[/* text */ 't', ` + 1.
  `]
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `If the argument is zero or subnormal, then the result is
  `],
-						[/* external link */ 'a', `Double.html#MIN_EXPONENT`, `Double.MIN_EXPONENT`],
+						[/* reference */ 'r', `.Double#MIN_EXPONENT`],
 						[/* text */ 't', ` -1.
  `]
 					]]
@@ -2164,7 +2164,7 @@ DocsCollector.collect('java.lang.Math', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  For examples, see `],
-					[/* reference */ 'r', `floorMod(int, int)`],
+					[/* reference */ 'r', `#floorMod(long,long)`, `floorMod(int, int)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -2254,12 +2254,12 @@ DocsCollector.collect('java.lang.Math', [
 						[/* list */ 'l', [
 							[/* block */ 'b', [
 								[/* inline code block */ 'i', `floorMod(+4, +3) == +1`],
-								[/* text */ 't', `; &nbsp; and `],
+								[/* text */ 't', `;   and `],
 								[/* inline code block */ 'i', `(+4 % +3) == +1`]
 							]],
 							[/* block */ 'b', [
 								[/* inline code block */ 'i', `floorMod(-4, -3) == -1`],
-								[/* text */ 't', `; &nbsp; and `],
+								[/* text */ 't', `;   and `],
 								[/* inline code block */ 'i', `(-4 % -3) == -1`]
 							]]
 						]]
@@ -2273,12 +2273,12 @@ DocsCollector.collect('java.lang.Math', [
 						[/* list */ 'l', [
 							[/* block */ 'b', [
 								[/* inline code block */ 'i', `floorMod(+4, -3) == -2`],
-								[/* text */ 't', `; &nbsp; and `],
+								[/* text */ 't', `;   and `],
 								[/* inline code block */ 'i', `(+4 % -3) == +1`]
 							]],
 							[/* block */ 'b', [
 								[/* inline code block */ 'i', `floorMod(-4, +3) == +2`],
-								[/* text */ 't', `; &nbsp; and `],
+								[/* text */ 't', `;   and `],
 								[/* inline code block */ 'i', `(-4 % +3) == -1`]
 							]]
 						]]
@@ -2351,7 +2351,7 @@ DocsCollector.collect('java.lang.Math', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  For examples, see `],
-					[/* reference */ 'r', `floorMod(int, int)`],
+					[/* reference */ 'r', `#floorMod(long,long)`, `floorMod(int, int)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -2452,7 +2452,7 @@ DocsCollector.collect('java.lang.Math', [
  `],
 					[/* block */ 'b', [
 						[/* text */ 't', `If the argument is `],
-						[/* external link */ 'a', `Double.html#isInfinite(double)`, `infinite`],
+						[/* reference */ 'r', `.Double#isInfinite(double)`],
 						[/* text */ 't', `,
  then the result is the closest value to `],
 						[/* text */ 't', `pi`],
@@ -2523,7 +2523,7 @@ DocsCollector.collect('java.lang.Math', [
  The remainder value is mathematically equal to
  `],
 				[/* inline code block */ 'i', `f1 - f2`],
-				[/* text */ 't', `&nbsp;×&nbsp;`],
+				[/* text */ 't', ` × `],
 				[/* text */ 't', `n`],
 				[/* text */ 't', `,
  where `],
@@ -2576,7 +2576,7 @@ DocsCollector.collect('java.lang.Math', [
 				[/* text */ 't', ` value that is less than or equal to the algebraic quotient.
  There is one special case, if the dividend is the
  `],
-				[/* external link */ 'a', `Long.html#MIN_VALUE`, `Long.MIN_VALUE`],
+				[/* reference */ 'r', `.Long#MIN_VALUE`],
 				[/* text */ 't', ` and the divisor is `],
 				[/* inline code block */ 'i', `-1`],
 				[/* text */ 't', `,
@@ -2595,7 +2595,7 @@ DocsCollector.collect('java.lang.Math', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  For examples, see `],
-					[/* reference */ 'r', `floorDiv(int, int)`],
+					[/* reference */ 'r', `#floorDiv(long,long)`, `floorDiv(int, int)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -2629,7 +2629,7 @@ DocsCollector.collect('java.lang.Math', [
 				[/* text */ 't', ` value that is less than or equal to the algebraic quotient.
  There is one special case, if the dividend is the
  `],
-				[/* external link */ 'a', `Integer.html#MIN_VALUE`, `Integer.MIN_VALUE`],
+				[/* reference */ 'r', `.Integer#MIN_VALUE`],
 				[/* text */ 't', ` and the divisor is `],
 				[/* inline code block */ 'i', `-1`],
 				[/* text */ 't', `,
@@ -2712,7 +2712,7 @@ DocsCollector.collect('java.lang.Math', [
 				[/* text */ 't', ` value that is less than or equal to the algebraic quotient.
  There is one special case, if the dividend is the
  `],
-				[/* external link */ 'a', `Long.html#MIN_VALUE`, `Long.MIN_VALUE`],
+				[/* reference */ 'r', `.Long#MIN_VALUE`],
 				[/* text */ 't', ` and the divisor is `],
 				[/* inline code block */ 'i', `-1`],
 				[/* text */ 't', `,
@@ -2731,7 +2731,7 @@ DocsCollector.collect('java.lang.Math', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  For examples, see `],
-					[/* reference */ 'r', `floorDiv(int, int)`],
+					[/* reference */ 'r', `#floorDiv(long,long)`, `floorDiv(int, int)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -2766,7 +2766,7 @@ DocsCollector.collect('java.lang.Math', [
 				[/* text */ 't', `x`],
 				[/* text */ 't', ` is defined to be
  (`],
-				[/* text */ 't', `e<sup>x</sup>&nbsp;-&nbsp;e<sup>-x</sup>`],
+				[/* text */ 't', `e<sup>x</sup> - e<sup>-x</sup>`],
 				[/* text */ 't', `)/2
  where `],
 				[/* text */ 't', `e`],
@@ -2814,7 +2814,7 @@ DocsCollector.collect('java.lang.Math', [
 				[/* text */ 't', `x`],
 				[/* text */ 't', ` is defined to be
  (`],
-				[/* text */ 't', `e<sup>x</sup>&nbsp;+&nbsp;e<sup>-x</sup>`],
+				[/* text */ 't', `e<sup>x</sup> + e<sup>-x</sup>`],
 				[/* text */ 't', `)/2
  where `],
 				[/* text */ 't', `e`],
@@ -2865,14 +2865,14 @@ DocsCollector.collect('java.lang.Math', [
 				[/* text */ 't', `x`],
 				[/* text */ 't', ` is defined to be
  (`],
-				[/* text */ 't', `e<sup>x</sup>&nbsp;-&nbsp;e<sup>-x</sup>`],
+				[/* text */ 't', `e<sup>x</sup> - e<sup>-x</sup>`],
 				[/* text */ 't', `)/(`],
-				[/* text */ 't', `e<sup>x</sup>&nbsp;+&nbsp;e<sup>-x</sup>`],
+				[/* text */ 't', `e<sup>x</sup> + e<sup>-x</sup>`],
 				[/* text */ 't', `),
  in other words, `],
-				[/* reference */ 'r', `x`],
+				[/* reference */ 'r', `#sinh(double)`, `x`],
 				[/* text */ 't', `/`],
-				[/* reference */ 'r', `x`],
+				[/* reference */ 'r', `#cosh(double)`, `x`],
 				[/* text */ 't', `.  Note
  that the absolute value of the exact tanh is always less than
  1.
@@ -2936,7 +2936,7 @@ DocsCollector.collect('java.lang.Math', [
 				[/* text */ 't', `Returns sqrt(`],
 				[/* text */ 't', `x`],
 				[/* text */ 't', `2`, 'sup'],
-				[/* text */ 't', `&nbsp;+`],
+				[/* text */ 't', ` +`],
 				[/* text */ 't', `y`],
 				[/* text */ 't', `2`, 'sup'],
 				[/* text */ 't', `)
@@ -2975,7 +2975,7 @@ DocsCollector.collect('java.lang.Math', [
 				[/* text */ 't', `sqrt(`],
 				[/* text */ 't', `x`],
 				[/* text */ 't', `2`, 'sup'],
-				[/* text */ 't', `&nbsp;+`],
+				[/* text */ 't', ` +`],
 				[/* text */ 't', `y`],
 				[/* text */ 't', `2`, 'sup'],
 				[/* text */ 't', `)
@@ -2987,13 +2987,13 @@ DocsCollector.collect('java.lang.Math', [
 				[/* text */ 't', `Returns `],
 				[/* text */ 't', `e`],
 				[/* text */ 't', `x`, 'sup'],
-				[/* text */ 't', `&nbsp;-1.  Note that for values of
+				[/* text */ 't', ` -1.  Note that for values of
  `],
 				[/* text */ 't', `x`],
 				[/* text */ 't', ` near 0, the exact sum of
  `],
 				[/* inline code block */ 'i', `expm1(x)`],
-				[/* text */ 't', `&nbsp;+&nbsp;1 is much closer to the true
+				[/* text */ 't', ` + 1 is much closer to the true
  result of `],
 				[/* text */ 't', `e`],
 				[/* text */ 't', `x`, 'sup'],
@@ -3034,7 +3034,7 @@ DocsCollector.collect('java.lang.Math', [
  `],
 					[/* text */ 't', `e`],
 					[/* text */ 't', `x`, 'sup'],
-					[/* text */ 't', `&nbsp;-&nbsp;1 is within 1/2
+					[/* text */ 't', ` - 1 is within 1/2
  ulp of the limit value -1, `],
 					[/* inline code block */ 'i', `-1.0`],
 					[/* text */ 't', ` should be
@@ -3049,7 +3049,7 @@ DocsCollector.collect('java.lang.Math', [
               `],
 					[/* text */ 't', `e`],
 					[/* text */ 't', `x`, 'sup'],
-					[/* text */ 't', `&nbsp;-1.`]
+					[/* text */ 't', ` -1.`]
 				]]
 			],
 			/* throws */ UDF,
@@ -3057,7 +3057,7 @@ DocsCollector.collect('java.lang.Math', [
 				[/* text */ 't', `the value `],
 				[/* text */ 't', `e`],
 				[/* text */ 't', `x`, 'sup'],
-				[/* text */ 't', `&nbsp;-&nbsp;1.`]
+				[/* text */ 't', ` - 1.`]
 			]
 		]],
 		[/* method */ 'log1p(double)', [
@@ -3111,10 +3111,10 @@ DocsCollector.collect('java.lang.Math', [
 			[/* return description */
 				[/* text */ 't', `the value ln(`],
 				[/* inline code block */ 'i', `x`],
-				[/* text */ 't', `&nbsp;+&nbsp;1), the natural
+				[/* text */ 't', ` + 1), the natural
  log of `],
 				[/* inline code block */ 'i', `x`],
-				[/* text */ 't', `&nbsp;+&nbsp;1`]
+				[/* text */ 't', ` + 1`]
 			]
 		]],
 		[/* method */ 'toRadians(double)', [
@@ -3373,7 +3373,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* external link */ 'a', `https://docs.oracle.com/javase/specs/jls/se17/html/jls-4.html#jls-4.2.1`, `4.2.1`],
 					[/* text */ 't', `), the
  mathematical absolute value of `],
-					[/* external link */ 'a', `Integer.html#MIN_VALUE`, `Integer.MIN_VALUE`],
+					[/* reference */ 'r', `.Integer#MIN_VALUE`],
 					[/* text */ 't', `
  overflows the positive `],
 					[/* inline code block */ 'i', `int`],
@@ -3389,7 +3389,7 @@ DocsCollector.collect('java.lang.Math', [
 			[/* throws */
 				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
 					[/* text */ 't', `if the argument is `],
-					[/* external link */ 'a', `Integer.html#MIN_VALUE`, `Integer.MIN_VALUE`]
+					[/* reference */ 'r', `.Integer#MIN_VALUE`]
 				]]
 			],
 			[/* return description */
@@ -3418,7 +3418,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* external link */ 'a', `https://docs.oracle.com/javase/specs/jls/se17/html/jls-4.html#jls-4.2.1`, `4.2.1`],
 					[/* text */ 't', `), the
  mathematical absolute value of `],
-					[/* external link */ 'a', `Long.html#MIN_VALUE`, `Long.MIN_VALUE`],
+					[/* reference */ 'r', `.Long#MIN_VALUE`],
 					[/* text */ 't', ` overflows
  the positive `],
 					[/* inline code block */ 'i', `long`],
@@ -3434,7 +3434,7 @@ DocsCollector.collect('java.lang.Math', [
 			[/* throws */
 				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
 					[/* text */ 't', `if the argument is `],
-					[/* external link */ 'a', `Long.html#MIN_VALUE`, `Long.MIN_VALUE`]
+					[/* reference */ 'r', `.Long#MIN_VALUE`]
 				]]
 			],
 			[/* return description */
@@ -3576,7 +3576,7 @@ DocsCollector.collect('java.lang.Math', [
 						[/* inline code block */ 'i', `start`],
 						[/* text */ 't', ` is
  ±`],
-						[/* external link */ 'a', `Double.html#MIN_VALUE`, `Double.MIN_VALUE`],
+						[/* reference */ 'r', `.Double#MIN_VALUE`],
 						[/* text */ 't', ` and `],
 						[/* inline code block */ 'i', `direction`],
 						[/* text */ 't', `
@@ -3596,7 +3596,7 @@ DocsCollector.collect('java.lang.Math', [
 						[/* inline code block */ 'i', `direction`],
 						[/* text */ 't', ` has a value such that the result should
  have a smaller magnitude, `],
-						[/* external link */ 'a', `Double.html#MAX_VALUE`, `Double.MAX_VALUE`],
+						[/* reference */ 'r', `.Double#MAX_VALUE`],
 						[/* text */ 't', ` with the
  same sign as `],
 						[/* inline code block */ 'i', `start`],
@@ -3609,7 +3609,7 @@ DocsCollector.collect('java.lang.Math', [
 						[/* inline code block */ 'i', `start`],
 						[/* text */ 't', ` is equal to ±
  `],
-						[/* external link */ 'a', `Double.html#MAX_VALUE`, `Double.MAX_VALUE`],
+						[/* reference */ 'r', `.Double#MAX_VALUE`],
 						[/* text */ 't', ` and `],
 						[/* inline code block */ 'i', `direction`],
 						[/* text */ 't', ` has a
@@ -3674,7 +3674,7 @@ DocsCollector.collect('java.lang.Math', [
 						[/* inline code block */ 'i', `start`],
 						[/* text */ 't', ` is
  ±`],
-						[/* external link */ 'a', `Float.html#MIN_VALUE`, `Float.MIN_VALUE`],
+						[/* reference */ 'r', `.Float#MIN_VALUE`],
 						[/* text */ 't', ` and `],
 						[/* inline code block */ 'i', `direction`],
 						[/* text */ 't', `
@@ -3694,7 +3694,7 @@ DocsCollector.collect('java.lang.Math', [
 						[/* inline code block */ 'i', `direction`],
 						[/* text */ 't', ` has a value such that the result should
  have a smaller magnitude, `],
-						[/* external link */ 'a', `Float.html#MAX_VALUE`, `Float.MAX_VALUE`],
+						[/* reference */ 'r', `.Float#MAX_VALUE`],
 						[/* text */ 't', ` with the
  same sign as `],
 						[/* inline code block */ 'i', `start`],
@@ -3707,7 +3707,7 @@ DocsCollector.collect('java.lang.Math', [
 						[/* inline code block */ 'i', `start`],
 						[/* text */ 't', ` is equal to ±
  `],
-						[/* external link */ 'a', `Float.html#MAX_VALUE`, `Float.MAX_VALUE`],
+						[/* reference */ 'r', `.Float#MAX_VALUE`],
 						[/* text */ 't', ` and `],
 						[/* inline code block */ 'i', `direction`],
 						[/* text */ 't', ` has a
@@ -3774,7 +3774,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* block */ 'b', [
 						[/* text */ 't', ` If the argument is zero, the result is
  `],
-						[/* external link */ 'a', `Double.html#MIN_VALUE`, `Double.MIN_VALUE`]
+						[/* reference */ 'r', `.Double#MIN_VALUE`]
 					]]
 				]],
 				[/* block */ 'b', '']
@@ -3820,7 +3820,7 @@ DocsCollector.collect('java.lang.Math', [
 					[/* block */ 'b', [
 						[/* text */ 't', ` If the argument is zero, the result is
  `],
-						[/* external link */ 'a', `Float.html#MIN_VALUE`, `Float.MIN_VALUE`]
+						[/* reference */ 'r', `.Float#MIN_VALUE`]
 					]]
 				]],
 				[/* block */ 'b', '']

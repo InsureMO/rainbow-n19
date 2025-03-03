@@ -5,7 +5,7 @@ DocsCollector.collect('java.lang.reflect.UndeclaredThrowableException', [
 	[/* class description */
 		[/* text */ 't', `Thrown by a method invocation on a proxy instance if its invocation
  handler's `],
-		[/* external link */ 'a', `InvocationHandler.html#invoke(java.lang.Object,java.lang.reflect.Method,java.lang.Object%5B%5D)`, `invoke`],
+		[/* reference */ 'r', `.InvocationHandler#invoke(java.lang.Object,java.lang.reflect.Method,java.lang.Object[])`],
 		[/* text */ 't', ` method throws a
  checked exception (a `],
 		[/* inline code block */ 'i', `Throwable`],

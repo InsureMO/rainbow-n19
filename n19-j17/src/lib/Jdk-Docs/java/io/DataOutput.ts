@@ -14,7 +14,7 @@ DocsCollector.collect('java.io.DataOutput', [
 		[/* inline code block */ 'i', `String`],
 		[/* text */ 't', ` into
  `],
-		[/* external link */ 'a', `DataInput.html#modified-utf-8`, `modified UTF-8`],
+		[/* reference */ 'r', `.DataInput#modified-utf-8`],
 		[/* text */ 't', `
  format and writing the resulting series
  of bytes.
@@ -207,7 +207,7 @@ DocsCollector.collect('java.io.DataOutput', [
  to the output stream, followed
  by the
  `],
-				[/* external link */ 'a', `DataInput.html#modified-utf-8`, `modified UTF-8`],
+				[/* reference */ 'r', `.DataInput#modified-utf-8`],
 				[/* text */ 't', `
  representation
  of  every character in the string `],

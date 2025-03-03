@@ -36,8 +36,14 @@ DocsCollector.collect('java.time.DayOfWeek', [
  `]
 		]],
 		[/* block */ 'b', [
-			[/* text */ 't', `Do not use <code>ordinal()</code> to obtain the numeric representation of <code>DayOfWeek</code>.
- Use <code>getValue()</code> instead.`]
+			[/* text */ 't', `Do not use `],
+			[/* inline code block */ 'i', `ordinal()`],
+			[/* text */ 't', ` to obtain the numeric representation of `],
+			[/* inline code block */ 'i', `DayOfWeek`],
+			[/* text */ 't', `.
+ Use `],
+			[/* inline code block */ 'i', `getValue()`],
+			[/* text */ 't', ` instead.`]
 		]],
 		[/* block */ 'b', `
  This enum represents a common concept that is found in many calendar systems.
@@ -62,7 +68,7 @@ DocsCollector.collect('java.time.DayOfWeek', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is `],
-					[/* external link */ 'a', `temporal/ChronoField.html#DAY_OF_WEEK`, `DAY_OF_WEEK`],
+					[/* reference */ 'r', `.ChronoField#DAY_OF_WEEK`],
 					[/* text */ 't', ` then the
  value of the day-of-week, from 1 to 7, will be returned.
  All other `],
@@ -134,7 +140,7 @@ the order they are declared.`]
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is `],
-					[/* external link */ 'a', `temporal/ChronoField.html#DAY_OF_WEEK`, `DAY_OF_WEEK`],
+					[/* reference */ 'r', `.ChronoField#DAY_OF_WEEK`],
 					[/* text */ 't', ` then the
  value of the day-of-week, from 1 to 7, will be returned.
  All other `],
@@ -214,7 +220,7 @@ not permitted.)`]
 					[/* text */ 't', `
  The values are numbered following the ISO-8601 standard, from 1 (Monday) to 7 (Sunday).
  See `],
-					[/* external link */ 'a', `temporal/WeekFields.html#dayOfWeek()`, `WeekFields.dayOfWeek()`],
+					[/* reference */ 'r', `.WeekFields#dayOfWeek()`],
 					[/* text */ 't', ` for localized week-numbering.`]
 				]]
 			],
@@ -277,7 +283,7 @@ not permitted.)`]
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The conversion extracts the `],
-					[/* external link */ 'a', `temporal/ChronoField.html#DAY_OF_WEEK`, `DAY_OF_WEEK`],
+					[/* reference */ 'r', `.ChronoField#DAY_OF_WEEK`],
 					[/* text */ 't', ` field.
  `]
 				]],
@@ -324,7 +330,7 @@ not permitted.)`]
 					[/* text */ 't', `
  The result of this method is obtained by invoking the
  `],
-					[/* external link */ 'a', `temporal/TemporalQuery.html#queryFrom(java.time.temporal.TemporalAccessor)`, `TemporalQuery.queryFrom(TemporalAccessor)`],
+					[/* reference */ 'r', `.TemporalQuery#queryFrom(java.time.temporal.TemporalAccessor)`],
 					[/* text */ 't', ` method on the
  specified query passing `],
 					[/* inline code block */ 'i', `this`],
@@ -361,7 +367,7 @@ not permitted.)`]
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is `],
-					[/* external link */ 'a', `temporal/ChronoField.html#DAY_OF_WEEK`, `DAY_OF_WEEK`],
+					[/* reference */ 'r', `.ChronoField#DAY_OF_WEEK`],
 					[/* text */ 't', ` then the
  range of the day-of-week, from 1 to 7, will be returned.
  All other `],
@@ -410,17 +416,17 @@ not permitted.)`]
 					[/* text */ 't', `
  This checks if this day-of-week can be queried for the specified field.
  If false, then calling the `],
-					[/* reference */ 'r', `range`],
+					[/* reference */ 'r', `#range(java.time.temporal.TemporalField)`, `range`],
 					[/* text */ 't', ` and
  `],
-					[/* reference */ 'r', `get`],
+					[/* reference */ 'r', `#get(java.time.temporal.TemporalField)`, `get`],
 					[/* text */ 't', ` methods will throw an exception.
  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the field is `],
-					[/* external link */ 'a', `temporal/ChronoField.html#DAY_OF_WEEK`, `DAY_OF_WEEK`],
+					[/* reference */ 'r', `.ChronoField#DAY_OF_WEEK`],
 					[/* text */ 't', ` then
  this method returns true.
  All other `],
@@ -464,7 +470,7 @@ not permitted.)`]
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If no textual mapping is found then the `],
-					[/* reference */ 'r', `numeric value`],
+					[/* reference */ 'r', `#getValue()`, `numeric value`],
 					[/* text */ 't', ` is returned.`]
 				]]
 			],
@@ -492,14 +498,14 @@ not permitted.)`]
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The adjustment is equivalent to using `],
-					[/* external link */ 'a', `temporal/Temporal.html#with(java.time.temporal.TemporalField,long)`, `Temporal.with(TemporalField, long)`],
+					[/* reference */ 'r', `.Temporal#with(java.time.temporal.TemporalField,long)`],
 					[/* text */ 't', `
  passing `],
-					[/* external link */ 'a', `temporal/ChronoField.html#DAY_OF_WEEK`, `ChronoField.DAY_OF_WEEK`],
+					[/* reference */ 'r', `.ChronoField#DAY_OF_WEEK`],
 					[/* text */ 't', ` as the field.
  Note that this adjusts forwards or backwards within a Monday to Sunday week.
  See `],
-					[/* external link */ 'a', `temporal/WeekFields.html#dayOfWeek()`, `WeekFields.dayOfWeek()`],
+					[/* reference */ 'r', `.WeekFields#dayOfWeek()`],
 					[/* text */ 't', ` for localized week start days.
  See `],
 					[/* inline code block */ 'i', `TemporalAdjuster`],
@@ -513,7 +519,7 @@ not permitted.)`]
 					[/* text */ 't', `
  In most cases, it is clearer to reverse the calling pattern by using
  `],
-					[/* external link */ 'a', `temporal/Temporal.html#with(java.time.temporal.TemporalAdjuster)`, `Temporal.with(TemporalAdjuster)`],
+					[/* reference */ 'r', `.Temporal#with(java.time.temporal.TemporalAdjuster)`],
 					[/* text */ 't', `:
  `]
 				]],

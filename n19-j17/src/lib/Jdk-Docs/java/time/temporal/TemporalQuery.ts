@@ -30,7 +30,7 @@ DocsCollector.collect('java.time.temporal.TemporalQuery', [
 			[/* text */ 't', `.
  The first is to invoke the method on this interface directly.
  The second is to use `],
-			[/* external link */ 'a', `TemporalAccessor.html#query(java.time.temporal.TemporalQuery)`, `TemporalAccessor.query(TemporalQuery)`],
+			[/* reference */ 'r', `.TemporalAccessor#query(java.time.temporal.TemporalQuery)`],
 			[/* text */ 't', `:
  `]
 		]],
@@ -76,7 +76,7 @@ DocsCollector.collect('java.time.temporal.TemporalQuery', [
  There are two equivalent ways of using this method.
  The first is to invoke this method directly.
  The second is to use `],
-					[/* external link */ 'a', `TemporalAccessor.html#query(java.time.temporal.TemporalQuery)`, `TemporalAccessor.query(TemporalQuery)`],
+					[/* reference */ 'r', `.TemporalAccessor#query(java.time.temporal.TemporalQuery)`],
 					[/* text */ 't', `:
  `]
 				]],

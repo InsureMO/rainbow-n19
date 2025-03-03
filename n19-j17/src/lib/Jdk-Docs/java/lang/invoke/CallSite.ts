@@ -25,7 +25,7 @@ DocsCollector.collect('java.lang.invoke.CallSite', [
  instructions, or it may be "free floating", associated with none.
  In any case, it may be invoked through an associated method handle
  called its `],
-		[/* reference */ 'r', `dynamic invoker`],
+		[/* reference */ 'r', `#dynamicInvoker()`, `dynamic invoker`],
 		[/* text */ 't', `.
  `],
 		[/* block */ 'b', [
@@ -68,7 +68,7 @@ DocsCollector.collect('java.lang.invoke.CallSite', [
 			[/* text */ 't', `relinked`],
 			[/* text */ 't', ` by changing its target.
  The new target must have the same `],
-			[/* external link */ 'a', `MethodHandle.html#type()`, `type`],
+			[/* reference */ 'r', `.MethodHandle#type()`],
 			[/* text */ 't', `
  as the previous target.
  Thus, though a call site can be relinked to a series of
@@ -172,7 +172,7 @@ private static CallSite bootstrapDynamic(MethodHandles.Lookup caller, String nam
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The type of the new target must be `],
-					[/* external link */ 'a', `MethodType.html#equals(java.lang.Object)`, `equal to`],
+					[/* reference */ 'r', `.MethodType#equals(java.lang.Object)`],
 					[/* text */ 't', `
  the type of the old target.`]
 				]]

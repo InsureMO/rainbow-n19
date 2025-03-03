@@ -94,7 +94,191 @@ DocsCollector.collect('java.io.DataInput', [
  `]
 			]]
 		]],
-		[/* table */ 't', ''],
+		[/* table */ 'tbl',
+			[/* caption */ 'tc', [
+				[/* text */ 't', `Encoding of UTF-8 values`]
+			]],
+			[/* table header */ 'th', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', 1, 2, [
+						[/* text */ 't', `Value`]
+					]],
+					[/* table header cell */ 'thc', 1, 2, [
+						[/* text */ 't', `Byte`]
+					]],
+					[/* table header cell */ 'thc', 8, 1, [
+						[/* text */ 't', `Bit Values`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` 7 `]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` 6 `]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` 5 `]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` 4 `]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` 3 `]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` 2 `]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` 1 `]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` 0 `]
+					]]
+				]]
+			]],
+			[/* table body */ 'tb', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `
+         `],
+						[/* inline code block */ 'i', `\\u0001`],
+						[/* text */ 't', ` to `],
+						[/* inline code block */ 'i', `\\u007F`],
+						[/* text */ 't', ` `]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` 1 `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `0
+       `]
+					]],
+					[/* table cell */ 'tbc', 7, 1, [
+						[/* text */ 't', `bits 6-0
+     `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', 1, 2, [
+						[/* text */ 't', `
+           `],
+						[/* inline code block */ 'i', `\\u0000`],
+						[/* text */ 't', `,`],
+						[/* new line */ 'n'],
+						[/* text */ 't', `
+           `],
+						[/* inline code block */ 'i', `\\u0080`],
+						[/* text */ 't', ` to `],
+						[/* inline code block */ 'i', `\\u07FF`],
+						[/* text */ 't', ` `]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` 1 `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `1
+       `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `1
+       `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `0
+       `]
+					]],
+					[/* table cell */ 'tbc', 5, 1, [
+						[/* text */ 't', `bits 10-6
+     `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` 2 `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `1
+       `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `0
+       `]
+					]],
+					[/* table cell */ 'tbc', 6, 1, [
+						[/* text */ 't', `bits 5-0
+     `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', 1, 3, [
+						[/* text */ 't', `
+         `],
+						[/* inline code block */ 'i', `\\u0800`],
+						[/* text */ 't', ` to `],
+						[/* inline code block */ 'i', `\\uFFFF`],
+						[/* text */ 't', ` `]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` 1 `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `1
+       `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `1
+       `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `1
+       `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `0
+       `]
+					]],
+					[/* table cell */ 'tbc', 4, 1, [
+						[/* text */ 't', `bits 15-12
+     `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` 2 `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `1
+       `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `0
+       `]
+					]],
+					[/* table cell */ 'tbc', 6, 1, [
+						[/* text */ 't', `bits 11-6
+     `]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` 3 `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `1
+       `]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `0
+       `]
+					]],
+					[/* table cell */ 'tbc', 6, 1, [
+						[/* text */ 't', `bits 5-0
+     `]
+					]]
+				]]
+			]],
+		],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `
  The differences between this format and the
@@ -112,7 +296,7 @@ DocsCollector.collect('java.io.DataInput', [
 			[/* block */ 'b', `Only the 1-byte, 2-byte, and 3-byte formats are used.
  `],
 			[/* block */ 'b', [
-				[/* external link */ 'a', `../lang/Character.html#unicode`, `Supplementary characters`],
+				[/* text */ 't', `Supplementary characters`],
 				[/* text */ 't', `
      are represented in the form of surrogate pairs.
  `]

@@ -13,7 +13,7 @@ DocsCollector.collect('java.time.temporal.JulianFields', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  The fields are implemented relative to `],
-			[/* external link */ 'a', `ChronoField.html#EPOCH_DAY`, `EPOCH_DAY`],
+			[/* reference */ 'r', `.ChronoField#EPOCH_DAY`],
 			[/* text */ 't', `.
  The fields are supported, and can be queried and set if `],
 			[/* inline code block */ 'i', `EPOCH_DAY`],
@@ -42,7 +42,7 @@ DocsCollector.collect('java.time.temporal.JulianFields', [
 					[/* inline code block */ 'i', `Temporal`],
 					[/* text */ 't', ` objects that
  can be converted into `],
-					[/* external link */ 'a', `ChronoField.html#EPOCH_DAY`, `ChronoField.EPOCH_DAY`],
+					[/* reference */ 'r', `.ChronoField#EPOCH_DAY`],
 					[/* text */ 't', `.
  An `],
 					[/* reference */ 'r', `java.time.temporal.UnsupportedTemporalTypeException`],
@@ -53,13 +53,13 @@ DocsCollector.collect('java.time.temporal.JulianFields', [
 					[/* text */ 't', `
  In the resolving phase of parsing, a date can be created from a Julian Day field.
  In `],
-					[/* external link */ 'a', `../format/ResolverStyle.html#STRICT`, `strict mode`],
+					[/* reference */ 'r', `java.ResolverStyle#STRICT`],
 					[/* text */ 't', ` and `],
-					[/* external link */ 'a', `../format/ResolverStyle.html#SMART`, `smart mode`],
+					[/* reference */ 'r', `java.ResolverStyle#SMART`],
 					[/* text */ 't', `
  the Julian Day value is validated against the range of valid values.
  In `],
-					[/* external link */ 'a', `../format/ResolverStyle.html#LENIENT`, `lenient mode`],
+					[/* reference */ 'r', `java.ResolverStyle#LENIENT`],
 					[/* text */ 't', ` no validation occurs.
 
  `]
@@ -125,7 +125,7 @@ DocsCollector.collect('java.time.temporal.JulianFields', [
 					[/* inline code block */ 'i', `Temporal`],
 					[/* text */ 't', ` objects
  that can be converted into `],
-					[/* external link */ 'a', `ChronoField.html#EPOCH_DAY`, `ChronoField.EPOCH_DAY`],
+					[/* reference */ 'r', `.ChronoField#EPOCH_DAY`],
 					[/* text */ 't', `.
  An `],
 					[/* reference */ 'r', `java.time.temporal.UnsupportedTemporalTypeException`],
@@ -139,13 +139,13 @@ DocsCollector.collect('java.time.temporal.JulianFields', [
 					[/* text */ 't', `
  In the resolving phase of parsing, a date can be created from a Modified Julian Day field.
  In `],
-					[/* external link */ 'a', `../format/ResolverStyle.html#STRICT`, `strict mode`],
+					[/* reference */ 'r', `java.ResolverStyle#STRICT`],
 					[/* text */ 't', ` and `],
-					[/* external link */ 'a', `../format/ResolverStyle.html#SMART`, `smart mode`],
+					[/* reference */ 'r', `java.ResolverStyle#SMART`],
 					[/* text */ 't', `
  the Modified Julian Day value is validated against the range of valid values.
  In `],
-					[/* external link */ 'a', `../format/ResolverStyle.html#LENIENT`, `lenient mode`],
+					[/* reference */ 'r', `java.ResolverStyle#LENIENT`],
 					[/* text */ 't', ` no validation occurs.
 
  `]
@@ -184,7 +184,7 @@ DocsCollector.collect('java.time.temporal.JulianFields', [
 					[/* inline code block */ 'i', `Temporal`],
 					[/* text */ 't', ` objects
  that can be converted into `],
-					[/* external link */ 'a', `ChronoField.html#EPOCH_DAY`, `ChronoField.EPOCH_DAY`],
+					[/* reference */ 'r', `.ChronoField#EPOCH_DAY`],
 					[/* text */ 't', `.
  An `],
 					[/* reference */ 'r', `java.time.temporal.UnsupportedTemporalTypeException`],
@@ -195,13 +195,13 @@ DocsCollector.collect('java.time.temporal.JulianFields', [
 					[/* text */ 't', `
  In the resolving phase of parsing, a date can be created from a Rata Die field.
  In `],
-					[/* external link */ 'a', `../format/ResolverStyle.html#STRICT`, `strict mode`],
+					[/* reference */ 'r', `java.ResolverStyle#STRICT`],
 					[/* text */ 't', ` and `],
-					[/* external link */ 'a', `../format/ResolverStyle.html#SMART`, `smart mode`],
+					[/* reference */ 'r', `java.ResolverStyle#SMART`],
 					[/* text */ 't', `
  the Rata Die value is validated against the range of valid values.
  In `],
-					[/* external link */ 'a', `../format/ResolverStyle.html#LENIENT`, `lenient mode`],
+					[/* reference */ 'r', `java.ResolverStyle#LENIENT`],
 					[/* text */ 't', ` no validation occurs.`]
 				]]
 			],

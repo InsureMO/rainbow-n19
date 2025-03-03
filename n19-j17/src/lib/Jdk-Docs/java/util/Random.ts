@@ -49,7 +49,7 @@ DocsCollector.collect('java.util.Random', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  Many applications will find the method `],
-			[/* external link */ 'a', `../lang/Math.html#random()`, `Math.random()`],
+			[/* reference */ 'r', `java.Math#random()`],
 			[/* text */ 't', ` simpler to use.
 
  `]
@@ -99,7 +99,7 @@ DocsCollector.collect('java.util.Random', [
 				[/* text */ 't', ` seed.
  The seed is the initial value of the internal state of the pseudorandom
  number generator which is maintained by method `],
-				[/* reference */ 'r', `next(int)`],
+				[/* reference */ 'r', `#next(int)`, `next(int)`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -301,7 +301,7 @@ DocsCollector.collect('java.util.Random', [
 					[/* inline code block */ 'i', `double`],
 					[/* text */ 't', ` value is generated as if it's the result
  of calling the method `],
-					[/* reference */ 'r', `nextDouble()`],
+					[/* reference */ 'r', `#nextDouble()`, `nextDouble()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -401,7 +401,7 @@ DocsCollector.collect('java.util.Random', [
 					[/* inline code block */ 'i', `double`],
 					[/* text */ 't', ` value is generated as if it's the result
  of calling the method `],
-					[/* reference */ 'r', `nextDouble()`],
+					[/* reference */ 'r', `#nextDouble()`, `nextDouble()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -478,7 +478,7 @@ DocsCollector.collect('java.util.Random', [
 					[/* inline code block */ 'i', `int`],
 					[/* text */ 't', ` value is generated as if it's the result of
  calling the method `],
-					[/* reference */ 'r', `nextInt()`],
+					[/* reference */ 'r', `#nextInt()`, `nextInt()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -514,7 +514,7 @@ DocsCollector.collect('java.util.Random', [
 					[/* inline code block */ 'i', `int`],
 					[/* text */ 't', ` value is generated as if it's the result of
  calling the method `],
-					[/* reference */ 'r', `nextInt()`],
+					[/* reference */ 'r', `#nextInt()`, `nextInt()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -732,7 +732,7 @@ DocsCollector.collect('java.util.Random', [
 					[/* inline code block */ 'i', `long`],
 					[/* text */ 't', ` value is generated as if it's the result
  of calling the method `],
-					[/* reference */ 'r', `nextLong()`],
+					[/* reference */ 'r', `#nextLong()`, `nextLong()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -768,7 +768,7 @@ DocsCollector.collect('java.util.Random', [
 					[/* inline code block */ 'i', `long`],
 					[/* text */ 't', ` value is generated as if it's the result
  of calling the method `],
-					[/* reference */ 'r', `nextLong()`],
+					[/* reference */ 'r', `#nextLong()`, `nextLong()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -941,7 +941,7 @@ DocsCollector.collect('java.util.Random', [
  `],
 					[/* inline code block */ 'i', `float`],
 					[/* text */ 't', ` values of the form `],
-					[/* text */ 't', `m&nbsp;x&nbsp;`],
+					[/* text */ 't', `m x `],
 					[/* text */ 't', `2`],
 					[/* text */ 't', `-24`, 'sup'],
 					[/* text */ 't', `,
@@ -1037,7 +1037,7 @@ DocsCollector.collect('java.util.Random', [
  and clearing the `],
 				[/* inline code block */ 'i', `haveNextNextGaussian`],
 				[/* text */ 't', ` flag used by `],
-				[/* reference */ 'r', `nextGaussian()`],
+				[/* reference */ 'r', `#nextGaussian()`, `nextGaussian()`],
 				[/* text */ 't', `.
 
  `],

@@ -10,8 +10,8 @@ DocsCollector.collect('java.nio.channels.AsynchronousChannel', [
 		[/* list */ 'l', [
 			[/* block */ 'b', [
 				[/* code block */ 'c', [
-					[/* reference */ 'r', `java.util.concurrent.Future`],
-					[/* text */ 't', `&lt;V&gt; `],
+					[/* text */ 't', `Future`],
+					[/* text */ 't', `<V> `],
 					[/* text */ 't', `operation`],
 					[/* text */ 't', `(`],
 					[/* text */ 't', `...`],
@@ -25,8 +25,8 @@ DocsCollector.collect('java.nio.channels.AsynchronousChannel', [
 					[/* text */ 't', `(`],
 					[/* text */ 't', `...`],
 					[/* text */ 't', ` A attachment, `],
-					[/* reference */ 'r', `java.nio.channels.CompletionHandler`],
-					[/* text */ 't', `&lt;V,? super A&gt; handler)`]
+					[/* text */ 't', `CompletionHandler`],
+					[/* text */ 't', `<V,? super A> handler)`]
 				]]
 			]]
 		]],
@@ -67,7 +67,7 @@ DocsCollector.collect('java.nio.channels.AsynchronousChannel', [
  closeable`],
 			[/* text */ 't', `: If an I/O operation is outstanding on the channel and the
  channel's `],
-			[/* reference */ 'r', `close`],
+			[/* reference */ 'r', `#close()`, `close`],
 			[/* text */ 't', ` method is invoked, then the I/O operation
  fails with the exception `],
 			[/* reference */ 'r', `java.nio.channels.AsynchronousCloseException`],
@@ -86,7 +86,7 @@ DocsCollector.collect('java.nio.channels.AsynchronousChannel', [
 			[/* text */ 't', ` The `],
 			[/* inline code block */ 'i', `Future`],
 			[/* text */ 't', ` interface defines the `],
-			[/* external link */ 'a', `../../util/concurrent/Future.html#cancel(boolean)`, `cancel`],
+			[/* reference */ 'r', `java.nio.Future#cancel(boolean)`],
 			[/* text */ 't', `
  method to cancel execution. This causes all threads waiting on the result of
  the I/O operation to throw `],
@@ -118,7 +118,7 @@ DocsCollector.collect('java.nio.channels.AsynchronousChannel', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Where the `],
-			[/* external link */ 'a', `../../util/concurrent/Future.html#cancel(boolean)`, `cancel`],
+			[/* reference */ 'r', `java.nio.Future#cancel(boolean)`],
 			[/* text */ 't', ` method is invoked with the `],
 			[/* inline code block */ 'i', `mayInterruptIfRunning`],
 			[/* text */ 't', ` parameter set to `],

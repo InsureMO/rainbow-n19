@@ -10,8 +10,12 @@ DocsCollector.collect('java.io.ObjectInputFilter', [
 			[/* text */ 't', `Warning: Deserialization of untrusted data is inherently dangerous
  and should be avoided. Untrusted data should be carefully validated according to the
  "Serialization and Deserialization" section of the
- <a href="https://docs.oracle.com/pls/topic/lookup?ctx=javase17&amp;id=secure_coding_guidelines_javase">Secure Coding Guidelines for Java SE</a>.
- <a href="https://docs.oracle.com/pls/topic/lookup?ctx=javase17&amp;id=serialization_filter_guide">Serialization Filtering</a> describes best
+ `],
+			[/* external link */ 'a', `https://docs.oracle.com/pls/topic/lookup?ctx=javase17&id=secure_coding_guidelines_javase`, `Secure Coding Guidelines for Java SE`],
+			[/* text */ 't', `.
+ `],
+			[/* external link */ 'a', `https://docs.oracle.com/pls/topic/lookup?ctx=javase17&id=serialization_filter_guide`, `Serialization Filtering`],
+			[/* text */ 't', ` describes best
  practices for defensive use of serial filters.
  `]
 		]],
@@ -38,11 +42,11 @@ DocsCollector.collect('java.io.ObjectInputFilter', [
  without setting a filter factory.
  The JVM-wide filter can be set either with a system property on the command line or by
  calling `],
-			[/* external link */ 'a', `ObjectInputFilter.Config.html#setSerialFilter(java.io.ObjectInputFilter)`, `Config.setSerialFilter`],
+			[/* reference */ 'r', `.ObjectInputFilter.Config#setSerialFilter(java.io.ObjectInputFilter)`],
 			[/* text */ 't', `.
  No custom filter factory needs to be specified, defaulting to the builtin filter factory.
  The builtin filter factory provides the `],
-			[/* external link */ 'a', `ObjectInputFilter.Config.html#getSerialFilter()`, `static JVM-wide filter`],
+			[/* reference */ 'r', `.ObjectInputFilter.Config#getSerialFilter()`],
 			[/* text */ 't', `
  for each `],
 			[/* reference */ 'r', `java.io.ObjectInputStream`],
@@ -71,7 +75,7 @@ DocsCollector.collect('java.io.ObjectInputFilter', [
 		[/* block */ 'b', [
 			[/* text */ 't', `In an application with multiple execution contexts, the application can provide a
  `],
-			[/* external link */ 'a', `ObjectInputFilter.Config.html#setSerialFilterFactory(java.util.function.BinaryOperator)`, `filter factory`],
+			[/* reference */ 'r', `.ObjectInputFilter.Config#setSerialFilterFactory(java.util.function.BinaryOperator)`],
 			[/* text */ 't', ` to
  protect individual contexts by providing a custom filter for each. When the stream
  is constructed, the filter factory is called to identify the execution context from the available
@@ -92,24 +96,24 @@ DocsCollector.collect('java.io.ObjectInputFilter', [
 			[/* reference */ 'r', `java.io.ObjectInputStream`],
 			[/* text */ 't', ` is
  `],
-			[/* external link */ 'a', `ObjectInputStream.html#%3Cinit%3E()`, `constructed`],
+			[/* reference */ 'r', `.ObjectInputStream#<init>()`],
 			[/* text */ 't', ` and when the
  `],
-			[/* external link */ 'a', `ObjectInputStream.html#setObjectInputFilter(java.io.ObjectInputFilter)`, `stream-specific filter is set`],
+			[/* reference */ 'r', `.ObjectInputStream#setObjectInputFilter(java.io.ObjectInputFilter)`],
 			[/* text */ 't', `.
  The parameters are the current filter and a requested filter and it
  returns the filter to be used for the stream. When invoked from the
  `],
-			[/* external link */ 'a', `ObjectInputStream.html#%3Cinit%3E(java.io.InputStream)`, `ObjectInputStream constructors`],
+			[/* reference */ 'r', `.ObjectInputStream#<init>(java.io.InputStream)`],
 			[/* text */ 't', `,
  the first parameter is `],
 			[/* inline code block */ 'i', `null`],
 			[/* text */ 't', ` and the second parameter is the
  `],
-			[/* external link */ 'a', `ObjectInputFilter.Config.html#getSerialFilter()`, `static JVM-wide filter`],
+			[/* reference */ 'r', `.ObjectInputFilter.Config#getSerialFilter()`],
 			[/* text */ 't', `.
  When invoked from `],
-			[/* external link */ 'a', `ObjectInputStream.html#setObjectInputFilter(java.io.ObjectInputFilter)`, `ObjectInputStream.setObjectInputFilter`],
+			[/* reference */ 'r', `.ObjectInputStream#setObjectInputFilter(java.io.ObjectInputFilter)`],
 			[/* text */ 't', `,
  the first parameter is the filter currently set on the stream (which was set in the constructor),
  and the second parameter is the filter given to `],
@@ -131,7 +135,7 @@ DocsCollector.collect('java.io.ObjectInputFilter', [
 		[/* list */ 'l', [
 			[/* block */ 'b', [
 				[/* text */ 't', `The application specific filter factory set via `],
-				[/* external link */ 'a', `ObjectInputFilter.Config.html#setSerialFilterFactory(java.util.function.BinaryOperator)`, `ObjectInputFilter.Config.setSerialFilterFactory(BinaryOperator)`],
+				[/* reference */ 'r', `.ObjectInputFilter.Config#setSerialFilterFactory(java.util.function.BinaryOperator)`],
 				[/* text */ 't', `
      or the system property `],
 				[/* inline code block */ 'i', `jdk.serialFilterFactory`],
@@ -144,17 +148,17 @@ DocsCollector.collect('java.io.ObjectInputFilter', [
 			[/* block */ 'b', [
 				[/* text */ 't', `Otherwise, a builtin deserialization filter factory
      provides the `],
-				[/* external link */ 'a', `ObjectInputFilter.Config.html#getSerialFilter()`, `static JVM-wide filter`],
+				[/* reference */ 'r', `.ObjectInputFilter.Config#getSerialFilter()`],
 				[/* text */ 't', ` when invoked from the
      `],
-				[/* external link */ 'a', `ObjectInputStream.html#%3Cinit%3E(java.io.InputStream)`, `ObjectInputStream constructors`],
+				[/* reference */ 'r', `.ObjectInputStream#<init>(java.io.InputStream)`],
 				[/* text */ 't', `
      and replaces the static filter when invoked from
      `],
-				[/* external link */ 'a', `ObjectInputStream.html#setObjectInputFilter(java.io.ObjectInputFilter)`, `ObjectInputStream.setObjectInputFilter(ObjectInputFilter)`],
+				[/* reference */ 'r', `.ObjectInputStream#setObjectInputFilter(java.io.ObjectInputFilter)`],
 				[/* text */ 't', `.
      See `],
-				[/* external link */ 'a', `ObjectInputFilter.Config.html#getSerialFilterFactory()`, `getSerialFilterFactory`],
+				[/* reference */ 'r', `.ObjectInputFilter.Config#getSerialFilterFactory()`],
 				[/* text */ 't', `.
  `]
 			]]
@@ -163,25 +167,25 @@ DocsCollector.collect('java.io.ObjectInputFilter', [
 		[/* block */ 'b', `Filters`],
 		[/* text */ 't', `
  Filters can be created from a `],
-		[/* external link */ 'a', `ObjectInputFilter.Config.html#createFilter(java.lang.String)`, `pattern string`],
+		[/* reference */ 'r', `.ObjectInputFilter.Config#createFilter(java.lang.String)`],
 		[/* text */ 't', `,
  or based on a `],
 		[/* reference */ 'r', `java.util.function.Predicate`],
 		[/* text */ 't', ` to
  `],
-		[/* reference */ 'r', `allow`],
+		[/* reference */ 'r', `#allowFilter(java.util.function.Predicate,java.io.ObjectInputFilter.Status)`, `allow`],
 		[/* text */ 't', ` or
  `],
-		[/* reference */ 'r', `reject`],
+		[/* reference */ 'r', `#rejectFilter(java.util.function.Predicate,java.io.ObjectInputFilter.Status)`, `reject`],
 		[/* text */ 't', ` classes.
 
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `The filter's `],
-			[/* reference */ 'r', `checkInput(FilterInfo)`],
+			[/* reference */ 'r', `#checkInput(java.io.ObjectInputFilter.FilterInfo)`, `checkInput(FilterInfo)`],
 			[/* text */ 't', ` method is invoked
  zero or more times while `],
-			[/* external link */ 'a', `ObjectInputStream.html#readObject()`, `reading objects`],
+			[/* reference */ 'r', `.ObjectInputStream#readObject()`],
 			[/* text */ 't', `.
  The method is called to validate classes, the length of each array,
  the number of objects being read from the stream, the depth of the graph,
@@ -192,11 +196,11 @@ DocsCollector.collect('java.io.ObjectInputFilter', [
 		[/* block */ 'b', [
 			[/* text */ 't', `Composite filters combine or check the results of other filters.
  The `],
-			[/* reference */ 'r', `merge(filter, anotherFilter)`],
+			[/* reference */ 'r', `#merge(java.io.ObjectInputFilter,java.io.ObjectInputFilter)`, `merge(filter, anotherFilter)`],
 			[/* text */ 't', `
  filter combines the status value of two filters.
  The `],
-			[/* reference */ 'r', `rejectUndecidedClass(filter)`],
+			[/* reference */ 'r', `#rejectUndecidedClass(java.io.ObjectInputFilter)`, `rejectUndecidedClass(filter)`],
 			[/* text */ 't', `
  checks the result of a filter for classes when the status is `],
 			[/* inline code block */ 'i', `UNDECIDED`],
@@ -212,12 +216,12 @@ DocsCollector.collect('java.io.ObjectInputFilter', [
 			[/* text */ 't', `
  A deserialization filter determines whether the arguments are allowed or rejected and
  should return the appropriate status: `],
-			[/* external link */ 'a', `ObjectInputFilter.Status.html#ALLOWED`, `ALLOWED`],
+			[/* reference */ 'r', `.ObjectInputFilter.Status#ALLOWED`],
 			[/* text */ 't', ` or `],
-			[/* external link */ 'a', `ObjectInputFilter.Status.html#REJECTED`, `REJECTED`],
+			[/* reference */ 'r', `.ObjectInputFilter.Status#REJECTED`],
 			[/* text */ 't', `.
  If the filter cannot determine the status it should return `],
-			[/* external link */ 'a', `ObjectInputFilter.Status.html#UNDECIDED`, `UNDECIDED`],
+			[/* reference */ 'r', `.ObjectInputFilter.Status#UNDECIDED`],
 			[/* text */ 't', `.
  Filters should be designed for the specific use case and expected types.
  A filter designed for a particular use may be passed a class outside
@@ -387,7 +391,7 @@ DocsCollector.collect('java.io.ObjectInputFilter', [
 				[/* text */ 't', ` filters.
 
  The filter returned implements the `],
-				[/* reference */ 'r', `checkInput(FilterInfo)`],
+				[/* reference */ 'r', `#checkInput(java.io.ObjectInputFilter.FilterInfo)`, `checkInput(FilterInfo)`],
 				[/* text */ 't', ` method
  as follows:
  `],
@@ -470,12 +474,12 @@ DocsCollector.collect('java.io.ObjectInputFilter', [
  stream size, and other available filtering information.
  Implementations of this method check the contents of the object graph being created
  during deserialization. The filter returns `],
-				[/* external link */ 'a', `ObjectInputFilter.Status.html#ALLOWED`, `Status.ALLOWED`],
+				[/* reference */ 'r', `.ObjectInputFilter.Status#ALLOWED`],
 				[/* text */ 't', `,
  `],
-				[/* external link */ 'a', `ObjectInputFilter.Status.html#REJECTED`, `Status.REJECTED`],
+				[/* reference */ 'r', `.ObjectInputFilter.Status#REJECTED`],
 				[/* text */ 't', `, or `],
-				[/* external link */ 'a', `ObjectInputFilter.Status.html#UNDECIDED`, `Status.UNDECIDED`],
+				[/* reference */ 'r', `.ObjectInputFilter.Status#UNDECIDED`],
 				[/* text */ 't', `.
 
  `],
@@ -503,13 +507,13 @@ DocsCollector.collect('java.io.ObjectInputFilter', [
 			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* external link */ 'a', `ObjectInputFilter.Status.html#ALLOWED`, `Status.ALLOWED`],
+				[/* reference */ 'r', `.ObjectInputFilter.Status#ALLOWED`],
 				[/* text */ 't', ` if accepted,
           `],
-				[/* external link */ 'a', `ObjectInputFilter.Status.html#REJECTED`, `Status.REJECTED`],
+				[/* reference */ 'r', `.ObjectInputFilter.Status#REJECTED`],
 				[/* text */ 't', ` if rejected,
           `],
-				[/* external link */ 'a', `ObjectInputFilter.Status.html#UNDECIDED`, `Status.UNDECIDED`],
+				[/* reference */ 'r', `.ObjectInputFilter.Status#UNDECIDED`],
 				[/* text */ 't', ` if undecided.`]
 			]
 		]],
@@ -537,17 +541,17 @@ DocsCollector.collect('java.io.ObjectInputFilter', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `When the filter's `],
-					[/* reference */ 'r', `checkInput(info)`],
+					[/* reference */ 'r', `#checkInput(java.io.ObjectInputFilter.FilterInfo)`, `checkInput(info)`],
 					[/* text */ 't', ` method is invoked,
  the predicate is applied to the `],
-					[/* external link */ 'a', `ObjectInputFilter.FilterInfo.html#serialClass()`, `info.serialClass()`],
+					[/* reference */ 'r', `.ObjectInputFilter.FilterInfo#serialClass()`],
 					[/* text */ 't', `,
  the return Status is:
  `]
 				]],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
-						[/* external link */ 'a', `ObjectInputFilter.Status.html#UNDECIDED`, `UNDECIDED`],
+						[/* reference */ 'r', `.ObjectInputFilter.Status#UNDECIDED`],
 						[/* text */ 't', `, if the `],
 						[/* inline code block */ 'i', `serialClass`],
 						[/* text */ 't', ` is `],
@@ -555,7 +559,7 @@ DocsCollector.collect('java.io.ObjectInputFilter', [
 						[/* text */ 't', `,`]
 					]],
 					[/* block */ 'b', [
-						[/* external link */ 'a', `ObjectInputFilter.Status.html#ALLOWED`, `ALLOWED`],
+						[/* reference */ 'r', `.ObjectInputFilter.Status#ALLOWED`],
 						[/* text */ 't', `, if the predicate on the class returns `],
 						[/* inline code block */ 'i', `true`],
 						[/* text */ 't', `,`]
@@ -618,16 +622,16 @@ DocsCollector.collect('java.io.ObjectInputFilter', [
 				[/* text */ 't', `.
 
  When the filter's `],
-				[/* reference */ 'r', `checkInput(info)`],
+				[/* reference */ 'r', `#checkInput(java.io.ObjectInputFilter.FilterInfo)`, `checkInput(info)`],
 				[/* text */ 't', ` method is invoked,
  the predicate is applied to the `],
-				[/* external link */ 'a', `ObjectInputFilter.FilterInfo.html#serialClass()`, `serialClass()`],
+				[/* reference */ 'r', `.ObjectInputFilter.FilterInfo#serialClass()`],
 				[/* text */ 't', `,
  the return Status is:
  `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
-						[/* external link */ 'a', `ObjectInputFilter.Status.html#UNDECIDED`, `UNDECIDED`],
+						[/* reference */ 'r', `.ObjectInputFilter.Status#UNDECIDED`],
 						[/* text */ 't', `, if the `],
 						[/* inline code block */ 'i', `serialClass`],
 						[/* text */ 't', ` is `],
@@ -635,7 +639,7 @@ DocsCollector.collect('java.io.ObjectInputFilter', [
 						[/* text */ 't', `,`]
 					]],
 					[/* block */ 'b', [
-						[/* external link */ 'a', `ObjectInputFilter.Status.html#REJECTED`, `REJECTED`],
+						[/* reference */ 'r', `.ObjectInputFilter.Status#REJECTED`],
 						[/* text */ 't', `, if the predicate on the class returns `],
 						[/* inline code block */ 'i', `true`],
 						[/* text */ 't', `,`]
@@ -706,10 +710,10 @@ DocsCollector.collect('java.io.ObjectInputFilter', [
 				[/* text */ 't', `an `],
 				[/* reference */ 'r', `java.io.ObjectInputFilter`],
 				[/* text */ 't', ` that maps an `],
-				[/* external link */ 'a', `ObjectInputFilter.Status.html#UNDECIDED`, `ObjectInputFilter.Status.UNDECIDED`],
+				[/* reference */ 'r', `.ObjectInputFilter.Status#UNDECIDED`],
 				[/* text */ 't', `
       status to `],
-				[/* external link */ 'a', `ObjectInputFilter.Status.html#REJECTED`, `ObjectInputFilter.Status.REJECTED`],
+				[/* reference */ 'r', `.ObjectInputFilter.Status#REJECTED`],
 				[/* text */ 't', ` for classes, otherwise returns the
       filter status`]
 			]

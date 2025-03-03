@@ -83,7 +83,536 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
  `]
 		]],
 		[/* block */ 'b', [
-			[/* table */ 't', '']
+			[/* table */ 'tbl',
+				[/* caption */ 'tc'],
+				[/* table header */ 'th', [
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* text */ 't', `Letter
+         `]
+						]],
+						[/* table header cell */ 'thc', [
+							[/* text */ 't', `Date or Time Component
+         `]
+						]],
+						[/* table header cell */ 'thc', [
+							[/* text */ 't', `Presentation
+         `]
+						]],
+						[/* table header cell */ 'thc', [
+							[/* text */ 't', `Examples
+ `]
+						]]
+					]]
+				]],
+				[/* table body */ 'tb', [
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `G`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Era designator
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Text`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* inline code block */ 'i', `AD`],
+							[/* text */ 't', `
+     `]
+						]]
+					]],
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `y`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Year
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Year`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* inline code block */ 'i', `1996`],
+							[/* text */ 't', `; `],
+							[/* inline code block */ 'i', `96`],
+							[/* text */ 't', `
+     `]
+						]]
+					]],
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `Y`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Week year
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Year`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* inline code block */ 'i', `2009`],
+							[/* text */ 't', `; `],
+							[/* inline code block */ 'i', `09`],
+							[/* text */ 't', `
+     `]
+						]]
+					]],
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `M`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Month in year (context sensitive)
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Month`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* inline code block */ 'i', `July`],
+							[/* text */ 't', `; `],
+							[/* inline code block */ 'i', `Jul`],
+							[/* text */ 't', `; `],
+							[/* inline code block */ 'i', `07`],
+							[/* text */ 't', `
+     `]
+						]]
+					]],
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `L`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Month in year (standalone form)
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Month`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* inline code block */ 'i', `July`],
+							[/* text */ 't', `; `],
+							[/* inline code block */ 'i', `Jul`],
+							[/* text */ 't', `; `],
+							[/* inline code block */ 'i', `07`],
+							[/* text */ 't', `
+     `]
+						]]
+					]],
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `w`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Week in year
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Number`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* inline code block */ 'i', `27`],
+							[/* text */ 't', `
+     `]
+						]]
+					]],
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `W`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Week in month
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Number`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* inline code block */ 'i', `2`],
+							[/* text */ 't', `
+     `]
+						]]
+					]],
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `D`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Day in year
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Number`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* inline code block */ 'i', `189`],
+							[/* text */ 't', `
+     `]
+						]]
+					]],
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `d`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Day in month
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Number`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* inline code block */ 'i', `10`],
+							[/* text */ 't', `
+     `]
+						]]
+					]],
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `F`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Day of week in month
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Number`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* inline code block */ 'i', `2`],
+							[/* text */ 't', `
+     `]
+						]]
+					]],
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `E`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Day name in week
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Text`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* inline code block */ 'i', `Tuesday`],
+							[/* text */ 't', `; `],
+							[/* inline code block */ 'i', `Tue`],
+							[/* text */ 't', `
+     `]
+						]]
+					]],
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `u`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Day number of week (1 = Monday, ..., 7 = Sunday)
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Number`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* inline code block */ 'i', `1`],
+							[/* text */ 't', `
+     `]
+						]]
+					]],
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `a`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Am/pm marker
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Text`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* inline code block */ 'i', `PM`],
+							[/* text */ 't', `
+     `]
+						]]
+					]],
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `H`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Hour in day (0-23)
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Number`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* inline code block */ 'i', `0`],
+							[/* text */ 't', `
+     `]
+						]]
+					]],
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `k`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Hour in day (1-24)
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Number`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* inline code block */ 'i', `24`],
+							[/* text */ 't', `
+     `]
+						]]
+					]],
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `K`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Hour in am/pm (0-11)
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Number`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* inline code block */ 'i', `0`],
+							[/* text */ 't', `
+     `]
+						]]
+					]],
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `h`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Hour in am/pm (1-12)
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Number`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* inline code block */ 'i', `12`],
+							[/* text */ 't', `
+     `]
+						]]
+					]],
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `m`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Minute in hour
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Number`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* inline code block */ 'i', `30`],
+							[/* text */ 't', `
+     `]
+						]]
+					]],
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `s`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Second in minute
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Number`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* inline code block */ 'i', `55`],
+							[/* text */ 't', `
+     `]
+						]]
+					]],
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `S`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Millisecond
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Number`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* inline code block */ 'i', `978`],
+							[/* text */ 't', `
+     `]
+						]]
+					]],
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `z`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Time zone
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `General time zone`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* inline code block */ 'i', `Pacific Standard Time`],
+							[/* text */ 't', `; `],
+							[/* inline code block */ 'i', `PST`],
+							[/* text */ 't', `; `],
+							[/* inline code block */ 'i', `GMT-08:00`],
+							[/* text */ 't', `
+     `]
+						]]
+					]],
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `Z`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Time zone
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `RFC 822 time zone`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* inline code block */ 'i', `-0800`],
+							[/* text */ 't', `
+     `]
+						]]
+					]],
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `X`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Time zone
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `ISO 8601 time zone`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* inline code block */ 'i', `-08`],
+							[/* text */ 't', `; `],
+							[/* inline code block */ 'i', `-0800`],
+							[/* text */ 't', `;  `],
+							[/* inline code block */ 'i', `-08:00`],
+							[/* text */ 't', `
+ `]
+						]]
+					]]
+				]],
+			]
 		]],
 		[/* text */ 't', `
  Pattern letters are usually repeated, as their number determines the
@@ -115,7 +644,7 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 				[/* text */ 't', `Year:`],
 				[/* text */ 't', `
      If the formatter's `],
-				[/* external link */ 'a', `DateFormat.html#getCalendar()`, `Calendar`],
+				[/* reference */ 'r', `.DateFormat#getCalendar()`],
 				[/* text */ 't', ` is the Gregorian
      calendar, the following rules are applied.`],
 				[/* new line */ 'n'],
@@ -150,7 +679,7 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
          would be interpreted as May 4, 1964.
          During parsing, only strings consisting of exactly two digits, as defined by
          `],
-						[/* external link */ 'a', `../lang/Character.html#isDigit(int)`, `Character.isDigit(char)`],
+						[/* reference */ 'r', `java.Character#isDigit(int)`],
 						[/* text */ 't', `, will be parsed into the default century.
          Any other numeric string, such as a one digit string, a three or more digit
          string, or a two digit string that isn't all digits (for example, "-1"), is
@@ -163,10 +692,10 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
      Otherwise, calendar system specific forms are applied.
      For both formatting and parsing, if the number of pattern
      letters is 4 or more, a calendar specific `],
-				[/* external link */ 'a', `../util/Calendar.html#LONG`, `long form`],
+				[/* reference */ 'r', `java.Calendar#LONG`],
 				[/* text */ 't', ` is used. Otherwise, a calendar
      specific `],
-				[/* external link */ 'a', `../util/Calendar.html#SHORT`, `short or abbreviated form`],
+				[/* reference */ 'r', `java.Calendar#SHORT`],
 				[/* text */ 't', `
      is used.`],
 				[/* new line */ 'n'],
@@ -175,16 +704,16 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
      If week year `],
 				[/* inline code block */ 'i', `'Y'`],
 				[/* text */ 't', ` is specified and the `],
-				[/* external link */ 'a', `DateFormat.html#getCalendar()`, `calendar`],
+				[/* reference */ 'r', `.DateFormat#getCalendar()`],
 				[/* text */ 't', ` doesn't support any `],
-				[/* external link */ 'a', `../util/GregorianCalendar.html#week_year`, `week years`],
+				[/* reference */ 'r', `java.GregorianCalendar#week_year`],
 				[/* text */ 't', `, the calendar year (`],
 				[/* inline code block */ 'i', `'y'`],
 				[/* text */ 't', `) is used instead. The
      support of week years can be tested with a call to `],
-				[/* external link */ 'a', `DateFormat.html#getCalendar()`, `getCalendar()`],
+				[/* reference */ 'r', `.DateFormat#getCalendar()`],
 				[/* text */ 't', `.`],
-				[/* external link */ 'a', `../util/Calendar.html#isWeekDateSupported()`, `isWeekDateSupported()`],
+				[/* reference */ 'r', `java.Calendar#isWeekDateSupported()`],
 				[/* text */ 't', `.`],
 				[/* new line */ 'n'],
 				[/* new line */ 'n']
@@ -219,9 +748,9 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 						[/* inline code block */ 'i', `DateFormatSymbols`],
 						[/* text */ 't', ` has been set explicitly with constructor
          `],
-						[/* reference */ 'r', `SimpleDateFormat(String,DateFormatSymbols)`],
+						[/* reference */ 'r', `#%3Cinit%3E(java.lang.String,java.text.DateFormatSymbols)`, `SimpleDateFormat(String,DateFormatSymbols)`],
 						[/* text */ 't', ` or method `],
-						[/* reference */ 'r', `setDateFormatSymbols(DateFormatSymbols)`],
+						[/* reference */ 'r', `#setDateFormatSymbols(java.text.DateFormatSymbols)`, `setDateFormatSymbols(DateFormatSymbols)`],
 						[/* text */ 't', `, the month names given by
          the `],
 						[/* inline code block */ 'i', `DateFormatSymbols`],
@@ -382,7 +911,7 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 					[/* text */ 't', ` is thrown when constructing a `],
 					[/* inline code block */ 'i', `SimpleDateFormat`],
 					[/* text */ 't', ` or `],
-					[/* reference */ 'r', `applying a pattern`],
+					[/* reference */ 'r', `#applyPattern(java.lang.String)`, `applying a pattern`],
 					[/* text */ 't', `.
  `]
 				]]
@@ -410,7 +939,155 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
  in the U.S. Pacific Time time zone.
  `],
 		[/* block */ 'b', [
-			[/* table */ 't', '']
+			[/* table */ 'tbl',
+				[/* caption */ 'tc'],
+				[/* table header */ 'th', [
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* text */ 't', `Date and Time Pattern
+         `]
+						]],
+						[/* table header cell */ 'thc', [
+							[/* text */ 't', `Result
+ `]
+						]]
+					]]
+				]],
+				[/* table body */ 'tb', [
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `"yyyy.MM.dd G 'at' HH:mm:ss z"`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* inline code block */ 'i', `2001.07.04 AD at 12:08:56 PDT`],
+							[/* text */ 't', `
+     `]
+						]]
+					]],
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `"EEE, MMM d, ''yy"`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* inline code block */ 'i', `Wed, Jul 4, '01`],
+							[/* text */ 't', `
+     `]
+						]]
+					]],
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `"h:mm a"`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* inline code block */ 'i', `12:08 PM`],
+							[/* text */ 't', `
+     `]
+						]]
+					]],
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `"hh 'o''clock' a, zzzz"`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* inline code block */ 'i', `12 o'clock PM, Pacific Daylight Time`],
+							[/* text */ 't', `
+     `]
+						]]
+					]],
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `"K:mm a, z"`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* inline code block */ 'i', `0:08 PM, PDT`],
+							[/* text */ 't', `
+     `]
+						]]
+					]],
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `"yyyyy.MMMMM.dd GGG hh:mm aaa"`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* inline code block */ 'i', `02001.July.04 AD 12:08 PM`],
+							[/* text */ 't', `
+     `]
+						]]
+					]],
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `"EEE, d MMM yyyy HH:mm:ss Z"`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* inline code block */ 'i', `Wed, 4 Jul 2001 12:08:56 -0700`],
+							[/* text */ 't', `
+     `]
+						]]
+					]],
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `"yyMMddHHmmssZ"`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* inline code block */ 'i', `010704120856-0700`],
+							[/* text */ 't', `
+     `]
+						]]
+					]],
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `"yyyy-MM-dd'T'HH:mm:ss.SSSZ"`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* inline code block */ 'i', `2001-07-04T12:08:56.235-0700`],
+							[/* text */ 't', `
+     `]
+						]]
+					]],
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `"yyyy-MM-dd'T'HH:mm:ss.SSSXXX"`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* inline code block */ 'i', `2001-07-04T12:08:56.235-07:00`],
+							[/* text */ 't', `
+     `]
+						]]
+					]],
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `"YYYY-'W'ww-u"`],
+							[/* text */ 't', `
+         `]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* inline code block */ 'i', `2001-W27-3`],
+							[/* text */ 't', `
+ `]
+						]]
+					]]
+				]],
+			]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `Synchronization`]
@@ -485,7 +1162,7 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 				[/* text */ 't', ` using the given pattern and
  the default date format symbols for the default
  `],
-				[/* external link */ 'a', `../util/Locale.Category.html#FORMAT`, `FORMAT`],
+				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
 				[/* text */ 't', ` locale.
  `],
 				[/* text */ 't', `Note:`],
@@ -498,7 +1175,7 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 				[/* block */ 'b', [
 					[/* text */ 't', `This is equivalent to calling
  `],
-					[/* reference */ 'r', `SimpleDateFormat(pattern, Locale.getDefault(Locale.Category.FORMAT))`],
+					[/* reference */ 'r', `#%3Cinit%3E(java.lang.String,java.util.Locale)`, `SimpleDateFormat(pattern, Locale.getDefault(Locale.Category.FORMAT))`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -523,7 +1200,7 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 				[/* text */ 't', ` using the default pattern and
  date format symbols for the default
  `],
-				[/* external link */ 'a', `../util/Locale.Category.html#FORMAT`, `FORMAT`],
+				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
 				[/* text */ 't', ` locale.
  `],
 				[/* text */ 't', `Note:`],
@@ -610,7 +1287,7 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 					[/* inline code block */ 'i', `fieldPosition`],
 					[/* text */ 't', `
  is `],
-					[/* external link */ 'a', `DateFormat.html#YEAR_FIELD`, `DateFormat.YEAR_FIELD`],
+					[/* reference */ 'r', `.DateFormat#YEAR_FIELD`],
 					[/* text */ 't', `, the begin index and end index of
  `],
 					[/* inline code block */ 'i', `fieldPosition`],
@@ -629,7 +1306,7 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 					[/* inline code block */ 'i', `"h a z (zzzz)"`],
 					[/* text */ 't', ` and the alignment field
  `],
-					[/* external link */ 'a', `DateFormat.html#TIMEZONE_FIELD`, `DateFormat.TIMEZONE_FIELD`],
+					[/* reference */ 'r', `.DateFormat#TIMEZONE_FIELD`],
 					[/* text */ 't', `, the begin index and end index of
  `],
 					[/* inline code block */ 'i', `fieldPosition`],
@@ -683,13 +1360,13 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `This parsing operation uses the `],
-					[/* external link */ 'a', `DateFormat.html#calendar`, `calendar`],
+					[/* reference */ 'r', `.DateFormat#calendar`],
 					[/* text */ 't', ` to produce a `],
 					[/* inline code block */ 'i', `Date`],
 					[/* text */ 't', `. All of the `],
 					[/* inline code block */ 'i', `calendar`],
 					[/* text */ 't', `'s date-time fields are `],
-					[/* external link */ 'a', `../util/Calendar.html#clear()`, `cleared`],
+					[/* reference */ 'r', `java.Calendar#clear()`],
 					[/* text */ 't', ` before parsing, and the `],
 					[/* inline code block */ 'i', `calendar`],
 					[/* text */ 't', `'s default
@@ -709,7 +1386,7 @@ DocsCollector.collect('java.text.SimpleDateFormat', [
 					[/* inline code block */ 'i', `TimeZone`],
 					[/* text */ 't', ` value that has previously been set by a call to
  `],
-					[/* external link */ 'a', `DateFormat.html#setTimeZone(java.util.TimeZone)`, `setTimeZone`],
+					[/* reference */ 'r', `.DateFormat#setTimeZone(java.util.TimeZone)`],
 					[/* text */ 't', ` may need
  to be restored for further operations.`]
 				]]

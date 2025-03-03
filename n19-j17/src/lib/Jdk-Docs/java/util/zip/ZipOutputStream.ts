@@ -180,7 +180,7 @@ DocsCollector.collect('java.util.zip.ZipOutputStream', [
  was specified for the entry. When writing a compressed (DEFLATED)
  entry, and the compressed size has not been explicitly set with the
  `],
-					[/* external link */ 'a', `ZipEntry.html#setCompressedSize(long)`, `ZipEntry.setCompressedSize(long)`],
+					[/* reference */ 'r', `.ZipEntry#setCompressedSize(long)`],
 					[/* text */ 't', ` method, then the compressed
  size will be set to the actual compressed size after deflation.
  `]

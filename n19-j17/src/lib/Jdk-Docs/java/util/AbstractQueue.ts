@@ -13,18 +13,18 @@ DocsCollector.collect('java.util.AbstractQueue', [
 		[/* inline code block */ 'i', `null`],
 		[/* text */ 't', `
  elements.  Methods `],
-		[/* reference */ 'r', `add`],
+		[/* reference */ 'r', `#add(E)`, `add`],
 		[/* text */ 't', `, `],
-		[/* reference */ 'r', `remove`],
+		[/* reference */ 'r', `#remove()`, `remove`],
 		[/* text */ 't', `, and
  `],
-		[/* reference */ 'r', `element`],
+		[/* reference */ 'r', `#element()`, `element`],
 		[/* text */ 't', ` are based on `],
-		[/* external link */ 'a', `Queue.html#offer(E)`, `offer`],
+		[/* reference */ 'r', `.Queue#offer(E)`],
 		[/* text */ 't', `, `],
-		[/* external link */ 'a', `Queue.html#poll()`, `poll`],
+		[/* reference */ 'r', `.Queue#poll()`],
 		[/* text */ 't', `, and `],
-		[/* external link */ 'a', `Queue.html#peek()`, `peek`],
+		[/* reference */ 'r', `.Queue#peek()`],
 		[/* text */ 't', `, respectively, but throw
  exceptions instead of indicating failure via `],
 		[/* inline code block */ 'i', `false`],
@@ -39,19 +39,19 @@ DocsCollector.collect('java.util.AbstractQueue', [
 			[/* inline code block */ 'i', `Queue`],
 			[/* text */ 't', ` implementation that extends this class must
  minimally define a method `],
-			[/* external link */ 'a', `Queue.html#offer(E)`, `Queue.offer(E)`],
+			[/* reference */ 'r', `.Queue#offer(E)`],
 			[/* text */ 't', ` which does not permit
  insertion of `],
 			[/* inline code block */ 'i', `null`],
 			[/* text */ 't', ` elements, along with methods `],
-			[/* external link */ 'a', `Queue.html#peek()`, `Queue.peek()`],
+			[/* reference */ 'r', `.Queue#peek()`],
 			[/* text */ 't', `, `],
-			[/* external link */ 'a', `Queue.html#poll()`, `Queue.poll()`],
+			[/* reference */ 'r', `.Queue#poll()`],
 			[/* text */ 't', `, `],
-			[/* external link */ 'a', `Collection.html#size()`, `Collection.size()`],
+			[/* reference */ 'r', `.Collection#size()`],
 			[/* text */ 't', `, and
  `],
-			[/* external link */ 'a', `Collection.html#iterator()`, `Collection.iterator()`],
+			[/* reference */ 'r', `.Collection#iterator()`],
 			[/* text */ 't', `.  Typically, additional methods will be
  overridden as well.  If these requirements cannot be met, consider
  instead subclassing `],
@@ -63,7 +63,7 @@ DocsCollector.collect('java.util.AbstractQueue', [
 		[/* block */ 'b', [
 			[/* text */ 't', `This class is a member of the
  `],
-			[/* external link */ 'a', `../../../java.base/java/util/package-summary.html#CollectionsFramework`, `Java Collections Framework`],
+			[/* text */ 't', `Java Collections Framework`],
 			[/* text */ 't', `.`]
 		]]
 	],
@@ -127,7 +127,7 @@ DocsCollector.collect('java.util.AbstractQueue', [
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` (as specified by `],
-				[/* external link */ 'a', `Collection.html#add(E)`, `Collection.add(E)`],
+				[/* reference */ 'r', `.Collection#add(E)`],
 				[/* text */ 't', `)`]
 			]
 		]],
@@ -135,7 +135,7 @@ DocsCollector.collect('java.util.AbstractQueue', [
 			[/* method description */
 				[/* text */ 't', `Retrieves and removes the head of this queue.  This method differs
  from `],
-				[/* external link */ 'a', `Queue.html#poll()`, `poll`],
+				[/* reference */ 'r', `.Queue#poll()`],
 				[/* text */ 't', ` only in that it throws an exception if this
  queue is empty.
 
@@ -165,7 +165,7 @@ DocsCollector.collect('java.util.AbstractQueue', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This implementation repeatedly invokes `],
-					[/* external link */ 'a', `Queue.html#poll()`, `poll`],
+					[/* reference */ 'r', `.Queue#poll()`],
 					[/* text */ 't', ` until it
  returns `],
 					[/* inline code block */ 'i', `null`],
@@ -233,7 +233,7 @@ DocsCollector.collect('java.util.AbstractQueue', [
 			[/* method description */
 				[/* text */ 't', `Retrieves, but does not remove, the head of this queue.  This method
  differs from `],
-				[/* external link */ 'a', `Queue.html#peek()`, `peek`],
+				[/* reference */ 'r', `.Queue#peek()`],
 				[/* text */ 't', ` only in that it throws an exception if
  this queue is empty.
 

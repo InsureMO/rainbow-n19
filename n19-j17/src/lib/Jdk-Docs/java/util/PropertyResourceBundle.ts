@@ -29,7 +29,7 @@ DocsCollector.collect('java.util.PropertyResourceBundle', [
 			[/* inline code block */ 'i', `PropertyResourceBundle`],
 			[/* text */ 't', ` that refers to it. See
  `],
-			[/* external link */ 'a', `ResourceBundle.html#getBundle(java.lang.String,java.util.Locale,java.lang.ClassLoader)`, `ResourceBundle.getBundle`],
+			[/* reference */ 'r', `.ResourceBundle#getBundle(java.lang.String,java.util.Locale,java.lang.ClassLoader)`],
 			[/* text */ 't', `
  for a complete description of the search and instantiation strategy.
 
@@ -48,7 +48,7 @@ DocsCollector.collect('java.util.PropertyResourceBundle', [
 			[/* text */ 't', `, and the text
  therefore is the content of the file "MyResources_de.properties"
  (a related `],
-			[/* external link */ 'a', `ListResourceBundle.html#sample`, `example`],
+			[/* reference */ 'r', `.ListResourceBundle#sample`],
 			[/* text */ 't', ` shows
  how you can add bundles to this family that are implemented as subclasses
  of `],
@@ -159,7 +159,7 @@ DocsCollector.collect('java.util.PropertyResourceBundle', [
 				[/* reference */ 'r', `java.io.Reader`],
 				[/* text */ 't', `.  Unlike the constructor
  `],
-				[/* reference */ 'r', `PropertyResourceBundle(InputStream)`],
+				[/* reference */ 'r', `#%3Cinit%3E(java.io.InputStream)`, `PropertyResourceBundle(InputStream)`],
 				[/* text */ 't', `,
  there is no limitation as to the encoding of the input property file.`]
 			],

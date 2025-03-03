@@ -205,7 +205,7 @@ DocsCollector.collect('java.io.ByteArrayInputStream', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  Unlike the `],
-					[/* external link */ 'a', `InputStream.html#read(byte%5B%5D,int,int)`, `overridden method`],
+					[/* reference */ 'r', `.InputStream#read(byte[],int,int)`],
 					[/* text */ 't', `
  of `],
 					[/* inline code block */ 'i', `InputStream`],

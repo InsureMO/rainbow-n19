@@ -192,9 +192,9 @@ DocsCollector.collect('java.time.temporal.ValueRange', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This implementation uses `],
-					[/* reference */ 'r', `getMinimum()`],
+					[/* reference */ 'r', `#getMinimum()`, `getMinimum()`],
 					[/* text */ 't', ` and `],
-					[/* reference */ 'r', `getMaximum()`],
+					[/* reference */ 'r', `#getMaximum()`, `getMaximum()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -309,9 +309,9 @@ DocsCollector.collect('java.time.temporal.ValueRange', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This method combines `],
-					[/* reference */ 'r', `isIntValue()`],
+					[/* reference */ 'r', `#isIntValue()`, `isIntValue()`],
 					[/* text */ 't', ` and `],
-					[/* reference */ 'r', `isValidValue(long)`],
+					[/* reference */ 'r', `#isValidValue(long)`, `isValidValue(long)`],
 					[/* text */ 't', `.`]
 				]]
 			],

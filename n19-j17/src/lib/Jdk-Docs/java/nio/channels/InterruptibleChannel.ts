@@ -12,7 +12,7 @@ DocsCollector.collect('java.nio.channels.InterruptibleChannel', [
  closeable:`],
 			[/* text */ 't', ` If a thread is blocked in an I/O operation on an
  interruptible channel then another thread may invoke the channel's `],
-			[/* reference */ 'r', `close`],
+			[/* reference */ 'r', `#close()`, `close`],
 			[/* text */ 't', ` method.  This will cause the blocked thread to receive an
  `],
 			[/* reference */ 'r', `java.nio.channels.AsynchronousCloseException`],
@@ -26,7 +26,7 @@ DocsCollector.collect('java.nio.channels.InterruptibleChannel', [
 			[/* text */ 't', `
  If a thread is blocked in an I/O operation on an interruptible channel then
  another thread may invoke the blocked thread's `],
-			[/* external link */ 'a', `../../lang/Thread.html#interrupt()`, `interrupt`],
+			[/* reference */ 'r', `java.nio.Thread#interrupt()`],
 			[/* text */ 't', ` method.  This will cause the channel to be closed, the blocked
  thread to receive a `],
 			[/* reference */ 'r', `java.nio.channels.ClosedByInterruptException`],
@@ -71,7 +71,7 @@ DocsCollector.collect('java.nio.channels.InterruptibleChannel', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method otherwise behaves exactly as specified by the `],
-					[/* external link */ 'a', `Channel.html#close()`, `Channel`],
+					[/* reference */ 'r', `.Channel#close()`],
 					[/* text */ 't', ` interface.  `]
 				]]
 			],

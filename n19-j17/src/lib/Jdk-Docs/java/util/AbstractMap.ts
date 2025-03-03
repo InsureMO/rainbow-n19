@@ -63,7 +63,7 @@ DocsCollector.collect('java.util.AbstractMap', [
 		[/* block */ 'b', [
 			[/* text */ 't', `This class is a member of the
  `],
-			[/* external link */ 'a', `../../../java.base/java/util/package-summary.html#CollectionsFramework`, `Java Collections Framework`],
+			[/* text */ 't', `Java Collections Framework`],
 			[/* text */ 't', `.`]
 		]]
 	],
@@ -135,14 +135,14 @@ DocsCollector.collect('java.util.AbstractMap', [
 					[/* text */ 't', `if the key is of an inappropriate type for
          this map
  (`],
-					[/* external link */ 'a', `../../../java.base/java/util/Collection.html#optional-restrictions`, `optional`],
+					[/* text */ 't', `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if the specified key is null and this
          map does not permit null keys
  (`],
-					[/* external link */ 'a', `../../../java.base/java/util/Collection.html#optional-restrictions`, `optional`],
+					[/* text */ 't', `optional`],
 					[/* text */ 't', `)`]
 				]]
 			],
@@ -195,7 +195,7 @@ DocsCollector.collect('java.util.AbstractMap', [
  explicitly maps the key to `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', `.  The `],
-					[/* external link */ 'a', `Map.html#containsKey(java.lang.Object)`, `containsKey`],
+					[/* reference */ 'r', `.Map#containsKey(java.lang.Object)`],
 					[/* text */ 't', ` operation may be used to distinguish these two cases.`]
 				]]
 			],
@@ -209,14 +209,14 @@ DocsCollector.collect('java.util.AbstractMap', [
 					[/* text */ 't', `if the key is of an inappropriate type for
          this map
  (`],
-					[/* external link */ 'a', `../../../java.base/java/util/Collection.html#optional-restrictions`, `optional`],
+					[/* text */ 't', `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if the specified key is null and this map
          does not permit null keys
  (`],
-					[/* external link */ 'a', `../../../java.base/java/util/Collection.html#optional-restrictions`, `optional`],
+					[/* text */ 't', `optional`],
 					[/* text */ 't', `)`]
 				]]
 			],
@@ -238,7 +238,7 @@ DocsCollector.collect('java.util.AbstractMap', [
 				[/* inline code block */ 'i', `k`],
 				[/* text */ 't', ` if and only
  if `],
-				[/* external link */ 'a', `Map.html#containsKey(java.lang.Object)`, `m.containsKey(k)`],
+				[/* reference */ 'r', `.Map#containsKey(java.lang.Object)`],
 				[/* text */ 't', ` would return
  `],
 				[/* inline code block */ 'i', `true`],
@@ -345,7 +345,7 @@ DocsCollector.collect('java.util.AbstractMap', [
 				[/* text */ 't', `) followed by the
  associated value.  Keys and values are converted to strings as by
  `],
-				[/* external link */ 'a', `../lang/String.html#valueOf(java.lang.Object)`, `String.valueOf(Object)`],
+				[/* reference */ 'r', `java.String#valueOf(java.lang.Object)`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -410,7 +410,7 @@ DocsCollector.collect('java.util.AbstractMap', [
 				[/* inline code block */ 'i', `m2`],
 				[/* text */ 't', `, as required by the general contract of
  `],
-				[/* external link */ 'a', `../lang/Object.html#hashCode()`, `Object.hashCode()`],
+				[/* reference */ 'r', `java.Object#hashCode()`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -495,7 +495,7 @@ DocsCollector.collect('java.util.AbstractMap', [
 				[/* text */ 't', `Copies all of the mappings from the specified map to this map
  (optional operation).  The effect of this call is equivalent to that
  of calling `],
-				[/* external link */ 'a', `Map.html#put(K,V)`, `put(k, v)`],
+				[/* reference */ 'r', `.Map#put(K,V)`],
 				[/* text */ 't', ` on this map once
  for each mapping from key `],
 				[/* inline code block */ 'i', `k`],
@@ -559,14 +559,14 @@ DocsCollector.collect('java.util.AbstractMap', [
 					[/* text */ 't', `if the key is of an inappropriate type for
          this map
  (`],
-					[/* external link */ 'a', `../../../java.base/java/util/Collection.html#optional-restrictions`, `optional`],
+					[/* text */ 't', `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if the specified key is null and this map
          does not permit null keys
  (`],
-					[/* external link */ 'a', `../../../java.base/java/util/Collection.html#optional-restrictions`, `optional`],
+					[/* text */ 't', `optional`],
 					[/* text */ 't', `)`]
 				]]
 			],
@@ -643,14 +643,14 @@ DocsCollector.collect('java.util.AbstractMap', [
 					[/* text */ 't', `if the value is of an inappropriate type for
          this map
  (`],
-					[/* external link */ 'a', `../../../java.base/java/util/Collection.html#optional-restrictions`, `optional`],
+					[/* text */ 't', `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if the specified value is null and this
          map does not permit null values
  (`],
-					[/* external link */ 'a', `../../../java.base/java/util/Collection.html#optional-restrictions`, `optional`],
+					[/* text */ 't', `optional`],
 					[/* text */ 't', `)`]
 				]]
 			],

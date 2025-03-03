@@ -5,7 +5,7 @@ DocsCollector.collect('java.util.random.RandomGeneratorFactory', [
 	[/* class description */
 		[/* text */ 't', `This is a factory class for generating multiple random number generators
  of a specific `],
-		[/* external link */ 'a', `package-summary.html#algorithms`, `algorithm`],
+		[/* reference */ 'r', `.package-summary#algorithms`],
 		[/* text */ 't', `.
  `],
 		[/* reference */ 'r', `java.util.random.RandomGeneratorFactory`],
@@ -16,14 +16,14 @@ DocsCollector.collect('java.util.random.RandomGeneratorFactory', [
 		[/* reference */ 'r', `java.util.random.RandomGeneratorFactory`],
 		[/* text */ 't', ` can be located by using the
  `],
-		[/* reference */ 'r', `of(String)`],
+		[/* reference */ 'r', `#of(java.lang.String)`, `of(String)`],
 		[/* text */ 't', ` method, where the argument string
  is the name of the `],
-		[/* external link */ 'a', `package-summary.html#algorithms`, `algorithm`],
+		[/* reference */ 'r', `.package-summary#algorithms`],
 		[/* text */ 't', `
  required. The method
  `],
-		[/* reference */ 'r', `all()`],
+		[/* reference */ 'r', `#all()`, `all()`],
 		[/* text */ 't', ` produces a non-empty `],
 		[/* reference */ 'r', `java.util.stream.Stream`],
 		[/* text */ 't', ` of all available
@@ -37,15 +37,15 @@ DocsCollector.collect('java.util.random.RandomGeneratorFactory', [
  There are three methods for constructing a RandomGenerator instance,
  depending on the type of initial seed required.
  `],
-		[/* reference */ 'r', `create(long)`],
+		[/* reference */ 'r', `#create(long)`, `create(long)`],
 		[/* text */ 't', ` is used for long
  seed construction,
  `],
-		[/* reference */ 'r', `create(byte[])`],
+		[/* reference */ 'r', `#create(byte%5B%5D)`, `create(byte[])`],
 		[/* text */ 't', ` is used for byte[]
  seed construction, and
  `],
-		[/* reference */ 'r', `create()`],
+		[/* reference */ 'r', `#create()`, `create()`],
 		[/* text */ 't', ` is used for random seed
  construction. Example;
 
@@ -65,11 +65,11 @@ DocsCollector.collect('java.util.random.RandomGeneratorFactory', [
  RandomGeneratorFactory also provides methods describing the attributes (or properties)
  of a generator and can be used to select random number generator
  `],
-		[/* external link */ 'a', `package-summary.html#algorithms`, `algorithms`],
+		[/* reference */ 'r', `.package-summary#algorithms`],
 		[/* text */ 't', `.
  These methods are typically used in
  conjunction with `],
-		[/* reference */ 'r', `all()`],
+		[/* reference */ 'r', `#all()`, `all()`],
 		[/* text */ 't', `. In this example, the code
  locates the `],
 		[/* reference */ 'r', `java.util.random.RandomGeneratorFactory`],
@@ -97,7 +97,7 @@ DocsCollector.collect('java.util.random.RandomGeneratorFactory', [
 		[/* method */ 'name()', [
 			[/* method description */
 				[/* text */ 't', `Return the name of the `],
-				[/* external link */ 'a', `package-summary.html#algorithms`, `algorithm`],
+				[/* reference */ 'r', `.package-summary#algorithms`],
 				[/* text */ 't', `
  used by the random number generator.`]
 			],
@@ -105,14 +105,14 @@ DocsCollector.collect('java.util.random.RandomGeneratorFactory', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `Name of the `],
-				[/* external link */ 'a', `package-summary.html#algorithms`, `algorithm`],
+				[/* reference */ 'r', `.package-summary#algorithms`],
 				[/* text */ 't', `.`]
 			]
 		]],
 		[/* method */ 'group()', [
 			[/* method description */
 				[/* text */ 't', `Return the group name of the `],
-				[/* external link */ 'a', `package-summary.html#algorithms`, `algorithm`],
+				[/* reference */ 'r', `.package-summary#algorithms`],
 				[/* text */ 't', `
  used by the random number generator.`]
 			],
@@ -120,7 +120,7 @@ DocsCollector.collect('java.util.random.RandomGeneratorFactory', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `Group name of the `],
-				[/* external link */ 'a', `package-summary.html#algorithms`, `algorithm`],
+				[/* reference */ 'r', `.package-summary#algorithms`],
 				[/* text */ 't', `.`]
 			]
 		]],
@@ -147,14 +147,14 @@ DocsCollector.collect('java.util.random.RandomGeneratorFactory', [
 				[/* reference */ 'r', `java.util.random.RandomGenerator`],
 				[/* text */ 't', ` that utilize the `],
 				[/* inline code block */ 'i', `name`],
-				[/* external link */ 'a', `package-summary.html#algorithms`, `algorithm`],
+				[/* reference */ 'r', `.package-summary#algorithms`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'name', [/* parameter description */
 					[/* text */ 't', `Name of random number generator
  `],
-					[/* external link */ 'a', `package-summary.html#algorithms`, `algorithm`]
+					[/* reference */ 'r', `.package-summary#algorithms`]
 				]]
 			],
 			[/* throws */
@@ -177,7 +177,7 @@ DocsCollector.collect('java.util.random.RandomGeneratorFactory', [
 				[/* reference */ 'r', `java.util.random.RandomGenerator`],
 				[/* text */ 't', ` based on
  `],
-				[/* external link */ 'a', `package-summary.html#algorithms`, `algorithm`],
+				[/* reference */ 'r', `.package-summary#algorithms`],
 				[/* text */ 't', ` chosen.`]
 			],
 			/* parameters */ UDF,
@@ -194,11 +194,11 @@ DocsCollector.collect('java.util.random.RandomGeneratorFactory', [
 				[/* reference */ 'r', `java.util.random.RandomGenerator`],
 				[/* text */ 't', ` based on
  `],
-				[/* external link */ 'a', `package-summary.html#algorithms`, `algorithm`],
+				[/* reference */ 'r', `.package-summary#algorithms`],
 				[/* text */ 't', ` chosen
  providing a starting byte[] seed. If byte[] seed is not supported by an
  `],
-				[/* external link */ 'a', `package-summary.html#algorithms`, `algorithm`],
+				[/* reference */ 'r', `.package-summary#algorithms`],
 				[/* text */ 't', ` then the no
  argument form of create is used.`]
 			],
@@ -224,7 +224,7 @@ DocsCollector.collect('java.util.random.RandomGeneratorFactory', [
 				[/* reference */ 'r', `java.util.random.RandomGenerator`],
 				[/* text */ 't', ` based on
  `],
-				[/* external link */ 'a', `package-summary.html#algorithms`, `algorithm`],
+				[/* reference */ 'r', `.package-summary#algorithms`],
 				[/* text */ 't', ` chosen
  providing a starting long seed. If long seed is not supported by an
  algorithm then the no argument form of create is used.`]
@@ -272,21 +272,21 @@ DocsCollector.collect('java.util.random.RandomGeneratorFactory', [
 		[/* method */ 'equidistribution()', [
 			[/* method description */
 				[/* text */ 't', `Returns the equidistribution of the `],
-				[/* external link */ 'a', `package-summary.html#algorithms`, `algorithm`],
+				[/* reference */ 'r', `.package-summary#algorithms`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `the equidistribution of the `],
-				[/* external link */ 'a', `package-summary.html#algorithms`, `algorithm`],
+				[/* reference */ 'r', `.package-summary#algorithms`],
 				[/* text */ 't', `.`]
 			]
 		]],
 		[/* method */ 'period()', [
 			[/* method description */
 				[/* text */ 't', `Return the period of the `],
-				[/* external link */ 'a', `package-summary.html#algorithms`, `algorithm`],
+				[/* reference */ 'r', `.package-summary#algorithms`],
 				[/* text */ 't', `
  used by the random number generator.
  Returns BigInteger.ZERO if period is not determinable.`]
@@ -295,17 +295,6 @@ DocsCollector.collect('java.util.random.RandomGeneratorFactory', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `BigInteger period.`]
-			]
-		]],
-		[/* method */ 'isStochastic()', [
-			[/* method description */
-				[/* text */ 't', `Return true if random generator is computed using external or entropic
- sources as inputs.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `true if random generator is stochastic.`]
 			]
 		]],
 		[/* method */ 'isHardware()', [
@@ -319,10 +308,21 @@ DocsCollector.collect('java.util.random.RandomGeneratorFactory', [
 				[/* text */ 't', `true if random generator is generated by hardware.`]
 			]
 		]],
+		[/* method */ 'isStochastic()', [
+			[/* method description */
+				[/* text */ 't', `Return true if random generator is computed using external or entropic
+ sources as inputs.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `true if random generator is stochastic.`]
+			]
+		]],
 		[/* method */ 'stateBits()', [
 			[/* method description */
 				[/* text */ 't', `Returns number of bits used by the `],
-				[/* external link */ 'a', `package-summary.html#algorithms`, `algorithm`],
+				[/* reference */ 'r', `.package-summary#algorithms`],
 				[/* text */ 't', `
  to maintain state of seed.`]
 			],
@@ -330,7 +330,7 @@ DocsCollector.collect('java.util.random.RandomGeneratorFactory', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `number of bits used by the `],
-				[/* external link */ 'a', `package-summary.html#algorithms`, `algorithm`],
+				[/* reference */ 'r', `.package-summary#algorithms`],
 				[/* text */ 't', `
          to maintain state of seed.`]
 			]
@@ -339,7 +339,7 @@ DocsCollector.collect('java.util.random.RandomGeneratorFactory', [
 			[/* method description */
 				[/* text */ 't', `Return true if random generator is computed using an arithmetic
  `],
-				[/* external link */ 'a', `package-summary.html#algorithms`, `algorithm`],
+				[/* reference */ 'r', `.package-summary#algorithms`],
 				[/* text */ 't', `
  and is statistically deterministic.`]
 			],

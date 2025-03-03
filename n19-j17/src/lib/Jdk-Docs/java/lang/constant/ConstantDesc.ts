@@ -4,11 +4,11 @@ import {DocsCollector} from '../../../DocsCollector';
 DocsCollector.collect('java.lang.constant.ConstantDesc', [
 	[/* class description */
 		[/* text */ 't', `A `],
-		[/* external link */ 'a', `package-summary.html#nominal`, `nominal descriptor`],
+		[/* reference */ 'r', `.package-summary#nominal`],
 		[/* text */ 't', ` for a loadable
  constant value, as defined in JVMS 4.4. Such a descriptor can be resolved via
  `],
-		[/* reference */ 'r', `resolveConstantDesc(MethodHandles.Lookup)`],
+		[/* reference */ 'r', `#resolveConstantDesc(java.lang.invoke.MethodHandles.Lookup)`, `resolveConstantDesc(MethodHandles.Lookup)`],
 		[/* text */ 't', ` to yield the
  constant value itself.
 
@@ -108,7 +108,7 @@ DocsCollector.collect('java.lang.constant.ConstantDesc', [
 		[/* block */ 'b', [
 			[/* text */ 't', `Nominal descriptors should be compared using the
  `],
-			[/* external link */ 'a', `../Object.html#equals(java.lang.Object)`, `Object.equals(Object)`],
+			[/* reference */ 'r', `java.Object#equals(java.lang.Object)`],
 			[/* text */ 't', ` method. There is no guarantee that any
  particular entity will always be represented by the same descriptor instance.`]
 		]]

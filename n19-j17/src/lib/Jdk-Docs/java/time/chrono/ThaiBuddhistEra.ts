@@ -12,11 +12,93 @@ DocsCollector.collect('java.time.chrono.ThaiBuddhistEra', [
  in the year-of-era count, are part of the 'Before Buddhist' era.
 
  `],
-		[/* table */ 't', ''],
+		[/* table */ 'tbl',
+			[/* caption */ 'tc'],
+			[/* table header */ 'th', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `year-of-era`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `era`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `proleptic-year`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `ISO proleptic-year`]
+					]]
+				]]
+			]],
+			[/* table body */ 'tb', [
+				[/* table row */ 'tr', [
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `2`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `BE`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `2`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `-542`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `1`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `BE`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `1`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `-543`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `1`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `BEFORE_BE`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `0`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `-544`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `2`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `BEFORE_BE`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `-1`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `-545`]
+					]]
+				]]
+			]],
+		],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
-			[/* text */ 't', `Do not use <code>ordinal()</code> to obtain the numeric representation of <code>ThaiBuddhistEra</code>.
- Use <code>getValue()</code> instead.`]
+			[/* text */ 't', `Do not use `],
+			[/* inline code block */ 'i', `ordinal()`],
+			[/* text */ 't', ` to obtain the numeric representation of `],
+			[/* inline code block */ 'i', `ThaiBuddhistEra`],
+			[/* text */ 't', `.
+ Use `],
+			[/* inline code block */ 'i', `getValue()`],
+			[/* text */ 't', ` instead.`]
 		]]
 	],
 	/* fields */ UDF,
@@ -116,7 +198,7 @@ not permitted.)`]
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If no textual mapping is found then the `],
-					[/* external link */ 'a', `Era.html#getValue()`, `numeric value`],
+					[/* reference */ 'r', `.Era#getValue()`],
 					[/* text */ 't', ` is returned.`]
 				]]
 			],

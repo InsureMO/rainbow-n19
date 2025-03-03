@@ -121,9 +121,9 @@ DocsCollector.collect('java.util.Formattable', [
 					[/* reference */ 'r', `java.util.Formatter`],
 					[/* text */ 't', `.  Implementing classes may call
          `],
-					[/* external link */ 'a', `Formatter.html#out()`, `formatter.out()`],
+					[/* reference */ 'r', `.Formatter#out()`],
 					[/* text */ 't', ` or `],
-					[/* external link */ 'a', `Formatter.html#locale()`, `formatter.locale()`],
+					[/* reference */ 'r', `.Formatter#locale()`],
 					[/* text */ 't', ` to obtain the `],
 					[/* reference */ 'r', `java.lang.Appendable`],
 					[/* text */ 't', ` or `],
@@ -137,11 +137,11 @@ DocsCollector.collect('java.util.Formattable', [
 					[/* text */ 't', `The flags modify the output format.  The value is interpreted as
          a bitmask.  Any combination of the following flags may be set:
          `],
-					[/* external link */ 'a', `FormattableFlags.html#LEFT_JUSTIFY`, `FormattableFlags.LEFT_JUSTIFY`],
+					[/* reference */ 'r', `.FormattableFlags#LEFT_JUSTIFY`],
 					[/* text */ 't', `, `],
-					[/* external link */ 'a', `FormattableFlags.html#UPPERCASE`, `FormattableFlags.UPPERCASE`],
+					[/* reference */ 'r', `.FormattableFlags#UPPERCASE`],
 					[/* text */ 't', `, and `],
-					[/* external link */ 'a', `FormattableFlags.html#ALTERNATE`, `FormattableFlags.ALTERNATE`],
+					[/* reference */ 'r', `.FormattableFlags#ALTERNATE`],
 					[/* text */ 't', `.  If no flags are set, the default
          formatting of the implementing class will apply.`]
 				]],
@@ -156,7 +156,7 @@ DocsCollector.collect('java.util.Formattable', [
 					[/* text */ 't', ` until the total number of characters
          equals width.  The padding is at the beginning by default.  If
          the `],
-					[/* external link */ 'a', `FormattableFlags.html#LEFT_JUSTIFY`, `FormattableFlags.LEFT_JUSTIFY`],
+					[/* reference */ 'r', `.FormattableFlags#LEFT_JUSTIFY`],
 					[/* text */ 't', ` flag is set then the
          padding will be at the end.  If `],
 					[/* inline code block */ 'i', `width`],
@@ -188,7 +188,7 @@ DocsCollector.collect('java.util.Formattable', [
 				[/* throw */ 'java.util.IllegalFormatException', [/* throw description */
 					[/* text */ 't', `If any of the parameters are invalid.  For specification of all
           possible formatting errors, see the `],
-					[/* external link */ 'a', `../util/Formatter.html#detail`, `Details`],
+					[/* reference */ 'r', `java.Formatter#detail`],
 					[/* text */ 't', ` section of the
           formatter class specification.`]
 				]]

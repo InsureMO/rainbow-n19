@@ -7,10 +7,10 @@ DocsCollector.collect('java.math.BigDecimal', [
 		[/* inline code block */ 'i', `BigDecimal`],
 		[/* text */ 't', ` consists of an arbitrary precision integer
  `],
-		[/* reference */ 'r', `unscaled value`],
+		[/* reference */ 'r', `#unscaledValue()`, `unscaled value`],
 		[/* text */ 't', ` and a 32-bit
  integer `],
-		[/* reference */ 'r', `scale`],
+		[/* reference */ 'r', `#scale()`, `scale`],
 		[/* text */ 't', `.  If zero or positive,
  the scale is the number of digits to the right of the decimal
  point.  If negative, the unscaled value of the number is multiplied
@@ -29,7 +29,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 			[/* text */ 't', ` class provides operations for
  arithmetic, scale manipulation, rounding, comparison, hashing, and
  format conversion.  The `],
-			[/* reference */ 'r', `toString()`],
+			[/* reference */ 'r', `#toString()`, `toString()`],
 			[/* text */ 't', ` method provides a
  canonical representation of a `],
 			[/* inline code block */ 'i', `BigDecimal`],
@@ -60,7 +60,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 			[/* inline code block */ 'i', `enum`],
 			[/* text */ 't', `, (such
  as `],
-			[/* external link */ 'a', `RoundingMode.html#HALF_UP`, `RoundingMode.HALF_UP`],
+			[/* reference */ 'r', `.RoundingMode#HALF_UP`],
 			[/* text */ 't', `) should be used instead.
 
  `]
@@ -70,7 +70,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 			[/* inline code block */ 'i', `MathContext`],
 			[/* text */ 't', ` object is supplied with a precision
  setting of 0 (for example, `],
-			[/* external link */ 'a', `MathContext.html#UNLIMITED`, `MathContext.UNLIMITED`],
+			[/* reference */ 'r', `.MathContext#UNLIMITED`],
 			[/* text */ 't', `),
  arithmetic operations are exact, as are the arithmetic methods
  which take no `],
@@ -117,19 +117,19 @@ DocsCollector.collect('java.math.BigDecimal', [
  called members of the same `],
 			[/* text */ 't', `cohort`],
 			[/* text */ 't', `. The `],
-			[/* reference */ 'r', `natural order`],
+			[/* reference */ 'r', `#compareTo(java.math.BigDecimal)`, `natural order`],
 			[/* text */ 't', ` of `],
 			[/* inline code block */ 'i', `BigDecimal`],
 			[/* text */ 't', `
  considers members of the same cohort to be equal to each other. In
  contrast, the `],
-			[/* reference */ 'r', `equals`],
+			[/* reference */ 'r', `#equals(java.lang.Object)`, `equals`],
 			[/* text */ 't', ` method requires both the
  numerical value and representation to be the same for equality to
  hold. The results of methods like `],
 			[/* inline code block */ 'i', `scale`],
 			[/* text */ 't', ` and `],
-			[/* reference */ 'r', `unscaledValue()`],
+			[/* reference */ 'r', `#unscaledValue()`, `unscaledValue()`],
 			[/* text */ 't', ` will differ for numerically equal values with
  different representations.
 
@@ -179,7 +179,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 			[/* inline code block */ 'i', `MathContext`],
 			[/* text */ 't', `
  parameter, if the result is inexact but the rounding mode is `],
-			[/* external link */ 'a', `RoundingMode.html#UNNECESSARY`, `UNNECESSARY`],
+			[/* reference */ 'r', `.RoundingMode#UNNECESSARY`],
 			[/* text */ 't', `, an `],
 			[/* inline code block */ 'i', `ArithmeticException`],
 			[/* text */ 't', ` will be thrown.
@@ -191,7 +191,64 @@ DocsCollector.collect('java.math.BigDecimal', [
  scale for each operation is listed in the table below.
 
  `],
-		[/* table */ 't', ''],
+		[/* table */ 'tbl',
+			[/* caption */ 'tc', [
+				[/* text */ 't', `Preferred Scales for Results of Arithmetic Operations
+ `]
+			]],
+			[/* table header */ 'th', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Operation`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Preferred Scale of Result`]
+					]]
+				]]
+			]],
+			[/* table body */ 'tb', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Add`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `max(addend.scale(), augend.scale())`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Subtract`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `max(minuend.scale(), subtrahend.scale())`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Multiply`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `multiplier.scale() + multiplicand.scale()`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Divide`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `dividend.scale() - divisor.scale()`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Square root`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `radicand.scale()/2`]
+					]]
+				]]
+			]],
+		],
 		[/* text */ 't', `
 
  These scales are the ones used by the methods which return exact
@@ -227,7 +284,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 			[/* text */ 't', ` digits by removing
  trailing zeros and decreasing the scale.  For example, rounding to
  three digits using the `],
-			[/* external link */ 'a', `RoundingMode.html#FLOOR`, `floor`],
+			[/* reference */ 'r', `.RoundingMode#FLOOR`],
 			[/* text */ 't', `
  rounding mode, `],
 			[/* new line */ 'n'],
@@ -253,11 +310,11 @@ DocsCollector.collect('java.math.BigDecimal', [
 			[/* inline code block */ 'i', `pow`],
 			[/* text */ 't', ` method using the
  `],
-			[/* reference */ 'r', `specified algorithm`],
+			[/* reference */ 'r', `#pow(int,java.math.MathContext)`, `specified algorithm`],
 			[/* text */ 't', ` can
  occasionally differ from the rounded mathematical result by more
  than one unit in the last place, one `],
-			[/* reference */ 'r', `ulp`],
+			[/* reference */ 'r', `#ulp()`, `ulp`],
 			[/* text */ 't', `.
 
  `]
@@ -268,9 +325,9 @@ DocsCollector.collect('java.math.BigDecimal', [
 			[/* inline code block */ 'i', `BigDecimal`],
 			[/* text */ 't', `: scaling/rounding operations and decimal
  point motion operations.  Scaling/rounding operations (`],
-			[/* reference */ 'r', `setScale`],
+			[/* reference */ 'r', `#setScale(int,java.math.RoundingMode)`, `setScale`],
 			[/* text */ 't', ` and `],
-			[/* reference */ 'r', `round`],
+			[/* reference */ 'r', `#round(java.math.MathContext)`, `round`],
 			[/* text */ 't', `) return a
  `],
 			[/* inline code block */ 'i', `BigDecimal`],
@@ -279,10 +336,10 @@ DocsCollector.collect('java.math.BigDecimal', [
  specified value; that is, they increase or decrease the precision
  of the stored number with minimal effect on its value.  Decimal
  point motion operations (`],
-			[/* reference */ 'r', `movePointLeft`],
+			[/* reference */ 'r', `#movePointLeft(int)`, `movePointLeft`],
 			[/* text */ 't', ` and
  `],
-			[/* reference */ 'r', `movePointRight`],
+			[/* reference */ 'r', `#movePointRight(int)`, `movePointRight`],
 			[/* text */ 't', `) return a
  `],
 			[/* inline code block */ 'i', `BigDecimal`],
@@ -435,7 +492,7 @@ DocsCollector.collect('java.math.BigDecimal', [
  down.  Behaves as for `],
 				[/* inline code block */ 'i', `ROUND_UP`],
 				[/* text */ 't', ` if the discarded
- fraction is &gt; 0.5; otherwise, behaves as for
+ fraction is > 0.5; otherwise, behaves as for
  `],
 				[/* inline code block */ 'i', `ROUND_DOWN`],
 				[/* text */ 't', `.`]
@@ -570,7 +627,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 					[/* text */ 't', `The results of this constructor can be somewhat unpredictable
  and its use is generally not recommended; see the notes under
  the `],
-					[/* reference */ 'r', `BigDecimal(double)`],
+					[/* reference */ 'r', `#%3Cinit%3E(double)`, `BigDecimal(double)`],
 					[/* text */ 't', ` constructor.`]
 				]]
 			],
@@ -613,9 +670,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 				[/* inline code block */ 'i', `(10scale × val)`],
 				[/* text */ 't', ` is an integer.
  `],
-				[/* block */ 'b', [
-					[/* text */ 't', `Notes:`]
-				]],
+				[/* block */ 'b', `Notes:`],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* text */ 't', `
@@ -656,7 +711,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 						[/* text */ 't', ` equal to
  0.1, as one would expect.  Therefore, it is generally
  recommended that the `],
-						[/* reference */ 'r', `String constructor`],
+						[/* reference */ 'r', `#%3Cinit%3E(java.lang.String)`, `String constructor`],
 						[/* text */ 't', ` be used in preference to this one.
 
  `]
@@ -676,14 +731,14 @@ DocsCollector.collect('java.math.BigDecimal', [
 						[/* inline code block */ 'i', `String`],
 						[/* text */ 't', ` using the
  `],
-						[/* external link */ 'a', `../lang/Double.html#toString(double)`, `Double.toString(double)`],
+						[/* reference */ 'r', `java.Double#toString(double)`],
 						[/* text */ 't', ` method and then using the
  `],
-						[/* reference */ 'r', `BigDecimal(String)`],
+						[/* reference */ 'r', `#%3Cinit%3E(java.lang.String)`, `BigDecimal(String)`],
 						[/* text */ 't', ` constructor.  To get that result,
  use the `],
 						[/* inline code block */ 'i', `static`],
-						[/* reference */ 'r', `valueOf(double)`],
+						[/* reference */ 'r', `#valueOf(double)`, `valueOf(double)`],
 						[/* text */ 't', ` method.
  `]
 					]]
@@ -851,7 +906,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 				[/* inline code block */ 'i', `BigDecimal`],
 				[/* text */ 't', `, accepting the
  same sequence of characters as the `],
-				[/* reference */ 'r', `BigDecimal(String)`],
+				[/* reference */ 'r', `#%3Cinit%3E(java.lang.String)`, `BigDecimal(String)`],
 				[/* text */ 't', `
  constructor, while allowing a sub-array to be specified and
  with rounding according to the context settings.`]
@@ -895,7 +950,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 				[/* inline code block */ 'i', `BigDecimal`],
 				[/* text */ 't', `, accepting the
  same sequence of characters as the `],
-				[/* reference */ 'r', `BigDecimal(String)`],
+				[/* reference */ 'r', `#%3Cinit%3E(java.lang.String)`, `BigDecimal(String)`],
 				[/* text */ 't', `
  constructor, while allowing a sub-array to be specified.`]
 			],
@@ -935,7 +990,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 				[/* inline code block */ 'i', `BigDecimal`],
 				[/* text */ 't', `, accepting the same strings as the
  `],
-				[/* reference */ 'r', `BigDecimal(String)`],
+				[/* reference */ 'r', `#%3Cinit%3E(java.lang.String)`, `BigDecimal(String)`],
 				[/* text */ 't', ` constructor, with rounding
  according to the context settings.`]
 			],
@@ -1004,11 +1059,11 @@ DocsCollector.collect('java.math.BigDecimal', [
 					[/* text */ 't', `)
  followed by one or more decimal digits.  The value of the
  exponent must lie between -`],
-					[/* external link */ 'a', `../lang/Integer.html#MAX_VALUE`, `Integer.MAX_VALUE`],
+					[/* reference */ 'r', `java.Integer#MAX_VALUE`],
 					[/* text */ 't', ` (`],
-					[/* external link */ 'a', `../lang/Integer.html#MIN_VALUE`, `Integer.MIN_VALUE`],
+					[/* reference */ 'r', `java.Integer#MIN_VALUE`],
 					[/* text */ 't', `+1) and `],
-					[/* external link */ 'a', `../lang/Integer.html#MAX_VALUE`, `Integer.MAX_VALUE`],
+					[/* reference */ 'r', `java.Integer#MAX_VALUE`],
 					[/* text */ 't', `, inclusive.
 
  `]
@@ -1017,7 +1072,143 @@ DocsCollector.collect('java.math.BigDecimal', [
  described by the following grammar:
  `],
 				[/* block */ 'b', [
-					[/* dl */ 't', '']
+					[/* dl */ 'dl', [
+						[/* dt */ 'dt', [
+							[/* text */ 't', `BigDecimalString:`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `Sign<sub>opt</sub> Significand Exponent<sub>opt</sub>`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dt */ 'dt', [
+							[/* text */ 't', `Sign:`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* inline code block */ 'i', `+`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* inline code block */ 'i', `-`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dt */ 'dt', [
+							[/* text */ 't', `Significand:`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `IntegerPart`],
+							[/* text */ 't', ` `],
+							[/* inline code block */ 'i', `.`],
+							[/* text */ 't', ` `],
+							[/* text */ 't', `opt`, 'sub'],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* inline code block */ 'i', `.`],
+							[/* text */ 't', ` `],
+							[/* text */ 't', `FractionPart`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `IntegerPart`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dt */ 'dt', [
+							[/* text */ 't', `IntegerPart:`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `Digits`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dt */ 'dt', [
+							[/* text */ 't', `FractionPart:`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `Digits`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dt */ 'dt', [
+							[/* text */ 't', `Exponent:`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `ExponentIndicator SignedInteger`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dt */ 'dt', [
+							[/* text */ 't', `ExponentIndicator:`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* inline code block */ 'i', `e`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* inline code block */ 'i', `E`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dt */ 'dt', [
+							[/* text */ 't', `SignedInteger:`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `opt`, 'sub'],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dt */ 'dt', [
+							[/* text */ 't', `Digits:`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `Digit`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `Digits Digit`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dt */ 'dt', [
+							[/* text */ 't', `Digit:`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `any character for which `],
+							[/* reference */ 'r', `java.Character#isDigit(char)`],
+							[/* text */ 't', `
+ returns `],
+							[/* inline code block */ 'i', `true`],
+							[/* text */ 't', `, including 0, 1, 2 ...
+ `]
+						]]
+					]]
 				]],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
@@ -1039,7 +1230,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `The character-to-digit mapping is provided by `],
-					[/* external link */ 'a', `../lang/Character.html#digit(char,int)`, `Character.digit(char, int)`],
+					[/* reference */ 'r', `java.Character#digit(char,int)`],
 					[/* text */ 't', ` set to convert to radix 10.  The
  String may not contain any extraneous characters (whitespace,
  for example).
@@ -1110,7 +1301,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 				[/* inline code block */ 'i', `BigDecimal`],
 				[/* text */ 't', `, accepting the
  same sequence of characters as the `],
-				[/* reference */ 'r', `BigDecimal(String)`],
+				[/* reference */ 'r', `#%3Cinit%3E(java.lang.String)`, `BigDecimal(String)`],
 				[/* text */ 't', `
  constructor and with rounding according to the context
  settings.`]
@@ -1145,7 +1336,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 				[/* inline code block */ 'i', `BigDecimal`],
 				[/* text */ 't', `, accepting the
  same sequence of characters as the `],
-				[/* reference */ 'r', `BigDecimal(String)`],
+				[/* reference */ 'r', `#%3Cinit%3E(java.lang.String)`, `BigDecimal(String)`],
 				[/* text */ 't', `
  constructor.`]
 			],
@@ -1226,7 +1417,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 				[/* text */ 't', ` with the specified `],
 				[/* inline code block */ 'i', `Object`],
 				[/* text */ 't', ` for equality.  Unlike `],
-				[/* reference */ 'r', `compareTo`],
+				[/* reference */ 'r', `#compareTo(java.math.BigDecimal)`, `compareTo`],
 				[/* text */ 't', `, this method considers two `],
 				[/* inline code block */ 'i', `BigDecimal`],
 				[/* text */ 't', `
@@ -1380,9 +1571,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 
  `]
 				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `Examples:`]
-				]],
+				[/* block */ 'b', `Examples:`],
 				[/* block */ 'b', [
 					[/* text */ 't', `For each representation [`],
 					[/* text */ 't', `unscaled value`],
@@ -1419,7 +1608,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 						[/* inline code block */ 'i', `BigDecimal`],
 						[/* text */ 't', ` using
  the `],
-						[/* reference */ 'r', `BigDecimal(String)`],
+						[/* reference */ 'r', `#%3Cinit%3E(java.lang.String)`, `BigDecimal(String)`],
 						[/* text */ 't', ` constructor, then the original
  value will be recovered.
 
@@ -1438,11 +1627,11 @@ DocsCollector.collect('java.math.BigDecimal', [
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `The `],
-						[/* reference */ 'r', `toEngineeringString()`],
+						[/* reference */ 'r', `#toEngineeringString()`, `toEngineeringString()`],
 						[/* text */ 't', ` method may be used for
  presenting numbers with exponents in engineering notation, and the
  `],
-						[/* reference */ 'r', `setScale`],
+						[/* reference */ 'r', `#setScale(int,java.math.RoundingMode)`, `setScale`],
 						[/* text */ 't', ` method may be used for
  rounding a `],
 						[/* inline code block */ 'i', `BigDecimal`],
@@ -1476,9 +1665,9 @@ DocsCollector.collect('java.math.BigDecimal', [
 				[/* inline code block */ 'i', `BigDecimal`],
 				[/* text */ 't', `.
  The hash code is computed as a function of the `],
-				[/* reference */ 'r', `unscaled value`],
+				[/* reference */ 'r', `#unscaledValue()`, `unscaled value`],
 				[/* text */ 't', ` and the `],
-				[/* reference */ 'r', `scale`],
+				[/* reference */ 'r', `#scale()`, `scale`],
 				[/* text */ 't', ` of this `],
 				[/* inline code block */ 'i', `BigDecimal`],
 				[/* text */ 't', `.`]
@@ -1545,11 +1734,11 @@ DocsCollector.collect('java.math.BigDecimal', [
 					[/* text */ 't', `. The value of the returned result is
  always within one ulp of the exact decimal value for the
  precision in question.  If the rounding mode is `],
-					[/* external link */ 'a', `RoundingMode.html#HALF_UP`, `HALF_UP`],
+					[/* reference */ 'r', `.RoundingMode#HALF_UP`],
 					[/* text */ 't', `, `],
-					[/* external link */ 'a', `RoundingMode.html#HALF_DOWN`, `HALF_DOWN`],
+					[/* reference */ 'r', `.RoundingMode#HALF_DOWN`],
 					[/* text */ 't', `, or `],
-					[/* external link */ 'a', `RoundingMode.html#HALF_EVEN`, `HALF_EVEN`],
+					[/* reference */ 'r', `.RoundingMode#HALF_EVEN`],
 					[/* text */ 't', `, the
  result is within one half an ulp of the exact decimal value.
 
@@ -1805,7 +1994,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 				[/* inline code block */ 'i', `val`],
 				[/* text */ 't', `.  If they are equal,
          as defined by the `],
-				[/* reference */ 'r', `compareTo`],
+				[/* reference */ 'r', `#compareTo(java.math.BigDecimal)`, `compareTo`],
 				[/* text */ 't', `
          method, `],
 				[/* inline code block */ 'i', `this`],
@@ -1836,7 +2025,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 				[/* inline code block */ 'i', `val`],
 				[/* text */ 't', `.  If they are equal,
          as defined by the `],
-				[/* reference */ 'r', `compareTo`],
+				[/* reference */ 'r', `#compareTo(java.math.BigDecimal)`, `compareTo`],
 				[/* text */ 't', `
          method, `],
 				[/* inline code block */ 'i', `this`],
@@ -1875,18 +2064,18 @@ DocsCollector.collect('java.math.BigDecimal', [
 				[/* text */ 't', `.
 
  This method is provided in preference to individual methods for
- each of the six boolean comparison operators (&lt;, ==,
- &gt;, &gt;=, !=, &lt;=).  The suggested
+ each of the six boolean comparison operators (<, ==,
+ >, >=, !=, <=).  The suggested
  idiom for performing these comparisons is: `],
 				[/* inline code block */ 'i', `(x.compareTo(y)`],
-				[/* text */ 't', ` &lt;`],
+				[/* text */ 't', ` <`],
 				[/* text */ 't', `op`],
-				[/* text */ 't', `&gt; `],
+				[/* text */ 't', `> `],
 				[/* inline code block */ 'i', `0)`],
 				[/* text */ 't', `, where
- &lt;`],
+ <`],
 				[/* text */ 't', `op`],
-				[/* text */ 't', `&gt; is one of the six comparison operators.`]
+				[/* text */ 't', `> is one of the six comparison operators.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'val', [/* parameter description */
@@ -2024,9 +2213,9 @@ DocsCollector.collect('java.math.BigDecimal', [
 				[/* inline code block */ 'i', `float`],
 				[/* text */ 't', `, it will be
  converted to `],
-				[/* external link */ 'a', `../lang/Float.html#NEGATIVE_INFINITY`, `Float.NEGATIVE_INFINITY`],
+				[/* reference */ 'r', `java.Float#NEGATIVE_INFINITY`],
 				[/* text */ 't', ` or `],
-				[/* external link */ 'a', `../lang/Float.html#POSITIVE_INFINITY`, `Float.POSITIVE_INFINITY`],
+				[/* reference */ 'r', `java.Float#POSITIVE_INFINITY`],
 				[/* text */ 't', ` as appropriate.  Note that even when
  the return value is finite, this conversion can lose
  information about the precision of the `],
@@ -2070,9 +2259,9 @@ DocsCollector.collect('java.math.BigDecimal', [
 				[/* inline code block */ 'i', `double`],
 				[/* text */ 't', `, it will be
  converted to `],
-				[/* external link */ 'a', `../lang/Double.html#NEGATIVE_INFINITY`, `Double.NEGATIVE_INFINITY`],
+				[/* reference */ 'r', `java.Double#NEGATIVE_INFINITY`],
 				[/* text */ 't', ` or `],
-				[/* external link */ 'a', `../lang/Double.html#POSITIVE_INFINITY`, `Double.POSITIVE_INFINITY`],
+				[/* reference */ 'r', `java.Double#POSITIVE_INFINITY`],
 				[/* text */ 't', ` as appropriate.  Note that even when
  the return value is finite, this conversion can lose
  information about the precision of the `],
@@ -2101,7 +2290,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 				[/* inline code block */ 'i', `double`],
 				[/* text */ 't', `'s canonical string representation provided
  by the `],
-				[/* external link */ 'a', `../lang/Double.html#toString(double)`, `Double.toString(double)`],
+				[/* reference */ 'r', `java.Double#toString(double)`],
 				[/* text */ 't', ` method.`]
 			],
 			[/* parameters */
@@ -2270,7 +2459,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The effect of this method is identical to that of the
  `],
-					[/* reference */ 'r', `plus(MathContext)`],
+					[/* reference */ 'r', `#plus(java.math.MathContext)`, `plus(MathContext)`],
 					[/* text */ 't', ` method.`]
 				]]
 			],
@@ -2352,7 +2541,7 @@ DocsCollector.collect('java.math.BigDecimal', [
  To have an exception thrown if the conversion is inexact (in
  other words if a nonzero fractional part is discarded), use the
  `],
-					[/* reference */ 'r', `toBigIntegerExact()`],
+					[/* reference */ 'r', `#toBigIntegerExact()`, `toBigIntegerExact()`],
 					[/* text */ 't', ` method.`]
 				]]
 			],
@@ -2451,7 +2640,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 					[/* text */ 't', `, or `],
 					[/* inline code block */ 'i', `mc.precision`],
 					[/* text */ 't', `
-         &gt; 0 and the result of `],
+         > 0 and the result of `],
 					[/* inline code block */ 'i', `this.divideToIntegralValue(divisor)`],
 					[/* text */ 't', ` would
          require a precision of more than `],
@@ -2534,7 +2723,7 @@ DocsCollector.collect('java.math.BigDecimal', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `The effect of this method is identical to that of the `],
-					[/* reference */ 'r', `round(MathContext)`],
+					[/* reference */ 'r', `#round(java.math.MathContext)`, `round(MathContext)`],
 					[/* text */ 't', ` method.`]
 				]]
 			],
@@ -2567,7 +2756,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 					[/* inline code block */ 'i', `BigDecimal`],
 					[/* text */ 't', `
  is included for symmetry with the unary minus method `],
-					[/* reference */ 'r', `negate()`],
+					[/* reference */ 'r', `#negate()`, `negate()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -2889,7 +3078,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 				[/* throw */ 'java.lang.ArithmeticException', [/* throw description */
 					[/* text */ 't', `if `],
 					[/* inline code block */ 'i', `mc.precision`],
-					[/* text */ 't', ` &gt; 0 and the result
+					[/* text */ 't', ` > 0 and the result
          requires a precision of more than `],
 					[/* inline code block */ 'i', `mc.precision`],
 					[/* text */ 't', ` digits.`]
@@ -3061,7 +3250,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 					[/* text */ 't', `, or `],
 					[/* inline code block */ 'i', `mc.precision`],
 					[/* text */ 't', `
-         &gt; 0 and the result of `],
+         > 0 and the result of `],
 					[/* inline code block */ 'i', `this.divideToIntegralValue(divisor)`],
 					[/* text */ 't', ` would
          require a precision of more than `],
@@ -3471,7 +3660,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 
  Note that if the result of this method is passed to the
  `],
-				[/* reference */ 'r', `string constructor`],
+				[/* reference */ 'r', `#%3Cinit%3E(java.lang.String)`, `string constructor`],
 				[/* text */ 't', `, only the
  numerical value of this `],
 				[/* inline code block */ 'i', `BigDecimal`],
@@ -3655,7 +3844,7 @@ DocsCollector.collect('java.math.BigDecimal', [
 					[/* inline code block */ 'i', `BigDecimal`],
 					[/* text */ 't', ` as
  described in the `],
-					[/* reference */ 'r', `toString()`],
+					[/* reference */ 'r', `#toString()`, `toString()`],
 					[/* text */ 't', ` method, except that if
  exponential notation is used, the power of ten is adjusted to
  be a multiple of three (engineering notation) such that the
@@ -3664,7 +3853,7 @@ DocsCollector.collect('java.math.BigDecimal', [
  decimal point and one or two fractional zero digits are used so
  that the scale of the zero value is preserved.  Note that
  unlike the output of `],
-					[/* reference */ 'r', `toString()`],
+					[/* reference */ 'r', `#toString()`, `toString()`],
 					[/* text */ 't', `, the output of this
  method is `],
 					[/* text */ 't', `not`],
@@ -3675,7 +3864,7 @@ DocsCollector.collect('java.math.BigDecimal', [
  converting back to a `],
 					[/* inline code block */ 'i', `BigDecimal`],
 					[/* text */ 't', ` using the `],
-					[/* reference */ 'r', `string constructor`],
+					[/* reference */ 'r', `#%3Cinit%3E(java.lang.String)`, `string constructor`],
 					[/* text */ 't', `.  The result of this method meets
  the weaker constraint of always producing a numerically equal
  result from applying the string constructor to the method's output.`]

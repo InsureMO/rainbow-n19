@@ -34,7 +34,7 @@ DocsCollector.collect('java.util.Objects', [
  is returned.  Otherwise, if the first argument is not `],
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', `, equality is determined by calling the `],
-				[/* external link */ 'a', `../lang/Object.html#equals(java.lang.Object)`, `equals`],
+				[/* reference */ 'r', `java.Object#equals(java.lang.Object)`],
 				[/* text */ 't', ` method of the first argument with the
  second argument of this method. Otherwise, `],
 				[/* inline code block */ 'i', `false`],
@@ -302,13 +302,13 @@ DocsCollector.collect('java.util.Objects', [
 				[/* text */ 't', `Generates a hash code for a sequence of input values. The hash
  code is generated as if all the input values were placed into an
  array, and that array were hashed by calling `],
-				[/* external link */ 'a', `Arrays.html#hashCode(java.lang.Object%5B%5D)`, `Arrays.hashCode(Object[])`],
+				[/* reference */ 'r', `.Arrays#hashCode(java.lang.Object[])`],
 				[/* text */ 't', `.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This method is useful for implementing `],
-					[/* external link */ 'a', `../lang/Object.html#hashCode()`, `Object.hashCode()`],
+					[/* reference */ 'r', `java.Object#hashCode()`],
 					[/* text */ 't', ` on objects containing multiple fields. For
  example, if an object that has three fields, `],
 					[/* inline code block */ 'i', `x`],
@@ -330,7 +330,7 @@ DocsCollector.collect('java.util.Objects', [
  value does not equal the hash code of that object reference.`],
 				[/* text */ 't', ` This
  value can be computed by calling `],
-				[/* reference */ 'r', `hashCode(Object)`],
+				[/* reference */ 'r', `#hashCode(java.lang.Object)`, `hashCode(Object)`],
 				[/* text */ 't', `.`],
 				[/* block */ 'b', '']
 			],
@@ -356,7 +356,7 @@ DocsCollector.collect('java.util.Objects', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `Unlike the method `],
-					[/* reference */ 'r', `requireNonNull(Object, String)`],
+					[/* reference */ 'r', `#requireNonNull(T,java.lang.String)`, `requireNonNull(Object, String)`],
 					[/* text */ 't', `,
  this method allows creation of the message to be deferred until
  after the null check is made. While this may confer a
@@ -707,10 +707,10 @@ DocsCollector.collect('java.util.Objects', [
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', ` values are deeply equal.  If both arguments are
  arrays, the algorithm in `],
-				[/* external link */ 'a', `Arrays.html#deepEquals(java.lang.Object%5B%5D,java.lang.Object%5B%5D)`, `Arrays.deepEquals`],
+				[/* reference */ 'r', `.Arrays#deepEquals(java.lang.Object[],java.lang.Object[])`],
 				[/* text */ 't', ` is used to determine equality.
  Otherwise, equality is determined by using the `],
-				[/* external link */ 'a', `../lang/Object.html#equals(java.lang.Object)`, `equals`],
+				[/* reference */ 'r', `java.Object#equals(java.lang.Object)`],
 				[/* text */ 't', ` method of the first argument.`]
 			],
 			[/* parameters */

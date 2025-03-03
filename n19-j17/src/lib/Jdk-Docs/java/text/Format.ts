@@ -249,7 +249,7 @@ DocsCollector.collect('java.text.Format', [
 				[/* text */ 't', `Formats an object to produce a string. This is equivalent to
  `],
 				[/* block */ 'b', [
-					[/* reference */ 'r', `format`],
+					[/* reference */ 'r', `#format(java.lang.Object,java.lang.StringBuffer,java.text.FieldPosition)`, `format`],
 					[/* inline code block */ 'i', `(obj, new StringBuffer(), new FieldPosition(0)).toString();`]
 				]]
 			],

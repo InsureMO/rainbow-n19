@@ -25,7 +25,7 @@ DocsCollector.collect('java.util.Map$Entry', [
 			[/* inline code block */ 'i', `Map.Entry`],
 			[/* text */ 't', `'s value via the
  `],
-			[/* reference */ 'r', `setValue`],
+			[/* reference */ 'r', `#setValue(V)`, `setValue`],
 			[/* text */ 't', ` method will be visible in the backing map.
  The behavior of such a `],
 			[/* inline code block */ 'i', `Map.Entry`],
@@ -60,7 +60,7 @@ DocsCollector.collect('java.util.Map$Entry', [
 				[/* text */ 't', ` represent the same mapping
  if`],
 				[/* code block */ 'c', `     (e1.getKey()==null ?
-      e2.getKey()==null : e1.getKey().equals(e2.getKey()))  &amp;&amp;
+      e2.getKey()==null : e1.getKey().equals(e2.getKey()))  &&
      (e1.getValue()==null ?
       e2.getValue()==null : e1.getValue().equals(e2.getValue()))
  `],
@@ -122,7 +122,7 @@ DocsCollector.collect('java.util.Map$Entry', [
 				[/* text */ 't', `. The returned instance is not
  associated with any map. The returned instance has the same characteristics
  as instances returned by the `],
-				[/* external link */ 'a', `Map.html#entry(K,V)`, `Map::entry`],
+				[/* reference */ 'r', `.Map#entry(K,V)`],
 				[/* text */ 't', ` method.`]
 			],
 			[/* parameters */

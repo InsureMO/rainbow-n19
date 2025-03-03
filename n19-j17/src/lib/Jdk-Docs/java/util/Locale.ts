@@ -42,7 +42,157 @@ DocsCollector.collect('java.util.Locale', [
 
  `]
 		]],
-		[/* dl */ 't', ''],
+		[/* dl */ 'dl', [
+			[/* dt */ 'dt', [
+				[/* text */ 't', `language`]
+			]],
+			[/* dd */ 'dd', [
+				[/* text */ 't', `ISO 639 alpha-2 or alpha-3 language code, or registered
+   language subtags up to 8 alpha letters (for future enhancements).
+   When a language has both an alpha-2 code and an alpha-3 code, the
+   alpha-2 code must be used.  You can find a full list of valid
+   language codes in the IANA Language Subtag Registry (search for
+   "Type: language").  The language field is case insensitive, but
+   `],
+				[/* inline code block */ 'i', `Locale`],
+				[/* text */ 't', ` always canonicalizes to lower case.`]
+			]],
+			[/* dd */ 'dd', [
+				[/* text */ 't', `Well-formed language values have the form
+   `],
+				[/* inline code block */ 'i', `[a-zA-Z]{2,8}`],
+				[/* text */ 't', `.  Note that this is not the full
+   BCP47 language production, since it excludes extlang.  They are
+   not needed since modern three-letter language codes replace
+   them.`]
+			]],
+			[/* dd */ 'dd', [
+				[/* text */ 't', `Example: "en" (English), "ja" (Japanese), "kok" (Konkani)`]
+			]],
+			[/* dt */ 'dt', [
+				[/* text */ 't', `script`]
+			]],
+			[/* dd */ 'dd', [
+				[/* text */ 't', `ISO 15924 alpha-4 script code.  You can find a full list of
+   valid script codes in the IANA Language Subtag Registry (search
+   for "Type: script").  The script field is case insensitive, but
+   `],
+				[/* inline code block */ 'i', `Locale`],
+				[/* text */ 't', ` always canonicalizes to title case (the first
+   letter is upper case and the rest of the letters are lower
+   case).`]
+			]],
+			[/* dd */ 'dd', [
+				[/* text */ 't', `Well-formed script values have the form
+   `],
+				[/* inline code block */ 'i', `[a-zA-Z]{4}`]
+			]],
+			[/* dd */ 'dd', [
+				[/* text */ 't', `Example: "Latn" (Latin), "Cyrl" (Cyrillic)`]
+			]],
+			[/* dt */ 'dt', [
+				[/* text */ 't', `country (region)`]
+			]],
+			[/* dd */ 'dd', [
+				[/* text */ 't', `ISO 3166 alpha-2 country code or UN M.49 numeric-3 area code.
+   You can find a full list of valid country and region codes in the
+   IANA Language Subtag Registry (search for "Type: region").  The
+   country (region) field is case insensitive, but
+   `],
+				[/* inline code block */ 'i', `Locale`],
+				[/* text */ 't', ` always canonicalizes to upper case.`]
+			]],
+			[/* dd */ 'dd', [
+				[/* text */ 't', `Well-formed country/region values have
+   the form `],
+				[/* inline code block */ 'i', `[a-zA-Z]{2} | [0-9]{3}`]
+			]],
+			[/* dd */ 'dd', [
+				[/* text */ 't', `Example: "US" (United States), "FR" (France), "029"
+   (Caribbean)`]
+			]],
+			[/* dt */ 'dt', [
+				[/* text */ 't', `variant`]
+			]],
+			[/* dd */ 'dd', [
+				[/* text */ 't', `Any arbitrary value used to indicate a variation of a
+   `],
+				[/* inline code block */ 'i', `Locale`],
+				[/* text */ 't', `.  Where there are two or more variant values
+   each indicating its own semantics, these values should be ordered
+   by importance, with most important first, separated by
+   underscore('_').  The variant field is case sensitive.`]
+			]],
+			[/* dd */ 'dd', [
+				[/* text */ 't', `Note: IETF BCP 47 places syntactic restrictions on variant
+   subtags.  Also BCP 47 subtags are strictly used to indicate
+   additional variations that define a language or its dialects that
+   are not covered by any combinations of language, script and
+   region subtags.  You can find a full list of valid variant codes
+   in the IANA Language Subtag Registry (search for "Type: variant").
+
+   `],
+				[/* block */ 'b', [
+					[/* text */ 't', `However, the variant field in `],
+					[/* inline code block */ 'i', `Locale`],
+					[/* text */ 't', ` has
+   historically been used for any kind of variation, not just
+   language variations.  For example, some supported variants
+   available in Java SE Runtime Environments indicate alternative
+   cultural behaviors such as calendar type or number script.  In
+   BCP 47 this kind of information, which does not identify the
+   language, is supported by extension subtags or private use
+   subtags.`]
+				]]
+			]],
+			[/* dd */ 'dd', [
+				[/* text */ 't', `Well-formed variant values have the form `],
+				[/* inline code block */ 'i', `SUBTAG (('_'|'-') SUBTAG)*`],
+				[/* text */ 't', ` where `],
+				[/* inline code block */ 'i', `SUBTAG = [0-9][0-9a-zA-Z]{3} | [0-9a-zA-Z]{5,8}`],
+				[/* text */ 't', `. (Note: BCP 47 only
+   uses hyphen ('-') as a delimiter, this is more lenient).`]
+			]],
+			[/* dd */ 'dd', [
+				[/* text */ 't', `Example: "polyton" (Polytonic Greek), "POSIX"`]
+			]],
+			[/* dt */ 'dt', [
+				[/* text */ 't', `extensions`]
+			]],
+			[/* dd */ 'dd', [
+				[/* text */ 't', `A map from single character keys to string values, indicating
+   extensions apart from language identification.  The extensions in
+   `],
+				[/* inline code block */ 'i', `Locale`],
+				[/* text */ 't', ` implement the semantics and syntax of BCP 47
+   extension subtags and private use subtags. The extensions are
+   case insensitive, but `],
+				[/* inline code block */ 'i', `Locale`],
+				[/* text */ 't', ` canonicalizes all
+   extension keys and values to lower case. Note that extensions
+   cannot have empty values.`]
+			]],
+			[/* dd */ 'dd', [
+				[/* text */ 't', `Well-formed keys are single characters from the set
+   `],
+				[/* inline code block */ 'i', `[0-9a-zA-Z]`],
+				[/* text */ 't', `.  Well-formed values have the form
+   `],
+				[/* inline code block */ 'i', `SUBTAG ('-' SUBTAG)*`],
+				[/* text */ 't', ` where for the key 'x'
+   `],
+				[/* inline code block */ 'i', `SUBTAG = [0-9a-zA-Z]{1,8}`],
+				[/* text */ 't', ` and for other keys
+   `],
+				[/* inline code block */ 'i', `SUBTAG = [0-9a-zA-Z]{2,8}`],
+				[/* text */ 't', ` (that is, 'x' allows
+   single-character subtags).`]
+			]],
+			[/* dd */ 'dd', [
+				[/* text */ 't', `Example: key="u"/value="ca-japanese" (Japanese Calendar),
+   key="x"/value="java-1-7"`]
+			]]
+		]],
 		[/* text */ 't', `Note:`],
 		[/* text */ 't', ` Although BCP 47 requires field values to be registered
  in the IANA Language Subtag Registry, the `],
@@ -91,12 +241,12 @@ DocsCollector.collect('java.util.Locale', [
  `],
 			[/* inline code block */ 'i', `Locale`],
 			[/* text */ 't', ` class also provides `],
-			[/* reference */ 'r', `getUnicodeLocaleAttributes()`],
+			[/* reference */ 'r', `#getUnicodeLocaleAttributes()`, `getUnicodeLocaleAttributes()`],
 			[/* text */ 't', `, `],
-			[/* reference */ 'r', `getUnicodeLocaleKeys()`],
+			[/* reference */ 'r', `#getUnicodeLocaleKeys()`, `getUnicodeLocaleKeys()`],
 			[/* text */ 't', `, and
  `],
-			[/* reference */ 'r', `getUnicodeLocaleType(java.lang.String)`],
+			[/* reference */ 'r', `#getUnicodeLocaleType(java.lang.String)`, `getUnicodeLocaleType(java.lang.String)`],
 			[/* text */ 't', ` which allow you to access Unicode
  locale attributes and key/type pairs directly.  When represented as
  a string, the Unicode Locale Extension lists attributes
@@ -159,9 +309,9 @@ DocsCollector.collect('java.util.Locale', [
 		]],
 		[/* block */ 'b', [
 			[/* code block */ 'c', [
-				[/* reference */ 'r', `Locale(String language)`],
-				[/* reference */ 'r', `Locale(String language, String country)`],
-				[/* reference */ 'r', `Locale(String language, String country, String variant)`]
+				[/* text */ 't', `Locale(String language)`],
+				[/* text */ 't', `Locale(String language, String country)`],
+				[/* text */ 't', `Locale(String language, String country, String variant)`]
 			]]
 		]],
 		[/* text */ 't', `
@@ -176,7 +326,7 @@ DocsCollector.collect('java.util.Locale', [
 		[/* block */ 'b', `Factory Methods`],
 		[/* block */ 'b', [
 			[/* text */ 't', `The method `],
-			[/* reference */ 'r', `forLanguageTag(java.lang.String)`],
+			[/* reference */ 'r', `#forLanguageTag(java.lang.String)`, `forLanguageTag(java.lang.String)`],
 			[/* text */ 't', ` creates a `],
 			[/* inline code block */ 'i', `Locale`],
 			[/* text */ 't', `
@@ -342,7 +492,7 @@ DocsCollector.collect('java.util.Locale', [
 			[/* text */ 't', ` methods are themselves locale-sensitive
  and have two versions: one that uses the default
  `],
-			[/* external link */ 'a', `Locale.Category.html#DISPLAY`, `DISPLAY`],
+			[/* reference */ 'r', `.Locale.Category#DISPLAY`],
 			[/* text */ 't', ` locale and one
  that uses the locale specified as an argument.
 
@@ -376,7 +526,7 @@ DocsCollector.collect('java.util.Locale', [
  Each of these methods has two variants; one with an explicit locale
  and one without; the latter uses the default
  `],
-		[/* external link */ 'a', `Locale.Category.html#FORMAT`, `FORMAT`],
+		[/* reference */ 'r', `.Locale.Category#FORMAT`],
 		[/* text */ 't', ` locale:
  `],
 		[/* block */ 'b', [
@@ -840,7 +990,7 @@ DocsCollector.collect('java.util.Locale', [
  Language is always lower case, country is always upper case, script is always title
  case, and extensions are always lower case.  Extensions and private use subtags
  will be in canonical order as explained in `],
-				[/* reference */ 'r', `toLanguageTag()`],
+				[/* reference */ 'r', `#toLanguageTag()`, `toLanguageTag()`],
 				[/* text */ 't', `.
 
  `],
@@ -865,7 +1015,7 @@ DocsCollector.collect('java.util.Locale', [
 					[/* text */ 't', ` that expected language, country, and variant
  fields only.  To represent a Locale as a String for interchange purposes, use
  `],
-					[/* reference */ 'r', `toLanguageTag()`],
+					[/* reference */ 'r', `#toLanguageTag()`, `toLanguageTag()`],
 					[/* text */ 't', `.
 
  `]
@@ -965,7 +1115,7 @@ DocsCollector.collect('java.util.Locale', [
  methods if no locale is explicitly specified.
  It can be changed using the
  `],
-					[/* reference */ 'r', `setDefault`],
+					[/* reference */ 'r', `#setDefault(java.util.Locale)`, `setDefault`],
 					[/* text */ 't', ` method.`]
 				]]
 			],
@@ -1020,12 +1170,12 @@ DocsCollector.collect('java.util.Locale', [
 				[/* text */ 't', ` instances using the filtering
  mechanism defined in RFC 4647. This is equivalent to
  `],
-				[/* reference */ 'r', `filter(List, Collection, FilteringMode)`],
+				[/* reference */ 'r', `#filter(java.util.List,java.util.Collection,java.util.Locale.FilteringMode)`, `filter(List, Collection, FilteringMode)`],
 				[/* text */ 't', ` when `],
 				[/* inline code block */ 'i', `mode`],
 				[/* text */ 't', ` is
  `],
-				[/* external link */ 'a', `Locale.FilteringMode.html#AUTOSELECT_FILTERING`, `Locale.FilteringMode.AUTOSELECT_FILTERING`],
+				[/* reference */ 'r', `.Locale.FilteringMode#AUTOSELECT_FILTERING`],
 				[/* text */ 't', `.
 
  This filter operation on the given `],
@@ -1103,7 +1253,7 @@ DocsCollector.collect('java.util.Locale', [
 					[/* text */ 't', `if one or more extended language ranges
      are included in the given list when
      `],
-					[/* external link */ 'a', `Locale.FilteringMode.html#REJECT_EXTENDED_RANGES`, `Locale.FilteringMode.REJECT_EXTENDED_RANGES`],
+					[/* reference */ 'r', `.Locale.FilteringMode#REJECT_EXTENDED_RANGES`],
 					[/* text */ 't', ` is specified`]
 				]]
 			],
@@ -1154,7 +1304,7 @@ DocsCollector.collect('java.util.Locale', [
  to the user.  This will be the values returned by
  getDisplayLanguage(), getDisplayScript(),getDisplayCountry()
  getDisplayVariant(), and optional `],
-				[/* external link */ 'a', `./Locale.html#def_locale_extension`, `Unicode extensions`],
+				[/* reference */ 'r', `.Locale#def_locale_extension`],
 				[/* text */ 't', ` assembled into a single string. The non-empty
  values are used in order, with the second and subsequent names in
  parentheses.  For example:
@@ -1205,7 +1355,7 @@ DocsCollector.collect('java.util.Locale', [
  user. This will be the values returned by getDisplayLanguage(),
  getDisplayScript(), getDisplayCountry(), getDisplayVariant() and
  optional `],
-				[/* external link */ 'a', `./Locale.html#def_locale_extension`, `Unicode extensions`],
+				[/* reference */ 'r', `.Locale#def_locale_extension`],
 				[/* text */ 't', `
  assembled into a single string. The non-empty values are used in order, with
  the second and subsequent names in parentheses.  For example:
@@ -1471,20 +1621,20 @@ DocsCollector.collect('java.util.Locale', [
  user.
  If possible, the name returned will be localized for the default
  `],
-				[/* external link */ 'a', `Locale.Category.html#DISPLAY`, `DISPLAY`],
+				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
 				[/* text */ 't', ` locale.
  For example, if the locale is fr_FR and the default
  `],
-				[/* external link */ 'a', `Locale.Category.html#DISPLAY`, `DISPLAY`],
+				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
 				[/* text */ 't', ` locale
  is en_US, getDisplayLanguage() will return "French"; if the locale is en_US and
  the default `],
-				[/* external link */ 'a', `Locale.Category.html#DISPLAY`, `DISPLAY`],
+				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
 				[/* text */ 't', ` locale is fr_FR,
  getDisplayLanguage() will return "anglais".
  If the name returned cannot be localized for the default
  `],
-				[/* external link */ 'a', `Locale.Category.html#DISPLAY`, `DISPLAY`],
+				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
 				[/* text */ 't', ` locale,
  (say, we don't have a Japanese name for Croatian),
  this function falls back on the English name, and uses the ISO code as a last-resort
@@ -1501,7 +1651,7 @@ DocsCollector.collect('java.util.Locale', [
 				[/* text */ 't', `Returns a name for the locale's script that is appropriate for display to
  the user. If possible, the name will be localized for the default
  `],
-				[/* external link */ 'a', `Locale.Category.html#DISPLAY`, `DISPLAY`],
+				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
 				[/* text */ 't', ` locale.  Returns
  the empty string if this locale doesn't specify a script code.`]
 			],
@@ -1510,7 +1660,7 @@ DocsCollector.collect('java.util.Locale', [
 			[/* return description */
 				[/* text */ 't', `the display name of the script code for the current default
      `],
-				[/* external link */ 'a', `Locale.Category.html#DISPLAY`, `DISPLAY`],
+				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
 				[/* text */ 't', ` locale`]
 			]
 		]],
@@ -1537,7 +1687,7 @@ DocsCollector.collect('java.util.Locale', [
 			[/* return description */
 				[/* text */ 't', `the display name of the script code for the current default
  `],
-				[/* external link */ 'a', `Locale.Category.html#DISPLAY`, `DISPLAY`],
+				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
 				[/* text */ 't', ` locale`]
 			]
 		]],
@@ -1547,20 +1697,20 @@ DocsCollector.collect('java.util.Locale', [
  user.
  If possible, the name returned will be localized for the default
  `],
-				[/* external link */ 'a', `Locale.Category.html#DISPLAY`, `DISPLAY`],
+				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
 				[/* text */ 't', ` locale.
  For example, if the locale is fr_FR and the default
  `],
-				[/* external link */ 'a', `Locale.Category.html#DISPLAY`, `DISPLAY`],
+				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
 				[/* text */ 't', ` locale
  is en_US, getDisplayCountry() will return "France"; if the locale is en_US and
  the default `],
-				[/* external link */ 'a', `Locale.Category.html#DISPLAY`, `DISPLAY`],
+				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
 				[/* text */ 't', ` locale is fr_FR,
  getDisplayCountry() will return "Etats-Unis".
  If the name returned cannot be localized for the default
  `],
-				[/* external link */ 'a', `Locale.Category.html#DISPLAY`, `DISPLAY`],
+				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
 				[/* text */ 't', ` locale,
  (say, we don't have a Japanese name for Croatia),
  this function falls back on the English name, and uses the ISO code as a last-resort
@@ -1631,7 +1781,7 @@ DocsCollector.collect('java.util.Locale', [
 				[/* text */ 't', `Returns a name for the locale's variant code that is appropriate for display to the
  user.  If possible, the name will be localized for the default
  `],
-				[/* external link */ 'a', `Locale.Category.html#DISPLAY`, `DISPLAY`],
+				[/* reference */ 'r', `.Locale.Category#DISPLAY`],
 				[/* text */ 't', ` locale.  If the locale
  doesn't specify a variant code, this function returns the empty string.`]
 			],
@@ -1693,7 +1843,7 @@ DocsCollector.collect('java.util.Locale', [
 					[/* text */ 't', `if one or more extended language ranges
      are included in the given list when
      `],
-					[/* external link */ 'a', `Locale.FilteringMode.html#REJECT_EXTENDED_RANGES`, `Locale.FilteringMode.REJECT_EXTENDED_RANGES`],
+					[/* reference */ 'r', `.Locale.FilteringMode#REJECT_EXTENDED_RANGES`],
 					[/* text */ 't', ` is specified`]
 				]]
 			],
@@ -1708,12 +1858,12 @@ DocsCollector.collect('java.util.Locale', [
 				[/* text */ 't', `Returns a list of matching languages tags using the basic filtering
  mechanism defined in RFC 4647. This is equivalent to
  `],
-				[/* reference */ 'r', `filterTags(List, Collection, FilteringMode)`],
+				[/* reference */ 'r', `#filterTags(java.util.List,java.util.Collection,java.util.Locale.FilteringMode)`, `filterTags(List, Collection, FilteringMode)`],
 				[/* text */ 't', ` when `],
 				[/* inline code block */ 'i', `mode`],
 				[/* text */ 't', `
  is `],
-				[/* external link */ 'a', `Locale.FilteringMode.html#AUTOSELECT_FILTERING`, `Locale.FilteringMode.AUTOSELECT_FILTERING`],
+				[/* reference */ 'r', `.Locale.FilteringMode#AUTOSELECT_FILTERING`],
 				[/* text */ 't', `.
 
  This filter operation on the given `],
@@ -1829,11 +1979,11 @@ DocsCollector.collect('java.util.Locale', [
 				[/* text */ 't', `Returns a list of all 2-letter country codes defined in ISO 3166.
  Can be used to create Locales.
  This method is equivalent to `],
-				[/* reference */ 'r', `getISOCountries(Locale.IsoCountryCode type)`],
+				[/* reference */ 'r', `#getISOCountries(java.util.Locale.IsoCountryCode)`, `getISOCountries(Locale.IsoCountryCode type)`],
 				[/* text */ 't', `
  with `],
 				[/* inline code block */ 'i', `type`],
-				[/* external link */ 'a', `Locale.IsoCountryCode.html#PART1_ALPHA2`, `Locale.IsoCountryCode.PART1_ALPHA2`],
+				[/* reference */ 'r', `.Locale.IsoCountryCode#PART1_ALPHA2`],
 				[/* text */ 't', `.
  `],
 				[/* block */ 'b', [
@@ -1851,11 +2001,11 @@ DocsCollector.collect('java.util.Locale', [
  Note that this method does not return obsolete 2-letter country codes.
  ISO3166-3 codes which designate country codes for those obsolete codes,
  can be retrieved from `],
-					[/* reference */ 'r', `getISOCountries(Locale.IsoCountryCode type)`],
+					[/* reference */ 'r', `#getISOCountries(java.util.Locale.IsoCountryCode)`, `getISOCountries(Locale.IsoCountryCode type)`],
 					[/* text */ 't', ` with
  `],
 					[/* inline code block */ 'i', `type`],
-					[/* external link */ 'a', `Locale.IsoCountryCode.html#PART3`, `Locale.IsoCountryCode.PART3`],
+					[/* reference */ 'r', `.Locale.IsoCountryCode#PART3`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -1870,9 +2020,7 @@ DocsCollector.collect('java.util.Locale', [
 				[/* text */ 't', `Returns a list of all 2-letter language codes defined in ISO 639.
  Can be used to create Locales.
  `],
-				[/* block */ 'b', [
-					[/* text */ 't', `Note:`]
-				]],
+				[/* block */ 'b', `Note:`],
 				[/* list */ 'l', [
 					[/* block */ 'b', `ISO 639 is not a stable standard— some languages' codes have changed.
  The list this function returns includes both the new and the old codes for the
@@ -2030,14 +2178,7 @@ DocsCollector.collect('java.util.Locale', [
 					]]
 				]],
 				[/* block */ 'b', ''],
-				[/* block */ 'b', [
-					[/* text */ 't', `Special Conversions:`],
-					[/* text */ 't', ` Java supports some old locale
- representations, including deprecated ISO language codes,
- for compatibility. This method performs the following
- conversions:
- `]
-				]],
+				[/* block */ 'b', `Special Conversions:`],
 				[/* list */ 'l', [
 					[/* block */ 'b', `Deprecated ISO language codes "iw", "ji", and "in" are
  converted to "he", "yi", and "id", respectively.
@@ -2048,14 +2189,7 @@ DocsCollector.collect('java.util.Locale', [
  to a language tag "nn-NO".`]
 				]],
 				[/* block */ 'b', ''],
-				[/* block */ 'b', [
-					[/* text */ 't', `Note:`],
-					[/* text */ 't', ` Although the language tag created by this
- method is well-formed (satisfies the syntax requirements
- defined by the IETF BCP 47 specification), it is not
- necessarily a valid BCP 47 language tag.  For example,
- `]
-				]],
+				[/* block */ 'b', `Note:`],
 				[/* code block */ 'c', `   new Locale("xx", "YY").toLanguageTag();`],
 				[/* text */ 't', `
 
@@ -2079,17 +2213,13 @@ DocsCollector.collect('java.util.Locale', [
 					[/* text */ 't', `If the specified language tag contains any ill-formed subtags,
  the first such subtag and all following subtags are ignored.  Compare
  to `],
-					[/* external link */ 'a', `Locale.Builder.html#setLanguageTag(java.lang.String)`, `Locale.Builder.setLanguageTag(java.lang.String)`],
+					[/* reference */ 'r', `.Locale.Builder#setLanguageTag(java.lang.String)`],
 					[/* text */ 't', ` which throws an exception
  in this case.
 
  `]
 				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `The following `],
-					[/* text */ 't', `conversions`],
-					[/* text */ 't', ` are performed:`]
-				]],
+				[/* block */ 'b', `conversions`],
 				[/* list */ 'l', [
 					[/* block */ 'b', `The language code "und" is mapped to language "".
 
@@ -2164,13 +2294,249 @@ DocsCollector.collect('java.util.Locale', [
 				[/* block */ 'b', `Legacy tags with canonical replacements are as follows:
 
  `],
-				[/* table */ 't', ''],
+				[/* table */ 'tbl',
+					[/* caption */ 'tc'],
+					[/* table header */ 'th', [
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `legacy tag`]
+							]],
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `modern replacement`]
+							]]
+						]]
+					]],
+					[/* table body */ 'tb', [
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `art-lojban`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `jbo`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `i-ami`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `ami`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `i-bnn`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `bnn`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `i-hak`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `hak`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `i-klingon`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `tlh`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `i-lux`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `lb`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `i-navajo`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `nv`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `i-pwn`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `pwn`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `i-tao`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `tao`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `i-tay`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `tay`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `i-tsu`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `tsu`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `no-bok`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `nb`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `no-nyn`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `nn`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `sgn-BE-FR`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `sfb`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `sgn-BE-NL`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `vgt`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `sgn-CH-DE`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `sgg`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `zh-guoyu`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `cmn`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `zh-hakka`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `hak`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `zh-min-nan`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `nan`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `zh-xiang`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `hsn`]
+							]]
+						]]
+					]],
+				],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `Legacy tags with no modern replacement will be
  converted as follows:
 
  `],
-				[/* table */ 't', ''],
+				[/* table */ 'tbl',
+					[/* caption */ 'tc'],
+					[/* table header */ 'th', [
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `legacy tag`]
+							]],
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `converts to`]
+							]]
+						]]
+					]],
+					[/* table body */ 'tb', [
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `cel-gaulish`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `xtg-x-cel-gaulish`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `en-GB-oed`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `en-GB-x-oed`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `i-default`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `en-x-i-default`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `i-enochian`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `und-x-i-enochian`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `i-mingo`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `see-x-i-mingo`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `zh-min`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `nan-x-zh-min`]
+							]]
+						]]
+					]],
+				],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', `For a list of all legacy tags, see the
  IANA Language Subtag Registry (search for "Type: grandfathered").

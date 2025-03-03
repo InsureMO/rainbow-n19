@@ -26,7 +26,7 @@ DocsCollector.collect('java.lang.Package', [
 			[/* inline code block */ 'i', `Package`],
 			[/* text */ 't', ` is compatible with a particular specification version
  by using the `],
-			[/* reference */ 'r', `Package.isCompatibleWith(String)`],
+			[/* reference */ 'r', `#isCompatibleWith(java.lang.String)`, `Package.isCompatibleWith(String)`],
 			[/* text */ 't', `
  method. In addition, information about the actual classes that make up the
  run-time package can be provided when the `],
@@ -42,12 +42,12 @@ DocsCollector.collect('java.lang.Package', [
 			[/* inline code block */ 'i', `Package`],
 			[/* text */ 't', ` may be explicitly defined with
  the `],
-			[/* external link */ 'a', `ClassLoader.html#definePackage(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.net.URL)`, `ClassLoader.definePackage(String, String, String, String, String, String, String, URL)`],
+			[/* reference */ 'r', `.ClassLoader#definePackage(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.net.URL)`],
 			[/* text */ 't', ` method.
  The caller supplies the specification and implementation titles, versions, and
  vendors. The caller also indicates whether the package is
  `],
-			[/* external link */ 'a', `../util/jar/Attributes.Name.html#SEALED`, `sealed`],
+			[/* reference */ 'r', `java.Attributes.Name#SEALED`],
 			[/* text */ 't', `.
  If a `],
 			[/* inline code block */ 'i', `Package`],
@@ -69,14 +69,14 @@ DocsCollector.collect('java.lang.Package', [
 		[/* list */ 'l', [
 			[/* block */ 'b', [
 				[/* text */ 't', `The name of the package is derived from the `],
-				[/* external link */ 'a', `Class.html#getName()`, `binary names`],
+				[/* reference */ 'r', `.Class#getName()`],
 				[/* text */ 't', `
      of the classes. Since classes in a named module must be in a named package,
      the derived name is never empty.`]
 			]],
 			[/* block */ 'b', [
 				[/* text */ 't', `The package is sealed with the `],
-				[/* external link */ 'a', `module/ModuleReference.html#location()`, `module location`],
+				[/* reference */ 'r', `.ModuleReference#location()`],
 				[/* text */ 't', ` as the code source, if known.`]
 			]],
 			[/* block */ 'b', `The specification and implementation titles, versions, and vendors
@@ -103,7 +103,7 @@ DocsCollector.collect('java.lang.Package', [
 				[/* inline code block */ 'i', `""`],
 				[/* text */ 't', ` (for classes in an unnamed package)
      or derived from the `],
-				[/* external link */ 'a', `Class.html#getName()`, `binary names`],
+				[/* reference */ 'r', `.Class#getName()`],
 				[/* text */ 't', ` of the classes
      (for classes in a named package).`]
 			]],
@@ -123,18 +123,18 @@ DocsCollector.collect('java.lang.Package', [
  A `],
 			[/* inline code block */ 'i', `Package`],
 			[/* text */ 't', ` can be obtained with the `],
-			[/* reference */ 'r', `Package.getPackage(String)`],
+			[/* reference */ 'r', `#getPackage(java.lang.String)`, `Package.getPackage(String)`],
 			[/* text */ 't', ` and `],
-			[/* external link */ 'a', `ClassLoader.html#getDefinedPackage(java.lang.String)`, `ClassLoader.getDefinedPackage(String)`],
+			[/* reference */ 'r', `.ClassLoader#getDefinedPackage(java.lang.String)`],
 			[/* text */ 't', ` methods.
  Every `],
 			[/* inline code block */ 'i', `Package`],
 			[/* text */ 't', ` defined by a class loader can be obtained
  with the `],
-			[/* reference */ 'r', `Package.getPackages()`],
+			[/* reference */ 'r', `#getPackages()`, `Package.getPackages()`],
 			[/* text */ 't', ` and
  `],
-			[/* external link */ 'a', `ClassLoader.html#getDefinedPackages()`, `ClassLoader.getDefinedPackages()`],
+			[/* reference */ 'r', `.ClassLoader#getDefinedPackages()`],
 			[/* text */ 't', ` methods.`]
 		]]
 	],
@@ -234,7 +234,7 @@ DocsCollector.collect('java.lang.Package', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  Calling this method is equivalent to calling `],
-					[/* external link */ 'a', `ClassLoader.html#getPackage(java.lang.String)`, `ClassLoader.getPackage(java.lang.String)`],
+					[/* reference */ 'r', `.ClassLoader#getPackage(java.lang.String)`],
 					[/* text */ 't', `
  on a `],
 					[/* inline code block */ 'i', `ClassLoader`],
@@ -304,7 +304,7 @@ DocsCollector.collect('java.lang.Package', [
  value is an array of length 0.
 
  The difference between this method and `],
-				[/* external link */ 'a', `reflect/AnnotatedElement.html#getAnnotation(java.lang.Class)`, `AnnotatedElement.getAnnotation(Class)`],
+				[/* reference */ 'r', `.AnnotatedElement#getAnnotation(java.lang.Class)`],
 				[/* text */ 't', `
  is that this method detects if its argument is a `],
 				[/* text */ 't', `repeatable
@@ -406,7 +406,7 @@ DocsCollector.collect('java.lang.Package', [
  0.
 
  The difference between this method and `],
-					[/* external link */ 'a', `reflect/AnnotatedElement.html#getDeclaredAnnotation(java.lang.Class)`, `AnnotatedElement.getDeclaredAnnotation(Class)`],
+					[/* reference */ 'r', `.AnnotatedElement#getDeclaredAnnotation(java.lang.Class)`],
 					[/* text */ 't', ` is that this method detects if its
  argument is a `],
 					[/* text */ 't', `repeatable annotation type`],
@@ -502,7 +502,7 @@ DocsCollector.collect('java.lang.Package', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  Calling this method is equivalent to calling `],
-					[/* external link */ 'a', `ClassLoader.html#getPackages()`, `ClassLoader.getPackages()`],
+					[/* reference */ 'r', `.ClassLoader#getPackages()`],
 					[/* text */ 't', `
  on a `],
 					[/* inline code block */ 'i', `ClassLoader`],
@@ -548,7 +548,69 @@ DocsCollector.collect('java.lang.Package', [
  by the following formal grammar:
  `],
 				[/* block */ 'b', [
-					[/* dl */ 't', '']
+					[/* dl */ 'dl', [
+						[/* dt */ 'dt', [
+							[/* text */ 't', `SpecificationVersion:`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `opt`, 'sub'],
+							[/* text */ 't', `
+
+ `]
+						]],
+						[/* dt */ 'dt', [
+							[/* text */ 't', `RefinedVersion:`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* inline code block */ 'i', `.`],
+							[/* text */ 't', ` `],
+							[/* text */ 't', `Digits`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* inline code block */ 'i', `.`],
+							[/* text */ 't', ` `],
+							[/* text */ 't', `Digits RefinedVersion`],
+							[/* text */ 't', `
+
+ `]
+						]],
+						[/* dt */ 'dt', [
+							[/* text */ 't', `Digits:`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `Digit`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `Digits`],
+							[/* text */ 't', `
+
+ `]
+						]],
+						[/* dt */ 'dt', [
+							[/* text */ 't', `Digit:`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `any character for which `],
+							[/* reference */ 'r', `.Character#isDigit(char)`],
+							[/* text */ 't', ` returns `],
+							[/* inline code block */ 'i', `true`],
+							[/* text */ 't', `,
+ e.g. 0, 1, 2, ...
+ `]
+						]]
+					]]
 				]],
 				[/* block */ 'b', '']
 			],

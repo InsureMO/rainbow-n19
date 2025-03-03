@@ -5,7 +5,7 @@ DocsCollector.collect('java.util.IllegalFormatCodePointException', [
 	[/* class description */
 		[/* text */ 't', `Unchecked exception thrown when a character with an invalid Unicode code
  point as defined by `],
-		[/* external link */ 'a', `../lang/Character.html#isValidCodePoint(int)`, `Character.isValidCodePoint(int)`],
+		[/* reference */ 'r', `java.Character#isValidCodePoint(int)`],
 		[/* text */ 't', ` is passed to the
  `],
 		[/* reference */ 'r', `java.util.Formatter`],
@@ -27,7 +27,7 @@ DocsCollector.collect('java.util.IllegalFormatCodePointException', [
 			[/* constructor description */
 				[/* text */ 't', `Constructs an instance of this class with the specified illegal code
  point as defined by `],
-				[/* external link */ 'a', `../lang/Character.html#isValidCodePoint(int)`, `Character.isValidCodePoint(int)`],
+				[/* reference */ 'r', `java.Character#isValidCodePoint(int)`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -43,7 +43,7 @@ DocsCollector.collect('java.util.IllegalFormatCodePointException', [
 		[/* method */ 'getCodePoint()', [
 			[/* method description */
 				[/* text */ 't', `Returns the illegal code point as defined by `],
-				[/* external link */ 'a', `../lang/Character.html#isValidCodePoint(int)`, `Character.isValidCodePoint(int)`],
+				[/* reference */ 'r', `java.Character#isValidCodePoint(int)`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,

@@ -12,10 +12,10 @@ DocsCollector.collect('java.util.HexFormat', [
  There are two factories of `],
 			[/* inline code block */ 'i', `HexFormat`],
 			[/* text */ 't', ` with preset parameters `],
-			[/* reference */ 'r', `of()`],
+			[/* reference */ 'r', `#of()`, `of()`],
 			[/* text */ 't', ` and
  `],
-			[/* reference */ 'r', `ofDelimiter(delimiter)`],
+			[/* reference */ 'r', `#ofDelimiter(java.lang.String)`, `ofDelimiter(delimiter)`],
 			[/* text */ 't', `. For other parameter combinations
  the `],
 			[/* inline code block */ 'i', `withXXX`],
@@ -23,16 +23,16 @@ DocsCollector.collect('java.util.HexFormat', [
 			[/* inline code block */ 'i', `HexFormat`],
 			[/* text */ 't', ` modified
  `],
-			[/* reference */ 'r', `withPrefix(String)`],
+			[/* reference */ 'r', `#withPrefix(java.lang.String)`, `withPrefix(String)`],
 			[/* text */ 't', `, `],
-			[/* reference */ 'r', `withSuffix(String)`],
+			[/* reference */ 'r', `#withSuffix(java.lang.String)`, `withSuffix(String)`],
 			[/* text */ 't', `, `],
-			[/* reference */ 'r', `withDelimiter(String)`],
+			[/* reference */ 'r', `#withDelimiter(java.lang.String)`, `withDelimiter(String)`],
 			[/* text */ 't', `
  or choice of `],
-			[/* reference */ 'r', `withUpperCase()`],
+			[/* reference */ 'r', `#withUpperCase()`, `withUpperCase()`],
 			[/* text */ 't', ` or `],
-			[/* reference */ 'r', `withLowerCase()`],
+			[/* reference */ 'r', `#withLowerCase()`, `withLowerCase()`],
 			[/* text */ 't', ` parameters.
  `]
 		]],
@@ -42,12 +42,12 @@ DocsCollector.collect('java.util.HexFormat', [
 			[/* inline code block */ 'i', `toHexDigits`],
 			[/* text */ 't', `
  methods include `],
-			[/* reference */ 'r', `toHexDigits(byte)`],
+			[/* reference */ 'r', `#toHexDigits(long)`, `toHexDigits(byte)`],
 			[/* text */ 't', `, `],
-			[/* reference */ 'r', `toHexDigits(int)`],
+			[/* reference */ 'r', `#toHexDigits(long)`, `toHexDigits(int)`],
 			[/* text */ 't', `, and
  `],
-			[/* reference */ 'r', `toHexDigits(long)`],
+			[/* reference */ 'r', `#toHexDigits(long)`, `toHexDigits(long)`],
 			[/* text */ 't', `, etc. The default is to use lowercase characters `],
 			[/* inline code block */ 'i', `"0-9","a-f"`],
 			[/* text */ 't', `.
@@ -55,7 +55,7 @@ DocsCollector.collect('java.util.HexFormat', [
 			[/* inline code block */ 'i', `"0-9","A-F"`],
 			[/* text */ 't', `.
  Only the `],
-			[/* reference */ 'r', `HexFormat.isUpperCase()`],
+			[/* reference */ 'r', `#isUpperCase()`, `HexFormat.isUpperCase()`],
 			[/* text */ 't', ` parameter is
  considered; the delimiter, prefix and suffix are not used.
 
@@ -67,13 +67,13 @@ DocsCollector.collect('java.util.HexFormat', [
 			[/* inline code block */ 'i', `fromHexDigits`],
 			[/* text */ 't', `
  methods include `],
-			[/* reference */ 'r', `fromHexDigits(string)`],
+			[/* reference */ 'r', `#fromHexDigits(java.lang.CharSequence)`, `fromHexDigits(string)`],
 			[/* text */ 't', `,
  `],
-			[/* reference */ 'r', `fromHexDigitsToLong(string)`],
+			[/* reference */ 'r', `#fromHexDigitsToLong(java.lang.CharSequence)`, `fromHexDigitsToLong(string)`],
 			[/* text */ 't', `, and
  `],
-			[/* reference */ 'r', `fromHexDigit(int)`],
+			[/* reference */ 'r', `#fromHexDigit(int)`, `fromHexDigit(int)`],
 			[/* text */ 't', ` converts a single character or codepoint.
  For conversions from hexadecimal characters the digits and uppercase and lowercase
  characters in `],
@@ -91,10 +91,10 @@ DocsCollector.collect('java.util.HexFormat', [
  the `],
 			[/* inline code block */ 'i', `formatHex`],
 			[/* text */ 't', ` methods include `],
-			[/* reference */ 'r', `formatHex(byte[])`],
+			[/* reference */ 'r', `#formatHex(byte%5B%5D)`, `formatHex(byte[])`],
 			[/* text */ 't', `
  and `],
-			[/* reference */ 'r', `formatHex(Appendable, byte[])`],
+			[/* reference */ 'r', `#formatHex(A,byte%5B%5D)`, `formatHex(Appendable, byte[])`],
 			[/* text */ 't', `.
  The formatted output is a string or is appended to an `],
 			[/* reference */ 'r', `java.lang.Appendable`],
@@ -108,7 +108,7 @@ DocsCollector.collect('java.util.HexFormat', [
  uppercase or lowercase digits, and the suffix.
  A delimiter follows each formatted value, except the last.
  For conversions producing uppercase hexadecimal strings use `],
-			[/* reference */ 'r', `withUpperCase()`],
+			[/* reference */ 'r', `#withUpperCase()`, `withUpperCase()`],
 			[/* text */ 't', `.
 
  `]
@@ -119,10 +119,10 @@ DocsCollector.collect('java.util.HexFormat', [
  `],
 			[/* inline code block */ 'i', `parseHex`],
 			[/* text */ 't', ` methods include `],
-			[/* reference */ 'r', `parseHex(CharSequence)`],
+			[/* reference */ 'r', `#parseHex(java.lang.CharSequence)`, `parseHex(CharSequence)`],
 			[/* text */ 't', ` and
  `],
-			[/* reference */ 'r', `parseHex(char[], offset, length)`],
+			[/* reference */ 'r', `#parseHex(char%5B%5D,int,int)`, `parseHex(char[], offset, length)`],
 			[/* text */ 't', `.
  Each byte value is parsed from the prefix, two case insensitive hexadecimal characters,
  and the suffix. A delimiter follows each formatted value, except the last.`]
@@ -204,17 +204,17 @@ DocsCollector.collect('java.util.HexFormat', [
 				[/* text */ 't', `Returns a hexadecimal formatter with no delimiter and lowercase characters.
  The delimiter, prefix, and suffix are empty.
  The methods `],
-				[/* reference */ 'r', `withDelimiter`],
+				[/* reference */ 'r', `#withDelimiter(java.lang.String)`, `withDelimiter`],
 				[/* text */ 't', `,
  `],
-				[/* reference */ 'r', `withUpperCase`],
+				[/* reference */ 'r', `#withUpperCase()`, `withUpperCase`],
 				[/* text */ 't', `, `],
-				[/* reference */ 'r', `withLowerCase`],
+				[/* reference */ 'r', `#withLowerCase()`, `withLowerCase`],
 				[/* text */ 't', `,
  `],
-				[/* reference */ 'r', `withPrefix`],
+				[/* reference */ 'r', `#withPrefix(java.lang.String)`, `withPrefix`],
 				[/* text */ 't', `, and `],
-				[/* reference */ 'r', `withSuffix`],
+				[/* reference */ 'r', `#withSuffix(java.lang.String)`, `withSuffix`],
 				[/* text */ 't', `
  return copies of formatters with new parameters.`]
 			],
@@ -281,7 +281,7 @@ DocsCollector.collect('java.util.HexFormat', [
 				[/* text */ 't', ` value.
  Each nibble (4 bits) from most significant to least significant of the value
  is formatted as if by `],
-				[/* reference */ 'r', `toLowHexDigit(nibble)`],
+				[/* reference */ 'r', `#toLowHexDigit(int)`, `toLowHexDigit(nibble)`],
 				[/* text */ 't', `.
  The delimiter, prefix and suffix are not used.`]
 			],
@@ -306,7 +306,7 @@ DocsCollector.collect('java.util.HexFormat', [
 				[/* text */ 't', ` value.
  Each nibble (4 bits) from most significant to least significant of the value
  is formatted as if by `],
-				[/* reference */ 'r', `toLowHexDigit(nibble)`],
+				[/* reference */ 'r', `#toLowHexDigit(int)`, `toLowHexDigit(nibble)`],
 				[/* text */ 't', `.
  The delimiter, prefix and suffix are not used.`]
 			],
@@ -331,7 +331,7 @@ DocsCollector.collect('java.util.HexFormat', [
 				[/* text */ 't', ` value.
  Each nibble (4 bits) from most significant to least significant of the value
  is formatted as if by `],
-				[/* reference */ 'r', `toLowHexDigit(nibble)`],
+				[/* reference */ 'r', `#toLowHexDigit(int)`, `toLowHexDigit(nibble)`],
 				[/* text */ 't', `.
  The delimiter, prefix and suffix are not used.`]
 			],
@@ -356,7 +356,7 @@ DocsCollector.collect('java.util.HexFormat', [
 				[/* text */ 't', ` value.
  Each nibble (4 bits) from most significant to least significant of the value
  is formatted as if by `],
-				[/* reference */ 'r', `toLowHexDigit(nibble)`],
+				[/* reference */ 'r', `#toLowHexDigit(int)`, `toLowHexDigit(nibble)`],
 				[/* text */ 't', `.
  The delimiter, prefix and suffix are not used.`]
 			],
@@ -381,7 +381,7 @@ DocsCollector.collect('java.util.HexFormat', [
 				[/* text */ 't', ` value.
  Each nibble (4 bits) from most significant to least significant of the value
  is formatted as if by `],
-				[/* reference */ 'r', `toLowHexDigit(nibble)`],
+				[/* reference */ 'r', `#toLowHexDigit(int)`, `toLowHexDigit(nibble)`],
 				[/* text */ 't', `.
  The delimiter, prefix and suffix are not used.`]
 			],
@@ -402,7 +402,7 @@ DocsCollector.collect('java.util.HexFormat', [
 				[/* text */ 't', `.
  Each nibble (4 bits) from most significant to least significant of the value
  is formatted as if by `],
-				[/* reference */ 'r', `toLowHexDigit(nibble)`],
+				[/* reference */ 'r', `#toLowHexDigit(int)`, `toLowHexDigit(nibble)`],
 				[/* text */ 't', `.
  The hexadecimal characters are appended in one or more calls to the
  `],
@@ -436,7 +436,7 @@ DocsCollector.collect('java.util.HexFormat', [
 				[/* text */ 't', ` value.
  Each nibble (4 bits) from most significant to least significant of the value
  is formatted as if by `],
-				[/* reference */ 'r', `toLowHexDigit(nibble)`],
+				[/* reference */ 'r', `#toLowHexDigit(int)`, `toLowHexDigit(nibble)`],
 				[/* text */ 't', `.
  The delimiter, prefix and suffix are not used.`]
 			],
@@ -468,13 +468,13 @@ DocsCollector.collect('java.util.HexFormat', [
 				[/* text */ 't', `Returns a hexadecimal string formatted from a byte array.
  Each byte value is formatted as the prefix, two hexadecimal characters
  `],
-				[/* reference */ 'r', `selected from`],
+				[/* reference */ 'r', `#isUpperCase()`, `selected from`],
 				[/* text */ 't', ` uppercase or lowercase digits, and the suffix.
  A delimiter follows each formatted value, except the last.
 
  The behavior is equivalent to
  `],
-				[/* reference */ 'r', `formatHex(bytes, 0, bytes.length))`],
+				[/* reference */ 'r', `#formatHex(byte%5B%5D,int,int)`, `formatHex(bytes, 0, bytes.length))`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -494,7 +494,7 @@ DocsCollector.collect('java.util.HexFormat', [
 				[/* text */ 't', `.
  Each byte value is formatted as the prefix, two hexadecimal characters
  `],
-				[/* reference */ 'r', `selected from`],
+				[/* reference */ 'r', `#isUpperCase()`, `selected from`],
 				[/* text */ 't', ` uppercase or lowercase digits, and the suffix.
  A delimiter follows each formatted value, except the last.
  The formatted hexadecimal strings are appended in zero or more calls to the `],
@@ -528,7 +528,7 @@ DocsCollector.collect('java.util.HexFormat', [
 				[/* text */ 't', `.
  Each byte value is formatted as the prefix, two hexadecimal characters
  `],
-				[/* reference */ 'r', `selected from`],
+				[/* reference */ 'r', `#isUpperCase()`, `selected from`],
 				[/* text */ 't', ` uppercase or lowercase digits, and the suffix.
  A delimiter follows each formatted value, except the last.
  The formatted hexadecimal strings are appended in zero or more calls to the `],
@@ -569,7 +569,7 @@ DocsCollector.collect('java.util.HexFormat', [
 				[/* text */ 't', `Returns a hexadecimal string formatted from a byte array range.
  Each byte value is formatted as the prefix, two hexadecimal characters
  `],
-				[/* reference */ 'r', `selected from`],
+				[/* reference */ 'r', `#isUpperCase()`, `selected from`],
 				[/* text */ 't', ` uppercase or lowercase digits, and the suffix.
  A delimiter follows each formatted value, except the last.`]
 			],
@@ -597,7 +597,7 @@ DocsCollector.collect('java.util.HexFormat', [
 			[/* method description */
 				[/* text */ 't', `Returns the hexadecimal character for the high 4 bits of the value considering it to be a byte.
  If the parameter `],
-				[/* reference */ 'r', `isUpperCase()`],
+				[/* reference */ 'r', `#isUpperCase()`, `isUpperCase()`],
 				[/* text */ 't', ` is `],
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` the
@@ -633,7 +633,7 @@ DocsCollector.collect('java.util.HexFormat', [
 			[/* method description */
 				[/* text */ 't', `Returns the hexadecimal character for the low 4 bits of the value considering it to be a byte.
  If the parameter `],
-				[/* reference */ 'r', `isUpperCase()`],
+				[/* reference */ 'r', `#isUpperCase()`, `isUpperCase()`],
 				[/* text */ 't', ` is `],
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` the
@@ -775,7 +775,7 @@ DocsCollector.collect('java.util.HexFormat', [
 				[/* text */ 't', `, exclusive,
  are parsed from most significant to least significant
  using `],
-				[/* reference */ 'r', `fromHexDigit(int)`],
+				[/* reference */ 'r', `#fromHexDigit(int)`, `fromHexDigit(int)`],
 				[/* text */ 't', ` to form an unsigned value.
  The value is zero extended to 32 bits and is returned as an `],
 				[/* inline code block */ 'i', `int`],
@@ -814,7 +814,7 @@ DocsCollector.collect('java.util.HexFormat', [
 				[/* text */ 't', ` value parsed from a string of up to eight hexadecimal characters.
  The hexadecimal characters are parsed from most significant to least significant
  using `],
-				[/* reference */ 'r', `fromHexDigit(int)`],
+				[/* reference */ 'r', `#fromHexDigit(int)`, `fromHexDigit(int)`],
 				[/* text */ 't', ` to form an unsigned value.
  The value is zero extended to 32 bits and is returned as an `],
 				[/* inline code block */ 'i', `int`],
@@ -896,7 +896,7 @@ DocsCollector.collect('java.util.HexFormat', [
 				[/* text */ 't', `, exclusive,
  are parsed from most significant to least significant
  using `],
-				[/* reference */ 'r', `fromHexDigit(int)`],
+				[/* reference */ 'r', `#fromHexDigit(int)`, `fromHexDigit(int)`],
 				[/* text */ 't', ` to form an unsigned value.
  The value is zero extended to 64 bits and is returned as a `],
 				[/* inline code block */ 'i', `long`],
@@ -933,7 +933,7 @@ DocsCollector.collect('java.util.HexFormat', [
 				[/* text */ 't', `Returns the long value parsed from a string of up to sixteen hexadecimal characters.
  The hexadecimal characters are parsed from most significant to least significant
  using `],
-				[/* reference */ 'r', `fromHexDigit(int)`],
+				[/* reference */ 'r', `#fromHexDigit(int)`, `fromHexDigit(int)`],
 				[/* text */ 't', ` to form an unsigned value.
  The value is zero extended to 64 bits and is returned as a `],
 				[/* inline code block */ 'i', `long`],
@@ -959,17 +959,17 @@ DocsCollector.collect('java.util.HexFormat', [
 				[/* text */ 't', `Returns a hexadecimal formatter with the delimiter and lowercase characters.
  The prefix and suffix are empty.
  The methods `],
-				[/* reference */ 'r', `withDelimiter`],
+				[/* reference */ 'r', `#withDelimiter(java.lang.String)`, `withDelimiter`],
 				[/* text */ 't', `,
  `],
-				[/* reference */ 'r', `withUpperCase`],
+				[/* reference */ 'r', `#withUpperCase()`, `withUpperCase`],
 				[/* text */ 't', `, `],
-				[/* reference */ 'r', `withLowerCase`],
+				[/* reference */ 'r', `#withLowerCase()`, `withLowerCase`],
 				[/* text */ 't', `,
  `],
-				[/* reference */ 'r', `withPrefix`],
+				[/* reference */ 'r', `#withPrefix(java.lang.String)`, `withPrefix`],
 				[/* text */ 't', `, and `],
-				[/* reference */ 'r', `withSuffix`],
+				[/* reference */ 'r', `#withSuffix(java.lang.String)`, `withSuffix`],
 				[/* text */ 't', `
  return copies of formatters with new parameters.`]
 			],

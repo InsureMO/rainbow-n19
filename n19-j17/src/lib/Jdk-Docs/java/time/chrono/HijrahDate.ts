@@ -31,7 +31,7 @@ DocsCollector.collect('java.time.chrono.HijrahDate', [
  To use a different Hijrah variant, its HijrahChronology can be used
  to create new HijrahDate instances.
  Alternatively, the `],
-			[/* reference */ 'r', `withVariant(java.time.chrono.HijrahChronology)`],
+			[/* reference */ 'r', `#withVariant(java.time.chrono.HijrahChronology)`, `withVariant(java.time.chrono.HijrahChronology)`],
 			[/* text */ 't', ` method can be used to convert
  to a new HijrahChronology.
  `]
@@ -39,11 +39,11 @@ DocsCollector.collect('java.time.chrono.HijrahDate', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  This is a `],
-			[/* external link */ 'a', `../../../../java.base/java/lang/doc-files/ValueBased.html`, `value-based`],
+			[/* text */ 't', `value-based`],
 			[/* text */ 't', `
  class; programmers should treat instances that are
  `],
-			[/* reference */ 'r', `equal`],
+			[/* reference */ 'r', `#equals(java.lang.Object)`, `equal`],
 			[/* text */ 't', ` as interchangeable and should not
  use instances for synchronization, or unpredictable behavior may
  occur. For example, in a future release, synchronization may fail.
@@ -75,7 +75,7 @@ DocsCollector.collect('java.time.chrono.HijrahDate', [
 					[/* inline code block */ 'i', `TemporalAccessor`],
 					[/* text */ 't', ` instances, including dates
  in two different chronologies, use `],
-					[/* external link */ 'a', `../temporal/ChronoField.html#EPOCH_DAY`, `ChronoField.EPOCH_DAY`],
+					[/* reference */ 'r', `java.ChronoField#EPOCH_DAY`],
 					[/* text */ 't', ` as a comparator.`]
 				]]
 			],
@@ -179,7 +179,7 @@ DocsCollector.collect('java.time.chrono.HijrahDate', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The conversion typically uses the `],
-					[/* external link */ 'a', `../temporal/ChronoField.html#EPOCH_DAY`, `EPOCH_DAY`],
+					[/* reference */ 'r', `java.ChronoField#EPOCH_DAY`],
 					[/* text */ 't', `
  field, which is standardized across calendar systems.
  `]
@@ -220,7 +220,7 @@ DocsCollector.collect('java.time.chrono.HijrahDate', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This will query the `],
-					[/* external link */ 'a', `../Clock.html#system(java.time.ZoneId)`, `system clock`],
+					[/* reference */ 'r', `java.Clock#system(java.time.ZoneId)`],
 					[/* text */ 't', ` to obtain the current date.
  Specifying the time-zone avoids dependence on the default time-zone.
  `]
@@ -249,7 +249,7 @@ DocsCollector.collect('java.time.chrono.HijrahDate', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This will query the `],
-					[/* external link */ 'a', `../Clock.html#systemDefaultZone()`, `system clock`],
+					[/* reference */ 'r', `java.Clock#systemDefaultZone()`],
 					[/* text */ 't', ` in the default
  time-zone to obtain the current date.
  `]

@@ -217,7 +217,7 @@ not permitted.)`]
 		[/* method */ 'sleep(long)', [
 			[/* method description */
 				[/* text */ 't', `Performs a `],
-				[/* external link */ 'a', `../../lang/Thread.html#sleep(long,int)`, `Thread.sleep`],
+				[/* reference */ 'r', `java.util.Thread#sleep(long,int)`],
 				[/* text */ 't', ` using
  this time unit.
  This is a convenience method that converts time arguments into the
@@ -242,7 +242,7 @@ not permitted.)`]
 			[/* method description */
 				[/* text */ 't', `Equivalent to
  `],
-				[/* reference */ 'r', `MILLISECONDS.convert(duration, this)`],
+				[/* reference */ 'r', `#convert(long,java.util.concurrent.TimeUnit)`, `MILLISECONDS.convert(duration, this)`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -265,7 +265,7 @@ not permitted.)`]
 			[/* method description */
 				[/* text */ 't', `Equivalent to
  `],
-				[/* reference */ 'r', `NANOSECONDS.convert(duration, this)`],
+				[/* reference */ 'r', `#convert(long,java.util.concurrent.TimeUnit)`, `NANOSECONDS.convert(duration, this)`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -288,7 +288,7 @@ not permitted.)`]
 			[/* method description */
 				[/* text */ 't', `Equivalent to
  `],
-				[/* reference */ 'r', `MICROSECONDS.convert(duration, this)`],
+				[/* reference */ 'r', `#convert(long,java.util.concurrent.TimeUnit)`, `MICROSECONDS.convert(duration, this)`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -311,7 +311,7 @@ not permitted.)`]
 			[/* method description */
 				[/* text */ 't', `Equivalent to
  `],
-				[/* reference */ 'r', `SECONDS.convert(duration, this)`],
+				[/* reference */ 'r', `#convert(long,java.util.concurrent.TimeUnit)`, `SECONDS.convert(duration, this)`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -334,7 +334,7 @@ not permitted.)`]
 			[/* method description */
 				[/* text */ 't', `Equivalent to
  `],
-				[/* reference */ 'r', `MINUTES.convert(duration, this)`],
+				[/* reference */ 'r', `#convert(long,java.util.concurrent.TimeUnit)`, `MINUTES.convert(duration, this)`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -357,7 +357,7 @@ not permitted.)`]
 			[/* method description */
 				[/* text */ 't', `Equivalent to
  `],
-				[/* reference */ 'r', `HOURS.convert(duration, this)`],
+				[/* reference */ 'r', `#convert(long,java.util.concurrent.TimeUnit)`, `HOURS.convert(duration, this)`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -380,7 +380,7 @@ not permitted.)`]
 			[/* method description */
 				[/* text */ 't', `Equivalent to
  `],
-				[/* reference */ 'r', `DAYS.convert(duration, this)`],
+				[/* reference */ 'r', `#convert(long,java.util.concurrent.TimeUnit)`, `DAYS.convert(duration, this)`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -396,7 +396,7 @@ not permitted.)`]
 		[/* method */ 'timedWait(java.lang.Object,long)', [
 			[/* method description */
 				[/* text */ 't', `Performs a timed `],
-				[/* external link */ 'a', `../../lang/Object.html#wait(long,int)`, `Object.wait`],
+				[/* reference */ 'r', `java.util.Object#wait(long,int)`],
 				[/* text */ 't', `
  using this time unit.
  This is a convenience method that converts timeout arguments
@@ -410,7 +410,7 @@ not permitted.)`]
 					[/* inline code block */ 'i', `poll`],
 					[/* text */ 't', ` method
  (see `],
-					[/* external link */ 'a', `BlockingQueue.html#poll(long,java.util.concurrent.TimeUnit)`, `BlockingQueue.poll`],
+					[/* reference */ 'r', `.BlockingQueue#poll(long,java.util.concurrent.TimeUnit)`],
 					[/* text */ 't', `)
  using:
 
@@ -448,7 +448,7 @@ not permitted.)`]
 		[/* method */ 'timedJoin(java.lang.Thread,long)', [
 			[/* method description */
 				[/* text */ 't', `Performs a timed `],
-				[/* external link */ 'a', `../../lang/Thread.html#join(long,int)`, `Thread.join`],
+				[/* reference */ 'r', `java.util.Thread#join(long,int)`],
 				[/* text */ 't', `
  using this time unit.
  This is a convenience method that converts time arguments into the

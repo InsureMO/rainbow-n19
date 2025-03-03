@@ -19,10 +19,10 @@ DocsCollector.collect('java.util.function.LongSupplier', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
-			[/* external link */ 'a', `package-summary.html`, `functional interface`],
+			[/* reference */ 'r', `.package-summary`],
 			[/* text */ 't', `
  whose functional method is `],
-			[/* reference */ 'r', `getAsLong()`],
+			[/* reference */ 'r', `#getAsLong()`, `getAsLong()`],
 			[/* text */ 't', `.`]
 		]]
 	],

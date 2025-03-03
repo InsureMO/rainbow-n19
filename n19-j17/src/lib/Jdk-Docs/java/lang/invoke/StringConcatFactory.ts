@@ -55,7 +55,7 @@ DocsCollector.collect('java.lang.invoke.StringConcatFactory', [
 				[/* inline code block */ 'i', `MethodHandle`],
 				[/* text */ 't', ` is invoked with the static arguments and any additional dynamic
  arguments provided on invocation, as if by `],
-				[/* external link */ 'a', `MethodHandle.html#invoke(java.lang.Object...)`, `MethodHandle.invoke(Object...)`],
+				[/* reference */ 'r', `.MethodHandle#invoke(java.lang.Object...)`],
 				[/* text */ 't', `.`]
 			]]
 		]],
@@ -63,10 +63,10 @@ DocsCollector.collect('java.lang.invoke.StringConcatFactory', [
 		[/* block */ 'b', [
 			[/* text */ 't', ` This class provides two forms of linkage methods: a simple version
  (`],
-			[/* reference */ 'r', `makeConcat(java.lang.invoke.MethodHandles.Lookup, String, MethodType)`],
+			[/* reference */ 'r', `#makeConcat(java.lang.invoke.MethodHandles.Lookup,java.lang.String,java.lang.invoke.MethodType)`, `makeConcat(java.lang.invoke.MethodHandles.Lookup, String, MethodType)`],
 			[/* text */ 't', `) using only the dynamic arguments, and an advanced version
  (`],
-			[/* reference */ 'r', `makeConcatWithConstants(java.lang.invoke.MethodHandles.Lookup, String, MethodType, String, Object...)`],
+			[/* reference */ 'r', `#makeConcatWithConstants(java.lang.invoke.MethodHandles.Lookup,java.lang.String,java.lang.invoke.MethodType,java.lang.String,java.lang.Object...)`, `makeConcatWithConstants(java.lang.invoke.MethodHandles.Lookup, String, MethodType, String, Object...)`],
 			[/* text */ 't', ` using the advanced forms of capturing
  the constant arguments. The advanced strategy can produce marginally better
  invocation bytecode, at the expense of exploding the number of shapes of
@@ -115,16 +115,7 @@ DocsCollector.collect('java.lang.invoke.StringConcatFactory', [
      and combined from left to right.`]
 				]],
 				[/* block */ 'b', ''],
-				[/* block */ 'b', [
-					[/* text */ 't', `The concatenation `],
-					[/* text */ 't', `recipe`],
-					[/* text */ 't', ` is a String description for the way to
- construct a concatenated String from the arguments and constants. The
- recipe is processed from left to right, and each character represents an
- input to concatenation. Recipe characters mean:
-
- `]
-				]],
+				[/* block */ 'b', `recipe`],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* text */ 't', `\\1 (Unicode point 0001)`],
@@ -210,7 +201,7 @@ DocsCollector.collect('java.lang.invoke.StringConcatFactory', [
                   privileges of the caller. Specifically, the lookup
                   context must have
                   `],
-					[/* external link */ 'a', `MethodHandles.Lookup.html#hasFullPrivilegeAccess()`, `full privilege access`],
+					[/* reference */ 'r', `.MethodHandles.Lookup#hasFullPrivilegeAccess()`],
 					[/* text */ 't', `.
                   When used with `],
 					[/* inline code block */ 'i', `invokedynamic`],
@@ -351,7 +342,7 @@ DocsCollector.collect('java.lang.invoke.StringConcatFactory', [
                  privileges of the caller. Specifically, the lookup
                  context must have
                  `],
-					[/* external link */ 'a', `MethodHandles.Lookup.html#hasFullPrivilegeAccess()`, `full privilege access`],
+					[/* reference */ 'r', `.MethodHandles.Lookup#hasFullPrivilegeAccess()`],
 					[/* text */ 't', `.
                  When used with `],
 					[/* inline code block */ 'i', `invokedynamic`],

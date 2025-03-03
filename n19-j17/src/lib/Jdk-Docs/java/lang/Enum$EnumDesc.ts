@@ -4,7 +4,7 @@ import {DocsCollector} from '../../DocsCollector';
 DocsCollector.collect('java.lang.Enum$EnumDesc', [
 	[/* class description */
 		[/* text */ 't', `A `],
-		[/* external link */ 'a', `../../../java.base/java/lang/constant/package-summary.html#nominal`, `nominal descriptor`],
+		[/* text */ 't', `nominal descriptor`],
 		[/* text */ 't', ` for an
  `],
 		[/* inline code block */ 'i', `enum`],

@@ -154,7 +154,7 @@ DocsCollector.collect('java.util.Base64$Encoder', [
 					[/* text */ 't', ` This method first encodes all input bytes into a base64 encoded
  byte array and then constructs a new String by using the encoded byte
  array and the `],
-					[/* external link */ 'a', `../nio/charset/StandardCharsets.html#ISO_8859_1`, `ISO-8859-1`],
+					[/* reference */ 'r', `java.StandardCharsets#ISO_8859_1`],
 					[/* text */ 't', ` charset.
 
  `]

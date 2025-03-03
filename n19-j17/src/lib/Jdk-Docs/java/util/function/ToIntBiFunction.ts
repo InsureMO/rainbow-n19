@@ -14,10 +14,10 @@ DocsCollector.collect('java.util.function.ToIntBiFunction', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
-			[/* external link */ 'a', `package-summary.html`, `functional interface`],
+			[/* reference */ 'r', `.package-summary`],
 			[/* text */ 't', `
  whose functional method is `],
-			[/* reference */ 'r', `applyAsInt(Object, Object)`],
+			[/* reference */ 'r', `#applyAsInt(T,U)`, `applyAsInt(Object, Object)`],
 			[/* text */ 't', `.`]
 		]]
 	],

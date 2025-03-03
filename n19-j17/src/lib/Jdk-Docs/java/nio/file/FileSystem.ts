@@ -9,7 +9,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The default file system, obtained by invoking the `],
-			[/* external link */ 'a', `FileSystems.html#getDefault()`, `FileSystems.getDefault`],
+			[/* reference */ 'r', `.FileSystems#getDefault()`],
 			[/* text */ 't', ` method, provides access to the file system that is
  accessible to the Java virtual machine. The `],
 			[/* reference */ 'r', `java.nio.file.FileSystems`],
@@ -26,7 +26,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The `],
-					[/* reference */ 'r', `getPath`],
+					[/* reference */ 'r', `#getPath(java.lang.String,java.lang.String...)`, `getPath`],
 					[/* text */ 't', ` method converts a system dependent
      `],
 					[/* text */ 't', `path string`],
@@ -39,7 +39,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The `],
-					[/* reference */ 'r', `getPathMatcher`],
+					[/* reference */ 'r', `#getPathMatcher(java.lang.String)`, `getPathMatcher`],
 					[/* text */ 't', ` method is used
      to create a `],
 					[/* reference */ 'r', `java.nio.file.PathMatcher`],
@@ -50,7 +50,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The `],
-					[/* reference */ 'r', `getFileStores`],
+					[/* reference */ 'r', `#getFileStores()`, `getFileStores`],
 					[/* text */ 't', ` method returns an iterator
      over the underlying `],
 					[/* reference */ 'r', `java.nio.file.FileStore`],
@@ -60,7 +60,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The `],
-					[/* reference */ 'r', `getUserPrincipalLookupService`],
+					[/* reference */ 'r', `#getUserPrincipalLookupService()`, `getUserPrincipalLookupService`],
 					[/* text */ 't', `
      method returns the `],
 					[/* reference */ 'r', `java.nio.file.attribute.UserPrincipalLookupService`],
@@ -71,7 +71,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The `],
-					[/* reference */ 'r', `newWatchService`],
+					[/* reference */ 'r', `#newWatchService()`, `newWatchService`],
 					[/* text */ 't', ` method creates a
      `],
 					[/* reference */ 'r', `java.nio.file.WatchService`],
@@ -86,7 +86,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
  hierarchy of files with one top-level root directory. In other cases it may
  have several distinct file hierarchies, each with its own top-level root
  directory. The `],
-			[/* reference */ 'r', `getRootDirectories`],
+			[/* reference */ 'r', `#getRootDirectories()`, `getRootDirectories`],
 			[/* text */ 't', ` method may be
  used to iterate over the root directories in the file system. A file system
  is typically composed of one or more underlying `],
@@ -103,7 +103,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 		[/* block */ 'b', [
 			[/* text */ 't', ` A file system is open upon creation and can be closed by invoking its
  `],
-			[/* reference */ 'r', `close`],
+			[/* reference */ 'r', `#close()`, `close`],
 			[/* text */ 't', ` method. Once closed, any further attempt to access
  objects in the file system cause `],
 			[/* reference */ 'r', `java.nio.file.ClosedFileSystemException`],
@@ -124,7 +124,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 			[/* inline code block */ 'i', `FileSystem`],
 			[/* text */ 't', ` is created and can be tested by invoking
  its `],
-			[/* reference */ 'r', `isReadOnly`],
+			[/* reference */ 'r', `#isReadOnly()`, `isReadOnly`],
 			[/* text */ 't', ` method. Attempts to write to file stores
  by means of an object associated with a read-only file system throws `],
 			[/* reference */ 'r', `java.nio.file.ReadOnlyFileSystemException`],
@@ -134,7 +134,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` File systems are safe for use by multiple concurrent threads. The `],
-			[/* reference */ 'r', `close`],
+			[/* reference */ 'r', `#close()`, `close`],
 			[/* text */ 't', ` method may be invoked at any time to close a file system but
  whether a file system is `],
 			[/* text */ 't', `asynchronously closeable`],
@@ -209,7 +209,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 					[/* reference */ 'r', `java.nio.file.WatchService`],
 					[/* text */ 't', `, and other closeable objects associated
  with this file system. The `],
-					[/* external link */ 'a', `FileSystems.html#getDefault()`, `default`],
+					[/* reference */ 'r', `.FileSystems#getDefault()`],
 					[/* text */ 't', ` file
  system cannot be closed.`]
 				]]
@@ -247,7 +247,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 				[/* text */ 't', `) and is joined to form a path string.
  The details as to how the Strings are joined is provider specific but
  typically they will be joined using the `],
-				[/* reference */ 'r', `name-separator`],
+				[/* reference */ 'r', `#getSeparator()`, `name-separator`],
 				[/* text */ 't', ` as the separator. For example, if the name separator is
  "`],
 				[/* inline code block */ 'i', `/`],
@@ -304,7 +304,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 					[/* text */ 't', ` when the path string
  cannot be converted to a path. Where possible, and where applicable,
  the exception is created with an `],
-					[/* external link */ 'a', `InvalidPathException.html#getIndex()`, `index`],
+					[/* reference */ 'r', `.InvalidPathException#getIndex()`],
 					[/* text */ 't', ` value indicating the first position in the `],
 					[/* inline code block */ 'i', `path`],
 					[/* text */ 't', ` parameter
@@ -354,7 +354,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 					[/* text */ 't', `default`],
 					[/* text */ 't', ` name separator.
  This separator is used when creating path strings by invoking the `],
-					[/* external link */ 'a', `Path.html#toString()`, `toString()`],
+					[/* reference */ 'r', `.Path#toString()`],
 					[/* text */ 't', ` method.
 
  `]
@@ -362,7 +362,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` In the case of the default provider, this method returns the same
  separator as `],
-					[/* external link */ 'a', `../../io/File.html#separator`, `File.separator`],
+					[/* reference */ 'r', `java.nio.File#separator`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -392,7 +392,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 					[/* text */ 't', ` When a security manager is installed, it is invoked to check access
  to the each root directory. If denied, the root directory is not returned
  by the iterator. In the case of the default provider, the `],
-					[/* external link */ 'a', `../../lang/SecurityManager.html#checkRead(java.lang.String)`, `SecurityManager.checkRead(String)`],
+					[/* reference */ 'r', `java.nio.SecurityManager#checkRead(java.lang.String)`],
 					[/* text */ 't', ` method is invoked to check read access
  to each root directory. It is system dependent if the permission checks
  are done when the iterator is obtained or during iteration.`]
@@ -427,7 +427,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 					[/* text */ 't', `. If denied, then
  no file stores are returned by the iterator. In addition, the security
  manager's `],
-					[/* external link */ 'a', `../../lang/SecurityManager.html#checkRead(java.lang.String)`, `SecurityManager.checkRead(String)`],
+					[/* reference */ 'r', `java.nio.SecurityManager#checkRead(java.lang.String)`],
 					[/* text */ 't', ` method is invoked to
  check read access to the file store's `],
 					[/* text */ 't', `top-most`],
@@ -438,12 +438,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 
  `]
 				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `Usage Example:`],
-					[/* text */ 't', `
- Suppose we want to print the space usage for all file stores:
- `]
-				]],
+				[/* block */ 'b', `Usage Example:`],
 				[/* code block */ 'c', `     for (FileStore store: FileSystems.getDefault().getFileStores()) {
          long total = store.getTotalSpace() / 1024;
          long used = (store.getTotalSpace() - store.getUnallocatedSpace()) / 1024;
@@ -462,7 +457,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 		[/* method */ 'supportedFileAttributeViews()', [
 			[/* method description */
 				[/* text */ 't', `Returns the set of the `],
-				[/* external link */ 'a', `attribute/AttributeView.html#name()`, `names`],
+				[/* reference */ 'r', `.AttributeView#name()`],
 				[/* text */ 't', ` of the file
  attribute views supported by this `],
 				[/* inline code block */ 'i', `FileSystem`],
@@ -479,7 +474,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The `],
-					[/* external link */ 'a', `FileStore.html#supportsFileAttributeView(java.lang.String)`, `supportsFileAttributeView(String)`],
+					[/* reference */ 'r', `.FileStore#supportsFileAttributeView(java.lang.String)`],
 					[/* text */ 't', ` method may be used to test if an
  underlying `],
 					[/* reference */ 'r', `java.nio.file.FileStore`],
@@ -548,7 +543,107 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 
  `]
 				]],
-				[/* table */ 't', ''],
+				[/* table */ 'tbl',
+					[/* caption */ 'tc'],
+					[/* table header */ 'th', [
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `Example
+   `]
+							]],
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `Description
+ `]
+							]]
+						]]
+					]],
+					[/* table body */ 'tb', [
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `*.java`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `Matches a path that represents a file name ending in `],
+								[/* inline code block */ 'i', `.java`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `*.*`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `Matches file names containing a dot`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `*.{java,class}`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `Matches file names ending with `],
+								[/* inline code block */ 'i', `.java`],
+								[/* text */ 't', ` or `],
+								[/* inline code block */ 'i', `.class`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `foo.?`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `Matches file names starting with `],
+								[/* inline code block */ 'i', `foo.`],
+								[/* text */ 't', ` and a single
+   character extension`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `/home/*/*`],
+								[/* text */ 't', `
+   `]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `Matches `],
+								[/* inline code block */ 'i', `/home/gus/data`],
+								[/* text */ 't', ` on UNIX platforms`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `/home/**`],
+								[/* text */ 't', `
+   `]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `Matches `],
+								[/* inline code block */ 'i', `/home/gus`],
+								[/* text */ 't', ` and
+   `],
+								[/* inline code block */ 'i', `/home/gus/data`],
+								[/* text */ 't', ` on UNIX platforms`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `C:\\\\*`],
+								[/* text */ 't', `
+   `]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', `Matches `],
+								[/* inline code block */ 'i', `C:\\foo`],
+								[/* text */ 't', ` and `],
+								[/* inline code block */ 'i', `C:\\bar`],
+								[/* text */ 't', ` on the Windows
+   platform (note that the backslash is escaped; as a string literal in the
+   Java Language the pattern would be `],
+								[/* inline code block */ 'i', `"C:\\\\\\\\*"`],
+								[/* text */ 't', `) `]
+							]]
+						]]
+					]],
+				],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', ` The following rules are used to interpret glob patterns:
 
@@ -561,7 +656,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 							[/* text */ 't', ` character matches zero or more `],
 							[/* reference */ 'r', `java.lang.Character`],
 							[/* text */ 't', ` of a `],
-							[/* external link */ 'a', `Path.html#getName(int)`, `name`],
+							[/* reference */ 'r', `.Path#getName(int)`],
 							[/* text */ 't', ` component without
    crossing directory boundaries. `]
 						]]
@@ -692,7 +787,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 							[/* inline code block */ 'i', `".login"`],
 							[/* text */ 't', `.
    The `],
-							[/* external link */ 'a', `Files.html#isHidden(java.nio.file.Path)`, `Files.isHidden(java.nio.file.Path)`],
+							[/* reference */ 'r', `.Files#isHidden(java.nio.file.Path)`],
 							[/* text */ 't', ` method may be used to test whether a file
    is considered hidden.
    `]
@@ -702,14 +797,14 @@ DocsCollector.collect('java.nio.file.FileSystem', [
 						[/* block */ 'b', [
 							[/* text */ 't', ` All other characters match themselves in an implementation
    dependent manner. This includes characters representing any `],
-							[/* reference */ 'r', `name-separators`],
+							[/* reference */ 'r', `#getSeparator()`, `name-separators`],
 							[/* text */ 't', `. `]
 						]]
 					]],
 					[/* block */ 'b', [
 						[/* block */ 'b', [
 							[/* text */ 't', ` The matching of `],
-							[/* external link */ 'a', `Path.html#getRoot()`, `root`],
+							[/* reference */ 'r', `.Path#getRoot()`],
 							[/* text */ 't', ` components is highly
    implementation-dependent and is not specified. `]
 						]]
@@ -763,12 +858,7 @@ DocsCollector.collect('java.nio.file.FileSystem', [
  lookup user or group names.
 
  `],
-				[/* block */ 'b', [
-					[/* text */ 't', `Usage Example:`],
-					[/* text */ 't', `
- Suppose we want to make "joe" the owner of a file:
- `]
-				]],
+				[/* block */ 'b', `Usage Example:`],
 				[/* code block */ 'c', `     UserPrincipalLookupService lookupService = FileSystems.getDefault().getUserPrincipalLookupService();
      Files.setOwner(path, lookupService.lookupPrincipalByName("joe"));
  `],

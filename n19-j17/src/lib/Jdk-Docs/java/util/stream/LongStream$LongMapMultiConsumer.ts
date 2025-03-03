@@ -8,17 +8,17 @@ DocsCollector.collect('java.util.stream.LongStream$LongMapMultiConsumer', [
 		[/* text */ 't', `-valued argument
  and a LongConsumer, and returns no result. This functional interface is
  used by `],
-		[/* external link */ 'a', `LongStream.html#mapMulti(java.util.stream.LongStream.LongMapMultiConsumer)`, `LongStream.mapMulti`],
+		[/* reference */ 'r', `.LongStream#mapMulti(java.util.stream.LongStream.LongMapMultiConsumer)`],
 		[/* text */ 't', `
  to replace a long value with zero or more long values.
 
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
-			[/* external link */ 'a', `../function/package-summary.html`, `functional interface`],
+			[/* text */ 't', `functional interface`],
 			[/* text */ 't', `
  whose functional method is `],
-			[/* reference */ 'r', `accept(long, LongConsumer)`],
+			[/* reference */ 'r', `#accept(long,java.util.function.LongConsumer)`, `accept(long, LongConsumer)`],
 			[/* text */ 't', `.`]
 		]]
 	],

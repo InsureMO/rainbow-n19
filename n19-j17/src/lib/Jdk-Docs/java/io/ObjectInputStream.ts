@@ -11,8 +11,12 @@ DocsCollector.collect('java.io.ObjectInputStream', [
 			[/* text */ 't', `Warning: Deserialization of untrusted data is inherently dangerous
  and should be avoided. Untrusted data should be carefully validated according to the
  "Serialization and Deserialization" section of the
- <a href="https://docs.oracle.com/pls/topic/lookup?ctx=javase17&amp;id=secure_coding_guidelines_javase">Secure Coding Guidelines for Java SE</a>.
- <a href="https://docs.oracle.com/pls/topic/lookup?ctx=javase17&amp;id=serialization_filter_guide">Serialization Filtering</a> describes best
+ `],
+			[/* external link */ 'a', `https://docs.oracle.com/pls/topic/lookup?ctx=javase17&id=secure_coding_guidelines_javase`, `Secure Coding Guidelines for Java SE`],
+			[/* text */ 't', `.
+ `],
+			[/* external link */ 'a', `https://docs.oracle.com/pls/topic/lookup?ctx=javase17&id=serialization_filter_guide`, `Serialization Filtering`],
+			[/* text */ 't', ` describes best
  practices for defensive use of serial filters.
  `]
 		]],
@@ -33,10 +37,10 @@ DocsCollector.collect('java.io.ObjectInputStream', [
 			[/* text */ 't', `
  and every object read from the stream can be checked.
  The `],
-			[/* reference */ 'r', `ObjectInputStream constructors`],
+			[/* reference */ 'r', `#%3Cinit%3E()`, `ObjectInputStream constructors`],
 			[/* text */ 't', ` invoke the filter factory
  to select the initial filter which may be updated or replaced by `],
-			[/* reference */ 'r', `setObjectInputFilter(java.io.ObjectInputFilter)`],
+			[/* reference */ 'r', `#setObjectInputFilter(java.io.ObjectInputFilter)`, `setObjectInputFilter(java.io.ObjectInputFilter)`],
 			[/* text */ 't', `.
  `]
 		]],
@@ -237,7 +241,7 @@ DocsCollector.collect('java.io.ObjectInputStream', [
  to construct the record object. Certain serialization-related methods, such
  as readObject and writeObject, are ignored for serializable records. See
  `],
-			[/* external link */ 'a', `../../../../specs/serialization/serial-arch.html#serialization-of-records`, `Java Object Serialization Specification, Section 1.13, "Serialization of Records"`],
+			[/* text */ 't', `Java Object Serialization Specification, Section 1.13, "Serialization of Records"`],
 			[/* text */ 't', ` for additional information.`]
 		]]
 	],
@@ -254,12 +258,12 @@ DocsCollector.collect('java.io.ObjectInputStream', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The constructor initializes the deserialization filter to the filter returned
  by invoking the `],
-					[/* external link */ 'a', `ObjectInputFilter.Config.html#getSerialFilterFactory()`, `ObjectInputFilter.Config.getSerialFilterFactory()`],
+					[/* reference */ 'r', `.ObjectInputFilter.Config#getSerialFilterFactory()`],
 					[/* text */ 't', ` with `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` for the current filter
  and the `],
-					[/* external link */ 'a', `ObjectInputFilter.Config.html#getSerialFilter()`, `static JVM-wide filter`],
+					[/* reference */ 'r', `.ObjectInputFilter.Config#getSerialFilter()`],
 					[/* text */ 't', ` for the requested filter.
 
  `]
@@ -304,12 +308,12 @@ DocsCollector.collect('java.io.ObjectInputStream', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The constructor initializes the deserialization filter to the filter returned
  by invoking the `],
-					[/* external link */ 'a', `ObjectInputFilter.Config.html#getSerialFilterFactory()`, `ObjectInputFilter.Config.getSerialFilterFactory()`],
+					[/* reference */ 'r', `.ObjectInputFilter.Config#getSerialFilterFactory()`],
 					[/* text */ 't', ` with `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` for the current filter
  and the `],
-					[/* external link */ 'a', `ObjectInputFilter.Config.html#getSerialFilter()`, `static JVM-wide filter`],
+					[/* reference */ 'r', `.ObjectInputFilter.Config#getSerialFilter()`],
 					[/* text */ 't', ` for the requested filter.
 
  `]
@@ -383,7 +387,7 @@ DocsCollector.collect('java.io.ObjectInputStream', [
 				[/* text */ 't', ` is the first class loader on the current
  thread's stack (starting from the currently executing method) that is
  neither the `],
-				[/* external link */ 'a', `../lang/ClassLoader.html#getPlatformClassLoader()`, `platform class loader`],
+				[/* reference */ 'r', `java.ClassLoader#getPlatformClassLoader()`],
 				[/* text */ 't', ` nor its ancestor; otherwise, `],
 				[/* inline code block */ 'i', `loader`],
 				[/* text */ 't', ` is the
@@ -483,7 +487,7 @@ DocsCollector.collect('java.io.ObjectInputStream', [
 					[/* text */ 't', `, is invoked for
  each object (regular or class) read to reconstruct the root object.
  See `],
-					[/* reference */ 'r', `setObjectInputFilter`],
+					[/* reference */ 'r', `#setObjectInputFilter(java.io.ObjectInputFilter)`, `setObjectInputFilter`],
 					[/* text */ 't', ` for details.
 
  `]
@@ -673,7 +677,7 @@ DocsCollector.collect('java.io.ObjectInputStream', [
 			[/* method description */
 				[/* text */ 't', `Reads a String in
  `],
-				[/* external link */ 'a', `DataInput.html#modified-utf-8`, `modified UTF-8`],
+				[/* reference */ 'r', `.DataInput#modified-utf-8`],
 				[/* text */ 't', `
  format.`]
 			],
@@ -1085,7 +1089,7 @@ DocsCollector.collect('java.io.ObjectInputStream', [
 				[/* text */ 't', ` is the first class loader on the current
  thread's stack (starting from the currently executing method) that is
  neither the `],
-				[/* external link */ 'a', `../lang/ClassLoader.html#getPlatformClassLoader()`, `platform class loader`],
+				[/* reference */ 'r', `java.ClassLoader#getPlatformClassLoader()`],
 				[/* text */ 't', ` nor its ancestor; otherwise, `],
 				[/* inline code block */ 'i', `loader`],
 				[/* text */ 't', ` is the
@@ -1208,7 +1212,7 @@ DocsCollector.collect('java.io.ObjectInputStream', [
 					[/* text */ 't', `, is invoked for
  each object (regular or class) read to reconstruct the root object.
  See `],
-					[/* reference */ 'r', `setObjectInputFilter`],
+					[/* reference */ 'r', `#setObjectInputFilter(java.io.ObjectInputFilter)`, `setObjectInputFilter`],
 					[/* text */ 't', ` for details.
 
  `]
@@ -1278,7 +1282,7 @@ DocsCollector.collect('java.io.ObjectInputStream', [
 			[/* method description */
 				[/* text */ 't', `Enables the stream to do replacement of objects read from the stream. When
  enabled, the `],
-				[/* reference */ 'r', `resolveObject(java.lang.Object)`],
+				[/* reference */ 'r', `#resolveObject(java.lang.Object)`, `resolveObject(java.lang.Object)`],
 				[/* text */ 't', ` method is called for every object being
  deserialized.
 
@@ -1325,13 +1329,13 @@ DocsCollector.collect('java.io.ObjectInputStream', [
 				[/* text */ 't', `Returns the deserialization filter for this stream.
  The filter is the result of invoking the
  `],
-				[/* external link */ 'a', `ObjectInputFilter.Config.html#getSerialFilterFactory()`, `JVM-wide filter factory`],
+				[/* reference */ 'r', `.ObjectInputFilter.Config#getSerialFilterFactory()`],
 				[/* text */ 't', `
  either by the `],
-				[/* reference */ 'r', `constructor`],
+				[/* reference */ 'r', `#%3Cinit%3E()`, `constructor`],
 				[/* text */ 't', ` or the most recent invocation of
  `],
-				[/* reference */ 'r', `setObjectInputFilter`],
+				[/* reference */ 'r', `#setObjectInputFilter(java.io.ObjectInputFilter)`, `setObjectInputFilter`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -1346,30 +1350,30 @@ DocsCollector.collect('java.io.ObjectInputStream', [
 
  The deserialization filter is set to the filter returned by invoking the
  `],
-				[/* external link */ 'a', `ObjectInputFilter.Config.html#getSerialFilterFactory()`, `JVM-wide filter factory`],
+				[/* reference */ 'r', `.ObjectInputFilter.Config#getSerialFilterFactory()`],
 				[/* text */ 't', `
  with the `],
-				[/* reference */ 'r', `current filter`],
+				[/* reference */ 'r', `#getObjectInputFilter()`, `current filter`],
 				[/* text */ 't', ` and the `],
 				[/* inline code block */ 'i', `filter`],
 				[/* text */ 't', ` parameter.
  The current filter was set in the
  `],
-				[/* reference */ 'r', `ObjectInputStream constructors`],
+				[/* reference */ 'r', `#%3Cinit%3E()`, `ObjectInputStream constructors`],
 				[/* text */ 't', ` by invoking the
  `],
-				[/* external link */ 'a', `ObjectInputFilter.Config.html#getSerialFilterFactory()`, `JVM-wide filter factory`],
+				[/* reference */ 'r', `.ObjectInputFilter.Config#getSerialFilterFactory()`],
 				[/* text */ 't', ` and may be `],
 				[/* inline code block */ 'i', `null`],
 				[/* text */ 't', `.
  `],
-				[/* reference */ 'r', `setObjectInputFilter(ObjectInputFilter)`],
+				[/* reference */ 'r', `#setObjectInputFilter(java.io.ObjectInputFilter)`, `setObjectInputFilter(ObjectInputFilter)`],
 				[/* text */ 't', ` This method} can be called
  once and only once before reading any objects from the stream;
  for example, by calling `],
-				[/* reference */ 'r', `readObject()`],
+				[/* reference */ 'r', `#readObject()`, `readObject()`],
 				[/* text */ 't', ` or `],
-				[/* reference */ 'r', `readUnshared()`],
+				[/* reference */ 'r', `#readUnshared()`, `readUnshared()`],
 				[/* text */ 't', `.
 
  `],
@@ -1380,7 +1384,7 @@ DocsCollector.collect('java.io.ObjectInputStream', [
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` filter.
  If the `],
-					[/* reference */ 'r', `current filter`],
+					[/* reference */ 'r', `#getObjectInputFilter()`, `current filter`],
 					[/* text */ 't', ` is `],
 					[/* inline code block */ 'i', `non-null`],
 					[/* text */ 't', `,
@@ -1392,13 +1396,13 @@ DocsCollector.collect('java.io.ObjectInputStream', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `The filter's `],
-					[/* external link */ 'a', `ObjectInputFilter.html#checkInput(java.io.ObjectInputFilter.FilterInfo)`, `checkInput`],
+					[/* reference */ 'r', `.ObjectInputFilter#checkInput(java.io.ObjectInputFilter.FilterInfo)`],
 					[/* text */ 't', ` method is called
  for each class and reference in the stream.
  The filter can check any or all of the class, the array length, the number
  of references, the depth of the graph, and the size of the input stream.
  The depth is the number of nested `],
-					[/* reference */ 'r', `readObject`],
+					[/* reference */ 'r', `#readObject()`, `readObject`],
 					[/* text */ 't', `
  calls starting with the reading of the root of the graph being deserialized
  and the current object being deserialized.
@@ -1411,7 +1415,7 @@ DocsCollector.collect('java.io.ObjectInputStream', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the filter returns `],
-					[/* external link */ 'a', `ObjectInputFilter.Status.html#REJECTED`, `Status.REJECTED`],
+					[/* reference */ 'r', `.ObjectInputFilter.Status#REJECTED`],
 					[/* text */ 't', `,
  `],
 					[/* inline code block */ 'i', `null`],
@@ -1447,7 +1451,7 @@ DocsCollector.collect('java.io.ObjectInputStream', [
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` when the
        `],
-					[/* reference */ 'r', `current filter`],
+					[/* reference */ 'r', `#getObjectInputFilter()`, `current filter`],
 					[/* text */ 't', ` is non-null, or
        if the filter has already been set.`]
 				]]

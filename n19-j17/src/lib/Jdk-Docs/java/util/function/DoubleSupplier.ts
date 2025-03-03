@@ -19,10 +19,10 @@ DocsCollector.collect('java.util.function.DoubleSupplier', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
-			[/* external link */ 'a', `package-summary.html`, `functional interface`],
+			[/* reference */ 'r', `.package-summary`],
 			[/* text */ 't', `
  whose functional method is `],
-			[/* reference */ 'r', `getAsDouble()`],
+			[/* reference */ 'r', `#getAsDouble()`, `getAsDouble()`],
 			[/* text */ 't', `.`]
 		]]
 	],

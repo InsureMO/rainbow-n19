@@ -9,7 +9,7 @@ DocsCollector.collect('java.io.InputStreamReader', [
 		[/* text */ 't', `.  The charset that it uses
  may be specified by name or may be given explicitly, or the platform's
  `],
-		[/* external link */ 'a', `../nio/charset/Charset.html#defaultCharset()`, `default charset`],
+		[/* reference */ 'r', `java.Charset#defaultCharset()`],
 		[/* text */ 't', ` may be accepted.
 
  `],
@@ -83,7 +83,7 @@ DocsCollector.collect('java.io.InputStreamReader', [
 			[/* constructor description */
 				[/* text */ 't', `Creates an InputStreamReader that uses the
  `],
-				[/* external link */ 'a', `../nio/charset/Charset.html#defaultCharset()`, `default charset`],
+				[/* reference */ 'r', `java.Charset#defaultCharset()`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -192,7 +192,7 @@ DocsCollector.collect('java.io.InputStreamReader', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` If this instance was created with the `],
-					[/* reference */ 'r', `InputStreamReader(InputStream, String)`],
+					[/* reference */ 'r', `#%3Cinit%3E(java.io.InputStream,java.lang.String)`, `InputStreamReader(InputStream, String)`],
 					[/* text */ 't', ` constructor then the returned
  name, being unique for the encoding, may differ from the name passed to
  the constructor. This method will return `],

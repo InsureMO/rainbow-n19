@@ -5,9 +5,9 @@ DocsCollector.collect('java.io.LineNumberReader', [
 	[/* class description */
 		[/* text */ 't', `A buffered character-input stream that keeps track of line numbers.  This
  class defines methods `],
-		[/* reference */ 'r', `setLineNumber(int)`],
+		[/* reference */ 'r', `#setLineNumber(int)`, `setLineNumber(int)`],
 		[/* text */ 't', ` and `],
-		[/* reference */ 'r', `getLineNumber()`],
+		[/* reference */ 'r', `#getLineNumber()`, `getLineNumber()`],
 		[/* text */ 't', ` for setting and getting the current line number
  respectively.
 

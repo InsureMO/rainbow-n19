@@ -16,7 +16,7 @@ DocsCollector.collect('java.net.URI', [
 			[/* text */ 't', `. The Literal IPv6 address format
  also supports scope_ids. The syntax and usage of scope_ids is described
  `],
-			[/* external link */ 'a', `Inet6Address.html#scoped`, `here`],
+			[/* reference */ 'r', `.Inet6Address#scoped`],
 			[/* text */ 't', `.
  This class provides constructors for creating URI instances from
  their components or by parsing their string forms, methods for accessing the
@@ -205,7 +205,93 @@ DocsCollector.collect('java.net.URI', [
 		[/* block */ 'b', ` All told, then, a URI instance has the following nine components:
 
  `],
-		[/* table */ 't', ''],
+		[/* table */ 'tbl',
+			[/* caption */ 'tc'],
+			[/* table header */ 'th', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Component`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Type`]
+					]]
+				]]
+			]],
+			[/* table body */ 'tb', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `scheme`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `String`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `scheme-specific-part`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `String`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `authority`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `String`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `user-info`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `String`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `host`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `String`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `port`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `int`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `path`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `String`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `query`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `String`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `fragment`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* inline code block */ 'i', `String`]
+					]]
+				]]
+			]],
+		],
 		[/* text */ 't', `
 
  In a given instance any particular component is either `],
@@ -275,7 +361,7 @@ DocsCollector.collect('java.net.URI', [
  `],
 			[/* text */ 't', `base`],
 			[/* text */ 't', ` URI.  The resulting URI is constructed from components of both
- URIs in the manner specified by RFC&nbsp;2396, taking components from the
+ URIs in the manner specified by RFC 2396, taking components from the
  base URI for those not specified in the original.  For hierarchical URIs,
  the path of the original is resolved against the path of the base and then
  normalized.  The result, for example, of resolving
@@ -285,8 +371,8 @@ DocsCollector.collect('java.net.URI', [
 		[/* block */ 'b', [
 			[/* inline code block */ 'i', `sample/a/index.html#28`],
 			[/* text */ 't', `
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
- &nbsp;&nbsp;&nbsp;&nbsp;(1)
+             
+     (1)
  `]
 		]],
 		[/* text */ 't', `
@@ -307,7 +393,7 @@ DocsCollector.collect('java.net.URI', [
  `],
 		[/* block */ 'b', [
 			[/* inline code block */ 'i', `../../demo/b/index.html`],
-			[/* text */ 't', `&nbsp;&nbsp;&nbsp;&nbsp;(2)
+			[/* text */ 't', `    (2)
  `]
 		]],
 		[/* text */ 't', `
@@ -339,7 +425,7 @@ DocsCollector.collect('java.net.URI', [
 			[/* text */ 't', `, finally, is the inverse of resolution: For any
  two normalized URIs `],
 			[/* text */ 't', `u`],
-			[/* text */ 't', ` and&nbsp;`],
+			[/* text */ 't', ` and `],
 			[/* text */ 't', `v`],
 			[/* text */ 't', `,
 
@@ -354,7 +440,7 @@ DocsCollector.collect('java.net.URI', [
 			[/* inline code block */ 'i', `)).equals(`],
 			[/* text */ 't', `v`],
 			[/* inline code block */ 'i', `)`],
-			[/* text */ 't', `&nbsp;&nbsp;and`],
+			[/* text */ 't', `  and`],
 			[/* new line */ 'n'],
 			[/* text */ 't', `u`],
 			[/* inline code block */ 'i', `.resolve(`],
@@ -364,7 +450,7 @@ DocsCollector.collect('java.net.URI', [
 			[/* inline code block */ 'i', `)).equals(`],
 			[/* text */ 't', `v`],
 			[/* inline code block */ 'i', `)`],
-			[/* text */ 't', `&nbsp;&nbsp;.`],
+			[/* text */ 't', `  .`],
 			[/* new line */ 'n']
 		]],
 		[/* text */ 't', `
@@ -397,13 +483,142 @@ DocsCollector.collect('java.net.URI', [
 		[/* block */ 'b', ` Character categories `],
 		[/* text */ 't', `
 
- RFC&nbsp;2396 specifies precisely which characters are permitted in the
+ RFC 2396 specifies precisely which characters are permitted in the
  various components of a URI reference.  The following categories, most of
  which are taken from that specification, are used below to describe these
  constraints:
 
  `],
-		[/* table */ 't', ''],
+		[/* table */ 'tbl',
+			[/* caption */ 'tc'],
+			[/* table header */ 'th', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Category`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Description`]
+					]]
+				]]
+			]],
+			[/* table body */ 'tb', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `alpha`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `The US-ASCII alphabetic characters,
+        `],
+						[/* inline code block */ 'i', `'A'`],
+						[/* text */ 't', ` through `],
+						[/* inline code block */ 'i', `'Z'`],
+						[/* text */ 't', `
+        and `],
+						[/* inline code block */ 'i', `'a'`],
+						[/* text */ 't', ` through `],
+						[/* inline code block */ 'i', `'z'`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `digit`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `The US-ASCII decimal digit characters,
+       `],
+						[/* inline code block */ 'i', `'0'`],
+						[/* text */ 't', ` through `],
+						[/* inline code block */ 'i', `'9'`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `alphanum`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `All `],
+						[/* text */ 't', `alpha`],
+						[/* text */ 't', ` and `],
+						[/* text */ 't', `digit`],
+						[/* text */ 't', ` characters`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `unreserved`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `All `],
+						[/* text */ 't', `alphanum`],
+						[/* text */ 't', ` characters together with those in the string
+        `],
+						[/* inline code block */ 'i', `"_-!.~'()*"`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `punct`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `The characters in the string `],
+						[/* inline code block */ 'i', `",;:$&+="`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `reserved`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `All `],
+						[/* text */ 't', `punct`],
+						[/* text */ 't', ` characters together with those in the string
+        `],
+						[/* inline code block */ 'i', `"?/[]@"`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `escaped`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `Escaped octets, that is, triplets consisting of the percent
+           character (`],
+						[/* inline code block */ 'i', `'%'`],
+						[/* text */ 't', `) followed by two hexadecimal digits
+           (`],
+						[/* inline code block */ 'i', `'0'`],
+						[/* text */ 't', `-`],
+						[/* inline code block */ 'i', `'9'`],
+						[/* text */ 't', `, `],
+						[/* inline code block */ 'i', `'A'`],
+						[/* text */ 't', `-`],
+						[/* inline code block */ 'i', `'F'`],
+						[/* text */ 't', `, and
+           `],
+						[/* inline code block */ 'i', `'a'`],
+						[/* text */ 't', `-`],
+						[/* inline code block */ 'i', `'f'`],
+						[/* text */ 't', `)`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `other`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* text */ 't', `The Unicode characters that are not in the US-ASCII character set,
+           are not control characters (according to the `],
+						[/* reference */ 'r', `java.Character#isISOControl(int)`],
+						[/* text */ 't', `
+           method), and are not space characters (according to the `],
+						[/* reference */ 'r', `java.Character#isSpaceChar(int)`],
+						[/* text */ 't', `
+           method)  `],
+						[/* text */ 't', `Deviation from RFC 2396`]
+					]]
+				]]
+			]],
+		],
 		[/* block */ 'b', [
 			[/* text */ 't', ``],
 			[/* text */ 't', ` The set of all legal URI characters consists of
@@ -434,7 +649,7 @@ DocsCollector.collect('java.net.URI', [
 					[/* text */ 't', ` To `],
 					[/* text */ 't', `encode`],
 					[/* text */ 't', ` non-US-ASCII characters when a URI is required to
-   conform strictly to RFC&nbsp;2396 by not containing any `],
+   conform strictly to RFC 2396 by not containing any `],
 					[/* text */ 't', `other`],
 					[/* text */ 't', `
    characters.  `]
@@ -471,7 +686,7 @@ DocsCollector.collect('java.net.URI', [
 					[/* inline code block */ 'i', `"%E2%82%AC"`],
 					[/* text */ 't', `.  `],
 					[/* text */ 't', `Deviation from
-   RFC&nbsp;2396`]
+   RFC 2396`]
 				]]
 			]],
 			[/* block */ 'b', [
@@ -485,7 +700,7 @@ DocsCollector.collect('java.net.URI', [
 					[/* inline code block */ 'i', `"%20"`],
 					[/* text */ 't', `.  UTF-8 contains US-ASCII, hence for US-ASCII
    characters this transformation has exactly the effect required by
-   RFC&nbsp;2396. `]
+   RFC 2396. `]
 				]]
 			]],
 			[/* block */ 'b', [
@@ -499,7 +714,7 @@ DocsCollector.collect('java.net.URI', [
    UTF-8 character set.  UTF-8 contains US-ASCII, hence decoding has the
    effect of de-quoting any quoted US-ASCII characters as well as that of
    decoding any encoded non-US-ASCII characters.  If a `],
-					[/* external link */ 'a', `../nio/charset/CharsetDecoder.html#ce`, `decoding error`],
+					[/* reference */ 'r', `java.CharsetDecoder#ce`],
 					[/* text */ 't', ` occurs
    when decoding the escaped octets then the erroneous octets are replaced by
    `],
@@ -518,7 +733,7 @@ DocsCollector.collect('java.net.URI', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The `],
-					[/* reference */ 'r', `single-argument constructor`],
+					[/* reference */ 'r', `#%3Cinit%3E(java.lang.String)`, `single-argument constructor`],
 					[/* text */ 't', ` requires any illegal characters in its argument to be
    quoted and preserves any escaped octets and `],
 					[/* text */ 't', `other`],
@@ -529,7 +744,7 @@ DocsCollector.collect('java.net.URI', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The `],
-					[/* reference */ 'r', `multi-argument constructors`],
+					[/* reference */ 'r', `#%3Cinit%3E(java.lang.String,java.lang.String,java.lang.String,int,java.lang.String,java.lang.String,java.lang.String)`, `multi-argument constructors`],
 					[/* text */ 't', ` quote illegal characters as
    required by the components in which they appear.  The percent character
    (`],
@@ -543,17 +758,17 @@ DocsCollector.collect('java.net.URI', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The `],
-					[/* reference */ 'r', `getRawUserInfo`],
+					[/* reference */ 'r', `#getRawUserInfo()`, `getRawUserInfo`],
 					[/* text */ 't', `, `],
-					[/* reference */ 'r', `getRawPath`],
+					[/* reference */ 'r', `#getRawPath()`, `getRawPath`],
 					[/* text */ 't', `, `],
-					[/* reference */ 'r', `getRawQuery`],
+					[/* reference */ 'r', `#getRawQuery()`, `getRawQuery`],
 					[/* text */ 't', `, `],
-					[/* reference */ 'r', `getRawFragment`],
+					[/* reference */ 'r', `#getRawFragment()`, `getRawFragment`],
 					[/* text */ 't', `, `],
-					[/* reference */ 'r', `getRawAuthority`],
+					[/* reference */ 'r', `#getRawAuthority()`, `getRawAuthority`],
 					[/* text */ 't', `, and `],
-					[/* reference */ 'r', `getRawSchemeSpecificPart`],
+					[/* reference */ 'r', `#getRawSchemeSpecificPart()`, `getRawSchemeSpecificPart`],
 					[/* text */ 't', ` methods return the
    values of their corresponding components in raw form, without interpreting
    any escaped octets.  The strings returned by these methods may contain
@@ -566,17 +781,17 @@ DocsCollector.collect('java.net.URI', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The `],
-					[/* reference */ 'r', `getUserInfo`],
+					[/* reference */ 'r', `#getUserInfo()`, `getUserInfo`],
 					[/* text */ 't', `, `],
-					[/* reference */ 'r', `getPath`],
+					[/* reference */ 'r', `#getPath()`, `getPath`],
 					[/* text */ 't', `, `],
-					[/* reference */ 'r', `getQuery`],
+					[/* reference */ 'r', `#getQuery()`, `getQuery`],
 					[/* text */ 't', `, `],
-					[/* reference */ 'r', `getFragment`],
+					[/* reference */ 'r', `#getFragment()`, `getFragment`],
 					[/* text */ 't', `, `],
-					[/* reference */ 'r', `getAuthority`],
+					[/* reference */ 'r', `#getAuthority()`, `getAuthority`],
 					[/* text */ 't', `, and `],
-					[/* reference */ 'r', `getSchemeSpecificPart`],
+					[/* reference */ 'r', `#getSchemeSpecificPart()`, `getSchemeSpecificPart`],
 					[/* text */ 't', ` methods decode any escaped
    octets in their corresponding components.  The strings returned by these
    methods may contain both `],
@@ -588,7 +803,7 @@ DocsCollector.collect('java.net.URI', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The `],
-					[/* reference */ 'r', `toString`],
+					[/* reference */ 'r', `#toString()`, `toString`],
 					[/* text */ 't', ` method returns a URI string with
    all necessary quotation but which may contain `],
 					[/* text */ 't', `other`],
@@ -599,7 +814,7 @@ DocsCollector.collect('java.net.URI', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The `],
-					[/* reference */ 'r', `toASCIIString`],
+					[/* reference */ 'r', `#toASCIIString()`, `toASCIIString`],
 					[/* text */ 't', ` method returns a fully
    quoted and encoded URI string that does not contain any `],
 					[/* text */ 't', `other`],
@@ -622,7 +837,7 @@ DocsCollector.collect('java.net.URI', [
 			[/* inline code block */ 'i', `.toString()).equals(`],
 			[/* text */ 't', `u`],
 			[/* inline code block */ 'i', `)`],
-			[/* text */ 't', `&nbsp;.
+			[/* text */ 't', ` .
  `]
 		]],
 		[/* text */ 't', `
@@ -632,11 +847,11 @@ DocsCollector.collect('java.net.URI', [
 		[/* text */ 't', ` that does not contain redundant syntax such as two
  slashes before an empty authority (as in `],
 		[/* inline code block */ 'i', `file:///tmp/`],
-		[/* text */ 't', `&nbsp;) or a
+		[/* text */ 't', ` ) or a
  colon following a host name but no port (as in
  `],
 		[/* inline code block */ 'i', `http://www.example.com:`],
-		[/* text */ 't', `&nbsp;), and that does not encode characters
+		[/* text */ 't', ` ), and that does not encode characters
  except those that must be quoted, the following identities also hold:
  `],
 		[/* code block */ 'c', [
@@ -743,7 +958,7 @@ DocsCollector.collect('java.net.URI', [
  `]
 		]],
 		[/* block */ 'b', ` An instance of this class represents a URI reference in the syntactic
- sense defined by RFC&nbsp;2396.  A URI may be either absolute or relative.
+ sense defined by RFC 2396.  A URI may be either absolute or relative.
  A URI string is parsed according to the generic syntax without regard to the
  scheme, if any, that it specifies.  No lookup of the host, if any, is
  performed, and no scheme-dependent stream handler is constructed.  Equality,
@@ -793,7 +1008,7 @@ DocsCollector.collect('java.net.URI', [
  according to the rules specified in `],
 					[/* external link */ 'a', `http://www.ietf.org/rfc/rfc2396.txt`, `RFC 2396`],
 					[/* text */ 't', `,
- section&nbsp;5.2, step&nbsp;7: `]
+ section 5.2, step 7: `]
 				]],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
@@ -880,9 +1095,9 @@ DocsCollector.collect('java.net.URI', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The resulting URI string is then parsed as if by invoking the `],
-					[/* reference */ 'r', `URI(String)`],
+					[/* reference */ 'r', `#%3Cinit%3E(java.lang.String)`, `URI(String)`],
 					[/* text */ 't', ` constructor and then invoking the `],
-					[/* reference */ 'r', `parseServerAuthority()`],
+					[/* reference */ 'r', `#parseServerAuthority()`, `parseServerAuthority()`],
 					[/* text */ 't', ` method upon the result; this may cause a `],
 					[/* reference */ 'r', `java.net.URISyntaxException`],
 					[/* text */ 't', ` to be thrown.  `]
@@ -909,7 +1124,7 @@ DocsCollector.collect('java.net.URI', [
 				[/* throw */ 'java.net.URISyntaxException', [/* throw description */
 					[/* text */ 't', `If both a scheme and a path are given but the path is relative,
          if the URI string constructed from the given components violates
-         RFC&nbsp;2396, or if the authority component of the string is
+         RFC 2396, or if the authority component of the string is
          present but cannot be parsed as a server-based authority`]
 				]]
 			]
@@ -932,7 +1147,7 @@ DocsCollector.collect('java.net.URI', [
  `],
 				[/* block */ 'b', [
 					[/* inline code block */ 'i', `new`],
-					[/* reference */ 'r', `URI`],
+					[/* reference */ 'r', `#%3Cinit%3E(java.lang.String,java.lang.String,java.lang.String,int,java.lang.String,java.lang.String,java.lang.String)`, `URI`],
 					[/* inline code block */ 'i', `(scheme, null, host, -1, path, null, fragment);`]
 				]],
 				[/* block */ 'b', '']
@@ -954,7 +1169,7 @@ DocsCollector.collect('java.net.URI', [
 			[/* throws */
 				[/* throw */ 'java.net.URISyntaxException', [/* throw description */
 					[/* text */ 't', `If the URI string constructed from the given components
-          violates RFC&nbsp;2396`]
+          violates RFC 2396`]
 				]]
 			]
 		]],
@@ -1008,7 +1223,7 @@ DocsCollector.collect('java.net.URI', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The resulting URI string is then parsed in order to create the new
  URI instance as if by invoking the `],
-					[/* reference */ 'r', `URI(String)`],
+					[/* reference */ 'r', `#%3Cinit%3E(java.lang.String)`, `URI(String)`],
 					[/* text */ 't', ` constructor;
  this may cause a `],
 					[/* reference */ 'r', `java.net.URISyntaxException`],
@@ -1029,7 +1244,7 @@ DocsCollector.collect('java.net.URI', [
 			[/* throws */
 				[/* throw */ 'java.net.URISyntaxException', [/* throw description */
 					[/* text */ 't', `If the URI string constructed from the given components
-          violates RFC&nbsp;2396`]
+          violates RFC 2396`]
 				]]
 			]
 		]],
@@ -1043,7 +1258,7 @@ DocsCollector.collect('java.net.URI', [
  grammar in `],
 					[/* external link */ 'a', `http://www.ietf.org/rfc/rfc2396.txt`, `RFC 2396`],
 					[/* text */ 't', `,
- Appendix&nbsp;A, `],
+ Appendix A, `],
 					[/* text */ 't', `except for the following deviations:`]
 				]],
 				[/* list */ 'l', [
@@ -1055,7 +1270,7 @@ DocsCollector.collect('java.net.URI', [
    `],
 							[/* inline code block */ 'i', `"file:///foo/bar"`],
 							[/* text */ 't', `, which seems to be the intent of
-   RFC&nbsp;2396 although the grammar does not permit it.  If the
+   RFC 2396 although the grammar does not permit it.  If the
    authority component is empty then the user-information, host, and port
    components are undefined. `]
 						]]
@@ -1063,7 +1278,7 @@ DocsCollector.collect('java.net.URI', [
 					[/* block */ 'b', [
 						[/* block */ 'b', [
 							[/* text */ 't', ` Empty relative paths are permitted; this seems to be the
-   intent of RFC&nbsp;2396 although the grammar does not permit it.  The
+   intent of RFC 2396 although the grammar does not permit it.  The
    primary consequence of this deviation is that a standalone fragment
    such as `],
 							[/* inline code block */ 'i', `"#foo"`],
@@ -1095,7 +1310,7 @@ DocsCollector.collect('java.net.URI', [
    character. This seems to be the intent of `],
 							[/* external link */ 'a', `http://www.ietf.org/rfc/rfc2396.txt`, `RFC 2396`],
 							[/* text */ 't', `
-   section&nbsp;3.2.2 although the grammar does not permit it. The
+   section 3.2.2 although the grammar does not permit it. The
    consequence of this deviation is that the authority component of a
    hierarchical URI such as `],
 							[/* inline code block */ 'i', `s://123`],
@@ -1118,7 +1333,7 @@ DocsCollector.collect('java.net.URI', [
 							[/* external link */ 'a', `http://www.ietf.org/rfc/rfc2373.txt`, `RFC 2373`],
 							[/* text */ 't', `.  IPv6
    addresses are further constrained to describe no more than sixteen
-   bytes of address information, a constraint implicit in RFC&nbsp;2373
+   bytes of address information, a constraint implicit in RFC 2373
    but not expressible in the grammar. `]
 						]]
 					]],
@@ -1127,7 +1342,7 @@ DocsCollector.collect('java.net.URI', [
 							[/* text */ 't', ` Characters in the `],
 							[/* text */ 't', `other`],
 							[/* text */ 't', ` category are permitted wherever
-   RFC&nbsp;2396 permits `],
+   RFC 2396 permits `],
 							[/* text */ 't', `escaped`],
 							[/* text */ 't', ` octets, that is, in the
    user-information, path, query, and fragment components, as well as in
@@ -1152,7 +1367,7 @@ DocsCollector.collect('java.net.URI', [
 					[/* inline code block */ 'i', `null`]
 				]],
 				[/* throw */ 'java.net.URISyntaxException', [/* throw description */
-					[/* text */ 't', `If the given string violates RFC&nbsp;2396, as augmented
+					[/* text */ 't', `If the given string violates RFC 2396, as augmented
           by the above deviations`]
 				]]
 			]
@@ -1184,7 +1399,7 @@ DocsCollector.collect('java.net.URI', [
  according to the rules specified in `],
 					[/* external link */ 'a', `http://www.ietf.org/rfc/rfc2396.txt`, `RFC 2396`],
 					[/* text */ 't', `,
- section&nbsp;5.2, step&nbsp;7: `]
+ section 5.2, step 7: `]
 				]],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
@@ -1291,9 +1506,9 @@ DocsCollector.collect('java.net.URI', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The resulting URI string is then parsed as if by invoking the `],
-					[/* reference */ 'r', `URI(String)`],
+					[/* reference */ 'r', `#%3Cinit%3E(java.lang.String)`, `URI(String)`],
 					[/* text */ 't', ` constructor and then invoking the `],
-					[/* reference */ 'r', `parseServerAuthority()`],
+					[/* reference */ 'r', `#parseServerAuthority()`, `parseServerAuthority()`],
 					[/* text */ 't', ` method upon the result; this may cause a `],
 					[/* reference */ 'r', `java.net.URISyntaxException`],
 					[/* text */ 't', ` to be thrown.  `]
@@ -1326,7 +1541,7 @@ DocsCollector.collect('java.net.URI', [
 				[/* throw */ 'java.net.URISyntaxException', [/* throw description */
 					[/* text */ 't', `If both a scheme and a path are given but the path is relative,
          if the URI string constructed from the given components violates
-         RFC&nbsp;2396, or if the authority component of the string is
+         RFC 2396, or if the authority component of the string is
          present but cannot be parsed as a server-based authority`]
 				]]
 			]
@@ -1375,7 +1590,7 @@ DocsCollector.collect('java.net.URI', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method satisfies the general contract of the `],
-					[/* external link */ 'a', `../lang/Object.html#equals(java.lang.Object)`, `Object.equals`],
+					[/* reference */ 'r', `java.Object#equals(java.lang.Object)`],
 					[/* text */ 't', ` method. `]
 				]]
 			],
@@ -1405,7 +1620,7 @@ DocsCollector.collect('java.net.URI', [
  components according to the rules specified in `],
 					[/* external link */ 'a', `http://www.ietf.org/rfc/rfc2396.txt`, `RFC 2396`],
 					[/* text */ 't', `,
- section&nbsp;5.2, step&nbsp;7. `]
+ section 5.2, step 7. `]
 				]]
 			],
 			/* parameters */ UDF,
@@ -1419,7 +1634,7 @@ DocsCollector.collect('java.net.URI', [
 				[/* text */ 't', `Returns a hash-code value for this URI.  The hash code is based upon all
  of the URI's components, and satisfies the general contract of the
  `],
-				[/* external link */ 'a', `../lang/Object.html#hashCode()`, `Object.hashCode`],
+				[/* reference */ 'r', `java.Object#hashCode()`],
 				[/* text */ 't', ` method.`]
 			],
 			/* parameters */ UDF,
@@ -1439,7 +1654,7 @@ DocsCollector.collect('java.net.URI', [
  considered to be less than the second.  Unless otherwise noted, string
  components are ordered according to their natural, case-sensitive
  ordering as defined by the `],
-					[/* external link */ 'a', `../lang/String.html#compareTo(java.lang.String)`, `String.compareTo`],
+					[/* reference */ 'r', `java.String#compareTo(java.lang.String)`],
 					[/* text */ 't', ` method.  String components that are subject to
  encoding are compared by comparing their raw forms rather than their
  encoded forms and the hexadecimal digits of escaped octets are compared
@@ -1495,7 +1710,7 @@ DocsCollector.collect('java.net.URI', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method satisfies the general contract of the `],
-					[/* external link */ 'a', `../lang/Comparable.html#compareTo(T)`, `Comparable.compareTo`],
+					[/* reference */ 'r', `java.Comparable#compareTo(T)`],
 					[/* text */ 't', `
  method. `]
 				]]
@@ -1538,9 +1753,9 @@ DocsCollector.collect('java.net.URI', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` This convenience method works as if invoking it were equivalent to
  evaluating the expression `],
-					[/* reference */ 'r', `resolve`],
+					[/* reference */ 'r', `#resolve(java.net.URI)`, `resolve`],
 					[/* inline code block */ 'i', `(URI.`],
-					[/* reference */ 'r', `create`],
+					[/* reference */ 'r', `#create(java.lang.String)`, `create`],
 					[/* inline code block */ 'i', `(str))`],
 					[/* text */ 't', `. `]
 				]]
@@ -1558,7 +1773,7 @@ DocsCollector.collect('java.net.URI', [
 					[/* inline code block */ 'i', `null`]
 				]],
 				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the given string violates RFC&nbsp;2396`]
+					[/* text */ 't', `If the given string violates RFC 2396`]
 				]]
 			],
 			[/* return description */
@@ -1592,7 +1807,7 @@ DocsCollector.collect('java.net.URI', [
  consistent with `],
 					[/* external link */ 'a', `http://www.ietf.org/rfc/rfc2396.txt`, `RFC 2396`],
 					[/* text */ 't', `,
- section&nbsp;5.2; that is: `]
+ section 5.2; that is: `]
 				]],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
@@ -1618,7 +1833,7 @@ DocsCollector.collect('java.net.URI', [
      against the path of this URI.  This is done by concatenating all but
      the last segment of this URI's path, if any, with the given URI's
      path and then normalizing the result as if by invoking the `],
-									[/* reference */ 'r', `normalize`],
+									[/* reference */ 'r', `#normalize()`, `normalize`],
 									[/* text */ 't', ` method. `]
 								]]
 							]]
@@ -1657,7 +1872,7 @@ DocsCollector.collect('java.net.URI', [
  this URI's path in a manner consistent with `],
 					[/* external link */ 'a', `http://www.ietf.org/rfc/rfc2396.txt`, `RFC 2396`],
 					[/* text */ 't', `,
- section&nbsp;5.2, step&nbsp;6, sub-steps&nbsp;c through&nbsp;f; that is:
+ section 5.2, step 6, sub-steps c through f; that is:
  `]
 				]],
 				[/* list */ 'l', [
@@ -1697,7 +1912,7 @@ DocsCollector.collect('java.net.URI', [
 							[/* inline code block */ 'i', `"b/c/d"`],
 							[/* text */ 't', `.
    `],
-							[/* text */ 't', `(Deviation from RFC&nbsp;2396)`]
+							[/* text */ 't', `(Deviation from RFC 2396)`]
 						]]
 					]]
 				]],
@@ -1943,7 +2158,7 @@ DocsCollector.collect('java.net.URI', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This convenience factory method works as if by invoking the `],
-					[/* reference */ 'r', `URI(String)`],
+					[/* reference */ 'r', `#%3Cinit%3E(java.lang.String)`, `URI(String)`],
 					[/* text */ 't', ` constructor; any `],
 					[/* reference */ 'r', `java.net.URISyntaxException`],
 					[/* text */ 't', ` thrown by the
@@ -1978,7 +2193,7 @@ DocsCollector.collect('java.net.URI', [
 					[/* inline code block */ 'i', `null`]
 				]],
 				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
-					[/* text */ 't', `If the given string violates RFC&nbsp;2396`]
+					[/* text */ 't', `If the given string violates RFC 2396`]
 				]]
 			],
 			[/* return description */
@@ -1993,7 +2208,7 @@ DocsCollector.collect('java.net.URI', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The string returned by this method is equal to that returned by the
  `],
-					[/* reference */ 'r', `getRawAuthority`],
+					[/* reference */ 'r', `#getRawAuthority()`, `getRawAuthority`],
 					[/* text */ 't', ` method except that all
  sequences of escaped octets are `],
 					[/* text */ 't', `decoded`],
@@ -2017,7 +2232,7 @@ DocsCollector.collect('java.net.URI', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The string returned by this method is equal to that returned by the
  `],
-					[/* reference */ 'r', `getRawQuery`],
+					[/* reference */ 'r', `#getRawQuery()`, `getRawQuery`],
 					[/* text */ 't', ` method except that all sequences of
  escaped octets are `],
 					[/* text */ 't', `decoded`],
@@ -2041,7 +2256,7 @@ DocsCollector.collect('java.net.URI', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The string returned by this method is equal to that returned by the
  `],
-					[/* reference */ 'r', `getRawPath`],
+					[/* reference */ 'r', `#getRawPath()`, `getRawPath`],
 					[/* text */ 't', ` method except that all sequences of
  escaped octets are `],
 					[/* text */ 't', `decoded`],
@@ -2065,7 +2280,7 @@ DocsCollector.collect('java.net.URI', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The string returned by this method is equal to that returned by the
  `],
-					[/* reference */ 'r', `getRawUserInfo`],
+					[/* reference */ 'r', `#getRawUserInfo()`, `getRawUserInfo`],
 					[/* text */ 't', ` method except that all
  sequences of escaped octets are `],
 					[/* text */ 't', `decoded`],
@@ -2260,7 +2475,7 @@ DocsCollector.collect('java.net.URI', [
 				[/* throw */ 'java.net.URISyntaxException', [/* throw description */
 					[/* text */ 't', `If the authority component of this URI is defined
           but cannot be parsed as a server-based authority
-          according to RFC&nbsp;2396`]
+          according to RFC 2396`]
 				]]
 			],
 			[/* return description */
@@ -2276,7 +2491,7 @@ DocsCollector.collect('java.net.URI', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The string returned by this method is equal to that returned by the
  `],
-					[/* reference */ 'r', `getRawSchemeSpecificPart`],
+					[/* reference */ 'r', `#getRawSchemeSpecificPart()`, `getRawSchemeSpecificPart`],
 					[/* text */ 't', ` method
  except that all sequences of escaped octets are `],
 					[/* text */ 't', `decoded`],
@@ -2328,7 +2543,7 @@ DocsCollector.collect('java.net.URI', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The string returned by this method is equal to that returned by the
  `],
-					[/* reference */ 'r', `getRawFragment`],
+					[/* reference */ 'r', `#getRawFragment()`, `getRawFragment`],
 					[/* text */ 't', ` method except that all
  sequences of escaped octets are `],
 					[/* text */ 't', `decoded`],
@@ -2355,7 +2570,7 @@ DocsCollector.collect('java.net.URI', [
 					[/* text */ 't', `
  category then an invocation of this method will return the same value as
  an invocation of the `],
-					[/* reference */ 'r', `toString`],
+					[/* reference */ 'r', `#toString()`, `toString`],
 					[/* text */ 't', ` method.  Otherwise
  this method works as if by invoking that method and then `],
 					[/* text */ 't', `encoding`],

@@ -119,7 +119,7 @@ DocsCollector.collect('java.util.HashMap', [
 
  If no such object exists, the map should be "wrapped" using the
  `],
-			[/* external link */ 'a', `Collections.html#synchronizedMap(java.util.Map)`, `Collections.synchronizedMap`],
+			[/* reference */ 'r', `.Collections#synchronizedMap(java.util.Map)`],
 			[/* text */ 't', `
  method.  This is best done at creation time, to prevent accidental
  unsynchronized access to the map:`]
@@ -159,7 +159,7 @@ DocsCollector.collect('java.util.HashMap', [
 		[/* block */ 'b', [
 			[/* text */ 't', `This class is a member of the
  `],
-			[/* external link */ 'a', `../../../java.base/java/util/package-summary.html#CollectionsFramework`, `Java Collections Framework`],
+			[/* text */ 't', `Java Collections Framework`],
 			[/* text */ 't', `.`]
 		]]
 	],
@@ -309,7 +309,7 @@ DocsCollector.collect('java.util.HashMap', [
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', `.
  The `],
-					[/* reference */ 'r', `containsKey`],
+					[/* reference */ 'r', `#containsKey(java.lang.Object)`, `containsKey`],
 					[/* text */ 't', ` operation may be used to
  distinguish these two cases.`]
 				]]
@@ -587,7 +587,7 @@ DocsCollector.collect('java.util.HashMap', [
 				]],
 				[/* text */ 't', `
  (Method `],
-				[/* external link */ 'a', `Map.html#merge(K,V,java.util.function.BiFunction)`, `merge()`],
+				[/* reference */ 'r', `.Map#merge(K,V,java.util.function.BiFunction)`],
 				[/* text */ 't', ` is often simpler to use for such purposes.)
 
  `],

@@ -33,8 +33,8 @@ DocsCollector.collect('java.lang.ThreadLocal', [
      private static final AtomicInteger nextId = new AtomicInteger(0);
 
      // Thread local variable containing each thread's ID
-     private static final ThreadLocal&lt;Integer&gt; threadId =
-         new ThreadLocal&lt;Integer&gt;() {
+     private static final ThreadLocal<Integer> threadId =
+         new ThreadLocal<Integer>() {
              @Override protected Integer initialValue() {
                  return nextId.getAndIncrement();
          }
@@ -73,13 +73,13 @@ DocsCollector.collect('java.lang.ThreadLocal', [
 				[/* text */ 't', `Removes the current thread's value for this thread-local
  variable.  If this thread-local variable is subsequently
  `],
-				[/* reference */ 'r', `read`],
+				[/* reference */ 'r', `#get()`, `read`],
 				[/* text */ 't', ` by the current thread, its value will be
  reinitialized by invoking its `],
-				[/* reference */ 'r', `initialValue()`],
+				[/* reference */ 'r', `#initialValue()`, `initialValue()`],
 				[/* text */ 't', ` method,
  unless its value is `],
-				[/* reference */ 'r', `set`],
+				[/* reference */ 'r', `#set(T)`, `set`],
 				[/* text */ 't', ` by the current thread
  in the interim.  This may result in multiple invocations of the
  `],
@@ -96,7 +96,7 @@ DocsCollector.collect('java.lang.ThreadLocal', [
  thread-local variable.  If the variable has no value for the
  current thread, it is first initialized to the value returned
  by an invocation of the `],
-				[/* reference */ 'r', `initialValue()`],
+				[/* reference */ 'r', `#initialValue()`, `initialValue()`],
 				[/* text */ 't', ` method.`]
 			],
 			/* parameters */ UDF,
@@ -110,7 +110,7 @@ DocsCollector.collect('java.lang.ThreadLocal', [
 				[/* text */ 't', `Sets the current thread's copy of this thread-local variable
  to the specified value.  Most subclasses will have no need to
  override this method, relying solely on the `],
-				[/* reference */ 'r', `initialValue()`],
+				[/* reference */ 'r', `#initialValue()`, `initialValue()`],
 				[/* text */ 't', `
  method to set the values of thread-locals.`]
 			],
@@ -128,10 +128,10 @@ DocsCollector.collect('java.lang.ThreadLocal', [
 				[/* text */ 't', `Returns the current thread's "initial value" for this
  thread-local variable.  This method will be invoked the first
  time a thread accesses the variable with the `],
-				[/* reference */ 'r', `get()`],
+				[/* reference */ 'r', `#get()`, `get()`],
 				[/* text */ 't', `
  method, unless the thread previously invoked the `],
-				[/* reference */ 'r', `set(T)`],
+				[/* reference */ 'r', `#set(T)`, `set(T)`],
 				[/* text */ 't', `
  method, in which case the `],
 				[/* inline code block */ 'i', `initialValue`],
@@ -139,9 +139,9 @@ DocsCollector.collect('java.lang.ThreadLocal', [
  be invoked for the thread.  Normally, this method is invoked at
  most once per thread, but it may be invoked again in case of
  subsequent invocations of `],
-				[/* reference */ 'r', `remove()`],
+				[/* reference */ 'r', `#remove()`, `remove()`],
 				[/* text */ 't', ` followed by `],
-				[/* reference */ 'r', `get()`],
+				[/* reference */ 'r', `#get()`, `get()`],
 				[/* text */ 't', `.
 
  `],

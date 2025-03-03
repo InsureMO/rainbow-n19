@@ -11,6 +11,21 @@ DocsCollector.collect('java.lang.reflect.AnnotatedParameterizedType', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
+		[/* method */ 'getAnnotatedActualTypeArguments()', [
+			[/* method description */
+				[/* text */ 't', `Returns the potentially annotated actual type arguments of this parameterized type.
+
+ `],
+				[/* block */ 'b', `Note that in some cases, the returned array can be empty. This can occur
+ if this annotated type represents a non-parameterized type nested within
+ a parameterized type.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the potentially annotated actual type arguments of this parameterized type`]
+			]
+		]],
 		[/* method */ 'getAnnotatedOwnerType()', [
 			[/* method description */
 				[/* text */ 't', `Returns the potentially annotated type that this type is a member of, if
@@ -50,21 +65,6 @@ DocsCollector.collect('java.lang.reflect.AnnotatedParameterizedType', [
 				[/* text */ 't', ` object representing the potentially
      annotated type that this type is a member of, or `],
 				[/* inline code block */ 'i', `null`]
-			]
-		]],
-		[/* method */ 'getAnnotatedActualTypeArguments()', [
-			[/* method description */
-				[/* text */ 't', `Returns the potentially annotated actual type arguments of this parameterized type.
-
- `],
-				[/* block */ 'b', `Note that in some cases, the returned array can be empty. This can occur
- if this annotated type represents a non-parameterized type nested within
- a parameterized type.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the potentially annotated actual type arguments of this parameterized type`]
 			]
 		]]
 	],

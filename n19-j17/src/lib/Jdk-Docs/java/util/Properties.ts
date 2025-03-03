@@ -84,17 +84,17 @@ DocsCollector.collect('java.util.Properties', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  The `],
-			[/* reference */ 'r', `load(Reader)`],
+			[/* reference */ 'r', `#load(java.io.Reader)`, `load(Reader)`],
 			[/* inline code block */ 'i', `/`],
-			[/* reference */ 'r', `store(Writer, String)`],
+			[/* reference */ 'r', `#store(java.io.Writer,java.lang.String)`, `store(Writer, String)`],
 			[/* text */ 't', `
  methods load and store properties from and to a character based stream
  in a simple line-oriented format specified below.
 
  The `],
-			[/* reference */ 'r', `load(InputStream)`],
+			[/* reference */ 'r', `#load(java.io.InputStream)`, `load(InputStream)`],
 			[/* inline code block */ 'i', `/`],
-			[/* reference */ 'r', `store(OutputStream, String)`],
+			[/* reference */ 'r', `#store(java.io.OutputStream,java.lang.String)`, `store(OutputStream, String)`],
 			[/* text */ 't', `
  methods work the same way as the load(Reader)/store(Writer, String) pair, except
  the input/output stream is encoded in ISO 8859-1 character encoding.
@@ -112,9 +112,9 @@ DocsCollector.collect('java.util.Properties', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The `],
-			[/* reference */ 'r', `loadFromXML(InputStream)`],
+			[/* reference */ 'r', `#loadFromXML(java.io.InputStream)`, `loadFromXML(InputStream)`],
 			[/* text */ 't', ` and `],
-			[/* reference */ 'r', `storeToXML(OutputStream, String, String)`],
+			[/* reference */ 'r', `#storeToXML(java.io.OutputStream,java.lang.String,java.lang.String)`, `storeToXML(OutputStream, String, String)`],
 			[/* text */ 't', ` methods load and store properties
  in a simple XML format.  By default the UTF-8 character encoding is used,
  however a specific encoding may be specified if required. Implementations
@@ -123,7 +123,7 @@ DocsCollector.collect('java.util.Properties', [
 
  `]
 		]],
-		[/* code block */ 'c', ` &lt;!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd"&gt;
+		[/* code block */ 'c', ` <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
  `],
 		[/* text */ 't', `
  Note that the system URI (http://java.sun.com/dtd/properties.dtd) is
@@ -132,19 +132,19 @@ DocsCollector.collect('java.util.Properties', [
 		[/* text */ 't', ` accessed when exporting or importing properties; it merely
  serves as a string to uniquely identify the DTD, which is:
  `],
-		[/* code block */ 'c', `    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+		[/* code block */ 'c', `    <?xml version="1.0" encoding="UTF-8"?>
 
-    &lt;!-- DTD for properties --&gt;
+    <!-- DTD for properties -->
 
-    &lt;!ELEMENT properties ( comment?, entry* ) &gt;
+    <!ELEMENT properties ( comment?, entry* ) >
 
-    &lt;!ATTLIST properties version CDATA #FIXED "1.0"&gt;
+    <!ATTLIST properties version CDATA #FIXED "1.0">
 
-    &lt;!ELEMENT comment (#PCDATA) &gt;
+    <!ELEMENT comment (#PCDATA) >
 
-    &lt;!ELEMENT entry (#PCDATA) &gt;
+    <!ELEMENT entry (#PCDATA) >
 
-    &lt;!ATTLIST entry key CDATA #REQUIRED&gt;
+    <!ATTLIST entry key CDATA #REQUIRED>
  `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
@@ -546,7 +546,7 @@ DocsCollector.collect('java.util.Properties', [
  byte stream. The input stream is in a simple line-oriented
  format as specified in
  `],
-				[/* reference */ 'r', `load(Reader)`],
+				[/* reference */ 'r', `#load(java.io.Reader)`, `load(Reader)`],
 				[/* text */ 't', ` and is assumed to use
  the ISO 8859-1 character encoding; that is each byte is one Latin1
  character. Characters not in Latin1, and certain special characters,
@@ -593,7 +593,7 @@ DocsCollector.collect('java.util.Properties', [
 				[/* inline code block */ 'i', `Properties`],
 				[/* text */ 't', ` table using the
  `],
-				[/* reference */ 'r', `load(InputStream)`],
+				[/* reference */ 'r', `#load(java.io.InputStream)`, `load(InputStream)`],
 				[/* text */ 't', ` method.
  `],
 				[/* block */ 'b', [
@@ -611,7 +611,7 @@ DocsCollector.collect('java.util.Properties', [
  This method outputs the comments, properties keys and values in
  the same format as specified in
  `],
-					[/* reference */ 'r', `store(Writer)`],
+					[/* reference */ 'r', `#store(java.io.Writer,java.lang.String)`, `store(Writer)`],
 					[/* text */ 't', `,
  with the following differences:
  `]
@@ -692,7 +692,7 @@ DocsCollector.collect('java.util.Properties', [
 				[/* inline code block */ 'i', `Properties`],
 				[/* text */ 't', ` table to the output character stream in a
  format suitable for using the `],
-				[/* reference */ 'r', `load(Reader)`],
+				[/* reference */ 'r', `#load(java.io.Reader)`, `load(Reader)`],
 				[/* text */ 't', `
  method.
  `],
@@ -907,7 +907,7 @@ DocsCollector.collect('java.util.Properties', [
  `],
 				[/* block */ 'b', `The XML document will have the following DOCTYPE declaration:
  `],
-				[/* code block */ 'c', ` &lt;!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd"&gt;
+				[/* code block */ 'c', ` <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
  `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
@@ -935,10 +935,10 @@ DocsCollector.collect('java.util.Properties', [
 				[/* block */ 'b', [
 					[/* text */ 't', `This method behaves the same as
  `],
-					[/* reference */ 'r', `storeToXML(OutputStream os, String comment, Charset charset)`],
+					[/* reference */ 'r', `#storeToXML(java.io.OutputStream,java.lang.String,java.nio.charset.Charset)`, `storeToXML(OutputStream os, String comment, Charset charset)`],
 					[/* text */ 't', `
  except that it will `],
-					[/* external link */ 'a', `../nio/charset/Charset.html#forName(java.lang.String)`, `look up the charset`],
+					[/* reference */ 'r', `java.Charset#forName(java.lang.String)`],
 					[/* text */ 't', `
  using the given encoding name.`]
 				]]
@@ -956,7 +956,7 @@ DocsCollector.collect('java.util.Properties', [
 				[/* parameter */ 'encoding', [/* parameter description */
 					[/* text */ 't', `the name of a supported
                   `],
-					[/* external link */ 'a', `../lang/package-summary.html#charenc`, `character encoding`]
+					[/* text */ 't', `character encoding`]
 				]]
 			],
 			[/* throws */
@@ -1051,7 +1051,7 @@ DocsCollector.collect('java.util.Properties', [
  `],
 				[/* block */ 'b', `The XML document will have the following DOCTYPE declaration:
  `],
-				[/* code block */ 'c', ` &lt;!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd"&gt;
+				[/* code block */ 'c', ` <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
  `],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
@@ -1161,7 +1161,7 @@ DocsCollector.collect('java.util.Properties', [
  `],
 				[/* block */ 'b', `The XML document must have the following DOCTYPE declaration:
  `],
-				[/* code block */ 'c', ` &lt;!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd"&gt;
+				[/* code block */ 'c', ` <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
  `],
 				[/* text */ 't', `
  Furthermore, the document must satisfy the properties DTD described

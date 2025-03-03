@@ -24,11 +24,11 @@ DocsCollector.collect('java.util.Optional', [
 		[/* block */ 'b', [
 			[/* text */ 't', `Additional methods that depend on the presence or absence of a contained
  value are provided, such as `],
-			[/* reference */ 'r', `orElse()`],
+			[/* reference */ 'r', `#orElse(T)`, `orElse()`],
 			[/* text */ 't', `
  (returns a default value if no value is present) and
  `],
-			[/* reference */ 'r', `ifPresent()`],
+			[/* reference */ 'r', `#ifPresent(java.util.function.Consumer)`, `ifPresent()`],
 			[/* text */ 't', ` (performs an
  action if a value is present).
 
@@ -36,11 +36,11 @@ DocsCollector.collect('java.util.Optional', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
-			[/* external link */ 'a', `../../../java.base/java/lang/doc-files/ValueBased.html`, `value-based`],
+			[/* text */ 't', `value-based`],
 			[/* text */ 't', `
  class; programmers should treat instances that are
  `],
-			[/* reference */ 'r', `equal`],
+			[/* reference */ 'r', `#equals(java.lang.Object)`, `equal`],
 			[/* text */ 't', ` as interchangeable and should not
  use instances for synchronization, or unpredictable behavior may
  occur. For example, in a future release, synchronization may fail.`]
@@ -159,7 +159,7 @@ DocsCollector.collect('java.util.Optional', [
 				[/* inline code block */ 'i', `Optional`],
 				[/* text */ 't', ` describing (as if by
  `],
-				[/* reference */ 'r', `ofNullable(T)`],
+				[/* reference */ 'r', `#ofNullable(T)`, `ofNullable(T)`],
 				[/* text */ 't', `) the result of applying the given mapping function to
  the value, otherwise returns an empty `],
 				[/* inline code block */ 'i', `Optional`],
@@ -301,7 +301,7 @@ DocsCollector.collect('java.util.Optional', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This method is similar to `],
-					[/* reference */ 'r', `map(Function)`],
+					[/* reference */ 'r', `#map(java.util.function.Function)`, `map(Function)`],
 					[/* text */ 't', `, but the mapping
  function is one whose result is already an `],
 					[/* inline code block */ 'i', `Optional`],

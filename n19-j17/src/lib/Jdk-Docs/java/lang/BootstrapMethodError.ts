@@ -15,10 +15,10 @@ DocsCollector.collect('java.lang.BootstrapMethodError', [
 		[/* reference */ 'r', `java.lang.invoke.CallSite`],
 		[/* text */ 't', ` with a
  `],
-		[/* external link */ 'a', `invoke/CallSite.html#getTarget()`, `target`],
+		[/* reference */ 'r', `.CallSite#getTarget()`],
 		[/* text */ 't', `
  of the correct `],
-		[/* external link */ 'a', `invoke/MethodHandle.html#type()`, `method type`],
+		[/* reference */ 'r', `.MethodHandle#type()`],
 		[/* text */ 't', `,
  or for a dynamic constant the bootstrap method has failed to provide a
  constant value of the required type.`]

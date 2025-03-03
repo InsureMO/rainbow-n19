@@ -65,7 +65,7 @@ DocsCollector.collect('java.lang.Enum', [
  enum declaration.
 
  `],
-				[/* reference */ 'r', `toString()`],
+				[/* reference */ 'r', `#toString()`, `toString()`],
 				[/* text */ 't', `  This method is designed primarily for
  use in specialized situations where correctness depends on getting the
  exact name, which will not vary from release to release.`]
@@ -251,7 +251,7 @@ DocsCollector.collect('java.lang.Enum', [
    e1.getDeclaringClass() == e2.getDeclaringClass().
  (The value returned by this method may differ from the one returned
  by the `],
-				[/* external link */ 'a', `Object.html#getClass()`, `Object.getClass()`],
+				[/* reference */ 'r', `.Object#getClass()`],
 				[/* text */ 't', ` method for enum constants with
  constant-specific class bodies.)`]
 			],

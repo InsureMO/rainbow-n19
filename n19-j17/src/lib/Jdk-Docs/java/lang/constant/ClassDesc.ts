@@ -4,7 +4,7 @@ import {DocsCollector} from '../../../DocsCollector';
 DocsCollector.collect('java.lang.constant.ClassDesc', [
 	[/* class description */
 		[/* text */ 't', `A `],
-		[/* external link */ 'a', `package-summary.html#nominal`, `nominal descriptor`],
+		[/* reference */ 'r', `.package-summary#nominal`],
 		[/* text */ 't', ` for a
  `],
 		[/* reference */ 'r', `java.lang.Class`],
@@ -26,23 +26,23 @@ DocsCollector.collect('java.lang.constant.ClassDesc', [
  To create a `],
 			[/* reference */ 'r', `java.lang.constant.ClassDesc`],
 			[/* text */ 't', ` for a class or interface type, use `],
-			[/* reference */ 'r', `of(java.lang.String)`],
+			[/* reference */ 'r', `#of(java.lang.String)`, `of(java.lang.String)`],
 			[/* text */ 't', ` or
  `],
-			[/* reference */ 'r', `ofDescriptor(String)`],
+			[/* reference */ 'r', `#ofDescriptor(java.lang.String)`, `ofDescriptor(String)`],
 			[/* text */ 't', `; to create a `],
 			[/* reference */ 'r', `java.lang.constant.ClassDesc`],
 			[/* text */ 't', ` for an array
  type, use `],
-			[/* reference */ 'r', `ofDescriptor(String)`],
+			[/* reference */ 'r', `#ofDescriptor(java.lang.String)`, `ofDescriptor(String)`],
 			[/* text */ 't', `, or first obtain a
  `],
 			[/* reference */ 'r', `java.lang.constant.ClassDesc`],
 			[/* text */ 't', ` for the component type and then call the `],
-			[/* reference */ 'r', `arrayType()`],
+			[/* reference */ 'r', `#arrayType()`, `arrayType()`],
 			[/* text */ 't', `
  or `],
-			[/* reference */ 'r', `arrayType(int)`],
+			[/* reference */ 'r', `#arrayType(int)`, `arrayType(int)`],
 			[/* text */ 't', ` methods.`]
 		]]
 	],
@@ -126,13 +126,13 @@ DocsCollector.collect('java.lang.constant.ClassDesc', [
 				[/* inline code block */ 'i', `"java.lang.String"`],
 				[/* text */ 't', `.
  (To create a descriptor for an array type, either use `],
-				[/* reference */ 'r', `ofDescriptor(String)`],
+				[/* reference */ 'r', `#ofDescriptor(java.lang.String)`, `ofDescriptor(String)`],
 				[/* text */ 't', `
  or `],
-				[/* reference */ 'r', `arrayType()`],
+				[/* reference */ 'r', `#arrayType()`, `arrayType()`],
 				[/* text */ 't', `; to create a descriptor for a primitive type, use
  `],
-				[/* reference */ 'r', `ofDescriptor(String)`],
+				[/* reference */ 'r', `#ofDescriptor(java.lang.String)`, `ofDescriptor(String)`],
 				[/* text */ 't', ` or use the predefined constants in
  `],
 				[/* reference */ 'r', `java.lang.constant.ConstantDescs`],

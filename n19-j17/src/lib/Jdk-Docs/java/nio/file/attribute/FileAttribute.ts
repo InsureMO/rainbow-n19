@@ -5,9 +5,9 @@ DocsCollector.collect('java.nio.file.attribute.FileAttribute', [
 	[/* class description */
 		[/* text */ 't', `An object that encapsulates the value of a file attribute that can be set
  atomically when creating a new file or directory by invoking the `],
-		[/* external link */ 'a', `../Files.html#createFile(java.nio.file.Path,java.nio.file.attribute.FileAttribute...)`, `createFile`],
+		[/* reference */ 'r', `java.Files#createFile(java.nio.file.Path,java.nio.file.attribute.FileAttribute...)`],
 		[/* text */ 't', ` or `],
-		[/* external link */ 'a', `../Files.html#createDirectory(java.nio.file.Path,java.nio.file.attribute.FileAttribute...)`, `createDirectory`],
+		[/* reference */ 'r', `java.Files#createDirectory(java.nio.file.Path,java.nio.file.attribute.FileAttribute...)`],
 		[/* text */ 't', ` methods.`]
 	],
 	/* fields */ UDF,

@@ -21,9 +21,9 @@ DocsCollector.collect('java.time.temporal.TemporalAmount', [
  `],
 			[/* inline code block */ 'i', `long`],
 			[/* text */ 't', `, exposed via `],
-			[/* reference */ 'r', `getUnits()`],
+			[/* reference */ 'r', `#getUnits()`, `getUnits()`],
 			[/* text */ 't', ` and `],
-			[/* reference */ 'r', `get(TemporalUnit)`],
+			[/* reference */ 'r', `#get(java.time.temporal.TemporalUnit)`, `get(TemporalUnit)`],
 			[/* text */ 't', `.
  A simple case might have a single unit-value pair, such as "6 hours".
  A more complex case may have multiple unit-value pairs, such as
@@ -61,7 +61,7 @@ DocsCollector.collect('java.time.temporal.TemporalAmount', [
 			[/* method description */
 				[/* text */ 't', `Returns the value of the requested unit.
  The units returned from `],
-				[/* reference */ 'r', `getUnits()`],
+				[/* reference */ 'r', `#getUnits()`, `getUnits()`],
 				[/* text */ 't', ` uniquely define the
  value of the `],
 				[/* inline code block */ 'i', `TemporalAmount`],
@@ -104,7 +104,7 @@ DocsCollector.collect('java.time.temporal.TemporalAmount', [
  There are two equivalent ways of using this method.
  The first is to invoke this method directly.
  The second is to use `],
-					[/* external link */ 'a', `Temporal.html#plus(java.time.temporal.TemporalAmount)`, `Temporal.plus(TemporalAmount)`],
+					[/* reference */ 'r', `.Temporal#plus(java.time.temporal.TemporalAmount)`],
 					[/* text */ 't', `:
  `]
 				]],
@@ -170,7 +170,7 @@ DocsCollector.collect('java.time.temporal.TemporalAmount', [
  There are two equivalent ways of using this method.
  The first is to invoke this method directly.
  The second is to use `],
-					[/* external link */ 'a', `Temporal.html#minus(java.time.temporal.TemporalAmount)`, `Temporal.minus(TemporalAmount)`],
+					[/* reference */ 'r', `.Temporal#minus(java.time.temporal.TemporalAmount)`],
 					[/* text */ 't', `:
  `]
 				]],

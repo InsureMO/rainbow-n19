@@ -318,7 +318,7 @@ DocsCollector.collect('java.lang.ThreadGroup', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` An application might use the
  `],
-					[/* reference */ 'r', `activeGroupCount`],
+					[/* reference */ 'r', `#activeGroupCount()`, `activeGroupCount`],
 					[/* text */ 't', ` method to
  get an estimate of how big the array should be, however `],
 					[/* text */ 't', `if the
@@ -349,7 +349,7 @@ DocsCollector.collect('java.lang.ThreadGroup', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if `],
-					[/* reference */ 'r', `checkAccess`],
+					[/* reference */ 'r', `#checkAccess()`, `checkAccess`],
 					[/* text */ 't', ` determines that
           the current thread cannot access this thread group`]
 				]]
@@ -369,7 +369,7 @@ DocsCollector.collect('java.lang.ThreadGroup', [
 
  `],
 				[/* block */ 'b', [
-					[/* reference */ 'r', `enumerate`],
+					[/* reference */ 'r', `#enumerate(java.lang.ThreadGroup%5B%5D,boolean)`, `enumerate`],
 					[/* inline code block */ 'i', `(list, true)`]
 				]],
 				[/* block */ 'b', '']
@@ -382,7 +382,7 @@ DocsCollector.collect('java.lang.ThreadGroup', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if `],
-					[/* reference */ 'r', `checkAccess`],
+					[/* reference */ 'r', `#checkAccess()`, `checkAccess`],
 					[/* text */ 't', ` determines that
           the current thread cannot access this thread group`]
 				]]
@@ -402,7 +402,7 @@ DocsCollector.collect('java.lang.ThreadGroup', [
 
  `],
 				[/* block */ 'b', [
-					[/* reference */ 'r', `enumerate`],
+					[/* reference */ 'r', `#enumerate(java.lang.Thread%5B%5D,boolean)`, `enumerate`],
 					[/* inline code block */ 'i', `(list, true)`]
 				]],
 				[/* block */ 'b', '']
@@ -415,7 +415,7 @@ DocsCollector.collect('java.lang.ThreadGroup', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if `],
-					[/* reference */ 'r', `checkAccess`],
+					[/* reference */ 'r', `#checkAccess()`, `checkAccess`],
 					[/* text */ 't', ` determines that
           the current thread cannot access this thread group`]
 				]]
@@ -440,7 +440,7 @@ DocsCollector.collect('java.lang.ThreadGroup', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` An application might use the `],
-					[/* reference */ 'r', `activeCount`],
+					[/* reference */ 'r', `#activeCount()`, `activeCount`],
 					[/* text */ 't', `
  method to get an estimate of how big the array should be, however
  `],
@@ -471,7 +471,7 @@ DocsCollector.collect('java.lang.ThreadGroup', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if `],
-					[/* reference */ 'r', `checkAccess`],
+					[/* reference */ 'r', `#checkAccess()`, `checkAccess`],
 					[/* text */ 't', ` determines that
           the current thread cannot access this thread group`]
 				]]
@@ -511,7 +511,7 @@ DocsCollector.collect('java.lang.ThreadGroup', [
 					[/* block */ 'b', [
 						[/* text */ 't', `Otherwise, this method checks to see if there is a
      `],
-						[/* external link */ 'a', `Thread.html#getDefaultUncaughtExceptionHandler()`, `default uncaught exception handler`],
+						[/* reference */ 'r', `.Thread#getDefaultUncaughtExceptionHandler()`],
 						[/* text */ 't', ` installed, and if so, its
      `],
 						[/* inline code block */ 'i', `uncaughtException`],
@@ -528,15 +528,15 @@ DocsCollector.collect('java.lang.ThreadGroup', [
 						[/* text */ 't', `. If so, nothing
      special is done. Otherwise, a message containing the
      thread's name, as returned from the thread's `],
-						[/* external link */ 'a', `Thread.html#getName()`, `getName`],
+						[/* reference */ 'r', `.Thread#getName()`],
 						[/* text */ 't', ` method, and a stack backtrace,
      using the `],
 						[/* inline code block */ 'i', `Throwable`],
 						[/* text */ 't', `'s `],
-						[/* external link */ 'a', `Throwable.html#printStackTrace()`, `printStackTrace`],
+						[/* reference */ 'r', `.Throwable#printStackTrace()`],
 						[/* text */ 't', ` method, is
      printed to the `],
-						[/* external link */ 'a', `System.html#err`, `standard error stream`],
+						[/* reference */ 'r', `.System#err`],
 						[/* text */ 't', `.
  `]
 					]]
@@ -641,10 +641,10 @@ DocsCollector.collect('java.lang.ThreadGroup', [
 					[/* inline code block */ 'i', `pri`],
 					[/* text */ 't', ` argument is less than
  `],
-					[/* external link */ 'a', `Thread.html#MIN_PRIORITY`, `Thread.MIN_PRIORITY`],
+					[/* reference */ 'r', `.Thread#MIN_PRIORITY`],
 					[/* text */ 't', ` or greater than
  `],
-					[/* external link */ 'a', `Thread.html#MAX_PRIORITY`, `Thread.MAX_PRIORITY`],
+					[/* reference */ 'r', `.Thread#MAX_PRIORITY`],
 					[/* text */ 't', `, the maximum priority of the group
  remains unchanged.
  `]

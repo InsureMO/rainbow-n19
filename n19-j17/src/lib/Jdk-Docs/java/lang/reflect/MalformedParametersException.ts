@@ -4,7 +4,7 @@ import {DocsCollector} from '../../../DocsCollector';
 DocsCollector.collect('java.lang.reflect.MalformedParametersException', [
 	[/* class description */
 		[/* text */ 't', `Thrown when `],
-		[/* external link */ 'a', `Executable.html#getParameters()`, `the java.lang.reflect package`],
+		[/* reference */ 'r', `.Executable#getParameters()`],
 		[/* text */ 't', ` attempts to read method parameters from
  a class file and determines that one or more parameters are
  malformed.
@@ -29,7 +29,7 @@ DocsCollector.collect('java.lang.reflect.MalformedParametersException', [
 		[/* text */ 't', `
 
  See `],
-		[/* external link */ 'a', `Executable.html#getParameters()`, `Executable.getParameters()`],
+		[/* reference */ 'r', `.Executable#getParameters()`],
 		[/* text */ 't', ` for more
  information.`],
 		[/* block */ 'b', '']

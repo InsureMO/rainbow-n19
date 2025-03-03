@@ -103,7 +103,7 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Version', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method satisfies the general contract of the `],
-					[/* external link */ 'a', `../Object.html#equals(java.lang.Object)`, `Object.equals`],
+					[/* reference */ 'r', `java.Object#equals(java.lang.Object)`],
 					[/* text */ 't', ` method. `]
 				]]
 			],
@@ -137,7 +137,7 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Version', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The hash code is based upon the components of the version and
  satisfies the general contract of the `],
-					[/* external link */ 'a', `../Object.html#hashCode()`, `Object.hashCode`],
+					[/* reference */ 'r', `java.Object#hashCode()`],
 					[/* text */ 't', ` method. `]
 				]]
 			],

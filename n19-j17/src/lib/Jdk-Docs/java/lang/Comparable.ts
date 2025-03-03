@@ -18,10 +18,10 @@ DocsCollector.collect('java.lang.Comparable', [
 
  Lists (and arrays) of objects that implement this interface can be sorted
  automatically by `],
-			[/* external link */ 'a', `../util/Collections.html#sort(java.util.List)`, `Collections.sort`],
+			[/* reference */ 'r', `java.Collections#sort(java.util.List)`],
 			[/* text */ 't', ` (and
  `],
-			[/* external link */ 'a', `../util/Arrays.html#sort(java.lang.Object%5B%5D)`, `Arrays.sort`],
+			[/* reference */ 'r', `java.Arrays#sort(java.lang.Object[])`],
 			[/* text */ 't', `).  Objects that implement this
  interface can be used as keys in a `],
 			[/* reference */ 'r', `java.util.SortedMap`],
@@ -113,12 +113,12 @@ DocsCollector.collect('java.lang.Comparable', [
  exception is `],
 			[/* reference */ 'r', `java.math.BigDecimal`],
 			[/* text */ 't', `, whose `],
-			[/* external link */ 'a', `../math/BigDecimal.html#compareTo(java.math.BigDecimal)`, `natural ordering`],
+			[/* reference */ 'r', `java.BigDecimal#compareTo(java.math.BigDecimal)`],
 			[/* text */ 't', ` equates `],
 			[/* inline code block */ 'i', `BigDecimal`],
 			[/* text */ 't', ` objects with equal numerical values and different
  representations (such as 4.0 and 4.00). For `],
-			[/* external link */ 'a', `../math/BigDecimal.html#equals(java.lang.Object)`, `BigDecimal.equals()`],
+			[/* reference */ 'r', `java.BigDecimal#equals(java.lang.Object)`],
 			[/* text */ 't', ` to return true,
  the representation and numerical value of the two `],
 			[/* inline code block */ 'i', `BigDecimal`],
@@ -161,7 +161,7 @@ DocsCollector.collect('java.lang.Comparable', [
 		[/* text */ 't', `, we mean that the
  quotient for the natural ordering is the equivalence relation defined by
  the class's `],
-		[/* external link */ 'a', `Object.html#equals(java.lang.Object)`, `equals(Object)`],
+		[/* reference */ 'r', `.Object#equals(java.lang.Object)`],
 		[/* text */ 't', ` method:`],
 		[/* code block */ 'c', `     {(x, y) such that x.equals(y)}. `],
 		[/* block */ 'b', ''],
@@ -182,7 +182,7 @@ DocsCollector.collect('java.lang.Comparable', [
 		[/* block */ 'b', [
 			[/* text */ 't', `This interface is a member of the
  `],
-			[/* external link */ 'a', `../../../java.base/java/util/package-summary.html#CollectionsFramework`, `Java Collections Framework`],
+			[/* text */ 't', `Java Collections Framework`],
 			[/* text */ 't', `.`]
 		]]
 	],
@@ -198,7 +198,7 @@ DocsCollector.collect('java.lang.Comparable', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `The implementor must ensure `],
-					[/* external link */ 'a', `Integer.html#signum(int)`, `signum`],
+					[/* reference */ 'r', `.Integer#signum(int)`],
 					[/* inline code block */ 'i', `(x.compareTo(y)) == -signum(y.compareTo(x))`],
 					[/* text */ 't', ` for
  all `],

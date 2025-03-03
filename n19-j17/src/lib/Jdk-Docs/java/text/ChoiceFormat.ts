@@ -13,7 +13,7 @@ DocsCollector.collect('java.text.ChoiceFormat', [
  specifies a half-open interval up to the next item:
  `],
 		[/* block */ 'b', [
-			[/* code block */ 'c', ` X matches j if and only if limit[j] ≤ X &lt; limit[j+1]
+			[/* code block */ 'c', ` X matches j if and only if limit[j] ≤ X < limit[j+1]
  `]
 		]],
 		[/* text */ 't', `
@@ -309,7 +309,7 @@ DocsCollector.collect('java.text.ChoiceFormat', [
 					[/* inline code block */ 'i', `fieldPosition`],
 					[/* text */ 't', ` is
                    `],
-					[/* external link */ 'a', `NumberFormat.html#INTEGER_FIELD`, `NumberFormat.INTEGER_FIELD`],
+					[/* reference */ 'r', `.NumberFormat#INTEGER_FIELD`],
 					[/* text */ 't', `, the begin index
                    and end index of `],
 					[/* inline code block */ 'i', `fieldPosition`],
@@ -492,7 +492,7 @@ DocsCollector.collect('java.text.ChoiceFormat', [
 					[/* text */ 't', `contains the top value that you want
  parsed with that format, and should be in ascending sorted order. When
  formatting X, the choice will be the i, where
- limit[i] ≤ X &lt; limit[i+1].
+ limit[i] ≤ X < limit[i+1].
  If the limit array is not in ascending order, the results of formatting
  will be incorrect.`]
 				]],

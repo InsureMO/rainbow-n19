@@ -11,10 +11,10 @@ DocsCollector.collect('java.nio.file.FileStore', [
 		[/* inline code block */ 'i', `FileStore`],
 		[/* text */ 't', ` for where a file is stored is obtained
  by invoking the `],
-		[/* external link */ 'a', `Files.html#getFileStore(java.nio.file.Path)`, `getFileStore`],
+		[/* reference */ 'r', `.Files#getFileStore(java.nio.file.Path)`],
 		[/* text */ 't', ` method, or all file
  stores can be enumerated by invoking the `],
-		[/* external link */ 'a', `FileSystem.html#getFileStores()`, `getFileStores`],
+		[/* reference */ 'r', `.FileSystem#getFileStores()`],
 		[/* text */ 't', ` method.
 
  `],
@@ -47,7 +47,7 @@ DocsCollector.collect('java.nio.file.FileStore', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The string returned by this method may differ from the string
  returned by the `],
-					[/* external link */ 'a', `../../lang/Object.html#toString()`, `toString`],
+					[/* reference */ 'r', `java.nio.Object#toString()`],
 					[/* text */ 't', ` method.`]
 				]]
 			],
@@ -92,7 +92,7 @@ DocsCollector.collect('java.nio.file.FileStore', [
 			[/* method description */
 				[/* text */ 't', `Returns the size, in bytes, of the file store. If the total number of
  bytes in the file store is greater than `],
-				[/* external link */ 'a', `../../lang/Long.html#MAX_VALUE`, `Long.MAX_VALUE`],
+				[/* reference */ 'r', `java.nio.Long#MAX_VALUE`],
 				[/* text */ 't', `, then
  `],
 				[/* inline code block */ 'i', `Long.MAX_VALUE`],
@@ -113,7 +113,7 @@ DocsCollector.collect('java.nio.file.FileStore', [
 				[/* text */ 't', `Returns the number of bytes available to this Java virtual machine on the
  file store.  If the number of bytes available is greater than
  `],
-				[/* external link */ 'a', `../../lang/Long.html#MAX_VALUE`, `Long.MAX_VALUE`],
+				[/* reference */ 'r', `java.nio.Long#MAX_VALUE`],
 				[/* text */ 't', `, then `],
 				[/* inline code block */ 'i', `Long.MAX_VALUE`],
 				[/* text */ 't', ` will be returned.
@@ -163,7 +163,7 @@ DocsCollector.collect('java.nio.file.FileStore', [
 				[/* block */ 'b', [
 					[/* text */ 't', `view-name`],
 					[/* text */ 't', ` is the `],
-					[/* external link */ 'a', `attribute/AttributeView.html#name()`, `name`],
+					[/* reference */ 'r', `.AttributeView#name()`],
 					[/* text */ 't', ` of
  a `],
 					[/* reference */ 'r', `java.nio.file.FileStore`],
@@ -174,13 +174,7 @@ DocsCollector.collect('java.nio.file.FileStore', [
 
  `]
 				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `Usage Example:`],
-					[/* text */ 't', `
- Suppose we want to know if ZFS compression is enabled (assuming the "zfs"
- view is supported):
- `]
-				]],
+				[/* block */ 'b', `Usage Example:`],
 				[/* code block */ 'c', `    boolean compression = (Boolean)fs.getAttribute("zfs:compression");
  `],
 				[/* block */ 'b', '']
@@ -211,7 +205,7 @@ DocsCollector.collect('java.nio.file.FileStore', [
 				[/* text */ 't', `Returns the number of unallocated bytes in the file store.
  If the number of unallocated bytes is greater than
  `],
-				[/* external link */ 'a', `../../lang/Long.html#MAX_VALUE`, `Long.MAX_VALUE`],
+				[/* reference */ 'r', `java.nio.Long#MAX_VALUE`],
 				[/* text */ 't', `, then `],
 				[/* inline code block */ 'i', `Long.MAX_VALUE`],
 				[/* text */ 't', ` will be returned.
@@ -257,7 +251,7 @@ DocsCollector.collect('java.nio.file.FileStore', [
 			[/* parameters */
 				[/* parameter */ 'name', [/* parameter description */
 					[/* text */ 't', `the `],
-					[/* external link */ 'a', `attribute/AttributeView.html#name()`, `name`],
+					[/* reference */ 'r', `.AttributeView#name()`],
 					[/* text */ 't', ` of file attribute view`]
 				]]
 			],

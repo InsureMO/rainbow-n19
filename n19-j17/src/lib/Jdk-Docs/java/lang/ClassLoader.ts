@@ -18,7 +18,7 @@ DocsCollector.collect('java.lang.ClassLoader', [
 			[/* text */ 't', ` Every `],
 			[/* reference */ 'r', `java.lang.Class`],
 			[/* text */ 't', ` object contains a `],
-			[/* external link */ 'a', `Class.html#getClassLoader()`, `reference`],
+			[/* reference */ 'r', `.Class#getClassLoader()`],
 			[/* text */ 't', ` to the `],
 			[/* inline code block */ 'i', `ClassLoader`],
 			[/* text */ 't', ` that defined
@@ -31,7 +31,7 @@ DocsCollector.collect('java.lang.ClassLoader', [
 			[/* text */ 't', ` objects for array classes are not created by class
  loaders, but are created automatically as required by the Java runtime.
  The class loader for an array class, as returned by `],
-			[/* external link */ 'a', `Class.html#getClassLoader()`, `Class.getClassLoader()`],
+			[/* reference */ 'r', `.Class#getClassLoader()`],
 			[/* text */ 't', ` is the same as the class loader for its element
  type; if the element type is a primitive type, then the array class has no
  class loader.
@@ -83,11 +83,11 @@ DocsCollector.collect('java.lang.ClassLoader', [
 		[/* block */ 'b', [
 			[/* text */ 't', ` Class loaders that support concurrent loading of classes are known as
  `],
-			[/* reference */ 'r', `parallel capable`],
+			[/* reference */ 'r', `#isRegisteredAsParallelCapable()`, `parallel capable`],
 			[/* text */ 't', ` class
  loaders and are required to register themselves at their class initialization
  time by invoking the `],
-			[/* reference */ 'r', `ClassLoader.registerAsParallelCapable`],
+			[/* reference */ 'r', `#registerAsParallelCapable()`, `ClassLoader.registerAsParallelCapable`],
 			[/* text */ 't', `
  method. Note that the `],
 			[/* inline code block */ 'i', `ClassLoader`],
@@ -98,7 +98,7 @@ DocsCollector.collect('java.lang.ClassLoader', [
  hierarchical, class loaders need to be parallel capable, otherwise class
  loading can lead to deadlocks because the loader lock is held for the
  duration of the class loading process (see `],
-			[/* reference */ 'r', `loadClass`],
+			[/* reference */ 'r', `#loadClass(java.lang.String)`, `loadClass`],
 			[/* text */ 't', ` methods).
 
  `]
@@ -123,7 +123,7 @@ DocsCollector.collect('java.lang.ClassLoader', [
 			]],
 			[/* block */ 'b', [
 				[/* block */ 'b', [
-					[/* reference */ 'r', `Platform class loader`],
+					[/* reference */ 'r', `#getPlatformClassLoader()`, `Platform class loader`],
 					[/* text */ 't', `.
      The platform class loader is responsible for loading the
      `],
@@ -148,7 +148,7 @@ DocsCollector.collect('java.lang.ClassLoader', [
 			]],
 			[/* block */ 'b', [
 				[/* block */ 'b', [
-					[/* reference */ 'r', `System class loader`],
+					[/* reference */ 'r', `#getSystemClassLoader()`, `System class loader`],
 					[/* text */ 't', `.
      It is also known as `],
 					[/* text */ 't', `application class loader`],
@@ -168,13 +168,13 @@ DocsCollector.collect('java.lang.ClassLoader', [
  However, some classes may not originate from a file; they may originate
  from other sources, such as the network, or they could be constructed by an
  application.  The method `],
-			[/* reference */ 'r', `defineClass`],
+			[/* reference */ 'r', `#defineClass(java.lang.String,byte%5B%5D,int,int)`, `defineClass`],
 			[/* text */ 't', ` converts an array of bytes into an instance of class
  `],
 			[/* inline code block */ 'i', `Class`],
 			[/* text */ 't', `. Instances of this newly defined class can be created using
  `],
-			[/* external link */ 'a', `Class.html#newInstance()`, `Class.newInstance`],
+			[/* reference */ 'r', `.Class#newInstance()`],
 			[/* text */ 't', `.
 
  `]
@@ -183,7 +183,7 @@ DocsCollector.collect('java.lang.ClassLoader', [
 			[/* text */ 't', ` The methods and constructors of objects created by a class loader may
  reference other classes.  To determine the class(es) referred to, the Java
  virtual machine invokes the `],
-			[/* reference */ 'r', `loadClass`],
+			[/* reference */ 'r', `#loadClass(java.lang.String)`, `loadClass`],
 			[/* text */ 't', ` method of
  the class loader that originally created the class.
 
@@ -194,21 +194,21 @@ DocsCollector.collect('java.lang.ClassLoader', [
 
  `],
 		[/* block */ 'b', [
-			[/* code block */ 'c', `   ClassLoader loader&nbsp;= new NetworkClassLoader(host,&nbsp;port);
-   Object main&nbsp;= loader.loadClass("Main", true).newInstance();
-       &nbsp;.&nbsp;.&nbsp;.
+			[/* code block */ 'c', `   ClassLoader loader = new NetworkClassLoader(host, port);
+   Object main = loader.loadClass("Main", true).newInstance();
+        . . .
  `]
 		]],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The network class loader subclass must define the methods `],
-			[/* reference */ 'r', `findClass`],
+			[/* reference */ 'r', `#findClass(java.lang.String)`, `findClass`],
 			[/* text */ 't', ` and `],
 			[/* inline code block */ 'i', `loadClassData`],
 			[/* text */ 't', ` to load a class
  from the network.  Once it has downloaded the bytes that make up the class,
  it should use the method `],
-			[/* reference */ 'r', `defineClass`],
+			[/* reference */ 'r', `#defineClass(byte%5B%5D,int,int)`, `defineClass`],
 			[/* text */ 't', ` to
  create a class instance.  A sample implementation is:
 
@@ -226,7 +226,7 @@ DocsCollector.collect('java.lang.ClassLoader', [
 
          private byte[] loadClassData(String name) {
              // load the class data from the connection
-             &nbsp;.&nbsp;.&nbsp;.
+              . . .
          }
      }
  `]
@@ -279,13 +279,13 @@ DocsCollector.collect('java.lang.ClassLoader', [
 				[/* inline code block */ 'i', `ClassLoader`],
 				[/* text */ 't', ` returned by
  the method `],
-				[/* reference */ 'r', `getSystemClassLoader()`],
+				[/* reference */ 'r', `#getSystemClassLoader()`, `getSystemClassLoader()`],
 				[/* text */ 't', ` as the parent class loader.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` If there is a security manager, its `],
-					[/* external link */ 'a', `SecurityManager.html#checkCreateClassLoader()`, `checkCreateClassLoader`],
+					[/* reference */ 'r', `.SecurityManager#checkCreateClassLoader()`],
 					[/* text */ 't', ` method is invoked.  This may result in
  a security exception.  `]
 				]]
@@ -309,7 +309,7 @@ DocsCollector.collect('java.lang.ClassLoader', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` If there is a security manager, its `],
-					[/* external link */ 'a', `SecurityManager.html#checkCreateClassLoader()`, `checkCreateClassLoader`],
+					[/* reference */ 'r', `.SecurityManager#checkCreateClassLoader()`],
 					[/* text */ 't', ` method
  is invoked.  This may result in a security exception.  `]
 				]]
@@ -351,7 +351,7 @@ DocsCollector.collect('java.lang.ClassLoader', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its
          `],
-					[/* external link */ 'a', `SecurityManager.html#checkCreateClassLoader()`, `SecurityManager.checkCreateClassLoader()`],
+					[/* reference */ 'r', `.SecurityManager#checkCreateClassLoader()`],
 					[/* text */ 't', `
          method doesn't allow creation of a new class loader.`]
 				]]
@@ -388,7 +388,7 @@ DocsCollector.collect('java.lang.ClassLoader', [
 					[/* block */ 'b', [
 						[/* block */ 'b', [
 							[/* text */ 't', ` Invoke `],
-							[/* reference */ 'r', `findLoadedClass(String)`],
+							[/* reference */ 'r', `#findLoadedClass(java.lang.String)`, `findLoadedClass(String)`],
 							[/* text */ 't', ` to check if the class
    has already been loaded.  `]
 						]]
@@ -396,7 +396,7 @@ DocsCollector.collect('java.lang.ClassLoader', [
 					[/* block */ 'b', [
 						[/* block */ 'b', [
 							[/* text */ 't', ` Invoke the `],
-							[/* reference */ 'r', `loadClass`],
+							[/* reference */ 'r', `#loadClass(java.lang.String)`, `loadClass`],
 							[/* text */ 't', ` method
    on the parent class loader.  If the parent is `],
 							[/* inline code block */ 'i', `null`],
@@ -407,7 +407,7 @@ DocsCollector.collect('java.lang.ClassLoader', [
 					[/* block */ 'b', [
 						[/* block */ 'b', [
 							[/* text */ 't', ` Invoke the `],
-							[/* reference */ 'r', `findClass(String)`],
+							[/* reference */ 'r', `#findClass(java.lang.String)`, `findClass(String)`],
 							[/* text */ 't', ` method to find the
    class.  `]
 						]]
@@ -418,7 +418,7 @@ DocsCollector.collect('java.lang.ClassLoader', [
  `],
 					[/* inline code block */ 'i', `resolve`],
 					[/* text */ 't', ` flag is true, this method will then invoke the `],
-					[/* reference */ 'r', `resolveClass(Class)`],
+					[/* reference */ 'r', `#resolveClass(java.lang.Class)`, `resolveClass(Class)`],
 					[/* text */ 't', ` method on the resulting `],
 					[/* inline code block */ 'i', `Class`],
 					[/* text */ 't', ` object.
@@ -429,13 +429,13 @@ DocsCollector.collect('java.lang.ClassLoader', [
 					[/* text */ 't', ` Subclasses of `],
 					[/* inline code block */ 'i', `ClassLoader`],
 					[/* text */ 't', ` are encouraged to override `],
-					[/* reference */ 'r', `findClass(String)`],
+					[/* reference */ 'r', `#findClass(java.lang.String)`, `findClass(String)`],
 					[/* text */ 't', `, rather than this method.  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Unless overridden, this method synchronizes on the result of
  `],
-					[/* reference */ 'r', `getClassLoadingLock`],
+					[/* reference */ 'r', `#getClassLoadingLock(java.lang.String)`, `getClassLoadingLock`],
 					[/* text */ 't', ` method
  during the entire class loading process.`]
 				]]
@@ -469,11 +469,11 @@ DocsCollector.collect('java.lang.ClassLoader', [
 				[/* text */ 't', `binary name`],
 				[/* text */ 't', `.
  This method searches for classes in the same manner as the `],
-				[/* reference */ 'r', `loadClass(String, boolean)`],
+				[/* reference */ 'r', `#loadClass(java.lang.String,boolean)`, `loadClass(String, boolean)`],
 				[/* text */ 't', ` method.  It is invoked by the Java virtual
  machine to resolve class references.  Invoking this method is equivalent
  to invoking `],
-				[/* reference */ 'r', `loadClass(name, false)`],
+				[/* reference */ 'r', `#loadClass(java.lang.String,boolean)`, `loadClass(name, false)`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -597,7 +597,7 @@ DocsCollector.collect('java.lang.ClassLoader', [
           exception is thrown by that constructor when it is invoked. The
           underlying cause of the error can be retrieved via the
           `],
-					[/* external link */ 'a', `Throwable.html#getCause()`, `Throwable.getCause()`],
+					[/* reference */ 'r', `.Throwable#getCause()`],
 					[/* text */ 't', ` method.`]
 				]]
 			],
@@ -631,7 +631,7 @@ DocsCollector.collect('java.lang.ClassLoader', [
 					[/* text */ 't', `.
  Otherwise, the
  `],
-					[/* reference */ 'r', `defineClass`],
+					[/* reference */ 'r', `#defineClass(java.lang.String,byte%5B%5D,int,int,java.security.ProtectionDomain)`, `defineClass`],
 					[/* text */ 't', `
  method will define a package in this class loader corresponding to the package
  of the newly defined class; the properties of this defined package are
@@ -704,13 +704,13 @@ DocsCollector.collect('java.lang.ClassLoader', [
 					[/* text */ 't', ` For resources in named modules then the method must implement the
  rules for encapsulation specified in the `],
 					[/* inline code block */ 'i', `Module`],
-					[/* external link */ 'a', `Module.html#getResourceAsStream(java.lang.String)`, `getResourceAsStream`],
+					[/* reference */ 'r', `.Module#getResourceAsStream(java.lang.String)`],
 					[/* text */ 't', ` method. Additionally,
  it must not find non-"`],
 					[/* inline code block */ 'i', `.class`],
 					[/* text */ 't', `" resources in packages of named
  modules unless the package is `],
-					[/* external link */ 'a', `Module.html#isOpen(java.lang.String)`, `opened`],
+					[/* reference */ 'r', `.Module#isOpen(java.lang.String)`],
 					[/* text */ 't', `
  unconditionally. `]
 				]]
@@ -746,7 +746,7 @@ DocsCollector.collect('java.lang.ClassLoader', [
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` to find a resource in the
          `],
-					[/* reference */ 'r', `unnamed module`],
+					[/* reference */ 'r', `#getUnnamedModule()`, `unnamed module`],
 					[/* text */ 't', ` for this
          class loader`]
 				]],
@@ -774,21 +774,21 @@ DocsCollector.collect('java.lang.ClassLoader', [
 				[/* text */ 't', `Open for reading, a resource of the specified name from the search path
  used to load classes.  This method locates the resource through the
  system class loader (see `],
-				[/* reference */ 'r', `getSystemClassLoader()`],
+				[/* reference */ 'r', `#getSystemClassLoader()`, `getSystemClassLoader()`],
 				[/* text */ 't', `).
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Resources in named modules are subject to the encapsulation rules
  specified by `],
-					[/* external link */ 'a', `Module.html#getResourceAsStream(java.lang.String)`, `Module.getResourceAsStream`],
+					[/* reference */ 'r', `.Module#getResourceAsStream(java.lang.String)`],
 					[/* text */ 't', `.
  Additionally, and except for the special case where the resource has a
  name ending with "`],
 					[/* inline code block */ 'i', `.class`],
 					[/* text */ 't', `", this method will only find resources in
  packages of named modules when the package is `],
-					[/* external link */ 'a', `Module.html#isOpen(java.lang.String)`, `opened`],
+					[/* reference */ 'r', `.Module#isOpen(java.lang.String)`],
 					[/* text */ 't', ` unconditionally. `]
 				]]
 			],
@@ -814,20 +814,20 @@ DocsCollector.collect('java.lang.ClassLoader', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The search order is described in the documentation for `],
-					[/* reference */ 'r', `getResource(String)`],
+					[/* reference */ 'r', `#getResource(java.lang.String)`, `getResource(String)`],
 					[/* text */ 't', `.  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Resources in named modules are subject to the encapsulation rules
  specified by `],
-					[/* external link */ 'a', `Module.html#getResourceAsStream(java.lang.String)`, `Module.getResourceAsStream`],
+					[/* reference */ 'r', `.Module#getResourceAsStream(java.lang.String)`],
 					[/* text */ 't', `.
  Additionally, and except for the special case where the resource has a
  name ending with "`],
 					[/* inline code block */ 'i', `.class`],
 					[/* text */ 't', `", this method will only find resources in
  packages of named modules when the package is `],
-					[/* external link */ 'a', `Module.html#isOpen(java.lang.String)`, `opened`],
+					[/* reference */ 'r', `.Module#isOpen(java.lang.String)`],
 					[/* text */ 't', ` unconditionally. `]
 				]]
 			],
@@ -858,21 +858,21 @@ DocsCollector.collect('java.lang.ClassLoader', [
 				[/* text */ 't', `Find a resource of the specified name from the search path used to load
  classes.  This method locates the resource through the system class
  loader (see `],
-				[/* reference */ 'r', `getSystemClassLoader()`],
+				[/* reference */ 'r', `#getSystemClassLoader()`, `getSystemClassLoader()`],
 				[/* text */ 't', `).
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Resources in named modules are subject to the encapsulation rules
  specified by `],
-					[/* external link */ 'a', `Module.html#getResourceAsStream(java.lang.String)`, `Module.getResourceAsStream`],
+					[/* reference */ 'r', `.Module#getResourceAsStream(java.lang.String)`],
 					[/* text */ 't', `.
  Additionally, and except for the special case where the resource has a
  name ending with "`],
 					[/* inline code block */ 'i', `.class`],
 					[/* text */ 't', `", this method will only find resources in
  packages of named modules when the package is `],
-					[/* external link */ 'a', `Module.html#isOpen(java.lang.String)`, `opened`],
+					[/* reference */ 'r', `.Module#isOpen(java.lang.String)`],
 					[/* text */ 't', ` unconditionally. `]
 				]]
 			],
@@ -909,14 +909,14 @@ DocsCollector.collect('java.lang.ClassLoader', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` Resources in named modules are subject to the encapsulation rules
  specified by `],
-					[/* external link */ 'a', `Module.html#getResourceAsStream(java.lang.String)`, `Module.getResourceAsStream`],
+					[/* reference */ 'r', `.Module#getResourceAsStream(java.lang.String)`],
 					[/* text */ 't', `.
  Additionally, and except for the special case where the resource has a
  name ending with "`],
 					[/* inline code block */ 'i', `.class`],
 					[/* text */ 't', `", this method will only find resources in
  packages of named modules when the package is `],
-					[/* external link */ 'a', `Module.html#isOpen(java.lang.String)`, `opened`],
+					[/* reference */ 'r', `.Module#isOpen(java.lang.String)`],
 					[/* text */ 't', ` unconditionally (even if the caller of this method is in the
  same module as the resource). `]
 				]]
@@ -1072,7 +1072,7 @@ DocsCollector.collect('java.lang.ClassLoader', [
  This method should be overridden by class loader implementations that
  follow the delegation model for loading classes, and will be invoked by
  the `],
-				[/* reference */ 'r', `loadClass`],
+				[/* reference */ 'r', `#loadClass(java.lang.String)`, `loadClass`],
 				[/* text */ 't', ` method after checking the
  parent class loader for the requested class.`]
 			],
@@ -1109,7 +1109,7 @@ DocsCollector.collect('java.lang.ClassLoader', [
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` to find the class in the
          `],
-					[/* reference */ 'r', `unnamed module`],
+					[/* reference */ 'r', `#getUnnamedModule()`, `unnamed module`],
 					[/* text */ 't', ` for this
          class loader`]
 				]],
@@ -1241,7 +1241,7 @@ DocsCollector.collect('java.lang.ClassLoader', [
 				[/* text */ 't', `, then a default
  protection domain will be assigned to the class as
  specified in the documentation for `],
-				[/* reference */ 'r', `defineClass(String, byte[], int, int)`],
+				[/* reference */ 'r', `#defineClass(java.lang.String,byte%5B%5D,int,int)`, `defineClass(String, byte[], int, int)`],
 				[/* text */ 't', `.  Before the class can be used it must be resolved.
 
  `],
@@ -1250,7 +1250,7 @@ DocsCollector.collect('java.lang.ClassLoader', [
  set of certificates for the package, the restrictions on class names,
  and the defined package of the class
  are identical to those specified in the documentation for `],
-					[/* reference */ 'r', `defineClass(String, byte[], int, int, ProtectionDomain)`],
+					[/* reference */ 'r', `#defineClass(java.lang.String,byte%5B%5D,int,int,java.security.ProtectionDomain)`, `defineClass(String, byte[], int, int, ProtectionDomain)`],
 					[/* text */ 't', `.
 
  `]
@@ -1356,7 +1356,7 @@ DocsCollector.collect('java.lang.ClassLoader', [
 					[/* text */ 't', `,
  then a default protection domain will be assigned to the class as specified
  in the documentation for `],
-					[/* reference */ 'r', `defineClass(String, byte[], int, int)`],
+					[/* reference */ 'r', `#defineClass(java.lang.String,byte%5B%5D,int,int)`, `defineClass(String, byte[], int, int)`],
 					[/* text */ 't', `.
  Before the class can be used it must be resolved.
 
@@ -1396,7 +1396,7 @@ DocsCollector.collect('java.lang.ClassLoader', [
 					[/* inline code block */ 'i', `java.`],
 					[/* text */ 't', `", it can
  only be defined by the `],
-					[/* reference */ 'r', `platform class loader`],
+					[/* reference */ 'r', `#getPlatformClassLoader()`, `platform class loader`],
 					[/* text */ 't', ` or its ancestors; otherwise `],
 					[/* inline code block */ 'i', `SecurityException`],
 					[/* text */ 't', `
@@ -1534,11 +1534,11 @@ DocsCollector.collect('java.lang.ClassLoader', [
 					[/* inline code block */ 'i', `ProtectionDomain`],
 					[/* text */ 't', ` is effectively granted the same set of
  permissions returned when `],
-					[/* external link */ 'a', `../security/Policy.html#getPermissions(java.security.CodeSource)`, `Policy.getPolicy().getPermissions(new CodeSource(null, null))`],
+					[/* reference */ 'r', `java.Policy#getPermissions(java.security.CodeSource)`],
 					[/* text */ 't', `
  is invoked.  The default protection domain is created on the first invocation
  of `],
-					[/* reference */ 'r', `defineClass`],
+					[/* reference */ 'r', `#defineClass(java.lang.String,byte%5B%5D,int,int)`, `defineClass`],
 					[/* text */ 't', `,
  and re-used on subsequent invocations.
 
@@ -1549,7 +1549,7 @@ DocsCollector.collect('java.lang.ClassLoader', [
 					[/* inline code block */ 'i', `ProtectionDomain`],
 					[/* text */ 't', ` to the class, use
  the `],
-					[/* reference */ 'r', `defineClass`],
+					[/* reference */ 'r', `#defineClass(java.lang.String,byte%5B%5D,int,int,java.security.ProtectionDomain)`, `defineClass`],
 					[/* text */ 't', ` method that takes a
  `],
 					[/* inline code block */ 'i', `ProtectionDomain`],
@@ -1653,14 +1653,14 @@ DocsCollector.collect('java.lang.ClassLoader', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` Resources in named modules are subject to the encapsulation rules
  specified by `],
-					[/* external link */ 'a', `Module.html#getResourceAsStream(java.lang.String)`, `Module.getResourceAsStream`],
+					[/* reference */ 'r', `.Module#getResourceAsStream(java.lang.String)`],
 					[/* text */ 't', `.
  Additionally, and except for the special case where the resource has a
  name ending with "`],
 					[/* inline code block */ 'i', `.class`],
 					[/* text */ 't', `", this method will only find resources in
  packages of named modules when the package is `],
-					[/* external link */ 'a', `Module.html#isOpen(java.lang.String)`, `opened`],
+					[/* reference */ 'r', `.Module#isOpen(java.lang.String)`],
 					[/* text */ 't', ` unconditionally (even if the caller of this method is in the
  same module as the resource). `]
 				]]
@@ -1707,13 +1707,13 @@ DocsCollector.collect('java.lang.ClassLoader', [
 					[/* text */ 't', ` For resources in named modules then the method must implement the
  rules for encapsulation specified in the `],
 					[/* inline code block */ 'i', `Module`],
-					[/* external link */ 'a', `Module.html#getResourceAsStream(java.lang.String)`, `getResourceAsStream`],
+					[/* reference */ 'r', `.Module#getResourceAsStream(java.lang.String)`],
 					[/* text */ 't', ` method. Additionally,
  it must not find non-"`],
 					[/* inline code block */ 'i', `.class`],
 					[/* text */ 't', `" resources in packages of named
  modules unless the package is `],
-					[/* external link */ 'a', `Module.html#isOpen(java.lang.String)`, `opened`],
+					[/* reference */ 'r', `.Module#isOpen(java.lang.String)`],
 					[/* text */ 't', `
  unconditionally. `]
 				]]
@@ -1807,7 +1807,7 @@ DocsCollector.collect('java.lang.ClassLoader', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method loads the class through the system class loader (see
  `],
-					[/* reference */ 'r', `getSystemClassLoader()`],
+					[/* reference */ 'r', `#getSystemClassLoader()`, `getSystemClassLoader()`],
 					[/* text */ 't', `).  The `],
 					[/* inline code block */ 'i', `Class`],
 					[/* text */ 't', ` object returned
@@ -1818,7 +1818,7 @@ DocsCollector.collect('java.lang.ClassLoader', [
 					[/* inline code block */ 'i', `ClassLoader`],
 					[/* text */ 't', ` need not usually invoke this method,
  because most class loaders need to override just `],
-					[/* reference */ 'r', `findClass(String)`],
+					[/* reference */ 'r', `#findClass(java.lang.String)`, `findClass(String)`],
 					[/* text */ 't', `.  `]
 				]]
 			],
@@ -1872,14 +1872,14 @@ DocsCollector.collect('java.lang.ClassLoader', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` Resources in named modules are subject to the encapsulation rules
  specified by `],
-					[/* external link */ 'a', `Module.html#getResourceAsStream(java.lang.String)`, `Module.getResourceAsStream`],
+					[/* reference */ 'r', `.Module#getResourceAsStream(java.lang.String)`],
 					[/* text */ 't', `.
  Additionally, and except for the special case where the resource has a
  name ending with "`],
 					[/* inline code block */ 'i', `.class`],
 					[/* text */ 't', `", this method will only find resources in
  packages of named modules when the package is `],
-					[/* external link */ 'a', `Module.html#isOpen(java.lang.String)`, `opened`],
+					[/* reference */ 'r', `.Module#isOpen(java.lang.String)`],
 					[/* text */ 't', ` unconditionally (even if the caller of this method is in the
  same module as the resource). `]
 				]]
@@ -1915,7 +1915,7 @@ DocsCollector.collect('java.lang.ClassLoader', [
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if this class loader is registered as
  `],
-				[/* reference */ 'r', `parallel capable`],
+				[/* reference */ 'r', `#registerAsParallelCapable()`, `parallel capable`],
 				[/* text */ 't', `, otherwise
  `],
 				[/* inline code block */ 'i', `false`],
@@ -1944,20 +1944,20 @@ DocsCollector.collect('java.lang.ClassLoader', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The search order is described in the documentation for `],
-					[/* reference */ 'r', `getSystemResource(String)`],
+					[/* reference */ 'r', `#getSystemResource(java.lang.String)`, `getSystemResource(String)`],
 					[/* text */ 't', `.  `]
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Resources in named modules are subject to the encapsulation rules
  specified by `],
-					[/* external link */ 'a', `Module.html#getResourceAsStream(java.lang.String)`, `Module.getResourceAsStream`],
+					[/* reference */ 'r', `.Module#getResourceAsStream(java.lang.String)`],
 					[/* text */ 't', `.
  Additionally, and except for the special case where the resource has a
  name ending with "`],
 					[/* inline code block */ 'i', `.class`],
 					[/* text */ 't', `", this method will only find resources in
  packages of named modules when the package is `],
-					[/* external link */ 'a', `Module.html#isOpen(java.lang.String)`, `opened`],
+					[/* reference */ 'r', `.Module#isOpen(java.lang.String)`],
 					[/* text */ 't', ` unconditionally. `]
 				]]
 			],
@@ -2072,9 +2072,9 @@ DocsCollector.collect('java.lang.ClassLoader', [
  in the future will have assertions enabled or disabled by default.
  This setting may be overridden on a per-package or per-class basis by
  invoking `],
-				[/* reference */ 'r', `setPackageAssertionStatus(String, boolean)`],
+				[/* reference */ 'r', `#setPackageAssertionStatus(java.lang.String,boolean)`, `setPackageAssertionStatus(String, boolean)`],
 				[/* text */ 't', ` or `],
-				[/* reference */ 'r', `setClassAssertionStatus(String, boolean)`],
+				[/* reference */ 'r', `#setClassAssertionStatus(java.lang.String,boolean)`, `setClassAssertionStatus(String, boolean)`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -2139,7 +2139,7 @@ DocsCollector.collect('java.lang.ClassLoader', [
 					[/* text */ 't', ` Package defaults take precedence over the class loader's default
  assertion status, and may be overridden on a per-class basis by invoking
  `],
-					[/* reference */ 'r', `setClassAssertionStatus(String, boolean)`],
+					[/* reference */ 'r', `#setClassAssertionStatus(java.lang.String,boolean)`, `setClassAssertionStatus(String, boolean)`],
 					[/* text */ 't', `.  `]
 				]]
 			],

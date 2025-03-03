@@ -28,7 +28,7 @@ DocsCollector.collect('java.time.zone.ZoneRulesProvider', [
  fully qualified concrete zonerules-provider class name.
  Providers may also be made available by adding them to the class path or by
  registering themselves via `],
-			[/* reference */ 'r', `registerProvider(java.time.zone.ZoneRulesProvider)`],
+			[/* reference */ 'r', `#registerProvider(java.time.zone.ZoneRulesProvider)`, `registerProvider(java.time.zone.ZoneRulesProvider)`],
 			[/* text */ 't', ` method.
  `]
 		]],
@@ -93,7 +93,7 @@ DocsCollector.collect('java.time.zone.ZoneRulesProvider', [
  Under normal circumstances, the caching of zone rules is highly desirable
  as it will provide greater performance. However, there is a use case where
  the caching would not be desirable, see `],
-					[/* reference */ 'r', `provideRules(java.lang.String, boolean)`],
+					[/* reference */ 'r', `#provideRules(java.lang.String,boolean)`, `provideRules(java.lang.String, boolean)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -389,7 +389,7 @@ DocsCollector.collect('java.time.zone.ZoneRulesProvider', [
 					[/* text */ 't', ` must not be cached in the
  application as they will become stale. However, the boolean flag on
  `],
-					[/* reference */ 'r', `provideRules(String, boolean)`],
+					[/* reference */ 'r', `#provideRules(java.lang.String,boolean)`, `provideRules(String, boolean)`],
 					[/* text */ 't', ` allows provider implementations
  to control the caching of `],
 					[/* inline code block */ 'i', `ZoneId`],

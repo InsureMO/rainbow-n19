@@ -61,7 +61,7 @@ DocsCollector.collect('java.time.chrono.IsoChronology', [
  It can be used to lookup the `],
 					[/* inline code block */ 'i', `Chronology`],
 					[/* text */ 't', ` using `],
-					[/* external link */ 'a', `Chronology.html#of(java.lang.String)`, `Chronology.of(String)`],
+					[/* reference */ 'r', `.Chronology#of(java.lang.String)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -116,11 +116,11 @@ DocsCollector.collect('java.time.chrono.IsoChronology', [
  It can be used to lookup the `],
 					[/* inline code block */ 'i', `Chronology`],
 					[/* text */ 't', ` using `],
-					[/* external link */ 'a', `Chronology.html#of(java.lang.String)`, `Chronology.of(String)`],
+					[/* reference */ 'r', `.Chronology#of(java.lang.String)`],
 					[/* text */ 't', `.
  It can also be used as part of a locale, accessible via
  `],
-					[/* external link */ 'a', `../../util/Locale.html#getUnicodeLocaleType(java.lang.String)`, `Locale.getUnicodeLocaleType(String)`],
+					[/* reference */ 'r', `java.time.Locale#getUnicodeLocaleType(java.lang.String)`],
 					[/* text */ 't', ` with the key 'ca'.`]
 				]]
 			],
@@ -167,7 +167,7 @@ DocsCollector.collect('java.time.chrono.IsoChronology', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This is equivalent to `],
-					[/* external link */ 'a', `../LocalDate.html#from(java.time.temporal.TemporalAccessor)`, `LocalDate.from(TemporalAccessor)`],
+					[/* reference */ 'r', `java.LocalDate#from(java.time.temporal.TemporalAccessor)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -227,7 +227,7 @@ DocsCollector.collect('java.time.chrono.IsoChronology', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This is equivalent to `],
-					[/* external link */ 'a', `../LocalDate.html#of(int,int,int)`, `LocalDate.of(int, int, int)`],
+					[/* reference */ 'r', `java.LocalDate#of(int,int,int)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -258,7 +258,7 @@ DocsCollector.collect('java.time.chrono.IsoChronology', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This is equivalent to `],
-					[/* external link */ 'a', `../LocalDate.html#ofEpochDay(long)`, `LocalDate.ofEpochDay(long)`],
+					[/* reference */ 'r', `java.LocalDate#ofEpochDay(long)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -338,7 +338,7 @@ DocsCollector.collect('java.time.chrono.IsoChronology', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This is equivalent to `],
-					[/* external link */ 'a', `../LocalDate.html#ofYearDay(int,int)`, `LocalDate.ofYearDay(int, int)`],
+					[/* reference */ 'r', `java.LocalDate#ofYearDay(int,int)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -366,7 +366,7 @@ DocsCollector.collect('java.time.chrono.IsoChronology', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This will query the `],
-					[/* external link */ 'a', `../Clock.html#system(java.time.ZoneId)`, `system clock`],
+					[/* reference */ 'r', `java.Clock#system(java.time.ZoneId)`],
 					[/* text */ 't', ` to obtain the current date.
  Specifying the time-zone avoids dependence on the default time-zone.
  `]
@@ -396,7 +396,7 @@ DocsCollector.collect('java.time.chrono.IsoChronology', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This will query the `],
-					[/* external link */ 'a', `../Clock.html#systemDefaultZone()`, `system clock`],
+					[/* reference */ 'r', `java.Clock#systemDefaultZone()`],
 					[/* text */ 't', ` in the default
  time-zone to obtain the current date.
  `]
@@ -451,7 +451,7 @@ DocsCollector.collect('java.time.chrono.IsoChronology', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This is equivalent to `],
-					[/* external link */ 'a', `../ZonedDateTime.html#ofInstant(java.time.Instant,java.time.ZoneId)`, `ZonedDateTime.ofInstant(Instant, ZoneId)`],
+					[/* reference */ 'r', `java.ZonedDateTime#ofInstant(java.time.Instant,java.time.ZoneId)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -479,7 +479,7 @@ DocsCollector.collect('java.time.chrono.IsoChronology', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This is equivalent to `],
-					[/* external link */ 'a', `../ZonedDateTime.html#from(java.time.temporal.TemporalAccessor)`, `ZonedDateTime.from(TemporalAccessor)`],
+					[/* reference */ 'r', `java.ZonedDateTime#from(java.time.temporal.TemporalAccessor)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -504,7 +504,7 @@ DocsCollector.collect('java.time.chrono.IsoChronology', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This is equivalent to `],
-					[/* external link */ 'a', `../LocalDateTime.html#from(java.time.temporal.TemporalAccessor)`, `LocalDateTime.from(TemporalAccessor)`],
+					[/* reference */ 'r', `java.LocalDateTime#from(java.time.temporal.TemporalAccessor)`],
 					[/* text */ 't', `.`]
 				]]
 			],

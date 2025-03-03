@@ -8,7 +8,7 @@ DocsCollector.collect('java.nio.file.DirectoryStream$Filter', [
 		[/* inline code block */ 'i', `Filter`],
 		[/* text */ 't', ` is passed as the
  parameter to the `],
-		[/* external link */ 'a', `Files.html#newDirectoryStream(java.nio.file.Path,java.nio.file.DirectoryStream.Filter)`, `Files.newDirectoryStream(Path,DirectoryStream.Filter)`],
+		[/* reference */ 'r', `.Files#newDirectoryStream(java.nio.file.Path,java.nio.file.DirectoryStream.Filter)`],
 		[/* text */ 't', `
  method when opening a directory to iterate over the entries in the
  directory.`]

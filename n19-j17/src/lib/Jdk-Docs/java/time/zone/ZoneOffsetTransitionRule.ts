@@ -243,7 +243,7 @@ DocsCollector.collect('java.time.zone.ZoneOffsetTransitionRule', [
 			[/* method description */
 				[/* text */ 't', `Gets the local time of day of the transition which must be checked with
  `],
-				[/* reference */ 'r', `isMidnightEndOfDay()`],
+				[/* reference */ 'r', `#isMidnightEndOfDay()`, `isMidnightEndOfDay()`],
 				[/* text */ 't', `.
  `],
 				[/* block */ 'b', `

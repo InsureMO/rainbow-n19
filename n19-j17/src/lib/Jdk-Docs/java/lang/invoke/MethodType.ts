@@ -9,10 +9,10 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
  matched between a method handle and all its callers,
  and the JVM's operations enforce this matching at, specifically
  during calls to `],
-		[/* external link */ 'a', `MethodHandle.html#invokeExact(java.lang.Object...)`, `MethodHandle.invokeExact`],
+		[/* reference */ 'r', `.MethodHandle#invokeExact(java.lang.Object...)`],
 		[/* text */ 't', `
  and `],
-		[/* external link */ 'a', `MethodHandle.html#invoke(java.lang.Object...)`, `MethodHandle.invoke`],
+		[/* reference */ 'r', `.MethodHandle#invoke(java.lang.Object...)`],
 		[/* text */ 't', `, and during execution
  of `],
 		[/* inline code block */ 'i', `invokedynamic`],
@@ -116,7 +116,7 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 			[/* text */ 't', `
  if and only if all of the parameter types and return type can be described
  with a `],
-			[/* external link */ 'a', `../Class.html#describeConstable()`, `nominal descriptor`],
+			[/* reference */ 'r', `java.Class#describeConstable()`],
 			[/* text */ 't', ` represented by
  `],
 			[/* reference */ 'r', `java.lang.constant.ClassDesc`],
@@ -129,16 +129,16 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 				[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`],
 				[/* text */ 't', `
      returned by `],
-				[/* reference */ 'r', `MethodType::describeConstable`],
+				[/* reference */ 'r', `#describeConstable()`, `MethodType::describeConstable`],
 				[/* text */ 't', `.`]
 			]],
 			[/* block */ 'b', [
 				[/* text */ 't', `The descriptor string returned by
      `],
-				[/* reference */ 'r', `MethodType::descriptorString`],
+				[/* reference */ 'r', `#descriptorString()`, `MethodType::descriptorString`],
 				[/* text */ 't', ` or
      `],
-				[/* reference */ 'r', `MethodType::toMethodDescriptorString`],
+				[/* reference */ 'r', `#toMethodDescriptorString()`, `MethodType::toMethodDescriptorString`],
 				[/* text */ 't', `
      for the method type is a method descriptor (JVMS `],
 				[/* external link */ 'a', `https://docs.oracle.com/javase/specs/jvms/se17/html/jvms-4.html#jvms-4.3.3`, `4.3.3`],
@@ -150,7 +150,7 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 			[/* text */ 't', `
  If any of the parameter types or return type cannot be described
  nominally, i.e. `],
-			[/* external link */ 'a', `../Class.html#describeConstable()`, `Class::describeConstable`],
+			[/* reference */ 'r', `java.Class#describeConstable()`],
 			[/* text */ 't', `
  returns an empty optional for that type,
  then the method type cannot be described nominally:
@@ -162,17 +162,17 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 				[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`],
 				[/* text */ 't', ` and
      `],
-				[/* reference */ 'r', `MethodType::describeConstable`],
+				[/* reference */ 'r', `#describeConstable()`, `MethodType::describeConstable`],
 				[/* text */ 't', ` returns
      an empty optional.`]
 			]],
 			[/* block */ 'b', [
 				[/* text */ 't', `The descriptor string returned by
      `],
-				[/* reference */ 'r', `MethodType::descriptorString`],
+				[/* reference */ 'r', `#descriptorString()`, `MethodType::descriptorString`],
 				[/* text */ 't', ` or
      `],
-				[/* reference */ 'r', `MethodType::toMethodDescriptorString`],
+				[/* reference */ 'r', `#toMethodDescriptorString()`, `MethodType::toMethodDescriptorString`],
 				[/* text */ 't', `
      for the method type is not a type descriptor.`]
 			]]
@@ -228,7 +228,7 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 					[/* text */ 't', `
  Each type is represented by its
  `],
-					[/* external link */ 'a', `../Class.html#getSimpleName()`, `simple name`],
+					[/* reference */ 'r', `java.Class#getSimpleName()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -255,7 +255,7 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 			[/* method description */
 				[/* text */ 't', `Converts all primitive types to their corresponding wrapper types.
  Convenience method for `],
-				[/* reference */ 'r', `methodType`],
+				[/* reference */ 'r', `#methodType(java.lang.Class,java.lang.Class%5B%5D)`, `methodType`],
 				[/* text */ 't', `.
  All reference types (including wrapper types) will remain unchanged.
  A `],
@@ -311,7 +311,7 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 					[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`],
 					[/* text */ 't', ` for this method type
  can be produced by calling `],
-					[/* external link */ 'a', `../constant/MethodTypeDesc.html#ofDescriptor(java.lang.String)`, `MethodTypeDesc::ofDescriptor`],
+					[/* reference */ 'r', `java.MethodTypeDesc#ofDescriptor(java.lang.String)`],
 					[/* text */ 't', ` with the result descriptor string.
  `]
 				]],
@@ -331,10 +331,10 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 				[/* inline code block */ 'i', `<parameter-descriptors>`],
 				[/* text */ 't', ` is the concatenation of the
  `],
-				[/* external link */ 'a', `../Class.html#descriptorString()`, `descriptor string`],
+				[/* reference */ 'r', `java.Class#descriptorString()`],
 				[/* text */ 't', ` of all
  of the parameter types and the `],
-				[/* external link */ 'a', `../Class.html#descriptorString()`, `descriptor string`],
+				[/* reference */ 'r', `java.Class#descriptorString()`],
 				[/* text */ 't', `
  of the return type. No `],
 				[/* reference */ 'r', `java.lang.constant.MethodTypeDesc`],
@@ -373,7 +373,7 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 			[/* method description */
 				[/* text */ 't', `Finds or creates a method type with additional parameter types.
  Convenience method for `],
-				[/* reference */ 'r', `methodType`],
+				[/* reference */ 'r', `#methodType(java.lang.Class,java.lang.Class%5B%5D)`, `methodType`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -413,7 +413,7 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 			[/* method description */
 				[/* text */ 't', `Finds or creates a method type with additional parameter types.
  Convenience method for `],
-				[/* reference */ 'r', `methodType`],
+				[/* reference */ 'r', `#methodType(java.lang.Class,java.lang.Class%5B%5D)`, `methodType`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -453,7 +453,7 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 			[/* method description */
 				[/* text */ 't', `Finds or creates a method type with a different return type.
  Convenience method for `],
-				[/* reference */ 'r', `methodType`],
+				[/* reference */ 'r', `#methodType(java.lang.Class,java.lang.Class%5B%5D)`, `methodType`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -509,7 +509,7 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 			[/* method description */
 				[/* text */ 't', `Finds or creates a method type with the given components.
  Convenience method for `],
-				[/* reference */ 'r', `methodType`],
+				[/* reference */ 'r', `#methodType(java.lang.Class,java.lang.Class%5B%5D)`, `methodType`],
 				[/* text */ 't', `.
  The resulting method has the same parameter types as `],
 				[/* inline code block */ 'i', `ptypes`],
@@ -541,7 +541,7 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 			[/* method description */
 				[/* text */ 't', `Finds or creates a method type with the given components.
  Convenience method for `],
-				[/* reference */ 'r', `methodType`],
+				[/* reference */ 'r', `#methodType(java.lang.Class,java.lang.Class%5B%5D)`, `methodType`],
 				[/* text */ 't', `.
  The leading parameter type is prepended to the remaining array.`]
 			],
@@ -587,7 +587,7 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 			[/* method description */
 				[/* text */ 't', `Finds or creates a method type with the given components.
  Convenience method for `],
-				[/* reference */ 'r', `methodType`],
+				[/* reference */ 'r', `#methodType(java.lang.Class,java.lang.Class%5B%5D)`, `methodType`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -623,7 +623,7 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 			[/* method description */
 				[/* text */ 't', `Finds or creates a method type with the given components.
  Convenience method for `],
-				[/* reference */ 'r', `methodType`],
+				[/* reference */ 'r', `#methodType(java.lang.Class,java.lang.Class%5B%5D)`, `methodType`],
 				[/* text */ 't', `.
  The resulting method has the single given parameter type.`]
 			],
@@ -658,7 +658,7 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 			[/* method description */
 				[/* text */ 't', `Finds or creates a method type with the given components.
  Convenience method for `],
-				[/* reference */ 'r', `methodType`],
+				[/* reference */ 'r', `#methodType(java.lang.Class,java.lang.Class%5B%5D)`, `methodType`],
 				[/* text */ 't', `.
  The resulting method has no parameter types.`]
 			],
@@ -682,7 +682,7 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 			[/* method description */
 				[/* text */ 't', `Finds or creates a method type with some parameter types omitted.
  Convenience method for `],
-				[/* reference */ 'r', `methodType`],
+				[/* reference */ 'r', `#methodType(java.lang.Class,java.lang.Class%5B%5D)`, `methodType`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -721,7 +721,7 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 			[/* method description */
 				[/* text */ 't', `Finds or creates a method type with additional parameter types.
  Convenience method for `],
-				[/* reference */ 'r', `methodType`],
+				[/* reference */ 'r', `#methodType(java.lang.Class,java.lang.Class%5B%5D)`, `methodType`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -752,7 +752,7 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 			[/* method description */
 				[/* text */ 't', `Finds or creates a method type with additional parameter types.
  Convenience method for `],
-				[/* reference */ 'r', `methodType`],
+				[/* reference */ 'r', `#methodType(java.lang.Class,java.lang.Class%5B%5D)`, `methodType`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -797,7 +797,7 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 				[/* inline code block */ 'i', `Object[]`],
 				[/* text */ 't', ` array.
  Convenience method for `],
-				[/* reference */ 'r', `methodType`],
+				[/* reference */ 'r', `#methodType(java.lang.Class,java.lang.Class%5B%5D)`, `methodType`],
 				[/* text */ 't', `.
  All parameters and the return type will be `],
 				[/* inline code block */ 'i', `Object`],
@@ -834,7 +834,7 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 				[/* inline code block */ 'i', `Object`],
 				[/* text */ 't', `.
  Convenience method for `],
-				[/* reference */ 'r', `methodType`],
+				[/* reference */ 'r', `#methodType(java.lang.Class,java.lang.Class%5B%5D)`, `methodType`],
 				[/* text */ 't', `.
  All parameters and the return type will be Object.`]
 			],
@@ -886,7 +886,7 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 				[/* inline code block */ 'i', `Object`],
 				[/* text */ 't', `.
  Convenience method for `],
-				[/* reference */ 'r', `methodType`],
+				[/* reference */ 'r', `#methodType(java.lang.Class,java.lang.Class%5B%5D)`, `methodType`],
 				[/* text */ 't', `.
  All primitive types (including `],
 				[/* inline code block */ 'i', `void`],
@@ -902,14 +902,14 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 			[/* method description */
 				[/* text */ 't', `Returns a descriptor string for the method type.  This method
  is equivalent to calling `],
-				[/* reference */ 'r', `MethodType::descriptorString`],
+				[/* reference */ 'r', `#descriptorString()`, `MethodType::descriptorString`],
 				[/* text */ 't', `.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `
  Note that this is not a strict inverse of `],
-					[/* reference */ 'r', `fromMethodDescriptorString`],
+					[/* reference */ 'r', `#fromMethodDescriptorString(java.lang.String,java.lang.ClassLoader)`, `fromMethodDescriptorString`],
 					[/* text */ 't', `.
  Two distinct classes which share a common name but have different class loaders
  will appear identical when viewed within descriptor strings.
@@ -922,7 +922,7 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 					[/* inline code block */ 'i', `invokedynamic`],
 					[/* text */ 't', `.
  `],
-					[/* reference */ 'r', `fromMethodDescriptorString`],
+					[/* reference */ 'r', `#fromMethodDescriptorString(java.lang.String,java.lang.ClassLoader)`, `fromMethodDescriptorString`],
 					[/* text */ 't', `,
  because the latter requires a suitable class loader argument.`]
 				]]
@@ -961,7 +961,7 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 			[/* method description */
 				[/* text */ 't', `Converts all wrapper types to their corresponding primitive types.
  Convenience method for `],
-				[/* reference */ 'r', `methodType`],
+				[/* reference */ 'r', `#methodType(java.lang.Class,java.lang.Class%5B%5D)`, `methodType`],
 				[/* text */ 't', `.
  All primitive types (including `],
 				[/* inline code block */ 'i', `void`],
@@ -982,7 +982,7 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 			[/* method description */
 				[/* text */ 't', `Finds or creates a method type with a single different parameter type.
  Convenience method for `],
-				[/* reference */ 'r', `methodType`],
+				[/* reference */ 'r', `#methodType(java.lang.Class,java.lang.Class%5B%5D)`, `methodType`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -1039,7 +1039,7 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 				[/* inline code block */ 'i', `Object`],
 				[/* text */ 't', `.
  Convenience method for `],
-				[/* reference */ 'r', `genericMethodType`],
+				[/* reference */ 'r', `#genericMethodType(int)`, `genericMethodType`],
 				[/* text */ 't', `.
  The expression `],
 				[/* inline code block */ 'i', `type.wrap().erase()`],
@@ -1058,7 +1058,7 @@ DocsCollector.collect('java.lang.invoke.MethodType', [
 			[/* method description */
 				[/* text */ 't', `Finds or creates an instance of a method type, given the spelling of its bytecode descriptor.
  Convenience method for `],
-				[/* reference */ 'r', `methodType`],
+				[/* reference */ 'r', `#methodType(java.lang.Class,java.lang.Class%5B%5D)`, `methodType`],
 				[/* text */ 't', `.
  Any class or interface name embedded in the descriptor string will be
  resolved by the given loader (or if it is null, on the system class loader).

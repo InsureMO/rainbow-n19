@@ -84,7 +84,7 @@ DocsCollector.collect('java.time.temporal.TemporalUnit', [
  There are two equivalent ways of using this method.
  The first is to invoke this method directly.
  The second is to use `],
-					[/* external link */ 'a', `Temporal.html#until(java.time.temporal.Temporal,java.time.temporal.TemporalUnit)`, `Temporal.until(Temporal, TemporalUnit)`],
+					[/* reference */ 'r', `.Temporal#until(java.time.temporal.Temporal,java.time.temporal.TemporalUnit)`],
 					[/* text */ 't', `:
  `]
 				]],
@@ -153,7 +153,7 @@ DocsCollector.collect('java.time.temporal.TemporalUnit', [
 					[/* text */ 't', `
  A date is time-based if it can be used to imply meaning from a date.
  It must have a `],
-					[/* reference */ 'r', `duration`],
+					[/* reference */ 'r', `#getDuration()`, `duration`],
 					[/* text */ 't', ` that is an integral
  multiple of the length of a standard day.
  Note that it is valid for both `],
@@ -178,7 +178,7 @@ DocsCollector.collect('java.time.temporal.TemporalUnit', [
 					[/* text */ 't', `
  A unit is time-based if it can be used to imply meaning from a time.
  It must have a `],
-					[/* reference */ 'r', `duration`],
+					[/* reference */ 'r', `#getDuration()`, `duration`],
 					[/* text */ 't', ` that divides into
  the length of a standard day without remainder.
  Note that it is valid for both `],
@@ -207,7 +207,7 @@ DocsCollector.collect('java.time.temporal.TemporalUnit', [
 					[/* text */ 't', `
  This default implementation derives the value using
  `],
-					[/* external link */ 'a', `Temporal.html#plus(long,java.time.temporal.TemporalUnit)`, `Temporal.plus(long, TemporalUnit)`],
+					[/* reference */ 'r', `.Temporal#plus(long,java.time.temporal.TemporalUnit)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -240,7 +240,7 @@ DocsCollector.collect('java.time.temporal.TemporalUnit', [
  For example, days have an estimated duration due to the possibility of
  daylight saving time changes.
  To determine if the duration is an estimate, use `],
-					[/* reference */ 'r', `isDurationEstimated()`],
+					[/* reference */ 'r', `#isDurationEstimated()`, `isDurationEstimated()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -282,7 +282,7 @@ DocsCollector.collect('java.time.temporal.TemporalUnit', [
  There are two equivalent ways of using this method.
  The first is to invoke this method directly.
  The second is to use `],
-					[/* external link */ 'a', `Temporal.html#plus(long,java.time.temporal.TemporalUnit)`, `Temporal.plus(long, TemporalUnit)`],
+					[/* reference */ 'r', `.Temporal#plus(long,java.time.temporal.TemporalUnit)`],
 					[/* text */ 't', `:
  `]
 				]],

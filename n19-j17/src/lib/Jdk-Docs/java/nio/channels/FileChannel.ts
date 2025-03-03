@@ -14,16 +14,16 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 			[/* text */ 't', `position`],
 			[/* text */ 't', ` within its file which can
  be both `],
-			[/* reference */ 'r', `queried`],
+			[/* reference */ 'r', `#position()`, `queried`],
 			[/* text */ 't', ` and `],
-			[/* reference */ 'r', `modified`],
+			[/* reference */ 'r', `#position(long)`, `modified`],
 			[/* text */ 't', `.  The file itself contains a variable-length sequence
  of bytes that can be read and written and whose current `],
-			[/* reference */ 'r', `size`],
+			[/* reference */ 'r', `#size()`, `size`],
 			[/* text */ 't', ` can be queried.  The size of the file increases
  when bytes are written beyond its current size; the size of the file
  decreases when it is `],
-			[/* reference */ 'r', `truncated`],
+			[/* reference */ 'r', `#truncate(long)`, `truncated`],
 			[/* text */ 't', `.  The
  file may also have some associated `],
 			[/* text */ 't', `metadata`],
@@ -39,10 +39,10 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` Bytes may be `],
-					[/* reference */ 'r', `read`],
+					[/* reference */ 'r', `#read(java.nio.ByteBuffer,long)`, `read`],
 					[/* text */ 't', ` or
    `],
-					[/* reference */ 'r', `written`],
+					[/* reference */ 'r', `#write(java.nio.ByteBuffer,long)`, `written`],
 					[/* text */ 't', ` at an absolute
    position in a file in a way that does not affect the channel's current
    position.  `]
@@ -51,7 +51,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` A region of a file may be `],
-					[/* reference */ 'r', `mapped`],
+					[/* reference */ 'r', `#map(java.nio.channels.FileChannel.MapMode,long,long)`, `mapped`],
 					[/* text */ 't', `
    directly into memory; for large files this is often much more efficient
    than invoking the usual `],
@@ -65,7 +65,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` Updates made to a file may be `],
-					[/* reference */ 'r', `forced out`],
+					[/* reference */ 'r', `#force(boolean)`, `forced out`],
 					[/* text */ 't', ` to the underlying storage device, ensuring that data are not
    lost in the event of a system crash.  `]
 				]]
@@ -73,9 +73,9 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` Bytes can be transferred from a file `],
-					[/* reference */ 'r', `to some other channel`],
+					[/* reference */ 'r', `#transferTo(long,long,java.nio.channels.WritableByteChannel)`, `to some other channel`],
 					[/* text */ 't', `, and `],
-					[/* reference */ 'r', `vice versa`],
+					[/* reference */ 'r', `#transferFrom(java.nio.channels.ReadableByteChannel,long,long)`, `vice versa`],
 					[/* text */ 't', `, in a way that can be optimized by many operating systems
    into a very fast transfer directly to or from the filesystem cache.
    `]
@@ -93,7 +93,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 		[/* block */ 'b', [
 			[/* text */ 't', ` File channels are safe for use by multiple concurrent threads.  The
  `],
-			[/* external link */ 'a', `Channel.html#close()`, `close`],
+			[/* reference */ 'r', `.Channel#close()`],
 			[/* text */ 't', ` method may be invoked at any time, as specified
  by the `],
 			[/* reference */ 'r', `java.nio.channels.Channel`],
@@ -121,15 +121,15 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` A file channel is created by invoking one of the `],
-			[/* reference */ 'r', `open`],
+			[/* reference */ 'r', `#open(java.nio.file.Path,java.util.Set,java.nio.file.attribute.FileAttribute...)`, `open`],
 			[/* text */ 't', `
  methods defined by this class. A file channel can also be obtained from an
  existing `],
-			[/* external link */ 'a', `../../io/FileInputStream.html#getChannel()`, `FileInputStream`],
+			[/* reference */ 'r', `java.nio.FileInputStream#getChannel()`],
 			[/* text */ 't', `, `],
-			[/* external link */ 'a', `../../io/FileOutputStream.html#getChannel()`, `FileOutputStream`],
+			[/* reference */ 'r', `java.nio.FileOutputStream#getChannel()`],
 			[/* text */ 't', `, or `],
-			[/* external link */ 'a', `../../io/RandomAccessFile.html#getChannel()`, `RandomAccessFile`],
+			[/* reference */ 'r', `java.nio.RandomAccessFile#getChannel()`],
 			[/* text */ 't', ` object by invoking
  that object's `],
 			[/* inline code block */ 'i', `getChannel`],
@@ -153,18 +153,18 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 			[/* text */ 't', ` At various points this class specifies that an
  instance that is "open for reading," "open for writing," or "open for
  reading and writing" is required.  A channel obtained via the `],
-			[/* external link */ 'a', `../../io/FileInputStream.html#getChannel()`, `getChannel`],
+			[/* reference */ 'r', `java.nio.FileInputStream#getChannel()`],
 			[/* text */ 't', ` method of a `],
 			[/* reference */ 'r', `java.io.FileInputStream`],
 			[/* text */ 't', ` instance will be open for reading.  A channel
  obtained via the `],
-			[/* external link */ 'a', `../../io/FileOutputStream.html#getChannel()`, `getChannel`],
+			[/* reference */ 'r', `java.nio.FileOutputStream#getChannel()`],
 			[/* text */ 't', `
  method of a `],
 			[/* reference */ 'r', `java.io.FileOutputStream`],
 			[/* text */ 't', ` instance will be open for
  writing.  Finally, a channel obtained via the `],
-			[/* external link */ 'a', `../../io/RandomAccessFile.html#getChannel()`, `getChannel`],
+			[/* reference */ 'r', `java.nio.RandomAccessFile#getChannel()`],
 			[/* text */ 't', ` method of a `],
 			[/* reference */ 'r', `java.io.RandomAccessFile`],
 			[/* text */ 't', ` instance will be open for reading if the instance
@@ -184,7 +184,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 			[/* text */ 't', `append mode`],
 			[/* text */ 't', `, for example if it was obtained from a file-output stream
  that was created by invoking the `],
-			[/* external link */ 'a', `../../io/FileOutputStream.html#%3Cinit%3E(java.io.File,boolean)`, `FileOutputStream(File,boolean)`],
+			[/* reference */ 'r', `java.nio.FileOutputStream#<init>(java.io.File,boolean)`],
 			[/* text */ 't', ` constructor and passing `],
 			[/* inline code block */ 'i', `true`],
 			[/* text */ 't', ` for
@@ -221,7 +221,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 				]],
 				[/* code block */ 'c', [
 					[/* text */ 't', `     fc.`],
-					[/* reference */ 'r', `lock`],
+					[/* text */ 't', `lock`],
 					[/* text */ 't', `(0L, Long.MAX_VALUE, false) `]
 				]],
 				[/* block */ 'b', '']
@@ -299,9 +299,9 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
  required then a region starting at zero, and no smaller than the
  expected maximum size of the file, should be locked.  The zero-argument
  `],
-					[/* reference */ 'r', `lock()`],
+					[/* reference */ 'r', `#lock()`, `lock()`],
 					[/* text */ 't', ` method simply locks a region of size `],
-					[/* external link */ 'a', `../../lang/Long.html#MAX_VALUE`, `Long.MAX_VALUE`],
+					[/* reference */ 'r', `java.nio.Long#MAX_VALUE`],
 					[/* text */ 't', `.
 
  `]
@@ -311,7 +311,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
  request for a shared lock is automatically converted into a request for
  an exclusive lock.  Whether the newly-acquired lock is shared or
  exclusive may be tested by invoking the resulting lock object's `],
-					[/* external link */ 'a', `FileLock.html#isShared()`, `isShared`],
+					[/* reference */ 'r', `.FileLock#isShared()`],
 					[/* text */ 't', ` method.
 
  `]
@@ -329,7 +329,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 					[/* text */ 't', `The size of the locked region; must be non-negative, and the sum
          `],
 					[/* inline code block */ 'i', `position`],
-					[/* text */ 't', `&nbsp;+&nbsp;`],
+					[/* text */ 't', ` + `],
 					[/* inline code block */ 'i', `size`],
 					[/* text */ 't', ` must be non-negative`]
 				]],
@@ -482,7 +482,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 							[/* reference */ 'r', `java.nio.ReadOnlyBufferException`],
 							[/* text */ 't', ` to be thrown.
    (`],
-							[/* external link */ 'a', `FileChannel.MapMode.html#READ_ONLY`, `MapMode.READ_ONLY`],
+							[/* reference */ 'r', `.FileChannel.MapMode#READ_ONLY`],
 							[/* text */ 't', `) `]
 						]]
 					]],
@@ -492,7 +492,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 							[/* text */ 't', ` Changes made to the resulting buffer will
    eventually be propagated to the file; they may or may not be made
    visible to other programs that have mapped the same file.  (`],
-							[/* external link */ 'a', `FileChannel.MapMode.html#READ_WRITE`, `MapMode.READ_WRITE`],
+							[/* reference */ 'r', `.FileChannel.MapMode#READ_WRITE`],
 							[/* text */ 't', `) `]
 						]]
 					]],
@@ -503,7 +503,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
    be propagated to the file and will not be visible to other programs
    that have mapped the same file; instead, they will cause private
    copies of the modified portions of the buffer to be created.  (`],
-							[/* external link */ 'a', `FileChannel.MapMode.html#PRIVATE`, `MapMode.PRIVATE`],
+							[/* reference */ 'r', `.FileChannel.MapMode#PRIVATE`],
 							[/* text */ 't', `) `]
 						]]
 					]]
@@ -548,9 +548,9 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 					[/* text */ 't', ` For most operating systems, mapping a file into memory is more
  expensive than reading or writing a few tens of kilobytes of data via
  the usual `],
-					[/* reference */ 'r', `read`],
+					[/* reference */ 'r', `#read(java.nio.ByteBuffer)`, `read`],
 					[/* text */ 't', ` and `],
-					[/* reference */ 'r', `write`],
+					[/* reference */ 'r', `#write(java.nio.ByteBuffer)`, `write`],
 					[/* text */ 't', ` methods.  From the
  standpoint of performance it is generally only worth mapping relatively
  large files into memory.  `]
@@ -559,11 +559,11 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 			[/* parameters */
 				[/* parameter */ 'mode', [/* parameter description */
 					[/* text */ 't', `One of the constants `],
-					[/* external link */ 'a', `FileChannel.MapMode.html#READ_ONLY`, `READ_ONLY`],
+					[/* reference */ 'r', `.FileChannel.MapMode#READ_ONLY`],
 					[/* text */ 't', `, `],
-					[/* external link */ 'a', `FileChannel.MapMode.html#READ_WRITE`, `READ_WRITE`],
+					[/* reference */ 'r', `.FileChannel.MapMode#READ_WRITE`],
 					[/* text */ 't', `, or `],
-					[/* external link */ 'a', `FileChannel.MapMode.html#PRIVATE`, `PRIVATE`],
+					[/* reference */ 'r', `.FileChannel.MapMode#PRIVATE`],
 					[/* text */ 't', ` defined in the `],
 					[/* reference */ 'r', `java.nio.channels.FileChannel.MapMode`],
 					[/* text */ 't', ` class, according to
@@ -578,7 +578,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 				[/* parameter */ 'size', [/* parameter description */
 					[/* text */ 't', `The size of the region to be mapped; must be non-negative and
          no greater than `],
-					[/* external link */ 'a', `../../lang/Integer.html#MAX_VALUE`, `Integer.MAX_VALUE`]
+					[/* reference */ 'r', `java.nio.Integer#MAX_VALUE`]
 				]]
 			],
 			[/* throws */
@@ -586,7 +586,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 					[/* text */ 't', `If the `],
 					[/* inline code block */ 'i', `mode`],
 					[/* text */ 't', ` is `],
-					[/* external link */ 'a', `FileChannel.MapMode.html#READ_ONLY`, `READ_ONLY`],
+					[/* reference */ 'r', `.FileChannel.MapMode#READ_ONLY`],
 					[/* text */ 't', ` or
          an implementation specific map mode requiring read access
          but this channel was not opened for reading`]
@@ -595,10 +595,10 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 					[/* text */ 't', `If the `],
 					[/* inline code block */ 'i', `mode`],
 					[/* text */ 't', ` is `],
-					[/* external link */ 'a', `FileChannel.MapMode.html#READ_WRITE`, `READ_WRITE`],
+					[/* reference */ 'r', `.FileChannel.MapMode#READ_WRITE`],
 					[/* text */ 't', `.
          `],
-					[/* external link */ 'a', `FileChannel.MapMode.html#PRIVATE`, `PRIVATE`],
+					[/* reference */ 'r', `.FileChannel.MapMode#PRIVATE`],
 					[/* text */ 't', ` or an implementation specific
          map mode requiring write access but this channel was not
          opened for both reading and writing`]
@@ -625,7 +625,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method works in the same manner as the `],
-					[/* reference */ 'r', `write(ByteBuffer)`],
+					[/* reference */ 'r', `#write(java.nio.ByteBuffer)`, `write(ByteBuffer)`],
 					[/* text */ 't', ` method, except that bytes are written starting at
  the given file position rather than at the channel's current position.
  This method does not modify this channel's position.  If the given
@@ -748,7 +748,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
          non-negative and no larger than
          `],
 					[/* inline code block */ 'i', `srcs.length`],
-					[/* text */ 't', `&nbsp;-&nbsp;`],
+					[/* text */ 't', ``],
 					[/* inline code block */ 'i', `offset`]
 				]]
 			],
@@ -869,7 +869,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method works in the same manner as the `],
-					[/* reference */ 'r', `read(ByteBuffer)`],
+					[/* reference */ 'r', `#read(java.nio.ByteBuffer)`, `read(ByteBuffer)`],
 					[/* text */ 't', ` method, except that bytes are read starting at the
  given file position rather than at the channel's current position.  This
  method does not modify this channel's position.  If the given position
@@ -989,7 +989,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
          non-negative and no larger than
          `],
 					[/* inline code block */ 'i', `dsts.length`],
-					[/* text */ 't', `&nbsp;-&nbsp;`],
+					[/* text */ 't', ``],
 					[/* inline code block */ 'i', `offset`]
 				]]
 			],
@@ -1028,12 +1028,12 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 					[/* inline code block */ 'i', `options`],
 					[/* text */ 't', ` parameter determines how the file is opened.
  The `],
-					[/* external link */ 'a', `../file/StandardOpenOption.html#READ`, `READ`],
+					[/* reference */ 'r', `java.StandardOpenOption#READ`],
 					[/* text */ 't', ` and `],
-					[/* external link */ 'a', `../file/StandardOpenOption.html#WRITE`, `WRITE`],
+					[/* reference */ 'r', `java.StandardOpenOption#WRITE`],
 					[/* text */ 't', ` options determine if the file should be opened for reading and/or
  writing. If neither option (or the `],
-					[/* external link */ 'a', `../file/StandardOpenOption.html#APPEND`, `APPEND`],
+					[/* reference */ 'r', `java.StandardOpenOption#APPEND`],
 					[/* text */ 't', `
  option) is contained in the array then the file is opened for reading.
  By default reading or writing commences at the beginning of the file.
@@ -1050,7 +1050,147 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 
  `]
 				]],
-				[/* table */ 't', ''],
+				[/* table */ 'tbl',
+					[/* caption */ 'tc'],
+					[/* table header */ 'th', [
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `Option`]
+							]],
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `Description`]
+							]]
+						]]
+					]],
+					[/* table body */ 'tb', [
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', ` `],
+								[/* reference */ 'r', `java.StandardOpenOption#APPEND`],
+								[/* text */ 't', ` `]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', ` If this option is present then the file is opened for writing and
+     each invocation of the channel's `],
+								[/* inline code block */ 'i', `write`],
+								[/* text */ 't', ` method first advances
+     the position to the end of the file and then writes the requested
+     data. Whether the advancement of the position and the writing of the
+     data are done in a single atomic operation is system-dependent and
+     therefore unspecified. This option may not be used in conjunction
+     with the `],
+								[/* inline code block */ 'i', `READ`],
+								[/* text */ 't', ` or `],
+								[/* inline code block */ 'i', `TRUNCATE_EXISTING`],
+								[/* text */ 't', ` options. `]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', ` `],
+								[/* reference */ 'r', `java.StandardOpenOption#TRUNCATE_EXISTING`],
+								[/* text */ 't', ` `]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', ` If this option is present then the existing file is truncated to
+   a size of 0 bytes. This option is ignored when the file is opened only
+   for reading. `]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', ` `],
+								[/* reference */ 'r', `java.StandardOpenOption#CREATE_NEW`],
+								[/* text */ 't', ` `]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', ` If this option is present then a new file is created, failing if
+   the file already exists. When creating a file the check for the
+   existence of the file and the creation of the file if it does not exist
+   is atomic with respect to other file system operations. This option is
+   ignored when the file is opened only for reading. `]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', ` `],
+								[/* reference */ 'r', `java.StandardOpenOption#CREATE`],
+								[/* text */ 't', ` `]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', ` If this option is present then an existing file is opened if it
+   exists, otherwise a new file is created. When creating a file the check
+   for the existence of the file and the creation of the file if it does
+   not exist is atomic with respect to other file system operations. This
+   option is ignored if the `],
+								[/* inline code block */ 'i', `CREATE_NEW`],
+								[/* text */ 't', ` option is also present or
+   the file is opened only for reading. `]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', ` `],
+								[/* reference */ 'r', `java.StandardOpenOption#DELETE_ON_CLOSE`],
+								[/* text */ 't', ` `]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', ` When this option is present then the implementation makes a
+   `],
+								[/* text */ 't', `best effort`],
+								[/* text */ 't', ` attempt to delete the file when closed by
+   the `],
+								[/* reference */ 'r', `.AbstractInterruptibleChannel#close()`],
+								[/* text */ 't', ` method. If the `],
+								[/* inline code block */ 'i', `close`],
+								[/* text */ 't', ` method is not
+   invoked then a `],
+								[/* text */ 't', `best effort`],
+								[/* text */ 't', ` attempt is made to delete the file
+   when the Java virtual machine terminates. `]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* reference */ 'r', `java.StandardOpenOption#SPARSE`],
+								[/* text */ 't', ` `]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', ` When creating a new file this option is a `],
+								[/* text */ 't', `hint`],
+								[/* text */ 't', ` that the
+   new file will be sparse. This option is ignored when not creating
+   a new file. `]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', ` `],
+								[/* reference */ 'r', `java.StandardOpenOption#SYNC`],
+								[/* text */ 't', ` `]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', ` Requires that every update to the file's content or metadata be
+   written synchronously to the underlying storage device. (see `],
+								[/* text */ 't', `Synchronized I/O file integrity`],
+								[/* text */ 't', `). `]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', ` `],
+								[/* reference */ 'r', `java.StandardOpenOption#DSYNC`],
+								[/* text */ 't', ` `]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', ` Requires that every update to the file's content be written
+   synchronously to the underlying storage device. (see `],
+								[/* text */ 't', `Synchronized I/O file integrity`],
+								[/* text */ 't', `). `]
+							]]
+						]]
+					]],
+				],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', ` An implementation may also support additional options.
 
@@ -1066,7 +1206,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The new channel is created by invoking the `],
-					[/* external link */ 'a', `../file/spi/FileSystemProvider.html#newFileChannel(java.nio.file.Path,java.util.Set,java.nio.file.attribute.FileAttribute...)`, `newFileChannel`],
+					[/* reference */ 'r', `java.FileSystemProvider#newFileChannel(java.nio.file.Path,java.util.Set,java.nio.file.attribute.FileAttribute...)`],
 					[/* text */ 't', ` method on the
  provider that created the `],
 					[/* inline code block */ 'i', `Path`],
@@ -1099,11 +1239,11 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 				]],
 				[/* throw */ 'java.nio.file.FileAlreadyExistsException', [/* throw description */
 					[/* text */ 't', `If a file of that name already exists and the `],
-					[/* external link */ 'a', `../file/StandardOpenOption.html#CREATE_NEW`, `CREATE_NEW`],
+					[/* reference */ 'r', `java.StandardOpenOption#CREATE_NEW`],
 					[/* text */ 't', ` option is specified
           and the file is being opened for writing
           `],
-					[/* external link */ 'a', `../file/package-summary.html#optspecex`, `optional specific exception`]
+					[/* text */ 't', `optional specific exception`]
 				]],
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
@@ -1112,10 +1252,10 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 					[/* text */ 't', `If a security manager is installed and it denies an
           unspecified permission required by the implementation.
           In the case of the default provider, the `],
-					[/* external link */ 'a', `../../lang/SecurityManager.html#checkRead(java.lang.String)`, `SecurityManager.checkRead(String)`],
+					[/* reference */ 'r', `java.nio.SecurityManager#checkRead(java.lang.String)`],
 					[/* text */ 't', ` method is invoked to check
           read access if the file is opened for reading. The `],
-					[/* external link */ 'a', `../../lang/SecurityManager.html#checkWrite(java.lang.String)`, `SecurityManager.checkWrite(String)`],
+					[/* reference */ 'r', `java.nio.SecurityManager#checkWrite(java.lang.String)`],
 					[/* text */ 't', ` method is invoked to check
           write access if the file is opened for writing`]
 				]]
@@ -1134,8 +1274,8 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
  `],
 				[/* code block */ 'c', [
 					[/* text */ 't', `     fc.`],
-					[/* reference */ 'r', `open`],
-					[/* text */ 't', `(file, opts, new FileAttribute&lt;?&gt;[0]);
+					[/* text */ 't', `open`],
+					[/* text */ 't', `(file, opts, new FileAttribute<?>[0]);
  `]
 				]],
 				[/* text */ 't', `
@@ -1167,11 +1307,11 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 				]],
 				[/* throw */ 'java.nio.file.FileAlreadyExistsException', [/* throw description */
 					[/* text */ 't', `If a file of that name already exists and the `],
-					[/* external link */ 'a', `../file/StandardOpenOption.html#CREATE_NEW`, `CREATE_NEW`],
+					[/* reference */ 'r', `java.StandardOpenOption#CREATE_NEW`],
 					[/* text */ 't', ` option is specified
           and the file is being opened for writing
           `],
-					[/* external link */ 'a', `../file/package-summary.html#optspecex`, `optional specific exception`]
+					[/* text */ 't', `optional specific exception`]
 				]],
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
@@ -1180,10 +1320,10 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 					[/* text */ 't', `If a security manager is installed and it denies an
           unspecified permission required by the implementation.
           In the case of the default provider, the `],
-					[/* external link */ 'a', `../../lang/SecurityManager.html#checkRead(java.lang.String)`, `SecurityManager.checkRead(String)`],
+					[/* reference */ 'r', `java.nio.SecurityManager#checkRead(java.lang.String)`],
 					[/* text */ 't', ` method is invoked to check
           read access if the file is opened for reading. The `],
-					[/* external link */ 'a', `../../lang/SecurityManager.html#checkWrite(java.lang.String)`, `SecurityManager.checkWrite(String)`],
+					[/* reference */ 'r', `java.nio.SecurityManager#checkWrite(java.lang.String)`],
 					[/* text */ 't', ` method is invoked to check
           write access if the file is opened for writing`]
 				]]
@@ -1308,9 +1448,9 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
  required then a region starting at zero, and no smaller than the
  expected maximum size of the file, should be locked.  The zero-argument
  `],
-					[/* reference */ 'r', `tryLock()`],
+					[/* reference */ 'r', `#tryLock()`, `tryLock()`],
 					[/* text */ 't', ` method simply locks a region of size `],
-					[/* external link */ 'a', `../../lang/Long.html#MAX_VALUE`, `Long.MAX_VALUE`],
+					[/* reference */ 'r', `java.nio.Long#MAX_VALUE`],
 					[/* text */ 't', `.
 
  `]
@@ -1320,7 +1460,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
  request for a shared lock is automatically converted into a request for
  an exclusive lock.  Whether the newly-acquired lock is shared or
  exclusive may be tested by invoking the resulting lock object's `],
-					[/* external link */ 'a', `FileLock.html#isShared()`, `isShared`],
+					[/* reference */ 'r', `.FileLock#isShared()`],
 					[/* text */ 't', ` method.
 
  `]
@@ -1338,7 +1478,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 					[/* text */ 't', `The size of the locked region; must be non-negative, and the sum
          `],
 					[/* inline code block */ 'i', `position`],
-					[/* text */ 't', `&nbsp;+&nbsp;`],
+					[/* text */ 't', ` + `],
 					[/* inline code block */ 'i', `size`],
 					[/* text */ 't', ` must be non-negative`]
 				]],
@@ -1391,7 +1531,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 				]],
 				[/* code block */ 'c', [
 					[/* text */ 't', `     fc.`],
-					[/* reference */ 'r', `tryLock`],
+					[/* text */ 't', `tryLock`],
 					[/* text */ 't', `(0L, Long.MAX_VALUE, false) `]
 				]],
 				[/* block */ 'b', '']
@@ -1469,9 +1609,9 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 					[/* reference */ 'r', `java.nio.MappedByteBuffer`],
 					[/* text */ 't', ` obtained by
  invoking the `],
-					[/* reference */ 'r', `map`],
+					[/* reference */ 'r', `#map(java.nio.channels.FileChannel.MapMode,long,long)`, `map`],
 					[/* text */ 't', ` method.  Invoking the `],
-					[/* external link */ 'a', `../MappedByteBuffer.html#force()`, `force`],
+					[/* reference */ 'r', `java.MappedByteBuffer#force()`],
 					[/* text */ 't', ` method of the mapped byte buffer will
  force changes made to the buffer's content to be written.  `]
 				]]

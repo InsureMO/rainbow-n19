@@ -63,11 +63,11 @@ DocsCollector.collect('java.io.PipedInputStream', [
 				[/* inline code block */ 'i', `PipedInputStream`],
 				[/* text */ 't', ` so that it is not yet
  `],
-				[/* reference */ 'r', `connected`],
+				[/* reference */ 'r', `#connect(java.io.PipedOutputStream)`, `connected`],
 				[/* text */ 't', ` and
  uses the specified pipe size for the pipe's buffer.
  It must be `],
-				[/* external link */ 'a', `PipedOutputStream.html#connect(java.io.PipedInputStream)`, `connected`],
+				[/* reference */ 'r', `.PipedOutputStream#connect(java.io.PipedInputStream)`],
 				[/* text */ 't', ` to a `],
 				[/* inline code block */ 'i', `PipedOutputStream`],
 				[/* text */ 't', ` before being used.`]
@@ -91,10 +91,10 @@ DocsCollector.collect('java.io.PipedInputStream', [
 				[/* inline code block */ 'i', `PipedInputStream`],
 				[/* text */ 't', ` so
  that it is not yet `],
-				[/* reference */ 'r', `connected`],
+				[/* reference */ 'r', `#connect(java.io.PipedOutputStream)`, `connected`],
 				[/* text */ 't', `.
  It must be `],
-				[/* external link */ 'a', `PipedOutputStream.html#connect(java.io.PipedInputStream)`, `connected`],
+				[/* reference */ 'r', `.PipedOutputStream#connect(java.io.PipedInputStream)`],
 				[/* text */ 't', ` to a
  `],
 				[/* inline code block */ 'i', `PipedOutputStream`],
@@ -220,7 +220,7 @@ DocsCollector.collect('java.io.PipedInputStream', [
 					[/* text */ 't', `broken`],
 					[/* text */ 't', `,
            `],
-					[/* reference */ 'r', `unconnected`],
+					[/* reference */ 'r', `#connect(java.io.PipedOutputStream)`, `unconnected`],
 					[/* text */ 't', `,
            closed, or if an I/O error occurs.`]
 				]]
@@ -252,7 +252,7 @@ DocsCollector.collect('java.io.PipedInputStream', [
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if the pipe is
            `],
-					[/* reference */ 'r', `unconnected`],
+					[/* reference */ 'r', `#connect(java.io.PipedOutputStream)`, `unconnected`],
 					[/* text */ 't', `,
            `],
 					[/* text */ 't', `broken`],
@@ -349,10 +349,10 @@ DocsCollector.collect('java.io.PipedInputStream', [
 				[/* inline code block */ 'i', `0`],
 				[/* text */ 't', ` if this input stream has been
          closed by invoking its `],
-				[/* reference */ 'r', `close()`],
+				[/* reference */ 'r', `#close()`, `close()`],
 				[/* text */ 't', ` method, or if the pipe
          is `],
-				[/* reference */ 'r', `unconnected`],
+				[/* reference */ 'r', `#connect(java.io.PipedOutputStream)`, `unconnected`],
 				[/* text */ 't', `, or
          `],
 				[/* text */ 't', `broken`],
@@ -375,7 +375,7 @@ DocsCollector.collect('java.io.PipedInputStream', [
 					[/* text */ 't', `broken`],
 					[/* text */ 't', `,
           `],
-					[/* reference */ 'r', `unconnected`],
+					[/* reference */ 'r', `#connect(java.io.PipedOutputStream)`, `unconnected`],
 					[/* text */ 't', `,
           closed, or if an I/O error occurs.`]
 				]]

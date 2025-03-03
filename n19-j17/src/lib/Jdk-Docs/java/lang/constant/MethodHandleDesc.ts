@@ -4,7 +4,7 @@ import {DocsCollector} from '../../../DocsCollector';
 DocsCollector.collect('java.lang.constant.MethodHandleDesc', [
 	[/* class description */
 		[/* text */ 't', `A `],
-		[/* external link */ 'a', `package-summary.html#nominal`, `nominal descriptor`],
+		[/* reference */ 'r', `.package-summary#nominal`],
 		[/* text */ 't', ` for a
  `],
 		[/* reference */ 'r', `java.lang.invoke.MethodHandle`],
@@ -113,7 +113,7 @@ DocsCollector.collect('java.lang.constant.MethodHandleDesc', [
 				[/* reference */ 'r', `java.lang.constant.MethodHandleDesc`],
 				[/* text */ 't', ` that describes this method handle
  adapted to a different type, as if by `],
-				[/* external link */ 'a', `../invoke/MethodHandle.html#asType(java.lang.invoke.MethodType)`, `MethodHandle.asType(MethodType)`],
+				[/* reference */ 'r', `java.MethodHandle#asType(java.lang.invoke.MethodType)`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */

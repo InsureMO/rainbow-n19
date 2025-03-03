@@ -5,7 +5,7 @@ DocsCollector.collect('java.lang.AutoCloseable', [
 	[/* class description */
 		[/* text */ 't', `An object that may hold resources (such as file or socket handles)
  until it is closed. The `],
-		[/* reference */ 'r', `close()`],
+		[/* reference */ 'r', `#close()`, `close()`],
 		[/* text */ 't', ` method of an `],
 		[/* inline code block */ 'i', `AutoCloseable`],
 		[/* text */ 't', `

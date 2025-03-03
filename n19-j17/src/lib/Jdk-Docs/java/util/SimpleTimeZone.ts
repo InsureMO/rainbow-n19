@@ -14,7 +14,7 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
  and end rules for a daylight saving time schedule.  Since it only holds
  single values for each, it cannot handle historical changes in the offset
  from GMT and the daylight saving schedule, except that the `],
-		[/* reference */ 'r', `setStartYear`],
+		[/* reference */ 'r', `#setStartYear(int)`, `setStartYear`],
 		[/* text */ 't', ` method can specify the year when the daylight
  saving time schedule starts in effect.
  `],
@@ -40,18 +40,18 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 			[/* text */ 't', `month`],
 			[/* text */ 't', `
  value is represented by a Calendar `],
-			[/* external link */ 'a', `Calendar.html#MONTH`, `MONTH`],
+			[/* reference */ 'r', `.Calendar#MONTH`],
 			[/* text */ 't', ` field
  value, such as `],
-			[/* external link */ 'a', `Calendar.html#MARCH`, `Calendar.MARCH`],
+			[/* reference */ 'r', `.Calendar#MARCH`],
 			[/* text */ 't', `. The `],
 			[/* text */ 't', `day-of-week`],
 			[/* text */ 't', ` value is
  represented by a Calendar `],
-			[/* external link */ 'a', `Calendar.html#DAY_OF_WEEK`, `DAY_OF_WEEK`],
+			[/* reference */ 'r', `.Calendar#DAY_OF_WEEK`],
 			[/* text */ 't', ` value,
  such as `],
-			[/* external link */ 'a', `Calendar.html#SUNDAY`, `SUNDAY`],
+			[/* reference */ 'r', `.Calendar#SUNDAY`],
 			[/* text */ 't', `. The meanings of value combinations
  are as follows.
 
@@ -73,7 +73,7 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
  example, to specify March 1, set the `],
 				[/* text */ 't', `month`],
 				[/* text */ 't', ` to `],
-				[/* external link */ 'a', `Calendar.html#MARCH`, `MARCH`],
+				[/* reference */ 'r', `.Calendar#MARCH`],
 				[/* text */ 't', `, `],
 				[/* text */ 't', `day-of-month`],
 				[/* text */ 't', ` to 1, and `],
@@ -93,12 +93,12 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
  or after which the rule is applied, and `],
 				[/* text */ 't', `day-of-week`],
 				[/* text */ 't', ` to a negative `],
-				[/* external link */ 'a', `Calendar.html#DAY_OF_WEEK`, `DAY_OF_WEEK`],
+				[/* reference */ 'r', `.Calendar#DAY_OF_WEEK`],
 				[/* text */ 't', ` field value. For example, to specify the
  second Sunday of April, set `],
 				[/* text */ 't', `month`],
 				[/* text */ 't', ` to `],
-				[/* external link */ 'a', `Calendar.html#APRIL`, `APRIL`],
+				[/* reference */ 'r', `.Calendar#APRIL`],
 				[/* text */ 't', `,
  `],
 				[/* text */ 't', `day-of-month`],
@@ -106,7 +106,7 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 				[/* text */ 't', `day-of-week`],
 				[/* text */ 't', ` to `],
 				[/* inline code block */ 'i', `-`],
-				[/* external link */ 'a', `Calendar.html#SUNDAY`, `SUNDAY`],
+				[/* reference */ 'r', `.Calendar#SUNDAY`],
 				[/* text */ 't', `.`]
 			]],
 			[/* block */ 'b', [
@@ -123,7 +123,7 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
  `],
 				[/* text */ 't', `month`],
 				[/* text */ 't', ` to `],
-				[/* external link */ 'a', `Calendar.html#MARCH`, `MARCH`],
+				[/* reference */ 'r', `.Calendar#MARCH`],
 				[/* text */ 't', `, `],
 				[/* text */ 't', `day-of-month`],
 				[/* text */ 't', ` is -21
@@ -131,7 +131,7 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 				[/* text */ 't', `day-of-week`],
 				[/* text */ 't', ` is `],
 				[/* inline code block */ 'i', `-`],
-				[/* external link */ 'a', `Calendar.html#WEDNESDAY`, `WEDNESDAY`],
+				[/* reference */ 'r', `.Calendar#WEDNESDAY`],
 				[/* text */ 't', `. `]
 			]],
 			[/* block */ 'b', [
@@ -142,7 +142,7 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 				[/* text */ 't', `day-of-week`],
 				[/* text */ 't', ` to a
  `],
-				[/* external link */ 'a', `Calendar.html#DAY_OF_WEEK`, `DAY_OF_WEEK`],
+				[/* reference */ 'r', `.Calendar#DAY_OF_WEEK`],
 				[/* text */ 't', ` value and `],
 				[/* text */ 't', `day-of-month`],
 				[/* text */ 't', ` to
@@ -150,11 +150,11 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 				[/* text */ 't', `month`],
 				[/* text */ 't', `
  to `],
-				[/* external link */ 'a', `Calendar.html#OCTOBER`, `OCTOBER`],
+				[/* reference */ 'r', `.Calendar#OCTOBER`],
 				[/* text */ 't', `, `],
 				[/* text */ 't', `day-of-week`],
 				[/* text */ 't', ` to `],
-				[/* external link */ 'a', `Calendar.html#SUNDAY`, `SUNDAY`],
+				[/* reference */ 'r', `.Calendar#SUNDAY`],
 				[/* text */ 't', ` and `],
 				[/* text */ 't', `day-of-month`],
 				[/* text */ 't', ` to -1.  `]
@@ -271,7 +271,7 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 				[/* parameter */ 'startMonth', [/* parameter description */
 					[/* text */ 't', `The daylight saving time starting month. Month is
                         a `],
-					[/* external link */ 'a', `Calendar.html#MONTH`, `MONTH`],
+					[/* reference */ 'r', `.Calendar#MONTH`],
 					[/* text */ 't', ` field
                         value (0-based. e.g., 0 for January).`]
 				]],
@@ -295,7 +295,7 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 				[/* parameter */ 'endMonth', [/* parameter description */
 					[/* text */ 't', `The daylight saving time ending month. Month is
                         a `],
-					[/* external link */ 'a', `Calendar.html#MONTH`, `MONTH`],
+					[/* reference */ 'r', `.Calendar#MONTH`],
 					[/* text */ 't', ` field
                         value (0-based. e.g., 9 for October).`]
 				]],
@@ -367,7 +367,7 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 				[/* parameter */ 'startMonth', [/* parameter description */
 					[/* text */ 't', `The daylight saving time starting month. Month is
                         a `],
-					[/* external link */ 'a', `Calendar.html#MONTH`, `MONTH`],
+					[/* reference */ 'r', `.Calendar#MONTH`],
 					[/* text */ 't', ` field
                         value (0-based. e.g., 0 for January).`]
 				]],
@@ -386,7 +386,7 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 				[/* parameter */ 'endMonth', [/* parameter description */
 					[/* text */ 't', `The daylight saving time ending month. Month is
                         a `],
-					[/* external link */ 'a', `Calendar.html#MONTH`, `MONTH`],
+					[/* reference */ 'r', `.Calendar#MONTH`],
 					[/* text */ 't', ` field
                         value (0-based. e.g., 9 for October).`]
 				]],
@@ -454,7 +454,7 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 				[/* parameter */ 'startMonth', [/* parameter description */
 					[/* text */ 't', `The daylight saving time starting month. Month is
                         a `],
-					[/* external link */ 'a', `Calendar.html#MONTH`, `MONTH`],
+					[/* reference */ 'r', `.Calendar#MONTH`],
 					[/* text */ 't', ` field value (0-based. e.g., 0
                         for January).`]
 				]],
@@ -474,7 +474,7 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 				[/* parameter */ 'endMonth', [/* parameter description */
 					[/* text */ 't', `The daylight saving time ending month. Month is
                         a `],
-					[/* external link */ 'a', `Calendar.html#MONTH`, `MONTH`],
+					[/* reference */ 'r', `.Calendar#MONTH`],
 					[/* text */ 't', ` field
                         value (0-based. e.g., 9 for October).`]
 				]],
@@ -588,7 +588,11 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 
  `],
 				[/* block */ 'b', [
-					[/* inline code block */ 'i', `Calendar.get(ZONE_OFFSET) + Calendar.get(DST_OFFSET)`]
+					[/* text */ 't', `Note:  In general, clients should use
+ `],
+					[/* inline code block */ 'i', `Calendar.get(ZONE_OFFSET) + Calendar.get(DST_OFFSET)`],
+					[/* text */ 't', `
+ instead of calling this method.`]
 				]]
 			],
 			[/* parameters */
@@ -742,7 +746,7 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 				[/* inline code block */ 'i', `SimpleTimeZone`],
 				[/* text */ 't', ` observes
  Daylight Saving Time. This method is equivalent to `],
-				[/* reference */ 'r', `useDaylightTime()`],
+				[/* reference */ 'r', `#useDaylightTime()`, `useDaylightTime()`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -766,7 +770,7 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 				[/* parameter */ 'startMonth', [/* parameter description */
 					[/* text */ 't', `The daylight saving time starting month. Month is
                         a `],
-					[/* external link */ 'a', `Calendar.html#MONTH`, `MONTH`],
+					[/* reference */ 'r', `.Calendar#MONTH`],
 					[/* text */ 't', ` field
                         value (0-based. e.g., 0 for January).`]
 				]],
@@ -825,7 +829,7 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 				[/* parameter */ 'startMonth', [/* parameter description */
 					[/* text */ 't', `The daylight saving time starting month. Month is
                         a `],
-					[/* external link */ 'a', `Calendar.html#MONTH`, `MONTH`],
+					[/* reference */ 'r', `.Calendar#MONTH`],
 					[/* text */ 't', ` field
                         value (0-based. e.g., 0 for January).`]
 				]],
@@ -866,7 +870,7 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 				[/* parameter */ 'startMonth', [/* parameter description */
 					[/* text */ 't', `The daylight saving time starting month. Month is
                         a `],
-					[/* external link */ 'a', `Calendar.html#MONTH`, `MONTH`],
+					[/* reference */ 'r', `.Calendar#MONTH`],
 					[/* text */ 't', ` field
                         value (0-based. e.g., 0 for January).`]
 				]],
@@ -911,7 +915,7 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 				[/* parameter */ 'endMonth', [/* parameter description */
 					[/* text */ 't', `The daylight saving time ending month. Month is
                         a `],
-					[/* external link */ 'a', `Calendar.html#MONTH`, `MONTH`],
+					[/* reference */ 'r', `.Calendar#MONTH`],
 					[/* text */ 't', ` field
                         value (0-based. e.g., 9 for October).`]
 				]],
@@ -954,7 +958,7 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 				[/* parameter */ 'endMonth', [/* parameter description */
 					[/* text */ 't', `The daylight saving time ending month. Month is
                         a `],
-					[/* external link */ 'a', `Calendar.html#MONTH`, `MONTH`],
+					[/* reference */ 'r', `.Calendar#MONTH`],
 					[/* text */ 't', ` field
                         value (0-based. e.g., 9 for October).`]
 				]],
@@ -1014,7 +1018,7 @@ DocsCollector.collect('java.util.SimpleTimeZone', [
 				[/* parameter */ 'endMonth', [/* parameter description */
 					[/* text */ 't', `The daylight saving time ending month. Month is
                         a `],
-					[/* external link */ 'a', `Calendar.html#MONTH`, `MONTH`],
+					[/* reference */ 'r', `.Calendar#MONTH`],
 					[/* text */ 't', ` field
                         value (0-based. e.g., 9 for October).`]
 				]],

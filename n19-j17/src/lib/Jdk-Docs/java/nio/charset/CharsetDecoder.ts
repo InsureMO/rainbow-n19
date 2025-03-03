@@ -23,7 +23,7 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` Reset the decoder via the `],
-					[/* reference */ 'r', `reset`],
+					[/* reference */ 'r', `#reset()`, `reset`],
 					[/* text */ 't', ` method, unless it
    has not been used before; `]
 				]]
@@ -31,7 +31,7 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` Invoke the `],
-					[/* reference */ 'r', `decode`],
+					[/* reference */ 'r', `#decode(java.nio.ByteBuffer,java.nio.CharBuffer,boolean)`, `decode`],
 					[/* text */ 't', ` method zero or more times, as
    long as additional input may be available, passing `],
 					[/* inline code block */ 'i', `false`],
@@ -45,7 +45,7 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` Invoke the `],
-					[/* reference */ 'r', `decode`],
+					[/* reference */ 'r', `#decode(java.nio.ByteBuffer,java.nio.CharBuffer,boolean)`, `decode`],
 					[/* text */ 't', ` method one final time, passing
    `],
 					[/* inline code block */ 'i', `true`],
@@ -57,7 +57,7 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` Invoke the `],
-					[/* reference */ 'r', `flush`],
+					[/* reference */ 'r', `#flush(java.nio.CharBuffer)`, `flush`],
 					[/* text */ 't', ` method so that the decoder can
    flush any internal state to the output buffer. `]
 				]]
@@ -66,11 +66,11 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 		[/* text */ 't', `
 
  Each invocation of the `],
-		[/* reference */ 'r', `decode`],
+		[/* reference */ 'r', `#decode(java.nio.ByteBuffer,java.nio.CharBuffer,boolean)`, `decode`],
 		[/* text */ 't', ` method will decode as many
  bytes as possible from the input buffer, writing the resulting characters
  to the output buffer.  The `],
-		[/* reference */ 'r', `decode`],
+		[/* reference */ 'r', `#decode(java.nio.ByteBuffer,java.nio.CharBuffer,boolean)`, `decode`],
 		[/* text */ 't', ` method returns when more
  input is required, when there is not enough room in the output buffer, or
  when a decoding error has occurred.  In each case a `],
@@ -101,14 +101,14 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
  that type of error, which is described by an instance of the `],
 			[/* reference */ 'r', `java.nio.charset.CodingErrorAction`],
 			[/* text */ 't', ` class.  The possible error actions are to `],
-			[/* external link */ 'a', `CodingErrorAction.html#IGNORE`, `ignore`],
+			[/* reference */ 'r', `.CodingErrorAction#IGNORE`],
 			[/* text */ 't', ` the erroneous input, `],
-			[/* external link */ 'a', `CodingErrorAction.html#REPORT`, `report`],
+			[/* reference */ 'r', `.CodingErrorAction#REPORT`],
 			[/* text */ 't', ` the error to the invoker via
  the returned `],
 			[/* reference */ 'r', `java.nio.charset.CoderResult`],
 			[/* text */ 't', ` object, or `],
-			[/* external link */ 'a', `CodingErrorAction.html#REPLACE`, `replace`],
+			[/* reference */ 'r', `.CodingErrorAction#REPLACE`],
 			[/* text */ 't', ` the erroneous input with the current value of the
  replacement string.  The replacement
 
@@ -123,7 +123,7 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 
 
  its value may be changed via the `],
-			[/* reference */ 'r', `replaceWith`],
+			[/* reference */ 'r', `#replaceWith(java.lang.String)`, `replaceWith`],
 			[/* text */ 't', ` method.
 
  `]
@@ -131,13 +131,13 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 		[/* block */ 'b', [
 			[/* text */ 't', ` The default action for malformed-input and unmappable-character errors
  is to `],
-			[/* external link */ 'a', `CodingErrorAction.html#REPORT`, `report`],
+			[/* reference */ 'r', `.CodingErrorAction#REPORT`],
 			[/* text */ 't', ` them.  The
  malformed-input error action may be changed via the `],
-			[/* reference */ 'r', `onMalformedInput`],
+			[/* reference */ 'r', `#onMalformedInput(java.nio.charset.CodingErrorAction)`, `onMalformedInput`],
 			[/* text */ 't', ` method; the
  unmappable-character action may be changed via the `],
-			[/* reference */ 'r', `onUnmappableCharacter`],
+			[/* reference */ 'r', `#onUnmappableCharacter(java.nio.charset.CodingErrorAction)`, `onUnmappableCharacter`],
 			[/* text */ 't', ` method.
 
  `]
@@ -147,14 +147,14 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
  process, including the implementation of error actions.  A decoder for a
  specific charset, which is a concrete subclass of this class, need only
  implement the abstract `],
-			[/* reference */ 'r', `decodeLoop`],
+			[/* reference */ 'r', `#decodeLoop(java.nio.ByteBuffer,java.nio.CharBuffer)`, `decodeLoop`],
 			[/* text */ 't', ` method, which
  encapsulates the basic decoding loop.  A subclass that maintains internal
  state should, additionally, override the `],
-			[/* reference */ 'r', `implFlush`],
+			[/* reference */ 'r', `#implFlush(java.nio.CharBuffer)`, `implFlush`],
 			[/* text */ 't', ` and
  `],
-			[/* reference */ 'r', `implReset`],
+			[/* reference */ 'r', `#implReset()`, `implReset`],
 			[/* text */ 't', ` methods.
 
  `]
@@ -219,7 +219,7 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method invokes the `],
-					[/* reference */ 'r', `implOnMalformedInput`],
+					[/* reference */ 'r', `#implOnMalformedInput(java.nio.charset.CodingErrorAction)`, `implOnMalformedInput`],
 					[/* text */ 't', ` method, passing the new action.  `]
 				]]
 			],
@@ -245,7 +245,7 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method invokes the `],
-					[/* reference */ 'r', `implOnUnmappableCharacter`],
+					[/* reference */ 'r', `#implOnUnmappableCharacter(java.nio.charset.CodingErrorAction)`, `implOnUnmappableCharacter`],
 					[/* text */ 't', ` method, passing the new action.  `]
 				]]
 			],
@@ -292,13 +292,13 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 					[/* text */ 't', `If the byte sequence starting at the input buffer's current
           position is not legal for this charset and the current malformed-input action
           is `],
-					[/* external link */ 'a', `CodingErrorAction.html#REPORT`, `CodingErrorAction.REPORT`]
+					[/* reference */ 'r', `.CodingErrorAction#REPORT`]
 				]],
 				[/* throw */ 'java.nio.charset.UnmappableCharacterException', [/* throw description */
 					[/* text */ 't', `If the byte sequence starting at the input buffer's current
           position cannot be mapped to an equivalent character sequence and
           the current unmappable-character action is `],
-					[/* external link */ 'a', `CodingErrorAction.html#REPORT`, `CodingErrorAction.REPORT`]
+					[/* reference */ 'r', `.CodingErrorAction#REPORT`]
 				]],
 				[/* throw */ 'java.nio.charset.CharacterCodingException', UDF]
 			],
@@ -317,10 +317,10 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The buffers are read from, and written to, starting at their current
  positions.  At most `],
-					[/* external link */ 'a', `../Buffer.html#remaining()`, `in.remaining()`],
+					[/* reference */ 'r', `java.Buffer#remaining()`],
 					[/* text */ 't', ` bytes
  will be read and at most `],
-					[/* external link */ 'a', `../Buffer.html#remaining()`, `out.remaining()`],
+					[/* reference */ 'r', `java.Buffer#remaining()`],
 					[/* text */ 't', `
  characters will be written.  The buffers' positions will be advanced to
  reflect the bytes read and the characters written, but their marks and
@@ -340,7 +340,7 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 				[/* list */ 'l', [
 					[/* block */ 'b', [
 						[/* block */ 'b', [
-							[/* external link */ 'a', `CoderResult.html#UNDERFLOW`, `CoderResult.UNDERFLOW`],
+							[/* reference */ 'r', `.CoderResult#UNDERFLOW`],
 							[/* text */ 't', ` indicates that as much of the
    input buffer as possible has been decoded.  If there is no further
    input then the invoker can proceed to the next step of the
@@ -352,12 +352,12 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 					]],
 					[/* block */ 'b', [
 						[/* block */ 'b', [
-							[/* external link */ 'a', `CoderResult.html#OVERFLOW`, `CoderResult.OVERFLOW`],
+							[/* reference */ 'r', `.CoderResult#OVERFLOW`],
 							[/* text */ 't', ` indicates that there is
    insufficient space in the output buffer to decode any more bytes.
    This method should be invoked again with an output buffer that has
    more `],
-							[/* external link */ 'a', `../Buffer.html#remaining()`, `remaining`],
+							[/* reference */ 'r', `java.Buffer#remaining()`],
 							[/* text */ 't', ` characters. This is
    typically done by draining any decoded characters from the output
    buffer.  `]
@@ -366,18 +366,18 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 					[/* block */ 'b', [
 						[/* block */ 'b', [
 							[/* text */ 't', ` A `],
-							[/* external link */ 'a', `CoderResult.html#malformedForLength(int)`, `malformed-input`],
+							[/* reference */ 'r', `.CoderResult#malformedForLength(int)`],
 							[/* text */ 't', ` result indicates that a malformed-input
    error has been detected.  The malformed bytes begin at the input
    buffer's (possibly incremented) position; the number of malformed
    bytes may be determined by invoking the result object's `],
-							[/* external link */ 'a', `CoderResult.html#length()`, `length`],
+							[/* reference */ 'r', `.CoderResult#length()`],
 							[/* text */ 't', ` method.  This case applies only if the
    `],
-							[/* reference */ 'r', `malformed action`],
+							[/* reference */ 'r', `#onMalformedInput(java.nio.charset.CodingErrorAction)`, `malformed action`],
 							[/* text */ 't', ` of this decoder
    is `],
-							[/* external link */ 'a', `CodingErrorAction.html#REPORT`, `CodingErrorAction.REPORT`],
+							[/* reference */ 'r', `.CodingErrorAction#REPORT`],
 							[/* text */ 't', `; otherwise the malformed input
    will be ignored or replaced, as requested.  `]
 						]]
@@ -385,18 +385,18 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 					[/* block */ 'b', [
 						[/* block */ 'b', [
 							[/* text */ 't', ` An `],
-							[/* external link */ 'a', `CoderResult.html#unmappableForLength(int)`, `unmappable-character`],
+							[/* reference */ 'r', `.CoderResult#unmappableForLength(int)`],
 							[/* text */ 't', ` result indicates that an
    unmappable-character error has been detected.  The bytes that
    decode the unmappable character begin at the input buffer's (possibly
    incremented) position; the number of such bytes may be determined
    by invoking the result object's `],
-							[/* external link */ 'a', `CoderResult.html#length()`, `length`],
+							[/* reference */ 'r', `.CoderResult#length()`],
 							[/* text */ 't', `
    method.  This case applies only if the `],
-							[/* reference */ 'r', `unmappable action`],
+							[/* reference */ 'r', `#onUnmappableCharacter(java.nio.charset.CodingErrorAction)`, `unmappable action`],
 							[/* text */ 't', ` of this decoder is `],
-							[/* external link */ 'a', `CodingErrorAction.html#REPORT`, `CodingErrorAction.REPORT`],
+							[/* reference */ 'r', `.CodingErrorAction#REPORT`],
 							[/* text */ 't', `; otherwise the unmappable character will be
    ignored or replaced, as requested.  `]
 						]]
@@ -437,7 +437,7 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method works by invoking the `],
-					[/* reference */ 'r', `decodeLoop`],
+					[/* reference */ 'r', `#decodeLoop(java.nio.ByteBuffer,java.nio.CharBuffer)`, `decodeLoop`],
 					[/* text */ 't', `
  method, interpreting its results, handling error conditions, and
  reinvoking it as necessary.  `]
@@ -461,7 +461,7 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
 					[/* text */ 't', `If a decoding operation is already in progress and the previous
           step was an invocation neither of the `],
-					[/* reference */ 'r', `reset`],
+					[/* reference */ 'r', `#reset()`, `reset`],
 					[/* text */ 't', `
           method, nor of this method with a value of `],
 					[/* inline code block */ 'i', `false`],
@@ -498,7 +498,7 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` Any additional output is written to the output buffer beginning at
  its current position.  At most `],
-					[/* external link */ 'a', `../Buffer.html#remaining()`, `out.remaining()`],
+					[/* reference */ 'r', `java.Buffer#remaining()`],
 					[/* text */ 't', `
  characters will be written.  The buffer's position will be advanced
  appropriately, but its mark and limit will not be modified.
@@ -507,10 +507,10 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` If this method completes successfully then it returns `],
-					[/* external link */ 'a', `CoderResult.html#UNDERFLOW`, `CoderResult.UNDERFLOW`],
+					[/* reference */ 'r', `.CoderResult#UNDERFLOW`],
 					[/* text */ 't', `.  If there is insufficient room in the output
  buffer then it returns `],
-					[/* external link */ 'a', `CoderResult.html#OVERFLOW`, `CoderResult.OVERFLOW`],
+					[/* reference */ 'r', `.CoderResult#OVERFLOW`],
 					[/* text */ 't', `.  If this happens
  then this method must be invoked again, with an output buffer that has
  more room, in order to complete the current `],
@@ -525,7 +525,7 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method invokes the `],
-					[/* reference */ 'r', `implFlush`],
+					[/* reference */ 'r', `#implFlush(java.nio.CharBuffer)`, `implFlush`],
 					[/* text */ 't', ` method to
  perform the actual flushing operation.  `]
 				]]
@@ -539,10 +539,10 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
 					[/* text */ 't', `If the previous step of the current decoding operation was an
           invocation neither of the `],
-					[/* reference */ 'r', `flush`],
+					[/* reference */ 'r', `#flush(java.nio.CharBuffer)`, `flush`],
 					[/* text */ 't', ` method nor of
           the three-argument `],
-					[/* reference */ 'r', `decode`],
+					[/* reference */ 'r', `#decode(java.nio.ByteBuffer,java.nio.CharBuffer,boolean)`, `decode`],
 					[/* text */ 't', ` method
           with a value of `],
 					[/* inline code block */ 'i', `true`],
@@ -554,10 +554,10 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 			],
 			[/* return description */
 				[/* text */ 't', `A coder-result object, either `],
-				[/* external link */ 'a', `CoderResult.html#UNDERFLOW`, `CoderResult.UNDERFLOW`],
+				[/* reference */ 'r', `.CoderResult#UNDERFLOW`],
 				[/* text */ 't', ` or
           `],
-				[/* external link */ 'a', `CoderResult.html#OVERFLOW`, `CoderResult.OVERFLOW`]
+				[/* reference */ 'r', `.CoderResult#OVERFLOW`]
 			]
 		]],
 		[/* method */ 'charset()', [
@@ -591,7 +591,7 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method resets charset-independent state and also invokes the
  `],
-					[/* reference */ 'r', `implReset`],
+					[/* reference */ 'r', `#implReset()`, `implReset`],
 					[/* text */ 't', ` method in order to perform any
  charset-specific reset actions.  `]
 				]]
@@ -610,7 +610,7 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The default implementation of this method does nothing, and always
  returns `],
-					[/* external link */ 'a', `CoderResult.html#UNDERFLOW`, `CoderResult.UNDERFLOW`],
+					[/* reference */ 'r', `.CoderResult#UNDERFLOW`],
 					[/* text */ 't', `.  This method should be overridden
  by decoders that may need to write final characters to the output buffer
  once the entire input sequence has been read. `]
@@ -624,10 +624,10 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `A coder-result object, either `],
-				[/* external link */ 'a', `CoderResult.html#UNDERFLOW`, `CoderResult.UNDERFLOW`],
+				[/* reference */ 'r', `.CoderResult#UNDERFLOW`],
 				[/* text */ 't', ` or
           `],
-				[/* external link */ 'a', `CoderResult.html#OVERFLOW`, `CoderResult.OVERFLOW`]
+				[/* reference */ 'r', `.CoderResult#OVERFLOW`]
 			]
 		]],
 		[/* method */ 'malformedInputAction()', [
@@ -660,7 +660,7 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method invokes the `],
-					[/* reference */ 'r', `implReplaceWith`],
+					[/* reference */ 'r', `#implReplaceWith(java.lang.String)`, `implReplaceWith`],
 					[/* text */ 't', `
  method, passing the new replacement, after checking that the new
  replacement is acceptable.  `]
@@ -675,7 +675,7 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 
          and must not be longer than the value returned by the
          `],
-					[/* reference */ 'r', `maxCharsPerByte`],
+					[/* reference */ 'r', `#maxCharsPerByte()`, `maxCharsPerByte`],
 					[/* text */ 't', ` method`]
 				]]
 			],
@@ -761,7 +761,7 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
  bytes as possible until it either runs out of input, runs out of room
  in the output buffer, or encounters a decoding error.  This method is
  invoked by the `],
-					[/* reference */ 'r', `decode`],
+					[/* reference */ 'r', `#decode(java.nio.ByteBuffer,java.nio.CharBuffer,boolean)`, `decode`],
 					[/* text */ 't', ` method, which handles result
  interpretation and error recovery.
 
@@ -770,10 +770,10 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The buffers are read from, and written to, starting at their current
  positions.  At most `],
-					[/* external link */ 'a', `../Buffer.html#remaining()`, `in.remaining()`],
+					[/* reference */ 'r', `java.Buffer#remaining()`],
 					[/* text */ 't', ` bytes
  will be read, and at most `],
-					[/* external link */ 'a', `../Buffer.html#remaining()`, `out.remaining()`],
+					[/* reference */ 'r', `java.Buffer#remaining()`],
 					[/* text */ 't', `
  characters will be written.  The buffers' positions will be advanced to
  reflect the bytes read and the characters written, but their marks and
@@ -786,12 +786,12 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 					[/* reference */ 'r', `java.nio.charset.CoderResult`],
 					[/* text */ 't', ` object to describe its
  reason for termination, in the same manner as the `],
-					[/* reference */ 'r', `decode`],
+					[/* reference */ 'r', `#decode(java.nio.ByteBuffer,java.nio.CharBuffer,boolean)`, `decode`],
 					[/* text */ 't', `
  method.  Most implementations of this method will handle decoding errors
  by returning an appropriate result object for interpretation by the
  `],
-					[/* reference */ 'r', `decode`],
+					[/* reference */ 'r', `#decode(java.nio.ByteBuffer,java.nio.CharBuffer,boolean)`, `decode`],
 					[/* text */ 't', ` method.  An optimized implementation may instead
  examine the relevant error action and implement that action itself.
 
@@ -800,7 +800,7 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` An implementation of this method may perform arbitrary lookahead by
  returning `],
-					[/* external link */ 'a', `CoderResult.html#UNDERFLOW`, `CoderResult.UNDERFLOW`],
+					[/* reference */ 'r', `.CoderResult#UNDERFLOW`],
 					[/* text */ 't', ` until it receives sufficient
  input.  `]
 				]]
@@ -857,7 +857,7 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 		[/* method */ 'isCharsetDetected()', [
 			[/* method description */
 				[/* text */ 't', `Tells whether or not this decoder has yet detected a
- charset&nbsp;&nbsp;`],
+ charset  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -869,7 +869,7 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 					[/* inline code block */ 'i', `true`],
 					[/* text */ 't', ` to indicate that a specific charset has been detected in
  the input byte sequence.  Once this occurs, the `],
-					[/* reference */ 'r', `detectedCharset`],
+					[/* reference */ 'r', `#detectedCharset()`, `detectedCharset`],
 					[/* text */ 't', ` method may be invoked to retrieve the detected charset.
 
  `]
@@ -909,7 +909,7 @@ DocsCollector.collect('java.nio.charset.CharsetDecoder', [
 		[/* method */ 'detectedCharset()', [
 			[/* method description */
 				[/* text */ 't', `Retrieves the charset that was detected by this
- decoder&nbsp;&nbsp;`],
+ decoder  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 

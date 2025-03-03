@@ -15,10 +15,10 @@ DocsCollector.collect('java.util.function.BiConsumer', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
-			[/* external link */ 'a', `package-summary.html`, `functional interface`],
+			[/* reference */ 'r', `.package-summary`],
 			[/* text */ 't', `
  whose functional method is `],
-			[/* reference */ 'r', `accept(Object, Object)`],
+			[/* reference */ 'r', `#accept(T,U)`, `accept(Object, Object)`],
 			[/* text */ 't', `.`]
 		]]
 	],

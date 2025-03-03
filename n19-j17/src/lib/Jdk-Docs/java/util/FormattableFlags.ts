@@ -4,7 +4,7 @@ import {DocsCollector} from '../../DocsCollector';
 DocsCollector.collect('java.util.FormattableFlags', [
 	[/* class description */
 		[/* text */ 't', `FormattableFlags are passed to the `],
-		[/* external link */ 'a', `Formattable.html#formatTo(java.util.Formatter,int,int,int)`, `Formattable.formatTo()`],
+		[/* reference */ 'r', `.Formattable#formatTo(java.util.Formatter,int,int,int)`],
 		[/* text */ 't', ` method and modify the output format for `],
 		[/* reference */ 'r', `java.util.Formattable`],
 		[/* text */ 't', `.  Implementations of `],
@@ -42,10 +42,10 @@ DocsCollector.collect('java.util.FormattableFlags', [
  `],
 				[/* inline code block */ 'i', `formatter`],
 				[/* text */ 't', ` argument of the `],
-				[/* external link */ 'a', `Formattable.html#formatTo(java.util.Formatter,int,int,int)`, `formatTo()`],
+				[/* reference */ 'r', `.Formattable#formatTo(java.util.Formatter,int,int,int)`],
 				[/* text */ 't', ` method.  The output should be equivalent the following
  invocation of `],
-				[/* external link */ 'a', `../lang/String.html#toUpperCase(java.util.Locale)`, `String.toUpperCase(java.util.Locale)`],
+				[/* reference */ 'r', `java.String#toUpperCase(java.util.Locale)`],
 				[/* code block */ 'c', `     out.toUpperCase() `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This flag corresponds to `],

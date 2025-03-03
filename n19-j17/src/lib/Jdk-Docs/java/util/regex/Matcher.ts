@@ -12,7 +12,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', ` A matcher is created from a pattern by invoking the pattern's `],
-			[/* external link */ 'a', `Pattern.html#matcher(java.lang.CharSequence)`, `matcher`],
+			[/* reference */ 'r', `.Pattern#matcher(java.lang.CharSequence)`],
 			[/* text */ 't', ` method.  Once created, a matcher can be used to
  perform three different kinds of match operations:
 
@@ -22,7 +22,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The `],
-					[/* reference */ 'r', `matches`],
+					[/* reference */ 'r', `#matches()`, `matches`],
 					[/* text */ 't', ` method attempts to match the entire
    input sequence against the pattern.  `]
 				]]
@@ -30,7 +30,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The `],
-					[/* reference */ 'r', `lookingAt`],
+					[/* reference */ 'r', `#lookingAt()`, `lookingAt`],
 					[/* text */ 't', ` method attempts to match the
    input sequence, starting at the beginning, against the pattern.  `]
 				]]
@@ -38,7 +38,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The `],
-					[/* reference */ 'r', `find`],
+					[/* reference */ 'r', `#find()`, `find`],
 					[/* text */ 't', ` method scans the input sequence looking
    for the next subsequence that matches the pattern.  `]
 				]]
@@ -56,17 +56,17 @@ DocsCollector.collect('java.util.regex.Matcher', [
 			[/* text */ 't', `region`],
 			[/* text */ 't', `. By default, the region contains all of the matcher's input.
  The region can be modified via the `],
-			[/* reference */ 'r', `region`],
+			[/* reference */ 'r', `#region(int,int)`, `region`],
 			[/* text */ 't', ` method
  and queried via the `],
-			[/* reference */ 'r', `regionStart`],
+			[/* reference */ 'r', `#regionStart()`, `regionStart`],
 			[/* text */ 't', ` and `],
-			[/* reference */ 'r', `regionEnd`],
+			[/* reference */ 'r', `#regionEnd()`, `regionEnd`],
 			[/* text */ 't', ` methods. The way that the region boundaries interact
  with some pattern constructs can be changed. See `],
-			[/* reference */ 'r', `useAnchoringBounds`],
+			[/* reference */ 'r', `#useAnchoringBounds(boolean)`, `useAnchoringBounds`],
 			[/* text */ 't', ` and `],
-			[/* reference */ 'r', `useTransparentBounds`],
+			[/* reference */ 'r', `#useTransparentBounds(boolean)`, `useTransparentBounds`],
 			[/* text */ 't', ` for more details.
 
  `]
@@ -75,13 +75,13 @@ DocsCollector.collect('java.util.regex.Matcher', [
 			[/* text */ 't', ` This class also defines methods for replacing matched subsequences with
  new strings whose contents can, if desired, be computed from the match
  result.  The `],
-			[/* reference */ 'r', `appendReplacement`],
+			[/* reference */ 'r', `#appendReplacement(java.lang.StringBuffer,java.lang.String)`, `appendReplacement`],
 			[/* text */ 't', ` and `],
-			[/* reference */ 'r', `appendTail`],
+			[/* reference */ 'r', `#appendTail(java.lang.StringBuffer)`, `appendTail`],
 			[/* text */ 't', ` methods can be used in tandem in order to collect
  the result into an existing string buffer or string builder. Alternatively,
  the more convenient `],
-			[/* reference */ 'r', `replaceAll`],
+			[/* reference */ 'r', `#replaceAll(java.lang.String)`, `replaceAll`],
 			[/* text */ 't', ` method can be used to
  create a string in which every matching subsequence in the input sequence
  is replaced.
@@ -92,7 +92,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
 			[/* text */ 't', ` The explicit state of a matcher includes the start and end indices of
  the most recent successful match.  It also includes the start and end
  indices of the input subsequence captured by each `],
-			[/* external link */ 'a', `Pattern.html#cg`, `capturing group`],
+			[/* reference */ 'r', `.Pattern#cg`],
 			[/* text */ 't', ` in the pattern as well as a total
  count of such subsequences.  As a convenience, methods are also provided for
  returning these captured subsequences in string form.
@@ -114,17 +114,17 @@ DocsCollector.collect('java.util.regex.Matcher', [
 			[/* text */ 't', `append position`],
 			[/* text */ 't', `, which is initially zero and is updated
  by the `],
-			[/* reference */ 'r', `appendReplacement`],
+			[/* reference */ 'r', `#appendReplacement(java.lang.StringBuffer,java.lang.String)`, `appendReplacement`],
 			[/* text */ 't', ` method.
 
  `]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` A matcher may be reset explicitly by invoking its `],
-			[/* reference */ 'r', `reset()`],
+			[/* reference */ 'r', `#reset()`, `reset()`],
 			[/* text */ 't', `
  method or, if a new input sequence is desired, its `],
-			[/* reference */ 'r', `reset(CharSequence)`],
+			[/* reference */ 'r', `#reset(java.lang.CharSequence)`, `reset(CharSequence)`],
 			[/* text */ 't', ` method.  Resetting a
  matcher discards its explicit state information and sets the append position
  to zero.
@@ -141,7 +141,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
 			[/* method description */
 				[/* text */ 't', `Returns the input subsequence captured by the given
  `],
-				[/* external link */ 'a', `Pattern.html#groupname`, `named-capturing group`],
+				[/* reference */ 'r', `.Pattern#groupname`],
 				[/* text */ 't', ` during the
  previous match operation.
 
@@ -208,7 +208,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
 					[/* inline code block */ 'i', `start(`],
 					[/* text */ 't', `g`],
 					[/* inline code block */ 'i', `),`],
-					[/* text */ 't', `&nbsp;`],
+					[/* text */ 't', ` `],
 					[/* text */ 't', `m.`],
 					[/* inline code block */ 'i', `end(`],
 					[/* text */ 't', `g`],
@@ -217,7 +217,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
  are equivalent.  `]
 				]],
 				[/* block */ 'b', [
-					[/* external link */ 'a', `Pattern.html#cg`, `Capturing groups`],
+					[/* reference */ 'r', `.Pattern#cg`],
 					[/* text */ 't', ` are indexed from left
  to right, starting at one.  Group zero denotes the entire pattern, so
  the expression `],
@@ -282,7 +282,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
 					[/* inline code block */ 'i', `substring(`],
 					[/* text */ 't', `m.`],
 					[/* inline code block */ 'i', `start(),`],
-					[/* text */ 't', `&nbsp;`],
+					[/* text */ 't', ` `],
 					[/* text */ 't', `m.`],
 					[/* inline code block */ 'i', `end())`],
 					[/* text */ 't', ` are equivalent.  `]
@@ -359,7 +359,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
  part of the match are appended directly to the result string; the match
  is replaced in the result by the replacement string.  The replacement
  string may contain references to captured subsequences as in the `],
-					[/* reference */ 'r', `appendReplacement`],
+					[/* reference */ 'r', `#appendReplacement(java.lang.StringBuffer,java.lang.String)`, `appendReplacement`],
 					[/* text */ 't', ` method.
 
  `]
@@ -423,7 +423,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
  is replaced in the result by the applying the replacer function that
  returns a replacement string.  The replacement string may contain
  references to captured subsequences as in the `],
-					[/* reference */ 'r', `appendReplacement`],
+					[/* reference */ 'r', `#appendReplacement(java.lang.StringBuffer,java.lang.String)`, `appendReplacement`],
 					[/* text */ 't', ` method.
 
  `]
@@ -517,7 +517,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
  is replaced in the result by the applying the replacer function that
  returns a replacement string.  Each replacement string may contain
  references to captured subsequences as in the `],
-					[/* reference */ 'r', `appendReplacement`],
+					[/* reference */ 'r', `#appendReplacement(java.lang.StringBuffer,java.lang.String)`, `appendReplacement`],
 					[/* text */ 't', ` method.
 
  `]
@@ -606,7 +606,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
  part of any match are appended directly to the result string; each match
  is replaced in the result by the replacement string.  The replacement
  string may contain references to captured subsequences as in the `],
-					[/* reference */ 'r', `appendReplacement`],
+					[/* reference */ 'r', `#appendReplacement(java.lang.StringBuffer,java.lang.String)`, `appendReplacement`],
 					[/* text */ 't', ` method.
 
  `]
@@ -664,7 +664,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
 
  `],
 				[/* block */ 'b', [
-					[/* external link */ 'a', `Pattern.html#cg`, `Capturing groups`],
+					[/* reference */ 'r', `.Pattern#cg`],
 					[/* text */ 't', ` are indexed from left
  to right, starting at one.  Group zero denotes the entire pattern, so
  the expression `],
@@ -719,7 +719,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
 			[/* method description */
 				[/* text */ 't', `Returns the start index of the subsequence captured by the given
  `],
-				[/* external link */ 'a', `Pattern.html#groupname`, `named-capturing group`],
+				[/* reference */ 'r', `.Pattern#groupname`],
 				[/* text */ 't', ` during the
  previous match operation.`]
 			],
@@ -750,7 +750,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
 			[/* method description */
 				[/* text */ 't', `Returns the offset after the last character of the subsequence
  captured by the given `],
-				[/* external link */ 'a', `Pattern.html#groupname`, `named-capturing group`],
+				[/* reference */ 'r', `.Pattern#groupname`],
 				[/* text */ 't', ` during the previous match operation.`]
 			],
 			[/* parameters */
@@ -783,7 +783,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
 
  `],
 				[/* block */ 'b', [
-					[/* external link */ 'a', `Pattern.html#cg`, `Capturing groups`],
+					[/* reference */ 'r', `.Pattern#cg`],
 					[/* text */ 't', ` are indexed from left
  to right, starting at one.  Group zero denotes the entire pattern, so
  the expression `],
@@ -882,7 +882,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
 					[/* inline code block */ 'i', `group`],
 					[/* text */ 't', ` methods, and subsequent
  invocations of the `],
-					[/* reference */ 'r', `find()`],
+					[/* reference */ 'r', `#find()`, `find()`],
 					[/* text */ 't', ` method will start at the first
  character not matched by this match.  `]
 				]]
@@ -958,10 +958,10 @@ DocsCollector.collect('java.util.regex.Matcher', [
 				[/* block */ 'b', [
 					[/* text */ 't', `Depending on the transparency and anchoring being used (see
  `],
-					[/* reference */ 'r', `useTransparentBounds`],
+					[/* reference */ 'r', `#useTransparentBounds(boolean)`, `useTransparentBounds`],
 					[/* text */ 't', ` and
  `],
-					[/* reference */ 'r', `useAnchoringBounds`],
+					[/* reference */ 'r', `#useAnchoringBounds(boolean)`, `useAnchoringBounds`],
 					[/* text */ 't', `), certain
  constructs such as anchors may behave differently at or around the
  boundaries of the region.`]
@@ -1010,10 +1010,10 @@ DocsCollector.collect('java.util.regex.Matcher', [
    append position, and appends them to the given string buffer.  It
    stops after reading the last character preceding the previous match,
    that is, the character at index `],
-							[/* reference */ 'r', `start()`],
-							[/* text */ 't', `&nbsp;`],
+							[/* reference */ 'r', `#start()`, `start()`],
+							[/* text */ 't', ` `],
 							[/* inline code block */ 'i', `-`],
-							[/* text */ 't', `&nbsp;`],
+							[/* text */ 't', ` `],
 							[/* inline code block */ 'i', `1`],
 							[/* text */ 't', `.  `]
 						]]
@@ -1026,7 +1026,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
 						[/* block */ 'b', [
 							[/* text */ 't', ` It sets the append position of this matcher to the index of
    the last character matched, plus one, that is, to `],
-							[/* reference */ 'r', `end()`],
+							[/* reference */ 'r', `#end()`, `end()`],
 							[/* text */ 't', `.
    `]
 						]]
@@ -1045,9 +1045,9 @@ DocsCollector.collect('java.util.regex.Matcher', [
 					[/* text */ 't', `
  will be replaced by the result of evaluating the corresponding
  `],
-					[/* reference */ 'r', `group(name)`],
+					[/* reference */ 'r', `#group(java.lang.String)`, `group(name)`],
 					[/* text */ 't', ` or `],
-					[/* reference */ 'r', `group(g)`],
+					[/* reference */ 'r', `#group(int)`, `group(g)`],
 					[/* text */ 't', `
  respectively. For `],
 					[/* inline code block */ 'i', `$`],
@@ -1094,9 +1094,9 @@ DocsCollector.collect('java.util.regex.Matcher', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method is intended to be used in a loop together with the
  `],
-					[/* reference */ 'r', `appendTail`],
+					[/* reference */ 'r', `#appendTail(java.lang.StringBuffer)`, `appendTail`],
 					[/* text */ 't', ` and `],
-					[/* reference */ 'r', `find`],
+					[/* reference */ 'r', `#find()`, `find`],
 					[/* text */ 't', `
  methods.  The following code, for example, writes `],
 					[/* inline code block */ 'i', `one dog two dogs in the yard`],
@@ -1152,10 +1152,10 @@ DocsCollector.collect('java.util.regex.Matcher', [
    append position, and appends them to the given string builder.  It
    stops after reading the last character preceding the previous match,
    that is, the character at index `],
-							[/* reference */ 'r', `start()`],
-							[/* text */ 't', `&nbsp;`],
+							[/* reference */ 'r', `#start()`, `start()`],
+							[/* text */ 't', ` `],
 							[/* inline code block */ 'i', `-`],
-							[/* text */ 't', `&nbsp;`],
+							[/* text */ 't', ` `],
 							[/* inline code block */ 'i', `1`],
 							[/* text */ 't', `.  `]
 						]]
@@ -1168,7 +1168,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
 						[/* block */ 'b', [
 							[/* text */ 't', ` It sets the append position of this matcher to the index of
    the last character matched, plus one, that is, to `],
-							[/* reference */ 'r', `end()`],
+							[/* reference */ 'r', `#end()`, `end()`],
 							[/* text */ 't', `.
    `]
 						]]
@@ -1182,7 +1182,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
 					[/* text */ 't', `g`],
 					[/* text */ 't', ` will be replaced by the result of
  evaluating `],
-					[/* reference */ 'r', `group`],
+					[/* reference */ 'r', `#group(int)`, `group`],
 					[/* inline code block */ 'i', `(`],
 					[/* text */ 't', `g`],
 					[/* inline code block */ 'i', `)`],
@@ -1228,10 +1228,10 @@ DocsCollector.collect('java.util.regex.Matcher', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method is intended to be used in a loop together with the
  `],
-					[/* reference */ 'r', `appendTail`],
+					[/* reference */ 'r', `#appendTail(java.lang.StringBuilder)`, `appendTail`],
 					[/* text */ 't', ` and
  `],
-					[/* reference */ 'r', `find`],
+					[/* reference */ 'r', `#find()`, `find`],
 					[/* text */ 't', ` methods. The following code, for example, writes
  `],
 					[/* inline code block */ 'i', `one dog two dogs in the yard`],
@@ -1283,7 +1283,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
 					[/* text */ 't', ` This method reads characters from the input sequence, starting at
  the append position, and appends them to the given string buffer.  It is
  intended to be invoked after one or more invocations of the `],
-					[/* reference */ 'r', `appendReplacement`],
+					[/* reference */ 'r', `#appendReplacement(java.lang.StringBuffer,java.lang.String)`, `appendReplacement`],
 					[/* text */ 't', ` method in
  order to copy the remainder of the input sequence.  `]
 				]]
@@ -1307,7 +1307,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
 					[/* text */ 't', ` This method reads characters from the input sequence, starting at
  the append position, and appends them to the given string builder.  It is
  intended to be invoked after one or more invocations of the `],
-					[/* reference */ 'r', `appendReplacement`],
+					[/* reference */ 'r', `#appendReplacement(java.lang.StringBuilder,java.lang.String)`, `appendReplacement`],
 					[/* text */ 't', ` method in order to copy the remainder of the input
  sequence.  `]
 				]]
@@ -1397,10 +1397,10 @@ DocsCollector.collect('java.util.regex.Matcher', [
 				[/* text */ 't', `Reports the start index of this matcher's region. The
  searches this matcher conducts are limited to finding matches
  within `],
-				[/* reference */ 'r', `regionStart`],
+				[/* reference */ 'r', `#regionStart()`, `regionStart`],
 				[/* text */ 't', ` (inclusive) and
  `],
-				[/* reference */ 'r', `regionEnd`],
+				[/* reference */ 'r', `#regionEnd()`, `regionEnd`],
 				[/* text */ 't', ` (exclusive).`]
 			],
 			/* parameters */ UDF,
@@ -1414,10 +1414,10 @@ DocsCollector.collect('java.util.regex.Matcher', [
 				[/* text */ 't', `Reports the end index (exclusive) of this matcher's region.
  The searches this matcher conducts are limited to finding matches
  within `],
-				[/* reference */ 'r', `regionStart`],
+				[/* reference */ 'r', `#regionStart()`, `regionStart`],
 				[/* text */ 't', ` (inclusive) and
  `],
-				[/* reference */ 'r', `regionEnd`],
+				[/* reference */ 'r', `#regionEnd()`, `regionEnd`],
 				[/* text */ 't', ` (exclusive).`]
 			],
 			/* parameters */ UDF,
@@ -1464,7 +1464,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Like the `],
-					[/* reference */ 'r', `matches`],
+					[/* reference */ 'r', `#matches()`, `matches`],
 					[/* text */ 't', ` method, this method always starts
  at the beginning of the region; unlike that method, it does not
  require that the entire region be matched.
@@ -1537,7 +1537,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Each match result is produced as if by `],
-					[/* reference */ 'r', `toMatchResult()`],
+					[/* reference */ 'r', `#toMatchResult()`, `toMatchResult()`],
 					[/* text */ 't', `.
 
  `]
@@ -1594,7 +1594,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` See `],
-					[/* reference */ 'r', `useTransparentBounds`],
+					[/* reference */ 'r', `#useTransparentBounds(boolean)`, `useTransparentBounds`],
 					[/* text */ 't', ` for a
  description of transparent and opaque bounds.
 
@@ -1677,7 +1677,7 @@ DocsCollector.collect('java.util.regex.Matcher', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` See `],
-					[/* reference */ 'r', `useAnchoringBounds`],
+					[/* reference */ 'r', `#useAnchoringBounds(boolean)`, `useAnchoringBounds`],
 					[/* text */ 't', ` for a
  description of anchoring bounds.
 

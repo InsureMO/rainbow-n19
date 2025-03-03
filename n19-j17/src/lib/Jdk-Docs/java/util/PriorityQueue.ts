@@ -66,9 +66,9 @@ DocsCollector.collect('java.util.PriorityQueue', [
 			[/* text */ 't', ` and `],
 			[/* reference */ 'r', `java.util.Iterator`],
 			[/* text */ 't', ` interfaces.  The Iterator provided in method `],
-			[/* reference */ 'r', `iterator()`],
+			[/* reference */ 'r', `#iterator()`, `iterator()`],
 			[/* text */ 't', ` and the Spliterator provided in method `],
-			[/* reference */ 'r', `spliterator()`],
+			[/* reference */ 'r', `#spliterator()`, `spliterator()`],
 			[/* text */ 't', `
  are `],
 			[/* text */ 't', `not`],
@@ -124,7 +124,7 @@ DocsCollector.collect('java.util.PriorityQueue', [
 		[/* block */ 'b', [
 			[/* text */ 't', `This class is a member of the
  `],
-			[/* external link */ 'a', `../../../java.base/java/util/package-summary.html#CollectionsFramework`, `Java Collections Framework`],
+			[/* text */ 't', `Java Collections Framework`],
 			[/* text */ 't', `.`]
 		]]
 	],
@@ -331,7 +331,7 @@ DocsCollector.collect('java.util.PriorityQueue', [
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` (as specified by `],
-				[/* external link */ 'a', `Collection.html#add(E)`, `Collection.add(E)`],
+				[/* reference */ 'r', `.Collection#add(E)`],
 				[/* text */ 't', `)`]
 			]
 		]],
@@ -410,7 +410,7 @@ DocsCollector.collect('java.util.PriorityQueue', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', `Like the `],
-					[/* reference */ 'r', `toArray()`],
+					[/* reference */ 'r', `#toArray()`, `toArray()`],
 					[/* text */ 't', ` method, this method acts as bridge between
  array-based and collection-based APIs.  Further, this method allows
  precise control over the runtime type of the output array, and may,
@@ -522,7 +522,7 @@ DocsCollector.collect('java.util.PriorityQueue', [
 		[/* method */ 'spliterator()', [
 			[/* method description */
 				[/* text */ 't', `Creates a `],
-				[/* external link */ 'a', `Spliterator.html#binding`, `late-binding`],
+				[/* reference */ 'r', `.Spliterator#binding`],
 				[/* text */ 't', `
  and `],
 				[/* text */ 't', `fail-fast`],
@@ -530,7 +530,7 @@ DocsCollector.collect('java.util.PriorityQueue', [
 				[/* text */ 't', ` over the elements in this
  queue. The spliterator does not traverse elements in any particular order
  (the `],
-				[/* external link */ 'a', `Spliterator.html#ORDERED`, `ORDERED`],
+				[/* reference */ 'r', `.Spliterator#ORDERED`],
 				[/* text */ 't', ` characteristic is not reported).
 
  `],
@@ -538,12 +538,12 @@ DocsCollector.collect('java.util.PriorityQueue', [
 					[/* text */ 't', `The `],
 					[/* inline code block */ 'i', `Spliterator`],
 					[/* text */ 't', ` reports `],
-					[/* external link */ 'a', `Spliterator.html#SIZED`, `Spliterator.SIZED`],
+					[/* reference */ 'r', `.Spliterator#SIZED`],
 					[/* text */ 't', `,
  `],
-					[/* external link */ 'a', `Spliterator.html#SUBSIZED`, `Spliterator.SUBSIZED`],
+					[/* reference */ 'r', `.Spliterator#SUBSIZED`],
 					[/* text */ 't', `, and `],
-					[/* external link */ 'a', `Spliterator.html#NONNULL`, `Spliterator.NONNULL`],
+					[/* reference */ 'r', `.Spliterator#NONNULL`],
 					[/* text */ 't', `.
  Overriding implementations should document the reporting of additional
  characteristic values.`]
@@ -662,7 +662,7 @@ DocsCollector.collect('java.util.PriorityQueue', [
          null elements and the specified collection does not support
          null elements
          (`],
-					[/* external link */ 'a', `../../../java.base/java/util/Collection.html#optional-restrictions`, `optional`],
+					[/* text */ 't', `optional`],
 					[/* text */ 't', `),
          or if the specified collection is null`]
 				]]
@@ -691,7 +691,7 @@ DocsCollector.collect('java.util.PriorityQueue', [
          null elements and the specified collection does not permit null
          elements
          (`],
-					[/* external link */ 'a', `../../../java.base/java/util/Collection.html#optional-restrictions`, `optional`],
+					[/* text */ 't', `optional`],
 					[/* text */ 't', `),
          or if the specified collection is null`]
 				]]
@@ -743,7 +743,7 @@ DocsCollector.collect('java.util.PriorityQueue', [
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` (as specified by `],
-				[/* external link */ 'a', `Queue.html#offer(E)`, `Queue.offer(E)`],
+				[/* reference */ 'r', `.Queue#offer(E)`],
 				[/* text */ 't', `)`]
 			]
 		]]

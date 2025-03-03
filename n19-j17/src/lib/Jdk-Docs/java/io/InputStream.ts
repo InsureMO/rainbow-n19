@@ -775,7 +775,7 @@ DocsCollector.collect('java.io.InputStream', [
 					[/* reference */ 'r', `java.io.IOException`],
 					[/* text */ 't', ` if this input stream has been closed by invoking the
  `],
-					[/* reference */ 'r', `close()`],
+					[/* reference */ 'r', `#close()`, `close()`],
 					[/* text */ 't', ` method.
 
  `]

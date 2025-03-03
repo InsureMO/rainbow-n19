@@ -45,7 +45,7 @@ DocsCollector.collect('java.io.InterruptedIOException', [
 				[/* text */ 't', ` can be
  retrieved later by the
  `],
-				[/* external link */ 'a', `../lang/Throwable.html#getMessage()`, `Throwable.getMessage()`],
+				[/* reference */ 'r', `java.Throwable#getMessage()`],
 				[/* text */ 't', `
  method of class `],
 				[/* inline code block */ 'i', `java.lang.Throwable`],

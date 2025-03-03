@@ -132,7 +132,7 @@ DocsCollector.collect('java.lang.Object', [
 					[/* text */ 't', `
  The current thread must own this object's monitor lock. See the
  `],
-					[/* reference */ 'r', `notify`],
+					[/* reference */ 'r', `#notify()`, `notify`],
 					[/* text */ 't', ` method for a description of the ways in which
  a thread can become the owner of a monitor lock.
  `]
@@ -176,7 +176,7 @@ DocsCollector.collect('java.lang.Object', [
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `Some other thread `],
-						[/* external link */ 'a', `Thread.html#interrupt()`, `interrupts`],
+						[/* reference */ 'r', `.Thread#interrupt()`],
 						[/* text */ 't', `
  thread `],
 						[/* inline code block */ 'i', `T`],
@@ -234,17 +234,7 @@ DocsCollector.collect('java.lang.Object', [
  was invoked.
  `]
 				]],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- A thread can wake up without being notified, interrupted, or timing out, a
- so-called `],
-					[/* text */ 't', `spurious wakeup`],
-					[/* text */ 't', `.  While this will rarely occur in practice,
- applications must guard against it by testing for the condition that should
- have caused the thread to be awakened, and continuing to wait if the condition
- is not satisfied. See the example below.
- `]
-				]],
+				[/* block */ 'b', `spurious wakeup`],
 				[/* block */ 'b', [
 					[/* text */ 't', `
  For more information on this topic, see section 14.2,
@@ -261,7 +251,7 @@ DocsCollector.collect('java.lang.Object', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the current thread is `],
-					[/* external link */ 'a', `Thread.html#interrupt()`, `interrupted`],
+					[/* reference */ 'r', `.Thread#interrupt()`],
 					[/* text */ 't', `
  by any thread before or while it is waiting, then an `],
 					[/* inline code block */ 'i', `InterruptedException`],
@@ -319,7 +309,7 @@ DocsCollector.collect('java.lang.Object', [
 					[/* inline code block */ 'i', `wait(0L, 0)`],
 					[/* text */ 't', `
  had been called. See the specification of the `],
-					[/* reference */ 'r', `wait(long, int)`],
+					[/* reference */ 'r', `#wait(long,int)`, `wait(long, int)`],
 					[/* text */ 't', ` method
  for details.`]
 				]]
@@ -356,7 +346,7 @@ DocsCollector.collect('java.lang.Object', [
 					[/* inline code block */ 'i', `wait(timeoutMillis, 0)`],
 					[/* text */ 't', `
  had been called. See the specification of the `],
-					[/* reference */ 'r', `wait(long, int)`],
+					[/* reference */ 'r', `#wait(long,int)`, `wait(long, int)`],
 					[/* text */ 't', ` method
  for details.`]
 				]]
@@ -564,7 +554,7 @@ DocsCollector.collect('java.lang.Object', [
 					]],
 					[/* block */ 'b', [
 						[/* text */ 't', `If two objects are equal according to the `],
-						[/* reference */ 'r', `equals`],
+						[/* reference */ 'r', `#equals(java.lang.Object)`, `equals`],
 						[/* text */ 't', ` method, then calling the `],
 						[/* inline code block */ 'i', `hashCode`],
 						[/* text */ 't', ` method on each of the two objects must produce the
@@ -576,7 +566,7 @@ DocsCollector.collect('java.lang.Object', [
 						[/* text */ 't', `not`],
 						[/* text */ 't', ` required that if two objects are unequal
      according to the `],
-						[/* reference */ 'r', `equals`],
+						[/* reference */ 'r', `#equals(java.lang.Object)`, `equals`],
 						[/* text */ 't', ` method, then
      calling the `],
 						[/* inline code block */ 'i', `hashCode`],
@@ -608,11 +598,15 @@ DocsCollector.collect('java.lang.Object', [
 
  `],
 				[/* block */ 'b', [
-					[/* text */ 't', `The actual result type is <code>Class&lt;? extends |X|&gt;</code>
- where <code>|X|</code> is the erasure of the static type of the
- expression on which <code>getClass</code> is called.`],
-					[/* text */ 't', ` For
- example, no cast is required in this code fragment:`]
+					[/* text */ 't', `The actual result type is `],
+					[/* inline code block */ 'i', `Class<? extends |X|>`],
+					[/* text */ 't', `
+ where `],
+					[/* inline code block */ 'i', `|X|`],
+					[/* text */ 't', ` is the erasure of the static type of the
+ expression on which `],
+					[/* inline code block */ 'i', `getClass`],
+					[/* text */ 't', ` is called.`]
 				]],
 				[/* block */ 'b', [
 					[/* inline code block */ 'i', `Number n = 0;`],

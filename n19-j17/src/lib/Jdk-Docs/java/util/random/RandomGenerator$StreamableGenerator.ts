@@ -22,10 +22,10 @@ DocsCollector.collect('java.util.random.RandomGenerator$StreamableGenerator', [
 			[/* reference */ 'r', `java.util.random.RandomGenerator.SplittableGenerator`],
 			[/* text */ 't', ` may
  choose to use its `],
-			[/* external link */ 'a', `RandomGenerator.SplittableGenerator.html#splits()`, `splits`],
+			[/* reference */ 'r', `.RandomGenerator.SplittableGenerator#splits()`],
 			[/* text */ 't', `() method to
  implement the `],
-			[/* reference */ 'r', `rngs`],
+			[/* reference */ 'r', `#rngs()`, `rngs`],
 			[/* text */ 't', `() method required by this
  interface.
 
@@ -36,10 +36,10 @@ DocsCollector.collect('java.util.random.RandomGenerator$StreamableGenerator', [
 			[/* reference */ 'r', `java.util.random.RandomGenerator.JumpableGenerator`],
 			[/* text */ 't', ` may
  choose to use its `],
-			[/* external link */ 'a', `RandomGenerator.JumpableGenerator.html#jumps()`, `jumps`],
+			[/* reference */ 'r', `.RandomGenerator.JumpableGenerator#jumps()`],
 			[/* text */ 't', `() method to implement the
  `],
-			[/* reference */ 'r', `rngs`],
+			[/* reference */ 'r', `#rngs()`, `rngs`],
 			[/* text */ 't', `() method required by this interface.
 
  `]
@@ -49,10 +49,10 @@ DocsCollector.collect('java.util.random.RandomGenerator$StreamableGenerator', [
 			[/* reference */ 'r', `java.util.random.RandomGenerator.LeapableGenerator`],
 			[/* text */ 't', ` may
  choose to use its `],
-			[/* external link */ 'a', `RandomGenerator.LeapableGenerator.html#leaps()`, `leaps`],
+			[/* reference */ 'r', `.RandomGenerator.LeapableGenerator#leaps()`],
 			[/* text */ 't', `() method to
  implement the `],
-			[/* reference */ 'r', `rngs`],
+			[/* reference */ 'r', `#rngs()`, `rngs`],
 			[/* text */ 't', `() method required by this
  interface.
 
@@ -79,14 +79,14 @@ DocsCollector.collect('java.util.random.RandomGenerator$StreamableGenerator', [
 				[/* text */ 't', ` that utilizes the
  `],
 				[/* inline code block */ 'i', `name`],
-				[/* external link */ 'a', `package-summary.html#algorithms`, `algorithm`],
+				[/* reference */ 'r', `.package-summary#algorithms`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
 				[/* parameter */ 'name', [/* parameter description */
 					[/* text */ 't', `Name of random number generator
               `],
-					[/* external link */ 'a', `package-summary.html#algorithms`, `algorithm`]
+					[/* reference */ 'r', `.package-summary#algorithms`]
 				]]
 			],
 			[/* throws */
@@ -111,7 +111,7 @@ DocsCollector.collect('java.util.random.RandomGenerator$StreamableGenerator', [
  generators in the stream will appear to be statistically independent.
  The new generators are of the same
  `],
-				[/* external link */ 'a', `package-summary.html#algorithms`, `algorithm`],
+				[/* reference */ 'r', `.package-summary#algorithms`],
 				[/* text */ 't', ` as this generator.`]
 			],
 			/* parameters */ UDF,
@@ -131,7 +131,7 @@ DocsCollector.collect('java.util.random.RandomGenerator$StreamableGenerator', [
  generators in the stream will appear to be statistically independent.
  The new generators are of the same
  `],
-				[/* external link */ 'a', `package-summary.html#algorithms`, `algorithm`],
+				[/* reference */ 'r', `.package-summary#algorithms`],
 				[/* text */ 't', ` as this generator.`]
 			],
 			[/* parameters */

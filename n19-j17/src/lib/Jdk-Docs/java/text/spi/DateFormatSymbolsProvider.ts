@@ -45,7 +45,7 @@ DocsCollector.collect('java.text.spi.DateFormatSymbolsProvider', [
 					[/* text */ 't', ` isn't
      one of the locales returned from
      `],
-					[/* external link */ 'a', `../../util/spi/LocaleServiceProvider.html#getAvailableLocales()`, `getAvailableLocales()`],
+					[/* reference */ 'r', `java.text.LocaleServiceProvider#getAvailableLocales()`],
 					[/* text */ 't', `.`]
 				]]
 			],

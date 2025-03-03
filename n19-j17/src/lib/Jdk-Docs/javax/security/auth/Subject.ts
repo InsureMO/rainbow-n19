@@ -381,7 +381,7 @@ DocsCollector.collect('javax.security.auth.Subject', [
 					[/* text */ 't', `if a security manager is installed and the
          caller does not have an
          `],
-					[/* external link */ 'a', `AuthPermission.html#%3Cinit%3E(java.lang.String)`, `AuthPermission("setReadOnly")`],
+					[/* reference */ 'r', `.AuthPermission#<init>(java.lang.String)`],
 					[/* text */ 't', ` permission to set this
          `],
 					[/* inline code block */ 'i', `Subject`],
@@ -426,7 +426,7 @@ DocsCollector.collect('javax.security.auth.Subject', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` If a security manager is installed, the caller must have a
  `],
-					[/* external link */ 'a', `AuthPermission.html#%3Cinit%3E(java.lang.String)`, `AuthPermission("modifyPrincipals")`],
+					[/* reference */ 'r', `.AuthPermission#<init>(java.lang.String)`],
 					[/* text */ 't', ` permission to modify
  the returned set, or a `],
 					[/* inline code block */ 'i', `SecurityException`],
@@ -558,7 +558,7 @@ DocsCollector.collect('javax.security.auth.Subject', [
 					[/* text */ 't', `if a security manager is installed and the
           caller does not have an
           `],
-					[/* external link */ 'a', `AuthPermission.html#%3Cinit%3E(java.lang.String)`, `AuthPermission("getSubject")`],
+					[/* reference */ 'r', `.AuthPermission#<init>(java.lang.String)`],
 					[/* text */ 't', ` permission to get the
           `],
 					[/* inline code block */ 'i', `Subject`],
@@ -658,7 +658,7 @@ DocsCollector.collect('javax.security.auth.Subject', [
 					[/* text */ 't', `if a security manager is installed and the
                   caller does not have an
                   `],
-					[/* external link */ 'a', `AuthPermission.html#%3Cinit%3E(java.lang.String)`, `AuthPermission("doAs")`],
+					[/* reference */ 'r', `.AuthPermission#<init>(java.lang.String)`],
 					[/* text */ 't', ` permission to invoke this
                   method.`]
 				]]
@@ -746,7 +746,7 @@ DocsCollector.collect('javax.security.auth.Subject', [
 					[/* text */ 't', `if a security manager is installed and the
                   caller does not have an
                   `],
-					[/* external link */ 'a', `AuthPermission.html#%3Cinit%3E(java.lang.String)`, `AuthPermission("doAs")`],
+					[/* reference */ 'r', `.AuthPermission#<init>(java.lang.String)`],
 					[/* text */ 't', ` permission to invoke this
                   method.`]
 				]]
@@ -829,7 +829,7 @@ DocsCollector.collect('javax.security.auth.Subject', [
 					[/* text */ 't', `if a security manager is installed and the
                   caller does not have a
                   `],
-					[/* external link */ 'a', `AuthPermission.html#%3Cinit%3E(java.lang.String)`, `AuthPermission("doAsPrivileged")`],
+					[/* reference */ 'r', `.AuthPermission#<init>(java.lang.String)`],
 					[/* text */ 't', ` permission to invoke
                   this method.`]
 				]]
@@ -920,7 +920,7 @@ DocsCollector.collect('javax.security.auth.Subject', [
 					[/* text */ 't', `if a security manager is installed and the
                   caller does not have a
                   `],
-					[/* external link */ 'a', `AuthPermission.html#%3Cinit%3E(java.lang.String)`, `AuthPermission("doAsPrivileged")`],
+					[/* reference */ 'r', `.AuthPermission#<init>(java.lang.String)`],
 					[/* text */ 't', ` permission to invoke
                   this method.`]
 				]]
@@ -961,7 +961,7 @@ DocsCollector.collect('javax.security.auth.Subject', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` If a security manager is installed, the caller must have a
  `],
-					[/* external link */ 'a', `AuthPermission.html#%3Cinit%3E(java.lang.String)`, `AuthPermission("modifyPublicCredentials")`],
+					[/* reference */ 'r', `.AuthPermission#<init>(java.lang.String)`],
 					[/* text */ 't', ` permission to modify
  the returned set, or a `],
 					[/* inline code block */ 'i', `SecurityException`],
@@ -1135,7 +1135,7 @@ DocsCollector.collect('javax.security.auth.Subject', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` If a security manager is installed, the caller must have a
  `],
-					[/* external link */ 'a', `AuthPermission.html#%3Cinit%3E(java.lang.String)`, `AuthPermission("modifyPrivateCredentials")`],
+					[/* reference */ 'r', `.AuthPermission#<init>(java.lang.String)`],
 					[/* text */ 't', ` permission to modify
  the returned set, or a `],
 					[/* inline code block */ 'i', `SecurityException`],

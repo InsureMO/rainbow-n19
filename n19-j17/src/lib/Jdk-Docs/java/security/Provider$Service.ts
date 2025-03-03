@@ -17,9 +17,9 @@ DocsCollector.collect('java.security.Provider$Service', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `This class defines the methods `],
-			[/* reference */ 'r', `supportsParameter()`],
+			[/* reference */ 'r', `#supportsParameter(java.lang.Object)`, `supportsParameter()`],
 			[/* text */ 't', ` and `],
-			[/* reference */ 'r', `newInstance()`],
+			[/* reference */ 'r', `#newInstance(java.lang.Object)`, `newInstance()`],
 			[/* text */ 't', `
  which are used by the Java security framework when it searches for
  suitable services and instantiates them. The valid arguments to those

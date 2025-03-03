@@ -9,7 +9,7 @@ DocsCollector.collect('java.io.FileFilter', [
 		[/* block */ 'b', [
 			[/* text */ 't', ` Instances of this interface may be passed to the
  `],
-			[/* external link */ 'a', `File.html#listFiles(java.io.FileFilter)`, `listFiles(FileFilter)`],
+			[/* reference */ 'r', `.File#listFiles(java.io.FileFilter)`],
 			[/* text */ 't', ` method
  of the `],
 			[/* reference */ 'r', `java.io.File`],

@@ -38,10 +38,10 @@ DocsCollector.collect('java.lang.module.ModuleReader', [
 			[/* text */ 't', ` A `],
 			[/* inline code block */ 'i', `ModuleReader`],
 			[/* text */ 't', ` is `],
-			[/* external link */ 'a', `ModuleReference.html#open()`, `open`],
+			[/* reference */ 'r', `.ModuleReference#open()`],
 			[/* text */ 't', ` upon
  creation and is closed by invoking the `],
-			[/* reference */ 'r', `close`],
+			[/* reference */ 'r', `#close()`, `close`],
 			[/* text */ 't', ` method.  Failure
  to close a module reader may result in a resource leak.  The `],
 			[/* inline code block */ 'i', `try-with-resources`],
@@ -53,13 +53,13 @@ DocsCollector.collect('java.lang.module.ModuleReader', [
 			[/* inline code block */ 'i', `ModuleReader`],
 			[/* text */ 't', ` implementation may require permissions to access
  resources in the module. Consequently the `],
-			[/* reference */ 'r', `find`],
+			[/* reference */ 'r', `#find(java.lang.String)`, `find`],
 			[/* text */ 't', `, `],
-			[/* reference */ 'r', `open`],
+			[/* reference */ 'r', `#open(java.lang.String)`, `open`],
 			[/* text */ 't', `, `],
-			[/* reference */ 'r', `read`],
+			[/* reference */ 'r', `#read(java.lang.String)`, `read`],
 			[/* text */ 't', `, and `],
-			[/* reference */ 'r', `list`],
+			[/* reference */ 'r', `#list()`, `list`],
 			[/* text */ 't', ` methods may throw `],
 			[/* inline code block */ 'i', `SecurityException`],
 			[/* text */ 't', ` if access is denied by the security manager. `]
@@ -146,7 +146,7 @@ DocsCollector.collect('java.lang.module.ModuleReader', [
  The element at the returned buffer's position is the first byte of the
  resource, the element at the buffer's limit is the last byte of the
  resource. Once consumed, the `],
-				[/* reference */ 'r', `release`],
+				[/* reference */ 'r', `#release(java.nio.ByteBuffer)`, `release`],
 				[/* text */ 't', ` method
  must be invoked. Failure to invoke the `],
 				[/* inline code block */ 'i', `release`],

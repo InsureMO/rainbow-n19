@@ -303,11 +303,11 @@ DocsCollector.collect('java.lang.StringBuilder', [
 					[/* text */ 't', `
  The overall effect is exactly as if the argument were converted
  to a string by the method `],
-					[/* external link */ 'a', `String.html#valueOf(char%5B%5D)`, `String.valueOf(char[])`],
+					[/* reference */ 'r', `.String#valueOf(char[])`],
 					[/* text */ 't', `,
  and the characters of that string were then
  `],
-					[/* external link */ 'a', `Appendable.html#append(java.lang.CharSequence)`, `appended`],
+					[/* reference */ 'r', `.Appendable#append(java.lang.CharSequence)`],
 					[/* text */ 't', ` to this character sequence.`]
 				]]
 			],
@@ -348,11 +348,11 @@ DocsCollector.collect('java.lang.StringBuilder', [
 					[/* text */ 't', `
  The overall effect is exactly as if the arguments were converted
  to a string by the method `],
-					[/* external link */ 'a', `String.html#valueOf(char%5B%5D,int,int)`, `String.valueOf(char[],int,int)`],
+					[/* reference */ 'r', `.String#valueOf(char[],int,int)`],
 					[/* text */ 't', `,
  and the characters of that string were then
  `],
-					[/* external link */ 'a', `Appendable.html#append(java.lang.CharSequence)`, `appended`],
+					[/* reference */ 'r', `.Appendable#append(java.lang.CharSequence)`],
 					[/* text */ 't', ` to this character sequence.`]
 				]]
 			],
@@ -397,11 +397,11 @@ DocsCollector.collect('java.lang.StringBuilder', [
 					[/* text */ 't', `
  The overall effect is exactly as if the argument were converted
  to a string by the method `],
-					[/* external link */ 'a', `String.html#valueOf(boolean)`, `String.valueOf(boolean)`],
+					[/* reference */ 'r', `.String#valueOf(boolean)`],
 					[/* text */ 't', `,
  and the characters of that string were then
  `],
-					[/* external link */ 'a', `Appendable.html#append(java.lang.CharSequence)`, `appended`],
+					[/* reference */ 'r', `.Appendable#append(java.lang.CharSequence)`],
 					[/* text */ 't', ` to this character sequence.`]
 				]]
 			],
@@ -586,11 +586,11 @@ DocsCollector.collect('java.lang.StringBuilder', [
 					[/* text */ 't', `
  The overall effect is exactly as if the argument were converted
  to a string by the method `],
-					[/* external link */ 'a', `String.html#valueOf(double)`, `String.valueOf(float)`],
+					[/* reference */ 'r', `.String#valueOf(double)`],
 					[/* text */ 't', `,
  and the characters of that string were then
  `],
-					[/* external link */ 'a', `Appendable.html#append(java.lang.CharSequence)`, `appended`],
+					[/* reference */ 'r', `.Appendable#append(java.lang.CharSequence)`],
 					[/* text */ 't', ` to this character sequence.`]
 				]]
 			],
@@ -617,11 +617,11 @@ DocsCollector.collect('java.lang.StringBuilder', [
 					[/* text */ 't', `
  The overall effect is exactly as if the argument were converted
  to a string by the method `],
-					[/* external link */ 'a', `String.html#valueOf(double)`, `String.valueOf(double)`],
+					[/* reference */ 'r', `.String#valueOf(double)`],
 					[/* text */ 't', `,
  and the characters of that string were then
  `],
-					[/* external link */ 'a', `Appendable.html#append(java.lang.CharSequence)`, `appended`],
+					[/* reference */ 'r', `.Appendable#append(java.lang.CharSequence)`],
 					[/* text */ 't', ` to this character sequence.`]
 				]]
 			],
@@ -647,11 +647,11 @@ DocsCollector.collect('java.lang.StringBuilder', [
 					[/* text */ 't', `
  The overall effect is exactly as if the argument were converted
  to a string by the method `],
-					[/* external link */ 'a', `String.html#valueOf(java.lang.Object)`, `String.valueOf(Object)`],
+					[/* reference */ 'r', `.String#valueOf(java.lang.Object)`],
 					[/* text */ 't', `,
  and the characters of that string were then
  `],
-					[/* external link */ 'a', `Appendable.html#append(java.lang.CharSequence)`, `appended`],
+					[/* reference */ 'r', `.Appendable#append(java.lang.CharSequence)`],
 					[/* text */ 't', ` to this character sequence.`]
 				]]
 			],
@@ -686,11 +686,11 @@ DocsCollector.collect('java.lang.StringBuilder', [
 					[/* text */ 't', `
  The overall effect is exactly as if the argument were converted
  to a string by the method `],
-					[/* external link */ 'a', `String.html#valueOf(double)`, `String.valueOf(char)`],
+					[/* reference */ 'r', `.String#valueOf(double)`],
 					[/* text */ 't', `,
  and the character in that string were then
  `],
-					[/* external link */ 'a', `Appendable.html#append(java.lang.CharSequence)`, `appended`],
+					[/* reference */ 'r', `.Appendable#append(java.lang.CharSequence)`],
 					[/* text */ 't', ` to this character sequence.`]
 				]]
 			],
@@ -717,11 +717,11 @@ DocsCollector.collect('java.lang.StringBuilder', [
 					[/* text */ 't', `
  The overall effect is exactly as if the argument were converted
  to a string by the method `],
-					[/* external link */ 'a', `String.html#valueOf(double)`, `String.valueOf(int)`],
+					[/* reference */ 'r', `.String#valueOf(double)`],
 					[/* text */ 't', `,
  and the characters of that string were then
  `],
-					[/* external link */ 'a', `Appendable.html#append(java.lang.CharSequence)`, `appended`],
+					[/* reference */ 'r', `.Appendable#append(java.lang.CharSequence)`],
 					[/* text */ 't', ` to this character sequence.`]
 				]]
 			],
@@ -748,11 +748,11 @@ DocsCollector.collect('java.lang.StringBuilder', [
 					[/* text */ 't', `
  The overall effect is exactly as if the argument were converted
  to a string by the method `],
-					[/* external link */ 'a', `String.html#valueOf(double)`, `String.valueOf(long)`],
+					[/* reference */ 'r', `.String#valueOf(double)`],
 					[/* text */ 't', `,
  and the characters of that string were then
  `],
-					[/* external link */ 'a', `Appendable.html#append(java.lang.CharSequence)`, `appended`],
+					[/* reference */ 'r', `.Appendable#append(java.lang.CharSequence)`],
 					[/* text */ 't', ` to this character sequence.`]
 				]]
 			],
@@ -775,7 +775,7 @@ DocsCollector.collect('java.lang.StringBuilder', [
 				[/* text */ 't', ` instances lexicographically. This method
  follows the same rules for lexicographical comparison as defined in the
  `],
-				[/* external link */ 'a', `CharSequence.html#compare(java.lang.CharSequence,java.lang.CharSequence)`, `CharSequence.compare(this, another)`],
+				[/* reference */ 'r', `.CharSequence#compare(java.lang.CharSequence,java.lang.CharSequence)`],
 				[/* text */ 't', ` method.
 
  `],
@@ -905,11 +905,11 @@ DocsCollector.collect('java.lang.StringBuilder', [
 					[/* text */ 't', `
  The overall effect is exactly as if the second argument were
  converted to a string by the method `],
-					[/* external link */ 'a', `String.html#valueOf(double)`, `String.valueOf(float)`],
+					[/* reference */ 'r', `.String#valueOf(double)`],
 					[/* text */ 't', `,
  and the characters of that string were then
  `],
-					[/* reference */ 'r', `inserted`],
+					[/* reference */ 'r', `#insert(int,java.lang.CharSequence)`, `inserted`],
 					[/* text */ 't', ` into this character
  sequence at the indicated offset.
  `]
@@ -922,7 +922,7 @@ DocsCollector.collect('java.lang.StringBuilder', [
  `],
 					[/* inline code block */ 'i', `0`],
 					[/* text */ 't', `, and less than or equal to the `],
-					[/* external link */ 'a', `CharSequence.html#length()`, `length`],
+					[/* reference */ 'r', `.CharSequence#length()`],
 					[/* text */ 't', `
  of this sequence.`]
 				]]
@@ -957,11 +957,11 @@ DocsCollector.collect('java.lang.StringBuilder', [
 					[/* text */ 't', `
  The overall effect is exactly as if the second argument were
  converted to a string by the method `],
-					[/* external link */ 'a', `String.html#valueOf(double)`, `String.valueOf(long)`],
+					[/* reference */ 'r', `.String#valueOf(double)`],
 					[/* text */ 't', `,
  and the characters of that string were then
  `],
-					[/* reference */ 'r', `inserted`],
+					[/* reference */ 'r', `#insert(int,java.lang.CharSequence)`, `inserted`],
 					[/* text */ 't', ` into this character
  sequence at the indicated offset.
  `]
@@ -974,7 +974,7 @@ DocsCollector.collect('java.lang.StringBuilder', [
  `],
 					[/* inline code block */ 'i', `0`],
 					[/* text */ 't', `, and less than or equal to the `],
-					[/* external link */ 'a', `CharSequence.html#length()`, `length`],
+					[/* reference */ 'r', `.CharSequence#length()`],
 					[/* text */ 't', `
  of this sequence.`]
 				]]
@@ -1009,11 +1009,11 @@ DocsCollector.collect('java.lang.StringBuilder', [
 					[/* text */ 't', `
  The overall effect is exactly as if the second argument were
  converted to a string by the method `],
-					[/* external link */ 'a', `String.html#valueOf(double)`, `String.valueOf(int)`],
+					[/* reference */ 'r', `.String#valueOf(double)`],
 					[/* text */ 't', `,
  and the characters of that string were then
  `],
-					[/* reference */ 'r', `inserted`],
+					[/* reference */ 'r', `#insert(int,java.lang.CharSequence)`, `inserted`],
 					[/* text */ 't', ` into this character
  sequence at the indicated offset.
  `]
@@ -1026,7 +1026,7 @@ DocsCollector.collect('java.lang.StringBuilder', [
  `],
 					[/* inline code block */ 'i', `0`],
 					[/* text */ 't', `, and less than or equal to the `],
-					[/* external link */ 'a', `CharSequence.html#length()`, `length`],
+					[/* reference */ 'r', `.CharSequence#length()`],
 					[/* text */ 't', `
  of this sequence.`]
 				]]
@@ -1195,7 +1195,7 @@ DocsCollector.collect('java.lang.StringBuilder', [
  `],
 					[/* inline code block */ 'i', `0`],
 					[/* text */ 't', `, and less than or equal to the `],
-					[/* external link */ 'a', `CharSequence.html#length()`, `length`],
+					[/* reference */ 'r', `.CharSequence#length()`],
 					[/* text */ 't', `
  of this sequence.
  `]
@@ -1290,7 +1290,7 @@ DocsCollector.collect('java.lang.StringBuilder', [
  The result of this method is exactly the same as if it were an
  invocation of this object's
  `],
-					[/* reference */ 'r', `insert`],
+					[/* reference */ 'r', `#insert(int,java.lang.CharSequence,int,int)`, `insert`],
 					[/* text */ 't', `(dstOffset, s, 0, s.length())
  method.
 
@@ -1345,11 +1345,11 @@ DocsCollector.collect('java.lang.StringBuilder', [
 					[/* text */ 't', `
  The overall effect is exactly as if the second argument were
  converted to a string by the method `],
-					[/* external link */ 'a', `String.html#valueOf(char%5B%5D)`, `String.valueOf(char[])`],
+					[/* reference */ 'r', `.String#valueOf(char[])`],
 					[/* text */ 't', `,
  and the characters of that string were then
  `],
-					[/* reference */ 'r', `inserted`],
+					[/* reference */ 'r', `#insert(int,java.lang.CharSequence)`, `inserted`],
 					[/* text */ 't', ` into this character
  sequence at the indicated offset.
  `]
@@ -1362,7 +1362,7 @@ DocsCollector.collect('java.lang.StringBuilder', [
  `],
 					[/* inline code block */ 'i', `0`],
 					[/* text */ 't', `, and less than or equal to the `],
-					[/* external link */ 'a', `CharSequence.html#length()`, `length`],
+					[/* reference */ 'r', `.CharSequence#length()`],
 					[/* text */ 't', `
  of this sequence.`]
 				]]
@@ -1460,7 +1460,7 @@ DocsCollector.collect('java.lang.StringBuilder', [
  `],
 					[/* inline code block */ 'i', `0`],
 					[/* text */ 't', `, and less than or equal to the `],
-					[/* external link */ 'a', `CharSequence.html#length()`, `length`],
+					[/* reference */ 'r', `.CharSequence#length()`],
 					[/* text */ 't', `
  of this sequence.`]
 				]]
@@ -1493,11 +1493,11 @@ DocsCollector.collect('java.lang.StringBuilder', [
 					[/* text */ 't', `
  The overall effect is exactly as if the second argument were
  converted to a string by the method `],
-					[/* external link */ 'a', `String.html#valueOf(boolean)`, `String.valueOf(boolean)`],
+					[/* reference */ 'r', `.String#valueOf(boolean)`],
 					[/* text */ 't', `,
  and the characters of that string were then
  `],
-					[/* reference */ 'r', `inserted`],
+					[/* reference */ 'r', `#insert(int,java.lang.CharSequence)`, `inserted`],
 					[/* text */ 't', ` into this character
  sequence at the indicated offset.
  `]
@@ -1510,7 +1510,7 @@ DocsCollector.collect('java.lang.StringBuilder', [
  `],
 					[/* inline code block */ 'i', `0`],
 					[/* text */ 't', `, and less than or equal to the `],
-					[/* external link */ 'a', `CharSequence.html#length()`, `length`],
+					[/* reference */ 'r', `.CharSequence#length()`],
 					[/* text */ 't', `
  of this sequence.`]
 				]]
@@ -1545,11 +1545,11 @@ DocsCollector.collect('java.lang.StringBuilder', [
 					[/* text */ 't', `
  The overall effect is exactly as if the second argument were
  converted to a string by the method `],
-					[/* external link */ 'a', `String.html#valueOf(double)`, `String.valueOf(char)`],
+					[/* reference */ 'r', `.String#valueOf(double)`],
 					[/* text */ 't', `,
  and the character in that string were then
  `],
-					[/* reference */ 'r', `inserted`],
+					[/* reference */ 'r', `#insert(int,java.lang.CharSequence)`, `inserted`],
 					[/* text */ 't', ` into this character
  sequence at the indicated offset.
  `]
@@ -1562,7 +1562,7 @@ DocsCollector.collect('java.lang.StringBuilder', [
  `],
 					[/* inline code block */ 'i', `0`],
 					[/* text */ 't', `, and less than or equal to the `],
-					[/* external link */ 'a', `CharSequence.html#length()`, `length`],
+					[/* reference */ 'r', `.CharSequence#length()`],
 					[/* text */ 't', `
  of this sequence.`]
 				]]
@@ -1597,11 +1597,11 @@ DocsCollector.collect('java.lang.StringBuilder', [
 					[/* text */ 't', `
  The overall effect is exactly as if the second argument were
  converted to a string by the method `],
-					[/* external link */ 'a', `String.html#valueOf(java.lang.Object)`, `String.valueOf(Object)`],
+					[/* reference */ 'r', `.String#valueOf(java.lang.Object)`],
 					[/* text */ 't', `,
  and the characters of that string were then
  `],
-					[/* reference */ 'r', `inserted`],
+					[/* reference */ 'r', `#insert(int,java.lang.CharSequence)`, `inserted`],
 					[/* text */ 't', ` into this character
  sequence at the indicated offset.
  `]
@@ -1614,7 +1614,7 @@ DocsCollector.collect('java.lang.StringBuilder', [
  `],
 					[/* inline code block */ 'i', `0`],
 					[/* text */ 't', `, and less than or equal to the `],
-					[/* external link */ 'a', `CharSequence.html#length()`, `length`],
+					[/* reference */ 'r', `.CharSequence#length()`],
 					[/* text */ 't', `
  of this sequence.`]
 				]]
@@ -1649,11 +1649,11 @@ DocsCollector.collect('java.lang.StringBuilder', [
 					[/* text */ 't', `
  The overall effect is exactly as if the second argument were
  converted to a string by the method `],
-					[/* external link */ 'a', `String.html#valueOf(double)`, `String.valueOf(double)`],
+					[/* reference */ 'r', `.String#valueOf(double)`],
 					[/* text */ 't', `,
  and the characters of that string were then
  `],
-					[/* reference */ 'r', `inserted`],
+					[/* reference */ 'r', `#insert(int,java.lang.CharSequence)`, `inserted`],
 					[/* text */ 't', ` into this character
  sequence at the indicated offset.
  `]
@@ -1666,7 +1666,7 @@ DocsCollector.collect('java.lang.StringBuilder', [
  `],
 					[/* inline code block */ 'i', `0`],
 					[/* text */ 't', `, and less than or equal to the `],
-					[/* external link */ 'a', `CharSequence.html#length()`, `length`],
+					[/* reference */ 'r', `.CharSequence#length()`],
 					[/* text */ 't', `
  of this sequence.`]
 				]]
@@ -1873,7 +1873,7 @@ DocsCollector.collect('java.lang.StringBuilder', [
 					[/* text */ 't', ` The argument is appended to the contents of this sequence.
  The length of this sequence increases by
  `],
-					[/* external link */ 'a', `Character.html#charCount(int)`, `Character.charCount(codePoint)`],
+					[/* reference */ 'r', `.Character#charCount(int)`],
 					[/* text */ 't', `.
 
  `]
@@ -1884,10 +1884,10 @@ DocsCollector.collect('java.lang.StringBuilder', [
 					[/* inline code block */ 'i', `char`],
 					[/* text */ 't', ` array by the method
  `],
-					[/* external link */ 'a', `Character.html#toChars(int)`, `Character.toChars(int)`],
+					[/* reference */ 'r', `.Character#toChars(int)`],
 					[/* text */ 't', ` and the character in that array
  were then `],
-					[/* reference */ 'r', `appended`],
+					[/* reference */ 'r', `#append(char%5B%5D)`, `appended`],
 					[/* text */ 't', ` to this character
  sequence.`]
 				]]

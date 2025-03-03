@@ -23,7 +23,7 @@ DocsCollector.collect('java.nio.file.attribute.UserPrincipal', [
 			[/* inline code block */ 'i', `UserPrincipal`],
 			[/* text */ 't', ` object is an abstract representation of an
  identity. It has a `],
-			[/* external link */ 'a', `../../../security/Principal.html#getName()`, `name`],
+			[/* reference */ 'r', `java.nio.file.Principal#getName()`],
 			[/* text */ 't', ` that is typically the username or
  account name that it represents. User principal objects may be obtained using
  a `],
@@ -36,7 +36,7 @@ DocsCollector.collect('java.nio.file.attribute.UserPrincipal', [
 			[/* text */ 't', ` and `],
 			[/* reference */ 'r', `java.nio.file.attribute.PosixFileAttributeView`],
 			[/* text */ 't', ` provide access to a file's `],
-			[/* external link */ 'a', `PosixFileAttributes.html#owner()`, `owner`],
+			[/* reference */ 'r', `.PosixFileAttributes#owner()`],
 			[/* text */ 't', `.`]
 		]]
 	],

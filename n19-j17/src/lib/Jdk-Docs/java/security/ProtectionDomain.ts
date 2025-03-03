@@ -30,7 +30,7 @@ DocsCollector.collect('java.security.ProtectionDomain', [
 					[/* text */ 't', `
  The permissions granted to this domain are static, i.e.
  invoking the `],
-					[/* reference */ 'r', `staticPermissionsOnly()`],
+					[/* reference */ 'r', `#staticPermissionsOnly()`, `staticPermissionsOnly()`],
 					[/* text */ 't', ` method returns true.
  They contain only the ones passed to this constructor and
  the current Policy will not be consulted.`]
@@ -59,7 +59,7 @@ DocsCollector.collect('java.security.ProtectionDomain', [
 					[/* text */ 't', `
  The permissions granted to this domain are dynamic, i.e.
  invoking the `],
-					[/* reference */ 'r', `staticPermissionsOnly()`],
+					[/* reference */ 'r', `#staticPermissionsOnly()`, `staticPermissionsOnly()`],
 					[/* text */ 't', ` method returns false.
  They include both the static permissions passed to this constructor,
  and any permissions granted to this domain by the current Policy at the
@@ -146,7 +146,7 @@ DocsCollector.collect('java.security.ProtectionDomain', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If the `],
-					[/* reference */ 'r', `staticPermissionsOnly()`],
+					[/* reference */ 'r', `#staticPermissionsOnly()`, `staticPermissionsOnly()`],
 					[/* text */ 't', ` method returns
  true, then the permission will only be checked against the
  PermissionCollection supplied at construction.

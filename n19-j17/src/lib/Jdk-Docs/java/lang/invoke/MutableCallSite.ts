@@ -16,7 +16,7 @@ DocsCollector.collect('java.lang.invoke.MutableCallSite', [
 		[/* text */ 't', ` delegates
  all calls to the site's current target.
  The `],
-		[/* external link */ 'a', `CallSite.html#dynamicInvoker()`, `dynamic invoker`],
+		[/* reference */ 'r', `.CallSite#dynamicInvoker()`],
 		[/* text */ 't', ` of a mutable call site
  also delegates each call to the site's current target.
  `],
@@ -25,7 +25,7 @@ DocsCollector.collect('java.lang.invoke.MutableCallSite', [
  Here is an example of a mutable call site which introduces a
  state variable into a method handle chain.
  `],
-			[/* block */ 'b', `<!-- JavaDocExamplesTest.testMutableCallSite -->`]
+			[/* block */ 'b', ``]
 		]],
 		[/* block */ 'b', [
 			[/* code block */ 'c', [
@@ -60,22 +60,11 @@ assertEquals("Wilma, dear?", (String) worker2.invokeExact());`]
 			]]
 		]],
 		[/* block */ 'b', ''],
-		[/* block */ 'b', [
-			[/* text */ 't', `Non-synchronization of target values:`],
-			[/* text */ 't', `
- A write to a mutable call site's target does not force other threads
- to become aware of the updated value.  Threads which do not perform
- suitable synchronization actions relative to the updated call site
- may cache the old target value and delay their use of the new target
- value indefinitely.
- (This is a normal consequence of the Java Memory Model as applied
- to object fields.)
- `]
-		]],
+		[/* block */ 'b', `Non-synchronization of target values:`],
 		[/* block */ 'b', [
 			[/* text */ 't', `
  The `],
-			[/* reference */ 'r', `syncAll`],
+			[/* reference */ 'r', `#syncAll(java.lang.invoke.MutableCallSite%5B%5D)`, `syncAll`],
 			[/* text */ 't', ` operation provides a way to force threads
  to accept a new target value, even if there is no other synchronization.
  `]
@@ -109,7 +98,7 @@ assertEquals("Wilma, dear?", (String) worker2.invokeExact());`]
  or invoked in some other manner,
  it is usually provided with a more useful target method,
  via a call to `],
-					[/* external link */ 'a', `CallSite.html#setTarget(java.lang.invoke.MethodHandle)`, `setTarget`],
+					[/* reference */ 'r', `.CallSite#setTarget(java.lang.invoke.MethodHandle)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -237,7 +226,7 @@ assertEquals("Wilma, dear?", (String) worker2.invokeExact());`]
  This operation does not reverse any calls that have already started
  on an old target value.
  (Java supports `],
-					[/* external link */ 'a', `../Object.html#wait()`, `forward time travel`],
+					[/* reference */ 'r', `java.Object#wait()`],
 					[/* text */ 't', ` only.)
  `]
 				]],

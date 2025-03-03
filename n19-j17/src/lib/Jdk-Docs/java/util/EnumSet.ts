@@ -59,14 +59,14 @@ DocsCollector.collect('java.util.EnumSet', [
  externally.  This is typically accomplished by synchronizing on some
  object that naturally encapsulates the enum set.  If no such object exists,
  the set should be "wrapped" using the `],
-			[/* external link */ 'a', `Collections.html#synchronizedSet(java.util.Set)`, `Collections.synchronizedSet(java.util.Set<T>)`],
+			[/* reference */ 'r', `.Collections#synchronizedSet(java.util.Set)`],
 			[/* text */ 't', `
  method.  This is best done at creation time, to prevent accidental
  unsynchronized access:
 
  `]
 		]],
-		[/* code block */ 'c', ` Set&lt;MyEnum&gt; s = Collections.synchronizedSet(EnumSet.noneOf(MyEnum.class));
+		[/* code block */ 'c', ` Set<MyEnum> s = Collections.synchronizedSet(EnumSet.noneOf(MyEnum.class));
  `],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
@@ -82,7 +82,7 @@ DocsCollector.collect('java.util.EnumSet', [
 		[/* block */ 'b', [
 			[/* text */ 't', `This class is a member of the
  `],
-			[/* external link */ 'a', `../../../java.base/java/util/package-summary.html#CollectionsFramework`, `Java Collections Framework`],
+			[/* text */ 't', `Java Collections Framework`],
 			[/* text */ 't', `.`]
 		]]
 	],
@@ -106,7 +106,7 @@ DocsCollector.collect('java.util.EnumSet', [
 				[/* inline code block */ 'i', `EnumSet`],
 				[/* text */ 't', ` instance, this static
  factory method behaves identically to `],
-				[/* reference */ 'r', `copyOf(EnumSet)`],
+				[/* reference */ 'r', `#copyOf(java.util.EnumSet)`, `copyOf(EnumSet)`],
 				[/* text */ 't', `.
  Otherwise, the specified collection must contain at least one element
  (in order to determine the new enum set's element type).`]

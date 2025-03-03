@@ -91,13 +91,13 @@ DocsCollector.collect('java.util.spi.LocaleServiceProvider', [
  The methods first check whether the Java runtime environment itself
  supports the requested locale, and use its support if available.
  Otherwise, they call the `],
-			[/* reference */ 'r', `isSupportedLocale`],
+			[/* reference */ 'r', `#isSupportedLocale(java.util.Locale)`, `isSupportedLocale`],
 			[/* text */ 't', `
  methods of installed providers for the appropriate interface to find one that
  supports the requested locale. If such a provider is found, its other
  methods are called to obtain the requested object or name.  When checking
  whether a locale is supported, the `],
-			[/* external link */ 'a', `../Locale.html#def_extensions`, `locale's extensions`],
+			[/* reference */ 'r', `java.Locale#def_extensions`],
 			[/* text */ 't', ` are ignored by default. (If locale's extensions should
  also be checked, the `],
 			[/* inline code block */ 'i', `isSupportedLocale`],
@@ -110,7 +110,7 @@ DocsCollector.collect('java.util.spi.LocaleServiceProvider', [
 			[/* inline code block */ 'i', `ResourceBundle`],
 			[/* text */ 't', ` by default (see
  `],
-			[/* external link */ 'a', `../ResourceBundle.Control.html#getCandidateLocales(java.lang.String,java.util.Locale)`, `getCandidateLocales`],
+			[/* reference */ 'r', `java.ResourceBundle.Control#getCandidateLocales(java.lang.String,java.util.Locale)`],
 			[/* text */ 't', `
  for the details).  Even if a locale is resolved from the candidate list,
  methods that return requested objects or names are invoked with the original
@@ -250,7 +250,7 @@ DocsCollector.collect('java.util.spi.LocaleServiceProvider', [
 				[/* inline code block */ 'i', `locale`],
 				[/* text */ 't', ` may contain
  `],
-				[/* external link */ 'a', `../Locale.html#def_extensions`, `extensions`],
+				[/* reference */ 'r', `java.Locale#def_extensions`],
 				[/* text */ 't', ` that should be
  taken into account for the support determination.
 
@@ -265,7 +265,7 @@ DocsCollector.collect('java.util.spi.LocaleServiceProvider', [
 					[/* inline code block */ 'i', `Locale`],
 					[/* text */ 't', `s returned by
  `],
-					[/* reference */ 'r', `getAvailableLocales()`],
+					[/* reference */ 'r', `#getAvailableLocales()`, `getAvailableLocales()`],
 					[/* text */ 't', ` with ignoring any extensions in both the
  given `],
 					[/* inline code block */ 'i', `locale`],

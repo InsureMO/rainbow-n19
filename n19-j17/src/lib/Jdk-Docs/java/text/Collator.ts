@@ -397,7 +397,7 @@ DocsCollector.collect('java.text.Collator', [
 				[/* text */ 't', ` implementations.
  It must contain at least a Locale instance equal to
  `],
-				[/* external link */ 'a', `../util/Locale.html#US`, `Locale.US`],
+				[/* reference */ 'r', `java.Locale#US`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,

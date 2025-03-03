@@ -17,10 +17,10 @@ DocsCollector.collect('java.util.AbstractList', [
 		[/* block */ 'b', [
 			[/* text */ 't', `To implement an unmodifiable list, the programmer needs only to extend
  this class and provide implementations for the `],
-			[/* reference */ 'r', `get(int)`],
+			[/* reference */ 'r', `#get(int)`, `get(int)`],
 			[/* text */ 't', ` and
  `],
-			[/* external link */ 'a', `List.html#size()`, `size()`],
+			[/* reference */ 'r', `.List#size()`],
 			[/* text */ 't', ` methods.
 
  `]
@@ -28,16 +28,16 @@ DocsCollector.collect('java.util.AbstractList', [
 		[/* block */ 'b', [
 			[/* text */ 't', `To implement a modifiable list, the programmer must additionally
  override the `],
-			[/* reference */ 'r', `set(int, E)`],
+			[/* reference */ 'r', `#set(int,E)`, `set(int, E)`],
 			[/* text */ 't', ` method (which otherwise
  throws an `],
 			[/* inline code block */ 'i', `UnsupportedOperationException`],
 			[/* text */ 't', `).  If the list is
  variable-size the programmer must additionally override the
  `],
-			[/* reference */ 'r', `add(int, E)`],
+			[/* reference */ 'r', `#add(int,E)`, `add(int, E)`],
 			[/* text */ 't', ` and `],
-			[/* reference */ 'r', `remove(int)`],
+			[/* reference */ 'r', `#remove(int)`, `remove(int)`],
 			[/* text */ 't', ` methods.
 
  `]
@@ -59,16 +59,16 @@ DocsCollector.collect('java.util.AbstractList', [
  list iterator are implemented by this class, on top of the "random access"
  methods:
  `],
-			[/* reference */ 'r', `get(int)`],
+			[/* reference */ 'r', `#get(int)`, `get(int)`],
 			[/* text */ 't', `,
  `],
-			[/* reference */ 'r', `set(int, E)`],
+			[/* reference */ 'r', `#set(int,E)`, `set(int, E)`],
 			[/* text */ 't', `,
  `],
-			[/* reference */ 'r', `add(int, E)`],
+			[/* reference */ 'r', `#add(int,E)`, `add(int, E)`],
 			[/* text */ 't', ` and
  `],
-			[/* reference */ 'r', `remove(int)`],
+			[/* reference */ 'r', `#remove(int)`, `remove(int)`],
 			[/* text */ 't', `.
 
  `]
@@ -81,7 +81,7 @@ DocsCollector.collect('java.util.AbstractList', [
 		[/* block */ 'b', [
 			[/* text */ 't', `This class is a member of the
  `],
-			[/* external link */ 'a', `../../../java.base/java/util/package-summary.html#CollectionsFramework`, `Java Collections Framework`],
+			[/* text */ 't', `Java Collections Framework`],
 			[/* text */ 't', `.`]
 		]]
 	],
@@ -247,7 +247,7 @@ DocsCollector.collect('java.util.AbstractList', [
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` (as specified by `],
-				[/* external link */ 'a', `Collection.html#add(E)`, `Collection.add(E)`],
+				[/* reference */ 'r', `.Collection#add(E)`],
 				[/* text */ 't', `)`]
 			]
 		]],
@@ -366,14 +366,14 @@ DocsCollector.collect('java.util.AbstractList', [
 					[/* text */ 't', `if the type of the specified element
          is incompatible with this list
          (`],
-					[/* external link */ 'a', `Collection.html#optional-restrictions`, `optional`],
+					[/* reference */ 'r', `.Collection#optional-restrictions`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if the specified element is null and this
          list does not permit null elements
          (`],
-					[/* external link */ 'a', `Collection.html#optional-restrictions`, `optional`],
+					[/* reference */ 'r', `.Collection#optional-restrictions`],
 					[/* text */ 't', `)`]
 				]]
 			],
@@ -420,14 +420,14 @@ DocsCollector.collect('java.util.AbstractList', [
 					[/* text */ 't', `if the type of the specified element
          is incompatible with this list
          (`],
-					[/* external link */ 'a', `Collection.html#optional-restrictions`, `optional`],
+					[/* reference */ 'r', `.Collection#optional-restrictions`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if the specified element is null and this
          list does not permit null elements
          (`],
-					[/* external link */ 'a', `Collection.html#optional-restrictions`, `optional`],
+					[/* reference */ 'r', `.Collection#optional-restrictions`],
 					[/* text */ 't', `)`]
 				]]
 			],
@@ -677,10 +677,10 @@ DocsCollector.collect('java.util.AbstractList', [
  sequence), starting at the specified position in the list.
  The specified index indicates the first element that would be
  returned by an initial call to `],
-				[/* external link */ 'a', `ListIterator.html#next()`, `next`],
+				[/* reference */ 'r', `.ListIterator#next()`],
 				[/* text */ 't', `.
  An initial call to `],
-				[/* external link */ 'a', `ListIterator.html#previous()`, `previous`],
+				[/* reference */ 'r', `.ListIterator#previous()`],
 				[/* text */ 't', ` would
  return the element with the specified index minus one.`]
 			],
@@ -688,7 +688,7 @@ DocsCollector.collect('java.util.AbstractList', [
 				[/* parameter */ 'index', [/* parameter description */
 					[/* text */ 't', `index of the first element to be returned from the
         list iterator (by a call to `],
-					[/* external link */ 'a', `ListIterator.html#next()`, `next`],
+					[/* reference */ 'r', `.ListIterator#next()`],
 					[/* text */ 't', `)`]
 				]]
 			],

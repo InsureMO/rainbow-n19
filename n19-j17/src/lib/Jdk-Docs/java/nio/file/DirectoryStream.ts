@@ -9,17 +9,28 @@ DocsCollector.collect('java.nio.file.DirectoryStream', [
 
  `],
 		[/* block */ 'b', [
-			[/* text */ 't', ` While <code>DirectoryStream</code> extends <code>Iterable</code>, it is not a
- general-purpose <code>Iterable</code> as it supports only a single <code>
- Iterator</code>; invoking the <a href="#iterator()"><code>iterator</code></a> method to obtain a second
- or subsequent iterator throws <code>IllegalStateException</code>. `]
+			[/* text */ 't', ` While `],
+			[/* inline code block */ 'i', `DirectoryStream`],
+			[/* text */ 't', ` extends `],
+			[/* inline code block */ 'i', `Iterable`],
+			[/* text */ 't', `, it is not a
+ general-purpose `],
+			[/* inline code block */ 'i', `Iterable`],
+			[/* text */ 't', ` as it supports only a single `],
+			[/* inline code block */ 'i', `Iterator`],
+			[/* text */ 't', `; invoking the `],
+			[/* reference */ 'r', `#iterator()`, `iterator`],
+			[/* text */ 't', ` method to obtain a second
+ or subsequent iterator throws `],
+			[/* inline code block */ 'i', `IllegalStateException`],
+			[/* text */ 't', `. `]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` An important property of the directory stream's `],
 			[/* inline code block */ 'i', `Iterator`],
 			[/* text */ 't', ` is that
  its `],
-			[/* external link */ 'a', `../../util/Iterator.html#hasNext()`, `hasNext`],
+			[/* reference */ 'r', `java.nio.Iterator#hasNext()`],
 			[/* text */ 't', ` method is guaranteed to read-ahead by
  at least one element. If `],
 			[/* inline code block */ 'i', `hasNext`],
@@ -33,12 +44,12 @@ DocsCollector.collect('java.nio.file.DirectoryStream', [
 			[/* inline code block */ 'i', `next`],
 			[/* text */ 't', ` method will not throw an exception due to an I/O error, or
  because the stream has been `],
-			[/* external link */ 'a', `../../io/Closeable.html#close()`, `closed`],
+			[/* reference */ 'r', `java.nio.Closeable#close()`],
 			[/* text */ 't', `. The `],
 			[/* inline code block */ 'i', `Iterator`],
 			[/* text */ 't', ` does
  not support the `],
-			[/* external link */ 'a', `../../util/Iterator.html#remove()`, `remove`],
+			[/* reference */ 'r', `java.nio.Iterator#remove()`],
 			[/* text */ 't', ` operation.
 
  `]
@@ -56,7 +67,7 @@ DocsCollector.collect('java.nio.file.DirectoryStream', [
  `]
 		]],
 		[/* code block */ 'c', `   Path dir = ...
-   try (DirectoryStream&lt;Path&gt; stream = Files.newDirectoryStream(dir)) {
+   try (DirectoryStream<Path> stream = Files.newDirectoryStream(dir)) {
        for (Path entry: stream) {
            ...
        }
@@ -149,16 +160,10 @@ DocsCollector.collect('java.nio.file.DirectoryStream', [
 
  `]
 		]],
-		[/* block */ 'b', [
-			[/* text */ 't', `Usage Examples:`],
-			[/* text */ 't', `
- Suppose we want a list of the source files in a directory. This example uses
- both the for-each and try-with-resources constructs.
- `]
-		]],
-		[/* code block */ 'c', `   List&lt;Path&gt; listSourceFiles(Path dir) throws IOException {
-       List&lt;Path&gt; result = new ArrayList&lt;&gt;();
-       try (DirectoryStream&lt;Path&gt; stream = Files.newDirectoryStream(dir, "*.{c,h,cpp,hpp,java}")) {
+		[/* block */ 'b', `Usage Examples:`],
+		[/* code block */ 'c', `   List<Path> listSourceFiles(Path dir) throws IOException {
+       List<Path> result = new ArrayList<>();
+       try (DirectoryStream<Path> stream = Files.newDirectoryStream(dir, "*.{c,h,cpp,hpp,java}")) {
            for (Path entry: stream) {
                result.add(entry);
            }

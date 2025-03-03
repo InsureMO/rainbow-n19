@@ -89,7 +89,7 @@ not permitted.)`]
  This method returns the range of the field in the ISO-8601 calendar system.
  This range may be incorrect for other calendar systems.
  Use `],
-					[/* external link */ 'a', `../chrono/Chronology.html#range(java.time.temporal.ChronoField)`, `Chronology.range(ChronoField)`],
+					[/* reference */ 'r', `java.Chronology#range(java.time.temporal.ChronoField)`],
 					[/* text */ 't', ` to access the correct range
  for a different calendar system.
  `]
@@ -116,7 +116,7 @@ not permitted.)`]
 						[/* text */ 't', `
  This uses the temporal object to find the range of valid values for the field.
  This is similar to `],
-						[/* external link */ 'a', `TemporalField.html#range()`, `TemporalField.range()`],
+						[/* reference */ 'r', `.TemporalField#range()`],
 						[/* text */ 't', `, however this method refines the result
  using the temporal. For example, if the field is `],
 						[/* inline code block */ 'i', `DAY_OF_MONTH`],
@@ -133,7 +133,7 @@ not permitted.)`]
  There are two equivalent ways of using this method.
  The first is to invoke this method directly.
  The second is to use `],
-						[/* external link */ 'a', `TemporalAccessor.html#range(java.time.temporal.TemporalField)`, `TemporalAccessor.range(TemporalField)`],
+						[/* reference */ 'r', `.TemporalAccessor#range(java.time.temporal.TemporalField)`],
 						[/* text */ 't', `:
  `]
 					]],
@@ -180,7 +180,7 @@ not permitted.)`]
  The unit of the field is the period that varies within the range.
  For example, in the field 'MonthOfYear', the unit is 'Months'.
  See also `],
-						[/* external link */ 'a', `TemporalField.html#getRangeUnit()`, `TemporalField.getRangeUnit()`],
+						[/* reference */ 'r', `.TemporalField#getRangeUnit()`],
 						[/* text */ 't', `.`]
 					]]
 				]]
@@ -201,7 +201,7 @@ not permitted.)`]
  The range of the field is the period that the field varies within.
  For example, in the field 'MonthOfYear', the range is 'Years'.
  See also `],
-						[/* external link */ 'a', `TemporalField.html#getBaseUnit()`, `TemporalField.getBaseUnit()`],
+						[/* reference */ 'r', `.TemporalField#getBaseUnit()`],
 						[/* text */ 't', `.
  `]
 					]],
@@ -256,7 +256,7 @@ not permitted.)`]
  There are two equivalent ways of using this method.
  The first is to invoke this method directly.
  The second is to use `],
-						[/* external link */ 'a', `TemporalAccessor.html#isSupported(java.time.temporal.TemporalField)`, `TemporalAccessor.isSupported(TemporalField)`],
+						[/* reference */ 'r', `.TemporalAccessor#isSupported(java.time.temporal.TemporalField)`],
 						[/* text */ 't', `:
  `]
 					]],
@@ -303,10 +303,10 @@ not permitted.)`]
  There are two equivalent ways of using this method.
  The first is to invoke this method directly.
  The second is to use `],
-						[/* external link */ 'a', `TemporalAccessor.html#getLong(java.time.temporal.TemporalField)`, `TemporalAccessor.getLong(TemporalField)`],
+						[/* reference */ 'r', `.TemporalAccessor#getLong(java.time.temporal.TemporalField)`],
 						[/* text */ 't', `
  (or `],
-						[/* external link */ 'a', `TemporalAccessor.html#get(java.time.temporal.TemporalField)`, `TemporalAccessor.get(TemporalField)`],
+						[/* reference */ 'r', `.TemporalAccessor#get(java.time.temporal.TemporalField)`],
 						[/* text */ 't', `):
  `]
 					]],
@@ -370,7 +370,7 @@ not permitted.)`]
  There are two equivalent ways of using this method.
  The first is to invoke this method directly.
  The second is to use `],
-						[/* external link */ 'a', `Temporal.html#with(java.time.temporal.TemporalField,long)`, `Temporal.with(TemporalField, long)`],
+						[/* reference */ 'r', `.Temporal#with(java.time.temporal.TemporalField,long)`],
 						[/* text */ 't', `:
  `]
 					]],
@@ -423,7 +423,7 @@ not permitted.)`]
 					[/* text */ 't', `
  This validates that the value is within the outer range of valid values
  returned by `],
-					[/* reference */ 'r', `range()`],
+					[/* reference */ 'r', `#range()`, `range()`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -432,7 +432,7 @@ not permitted.)`]
  This method checks against the range of the field in the ISO-8601 calendar system.
  This range may be incorrect for other calendar systems.
  Use `],
-					[/* external link */ 'a', `../chrono/Chronology.html#range(java.time.temporal.ChronoField)`, `Chronology.range(ChronoField)`],
+					[/* reference */ 'r', `java.Chronology#range(java.time.temporal.ChronoField)`],
 					[/* text */ 't', ` to access the correct range
  for a different calendar system.`]
 				]]
@@ -457,7 +457,7 @@ not permitted.)`]
 					[/* text */ 't', `
  This validates that the value is within the outer range of valid values
  returned by `],
-					[/* reference */ 'r', `range()`],
+					[/* reference */ 'r', `#range()`, `range()`],
 					[/* text */ 't', `.
  It also checks that all valid values are within the bounds of an `],
 					[/* inline code block */ 'i', `int`],
@@ -469,7 +469,7 @@ not permitted.)`]
  This method checks against the range of the field in the ISO-8601 calendar system.
  This range may be incorrect for other calendar systems.
  Use `],
-					[/* external link */ 'a', `../chrono/Chronology.html#range(java.time.temporal.ChronoField)`, `Chronology.range(ChronoField)`],
+					[/* reference */ 'r', `java.Chronology#range(java.time.temporal.ChronoField)`],
 					[/* text */ 't', ` to access the correct range
  for a different calendar system.`]
 				]]

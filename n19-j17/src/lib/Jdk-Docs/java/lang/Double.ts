@@ -38,11 +38,11 @@ DocsCollector.collect('java.lang.Double', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
-			[/* external link */ 'a', `../../../java.base/java/lang/doc-files/ValueBased.html`, `value-based`],
+			[/* text */ 't', `value-based`],
 			[/* text */ 't', `
  class; programmers should treat instances that are
  `],
-			[/* reference */ 'r', `equal`],
+			[/* reference */ 'r', `#equals(java.lang.Object)`, `equal`],
 			[/* text */ 't', ` as interchangeable and should not
  use instances for synchronization, or unpredictable behavior may
  occur. For example, in a future release, synchronization may fail.
@@ -78,7 +78,7 @@ DocsCollector.collect('java.lang.Double', [
  relation on pairs of values that is reflexive, symmetric, and
  transitive. For more discussion of equivalence relations and object
  equality, see the `],
-			[/* external link */ 'a', `Object.html#equals(java.lang.Object)`, `Object.equals`],
+			[/* reference */ 'r', `.Object#equals(java.lang.Object)`],
 			[/* text */ 't', `
  specification. An equivalence relation partitions the values it
  operates over into sets called `],
@@ -208,7 +208,7 @@ DocsCollector.collect('java.lang.Double', [
  around `],
 			[/* inline code block */ 'i', `==`],
 			[/* text */ 't', ` or ordered comparison operations. Instead, `],
-			[/* reference */ 'r', `equals`],
+			[/* reference */ 'r', `#equals(java.lang.Object)`, `equals`],
 			[/* text */ 't', ` defines NaN arguments to be equal to each
  other and defines `],
 			[/* inline code block */ 'i', `+0.0`],
@@ -217,7 +217,7 @@ DocsCollector.collect('java.lang.Double', [
 			[/* text */ 't', ` be equal to `],
 			[/* inline code block */ 'i', `-0.0`],
 			[/* text */ 't', `, restoring reflexivity. For comparisons, `],
-			[/* reference */ 'r', `compareTo`],
+			[/* reference */ 'r', `#compareTo(java.lang.Double)`, `compareTo`],
 			[/* text */ 't', ` defines a total order where `],
 			[/* inline code block */ 'i', `-0.0`],
 			[/* text */ 't', ` is less than `],
@@ -233,7 +233,7 @@ DocsCollector.collect('java.lang.Double', [
 			[/* text */ 't', ` and `],
 			[/* inline code block */ 'i', `compareTo`],
 			[/* text */ 't', ` are expressed in terms of `],
-			[/* reference */ 'r', `bit-wise converting`],
+			[/* reference */ 'r', `#doubleToLongBits(double)`, `bit-wise converting`],
 			[/* text */ 't', ` the floating-point values to integral values.
 
  `]
@@ -242,7 +242,7 @@ DocsCollector.collect('java.lang.Double', [
 			[/* text */ 't', `The `],
 			[/* text */ 't', `natural ordering`],
 			[/* text */ 't', ` implemented by `],
-			[/* reference */ 'r', `compareTo`],
+			[/* reference */ 'r', `#compareTo(java.lang.Double)`, `compareTo`],
 			[/* text */ 't', ` is `],
 			[/* reference */ 'r', `java.lang.Comparable`],
 			[/* text */ 't', `. That
@@ -490,7 +490,7 @@ DocsCollector.collect('java.lang.Double', [
 				[/* inline code block */ 'i', `double`],
 				[/* text */ 't', ` values are considered to be
  the same if and only if the method `],
-				[/* reference */ 'r', `doubleToLongBits(double)`],
+				[/* reference */ 'r', `#doubleToLongBits(double)`, `doubleToLongBits(double)`],
 				[/* text */ 't', ` returns the identical
  `],
 				[/* inline code block */ 'i', `long`],
@@ -610,7 +610,7 @@ DocsCollector.collect('java.lang.Double', [
 								[/* text */ 't', `n`, 'sup'],
 								[/* text */ 't', ` ≤ `],
 								[/* text */ 't', `m`],
-								[/* text */ 't', ` &lt;
+								[/* text */ 't', ` <
  10`],
 								[/* text */ 't', `n+1`, 'sup'],
 								[/* text */ 't', `; then let `],
@@ -623,7 +623,7 @@ DocsCollector.collect('java.lang.Double', [
 								[/* text */ 't', `n`, 'sup'],
 								[/* text */ 't', ` so that 1 ≤ `],
 								[/* text */ 't', `a`],
-								[/* text */ 't', ` &lt; 10. The
+								[/* text */ 't', ` < 10. The
  magnitude is then represented as the integer part of `],
 								[/* text */ 't', `a`],
 								[/* text */ 't', `,
@@ -645,7 +645,7 @@ DocsCollector.collect('java.lang.Double', [
 								[/* text */ 't', `n`],
 								[/* text */ 't', ` as a decimal integer, as
  produced by the method `],
-								[/* external link */ 'a', `Integer.html#toString(int)`, `Integer.toString(int)`],
+								[/* reference */ 'r', `.Integer#toString(int)`],
 								[/* text */ 't', `.
  `]
 							]]
@@ -763,7 +763,7 @@ DocsCollector.collect('java.lang.Double', [
 				[/* inline code block */ 'i', `long`],
 				[/* text */ 't', ` integer bit representation, exactly as
  produced by the method `],
-				[/* reference */ 'r', `doubleToLongBits(double)`],
+				[/* reference */ 'r', `#doubleToLongBits(double)`, `doubleToLongBits(double)`],
 				[/* text */ 't', `, of
  the primitive `],
 				[/* inline code block */ 'i', `double`],
@@ -802,7 +802,7 @@ DocsCollector.collect('java.lang.Double', [
 				[/* inline code block */ 'i', `double`],
 				[/* text */ 't', ` values
  as if by calling `],
-				[/* external link */ 'a', `Math.html#min(double,double)`, `Math.min`],
+				[/* reference */ 'r', `.Math#min(double,double)`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -828,7 +828,7 @@ DocsCollector.collect('java.lang.Double', [
 				[/* inline code block */ 'i', `double`],
 				[/* text */ 't', ` values
  as if by calling `],
-				[/* external link */ 'a', `Math.html#max(double,double)`, `Math.max`],
+				[/* reference */ 'r', `.Math#max(double,double)`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -909,7 +909,7 @@ DocsCollector.collect('java.lang.Double', [
 					[/* inline code block */ 'i', `long`],
 					[/* text */ 't', ` integer that,
  when given to the `],
-					[/* reference */ 'r', `longBitsToDouble(long)`],
+					[/* reference */ 'r', `#longBitsToDouble(long)`, `longBitsToDouble(long)`],
 					[/* text */ 't', ` method, will
  produce a floating-point value the same as the argument to
  `],
@@ -983,7 +983,7 @@ DocsCollector.collect('java.lang.Double', [
 					[/* inline code block */ 'i', `long`],
 					[/* text */ 't', ` integer that, when
  given to the `],
-					[/* reference */ 'r', `longBitsToDouble(long)`],
+					[/* reference */ 'r', `#longBitsToDouble(long)`, `longBitsToDouble(long)`],
 					[/* text */ 't', ` method, will produce a
  floating-point value the same as the argument to
  `],
@@ -1432,7 +1432,7 @@ DocsCollector.collect('java.lang.Double', [
 					[/* inline code block */ 'i', `s`],
 					[/* text */ 't', `
  are ignored.  Whitespace is removed as if by the `],
-					[/* external link */ 'a', `String.html#trim()`, `String.trim()`],
+					[/* reference */ 'r', `.String#trim()`],
 					[/* text */ 't', ` method; that is, both ASCII space and control
  characters are removed. The rest of `],
 					[/* inline code block */ 'i', `s`],
@@ -1445,11 +1445,121 @@ DocsCollector.collect('java.lang.Double', [
  `]
 				]],
 				[/* block */ 'b', [
-					[/* dl */ 't', ''],
-					[/* dl */ 't', ''],
-					[/* dl */ 't', ''],
-					[/* dl */ 't', ''],
-					[/* dl */ 't', '']
+					[/* dl */ 'dl', [
+						[/* dt */ 'dt', [
+							[/* text */ 't', `FloatValue:`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `opt`, 'sub'],
+							[/* text */ 't', ` `],
+							[/* inline code block */ 'i', `NaN`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `opt`, 'sub'],
+							[/* text */ 't', ` `],
+							[/* inline code block */ 'i', `Infinity`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `opt`, 'sub'],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `opt`, 'sub'],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `SignedInteger`],
+							[/* text */ 't', `
+ `]
+						]]
+					]],
+					[/* dl */ 'dl', [
+						[/* dt */ 'dt', [
+							[/* text */ 't', `HexFloatingPointLiteral`],
+							[/* text */ 't', `:
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', ` `],
+							[/* text */ 't', `opt`, 'sub'],
+							[/* text */ 't', `
+ `]
+						]]
+					]],
+					[/* dl */ 'dl', [
+						[/* dt */ 'dt', [
+							[/* text */ 't', `HexSignificand:`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `HexNumeral`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `HexNumeral`],
+							[/* text */ 't', ` `],
+							[/* inline code block */ 'i', `.`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* inline code block */ 'i', `0x`],
+							[/* text */ 't', ` `],
+							[/* text */ 't', `opt`, 'sub'],
+							[/* inline code block */ 'i', `.`],
+							[/* text */ 't', ` HexDigits`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* inline code block */ 'i', `0X`],
+							[/* text */ 't', `opt`, 'sub'],
+							[/* inline code block */ 'i', `.`],
+							[/* text */ 't', ` `],
+							[/* text */ 't', `HexDigits`],
+							[/* text */ 't', `
+ `]
+						]]
+					]],
+					[/* dl */ 'dl', [
+						[/* dt */ 'dt', [
+							[/* text */ 't', `BinaryExponent:`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `BinaryExponentIndicator SignedInteger`],
+							[/* text */ 't', `
+ `]
+						]]
+					]],
+					[/* dl */ 'dl', [
+						[/* dt */ 'dt', [
+							[/* text */ 't', `BinaryExponentIndicator:`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* inline code block */ 'i', `p`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* inline code block */ 'i', `P`],
+							[/* text */ 't', `
+ `]
+						]]
+					]]
 				]],
 				[/* text */ 't', `
 
@@ -1502,7 +1612,7 @@ DocsCollector.collect('java.lang.Double', [
  enough in magnitude (greater than or equal to (`],
 				[/* text */ 't', `MAX_VALUE`],
 				[/* text */ 't', ` + `],
-				[/* external link */ 'a', `Math.html#ulp(double)`, `ulp(MAX_VALUE)`],
+				[/* reference */ 'r', `.Math#ulp(double)`],
 				[/* text */ 't', `/2),
  rounding to `],
 				[/* inline code block */ 'i', `double`],
@@ -1679,7 +1789,7 @@ DocsCollector.collect('java.lang.Double', [
 				[/* text */ 't', ` instance is not required, this method
  should generally be used in preference to the constructor
  `],
-				[/* reference */ 'r', `Double(double)`],
+				[/* reference */ 'r', `#%3Cinit%3E(double)`, `Double(double)`],
 				[/* text */ 't', `, as this method is likely to yield
  significantly better space and time performance by caching
  frequently requested values.`]
@@ -1782,7 +1892,7 @@ DocsCollector.collect('java.lang.Double', [
 								[/* text */ 't', ` followed
  by a decimal string of the unbiased exponent as if produced by
  a call to `],
-								[/* external link */ 'a', `Integer.html#toString(int)`, `Integer.toString`],
+								[/* reference */ 'r', `.Integer#toString(int)`],
 								[/* text */ 't', ` on the
  exponent value.
 
@@ -1811,7 +1921,103 @@ DocsCollector.collect('java.lang.Double', [
 						]]
 					]]
 				]],
-				[/* table */ 't', '']
+				[/* table */ 'tbl',
+					[/* caption */ 'tc', [
+						[/* text */ 't', `Examples`]
+					]],
+					[/* table header */ 'th', [
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `Floating-point Value`]
+							]],
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `Hexadecimal String`]
+							]]
+						]]
+					]],
+					[/* table body */ 'tb', [
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `1.0`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `0x1.0p0`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `-1.0`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `-0x1.0p0`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `2.0`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `0x1.0p1`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `3.0`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `0x1.8p1`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `0.5`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `0x1.0p-1`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `0.25`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `0x1.0p-2`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `Double.MAX_VALUE`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `0x1.fffffffffffffp1023`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `Minimum Normal Value`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `0x1.0p-1022`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `Maximum Subnormal Value`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `0x0.fffffffffffffp-1022`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `Double.MIN_VALUE`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `0x0.0000000000001p-1022`]
+							]]
+						]]
+					]],
+				]
 			],
 			[/* parameters */
 				[/* parameter */ 'd', [/* parameter description */

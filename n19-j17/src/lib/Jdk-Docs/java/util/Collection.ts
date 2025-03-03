@@ -103,10 +103,10 @@ DocsCollector.collect('java.util.Collection', [
 		[/* block */ 'b', [
 			[/* text */ 't', `Many methods in Collections Framework interfaces are defined in
  terms of the `],
-			[/* external link */ 'a', `../lang/Object.html#equals(java.lang.Object)`, `equals`],
+			[/* reference */ 'r', `java.Object#equals(java.lang.Object)`],
 			[/* text */ 't', ` method.  For example,
  the specification for the `],
-			[/* reference */ 'r', `contains(Object o)`],
+			[/* reference */ 'r', `#contains(java.lang.Object)`, `contains(Object o)`],
 			[/* text */ 't', `
  method says: "returns `],
 			[/* inline code block */ 'i', `true`],
@@ -135,7 +135,7 @@ DocsCollector.collect('java.util.Collection', [
 			[/* text */ 't', ` invocation is avoided, for
  example, by first comparing the hash codes of the two elements.  (The
  `],
-			[/* external link */ 'a', `../lang/Object.html#hashCode()`, `Object.hashCode()`],
+			[/* reference */ 'r', `java.Object#hashCode()`],
 			[/* text */ 't', ` specification guarantees that two objects with
  unequal hash codes cannot be equal.)  More generally, implementations of
  the various Collections Framework interfaces are free to take advantage of
@@ -176,24 +176,24 @@ DocsCollector.collect('java.util.Collection', [
  by the view collection itself are delegated to the backing collection. Examples of
  view collections include the wrapper collections returned by methods such as
  `],
-			[/* external link */ 'a', `Collections.html#checkedCollection(java.util.Collection,java.lang.Class)`, `Collections.checkedCollection`],
+			[/* reference */ 'r', `.Collections#checkedCollection(java.util.Collection,java.lang.Class)`],
 			[/* text */ 't', `,
  `],
-			[/* external link */ 'a', `Collections.html#synchronizedCollection(java.util.Collection)`, `Collections.synchronizedCollection`],
+			[/* reference */ 'r', `.Collections#synchronizedCollection(java.util.Collection)`],
 			[/* text */ 't', `, and
  `],
-			[/* external link */ 'a', `Collections.html#unmodifiableCollection(java.util.Collection)`, `Collections.unmodifiableCollection`],
+			[/* reference */ 'r', `.Collections#unmodifiableCollection(java.util.Collection)`],
 			[/* text */ 't', `.
  Other examples of view collections include collections that provide a
  different representation of the same elements, for example, as
  provided by `],
-			[/* external link */ 'a', `List.html#subList(int,int)`, `List.subList`],
+			[/* reference */ 'r', `.List#subList(int,int)`],
 			[/* text */ 't', `,
  `],
-			[/* external link */ 'a', `NavigableSet.html#subSet(E,boolean,E,boolean)`, `NavigableSet.subSet`],
+			[/* reference */ 'r', `.NavigableSet#subSet(E,boolean,E,boolean)`],
 			[/* text */ 't', `, or
  `],
-			[/* external link */ 'a', `Map.html#entrySet()`, `Map.entrySet`],
+			[/* reference */ 'r', `.Map#entrySet()`],
 			[/* text */ 't', `.
  Any changes made to the backing collection are visible in the view collection.
  Correspondingly, any changes made to the view collection — if changes
@@ -226,10 +226,10 @@ DocsCollector.collect('java.util.Collection', [
 			[/* text */ 't', ` if the invocation would
  have no effect on the collection. For example, consider a collection that
  does not support the `],
-			[/* reference */ 'r', `add`],
+			[/* reference */ 'r', `#add(E)`, `add`],
 			[/* text */ 't', ` operation. What will happen if the
  `],
-			[/* reference */ 'r', `addAll`],
+			[/* reference */ 'r', `#addAll(java.util.Collection)`, `addAll`],
 			[/* text */ 't', ` method is invoked on this collection, with an empty
  collection as the argument? The addition of zero elements has no effect,
  so it is permissible for this collection simply to do nothing and not to throw
@@ -251,7 +251,7 @@ DocsCollector.collect('java.util.Collection', [
  unmodifiable, any view collections derived from it must also be unmodifiable.
  For example, if a List is unmodifiable, the List returned by
  `],
-			[/* external link */ 'a', `List.html#subList(int,int)`, `List.subList`],
+			[/* reference */ 'r', `.List#subList(int,int)`],
 			[/* text */ 't', ` is also unmodifiable.
 
  `]
@@ -288,10 +288,10 @@ DocsCollector.collect('java.util.Collection', [
  collections unexpectedly. Examples of unmodifiable view collections
  are those returned by the
  `],
-			[/* external link */ 'a', `Collections.html#unmodifiableCollection(java.util.Collection)`, `Collections.unmodifiableCollection`],
+			[/* reference */ 'r', `.Collections#unmodifiableCollection(java.util.Collection)`],
 			[/* text */ 't', `,
  `],
-			[/* external link */ 'a', `Collections.html#unmodifiableList(java.util.List)`, `Collections.unmodifiableList`],
+			[/* reference */ 'r', `.Collections#unmodifiableList(java.util.List)`],
 			[/* text */ 't', `, and
  related methods.
 
@@ -385,7 +385,7 @@ DocsCollector.collect('java.util.Collection', [
 		[/* block */ 'b', [
 			[/* text */ 't', `This interface is a member of the
  `],
-			[/* external link */ 'a', `../../../java.base/java/util/package-summary.html#CollectionsFramework`, `Java Collections Framework`],
+			[/* text */ 't', `Java Collections Framework`],
 			[/* text */ 't', `.`]
 		]]
 	],
@@ -489,14 +489,14 @@ DocsCollector.collect('java.util.Collection', [
 					[/* text */ 't', `if the type of the specified element
          is incompatible with this collection
          (`],
-					[/* external link */ 'a', `../../../java.base/java/util/Collection.html#optional-restrictions`, `optional`],
+					[/* text */ 't', `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if the specified element is null and this
          collection does not permit null elements
          (`],
-					[/* external link */ 'a', `../../../java.base/java/util/Collection.html#optional-restrictions`, `optional`],
+					[/* text */ 't', `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
@@ -713,7 +713,7 @@ DocsCollector.collect('java.util.Collection', [
 				[/* throw */ 'java.lang.ArrayStoreException', [/* throw description */
 					[/* text */ 't', `if the runtime type of any element in this
          collection is not assignable to the `],
-					[/* external link */ 'a', `../lang/Class.html#getComponentType()`, `runtime component type`],
+					[/* reference */ 'r', `java.Class#getComponentType()`],
 					[/* text */ 't', ` of the specified array`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
@@ -746,7 +746,7 @@ DocsCollector.collect('java.util.Collection', [
 				[/* throw */ 'java.lang.ArrayStoreException', [/* throw description */
 					[/* text */ 't', `if the runtime type of any element in this
          collection is not assignable to the `],
-					[/* external link */ 'a', `../lang/Class.html#getComponentType()`, `runtime component type`],
+					[/* reference */ 'r', `java.Class#getComponentType()`],
 					[/* text */ 't', ` of the generated array`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
@@ -763,7 +763,7 @@ DocsCollector.collect('java.util.Collection', [
  If this collection makes any guarantees as to what order its elements
  are returned by its iterator, this method must return the elements in
  the same order. The returned array's `],
-				[/* external link */ 'a', `../lang/Class.html#getComponentType()`, `runtime component type`],
+				[/* reference */ 'r', `java.Class#getComponentType()`],
 				[/* text */ 't', ` is `],
 				[/* inline code block */ 'i', `Object`],
 				[/* text */ 't', `.
@@ -778,7 +778,7 @@ DocsCollector.collect('java.util.Collection', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `an array, whose `],
-				[/* external link */ 'a', `../lang/Class.html#getComponentType()`, `runtime component type`],
+				[/* reference */ 'r', `java.Class#getComponentType()`],
 				[/* text */ 't', ` is `],
 				[/* inline code block */ 'i', `Object`],
 				[/* text */ 't', `, containing all of the elements in this collection`]
@@ -808,7 +808,7 @@ DocsCollector.collect('java.util.Collection', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This method should be overridden when the `],
-					[/* reference */ 'r', `spliterator()`],
+					[/* reference */ 'r', `#spliterator()`, `spliterator()`],
 					[/* text */ 't', `
  method cannot return a spliterator that is `],
 					[/* inline code block */ 'i', `IMMUTABLE`],
@@ -818,7 +818,7 @@ DocsCollector.collect('java.util.Collection', [
 					[/* text */ 't', `, or `],
 					[/* text */ 't', `late-binding`],
 					[/* text */ 't', `. (See `],
-					[/* reference */ 'r', `spliterator()`],
+					[/* reference */ 'r', `#spliterator()`, `spliterator()`],
 					[/* text */ 't', `
  for details.)`]
 				]]
@@ -856,14 +856,14 @@ DocsCollector.collect('java.util.Collection', [
 					[/* text */ 't', `if the type of the specified element
          is incompatible with this collection
          (`],
-					[/* external link */ 'a', `../../../java.base/java/util/Collection.html#optional-restrictions`, `optional`],
+					[/* text */ 't', `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if the specified element is null and this
          collection does not permit null elements
          (`],
-					[/* external link */ 'a', `../../../java.base/java/util/Collection.html#optional-restrictions`, `optional`],
+					[/* text */ 't', `optional`],
 					[/* text */ 't', `)`]
 				]]
 			],
@@ -882,7 +882,7 @@ DocsCollector.collect('java.util.Collection', [
  Implementations should document characteristic values reported by the
  spliterator.  Such characteristic values are not required to be reported
  if the spliterator reports `],
-				[/* external link */ 'a', `Spliterator.html#SIZED`, `Spliterator.SIZED`],
+				[/* reference */ 'r', `.Spliterator#SIZED`],
 				[/* text */ 't', ` and this collection
  contains no elements.
 
@@ -891,10 +891,10 @@ DocsCollector.collect('java.util.Collection', [
 					[/* text */ 't', `The default implementation should be overridden by subclasses that
  can return a more efficient spliterator.  In order to
  preserve expected laziness behavior for the `],
-					[/* reference */ 'r', `stream()`],
+					[/* reference */ 'r', `#stream()`, `stream()`],
 					[/* text */ 't', ` and
  `],
-					[/* reference */ 'r', `parallelStream()`],
+					[/* reference */ 'r', `#parallelStream()`, `parallelStream()`],
 					[/* text */ 't', ` methods, spliterators should either have the
  characteristic of `],
 					[/* inline code block */ 'i', `IMMUTABLE`],
@@ -902,14 +902,14 @@ DocsCollector.collect('java.util.Collection', [
 					[/* inline code block */ 'i', `CONCURRENT`],
 					[/* text */ 't', `, or be
  `],
-					[/* external link */ 'a', `Spliterator.html#binding`, `late-binding`],
+					[/* reference */ 'r', `.Spliterator#binding`],
 					[/* text */ 't', `.
  If none of these is practical, the overriding class should describe the
  spliterator's documented policy of binding and structural interference,
  and should override the `],
-					[/* reference */ 'r', `stream()`],
+					[/* reference */ 'r', `#stream()`, `stream()`],
 					[/* text */ 't', ` and `],
-					[/* reference */ 'r', `parallelStream()`],
+					[/* reference */ 'r', `#parallelStream()`, `parallelStream()`],
 					[/* text */ 't', `
  methods to create streams using a `],
 					[/* inline code block */ 'i', `Supplier`],
@@ -924,9 +924,9 @@ DocsCollector.collect('java.util.Collection', [
 				[/* block */ 'b', [
 					[/* text */ 't', `These requirements ensure that streams produced by the
  `],
-					[/* reference */ 'r', `stream()`],
+					[/* reference */ 'r', `#stream()`, `stream()`],
 					[/* text */ 't', ` and `],
-					[/* reference */ 'r', `parallelStream()`],
+					[/* reference */ 'r', `#parallelStream()`, `parallelStream()`],
 					[/* text */ 't', ` methods will reflect the
  contents of the collection as of initiation of the terminal stream
  operation.`]
@@ -1039,7 +1039,7 @@ DocsCollector.collect('java.util.Collection', [
          in this collection are incompatible with the specified
          collection
          (`],
-					[/* external link */ 'a', `../../../java.base/java/util/Collection.html#optional-restrictions`, `optional`],
+					[/* text */ 't', `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
@@ -1047,7 +1047,7 @@ DocsCollector.collect('java.util.Collection', [
          null elements and the specified collection does not support
          null elements
          (`],
-					[/* external link */ 'a', `../../../java.base/java/util/Collection.html#optional-restrictions`, `optional`],
+					[/* text */ 't', `optional`],
 					[/* text */ 't', `),
          or if the specified collection is null`]
 				]]
@@ -1082,7 +1082,7 @@ DocsCollector.collect('java.util.Collection', [
          in this collection are incompatible with the specified
          collection
          (`],
-					[/* external link */ 'a', `../../../java.base/java/util/Collection.html#optional-restrictions`, `optional`],
+					[/* text */ 't', `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
@@ -1090,7 +1090,7 @@ DocsCollector.collect('java.util.Collection', [
          null elements and the specified collection does not permit null
          elements
          (`],
-					[/* external link */ 'a', `../../../java.base/java/util/Collection.html#optional-restrictions`, `optional`],
+					[/* text */ 't', `optional`],
 					[/* text */ 't', `),
          or if the specified collection is null`]
 				]]
@@ -1118,7 +1118,7 @@ DocsCollector.collect('java.util.Collection', [
          in the specified collection are incompatible with this
          collection
          (`],
-					[/* external link */ 'a', `../../../java.base/java/util/Collection.html#optional-restrictions`, `optional`],
+					[/* text */ 't', `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
@@ -1126,7 +1126,7 @@ DocsCollector.collect('java.util.Collection', [
          or more null elements and this collection does not permit null
          elements
          (`],
-					[/* external link */ 'a', `../../../java.base/java/util/Collection.html#optional-restrictions`, `optional`],
+					[/* text */ 't', `optional`],
 					[/* text */ 't', `),
          or if the specified collection is null.`]
 				]]
@@ -1147,7 +1147,7 @@ DocsCollector.collect('java.util.Collection', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This method should be overridden when the `],
-					[/* reference */ 'r', `spliterator()`],
+					[/* reference */ 'r', `#spliterator()`, `spliterator()`],
 					[/* text */ 't', `
  method cannot return a spliterator that is `],
 					[/* inline code block */ 'i', `IMMUTABLE`],
@@ -1157,7 +1157,7 @@ DocsCollector.collect('java.util.Collection', [
 					[/* text */ 't', `, or `],
 					[/* text */ 't', `late-binding`],
 					[/* text */ 't', `. (See `],
-					[/* reference */ 'r', `spliterator()`],
+					[/* reference */ 'r', `#spliterator()`, `spliterator()`],
 					[/* text */ 't', `
  for details.)`]
 				]]

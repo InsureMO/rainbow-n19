@@ -24,28 +24,28 @@ DocsCollector.collect('java.lang.ModuleLayer', [
 			[/* reference */ 'r', `java.lang.module.ResolvedModule`],
 			[/* text */ 't', ` in the configuration. For each resolved module that is
  `],
-			[/* external link */ 'a', `module/ResolvedModule.html#reads()`, `read`],
+			[/* reference */ 'r', `.ResolvedModule#reads()`],
 			[/* text */ 't', `, the `],
 			[/* inline code block */ 'i', `Module`],
-			[/* external link */ 'a', `Module.html#canRead(java.lang.Module)`, `reads`],
+			[/* reference */ 'r', `.Module#canRead(java.lang.Module)`],
 			[/* text */ 't', ` the corresponding run-time `],
 			[/* inline code block */ 'i', `Module`],
 			[/* text */ 't', `, which may
  be in the same layer or a `],
-			[/* reference */ 'r', `parent`],
+			[/* reference */ 'r', `#parents()`, `parent`],
 			[/* text */ 't', ` layer. `]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The `],
-			[/* reference */ 'r', `defineModulesWithOneLoader`],
+			[/* reference */ 'r', `#defineModulesWithOneLoader(java.lang.module.Configuration,java.lang.ClassLoader)`, `defineModulesWithOneLoader`],
 			[/* text */ 't', ` and
  `],
-			[/* reference */ 'r', `defineModulesWithManyLoaders`],
+			[/* reference */ 'r', `#defineModulesWithManyLoaders(java.lang.module.Configuration,java.lang.ClassLoader)`, `defineModulesWithManyLoaders`],
 			[/* text */ 't', ` methods
  provide convenient ways to create a module layer where all modules are
  mapped to a single class loader or where each module is mapped to its own
  class loader. The `],
-			[/* reference */ 'r', `defineModules`],
+			[/* reference */ 'r', `#defineModules(java.lang.module.Configuration,java.util.function.Function)`, `defineModules`],
 			[/* text */ 't', ` method is for more
  advanced cases where modules are mapped to custom class loaders by means of
  a function specified to the method. Each of these methods has an instance
@@ -58,7 +58,7 @@ DocsCollector.collect('java.lang.ModuleLayer', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` A Java virtual machine has at least one non-empty layer, the `],
-			[/* reference */ 'r', `boot`],
+			[/* reference */ 'r', `#boot()`, `boot`],
 			[/* text */ 't', ` layer, that is created when the Java virtual machine is
  started. The boot layer contains module `],
 			[/* inline code block */ 'i', `java.base`],
@@ -68,19 +68,19 @@ DocsCollector.collect('java.lang.ModuleLayer', [
 			[/* text */ 't', `".
  The modules in the boot layer are mapped to the bootstrap class loader and
  other class loaders that are `],
-			[/* external link */ 'a', `ClassLoader.html#builtinLoaders`, `built-in`],
+			[/* reference */ 'r', `.ClassLoader#builtinLoaders`],
 			[/* text */ 't', ` into the Java virtual machine. The boot layer will often be
  the `],
-			[/* reference */ 'r', `parent`],
+			[/* reference */ 'r', `#parents()`, `parent`],
 			[/* text */ 't', ` when creating additional layers. `]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Each `],
 			[/* inline code block */ 'i', `Module`],
 			[/* text */ 't', ` in a layer is created so that it `],
-			[/* external link */ 'a', `Module.html#isExported(java.lang.String)`, `exports`],
+			[/* reference */ 'r', `.Module#isExported(java.lang.String)`],
 			[/* text */ 't', ` and `],
-			[/* external link */ 'a', `Module.html#isOpen(java.lang.String)`, `opens`],
+			[/* reference */ 'r', `.Module#isOpen(java.lang.String)`],
 			[/* text */ 't', `
  the packages described by its `],
 			[/* reference */ 'r', `java.lang.module.ModuleDescriptor`],
@@ -125,7 +125,7 @@ DocsCollector.collect('java.lang.ModuleLayer', [
      `],
 				[/* inline code block */ 'i', `Y`],
 				[/* text */ 't', ` is located as if by invoking `],
-				[/* reference */ 'r', `findModule`],
+				[/* reference */ 'r', `#findModule(java.lang.String)`, `findModule`],
 				[/* text */ 't', ` to find the module in the layer or its parent layers. If
      `],
 				[/* inline code block */ 'i', `Y`],
@@ -144,7 +144,7 @@ DocsCollector.collect('java.lang.ModuleLayer', [
 			[/* inline code block */ 'i', `Configuration`],
 			[/* text */ 't', `,
  `],
-			[/* external link */ 'a', `module/ModuleDescriptor.html#isAutomatic()`, `automatic`],
+			[/* reference */ 'r', `.ModuleDescriptor#isAutomatic()`],
 			[/* text */ 't', ` modules receive special
  treatment when creating a layer. An automatic module is created in the
  Java virtual machine as a `],
@@ -217,7 +217,7 @@ DocsCollector.collect('java.lang.ModuleLayer', [
  `],
 				[/* inline code block */ 'i', `java.base`],
 				[/* text */ 't', `. Its parent is the `],
-				[/* reference */ 'r', `empty`],
+				[/* reference */ 'r', `#empty()`, `empty`],
 				[/* text */ 't', ` layer.`]
 			],
 			/* parameters */ UDF,
@@ -250,7 +250,7 @@ DocsCollector.collect('java.lang.ModuleLayer', [
 			[/* method description */
 				[/* text */ 't', `Returns an unmodifiable list of this layer's parents, in search
  order. If this is the `],
-				[/* reference */ 'r', `empty layer`],
+				[/* reference */ 'r', `#empty()`, `empty layer`],
 				[/* text */ 't', ` then an
  empty list is returned.`]
 			],
@@ -264,7 +264,7 @@ DocsCollector.collect('java.lang.ModuleLayer', [
 			[/* method description */
 				[/* text */ 't', `Returns the module with the given name in this layer, or if not in this
  layer, the `],
-				[/* reference */ 'r', `parent`],
+				[/* reference */ 'r', `#parents()`, `parent`],
 				[/* text */ 't', ` layers. Finding a module in
  parent layers is equivalent to invoking `],
 				[/* inline code block */ 'i', `findModule`],
@@ -298,7 +298,7 @@ DocsCollector.collect('java.lang.ModuleLayer', [
  Each module is mapped, by name, to its class loader by means of the
  given function. This method works exactly as specified by the static
  `],
-				[/* reference */ 'r', `defineModules`],
+				[/* reference */ 'r', `#defineModules(java.lang.module.Configuration,java.util.List,java.util.function.Function)`, `defineModules`],
 				[/* text */ 't', `
  method when invoked with this layer as the parent. In other words, if
  this layer is `],
@@ -355,7 +355,7 @@ DocsCollector.collect('java.lang.ModuleLayer', [
 					[/* text */ 't', ` The class loader delegation implemented by the class loaders must
  respect module readability. The class loaders should be
  `],
-					[/* external link */ 'a', `ClassLoader.html#registerAsParallelCapable()`, `parallel-capable`],
+					[/* reference */ 'r', `.ClassLoader#registerAsParallelCapable()`],
 					[/* text */ 't', ` so as to
  avoid deadlocks during class loading. In addition, the entity creating
  a new layer with this method should arrange that the class loaders be
@@ -391,7 +391,7 @@ DocsCollector.collect('java.lang.ModuleLayer', [
  returns `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` or the `],
-					[/* external link */ 'a', `ClassLoader.html#getPlatformClassLoader()`, `platform class loader`],
+					[/* reference */ 'r', `.ClassLoader#getPlatformClassLoader()`],
 					[/* text */ 't', `. `]
 				]],
 				[/* block */ 'b', ` If the function to map a module name to class loader throws an error
@@ -441,7 +441,7 @@ DocsCollector.collect('java.lang.ModuleLayer', [
 					[/* text */ 't', `direct
  delegation`],
 					[/* text */ 't', ` when loading classes from modules. If the `],
-					[/* external link */ 'a', `ClassLoader.html#loadClass(java.lang.String,boolean)`, `loadClass`],
+					[/* reference */ 'r', `.ClassLoader#loadClass(java.lang.String,boolean)`],
 					[/* text */ 't', ` method is invoked to
  load a class then it uses the package name of the class to map it to a
  module. This may be a module in this layer and hence defined to the same
@@ -458,9 +458,9 @@ DocsCollector.collect('java.lang.ModuleLayer', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The class loader created by this method locates resources
  (`],
-					[/* external link */ 'a', `ClassLoader.html#getResource(java.lang.String)`, `getResource`],
+					[/* reference */ 'r', `.ClassLoader#getResource(java.lang.String)`],
 					[/* text */ 't', `, `],
-					[/* external link */ 'a', `ClassLoader.html#getResources(java.lang.String)`, `getResources`],
+					[/* reference */ 'r', `.ClassLoader#getResources(java.lang.String)`],
 					[/* text */ 't', `, and other resource
  methods) in all modules in the layer before searching the parent class
  loader. `]
@@ -471,19 +471,10 @@ DocsCollector.collect('java.lang.ModuleLayer', [
  `],
 				[/* list */ 'l', [
 					[/* block */ 'b', [
-						[/* block */ 'b', [
-							[/* text */ 't', `Overlapping packages`],
-							[/* text */ 't', `: Two or more modules in the
-     configuration have the same package. `]
-						]]
+						[/* block */ 'b', `Overlapping packages`]
 					]],
 					[/* block */ 'b', [
-						[/* block */ 'b', [
-							[/* text */ 't', `Split delegation`],
-							[/* text */ 't', `: The resulting class loader would
-     need to delegate to more than one class loader in order to load
-     classes in a specific package. `]
-						]]
+						[/* block */ 'b', `Split delegation`]
 					]]
 				]],
 				[/* block */ 'b', ''],
@@ -547,11 +538,11 @@ DocsCollector.collect('java.lang.ModuleLayer', [
 				[/* text */ 't', ` to the Java virtual machine.
  This method creates one class loader and defines all modules to that
  class loader. The `],
-				[/* external link */ 'a', `ClassLoader.html#getParent()`, `parent`],
+				[/* reference */ 'r', `.ClassLoader#getParent()`],
 				[/* text */ 't', ` of each class
  loader is the given parent class loader. This method works exactly as
  specified by the static `],
-				[/* reference */ 'r', `defineModulesWithOneLoader`],
+				[/* reference */ 'r', `#defineModulesWithOneLoader(java.lang.module.Configuration,java.util.List,java.lang.ClassLoader)`, `defineModulesWithOneLoader`],
 				[/* text */ 't', ` method when invoked with this layer as the
  parent. In other words, if this layer is `],
 				[/* inline code block */ 'i', `thisLayer`],
@@ -606,7 +597,7 @@ DocsCollector.collect('java.lang.ModuleLayer', [
  its own `],
 				[/* reference */ 'r', `java.lang.ClassLoader`],
 				[/* text */ 't', ` created by this method. The `],
-				[/* external link */ 'a', `ClassLoader.html#getParent()`, `parent`],
+				[/* reference */ 'r', `.ClassLoader#getParent()`],
 				[/* text */ 't', ` of each class loader is the given parent
  class loader.
 
@@ -616,7 +607,7 @@ DocsCollector.collect('java.lang.ModuleLayer', [
 					[/* text */ 't', `direct
  delegation`],
 					[/* text */ 't', ` when loading classes from modules. If the `],
-					[/* external link */ 'a', `ClassLoader.html#loadClass(java.lang.String,boolean)`, `loadClass`],
+					[/* reference */ 'r', `.ClassLoader#loadClass(java.lang.String,boolean)`],
 					[/* text */ 't', ` method is invoked to
  load a class then it uses the package name of the class to map it to a
  module. The package may be in the module defined to the class loader.
@@ -635,9 +626,9 @@ DocsCollector.collect('java.lang.ModuleLayer', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The class loaders created by this method locate resources
  (`],
-					[/* external link */ 'a', `ClassLoader.html#getResource(java.lang.String)`, `getResource`],
+					[/* reference */ 'r', `.ClassLoader#getResource(java.lang.String)`],
 					[/* text */ 't', `, `],
-					[/* external link */ 'a', `ClassLoader.html#getResources(java.lang.String)`, `getResources`],
+					[/* reference */ 'r', `.ClassLoader#getResources(java.lang.String)`],
 					[/* text */ 't', `, and other resource
  methods) in the module defined to the class loader before searching
  the parent class loader. `]
@@ -701,11 +692,11 @@ DocsCollector.collect('java.lang.ModuleLayer', [
 				[/* reference */ 'r', `java.lang.ClassLoader`],
 				[/* text */ 't', ` created by this
  method. The `],
-				[/* external link */ 'a', `ClassLoader.html#getParent()`, `parent`],
+				[/* reference */ 'r', `.ClassLoader#getParent()`],
 				[/* text */ 't', ` of each class loader
  is the given parent class loader. This method works exactly as specified
  by the static `],
-				[/* reference */ 'r', `defineModulesWithManyLoaders`],
+				[/* reference */ 'r', `#defineModulesWithManyLoaders(java.lang.module.Configuration,java.util.List,java.lang.ClassLoader)`, `defineModulesWithManyLoaders`],
 				[/* text */ 't', ` method when invoked with this layer as the
  parent. In other words, if this layer is `],
 				[/* inline code block */ 'i', `thisLayer`],
@@ -758,9 +749,9 @@ DocsCollector.collect('java.lang.ModuleLayer', [
 				[/* inline code block */ 'i', `ClassLoader`],
 				[/* text */ 't', ` for the module with the given name. If
  a module of the given name is not in this layer then the `],
-				[/* reference */ 'r', `parent`],
+				[/* reference */ 'r', `#parents()`, `parent`],
 				[/* text */ 't', ` layers are searched in the manner specified by `],
-				[/* reference */ 'r', `findModule`],
+				[/* reference */ 'r', `#findModule(java.lang.String)`, `findModule`],
 				[/* text */ 't', `.
 
  `],

@@ -13,11 +13,11 @@ DocsCollector.collect('java.io.PipedReader', [
 				[/* inline code block */ 'i', `PipedReader`],
 				[/* text */ 't', ` so that it is not yet
  `],
-				[/* reference */ 'r', `connected`],
+				[/* reference */ 'r', `#connect(java.io.PipedWriter)`, `connected`],
 				[/* text */ 't', ` and uses
  the specified pipe size for the pipe's buffer.
  It must be  `],
-				[/* external link */ 'a', `PipedWriter.html#connect(java.io.PipedReader)`, `connected`],
+				[/* reference */ 'r', `.PipedWriter#connect(java.io.PipedReader)`],
 				[/* text */ 't', ` to a `],
 				[/* inline code block */ 'i', `PipedWriter`],
 				[/* text */ 't', `
@@ -42,9 +42,9 @@ DocsCollector.collect('java.io.PipedReader', [
 				[/* inline code block */ 'i', `PipedReader`],
 				[/* text */ 't', ` so
  that it is not yet `],
-				[/* reference */ 'r', `connected`],
+				[/* reference */ 'r', `#connect(java.io.PipedWriter)`, `connected`],
 				[/* text */ 't', `. It must be `],
-				[/* external link */ 'a', `PipedWriter.html#connect(java.io.PipedReader)`, `connected`],
+				[/* reference */ 'r', `.PipedWriter#connect(java.io.PipedReader)`],
 				[/* text */ 't', ` to a `],
 				[/* inline code block */ 'i', `PipedWriter`],
 				[/* text */ 't', `
@@ -126,10 +126,10 @@ DocsCollector.collect('java.io.PipedReader', [
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if the pipe is
           `],
-					[/* external link */ 'a', `PipedInputStream.html#BROKEN`, `broken`],
+					[/* reference */ 'r', `.PipedInputStream#BROKEN`],
 					[/* text */ 't', `,
           `],
-					[/* reference */ 'r', `unconnected`],
+					[/* reference */ 'r', `#connect(java.io.PipedWriter)`, `unconnected`],
 					[/* text */ 't', `, closed,
           or an I/O error occurs.`]
 				]]
@@ -200,10 +200,10 @@ DocsCollector.collect('java.io.PipedReader', [
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if the pipe is
              `],
-					[/* external link */ 'a', `PipedInputStream.html#BROKEN`, `broken`],
+					[/* reference */ 'r', `.PipedInputStream#BROKEN`],
 					[/* text */ 't', `,
              `],
-					[/* reference */ 'r', `unconnected`],
+					[/* reference */ 'r', `#connect(java.io.PipedWriter)`, `unconnected`],
 					[/* text */ 't', `, closed,
              or an I/O error occurs.`]
 				]]
@@ -288,10 +288,10 @@ DocsCollector.collect('java.io.PipedReader', [
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `if the pipe is
              `],
-					[/* external link */ 'a', `PipedInputStream.html#BROKEN`, `broken`],
+					[/* reference */ 'r', `.PipedInputStream#BROKEN`],
 					[/* text */ 't', `,
              `],
-					[/* reference */ 'r', `unconnected`],
+					[/* reference */ 'r', `#connect(java.io.PipedWriter)`, `unconnected`],
 					[/* text */ 't', `, or closed.`]
 				]]
 			],

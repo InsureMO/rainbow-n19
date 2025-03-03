@@ -24,7 +24,7 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
 		[/* block */ 'b', [
 			[/* text */ 't', `If the locale contains "rg" (region override)
  `],
-			[/* external link */ 'a', `../util/Locale.html#def_locale_extension`, `Unicode extension`],
+			[/* reference */ 'r', `java.Locale#def_locale_extension`],
 			[/* text */ 't', `,
  the symbols are overridden for the designated region.`]
 		]]
@@ -35,7 +35,7 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
 			[/* constructor description */
 				[/* text */ 't', `Create a DecimalFormatSymbols object for the default
  `],
-				[/* external link */ 'a', `../util/Locale.Category.html#FORMAT`, `FORMAT`],
+				[/* reference */ 'r', `java.Locale.Category#FORMAT`],
 				[/* text */ 't', ` locale.
  This constructor can only construct instances for the locales
  supported by the Java runtime environment, not for those
@@ -45,13 +45,13 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
 				[/* text */ 't', `
  implementations. For full locale coverage, use the
  `],
-				[/* reference */ 'r', `getInstance`],
+				[/* reference */ 'r', `#getInstance(java.util.Locale)`, `getInstance`],
 				[/* text */ 't', ` method.
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This is equivalent to calling
  `],
-					[/* reference */ 'r', `DecimalFormatSymbols(Locale.getDefault(Locale.Category.FORMAT))`],
+					[/* reference */ 'r', `#%3Cinit%3E(java.util.Locale)`, `DecimalFormatSymbols(Locale.getDefault(Locale.Category.FORMAT))`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -69,10 +69,10 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
 				[/* text */ 't', `
  implementations. For full locale coverage, use the
  `],
-				[/* reference */ 'r', `getInstance`],
+				[/* reference */ 'r', `#getInstance(java.util.Locale)`, `getInstance`],
 				[/* text */ 't', ` method.
  If the specified locale contains the `],
-				[/* external link */ 'a', `../util/Locale.html#UNICODE_LOCALE_EXTENSION`, `Locale.UNICODE_LOCALE_EXTENSION`],
+				[/* reference */ 'r', `java.Locale#UNICODE_LOCALE_EXTENSION`],
 				[/* text */ 't', `
  for the numbering system, the instance is initialized with the specified numbering
  system if the JRE implementation supports it. For example,
@@ -152,7 +152,7 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
 				[/* reference */ 'r', `java.text.spi.DecimalFormatSymbolsProvider`],
 				[/* text */ 't', ` implementations.
  If the specified locale contains the `],
-				[/* external link */ 'a', `../util/Locale.html#UNICODE_LOCALE_EXTENSION`, `Locale.UNICODE_LOCALE_EXTENSION`],
+				[/* reference */ 'r', `java.Locale#UNICODE_LOCALE_EXTENSION`],
 				[/* text */ 't', `
  for the numbering system, the instance is initialized with the specified numbering
  system if the JRE implementation supports it. For example,
@@ -200,7 +200,7 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
 				[/* block */ 'b', [
 					[/* text */ 't', `This is equivalent to calling
  `],
-					[/* reference */ 'r', `getInstance(Locale.getDefault(Locale.Category.FORMAT))`],
+					[/* reference */ 'r', `#getInstance(java.util.Locale)`, `getInstance(Locale.getDefault(Locale.Category.FORMAT))`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -228,7 +228,7 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
 				[/* inline code block */ 'i', `Locale`],
 				[/* text */ 't', `
  instance equal to `],
-				[/* external link */ 'a', `../util/Locale.html#US`, `Locale.US`],
+				[/* reference */ 'r', `java.Locale#US`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -544,7 +544,7 @@ DocsCollector.collect('java.text.DecimalFormatSymbols', [
  DecimalFormatSymbols.
  If the currency code is valid (as defined by
  `],
-				[/* external link */ 'a', `../util/Currency.html#getInstance(java.lang.String)`, `Currency.getInstance`],
+				[/* reference */ 'r', `java.Currency#getInstance(java.lang.String)`],
 				[/* text */ 't', `),
  this also sets the currency attribute to the corresponding Currency
  instance and the currency symbol attribute to the currency's symbol

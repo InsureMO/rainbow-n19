@@ -27,17 +27,17 @@ DocsCollector.collect('java.lang.ProcessBuilder$Redirect', [
 			[/* block */ 'b', [
 				[/* text */ 't', `a redirection to read from a file, created by an invocation of
      `],
-				[/* reference */ 'r', `Redirect.from(File)`]
+				[/* reference */ 'r', `#from(java.io.File)`, `Redirect.from(File)`]
 			]],
 			[/* block */ 'b', [
 				[/* text */ 't', `a redirection to write to a file,  created by an invocation of
      `],
-				[/* reference */ 'r', `Redirect.to(File)`]
+				[/* reference */ 'r', `#to(java.io.File)`, `Redirect.to(File)`]
 			]],
 			[/* block */ 'b', [
 				[/* text */ 't', `a redirection to append to a file, created by an invocation of
      `],
-				[/* reference */ 'r', `Redirect.appendTo(File)`]
+				[/* reference */ 'r', `#appendTo(java.io.File)`, `Redirect.appendTo(File)`]
 			]]
 		]],
 		[/* block */ 'b', [

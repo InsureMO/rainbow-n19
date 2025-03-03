@@ -87,13 +87,13 @@ DocsCollector.collect('java.nio.Buffer', [
 			[/* text */ 't', `mark`],
 			[/* text */ 't', ` is the index to which its position will be reset
  when the `],
-			[/* reference */ 'r', `reset`],
+			[/* reference */ 'r', `#reset()`, `reset`],
 			[/* text */ 't', ` method is invoked.  The mark is not always
  defined, but when it is defined it is never negative and is never greater
  than the position.  If the mark is defined then it is discarded when the
  position or the limit is adjusted to a value smaller than the mark.  If the
  mark is not defined then invoking the `],
-			[/* reference */ 'r', `reset`],
+			[/* reference */ 'r', `#reset()`, `reset`],
 			[/* text */ 't', ` method causes an
  `],
 			[/* reference */ 'r', `java.nio.InvalidMarkException`],
@@ -136,7 +136,7 @@ DocsCollector.collect('java.nio.Buffer', [
 		[/* list */ 'l', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
-					[/* reference */ 'r', `clear()`],
+					[/* reference */ 'r', `#clear()`, `clear()`],
 					[/* text */ 't', ` makes a buffer ready for a new sequence of
    channel-read or relative `],
 					[/* text */ 't', `put`],
@@ -146,7 +146,7 @@ DocsCollector.collect('java.nio.Buffer', [
 			]],
 			[/* block */ 'b', [
 				[/* block */ 'b', [
-					[/* reference */ 'r', `flip()`],
+					[/* reference */ 'r', `#flip()`, `flip()`],
 					[/* text */ 't', ` makes a buffer ready for a new sequence of
    channel-write or relative `],
 					[/* text */ 't', `get`],
@@ -156,7 +156,7 @@ DocsCollector.collect('java.nio.Buffer', [
 			]],
 			[/* block */ 'b', [
 				[/* block */ 'b', [
-					[/* reference */ 'r', `rewind()`],
+					[/* reference */ 'r', `#rewind()`, `rewind()`],
 					[/* text */ 't', ` makes a buffer ready for re-reading the data that
    it already contains: It leaves the limit unchanged and sets the position
    to zero.  `]
@@ -165,9 +165,9 @@ DocsCollector.collect('java.nio.Buffer', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The `],
-					[/* reference */ 'r', `slice()`],
+					[/* reference */ 'r', `#slice()`, `slice()`],
 					[/* text */ 't', ` and `],
-					[/* reference */ 'r', `slice(index,length)`],
+					[/* reference */ 'r', `#slice(int,int)`, `slice(index,length)`],
 					[/* text */ 't', `
    methods create a subsequence of a buffer: They leave the limit and the
    position unchanged. `]
@@ -175,7 +175,7 @@ DocsCollector.collect('java.nio.Buffer', [
 			]],
 			[/* block */ 'b', [
 				[/* block */ 'b', [
-					[/* reference */ 'r', `duplicate()`],
+					[/* reference */ 'r', `#duplicate()`, `duplicate()`],
 					[/* text */ 't', ` creates a shallow copy of a buffer: It leaves
    the limit and the position unchanged. `]
 				]]
@@ -195,7 +195,7 @@ DocsCollector.collect('java.nio.Buffer', [
  content to be changed, but its mark, position, and limit values are mutable.
  Whether or not a buffer is read-only may be determined by invoking its
  `],
-			[/* reference */ 'r', `isReadOnly`],
+			[/* reference */ 'r', `#isReadOnly()`, `isReadOnly`],
 			[/* text */ 't', ` method.
 
 
@@ -341,7 +341,7 @@ DocsCollector.collect('java.nio.Buffer', [
 			[/* method description */
 				[/* text */ 't', `Tells whether or not this buffer is
  `],
-				[/* external link */ 'a', `ByteBuffer.html#direct`, `direct`],
+				[/* reference */ 'r', `.ByteBuffer#direct`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
@@ -361,10 +361,10 @@ DocsCollector.collect('java.nio.Buffer', [
 					[/* text */ 't', ` If this method returns `],
 					[/* inline code block */ 'i', `true`],
 					[/* text */ 't', ` then the `],
-					[/* reference */ 'r', `array`],
+					[/* reference */ 'r', `#array()`, `array`],
 					[/* text */ 't', `
  and `],
-					[/* reference */ 'r', `arrayOffset`],
+					[/* reference */ 'r', `#arrayOffset()`, `arrayOffset`],
 					[/* text */ 't', ` methods may safely be invoked.
  `]
 				]]
@@ -380,7 +380,7 @@ DocsCollector.collect('java.nio.Buffer', [
 		[/* method */ 'array()', [
 			[/* method description */
 				[/* text */ 't', `Returns the array that backs this
- buffer&nbsp;&nbsp;`],
+ buffer  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -396,7 +396,7 @@ DocsCollector.collect('java.nio.Buffer', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Invoke the `],
-					[/* reference */ 'r', `hasArray`],
+					[/* reference */ 'r', `#hasArray()`, `hasArray`],
 					[/* text */ 't', ` method before invoking this
  method in order to ensure that this buffer has an accessible backing
  array.  `]
@@ -418,7 +418,7 @@ DocsCollector.collect('java.nio.Buffer', [
 		[/* method */ 'arrayOffset()', [
 			[/* method description */
 				[/* text */ 't', `Returns the offset within this buffer's backing array of the first
- element of the buffer&nbsp;&nbsp;`],
+ element of the buffer  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.
 
@@ -429,7 +429,7 @@ DocsCollector.collect('java.nio.Buffer', [
 					[/* text */ 't', `
  corresponds to array index `],
 					[/* text */ 't', `p`],
-					[/* text */ 't', `&nbsp;+&nbsp;`],
+					[/* text */ 't', ` + `],
 					[/* inline code block */ 'i', `arrayOffset()`],
 					[/* text */ 't', `.
 
@@ -437,7 +437,7 @@ DocsCollector.collect('java.nio.Buffer', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` Invoke the `],
-					[/* reference */ 'r', `hasArray`],
+					[/* reference */ 'r', `#hasArray()`, `hasArray`],
 					[/* text */ 't', ` method before invoking this
  method in order to ensure that this buffer has an accessible backing
  array.  `]
@@ -522,7 +522,7 @@ DocsCollector.collect('java.nio.Buffer', [
 				[/* block */ 'b', ''],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method is often used in conjunction with the `],
-					[/* external link */ 'a', `ByteBuffer.html#compact()`, `compact`],
+					[/* reference */ 'r', `.ByteBuffer#compact()`],
 					[/* text */ 't', ` method when transferring data from
  one place to another.  `]
 				]]
@@ -617,7 +617,7 @@ DocsCollector.collect('java.nio.Buffer', [
 					[/* text */ 't', `The position in this buffer at which the content of the new
           buffer will start; must be non-negative and no larger than
           `],
-					[/* reference */ 'r', `limit()`]
+					[/* reference */ 'r', `#limit()`, `limit()`]
 				]],
 				[/* parameter */ 'length', [/* parameter description */
 					[/* text */ 't', `The number of elements the new buffer will contain; must be

@@ -23,7 +23,7 @@ DocsCollector.collect('java.util.Iterator', [
 		[/* block */ 'b', [
 			[/* text */ 't', `This interface is a member of the
  `],
-			[/* external link */ 'a', `../../../java.base/java/util/package-summary.html#CollectionsFramework`, `Java Collections Framework`],
+			[/* text */ 't', `Java Collections Framework`],
 			[/* text */ 't', `.`]
 		]]
 	],
@@ -35,7 +35,7 @@ DocsCollector.collect('java.util.Iterator', [
 				[/* text */ 't', `Removes from the underlying collection the last element returned
  by this iterator (optional operation).  This method can be called
  only once per call to `],
-				[/* reference */ 'r', `next()`],
+				[/* reference */ 'r', `#next()`, `next()`],
 				[/* text */ 't', `.
  `],
 				[/* block */ 'b', `
@@ -48,7 +48,7 @@ DocsCollector.collect('java.util.Iterator', [
 					[/* text */ 't', `
  The behavior of an iterator is unspecified if this method is called
  after a call to the `],
-					[/* reference */ 'r', `forEachRemaining`],
+					[/* reference */ 'r', `#forEachRemaining(java.util.function.Consumer)`, `forEachRemaining`],
 					[/* text */ 't', ` method.`]
 				]]
 			],
@@ -86,7 +86,7 @@ DocsCollector.collect('java.util.Iterator', [
 					[/* text */ 't', `
  The behavior of an iterator is unspecified if the action modifies the
  collection in any way (even by calling the `],
-					[/* reference */ 'r', `remove`],
+					[/* reference */ 'r', `#remove()`, `remove`],
 					[/* text */ 't', ` method
  or other mutator methods of `],
 					[/* inline code block */ 'i', `Iterator`],
@@ -118,7 +118,7 @@ DocsCollector.collect('java.util.Iterator', [
  (In other words, returns `],
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if `],
-				[/* reference */ 'r', `next()`],
+				[/* reference */ 'r', `#next()`, `next()`],
 				[/* text */ 't', ` would
  return an element rather than throwing an exception.)`]
 			],

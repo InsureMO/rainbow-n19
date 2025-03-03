@@ -33,25 +33,25 @@ DocsCollector.collect('java.util.ListIterator', [
  `],
 		[/* text */ 't', `
  Note that the `],
-		[/* reference */ 'r', `remove()`],
+		[/* reference */ 'r', `#remove()`, `remove()`],
 		[/* text */ 't', ` and `],
-		[/* reference */ 'r', `set(Object)`],
+		[/* reference */ 'r', `#set(E)`, `set(Object)`],
 		[/* text */ 't', ` methods are
  `],
 		[/* text */ 't', `not`],
 		[/* text */ 't', ` defined in terms of the cursor position;  they are defined to
  operate on the last element returned by a call to `],
-		[/* reference */ 'r', `next()`],
+		[/* reference */ 'r', `#next()`, `next()`],
 		[/* text */ 't', ` or
  `],
-		[/* reference */ 'r', `previous()`],
+		[/* reference */ 'r', `#previous()`, `previous()`],
 		[/* text */ 't', `.
 
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `This interface is a member of the
  `],
-			[/* external link */ 'a', `../../../java.base/java/util/package-summary.html#CollectionsFramework`, `Java Collections Framework`],
+			[/* text */ 't', `Java Collections Framework`],
 			[/* text */ 't', `.`]
 		]]
 	],
@@ -63,10 +63,10 @@ DocsCollector.collect('java.util.ListIterator', [
 				[/* text */ 't', `Inserts the specified element into the list (optional operation).
  The element is inserted immediately before the element that
  would be returned by `],
-				[/* reference */ 'r', `next()`],
+				[/* reference */ 'r', `#next()`, `next()`],
 				[/* text */ 't', `, if any, and after the element
  that would be returned by `],
-				[/* reference */ 'r', `previous()`],
+				[/* reference */ 'r', `#previous()`, `previous()`],
 				[/* text */ 't', `, if any.  (If the
  list contains no elements, the new element becomes the sole element
  on the list.)  The new element is inserted before the implicit
@@ -109,9 +109,9 @@ DocsCollector.collect('java.util.ListIterator', [
 		[/* method */ 'remove()', [
 			[/* method description */
 				[/* text */ 't', `Removes from the list the last element that was returned by `],
-				[/* reference */ 'r', `next()`],
+				[/* reference */ 'r', `#next()`, `next()`],
 				[/* text */ 't', ` or `],
-				[/* reference */ 'r', `previous()`],
+				[/* reference */ 'r', `#previous()`, `previous()`],
 				[/* text */ 't', ` (optional operation).  This call can
  only be made once per call to `],
 				[/* inline code block */ 'i', `next`],
@@ -119,7 +119,7 @@ DocsCollector.collect('java.util.ListIterator', [
 				[/* inline code block */ 'i', `previous`],
 				[/* text */ 't', `.
  It can be made only if `],
-				[/* reference */ 'r', `add(E)`],
+				[/* reference */ 'r', `#add(E)`, `add(E)`],
 				[/* text */ 't', ` has not been
  called after the last call to `],
 				[/* inline code block */ 'i', `next`],
@@ -164,7 +164,7 @@ DocsCollector.collect('java.util.ListIterator', [
  returns `],
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if `],
-				[/* reference */ 'r', `next()`],
+				[/* reference */ 'r', `#next()`, `next()`],
 				[/* text */ 't', ` would return an element rather
  than throwing an exception.)`]
 			],
@@ -181,7 +181,7 @@ DocsCollector.collect('java.util.ListIterator', [
 				[/* text */ 't', `Returns the next element in the list and advances the cursor position.
  This method may be called repeatedly to iterate through the list,
  or intermixed with calls to `],
-				[/* reference */ 'r', `previous()`],
+				[/* reference */ 'r', `#previous()`, `previous()`],
 				[/* text */ 't', ` to go back and forth.
  (Note that alternating calls to `],
 				[/* inline code block */ 'i', `next`],
@@ -203,15 +203,15 @@ DocsCollector.collect('java.util.ListIterator', [
 		[/* method */ 'set(java.lang.Object)', [
 			[/* method description */
 				[/* text */ 't', `Replaces the last element returned by `],
-				[/* reference */ 'r', `next()`],
+				[/* reference */ 'r', `#next()`, `next()`],
 				[/* text */ 't', ` or
  `],
-				[/* reference */ 'r', `previous()`],
+				[/* reference */ 'r', `#previous()`, `previous()`],
 				[/* text */ 't', ` with the specified element (optional operation).
  This call can be made only if neither `],
-				[/* reference */ 'r', `remove()`],
+				[/* reference */ 'r', `#remove()`, `remove()`],
 				[/* text */ 't', ` nor `],
-				[/* reference */ 'r', `add(E)`],
+				[/* reference */ 'r', `#add(E)`, `add(E)`],
 				[/* text */ 't', ` have been called after the last call to `],
 				[/* inline code block */ 'i', `next`],
 				[/* text */ 't', ` or
@@ -267,7 +267,7 @@ DocsCollector.collect('java.util.ListIterator', [
 			[/* method description */
 				[/* text */ 't', `Returns the index of the element that would be returned by a
  subsequent call to `],
-				[/* reference */ 'r', `next()`],
+				[/* reference */ 'r', `#next()`, `next()`],
 				[/* text */ 't', `. (Returns list size if the list
  iterator is at the end of the list.)`]
 			],
@@ -285,7 +285,7 @@ DocsCollector.collect('java.util.ListIterator', [
 			[/* method description */
 				[/* text */ 't', `Returns the index of the element that would be returned by a
  subsequent call to `],
-				[/* reference */ 'r', `previous()`],
+				[/* reference */ 'r', `#previous()`, `previous()`],
 				[/* text */ 't', `. (Returns -1 if the list
  iterator is at the beginning of the list.)`]
 			],
@@ -308,7 +308,7 @@ DocsCollector.collect('java.util.ListIterator', [
  returns `],
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` if `],
-				[/* reference */ 'r', `previous()`],
+				[/* reference */ 'r', `#previous()`, `previous()`],
 				[/* text */ 't', ` would return an element
  rather than throwing an exception.)`]
 			],
@@ -326,7 +326,7 @@ DocsCollector.collect('java.util.ListIterator', [
  position backwards.  This method may be called repeatedly to
  iterate through the list backwards, or intermixed with calls to
  `],
-				[/* reference */ 'r', `next()`],
+				[/* reference */ 'r', `#next()`, `next()`],
 				[/* text */ 't', ` to go back and forth.  (Note that alternating calls
  to `],
 				[/* inline code block */ 'i', `next`],

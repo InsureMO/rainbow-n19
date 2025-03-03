@@ -65,7 +65,7 @@ DocsCollector.collect('java.util.LinkedHashMap', [
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `A special `],
-			[/* reference */ 'r', `constructor`],
+			[/* reference */ 'r', `#%3Cinit%3E(int,float,boolean)`, `constructor`],
 			[/* text */ 't', ` is
  provided to create a linked hash map whose order of iteration is the order
  in which its entries were last accessed, from least-recently accessed to
@@ -112,7 +112,7 @@ DocsCollector.collect('java.util.LinkedHashMap', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `The `],
-			[/* reference */ 'r', `removeEldestEntry(Map.Entry)`],
+			[/* reference */ 'r', `#removeEldestEntry(java.util.Map.Entry)`, `removeEldestEntry(Map.Entry)`],
 			[/* text */ 't', ` method may be overridden to
  impose a policy for removing stale mappings automatically when new mappings
  are added to the map.
@@ -184,7 +184,7 @@ DocsCollector.collect('java.util.LinkedHashMap', [
 
  If no such object exists, the map should be "wrapped" using the
  `],
-			[/* external link */ 'a', `Collections.html#synchronizedMap(java.util.Map)`, `Collections.synchronizedMap`],
+			[/* reference */ 'r', `.Collections#synchronizedMap(java.util.Map)`],
 			[/* text */ 't', `
  method.  This is best done at creation time, to prevent accidental
  unsynchronized access to the map:`]
@@ -237,12 +237,12 @@ DocsCollector.collect('java.util.LinkedHashMap', [
 			[/* text */ 't', `The spliterators returned by the spliterator method of the collections
  returned by all of this class's collection view methods are
  `],
-			[/* external link */ 'a', `Spliterator.html#binding`, `late-binding`],
+			[/* reference */ 'r', `.Spliterator#binding`],
 			[/* text */ 't', `,
  `],
 			[/* text */ 't', `fail-fast`],
 			[/* text */ 't', `, and additionally report `],
-			[/* external link */ 'a', `Spliterator.html#ORDERED`, `Spliterator.ORDERED`],
+			[/* reference */ 'r', `.Spliterator#ORDERED`],
 			[/* text */ 't', `.
 
  `]
@@ -250,7 +250,7 @@ DocsCollector.collect('java.util.LinkedHashMap', [
 		[/* block */ 'b', [
 			[/* text */ 't', `This class is a member of the
  `],
-			[/* external link */ 'a', `../../../java.base/java/util/package-summary.html#CollectionsFramework`, `Java Collections Framework`],
+			[/* text */ 't', `Java Collections Framework`],
 			[/* text */ 't', `.`]
 		]]
 	],
@@ -396,7 +396,7 @@ DocsCollector.collect('java.util.LinkedHashMap', [
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', `.
  The `],
-					[/* external link */ 'a', `HashMap.html#containsKey(java.lang.Object)`, `containsKey`],
+					[/* reference */ 'r', `.HashMap#containsKey(java.lang.Object)`],
 					[/* text */ 't', ` operation may be used to
  distinguish these two cases.`]
 				]]
@@ -606,7 +606,7 @@ DocsCollector.collect('java.util.LinkedHashMap', [
 				[/* code block */ 'c', `     private static final int MAX_ENTRIES = 100;
 
      protected boolean removeEldestEntry(Map.Entry eldest) {
-        return size() &gt; MAX_ENTRIES;
+        return size() > MAX_ENTRIES;
      }
  `],
 				[/* block */ 'b', ''],

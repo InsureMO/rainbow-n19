@@ -13,26 +13,26 @@ DocsCollector.collect('java.nio.channels.SeekableByteChannel', [
 			[/* text */ 't', ` A seekable byte channel is connected to an entity, typically a file,
  that contains a variable-length sequence of bytes that can be read and
  written. The current position can be `],
-			[/* reference */ 'r', `queried`],
+			[/* reference */ 'r', `#position()`, `queried`],
 			[/* text */ 't', ` and
  `],
-			[/* reference */ 'r', `modified`],
+			[/* reference */ 'r', `#position(long)`, `modified`],
 			[/* text */ 't', `. The channel also provides access to
  the current `],
 			[/* text */ 't', `size`],
 			[/* text */ 't', ` of the entity to which the channel is connected. The
  size increases when bytes are written beyond its current size; the size
  decreases when it is `],
-			[/* reference */ 'r', `truncated`],
+			[/* reference */ 'r', `#truncate(long)`, `truncated`],
 			[/* text */ 't', `.
 
  `]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The `],
-			[/* reference */ 'r', `position`],
+			[/* reference */ 'r', `#position(long)`, `position`],
 			[/* text */ 't', ` and `],
-			[/* reference */ 'r', `truncate`],
+			[/* reference */ 'r', `#truncate(long)`, `truncate`],
 			[/* text */ 't', ` methods
  which do not otherwise have a value to return are specified to return the
  channel upon which they are invoked. This allows method invocations to be
@@ -79,7 +79,7 @@ DocsCollector.collect('java.nio.channels.SeekableByteChannel', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` Setting the channel's position is not recommended when connected to
  an entity, typically a file, that is opened with the `],
-					[/* external link */ 'a', `../file/StandardOpenOption.html#APPEND`, `APPEND`],
+					[/* reference */ 'r', `java.StandardOpenOption#APPEND`],
 					[/* text */ 't', ` option. When opened for
  append, the position is first advanced to the end before writing.`]
 				]]
@@ -131,7 +131,7 @@ DocsCollector.collect('java.nio.channels.SeekableByteChannel', [
 					[/* text */ 't', ` Bytes are written starting at this channel's current position, unless
  the channel is connected to an entity such as a file that is opened with
  the `],
-					[/* external link */ 'a', `../file/StandardOpenOption.html#APPEND`, `APPEND`],
+					[/* reference */ 'r', `java.StandardOpenOption#APPEND`],
 					[/* text */ 't', ` option, in
  which case the position is first advanced to the end. The entity to which
  the channel is connected is grown, if necessary, to accommodate the
@@ -228,7 +228,7 @@ DocsCollector.collect('java.nio.channels.SeekableByteChannel', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` An implementation of this interface may prohibit truncation when
  connected to an entity, typically a file, opened with the `],
-					[/* external link */ 'a', `../file/StandardOpenOption.html#APPEND`, `APPEND`],
+					[/* reference */ 'r', `java.StandardOpenOption#APPEND`],
 					[/* text */ 't', ` option.`]
 				]]
 			],

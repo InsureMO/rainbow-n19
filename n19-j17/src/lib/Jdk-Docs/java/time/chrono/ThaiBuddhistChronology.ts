@@ -63,7 +63,7 @@ DocsCollector.collect('java.time.chrono.ThaiBuddhistChronology', [
  It can be used to lookup the `],
 					[/* inline code block */ 'i', `Chronology`],
 					[/* text */ 't', ` using `],
-					[/* external link */ 'a', `Chronology.html#of(java.lang.String)`, `Chronology.of(String)`],
+					[/* reference */ 'r', `.Chronology#of(java.lang.String)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -118,11 +118,11 @@ DocsCollector.collect('java.time.chrono.ThaiBuddhistChronology', [
  It can be used to lookup the `],
 					[/* inline code block */ 'i', `Chronology`],
 					[/* text */ 't', ` using `],
-					[/* external link */ 'a', `Chronology.html#of(java.lang.String)`, `Chronology.of(String)`],
+					[/* reference */ 'r', `.Chronology#of(java.lang.String)`],
 					[/* text */ 't', `.
  It can also be used as part of a locale, accessible via
  `],
-					[/* external link */ 'a', `../../util/Locale.html#getUnicodeLocaleType(java.lang.String)`, `Locale.getUnicodeLocaleType(String)`],
+					[/* reference */ 'r', `java.time.Locale#getUnicodeLocaleType(java.lang.String)`],
 					[/* text */ 't', ` with the key 'ca'.`]
 				]]
 			],
@@ -204,7 +204,7 @@ DocsCollector.collect('java.time.chrono.ThaiBuddhistChronology', [
 					[/* block */ 'b', [
 						[/* text */ 't', `
  The conversion typically uses the `],
-						[/* external link */ 'a', `../temporal/ChronoField.html#EPOCH_DAY`, `EPOCH_DAY`],
+						[/* reference */ 'r', `java.ChronoField#EPOCH_DAY`],
 						[/* text */ 't', `
  field, which is standardized across calendar systems.
  `]
@@ -365,7 +365,7 @@ DocsCollector.collect('java.time.chrono.ThaiBuddhistChronology', [
 					[/* block */ 'b', [
 						[/* text */ 't', `
  This will query the `],
-						[/* external link */ 'a', `../Clock.html#systemDefaultZone()`, `system clock`],
+						[/* reference */ 'r', `java.Clock#systemDefaultZone()`],
 						[/* text */ 't', ` in the default
  time-zone to obtain the current date.
  `]
@@ -389,7 +389,7 @@ DocsCollector.collect('java.time.chrono.ThaiBuddhistChronology', [
 					[/* block */ 'b', [
 						[/* text */ 't', `
  This will query the `],
-						[/* external link */ 'a', `../Clock.html#system(java.time.ZoneId)`, `system clock`],
+						[/* reference */ 'r', `java.Clock#system(java.time.ZoneId)`],
 						[/* text */ 't', ` to obtain the current date.
  Specifying the time-zone avoids dependence on the default time-zone.
  `]
@@ -817,12 +817,12 @@ DocsCollector.collect('java.time.chrono.ThaiBuddhistChronology', [
 						[/* text */ 't', `
  The default implementation is suitable for most calendar systems.
  If `],
-						[/* external link */ 'a', `../temporal/ChronoField.html#YEAR_OF_ERA`, `ChronoField.YEAR_OF_ERA`],
+						[/* reference */ 'r', `java.ChronoField#YEAR_OF_ERA`],
 						[/* text */ 't', ` is found without an `],
-						[/* external link */ 'a', `../temporal/ChronoField.html#ERA`, `ChronoField.ERA`],
+						[/* reference */ 'r', `java.ChronoField#ERA`],
 						[/* text */ 't', `
  then the last era in `],
-						[/* external link */ 'a', `Chronology.html#eras()`, `Chronology.eras()`],
+						[/* reference */ 'r', `.Chronology#eras()`],
 						[/* text */ 't', ` is used.
  The implementation assumes a 7 day week, that the first day-of-month
  has the value 1, that first day-of-year has the value 1, and that the

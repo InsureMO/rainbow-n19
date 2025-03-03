@@ -263,32 +263,6 @@ DocsCollector.collect('java.time.zone.ZoneOffsetTransition', [
 				[/* text */ 't', `true if the offset is valid during the transition`]
 			]
 		]],
-		[/* method */ 'getInstant()', [
-			[/* method description */
-				[/* text */ 't', `Gets the transition instant.
- `],
-				[/* block */ 'b', `
- This is the instant of the discontinuity, which is defined as the first
- instant that the 'after' offset applies.
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `
- The methods `],
-					[/* reference */ 'r', `getInstant()`],
-					[/* text */ 't', `, `],
-					[/* reference */ 'r', `getDateTimeBefore()`],
-					[/* text */ 't', ` and `],
-					[/* reference */ 'r', `getDateTimeAfter()`],
-					[/* text */ 't', `
- all represent the same instant.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the transition instant, not null`]
-			]
-		]],
 		[/* method */ 'isOverlap()', [
 			[/* method description */
 				[/* text */ 't', `Does this transition represent an overlap in the local time-line.
@@ -308,6 +282,32 @@ DocsCollector.collect('java.time.zone.ZoneOffsetTransition', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `true if this transition is an overlap, false if it is a gap`]
+			]
+		]],
+		[/* method */ 'getInstant()', [
+			[/* method description */
+				[/* text */ 't', `Gets the transition instant.
+ `],
+				[/* block */ 'b', `
+ This is the instant of the discontinuity, which is defined as the first
+ instant that the 'after' offset applies.
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `
+ The methods `],
+					[/* reference */ 'r', `#getInstant()`, `getInstant()`],
+					[/* text */ 't', `, `],
+					[/* reference */ 'r', `#getDateTimeBefore()`, `getDateTimeBefore()`],
+					[/* text */ 't', ` and `],
+					[/* reference */ 'r', `#getDateTimeAfter()`, `getDateTimeAfter()`],
+					[/* text */ 't', `
+ all represent the same instant.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the transition instant, not null`]
 			]
 		]]
 	],

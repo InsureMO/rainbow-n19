@@ -11,11 +11,11 @@ DocsCollector.collect('java.lang.module.ResolvedModule', [
 		[/* block */ 'b', [
 			[/* inline code block */ 'i', `ResolvedModule`],
 			[/* text */ 't', ` defines the `],
-			[/* reference */ 'r', `configuration`],
+			[/* reference */ 'r', `#configuration()`, `configuration`],
 			[/* text */ 't', `
  method to get the configuration that the resolved module is in. It defines
  the `],
-			[/* reference */ 'r', `reference`],
+			[/* reference */ 'r', `#reference()`, `reference`],
 			[/* text */ 't', ` method to get the reference to the
  module's content.`]
 		]]
@@ -58,7 +58,7 @@ DocsCollector.collect('java.lang.module.ResolvedModule', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method satisfies the general contract of the `],
-					[/* external link */ 'a', `../Object.html#equals(java.lang.Object)`, `Object.equals`],
+					[/* reference */ 'r', `java.Object#equals(java.lang.Object)`],
 					[/* text */ 't', ` method. `]
 				]]
 			],
@@ -92,7 +92,7 @@ DocsCollector.collect('java.lang.module.ResolvedModule', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` The hash code is based upon the components of the resolved module
  and satisfies the general contract of the `],
-					[/* external link */ 'a', `../Object.html#hashCode()`, `Object.hashCode`],
+					[/* reference */ 'r', `java.Object#hashCode()`],
 					[/* text */ 't', ` method. `]
 				]]
 			],

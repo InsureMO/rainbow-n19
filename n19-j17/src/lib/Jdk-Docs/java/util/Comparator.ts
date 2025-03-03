@@ -8,9 +8,9 @@ DocsCollector.collect('java.util.Comparator', [
 		[/* text */ 't', ` on
  some collection of objects.  Comparators can be passed to a sort
  method (such as `],
-		[/* external link */ 'a', `Collections.html#sort(java.util.List,java.util.Comparator)`, `Collections.sort`],
+		[/* reference */ 'r', `.Collections#sort(java.util.List,java.util.Comparator)`],
 		[/* text */ 't', ` or `],
-		[/* external link */ 'a', `Arrays.html#sort(T%5B%5D,java.util.Comparator)`, `Arrays.sort`],
+		[/* reference */ 'r', `.Arrays#sort(T[],java.util.Comparator)`],
 		[/* text */ 't', `) to allow precise control over the sort order.
  Comparators can also be used to control the order of certain data
  structures (such as `],
@@ -96,7 +96,7 @@ DocsCollector.collect('java.util.Comparator', [
 			[/* text */ 't', ` are not equivalent from the tree set's perspective, even though
  this is contrary to the specification of the
  `],
-			[/* external link */ 'a', `Set.html#add(E)`, `Set.add`],
+			[/* reference */ 'r', `.Set#add(E)`],
 			[/* text */ 't', ` method.`]
 		]],
 		[/* block */ 'b', [
@@ -131,7 +131,7 @@ DocsCollector.collect('java.util.Comparator', [
 			[/* inline code block */ 'i', `S`],
 			[/* text */ 't', ` is:`]
 		]],
-		[/* code block */ 'c', `       {(x, y) such that c.compare(x, y) &lt;= 0}.
+		[/* code block */ 'c', `       {(x, y) such that c.compare(x, y) <= 0}.
  `],
 		[/* text */ 't', ` The `],
 		[/* text */ 't', `quotient`],
@@ -162,7 +162,7 @@ DocsCollector.collect('java.util.Comparator', [
  equals`],
 		[/* text */ 't', `, we mean that the quotient for the ordering is the equivalence
  relation defined by the objects' `],
-		[/* external link */ 'a', `../lang/Object.html#equals(java.lang.Object)`, `equals(Object)`],
+		[/* reference */ 'r', `java.Object#equals(java.lang.Object)`],
 		[/* text */ 't', ` method(s):`],
 		[/* code block */ 'c', `     {(x, y) such that x.equals(y)}. `],
 		[/* text */ 't', `
@@ -190,7 +190,7 @@ DocsCollector.collect('java.util.Comparator', [
 		[/* block */ 'b', [
 			[/* text */ 't', `This interface is a member of the
  `],
-			[/* external link */ 'a', `../../../java.base/java/util/package-summary.html#CollectionsFramework`, `Java Collections Framework`],
+			[/* text */ 't', `Java Collections Framework`],
 			[/* text */ 't', `.`]
 		]]
 	],
@@ -202,7 +202,7 @@ DocsCollector.collect('java.util.Comparator', [
 				[/* text */ 't', `Indicates whether some other object is "equal to"
  this comparator.  This method must obey the general contract of
  `],
-				[/* external link */ 'a', `../lang/Object.html#equals(java.lang.Object)`, `Object.equals(Object)`],
+				[/* reference */ 'r', `java.Object#equals(java.lang.Object)`],
 				[/* text */ 't', `.  Additionally, this method can
  return `],
 				[/* inline code block */ 'i', `true`],
@@ -213,7 +213,7 @@ DocsCollector.collect('java.util.Comparator', [
 				[/* inline code block */ 'i', `comp1.equals(comp2)`],
 				[/* text */ 't', ` implies that
  `],
-				[/* external link */ 'a', `../lang/Integer.html#signum(int)`, `signum`],
+				[/* reference */ 'r', `java.Integer#signum(int)`],
 				[/* inline code block */ 'i', `(comp1.compare(o1, o2))==signum(comp2.compare(o1, o2))`],
 				[/* text */ 't', ` for every object reference
  `],
@@ -258,7 +258,7 @@ DocsCollector.collect('java.util.Comparator', [
 					[/* text */ 't', `
 
  The implementor must ensure that `],
-					[/* external link */ 'a', `../lang/Integer.html#signum(int)`, `signum`],
+					[/* reference */ 'r', `java.Integer#signum(int)`],
 					[/* inline code block */ 'i', `(compare(x, y)) == -signum(compare(y, x))`],
 					[/* text */ 't', ` for
  all `],

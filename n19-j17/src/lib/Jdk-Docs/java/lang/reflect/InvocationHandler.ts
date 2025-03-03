@@ -243,7 +243,7 @@ DocsCollector.collect('java.lang.reflect.InvocationHandler', [
 				[/* inline code block */ 'i', `"m"`],
 				[/* text */ 't', ` is dispatched to
  the invocation handler's `],
-				[/* reference */ 'r', `invoke`],
+				[/* reference */ 'r', `#invoke(java.lang.Object,java.lang.reflect.Method,java.lang.Object%5B%5D)`, `invoke`],
 				[/* text */ 't', `
  method with the `],
 				[/* inline code block */ 'i', `Method`],
@@ -397,7 +397,7 @@ DocsCollector.collect('java.lang.reflect.InvocationHandler', [
 						[/* block */ 'b', [
 							[/* inline code block */ 'i', `proxy`],
 							[/* text */ 't', ` is not `],
-							[/* external link */ 'a', `Proxy.html#isProxyClass(java.lang.Class)`, `a proxy instance`],
+							[/* reference */ 'r', `.Proxy#isProxyClass(java.lang.Class)`],
 							[/* text */ 't', `; or`]
 						]],
 						[/* block */ 'b', [

@@ -23,7 +23,7 @@ DocsCollector.collect('java.nio.charset.CoderResult', [
    `],
 					[/* text */ 't', `UNDERFLOW`],
 					[/* text */ 't', `, whose `],
-					[/* reference */ 'r', `isUnderflow`],
+					[/* reference */ 'r', `#isUnderflow()`, `isUnderflow`],
 					[/* text */ 't', ` method
    returns `],
 					[/* inline code block */ 'i', `true`],
@@ -38,7 +38,7 @@ DocsCollector.collect('java.nio.charset.CoderResult', [
    unique result object `],
 					[/* text */ 't', `OVERFLOW`],
 					[/* text */ 't', `, whose `],
-					[/* reference */ 'r', `isOverflow`],
+					[/* reference */ 'r', `#isOverflow()`, `isOverflow`],
 					[/* text */ 't', ` method returns `],
 					[/* inline code block */ 'i', `true`],
 					[/* text */ 't', `.  `]
@@ -51,12 +51,12 @@ DocsCollector.collect('java.nio.charset.CoderResult', [
 					[/* text */ 't', ` is reported when a sequence of
    input units is not well-formed.  Such errors are described by instances of
    this class whose `],
-					[/* reference */ 'r', `isMalformed`],
+					[/* reference */ 'r', `#isMalformed()`, `isMalformed`],
 					[/* text */ 't', ` method returns
    `],
 					[/* inline code block */ 'i', `true`],
 					[/* text */ 't', ` and whose `],
-					[/* reference */ 'r', `length`],
+					[/* reference */ 'r', `#length()`, `length`],
 					[/* text */ 't', ` method returns the length
    of the malformed sequence.  There is one unique instance of this class for
    all malformed-input errors of a given length.  `]
@@ -70,12 +70,12 @@ DocsCollector.collect('java.nio.charset.CoderResult', [
    of input units denotes a character that cannot be represented in the
    output charset.  Such errors are described by instances of this class
    whose `],
-					[/* reference */ 'r', `isUnmappable`],
+					[/* reference */ 'r', `#isUnmappable()`, `isUnmappable`],
 					[/* text */ 't', ` method returns `],
 					[/* inline code block */ 'i', `true`],
 					[/* text */ 't', ` and
    whose `],
-					[/* reference */ 'r', `length`],
+					[/* reference */ 'r', `#length()`, `length`],
 					[/* text */ 't', ` method returns the length of the input
    sequence denoting the unmappable character.  There is one unique instance
    of this class for all unmappable-character errors of a given length.
@@ -86,7 +86,7 @@ DocsCollector.collect('java.nio.charset.CoderResult', [
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', ` For convenience, the `],
-			[/* reference */ 'r', `isError`],
+			[/* reference */ 'r', `#isError()`, `isError`],
 			[/* text */ 't', ` method returns `],
 			[/* inline code block */ 'i', `true`],
 			[/* text */ 't', `
@@ -117,7 +117,7 @@ DocsCollector.collect('java.nio.charset.CoderResult', [
 		[/* method */ 'length()', [
 			[/* method description */
 				[/* text */ 't', `Returns the length of the erroneous input described by this
- object&nbsp;&nbsp;`],
+ object  `],
 				[/* text */ 't', `(optional operation)`],
 				[/* text */ 't', `.`]
 			],
@@ -126,7 +126,7 @@ DocsCollector.collect('java.nio.charset.CoderResult', [
 				[/* throw */ 'java.lang.UnsupportedOperationException', [/* throw description */
 					[/* text */ 't', `If this object does not describe an error condition, that is,
           if the `],
-					[/* reference */ 'r', `isError`],
+					[/* reference */ 'r', `#isError()`, `isError`],
 					[/* text */ 't', ` does not return `],
 					[/* inline code block */ 'i', `true`]
 				]]

@@ -66,7 +66,7 @@ DocsCollector.collect('java.lang.ref.Reference', [
 			[/* method description */
 				[/* text */ 't', `Ensures that the object referenced by the given reference remains
  `],
-				[/* external link */ 'a', `package-summary.html#reachability`, `strongly reachable`],
+				[/* reference */ 'r', `.package-summary#reachability`],
 				[/* text */ 't', `,
  regardless of any prior actions of the program that might otherwise cause
  the object to become unreachable; thus, the referenced object is not
@@ -78,7 +78,7 @@ DocsCollector.collect('java.lang.ref.Reference', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method establishes an ordering for
  `],
-					[/* external link */ 'a', `package-summary.html#reachability`, `strong reachability`],
+					[/* reference */ 'r', `.package-summary#reachability`],
 					[/* text */ 't', `
  with respect to garbage collection.  It controls relations that are
  otherwise only implicit in a program -- the reachability conditions
@@ -169,7 +169,7 @@ DocsCollector.collect('java.lang.ref.Reference', [
 					[/* block */ 'b', [
 						[/* text */ 't', `the garbage collector has added this reference object to the queue
      or `],
-						[/* reference */ 'r', `enqueue()`],
+						[/* reference */ 'r', `#enqueue()`, `enqueue()`],
 						[/* text */ 't', ` is called; and
  `]
 					]],

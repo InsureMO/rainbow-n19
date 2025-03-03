@@ -16,7 +16,7 @@ DocsCollector.collect('java.nio.file.WatchService', [
 			[/* reference */ 'r', `java.nio.file.Watchable`],
 			[/* text */ 't', ` object is registered with a watch service by invoking
  its `],
-			[/* external link */ 'a', `Watchable.html#register(java.nio.file.WatchService,java.nio.file.WatchEvent.Kind%5B%5D,java.nio.file.WatchEvent.Modifier...)`, `register`],
+			[/* reference */ 'r', `.Watchable#register(java.nio.file.WatchService,java.nio.file.WatchEvent.Kind[],java.nio.file.WatchEvent.Modifier...)`],
 			[/* text */ 't', ` method, returning a `],
 			[/* reference */ 'r', `java.nio.file.WatchKey`],
 			[/* text */ 't', `
@@ -26,13 +26,13 @@ DocsCollector.collect('java.nio.file.WatchService', [
 			[/* text */ 't', `, and if not currently signalled, it is queued to
  the watch service so that it can be retrieved by consumers that invoke the
  `],
-			[/* reference */ 'r', `poll`],
+			[/* reference */ 'r', `#poll()`, `poll`],
 			[/* text */ 't', ` or `],
-			[/* reference */ 'r', `take`],
+			[/* reference */ 'r', `#take()`, `take`],
 			[/* text */ 't', ` methods to retrieve keys
  and process events. Once the events have been processed the consumer
  invokes the key's `],
-			[/* external link */ 'a', `WatchKey.html#reset()`, `reset`],
+			[/* reference */ 'r', `.WatchKey#reset()`],
 			[/* text */ 't', ` method to reset the key which
  allows the key to be signalled and re-queued with further events.
 
@@ -41,7 +41,7 @@ DocsCollector.collect('java.nio.file.WatchService', [
 		[/* block */ 'b', [
 			[/* text */ 't', ` Registration with a watch service is cancelled by invoking the key's
  `],
-			[/* external link */ 'a', `WatchKey.html#cancel()`, `cancel`],
+			[/* reference */ 'r', `.WatchKey#cancel()`],
 			[/* text */ 't', ` method. A key that is queued at the time that
  it is cancelled remains in the queue until it is retrieved. Depending on the
  object, a key may be cancelled automatically. For example, suppose a
@@ -62,7 +62,7 @@ DocsCollector.collect('java.nio.file.WatchService', [
 			[/* inline code block */ 'i', `reset`],
 			[/* text */ 't', `
  method is only invoked after its events have been processed. The `],
-			[/* reference */ 'r', `close`],
+			[/* reference */ 'r', `#close()`, `close`],
 			[/* text */ 't', ` method may be invoked at any time to close the service causing
  any threads waiting to retrieve keys, to throw `],
 			[/* inline code block */ 'i', `ClosedWatchServiceException`],
@@ -77,9 +77,9 @@ DocsCollector.collect('java.nio.file.WatchService', [
 			[/* text */ 't', `knowingly`],
 			[/* text */ 't', `
  discards events then it arranges for the key's `],
-			[/* external link */ 'a', `WatchKey.html#pollEvents()`, `pollEvents`],
+			[/* reference */ 'r', `.WatchKey#pollEvents()`],
 			[/* text */ 't', ` method to return an element with an event type of `],
-			[/* external link */ 'a', `StandardWatchEventKinds.html#OVERFLOW`, `OVERFLOW`],
+			[/* reference */ 'r', `.StandardWatchEventKinds#OVERFLOW`],
 			[/* text */ 't', `. This event can be used by the
  consumer as a trigger to re-examine the state of the object.
 
@@ -106,7 +106,7 @@ DocsCollector.collect('java.nio.file.WatchService', [
  are detected, their timeliness, and whether their ordering is preserved are
  highly implementation specific. For example, when a file in a watched
  directory is modified then it may result in a single `],
-			[/* external link */ 'a', `StandardWatchEventKinds.html#ENTRY_MODIFY`, `ENTRY_MODIFY`],
+			[/* reference */ 'r', `.StandardWatchEventKinds#ENTRY_MODIFY`],
 			[/* text */ 't', ` event in some
  implementations but several events in other implementations. Short-lived
  files (meaning files that are deleted very quickly after they are created)
@@ -178,15 +178,15 @@ DocsCollector.collect('java.nio.file.WatchService', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` If a thread is currently blocked in the `],
-					[/* reference */ 'r', `take`],
+					[/* reference */ 'r', `#take()`, `take`],
 					[/* text */ 't', ` or `],
-					[/* reference */ 'r', `poll`],
+					[/* reference */ 'r', `#poll(long,java.util.concurrent.TimeUnit)`, `poll`],
 					[/* text */ 't', ` methods waiting for a key to be queued then
  it immediately receives a `],
 					[/* reference */ 'r', `java.nio.file.ClosedWatchServiceException`],
 					[/* text */ 't', `. Any
  valid keys associated with this watch service are `],
-					[/* external link */ 'a', `WatchKey.html#isValid()`, `invalidated`],
+					[/* reference */ 'r', `.WatchKey#isValid()`],
 					[/* text */ 't', `.
 
  `]

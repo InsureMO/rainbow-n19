@@ -120,7 +120,7 @@ DocsCollector.collect('java.lang.invoke.ConstantCallSite', [
 				[/* text */ 't', `Returns this call site's permanent target.
  Since that target will never change, this is a correct implementation
  of `],
-				[/* external link */ 'a', `CallSite.html#dynamicInvoker()`, `CallSite.dynamicInvoker`],
+				[/* reference */ 'r', `.CallSite#dynamicInvoker()`],
 				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,

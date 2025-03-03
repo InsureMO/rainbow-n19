@@ -175,7 +175,7 @@ DocsCollector.collect('java.lang.reflect.Executable', [
  value is an array of length 0.
 
  The difference between this method and `],
-				[/* external link */ 'a', `AnnotatedElement.html#getAnnotation(java.lang.Class)`, `AnnotatedElement.getAnnotation(Class)`],
+				[/* reference */ 'r', `.AnnotatedElement#getAnnotation(java.lang.Class)`],
 				[/* text */ 't', `
  is that this method detects if its argument is a `],
 				[/* text */ 't', `repeatable
@@ -344,7 +344,7 @@ DocsCollector.collect('java.lang.reflect.Executable', [
  constructors of some inner classes may have an implicitly
  declared parameter in addition to explicitly declared ones.
  Also note that as a `],
-				[/* external link */ 'a', `../../../../java.base/java/lang/reflect/package-summary.html#LanguageJvmModel`, `modeling artifact`],
+				[/* text */ 't', `modeling artifact`],
 				[/* text */ 't', `, the number of returned parameters can differ
  depending on whether or not generic information is present. If
  generic information is present, only parameters explicitly

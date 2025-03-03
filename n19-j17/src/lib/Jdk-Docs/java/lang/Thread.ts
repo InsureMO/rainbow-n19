@@ -73,7 +73,7 @@ DocsCollector.collect('java.lang.Thread', [
  larger than a stated value could be written as follows:
  `]
 		]],
-		[/* block */ 'b', `<hr>`],
+		[/* new line */ 'n'],
 		[/* block */ 'b', [
 			[/* code block */ 'c', `     class PrimeThread extends Thread {
          long minPrime;
@@ -83,12 +83,12 @@ DocsCollector.collect('java.lang.Thread', [
 
          public void run() {
              // compute primes larger than minPrime
-             &nbsp;.&nbsp;.&nbsp;.
+              . . .
          }
      }
  `]
 		]],
-		[/* block */ 'b', `<hr>`],
+		[/* new line */ 'n'],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `
  The following code would then create a thread and start it running:
@@ -115,7 +115,7 @@ DocsCollector.collect('java.lang.Thread', [
  style looks like the following:
  `]
 		]],
-		[/* block */ 'b', `<hr>`],
+		[/* new line */ 'n'],
 		[/* block */ 'b', [
 			[/* code block */ 'c', `     class PrimeRun implements Runnable {
          long minPrime;
@@ -125,12 +125,12 @@ DocsCollector.collect('java.lang.Thread', [
 
          public void run() {
              // compute primes larger than minPrime
-             &nbsp;.&nbsp;.&nbsp;.
+              . . .
          }
      }
  `]
 		]],
-		[/* block */ 'b', `<hr>`],
+		[/* new line */ 'n'],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', `
  The following code would then create a thread and start it running:
@@ -181,7 +181,7 @@ DocsCollector.collect('java.lang.Thread', [
 				[/* inline code block */ 'i', `Thread`],
 				[/* text */ 't', ` object. This constructor has the same
  effect as `],
-				[/* reference */ 'r', `Thread`],
+				[/* reference */ 'r', `#%3Cinit%3E(java.lang.ThreadGroup,java.lang.Runnable,java.lang.String)`, `Thread`],
 				[/* inline code block */ 'i', `(group, target, gname)`],
 				[/* text */ 't', ` ,where `],
 				[/* inline code block */ 'i', `gname`],
@@ -200,7 +200,7 @@ DocsCollector.collect('java.lang.Thread', [
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` and there is a security
          manager, the group is determined by `],
-					[/* external link */ 'a', `SecurityManager.html#getThreadGroup()`, `SecurityManager.getThreadGroup()`],
+					[/* reference */ 'r', `.SecurityManager#getThreadGroup()`],
 					[/* text */ 't', `.
          If there is not a security manager or `],
 					[/* inline code block */ 'i', `SecurityManager.getThreadGroup()`],
@@ -231,7 +231,7 @@ DocsCollector.collect('java.lang.Thread', [
 				[/* inline code block */ 'i', `Thread`],
 				[/* text */ 't', ` object. This constructor has the same
  effect as `],
-				[/* reference */ 'r', `Thread`],
+				[/* reference */ 'r', `#%3Cinit%3E(java.lang.ThreadGroup,java.lang.Runnable,java.lang.String)`, `Thread`],
 				[/* inline code block */ 'i', `(null, null, name)`],
 				[/* text */ 't', `.`]
 			],
@@ -248,7 +248,7 @@ DocsCollector.collect('java.lang.Thread', [
 				[/* inline code block */ 'i', `Thread`],
 				[/* text */ 't', ` object. This constructor has the same
  effect as `],
-				[/* reference */ 'r', `Thread`],
+				[/* reference */ 'r', `#%3Cinit%3E(java.lang.ThreadGroup,java.lang.Runnable,java.lang.String)`, `Thread`],
 				[/* inline code block */ 'i', `(group, null, name)`],
 				[/* text */ 't', `.`]
 			],
@@ -258,7 +258,7 @@ DocsCollector.collect('java.lang.Thread', [
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` and there is a security
          manager, the group is determined by `],
-					[/* external link */ 'a', `SecurityManager.html#getThreadGroup()`, `SecurityManager.getThreadGroup()`],
+					[/* reference */ 'r', `.SecurityManager#getThreadGroup()`],
 					[/* text */ 't', `.
          If there is not a security manager or `],
 					[/* inline code block */ 'i', `SecurityManager.getThreadGroup()`],
@@ -284,7 +284,7 @@ DocsCollector.collect('java.lang.Thread', [
 				[/* inline code block */ 'i', `Thread`],
 				[/* text */ 't', ` object. This constructor has the same
  effect as `],
-				[/* reference */ 'r', `Thread`],
+				[/* reference */ 'r', `#%3Cinit%3E(java.lang.ThreadGroup,java.lang.Runnable,java.lang.String)`, `Thread`],
 				[/* inline code block */ 'i', `(null, null, gname)`],
 				[/* text */ 't', `, where `],
 				[/* inline code block */ 'i', `gname`],
@@ -306,7 +306,7 @@ DocsCollector.collect('java.lang.Thread', [
 				[/* inline code block */ 'i', `Thread`],
 				[/* text */ 't', ` object. This constructor has the same
  effect as `],
-				[/* reference */ 'r', `Thread`],
+				[/* reference */ 'r', `#%3Cinit%3E(java.lang.ThreadGroup,java.lang.Runnable,java.lang.String)`, `Thread`],
 				[/* inline code block */ 'i', `(null, target, gname)`],
 				[/* text */ 't', `, where `],
 				[/* inline code block */ 'i', `gname`],
@@ -362,7 +362,7 @@ DocsCollector.collect('java.lang.Thread', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This constructor is identical to `],
-					[/* reference */ 'r', `Thread(ThreadGroup,Runnable,String,long)`],
+					[/* reference */ 'r', `#%3Cinit%3E(java.lang.ThreadGroup,java.lang.Runnable,java.lang.String,long)`, `Thread(ThreadGroup,Runnable,String,long)`],
 					[/* text */ 't', ` with the added ability to
  suppress, or not, the inheriting of initial values for inheritable
  thread-local variables from the constructing thread. This allows for
@@ -395,7 +395,7 @@ DocsCollector.collect('java.lang.Thread', [
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` and there is a security
          manager, the group is determined by `],
-					[/* external link */ 'a', `SecurityManager.html#getThreadGroup()`, `SecurityManager.getThreadGroup()`],
+					[/* reference */ 'r', `.SecurityManager#getThreadGroup()`],
 					[/* text */ 't', `.
          If there is not a security manager or `],
 					[/* inline code block */ 'i', `SecurityManager.getThreadGroup()`],
@@ -454,7 +454,7 @@ DocsCollector.collect('java.lang.Thread', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This constructor is identical to `],
-					[/* reference */ 'r', `Thread(ThreadGroup,Runnable,String)`],
+					[/* reference */ 'r', `#%3Cinit%3E(java.lang.ThreadGroup,java.lang.Runnable,java.lang.String)`, `Thread(ThreadGroup,Runnable,String)`],
 					[/* text */ 't', ` with the exception of the fact
  that it allows the thread stack size to be specified.  The stack size
  is the approximate number of bytes of address space that the virtual
@@ -527,7 +527,7 @@ DocsCollector.collect('java.lang.Thread', [
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` and there is a security
          manager, the group is determined by `],
-					[/* external link */ 'a', `SecurityManager.html#getThreadGroup()`, `SecurityManager.getThreadGroup()`],
+					[/* reference */ 'r', `.SecurityManager#getThreadGroup()`],
 					[/* text */ 't', `.
          If there is not a security manager or `],
 					[/* inline code block */ 'i', `SecurityManager.getThreadGroup()`],
@@ -577,7 +577,7 @@ DocsCollector.collect('java.lang.Thread', [
 				[/* block */ 'b', [
 					[/* text */ 't', `If there is a security manager, its
  `],
-					[/* external link */ 'a', `SecurityManager.html#checkAccess(java.lang.ThreadGroup)`, `checkAccess`],
+					[/* reference */ 'r', `.SecurityManager#checkAccess(java.lang.ThreadGroup)`],
 					[/* text */ 't', `
  method is invoked with the ThreadGroup as its argument.
 
@@ -604,7 +604,7 @@ DocsCollector.collect('java.lang.Thread', [
 					[/* text */ 't', `The priority of the newly created thread is set equal to the
  priority of the thread creating it, that is, the currently running
  thread. The method `],
-					[/* reference */ 'r', `setPriority`],
+					[/* reference */ 'r', `#setPriority(int)`, `setPriority`],
 					[/* text */ 't', ` may be
  used to change the priority to a new value.
 
@@ -614,7 +614,7 @@ DocsCollector.collect('java.lang.Thread', [
 					[/* text */ 't', `The newly created thread is initially marked as being a daemon
  thread if and only if the thread creating it is currently marked
  as a daemon thread. The method `],
-					[/* reference */ 'r', `setDaemon`],
+					[/* reference */ 'r', `#setDaemon(boolean)`, `setDaemon`],
 					[/* text */ 't', `
  may be used to change whether or not a thread is a daemon.`]
 				]]
@@ -625,7 +625,7 @@ DocsCollector.collect('java.lang.Thread', [
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` and there is a security
          manager, the group is determined by `],
-					[/* external link */ 'a', `SecurityManager.html#getThreadGroup()`, `SecurityManager.getThreadGroup()`],
+					[/* reference */ 'r', `.SecurityManager#getThreadGroup()`],
 					[/* text */ 't', `.
          If there is not a security manager or `],
 					[/* inline code block */ 'i', `SecurityManager.getThreadGroup()`],
@@ -659,7 +659,7 @@ DocsCollector.collect('java.lang.Thread', [
 				[/* inline code block */ 'i', `Thread`],
 				[/* text */ 't', ` object. This constructor has the same
  effect as `],
-				[/* reference */ 'r', `Thread`],
+				[/* reference */ 'r', `#%3Cinit%3E(java.lang.ThreadGroup,java.lang.Runnable,java.lang.String)`, `Thread`],
 				[/* inline code block */ 'i', `(null, target, name)`],
 				[/* text */ 't', `.`]
 			],
@@ -773,7 +773,7 @@ DocsCollector.collect('java.lang.Thread', [
 
  `],
 				[/* block */ 'b', [
-					[/* reference */ 'r', `join`],
+					[/* reference */ 'r', `#join(long)`, `join`],
 					[/* inline code block */ 'i', `(0)`]
 				]],
 				[/* block */ 'b', '']
@@ -965,7 +965,7 @@ DocsCollector.collect('java.lang.Thread', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `If a security manager is present, its `],
-					[/* external link */ 'a', `SecurityManager.html#checkPermission(java.security.Permission)`, `checkPermission`],
+					[/* reference */ 'r', `.SecurityManager#checkPermission(java.security.Permission)`],
 					[/* text */ 't', `
  method is invoked with a `],
 					[/* reference */ 'r', `java.lang.RuntimePermission`],
@@ -1150,7 +1150,7 @@ DocsCollector.collect('java.lang.Thread', [
 		[/* method */ 'setDaemon(boolean)', [
 			[/* method description */
 				[/* text */ 't', `Marks this thread as either a `],
-				[/* reference */ 'r', `daemon`],
+				[/* reference */ 'r', `#isDaemon()`, `daemon`],
 				[/* text */ 't', ` thread
  or a user thread. The Java Virtual Machine exits when the only
  threads running are all daemon threads.
@@ -1168,11 +1168,11 @@ DocsCollector.collect('java.lang.Thread', [
 			[/* throws */
 				[/* throw */ 'java.lang.IllegalThreadStateException', [/* throw description */
 					[/* text */ 't', `if this thread is `],
-					[/* reference */ 'r', `alive`]
+					[/* reference */ 'r', `#isAlive()`, `alive`]
 				]],
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if `],
-					[/* reference */ 'r', `checkAccess()`],
+					[/* reference */ 'r', `#checkAccess()`, `checkAccess()`],
 					[/* text */ 't', ` determines that the current
           thread cannot modify this thread`]
 				]]
@@ -1279,7 +1279,7 @@ DocsCollector.collect('java.lang.Thread', [
 				[/* text */ 't', ` is provided by the creator of the thread for use
  by code running in this thread when loading classes and resources.
  If not `],
-				[/* reference */ 'r', `set`],
+				[/* reference */ 'r', `#setContextClassLoader(java.lang.ClassLoader)`, `set`],
 				[/* text */ 't', `, the default is the
  `],
 				[/* inline code block */ 'i', `ClassLoader`],
@@ -1370,7 +1370,7 @@ DocsCollector.collect('java.lang.Thread', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` Unless the current thread is interrupting itself, which is
  always permitted, the `],
-					[/* reference */ 'r', `checkAccess`],
+					[/* reference */ 'r', `#checkAccess()`, `checkAccess`],
 					[/* text */ 't', ` method
  of this thread is invoked, which may cause a `],
 					[/* reference */ 'r', `java.lang.SecurityException`],
@@ -1380,24 +1380,24 @@ DocsCollector.collect('java.lang.Thread', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` If this thread is blocked in an invocation of the `],
-					[/* external link */ 'a', `Object.html#wait()`, `wait()`],
+					[/* reference */ 'r', `.Object#wait()`],
 					[/* text */ 't', `, `],
-					[/* external link */ 'a', `Object.html#wait(long)`, `wait(long)`],
+					[/* reference */ 'r', `.Object#wait(long)`],
 					[/* text */ 't', `, or `],
-					[/* external link */ 'a', `Object.html#wait(long,int)`, `wait(long, int)`],
+					[/* reference */ 'r', `.Object#wait(long,int)`],
 					[/* text */ 't', ` methods of the `],
 					[/* reference */ 'r', `java.lang.Object`],
 					[/* text */ 't', `
  class, or of the `],
-					[/* reference */ 'r', `join()`],
+					[/* reference */ 'r', `#join()`, `join()`],
 					[/* text */ 't', `, `],
-					[/* reference */ 'r', `join(long)`],
+					[/* reference */ 'r', `#join(long)`, `join(long)`],
 					[/* text */ 't', `, `],
-					[/* reference */ 'r', `join(long, int)`],
+					[/* reference */ 'r', `#join(long,int)`, `join(long, int)`],
 					[/* text */ 't', `, `],
-					[/* reference */ 'r', `sleep(long)`],
+					[/* reference */ 'r', `#sleep(long)`, `sleep(long)`],
 					[/* text */ 't', `, or `],
-					[/* reference */ 'r', `sleep(long, int)`],
+					[/* reference */ 'r', `#sleep(long,int)`, `sleep(long, int)`],
 					[/* text */ 't', `
  methods of this class, then its interrupt status will be cleared and it
  will receive an `],
@@ -1424,7 +1424,7 @@ DocsCollector.collect('java.lang.Thread', [
  then the thread's interrupt status will be set and it will return
  immediately from the selection operation, possibly with a non-zero
  value, just as if the selector's `],
-					[/* external link */ 'a', `../nio/channels/Selector.html#wakeup()`, `wakeup`],
+					[/* reference */ 'r', `java.Selector#wakeup()`],
 					[/* text */ 't', ` method were invoked.
 
  `]
@@ -1470,14 +1470,14 @@ DocsCollector.collect('java.lang.Thread', [
 				[/* text */ 't', `Copies into the specified array every active thread in the current
  thread's thread group and its subgroups. This method simply
  invokes the `],
-				[/* external link */ 'a', `ThreadGroup.html#enumerate(java.lang.Thread%5B%5D)`, `ThreadGroup.enumerate(Thread[])`],
+				[/* reference */ 'r', `.ThreadGroup#enumerate(java.lang.Thread[])`],
 				[/* text */ 't', `
  method of the current thread's thread group.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` An application might use the `],
-					[/* reference */ 'r', `activeCount`],
+					[/* reference */ 'r', `#activeCount()`, `activeCount`],
 					[/* text */ 't', `
  method to get an estimate of how big the array should be, however
  `],
@@ -1503,7 +1503,7 @@ DocsCollector.collect('java.lang.Thread', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `if `],
-					[/* external link */ 'a', `ThreadGroup.html#checkAccess()`, `ThreadGroup.checkAccess()`],
+					[/* reference */ 'r', `.ThreadGroup#checkAccess()`],
 					[/* text */ 't', ` determines that
           the current thread cannot access its thread group`]
 				]]
@@ -1620,7 +1620,7 @@ DocsCollector.collect('java.lang.Thread', [
  bugs due to race conditions. It may also be useful when designing
  concurrency control constructs such as the ones in the
  `],
-					[/* external link */ 'a', `../util/concurrent/locks/package-summary.html`, `java.util.concurrent.locks`],
+					[/* text */ 't', `java.util.concurrent.locks`],
 					[/* text */ 't', ` package.`]
 				]]
 			],
@@ -1818,7 +1818,7 @@ DocsCollector.collect('java.lang.Thread', [
 				[/* text */ 't', `.
  The returned stack traces are in the format specified for
  the `],
-				[/* reference */ 'r', `getStackTrace`],
+				[/* reference */ 'r', `#getStackTrace()`, `getStackTrace`],
 				[/* text */ 't', ` method.
 
  `],

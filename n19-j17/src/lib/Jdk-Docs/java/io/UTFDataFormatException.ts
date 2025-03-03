@@ -5,14 +5,14 @@ DocsCollector.collect('java.io.UTFDataFormatException', [
 	[/* class description */
 		[/* text */ 't', `Signals that a malformed string in
  `],
-		[/* external link */ 'a', `DataInput.html#modified-utf-8`, `modified UTF-8`],
+		[/* reference */ 'r', `.DataInput#modified-utf-8`],
 		[/* text */ 't', `
  format has been read in a data
  input stream or by any class that implements the data input
  interface.
  See the
  `],
-		[/* external link */ 'a', `DataInput.html#modified-utf-8`, `DataInput`],
+		[/* reference */ 'r', `.DataInput#modified-utf-8`],
 		[/* text */ 't', `
  class description for the format in
  which modified UTF-8 strings are read and written.`]
@@ -41,7 +41,7 @@ DocsCollector.collect('java.io.UTFDataFormatException', [
 				[/* text */ 't', ` can be
  retrieved later by the
  `],
-				[/* external link */ 'a', `../lang/Throwable.html#getMessage()`, `Throwable.getMessage()`],
+				[/* reference */ 'r', `java.Throwable#getMessage()`],
 				[/* text */ 't', `
  method of class `],
 				[/* inline code block */ 'i', `java.lang.Throwable`],

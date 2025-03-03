@@ -70,9 +70,9 @@ DocsCollector.collect('java.lang.SafeVarargs', [
  `],
 				[/* block */ 'b', [
 					[/* code block */ 'c', ` @SafeVarargs // Not actually safe!
- static void m(List&lt;String&gt;... stringLists) {
+ static void m(List<String>... stringLists) {
    Object[] array = stringLists;
-   List&lt;Integer&gt; tmpList = Arrays.asList(42);
+   List<Integer> tmpList = Arrays.asList(42);
    array[0] = tmpList; // Semantically invalid, but compiles without warnings
    String s = stringLists[0].get(0); // Oh no, ClassCastException at runtime!
  }

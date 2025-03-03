@@ -14,14 +14,14 @@ DocsCollector.collect('java.nio.file.WatchKey', [
 		[/* block */ 'b', [
 			[/* text */ 't', ` A watch key is created when a watchable object is registered with a watch
  service. The key remains `],
-			[/* reference */ 'r', `valid`],
+			[/* reference */ 'r', `#isValid()`, `valid`],
 			[/* text */ 't', ` until:
  `]
 		]],
 		[/* list */ 'l', [
 			[/* block */ 'b', [
 				[/* text */ 't', ` It is cancelled, explicitly, by invoking its `],
-				[/* reference */ 'r', `cancel`],
+				[/* reference */ 'r', `#cancel()`, `cancel`],
 				[/* text */ 't', `
      method, or`]
 			]],
@@ -29,7 +29,7 @@ DocsCollector.collect('java.nio.file.WatchKey', [
      or `],
 			[/* block */ 'b', [
 				[/* text */ 't', ` By `],
-				[/* external link */ 'a', `WatchService.html#close()`, `closing`],
+				[/* reference */ 'r', `.WatchService#close()`],
 				[/* text */ 't', ` the watch service. `]
 			]]
 		]],
@@ -42,18 +42,18 @@ DocsCollector.collect('java.nio.file.WatchKey', [
 			[/* text */ 't', `signalled`],
 			[/* text */ 't', `
  and queued so that it can be retrieved by invoking the watch service's `],
-			[/* external link */ 'a', `WatchService.html#poll()`, `poll`],
+			[/* reference */ 'r', `.WatchService#poll()`],
 			[/* text */ 't', ` or `],
-			[/* external link */ 'a', `WatchService.html#take()`, `take`],
+			[/* reference */ 'r', `.WatchService#take()`],
 			[/* text */ 't', ` methods. Once
  signalled, a key remains in this state until its `],
-			[/* reference */ 'r', `reset`],
+			[/* reference */ 'r', `#reset()`, `reset`],
 			[/* text */ 't', ` method
  is invoked to return the key to the ready state. Events detected while the
  key is in the signalled state are queued but do not cause the key to be
  re-queued for retrieval from the watch service. Events are retrieved by
  invoking the key's `],
-			[/* reference */ 'r', `pollEvents`],
+			[/* reference */ 'r', `#pollEvents()`, `pollEvents`],
 			[/* text */ 't', ` method. This method
  retrieves and removes all events accumulated for the object. When initially
  created, a watch key has no pending events. Typically events are retrieved
@@ -66,7 +66,7 @@ DocsCollector.collect('java.nio.file.WatchKey', [
          WatchKey key = watcher.take();
 
          // process events
-         for (WatchEvent&lt;?&gt; event: key.pollEvents()) {
+         for (WatchEvent<?> event: key.pollEvents()) {
              :
          }
 
@@ -112,7 +112,7 @@ DocsCollector.collect('java.nio.file.WatchKey', [
 				[/* inline code block */ 'i', `false`],
 				[/* text */ 't', ` if the watch key could not be reset because it is
           no longer `],
-				[/* reference */ 'r', `valid`]
+				[/* reference */ 'r', `#isValid()`, `valid`]
 			]
 		]],
 		[/* method */ 'cancel()', [
@@ -122,7 +122,7 @@ DocsCollector.collect('java.nio.file.WatchKey', [
  from the watch service, then it will remain in the queue until it is
  removed. Pending events, if any, remain pending and may be retrieved by
  invoking the `],
-				[/* reference */ 'r', `pollEvents`],
+				[/* reference */ 'r', `#pollEvents()`, `pollEvents`],
 				[/* text */ 't', ` method after the key is
  cancelled.
 

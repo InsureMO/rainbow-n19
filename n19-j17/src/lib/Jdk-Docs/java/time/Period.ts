@@ -49,12 +49,12 @@ DocsCollector.collect('java.time.Period', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  The supported units of a period are `],
-			[/* external link */ 'a', `temporal/ChronoUnit.html#YEARS`, `YEARS`],
+			[/* reference */ 'r', `.ChronoUnit#YEARS`],
 			[/* text */ 't', `,
  `],
-			[/* external link */ 'a', `temporal/ChronoUnit.html#MONTHS`, `MONTHS`],
+			[/* reference */ 'r', `.ChronoUnit#MONTHS`],
 			[/* text */ 't', ` and `],
-			[/* external link */ 'a', `temporal/ChronoUnit.html#DAYS`, `DAYS`],
+			[/* reference */ 'r', `.ChronoUnit#DAYS`],
 			[/* text */ 't', `.
  All three fields are always present, but may be set to zero.
  `]
@@ -71,11 +71,11 @@ DocsCollector.collect('java.time.Period', [
 		[/* block */ 'b', [
 			[/* text */ 't', `
  This is a `],
-			[/* external link */ 'a', `../../../java.base/java/lang/doc-files/ValueBased.html`, `value-based`],
+			[/* text */ 't', `value-based`],
 			[/* text */ 't', `
  class; programmers should treat instances that are
  `],
-			[/* reference */ 'r', `equal`],
+			[/* reference */ 'r', `#equals(java.lang.Object)`, `equal`],
 			[/* text */ 't', ` as interchangeable and should not
  use instances for synchronization, or unpredictable behavior may
  occur. For example, in a future release, synchronization may fail.
@@ -101,12 +101,12 @@ DocsCollector.collect('java.time.Period', [
 					[/* text */ 't', `
  This returns a value for each of the three supported units,
  `],
-					[/* external link */ 'a', `temporal/ChronoUnit.html#YEARS`, `YEARS`],
+					[/* reference */ 'r', `.ChronoUnit#YEARS`],
 					[/* text */ 't', `, `],
-					[/* external link */ 'a', `temporal/ChronoUnit.html#MONTHS`, `MONTHS`],
+					[/* reference */ 'r', `.ChronoUnit#MONTHS`],
 					[/* text */ 't', ` and
  `],
-					[/* external link */ 'a', `temporal/ChronoUnit.html#DAYS`, `DAYS`],
+					[/* reference */ 'r', `.ChronoUnit#DAYS`],
 					[/* text */ 't', `.
  All other units throw an exception.`]
 				]]
@@ -228,12 +228,12 @@ DocsCollector.collect('java.time.Period', [
 					[/* text */ 't', `
  The conversion loops around the set of units from the amount and uses
  the `],
-					[/* external link */ 'a', `temporal/ChronoUnit.html#YEARS`, `YEARS`],
+					[/* reference */ 'r', `.ChronoUnit#YEARS`],
 					[/* text */ 't', `, `],
-					[/* external link */ 'a', `temporal/ChronoUnit.html#MONTHS`, `MONTHS`],
+					[/* reference */ 'r', `.ChronoUnit#MONTHS`],
 					[/* text */ 't', `
  and `],
-					[/* external link */ 'a', `temporal/ChronoUnit.html#DAYS`, `DAYS`],
+					[/* reference */ 'r', `.ChronoUnit#DAYS`],
 					[/* text */ 't', ` units to create a period.
  If any other units are found then an exception is thrown.
  `]
@@ -472,7 +472,7 @@ DocsCollector.collect('java.time.Period', [
 					[/* inline code block */ 'i', `Period`],
 					[/* text */ 't', `.
  Other types are interpreted using `],
-					[/* reference */ 'r', `from(TemporalAmount)`],
+					[/* reference */ 'r', `#from(java.time.temporal.TemporalAmount)`, `from(TemporalAmount)`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -512,7 +512,7 @@ DocsCollector.collect('java.time.Period', [
 					[/* text */ 't', `
  In most cases, it is clearer to reverse the calling pattern by using
  `],
-					[/* external link */ 'a', `temporal/Temporal.html#plus(java.time.temporal.TemporalAmount)`, `Temporal.plus(TemporalAmount)`],
+					[/* reference */ 'r', `.Temporal#plus(java.time.temporal.TemporalAmount)`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -566,12 +566,12 @@ DocsCollector.collect('java.time.Period', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  The supported units are `],
-					[/* external link */ 'a', `temporal/ChronoUnit.html#YEARS`, `YEARS`],
+					[/* reference */ 'r', `.ChronoUnit#YEARS`],
 					[/* text */ 't', `,
  `],
-					[/* external link */ 'a', `temporal/ChronoUnit.html#MONTHS`, `MONTHS`],
+					[/* reference */ 'r', `.ChronoUnit#MONTHS`],
 					[/* text */ 't', ` and `],
-					[/* external link */ 'a', `temporal/ChronoUnit.html#DAYS`, `DAYS`],
+					[/* reference */ 'r', `.ChronoUnit#DAYS`],
 					[/* text */ 't', `.
  They are returned in the order years, months, days.
  `]
@@ -579,7 +579,7 @@ DocsCollector.collect('java.time.Period', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This set can be used in conjunction with `],
-					[/* reference */ 'r', `get(TemporalUnit)`],
+					[/* reference */ 'r', `#get(java.time.temporal.TemporalUnit)`, `get(TemporalUnit)`],
 					[/* text */ 't', `
  to access the entire state of the period.`]
 				]]
@@ -603,7 +603,7 @@ DocsCollector.collect('java.time.Period', [
 					[/* text */ 't', `
  In most cases, it is clearer to reverse the calling pattern by using
  `],
-					[/* external link */ 'a', `temporal/Temporal.html#minus(java.time.temporal.TemporalAmount)`, `Temporal.minus(TemporalAmount)`],
+					[/* reference */ 'r', `.Temporal#minus(java.time.temporal.TemporalAmount)`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -749,7 +749,7 @@ DocsCollector.collect('java.time.Period', [
 					[/* inline code block */ 'i', `Period`],
 					[/* text */ 't', `.
  Other types are interpreted using `],
-					[/* reference */ 'r', `from(TemporalAmount)`],
+					[/* reference */ 'r', `#from(java.time.temporal.TemporalAmount)`, `from(TemporalAmount)`],
 					[/* text */ 't', `.
  `]
 				]],

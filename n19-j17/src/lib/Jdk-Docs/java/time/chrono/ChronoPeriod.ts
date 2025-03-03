@@ -33,12 +33,12 @@ DocsCollector.collect('java.time.chrono.ChronoPeriod', [
 					[/* text */ 't', `
  The supported units are chronology specific.
  They will typically be `],
-					[/* external link */ 'a', `../temporal/ChronoUnit.html#YEARS`, `YEARS`],
+					[/* reference */ 'r', `java.ChronoUnit#YEARS`],
 					[/* text */ 't', `,
  `],
-					[/* external link */ 'a', `../temporal/ChronoUnit.html#MONTHS`, `MONTHS`],
+					[/* reference */ 'r', `java.ChronoUnit#MONTHS`],
 					[/* text */ 't', ` and `],
-					[/* external link */ 'a', `../temporal/ChronoUnit.html#DAYS`, `DAYS`],
+					[/* reference */ 'r', `java.ChronoUnit#DAYS`],
 					[/* text */ 't', `.
  Requesting an unsupported unit will throw an exception.`]
 				]]
@@ -143,7 +143,7 @@ DocsCollector.collect('java.time.chrono.ChronoPeriod', [
 					[/* text */ 't', `
  The start date is included, but the end date is not.
  The period is calculated using `],
-					[/* external link */ 'a', `ChronoLocalDate.html#until(java.time.chrono.ChronoLocalDate)`, `ChronoLocalDate.until(ChronoLocalDate)`],
+					[/* reference */ 'r', `.ChronoLocalDate#until(java.time.chrono.ChronoLocalDate)`],
 					[/* text */ 't', `.
  As such, the calculation is chronology specific.
  `]
@@ -255,7 +255,7 @@ DocsCollector.collect('java.time.chrono.ChronoPeriod', [
 					[/* text */ 't', `
  In most cases, it is clearer to reverse the calling pattern by using
  `],
-					[/* external link */ 'a', `../temporal/Temporal.html#plus(java.time.temporal.TemporalAmount)`, `Temporal.plus(TemporalAmount)`],
+					[/* reference */ 'r', `java.Temporal#plus(java.time.temporal.TemporalAmount)`],
 					[/* text */ 't', `.
  `]
 				]],
@@ -296,12 +296,12 @@ DocsCollector.collect('java.time.chrono.ChronoPeriod', [
 					[/* text */ 't', `
  The supported units are chronology specific.
  They will typically be `],
-					[/* external link */ 'a', `../temporal/ChronoUnit.html#YEARS`, `YEARS`],
+					[/* reference */ 'r', `java.ChronoUnit#YEARS`],
 					[/* text */ 't', `,
  `],
-					[/* external link */ 'a', `../temporal/ChronoUnit.html#MONTHS`, `MONTHS`],
+					[/* reference */ 'r', `java.ChronoUnit#MONTHS`],
 					[/* text */ 't', ` and `],
-					[/* external link */ 'a', `../temporal/ChronoUnit.html#DAYS`, `DAYS`],
+					[/* reference */ 'r', `java.ChronoUnit#DAYS`],
 					[/* text */ 't', `.
  They are returned in order from largest to smallest.
  `]
@@ -309,7 +309,7 @@ DocsCollector.collect('java.time.chrono.ChronoPeriod', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This set can be used in conjunction with `],
-					[/* reference */ 'r', `get(TemporalUnit)`],
+					[/* reference */ 'r', `#get(java.time.temporal.TemporalUnit)`, `get(TemporalUnit)`],
 					[/* text */ 't', `
  to access the entire state of the period.`]
 				]]
@@ -332,7 +332,7 @@ DocsCollector.collect('java.time.chrono.ChronoPeriod', [
 					[/* text */ 't', `
  In most cases, it is clearer to reverse the calling pattern by using
  `],
-					[/* external link */ 'a', `../temporal/Temporal.html#minus(java.time.temporal.TemporalAmount)`, `Temporal.minus(TemporalAmount)`],
+					[/* reference */ 'r', `java.Temporal#minus(java.time.temporal.TemporalAmount)`],
 					[/* text */ 't', `.
  `]
 				]],

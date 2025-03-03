@@ -92,7 +92,7 @@ DocsCollector.collect('java.util.zip.ZipFile', [
 					[/* text */ 't', ` to be
         used to decode the ZIP entry name and comment (ignored if
         the `],
-					[/* external link */ 'a', `package-summary.html#lang_encoding`, `language encoding bit`],
+					[/* reference */ 'r', `.package-summary#lang_encoding`],
 					[/* text */ 't', ` of the ZIP entry's general purpose bit
         flag is set).`]
 				]]
@@ -367,7 +367,7 @@ DocsCollector.collect('java.util.zip.ZipFile', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` Closing this ZIP file will close all of the input streams
  previously returned by invocations of the `],
-					[/* reference */ 'r', `getInputStream`],
+					[/* reference */ 'r', `#getInputStream(java.util.zip.ZipEntry)`, `getInputStream`],
 					[/* text */ 't', ` method.`]
 				]]
 			],

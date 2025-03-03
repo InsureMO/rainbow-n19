@@ -26,7 +26,7 @@ DocsCollector.collect('java.security.cert.CertificateEncodingException', [
 				[/* parameter */ 'cause', [/* parameter description */
 					[/* text */ 't', `the cause (which is saved for later retrieval by the
         `],
-					[/* external link */ 'a', `../../lang/Throwable.html#getCause()`, `Throwable.getCause()`],
+					[/* reference */ 'r', `java.security.Throwable#getCause()`],
 					[/* text */ 't', ` method).  (A `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` value is permitted,
@@ -46,13 +46,13 @@ DocsCollector.collect('java.security.cert.CertificateEncodingException', [
 				[/* parameter */ 'message', [/* parameter description */
 					[/* text */ 't', `the detail message (which is saved for later retrieval
         by the `],
-					[/* external link */ 'a', `../../lang/Throwable.html#getMessage()`, `Throwable.getMessage()`],
+					[/* reference */ 'r', `java.security.Throwable#getMessage()`],
 					[/* text */ 't', ` method).`]
 				]],
 				[/* parameter */ 'cause', [/* parameter description */
 					[/* text */ 't', `the cause (which is saved for later retrieval by the
         `],
-					[/* external link */ 'a', `../../lang/Throwable.html#getCause()`, `Throwable.getCause()`],
+					[/* reference */ 'r', `java.security.Throwable#getCause()`],
 					[/* text */ 't', ` method).  (A `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` value is permitted,

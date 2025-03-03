@@ -18,10 +18,10 @@ DocsCollector.collect('java.util.function.DoubleUnaryOperator', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
-			[/* external link */ 'a', `package-summary.html`, `functional interface`],
+			[/* reference */ 'r', `.package-summary`],
 			[/* text */ 't', `
  whose functional method is `],
-			[/* reference */ 'r', `applyAsDouble(double)`],
+			[/* reference */ 'r', `#applyAsDouble(double)`, `applyAsDouble(double)`],
 			[/* text */ 't', `.`]
 		]]
 	],

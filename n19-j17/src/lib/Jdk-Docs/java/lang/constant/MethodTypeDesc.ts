@@ -4,7 +4,7 @@ import {DocsCollector} from '../../../DocsCollector';
 DocsCollector.collect('java.lang.constant.MethodTypeDesc', [
 	[/* class description */
 		[/* text */ 't', `A `],
-		[/* external link */ 'a', `package-summary.html#nominal`, `nominal descriptor`],
+		[/* reference */ 'r', `.package-summary#nominal`],
 		[/* text */ 't', ` for a
  `],
 		[/* reference */ 'r', `java.lang.invoke.MethodType`],

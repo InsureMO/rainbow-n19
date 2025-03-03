@@ -15,7 +15,7 @@ DocsCollector.collect('java.lang.Thread$UncaughtExceptionHandler', [
 			[/* inline code block */ 'i', `UncaughtExceptionHandler`],
 			[/* text */ 't', ` using
  `],
-			[/* external link */ 'a', `Thread.html#getUncaughtExceptionHandler()`, `Thread.getUncaughtExceptionHandler()`],
+			[/* reference */ 'r', `.Thread#getUncaughtExceptionHandler()`],
 			[/* text */ 't', ` and will invoke the handler's
  `],
 			[/* inline code block */ 'i', `uncaughtException`],
@@ -35,7 +35,7 @@ DocsCollector.collect('java.lang.Thread$UncaughtExceptionHandler', [
  has no
  special requirements for dealing with the exception, it can forward
  the invocation to the `],
-			[/* external link */ 'a', `Thread.html#getDefaultUncaughtExceptionHandler()`, `default uncaught exception handler`],
+			[/* reference */ 'r', `.Thread#getDefaultUncaughtExceptionHandler()`],
 			[/* text */ 't', `.`]
 		]]
 	],

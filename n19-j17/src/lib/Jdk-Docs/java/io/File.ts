@@ -25,10 +25,10 @@ DocsCollector.collect('java.io.File', [
 				[/* text */ 't', ` string,
       such as a disk-drive specifier, `],
 				[/* inline code block */ 'i', `"/"`],
-				[/* text */ 't', `&nbsp;for the UNIX root
+				[/* text */ 't', ` for the UNIX root
       directory, or `],
 				[/* inline code block */ 'i', `"\\\\\\\\"`],
-				[/* text */ 't', `&nbsp;for a Microsoft Windows UNC pathname, and
+				[/* text */ 't', ` for a Microsoft Windows UNC pathname, and
  `]
 			]],
 			[/* block */ 'b', [
@@ -97,7 +97,7 @@ DocsCollector.collect('java.io.File', [
 			[/* text */ 't', `parent`],
 			[/* text */ 't', ` of an abstract pathname may be obtained by invoking
  the `],
-			[/* reference */ 'r', `getParent()`],
+			[/* reference */ 'r', `#getParent()`, `getParent()`],
 			[/* text */ 't', ` method of this class and consists of the pathname's
  prefix and each name in the pathname's name sequence except for the last.
  Each directory's absolute pathname is an ancestor of any `],
@@ -199,7 +199,7 @@ DocsCollector.collect('java.io.File', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` The `],
-			[/* external link */ 'a', `../../java/nio/file/package-summary.html`, `java.nio.file`],
+			[/* text */ 't', `java.nio.file`],
 			[/* text */ 't', `
  package defines interfaces and classes for the Java virtual machine to access
  files, file attributes, and file systems. This API may be used to overcome
@@ -207,7 +207,7 @@ DocsCollector.collect('java.io.File', [
 			[/* inline code block */ 'i', `java.io.File`],
 			[/* text */ 't', ` class.
  The `],
-			[/* reference */ 'r', `toPath`],
+			[/* reference */ 'r', `#toPath()`, `toPath`],
 			[/* text */ 't', ` method may be used to obtain a `],
 			[/* reference */ 'r', `java.nio.file.Path`],
 			[/* text */ 't', ` that uses the abstract path represented by a `],
@@ -393,9 +393,9 @@ DocsCollector.collect('java.io.File', [
 				]],
 				[/* block */ 'b', [
 					[/* inline code block */ 'i', `new File(`],
-					[/* text */ 't', `&nbsp;f`],
+					[/* text */ 't', ` f`],
 					[/* inline code block */ 'i', `.toURI()).equals(`],
-					[/* text */ 't', `&nbsp;f`],
+					[/* text */ 't', ` f`],
 					[/* inline code block */ 'i', `.getAbsoluteFile())`]
 				]],
 				[/* text */ 't', `
@@ -556,7 +556,7 @@ DocsCollector.collect('java.io.File', [
 					[/* inline code block */ 'i', `0L`],
 					[/* text */ 't', ` is returned, or where several attributes of the same file
  are required at the same time, then the `],
-					[/* external link */ 'a', `../nio/file/Files.html#readAttributes(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)`, `Files.readAttributes`],
+					[/* reference */ 'r', `java.Files#readAttributes(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)`],
 					[/* text */ 't', ` method may be used.`]
 				]]
 			],
@@ -564,7 +564,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkRead(java.lang.String)`, `SecurityManager.checkRead(java.lang.String)`],
+					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
 					[/* text */ 't', `
           method denies read access to the file`]
 				]]
@@ -584,7 +584,7 @@ DocsCollector.collect('java.io.File', [
 			[/* method description */
 				[/* text */ 't', `Returns the pathname string of this abstract pathname.  This is just the
  string returned by the `],
-				[/* reference */ 'r', `getPath()`],
+				[/* reference */ 'r', `#getPath()`, `getPath()`],
 				[/* text */ 't', ` method.`]
 			],
 			/* parameters */ UDF,
@@ -636,7 +636,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkRead(java.lang.String)`, `SecurityManager.checkRead(java.lang.String)`],
+					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
 					[/* text */ 't', `
           method denies read access to the file`]
 				]]
@@ -697,7 +697,7 @@ DocsCollector.collect('java.io.File', [
 					[/* text */ 't', ` Note that the `],
 					[/* reference */ 'r', `java.nio.file.Files`],
 					[/* text */ 't', ` class defines the `],
-					[/* external link */ 'a', `../nio/file/Files.html#newDirectoryStream(java.nio.file.Path)`, `newDirectoryStream`],
+					[/* reference */ 'r', `java.Files#newDirectoryStream(java.nio.file.Path)`],
 					[/* text */ 't', ` method to
  open a directory and iterate over the names of the files in the directory.
  This may use less resources when working with very large directories, and
@@ -708,7 +708,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkRead(java.lang.String)`, `SecurityManager.checkRead(String)`],
+					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
 					[/* text */ 't', ` method denies read access to
           the directory`]
 				]]
@@ -729,7 +729,7 @@ DocsCollector.collect('java.io.File', [
  directory denoted by this abstract pathname that satisfy the specified
  filter.  The behavior of this method is the same as that of the
  `],
-				[/* reference */ 'r', `list()`],
+				[/* reference */ 'r', `#list()`, `list()`],
 				[/* text */ 't', ` method, except that the strings in the returned array
  must satisfy the filter.  If the given `],
 				[/* inline code block */ 'i', `filter`],
@@ -740,7 +740,7 @@ DocsCollector.collect('java.io.File', [
  and only if the value `],
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` results when the `],
-				[/* external link */ 'a', `FilenameFilter.html#accept(java.io.File,java.lang.String)`, `FilenameFilter.accept(File, String)`],
+				[/* reference */ 'r', `.FilenameFilter#accept(java.io.File,java.lang.String)`],
 				[/* text */ 't', ` method
  of the filter is invoked on this abstract pathname and the name of a
  file or directory in the directory that it denotes.`]
@@ -753,7 +753,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkRead(java.lang.String)`, `SecurityManager.checkRead(String)`],
+					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
 					[/* text */ 't', ` method denies read access to
           the directory`]
 				]]
@@ -803,14 +803,7 @@ DocsCollector.collect('java.io.File', [
 				[/* text */ 't', ` if this pathname does not name a parent directory.
 
  `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The `],
-					[/* text */ 't', `parent`],
-					[/* text */ 't', ` of an abstract pathname consists of the
- pathname's prefix, if any, and each name in the pathname's name
- sequence except for the last.  If the name sequence is empty then
- the pathname does not name a parent directory.`]
-				]]
+				[/* block */ 'b', `parent`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
@@ -833,7 +826,7 @@ DocsCollector.collect('java.io.File', [
 					[/* text */ 't', ` Note that the `],
 					[/* reference */ 'r', `java.nio.file.Files`],
 					[/* text */ 't', ` class defines the `],
-					[/* external link */ 'a', `../nio/file/Files.html#delete(java.nio.file.Path)`, `delete`],
+					[/* reference */ 'r', `java.Files#delete(java.nio.file.Path)`],
 					[/* text */ 't', ` method to throw an `],
 					[/* reference */ 'r', `java.io.IOException`],
 					[/* text */ 't', `
@@ -845,7 +838,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkDelete(java.lang.String)`, `SecurityManager.checkDelete(java.lang.String)`],
+					[/* reference */ 'r', `java.SecurityManager#checkDelete(java.lang.String)`],
 					[/* text */ 't', ` method denies
           delete access to the file`]
 				]]
@@ -872,7 +865,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkWrite(java.lang.String)`, `SecurityManager.checkWrite(java.lang.String)`],
+					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.lang.String)`],
 					[/* text */ 't', `
           method denies write access to the named file`]
 				]]
@@ -899,7 +892,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkRead(java.lang.String)`, `SecurityManager.checkRead(java.lang.String)`],
+					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
 					[/* text */ 't', `
           method denies read access to the file`]
 				]]
@@ -950,9 +943,9 @@ DocsCollector.collect('java.io.File', [
 				]],
 				[/* block */ 'b', [
 					[/* inline code block */ 'i', `new File(`],
-					[/* text */ 't', `&nbsp;f`],
+					[/* text */ 't', ` f`],
 					[/* inline code block */ 'i', `.toURI()).equals(`],
-					[/* text */ 't', `&nbsp;f`],
+					[/* text */ 't', ` f`],
 					[/* inline code block */ 'i', `.getAbsoluteFile())`]
 				]],
 				[/* text */ 't', `
@@ -981,12 +974,12 @@ DocsCollector.collect('java.io.File', [
 					[/* reference */ 'r', `java.nio.file.Path`],
 					[/* text */ 't', ` class defines the
  `],
-					[/* external link */ 'a', `../nio/file/Path.html#toUri()`, `toUri`],
+					[/* reference */ 'r', `java.Path#toUri()`],
 					[/* text */ 't', ` method to encode the server name in the authority
  component of the resulting `],
 					[/* inline code block */ 'i', `URI`],
 					[/* text */ 't', `. The `],
-					[/* reference */ 'r', `toPath`],
+					[/* reference */ 'r', `#toPath()`, `toPath`],
 					[/* text */ 't', ` method
  may be used to obtain a `],
 					[/* inline code block */ 'i', `Path`],
@@ -1036,7 +1029,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkRead(java.lang.String)`, `SecurityManager.checkRead(java.lang.String)`],
+					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
 					[/* text */ 't', `
           method denies read access to the file or directory`]
 				]]
@@ -1076,7 +1069,7 @@ DocsCollector.collect('java.io.File', [
 				]],
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkWrite(java.lang.String)`, `SecurityManager.checkWrite(java.lang.String)`],
+					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.lang.String)`],
 					[/* text */ 't', `
           method denies write access to the file`]
 				]]
@@ -1113,7 +1106,7 @@ DocsCollector.collect('java.io.File', [
 					[/* text */ 't', ` Note that the `],
 					[/* reference */ 'r', `java.nio.file.Files`],
 					[/* text */ 't', ` class defines the `],
-					[/* external link */ 'a', `../nio/file/Files.html#move(java.nio.file.Path,java.nio.file.Path,java.nio.file.CopyOption...)`, `move`],
+					[/* reference */ 'r', `java.Files#move(java.nio.file.Path,java.nio.file.Path,java.nio.file.CopyOption...)`],
 					[/* text */ 't', ` method to move or rename a file in a
  platform independent manner.`]
 				]]
@@ -1126,7 +1119,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkWrite(java.lang.String)`, `SecurityManager.checkWrite(java.lang.String)`],
+					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.lang.String)`],
 					[/* text */ 't', `
           method denies write access to either the old or new pathnames`]
 				]],
@@ -1153,7 +1146,7 @@ DocsCollector.collect('java.io.File', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` If this abstract pathname is already absolute, then the pathname
  string is simply returned as if by the `],
-					[/* reference */ 'r', `getPath()`],
+					[/* reference */ 'r', `#getPath()`, `getPath()`],
 					[/* text */ 't', `
  method.  If this abstract pathname is the empty abstract pathname then
  the pathname string of the current user directory, which is named by the
@@ -1189,7 +1182,7 @@ DocsCollector.collect('java.io.File', [
  definition of canonical form is system-dependent.  This method first
  converts this pathname to absolute form if necessary, as if by invoking the
  `],
-					[/* reference */ 'r', `getAbsolutePath()`],
+					[/* reference */ 'r', `#getAbsolutePath()`, `getAbsolutePath()`],
 					[/* text */ 't', ` method, and then maps it to its unique form in a
  system-dependent way.  This typically involves removing redundant names
  such as `],
@@ -1221,7 +1214,7 @@ DocsCollector.collect('java.io.File', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a required system property value cannot be accessed, or
           if a security manager exists and its `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkRead(java.io.FileDescriptor)`, `SecurityManager.checkRead(java.io.FileDescriptor)`],
+					[/* reference */ 'r', `java.SecurityManager#checkRead(java.io.FileDescriptor)`],
 					[/* text */ 't', ` method denies
           read access to the file`]
 				]]
@@ -1241,7 +1234,7 @@ DocsCollector.collect('java.io.File', [
 					[/* text */ 't', ` Where it is required to distinguish an I/O exception from the case
  that the file is not a directory, or where several attributes of the
  same file are required at the same time, then the `],
-					[/* external link */ 'a', `../nio/file/Files.html#readAttributes(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)`, `Files.readAttributes`],
+					[/* reference */ 'r', `java.Files#readAttributes(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)`],
 					[/* text */ 't', ` method may be used.`]
 				]]
 			],
@@ -1249,7 +1242,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkRead(java.lang.String)`, `SecurityManager.checkRead(java.lang.String)`],
+					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
 					[/* text */ 't', `
           method denies read access to the file`]
 				]]
@@ -1291,7 +1284,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkWrite(java.lang.String)`, `SecurityManager.checkWrite(java.lang.String)`],
+					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.lang.String)`],
 					[/* text */ 't', `
           method does not permit the named directory to be created`]
 				]]
@@ -1321,7 +1314,7 @@ DocsCollector.collect('java.io.File', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a required system property value cannot be accessed, or
           if a security manager exists and its `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkRead(java.io.FileDescriptor)`, `SecurityManager.checkRead(java.io.FileDescriptor)`],
+					[/* reference */ 'r', `java.SecurityManager#checkRead(java.io.FileDescriptor)`],
 					[/* text */ 't', ` method denies
           read access to the file`]
 				]]
@@ -1340,14 +1333,7 @@ DocsCollector.collect('java.io.File', [
  directory.
 
  `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` The `],
-					[/* text */ 't', `parent`],
-					[/* text */ 't', ` of an abstract pathname consists of the
- pathname's prefix, if any, and each name in the pathname's name
- sequence except for the last.  If the name sequence is empty then
- the pathname does not name a parent directory.`]
-				]]
+				[/* block */ 'b', `parent`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
@@ -1370,12 +1356,12 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkRead(java.lang.String)`, `SecurityManager.checkRead(java.lang.String)`],
+					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
 					[/* text */ 't', `
           method does not permit verification of the existence of the
           named directory and all necessary parent directories; or if
           the `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkWrite(java.lang.String)`, `SecurityManager.checkWrite(java.lang.String)`],
+					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.lang.String)`],
 					[/* text */ 't', `
           method does not permit the named directory and all necessary
           parent directories to be created`]
@@ -1424,7 +1410,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkWrite(java.lang.String)`, `SecurityManager.checkWrite(java.lang.String)`],
+					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.lang.String)`],
 					[/* text */ 't', `
           method denies write access to the file`]
 				]]
@@ -1474,7 +1460,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkWrite(java.lang.String)`, `SecurityManager.checkWrite(java.lang.String)`],
+					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.lang.String)`],
 					[/* text */ 't', `
           method denies write access to the named file`]
 				]]
@@ -1520,7 +1506,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkWrite(java.lang.String)`, `SecurityManager.checkWrite(java.lang.String)`],
+					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.lang.String)`],
 					[/* text */ 't', `
           method denies write access to the file`]
 				]]
@@ -1577,7 +1563,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkWrite(java.lang.String)`, `SecurityManager.checkWrite(java.lang.String)`],
+					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.lang.String)`],
 					[/* text */ 't', `
           method denies write access to the file`]
 				]]
@@ -1634,7 +1620,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkWrite(java.lang.String)`, `SecurityManager.checkWrite(java.lang.String)`],
+					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.lang.String)`],
 					[/* text */ 't', `
           method denies write access to the file`]
 				]]
@@ -1687,7 +1673,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkWrite(java.lang.String)`, `SecurityManager.checkWrite(java.lang.String)`],
+					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.lang.String)`],
 					[/* text */ 't', `
           method denies write access to the file`]
 				]]
@@ -1758,7 +1744,7 @@ DocsCollector.collect('java.io.File', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` Unlike most methods in this class, this method does not throw
  security exceptions.  If a security manager exists and its `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkRead(java.lang.String)`, `SecurityManager.checkRead(String)`],
+					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
 					[/* text */ 't', ` method denies read access to a
  particular root directory, then that directory will not appear in the
  result.`]
@@ -1798,7 +1784,7 @@ DocsCollector.collect('java.io.File', [
  This method provides only part of a temporary-file facility.  To arrange
  for a file created by this method to be deleted automatically, use the
  `],
-				[/* reference */ 'r', `deleteOnExit()`],
+				[/* reference */ 'r', `#deleteOnExit()`, `deleteOnExit()`],
 				[/* text */ 't', ` method.
 
  `],
@@ -1897,7 +1883,7 @@ DocsCollector.collect('java.io.File', [
 				]],
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkWrite(java.lang.String)`, `SecurityManager.checkWrite(java.lang.String)`],
+					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.lang.String)`],
 					[/* text */ 't', `
           method does not allow a file to be created`]
 				]]
@@ -1911,13 +1897,13 @@ DocsCollector.collect('java.io.File', [
 				[/* text */ 't', `Creates an empty file in the default temporary-file directory, using
  the given prefix and suffix to generate its name. Invoking this method
  is equivalent to invoking `],
-				[/* reference */ 'r', `createTempFile(prefix, suffix, null)`],
+				[/* reference */ 'r', `#createTempFile(java.lang.String,java.lang.String,java.io.File)`, `createTempFile(prefix, suffix, null)`],
 				[/* text */ 't', `.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The `],
-					[/* external link */ 'a', `../nio/file/Files.html#createTempFile(java.lang.String,java.lang.String,java.nio.file.attribute.FileAttribute...)`, `Files.createTempFile`],
+					[/* reference */ 'r', `java.Files#createTempFile(java.lang.String,java.lang.String,java.nio.file.attribute.FileAttribute...)`],
 					[/* text */ 't', ` method provides an alternative method to create an
  empty file in the temporary-file directory. Files created by that method
  may have more restrictive access permissions to files created by this
@@ -1951,7 +1937,7 @@ DocsCollector.collect('java.io.File', [
 				]],
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkWrite(java.lang.String)`, `SecurityManager.checkWrite(java.lang.String)`],
+					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.lang.String)`],
 					[/* text */ 't', `
           method does not allow a file to be created`]
 				]]
@@ -1974,7 +1960,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkWrite(java.lang.String)`, `SecurityManager.checkWrite(java.lang.String)`],
+					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.lang.String)`],
 					[/* text */ 't', `
           method denies write access to the file`]
 				]]
@@ -2005,7 +1991,7 @@ DocsCollector.collect('java.io.File', [
 					[/* text */ 't', ` Where it is required to distinguish an I/O exception from the case
  that the file is not a normal file, or where several attributes of the
  same file are required at the same time, then the `],
-					[/* external link */ 'a', `../nio/file/Files.html#readAttributes(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)`, `Files.readAttributes`],
+					[/* reference */ 'r', `java.Files#readAttributes(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)`],
 					[/* text */ 't', ` method may be used.`]
 				]]
 			],
@@ -2013,7 +1999,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkRead(java.lang.String)`, `SecurityManager.checkRead(java.lang.String)`],
+					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
 					[/* text */ 't', `
           method denies read access to the file`]
 				]]
@@ -2038,7 +2024,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkRead(java.lang.String)`, `SecurityManager.checkRead(java.lang.String)`],
+					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
 					[/* text */ 't', `
           method denies read access to the file`]
 				]]
@@ -2087,7 +2073,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkDelete(java.lang.String)`, `SecurityManager.checkDelete(java.lang.String)`],
+					[/* reference */ 'r', `java.SecurityManager#checkDelete(java.lang.String)`],
 					[/* text */ 't', ` method denies
           delete access to the file`]
 				]]
@@ -2100,7 +2086,7 @@ DocsCollector.collect('java.io.File', [
  directories in the directory denoted by this abstract pathname that
  satisfy the specified filter.  The behavior of this method is the same
  as that of the `],
-				[/* reference */ 'r', `listFiles()`],
+				[/* reference */ 'r', `#listFiles()`, `listFiles()`],
 				[/* text */ 't', ` method, except that the pathnames in
  the returned array must satisfy the filter.  If the given `],
 				[/* inline code block */ 'i', `filter`],
@@ -2112,7 +2098,7 @@ DocsCollector.collect('java.io.File', [
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` results when
  the `],
-				[/* external link */ 'a', `FilenameFilter.html#accept(java.io.File,java.lang.String)`, `FilenameFilter.accept(File, String)`],
+				[/* reference */ 'r', `.FilenameFilter#accept(java.io.File,java.lang.String)`],
 				[/* text */ 't', ` method of the filter is
  invoked on this abstract pathname and the name of a file or directory in
  the directory that it denotes.`]
@@ -2125,7 +2111,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkRead(java.lang.String)`, `SecurityManager.checkRead(String)`],
+					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
 					[/* text */ 't', ` method denies read access to
           the directory`]
 				]]
@@ -2146,7 +2132,7 @@ DocsCollector.collect('java.io.File', [
  directories in the directory denoted by this abstract pathname that
  satisfy the specified filter.  The behavior of this method is the same
  as that of the `],
-				[/* reference */ 'r', `listFiles()`],
+				[/* reference */ 'r', `#listFiles()`, `listFiles()`],
 				[/* text */ 't', ` method, except that the pathnames in
  the returned array must satisfy the filter.  If the given `],
 				[/* inline code block */ 'i', `filter`],
@@ -2158,7 +2144,7 @@ DocsCollector.collect('java.io.File', [
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` results when
  the `],
-				[/* external link */ 'a', `FileFilter.html#accept(java.io.File)`, `FileFilter.accept(File)`],
+				[/* reference */ 'r', `.FileFilter#accept(java.io.File)`],
 				[/* text */ 't', ` method of the
  filter is invoked on the pathname.`]
 			],
@@ -2170,7 +2156,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkRead(java.lang.String)`, `SecurityManager.checkRead(String)`],
+					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
 					[/* text */ 't', ` method denies read access to
           the directory`]
 				]]
@@ -2202,7 +2188,7 @@ DocsCollector.collect('java.io.File', [
  denoting the directory itself and the directory's parent directory are
  not included in the result.  Each resulting abstract pathname is
  constructed from this abstract pathname using the `],
-					[/* reference */ 'r', `File(File, String)`],
+					[/* reference */ 'r', `#%3Cinit%3E(java.io.File,java.lang.String)`, `File(File, String)`],
 					[/* text */ 't', ` constructor.  Therefore if this
  pathname is absolute then each resulting pathname is absolute; if this
  pathname is relative then each resulting pathname will be relative to
@@ -2219,7 +2205,7 @@ DocsCollector.collect('java.io.File', [
 					[/* text */ 't', ` Note that the `],
 					[/* reference */ 'r', `java.nio.file.Files`],
 					[/* text */ 't', ` class defines the `],
-					[/* external link */ 'a', `../nio/file/Files.html#newDirectoryStream(java.nio.file.Path)`, `newDirectoryStream`],
+					[/* reference */ 'r', `java.Files#newDirectoryStream(java.nio.file.Path)`],
 					[/* text */ 't', ` method
  to open a directory and iterate over the names of the files in the
  directory. This may use less resources when working with very large
@@ -2230,7 +2216,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkRead(java.lang.String)`, `SecurityManager.checkRead(String)`],
+					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
 					[/* text */ 't', ` method denies read access to
           the directory`]
 				]]
@@ -2257,7 +2243,7 @@ DocsCollector.collect('java.io.File', [
  the supported precision.  If the operation succeeds and no intervening
  operations on the file take place, then the next invocation of the
  `],
-					[/* reference */ 'r', `lastModified()`],
+					[/* reference */ 'r', `#lastModified()`, `lastModified()`],
 					[/* text */ 't', ` method will return the (possibly
  truncated) `],
 					[/* inline code block */ 'i', `time`],
@@ -2276,7 +2262,7 @@ DocsCollector.collect('java.io.File', [
 				]],
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkWrite(java.lang.String)`, `SecurityManager.checkWrite(java.lang.String)`],
+					[/* reference */ 'r', `java.SecurityManager#checkWrite(java.lang.String)`],
 					[/* text */ 't', `
           method denies write access to the named file`]
 				]]
@@ -2303,7 +2289,7 @@ DocsCollector.collect('java.io.File', [
 			[/* throws */
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `If a security manager exists and its `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkExec(java.lang.String)`, `SecurityManager.checkExec(java.lang.String)`],
+					[/* reference */ 'r', `java.SecurityManager#checkExec(java.lang.String)`],
 					[/* text */ 't', `
           method denies execute access to the file`]
 				]]
@@ -2323,7 +2309,7 @@ DocsCollector.collect('java.io.File', [
 				[/* text */ 't', ` by this
  abstract pathname. If the total number of bytes in the partition is
  greater than `],
-				[/* external link */ 'a', `../lang/Long.html#MAX_VALUE`, `Long.MAX_VALUE`],
+				[/* reference */ 'r', `java.Long#MAX_VALUE`],
 				[/* text */ 't', `, then `],
 				[/* inline code block */ 'i', `Long.MAX_VALUE`],
 				[/* text */ 't', ` will be
@@ -2338,7 +2324,7 @@ DocsCollector.collect('java.io.File', [
 					[/* inline code block */ 'i', `("getFileSystemAttributes")`],
 					[/* text */ 't', `
           or its `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkRead(java.lang.String)`, `SecurityManager.checkRead(String)`],
+					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
 					[/* text */ 't', ` method denies
           read access to the file named by this abstract pathname`]
 				]]
@@ -2358,7 +2344,7 @@ DocsCollector.collect('java.io.File', [
 				[/* text */ 't', ` by this abstract path name.  If the
  number of unallocated bytes in the partition is greater than
  `],
-				[/* external link */ 'a', `../lang/Long.html#MAX_VALUE`, `Long.MAX_VALUE`],
+				[/* reference */ 'r', `java.Long#MAX_VALUE`],
 				[/* text */ 't', `, then `],
 				[/* inline code block */ 'i', `Long.MAX_VALUE`],
 				[/* text */ 't', ` will be returned.
@@ -2382,7 +2368,7 @@ DocsCollector.collect('java.io.File', [
 					[/* inline code block */ 'i', `("getFileSystemAttributes")`],
 					[/* text */ 't', `
           or its `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkRead(java.lang.String)`, `SecurityManager.checkRead(String)`],
+					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
 					[/* text */ 't', ` method denies
           read access to the file named by this abstract pathname`]
 				]]
@@ -2395,7 +2381,7 @@ DocsCollector.collect('java.io.File', [
           number cannot be obtained.  This value will be less than or
           equal to the total file system size returned by
           `],
-				[/* reference */ 'r', `getTotalSpace()`],
+				[/* reference */ 'r', `#getTotalSpace()`, `getTotalSpace()`],
 				[/* text */ 't', `.`]
 			]
 		]],
@@ -2407,7 +2393,7 @@ DocsCollector.collect('java.io.File', [
 				[/* text */ 't', ` by this abstract pathname.  If
  the number of available bytes in the partition is greater than
  `],
-				[/* external link */ 'a', `../lang/Long.html#MAX_VALUE`, `Long.MAX_VALUE`],
+				[/* reference */ 'r', `java.Long#MAX_VALUE`],
 				[/* text */ 't', `, then `],
 				[/* inline code block */ 'i', `Long.MAX_VALUE`],
 				[/* text */ 't', ` will be returned.
@@ -2415,7 +2401,7 @@ DocsCollector.collect('java.io.File', [
  operating system restrictions and will therefore usually provide a more
  accurate estimate of how much new data can actually be written than
  `],
-				[/* reference */ 'r', `getFreeSpace()`],
+				[/* reference */ 'r', `#getFreeSpace()`, `getFreeSpace()`],
 				[/* text */ 't', `.
 
  `],
@@ -2436,7 +2422,7 @@ DocsCollector.collect('java.io.File', [
 					[/* inline code block */ 'i', `("getFileSystemAttributes")`],
 					[/* text */ 't', `
           or its `],
-					[/* external link */ 'a', `../lang/SecurityManager.html#checkRead(java.lang.String)`, `SecurityManager.checkRead(String)`],
+					[/* reference */ 'r', `java.SecurityManager#checkRead(java.lang.String)`],
 					[/* text */ 't', ` method denies
           read access to the file named by this abstract pathname`]
 				]]
@@ -2449,7 +2435,7 @@ DocsCollector.collect('java.io.File', [
           number cannot be obtained.  On systems where this information
           is not available, this method will be equivalent to a call to
           `],
-				[/* reference */ 'r', `getFreeSpace()`],
+				[/* reference */ 'r', `#getFreeSpace()`, `getFreeSpace()`],
 				[/* text */ 't', `.`]
 			]
 		]],
@@ -2462,7 +2448,7 @@ DocsCollector.collect('java.io.File', [
 				[/* inline code block */ 'i', `Path`],
 				[/* text */ 't', ` is associated with the
  `],
-				[/* external link */ 'a', `../nio/file/FileSystems.html#getDefault()`, `default-filesystem`],
+				[/* reference */ 'r', `java.FileSystems#getDefault()`],
 				[/* text */ 't', `.
 
  `],
@@ -2502,7 +2488,7 @@ DocsCollector.collect('java.io.File', [
 					[/* inline code block */ 'i', `Path`],
 					[/* text */ 't', ` object cannot be constructed from the abstract
           path (see `],
-					[/* external link */ 'a', `../nio/file/FileSystem.html#getPath(java.lang.String,java.lang.String...)`, `FileSystem.getPath`],
+					[/* reference */ 'r', `java.FileSystem#getPath(java.lang.String,java.lang.String...)`],
 					[/* text */ 't', `)`]
 				]]
 			],

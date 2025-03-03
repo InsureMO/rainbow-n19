@@ -5,7 +5,7 @@ DocsCollector.collect('java.lang.invoke.MethodHandles$Lookup$ClassOption', [
 	[/* class description */
 		[/* text */ 't', `The set of class options that specify whether a hidden class created by
  `],
-		[/* external link */ 'a', `MethodHandles.Lookup.html#defineHiddenClass(byte%5B%5D,boolean,java.lang.invoke.MethodHandles.Lookup.ClassOption...)`, `Lookup::defineHiddenClass`],
+		[/* reference */ 'r', `.MethodHandles.Lookup#defineHiddenClass(byte[],boolean,java.lang.invoke.MethodHandles.Lookup.ClassOption...)`],
 		[/* text */ 't', ` method is dynamically added as a new member
  to the nest of a lookup class and/or whether a hidden class has
  a strong relationship with the class loader marked as its defining loader.`]

@@ -138,7 +138,7 @@ DocsCollector.collect('java.util.SortedSet', [
 			[/* inline code block */ 'i', `high`],
 			[/* text */ 't', `, inclusive:`]
 		]],
-		[/* code block */ 'c', `   SortedSet&lt;String&gt; sub = s.subSet(low, high+"\\0");`],
+		[/* code block */ 'c', `   SortedSet<String> sub = s.subSet(low, high+"\\0");`],
 		[/* text */ 't', `
 
  A similar technique can be used to generate an `],
@@ -153,12 +153,12 @@ DocsCollector.collect('java.util.SortedSet', [
  `],
 		[/* inline code block */ 'i', `high`],
 		[/* text */ 't', `, exclusive:`],
-		[/* code block */ 'c', `   SortedSet&lt;String&gt; sub = s.subSet(low+"\\0", high);`],
+		[/* code block */ 'c', `   SortedSet<String> sub = s.subSet(low+"\\0", high);`],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `This interface is a member of the
  `],
-			[/* external link */ 'a', `../../../java.base/java/util/package-summary.html#CollectionsFramework`, `Java Collections Framework`],
+			[/* text */ 't', `Java Collections Framework`],
 			[/* text */ 't', `.`]
 		]]
 	],
@@ -190,12 +190,12 @@ DocsCollector.collect('java.util.SortedSet', [
 					[/* text */ 't', `The `],
 					[/* inline code block */ 'i', `Spliterator`],
 					[/* text */ 't', ` reports `],
-					[/* external link */ 'a', `Spliterator.html#DISTINCT`, `Spliterator.DISTINCT`],
+					[/* reference */ 'r', `.Spliterator#DISTINCT`],
 					[/* text */ 't', `,
  `],
-					[/* external link */ 'a', `Spliterator.html#SORTED`, `Spliterator.SORTED`],
+					[/* reference */ 'r', `.Spliterator#SORTED`],
 					[/* text */ 't', ` and `],
-					[/* external link */ 'a', `Spliterator.html#ORDERED`, `Spliterator.ORDERED`],
+					[/* reference */ 'r', `.Spliterator#ORDERED`],
 					[/* text */ 't', `.
  Implementations should document the reporting of additional
  characteristic values.
@@ -205,12 +205,12 @@ DocsCollector.collect('java.util.SortedSet', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The spliterator's comparator (see
  `],
-					[/* external link */ 'a', `Spliterator.html#getComparator()`, `Spliterator.getComparator()`],
+					[/* reference */ 'r', `.Spliterator#getComparator()`],
 					[/* text */ 't', `) must be `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', ` if
  the sorted set's comparator (see `],
-					[/* reference */ 'r', `comparator()`],
+					[/* reference */ 'r', `#comparator()`, `comparator()`],
 					[/* text */ 't', `) is `],
 					[/* inline code block */ 'i', `null`],
 					[/* text */ 't', `.

@@ -9,15 +9,15 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
 		[/* block */ 'b', [
 			[/* text */ 't', ` An asynchronous file channel is created when a file is opened by invoking
  one of the `],
-			[/* reference */ 'r', `open`],
+			[/* reference */ 'r', `#open(java.nio.file.Path,java.util.Set,java.util.concurrent.ExecutorService,java.nio.file.attribute.FileAttribute...)`, `open`],
 			[/* text */ 't', ` methods defined by this class. The file contains
  a variable-length sequence of bytes that can be read and written and whose
  current size can be `],
-			[/* reference */ 'r', `queried`],
+			[/* reference */ 'r', `#size()`, `queried`],
 			[/* text */ 't', `. The size of the file increases
  when bytes are written beyond its  current size; the size of the file decreases
  when it is `],
-			[/* reference */ 'r', `truncated`],
+			[/* reference */ 'r', `#truncate(long)`, `truncated`],
 			[/* text */ 't', `.
 
  `]
@@ -48,7 +48,7 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` Updates made to a file may be `],
-					[/* reference */ 'r', `forced out`],
+					[/* reference */ 'r', `#force(boolean)`, `forced out`],
 					[/* text */ 't', ` to the underlying storage device, ensuring that data are not
    lost in the event of a system crash.  `]
 				]]
@@ -56,7 +56,7 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
 			[/* block */ 'b', [
 				[/* block */ 'b', [
 					[/* text */ 't', ` A region of a file may be `],
-					[/* reference */ 'r', `locked`],
+					[/* reference */ 'r', `#lock(long,long,boolean,A,java.nio.channels.CompletionHandler)`, `locked`],
 					[/* text */ 't', ` against
    access by other programs.  `]
 				]]
@@ -90,7 +90,7 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
 		[/* block */ 'b', [
 			[/* text */ 't', ` Channels of this type are safe for use by multiple concurrent threads. The
  `],
-			[/* external link */ 'a', `Channel.html#close()`, `close`],
+			[/* reference */ 'r', `.Channel#close()`],
 			[/* text */ 't', ` method may be invoked at any time, as specified
  by the `],
 			[/* reference */ 'r', `java.nio.channels.Channel`],
@@ -146,7 +146,7 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
 					[/* text */ 't', ` This method initiates an operation to acquire a lock on the given
  region of this channel's file.  The method behaves in exactly the same
  manner as the `],
-					[/* reference */ 'r', `lock(long, long, boolean, Object, CompletionHandler)`],
+					[/* reference */ 'r', `#lock(long,long,boolean,A,java.nio.channels.CompletionHandler)`, `lock(long, long, boolean, Object, CompletionHandler)`],
 					[/* text */ 't', `
  method except that instead of specifying a completion handler, this
  method returns a `],
@@ -155,7 +155,7 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
  `],
 					[/* inline code block */ 'i', `Future`],
 					[/* text */ 't', `'s `],
-					[/* external link */ 'a', `../../util/concurrent/Future.html#get()`, `get`],
+					[/* reference */ 'r', `java.nio.Future#get()`],
 					[/* text */ 't', ` method returns the `],
 					[/* reference */ 'r', `java.nio.channels.FileLock`],
 					[/* text */ 't', ` on successful completion.`]
@@ -170,7 +170,7 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
 					[/* text */ 't', `The size of the locked region; must be non-negative, and the sum
           `],
 					[/* inline code block */ 'i', `position`],
-					[/* text */ 't', `&nbsp;+&nbsp;`],
+					[/* text */ 't', ` + `],
 					[/* inline code block */ 'i', `size`],
 					[/* text */ 't', ` must be non-negative`]
 				]],
@@ -237,7 +237,7 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
 				]],
 				[/* code block */ 'c', [
 					[/* text */ 't', `     ch.`],
-					[/* reference */ 'r', `lock`],
+					[/* text */ 't', `lock`],
 					[/* text */ 't', `(0L, Long.MAX_VALUE, false, att, handler)
  `]
 				]],
@@ -295,10 +295,10 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
  required then a region starting at zero, and no smaller than the
  expected maximum size of the file, should be locked.  The two-argument
  `],
-					[/* reference */ 'r', `lock(Object,CompletionHandler)`],
+					[/* reference */ 'r', `#lock(A,java.nio.channels.CompletionHandler)`, `lock(Object,CompletionHandler)`],
 					[/* text */ 't', ` method simply locks a region
  of size `],
-					[/* external link */ 'a', `../../lang/Long.html#MAX_VALUE`, `Long.MAX_VALUE`],
+					[/* reference */ 'r', `java.nio.Long#MAX_VALUE`],
 					[/* text */ 't', `. If a lock that overlaps the requested
  region is already held by this Java virtual machine, or this method has
  been invoked to lock an overlapping region and that operation has not
@@ -321,7 +321,7 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
  request for a shared lock is automatically converted into a request for
  an exclusive lock.  Whether the newly-acquired lock is shared or
  exclusive may be tested by invoking the resulting lock object's `],
-					[/* external link */ 'a', `FileLock.html#isShared()`, `isShared`],
+					[/* reference */ 'r', `.FileLock#isShared()`],
 					[/* text */ 't', ` method.
 
  `]
@@ -339,7 +339,7 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
 					[/* text */ 't', `The size of the locked region; must be non-negative, and the sum
           `],
 					[/* inline code block */ 'i', `position`],
-					[/* text */ 't', `&nbsp;+&nbsp;`],
+					[/* text */ 't', ` + `],
 					[/* inline code block */ 'i', `size`],
 					[/* text */ 't', ` must be non-negative`]
 				]],
@@ -396,7 +396,7 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
  pending result of the operation. The `],
 					[/* inline code block */ 'i', `Future`],
 					[/* text */ 't', `'s `],
-					[/* external link */ 'a', `../../util/concurrent/Future.html#get()`, `get`],
+					[/* reference */ 'r', `java.nio.Future#get()`],
 					[/* text */ 't', ` method returns the `],
 					[/* reference */ 'r', `java.nio.channels.FileLock`],
 					[/* text */ 't', ` on successful completion.
@@ -408,7 +408,7 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
  `],
 				[/* code block */ 'c', [
 					[/* text */ 't', `     ch.`],
-					[/* reference */ 'r', `lock`],
+					[/* text */ 't', `lock`],
 					[/* text */ 't', `(0L, Long.MAX_VALUE, false)
  `]
 				]],
@@ -462,7 +462,7 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
  write operation. The `],
 					[/* inline code block */ 'i', `Future`],
 					[/* text */ 't', `'s `],
-					[/* external link */ 'a', `../../util/concurrent/Future.html#get()`, `get`],
+					[/* reference */ 'r', `java.nio.Future#get()`],
 					[/* text */ 't', ` method
  returns the number of bytes written.
 
@@ -470,7 +470,7 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method works in the same manner as the `],
-					[/* external link */ 'a', `AsynchronousByteChannel.html#write(java.nio.ByteBuffer)`, `AsynchronousByteChannel.write(ByteBuffer)`],
+					[/* reference */ 'r', `.AsynchronousByteChannel#write(java.nio.ByteBuffer)`],
 					[/* text */ 't', ` method, except that bytes are
  written starting at the given file position. If the given position is
  greater than the file's size, at the time that the write is attempted,
@@ -510,7 +510,7 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method works in the same manner as the `],
-					[/* external link */ 'a', `AsynchronousByteChannel.html#write(java.nio.ByteBuffer,A,java.nio.channels.CompletionHandler)`, `AsynchronousByteChannel.write(ByteBuffer,Object,CompletionHandler)`],
+					[/* reference */ 'r', `.AsynchronousByteChannel#write(java.nio.ByteBuffer,A,java.nio.channels.CompletionHandler)`],
 					[/* text */ 't', `
  method, except that bytes are written starting at the given file position.
  If the given position is greater than the file's size, at the time that
@@ -560,7 +560,7 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
  operation. The `],
 					[/* inline code block */ 'i', `Future`],
 					[/* text */ 't', `'s `],
-					[/* external link */ 'a', `../../util/concurrent/Future.html#get()`, `get`],
+					[/* reference */ 'r', `java.nio.Future#get()`],
 					[/* text */ 't', ` method returns
  the number of bytes read or `],
 					[/* inline code block */ 'i', `-1`],
@@ -571,7 +571,7 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method works in the same manner as the `],
-					[/* external link */ 'a', `AsynchronousByteChannel.html#read(java.nio.ByteBuffer)`, `AsynchronousByteChannel.read(ByteBuffer)`],
+					[/* reference */ 'r', `.AsynchronousByteChannel#read(java.nio.ByteBuffer)`],
 					[/* text */ 't', ` method, except that bytes are
  read starting at the given file position. If the given file position is
  greater than the file's size at the time that the read is attempted then
@@ -620,7 +620,7 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method works in the same manner as the `],
-					[/* external link */ 'a', `AsynchronousByteChannel.html#read(java.nio.ByteBuffer,A,java.nio.channels.CompletionHandler)`, `AsynchronousByteChannel.read(ByteBuffer,Object,CompletionHandler)`],
+					[/* reference */ 'r', `.AsynchronousByteChannel#read(java.nio.ByteBuffer,A,java.nio.channels.CompletionHandler)`],
 					[/* text */ 't', `
  method, except that bytes are read starting at the given file position.
  If the given file position is greater than the file's size at the time
@@ -664,9 +664,9 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
 					[/* inline code block */ 'i', `options`],
 					[/* text */ 't', ` parameter determines how the file is opened.
  The `],
-					[/* external link */ 'a', `../file/StandardOpenOption.html#READ`, `READ`],
+					[/* reference */ 'r', `java.StandardOpenOption#READ`],
 					[/* text */ 't', ` and `],
-					[/* external link */ 'a', `../file/StandardOpenOption.html#WRITE`, `WRITE`],
+					[/* reference */ 'r', `java.StandardOpenOption#WRITE`],
 					[/* text */ 't', ` options determines if the file should be opened for reading and/or
  writing. If neither option is contained in the array then an existing file
  is opened for  reading.
@@ -683,7 +683,125 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
 
  `]
 				]],
-				[/* table */ 't', ''],
+				[/* table */ 'tbl',
+					[/* caption */ 'tc'],
+					[/* table header */ 'th', [
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `Option`]
+							]],
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `Description`]
+							]]
+						]]
+					]],
+					[/* table body */ 'tb', [
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', ` `],
+								[/* reference */ 'r', `java.StandardOpenOption#TRUNCATE_EXISTING`],
+								[/* text */ 't', ` `]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', ` When opening an existing file, the file is first truncated to a
+   size of 0 bytes. This option is ignored when the file is opened only
+   for reading.`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', ` `],
+								[/* reference */ 'r', `java.StandardOpenOption#CREATE_NEW`],
+								[/* text */ 't', ` `]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', ` If this option is present then a new file is created, failing if
+   the file already exists. When creating a file the check for the
+   existence of the file and the creation of the file if it does not exist
+   is atomic with respect to other file system operations. This option is
+   ignored when the file is opened only for reading. `]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', ` `],
+								[/* reference */ 'r', `java.StandardOpenOption#CREATE`],
+								[/* text */ 't', ` `]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', ` If this option is present then an existing file is opened if it
+   exists, otherwise a new file is created. When creating a file the check
+   for the existence of the file and the creation of the file if it does
+   not exist is atomic with respect to other file system operations. This
+   option is ignored if the `],
+								[/* inline code block */ 'i', `CREATE_NEW`],
+								[/* text */ 't', ` option is also present or
+   the file is opened only for reading. `]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', ` `],
+								[/* reference */ 'r', `java.StandardOpenOption#DELETE_ON_CLOSE`],
+								[/* text */ 't', ` `]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', ` When this option is present then the implementation makes a
+   `],
+								[/* text */ 't', `best effort`],
+								[/* text */ 't', ` attempt to delete the file when closed by
+   the `],
+								[/* reference */ 'r', `.AsynchronousChannel#close()`],
+								[/* text */ 't', ` method. If the `],
+								[/* inline code block */ 'i', `close`],
+								[/* text */ 't', ` method is not
+   invoked then a `],
+								[/* text */ 't', `best effort`],
+								[/* text */ 't', ` attempt is made to delete the file
+   when the Java virtual machine terminates. `]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* reference */ 'r', `java.StandardOpenOption#SPARSE`],
+								[/* text */ 't', ` `]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', ` When creating a new file this option is a `],
+								[/* text */ 't', `hint`],
+								[/* text */ 't', ` that the
+   new file will be sparse. This option is ignored when not creating
+   a new file. `]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', ` `],
+								[/* reference */ 'r', `java.StandardOpenOption#SYNC`],
+								[/* text */ 't', ` `]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', ` Requires that every update to the file's content or metadata be
+   written synchronously to the underlying storage device. (see `],
+								[/* text */ 't', `Synchronized I/O file integrity`],
+								[/* text */ 't', `). `]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', ` `],
+								[/* reference */ 'r', `java.StandardOpenOption#DSYNC`],
+								[/* text */ 't', ` `]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* text */ 't', ` Requires that every update to the file's content be written
+   synchronously to the underlying storage device. (see `],
+								[/* text */ 't', `Synchronized I/O file integrity`],
+								[/* text */ 't', `). `]
+							]]
+						]]
+					]],
+				],
 				[/* block */ 'b', ''],
 				[/* block */ 'b', ` An implementation may also support additional options.
 
@@ -702,7 +820,7 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
 					[/* text */ 't', `. Minimally it
  should support an unbounded work queue and should not run tasks on the
  caller thread of the `],
-					[/* external link */ 'a', `../../util/concurrent/Executor.html#execute(java.lang.Runnable)`, `execute`],
+					[/* reference */ 'r', `java.nio.Executor#execute(java.lang.Runnable)`],
 					[/* text */ 't', ` method.
  Shutting down the executor service while the channel is open results in
  unspecified behavior.
@@ -720,7 +838,7 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The new channel is created by invoking the `],
-					[/* external link */ 'a', `../file/spi/FileSystemProvider.html#newAsynchronousFileChannel(java.nio.file.Path,java.util.Set,java.util.concurrent.ExecutorService,java.nio.file.attribute.FileAttribute...)`, `newAsynchronousFileChannel`],
+					[/* reference */ 'r', `java.FileSystemProvider#newAsynchronousFileChannel(java.nio.file.Path,java.util.Set,java.util.concurrent.ExecutorService,java.nio.file.attribute.FileAttribute...)`],
 					[/* text */ 't', `
  method on the provider that created the `],
 					[/* inline code block */ 'i', `Path`],
@@ -759,11 +877,11 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
 				]],
 				[/* throw */ 'java.nio.file.FileAlreadyExistsException', [/* throw description */
 					[/* text */ 't', `If a file of that name already exists and the `],
-					[/* external link */ 'a', `../file/StandardOpenOption.html#CREATE_NEW`, `CREATE_NEW`],
+					[/* reference */ 'r', `java.StandardOpenOption#CREATE_NEW`],
 					[/* text */ 't', ` option is specified
           and the file is being opened for writing
           `],
-					[/* external link */ 'a', `../file/package-summary.html#optspecex`, `optional specific exception`]
+					[/* text */ 't', `optional specific exception`]
 				]],
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
@@ -772,10 +890,10 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
 					[/* text */ 't', `If a security manager is installed and it denies an
           unspecified permission required by the implementation.
           In the case of the default provider, the `],
-					[/* external link */ 'a', `../../lang/SecurityManager.html#checkRead(java.lang.String)`, `SecurityManager.checkRead(String)`],
+					[/* reference */ 'r', `java.nio.SecurityManager#checkRead(java.lang.String)`],
 					[/* text */ 't', ` method is invoked to check
           read access if the file is opened for reading. The `],
-					[/* external link */ 'a', `../../lang/SecurityManager.html#checkWrite(java.lang.String)`, `SecurityManager.checkWrite(String)`],
+					[/* reference */ 'r', `java.nio.SecurityManager#checkWrite(java.lang.String)`],
 					[/* text */ 't', ` method is invoked to check
           write access if the file is opened for writing`]
 				]]
@@ -795,8 +913,8 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
  `],
 				[/* code block */ 'c', [
 					[/* text */ 't', `     ch.`],
-					[/* reference */ 'r', `open`],
-					[/* text */ 't', `(file, opts, null, new FileAttribute&lt;?&gt;[0]);
+					[/* text */ 't', `open`],
+					[/* text */ 't', `(file, opts, null, new FileAttribute<?>[0]);
  `]
 				]],
 				[/* text */ 't', `
@@ -835,11 +953,11 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
 				]],
 				[/* throw */ 'java.nio.file.FileAlreadyExistsException', [/* throw description */
 					[/* text */ 't', `If a file of that name already exists and the `],
-					[/* external link */ 'a', `../file/StandardOpenOption.html#CREATE_NEW`, `CREATE_NEW`],
+					[/* reference */ 'r', `java.StandardOpenOption#CREATE_NEW`],
 					[/* text */ 't', ` option is specified
           and the file is being opened for writing
           `],
-					[/* external link */ 'a', `../file/package-summary.html#optspecex`, `optional specific exception`]
+					[/* text */ 't', `optional specific exception`]
 				]],
 				[/* throw */ 'java.io.IOException', [/* throw description */
 					[/* text */ 't', `If an I/O error occurs`]
@@ -848,10 +966,10 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
 					[/* text */ 't', `If a security manager is installed and it denies an
           unspecified permission required by the implementation.
           In the case of the default provider, the `],
-					[/* external link */ 'a', `../../lang/SecurityManager.html#checkRead(java.lang.String)`, `SecurityManager.checkRead(String)`],
+					[/* reference */ 'r', `java.nio.SecurityManager#checkRead(java.lang.String)`],
 					[/* text */ 't', ` method is invoked to check
           read access if the file is opened for reading. The `],
-					[/* external link */ 'a', `../../lang/SecurityManager.html#checkWrite(java.lang.String)`, `SecurityManager.checkWrite(String)`],
+					[/* reference */ 'r', `java.nio.SecurityManager#checkWrite(java.lang.String)`],
 					[/* text */ 't', ` method is invoked to check
           write access if the file is opened for writing`]
 				]]
@@ -875,7 +993,7 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
 				]],
 				[/* code block */ 'c', [
 					[/* text */ 't', `     ch.`],
-					[/* reference */ 'r', `tryLock`],
+					[/* text */ 't', `tryLock`],
 					[/* text */ 't', `(0L, Long.MAX_VALUE, false) `]
 				]],
 				[/* block */ 'b', '']
@@ -932,7 +1050,7 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
 					[/* text */ 't', `The size of the locked region; must be non-negative, and the sum
          `],
 					[/* inline code block */ 'i', `position`],
-					[/* text */ 't', `&nbsp;+&nbsp;`],
+					[/* text */ 't', ` + `],
 					[/* inline code block */ 'i', `size`],
 					[/* text */ 't', ` must be non-negative`]
 				]],

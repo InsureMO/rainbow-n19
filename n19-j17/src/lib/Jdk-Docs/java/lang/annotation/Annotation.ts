@@ -126,7 +126,7 @@ DocsCollector.collect('java.lang.annotation.Annotation', [
 						[/* inline code block */ 'i', `Arrays.equals(x, y)`],
 						[/* text */ 't', `, for the
     appropriate overloading of `],
-						[/* external link */ 'a', `../../util/Arrays.html#equals(long%5B%5D,long%5B%5D)`, `Arrays.equals`],
+						[/* reference */ 'r', `java.lang.Arrays#equals(long[],long[])`],
 						[/* text */ 't', `.
  `]
 					]]
@@ -169,7 +169,7 @@ DocsCollector.collect('java.lang.annotation.Annotation', [
 
  The hash code of an annotation member is (127 times the hash code
  of the member-name as computed by `],
-					[/* external link */ 'a', `../String.html#hashCode()`, `String.hashCode()`],
+					[/* reference */ 'r', `java.String#hashCode()`],
 					[/* text */ 't', `) XOR
  the hash code of the member-value.
  The hash code of a member-value depends on its type as defined below:
@@ -226,7 +226,7 @@ DocsCollector.collect('java.lang.annotation.Annotation', [
 						[/* text */ 't', `The hash code of an array member-value is computed by calling
      the appropriate overloading of
      `],
-						[/* external link */ 'a', `../../util/Arrays.html#hashCode(long%5B%5D)`, `Arrays.hashCode`],
+						[/* reference */ 'r', `java.lang.Arrays#hashCode(long[])`],
 						[/* text */ 't', `
      on the value.  (There is one overloading for each primitive
      type, and one for object reference types.)

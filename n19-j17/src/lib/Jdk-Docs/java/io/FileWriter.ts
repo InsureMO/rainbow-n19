@@ -9,7 +9,7 @@ DocsCollector.collect('java.io.FileWriter', [
 		[/* text */ 't', `
  or the platform's
  `],
-		[/* external link */ 'a', `../nio/charset/Charset.html#defaultCharset()`, `default charset`],
+		[/* reference */ 'r', `java.Charset#defaultCharset()`],
 		[/* text */ 't', `.
 
  `],
@@ -44,7 +44,7 @@ DocsCollector.collect('java.io.FileWriter', [
 				[/* text */ 't', ` given a file descriptor,
  using the platform's
  `],
-				[/* external link */ 'a', `../nio/charset/Charset.html#defaultCharset()`, `default charset`],
+				[/* reference */ 'r', `java.Charset#defaultCharset()`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -188,7 +188,7 @@ DocsCollector.collect('java.io.FileWriter', [
 				[/* inline code block */ 'i', `FileWriter`],
 				[/* text */ 't', ` given a file name, using the platform's
  `],
-				[/* external link */ 'a', `../nio/charset/Charset.html#defaultCharset()`, `default charset`]
+				[/* reference */ 'r', `java.Charset#defaultCharset()`]
 			],
 			[/* parameters */
 				[/* parameter */ 'fileName', [/* parameter description */
@@ -210,7 +210,7 @@ DocsCollector.collect('java.io.FileWriter', [
 				[/* text */ 't', ` given a file name and a boolean indicating
  whether to append the data written, using the platform's
  `],
-				[/* external link */ 'a', `../nio/charset/Charset.html#defaultCharset()`, `default charset`],
+				[/* reference */ 'r', `java.Charset#defaultCharset()`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -241,7 +241,7 @@ DocsCollector.collect('java.io.FileWriter', [
 				[/* text */ 't', ` to write,
  using the platform's
  `],
-				[/* external link */ 'a', `../nio/charset/Charset.html#defaultCharset()`, `default charset`]
+				[/* reference */ 'r', `java.Charset#defaultCharset()`]
 			],
 			[/* parameters */
 				[/* parameter */ 'file', [/* parameter description */
@@ -267,7 +267,7 @@ DocsCollector.collect('java.io.FileWriter', [
 				[/* text */ 't', ` to write and
  a boolean indicating whether to append the data written, using the platform's
  `],
-				[/* external link */ 'a', `../nio/charset/Charset.html#defaultCharset()`, `default charset`],
+				[/* reference */ 'r', `java.Charset#defaultCharset()`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */

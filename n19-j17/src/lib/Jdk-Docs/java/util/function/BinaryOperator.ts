@@ -13,10 +13,10 @@ DocsCollector.collect('java.util.function.BinaryOperator', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
-			[/* external link */ 'a', `package-summary.html`, `functional interface`],
+			[/* reference */ 'r', `.package-summary`],
 			[/* text */ 't', `
  whose functional method is `],
-			[/* external link */ 'a', `BiFunction.html#apply(T,U)`, `BiFunction.apply(Object, Object)`],
+			[/* reference */ 'r', `.BiFunction#apply(T,U)`],
 			[/* text */ 't', `.`]
 		]]
 	],

@@ -4,7 +4,7 @@ import {DocsCollector} from '../../../DocsCollector';
 DocsCollector.collect('java.nio.charset.Charset', [
 	[/* class description */
 		[/* text */ 't', `A named mapping between sequences of sixteen-bit Unicode `],
-		[/* external link */ 'a', `../../lang/Character.html#unicode`, `code units`],
+		[/* text */ 't', `code units`],
 		[/* text */ 't', ` and sequences of
  bytes.  This class defines methods for creating decoders and encoders and
  for retrieving the various names associated with a charset.  Instances of
@@ -42,7 +42,7 @@ DocsCollector.collect('java.nio.charset.Charset', [
 				[/* text */ 't', `
         (`],
 				[/* inline code block */ 'i', `'\\u0041'`],
-				[/* text */ 't', `&nbsp;through&nbsp;`],
+				[/* text */ 't', ` through `],
 				[/* inline code block */ 'i', `'\\u005a'`],
 				[/* text */ 't', `),
 
@@ -56,7 +56,7 @@ DocsCollector.collect('java.nio.charset.Charset', [
 				[/* text */ 't', `
         (`],
 				[/* inline code block */ 'i', `'\\u0061'`],
-				[/* text */ 't', `&nbsp;through&nbsp;`],
+				[/* text */ 't', ` through `],
 				[/* inline code block */ 'i', `'\\u007a'`],
 				[/* text */ 't', `),
 
@@ -70,7 +70,7 @@ DocsCollector.collect('java.nio.charset.Charset', [
 				[/* text */ 't', `
         (`],
 				[/* inline code block */ 'i', `'\\u0030'`],
-				[/* text */ 't', `&nbsp;through&nbsp;`],
+				[/* text */ 't', ` through `],
 				[/* inline code block */ 'i', `'\\u0039'`],
 				[/* text */ 't', `),
 
@@ -82,7 +82,7 @@ DocsCollector.collect('java.nio.charset.Charset', [
 				[/* text */ 't', `
         (`],
 				[/* inline code block */ 'i', `'\\u002d'`],
-				[/* text */ 't', `,&nbsp;`],
+				[/* text */ 't', `, `],
 				[/* text */ 't', `HYPHEN-MINUS`, 'small'],
 				[/* text */ 't', `),
 
@@ -94,7 +94,7 @@ DocsCollector.collect('java.nio.charset.Charset', [
 				[/* text */ 't', `
         (`],
 				[/* inline code block */ 'i', `'\\u002b'`],
-				[/* text */ 't', `,&nbsp;`],
+				[/* text */ 't', `, `],
 				[/* text */ 't', `PLUS SIGN`, 'small'],
 				[/* text */ 't', `),
 
@@ -106,7 +106,7 @@ DocsCollector.collect('java.nio.charset.Charset', [
 				[/* text */ 't', `
         (`],
 				[/* inline code block */ 'i', `'\\u002e'`],
-				[/* text */ 't', `,&nbsp;`],
+				[/* text */ 't', `, `],
 				[/* text */ 't', `FULL STOP`, 'small'],
 				[/* text */ 't', `),
 
@@ -118,7 +118,7 @@ DocsCollector.collect('java.nio.charset.Charset', [
 				[/* text */ 't', `
         (`],
 				[/* inline code block */ 'i', `'\\u003a'`],
-				[/* text */ 't', `,&nbsp;`],
+				[/* text */ 't', `, `],
 				[/* text */ 't', `COLON`, 'small'],
 				[/* text */ 't', `), and
 
@@ -130,7 +130,7 @@ DocsCollector.collect('java.nio.charset.Charset', [
 				[/* text */ 't', `
         (`],
 				[/* inline code block */ 'i', `'\\u005f'`],
-				[/* text */ 't', `,&nbsp;`],
+				[/* text */ 't', `, `],
 				[/* text */ 't', `LOW LINE`, 'small'],
 				[/* text */ 't', `).
 
@@ -155,11 +155,11 @@ DocsCollector.collect('java.nio.charset.Charset', [
  `],
 			[/* text */ 't', `aliases`],
 			[/* text */ 't', `.  The canonical name is returned by the `],
-			[/* reference */ 'r', `name`],
+			[/* reference */ 'r', `#name()`, `name`],
 			[/* text */ 't', ` method
  of this class.  Canonical names are, by convention, usually in upper case.
  The aliases of a charset are returned by the `],
-			[/* reference */ 'r', `aliases`],
+			[/* reference */ 'r', `#aliases()`, `aliases`],
 			[/* text */ 't', `
  method.
 
@@ -173,9 +173,9 @@ DocsCollector.collect('java.nio.charset.Charset', [
 			[/* inline code block */ 'i', `getEncoding()`],
 			[/* text */ 't', ` methods of the
  `],
-			[/* external link */ 'a', `../../io/InputStreamReader.html#getEncoding()`, `InputStreamReader`],
+			[/* reference */ 'r', `java.nio.InputStreamReader#getEncoding()`],
 			[/* text */ 't', ` and `],
-			[/* external link */ 'a', `../../io/OutputStreamWriter.html#getEncoding()`, `OutputStreamWriter`],
+			[/* reference */ 'r', `java.nio.OutputStreamWriter#getEncoding()`],
 			[/* text */ 't', ` classes.
 
  `]
@@ -219,7 +219,76 @@ DocsCollector.collect('java.nio.charset.Charset', [
 
  `],
 		[/* block */ 'b', [
-			[/* table */ 't', '']
+			[/* table */ 'tbl',
+				[/* caption */ 'tc'],
+				[/* table header */ 'th', [
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* text */ 't', `Charset`]
+						]],
+						[/* table header cell */ 'thc', [
+							[/* text */ 't', `Description`]
+						]]
+					]]
+				]],
+				[/* table body */ 'tb', [
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `US-ASCII`]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Seven-bit ASCII, a.k.a. `],
+							[/* inline code block */ 'i', `ISO646-US`],
+							[/* text */ 't', `,
+         a.k.a. the Basic Latin block of the Unicode character set`]
+						]]
+					]],
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `ISO-8859-1`]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `ISO Latin Alphabet No. 1, a.k.a. `],
+							[/* inline code block */ 'i', `ISO-LATIN-1`]
+						]]
+					]],
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `UTF-8`]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Eight-bit UCS Transformation Format`]
+						]]
+					]],
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `UTF-16BE`]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Sixteen-bit UCS Transformation Format,
+         big-endian byte order`]
+						]]
+					]],
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `UTF-16LE`]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Sixteen-bit UCS Transformation Format,
+         little-endian byte order`]
+						]]
+					]],
+					[/* table row */ 'tr', [
+						[/* table header cell */ 'thc', [
+							[/* inline code block */ 'i', `UTF-16`]
+						]],
+						[/* table cell */ 'tbc', [
+							[/* text */ 't', `Sixteen-bit UCS Transformation Format,
+         byte order identified by an optional byte-order mark`]
+						]]
+					]]
+				]],
+			]
 		]],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
@@ -229,7 +298,7 @@ DocsCollector.collect('java.nio.charset.Charset', [
 			[/* external link */ 'a', `http://www.ietf.org/rfc/rfc2279.txt`, `RFC 2279`],
 			[/* text */ 't', `; the
  transformation format upon which it is based is specified in
- Amendment&nbsp;2 of ISO&nbsp;10646-1 and is also described in the `],
+ Amendment 2 of ISO 10646-1 and is also described in the `],
 			[/* external link */ 'a', `http://www.unicode.org/standard/standard.html`, `Unicode Standard`],
 			[/* text */ 't', `.
 
@@ -242,7 +311,7 @@ DocsCollector.collect('java.nio.charset.Charset', [
 			[/* external link */ 'a', `http://www.ietf.org/rfc/rfc2781.txt`, `RFC 2781`],
 			[/* text */ 't', `; the
  transformation formats upon which they are based are specified in
- Amendment&nbsp;1 of ISO&nbsp;10646-1 and are also described in the `],
+ Amendment 1 of ISO 10646-1 and are also described in the `],
 			[/* external link */ 'a', `http://www.unicode.org/standard/standard.html`, `Unicode Standard`],
 			[/* text */ 't', `.
 
@@ -334,8 +403,8 @@ DocsCollector.collect('java.nio.charset.Charset', [
 			[/* text */ 't', ` A `],
 			[/* text */ 't', `coded character set`],
 			[/* text */ 't', ` is a mapping between a set of abstract
- characters and a set of integers.  US-ASCII, ISO&nbsp;8859-1,
- JIS&nbsp;X&nbsp;0201, and Unicode are examples of coded character sets.
+ characters and a set of integers.  US-ASCII, ISO 8859-1,
+ JIS X 0201, and Unicode are examples of coded character sets.
 
  `]
 		]],
@@ -360,7 +429,7 @@ DocsCollector.collect('java.nio.charset.Charset', [
 			[/* text */ 't', `character-encoding scheme`],
 			[/* text */ 't', ` is a mapping between one or more
  coded character sets and a set of octet (eight-bit byte) sequences.
- UTF-8, UTF-16, ISO&nbsp;2022, and EUC are examples of
+ UTF-8, UTF-16, ISO 2022, and EUC are examples of
  character-encoding schemes.  Encoding schemes are often associated with
  a particular coded character set; UTF-8, for example, is used only to
  encode Unicode.  Some schemes, however, are associated with multiple
@@ -381,7 +450,7 @@ DocsCollector.collect('java.nio.charset.Charset', [
  `],
 			[/* inline code block */ 'i', `EUC-JP`],
 			[/* text */ 't', ` is the name of the charset that encodes the
- JIS&nbsp;X&nbsp;0201, JIS&nbsp;X&nbsp;0208, and JIS&nbsp;X&nbsp;0212
+ JIS X 0201, JIS X 0208, and JIS X 0212
  coded character sets for the Japanese language.
 
  `]
@@ -550,7 +619,7 @@ DocsCollector.collect('java.nio.charset.Charset', [
 					[/* text */ 't', ` This method always replaces malformed-input and unmappable-character
  sequences with this charset's default replacement byte array.  In order
  to detect such sequences, use the `],
-					[/* external link */ 'a', `CharsetDecoder.html#decode(java.nio.ByteBuffer)`, `CharsetDecoder.decode(java.nio.ByteBuffer)`],
+					[/* reference */ 'r', `.CharsetDecoder#decode(java.nio.ByteBuffer)`],
 					[/* text */ 't', ` method directly.  `]
 				]]
 			],
@@ -633,7 +702,7 @@ DocsCollector.collect('java.nio.charset.Charset', [
 					[/* text */ 't', ` This method always replaces malformed-input and unmappable-character
  sequences with this charset's default replacement string.  In order to
  detect such sequences, use the `],
-					[/* external link */ 'a', `CharsetEncoder.html#encode(java.nio.CharBuffer)`, `CharsetEncoder.encode(java.nio.CharBuffer)`],
+					[/* reference */ 'r', `.CharsetEncoder#encode(java.nio.CharBuffer)`],
 					[/* text */ 't', ` method directly.  `]
 				]]
 			],
@@ -824,7 +893,7 @@ DocsCollector.collect('java.nio.charset.Charset', [
  to occur.  This method is provided for applications that need to
  enumerate all of the available charsets, for example to allow user
  charset selection.  This method is not used by the `],
-					[/* reference */ 'r', `forName`],
+					[/* reference */ 'r', `#forName(java.lang.String)`, `forName`],
 					[/* text */ 't', ` method, which instead employs an efficient incremental lookup
  algorithm.
 
@@ -835,7 +904,7 @@ DocsCollector.collect('java.nio.charset.Charset', [
  charset providers are dynamically made available to the current Java
  virtual machine.  In the absence of such changes, the charsets returned
  by this method are exactly those that can be retrieved via the `],
-					[/* reference */ 'r', `forName`],
+					[/* reference */ 'r', `#forName(java.lang.String)`, `forName`],
 					[/* text */ 't', ` method.  `]
 				]]
 			],

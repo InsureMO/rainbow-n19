@@ -10,8 +10,14 @@ DocsCollector.collect('java.time.chrono.HijrahEra', [
  proleptic years greater than zero.
  `],
 		[/* block */ 'b', [
-			[/* text */ 't', `Do not use <code>ordinal()</code> to obtain the numeric representation of <code>HijrahEra</code>.
- Use <code>getValue()</code> instead.`]
+			[/* text */ 't', `Do not use `],
+			[/* inline code block */ 'i', `ordinal()`],
+			[/* text */ 't', ` to obtain the numeric representation of `],
+			[/* inline code block */ 'i', `HijrahEra`],
+			[/* text */ 't', `.
+ Use `],
+			[/* inline code block */ 'i', `getValue()`],
+			[/* text */ 't', ` instead.`]
 		]]
 	],
 	/* fields */ UDF,
@@ -169,7 +175,7 @@ not permitted.)`]
 				[/* block */ 'b', [
 					[/* text */ 't', `
  If no textual mapping is found then the `],
-					[/* external link */ 'a', `Era.html#getValue()`, `numeric value`],
+					[/* reference */ 'r', `.Era#getValue()`],
 					[/* text */ 't', ` is returned.`]
 				]]
 			],

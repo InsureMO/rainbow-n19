@@ -500,7 +500,7 @@ DocsCollector.collect('java.lang.reflect.Method', [
  access to a `],
 						[/* reference */ 'r', `java.lang.reflect.Member`],
 						[/* text */ 't', ` of `],
-						[/* external link */ 'a', `Member.html#getDeclaringClass()`, `declaring class`],
+						[/* reference */ 'r', `.Member#getDeclaringClass()`],
 						[/* inline code block */ 'i', `D`],
 						[/* text */ 't', ` if any of the following hold: `]
 					]],
@@ -521,7 +521,7 @@ DocsCollector.collect('java.lang.reflect.Method', [
 							[/* text */ 't', ` in
      a package that the module containing `],
 							[/* inline code block */ 'i', `D`],
-							[/* external link */ 'a', `../Module.html#isExported(java.lang.String,java.lang.Module)`, `exports`],
+							[/* reference */ 'r', `java.Module#isExported(java.lang.String,java.lang.Module)`],
 							[/* text */ 't', ` to at least the module
      containing `],
 							[/* inline code block */ 'i', `C`],
@@ -552,7 +552,7 @@ DocsCollector.collect('java.lang.reflect.Method', [
 							[/* inline code block */ 'i', `D`],
 							[/* text */ 't', ` is in a package that the module containing `],
 							[/* inline code block */ 'i', `D`],
-							[/* external link */ 'a', `../Module.html#isOpen(java.lang.String,java.lang.Module)`, `opens`],
+							[/* reference */ 'r', `java.Module#isOpen(java.lang.String,java.lang.Module)`],
 							[/* text */ 't', ` to at least the module
      containing `],
 							[/* inline code block */ 'i', `C`],
@@ -571,7 +571,7 @@ DocsCollector.collect('java.lang.reflect.Method', [
  to the caller's module. `],
 					[/* block */ 'b', [
 						[/* text */ 't', ` This method cannot be used to enable `],
-						[/* external link */ 'a', `Field.html#set(java.lang.Object,java.lang.Object)`, `write`],
+						[/* reference */ 'r', `.Field#set(java.lang.Object,java.lang.Object)`],
 						[/* text */ 't', `
  access to a `],
 						[/* text */ 't', `non-modifiable`],
@@ -583,11 +583,11 @@ DocsCollector.collect('java.lang.reflect.Method', [
 						[/* block */ 'b', `static final fields declared in any class or interface`],
 						[/* block */ 'b', [
 							[/* text */ 't', `final fields declared in a `],
-							[/* external link */ 'a', `../Class.html#isHidden()`, `hidden class`]
+							[/* reference */ 'r', `java.Class#isHidden()`]
 						]],
 						[/* block */ 'b', [
 							[/* text */ 't', `final fields declared in a `],
-							[/* external link */ 'a', `../Class.html#isRecord()`, `record`]
+							[/* reference */ 'r', `java.Class#isRecord()`]
 						]]
 					]],
 					[/* block */ 'b', ''],
@@ -598,7 +598,7 @@ DocsCollector.collect('java.lang.reflect.Method', [
 						[/* inline code block */ 'i', `true`],
 						[/* text */ 't', ` suppresses Java language access
  control checks to only enable `],
-						[/* external link */ 'a', `Field.html#get(java.lang.Object)`, `read`],
+						[/* reference */ 'r', `.Field#get(java.lang.Object)`],
 						[/* text */ 't', ` access to
  these non-modifiable final fields.
 
@@ -717,7 +717,7 @@ DocsCollector.collect('java.lang.reflect.Method', [
  constructors of some inner classes may have an implicitly
  declared parameter in addition to explicitly declared ones.
  Also note that as a `],
-				[/* external link */ 'a', `../../../../java.base/java/lang/reflect/package-summary.html#LanguageJvmModel`, `modeling artifact`],
+				[/* text */ 't', `modeling artifact`],
 				[/* text */ 't', `, the number of returned parameters can differ
  depending on whether or not generic information is present. If
  generic information is present, only parameters explicitly

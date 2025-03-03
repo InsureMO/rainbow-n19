@@ -11,17 +11,17 @@ DocsCollector.collect('java.util.concurrent.ConcurrentMap', [
 		[/* block */ 'b', [
 			[/* text */ 't', `To maintain the specified guarantees, default implementations of
  methods including `],
-			[/* reference */ 'r', `putIfAbsent(K, V)`],
+			[/* reference */ 'r', `#putIfAbsent(K,V)`, `putIfAbsent(K, V)`],
 			[/* text */ 't', ` inherited from `],
 			[/* reference */ 'r', `java.util.Map`],
 			[/* text */ 't', `
  must be overridden by implementations of this interface. Similarly,
  implementations of the collections returned by methods `],
-			[/* external link */ 'a', `../Map.html#keySet()`, `Map.keySet()`],
+			[/* reference */ 'r', `java.Map#keySet()`],
 			[/* text */ 't', `, `],
-			[/* external link */ 'a', `../Map.html#values()`, `Map.values()`],
+			[/* reference */ 'r', `java.Map#values()`],
 			[/* text */ 't', `, and `],
-			[/* external link */ 'a', `../Map.html#entrySet()`, `Map.entrySet()`],
+			[/* reference */ 'r', `java.Map#entrySet()`],
 			[/* text */ 't', ` must override
  methods such as `],
 			[/* inline code block */ 'i', `removeIf`],
@@ -37,7 +37,7 @@ DocsCollector.collect('java.util.concurrent.ConcurrentMap', [
 			[/* inline code block */ 'i', `ConcurrentMap`],
 			[/* text */ 't', ` as a key or value
  `],
-			[/* external link */ 'a', `package-summary.html#MemoryVisibility`, `happen-before`],
+			[/* reference */ 'r', `.package-summary#MemoryVisibility`],
 			[/* text */ 't', `
  actions subsequent to the access or removal of that object from
  the `],
@@ -49,7 +49,7 @@ DocsCollector.collect('java.util.concurrent.ConcurrentMap', [
 		[/* block */ 'b', [
 			[/* text */ 't', `This interface is a member of the
  `],
-			[/* external link */ 'a', `../../../../java.base/java/util/package-summary.html#CollectionsFramework`, `Java Collections Framework`],
+			[/* text */ 't', `Java Collections Framework`],
 			[/* text */ 't', `.`]
 		]]
 	],
@@ -95,14 +95,14 @@ DocsCollector.collect('java.util.concurrent.ConcurrentMap', [
 					[/* text */ 't', `if the key or value is of an inappropriate
          type for this map
  (`],
-					[/* external link */ 'a', `../../../../java.base/java/util/Collection.html#optional-restrictions`, `optional`],
+					[/* text */ 't', `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if the specified key or value is null,
          and this map does not permit null keys or values
  (`],
-					[/* external link */ 'a', `../../../../java.base/java/util/Collection.html#optional-restrictions`, `optional`],
+					[/* text */ 't', `optional`],
 					[/* text */ 't', `)`]
 				]]
 			],
@@ -249,21 +249,21 @@ DocsCollector.collect('java.util.concurrent.ConcurrentMap', [
 					[/* text */ 't', `if function or a replacement value is null,
          and this map does not permit null keys or values
          (`],
-					[/* external link */ 'a', `../../../../java.base/java/util/Collection.html#optional-restrictions`, `optional`],
+					[/* text */ 't', `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
 					[/* text */ 't', `if a replacement value is of an inappropriate
          type for this map
          (`],
-					[/* external link */ 'a', `../../../../java.base/java/util/Collection.html#optional-restrictions`, `optional`],
+					[/* text */ 't', `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
 					[/* text */ 't', `if some property of a replacement value
          prevents it from being stored in this map
          (`],
-					[/* external link */ 'a', `../../../../java.base/java/util/Collection.html#optional-restrictions`, `optional`],
+					[/* text */ 't', `optional`],
 					[/* text */ 't', `)`]
 				]]
 			],
@@ -319,14 +319,14 @@ DocsCollector.collect('java.util.concurrent.ConcurrentMap', [
 					[/* text */ 't', ` operation
          is not supported by this map
          (`],
-					[/* external link */ 'a', `../../../../java.base/java/util/Collection.html#optional-restrictions`, `optional`],
+					[/* text */ 't', `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
 					[/* text */ 't', `if the class of the specified key or value
          prevents it from being stored in this map
          (`],
-					[/* external link */ 'a', `../../../../java.base/java/util/Collection.html#optional-restrictions`, `optional`],
+					[/* text */ 't', `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
@@ -338,7 +338,7 @@ DocsCollector.collect('java.util.concurrent.ConcurrentMap', [
 					[/* text */ 't', `if some property of the specified key
          or value prevents it from being stored in this map
          (`],
-					[/* external link */ 'a', `../../../../java.base/java/util/Collection.html#optional-restrictions`, `optional`],
+					[/* text */ 't', `optional`],
 					[/* text */ 't', `)`]
 				]]
 			],
@@ -424,7 +424,7 @@ DocsCollector.collect('java.util.concurrent.ConcurrentMap', [
 				]],
 				[/* text */ 't', `
  (Method `],
-				[/* external link */ 'a', `../Map.html#merge(K,V,java.util.function.BiFunction)`, `merge()`],
+				[/* reference */ 'r', `java.Map#merge(K,V,java.util.function.BiFunction)`],
 				[/* text */ 't', ` is often simpler to use for such purposes.)
 
  `],
@@ -455,14 +455,14 @@ DocsCollector.collect('java.util.concurrent.ConcurrentMap', [
 					[/* text */ 't', ` operation
          is not supported by this map
          (`],
-					[/* external link */ 'a', `../../../../java.base/java/util/Collection.html#optional-restrictions`, `optional`],
+					[/* text */ 't', `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
 					[/* text */ 't', `if the class of the specified key or value
          prevents it from being stored in this map
          (`],
-					[/* external link */ 'a', `../../../../java.base/java/util/Collection.html#optional-restrictions`, `optional`],
+					[/* text */ 't', `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
@@ -474,7 +474,7 @@ DocsCollector.collect('java.util.concurrent.ConcurrentMap', [
 					[/* text */ 't', `if some property of the specified key
          or value prevents it from being stored in this map
          (`],
-					[/* external link */ 'a', `../../../../java.base/java/util/Collection.html#optional-restrictions`, `optional`],
+					[/* text */ 't', `optional`],
 					[/* text */ 't', `)`]
 				]]
 			],
@@ -557,14 +557,14 @@ DocsCollector.collect('java.util.concurrent.ConcurrentMap', [
 					[/* text */ 't', ` operation
          is not supported by this map
          (`],
-					[/* external link */ 'a', `../../../../java.base/java/util/Collection.html#optional-restrictions`, `optional`],
+					[/* text */ 't', `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
 					[/* text */ 't', `if the class of the specified key or value
          prevents it from being stored in this map
          (`],
-					[/* external link */ 'a', `../../../../java.base/java/util/Collection.html#optional-restrictions`, `optional`],
+					[/* text */ 't', `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
@@ -576,7 +576,7 @@ DocsCollector.collect('java.util.concurrent.ConcurrentMap', [
 					[/* text */ 't', `if some property of the specified key
          or value prevents it from being stored in this map
          (`],
-					[/* external link */ 'a', `../../../../java.base/java/util/Collection.html#optional-restrictions`, `optional`],
+					[/* text */ 't', `optional`],
 					[/* text */ 't', `)`]
 				]]
 			],
@@ -605,14 +605,14 @@ DocsCollector.collect('java.util.concurrent.ConcurrentMap', [
 					[/* text */ 't', `if the key is of an inappropriate type for
  this map
  (`],
-					[/* external link */ 'a', `../../../../java.base/java/util/Collection.html#optional-restrictions`, `optional`],
+					[/* text */ 't', `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if the specified key is null and this map
  does not permit null keys
  (`],
-					[/* external link */ 'a', `../../../../java.base/java/util/Collection.html#optional-restrictions`, `optional`],
+					[/* text */ 't', `optional`],
 					[/* text */ 't', `)`]
 				]]
 			],
@@ -655,14 +655,14 @@ DocsCollector.collect('java.util.concurrent.ConcurrentMap', [
 					[/* text */ 't', ` operation
          is not supported by this map
          (`],
-					[/* external link */ 'a', `../../../../java.base/java/util/Collection.html#optional-restrictions`, `optional`],
+					[/* text */ 't', `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.ClassCastException', [/* throw description */
 					[/* text */ 't', `if the class of the specified key or value
          prevents it from being stored in this map
          (`],
-					[/* external link */ 'a', `../../../../java.base/java/util/Collection.html#optional-restrictions`, `optional`],
+					[/* text */ 't', `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
@@ -674,7 +674,7 @@ DocsCollector.collect('java.util.concurrent.ConcurrentMap', [
 					[/* text */ 't', `if some property of the specified key
          or value prevents it from being stored in this map
          (`],
-					[/* external link */ 'a', `../../../../java.base/java/util/Collection.html#optional-restrictions`, `optional`],
+					[/* text */ 't', `optional`],
 					[/* text */ 't', `)`]
 				]]
 			],

@@ -16,10 +16,10 @@ DocsCollector.collect('java.util.function.DoubleToLongFunction', [
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
-			[/* external link */ 'a', `package-summary.html`, `functional interface`],
+			[/* reference */ 'r', `.package-summary`],
 			[/* text */ 't', `
  whose functional method is `],
-			[/* reference */ 'r', `applyAsLong(double)`],
+			[/* reference */ 'r', `#applyAsLong(double)`, `applyAsLong(double)`],
 			[/* text */ 't', `.`]
 		]]
 	],

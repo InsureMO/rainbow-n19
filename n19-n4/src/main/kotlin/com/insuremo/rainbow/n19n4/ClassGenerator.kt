@@ -784,7 +784,8 @@ private class ClassGenerator(
 				linkTo.add(myPackageName.removeFirst())
 				link = link.substring(3)
 			}
-			"${linkTo.joinToString(".")}.${link.substring(link.lastIndexOf("/") + 1).replace(".html", "")}"
+			"${linkTo.joinToString(".")}." +
+					link.substring(link.indexOf("/") + 1).replace(".html", "").replace("/", ".")
 		}
 	}
 

@@ -40,13 +40,13 @@ DocsCollector.collect('java.nio.channels.ReadableByteChannel', [
 					[/* text */ 't', ` is read, where
  `],
 					[/* inline code block */ 'i', `0`],
-					[/* text */ 't', `&nbsp;`],
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `<=`],
-					[/* text */ 't', `&nbsp;`],
+					[/* text */ 't', ` `],
 					[/* text */ 't', `n`],
-					[/* text */ 't', `&nbsp;`],
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `<=`],
-					[/* text */ 't', `&nbsp;`],
+					[/* text */ 't', ` `],
 					[/* text */ 't', `r`],
 					[/* text */ 't', `.
  This byte sequence will be transferred into the buffer so that the first
@@ -55,13 +55,13 @@ DocsCollector.collect('java.nio.channels.ReadableByteChannel', [
 					[/* text */ 't', ` and the last byte is at index
  `],
 					[/* text */ 't', `p`],
-					[/* text */ 't', `&nbsp;`],
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `+`],
-					[/* text */ 't', `&nbsp;`],
+					[/* text */ 't', ` `],
 					[/* text */ 't', `n`],
-					[/* text */ 't', `&nbsp;`],
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `-`],
-					[/* text */ 't', `&nbsp;`],
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `1`],
 					[/* text */ 't', `,
  where `],
@@ -70,9 +70,9 @@ DocsCollector.collect('java.nio.channels.ReadableByteChannel', [
  invoked.  Upon return the buffer's position will be equal to
  `],
 					[/* text */ 't', `p`],
-					[/* text */ 't', `&nbsp;`],
+					[/* text */ 't', ` `],
 					[/* inline code block */ 'i', `+`],
-					[/* text */ 't', `&nbsp;`],
+					[/* text */ 't', ` `],
 					[/* text */ 't', `n`],
 					[/* text */ 't', `; its limit will not have changed.
 

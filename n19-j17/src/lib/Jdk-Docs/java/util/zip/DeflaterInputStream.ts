@@ -225,9 +225,9 @@ DocsCollector.collect('java.util.zip.DeflaterInputStream', [
 				[/* inline code block */ 'i', `false`],
 				[/* text */ 't', ` because this input stream does not support
  the `],
-				[/* reference */ 'r', `mark()`],
+				[/* reference */ 'r', `#mark(int)`, `mark()`],
 				[/* text */ 't', ` and `],
-				[/* reference */ 'r', `reset()`],
+				[/* reference */ 'r', `#reset()`, `reset()`],
 				[/* text */ 't', ` methods.`]
 			],
 			/* parameters */ UDF,

@@ -8,17 +8,17 @@ DocsCollector.collect('java.util.stream.DoubleStream$DoubleMapMultiConsumer', [
 		[/* text */ 't', `-valued argument
  and a DoubleConsumer, and returns no result. This functional interface is
  used by `],
-		[/* external link */ 'a', `DoubleStream.html#mapMulti(java.util.stream.DoubleStream.DoubleMapMultiConsumer)`, `DoubleStream.mapMulti`],
+		[/* reference */ 'r', `.DoubleStream#mapMulti(java.util.stream.DoubleStream.DoubleMapMultiConsumer)`],
 		[/* text */ 't', `
  to replace a double value with zero or more double values.
 
  `],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
-			[/* external link */ 'a', `../function/package-summary.html`, `functional interface`],
+			[/* text */ 't', `functional interface`],
 			[/* text */ 't', `
  whose functional method is `],
-			[/* reference */ 'r', `accept(double, DoubleConsumer)`],
+			[/* reference */ 'r', `#accept(double,java.util.function.DoubleConsumer)`, `accept(double, DoubleConsumer)`],
 			[/* text */ 't', `.`]
 		]]
 	],

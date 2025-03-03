@@ -7,14 +7,14 @@ DocsCollector.collect('java.util.NavigableSet', [
 		[/* reference */ 'r', `java.util.SortedSet`],
 		[/* text */ 't', ` extended with navigation methods reporting
  closest matches for given search targets. Methods `],
-		[/* reference */ 'r', `lower(E)`],
+		[/* reference */ 'r', `#lower(E)`, `lower(E)`],
 		[/* text */ 't', `,
  `],
-		[/* reference */ 'r', `floor(E)`],
+		[/* reference */ 'r', `#floor(E)`, `floor(E)`],
 		[/* text */ 't', `, `],
-		[/* reference */ 'r', `ceiling(E)`],
+		[/* reference */ 'r', `#ceiling(E)`, `ceiling(E)`],
 		[/* text */ 't', `, and `],
-		[/* reference */ 'r', `higher(E)`],
+		[/* reference */ 'r', `#higher(E)`, `higher(E)`],
 		[/* text */ 't', ` return elements
  respectively less than, less than or equal, greater than or equal,
  and greater than a given element, returning `],
@@ -28,28 +28,28 @@ DocsCollector.collect('java.util.NavigableSet', [
 			[/* inline code block */ 'i', `NavigableSet`],
 			[/* text */ 't', ` may be accessed and traversed in either
  ascending or descending order.  The `],
-			[/* reference */ 'r', `descendingSet()`],
+			[/* reference */ 'r', `#descendingSet()`, `descendingSet()`],
 			[/* text */ 't', ` method
  returns a view of the set with the senses of all relational and
  directional methods inverted. The performance of ascending
  operations and views is likely to be faster than that of descending
  ones.  This interface additionally defines methods `],
-			[/* reference */ 'r', `pollFirst()`],
+			[/* reference */ 'r', `#pollFirst()`, `pollFirst()`],
 			[/* text */ 't', ` and `],
-			[/* reference */ 'r', `pollLast()`],
+			[/* reference */ 'r', `#pollLast()`, `pollLast()`],
 			[/* text */ 't', ` that return and remove the lowest
  and highest element, if one exists, else returning `],
 			[/* inline code block */ 'i', `null`],
 			[/* text */ 't', `.
  Methods
  `],
-			[/* reference */ 'r', `subSet(E, boolean, E, boolean)`],
+			[/* reference */ 'r', `#subSet(E,boolean,E,boolean)`, `subSet(E, boolean, E, boolean)`],
 			[/* text */ 't', `,
  `],
-			[/* reference */ 'r', `headSet(E, boolean)`],
+			[/* reference */ 'r', `#headSet(E,boolean)`, `headSet(E, boolean)`],
 			[/* text */ 't', `, and
  `],
-			[/* reference */ 'r', `tailSet(E, boolean)`],
+			[/* reference */ 'r', `#tailSet(E,boolean)`, `tailSet(E, boolean)`],
 			[/* text */ 't', `
  differ from the like-named `],
 			[/* inline code block */ 'i', `SortedSet`],
@@ -89,13 +89,13 @@ DocsCollector.collect('java.util.NavigableSet', [
 		[/* block */ 'b', [
 			[/* text */ 't', `Methods
  `],
-			[/* reference */ 'r', `subSet(E, E)`],
+			[/* reference */ 'r', `#subSet(E,E)`, `subSet(E, E)`],
 			[/* text */ 't', `,
  `],
-			[/* reference */ 'r', `headSet(E)`],
+			[/* reference */ 'r', `#headSet(E)`, `headSet(E)`],
 			[/* text */ 't', `, and
  `],
-			[/* reference */ 'r', `tailSet(E)`],
+			[/* reference */ 'r', `#tailSet(E)`, `tailSet(E)`],
 			[/* text */ 't', `
  are specified to return `],
 			[/* inline code block */ 'i', `SortedSet`],
@@ -116,7 +116,7 @@ DocsCollector.collect('java.util.NavigableSet', [
 		[/* block */ 'b', [
 			[/* text */ 't', `This interface is a member of the
  `],
-			[/* external link */ 'a', `../../../java.base/java/util/package-summary.html#CollectionsFramework`, `Java Collections Framework`],
+			[/* text */ 't', `Java Collections Framework`],
 			[/* text */ 't', `.`]
 		]]
 	],
@@ -779,7 +779,7 @@ DocsCollector.collect('java.util.NavigableSet', [
 				[/* block */ 'b', [
 					[/* text */ 't', `The returned set has an ordering equivalent to
  `],
-					[/* external link */ 'a', `Collections.html#reverseOrder(java.util.Comparator)`, `Collections.reverseOrder`],
+					[/* reference */ 'r', `.Collections#reverseOrder(java.util.Comparator)`],
 					[/* inline code block */ 'i', `(comparator())`],
 					[/* text */ 't', `.
  The expression `],

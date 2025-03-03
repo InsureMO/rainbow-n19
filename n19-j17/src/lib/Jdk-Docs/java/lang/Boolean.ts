@@ -36,11 +36,11 @@ DocsCollector.collect('java.lang.Boolean', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
-			[/* external link */ 'a', `../../../java.base/java/lang/doc-files/ValueBased.html`, `value-based`],
+			[/* text */ 't', `value-based`],
 			[/* text */ 't', `
  class; programmers should treat instances that are
  `],
-			[/* reference */ 'r', `equal`],
+			[/* reference */ 'r', `#equals(java.lang.Object)`, `equal`],
 			[/* text */ 't', ` as interchangeable and should not
  use instances for synchronization, or unpredictable behavior may
  occur. For example, in a future release, synchronization may fail.`]
@@ -299,7 +299,7 @@ DocsCollector.collect('java.lang.Boolean', [
 				[/* throw */ 'java.lang.SecurityException', [/* throw description */
 					[/* text */ 't', `for the same reasons as
           `],
-					[/* external link */ 'a', `System.html#getProperty(java.lang.String)`, `System.getProperty`]
+					[/* reference */ 'r', `.System#getProperty(java.lang.String)`]
 				]]
 			],
 			[/* return description */
@@ -417,7 +417,7 @@ DocsCollector.collect('java.lang.Boolean', [
 				[/* text */ 't', ` instance is not required, this method
  should generally be used in preference to the constructor
  `],
-				[/* reference */ 'r', `Boolean(boolean)`],
+				[/* reference */ 'r', `#%3Cinit%3E(boolean)`, `Boolean(boolean)`],
 				[/* text */ 't', `, as this method is likely to yield
  significantly better space and time performance.`]
 			],

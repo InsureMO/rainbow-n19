@@ -19,7 +19,7 @@ DocsCollector.collect('java.time.temporal.TemporalAdjusters', [
 			[/* text */ 't', `.
  The first is to invoke the method on the interface directly.
  The second is to use `],
-			[/* external link */ 'a', `Temporal.html#with(java.time.temporal.TemporalAdjuster)`, `Temporal.with(TemporalAdjuster)`],
+			[/* reference */ 'r', `.Temporal#with(java.time.temporal.TemporalAdjuster)`],
 			[/* text */ 't', `:
  `]
 		]],

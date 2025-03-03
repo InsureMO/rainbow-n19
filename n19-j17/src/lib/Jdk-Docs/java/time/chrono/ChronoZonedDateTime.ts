@@ -7,7 +7,10 @@ DocsCollector.collect('java.time.chrono.ChronoZonedDateTime', [
  intended for advanced globalization use cases.
  `],
 		[/* block */ 'b', [
-			[/* reference */ 'r', `java.time.ZonedDateTime`]
+			[/* text */ 't', `Most applications should declare method signatures, fields and variables
+ as `],
+			[/* reference */ 'r', `java.time.ZonedDateTime`],
+			[/* text */ 't', `, not this interface.`]
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `
@@ -58,7 +61,7 @@ DocsCollector.collect('java.time.chrono.ChronoZonedDateTime', [
 					[/* text */ 't', `
  The comparison is based on the offset date-time and the zone.
  To compare for the same instant on the time-line, use `],
-					[/* reference */ 'r', `compareTo(java.time.chrono.ChronoZonedDateTime<?>)`],
+					[/* reference */ 'r', `#compareTo(java.time.chrono.ChronoZonedDateTime)`, `compareTo(java.time.chrono.ChronoZonedDateTime<?>)`],
 					[/* text */ 't', `.
  Only objects of type `],
 					[/* inline code block */ 'i', `ChronoZonedDateTime`],
@@ -204,7 +207,7 @@ DocsCollector.collect('java.time.chrono.ChronoZonedDateTime', [
  The conversion extracts and combines the chronology, date, time and zone
  from the temporal object. The behavior is equivalent to using
  `],
-					[/* external link */ 'a', `Chronology.html#zonedDateTime(java.time.temporal.TemporalAccessor)`, `Chronology.zonedDateTime(TemporalAccessor)`],
+					[/* reference */ 'r', `.Chronology#zonedDateTime(java.time.temporal.TemporalAccessor)`],
 					[/* text */ 't', ` with the extracted chronology.
  Implementations are permitted to perform optimizations such as accessing
  those fields that are equivalent to the relevant objects.
@@ -253,7 +256,7 @@ DocsCollector.collect('java.time.chrono.ChronoZonedDateTime', [
 					[/* text */ 't', `
  The result of this method is obtained by invoking the
  `],
-					[/* external link */ 'a', `../temporal/TemporalQuery.html#queryFrom(java.time.temporal.TemporalAccessor)`, `TemporalQuery.queryFrom(TemporalAccessor)`],
+					[/* reference */ 'r', `java.TemporalQuery#queryFrom(java.time.temporal.TemporalAccessor)`],
 					[/* text */ 't', ` method on the
  specified query passing `],
 					[/* inline code block */ 'i', `this`],
@@ -299,10 +302,10 @@ DocsCollector.collect('java.time.chrono.ChronoZonedDateTime', [
 					[/* text */ 't', `
  This checks if the specified unit can be added to or subtracted from this date-time.
  If false, then calling the `],
-					[/* reference */ 'r', `plus(long, TemporalUnit)`],
+					[/* reference */ 'r', `#plus(long,java.time.temporal.TemporalUnit)`, `plus(long, TemporalUnit)`],
 					[/* text */ 't', ` and
  `],
-					[/* reference */ 'r', `minus`],
+					[/* reference */ 'r', `#minus(long,java.time.temporal.TemporalUnit)`, `minus`],
 					[/* text */ 't', ` methods will throw an exception.
  `]
 				]],
@@ -348,12 +351,12 @@ DocsCollector.collect('java.time.chrono.ChronoZonedDateTime', [
 					[/* text */ 't', `
  This checks if the specified field can be queried on this date-time.
  If false, then calling the `],
-					[/* external link */ 'a', `../temporal/TemporalAccessor.html#range(java.time.temporal.TemporalField)`, `range`],
+					[/* reference */ 'r', `java.TemporalAccessor#range(java.time.temporal.TemporalField)`],
 					[/* text */ 't', `,
  `],
-					[/* external link */ 'a', `../temporal/TemporalAccessor.html#get(java.time.temporal.TemporalField)`, `get`],
+					[/* reference */ 'r', `java.TemporalAccessor#get(java.time.temporal.TemporalField)`],
 					[/* text */ 't', ` and `],
-					[/* reference */ 'r', `with(TemporalField, long)`],
+					[/* reference */ 'r', `#with(java.time.temporal.TemporalField,long)`, `with(TemporalField, long)`],
 					[/* text */ 't', `
  methods will throw an exception.
  `]
@@ -397,9 +400,9 @@ DocsCollector.collect('java.time.chrono.ChronoZonedDateTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This method differs from the comparison in `],
-					[/* reference */ 'r', `compareTo(java.time.chrono.ChronoZonedDateTime<?>)`],
+					[/* reference */ 'r', `#compareTo(java.time.chrono.ChronoZonedDateTime)`, `compareTo(java.time.chrono.ChronoZonedDateTime<?>)`],
 					[/* text */ 't', ` and `],
-					[/* reference */ 'r', `equals(java.lang.Object)`],
+					[/* reference */ 'r', `#equals(java.lang.Object)`, `equals(java.lang.Object)`],
 					[/* text */ 't', `
  in that it only compares the instant of the date-time. This is equivalent to using
  `],
@@ -429,10 +432,10 @@ DocsCollector.collect('java.time.chrono.ChronoZonedDateTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This uses the `],
-					[/* reference */ 'r', `local date-time`],
+					[/* reference */ 'r', `#toLocalDateTime()`, `local date-time`],
 					[/* text */ 't', ` and
  `],
-					[/* reference */ 'r', `offset`],
+					[/* reference */ 'r', `#getOffset()`, `offset`],
 					[/* text */ 't', ` to calculate the epoch-second value,
  which is the number of elapsed seconds from 1970-01-01T00:00:00Z.
  Instants on the time-line after the epoch are positive, earlier are negative.`]
@@ -457,10 +460,10 @@ DocsCollector.collect('java.time.chrono.ChronoZonedDateTime', [
 					[/* text */ 't', ` representing the same point on the
  time-line as this date-time. The calculation combines the
  `],
-					[/* reference */ 'r', `local date-time`],
+					[/* reference */ 'r', `#toLocalDateTime()`, `local date-time`],
 					[/* text */ 't', ` and
  `],
-					[/* reference */ 'r', `offset`],
+					[/* reference */ 'r', `#getOffset()`, `offset`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -777,7 +780,7 @@ DocsCollector.collect('java.time.chrono.ChronoZonedDateTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This method differs from the comparison in `],
-					[/* reference */ 'r', `compareTo(java.time.chrono.ChronoZonedDateTime<?>)`],
+					[/* reference */ 'r', `#compareTo(java.time.chrono.ChronoZonedDateTime)`, `compareTo(java.time.chrono.ChronoZonedDateTime<?>)`],
 					[/* text */ 't', ` in that it
  only compares the instant of the date-time. This is equivalent to using
  `],
@@ -806,7 +809,7 @@ DocsCollector.collect('java.time.chrono.ChronoZonedDateTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This method differs from the comparison in `],
-					[/* reference */ 'r', `compareTo(java.time.chrono.ChronoZonedDateTime<?>)`],
+					[/* reference */ 'r', `#compareTo(java.time.chrono.ChronoZonedDateTime)`, `compareTo(java.time.chrono.ChronoZonedDateTime<?>)`],
 					[/* text */ 't', ` in that it
  only compares the instant of the date-time. This is equivalent to using
  `],
@@ -866,7 +869,7 @@ DocsCollector.collect('java.time.chrono.ChronoZonedDateTime', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  This comparator differs from the comparison in `],
-					[/* reference */ 'r', `compareTo(java.time.chrono.ChronoZonedDateTime<?>)`],
+					[/* reference */ 'r', `#compareTo(java.time.chrono.ChronoZonedDateTime)`, `compareTo(java.time.chrono.ChronoZonedDateTime<?>)`],
 					[/* text */ 't', ` in that it
  only compares the underlying instant and not the chronology.
  This allows dates in different calendar systems to be compared based
@@ -911,7 +914,7 @@ DocsCollector.collect('java.time.chrono.ChronoZonedDateTime', [
 					[/* text */ 't', `
  To change the offset while keeping the local time,
  use `],
-					[/* reference */ 'r', `withZoneSameLocal(ZoneId)`],
+					[/* reference */ 'r', `#withZoneSameLocal(java.time.ZoneId)`, `withZoneSameLocal(ZoneId)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -944,7 +947,7 @@ DocsCollector.collect('java.time.chrono.ChronoZonedDateTime', [
 					[/* text */ 't', `
  To change the zone and adjust the local date-time,
  use `],
-					[/* reference */ 'r', `withZoneSameInstant(ZoneId)`],
+					[/* reference */ 'r', `#withZoneSameInstant(java.time.ZoneId)`, `withZoneSameInstant(ZoneId)`],
 					[/* text */ 't', `.
  `]
 				]],

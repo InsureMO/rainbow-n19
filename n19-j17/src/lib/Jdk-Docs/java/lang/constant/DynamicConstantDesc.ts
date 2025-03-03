@@ -4,7 +4,7 @@ import {DocsCollector} from '../../../DocsCollector';
 DocsCollector.collect('java.lang.constant.DynamicConstantDesc', [
 	[/* class description */
 		[/* text */ 't', `A `],
-		[/* external link */ 'a', `package-summary.html#nominal`, `nominal descriptor`],
+		[/* reference */ 'r', `.package-summary#nominal`],
 		[/* text */ 't', ` for a
  dynamic constant (one described in the constant pool with
  `],
@@ -151,7 +151,7 @@ DocsCollector.collect('java.lang.constant.DynamicConstantDesc', [
 						]],
 						[/* block */ 'b', [
 							[/* text */ 't', `If two objects are equal according to the `],
-							[/* external link */ 'a', `../Object.html#equals(java.lang.Object)`, `equals`],
+							[/* reference */ 'r', `java.Object#equals(java.lang.Object)`],
 							[/* text */ 't', ` method, then calling the `],
 							[/* inline code block */ 'i', `hashCode`],
 							[/* text */ 't', ` method on each of the two objects must produce the
@@ -163,7 +163,7 @@ DocsCollector.collect('java.lang.constant.DynamicConstantDesc', [
 							[/* text */ 't', `not`],
 							[/* text */ 't', ` required that if two objects are unequal
      according to the `],
-							[/* external link */ 'a', `../Object.html#equals(java.lang.Object)`, `equals`],
+							[/* reference */ 'r', `java.Object#equals(java.lang.Object)`],
 							[/* text */ 't', ` method, then
      calling the `],
 							[/* inline code block */ 'i', `hashCode`],
@@ -187,7 +187,7 @@ DocsCollector.collect('java.lang.constant.DynamicConstantDesc', [
 			[/* method description */
 				[/* text */ 't', `Returns a nominal descriptor for a dynamic constant whose name parameter
  is `],
-				[/* external link */ 'a', `ConstantDescs.html#DEFAULT_NAME`, `ConstantDescs.DEFAULT_NAME`],
+				[/* reference */ 'r', `.ConstantDescs#DEFAULT_NAME`],
 				[/* text */ 't', `, and whose type parameter is always
  the same as the bootstrap method return type.`]
 			],
@@ -221,7 +221,7 @@ DocsCollector.collect('java.lang.constant.DynamicConstantDesc', [
 			[/* method description */
 				[/* text */ 't', `Returns a nominal descriptor for a dynamic constant whose bootstrap has
  no static arguments, whose name parameter is `],
-				[/* external link */ 'a', `ConstantDescs.html#DEFAULT_NAME`, `ConstantDescs.DEFAULT_NAME`],
+				[/* reference */ 'r', `.ConstantDescs#DEFAULT_NAME`],
 				[/* text */ 't', `,
  and whose type parameter is always the same as the bootstrap method return type.`]
 			],
@@ -390,7 +390,7 @@ DocsCollector.collect('java.lang.constant.DynamicConstantDesc', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `Classes whose `],
-					[/* external link */ 'a', `Constable.html#describeConstable()`, `Constable.describeConstable()`],
+					[/* reference */ 'r', `.Constable#describeConstable()`],
 					[/* text */ 't', ` method produce
  a `],
 					[/* reference */ 'r', `java.lang.constant.DynamicConstantDesc`],
@@ -412,7 +412,7 @@ DocsCollector.collect('java.lang.constant.DynamicConstantDesc', [
 					[/* reference */ 'r', `java.lang.constant.ConstantDesc`],
 					[/* text */ 't', ` to their callers should generally use this
  method in preference to `],
-					[/* reference */ 'r', `ofNamed(DirectMethodHandleDesc, String, ClassDesc, ConstantDesc...)`],
+					[/* reference */ 'r', `#ofNamed(java.lang.constant.DirectMethodHandleDesc,java.lang.String,java.lang.constant.ClassDesc,java.lang.constant.ConstantDesc...)`, `ofNamed(DirectMethodHandleDesc, String, ClassDesc, ConstantDesc...)`],
 					[/* text */ 't', `
  because this may result in a more specific type that can be provided to
  callers.`]

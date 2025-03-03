@@ -9,9 +9,9 @@ DocsCollector.collect('java.nio.charset.CodingErrorAction', [
 		[/* block */ 'b', [
 			[/* text */ 't', ` Instances of this class are used to specify how malformed-input and
  unmappable-character errors are to be handled by charset `],
-			[/* external link */ 'a', `CharsetDecoder.html#cae`, `decoders`],
+			[/* reference */ 'r', `.CharsetDecoder#cae`],
 			[/* text */ 't', ` and `],
-			[/* external link */ 'a', `CharsetEncoder.html#cae`, `encoders`],
+			[/* reference */ 'r', `.CharsetEncoder#cae`],
 			[/* text */ 't', `.  `]
 		]]
 	],

@@ -34,7 +34,7 @@ DocsCollector.collect('java.io.EOFException', [
 				[/* inline code block */ 'i', `s`],
 				[/* text */ 't', ` may later be retrieved by the
  `],
-				[/* external link */ 'a', `../lang/Throwable.html#getMessage()`, `Throwable.getMessage()`],
+				[/* reference */ 'r', `java.Throwable#getMessage()`],
 				[/* text */ 't', ` method of class
  `],
 				[/* inline code block */ 'i', `java.lang.Throwable`],

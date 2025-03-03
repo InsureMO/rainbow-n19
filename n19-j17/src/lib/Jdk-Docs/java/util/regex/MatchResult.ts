@@ -38,7 +38,7 @@ DocsCollector.collect('java.util.regex.MatchResult', [
 					[/* inline code block */ 'i', `substring(`],
 					[/* text */ 't', `m.`],
 					[/* inline code block */ 'i', `start(),`],
-					[/* text */ 't', `&nbsp;`],
+					[/* text */ 't', ` `],
 					[/* text */ 't', `m.`],
 					[/* inline code block */ 'i', `end())`],
 					[/* text */ 't', `
@@ -91,7 +91,7 @@ DocsCollector.collect('java.util.regex.MatchResult', [
 					[/* inline code block */ 'i', `start(`],
 					[/* text */ 't', `g`],
 					[/* inline code block */ 'i', `),`],
-					[/* text */ 't', `&nbsp;`],
+					[/* text */ 't', ` `],
 					[/* text */ 't', `m.`],
 					[/* inline code block */ 'i', `end(`],
 					[/* text */ 't', `g`],
@@ -100,7 +100,7 @@ DocsCollector.collect('java.util.regex.MatchResult', [
  are equivalent.  `]
 				]],
 				[/* block */ 'b', [
-					[/* external link */ 'a', `Pattern.html#cg`, `Capturing groups`],
+					[/* reference */ 'r', `.Pattern#cg`],
 					[/* text */ 't', ` are indexed from left
  to right, starting at one.  Group zero denotes the entire pattern, so
  the expression `],
@@ -152,7 +152,7 @@ DocsCollector.collect('java.util.regex.MatchResult', [
 
  `],
 				[/* block */ 'b', [
-					[/* external link */ 'a', `Pattern.html#cg`, `Capturing groups`],
+					[/* reference */ 'r', `.Pattern#cg`],
 					[/* text */ 't', ` are indexed from left
  to right, starting at one.  Group zero denotes the entire pattern, so
  the expression `],
@@ -210,7 +210,7 @@ DocsCollector.collect('java.util.regex.MatchResult', [
 
  `],
 				[/* block */ 'b', [
-					[/* external link */ 'a', `Pattern.html#cg`, `Capturing groups`],
+					[/* reference */ 'r', `.Pattern#cg`],
 					[/* text */ 't', ` are indexed from left
  to right, starting at one.  Group zero denotes the entire pattern, so
  the expression `],

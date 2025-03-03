@@ -46,7 +46,7 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Requires', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` This method satisfies the general contract of the `],
-					[/* external link */ 'a', `../Object.html#equals(java.lang.Object)`, `Object.equals`],
+					[/* reference */ 'r', `java.Object#equals(java.lang.Object)`],
 					[/* text */ 't', ` method. `]
 				]]
 			],
@@ -81,7 +81,7 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Requires', [
 					[/* text */ 't', ` The hash code is based upon the module name, modifiers, and the
  module version if recorded at compile time. It satisfies the general
  contract of the `],
-					[/* external link */ 'a', `../Object.html#hashCode()`, `Object.hashCode`],
+					[/* reference */ 'r', `java.Object#hashCode()`],
 					[/* text */ 't', ` method. `]
 				]]
 			],
@@ -103,16 +103,16 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Requires', [
  module names lexicographically. Where the module names are equal
  then the sets of modifiers are compared in the same way that
  module modifiers are compared (see `],
-					[/* external link */ 'a', `ModuleDescriptor.html#compareTo(java.lang.module.ModuleDescriptor)`, `ModuleDescriptor.compareTo`],
+					[/* reference */ 'r', `.ModuleDescriptor#compareTo(java.lang.module.ModuleDescriptor)`],
 					[/* text */ 't', `). Where the module names are equal and
  the set of modifiers are equal then the version of the modules
  recorded at compile-time are compared. When comparing the versions
  recorded at compile-time then a dependence that has a recorded
  version is considered to succeed a dependence that does not have a
  recorded version. If both recorded versions are `],
-					[/* external link */ 'a', `ModuleDescriptor.Version.html#parse(java.lang.String)`, `unparseable`],
+					[/* reference */ 'r', `.ModuleDescriptor.Version#parse(java.lang.String)`],
 					[/* text */ 't', ` then the `],
-					[/* reference */ 'r', `raw version strings`],
+					[/* reference */ 'r', `#rawCompiledVersion()`, `raw version strings`],
 					[/* text */ 't', ` are compared
  lexicographically. `]
 				]]
@@ -156,7 +156,7 @@ DocsCollector.collect('java.lang.module.ModuleDescriptor$Requires', [
 				[/* inline code block */ 'i', `Optional`],
 				[/* text */ 't', ` if no version was recorded or
          the version string recorded is `],
-				[/* external link */ 'a', `ModuleDescriptor.Version.html#parse(java.lang.String)`, `unparseable`]
+				[/* reference */ 'r', `.ModuleDescriptor.Version#parse(java.lang.String)`]
 			]
 		]]
 	],

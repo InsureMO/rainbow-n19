@@ -11,7 +11,7 @@ DocsCollector.collect('java.io.ObjectStreamClass', [
 		[/* block */ 'b', [
 			[/* text */ 't', `The algorithm to compute the SerialVersionUID is described in
  `],
-			[/* external link */ 'a', `../../../../specs/serialization/class.html#stream-unique-identifiers`, `Java Object Serialization Specification, Section 4.6, "Stream Unique Identifiers"`],
+			[/* text */ 't', `Java Object Serialization Specification, Section 4.6, "Stream Unique Identifiers"`],
 			[/* text */ 't', `.`]
 		]]
 	],
@@ -29,7 +29,7 @@ DocsCollector.collect('java.io.ObjectStreamClass', [
 				[/* text */ 't', `Returns the name of the class described by this descriptor.
  This method returns the name of the class in the format that
  is used by the `],
-				[/* external link */ 'a', `../lang/Class.html#getName()`, `Class.getName()`],
+				[/* reference */ 'r', `java.Class#getName()`],
 				[/* text */ 't', ` method.`]
 			],
 			/* parameters */ UDF,

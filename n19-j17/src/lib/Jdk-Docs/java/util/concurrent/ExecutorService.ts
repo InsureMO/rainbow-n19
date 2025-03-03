@@ -20,11 +20,11 @@ DocsCollector.collect('java.util.concurrent.ExecutorService', [
  shutting down an `],
 			[/* inline code block */ 'i', `ExecutorService`],
 			[/* text */ 't', `. The `],
-			[/* reference */ 'r', `shutdown()`],
+			[/* reference */ 'r', `#shutdown()`, `shutdown()`],
 			[/* text */ 't', `
  method will allow previously submitted tasks to execute before
  terminating, while the `],
-			[/* reference */ 'r', `shutdownNow()`],
+			[/* reference */ 'r', `#shutdownNow()`, `shutdownNow()`],
 			[/* text */ 't', ` method prevents waiting
  tasks from starting and attempts to stop currently executing tasks.
  Upon termination, an executor has no tasks actively executing, no
@@ -40,7 +40,7 @@ DocsCollector.collect('java.util.concurrent.ExecutorService', [
 			[/* text */ 't', `Method `],
 			[/* inline code block */ 'i', `submit`],
 			[/* text */ 't', ` extends base method `],
-			[/* external link */ 'a', `Executor.html#execute(java.lang.Runnable)`, `Executor.execute(Runnable)`],
+			[/* reference */ 'r', `.Executor#execute(java.lang.Runnable)`],
 			[/* text */ 't', ` by creating and returning a `],
 			[/* reference */ 'r', `java.util.concurrent.Future`],
 			[/* text */ 't', `
@@ -72,7 +72,7 @@ DocsCollector.collect('java.util.concurrent.ExecutorService', [
 
  Here is a sketch of a network service in which threads in a thread
  pool service incoming requests. It uses the preconfigured `],
-		[/* external link */ 'a', `Executors.html#newFixedThreadPool(int)`, `Executors.newFixedThreadPool(int)`],
+		[/* reference */ 'r', `.Executors#newFixedThreadPool(int)`],
 		[/* text */ 't', ` factory method:
 
  `],
@@ -147,7 +147,7 @@ DocsCollector.collect('java.util.concurrent.ExecutorService', [
 			[/* text */ 't', ` task to an
  `],
 			[/* inline code block */ 'i', `ExecutorService`],
-			[/* external link */ 'a', `package-summary.html#MemoryVisibility`, `happen-before`],
+			[/* reference */ 'r', `.package-summary#MemoryVisibility`],
 			[/* text */ 't', `
  any actions taken by that task, which in turn `],
 			[/* text */ 't', `happen-before`],
@@ -170,7 +170,7 @@ DocsCollector.collect('java.util.concurrent.ExecutorService', [
 				[/* block */ 'b', [
 					[/* text */ 't', `This method does not wait for previously submitted tasks to
  complete execution.  Use `],
-					[/* reference */ 'r', `awaitTermination`],
+					[/* reference */ 'r', `#awaitTermination(long,java.util.concurrent.TimeUnit)`, `awaitTermination`],
 					[/* text */ 't', `
  to do that.`]
 				]]
@@ -319,7 +319,7 @@ DocsCollector.collect('java.util.concurrent.ExecutorService', [
  their status and results
  when all complete or the timeout expires, whichever happens first.
  `],
-				[/* external link */ 'a', `Future.html#isDone()`, `Future.isDone()`],
+				[/* reference */ 'r', `.Future#isDone()`],
 				[/* text */ 't', ` is `],
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` for each
@@ -371,7 +371,7 @@ DocsCollector.collect('java.util.concurrent.ExecutorService', [
 				[/* text */ 't', `Executes the given tasks, returning a list of Futures holding
  their status and results when all complete.
  `],
-				[/* external link */ 'a', `Future.html#isDone()`, `Future.isDone()`],
+				[/* reference */ 'r', `.Future#isDone()`],
 				[/* text */ 't', ` is `],
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` for each
@@ -418,7 +418,7 @@ DocsCollector.collect('java.util.concurrent.ExecutorService', [
 				[/* block */ 'b', [
 					[/* text */ 't', `This method does not wait for actively executing tasks to
  terminate.  Use `],
-					[/* reference */ 'r', `awaitTermination`],
+					[/* reference */ 'r', `#awaitTermination(long,java.util.concurrent.TimeUnit)`, `awaitTermination`],
 					[/* text */ 't', ` to
  do that.
 
@@ -428,7 +428,7 @@ DocsCollector.collect('java.util.concurrent.ExecutorService', [
 					[/* text */ 't', `There are no guarantees beyond best-effort attempts to stop
  processing actively executing tasks.  For example, typical
  implementations will cancel via `],
-					[/* external link */ 'a', `../../lang/Thread.html#interrupt()`, `Thread.interrupt()`],
+					[/* reference */ 'r', `java.util.Thread#interrupt()`],
 					[/* text */ 't', `, so any
  task that fails to respond to interrupts may never terminate.`]
 				]]

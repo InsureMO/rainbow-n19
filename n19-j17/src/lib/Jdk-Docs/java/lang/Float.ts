@@ -38,11 +38,11 @@ DocsCollector.collect('java.lang.Float', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', `This is a `],
-			[/* external link */ 'a', `../../../java.base/java/lang/doc-files/ValueBased.html`, `value-based`],
+			[/* text */ 't', `value-based`],
 			[/* text */ 't', `
  class; programmers should treat instances that are
  `],
-			[/* reference */ 'r', `equal`],
+			[/* reference */ 'r', `#equals(java.lang.Object)`, `equal`],
 			[/* text */ 't', ` as interchangeable and should not
  use instances for synchronization, or unpredictable behavior may
  occur. For example, in a future release, synchronization may fail.
@@ -57,7 +57,7 @@ DocsCollector.collect('java.lang.Float', [
  The class `],
 		[/* inline code block */ 'i', `java.lang.Double`],
 		[/* text */ 't', ` has a `],
-		[/* external link */ 'a', `Double.html#equivalenceRelation`, `discussion of equality, equivalence, and comparison of floating-point values`],
+		[/* reference */ 'r', `.Double#equivalenceRelation`],
 		[/* text */ 't', ` that is
  equality applicable to `],
 		[/* inline code block */ 'i', `float`],
@@ -282,7 +282,7 @@ DocsCollector.collect('java.lang.Float', [
 				[/* inline code block */ 'i', `float`],
 				[/* text */ 't', ` values are considered to be the
  same if and only if the method `],
-				[/* reference */ 'r', `floatToIntBits(float)`],
+				[/* reference */ 'r', `#floatToIntBits(float)`, `floatToIntBits(float)`],
 				[/* text */ 't', `
  returns the identical `],
 				[/* inline code block */ 'i', `int`],
@@ -404,7 +404,7 @@ DocsCollector.collect('java.lang.Float', [
 								[/* text */ 't', `≤
       `],
 								[/* text */ 't', `m`],
-								[/* text */ 't', ` &lt; 10`],
+								[/* text */ 't', ` < 10`],
 								[/* text */ 't', `n+1`, 'sup'],
 								[/* text */ 't', `; then let `],
 								[/* text */ 't', `a`],
@@ -416,7 +416,7 @@ DocsCollector.collect('java.lang.Float', [
 								[/* text */ 't', `n`, 'sup'],
 								[/* text */ 't', ` so that 1 ≤ `],
 								[/* text */ 't', `a`],
-								[/* text */ 't', ` &lt; 10.
+								[/* text */ 't', ` < 10.
       The magnitude is then represented as the integer part of
       `],
 								[/* text */ 't', `a`],
@@ -439,7 +439,7 @@ DocsCollector.collect('java.lang.Float', [
 								[/* text */ 't', `n`],
 								[/* text */ 't', ` as a decimal integer, as produced by the
       method `],
-								[/* external link */ 'a', `Integer.html#toString(int)`, `Integer.toString(int)`],
+								[/* reference */ 'r', `.Integer#toString(int)`],
 								[/* text */ 't', `.
 
  `]
@@ -557,7 +557,7 @@ DocsCollector.collect('java.lang.Float', [
 				[/* text */ 't', ` object. The
  result is the integer bit representation, exactly as produced
  by the method `],
-				[/* reference */ 'r', `floatToIntBits(float)`],
+				[/* reference */ 'r', `#floatToIntBits(float)`, `floatToIntBits(float)`],
 				[/* text */ 't', `, of the primitive
  `],
 				[/* inline code block */ 'i', `float`],
@@ -578,7 +578,7 @@ DocsCollector.collect('java.lang.Float', [
 				[/* inline code block */ 'i', `float`],
 				[/* text */ 't', ` values
  as if by calling `],
-				[/* external link */ 'a', `Math.html#min(double,double)`, `Math.min`],
+				[/* reference */ 'r', `.Math#min(double,double)`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -603,7 +603,7 @@ DocsCollector.collect('java.lang.Float', [
 				[/* inline code block */ 'i', `float`],
 				[/* text */ 't', ` values
  as if by calling `],
-				[/* external link */ 'a', `Math.html#max(double,double)`, `Math.max`],
+				[/* reference */ 'r', `.Math#max(double,double)`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -679,7 +679,7 @@ DocsCollector.collect('java.lang.Float', [
 				[/* block */ 'b', [
 					[/* text */ 't', `In all cases, the result is an integer that, when given to the
  `],
-					[/* reference */ 'r', `intBitsToFloat(int)`],
+					[/* reference */ 'r', `#intBitsToFloat(int)`, `intBitsToFloat(int)`],
 					[/* text */ 't', ` method, will produce a
  floating-point value the same as the argument to
  `],
@@ -748,7 +748,7 @@ DocsCollector.collect('java.lang.Float', [
 				[/* block */ 'b', [
 					[/* text */ 't', `In all cases, the result is an integer that, when given to the
  `],
-					[/* reference */ 'r', `intBitsToFloat(int)`],
+					[/* reference */ 'r', `#intBitsToFloat(int)`, `intBitsToFloat(int)`],
 					[/* text */ 't', ` method, will produce a floating-point
  value the same as the argument to `],
 					[/* inline code block */ 'i', `floatToIntBits`],
@@ -959,7 +959,7 @@ DocsCollector.collect('java.lang.Float', [
 				[/* text */ 't', `consistent with
  equals`],
 				[/* text */ 't', `; see `],
-				[/* external link */ 'a', `Double.html#equivalenceRelation`, `this discussion`],
+				[/* reference */ 'r', `.Double#equivalenceRelation`],
 				[/* text */ 't', ` for details of floating-point comparison and
  ordering.`]
 			],
@@ -1191,7 +1191,7 @@ DocsCollector.collect('java.lang.Float', [
 					[/* inline code block */ 'i', `s`],
 					[/* text */ 't', `
  are ignored.  Whitespace is removed as if by the `],
-					[/* external link */ 'a', `String.html#trim()`, `String.trim()`],
+					[/* reference */ 'r', `.String#trim()`],
 					[/* text */ 't', ` method; that is, both ASCII space and control
  characters are removed. The rest of `],
 					[/* inline code block */ 'i', `s`],
@@ -1204,11 +1204,121 @@ DocsCollector.collect('java.lang.Float', [
  `]
 				]],
 				[/* block */ 'b', [
-					[/* dl */ 't', ''],
-					[/* dl */ 't', ''],
-					[/* dl */ 't', ''],
-					[/* dl */ 't', ''],
-					[/* dl */ 't', '']
+					[/* dl */ 'dl', [
+						[/* dt */ 'dt', [
+							[/* text */ 't', `FloatValue:`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `opt`, 'sub'],
+							[/* text */ 't', ` `],
+							[/* inline code block */ 'i', `NaN`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `opt`, 'sub'],
+							[/* text */ 't', ` `],
+							[/* inline code block */ 'i', `Infinity`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `opt`, 'sub'],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `opt`, 'sub'],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `SignedInteger`],
+							[/* text */ 't', `
+ `]
+						]]
+					]],
+					[/* dl */ 'dl', [
+						[/* dt */ 'dt', [
+							[/* text */ 't', `HexFloatingPointLiteral`],
+							[/* text */ 't', `:
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', ` `],
+							[/* text */ 't', `opt`, 'sub'],
+							[/* text */ 't', `
+ `]
+						]]
+					]],
+					[/* dl */ 'dl', [
+						[/* dt */ 'dt', [
+							[/* text */ 't', `HexSignificand:`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `HexNumeral`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `HexNumeral`],
+							[/* text */ 't', ` `],
+							[/* inline code block */ 'i', `.`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* inline code block */ 'i', `0x`],
+							[/* text */ 't', ` `],
+							[/* text */ 't', `opt`, 'sub'],
+							[/* inline code block */ 'i', `.`],
+							[/* text */ 't', ` HexDigits`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* inline code block */ 'i', `0X`],
+							[/* text */ 't', `opt`, 'sub'],
+							[/* inline code block */ 'i', `.`],
+							[/* text */ 't', ` `],
+							[/* text */ 't', `HexDigits`],
+							[/* text */ 't', `
+ `]
+						]]
+					]],
+					[/* dl */ 'dl', [
+						[/* dt */ 'dt', [
+							[/* text */ 't', `BinaryExponent:`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* text */ 't', `BinaryExponentIndicator SignedInteger`],
+							[/* text */ 't', `
+ `]
+						]]
+					]],
+					[/* dl */ 'dl', [
+						[/* dt */ 'dt', [
+							[/* text */ 't', `BinaryExponentIndicator:`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* inline code block */ 'i', `p`],
+							[/* text */ 't', `
+ `]
+						]],
+						[/* dd */ 'dd', [
+							[/* inline code block */ 'i', `P`],
+							[/* text */ 't', `
+ `]
+						]]
+					]]
 				]],
 				[/* text */ 't', `
 
@@ -1261,7 +1371,7 @@ DocsCollector.collect('java.lang.Float', [
  enough in magnitude (greater than or equal to (`],
 				[/* text */ 't', `MAX_VALUE`],
 				[/* text */ 't', ` + `],
-				[/* external link */ 'a', `Math.html#ulp(float)`, `ulp(MAX_VALUE)`],
+				[/* reference */ 'r', `.Math#ulp(float)`],
 				[/* text */ 't', `/2),
  rounding to `],
 				[/* inline code block */ 'i', `float`],
@@ -1353,7 +1463,7 @@ DocsCollector.collect('java.lang.Float', [
 					[/* inline code block */ 'i', `NumberFormatException`],
 					[/* text */ 't', ` be thrown, the documentation
  for `],
-					[/* external link */ 'a', `Double.html#valueOf(java.lang.String)`, `Double.valueOf`],
+					[/* reference */ 'r', `.Double#valueOf(java.lang.String)`],
 					[/* text */ 't', ` lists a regular
  expression which can be used to screen the input.`]
 				]]
@@ -1391,7 +1501,7 @@ DocsCollector.collect('java.lang.Float', [
 				[/* text */ 't', ` instance is not required, this method
  should generally be used in preference to the constructor
  `],
-				[/* reference */ 'r', `Float(float)`],
+				[/* reference */ 'r', `#%3Cinit%3E(double)`, `Float(float)`],
 				[/* text */ 't', `, as this method is likely to yield
  significantly better space and time performance by caching
  frequently requested values.`]
@@ -1494,7 +1604,7 @@ DocsCollector.collect('java.lang.Float', [
 								[/* text */ 't', ` followed
  by a decimal string of the unbiased exponent as if produced by
  a call to `],
-								[/* external link */ 'a', `Integer.html#toString(int)`, `Integer.toString`],
+								[/* reference */ 'r', `.Integer#toString(int)`],
 								[/* text */ 't', ` on the
  exponent value.
 
@@ -1523,7 +1633,103 @@ DocsCollector.collect('java.lang.Float', [
 						]]
 					]]
 				]],
-				[/* table */ 't', '']
+				[/* table */ 'tbl',
+					[/* caption */ 'tc', [
+						[/* text */ 't', `Examples`]
+					]],
+					[/* table header */ 'th', [
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `Floating-point Value`]
+							]],
+							[/* table header cell */ 'thc', [
+								[/* text */ 't', `Hexadecimal String`]
+							]]
+						]]
+					]],
+					[/* table body */ 'tb', [
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `1.0`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `0x1.0p0`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `-1.0`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `-0x1.0p0`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `2.0`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `0x1.0p1`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `3.0`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `0x1.8p1`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `0.5`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `0x1.0p-1`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `0.25`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `0x1.0p-2`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `Float.MAX_VALUE`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `0x1.fffffep127`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `Minimum Normal Value`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `0x1.0p-126`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `Maximum Subnormal Value`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `0x0.fffffep-126`]
+							]]
+						]],
+						[/* table row */ 'tr', [
+							[/* table header cell */ 'thc', [
+								[/* inline code block */ 'i', `Float.MIN_VALUE`]
+							]],
+							[/* table cell */ 'tbc', [
+								[/* inline code block */ 'i', `0x0.000002p-126`]
+							]]
+						]]
+					]],
+				]
 			],
 			[/* parameters */
 				[/* parameter */ 'f', [/* parameter description */

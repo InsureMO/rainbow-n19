@@ -38,7 +38,89 @@ DocsCollector.collect('java.util.Deque', [
  following table:
 
  `],
-		[/* table */ 't', ''],
+		[/* table */ 'tbl',
+			[/* caption */ 'tc', [
+				[/* text */ 't', `Summary of Deque methods`]
+			]],
+			[/* table header */ 'th', [
+				[/* table row */ 'tr', [
+					[/* table cell */ 'tbc', 1, 2],
+					[/* table header cell */ 'thc', 2, 1, [
+						[/* text */ 't', ` First Element (Head)`]
+					]],
+					[/* table header cell */ 'thc', 2, 1, [
+						[/* text */ 't', ` Last Element (Tail)`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Throws exception`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Special value`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Throws exception`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Special value`]
+					]]
+				]]
+			]],
+			[/* table body */ 'tb', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Insert`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* reference */ 'r', `#addFirst(E)`, `addFirst(e)`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* reference */ 'r', `#offerFirst(E)`, `offerFirst(e)`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* reference */ 'r', `#addLast(E)`, `addLast(e)`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* reference */ 'r', `#offerLast(E)`, `offerLast(e)`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Remove`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* reference */ 'r', `#removeFirst()`, `removeFirst()`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* reference */ 'r', `#pollFirst()`, `pollFirst()`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* reference */ 'r', `#removeLast()`, `removeLast()`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* reference */ 'r', `#pollLast()`, `pollLast()`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', `Examine`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* reference */ 'r', `#getFirst()`, `getFirst()`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* reference */ 'r', `#peekFirst()`, `peekFirst()`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* reference */ 'r', `#getLast()`, `getLast()`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* reference */ 'r', `#peekLast()`, `peekLast()`]
+					]]
+				]]
+			]],
+		],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `This interface extends the `],
@@ -55,7 +137,75 @@ DocsCollector.collect('java.util.Deque', [
 
  `]
 		]],
-		[/* table */ 't', ''],
+		[/* table */ 'tbl',
+			[/* caption */ 'tc', [
+				[/* text */ 't', `Comparison of Queue and Deque methods`]
+			]],
+			[/* table header */ 'th', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` `],
+						[/* inline code block */ 'i', `Queue`],
+						[/* text */ 't', ` Method`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` Equivalent `],
+						[/* inline code block */ 'i', `Deque`],
+						[/* text */ 't', ` Method`]
+					]]
+				]]
+			]],
+			[/* table body */ 'tb', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* reference */ 'r', `#add(E)`, `add(e)`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* reference */ 'r', `#addLast(E)`, `addLast(e)`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* reference */ 'r', `#offer(E)`, `offer(e)`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* reference */ 'r', `#offerLast(E)`, `offerLast(e)`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* reference */ 'r', `#remove()`, `remove()`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* reference */ 'r', `#removeFirst()`, `removeFirst()`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* reference */ 'r', `#poll()`, `poll()`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* reference */ 'r', `#pollFirst()`, `pollFirst()`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* reference */ 'r', `#element()`, `element()`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* reference */ 'r', `#getFirst()`, `getFirst()`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* reference */ 'r', `#peek()`, `peek()`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* reference */ 'r', `#peekFirst()`, `peekFirst()`]
+					]]
+				]]
+			]],
+		],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `Deques can also be used as LIFO (Last-In-First-Out) stacks.  This
@@ -70,11 +220,53 @@ DocsCollector.collect('java.util.Deque', [
 
  `]
 		]],
-		[/* table */ 't', ''],
+		[/* table */ 'tbl',
+			[/* caption */ 'tc', [
+				[/* text */ 't', `Comparison of Stack and Deque methods`]
+			]],
+			[/* table header */ 'th', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` Stack Method`]
+					]],
+					[/* table header cell */ 'thc', [
+						[/* text */ 't', ` Equivalent `],
+						[/* inline code block */ 'i', `Deque`],
+						[/* text */ 't', ` Method`]
+					]]
+				]]
+			]],
+			[/* table body */ 'tb', [
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* reference */ 'r', `#push(E)`, `push(e)`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* reference */ 'r', `#addFirst(E)`, `addFirst(e)`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* reference */ 'r', `#pop()`, `pop()`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* reference */ 'r', `#removeFirst()`, `removeFirst()`]
+					]]
+				]],
+				[/* table row */ 'tr', [
+					[/* table header cell */ 'thc', [
+						[/* reference */ 'r', `#peek()`, `peek()`]
+					]],
+					[/* table cell */ 'tbc', [
+						[/* reference */ 'r', `#getFirst()`, `getFirst()`]
+					]]
+				]]
+			]],
+		],
 		[/* block */ 'b', ''],
 		[/* block */ 'b', [
 			[/* text */ 't', `Note that the `],
-			[/* reference */ 'r', `peek`],
+			[/* reference */ 'r', `#peek()`, `peek`],
 			[/* text */ 't', ` method works equally well when
  a deque is used as a queue or a stack; in either case, elements are
  drawn from the beginning of the deque.
@@ -84,10 +276,10 @@ DocsCollector.collect('java.util.Deque', [
 		[/* block */ 'b', [
 			[/* text */ 't', `This interface provides two methods to remove interior
  elements, `],
-			[/* reference */ 'r', `removeFirstOccurrence`],
+			[/* reference */ 'r', `#removeFirstOccurrence(java.lang.Object)`, `removeFirstOccurrence`],
 			[/* text */ 't', ` and
  `],
-			[/* reference */ 'r', `removeLastOccurrence`],
+			[/* reference */ 'r', `#removeLastOccurrence(java.lang.Object)`, `removeLastOccurrence`],
 			[/* text */ 't', `.
 
  `]
@@ -137,7 +329,7 @@ DocsCollector.collect('java.util.Deque', [
 		[/* block */ 'b', [
 			[/* text */ 't', `This interface is a member of the
  `],
-			[/* external link */ 'a', `../../../java.base/java/util/package-summary.html#CollectionsFramework`, `Java Collections Framework`],
+			[/* text */ 't', `Java Collections Framework`],
 			[/* text */ 't', `.`]
 		]]
 	],
@@ -157,13 +349,13 @@ DocsCollector.collect('java.util.Deque', [
 				[/* text */ 't', ` if no space is currently available.
  When using a capacity-restricted deque, it is generally preferable to
  use `],
-				[/* reference */ 'r', `offer`],
+				[/* reference */ 'r', `#offer(E)`, `offer`],
 				[/* text */ 't', `.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This method is equivalent to `],
-					[/* reference */ 'r', `addLast(E)`],
+					[/* reference */ 'r', `#addLast(E)`, `addLast(E)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -193,7 +385,7 @@ DocsCollector.collect('java.util.Deque', [
 			[/* return description */
 				[/* inline code block */ 'i', `true`],
 				[/* text */ 't', ` (as specified by `],
-				[/* external link */ 'a', `Collection.html#add(E)`, `Collection.add(E)`],
+				[/* reference */ 'r', `.Collection#add(E)`],
 				[/* text */ 't', `)`]
 			]
 		]],
@@ -202,14 +394,14 @@ DocsCollector.collect('java.util.Deque', [
 				[/* text */ 't', `Retrieves and removes the head of the queue represented by this deque
  (in other words, the first element of this deque).
  This method differs from `],
-				[/* reference */ 'r', `poll()`],
+				[/* reference */ 'r', `#poll()`, `poll()`],
 				[/* text */ 't', ` only in that it
  throws an exception if this deque is empty.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This method is equivalent to `],
-					[/* reference */ 'r', `removeFirst()`],
+					[/* reference */ 'r', `#removeFirst()`, `removeFirst()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -241,7 +433,7 @@ DocsCollector.collect('java.util.Deque', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This method is equivalent to `],
-					[/* reference */ 'r', `removeFirstOccurrence(Object)`],
+					[/* reference */ 'r', `#removeFirstOccurrence(java.lang.Object)`, `removeFirstOccurrence(Object)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -255,14 +447,14 @@ DocsCollector.collect('java.util.Deque', [
 					[/* text */ 't', `if the class of the specified element
          is incompatible with this deque
  (`],
-					[/* external link */ 'a', `../../../java.base/java/util/Collection.html#optional-restrictions`, `optional`],
+					[/* text */ 't', `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if the specified element is null and this
          deque does not permit null elements
  (`],
-					[/* external link */ 'a', `../../../java.base/java/util/Collection.html#optional-restrictions`, `optional`],
+					[/* text */ 't', `optional`],
 					[/* text */ 't', `)`]
 				]]
 			],
@@ -316,14 +508,14 @@ DocsCollector.collect('java.util.Deque', [
 					[/* text */ 't', `if the class of the specified element
          is incompatible with this deque
  (`],
-					[/* external link */ 'a', `../../../java.base/java/util/Collection.html#optional-restrictions`, `optional`],
+					[/* text */ 't', `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if the specified element is null and this
          deque does not permit null elements
  (`],
-					[/* external link */ 'a', `../../../java.base/java/util/Collection.html#optional-restrictions`, `optional`],
+					[/* text */ 't', `optional`],
 					[/* text */ 't', `)`]
 				]]
 			],
@@ -336,7 +528,7 @@ DocsCollector.collect('java.util.Deque', [
 			[/* method description */
 				[/* text */ 't', `Adds all of the elements in the specified collection at the end
  of this deque, as if by calling `],
-				[/* reference */ 'r', `addLast(E)`],
+				[/* reference */ 'r', `#addLast(E)`, `addLast(E)`],
 				[/* text */ 't', ` on each one,
  in the order that they are returned by the collection's iterator.
 
@@ -344,7 +536,7 @@ DocsCollector.collect('java.util.Deque', [
 				[/* block */ 'b', [
 					[/* text */ 't', `When using a capacity-restricted deque, it is generally preferable
  to call `],
-					[/* reference */ 'r', `offer`],
+					[/* reference */ 'r', `#offer(E)`, `offer`],
 					[/* text */ 't', ` separately on each element.
 
  `]
@@ -393,7 +585,7 @@ DocsCollector.collect('java.util.Deque', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This method is equivalent to `],
-					[/* reference */ 'r', `pollFirst()`],
+					[/* reference */ 'r', `#pollFirst()`, `pollFirst()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -417,7 +609,7 @@ DocsCollector.collect('java.util.Deque', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This method is equivalent to `],
-					[/* reference */ 'r', `peekFirst()`],
+					[/* reference */ 'r', `#peekFirst()`, `peekFirst()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -435,14 +627,14 @@ DocsCollector.collect('java.util.Deque', [
 				[/* text */ 't', `Retrieves, but does not remove, the head of the queue represented by
  this deque (in other words, the first element of this deque).
  This method differs from `],
-				[/* reference */ 'r', `peek`],
+				[/* reference */ 'r', `#peek()`, `peek`],
 				[/* text */ 't', ` only in that it throws an
  exception if this deque is empty.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This method is equivalent to `],
-					[/* reference */ 'r', `getFirst()`],
+					[/* reference */ 'r', `#getFirst()`, `getFirst()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -468,7 +660,7 @@ DocsCollector.collect('java.util.Deque', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This method is equivalent to `],
-					[/* reference */ 'r', `addFirst(E)`],
+					[/* reference */ 'r', `#addFirst(E)`, `addFirst(E)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -505,7 +697,7 @@ DocsCollector.collect('java.util.Deque', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This method is equivalent to `],
-					[/* reference */ 'r', `removeFirst()`],
+					[/* reference */ 'r', `#removeFirst()`, `removeFirst()`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -529,7 +721,7 @@ DocsCollector.collect('java.util.Deque', [
 				[/* text */ 't', ` if no space is currently
  available.  When using a capacity-restricted deque, it is generally
  preferable to use method `],
-				[/* reference */ 'r', `offerFirst(E)`],
+				[/* reference */ 'r', `#offerFirst(E)`, `offerFirst(E)`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -566,13 +758,13 @@ DocsCollector.collect('java.util.Deque', [
 				[/* text */ 't', ` if no space is currently
  available.  When using a capacity-restricted deque, it is generally
  preferable to use method `],
-				[/* reference */ 'r', `offerLast(E)`],
+				[/* reference */ 'r', `#offerLast(E)`, `offerLast(E)`],
 				[/* text */ 't', `.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This method is equivalent to `],
-					[/* reference */ 'r', `add(E)`],
+					[/* reference */ 'r', `#add(E)`, `add(E)`],
 					[/* text */ 't', `.`]
 				]]
 			],
@@ -636,7 +828,7 @@ DocsCollector.collect('java.util.Deque', [
 				[/* text */ 't', `Inserts the specified element at the end of this deque unless it would
  violate capacity restrictions.  When using a capacity-restricted deque,
  this method is generally preferable to the `],
-				[/* reference */ 'r', `addLast(E)`],
+				[/* reference */ 'r', `#addLast(E)`, `addLast(E)`],
 				[/* text */ 't', ` method,
  which can fail to insert an element only by throwing an exception.`]
 			],
@@ -670,7 +862,7 @@ DocsCollector.collect('java.util.Deque', [
 			[/* method description */
 				[/* text */ 't', `Retrieves and removes the first element of this deque.  This method
  differs from `],
-				[/* reference */ 'r', `pollFirst`],
+				[/* reference */ 'r', `#pollFirst()`, `pollFirst`],
 				[/* text */ 't', ` only in that it throws an
  exception if this deque is empty.`]
 			],
@@ -689,7 +881,7 @@ DocsCollector.collect('java.util.Deque', [
 				[/* text */ 't', `Retrieves, but does not remove, the first element of this deque.
 
  This method differs from `],
-				[/* reference */ 'r', `peekFirst`],
+				[/* reference */ 'r', `#peekFirst()`, `peekFirst`],
 				[/* text */ 't', ` only in that it
  throws an exception if this deque is empty.`]
 			],
@@ -743,14 +935,14 @@ DocsCollector.collect('java.util.Deque', [
 					[/* text */ 't', `if the class of the specified element
          is incompatible with this deque
  (`],
-					[/* external link */ 'a', `../../../java.base/java/util/Collection.html#optional-restrictions`, `optional`],
+					[/* text */ 't', `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if the specified element is null and this
          deque does not permit null elements
  (`],
-					[/* external link */ 'a', `../../../java.base/java/util/Collection.html#optional-restrictions`, `optional`],
+					[/* text */ 't', `optional`],
 					[/* text */ 't', `)`]
 				]]
 			],
@@ -764,7 +956,7 @@ DocsCollector.collect('java.util.Deque', [
 				[/* text */ 't', `Inserts the specified element at the front of this deque unless it would
  violate capacity restrictions.  When using a capacity-restricted deque,
  this method is generally preferable to the `],
-				[/* reference */ 'r', `addFirst(E)`],
+				[/* reference */ 'r', `#addFirst(E)`, `addFirst(E)`],
 				[/* text */ 't', ` method,
  which can fail to insert an element only by throwing an exception.`]
 			],
@@ -798,7 +990,7 @@ DocsCollector.collect('java.util.Deque', [
 			[/* method description */
 				[/* text */ 't', `Retrieves and removes the last element of this deque.  This method
  differs from `],
-				[/* reference */ 'r', `pollLast`],
+				[/* reference */ 'r', `#pollLast()`, `pollLast`],
 				[/* text */ 't', ` only in that it throws an
  exception if this deque is empty.`]
 			],
@@ -816,7 +1008,7 @@ DocsCollector.collect('java.util.Deque', [
 			[/* method description */
 				[/* text */ 't', `Retrieves, but does not remove, the last element of this deque.
  This method differs from `],
-				[/* reference */ 'r', `peekLast`],
+				[/* reference */ 'r', `#peekLast()`, `peekLast`],
 				[/* text */ 't', ` only in that it
  throws an exception if this deque is empty.`]
 			],
@@ -870,14 +1062,14 @@ DocsCollector.collect('java.util.Deque', [
 					[/* text */ 't', `if the class of the specified element
          is incompatible with this deque
  (`],
-					[/* external link */ 'a', `../../../java.base/java/util/Collection.html#optional-restrictions`, `optional`],
+					[/* text */ 't', `optional`],
 					[/* text */ 't', `)`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
 					[/* text */ 't', `if the specified element is null and this
          deque does not permit null elements
  (`],
-					[/* external link */ 'a', `../../../java.base/java/util/Collection.html#optional-restrictions`, `optional`],
+					[/* text */ 't', `optional`],
 					[/* text */ 't', `)`]
 				]]
 			],
@@ -898,14 +1090,14 @@ DocsCollector.collect('java.util.Deque', [
 				[/* text */ 't', ` if no space is currently
  available.  When using a capacity-restricted deque, this method is
  generally preferable to the `],
-				[/* reference */ 'r', `add(E)`],
+				[/* reference */ 'r', `#add(E)`, `add(E)`],
 				[/* text */ 't', ` method, which can fail to
  insert an element only by throwing an exception.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This method is equivalent to `],
-					[/* reference */ 'r', `offerLast(E)`],
+					[/* reference */ 'r', `#offerLast(E)`, `offerLast(E)`],
 					[/* text */ 't', `.`]
 				]]
 			],

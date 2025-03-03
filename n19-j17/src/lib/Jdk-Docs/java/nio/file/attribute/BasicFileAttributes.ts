@@ -11,9 +11,7 @@ DocsCollector.collect('java.nio.file.attribute.BasicFileAttributes', [
  interface.
 
  `],
-		[/* block */ 'b', [
-			[/* text */ 't', `Usage Example:`]
-		]],
+		[/* block */ 'b', `Usage Example:`],
 		[/* code block */ 'c', `    Path file = ...
     BasicFileAttributes attrs = Files.readAttributes(file, BasicFileAttributes.class);
  `],
@@ -27,7 +25,7 @@ DocsCollector.collect('java.nio.file.attribute.BasicFileAttributes', [
 				[/* text */ 't', `Returns the size of the file (in bytes). The size may differ from the
  actual size on the file system due to compression, support for sparse
  files, or other reasons. The size of files that are not `],
-				[/* reference */ 'r', `regular`],
+				[/* reference */ 'r', `#isRegularFile()`, `regular`],
 				[/* text */ 't', ` files is implementation specific and
  therefore unspecified.`]
 			],
@@ -102,7 +100,7 @@ DocsCollector.collect('java.nio.file.attribute.BasicFileAttributes', [
 					[/* text */ 't', ` If the file system implementation does not support a time stamp
  to indicate the time of last access then this method returns
  an implementation specific default value, typically the `],
-					[/* reference */ 'r', `last-modified-time`],
+					[/* reference */ 'r', `#lastModifiedTime()`, `last-modified-time`],
 					[/* text */ 't', ` or a `],
 					[/* inline code block */ 'i', `FileTime`],
 					[/* text */ 't', `
@@ -127,7 +125,7 @@ DocsCollector.collect('java.nio.file.attribute.BasicFileAttributes', [
 					[/* text */ 't', ` If the file system implementation does not support a time stamp
  to indicate the time when the file was created then this method returns
  an implementation specific default value, typically the `],
-					[/* reference */ 'r', `last-modified-time`],
+					[/* reference */ 'r', `#lastModifiedTime()`, `last-modified-time`],
 					[/* text */ 't', ` or a `],
 					[/* inline code block */ 'i', `FileTime`],
 					[/* text */ 't', `
@@ -163,7 +161,7 @@ DocsCollector.collect('java.nio.file.attribute.BasicFileAttributes', [
  it is possible to use an identifier, or a combination of identifiers to
  uniquely identify a file. Such identifiers are important for operations
  such as file tree traversal in file systems that support `],
-				[/* external link */ 'a', `../package-summary.html#links`, `symbolic links`],
+				[/* text */ 't', `symbolic links`],
 				[/* text */ 't', ` or file systems
  that allow a file to be an entry in more than one directory. On UNIX file
  systems, for example, the `],
@@ -184,7 +182,7 @@ DocsCollector.collect('java.nio.file.attribute.BasicFileAttributes', [
 					[/* text */ 't', ` File keys returned by this method can be compared for equality and are
  suitable for use in collections. If the file system and files remain static,
  and two files are the `],
-					[/* external link */ 'a', `../Files.html#isSameFile(java.nio.file.Path,java.nio.file.Path)`, `same`],
+					[/* reference */ 'r', `java.Files#isSameFile(java.nio.file.Path,java.nio.file.Path)`],
 					[/* text */ 't', ` with
  non-`],
 					[/* inline code block */ 'i', `null`],

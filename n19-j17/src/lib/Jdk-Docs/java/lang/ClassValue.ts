@@ -27,10 +27,10 @@ DocsCollector.collect('java.lang.ClassValue', [
 			[/* method description */
 				[/* text */ 't', `Removes the associated value for the given class.
  If this value is subsequently `],
-				[/* reference */ 'r', `read`],
+				[/* reference */ 'r', `#get(java.lang.Class)`, `read`],
 				[/* text */ 't', ` for the same class,
  its value will be reinitialized by invoking its `],
-				[/* reference */ 'r', `computeValue`],
+				[/* reference */ 'r', `#computeValue(java.lang.Class)`, `computeValue`],
 				[/* text */ 't', ` method.
  This may result in an additional invocation of the
  `],
@@ -212,7 +212,7 @@ DocsCollector.collect('java.lang.ClassValue', [
 				[/* text */ 't', `Returns the value for the given class.
  If no value has yet been computed, it is obtained by
  an invocation of the `],
-				[/* reference */ 'r', `computeValue`],
+				[/* reference */ 'r', `#computeValue(java.lang.Class)`, `computeValue`],
 				[/* text */ 't', ` method.
  `],
 				[/* block */ 'b', `
@@ -245,7 +245,7 @@ DocsCollector.collect('java.lang.ClassValue', [
 					[/* text */ 't', ` calls are made,
  the rules for value observation are more complex.
  See the documentation for `],
-					[/* reference */ 'r', `remove`],
+					[/* reference */ 'r', `#remove(java.lang.Class)`, `remove`],
 					[/* text */ 't', ` for more information.`]
 				]]
 			],
@@ -275,7 +275,7 @@ DocsCollector.collect('java.lang.ClassValue', [
 					[/* text */ 't', `
  This method will be invoked within the first thread that accesses
  the value with the `],
-					[/* reference */ 'r', `get`],
+					[/* reference */ 'r', `#get(java.lang.Class)`, `get`],
 					[/* text */ 't', ` method.
  `]
 				]],
@@ -284,7 +284,7 @@ DocsCollector.collect('java.lang.ClassValue', [
  Normally, this method is invoked at most once per class,
  but it may be invoked again if there has been a call to
  `],
-					[/* reference */ 'r', `remove`],
+					[/* reference */ 'r', `#remove(java.lang.Class)`, `remove`],
 					[/* text */ 't', `.
  `]
 				]],
