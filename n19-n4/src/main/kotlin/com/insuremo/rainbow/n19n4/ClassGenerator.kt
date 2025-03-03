@@ -714,6 +714,7 @@ private class ClassGenerator(
 			.replace("`", """\`""")
 			.replace("&nbsp;", " ")
 			.replace("&thinsp;", " ")
+			.replace(" ", " ")
 			.replace("%5B", "[")
 			.replace("%5D", "]")
 			.replace("%3C", "<")
