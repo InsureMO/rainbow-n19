@@ -716,6 +716,15 @@ private class ClassGenerator(
 			.replace("&thinsp;", " ")
 			.replace("%5B", "[")
 			.replace("%5D", "]")
+			.replace("%3C", "<")
+			.replace("%3E", ">")
+			.let {
+				if (it.startsWith("<!--") && it.endsWith("-->")) {
+					""
+				} else {
+					it
+				}
+			}
 	}
 
 	private fun generateDocSegmentOfChildren(node: Node, level: Int, inCodeBlock: Boolean): String {
@@ -779,12 +788,7 @@ private class ClassGenerator(
 		val indent = "\t".repeat(level)
 		return when (node.nodeName()) {
 			"#text" -> {
-				val content = node.outerHtml()
-				if (content.startsWith("<!--") && content.endsWith("-->")) {
-					"${indent}[/* text */ 't', '']"
-				} else {
-					"${indent}[/* text */ 't', `${node.outerHtml().escapeDocChars()}`]"
-				}
+				"${indent}[/* text */ 't', `${node.outerHtml().escapeDocChars()}`]"
 			}
 
 			"em", "strong", "b", "i", "cite" -> {
@@ -812,9 +816,11 @@ private class ClassGenerator(
 					if (element.parent()?.attr("class") == "block"
 						&& element.parent()?.nextElementSibling()?.attr("class") == "block"
 					) {
-						"${indent}[/* block */ 'b', ${
-							generateDocSegmentOfChildren(element.parent()?.nextElementSibling()!!, level, inCodeBlock)
-						}]"
+						"${indent}[/* block */ 'b', " +
+								generateDocSegmentOfChildren(
+									element.parent()?.nextElementSibling()!!, level, inCodeBlock
+								) +
+								"]"
 					} else {
 						val from = element.children()
 							.firstOrNull { child -> child.nodeName() == "code" }
@@ -864,7 +870,7 @@ private class ClassGenerator(
 					}
 
 					hrefToAnotherPackage || hrefToSamePackage || hrefToSubPackage -> {
-						"${indent}[/* reference */ 'r', `${getInternalLink(node)}`]"
+						"${indent}[/* reference */ 'r', `${getInternalLink(node).escapeDocChars()}`]"
 					}
 
 					else -> {
@@ -884,12 +890,22 @@ private class ClassGenerator(
 					} else {
 						"/* table header cell */ 'thc'"
 					}
+				val colSpan = node.let {
+					val v = it.attr("colspan")
+					if (v.isEmpty() || v == "1") "1" else v
+				}
+
+				val rowSpan = node.let {
+					val v = it.attr("rowspan")
+					if (v.isEmpty() || v == "1") "1" else v
+				}
+				val pos = if (colSpan == "1" && rowSpan == "1") "" else ", ${colSpan}, $rowSpan"
 				val childNodes = node.childNodes()
 				if (childNodes.isEmpty()) {
-					"${indent}[${prefix}]"
+					"${indent}[${prefix}${pos}]"
 				} else {
 					listOf(
-						"${indent}[${prefix}, [",
+						"${indent}[${prefix}${pos}, [",
 						childNodes.joinToString(",\n") { node ->
 							generateDocSegment(node, level + 1, inCodeBlock)
 						},
@@ -1317,7 +1333,6 @@ fun generateClass(className: String, targetInfo: JarGeneratingTargetInfo, checkV
 		return false
 	}
 
-	Logs.verbose("Generating class[${className}]", -1)
 	if (checkVisibility == true) {
 		val modifiers = clazz.modifiers
 		if (Modifier.isPrivate(modifiers) || (!Modifier.isPublic(modifiers) && !Modifier.isProtected(modifiers))) {
@@ -1326,6 +1341,8 @@ fun generateClass(className: String, targetInfo: JarGeneratingTargetInfo, checkV
 			return false
 		}
 	}
+
+	Logs.verbose("Generating class[${className}]", -1)
 
 	val generator = ClassGenerator(clazz, targetInfo)
 	val packageName = clazz.packageName
