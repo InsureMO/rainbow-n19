@@ -7,9 +7,11 @@ export type DocSegmentText = ['t', DocSegmentContent] | ['t', DocSegmentContent,
 /** inline code block */
 export type DocSegmentInlineCodeBlock = ['i', DocSegmentContent];
 /** reference, could be class/field/method/constructor */
-export type DocSegmentReference = ['r', DocSegmentContent];
+export type DocSegmentReference =
+	| ['r', DocSegmentContent] // link
+	| ['r', DocSegmentContent, DocSegmentContent]; // link, text
 /** code block */
-export type DocSegmentCodeBlock = ['c', DocSegmentContent | Array<DocSegmentInlineCodeBlock | DocSegmentText>];
+export type DocSegmentCodeBlock = ['c', DocSegmentContent | Array<DocSegmentText | DocSegmentInlineCodeBlock>];
 /** external link */
 export type DocSegmentExternalLink = ['a', DocSegmentContent, DocSegmentContent];
 /** list */

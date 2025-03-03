@@ -707,7 +707,7 @@ private class ClassGenerator(
 		).joinToString("\n")
 	}
 
-	private fun generateDocSegmentOfChildren(node: Node, level: Int): String {
+	private fun generateDocSegmentOfChildren(node: Node, level: Int, inCodeBlock: Boolean): String {
 		val indent = "\t".repeat(level)
 		val childNodes = node.childNodes().filter { node ->
 			node.nodeName() != "#text" || node.outerHtml().trim().isNotEmpty()
@@ -719,13 +719,13 @@ private class ClassGenerator(
 				if (node.nodeName() == "#text") {
 					"`${node.outerHtml()}`"
 				} else {
-					"[\n${generateDocSegment(node, level + 1)}\n${indent}]"
+					"[\n${generateDocSegment(node, level + 1, inCodeBlock)}\n${indent}]"
 				}
 			}
 
 			else -> {
 				childNodes.joinToString(",\n", "[\n", "\n${indent}]") { child ->
-					generateDocSegment(child, level + 1)
+					generateDocSegment(child, level + 1, inCodeBlock)
 				}
 			}
 		}
@@ -742,14 +742,22 @@ private class ClassGenerator(
 		}
 	}
 
-	private fun generateDocSegment(node: Node, level: Int): String {
+	private fun generateDocSegment(node: Node, level: Int, inCodeBlock: Boolean): String {
 		val indent = "\t".repeat(level)
 		return when (node.nodeName()) {
-			"#text" -> "${indent}[/* text */ 't', `${node.outerHtml()}`]"
+			"#text" -> {
+				val content = node.outerHtml()
+				if (content.startsWith("<!--") && content.endsWith("-->")) {
+					"${indent}[/* text */ 't', '']"
+				} else {
+					"${indent}[/* text */ 't', `${node.outerHtml()}`]"
+				}
+			}
+
 			"em", "strong", "b", "i", "cite" -> {
 				val element = node as Element
 				if (element.childrenSize() == 1) {
-					return generateDocSegment(element.child(0), level)
+					return generateDocSegment(element.child(0), level, inCodeBlock)
 				} else {
 					"${indent}[/* text */ 't', `${element.html()}`]"
 				}
@@ -758,21 +766,22 @@ private class ClassGenerator(
 			"sup" -> "${indent}[/* text */ 't', `${(node as Element).text().replace("&nbsp;", " ")}`, 'sup']"
 			"sub" -> "${indent}[/* text */ 't', `${(node as Element).text().replace("&nbsp;", " ")}`, 'sub']"
 			"small" -> "${indent}[/* text */ 't', `${(node as Element).text().replace("&nbsp;", " ")}`, 'small']"
-			"p" -> "${indent}[/* block */ 'b', ${generateDocSegmentOfChildren(node, level)}]"
-			"h2", "h3", "h4" -> "${indent}[/* block */ 'b', ${generateDocSegmentOfChildren(node, level)}]"
-			"blockquote" -> "${indent}[/* block */ 'b', ${generateDocSegmentOfChildren(node, level)}]"
-			"li" -> "${indent}[/* block */ 'b', ${generateDocSegmentOfChildren(node, level)}]"
-			"ul" -> "${indent}[/* list */ 'l', ${generateDocSegmentOfChildren(node, level)}]"
-			"ol" -> "${indent}[/* list */ 'l', ${generateDocSegmentOfChildren(node, level)}]"
-			"pre" -> "${indent}[/* code block */ 'c', ${generateDocSegmentOfChildren(node, level)}]"
+			"p" -> "${indent}[/* block */ 'b', ${generateDocSegmentOfChildren(node, level, inCodeBlock)}]"
+			"h2", "h3", "h4" -> "${indent}[/* block */ 'b', ${generateDocSegmentOfChildren(node, level, inCodeBlock)}]"
+			"blockquote" -> "${indent}[/* block */ 'b', ${generateDocSegmentOfChildren(node, level, inCodeBlock)}]"
+			"li" -> "${indent}[/* block */ 'b', ${generateDocSegmentOfChildren(node, level, inCodeBlock)}]"
+			"ul" -> "${indent}[/* list */ 'l', ${generateDocSegmentOfChildren(node, level, inCodeBlock)}]"
+			"ol" -> "${indent}[/* list */ 'l', ${generateDocSegmentOfChildren(node, level, inCodeBlock)}]"
+			"pre" -> "${indent}[/* code block */ 'c', ${generateDocSegmentOfChildren(node, level, true)}]"
 			"span" -> {
 				val element = node as Element
 				if (element.attr("class") == "descfrm-type-label") {
 					if (element.parent()?.attr("class") == "block"
 						&& element.parent()?.nextElementSibling()?.attr("class") == "block"
 					) {
-						"${indent}[/* block */ 'b', " +
-								"${generateDocSegmentOfChildren(element.parent()?.nextElementSibling()!!, level)}]"
+						"${indent}[/* block */ 'b', ${
+							generateDocSegmentOfChildren(element.parent()?.nextElementSibling()!!, level, inCodeBlock)
+						}]"
 					} else {
 						val from = element.children()
 							.firstOrNull { child -> child.nodeName() == "code" }
@@ -782,7 +791,7 @@ private class ClassGenerator(
 						"${indent}[/* text, ignored since it is the description reference from [${from}] */ 't', '']"
 					}
 				} else if (element.childrenSize() == 1) {
-					return generateDocSegment(element.child(0), level)
+					return generateDocSegment(element.child(0), level, inCodeBlock)
 				} else {
 					"${indent}[/* text */ 't', `${element.html()}`]"
 				}
@@ -800,11 +809,12 @@ private class ClassGenerator(
 				val hrefToSubPackage = !hrefToExternal && !hrefToAnotherPackage && href.contains("/")
 				val hasChildElement = element.childrenSize() != 0
 				when {
+					inCodeBlock -> "${indent}[/* text */ 't', `${element.text()}`]"
 					!hasTitle && hasId -> "${indent}[/* text */ 't', `${element.text()}`]"
 					!hasTitle && hrefStartsWithHash && !href.contains("(") -> "${indent}[/* text */ 't', `${element.text()}`]"
-					!hasTitle && hrefStartsWithHash && !hasChildElement -> "${indent}[/* reference */ 'r', `${element.text()}`]"
+					!hasTitle && hrefStartsWithHash && !hasChildElement -> "${indent}[/* reference */ 'r', `${href}`, `${element.text()}`]"
 					!hasTitle && hrefStartsWithHash && hasChildElement -> {
-						"${indent}[/* reference */ 'r', `${element.child(0).text()}`]"
+						"${indent}[/* reference */ 'r', `${href}`, `${element.child(0).text()}`]"
 					}
 
 					!hasTitle -> "${indent}[/* external link */ 'a', `${href}`, `${element.text()}`]"
@@ -832,8 +842,8 @@ private class ClassGenerator(
 			"code" -> "${indent}[/* inline code block */ 'i', `${(node as Element).text()}`]"
 			"var" -> "${indent}[/* inline code block */ 'i', `${(node as Element).text()}`]"
 			"br", "hr" -> "${indent}[/* new line */ 'n']"
-			"table" -> "${indent}[/* table */ 't', '']"
-			"dl" -> "${indent}[/* dl */ 't', '']"
+			"table" -> "${indent}[/* table */ 't', `${node.outerHtml()}`]"
+			"dl" -> "${indent}[/* dl */ 't', `${node.outerHtml()}`]"
 			else -> "${indent}[/* block */ 'b', `${node.outerHtml()}`]"
 		}
 	}
@@ -843,10 +853,11 @@ private class ClassGenerator(
 		return node?.childNodes()
 			?.filter { node -> node.nodeName() != "#text" || node.outerHtml().trim().isNotEmpty() }
 			?.joinToString(",\n", "${indent}[${comments}\n", "\n${indent}],") { node ->
-				generateDocSegment(node, level + 1)
+				generateDocSegment(node, level + 1, false)
 			}
 			?.replace("""\""", """\\""")
 			?.replace("\${", """\""" + "$" + "{")
+			?.replace("&thinsp;", " ")
 			?: "${indent}${comments} UDF,"
 	}
 
@@ -922,7 +933,10 @@ private class ClassGenerator(
 				} else {
 					val description = descriptionNodes
 						.joinToString(",\n", "[/* parameter description */\n", "\n${indent1}]") { node ->
-							generateDocSegment(node, level + 2).replace("[/* text */ 't', ` - ", "[/* text */ 't', `")
+							generateDocSegment(node, level + 2, false).replace(
+								"[/* text */ 't', ` - ",
+								"[/* text */ 't', `"
+							)
 						}.replace("\${", """\""" + "$" + "{")
 
 					"${indent1}[/* parameter */ '${name}', ${description}]"
@@ -970,7 +984,10 @@ private class ClassGenerator(
 				} else {
 					val description = descriptionNodes
 						.joinToString(",\n", "[/* throw description */\n", "\n${indent1}]") { node ->
-							generateDocSegment(node, level + 2).replace("[/* text */ 't', ` - ", "[/* text */ 't', `")
+							generateDocSegment(node, level + 2, false).replace(
+								"[/* text */ 't', ` - ",
+								"[/* text */ 't', `"
+							)
 						}.replace("\${", """\""" + "$" + "{")
 
 					"${indent1}[/* throw */ '${name}', ${description}]"
@@ -1051,7 +1068,7 @@ private class ClassGenerator(
 			return "${indent}/* return */ UDF"
 		}
 		return nodes.joinToString(",\n", "${indent}[/* return description */\n", "\n${indent}]") { node ->
-			generateDocSegment(node, level + 1)
+			generateDocSegment(node, level + 1, false)
 		}.replace("\${", """\""" + "$" + "{")
 	}
 
@@ -1105,15 +1122,28 @@ private class ClassGenerator(
 	fun generateDoc(packageLevel: Int): String {
 		return htmlDocument?.let { doc ->
 			val classDescriptionNode = doc.getElementById("class-description")
+			val classDoc = generateClassDoc(classDescriptionNode!!)
+			val fieldDocs = generateClassFieldDocs(doc.getElementById("field-detail"))
+			val constructorDocs = generateClassConstructorDocs(doc.getElementById("constructor-detail"))
+			val methodDocs = generateClassMethodDocs(doc.getElementById("method-detail"))
+			val imports = if (classDoc.contains("UDF")
+				|| fieldDocs.contains("UDF")
+				|| constructorDocs.contains("UDF")
+				|| methodDocs.contains("UDF")
+			) {
+				"import {UDF} from '${"../".repeat(packageLevel + 1)}utils';\n" +
+						"import {DocsCollector} from '${"../".repeat(packageLevel)}DocsCollector';"
+			} else {
+				"import {DocsCollector} from '${"../".repeat(packageLevel)}DocsCollector';"
+			}
 			listOf(
-				"import {UDF} from '${"../".repeat(packageLevel + 1)}utils';",
-				"import {DocsCollector} from '${"../".repeat(packageLevel)}DocsCollector';",
+				imports,
 				"",
 				"DocsCollector.collect('${clazz.name}', [",
-				generateClassDoc(classDescriptionNode!!),
-				generateClassFieldDocs(doc.getElementById("field-detail")),
-				generateClassConstructorDocs(doc.getElementById("constructor-detail")),
-				generateClassMethodDocs(doc.getElementById("method-detail")),
+				classDoc,
+				fieldDocs,
+				constructorDocs,
+				methodDocs,
 				"]);",
 				""
 			).joinToString("\n")

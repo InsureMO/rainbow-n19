@@ -109,6 +109,9 @@ fun standardParameterNamesOfMethodFromDocHtml(
 			return listOf()
 		}
 	}
+	if (element.tagName() == "h3") {
+		element = element.parent()
+	}
 	val parametersElement = element.getElementsByClass("parameters").first()
 	val innerHtml = parametersElement?.html()
 	if (innerHtml == null) {
