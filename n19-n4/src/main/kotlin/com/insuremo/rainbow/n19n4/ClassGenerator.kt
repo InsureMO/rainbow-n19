@@ -719,6 +719,9 @@ private class ClassGenerator(
 			.replace("%5D", "]")
 			.replace("%3C", "<")
 			.replace("%3E", ">")
+			.replace("&lt;", "<")
+			.replace("&gt;", ">")
+			.replace("&amp;", "&")
 			.let {
 				if (it.startsWith("<!--") && it.endsWith("-->")) {
 					""
@@ -804,7 +807,19 @@ private class ClassGenerator(
 			"sup" -> "${indent}[/* text */ 't', `${(node as Element).text().escapeDocChars()}`, 'sup']"
 			"sub" -> "${indent}[/* text */ 't', `${(node as Element).text().escapeDocChars()}`, 'sub']"
 			"small" -> "${indent}[/* text */ 't', `${(node as Element).text().escapeDocChars()}`, 'small']"
-			"p" -> "${indent}[/* block */ 'b', ${generateDocSegmentOfChildren(node, level, inCodeBlock)}]"
+			"p" -> {
+				val element = node as Element
+				if (element.children().size == 1
+					&& (element.child(0).nodeName() == "strong"
+							|| element.child(0).nodeName() == "em"
+							|| element.child(0).nodeName() == "b")
+				) {
+					"${indent}[/* block */ 'b', ${generateDocSegmentOfChildren(node.child(0), level, inCodeBlock)}]"
+				} else {
+					"${indent}[/* block */ 'b', ${generateDocSegmentOfChildren(node, level, inCodeBlock)}]"
+				}
+			}
+
 			"h2", "h3", "h4" -> "${indent}[/* block */ 'b', ${generateDocSegmentOfChildren(node, level, inCodeBlock)}]"
 			"blockquote" -> "${indent}[/* block */ 'b', ${generateDocSegmentOfChildren(node, level, inCodeBlock)}]"
 			"li" -> "${indent}[/* block */ 'b', ${generateDocSegmentOfChildren(node, level, inCodeBlock)}]"
