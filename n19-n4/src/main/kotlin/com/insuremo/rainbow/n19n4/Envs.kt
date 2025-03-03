@@ -151,6 +151,8 @@ object Envs {
 	private val DEFAULT_EXCLUDED_CLASSES by lazy {
 		listOf(
 			"java.beans.AppletInitializer",
+			"java.lang.System",
+			"java.util.ServiceLoader"
 		).joinToString(",")
 	}
 	private const val GENERATE_DOCS = "generateDocs"
@@ -259,6 +261,23 @@ object Envs {
 			"groovy.transform.stc.ClosureParams",
 			"org.apache.groovy.lang.annotation.Incubating",
 			"org.codehaus.groovy.transform.GroovyASTTransformationClass"
+		)
+	}
+	val ignoredDocLinks by lazy {
+		listOf(
+			"/package-summary.html",
+			"/specs/serialization/",
+			"/doc-files/",
+			"/specs/jni/",
+			"/serialized-form.html",
+			"/specs/jvmti.html",
+			"/specs/security/",
+			"/Collection.html#optional-restrictions",
+			"/ResourceBundleProvider.html#obtain-resource-bundle",
+			"/Configuration.html#service-binding",
+			"/Character.html#unicode",
+			"/ModuleFinder.html#automatic-modules",
+			"/Instrumentation.html#isModifiableClass"
 		)
 	}
 

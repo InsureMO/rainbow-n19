@@ -18,8 +18,28 @@ export type DocSegmentExternalLink = ['a', DocSegmentContent, DocSegmentContent]
 export type DocSegmentList = ['l', Array<DocSegmentBlock>]
 /** new line, aka <br> */
 export type DocSegmentNewLine = ['n']
+/** dl */
+export type DocSegmentDt = ['dt'] | ['dt', Array<DocSegment>]
+export type DocSegmentDd = ['dd'] | ['dd', Array<DocSegment>]
+export type DocSegmentDl = ['dl'] | ['dl', Array<DocSegmentDt | DocSegmentDd>];
+/** table */
+export type DocSegmentTableCaption = ['tc'] | ['tc', Array<DocSegment>];
+export type DocSegmentTableCell =
+	| ['tbc']
+	| ['tbc', number, number]
+	| ['tbc', Array<DocSegment>]
+	| ['tbc', number, number, Array<DocSegment>]
+export type DocSegmentTableHeaderCell =
+	| ['thc']
+	| ['thc', number, number]
+	| ['thc', Array<DocSegment>]
+	| ['thc', number, number, Array<DocSegment>]
+export type DocSegmentTableRow = ['tr'] | ['tr', Array<DocSegmentTableHeaderCell | DocSegmentTableCell>]
+export type DocSegmentTableHeader = ['th'] | ['th', Array<DocSegmentTableRow>]
+export type DocSegmentTableBody = ['tb'] | ['tb', Array<DocSegmentTableRow>]
+export type DocSegmentTable = ['tbl', DocSegmentTableCaption, DocSegmentTableHeader, DocSegmentTableBody]
 /** block */
-export type DocSegmentBlock = ['b', DocSegmentContent | Array<DocSegmentText | DocSegmentInlineCodeBlock | DocSegmentReference | DocSegmentCodeBlock | DocSegmentExternalLink | DocSegmentList | DocSegmentNewLine | DocSegmentBlock>]
+export type DocSegmentBlock = ['b', DocSegmentContent | Array<DocSegmentText | DocSegmentInlineCodeBlock | DocSegmentReference | DocSegmentCodeBlock | DocSegmentExternalLink | DocSegmentList | DocSegmentNewLine | DocSegmentDl | DocSegmentTable | DocSegmentBlock>]
 export type DocSegment =
 	| DocSegmentText
 	| DocSegmentInlineCodeBlock
@@ -28,6 +48,8 @@ export type DocSegment =
 	| DocSegmentExternalLink
 	| DocSegmentList
 	| DocSegmentNewLine
+	| DocSegmentDl
+	| DocSegmentTable
 	| DocSegmentBlock;
 export type DocDescription = Optional<Array<DocSegment>>;
 
