@@ -8,7 +8,7 @@ DocsCollector.collect('groovy.lang.NonEmptySequence', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
-		[/* constructor */ '<init>(java.lang.Class,java.util.List)', [
+		[/* constructor */ '<init>()', [
 			/* constructor description */ UDF,
 			/* parameters */ UDF,
 			/* throws */ UDF
@@ -18,7 +18,7 @@ DocsCollector.collect('groovy.lang.NonEmptySequence', [
 			/* parameters */ UDF,
 			/* throws */ UDF
 		]],
-		[/* constructor */ '<init>()', [
+		[/* constructor */ '<init>(java.lang.Class,java.util.List)', [
 			/* constructor description */ UDF,
 			/* parameters */ UDF,
 			/* throws */ UDF

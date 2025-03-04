@@ -8,21 +8,6 @@ DocsCollector.collect('groovy.util.OrderBy', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
-		[/* constructor */ '<init>(java.util.List,boolean)', [
-			/* constructor description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF
-		]],
-		[/* constructor */ '<init>(java.util.List)', [
-			/* constructor description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF
-		]],
-		[/* constructor */ '<init>(groovy.lang.Closure,boolean)', [
-			/* constructor description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF
-		]],
 		[/* constructor */ '<init>()', [
 			/* constructor description */ UDF,
 			/* parameters */ UDF,
@@ -37,10 +22,25 @@ DocsCollector.collect('groovy.util.OrderBy', [
 			/* constructor description */ UDF,
 			/* parameters */ UDF,
 			/* throws */ UDF
+		]],
+		[/* constructor */ '<init>(groovy.lang.Closure,boolean)', [
+			/* constructor description */ UDF,
+			/* parameters */ UDF,
+			/* throws */ UDF
+		]],
+		[/* constructor */ '<init>(java.util.List)', [
+			/* constructor description */ UDF,
+			/* parameters */ UDF,
+			/* throws */ UDF
+		]],
+		[/* constructor */ '<init>(java.util.List,boolean)', [
+			/* constructor description */ UDF,
+			/* parameters */ UDF,
+			/* throws */ UDF
 		]]
 	],
 	[/* methods */
-		[/* method */ 'add(groovy.lang.Closure)', [
+		[/* method */ 'isEqualityCheck()', [
 			/* method description */ UDF,
 			/* parameters */ UDF,
 			/* throws */ UDF,
@@ -52,7 +52,7 @@ DocsCollector.collect('groovy.util.OrderBy', [
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
-		[/* method */ 'isEqualityCheck()', [
+		[/* method */ 'add(groovy.lang.Closure)', [
 			/* method description */ UDF,
 			/* parameters */ UDF,
 			/* throws */ UDF,

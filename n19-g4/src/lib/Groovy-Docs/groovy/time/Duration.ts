@@ -30,13 +30,25 @@ DocsCollector.collect('groovy.time.Duration', [
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
-		[/* method */ 'plus(groovy.time.Duration)', [
+		[/* method */ 'minus(groovy.time.DatumDependentDuration)', [
 			/* method description */ UDF,
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
 		[/* method */ 'plus(groovy.time.DatumDependentDuration)', [
+			/* method description */ UDF,
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'minus(groovy.time.Duration)', [
+			/* method description */ UDF,
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'plus(groovy.time.Duration)', [
 			/* method description */ UDF,
 			/* parameters */ UDF,
 			/* throws */ UDF,
@@ -55,18 +67,6 @@ DocsCollector.collect('groovy.time.Duration', [
 			/* return */ UDF
 		]],
 		[/* method */ 'minus(groovy.time.TimeDuration)', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'minus(groovy.time.Duration)', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'minus(groovy.time.DatumDependentDuration)', [
 			/* method description */ UDF,
 			/* parameters */ UDF,
 			/* throws */ UDF,

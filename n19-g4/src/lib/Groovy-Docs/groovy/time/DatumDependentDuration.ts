@@ -28,30 +28,6 @@ DocsCollector.collect('groovy.time.DatumDependentDuration', [
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
-		[/* method */ 'plus(groovy.time.Duration)', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'plus(groovy.time.TimeDatumDependentDuration)', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'plus(groovy.time.DatumDependentDuration)', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'plus(groovy.time.TimeDuration)', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
 		[/* method */ 'minus(groovy.time.DatumDependentDuration)', [
 			/* method description */ UDF,
 			/* parameters */ UDF,
@@ -64,13 +40,37 @@ DocsCollector.collect('groovy.time.DatumDependentDuration', [
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
-		[/* method */ 'getYears()', [
+		[/* method */ 'plus(groovy.time.DatumDependentDuration)', [
+			/* method description */ UDF,
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'plus(groovy.time.Duration)', [
+			/* method description */ UDF,
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'plus(groovy.time.TimeDatumDependentDuration)', [
+			/* method description */ UDF,
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'plus(groovy.time.TimeDuration)', [
 			/* method description */ UDF,
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
 		[/* method */ 'getMonths()', [
+			/* method description */ UDF,
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'getYears()', [
 			/* method description */ UDF,
 			/* parameters */ UDF,
 			/* throws */ UDF,

@@ -241,18 +241,6 @@ GroovyClassCreateHelper.class('groovy.time.BaseDuration', [
 		]
 	],
 	[/* declared fields */
-		[/* protected final int groovy.time.BaseDuration.years */
-			/* name */ 'years',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 20
-		],
-		[/* protected final int groovy.time.BaseDuration.months */
-			/* name */ 'months',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 20
-		],
 		[/* protected final int groovy.time.BaseDuration.days */
 			/* name */ 'days',
 			/* type */ 'int',
@@ -265,8 +253,20 @@ GroovyClassCreateHelper.class('groovy.time.BaseDuration', [
 			/* annotations */ UDF,
 			/* modifiers */ 20
 		],
+		[/* protected final int groovy.time.BaseDuration.millis */
+			/* name */ 'millis',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 20
+		],
 		[/* protected final int groovy.time.BaseDuration.minutes */
 			/* name */ 'minutes',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 20
+		],
+		[/* protected final int groovy.time.BaseDuration.months */
+			/* name */ 'months',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 20
@@ -277,8 +277,8 @@ GroovyClassCreateHelper.class('groovy.time.BaseDuration', [
 			/* annotations */ UDF,
 			/* modifiers */ 20
 		],
-		[/* protected final int groovy.time.BaseDuration.millis */
-			/* name */ 'millis',
+		[/* protected final int groovy.time.BaseDuration.years */
+			/* name */ 'years',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 20

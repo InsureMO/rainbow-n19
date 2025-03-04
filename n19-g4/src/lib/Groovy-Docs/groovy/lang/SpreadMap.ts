@@ -7,6 +7,11 @@ DocsCollector.collect('groovy.lang.SpreadMap', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
+		[/* constructor */ '<init>(java.lang.Object[])', [
+			/* constructor description */ UDF,
+			/* parameters */ UDF,
+			/* throws */ UDF
+		]],
 		[/* constructor */ '<init>(java.util.List)', [
 			/* constructor description */ UDF,
 			[/* parameters */
@@ -20,15 +25,22 @@ DocsCollector.collect('groovy.lang.SpreadMap', [
 			/* constructor description */ UDF,
 			/* parameters */ UDF,
 			/* throws */ UDF
-		]],
-		[/* constructor */ '<init>(java.lang.Object[])', [
-			/* constructor description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF
 		]]
 	],
 	[/* methods */
-		[/* method */ 'remove(java.lang.Object)', [
+		[/* method */ 'equals(groovy.lang.SpreadMap)', [
+			/* method description */ UDF,
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'equals(java.lang.Object)', [
+			/* method description */ UDF,
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'hashCode()', [
 			/* method description */ UDF,
 			/* parameters */ UDF,
 			/* throws */ UDF,
@@ -40,13 +52,7 @@ DocsCollector.collect('groovy.lang.SpreadMap', [
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
-		[/* method */ 'equals(groovy.lang.SpreadMap)', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'equals(java.lang.Object)', [
+		[/* method */ 'remove(java.lang.Object)', [
 			/* method description */ UDF,
 			/* parameters */ UDF,
 			/* throws */ UDF,
@@ -60,12 +66,6 @@ DocsCollector.collect('groovy.lang.SpreadMap', [
 				[/* text */ 't', `the string expression of `],
 				[/* inline code block */ 'i', `this`]
 			]
-		]],
-		[/* method */ 'hashCode()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
 		]],
 		[/* method */ 'putAll(java.util.Map)', [
 			/* method description */ UDF,

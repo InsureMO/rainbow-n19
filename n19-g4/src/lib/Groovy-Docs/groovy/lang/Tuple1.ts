@@ -7,12 +7,12 @@ DocsCollector.collect('groovy.lang.Tuple1', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
-		[/* constructor */ '<init>(java.lang.Object)', [
+		[/* constructor */ '<init>(groovy.lang.Tuple1)', [
 			/* constructor description */ UDF,
 			/* parameters */ UDF,
 			/* throws */ UDF
 		]],
-		[/* constructor */ '<init>(groovy.lang.Tuple1)', [
+		[/* constructor */ '<init>(java.lang.Object)', [
 			/* constructor description */ UDF,
 			/* parameters */ UDF,
 			/* throws */ UDF

@@ -7,12 +7,12 @@ DocsCollector.collect('groovy.lang.Tuple12', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
-		[/* constructor */ '<init>(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)', [
+		[/* constructor */ '<init>(groovy.lang.Tuple12)', [
 			/* constructor description */ UDF,
 			/* parameters */ UDF,
 			/* throws */ UDF
 		]],
-		[/* constructor */ '<init>(groovy.lang.Tuple12)', [
+		[/* constructor */ '<init>(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)', [
 			/* constructor description */ UDF,
 			/* parameters */ UDF,
 			/* throws */ UDF
@@ -26,6 +26,24 @@ DocsCollector.collect('groovy.lang.Tuple12', [
 			/* return */ UDF
 		]],
 		[/* method */ 'getV1()', [
+			/* method description */ UDF,
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'getV10()', [
+			/* method description */ UDF,
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'getV11()', [
+			/* method description */ UDF,
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'getV12()', [
 			/* method description */ UDF,
 			/* parameters */ UDF,
 			/* throws */ UDF,
@@ -74,24 +92,6 @@ DocsCollector.collect('groovy.lang.Tuple12', [
 			/* return */ UDF
 		]],
 		[/* method */ 'getV9()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'getV10()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'getV11()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'getV12()', [
 			/* method description */ UDF,
 			/* parameters */ UDF,
 			/* throws */ UDF,

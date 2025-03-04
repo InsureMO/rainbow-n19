@@ -33,18 +33,30 @@ export abstract class AbstractMutableClassDocs<P extends IClassDocs> extends Abs
 }
 
 export class ProjectClassDocs extends AbstractMutableClassDocs<ImmutableClassDocs> {
+	public constructor(parent: ImmutableClassDocs) {
+		super(parent);
+	}
+
 	get root(): ImmutableClassDocs {
 		return this.parent;
 	}
 }
 
 export class FloatingClassDocs extends AbstractMutableClassDocs<ProjectClassDocs> {
+	public constructor(parent: ProjectClassDocs) {
+		super(parent);
+	}
+
 	get root(): ImmutableClassDocs {
 		return this.parent.root;
 	}
 }
 
 export class EditingClassDocs extends AbstractMutableClassDocs<FloatingClassDocs> {
+	public constructor(parent: FloatingClassDocs) {
+		super(parent);
+	}
+
 	get root(): ImmutableClassDocs {
 		return this.parent.root;
 	}

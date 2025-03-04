@@ -18,10 +18,10 @@ DocsCollector.collect('groovy.lang.Closure', [
  subclass, you need to provide a doCall method with any
  signature you want to. This ensures that
  `],
-		[/* reference */ 'r', `getMaximumNumberOfParameters()`],
+		[/* reference */ 'r', `#getMaximumNumberOfParameters()`, `getMaximumNumberOfParameters()`],
 		[/* text */ 't', ` and
  `],
-		[/* reference */ 'r', `getParameterTypes()`],
+		[/* reference */ 'r', `#getParameterTypes()`, `getParameterTypes()`],
 		[/* text */ 't', ` will work too without any
  additional code. If no doCall method is provided a
  closure must be used in its long form like
@@ -32,39 +32,6 @@ DocsCollector.collect('groovy.lang.Closure', [
  `]
 	],
 	[/* fields */
-		[/* field */ 'OWNER_FIRST', [
-			[/* field description */
-				[/* text */ 't', `With this resolveStrategy set the closure will attempt to resolve property references and methods to the
- owner first, then the delegate (`],
-				[/* text */ 't', `this is the default strategy`],
-				[/* text */ 't', `).
-
- For example the following code:
- `],
-				[/* code block */ 'c', ` class Test {
-     def x = 30
-     def y = 40
-
-     def run() {
-         def data = [ x: 10, y: 20 ]
-         def cl = { y = x + y }
-         cl.delegate = data
-         cl()
-         assert x == 30
-         assert y == 70
-         assert data == [x:10, y:20]
-     }
- }
-
- new Test().run()
- `],
-				[/* text */ 't', `
- Will succeed, because the x and y fields declared in the Test class shadow the variables in the delegate.`],
-				[/* block */ 'b', [
-					[/* text */ 't', `Note that local variables are always looked up first, independently of the resolution strategy.`]
-				]]
-			],
-		]],
 		[/* field */ 'DELEGATE_FIRST', [
 			[/* field description */
 				[/* text */ 't', `With this resolveStrategy set the closure will attempt to resolve property references and methods to the
@@ -92,41 +59,6 @@ DocsCollector.collect('groovy.lang.Closure', [
  `],
 				[/* text */ 't', `
  This will succeed, because the x and y variables declared in the delegate shadow the fields in the owner class.`],
-				[/* block */ 'b', [
-					[/* text */ 't', `Note that local variables are always looked up first, independently of the resolution strategy.`]
-				]]
-			],
-		]],
-		[/* field */ 'OWNER_ONLY', [
-			[/* field description */
-				[/* text */ 't', `With this resolveStrategy set the closure will resolve property references and methods to the owner only
- and not call the delegate at all. For example the following code :
-
- `],
-				[/* code block */ 'c', ` class Test {
-     def x = 30
-     def y = 40
-
-     def run() {
-         def data = [ x: 10, y: 20, z: 30 ]
-         def cl = { y = x + y + z }
-         cl.delegate = data
-         cl.resolveStrategy = Closure.OWNER_ONLY
-         cl()
-         println x
-         println y
-         println data
-     }
- }
-
- groovy.test.GroovyAssert.shouldFail(MissingPropertyException) {
-     new Test().run()
- }
- `],
-				[/* text */ 't', `
-
- will throw "No such property: z" error because even if the z variable is declared in the delegate, no
- lookup is made.`],
 				[/* block */ 'b', [
 					[/* text */ 't', `Note that local variables are always looked up first, independently of the resolution strategy.`]
 				]]
@@ -168,6 +100,89 @@ DocsCollector.collect('groovy.lang.Closure', [
 				]]
 			],
 		]],
+		[/* field */ 'DONE', [
+			/* field description */ UDF,
+		]],
+		[/* field */ 'IDENTITY', [
+			/* field description */ UDF,
+		]],
+		[/* field */ 'maximumNumberOfParameters', [
+			/* field description */ UDF,
+		]],
+		[/* field */ 'OWNER_FIRST', [
+			[/* field description */
+				[/* text */ 't', `With this resolveStrategy set the closure will attempt to resolve property references and methods to the
+ owner first, then the delegate (`],
+				[/* text */ 't', `this is the default strategy`],
+				[/* text */ 't', `).
+
+ For example the following code:
+ `],
+				[/* code block */ 'c', ` class Test {
+     def x = 30
+     def y = 40
+
+     def run() {
+         def data = [ x: 10, y: 20 ]
+         def cl = { y = x + y }
+         cl.delegate = data
+         cl()
+         assert x == 30
+         assert y == 70
+         assert data == [x:10, y:20]
+     }
+ }
+
+ new Test().run()
+ `],
+				[/* text */ 't', `
+ Will succeed, because the x and y fields declared in the Test class shadow the variables in the delegate.`],
+				[/* block */ 'b', [
+					[/* text */ 't', `Note that local variables are always looked up first, independently of the resolution strategy.`]
+				]]
+			],
+		]],
+		[/* field */ 'OWNER_ONLY', [
+			[/* field description */
+				[/* text */ 't', `With this resolveStrategy set the closure will resolve property references and methods to the owner only
+ and not call the delegate at all. For example the following code :
+
+ `],
+				[/* code block */ 'c', ` class Test {
+     def x = 30
+     def y = 40
+
+     def run() {
+         def data = [ x: 10, y: 20, z: 30 ]
+         def cl = { y = x + y + z }
+         cl.delegate = data
+         cl.resolveStrategy = Closure.OWNER_ONLY
+         cl()
+         println x
+         println y
+         println data
+     }
+ }
+
+ groovy.test.GroovyAssert.shouldFail(MissingPropertyException) {
+     new Test().run()
+ }
+ `],
+				[/* text */ 't', `
+
+ will throw "No such property: z" error because even if the z variable is declared in the delegate, no
+ lookup is made.`],
+				[/* block */ 'b', [
+					[/* text */ 't', `Note that local variables are always looked up first, independently of the resolution strategy.`]
+				]]
+			],
+		]],
+		[/* field */ 'parameterTypes', [
+			/* field description */ UDF,
+		]],
+		[/* field */ 'SKIP', [
+			/* field description */ UDF,
+		]],
 		[/* field */ 'TO_SELF', [
 			[/* field description */
 				[/* text */ 't', `With this resolveStrategy set the closure will resolve property references to itself and go
@@ -178,29 +193,9 @@ DocsCollector.collect('groovy.lang.Closure', [
 					[/* text */ 't', `Note that local variables are always looked up first, independently of the resolution strategy.`]
 				]]
 			],
-		]],
-		[/* field */ 'DONE', [
-			/* field description */ UDF,
-		]],
-		[/* field */ 'SKIP', [
-			/* field description */ UDF,
-		]],
-		[/* field */ 'IDENTITY', [
-			/* field description */ UDF,
-		]],
-		[/* field */ 'parameterTypes', [
-			/* field description */ UDF,
-		]],
-		[/* field */ 'maximumNumberOfParameters', [
-			/* field description */ UDF,
 		]]
 	],
 	[/* constructors */
-		[/* constructor */ '<init>(java.lang.Object,java.lang.Object)', [
-			/* constructor description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF
-		]],
 		[/* constructor */ '<init>(java.lang.Object)', [
 			[/* constructor description */
 				[/* text */ 't', `Constructor used when the "this" object for the Closure is null.
@@ -212,66 +207,18 @@ DocsCollector.collect('groovy.lang.Closure', [
 				]]
 			],
 			/* throws */ UDF
+		]],
+		[/* constructor */ '<init>(java.lang.Object,java.lang.Object)', [
+			/* constructor description */ UDF,
+			/* parameters */ UDF,
+			/* throws */ UDF
 		]]
 	],
 	[/* methods */
-		[/* method */ 'run()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'clone()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'getParameterTypes()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the parameter types of the longest doCall method
- of this closure`]
-			]
-		]],
-		[/* method */ 'setDelegate(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Allows the delegate to be changed such as when performing markup building`]
-			],
-			[/* parameters */
-				[/* parameter */ 'delegate', [/* parameter description */
-					[/* text */ 't', `the new delegate`]
-				]]
-			],
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'getOwner()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the owner Object to which method calls will go which is
-         typically the outer class when the closure is constructed`]
-			]
-		]],
-		[/* method */ 'compose(groovy.lang.Closure)', [
-			[/* method description */
-				[/* text */ 't', `Alias for `],
-				[/* reference */ 'r', `leftShift(Closure)`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the newly composed closure`]
-			]
-		]],
 		[/* method */ 'andThen(groovy.lang.Closure)', [
 			[/* method description */
 				[/* text */ 't', `Alias for `],
-				[/* reference */ 'r', `rightShift(Closure)`]
+				[/* reference */ 'r', `#rightShift(groovy.lang.Closure)`, `rightShift(Closure)`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
@@ -279,9 +226,9 @@ DocsCollector.collect('groovy.lang.Closure', [
 				[/* text */ 't', `the newly composed closure`]
 			]
 		]],
-		[/* method */ 'leftShift(groovy.lang.Closure)', [
+		[/* method */ 'rightShift(groovy.lang.Closure)', [
 			[/* method description */
-				[/* text */ 't', `Support for Closure reverse composition.
+				[/* text */ 't', `Support for Closure forward composition.
  `],
 				[/* block */ 'b', `
  Typical usage:
@@ -293,13 +240,13 @@ DocsCollector.collect('groovy.lang.Closure', [
  def add3 = { a `],
 					[/* inline code block */ 'i', `->`],
 					[/* text */ 't', ` a + 3 }
- def addThenTimes = times2 `],
-					[/* inline code block */ 'i', `<<`],
+ def timesThenAdd = times2 `],
+					[/* inline code block */ 'i', `>>`],
 					[/* text */ 't', ` add3
- // equivalent: addThenTimes = { a `],
+ // equivalent: timesThenAdd = { a `],
 					[/* inline code block */ 'i', `->`],
-					[/* text */ 't', ` times2(add3(a)) }
- assert addThenTimes(3) == 12
+					[/* text */ 't', ` add3(times2(a)) }
+ assert timesThenAdd(3) == 9
  `]
 				]]
 			],
@@ -313,70 +260,115 @@ DocsCollector.collect('groovy.lang.Closure', [
 				[/* text */ 't', `the new composed Closure`]
 			]
 		]],
-		[/* method */ 'leftShift(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Alias for calling a Closure for non-closure arguments.
- `],
-				[/* block */ 'b', `
- Typical usage:
- `],
-				[/* code block */ 'c', [
-					[/* text */ 't', ` def times2 = { a `],
-					[/* inline code block */ 'i', `->`],
-					[/* text */ 't', ` a * 2 }
- def add3 = { a `],
-					[/* inline code block */ 'i', `->`],
-					[/* text */ 't', ` a + 3 }
- assert add3 `],
-					[/* inline code block */ 'i', `<<`],
-					[/* text */ 't', ` times2 `],
-					[/* inline code block */ 'i', `<<`],
-					[/* text */ 't', ` 3 == 9
- `]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'arg', [/* parameter description */
-					[/* text */ 't', `the argument to call the closure with`]
-				]]
-			],
+		[/* method */ 'isCase(java.lang.Object)', [
+			/* method description */ UDF,
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'asWritable()', [
+			/* method description */ UDF,
+			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the result of calling the Closure`]
+				[/* text */ 't', `a version of this closure which implements Writable.  Note that
+ the returned Writable also overrides `],
+				[/* external link */ 'a', `https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#toString--`, `Object.toString()`],
+				[/* text */ 't', ` in order
+ to allow rendering the result directly to a String.`]
 			]
 		]],
-		[/* method */ 'call(java.lang.Object)', [
+		[/* method */ 'andThenSelf()', [
 			[/* method description */
-				[/* text */ 't', `Invokes the closure with given argument(s), returning any value if applicable.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'arguments', [/* parameter description */
-					[/* text */ 't', `could be a single value or a List of values`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `The value if applicable or null if there is no return statement in the closure.`]
-			]
-		]],
-		[/* method */ 'call(java.lang.Object...)', [
-			[/* method description */
-				[/* text */ 't', `Invokes the closure with given argument(s), returning any value if applicable.`]
+				[/* text */ 't', `Call `],
+				[/* reference */ 'r', `#andThen(groovy.lang.Closure)`, `andThen(Closure)`],
+				[/* text */ 't', ` on `],
+				[/* inline code block */ 'i', `this`],
+				[/* text */ 't', `.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `The value if applicable or null if there is no return statement in the closure.`]
+				[/* text */ 't', `the newly composed closure`]
 			]
 		]],
-		[/* method */ 'call()', [
+		[/* method */ 'andThenSelf(int)', [
 			[/* method description */
-				[/* text */ 't', `Invokes the closure with no arguments, returning any value if applicable.`]
+				[/* text */ 't', `Call `],
+				[/* reference */ 'r', `#andThen(groovy.lang.Closure)`, `andThen(Closure)`],
+				[/* text */ 't', ` on `],
+				[/* inline code block */ 'i', `this`],
+				[/* text */ 't', ` exactly `],
+				[/* inline code block */ 'i', `times`],
+				[/* text */ 't', ` times.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'times', [/* parameter description */
+					[/* text */ 't', `the number of times to reverse compose the closure with itself`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the newly composed closure`]
+			]
+		]],
+		[/* method */ 'compose(groovy.lang.Closure)', [
+			[/* method description */
+				[/* text */ 't', `Alias for `],
+				[/* reference */ 'r', `#leftShift(java.lang.Object)`, `leftShift(Closure)`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `The value if applicable or null if there is no return statement in the closure.`]
+				[/* text */ 't', `the newly composed closure`]
+			]
+		]],
+		[/* method */ 'composeSelf()', [
+			[/* method description */
+				[/* text */ 't', `Call `],
+				[/* reference */ 'r', `#compose(groovy.lang.Closure)`, `compose(Closure)`],
+				[/* text */ 't', ` on `],
+				[/* inline code block */ 'i', `this`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the newly composed closure`]
+			]
+		]],
+		[/* method */ 'composeSelf(int)', [
+			[/* method description */
+				[/* text */ 't', `Call `],
+				[/* reference */ 'r', `#compose(groovy.lang.Closure)`, `compose(Closure)`],
+				[/* text */ 't', ` on `],
+				[/* inline code block */ 'i', `this`],
+				[/* text */ 't', ` exactly `],
+				[/* inline code block */ 'i', `times`],
+				[/* text */ 't', ` times.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'times', [/* parameter description */
+					[/* text */ 't', `the number of times to compose the closure with itself`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the newly composed closure`]
+			]
+		]],
+		[/* method */ 'curry(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Support for Closure currying.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'argument', [/* parameter description */
+					[/* text */ 't', `the argument to bind`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the new closure with the argument bound`]
 			]
 		]],
 		[/* method */ 'curry(java.lang.Object...)', [
@@ -431,62 +423,157 @@ DocsCollector.collect('groovy.lang.Closure', [
 				[/* text */ 't', `the new closure with its arguments bound`]
 			]
 		]],
-		[/* method */ 'curry(java.lang.Object)', [
+		[/* method */ 'dehydrate()', [
 			[/* method description */
-				[/* text */ 't', `Support for Closure currying.`]
+				[/* text */ 't', `Returns a copy of this closure where the "owner", "delegate" and "thisObject"
+ fields are null, allowing proper serialization when one of them is not serializable.`]
 			],
-			[/* parameters */
-				[/* parameter */ 'argument', [/* parameter description */
-					[/* text */ 't', `the argument to bind`]
-				]]
-			],
+			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the new closure with the argument bound`]
+				[/* text */ 't', `a serializable closure.`]
 			]
 		]],
-		[/* method */ 'rcurry(java.lang.Object...)', [
+		[/* method */ 'leftShift(groovy.lang.Closure)', [
 			[/* method description */
-				[/* text */ 't', `Support for Closure "right" currying.
- Parameters are supplied on the right rather than left as per the normal curry() method.
+				[/* text */ 't', `Support for Closure reverse composition.
+ `],
+				[/* block */ 'b', `
  Typical usage:
  `],
 				[/* code block */ 'c', [
-					[/* text */ 't', ` def divide = { a, b `],
+					[/* text */ 't', ` def times2 = { a `],
 					[/* inline code block */ 'i', `->`],
-					[/* text */ 't', ` a / b }
- def halver = divide.rcurry(2)
- assert halver(8) == 4
+					[/* text */ 't', ` a * 2 }
+ def add3 = { a `],
+					[/* inline code block */ 'i', `->`],
+					[/* text */ 't', ` a + 3 }
+ def addThenTimes = times2 `],
+					[/* inline code block */ 'i', `<<`],
+					[/* text */ 't', ` add3
+ // equivalent: addThenTimes = { a `],
+					[/* inline code block */ 'i', `->`],
+					[/* text */ 't', ` times2(add3(a)) }
+ assert addThenTimes(3) == 12
  `]
-				]],
-				[/* text */ 't', `
-
- The position of the curried parameters will be calculated lazily, for example,
- if two overloaded doCall methods are available, the supplied arguments plus the
- curried arguments will be concatenated and the result used for method selection.`]
+				]]
 			],
 			[/* parameters */
-				[/* parameter */ 'arguments', [/* parameter description */
-					[/* text */ 't', `the arguments to bind`]
+				[/* parameter */ 'other', [/* parameter description */
+					[/* text */ 't', `the Closure to compose with the current Closure`]
 				]]
 			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the new closure with its arguments bound`]
+				[/* text */ 't', `the new composed Closure`]
 			]
 		]],
-		[/* method */ 'rcurry(java.lang.Object)', [
+		[/* method */ 'memoize()', [
 			[/* method description */
-				[/* text */ 't', `Support for Closure "right" currying.`]
+				[/* text */ 't', `Creates a caching variant of the closure.
+ Whenever the closure is called, the mapping between the parameters and the return value is preserved in cache
+ making subsequent calls with the same arguments fast.
+ This variant will keep all cached values forever, i.e. till the closure gets garbage-collected.
+ The returned function can be safely used concurrently from multiple threads, however, the implementation
+ values high average-scenario performance and so concurrent calls on the memoized function with identical argument values
+ may not necessarily be able to benefit from each other's cached return value. With this having been mentioned,
+ the performance trade-off still makes concurrent use of memoized functions safe and highly recommended.
+
+ The cache gets garbage-collected together with the memoized closure.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `A new closure forwarding to the original one while caching the results`]
+			]
+		]],
+		[/* method */ 'memoizeAtLeast(int)', [
+			[/* method description */
+				[/* text */ 't', `Creates a caching variant of the closure with automatic cache size adjustment and lower limit
+ on the cache size.
+ Whenever the closure is called, the mapping between the parameters and the return value is preserved in cache
+ making subsequent calls with the same arguments fast.
+ This variant allows the garbage collector to release entries from the cache and at the same time allows
+ the user to specify how many entries should be protected from the eventual gc-initiated eviction.
+ Cached entries exceeding the specified preservation threshold are made available for eviction based on
+ the LRU (Last Recently Used) strategy.
+ Given the non-deterministic nature of garbage collector, the actual cache size may grow well beyond the limits
+ set by the user if memory is plentiful.
+ The returned function can be safely used concurrently from multiple threads, however, the implementation
+ values high average-scenario performance and so concurrent calls on the memoized function with identical argument values
+ may not necessarily be able to benefit from each other's cached return value. Also the protectedCacheSize parameter
+ might not be respected accurately in such scenarios for some periods of time. With this having been mentioned,
+ the performance trade-off still makes concurrent use of memoized functions safe and highly recommended.
+
+ The cache gets garbage-collected together with the memoized closure.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'argument', [/* parameter description */
-					[/* text */ 't', `the argument to bind`]
+				[/* parameter */ 'protectedCacheSize', [/* parameter description */
+					[/* text */ 't', `Number of cached return values to protect from garbage collection`]
 				]]
 			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the new closure with the argument bound`]
+				[/* text */ 't', `A new function forwarding to the original one while caching the results`]
+			]
+		]],
+		[/* method */ 'memoizeAtMost(int)', [
+			[/* method description */
+				[/* text */ 't', `Creates a caching variant of the closure with upper limit on the cache size.
+ Whenever the closure is called, the mapping between the parameters and the return value is preserved in cache
+ making subsequent calls with the same arguments fast.
+ This variant will keep all values until the upper size limit is reached. Then the values in the cache start rotating
+ using the LRU (Last Recently Used) strategy.
+ The returned function can be safely used concurrently from multiple threads, however, the implementation
+ values high average-scenario performance and so concurrent calls on the memoized function with identical argument values
+ may not necessarily be able to benefit from each other's cached return value. With this having been mentioned,
+ the performance trade-off still makes concurrent use of memoized functions safe and highly recommended.
+
+ The cache gets garbage-collected together with the memoized closure.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'maxCacheSize', [/* parameter description */
+					[/* text */ 't', `The maximum size the cache can grow to`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `A new function forwarding to the original one while caching the results`]
+			]
+		]],
+		[/* method */ 'memoizeBetween(int,int)', [
+			[/* method description */
+				[/* text */ 't', `Creates a caching variant of the closure with automatic cache size adjustment and lower and upper limits
+ on the cache size.
+ Whenever the closure is called, the mapping between the parameters and the return value is preserved in cache
+ making subsequent calls with the same arguments fast.
+ This variant allows the garbage collector to release entries from the cache and at the same time allows
+ the user to specify how many entries should be protected from the eventual gc-initiated eviction.
+ Cached entries exceeding the specified preservation threshold are made available for eviction based on
+ the LRU (Last Recently Used) strategy.
+ Given the non-deterministic nature of garbage collector, the actual cache size may grow well beyond the protected
+ size limits set by the user, if memory is plentiful.
+ Also, this variant will never exceed in size the upper size limit. Once the upper size limit has been reached,
+ the values in the cache start rotating using the LRU (Last Recently Used) strategy.
+ The returned function can be safely used concurrently from multiple threads, however, the implementation
+ values high average-scenario performance and so concurrent calls on the memoized function with identical argument values
+ may not necessarily be able to benefit from each other's cached return value. Also the protectedCacheSize parameter
+ might not be respected accurately in such scenarios for some periods of time. With this having been mentioned,
+ the performance trade-off still makes concurrent use of memoized functions safe and highly recommended.
+
+ The cache gets garbage-collected together with the memoized closure.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'protectedCacheSize', [/* parameter description */
+					[/* text */ 't', `Number of cached return values to protect from garbage collection`]
+				]],
+				[/* parameter */ 'maxCacheSize', [/* parameter description */
+					[/* text */ 't', `The maximum size the cache can grow to`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `A new function forwarding to the original one while caching the results`]
 			]
 		]],
 		[/* method */ 'ncurry(int,java.lang.Object)', [
@@ -565,75 +652,73 @@ DocsCollector.collect('groovy.lang.Closure', [
 				[/* text */ 't', `the new closure with its arguments bound`]
 			]
 		]],
-		[/* method */ 'rightShift(groovy.lang.Closure)', [
+		[/* method */ 'rcurry(java.lang.Object)', [
 			[/* method description */
-				[/* text */ 't', `Support for Closure forward composition.
- `],
-				[/* block */ 'b', `
+				[/* text */ 't', `Support for Closure "right" currying.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'argument', [/* parameter description */
+					[/* text */ 't', `the argument to bind`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the new closure with the argument bound`]
+			]
+		]],
+		[/* method */ 'rcurry(java.lang.Object...)', [
+			[/* method description */
+				[/* text */ 't', `Support for Closure "right" currying.
+ Parameters are supplied on the right rather than left as per the normal curry() method.
  Typical usage:
  `],
 				[/* code block */ 'c', [
-					[/* text */ 't', ` def times2 = { a `],
+					[/* text */ 't', ` def divide = { a, b `],
 					[/* inline code block */ 'i', `->`],
-					[/* text */ 't', ` a * 2 }
- def add3 = { a `],
-					[/* inline code block */ 'i', `->`],
-					[/* text */ 't', ` a + 3 }
- def timesThenAdd = times2 `],
-					[/* inline code block */ 'i', `>>`],
-					[/* text */ 't', ` add3
- // equivalent: timesThenAdd = { a `],
-					[/* inline code block */ 'i', `->`],
-					[/* text */ 't', ` add3(times2(a)) }
- assert timesThenAdd(3) == 9
+					[/* text */ 't', ` a / b }
+ def halver = divide.rcurry(2)
+ assert halver(8) == 4
  `]
-				]]
+				]],
+				[/* text */ 't', `
+
+ The position of the curried parameters will be calculated lazily, for example,
+ if two overloaded doCall methods are available, the supplied arguments plus the
+ curried arguments will be concatenated and the result used for method selection.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'other', [/* parameter description */
-					[/* text */ 't', `the Closure to compose with the current Closure`]
+				[/* parameter */ 'arguments', [/* parameter description */
+					[/* text */ 't', `the arguments to bind`]
 				]]
 			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `the new composed Closure`]
+				[/* text */ 't', `the new closure with its arguments bound`]
 			]
 		]],
-		[/* method */ 'isCase(java.lang.Object)', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'asWritable()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a version of this closure which implements Writable.  Note that
- the returned Writable also overrides `],
-				[/* reference */ 'r', `java.lang.Object.toString()`],
-				[/* text */ 't', ` in order
- to allow rendering the result directly to a String.`]
-			]
-		]],
-		[/* method */ 'memoize()', [
+		[/* method */ 'rehydrate(java.lang.Object,java.lang.Object,java.lang.Object)', [
 			[/* method description */
-				[/* text */ 't', `Creates a caching variant of the closure.
- Whenever the closure is called, the mapping between the parameters and the return value is preserved in cache
- making subsequent calls with the same arguments fast.
- This variant will keep all cached values forever, i.e. till the closure gets garbage-collected.
- The returned function can be safely used concurrently from multiple threads, however, the implementation
- values high average-scenario performance and so concurrent calls on the memoized function with identical argument values
- may not necessarily be able to benefit from each other's cached return value. With this having been mentioned,
- the performance trade-off still makes concurrent use of memoized functions safe and highly recommended.
-
- The cache gets garbage-collected together with the memoized closure.`]
+				[/* text */ 't', `Returns a copy of this closure for which the delegate, owner and thisObject are
+ replaced with the supplied parameters. Use this when you want to rehydrate a
+ closure which has been made serializable thanks to the `],
+				[/* reference */ 'r', `#dehydrate()`, `dehydrate()`],
+				[/* text */ 't', `
+ method.`]
 			],
-			/* parameters */ UDF,
+			[/* parameters */
+				[/* parameter */ 'delegate', [/* parameter description */
+					[/* text */ 't', `the closure delegate`]
+				]],
+				[/* parameter */ 'owner', [/* parameter description */
+					[/* text */ 't', `the closure owner`]
+				]],
+				[/* parameter */ 'thisObject', [/* parameter description */
+					[/* text */ 't', `the closure "this" object`]
+				]]
+			],
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `A new closure forwarding to the original one while caching the results`]
+				[/* text */ 't', `a copy of this closure where owner, delegate and thisObject are replaced`]
 			]
 		]],
 		[/* method */ 'trampoline()', [
@@ -687,57 +772,21 @@ DocsCollector.collect('groovy.lang.Closure', [
 				[/* text */ 't', `A closure, which will execute the original closure on a trampoline.`]
 			]
 		]],
-		[/* method */ 'dehydrate()', [
-			[/* method description */
-				[/* text */ 't', `Returns a copy of this closure where the "owner", "delegate" and "thisObject"
- fields are null, allowing proper serialization when one of them is not serializable.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a serializable closure.`]
-			]
-		]],
-		[/* method */ 'rehydrate(java.lang.Object,java.lang.Object,java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Returns a copy of this closure for which the delegate, owner and thisObject are
- replaced with the supplied parameters. Use this when you want to rehydrate a
- closure which has been made serializable thanks to the `],
-				[/* reference */ 'r', `dehydrate()`],
-				[/* text */ 't', `
- method.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'delegate', [/* parameter description */
-					[/* text */ 't', `the closure delegate`]
-				]],
-				[/* parameter */ 'owner', [/* parameter description */
-					[/* text */ 't', `the closure owner`]
-				]],
-				[/* parameter */ 'thisObject', [/* parameter description */
-					[/* text */ 't', `the closure "this" object`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `a copy of this closure where owner, delegate and thisObject are replaced`]
-			]
-		]],
-		[/* method */ 'getDelegate()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the delegate Object to which method calls will go which is
-         typically the outer class when the closure is constructed`]
-			]
-		]],
 		[/* method */ 'getDirective()', [
 			/* method description */ UDF,
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `Returns the directive.`]
+			]
+		]],
+		[/* method */ 'getMaximumNumberOfParameters()', [
+			/* method description */ UDF,
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the maximum number of parameters a doCall method
+ of this closure can take`]
 			]
 		]],
 		[/* method */ 'getResolveStrategy()', [
@@ -750,20 +799,124 @@ DocsCollector.collect('groovy.lang.Closure', [
 				[/* text */ 't', `The resolve strategy`]
 			]
 		]],
+		[/* method */ 'getParameterTypes()', [
+			/* method description */ UDF,
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the parameter types of the longest doCall method
+ of this closure`]
+			]
+		]],
+		[/* method */ 'clone()', [
+			/* method description */ UDF,
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'getDelegate()', [
+			/* method description */ UDF,
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the delegate Object to which method calls will go which is
+         typically the outer class when the closure is constructed`]
+			]
+		]],
+		[/* method */ 'getOwner()', [
+			/* method description */ UDF,
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the owner Object to which method calls will go which is
+         typically the outer class when the closure is constructed`]
+			]
+		]],
 		[/* method */ 'getThisObject()', [
 			/* method description */ UDF,
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
-		[/* method */ 'setResolveStrategy(int)', [
+		[/* method */ 'call()', [
 			[/* method description */
-				[/* text */ 't', `Sets the strategy which the closure uses to resolve property references and methods.
- The default is Closure.OWNER_FIRST`]
+				[/* text */ 't', `Invokes the closure with no arguments, returning any value if applicable.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The value if applicable or null if there is no return statement in the closure.`]
+			]
+		]],
+		[/* method */ 'call(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Invokes the closure with given argument(s), returning any value if applicable.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'resolveStrategy', [/* parameter description */
-					[/* text */ 't', `The resolve strategy to set`]
+				[/* parameter */ 'arguments', [/* parameter description */
+					[/* text */ 't', `could be a single value or a List of values`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The value if applicable or null if there is no return statement in the closure.`]
+			]
+		]],
+		[/* method */ 'call(java.lang.Object...)', [
+			[/* method description */
+				[/* text */ 't', `Invokes the closure with given argument(s), returning any value if applicable.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `The value if applicable or null if there is no return statement in the closure.`]
+			]
+		]],
+		[/* method */ 'leftShift(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Alias for calling a Closure for non-closure arguments.
+ `],
+				[/* block */ 'b', `
+ Typical usage:
+ `],
+				[/* code block */ 'c', [
+					[/* text */ 't', ` def times2 = { a `],
+					[/* inline code block */ 'i', `->`],
+					[/* text */ 't', ` a * 2 }
+ def add3 = { a `],
+					[/* inline code block */ 'i', `->`],
+					[/* text */ 't', ` a + 3 }
+ assert add3 `],
+					[/* inline code block */ 'i', `<<`],
+					[/* text */ 't', ` times2 `],
+					[/* inline code block */ 'i', `<<`],
+					[/* text */ 't', ` 3 == 9
+ `]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'arg', [/* parameter description */
+					[/* text */ 't', `the argument to call the closure with`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the result of calling the Closure`]
+			]
+		]],
+		[/* method */ 'run()', [
+			/* method description */ UDF,
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'setDelegate(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Allows the delegate to be changed such as when performing markup building`]
+			],
+			[/* parameters */
+				[/* parameter */ 'delegate', [/* parameter description */
+					[/* text */ 't', `the new delegate`]
 				]]
 			],
 			/* throws */ UDF,
@@ -779,171 +932,18 @@ DocsCollector.collect('groovy.lang.Closure', [
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
-		[/* method */ 'andThenSelf()', [
+		[/* method */ 'setResolveStrategy(int)', [
 			[/* method description */
-				[/* text */ 't', `Call `],
-				[/* reference */ 'r', `andThen(Closure)`],
-				[/* text */ 't', ` on `],
-				[/* inline code block */ 'i', `this`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the newly composed closure`]
-			]
-		]],
-		[/* method */ 'andThenSelf(int)', [
-			[/* method description */
-				[/* text */ 't', `Call `],
-				[/* reference */ 'r', `andThen(Closure)`],
-				[/* text */ 't', ` on `],
-				[/* inline code block */ 'i', `this`],
-				[/* text */ 't', ` exactly `],
-				[/* inline code block */ 'i', `times`],
-				[/* text */ 't', ` times.`]
+				[/* text */ 't', `Sets the strategy which the closure uses to resolve property references and methods.
+ The default is Closure.OWNER_FIRST`]
 			],
 			[/* parameters */
-				[/* parameter */ 'times', [/* parameter description */
-					[/* text */ 't', `the number of times to reverse compose the closure with itself`]
+				[/* parameter */ 'resolveStrategy', [/* parameter description */
+					[/* text */ 't', `The resolve strategy to set`]
 				]]
 			],
 			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the newly composed closure`]
-			]
-		]],
-		[/* method */ 'composeSelf(int)', [
-			[/* method description */
-				[/* text */ 't', `Call `],
-				[/* reference */ 'r', `compose(Closure)`],
-				[/* text */ 't', ` on `],
-				[/* inline code block */ 'i', `this`],
-				[/* text */ 't', ` exactly `],
-				[/* inline code block */ 'i', `times`],
-				[/* text */ 't', ` times.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'times', [/* parameter description */
-					[/* text */ 't', `the number of times to compose the closure with itself`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the newly composed closure`]
-			]
-		]],
-		[/* method */ 'composeSelf()', [
-			[/* method description */
-				[/* text */ 't', `Call `],
-				[/* reference */ 'r', `compose(Closure)`],
-				[/* text */ 't', ` on `],
-				[/* inline code block */ 'i', `this`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the newly composed closure`]
-			]
-		]],
-		[/* method */ 'memoizeAtMost(int)', [
-			[/* method description */
-				[/* text */ 't', `Creates a caching variant of the closure with upper limit on the cache size.
- Whenever the closure is called, the mapping between the parameters and the return value is preserved in cache
- making subsequent calls with the same arguments fast.
- This variant will keep all values until the upper size limit is reached. Then the values in the cache start rotating
- using the LRU (Last Recently Used) strategy.
- The returned function can be safely used concurrently from multiple threads, however, the implementation
- values high average-scenario performance and so concurrent calls on the memoized function with identical argument values
- may not necessarily be able to benefit from each other's cached return value. With this having been mentioned,
- the performance trade-off still makes concurrent use of memoized functions safe and highly recommended.
-
- The cache gets garbage-collected together with the memoized closure.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'maxCacheSize', [/* parameter description */
-					[/* text */ 't', `The maximum size the cache can grow to`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `A new function forwarding to the original one while caching the results`]
-			]
-		]],
-		[/* method */ 'memoizeAtLeast(int)', [
-			[/* method description */
-				[/* text */ 't', `Creates a caching variant of the closure with automatic cache size adjustment and lower limit
- on the cache size.
- Whenever the closure is called, the mapping between the parameters and the return value is preserved in cache
- making subsequent calls with the same arguments fast.
- This variant allows the garbage collector to release entries from the cache and at the same time allows
- the user to specify how many entries should be protected from the eventual gc-initiated eviction.
- Cached entries exceeding the specified preservation threshold are made available for eviction based on
- the LRU (Last Recently Used) strategy.
- Given the non-deterministic nature of garbage collector, the actual cache size may grow well beyond the limits
- set by the user if memory is plentiful.
- The returned function can be safely used concurrently from multiple threads, however, the implementation
- values high average-scenario performance and so concurrent calls on the memoized function with identical argument values
- may not necessarily be able to benefit from each other's cached return value. Also the protectedCacheSize parameter
- might not be respected accurately in such scenarios for some periods of time. With this having been mentioned,
- the performance trade-off still makes concurrent use of memoized functions safe and highly recommended.
-
- The cache gets garbage-collected together with the memoized closure.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'protectedCacheSize', [/* parameter description */
-					[/* text */ 't', `Number of cached return values to protect from garbage collection`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `A new function forwarding to the original one while caching the results`]
-			]
-		]],
-		[/* method */ 'memoizeBetween(int,int)', [
-			[/* method description */
-				[/* text */ 't', `Creates a caching variant of the closure with automatic cache size adjustment and lower and upper limits
- on the cache size.
- Whenever the closure is called, the mapping between the parameters and the return value is preserved in cache
- making subsequent calls with the same arguments fast.
- This variant allows the garbage collector to release entries from the cache and at the same time allows
- the user to specify how many entries should be protected from the eventual gc-initiated eviction.
- Cached entries exceeding the specified preservation threshold are made available for eviction based on
- the LRU (Last Recently Used) strategy.
- Given the non-deterministic nature of garbage collector, the actual cache size may grow well beyond the protected
- size limits set by the user, if memory is plentiful.
- Also, this variant will never exceed in size the upper size limit. Once the upper size limit has been reached,
- the values in the cache start rotating using the LRU (Last Recently Used) strategy.
- The returned function can be safely used concurrently from multiple threads, however, the implementation
- values high average-scenario performance and so concurrent calls on the memoized function with identical argument values
- may not necessarily be able to benefit from each other's cached return value. Also the protectedCacheSize parameter
- might not be respected accurately in such scenarios for some periods of time. With this having been mentioned,
- the performance trade-off still makes concurrent use of memoized functions safe and highly recommended.
-
- The cache gets garbage-collected together with the memoized closure.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'protectedCacheSize', [/* parameter description */
-					[/* text */ 't', `Number of cached return values to protect from garbage collection`]
-				]],
-				[/* parameter */ 'maxCacheSize', [/* parameter description */
-					[/* text */ 't', `The maximum size the cache can grow to`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `A new function forwarding to the original one while caching the results`]
-			]
-		]],
-		[/* method */ 'getMaximumNumberOfParameters()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the maximum number of parameters a doCall method
- of this closure can take`]
-			]
+			/* return */ UDF
 		]]
 	],
 ]);

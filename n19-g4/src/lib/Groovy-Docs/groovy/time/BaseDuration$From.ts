@@ -12,13 +12,13 @@ DocsCollector.collect('groovy.time.BaseDuration$From', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'getToday()', [
+		[/* method */ 'getNow()', [
 			/* method description */ UDF,
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
-		[/* method */ 'getNow()', [
+		[/* method */ 'getToday()', [
 			/* method description */ UDF,
 			/* parameters */ UDF,
 			/* throws */ UDF,

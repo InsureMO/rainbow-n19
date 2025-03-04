@@ -11,11 +11,114 @@ DocsCollector.collect('groovy.lang.MapWithDefault', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'remove(java.lang.Object)', [
+		[/* method */ 'containsKey(java.lang.Object)', [
 			/* method description */ UDF,
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			/* return */ UDF
+		]],
+		[/* method */ 'containsValue(java.lang.Object)', [
+			/* method description */ UDF,
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'equals(java.lang.Object)', [
+			/* method description */ UDF,
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'isEmpty()', [
+			/* method description */ UDF,
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'hashCode()', [
+			/* method description */ UDF,
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'size()', [
+			/* method description */ UDF,
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'values()', [
+			/* method description */ UDF,
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'entrySet()', [
+			/* method description */ UDF,
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'keySet()', [
+			/* method description */ UDF,
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'newInstance(java.util.Map,boolean,boolean,groovy.lang.Closure)', [
+			[/* method description */
+				[/* text */ 't', `Decorates the given Map allowing a default value to be specified.
+ Allows the behavior to be configured using `],
+				[/* inline code block */ 'i', `autoGrow`],
+				[/* text */ 't', ` and `],
+				[/* inline code block */ 'i', `autoShrink`],
+				[/* text */ 't', ` parameters.
+ The value of `],
+				[/* inline code block */ 'i', `autoShrink`],
+				[/* text */ 't', ` doesn't alter any values in the initial wrapped map, but you
+ can start with an empty map and use `],
+				[/* inline code block */ 'i', `putAll`],
+				[/* text */ 't', ` if you really need the minimal backing map value.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'm', [/* parameter description */
+					[/* text */ 't', `a Map to wrap`]
+				]],
+				[/* parameter */ 'autoGrow', [/* parameter description */
+					[/* text */ 't', `when true, also mutate the map adding in this value; otherwise, don't mutate the map, just return to calculated value`]
+				]],
+				[/* parameter */ 'autoShrink', [/* parameter description */
+					[/* text */ 't', `when true, ensure the key will be removed if attempting to store the default value using put or putAll`]
+				]],
+				[/* parameter */ 'initClosure', [/* parameter description */
+					[/* text */ 't', `the closure which when passed the `],
+					[/* inline code block */ 'i', `key`],
+					[/* text */ 't', ` returns the default value`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the wrapped Map`]
+			]
+		]],
+		[/* method */ 'newInstance(java.util.Map,groovy.lang.Closure)', [
+			[/* method description */
+				[/* text */ 't', `Decorates the given Map allowing a default value to be specified.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'm', [/* parameter description */
+					[/* text */ 't', `a Map to wrap`]
+				]],
+				[/* parameter */ 'initClosure', [/* parameter description */
+					[/* text */ 't', `the closure which when passed the `],
+					[/* inline code block */ 'i', `key`],
+					[/* text */ 't', ` returns the default value`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the wrapped Map`]
+			]
 		]],
 		[/* method */ 'get(java.lang.Object)', [
 			[/* method description */
@@ -56,19 +159,7 @@ DocsCollector.collect('groovy.lang.MapWithDefault', [
 				[/* text */ 't', `.`]
 			]
 		]],
-		[/* method */ 'equals(java.lang.Object)', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'values()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'hashCode()', [
+		[/* method */ 'remove(java.lang.Object)', [
 			/* method description */ UDF,
 			/* parameters */ UDF,
 			/* throws */ UDF,
@@ -80,98 +171,7 @@ DocsCollector.collect('groovy.lang.MapWithDefault', [
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
-		[/* method */ 'isEmpty()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'size()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'newInstance(java.util.Map,groovy.lang.Closure)', [
-			[/* method description */
-				[/* text */ 't', `Decorates the given Map allowing a default value to be specified.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'm', [/* parameter description */
-					[/* text */ 't', `a Map to wrap`]
-				]],
-				[/* parameter */ 'initClosure', [/* parameter description */
-					[/* text */ 't', `the closure which when passed the `],
-					[/* inline code block */ 'i', `key`],
-					[/* text */ 't', ` returns the default value`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the wrapped Map`]
-			]
-		]],
-		[/* method */ 'newInstance(java.util.Map,boolean,boolean,groovy.lang.Closure)', [
-			[/* method description */
-				[/* text */ 't', `Decorates the given Map allowing a default value to be specified.
- Allows the behavior to be configured using `],
-				[/* inline code block */ 'i', `autoGrow`],
-				[/* text */ 't', ` and `],
-				[/* inline code block */ 'i', `autoShrink`],
-				[/* text */ 't', ` parameters.
- The value of `],
-				[/* inline code block */ 'i', `autoShrink`],
-				[/* text */ 't', ` doesn't alter any values in the initial wrapped map, but you
- can start with an empty map and use `],
-				[/* inline code block */ 'i', `putAll`],
-				[/* text */ 't', ` if you really need the minimal backing map value.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'm', [/* parameter description */
-					[/* text */ 't', `a Map to wrap`]
-				]],
-				[/* parameter */ 'autoGrow', [/* parameter description */
-					[/* text */ 't', `when true, also mutate the map adding in this value; otherwise, don't mutate the map, just return to calculated value`]
-				]],
-				[/* parameter */ 'autoShrink', [/* parameter description */
-					[/* text */ 't', `when true, ensure the key will be removed if attempting to store the default value using put or putAll`]
-				]],
-				[/* parameter */ 'initClosure', [/* parameter description */
-					[/* text */ 't', `the closure which when passed the `],
-					[/* inline code block */ 'i', `key`],
-					[/* text */ 't', ` returns the default value`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the wrapped Map`]
-			]
-		]],
-		[/* method */ 'entrySet()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
 		[/* method */ 'putAll(java.util.Map)', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'containsKey(java.lang.Object)', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'keySet()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'containsValue(java.lang.Object)', [
 			/* method description */ UDF,
 			/* parameters */ UDF,
 			/* throws */ UDF,

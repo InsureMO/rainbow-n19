@@ -14,6 +14,14 @@ DocsCollector.collect('groovy.util.MapEntry', [
 		]]
 	],
 	[/* methods */
+		[/* method */ 'hash(java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Helper method to handle object hashes for possibly null values`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
 		[/* method */ 'equals(groovy.util.MapEntry)', [
 			/* method description */ UDF,
 			/* parameters */ UDF,
@@ -26,27 +34,7 @@ DocsCollector.collect('groovy.util.MapEntry', [
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
-		[/* method */ 'toString()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
 		[/* method */ 'hashCode()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'hash(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Helper method to handle object hashes for possibly null values`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'getValue()', [
 			/* method description */ UDF,
 			/* parameters */ UDF,
 			/* throws */ UDF,
@@ -58,7 +46,19 @@ DocsCollector.collect('groovy.util.MapEntry', [
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
+		[/* method */ 'getValue()', [
+			/* method description */ UDF,
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
 		[/* method */ 'setValue(java.lang.Object)', [
+			/* method description */ UDF,
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'toString()', [
 			/* method description */ UDF,
 			/* parameters */ UDF,
 			/* throws */ UDF,

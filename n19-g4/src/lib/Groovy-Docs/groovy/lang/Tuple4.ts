@@ -7,12 +7,12 @@ DocsCollector.collect('groovy.lang.Tuple4', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
-		[/* constructor */ '<init>(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)', [
+		[/* constructor */ '<init>(groovy.lang.Tuple4)', [
 			/* constructor description */ UDF,
 			/* parameters */ UDF,
 			/* throws */ UDF
 		]],
-		[/* constructor */ '<init>(groovy.lang.Tuple4)', [
+		[/* constructor */ '<init>(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)', [
 			/* constructor description */ UDF,
 			/* parameters */ UDF,
 			/* throws */ UDF
@@ -31,19 +31,13 @@ DocsCollector.collect('groovy.lang.Tuple4', [
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
-		[/* method */ 'getSecond()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'getThird()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
 		[/* method */ 'getV1()', [
+			/* method description */ UDF,
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'getSecond()', [
 			/* method description */ UDF,
 			/* parameters */ UDF,
 			/* throws */ UDF,
@@ -55,19 +49,25 @@ DocsCollector.collect('groovy.lang.Tuple4', [
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
+		[/* method */ 'getThird()', [
+			/* method description */ UDF,
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
 		[/* method */ 'getV3()', [
 			/* method description */ UDF,
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
-		[/* method */ 'getV4()', [
+		[/* method */ 'getFourth()', [
 			/* method description */ UDF,
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
-		[/* method */ 'getFourth()', [
+		[/* method */ 'getV4()', [
 			/* method description */ UDF,
 			/* parameters */ UDF,
 			/* throws */ UDF,

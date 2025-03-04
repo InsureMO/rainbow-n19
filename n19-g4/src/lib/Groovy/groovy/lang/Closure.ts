@@ -796,20 +796,8 @@ GroovyClassCreateHelper.class('groovy.lang.Closure', [
 		]
 	],
 	[/* declared fields */
-		[/* public static final int groovy.lang.Closure.OWNER_FIRST */
-			/* name */ 'OWNER_FIRST',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
 		[/* public static final int groovy.lang.Closure.DELEGATE_FIRST */
 			/* name */ 'DELEGATE_FIRST',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int groovy.lang.Closure.OWNER_ONLY */
-			/* name */ 'OWNER_ONLY',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
@@ -820,20 +808,8 @@ GroovyClassCreateHelper.class('groovy.lang.Closure', [
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
-		[/* public static final int groovy.lang.Closure.TO_SELF */
-			/* name */ 'TO_SELF',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
 		[/* public static final int groovy.lang.Closure.DONE */
 			/* name */ 'DONE',
-			/* type */ 'int',
-			/* annotations */ UDF,
-			/* modifiers */ 25
-		],
-		[/* public static final int groovy.lang.Closure.SKIP */
-			/* name */ 'SKIP',
 			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
@@ -841,6 +817,24 @@ GroovyClassCreateHelper.class('groovy.lang.Closure', [
 		[/* public static final groovy.lang.Closure groovy.lang.Closure.IDENTITY */
 			/* name */ 'IDENTITY',
 			/* type */ 'groovy.lang.Closure',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* protected int groovy.lang.Closure.maximumNumberOfParameters */
+			/* name */ 'maximumNumberOfParameters',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 4
+		],
+		[/* public static final int groovy.lang.Closure.OWNER_FIRST */
+			/* name */ 'OWNER_FIRST',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
+		],
+		[/* public static final int groovy.lang.Closure.OWNER_ONLY */
+			/* name */ 'OWNER_ONLY',
+			/* type */ 'int',
 			/* annotations */ UDF,
 			/* modifiers */ 25
 		],
@@ -861,11 +855,17 @@ GroovyClassCreateHelper.class('groovy.lang.Closure', [
 			/* annotations */ UDF,
 			/* modifiers */ 4
 		],
-		[/* protected int groovy.lang.Closure.maximumNumberOfParameters */
-			/* name */ 'maximumNumberOfParameters',
+		[/* public static final int groovy.lang.Closure.SKIP */
+			/* name */ 'SKIP',
 			/* type */ 'int',
 			/* annotations */ UDF,
-			/* modifiers */ 4
+			/* modifiers */ 25
+		],
+		[/* public static final int groovy.lang.Closure.TO_SELF */
+			/* name */ 'TO_SELF',
+			/* type */ 'int',
+			/* annotations */ UDF,
+			/* modifiers */ 25
 		]
 	],
 	/* enum values */ UDF

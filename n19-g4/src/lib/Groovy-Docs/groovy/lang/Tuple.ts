@@ -15,19 +15,19 @@ DocsCollector.collect('groovy.lang.Tuple', [
 		]]
 	],
 	[/* methods */
-		[/* method */ 'get(int)', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
 		[/* method */ 'equals(java.lang.Object)', [
 			/* method description */ UDF,
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
-		[/* method */ 'hashCode()', [
+		[/* method */ 'get(int)', [
+			/* method description */ UDF,
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'toArray()', [
 			/* method description */ UDF,
 			/* parameters */ UDF,
 			/* throws */ UDF,
@@ -39,7 +39,19 @@ DocsCollector.collect('groovy.lang.Tuple', [
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
+		[/* method */ 'subTuple(int,int)', [
+			/* method description */ UDF,
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
 		[/* method */ 'compareTo(groovy.lang.Tuple)', [
+			/* method description */ UDF,
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'hashCode()', [
 			/* method description */ UDF,
 			/* parameters */ UDF,
 			/* throws */ UDF,
@@ -57,14 +69,26 @@ DocsCollector.collect('groovy.lang.Tuple', [
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
-		[/* method */ 'toArray()', [
-			/* method description */ UDF,
+		[/* method */ 'tuple(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Construct a tuple of degree 16.`]
+			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
-		[/* method */ 'subTuple(int,int)', [
-			/* method description */ UDF,
+		[/* method */ 'tuple(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Construct a tuple of degree 15.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'tuple(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Construct a tuple of degree 14.`]
+			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			/* return */ UDF
@@ -101,33 +125,33 @@ DocsCollector.collect('groovy.lang.Tuple', [
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
-		[/* method */ 'tuple(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)', [
+		[/* method */ 'tuple(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)', [
 			[/* method description */
-				[/* text */ 't', `Construct a tuple of degree 16.`]
+				[/* text */ 't', `Construct a tuple of degree 9.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
-		[/* method */ 'tuple(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)', [
+		[/* method */ 'tuple(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)', [
 			[/* method description */
-				[/* text */ 't', `Construct a tuple of degree 4.`]
+				[/* text */ 't', `Construct a tuple of degree 8.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
-		[/* method */ 'tuple(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)', [
+		[/* method */ 'tuple(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)', [
 			[/* method description */
-				[/* text */ 't', `Construct a tuple of degree 15.`]
+				[/* text */ 't', `Construct a tuple of degree 7.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
-		[/* method */ 'tuple(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)', [
+		[/* method */ 'tuple(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)', [
 			[/* method description */
-				[/* text */ 't', `Construct a tuple of degree 14.`]
+				[/* text */ 't', `Construct a tuple of degree 6.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
@@ -136,6 +160,14 @@ DocsCollector.collect('groovy.lang.Tuple', [
 		[/* method */ 'tuple(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)', [
 			[/* method description */
 				[/* text */ 't', `Construct a tuple of degree 5.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			/* return */ UDF
+		]],
+		[/* method */ 'tuple(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)', [
+			[/* method description */
+				[/* text */ 't', `Construct a tuple of degree 4.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
@@ -168,38 +200,6 @@ DocsCollector.collect('groovy.lang.Tuple', [
 		[/* method */ 'tuple()', [
 			[/* method description */
 				[/* text */ 't', `Construct a tuple of degree 0.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'tuple(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Construct a tuple of degree 9.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'tuple(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Construct a tuple of degree 8.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'tuple(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Construct a tuple of degree 7.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			/* return */ UDF
-		]],
-		[/* method */ 'tuple(java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Construct a tuple of degree 6.`]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,

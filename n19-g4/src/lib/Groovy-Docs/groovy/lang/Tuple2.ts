@@ -7,12 +7,12 @@ DocsCollector.collect('groovy.lang.Tuple2', [
 	],
 	/* fields */ UDF,
 	[/* constructors */
-		[/* constructor */ '<init>(java.lang.Object,java.lang.Object)', [
+		[/* constructor */ '<init>(groovy.lang.Tuple2)', [
 			/* constructor description */ UDF,
 			/* parameters */ UDF,
 			/* throws */ UDF
 		]],
-		[/* constructor */ '<init>(groovy.lang.Tuple2)', [
+		[/* constructor */ '<init>(java.lang.Object,java.lang.Object)', [
 			/* constructor description */ UDF,
 			/* parameters */ UDF,
 			/* throws */ UDF
@@ -31,13 +31,13 @@ DocsCollector.collect('groovy.lang.Tuple2', [
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
-		[/* method */ 'getSecond()', [
+		[/* method */ 'getV1()', [
 			/* method description */ UDF,
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			/* return */ UDF
 		]],
-		[/* method */ 'getV1()', [
+		[/* method */ 'getSecond()', [
 			/* method description */ UDF,
 			/* parameters */ UDF,
 			/* throws */ UDF,

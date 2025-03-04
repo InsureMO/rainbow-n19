@@ -77,22 +77,58 @@ DocsCollector.collect('groovy.lang.Range', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'step(int,groovy.lang.Closure)', [
+		[/* method */ 'containsWithinBounds(java.lang.Object)', [
 			[/* method description */
-				[/* text */ 't', `Steps through the range, calling a closure for each item.`]
+				[/* text */ 't', `Indicates whether an object is greater than or equal to the `],
+				[/* inline code block */ 'i', `from`],
+				[/* text */ 't', `
+ value for the range and less than or equal to the `],
+				[/* inline code block */ 'i', `to`],
+				[/* text */ 't', ` value.
+ `],
+				[/* block */ 'b', `
+ This may be true even for values not contained in the range.
+
+ Example: from = 1.5, to = 3, next() increments by 1
+ containsWithinBounds(2) == true
+ contains(2) == false`]
 			],
 			[/* parameters */
-				[/* parameter */ 'step', [/* parameter description */
-					[/* text */ 't', `the amount by which to step. If negative, steps through the range backwards.`]
-				]],
-				[/* parameter */ 'closure', [/* parameter description */
-					[/* text */ 't', `the `],
-					[/* reference */ 'r', `groovy.lang.Closure`],
-					[/* text */ 't', ` to call`]
+				[/* parameter */ 'o', [/* parameter description */
+					[/* text */ 't', `the object to check against the boundaries of the range`]
 				]]
 			],
 			/* throws */ UDF,
-			/* return */ UDF
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if the object is between the from and to values`]
+			]
+		]],
+		[/* method */ 'isReverse()', [
+			[/* method description */
+				[/* text */ 't', `Indicates whether this is a reverse range which iterates backwards
+ starting from the to value and ending on the from value`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* inline code block */ 'i', `true`],
+				[/* text */ 't', ` if this is a reverse range`]
+			]
+		]],
+		[/* method */ 'inspect()', [
+			/* method description */ UDF,
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the verbose `],
+				[/* external link */ 'a', `https://docs.oracle.com/javase/8/docs/api/java/lang/String.html`, `String`],
+				[/* text */ 't', ` representation of this `],
+				[/* reference */ 'r', `groovy.lang.Range`],
+				[/* text */ 't', ` as would be typed into a console to create the `],
+				[/* reference */ 'r', `groovy.lang.Range`],
+				[/* text */ 't', ` instance`]
+			]
 		]],
 		[/* method */ 'step(int)', [
 			[/* method description */
@@ -128,58 +164,22 @@ DocsCollector.collect('groovy.lang.Range', [
 				[/* text */ 't', `the upper value in the range`]
 			]
 		]],
-		[/* method */ 'isReverse()', [
+		[/* method */ 'step(int,groovy.lang.Closure)', [
 			[/* method description */
-				[/* text */ 't', `Indicates whether this is a reverse range which iterates backwards
- starting from the to value and ending on the from value`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if this is a reverse range`]
-			]
-		]],
-		[/* method */ 'inspect()', [
-			/* method description */ UDF,
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the verbose `],
-				[/* reference */ 'r', `java.lang.String`],
-				[/* text */ 't', ` representation of this `],
-				[/* reference */ 'r', `groovy.lang.Range`],
-				[/* text */ 't', ` as would be typed into a console to create the `],
-				[/* reference */ 'r', `groovy.lang.Range`],
-				[/* text */ 't', ` instance`]
-			]
-		]],
-		[/* method */ 'containsWithinBounds(java.lang.Object)', [
-			[/* method description */
-				[/* text */ 't', `Indicates whether an object is greater than or equal to the `],
-				[/* inline code block */ 'i', `from`],
-				[/* text */ 't', `
- value for the range and less than or equal to the `],
-				[/* inline code block */ 'i', `to`],
-				[/* text */ 't', ` value.
- `],
-				[/* block */ 'b', `
- This may be true even for values not contained in the range.
-
- Example: from = 1.5, to = 3, next() increments by 1
- containsWithinBounds(2) == true
- contains(2) == false`]
+				[/* text */ 't', `Steps through the range, calling a closure for each item.`]
 			],
 			[/* parameters */
-				[/* parameter */ 'o', [/* parameter description */
-					[/* text */ 't', `the object to check against the boundaries of the range`]
+				[/* parameter */ 'step', [/* parameter description */
+					[/* text */ 't', `the amount by which to step. If negative, steps through the range backwards.`]
+				]],
+				[/* parameter */ 'closure', [/* parameter description */
+					[/* text */ 't', `the `],
+					[/* reference */ 'r', `groovy.lang.Closure`],
+					[/* text */ 't', ` to call`]
 				]]
 			],
 			/* throws */ UDF,
-			[/* return description */
-				[/* inline code block */ 'i', `true`],
-				[/* text */ 't', ` if the object is between the from and to values`]
-			]
+			/* return */ UDF
 		]]
 	],
 ]);

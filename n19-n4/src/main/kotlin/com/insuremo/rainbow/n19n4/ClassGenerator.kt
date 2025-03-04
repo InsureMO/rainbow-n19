@@ -568,7 +568,7 @@ private class ClassGenerator(
 				Modifier.isProtected(constructor.modifiers) -> true
 				else -> false
 			}
-		}
+		}.sortedBy { it.toGenericString().lowercase() }
 	}
 
 	private fun generateConstructors(): String {
@@ -611,7 +611,7 @@ private class ClassGenerator(
 				Modifier.isProtected(method.modifiers) && !Modifier.isStatic(method.modifiers) -> true
 				else -> false
 			}
-		}
+		}.sortedBy { it.toGenericString().lowercase() }
 	}
 
 	private fun generateMethods(): String {
@@ -651,7 +651,7 @@ private class ClassGenerator(
 			}
 		}.filter { field ->
 			!(field.type === clazz && clazz.isEnum)
-		}
+		}.sortedBy { it.name.lowercase() }
 	}
 
 	private fun generateFields(): String {
