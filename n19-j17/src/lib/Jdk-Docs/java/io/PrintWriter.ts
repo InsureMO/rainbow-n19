@@ -66,7 +66,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 				[/* reference */ 'r', `java.io.OutputStreamWriter`],
 				[/* text */ 't', `,
  which will encode characters using the `],
-				[/* reference */ 'r', `java.Charset#defaultCharset()`],
+				[/* reference */ 'r', `java.charset.Charset#defaultCharset()`],
 				[/* text */ 't', ` for this
  instance of the Java virtual machine.`]
 			],
@@ -173,7 +173,7 @@ DocsCollector.collect('java.io.PrintWriter', [
 				[/* reference */ 'r', `java.io.OutputStreamWriter`],
 				[/* text */ 't', `,
  which will encode characters using the `],
-				[/* reference */ 'r', `java.Charset#defaultCharset()`],
+				[/* reference */ 'r', `java.charset.Charset#defaultCharset()`],
 				[/* text */ 't', ` for this
  instance of the Java virtual machine.`]
 			],

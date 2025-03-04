@@ -9,7 +9,7 @@ DocsCollector.collect('java.io.InputStreamReader', [
 		[/* text */ 't', `.  The charset that it uses
  may be specified by name or may be given explicitly, or the platform's
  `],
-		[/* reference */ 'r', `java.Charset#defaultCharset()`],
+		[/* reference */ 'r', `java.charset.Charset#defaultCharset()`],
 		[/* text */ 't', ` may be accepted.
 
  `],
@@ -83,7 +83,7 @@ DocsCollector.collect('java.io.InputStreamReader', [
 			[/* constructor description */
 				[/* text */ 't', `Creates an InputStreamReader that uses the
  `],
-				[/* reference */ 'r', `java.Charset#defaultCharset()`],
+				[/* reference */ 'r', `java.charset.Charset#defaultCharset()`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */

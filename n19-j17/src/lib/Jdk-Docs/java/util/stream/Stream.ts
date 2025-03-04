@@ -206,7 +206,7 @@ DocsCollector.collect('java.util.stream.Stream', [
  are backed by collections, arrays, or generating functions, which require no
  special resource management. Generally, only streams whose source is an IO channel,
  such as those returned by `],
-			[/* reference */ 'r', `java.util.Files#lines(java.nio.file.Path)`],
+			[/* reference */ 'r', `java.util.file.Files#lines(java.nio.file.Path)`],
 			[/* text */ 't', `, will require closing. If a
  stream does require closing, it must be opened as a resource within a try-with-resources
  statement or similar control structure to ensure that it is closed promptly after its

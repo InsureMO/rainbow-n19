@@ -2748,7 +2748,7 @@ DocsCollector.collect('java.lang.String', [
 		[/* method */ 'matches(java.lang.String)', [
 			[/* method description */
 				[/* text */ 't', `Tells whether or not this string matches the given `],
-				[/* reference */ 'r', `java.Pattern#sum`],
+				[/* reference */ 'r', `java.regex.Pattern#sum`],
 				[/* text */ 't', `.
 
  `],
@@ -2767,7 +2767,7 @@ DocsCollector.collect('java.lang.String', [
 				[/* block */ 'b', [
 					[/* reference */ 'r', `java.util.regex.Pattern`],
 					[/* text */ 't', `.`],
-					[/* reference */ 'r', `java.Pattern#matches(java.lang.String,java.lang.CharSequence)`]
+					[/* reference */ 'r', `java.regex.Pattern#matches(java.lang.String,java.lang.CharSequence)`]
 				]],
 				[/* block */ 'b', '']
 			],
@@ -2790,7 +2790,7 @@ DocsCollector.collect('java.lang.String', [
 		[/* method */ 'replaceFirst(java.lang.String,java.lang.String)', [
 			[/* method description */
 				[/* text */ 't', `Replaces the first substring of this string that matches the given `],
-				[/* reference */ 'r', `java.Pattern#sum`],
+				[/* reference */ 'r', `java.regex.Pattern#sum`],
 				[/* text */ 't', ` with the
  given replacement.
 
@@ -2823,10 +2823,10 @@ DocsCollector.collect('java.lang.String', [
  replacement string may cause the results to be different than if it were
  being treated as a literal replacement string; see
  `],
-					[/* reference */ 'r', `java.Matcher#replaceFirst(java.lang.String)`],
+					[/* reference */ 'r', `java.regex.Matcher#replaceFirst(java.lang.String)`],
 					[/* text */ 't', `.
  Use `],
-					[/* reference */ 'r', `java.Matcher#quoteReplacement(java.lang.String)`],
+					[/* reference */ 'r', `java.regex.Matcher#quoteReplacement(java.lang.String)`],
 					[/* text */ 't', ` to suppress the special
  meaning of these characters, if desired.`]
 				]]
@@ -2852,7 +2852,7 @@ DocsCollector.collect('java.lang.String', [
 		[/* method */ 'replaceAll(java.lang.String,java.lang.String)', [
 			[/* method description */
 				[/* text */ 't', `Replaces each substring of this string that matches the given `],
-				[/* reference */ 'r', `java.Pattern#sum`],
+				[/* reference */ 'r', `java.regex.Pattern#sum`],
 				[/* text */ 't', ` with the
  given replacement.
 
@@ -2885,10 +2885,10 @@ DocsCollector.collect('java.lang.String', [
  replacement string may cause the results to be different than if it were
  being treated as a literal replacement string; see
  `],
-					[/* reference */ 'r', `java.Matcher#replaceAll(java.lang.String)`],
+					[/* reference */ 'r', `java.regex.Matcher#replaceAll(java.lang.String)`],
 					[/* text */ 't', `.
  Use `],
-					[/* reference */ 'r', `java.Matcher#quoteReplacement(java.lang.String)`],
+					[/* reference */ 'r', `java.regex.Matcher#quoteReplacement(java.lang.String)`],
 					[/* text */ 't', ` to suppress the special
  meaning of these characters, if desired.`]
 				]]
@@ -2914,7 +2914,7 @@ DocsCollector.collect('java.lang.String', [
 		[/* method */ 'split(java.lang.String)', [
 			[/* method description */
 				[/* text */ 't', `Splits this string around matches of the given `],
-				[/* reference */ 'r', `java.Pattern#sum`],
+				[/* reference */ 'r', `java.regex.Pattern#sum`],
 				[/* text */ 't', `.
 
  `],
@@ -2989,7 +2989,7 @@ DocsCollector.collect('java.lang.String', [
 			[/* method description */
 				[/* text */ 't', `Splits this string around matches of the given
  `],
-				[/* reference */ 'r', `java.Pattern#sum`],
+				[/* reference */ 'r', `java.regex.Pattern#sum`],
 				[/* text */ 't', `.
 
  `],

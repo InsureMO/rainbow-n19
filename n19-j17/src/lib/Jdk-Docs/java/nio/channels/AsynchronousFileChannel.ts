@@ -155,7 +155,7 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
  `],
 					[/* inline code block */ 'i', `Future`],
 					[/* text */ 't', `'s `],
-					[/* reference */ 'r', `java.nio.Future#get()`],
+					[/* reference */ 'r', `java.nio.concurrent.Future#get()`],
 					[/* text */ 't', ` method returns the `],
 					[/* reference */ 'r', `java.nio.channels.FileLock`],
 					[/* text */ 't', ` on successful completion.`]
@@ -396,7 +396,7 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
  pending result of the operation. The `],
 					[/* inline code block */ 'i', `Future`],
 					[/* text */ 't', `'s `],
-					[/* reference */ 'r', `java.nio.Future#get()`],
+					[/* reference */ 'r', `java.nio.concurrent.Future#get()`],
 					[/* text */ 't', ` method returns the `],
 					[/* reference */ 'r', `java.nio.channels.FileLock`],
 					[/* text */ 't', ` on successful completion.
@@ -462,7 +462,7 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
  write operation. The `],
 					[/* inline code block */ 'i', `Future`],
 					[/* text */ 't', `'s `],
-					[/* reference */ 'r', `java.nio.Future#get()`],
+					[/* reference */ 'r', `java.nio.concurrent.Future#get()`],
 					[/* text */ 't', ` method
  returns the number of bytes written.
 
@@ -560,7 +560,7 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
  operation. The `],
 					[/* inline code block */ 'i', `Future`],
 					[/* text */ 't', `'s `],
-					[/* reference */ 'r', `java.nio.Future#get()`],
+					[/* reference */ 'r', `java.nio.concurrent.Future#get()`],
 					[/* text */ 't', ` method returns
  the number of bytes read or `],
 					[/* inline code block */ 'i', `-1`],
@@ -820,7 +820,7 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
 					[/* text */ 't', `. Minimally it
  should support an unbounded work queue and should not run tasks on the
  caller thread of the `],
-					[/* reference */ 'r', `java.nio.Executor#execute(java.lang.Runnable)`],
+					[/* reference */ 'r', `java.nio.concurrent.Executor#execute(java.lang.Runnable)`],
 					[/* text */ 't', ` method.
  Shutting down the executor service while the channel is open results in
  unspecified behavior.
@@ -838,7 +838,7 @@ DocsCollector.collect('java.nio.channels.AsynchronousFileChannel', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The new channel is created by invoking the `],
-					[/* reference */ 'r', `java.FileSystemProvider#newAsynchronousFileChannel(java.nio.file.Path,java.util.Set,java.util.concurrent.ExecutorService,java.nio.file.attribute.FileAttribute...)`],
+					[/* reference */ 'r', `java.spi.FileSystemProvider#newAsynchronousFileChannel(java.nio.file.Path,java.util.Set,java.util.concurrent.ExecutorService,java.nio.file.attribute.FileAttribute...)`],
 					[/* text */ 't', `
  method on the provider that created the `],
 					[/* inline code block */ 'i', `Path`],

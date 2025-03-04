@@ -417,7 +417,7 @@ DocsCollector.collect('java.io.FileOutputStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The initial `],
-					[/* reference */ 'r', `java.FileChannel#position()`],
+					[/* reference */ 'r', `java.channels.FileChannel#position()`],
 					[/* text */ 't', ` of the returned channel will be equal to the
  number of bytes written to the file so far unless this stream is in
  append mode, in which case it will be equal to the size of the file.

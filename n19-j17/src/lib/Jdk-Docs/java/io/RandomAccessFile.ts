@@ -134,7 +134,7 @@ DocsCollector.collect('java.io.RandomAccessFile', [
 				[/* text */ 't', ` and `],
 				[/* inline code block */ 'i', `"rwd"`],
 				[/* text */ 't', ` modes work much like the `],
-				[/* reference */ 'r', `java.FileChannel#force(boolean)`],
+				[/* reference */ 'r', `java.channels.FileChannel#force(boolean)`],
 				[/* text */ 't', ` method of
  the `],
 				[/* reference */ 'r', `java.nio.channels.FileChannel`],
@@ -836,7 +836,7 @@ DocsCollector.collect('java.io.RandomAccessFile', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The `],
-					[/* reference */ 'r', `java.FileChannel#position()`],
+					[/* reference */ 'r', `java.channels.FileChannel#position()`],
 					[/* text */ 't', ` of the returned channel will always be equal to
  this object's file-pointer offset as returned by the `],
 					[/* reference */ 'r', `#getFilePointer()`, `getFilePointer`],

@@ -9,7 +9,7 @@ DocsCollector.collect('java.io.FileReader', [
 		[/* text */ 't', `
  or the platform's
  `],
-		[/* reference */ 'r', `java.Charset#defaultCharset()`],
+		[/* reference */ 'r', `java.charset.Charset#defaultCharset()`],
 		[/* text */ 't', `.
 
  `],
@@ -92,7 +92,7 @@ DocsCollector.collect('java.io.FileReader', [
 				[/* text */ 't', ` to read,
  using the platform's
  `],
-				[/* reference */ 'r', `java.Charset#defaultCharset()`],
+				[/* reference */ 'r', `java.charset.Charset#defaultCharset()`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -113,7 +113,7 @@ DocsCollector.collect('java.io.FileReader', [
 				[/* text */ 't', ` to read,
  using the platform's
  `],
-				[/* reference */ 'r', `java.Charset#defaultCharset()`],
+				[/* reference */ 'r', `java.charset.Charset#defaultCharset()`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -139,7 +139,7 @@ DocsCollector.collect('java.io.FileReader', [
 				[/* text */ 't', `, given the name of the file to read,
  using the platform's
  `],
-				[/* reference */ 'r', `java.Charset#defaultCharset()`],
+				[/* reference */ 'r', `java.charset.Charset#defaultCharset()`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */

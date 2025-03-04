@@ -76,7 +76,7 @@ DocsCollector.collect('java.text.spi.DateFormatProvider', [
 					[/* text */ 't', ` isn't
      one of the locales returned from
      `],
-					[/* reference */ 'r', `java.text.LocaleServiceProvider#getAvailableLocales()`],
+					[/* reference */ 'r', `java.text.spi.LocaleServiceProvider#getAvailableLocales()`],
 					[/* text */ 't', `.`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
@@ -126,7 +126,7 @@ DocsCollector.collect('java.text.spi.DateFormatProvider', [
 					[/* text */ 't', ` isn't
      one of the locales returned from
      `],
-					[/* reference */ 'r', `java.text.LocaleServiceProvider#getAvailableLocales()`],
+					[/* reference */ 'r', `java.text.spi.LocaleServiceProvider#getAvailableLocales()`],
 					[/* text */ 't', `.`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
@@ -176,7 +176,7 @@ DocsCollector.collect('java.text.spi.DateFormatProvider', [
 					[/* text */ 't', ` isn't
      one of the locales returned from
      `],
-					[/* reference */ 'r', `java.text.LocaleServiceProvider#getAvailableLocales()`],
+					[/* reference */ 'r', `java.text.spi.LocaleServiceProvider#getAvailableLocales()`],
 					[/* text */ 't', `.`]
 				]],
 				[/* throw */ 'java.lang.NullPointerException', [/* throw description */

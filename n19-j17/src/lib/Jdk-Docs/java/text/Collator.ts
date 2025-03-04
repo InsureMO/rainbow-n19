@@ -409,6 +409,34 @@ DocsCollector.collect('java.text.Collator', [
 				[/* text */ 't', ` instances are available.`]
 			]
 		]],
+		[/* method */ 'getDecomposition()', [
+			[/* method description */
+				[/* text */ 't', `Get the decomposition mode of this Collator. Decomposition mode
+ determines how Unicode composed characters are handled. Adjusting
+ decomposition mode allows the user to select between faster and more
+ complete collation behavior.
+ `],
+				[/* block */ 'b', `The three values for decomposition mode are:
+ `],
+				[/* list */ 'l', [
+					[/* block */ 'b', `NO_DECOMPOSITION,
+ `],
+					[/* block */ 'b', `CANONICAL_DECOMPOSITION
+ `],
+					[/* block */ 'b', `FULL_DECOMPOSITION.
+ `]
+				]],
+				[/* text */ 't', `
+ See the documentation for these three constants for a description
+ of their meaning.`],
+				[/* block */ 'b', '']
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the decomposition mode`]
+			]
+		]],
 		[/* method */ 'getStrength()', [
 			[/* method description */
 				[/* text */ 't', `Returns this Collator's strength property.  The strength property determines
@@ -474,34 +502,6 @@ DocsCollector.collect('java.text.Collator', [
 			[/* return description */
 				[/* text */ 't', `the CollationKey for the given String based on this Collator's collation
  rules. If the source String is null, a null CollationKey is returned.`]
-			]
-		]],
-		[/* method */ 'getDecomposition()', [
-			[/* method description */
-				[/* text */ 't', `Get the decomposition mode of this Collator. Decomposition mode
- determines how Unicode composed characters are handled. Adjusting
- decomposition mode allows the user to select between faster and more
- complete collation behavior.
- `],
-				[/* block */ 'b', `The three values for decomposition mode are:
- `],
-				[/* list */ 'l', [
-					[/* block */ 'b', `NO_DECOMPOSITION,
- `],
-					[/* block */ 'b', `CANONICAL_DECOMPOSITION
- `],
-					[/* block */ 'b', `FULL_DECOMPOSITION.
- `]
-				]],
-				[/* text */ 't', `
- See the documentation for these three constants for a description
- of their meaning.`],
-				[/* block */ 'b', '']
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the decomposition mode`]
 			]
 		]]
 	],

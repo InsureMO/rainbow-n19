@@ -11,32 +11,6 @@ DocsCollector.collect('java.lang.reflect.AnnotatedWildcardType', [
 	/* fields */ UDF,
 	/* constructors */ UDF,
 	[/* methods */
-		[/* method */ 'getAnnotatedLowerBounds()', [
-			[/* method description */
-				[/* text */ 't', `Returns the potentially annotated lower bounds of this wildcard type.
- If no lower bound is explicitly declared, the lower bound is the
- type of null. In this case, a zero length array is returned.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the potentially annotated lower bounds of this wildcard type or
- an empty array if no lower bound is explicitly declared.`]
-			]
-		]],
-		[/* method */ 'getAnnotatedUpperBounds()', [
-			[/* method description */
-				[/* text */ 't', `Returns the potentially annotated upper bounds of this wildcard type.
- If no upper bound is explicitly declared, the upper bound is
- unannotated `],
-				[/* inline code block */ 'i', `Object`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the potentially annotated upper bounds of this wildcard type`]
-			]
-		]],
 		[/* method */ 'getAnnotatedOwnerType()', [
 			[/* method description */
 				[/* text */ 't', `Returns the potentially annotated type that this type is a member of, if
@@ -63,6 +37,32 @@ DocsCollector.collect('java.lang.reflect.AnnotatedWildcardType', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* inline code block */ 'i', `null`]
+			]
+		]],
+		[/* method */ 'getAnnotatedLowerBounds()', [
+			[/* method description */
+				[/* text */ 't', `Returns the potentially annotated lower bounds of this wildcard type.
+ If no lower bound is explicitly declared, the lower bound is the
+ type of null. In this case, a zero length array is returned.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the potentially annotated lower bounds of this wildcard type or
+ an empty array if no lower bound is explicitly declared.`]
+			]
+		]],
+		[/* method */ 'getAnnotatedUpperBounds()', [
+			[/* method description */
+				[/* text */ 't', `Returns the potentially annotated upper bounds of this wildcard type.
+ If no upper bound is explicitly declared, the upper bound is
+ unannotated `],
+				[/* inline code block */ 'i', `Object`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the potentially annotated upper bounds of this wildcard type`]
 			]
 		]]
 	],

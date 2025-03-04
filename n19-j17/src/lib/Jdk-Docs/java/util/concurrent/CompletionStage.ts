@@ -330,27 +330,6 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
 				[/* text */ 't', `the new CompletionStage`]
 			]
 		]],
-		[/* method */ 'exceptionallyAsync(java.util.function.Function)', [
-			[/* method description */
-				[/* text */ 't', `Returns a new CompletionStage that, when this stage completes
- exceptionally, is executed with this stage's exception as the
- argument to the supplied function, using this stage's default
- asynchronous execution facility.  Otherwise, if this stage
- completes normally, then the returned stage also completes
- normally with the same value.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'fn', [/* parameter description */
-					[/* text */ 't', `the function to use to compute the value of the
- returned CompletionStage if this CompletionStage completed
- exceptionally`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the new CompletionStage`]
-			]
-		]],
 		[/* method */ 'exceptionallyAsync(java.util.function.Function,java.util.concurrent.Executor)', [
 			[/* method description */
 				[/* text */ 't', `Returns a new CompletionStage that, when this stage completes
@@ -367,6 +346,27 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
 				]],
 				[/* parameter */ 'executor', [/* parameter description */
 					[/* text */ 't', `the executor to use for asynchronous execution`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the new CompletionStage`]
+			]
+		]],
+		[/* method */ 'exceptionallyAsync(java.util.function.Function)', [
+			[/* method description */
+				[/* text */ 't', `Returns a new CompletionStage that, when this stage completes
+ exceptionally, is executed with this stage's exception as the
+ argument to the supplied function, using this stage's default
+ asynchronous execution facility.  Otherwise, if this stage
+ completes normally, then the returned stage also completes
+ normally with the same value.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'fn', [/* parameter description */
+					[/* text */ 't', `the function to use to compute the value of the
+ returned CompletionStage if this CompletionStage completed
+ exceptionally`]
 				]]
 			],
 			/* throws */ UDF,
@@ -665,6 +665,31 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
 				[/* text */ 't', `the new CompletionStage`]
 			]
 		]],
+		[/* method */ 'runAfterEitherAsync(java.util.concurrent.CompletionStage,java.lang.Runnable)', [
+			[/* method description */
+				[/* text */ 't', `Returns a new CompletionStage that, when either this or the
+ other given stage complete normally, executes the given action
+ using this stage's default asynchronous execution facility.
+
+ See the `],
+				[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+				[/* text */ 't', ` documentation for rules
+ covering exceptional completion.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'other', [/* parameter description */
+					[/* text */ 't', `the other CompletionStage`]
+				]],
+				[/* parameter */ 'action', [/* parameter description */
+					[/* text */ 't', `the action to perform before completing the
+ returned CompletionStage`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the new CompletionStage`]
+			]
+		]],
 		[/* method */ 'runAfterEitherAsync(java.util.concurrent.CompletionStage,java.lang.Runnable,java.util.concurrent.Executor)', [
 			[/* method description */
 				[/* text */ 't', `Returns a new CompletionStage that, when either this or the
@@ -686,31 +711,6 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
 				]],
 				[/* parameter */ 'executor', [/* parameter description */
 					[/* text */ 't', `the executor to use for asynchronous execution`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the new CompletionStage`]
-			]
-		]],
-		[/* method */ 'runAfterEitherAsync(java.util.concurrent.CompletionStage,java.lang.Runnable)', [
-			[/* method description */
-				[/* text */ 't', `Returns a new CompletionStage that, when either this or the
- other given stage complete normally, executes the given action
- using this stage's default asynchronous execution facility.
-
- See the `],
-				[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
-				[/* text */ 't', ` documentation for rules
- covering exceptional completion.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'other', [/* parameter description */
-					[/* text */ 't', `the other CompletionStage`]
-				]],
-				[/* parameter */ 'action', [/* parameter description */
-					[/* text */ 't', `the action to perform before completing the
- returned CompletionStage`]
 				]]
 			],
 			/* throws */ UDF,
@@ -822,6 +822,32 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
 				[/* text */ 't', `the new CompletionStage`]
 			]
 		]],
+		[/* method */ 'applyToEitherAsync(java.util.concurrent.CompletionStage,java.util.function.Function)', [
+			[/* method description */
+				[/* text */ 't', `Returns a new CompletionStage that, when either this or the
+ other given stage complete normally, is executed using this
+ stage's default asynchronous execution facility, with the
+ corresponding result as argument to the supplied function.
+
+ See the `],
+				[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+				[/* text */ 't', ` documentation for rules
+ covering exceptional completion.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'other', [/* parameter description */
+					[/* text */ 't', `the other CompletionStage`]
+				]],
+				[/* parameter */ 'fn', [/* parameter description */
+					[/* text */ 't', `the function to use to compute the value of the
+ returned CompletionStage`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the new CompletionStage`]
+			]
+		]],
 		[/* method */ 'applyToEitherAsync(java.util.concurrent.CompletionStage,java.util.function.Function,java.util.concurrent.Executor)', [
 			[/* method description */
 				[/* text */ 't', `Returns a new CompletionStage that, when either this or the
@@ -844,32 +870,6 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
 				]],
 				[/* parameter */ 'executor', [/* parameter description */
 					[/* text */ 't', `the executor to use for asynchronous execution`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the new CompletionStage`]
-			]
-		]],
-		[/* method */ 'applyToEitherAsync(java.util.concurrent.CompletionStage,java.util.function.Function)', [
-			[/* method description */
-				[/* text */ 't', `Returns a new CompletionStage that, when either this or the
- other given stage complete normally, is executed using this
- stage's default asynchronous execution facility, with the
- corresponding result as argument to the supplied function.
-
- See the `],
-				[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
-				[/* text */ 't', ` documentation for rules
- covering exceptional completion.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'other', [/* parameter description */
-					[/* text */ 't', `the other CompletionStage`]
-				]],
-				[/* parameter */ 'fn', [/* parameter description */
-					[/* text */ 't', `the function to use to compute the value of the
- returned CompletionStage`]
 				]]
 			],
 			/* throws */ UDF,
@@ -902,6 +902,31 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
 				[/* text */ 't', `the new CompletionStage`]
 			]
 		]],
+		[/* method */ 'runAfterBothAsync(java.util.concurrent.CompletionStage,java.lang.Runnable)', [
+			[/* method description */
+				[/* text */ 't', `Returns a new CompletionStage that, when this and the other
+ given stage both complete normally, executes the given action
+ using this stage's default asynchronous execution facility.
+
+ See the `],
+				[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+				[/* text */ 't', ` documentation for rules
+ covering exceptional completion.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'other', [/* parameter description */
+					[/* text */ 't', `the other CompletionStage`]
+				]],
+				[/* parameter */ 'action', [/* parameter description */
+					[/* text */ 't', `the action to perform before completing the
+ returned CompletionStage`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the new CompletionStage`]
+			]
+		]],
 		[/* method */ 'runAfterBothAsync(java.util.concurrent.CompletionStage,java.lang.Runnable,java.util.concurrent.Executor)', [
 			[/* method description */
 				[/* text */ 't', `Returns a new CompletionStage that, when this and the other
@@ -923,31 +948,6 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
 				]],
 				[/* parameter */ 'executor', [/* parameter description */
 					[/* text */ 't', `the executor to use for asynchronous execution`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the new CompletionStage`]
-			]
-		]],
-		[/* method */ 'runAfterBothAsync(java.util.concurrent.CompletionStage,java.lang.Runnable)', [
-			[/* method description */
-				[/* text */ 't', `Returns a new CompletionStage that, when this and the other
- given stage both complete normally, executes the given action
- using this stage's default asynchronous execution facility.
-
- See the `],
-				[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
-				[/* text */ 't', ` documentation for rules
- covering exceptional completion.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'other', [/* parameter description */
-					[/* text */ 't', `the other CompletionStage`]
-				]],
-				[/* parameter */ 'action', [/* parameter description */
-					[/* text */ 't', `the action to perform before completing the
- returned CompletionStage`]
 				]]
 			],
 			/* throws */ UDF,
@@ -1059,6 +1059,32 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
 				[/* text */ 't', `the new CompletionStage`]
 			]
 		]],
+		[/* method */ 'thenCombineAsync(java.util.concurrent.CompletionStage,java.util.function.BiFunction)', [
+			[/* method description */
+				[/* text */ 't', `Returns a new CompletionStage that, when this and the other
+ given stage both complete normally, is executed using this
+ stage's default asynchronous execution facility, with the two
+ results as arguments to the supplied function.
+
+ See the `],
+				[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+				[/* text */ 't', ` documentation for rules
+ covering exceptional completion.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'other', [/* parameter description */
+					[/* text */ 't', `the other CompletionStage`]
+				]],
+				[/* parameter */ 'fn', [/* parameter description */
+					[/* text */ 't', `the function to use to compute the value of the
+ returned CompletionStage`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the new CompletionStage`]
+			]
+		]],
 		[/* method */ 'thenCombineAsync(java.util.concurrent.CompletionStage,java.util.function.BiFunction,java.util.concurrent.Executor)', [
 			[/* method description */
 				[/* text */ 't', `Returns a new CompletionStage that, when this and the other
@@ -1081,32 +1107,6 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
 				]],
 				[/* parameter */ 'executor', [/* parameter description */
 					[/* text */ 't', `the executor to use for asynchronous execution`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the new CompletionStage`]
-			]
-		]],
-		[/* method */ 'thenCombineAsync(java.util.concurrent.CompletionStage,java.util.function.BiFunction)', [
-			[/* method description */
-				[/* text */ 't', `Returns a new CompletionStage that, when this and the other
- given stage both complete normally, is executed using this
- stage's default asynchronous execution facility, with the two
- results as arguments to the supplied function.
-
- See the `],
-				[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
-				[/* text */ 't', ` documentation for rules
- covering exceptional completion.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'other', [/* parameter description */
-					[/* text */ 't', `the other CompletionStage`]
-				]],
-				[/* parameter */ 'fn', [/* parameter description */
-					[/* text */ 't', `the function to use to compute the value of the
- returned CompletionStage`]
 				]]
 			],
 			/* throws */ UDF,
@@ -1206,29 +1206,6 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
 				[/* text */ 't', `the new CompletionStage`]
 			]
 		]],
-		[/* method */ 'thenAcceptAsync(java.util.function.Consumer)', [
-			[/* method description */
-				[/* text */ 't', `Returns a new CompletionStage that, when this stage completes
- normally, is executed using this stage's default asynchronous
- execution facility, with this stage's result as the argument to
- the supplied action.
-
- See the `],
-				[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
-				[/* text */ 't', ` documentation for rules
- covering exceptional completion.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'action', [/* parameter description */
-					[/* text */ 't', `the action to perform before completing the
- returned CompletionStage`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the new CompletionStage`]
-			]
-		]],
 		[/* method */ 'thenAcceptAsync(java.util.function.Consumer,java.util.concurrent.Executor)', [
 			[/* method description */
 				[/* text */ 't', `Returns a new CompletionStage that, when this stage completes
@@ -1247,6 +1224,29 @@ DocsCollector.collect('java.util.concurrent.CompletionStage', [
 				]],
 				[/* parameter */ 'executor', [/* parameter description */
 					[/* text */ 't', `the executor to use for asynchronous execution`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the new CompletionStage`]
+			]
+		]],
+		[/* method */ 'thenAcceptAsync(java.util.function.Consumer)', [
+			[/* method description */
+				[/* text */ 't', `Returns a new CompletionStage that, when this stage completes
+ normally, is executed using this stage's default asynchronous
+ execution facility, with this stage's result as the argument to
+ the supplied action.
+
+ See the `],
+				[/* reference */ 'r', `java.util.concurrent.CompletionStage`],
+				[/* text */ 't', ` documentation for rules
+ covering exceptional completion.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'action', [/* parameter description */
+					[/* text */ 't', `the action to perform before completing the
+ returned CompletionStage`]
 				]]
 			],
 			/* throws */ UDF,

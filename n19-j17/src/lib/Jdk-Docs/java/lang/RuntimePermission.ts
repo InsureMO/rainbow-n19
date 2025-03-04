@@ -539,7 +539,7 @@ DocsCollector.collect('java.lang.RuntimePermission', [
 					]],
 					[/* table cell */ 'tbc', [
 						[/* text */ 't', `See `],
-						[/* reference */ 'r', `java.LocaleServiceProvider`],
+						[/* reference */ 'r', `java.spi.LocaleServiceProvider`],
 						[/* text */ 't', ` for more
    information.`]
 					]]

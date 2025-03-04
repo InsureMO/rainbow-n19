@@ -556,7 +556,7 @@ DocsCollector.collect('java.io.File', [
 					[/* inline code block */ 'i', `0L`],
 					[/* text */ 't', ` is returned, or where several attributes of the same file
  are required at the same time, then the `],
-					[/* reference */ 'r', `java.Files#readAttributes(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)`],
+					[/* reference */ 'r', `java.file.Files#readAttributes(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)`],
 					[/* text */ 't', ` method may be used.`]
 				]]
 			],
@@ -697,7 +697,7 @@ DocsCollector.collect('java.io.File', [
 					[/* text */ 't', ` Note that the `],
 					[/* reference */ 'r', `java.nio.file.Files`],
 					[/* text */ 't', ` class defines the `],
-					[/* reference */ 'r', `java.Files#newDirectoryStream(java.nio.file.Path)`],
+					[/* reference */ 'r', `java.file.Files#newDirectoryStream(java.nio.file.Path)`],
 					[/* text */ 't', ` method to
  open a directory and iterate over the names of the files in the directory.
  This may use less resources when working with very large directories, and
@@ -826,7 +826,7 @@ DocsCollector.collect('java.io.File', [
 					[/* text */ 't', ` Note that the `],
 					[/* reference */ 'r', `java.nio.file.Files`],
 					[/* text */ 't', ` class defines the `],
-					[/* reference */ 'r', `java.Files#delete(java.nio.file.Path)`],
+					[/* reference */ 'r', `java.file.Files#delete(java.nio.file.Path)`],
 					[/* text */ 't', ` method to throw an `],
 					[/* reference */ 'r', `java.io.IOException`],
 					[/* text */ 't', `
@@ -974,7 +974,7 @@ DocsCollector.collect('java.io.File', [
 					[/* reference */ 'r', `java.nio.file.Path`],
 					[/* text */ 't', ` class defines the
  `],
-					[/* reference */ 'r', `java.Path#toUri()`],
+					[/* reference */ 'r', `java.file.Path#toUri()`],
 					[/* text */ 't', ` method to encode the server name in the authority
  component of the resulting `],
 					[/* inline code block */ 'i', `URI`],
@@ -1106,7 +1106,7 @@ DocsCollector.collect('java.io.File', [
 					[/* text */ 't', ` Note that the `],
 					[/* reference */ 'r', `java.nio.file.Files`],
 					[/* text */ 't', ` class defines the `],
-					[/* reference */ 'r', `java.Files#move(java.nio.file.Path,java.nio.file.Path,java.nio.file.CopyOption...)`],
+					[/* reference */ 'r', `java.file.Files#move(java.nio.file.Path,java.nio.file.Path,java.nio.file.CopyOption...)`],
 					[/* text */ 't', ` method to move or rename a file in a
  platform independent manner.`]
 				]]
@@ -1234,7 +1234,7 @@ DocsCollector.collect('java.io.File', [
 					[/* text */ 't', ` Where it is required to distinguish an I/O exception from the case
  that the file is not a directory, or where several attributes of the
  same file are required at the same time, then the `],
-					[/* reference */ 'r', `java.Files#readAttributes(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)`],
+					[/* reference */ 'r', `java.file.Files#readAttributes(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)`],
 					[/* text */ 't', ` method may be used.`]
 				]]
 			],
@@ -1903,7 +1903,7 @@ DocsCollector.collect('java.io.File', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The `],
-					[/* reference */ 'r', `java.Files#createTempFile(java.lang.String,java.lang.String,java.nio.file.attribute.FileAttribute...)`],
+					[/* reference */ 'r', `java.file.Files#createTempFile(java.lang.String,java.lang.String,java.nio.file.attribute.FileAttribute...)`],
 					[/* text */ 't', ` method provides an alternative method to create an
  empty file in the temporary-file directory. Files created by that method
  may have more restrictive access permissions to files created by this
@@ -1991,7 +1991,7 @@ DocsCollector.collect('java.io.File', [
 					[/* text */ 't', ` Where it is required to distinguish an I/O exception from the case
  that the file is not a normal file, or where several attributes of the
  same file are required at the same time, then the `],
-					[/* reference */ 'r', `java.Files#readAttributes(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)`],
+					[/* reference */ 'r', `java.file.Files#readAttributes(java.nio.file.Path,java.lang.Class,java.nio.file.LinkOption...)`],
 					[/* text */ 't', ` method may be used.`]
 				]]
 			],
@@ -2205,7 +2205,7 @@ DocsCollector.collect('java.io.File', [
 					[/* text */ 't', ` Note that the `],
 					[/* reference */ 'r', `java.nio.file.Files`],
 					[/* text */ 't', ` class defines the `],
-					[/* reference */ 'r', `java.Files#newDirectoryStream(java.nio.file.Path)`],
+					[/* reference */ 'r', `java.file.Files#newDirectoryStream(java.nio.file.Path)`],
 					[/* text */ 't', ` method
  to open a directory and iterate over the names of the files in the
  directory. This may use less resources when working with very large
@@ -2448,7 +2448,7 @@ DocsCollector.collect('java.io.File', [
 				[/* inline code block */ 'i', `Path`],
 				[/* text */ 't', ` is associated with the
  `],
-				[/* reference */ 'r', `java.FileSystems#getDefault()`],
+				[/* reference */ 'r', `java.file.FileSystems#getDefault()`],
 				[/* text */ 't', `.
 
  `],
@@ -2488,7 +2488,7 @@ DocsCollector.collect('java.io.File', [
 					[/* inline code block */ 'i', `Path`],
 					[/* text */ 't', ` object cannot be constructed from the abstract
           path (see `],
-					[/* reference */ 'r', `java.FileSystem#getPath(java.lang.String,java.lang.String...)`],
+					[/* reference */ 'r', `java.file.FileSystem#getPath(java.lang.String,java.lang.String...)`],
 					[/* text */ 't', `)`]
 				]]
 			],

@@ -1206,7 +1206,7 @@ DocsCollector.collect('java.nio.channels.FileChannel', [
 				]],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The new channel is created by invoking the `],
-					[/* reference */ 'r', `java.FileSystemProvider#newFileChannel(java.nio.file.Path,java.util.Set,java.nio.file.attribute.FileAttribute...)`],
+					[/* reference */ 'r', `java.spi.FileSystemProvider#newFileChannel(java.nio.file.Path,java.util.Set,java.nio.file.attribute.FileAttribute...)`],
 					[/* text */ 't', ` method on the
  provider that created the `],
 					[/* inline code block */ 'i', `Path`],

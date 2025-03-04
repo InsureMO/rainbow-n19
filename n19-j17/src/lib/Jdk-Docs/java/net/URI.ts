@@ -714,7 +714,7 @@ DocsCollector.collect('java.net.URI', [
    UTF-8 character set.  UTF-8 contains US-ASCII, hence decoding has the
    effect of de-quoting any quoted US-ASCII characters as well as that of
    decoding any encoded non-US-ASCII characters.  If a `],
-					[/* reference */ 'r', `java.CharsetDecoder#ce`],
+					[/* reference */ 'r', `java.charset.CharsetDecoder#ce`],
 					[/* text */ 't', ` occurs
    when decoding the escaped octets then the erroneous octets are replaced by
    `],

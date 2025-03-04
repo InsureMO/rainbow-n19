@@ -47,7 +47,7 @@ DocsCollector.collect('java.lang.Package', [
  The caller supplies the specification and implementation titles, versions, and
  vendors. The caller also indicates whether the package is
  `],
-			[/* reference */ 'r', `java.Attributes.Name#SEALED`],
+			[/* reference */ 'r', `java.jar.Attributes.Name#SEALED`],
 			[/* text */ 't', `.
  If a `],
 			[/* inline code block */ 'i', `Package`],

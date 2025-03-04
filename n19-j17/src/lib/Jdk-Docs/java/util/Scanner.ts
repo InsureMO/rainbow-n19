@@ -757,7 +757,7 @@ DocsCollector.collect('java.util.Scanner', [
  from the specified input stream. Bytes from the stream are converted
  into characters using the underlying platform's
  `],
-				[/* reference */ 'r', `java.Charset#defaultCharset()`],
+				[/* reference */ 'r', `java.charset.Charset#defaultCharset()`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -792,7 +792,7 @@ DocsCollector.collect('java.util.Scanner', [
  from the specified file. Bytes from the file are converted into
  characters using the underlying platform's
  `],
-				[/* reference */ 'r', `java.Charset#defaultCharset()`],
+				[/* reference */ 'r', `java.charset.Charset#defaultCharset()`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -856,7 +856,7 @@ DocsCollector.collect('java.util.Scanner', [
  from the specified channel. Bytes from the source are converted into
  characters using the underlying platform's
  `],
-				[/* reference */ 'r', `java.Charset#defaultCharset()`],
+				[/* reference */ 'r', `java.charset.Charset#defaultCharset()`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -944,7 +944,7 @@ DocsCollector.collect('java.util.Scanner', [
  from the specified file. Bytes from the file are converted into
  characters using the underlying platform's
  `],
-				[/* reference */ 'r', `java.Charset#defaultCharset()`],
+				[/* reference */ 'r', `java.charset.Charset#defaultCharset()`],
 				[/* text */ 't', `.`]
 			],
 			[/* parameters */
@@ -1525,47 +1525,6 @@ DocsCollector.collect('java.util.Scanner', [
 				[/* text */ 't', ` scanned from the input`]
 			]
 		]],
-		[/* method */ 'nextInt()', [
-			[/* method description */
-				[/* text */ 't', `Scans the next token of the input as an `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` An invocation of this method of the form
- `],
-					[/* inline code block */ 'i', `nextInt()`],
-					[/* text */ 't', ` behaves in exactly the same way as the
- invocation `],
-					[/* inline code block */ 'i', `nextInt(radix)`],
-					[/* text */ 't', `, where `],
-					[/* inline code block */ 'i', `radix`],
-					[/* text */ 't', `
- is the default radix of this scanner.`]
-				]]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.util.InputMismatchException', [/* throw description */
-					[/* text */ 't', `if the next token does not match the `],
-					[/* text */ 't', `Integer`],
-					[/* text */ 't', `
-         regular expression, or is out of range`]
-				]],
-				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
-					[/* text */ 't', `if input is exhausted`]
-				]],
-				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
-					[/* text */ 't', `if this scanner is closed`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', ` scanned from the input`]
-			]
-		]],
 		[/* method */ 'nextInt(int)', [
 			[/* method description */
 				[/* text */ 't', `Scans the next token of the input as an `],
@@ -1638,6 +1597,77 @@ DocsCollector.collect('java.util.Scanner', [
 				[/* text */ 't', `the `],
 				[/* inline code block */ 'i', `int`],
 				[/* text */ 't', ` scanned from the input`]
+			]
+		]],
+		[/* method */ 'nextInt()', [
+			[/* method description */
+				[/* text */ 't', `Scans the next token of the input as an `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` An invocation of this method of the form
+ `],
+					[/* inline code block */ 'i', `nextInt()`],
+					[/* text */ 't', ` behaves in exactly the same way as the
+ invocation `],
+					[/* inline code block */ 'i', `nextInt(radix)`],
+					[/* text */ 't', `, where `],
+					[/* inline code block */ 'i', `radix`],
+					[/* text */ 't', `
+ is the default radix of this scanner.`]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.util.InputMismatchException', [/* throw description */
+					[/* text */ 't', `if the next token does not match the `],
+					[/* text */ 't', `Integer`],
+					[/* text */ 't', `
+         regular expression, or is out of range`]
+				]],
+				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
+					[/* text */ 't', `if input is exhausted`]
+				]],
+				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
+					[/* text */ 't', `if this scanner is closed`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', ` scanned from the input`]
+			]
+		]],
+		[/* method */ 'findAll(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Returns a stream of match results that match the provided pattern string.
+ The effect is equivalent to the following code:
+
+ `],
+				[/* code block */ 'c', [
+					[/* inline code block */ 'i', `scanner.findAll(Pattern.compile(patString))`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'patString', [/* parameter description */
+					[/* text */ 't', `the pattern string`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
+					[/* text */ 't', `if patString is null`]
+				]],
+				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
+					[/* text */ 't', `if this scanner is closed`]
+				]],
+				[/* throw */ 'java.util.regex.PatternSyntaxException', [/* throw description */
+					[/* text */ 't', `if the regular expression's syntax is invalid`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `a sequential stream of match results`]
 			]
 		]],
 		[/* method */ 'findAll(java.util.regex.Pattern)', [
@@ -1716,36 +1746,6 @@ DocsCollector.collect('java.util.Scanner', [
 				]],
 				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
 					[/* text */ 't', `if this scanner is closed`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `a sequential stream of match results`]
-			]
-		]],
-		[/* method */ 'findAll(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Returns a stream of match results that match the provided pattern string.
- The effect is equivalent to the following code:
-
- `],
-				[/* code block */ 'c', [
-					[/* inline code block */ 'i', `scanner.findAll(Pattern.compile(patString))`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'patString', [/* parameter description */
-					[/* text */ 't', `the pattern string`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.NullPointerException', [/* throw description */
-					[/* text */ 't', `if patString is null`]
-				]],
-				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
-					[/* text */ 't', `if this scanner is closed`]
-				]],
-				[/* throw */ 'java.util.regex.PatternSyntaxException', [/* throw description */
-					[/* text */ 't', `if the regular expression's syntax is invalid`]
 				]]
 			],
 			[/* return description */
@@ -2195,36 +2195,6 @@ DocsCollector.collect('java.util.Scanner', [
 				[/* text */ 't', `the text that matched the specified pattern`]
 			]
 		]],
-		[/* method */ 'findInLine(java.lang.String)', [
-			[/* method description */
-				[/* text */ 't', `Attempts to find the next occurrence of a pattern constructed from the
- specified string, ignoring delimiters.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `An invocation of this method of the form `],
-					[/* inline code block */ 'i', `findInLine(pattern)`],
-					[/* text */ 't', `
- behaves in exactly the same way as the invocation
- `],
-					[/* inline code block */ 'i', `findInLine(Pattern.compile(pattern))`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			[/* parameters */
-				[/* parameter */ 'pattern', [/* parameter description */
-					[/* text */ 't', `a string specifying the pattern to search for`]
-				]]
-			],
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
-					[/* text */ 't', `if this scanner is closed`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the text that matched the specified pattern`]
-			]
-		]],
 		[/* method */ 'findInLine(java.util.regex.Pattern)', [
 			[/* method description */
 				[/* text */ 't', `Attempts to find the next occurrence of the specified pattern ignoring
@@ -2246,6 +2216,36 @@ DocsCollector.collect('java.util.Scanner', [
 			[/* parameters */
 				[/* parameter */ 'pattern', [/* parameter description */
 					[/* text */ 't', `the pattern to scan for`]
+				]]
+			],
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
+					[/* text */ 't', `if this scanner is closed`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the text that matched the specified pattern`]
+			]
+		]],
+		[/* method */ 'findInLine(java.lang.String)', [
+			[/* method description */
+				[/* text */ 't', `Attempts to find the next occurrence of a pattern constructed from the
+ specified string, ignoring delimiters.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `An invocation of this method of the form `],
+					[/* inline code block */ 'i', `findInLine(pattern)`],
+					[/* text */ 't', `
+ behaves in exactly the same way as the invocation
+ `],
+					[/* inline code block */ 'i', `findInLine(Pattern.compile(pattern))`],
+					[/* text */ 't', `.`]
+				]]
+			],
+			[/* parameters */
+				[/* parameter */ 'pattern', [/* parameter description */
+					[/* text */ 't', `a string specifying the pattern to search for`]
 				]]
 			],
 			[/* throws */
@@ -2373,47 +2373,6 @@ DocsCollector.collect('java.util.Scanner', [
          short value in the specified radix`]
 			]
 		]],
-		[/* method */ 'nextShort()', [
-			[/* method description */
-				[/* text */ 't', `Scans the next token of the input as a `],
-				[/* inline code block */ 'i', `short`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` An invocation of this method of the form
- `],
-					[/* inline code block */ 'i', `nextShort()`],
-					[/* text */ 't', ` behaves in exactly the same way as the
- invocation `],
-					[/* reference */ 'r', `#nextShort(int)`, `nextShort(radix)`],
-					[/* text */ 't', `, where `],
-					[/* inline code block */ 'i', `radix`],
-					[/* text */ 't', `
- is the default radix of this scanner.`]
-				]]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.util.InputMismatchException', [/* throw description */
-					[/* text */ 't', `if the next token does not match the `],
-					[/* text */ 't', `Integer`],
-					[/* text */ 't', `
-         regular expression, or is out of range`]
-				]],
-				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
-					[/* text */ 't', `if input is exhausted`]
-				]],
-				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
-					[/* text */ 't', `if this scanner is closed`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the `],
-				[/* inline code block */ 'i', `short`],
-				[/* text */ 't', ` scanned from the input`]
-			]
-		]],
 		[/* method */ 'nextShort(int)', [
 			[/* method description */
 				[/* text */ 't', `Scans the next token of the input as a `],
@@ -2488,6 +2447,66 @@ DocsCollector.collect('java.util.Scanner', [
 				[/* text */ 't', ` scanned from the input`]
 			]
 		]],
+		[/* method */ 'nextShort()', [
+			[/* method description */
+				[/* text */ 't', `Scans the next token of the input as a `],
+				[/* inline code block */ 'i', `short`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` An invocation of this method of the form
+ `],
+					[/* inline code block */ 'i', `nextShort()`],
+					[/* text */ 't', ` behaves in exactly the same way as the
+ invocation `],
+					[/* reference */ 'r', `#nextShort(int)`, `nextShort(radix)`],
+					[/* text */ 't', `, where `],
+					[/* inline code block */ 'i', `radix`],
+					[/* text */ 't', `
+ is the default radix of this scanner.`]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.util.InputMismatchException', [/* throw description */
+					[/* text */ 't', `if the next token does not match the `],
+					[/* text */ 't', `Integer`],
+					[/* text */ 't', `
+         regular expression, or is out of range`]
+				]],
+				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
+					[/* text */ 't', `if input is exhausted`]
+				]],
+				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
+					[/* text */ 't', `if this scanner is closed`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the `],
+				[/* inline code block */ 'i', `short`],
+				[/* text */ 't', ` scanned from the input`]
+			]
+		]],
+		[/* method */ 'hasNextInt()', [
+			[/* method description */
+				[/* text */ 't', `Returns true if the next token in this scanner's input can be
+ interpreted as an int value in the default radix using the
+ `],
+				[/* reference */ 'r', `#nextInt()`, `nextInt()`],
+				[/* text */ 't', ` method. The scanner does not advance past any input.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
+					[/* text */ 't', `if this scanner is closed`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `true if and only if this scanner's next token is a valid
+         int value`]
+			]
+		]],
 		[/* method */ 'hasNextInt(int)', [
 			[/* method description */
 				[/* text */ 't', `Returns true if the next token in this scanner's input can be
@@ -2520,25 +2539,6 @@ DocsCollector.collect('java.util.Scanner', [
 				]],
 				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
 					[/* text */ 't', `if the radix is out of range`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `true if and only if this scanner's next token is a valid
-         int value`]
-			]
-		]],
-		[/* method */ 'hasNextInt()', [
-			[/* method description */
-				[/* text */ 't', `Returns true if the next token in this scanner's input can be
- interpreted as an int value in the default radix using the
- `],
-				[/* reference */ 'r', `#nextInt()`, `nextInt()`],
-				[/* text */ 't', ` method. The scanner does not advance past any input.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
-					[/* text */ 't', `if this scanner is closed`]
 				]]
 			],
 			[/* return description */
@@ -2604,29 +2604,6 @@ DocsCollector.collect('java.util.Scanner', [
          long value`]
 			]
 		]],
-		[/* method */ 'hasNextBigInteger()', [
-			[/* method description */
-				[/* text */ 't', `Returns true if the next token in this scanner's input can be
- interpreted as a `],
-				[/* inline code block */ 'i', `BigInteger`],
-				[/* text */ 't', ` in the default radix using the
- `],
-				[/* reference */ 'r', `#nextBigInteger()`, `nextBigInteger()`],
-				[/* text */ 't', ` method. The scanner does not advance past any
- input.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
-					[/* text */ 't', `if this scanner is closed`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `true if and only if this scanner's next token is a valid
-         `],
-				[/* inline code block */ 'i', `BigInteger`]
-			]
-		]],
 		[/* method */ 'hasNextBigInteger(int)', [
 			[/* method description */
 				[/* text */ 't', `Returns true if the next token in this scanner's input can be
@@ -2662,6 +2639,29 @@ DocsCollector.collect('java.util.Scanner', [
 				]],
 				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
 					[/* text */ 't', `if the radix is out of range`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `true if and only if this scanner's next token is a valid
+         `],
+				[/* inline code block */ 'i', `BigInteger`]
+			]
+		]],
+		[/* method */ 'hasNextBigInteger()', [
+			[/* method description */
+				[/* text */ 't', `Returns true if the next token in this scanner's input can be
+ interpreted as a `],
+				[/* inline code block */ 'i', `BigInteger`],
+				[/* text */ 't', ` in the default radix using the
+ `],
+				[/* reference */ 'r', `#nextBigInteger()`, `nextBigInteger()`],
+				[/* text */ 't', ` method. The scanner does not advance past any
+ input.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
+					[/* text */ 't', `if this scanner is closed`]
 				]]
 			],
 			[/* return description */
@@ -2825,20 +2825,6 @@ DocsCollector.collect('java.util.Scanner', [
 				[/* text */ 't', `this scanner`]
 			]
 		]],
-		[/* method */ 'useDelimiter(java.util.regex.Pattern)', [
-			[/* method description */
-				[/* text */ 't', `Sets this scanner's delimiting pattern to the specified pattern.`]
-			],
-			[/* parameters */
-				[/* parameter */ 'pattern', [/* parameter description */
-					[/* text */ 't', `A delimiting pattern`]
-				]]
-			],
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `this scanner`]
-			]
-		]],
 		[/* method */ 'useDelimiter(java.lang.String)', [
 			[/* method description */
 				[/* text */ 't', `Sets this scanner's delimiting pattern to a pattern constructed from
@@ -2870,6 +2856,20 @@ DocsCollector.collect('java.util.Scanner', [
 			[/* parameters */
 				[/* parameter */ 'pattern', [/* parameter description */
 					[/* text */ 't', `A string specifying a delimiting pattern`]
+				]]
+			],
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `this scanner`]
+			]
+		]],
+		[/* method */ 'useDelimiter(java.util.regex.Pattern)', [
+			[/* method description */
+				[/* text */ 't', `Sets this scanner's delimiting pattern to the specified pattern.`]
+			],
+			[/* parameters */
+				[/* parameter */ 'pattern', [/* parameter description */
+					[/* text */ 't', `A delimiting pattern`]
 				]]
 			],
 			/* throws */ UDF,
@@ -3017,6 +3017,47 @@ DocsCollector.collect('java.util.Scanner', [
 				[/* text */ 't', `true if and only if this scanner has another line of input`]
 			]
 		]],
+		[/* method */ 'nextByte()', [
+			[/* method description */
+				[/* text */ 't', `Scans the next token of the input as a `],
+				[/* inline code block */ 'i', `byte`],
+				[/* text */ 't', `.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', ` An invocation of this method of the form
+ `],
+					[/* inline code block */ 'i', `nextByte()`],
+					[/* text */ 't', ` behaves in exactly the same way as the
+ invocation `],
+					[/* inline code block */ 'i', `nextByte(radix)`],
+					[/* text */ 't', `, where `],
+					[/* inline code block */ 'i', `radix`],
+					[/* text */ 't', `
+ is the default radix of this scanner.`]
+				]]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.util.InputMismatchException', [/* throw description */
+					[/* text */ 't', `if the next token does not match the `],
+					[/* text */ 't', `Integer`],
+					[/* text */ 't', `
+         regular expression, or is out of range`]
+				]],
+				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
+					[/* text */ 't', `if input is exhausted`]
+				]],
+				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
+					[/* text */ 't', `if this scanner is closed`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the `],
+				[/* inline code block */ 'i', `byte`],
+				[/* text */ 't', ` scanned from the input`]
+			]
+		]],
 		[/* method */ 'nextByte(int)', [
 			[/* method description */
 				[/* text */ 't', `Scans the next token of the input as a `],
@@ -3083,47 +3124,6 @@ DocsCollector.collect('java.util.Scanner', [
 				]],
 				[/* throw */ 'java.lang.IllegalArgumentException', [/* throw description */
 					[/* text */ 't', `if the radix is out of range`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the `],
-				[/* inline code block */ 'i', `byte`],
-				[/* text */ 't', ` scanned from the input`]
-			]
-		]],
-		[/* method */ 'nextByte()', [
-			[/* method description */
-				[/* text */ 't', `Scans the next token of the input as a `],
-				[/* inline code block */ 'i', `byte`],
-				[/* text */ 't', `.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', ` An invocation of this method of the form
- `],
-					[/* inline code block */ 'i', `nextByte()`],
-					[/* text */ 't', ` behaves in exactly the same way as the
- invocation `],
-					[/* inline code block */ 'i', `nextByte(radix)`],
-					[/* text */ 't', `, where `],
-					[/* inline code block */ 'i', `radix`],
-					[/* text */ 't', `
- is the default radix of this scanner.`]
-				]]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.util.InputMismatchException', [/* throw description */
-					[/* text */ 't', `if the next token does not match the `],
-					[/* text */ 't', `Integer`],
-					[/* text */ 't', `
-         regular expression, or is out of range`]
-				]],
-				[/* throw */ 'java.util.NoSuchElementException', [/* throw description */
-					[/* text */ 't', `if input is exhausted`]
-				]],
-				[/* throw */ 'java.lang.IllegalStateException', [/* throw description */
-					[/* text */ 't', `if this scanner is closed`]
 				]]
 			],
 			[/* return description */

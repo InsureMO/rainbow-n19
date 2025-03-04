@@ -202,7 +202,7 @@ DocsCollector.collect('java.lang.Process', [
 					[/* reference */ 'r', `#onExit()`, `onExit()`],
 					[/* text */ 't', ` is
  `],
-					[/* reference */ 'r', `java.CompletableFuture#complete(T)`],
+					[/* reference */ 'r', `java.concurrent.CompletableFuture#complete(T)`],
 					[/* text */ 't', `
  when the process has terminated.`]
 				]]
@@ -296,40 +296,6 @@ DocsCollector.collect('java.lang.Process', [
          the process`]
 			]
 		]],
-		[/* method */ 'waitFor()', [
-			[/* method description */
-				[/* text */ 't', `Causes the current thread to wait, if necessary, until the
- process represented by this `],
-				[/* inline code block */ 'i', `Process`],
-				[/* text */ 't', ` object has
- terminated.  This method returns immediately if the process
- has already terminated.  If the process has not yet
- terminated, the calling thread will be blocked until the
- process exits.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.lang.InterruptedException', [/* throw description */
-					[/* text */ 't', `if the current thread is
-         `],
-					[/* reference */ 'r', `.Thread#interrupt()`],
-					[/* text */ 't', ` by another
-         thread while it is waiting, then the wait is ended and
-         an `],
-					[/* reference */ 'r', `java.lang.InterruptedException`],
-					[/* text */ 't', ` is thrown.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the exit value of the process represented by this
-         `],
-				[/* inline code block */ 'i', `Process`],
-				[/* text */ 't', ` object.  By convention, the value
-         `],
-				[/* inline code block */ 'i', `0`],
-				[/* text */ 't', ` indicates normal termination.`]
-			]
-		]],
 		[/* method */ 'waitFor(long,java.util.concurrent.TimeUnit)', [
 			[/* method description */
 				[/* text */ 't', `Causes the current thread to wait, if necessary, until the
@@ -387,6 +353,40 @@ DocsCollector.collect('java.lang.Process', [
          the waiting time elapsed before the process has exited.`]
 			]
 		]],
+		[/* method */ 'waitFor()', [
+			[/* method description */
+				[/* text */ 't', `Causes the current thread to wait, if necessary, until the
+ process represented by this `],
+				[/* inline code block */ 'i', `Process`],
+				[/* text */ 't', ` object has
+ terminated.  This method returns immediately if the process
+ has already terminated.  If the process has not yet
+ terminated, the calling thread will be blocked until the
+ process exits.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.lang.InterruptedException', [/* throw description */
+					[/* text */ 't', `if the current thread is
+         `],
+					[/* reference */ 'r', `.Thread#interrupt()`],
+					[/* text */ 't', ` by another
+         thread while it is waiting, then the wait is ended and
+         an `],
+					[/* reference */ 'r', `java.lang.InterruptedException`],
+					[/* text */ 't', ` is thrown.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the exit value of the process represented by this
+         `],
+				[/* inline code block */ 'i', `Process`],
+				[/* text */ 't', ` object.  By convention, the value
+         `],
+				[/* inline code block */ 'i', `0`],
+				[/* text */ 't', ` indicates normal termination.`]
+			]
+		]],
 		[/* method */ 'children()', [
 			[/* method description */
 				[/* text */ 't', `Returns a snapshot of the direct children of the process.
@@ -419,45 +419,31 @@ DocsCollector.collect('java.lang.Process', [
          direct children of the process`]
 			]
 		]],
-		[/* method */ 'inputReader()', [
+		[/* method */ 'getOutputStream()', [
 			[/* method description */
-				[/* text */ 't', `Returns a `],
-				[/* reference */ 'r', `java.io.BufferedReader`],
-				[/* text */ 't', ` connected to the standard
- output of the process. The `],
-				[/* reference */ 'r', `java.nio.charset.Charset`],
-				[/* text */ 't', ` for the native encoding is used
- to read characters, lines, or stream lines from standard output.
+				[/* text */ 't', `Returns the output stream connected to the normal input of the
+ process.  Output to the stream is piped into the standard
+ input of the process represented by this `],
+				[/* inline code block */ 'i', `Process`],
+				[/* text */ 't', ` object.
 
  `],
 				[/* block */ 'b', [
-					[/* text */ 't', `This method delegates to `],
-					[/* reference */ 'r', `#inputReader(java.nio.charset.Charset)`, `inputReader(Charset)`],
-					[/* text */ 't', ` using the
+					[/* text */ 't', `If the standard input of the process has been redirected using
  `],
-					[/* reference */ 'r', `java.nio.charset.Charset`],
-					[/* text */ 't', ` named by the `],
-					[/* inline code block */ 'i', `native.encoding`],
-					[/* text */ 't', ` system property.
- If the `],
-					[/* inline code block */ 'i', `native.encoding`],
-					[/* text */ 't', ` is not a valid charset name or not supported
- the `],
-					[/* reference */ 'r', `java.Charset#defaultCharset()`],
-					[/* text */ 't', ` is used.`]
+					[/* reference */ 'r', `.ProcessBuilder#redirectInput(java.lang.ProcessBuilder.Redirect)`],
+					[/* text */ 't', `
+ then this method will return a
+ `],
+					[/* reference */ 'r', `.ProcessBuilder#redirect-input`],
+					[/* text */ 't', `.`]
 				]]
 			],
 			/* parameters */ UDF,
 			/* throws */ UDF,
 			[/* return description */
-				[/* text */ 't', `a `],
-				[/* reference */ 'r', `java.io.BufferedReader`],
-				[/* text */ 't', ` using the
-          `],
-				[/* inline code block */ 'i', `native.encoding`],
-				[/* text */ 't', ` if supported, otherwise, the
-          `],
-				[/* reference */ 'r', `java.Charset#defaultCharset()`]
+				[/* text */ 't', `the output stream connected to the normal input of the
+         process`]
 			]
 		]],
 		[/* method */ 'inputReader(java.nio.charset.Charset)', [
@@ -550,20 +536,20 @@ DocsCollector.collect('java.lang.Process', [
 				[/* inline code block */ 'i', `charset`]
 			]
 		]],
-		[/* method */ 'errorReader()', [
+		[/* method */ 'inputReader()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
 				[/* reference */ 'r', `java.io.BufferedReader`],
 				[/* text */ 't', ` connected to the standard
- error of the process. The `],
+ output of the process. The `],
 				[/* reference */ 'r', `java.nio.charset.Charset`],
 				[/* text */ 't', ` for the native encoding is used
- to read characters, lines, or stream lines from standard error.
+ to read characters, lines, or stream lines from standard output.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This method delegates to `],
-					[/* reference */ 'r', `#errorReader(java.nio.charset.Charset)`, `errorReader(Charset)`],
+					[/* reference */ 'r', `#inputReader(java.nio.charset.Charset)`, `inputReader(Charset)`],
 					[/* text */ 't', ` using the
  `],
 					[/* reference */ 'r', `java.nio.charset.Charset`],
@@ -574,7 +560,7 @@ DocsCollector.collect('java.lang.Process', [
 					[/* inline code block */ 'i', `native.encoding`],
 					[/* text */ 't', ` is not a valid charset name or not supported
  the `],
-					[/* reference */ 'r', `java.Charset#defaultCharset()`],
+					[/* reference */ 'r', `java.charset.Charset#defaultCharset()`],
 					[/* text */ 't', ` is used.`]
 				]]
 			],
@@ -588,7 +574,7 @@ DocsCollector.collect('java.lang.Process', [
 				[/* inline code block */ 'i', `native.encoding`],
 				[/* text */ 't', ` if supported, otherwise, the
           `],
-				[/* reference */ 'r', `java.Charset#defaultCharset()`]
+				[/* reference */ 'r', `java.charset.Charset#defaultCharset()`]
 			]
 		]],
 		[/* method */ 'errorReader(java.nio.charset.Charset)', [
@@ -674,19 +660,20 @@ DocsCollector.collect('java.lang.Process', [
 				[/* inline code block */ 'i', `charset`]
 			]
 		]],
-		[/* method */ 'outputWriter()', [
+		[/* method */ 'errorReader()', [
 			[/* method description */
 				[/* text */ 't', `Returns a `],
-				[/* inline code block */ 'i', `BufferedWriter`],
-				[/* text */ 't', ` connected to the normal input of the process
- using the native encoding.
- Writes text to a character-output stream, buffering characters so as to provide
- for the efficient writing of single characters, arrays, and strings.
+				[/* reference */ 'r', `java.io.BufferedReader`],
+				[/* text */ 't', ` connected to the standard
+ error of the process. The `],
+				[/* reference */ 'r', `java.nio.charset.Charset`],
+				[/* text */ 't', ` for the native encoding is used
+ to read characters, lines, or stream lines from standard error.
 
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', `This method delegates to `],
-					[/* reference */ 'r', `#outputWriter(java.nio.charset.Charset)`, `outputWriter(Charset)`],
+					[/* reference */ 'r', `#errorReader(java.nio.charset.Charset)`, `errorReader(Charset)`],
 					[/* text */ 't', ` using the
  `],
 					[/* reference */ 'r', `java.nio.charset.Charset`],
@@ -697,7 +684,7 @@ DocsCollector.collect('java.lang.Process', [
 					[/* inline code block */ 'i', `native.encoding`],
 					[/* text */ 't', ` is not a valid charset name or not supported
  the `],
-					[/* reference */ 'r', `java.Charset#defaultCharset()`],
+					[/* reference */ 'r', `java.charset.Charset#defaultCharset()`],
 					[/* text */ 't', ` is used.`]
 				]]
 			],
@@ -705,11 +692,13 @@ DocsCollector.collect('java.lang.Process', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `a `],
-				[/* inline code block */ 'i', `BufferedWriter`],
-				[/* text */ 't', ` to the standard input of the process using the charset
-          for the `],
+				[/* reference */ 'r', `java.io.BufferedReader`],
+				[/* text */ 't', ` using the
+          `],
 				[/* inline code block */ 'i', `native.encoding`],
-				[/* text */ 't', ` system property`]
+				[/* text */ 't', ` if supported, otherwise, the
+          `],
+				[/* reference */ 'r', `java.charset.Charset#defaultCharset()`]
 			]
 		]],
 		[/* method */ 'outputWriter(java.nio.charset.Charset)', [
@@ -787,6 +776,44 @@ DocsCollector.collect('java.lang.Process', [
 				[/* inline code block */ 'i', `BufferedWriter`],
 				[/* text */ 't', ` to the standard input of the process using the `],
 				[/* inline code block */ 'i', `charset`]
+			]
+		]],
+		[/* method */ 'outputWriter()', [
+			[/* method description */
+				[/* text */ 't', `Returns a `],
+				[/* inline code block */ 'i', `BufferedWriter`],
+				[/* text */ 't', ` connected to the normal input of the process
+ using the native encoding.
+ Writes text to a character-output stream, buffering characters so as to provide
+ for the efficient writing of single characters, arrays, and strings.
+
+ `],
+				[/* block */ 'b', [
+					[/* text */ 't', `This method delegates to `],
+					[/* reference */ 'r', `#outputWriter(java.nio.charset.Charset)`, `outputWriter(Charset)`],
+					[/* text */ 't', ` using the
+ `],
+					[/* reference */ 'r', `java.nio.charset.Charset`],
+					[/* text */ 't', ` named by the `],
+					[/* inline code block */ 'i', `native.encoding`],
+					[/* text */ 't', ` system property.
+ If the `],
+					[/* inline code block */ 'i', `native.encoding`],
+					[/* text */ 't', ` is not a valid charset name or not supported
+ the `],
+					[/* reference */ 'r', `java.charset.Charset#defaultCharset()`],
+					[/* text */ 't', ` is used.`]
+				]]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `a `],
+				[/* inline code block */ 'i', `BufferedWriter`],
+				[/* text */ 't', ` to the standard input of the process using the charset
+          for the `],
+				[/* inline code block */ 'i', `native.encoding`],
+				[/* text */ 't', ` system property`]
 			]
 		]],
 		[/* method */ 'exitValue()', [
@@ -899,7 +926,7 @@ DocsCollector.collect('java.lang.Process', [
 					[/* reference */ 'r', `#onExit()`, `onExit()`],
 					[/* text */ 't', ` is
  `],
-					[/* reference */ 'r', `java.CompletableFuture#complete(T)`],
+					[/* reference */ 'r', `java.concurrent.CompletableFuture#complete(T)`],
 					[/* text */ 't', `
  when the process has terminated.
  `]
@@ -988,7 +1015,7 @@ DocsCollector.collect('java.lang.Process', [
  or asynchronously upon process termination.
  When the process has terminated the CompletableFuture is
  `],
-				[/* reference */ 'r', `java.CompletableFuture#complete(T)`],
+				[/* reference */ 'r', `java.concurrent.CompletableFuture#complete(T)`],
 				[/* text */ 't', ` regardless
  of the exit status of the process.
  `],
@@ -999,13 +1026,13 @@ DocsCollector.collect('java.lang.Process', [
 					[/* text */ 't', ` waits for the process to terminate and returns
  the Process. The future can be used to check if the process is
  `],
-					[/* reference */ 'r', `java.CompletableFuture#isDone()`],
+					[/* reference */ 'r', `java.concurrent.CompletableFuture#isDone()`],
 					[/* text */ 't', ` or to
  `],
-					[/* reference */ 'r', `java.CompletableFuture#get()`],
+					[/* reference */ 'r', `java.concurrent.CompletableFuture#get()`],
 					[/* text */ 't', ` for it to terminate.
  `],
-					[/* reference */ 'r', `java.CompletableFuture#cancel(boolean)`],
+					[/* reference */ 'r', `java.concurrent.CompletableFuture#cancel(boolean)`],
 					[/* text */ 't', `
  the CompletableFuture does not affect the Process.
  `]
@@ -1025,33 +1052,6 @@ DocsCollector.collect('java.lang.Process', [
 				[/* text */ 't', `a new `],
 				[/* inline code block */ 'i', `CompletableFuture<Process>`],
 				[/* text */ 't', ` for the Process`]
-			]
-		]],
-		[/* method */ 'getOutputStream()', [
-			[/* method description */
-				[/* text */ 't', `Returns the output stream connected to the normal input of the
- process.  Output to the stream is piped into the standard
- input of the process represented by this `],
-				[/* inline code block */ 'i', `Process`],
-				[/* text */ 't', ` object.
-
- `],
-				[/* block */ 'b', [
-					[/* text */ 't', `If the standard input of the process has been redirected using
- `],
-					[/* reference */ 'r', `.ProcessBuilder#redirectInput(java.lang.ProcessBuilder.Redirect)`],
-					[/* text */ 't', `
- then this method will return a
- `],
-					[/* reference */ 'r', `.ProcessBuilder#redirect-input`],
-					[/* text */ 't', `.`]
-				]]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the output stream connected to the normal input of the
-         process`]
 			]
 		]]
 	],

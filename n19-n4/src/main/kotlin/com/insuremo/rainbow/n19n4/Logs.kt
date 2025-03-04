@@ -1,5 +1,8 @@
 package com.insuremo.rainbow.n19n4
 
+import java.io.PrintWriter
+import java.io.StringWriter
+
 object Logs {
 	val empties = (0..100).map { " ".repeat(it) }
 	val indexes = ArrayList<Int>(listOf<Int>(0))
@@ -35,7 +38,17 @@ object Logs {
 		println("${linePrefix(indent)}\u001B[33m\u001B[3m${msg}\u001B[0m")
 	}
 
-	fun error(t: Throwable) {
-		t.printStackTrace()
+	fun error(t: Throwable, indent: Int) {
+		val lineIndent = linePrefix(indent)
+		val sw = StringWriter()
+		val pw = PrintWriter(sw)
+		t.printStackTrace(pw)
+		sw.toString().split("\n").forEach { line ->
+			println("${lineIndent}\u001B[31m\u001B[3m${line}\u001B[0m")
+		}
+	}
+
+	fun error(msg: String, indent: Int) {
+		println("${linePrefix(indent)}\u001B[31m\u001B[3m${msg}\u001B[0m")
 	}
 }

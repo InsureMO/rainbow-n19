@@ -393,6 +393,18 @@ DocsCollector.collect('java.util.Locale$LanguageRange', [
      modifiable.`]
 			]
 		]],
+		[/* method */ 'getRange()', [
+			[/* method description */
+				[/* text */ 't', `Returns the language range of this `],
+				[/* inline code block */ 'i', `LanguageRange`],
+				[/* text */ 't', `.`]
+			],
+			/* parameters */ UDF,
+			/* throws */ UDF,
+			[/* return description */
+				[/* text */ 't', `the language range.`]
+			]
+		]],
 		[/* method */ 'mapEquivalents(java.util.List,java.util.Map)', [
 			[/* method description */
 				[/* text */ 't', `Generates a new customized Language Priority List using the given
@@ -533,18 +545,6 @@ DocsCollector.collect('java.util.Locale$LanguageRange', [
 			/* throws */ UDF,
 			[/* return description */
 				[/* text */ 't', `the weight value.`]
-			]
-		]],
-		[/* method */ 'getRange()', [
-			[/* method description */
-				[/* text */ 't', `Returns the language range of this `],
-				[/* inline code block */ 'i', `LanguageRange`],
-				[/* text */ 't', `.`]
-			],
-			/* parameters */ UDF,
-			/* throws */ UDF,
-			[/* return description */
-				[/* text */ 't', `the language range.`]
 			]
 		]]
 	],

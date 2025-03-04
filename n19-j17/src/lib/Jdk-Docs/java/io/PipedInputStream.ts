@@ -164,6 +164,40 @@ DocsCollector.collect('java.io.PipedInputStream', [
 		]]
 	],
 	[/* methods */
+		[/* method */ 'read()', [
+			[/* method description */
+				[/* text */ 't', `Reads the next byte of data from this piped input stream. The
+ value byte is returned as an `],
+				[/* inline code block */ 'i', `int`],
+				[/* text */ 't', ` in the range
+ `],
+				[/* inline code block */ 'i', `0`],
+				[/* text */ 't', ` to `],
+				[/* inline code block */ 'i', `255`],
+				[/* text */ 't', `.
+ This method blocks until input data is available, the end of the
+ stream is detected, or an exception is thrown.`]
+			],
+			/* parameters */ UDF,
+			[/* throws */
+				[/* throw */ 'java.io.IOException', [/* throw description */
+					[/* text */ 't', `if the pipe is
+           `],
+					[/* reference */ 'r', `#connect(java.io.PipedOutputStream)`, `unconnected`],
+					[/* text */ 't', `,
+           `],
+					[/* text */ 't', `broken`],
+					[/* text */ 't', `, closed,
+           or if an I/O error occurs.`]
+				]]
+			],
+			[/* return description */
+				[/* text */ 't', `the next byte of data, or `],
+				[/* inline code block */ 'i', `-1`],
+				[/* text */ 't', ` if the end of the
+           stream is reached.`]
+			]
+		]],
 		[/* method */ 'read(byte[],int,int)', [
 			[/* method description */
 				[/* text */ 't', `Reads up to `],
@@ -231,40 +265,6 @@ DocsCollector.collect('java.io.PipedInputStream', [
 				[/* inline code block */ 'i', `-1`],
 				[/* text */ 't', ` if there is no more data because the end of
              the stream has been reached.`]
-			]
-		]],
-		[/* method */ 'read()', [
-			[/* method description */
-				[/* text */ 't', `Reads the next byte of data from this piped input stream. The
- value byte is returned as an `],
-				[/* inline code block */ 'i', `int`],
-				[/* text */ 't', ` in the range
- `],
-				[/* inline code block */ 'i', `0`],
-				[/* text */ 't', ` to `],
-				[/* inline code block */ 'i', `255`],
-				[/* text */ 't', `.
- This method blocks until input data is available, the end of the
- stream is detected, or an exception is thrown.`]
-			],
-			/* parameters */ UDF,
-			[/* throws */
-				[/* throw */ 'java.io.IOException', [/* throw description */
-					[/* text */ 't', `if the pipe is
-           `],
-					[/* reference */ 'r', `#connect(java.io.PipedOutputStream)`, `unconnected`],
-					[/* text */ 't', `,
-           `],
-					[/* text */ 't', `broken`],
-					[/* text */ 't', `, closed,
-           or if an I/O error occurs.`]
-				]]
-			],
-			[/* return description */
-				[/* text */ 't', `the next byte of data, or `],
-				[/* inline code block */ 'i', `-1`],
-				[/* text */ 't', ` if the end of the
-           stream is reached.`]
 			]
 		]],
 		[/* method */ 'connect(java.io.PipedOutputStream)', [

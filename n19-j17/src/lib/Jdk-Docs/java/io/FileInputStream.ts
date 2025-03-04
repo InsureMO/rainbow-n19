@@ -429,7 +429,7 @@ DocsCollector.collect('java.io.FileInputStream', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The initial `],
-					[/* reference */ 'r', `java.FileChannel#position()`],
+					[/* reference */ 'r', `java.channels.FileChannel#position()`],
 					[/* text */ 't', ` of the returned channel will be equal to the
  number of bytes read from the file so far.  Reading bytes from this
  stream will increment the channel's position.  Changing the channel's

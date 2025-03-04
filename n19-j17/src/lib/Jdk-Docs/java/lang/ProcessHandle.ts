@@ -307,7 +307,7 @@ DocsCollector.collect('java.lang.ProcessHandle', [
 					[/* reference */ 'r', `#onExit()`, `onExit()`],
 					[/* text */ 't', ` is
  `],
-					[/* reference */ 'r', `java.CompletableFuture#complete(T)`],
+					[/* reference */ 'r', `java.concurrent.CompletableFuture#complete(T)`],
 					[/* text */ 't', `
  when the process has terminated.
  `]
@@ -439,7 +439,7 @@ DocsCollector.collect('java.lang.ProcessHandle', [
 					[/* reference */ 'r', `#onExit()`, `onExit()`],
 					[/* text */ 't', ` is
  `],
-					[/* reference */ 'r', `java.CompletableFuture#complete(T)`],
+					[/* reference */ 'r', `java.concurrent.CompletableFuture#complete(T)`],
 					[/* text */ 't', `
  when the process has terminated.
  `]
@@ -509,7 +509,7 @@ DocsCollector.collect('java.lang.ProcessHandle', [
  or asynchronously upon process termination.
  When the process has terminated the CompletableFuture is
  `],
-				[/* reference */ 'r', `java.CompletableFuture#complete(T)`],
+				[/* reference */ 'r', `java.concurrent.CompletableFuture#complete(T)`],
 				[/* text */ 't', ` regardless
  of the exit status of the process.
  The `],
@@ -524,13 +524,13 @@ DocsCollector.collect('java.lang.ProcessHandle', [
 					[/* text */ 't', ` waits for the process to terminate and returns
  the ProcessHandle. The future can be used to check if the process is
  `],
-					[/* reference */ 'r', `java.CompletableFuture#isDone()`],
+					[/* reference */ 'r', `java.concurrent.CompletableFuture#isDone()`],
 					[/* text */ 't', ` or to
  `],
-					[/* reference */ 'r', `java.Future#get()`],
+					[/* reference */ 'r', `java.concurrent.Future#get()`],
 					[/* text */ 't', ` for it to terminate.
  `],
-					[/* reference */ 'r', `java.Future#cancel(boolean)`],
+					[/* reference */ 'r', `java.concurrent.Future#cancel(boolean)`],
 					[/* text */ 't', `
  the CompleteableFuture does not affect the Process.`]
 				]]

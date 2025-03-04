@@ -135,7 +135,7 @@ private class ClassGenerator(
 				doc.outputSettings().prettyPrint(false)
 				doc
 			} catch (t: Throwable) {
-				Logs.error(t)
+				Logs.error(t, -1)
 				null
 			}
 		}
@@ -273,7 +273,7 @@ private class ClassGenerator(
 							else -> throw RuntimeException("Cannot recognize annotation value[class=${value.javaClass}, value=${value}].")
 						}
 					} catch (t: Throwable) {
-						Logs.error(t)
+						Logs.error(t, -1)
 						return@joinToString "${indent1}['p', '$name', '\$Unreadable Value']"
 					}
 				},
@@ -778,8 +778,8 @@ private class ClassGenerator(
 			var linkTo: MutableList<String> = mutableListOf()
 			while (link.startsWith("../")) {
 				if (myPackageName.isEmpty()) {
-					println(href)
-					break
+					Logs.error("Cannot compute internal link[${href}].", -1)
+					return href
 				}
 				linkTo.add(myPackageName.removeFirst())
 				link = link.substring(3)

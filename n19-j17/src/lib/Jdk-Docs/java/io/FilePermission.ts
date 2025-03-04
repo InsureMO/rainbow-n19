@@ -85,7 +85,7 @@ DocsCollector.collect('java.io.FilePermission', [
 				[/* text */ 't', `symbolic link`],
 				[/* text */ 't', `
          to be read by invoking the `],
-				[/* reference */ 'r', `java.Files#readSymbolicLink(java.nio.file.Path)`],
+				[/* reference */ 'r', `java.file.Files#readSymbolicLink(java.nio.file.Path)`],
 				[/* text */ 't', ` method.
  `]
 			]]

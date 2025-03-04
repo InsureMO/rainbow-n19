@@ -86,7 +86,7 @@ DocsCollector.collect('java.nio.channels.AsynchronousChannel', [
 			[/* text */ 't', ` The `],
 			[/* inline code block */ 'i', `Future`],
 			[/* text */ 't', ` interface defines the `],
-			[/* reference */ 'r', `java.nio.Future#cancel(boolean)`],
+			[/* reference */ 'r', `java.nio.concurrent.Future#cancel(boolean)`],
 			[/* text */ 't', `
  method to cancel execution. This causes all threads waiting on the result of
  the I/O operation to throw `],
@@ -118,7 +118,7 @@ DocsCollector.collect('java.nio.channels.AsynchronousChannel', [
 		]],
 		[/* block */ 'b', [
 			[/* text */ 't', ` Where the `],
-			[/* reference */ 'r', `java.nio.Future#cancel(boolean)`],
+			[/* reference */ 'r', `java.nio.concurrent.Future#cancel(boolean)`],
 			[/* text */ 't', ` method is invoked with the `],
 			[/* inline code block */ 'i', `mayInterruptIfRunning`],
 			[/* text */ 't', ` parameter set to `],

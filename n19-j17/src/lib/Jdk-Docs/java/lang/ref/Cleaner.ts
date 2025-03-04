@@ -157,14 +157,14 @@ DocsCollector.collect('java.lang.ref.Cleaner', [
 				[/* block */ 'b', [
 					[/* text */ 't', `
  A thread from the thread factory's `],
-					[/* reference */ 'r', `java.lang.ThreadFactory#newThread(java.lang.Runnable)`],
+					[/* reference */ 'r', `java.lang.concurrent.ThreadFactory#newThread(java.lang.Runnable)`],
 					[/* text */ 't', `
  method is set to be a `],
 					[/* reference */ 'r', `java.Thread#setDaemon(boolean)`],
 					[/* text */ 't', `
  and started to process phantom reachable objects and invoke cleaning actions.
  On each call the `],
-					[/* reference */ 'r', `java.lang.ThreadFactory#newThread(java.lang.Runnable)`],
+					[/* reference */ 'r', `java.lang.concurrent.ThreadFactory#newThread(java.lang.Runnable)`],
 					[/* text */ 't', `
  must provide a Thread that is suitable for performing the cleaning actions.
  `]

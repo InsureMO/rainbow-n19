@@ -65,7 +65,7 @@ DocsCollector.collect('java.text.spi.DecimalFormatSymbolsProvider', [
 					[/* text */ 't', ` isn't
      one of the locales returned from
      `],
-					[/* reference */ 'r', `java.text.LocaleServiceProvider#getAvailableLocales()`],
+					[/* reference */ 'r', `java.text.spi.LocaleServiceProvider#getAvailableLocales()`],
 					[/* text */ 't', `.`]
 				]]
 			],

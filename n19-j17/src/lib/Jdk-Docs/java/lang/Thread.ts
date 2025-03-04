@@ -1424,7 +1424,7 @@ DocsCollector.collect('java.lang.Thread', [
  then the thread's interrupt status will be set and it will return
  immediately from the selection operation, possibly with a non-zero
  value, just as if the selector's `],
-					[/* reference */ 'r', `java.Selector#wakeup()`],
+					[/* reference */ 'r', `java.channels.Selector#wakeup()`],
 					[/* text */ 't', ` method were invoked.
 
  `]

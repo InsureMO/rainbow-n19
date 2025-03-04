@@ -938,7 +938,7 @@ DocsCollector.collect('java.util.Properties', [
 					[/* reference */ 'r', `#storeToXML(java.io.OutputStream,java.lang.String,java.nio.charset.Charset)`, `storeToXML(OutputStream os, String comment, Charset charset)`],
 					[/* text */ 't', `
  except that it will `],
-					[/* reference */ 'r', `java.Charset#forName(java.lang.String)`],
+					[/* reference */ 'r', `java.charset.Charset#forName(java.lang.String)`],
 					[/* text */ 't', `
  using the given encoding name.`]
 				]]

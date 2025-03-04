@@ -182,7 +182,7 @@ DocsCollector.collect('java.io.Console', [
  (e.g., keyboard and/or display) specified by the host environment or user.
  It may not necessarily be the same as the default charset returned from
  `],
-					[/* reference */ 'r', `java.Charset#defaultCharset()`],
+					[/* reference */ 'r', `java.charset.Charset#defaultCharset()`],
 					[/* text */ 't', `.`]
 				]]
 			],

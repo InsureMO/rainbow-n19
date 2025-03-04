@@ -5635,7 +5635,7 @@ DocsCollector.collect('java.util.Formatter', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The charset used is the `],
-					[/* reference */ 'r', `java.Charset#defaultCharset()`],
+					[/* reference */ 'r', `java.charset.Charset#defaultCharset()`],
 					[/* text */ 't', ` for this
  instance of the Java virtual machine.
 
@@ -5853,7 +5853,7 @@ DocsCollector.collect('java.util.Formatter', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The charset used is the `],
-					[/* reference */ 'r', `java.Charset#defaultCharset()`],
+					[/* reference */ 'r', `java.charset.Charset#defaultCharset()`],
 					[/* text */ 't', ` for this
  instance of the Java virtual machine.
 
@@ -6105,7 +6105,7 @@ DocsCollector.collect('java.util.Formatter', [
  `],
 				[/* block */ 'b', [
 					[/* text */ 't', ` The charset used is the `],
-					[/* reference */ 'r', `java.Charset#defaultCharset()`],
+					[/* reference */ 'r', `java.charset.Charset#defaultCharset()`],
 					[/* text */ 't', ` for this
  instance of the Java virtual machine.
 

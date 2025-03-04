@@ -126,7 +126,7 @@ DocsCollector.collect('java.lang.module.ModuleFinder', [
 					[/* inline code block */ 'i', `module-info.class`],
 					[/* text */ 't', ` in its top-level directory, or in a versioned entry
  in a `],
-					[/* reference */ 'r', `java.lang.JarFile#isMultiRelease()`],
+					[/* reference */ 'r', `java.lang.jar.JarFile#isMultiRelease()`],
 					[/* text */ 't', `
  JAR file, is a modular JAR file and thus defines an `],
 					[/* text */ 't', `explicit`],
@@ -305,7 +305,7 @@ DocsCollector.collect('java.lang.module.ModuleFinder', [
 					[/* text */ 't', `scanned`],
 					[/* text */ 't', ` in order to determine the packages
  in the module. Whether `],
-					[/* reference */ 'r', `java.lang.Files#isHidden(java.nio.file.Path)`],
+					[/* reference */ 'r', `java.lang.file.Files#isHidden(java.nio.file.Path)`],
 					[/* text */ 't', ` are ignored or not is implementation specific and therefore
  not specified. If a `],
 					[/* inline code block */ 'i', `.class`],
